@@ -1,0 +1,1111 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{The Polar Form of the Conic Sections}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{PolarConics}
+
+\setcounter{footnote}{0}
+
+\label{PolarConics}
+
+In this section, we revisit our friends the Conic Sections which we began studying in Chapter \ref{TheConicSections}.  Our first task is to formalize the notion of rotating axes so this subsection is actually a follow-up to Example  \ref{rotationmatrixex} in Section \ref{MatArithmetic}. In that example, we saw that the graph of $y = \frac{2}{x}$ is actually a hyperbola.  
+
+\smallskip
+
+More specifically, the graph of $y = \frac{1}{x}$ is the hyperbola  obtained by rotating the graph of $x^2-y^2=4$ counter-clockwise through a $45^{\circ}$ angle.  Armed with polar coordinates, we can generalize the process of rotating axes as shown below.
+
+
+\subsection{Rotation of Axes}
+\label{rotationaxes}
+
+Consider the $x$- and $y$-axes below along with the dashed $x'$- and $y'$-axes obtained by rotating the $x$- and $y$-axes counter-clockwise through an angle $\theta$ and consider the point $P(x,y)$.  The coordinates $(x,y)$ are rectangular coordinates and are based on the $x$- and $y$-axes.  
+
+\smallskip
+
+Suppose we wished to find rectangular coordinates based on the $x'$- and $y'$-axes.  That is, we wish to determine $P(x',y')$.  While this seems like a formidable challenge, it is nearly trivial if we use polar coordinates.  
+
+\smallskip
+
+Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose terminal side contains the point $P$.   We relate $P(x,y)$ and $P(x',y')$ by converting them to polar coordinates. 
+
+\begin{center}
+\begin{mfpic}[20]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](3.75,3.5){\scriptsize $x'$}
+\tlabel[cc](-3.5,3.75){\scriptsize $y'$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\point[3pt]{(1,3)}
+\gclear \tlabelrect[cc](1,3.5){\scriptsize $P(x,y) = P(x',y')$}
+\dotted \polyline{(0,0), (1,3)}
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)}
+\rotatepath{(0,0),45} \polyline{(2.83,-0.15),(2.83,0.15)}
+\rotatepath{(0,0),135} \polyline{(1.41,-0.15),(1.41,0.15)}
+\dotted \rotatepath{(0,0),45} \polyline{(2.83,0),(2.83,1.41)}
+\dotted \rotatepath{(0,0),45} \polyline{(0,1.41),(2.83,1.41)}
+\arrow \parafcn{5,40,5}{1.5*dir(t)}
+\arrow \parafcn{95,130,5}{2*dir(t)}
+\arrow \parafcn{50,69,5}{1.5*dir(t)}
+\tlabel[cc](1.75,0.75){\scriptsize $\theta$}
+\tlabel[cc](-.75,2.25){\scriptsize $\theta$}
+\tlabel[cc](1,1.5){\scriptsize $\phi$}
+\end{mfpic}
+
+\end{center}
+
+ Converting $P(x,y)$ to polar coordinates with $r > 0$ yields $x = r\cos(\theta + \phi)$ and $y = r\sin(\theta + \phi)$.  To convert the point $P(x',y')$ into polar coordinates, we first match the polar axis with the positive $x'$-axis, choose the same $r>0$ (since the origin is the same in both systems) and get $x' = r\cos(\phi)$ and $y' = r\sin(\phi)$.  
+ 
+ \smallskip
+ 
+ Using the sum formulas for sine and cosine, we have
+
+\[ \begin{array}{rcll}
+
+x & = & r\cos(\theta + \phi) & \\[3pt]
+  & = & r\cos(\theta)\cos(\phi) - r\sin(\theta) \sin(\phi) & \text{Sum formula for cosine} \\[3pt]
+  & = & (r\cos(\phi))\cos(\theta) - (r\sin(\phi))\sin(\theta) & \\[3pt]
+  & = & x' \cos(\theta) - y' \sin(\theta) & \text{Since $x' = r\cos(\phi)$ and $y' = r\sin(\phi)$}\\ \end{array}\]
+
+Similarly, using the sum formula for sine we get $y = x'\sin(\theta) + y'\cos(\theta)$.  These equations enable us to easily convert points with $x'y'$-coordinates back into $xy$-coordinates.  They also enable us to easily convert equations in the variables $x$ and $y$ into equations in the variables in terms of $x'$ and $y'$.\footnote{Just like in Section \ref{PolarCoordinates}, the equations $x = r\cos(\theta)$ and $y = r\sin(\theta)$ make it easy to convert \textit{points} from polar coordinates into rectangular coordinates, and they make it easy to convert \textit{equations} from rectangular coordinates into polar coordinates.}  
+
+\smallskip
+
+If we want equations which enable us to convert points with $xy$-coordinates into $x'y'$-coordinates, we need to solve the system
+
+\vspace{-.05in}
+
+\[ \left\{ \begin{array}{rcl} x' \cos(\theta) - y' \sin(\theta) & = & x \\ x'\sin(\theta) + y'\cos(\theta) & = & y \\ \end{array} \right.\]
+
+for $x'$ and $y'$. Perhaps the cleanest way\footnote{We could, of course, interchange the roles of $x$ and $x'$, $y$ and $y'$ and replace $\phi$ with $-\phi$ to get $x'$ and $y'$ in terms of $x$ and $y$, but that seems like cheating.  The matrix $A$ introduced here is revisited in the Exercises.} to solve this system is to write it as a matrix equation. Using the machinery developed in Section \ref{MatMethods}, we write the above system as the matrix equation $AX' = X$ where
+
+\vspace{-.05in}
+
+\[ \begin{array}{ccc}
+
+A = \left[ \begin{array}{rr} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \\ \end{array} \right], 
+
+&
+
+X'= \left[ \begin{array}{c}x' \\ y'\\ \end{array} \right],
+
+&
+
+X= \left[ \begin{array}{c}x \\ y\\ \end{array} \right]
+
+
+\end{array} \]
+
+Since $\det(A) = (\cos(\theta))(\cos(\theta)) - (-\sin(\theta))(\sin(\theta)) = \cos^{2}(\theta) + \sin^{2}(\theta) = 1$, the determinant of $A$ is not zero so $A$ is invertible and  $X' = A^{-1}X$.  Using the  formula given in Equation \ref{2by2inverse} with $\det(A) = 1$, we find
+
+\vspace{-.05in}
+
+\[ A^{-1} = \left[ \begin{array}{rr} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) \\ \end{array} \right] \]
+
+so that
+
+\[ \begin{array}{rcl}
+
+X'& = & A^{-1} X \\ [5pt]
+\left[ \begin{array}{c}x' \\ y'\\ \end{array} \right] & = & \left[ \begin{array}{rr} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) \\ \end{array} \right]\left[ \begin{array}{c}x \\ y\\ \end{array} \right] \\ [15pt]
+
+\left[ \begin{array}{c}x' \\ y'\\ \end{array} \right] & = & \left[ \begin{array}{c}x \cos(\theta) + y\sin(\theta) \\- x \sin(\theta) + y\cos(\theta)  \\ \end{array} \right] \\ \end{array} \]
+
+From which we get $x' = x \cos(\theta) + y\sin(\theta)$ and $y'=- x \sin(\theta) + y\cos(\theta)$.   To summarize, 
+
+\medskip
+
+%% \colorbox{ResultColor}{\bbm  
+
+\begin{theorem} \label{rotatecoordinatesthm}  \textbf{Rotation of Axes:} \index{rotation of axes} Suppose the positive $x$ and $y$ axes are rotated counter-clockwise through an angle $\theta$ to produce the axes $x'$ and $y'$, respectively.  Then the coordinates $P(x,y)$ and $P(x',y')$ are related by the following systems of equations
+\[ \begin{array}{ccc}
+
+\left\{  \begin{array}{rcl}x & = & x' \cos(\theta) - y' \sin(\theta) \\ y& = &  x'\sin(\theta) + y'\cos(\theta)  \\ \end{array} \right. &
+
+\text{and}
+
+&
+
+\left\{ \begin{array}{rcl} x' & = & x \cos(\theta) + y \sin(\theta) \\ y' & = &  -x\sin(\theta) +y\cos(\theta)  \\ \end{array} \right.  
+
+\\ \end{array} \]
+
+\end{theorem}
+
+%% \ebm}
+
+\medskip
+
+We put the formulas in  Theorem \ref{rotatecoordinatesthm} to good use in the following example.
+
+\begin{example} \label{rotatedaxesex1}  Suppose the $x$- and $y$- axes are both rotated counter-clockwise through the angle $\theta = \frac{\pi}{3}$ to produce the $x'$- and $y'$- axes, respectively. 
+
+
+\begin{enumerate}
+
+\item  Let $P(x,y) = (2,-4)$ and find $P(x',y')$.  Check your answer algebraically and graphically.
+
+\item  \label{rotatedellipseex} Convert the equation $21x^2+10xy\sqrt{3}+31y^2=144$ to an equation in $x'$ and $y'$ and graph.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+ \item  If $P(x,y) = (2,-4)$ then $x=2$ and $y=-4$.  Using these values for $x$ and $y$ along with  $\theta = \frac{\pi}{3}$, Theorem \ref{rotatecoordinatesthm} gives
+$x' = x \cos(\theta) + y \sin(\theta) = 2 \cos\left(\frac{\pi}{3}\right) + (-4)\sin\left(\frac{\pi}{3}\right)$ which simplifies to $x' = 1-2\sqrt{3}$.  
+
+\smallskip
+
+Similarly,  $y' = -x\sin(\theta) + y\cos(\theta) = (-2)\sin\left(\frac{\pi}{3}\right) + (-4)\cos\left(\frac{\pi}{3}\right)$ which gives $y' = -\sqrt{3}-2 = -2-\sqrt{3}$. Hence $P(x',y') = \left(1-2\sqrt{3}, -2-\sqrt{3}\right)$.  
+
+\smallskip
+
+To check our answer algebraically,  we convert $P(x',y') = \left(1-2\sqrt{3},-2-\sqrt{3}\right)$ back into $x$ and $y$ coordinates using the formulas in   Theorem \ref{rotatecoordinatesthm}.  We get
+
+\[ \begin{array}{rcl}
+x  & = &  x' \cos(\theta) - y' \sin(\theta) \\ [3pt]
+   & = & (1-2\sqrt{3}) \cos\left(\frac{\pi}{3}\right) - (-2-\sqrt{3})\sin\left(\frac{\pi}{3}\right) \\ [3pt]
+   & = & \left(\frac{1}{2} - \sqrt{3} \right) -\left(-\sqrt{3} - \frac{3}{2}\right)\\ [3pt]
+   & = & 2 \end{array} \] 
+   
+Similarly, using  $y =  x'\sin(\theta) + y'\cos(\theta)$, we obtain $y = -4$ as required.  
+
+\smallskip
+
+To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see if the new coordinates   $P(x',y') = \left(1-2\sqrt{3},-2-\sqrt{3}\right) \approx (-2.46,-3.73)$ seem reasonable.  Our graph is below.
+
+
+\begin{center}
+\begin{mfpic}[18]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](2.75,4){\scriptsize $x'$}
+\tlabel[cc](-4,2.75){\scriptsize $y'$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\point[3pt]{(2,-4)}
+\gclear \tlabelrect[cc](2,-4.5){\scriptsize $P(x,y) = (2,-4)$}
+\gclear \tlabelrect[cc](2,-5){\scriptsize  $P(x',y') \approx (-2.46,-3.73)$}
+\dashed \arrow \rotatepath{(0,0),60} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)}
+\dotted \rotatepath{(0,0),60} \polyline{(-2.46,0), (-2.46,-3.73)}
+\dotted \rotatepath{(0,0),60} \polyline{(0,-3.73), (-2.46,-3.73)}
+\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),240} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)}
+\arrow \parafcn{5,55,5}{1.5*dir(t)}
+\arrow \parafcn{95,145,5}{1.5*dir(t)}
+\tlabel[cc](1.75,0.75){\scriptsize $\frac{\pi}{3}$}
+\tlabel[cc](-.75,1.75){\scriptsize $\frac{\pi}{3}$}
+\end{mfpic}
+
+\end{center}
+
+\item   To convert the equation $21x^2+10xy\sqrt{3}+31y^2=144$ to an equation in the variables $x'$ and $y'$, we substitute  $x = x' \cos\left(\frac{\pi}{3}\right) - y' \sin\left(\frac{\pi}{3}\right) = \frac{x'}{2} - \frac{y'\sqrt{3}}{2}$ and  $y =  x'\sin\left(\frac{\pi}{3}\right) + y'\cos\left(\frac{\pi}{3}\right) = \frac{x'\sqrt{3}}{2} + \frac{y'}{2}$.
+
+\smallskip
+
+ While this is by no means a trivial task, it is nothing more than a hefty dose of Intermediate Algebra. While we leave most of the details to the reader, a good starting point is to verify: 
+
+\[ x^2 = \frac{(x')^2}{4} -\frac{x'y' \sqrt{3}}{2} +\frac{3(y')^2}{4}, \quad xy = \frac{(x')^2 \sqrt{3}}{4} -\frac{x'y'}{2} -\frac{(y')^2 \sqrt{3}}{4}, \quad y^2 = \frac{3(x')^2}{4} +\frac{x'y'\sqrt{3}}{2} + \frac{(y')^2}{4} \]
+
+To our surprise and delight, the equation $21x^2+10xy\sqrt{3}+31y^2=144$ in $xy$-coordinates reduces to $36(x')^2 + 16(y')^2 = 144$, or $\frac{(x')^2}{4} + \frac{(y')^2}{9} = 1$ in $x'y'$-coordinates.  
+
+\smallskip
+
+That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'$-axis with ($x'y'$-coordinates) $(0, \pm 3)$ and whose minor axis has endpoints with ($x'y'$-coordinates) $(\pm 2, 0)$ as seen below.
+
+
+\begin{center}
+\begin{mfpic}[18]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](2.75,4){\scriptsize $x'$}
+\tlabel[cc](-4,2.75){\scriptsize $y'$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\point[4pt]{\plr{(2,60)}, \plr{(-2,60)}, \plr{(3,150)}, \plr{(-3,150)}}
+\dashed \arrow \rotatepath{(0,0),60} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)}
+\rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),240} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)}
+\arrow \parafcn{5,55,5}{4*dir(t)}
+\arrow \parafcn{95,145,5}{4*dir(t)}
+\penwd{1.25pt}
+\rotatepath{(0,0),60} \ellipse{(0,0), 2, 3}
+\tlabel[cc](4,1.75){\scriptsize $\frac{\pi}{3}$}
+\tlabel[cc](-1.75,4){\scriptsize $\frac{\pi}{3}$}
+\tcaption{$21x^2+10xy\sqrt{3}+31y^2=144$}
+\end{mfpic}
+
+\end{center}
+
+\end{enumerate}
+
+\qed
+
+\end{example}
+
+Thanks to the elimination of  the $xy$' term from the equation $21x^2+10xy\sqrt{3}+31y^2=144$ in  Example \ref{rotatedaxesex1} number \ref{rotatedellipseex}, we   were able to graph the equation on the $x'y'$-plane using what we know from Chapter \ref{TheConicSections}. 
+
+\smallskip
+	
+ It is natural to wonder if, given an equation of the form $Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0$, with $B \neq 0$, is there an angle $\theta$ so that if we rotate the $x$ and $y$-axes counter-clockwise through that angle $\theta$, the equation in the rotated  variables $x'$ and $y'$ contains no $x'y'$ term.
+ 
+ \smallskip
+ 
+  To find out, we make the usual substitutions  $x = x' \cos(\theta) - y' \sin(\theta)$ and  $y =  x'\sin(\theta) + y'\cos(\theta)$ into the equation $Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0$ and set the coefficient of the $x'y'$ term equal to $0$.  
+  
+  \smallskip
+  
+  Terms containing $x'y'$ in this expression will come from the first three terms of the equation: $Ax^2$, $Bxy$ and $Cy^2$.  We leave it to the reader to verify that 
+
+\[ \begin{array}{rcl}
+
+
+
+x^2 & = &(x')^2 \cos^{2}(\theta) - 2x'y'\cos(\theta) \sin(\theta) + (y')^2 \sin(\theta) \\ [3pt]
+
+
+xy & = &  (x')^2\cos(\theta) \sin(\theta)+ x'y' \left(\cos^{2}(\theta)-\sin^2(\theta)\right)-(y')^2\cos(\theta)\sin(\theta) \\ [3pt]
+
+
+y^2 & = & (x')^2 \sin^{2}(\theta) +2x'y' \cos(\theta) \sin(\theta) +(y')^2 \cos^{2}(\theta) \\
+
+\end{array} \]
+
+The contribution to the $x'y'$-term from $Ax^2$ is $-2A\cos(\theta) \sin(\theta)$, from $Bxy$ it is $B \left(\cos^{2}(\theta)-\sin^2(\theta)\right)$, and from $Cy^2$ it is $2C \cos(\theta) \sin(\theta)$.  Equating the $x'y'$-term to $0$, we get
+
+\[ \begin{array}{rcll}
+
+-2A\cos(\theta) \sin(\theta) + B \left(\cos^{2}(\theta)-\sin^2(\theta)\right) + 2C \cos(\theta) \sin(\theta) & = & 0 & \\ [3pt]
+-A \sin(2\theta) + B \cos(2\theta) + C \sin(2\theta) & = & 0 & \text{Double Angle Identities} \\ [3pt]
+\end{array} \]
+
+From this, we get $B \cos(2\theta) = (A-C)\sin(2\theta)$. Our goal is to solve for $\theta$ in terms of  $A$, $B$ and $C$. 
+
+\smallskip
+
+ Since we are assuming $B \neq 0$, we can divide both sides of this equation by $B$.  To solve for $\theta$ we would like to divide both sides of the equation by $\sin(2\theta)$, provided of course that  we have assurances that $\sin(2\theta) \neq 0$.  
+ 
+ \smallskip
+ 
+ If  $\sin(2\theta) = 0$, then we would have  $B \cos(2\theta) = 0$, and since $B \neq 0$, this would force $\cos(2\theta) = 0$.  Since no angle $\theta$ can have both $\sin(2\theta) = 0$ and $\cos(2\theta) = 0$, we can safely assume\footnote{The reader is invited to think about the case $\sin(2\theta) = 0$ geometrically.  What happens to the axes in this case?} $\sin(2\theta) \neq 0$.  
+ 
+ \smallskip
+ 
+Hence, we get $\frac{\cos(2\theta)}{\sin(2\theta)} = \frac{A-C}{B}$, or $\cot(2\theta) = \frac{A-C}{B}$.  We have just proved the following theorem.
+
+ \smallskip
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{rotatedconicthm}  The equation  $Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0$ with $B \neq 0$ can be transformed into an equation in variables $x'$ and $y'$ without any $x'y'$ terms by rotating the $x$- and $y$- axes counter-clockwise through an angle $\theta$ which satisfies $\cot(2\theta) = \frac{A-C}{B}$.
+
+\end{theorem}
+
+%% \ebm}
+ \smallskip
+
+We put Theorem \ref{rotatedconicthm} to good use in the following example.
+
+\begin{example} \label{graphrotatedconicex} Graph the following equations.
+
+\begin{enumerate}
+
+\item \label{rotatedhyperbolaex}  $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$
+
+\item \label{rotatedparabolaex} $16x^2+24xy+9y^2 +15x-20y = 0$
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item Since the equation $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$ is already given to us in the form required by Theorem \ref{rotatedconicthm}, we identify $A = 5$, $B = 26$ and $C = 5$ so that $\cot(2\theta) = \frac{A-C}{B} = \frac{5-5}{26} = 0$.  
+
+\smallskip
+
+This means $\cot(2\theta) = 0$ which gives $\theta = \frac{\pi}{4} + \frac{\pi}{2} k$ for integers $k$.  We choose $\theta = \frac{\pi}{4}$ so that our rotation equations are $x = \frac{x' \sqrt{2}}{2} -\frac{y' \sqrt{2}}{2}$ and $y = \frac{x' \sqrt{2}}{2} + \frac{y' \sqrt{2}}{2}$.  The reader should verify that 
+
+\vspace{-.1in}
+
+\[ x^2 = \frac{(x')^2}{2} - x'y' +\frac{(y')^2}{2}, \quad xy = \frac{(x')^2}{2} -\frac{(y')^2}{2}, \quad y^2 = \frac{(x')^2}{2} + x'y' +\frac{(y')^2}{2} \]
+
+Making the other substitutions, we get that $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$ reduces to $18(x')^2-8(y')^2+32y'-104 = 0$, or $\frac{(x')^2}{4} -\frac{(y'-2)^2}{9} = 1$.  
+
+\smallskip
+
+Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in the $x'$ direction with vertices $(\pm 2,2)$ (in $x'y'$-coordinates)  and asymptotes $y' = \pm \frac{3}{2} x' + 2$. We graph this equation below. 
+
+\begin{center}
+
+\begin{mfpic}[18]{-5}{5}{-4}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](3.75,3.25){\scriptsize $x'$}
+\tlabel[cc](-3.25,3.75){\scriptsize $y'$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-3,-2,-1,1,2,3,4}
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)}
+\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{1.5*x+2}
+\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2-1.5*x}
+\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2}
+\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
+\point[3pt]{(0,2.83), (-2.83,0)}
+\arrow \parafcn{5,40,5}{1.25*dir(t)}
+\tlabel[cc](2.35,0.4){\scriptsize $\theta = \frac{\pi}{4}$}
+\tcaption{$5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(2*sec(t), 2+3*tan(t))}
+\arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(0-2*sec(t), 2+3*tan(t))}
+\end{mfpic}
+
+
+\end{center}
+
+\item  From $16x^2+24xy+9y^2 +15x-20y = 0$, we get $A = 16$, $B=24$ and $C = 9$ so that $\cot(2\theta) = \frac{7}{24}$.  Since this isn't one of the values of the common angles, we will need to use inverse functions. 
+
+\smallskip
+
+Ultimately, we need to find $\cos(\theta)$ and $\sin(\theta)$, which means we have two options. If we use the arccotangent function immediately, after the usual calculations we get $\theta = \frac{1}{2} \text{arccot}\left(\frac{7}{24}\right)$.  To get $\cos(\theta)$ and $\sin(\theta)$ from this, we would need to use half angle identities.  
+
+\smallskip
+
+Alternatively, we can start with $\cot(2\theta) = \frac{7}{24}$, use a double angle identity, and then go after $\cos(\theta)$ and $\sin(\theta)$.  We adopt the second approach. 
+
+\smallskip
+
+From $\cot(2\theta) = \frac{7}{24}$, we have $\tan(2\theta) = \frac{24}{7}$.  Using the double angle identity for tangent, we have $\frac{2\tan(\theta)}{1-\tan^{2}(\theta)} = \frac{24}{7}$, which gives $24 \tan^{2}(\theta) + 14 \tan(\theta) - 24=0$.  
+
+\smallskip
+
+Factoring, we get $2(3\tan(\theta)+4)(4\tan(\theta)-3) = 0$ which gives $\tan(\theta) = -\frac{4}{3}$ or $\tan(\theta) = \frac{3}{4}$.  While either of these values of $\tan(\theta)$ satisfies the equation $\cot(2\theta) = \frac{7}{24}$, we choose $\tan(\theta) = \frac{3}{4}$, since this produces an acute angle,\footnote{As usual, there are infinitely many solutions to $\tan(\theta) = \frac{3}{4}$.  We choose the acute angle  $\theta=\arctan\left(\frac{3}{4}\right)$. The reader is encouraged to think about why there is always at least one acute answer to $\cot(2\theta) = \frac{A-C}{B}$ and what this means geometrically in terms of what we are trying to accomplish by rotating the axes.  The reader is also encouraged to keep a sharp lookout for the angles which satisfy $\tan(\theta) = -\frac{4}{3}$ in our final graph.  (Hint:  $\left(\frac{3}{4}\right) \left(-\frac{4}{3}\right) = -1$.)}  $\theta = \arctan\left(\frac{3}{4}\right)$.  
+
+\smallskip
+
+To find the rotation equations, we need $\cos(\theta) = \cos\left(\arctan\left(\frac{3}{4}\right)\right)$ and $\sin(\theta) = \sin\left(\arctan\left(\frac{3}{4}\right)\right)$. Using the techniques developed in Section \ref{TheInverseTrigonometricFunctions} we get $\cos(\theta) = \frac{4}{5}$ and $\sin(\theta) = \frac{3}{5}$. 
+
+\smallskip
+
+Our rotation equations are $x = x' \cos(\theta) - y' \sin(\theta) = \frac{4x'}{5} - \frac{3y'}{5}$ and $y = x' \sin(\theta) + y'\cos(\theta) = \frac{3x'}{5} + \frac{4y'}{5}$. 
+
+\smallskip
+
+ As usual, we now substitute these quantities into $16x^2+24xy+9y^2 +15x-20y = 0$ and simplify.  As a first step, the reader can verify
+
+
+\[ x^2 = \frac{16(x')^2}{25} - \frac{24 x'y'}{25} +\frac{9(y')^2}{25}, \quad xy = \frac{12(x')^2}{25} +\frac{7 x'y'}{25} - \frac{12(y')^2}{25}, \quad y^2 = \frac{9(x')^2}{25} + \frac{24x'y'}{25} +\frac{16(y')^2}{25} \]
+
+Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose graph is a parabola opening along the positive $y'$-axis with vertex $(0,0)$. We graph this equation below. 
+
+\end{enumerate}
+\begin{center}
+
+
+\begin{mfpic}[18]{-4}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](4.25,2.35){\scriptsize $x'$}
+\tlabel[cc](-2.5,4.5){\scriptsize $y'$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-3,-2,-1,1,2,3,4}
+\dashed \arrow \rotatepath{(0,0),36.87} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),36.87} \polyline{(0,-5), (0,5)}
+\rotatepath{(0,0),36.87} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),36.87} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),36.87} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),36.87} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),126.87} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),126.87} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),126.87} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),126.87} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),216.87} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),216.87} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),216.87} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),216.87} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),306.87} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),306.87} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),306.87} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),306.87} \polyline{(4,-0.15),(4,0.15)}
+\point[3pt]{(0,0)}
+\arrow \parafcn{5,30,5}{2*dir(t)}
+\tlabel[cc](3.75,0.5){\scriptsize $\theta = \arctan\left(\frac{3}{4}\right)$}
+\tcaption{$16x^2+24xy+9y^2 +15x-20y = 0$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \rotatepath{(0,0),36.87} \function{-2,2,0.1}{x**2}
+\end{mfpic}
+
+\end{center}
+
+\vspace{-.15in} \qed
+
+
+\end{example}
+
+
+Note  that even though the coefficients of $x^2$ and $y^2$ were both positive numbers in parts \ref{rotatedhyperbolaex} and  \ref{rotatedparabolaex} of Example  \ref{graphrotatedconicex}, the graph in part  \ref{rotatedhyperbolaex} turned out to be a hyperbola and the graph in part \ref{rotatedparabolaex} worked out to be a parabola.  
+
+\smallskip
+
+Whereas in Chapter \ref{TheConicSections}, we could easily pick out which conic section we were dealing with based on the presence (or absence) of quadratic terms and their coefficients, Example  \ref{graphrotatedconicex} demonstrates the situation is much more complicated when an  $xy$ term is present. 
+
+\smallskip
+
+ Nevertheless,  it is possible to determine which conic section we have by looking at a special, familiar  \textit{combination} of the coefficients of the quadratic terms.  We have the following theorem.
+
+\smallskip
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem} \label{conicclassification} $~$
+
+Suppose the equation $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ describes a non-degenerate conic section.\footnote{Recall that this means its graph is either a circle, parabola, ellipse or hyperbola.  See page \pageref{degenerateconics}.}
+
+\begin{itemize}
+
+\item If $B^2 - 4AC > 0$ then the graph of the equation is a hyperbola.
+
+\item If $B^2 - 4AC =0$ then the graph of the equation is a parabola.
+
+\item If $B^2 - 4AC < 0$ then the graph of the equation is an ellipse or circle.
+
+\end{itemize}
+
+\end{theorem}
+%% \ebm}
+\smallskip 
+
+As you may expect, the quantity $B^2 - 4AC$ mentioned in Theorem \ref{conicclassification} is called the \textbf{discriminant}\index{discriminant ! of a conic} of the conic section.  While we will not attempt to explain the deep Mathematics which produces this `coincidence', we will at least work through the proof of Theorem \ref{conicclassification} mechanically to show that it is true.\footnote{We hope that someday you get to see \emph{why} this works the way it does.}  
+
+\smallskip
+
+First note that if the coefficient $B=0$ in the equation $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, Theorem \ref{conicclassification} reduces to the result presented in Exercise \ref{conicsclassificationnoxytermex} in Section \ref{Hyperbolas}.
+
+\smallskip
+
+Hence,  we proceed under the assumption that $B \neq 0$.  We rotate the $xy$-axes counter-clockwise through an angle $\theta$ which satisfies $\cot(2\theta) = \frac{A-C}{B}$ to produce an equation with no $x'y'$-term in accordance with  Theorem \ref{rotatedconicthm}:  $A'(x')^2 +C(y')^2 + Dx' + Ey' + F'= 0$.  
+
+\smallskip
+
+In this form, we can invoke Exercise \ref{conicsclassificationnoxytermex} in Section \ref{Hyperbolas} once more using the product $A'C'$.  Our goal is to find the product $A'C'$ in terms of the coefficients $A$, $B$ and $C$ in the original equation.  
+
+\smallskip
+
+We substitute $x = x' \cos(\theta) - y' \sin(\theta)$  $y =  x'\sin(\theta) + y'\cos(\theta)$ into  $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$.  After gathering like terms, the coefficient $A'$ on $(x')^2$ and the coefficient $C'$ on $(y')^2$ are
+\vspace{-.1in}
+\enlargethispage{.2in}
+\[ \begin{array}{rcll}
+
+A' & = & A \cos^{2}(\theta) + B \cos(\theta) \sin(\theta) + C \sin^{2}(\theta) \\ [3pt]
+C' & = & A \sin^{2}(\theta) - B \cos(\theta) \sin(\theta) + C \cos^{2}(\theta) \\
+ 
+\end{array} \]
+
+In order to make use of the condition $\cot(2\theta) = \frac{A-C}{B}$, we rewrite our formulas for $A'$ and $C'$ using the power reduction formulas.  After some regrouping, we get
+
+\[ \begin{array}{rcll}
+
+2A' & = &  \left[ (A+C) + (A-C)\cos(2\theta)\right]  + B\sin(2\theta)  \\ [3pt]
+2C' & = &  \left[ (A+C)-(A-C)\cos(2\theta)\right] - B\sin(2\theta)  \\
+ 
+\end{array} \]
+
+Next, we try to make sense of the product \[(2A')(2C') = \left\{ \left[ (A+C) + (A-C)\cos(2\theta)\right]  + B\sin(2\theta)\right\} \left\{\left[ (A+C)-(A-C)\cos(2\theta)\right] - B\sin(2\theta)\right\}\]  We break this product into pieces.  First, we use the difference of squares to multiply the `first' quantities in each factor to get
+
+\[ \begin{array}{rcl}
+  \left[ (A+C) + (A-C)\cos(2\theta)\right] \left[ (A+C)-(A-C)\cos(2\theta)\right] & = &  (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) \\
+\end{array} \]
+
+Next, we add the product of the `outer' and `inner' quantities in each factor to get
+
+\[ \begin{array}{rcl}
+
+- B\sin(2\theta)\left[ (A+C) + (A-C)\cos(2\theta)\right] &&\\
++ B\sin(2\theta)\left[ (A+C)-(A-C)\cos(2\theta)\right] & = & -2B(A-C)\cos(2\theta)\sin(2\theta)  \\
+
+\end{array} \]
+
+The product of the `last' quantity in each factor is $(B\sin(2\theta))(- B\sin(2\theta)) = -B^2\sin^2(2\theta)$.  
+
+\smallskip
+
+Putting all of this together yields  
+
+
+\[ \begin{array}{rcl}
+
+4A'C' & = & (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) -2B(A-C)\cos(2\theta)\sin(2\theta) -B^2\sin^2(2\theta) \\
+
+\end{array} \]
+
+From $\cot(2\theta) = \frac{A-C}{B}$, we get $\frac{\cos(2\theta)}{\sin(2\theta)} = \frac{A-C}{B}$, or $(A-C)\sin(2\theta)=B\cos(2\theta)$. 
+
+\smallskip
+
+Using this substitution twice along with the Pythagorean Identity $\cos^{2}(2\theta) = 1 - \sin^{2}(2\theta)$ we get:
+
+\[ \begin{array}{rcl}
+
+4A'C' & = & (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) -2B(A-C)\cos(2\theta)\sin(2\theta) -B^2\sin^2(2\theta) \\ [3pt]
+      & = & (A+C)^2 - (A-C)^2 \left[ 1-\sin^{2}(2\theta)\right] -2B\cos(2\theta) B \cos(2\theta) -B^2\sin^2(2\theta) \\ [3pt]
+      & = & (A+C)^2 - (A-C)^2  + (A-C)^2 \sin^{2}(2\theta) -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta) \\ [3pt]   
+      & = & (A+C)^2 - (A-C)^2  +\left[(A-C) \sin(2\theta)\right]^2 -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ [3pt]    
+      & = & (A+C)^2 - (A-C)^2  +\left[B \cos(2\theta)\right]^2 -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ [3pt]      
+      & = & (A+C)^2 - (A-C)^2  +B^2\cos^{2}(2\theta) -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ [3pt]   
+      & = & (A+C)^2 - (A-C)^2  -B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ [3pt] 
+		  & = & (A+C)^2 - (A-C)^2  -B^2\left[\cos^{2}(2\theta)+ \sin^2(2\theta)\right]  \\ [3pt]  
+		  & = & (A+C)^2 - (A-C)^2  -B^2 (1) \\ [3pt] 
+	  	& = & \left(A^2 + 2AC+C^2\right) - \left(A^2 - 2AC+C^2\right)  -B^2  \\ [3pt] 			    			
+	  	& = & 4AC  -B^2  \\ [3pt] 		
+\end{array} \]
+
+Hence, $B^2 - 4AC = -4 A'C'$, so the quantity $B^2 - 4AC$ has the opposite sign of $A'C'$.  The result now follows by applying  Exercise \ref{conicsclassificationnoxytermex} in Section \ref{Hyperbolas}.
+
+\begin{example} \label{conicdiscex}  Use Theorem \ref{conicclassification} to classify the graphs of the following non-degenerate conics.
+
+\begin{enumerate}
+
+\item   $21x^2+10xy\sqrt{3}+31y^2=144$  
+
+\item   $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$  
+
+\item   $16x^2+24xy+9y^2 +15x-20y = 0$  
+
+\end{enumerate}
+
+{\bf Solution.} This is a straightforward application of Theorem \ref{conicclassification}.
+
+ \begin{enumerate}
+ 
+\item  We have $A = 21$, $B = 10\sqrt{3}$ and $C = 31$ so $B^2 - 4AC = (10\sqrt{3})^2 - 4(21)(31) = -2304 < 0$.  Theorem \ref{conicclassification} predicts the graph is an ellipse, which checks with our work from Example \ref{rotatedaxesex1} number \ref{rotatedellipseex}.
+ 
+\item  Here,  $A = 5$, $B = 26$ and $C = 5$, so $B^2 - 4AC = 26^2 - 4(5)(5) = 576 > 0$. Theorem \ref{conicclassification} classifies the graph as a hyperbola, which matches our answer to Example \ref{graphrotatedconicex} number \ref{rotatedhyperbolaex}. 
+
+\item  Finally,  we have $A = 16$, $B = 24$ and $C = 9$ which gives $24^2 - 4(16)(9) = 0$. Theorem \ref{conicclassification} tells us that the graph is a parabola,  matching our result from Example \ref{graphrotatedconicex} number \ref{rotatedparabolaex}. \qed
+
+\end{enumerate}
+
+\end{example}
+
+
+\subsection{The Polar Form of Conics}
+\label{polarformofconics}
+
+Here, we revisit the conic sections from a more unified perspective starting with a  `new' definition below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{definition} \label{focusdirectrixeccentrityconic} Given a fixed line $L$,  a point $F$  not on $L$, and a positive number $e$, a conic section is the set of all points $P$ such that
+
+\[ \dfrac{\text{the distance from $P$ to $F$}}{\text{the distance from $P$ to $L$}} = e\]
+
+The line $L$ is called the \textbf{directrix}\index{directrix ! of a conic section in polar form} of the conic section, the point $F$ is called a \textbf{focus}\index{focus ! of a conic section in polar form} of the conic section, and the constant $e$ is called the \textbf{eccentricity}\index{eccentricity} of the conic section.
+
+\end{definition}
+%% \ebm}
+\smallskip 
+
+We have seen the notions of focus and directrix before in the definition of a parabola, Definition \ref{paraboladefn}.   There, a parabola is defined as the set of points equidistant from the focus and directrix, giving an eccentricity $e = 1$ according to Definition \ref{focusdirectrixeccentrityconic}.  
+
+\smallskip
+
+We have also seen the concept of eccentricity before.  It was introduced for ellipses in Definition \ref{ellipseeccentricity} in Section \ref{Ellipses}, and later extended to hyperbolas in Exercise \ref{hyperbolaeccentricity} in Section \ref{Hyperbolas}.  There, $e$ was also defined as a ratio of distances, though in these cases the distances involved were measurements from the center to a focus and from the center to a vertex.  
+
+\smallskip
+
+One way to reconcile the `old' ideas of focus, directrix and eccentricity with the `new' ones presented in Definition \ref{focusdirectrixeccentrityconic} is to derive equations for the conic sections using Definition \ref{focusdirectrixeccentrityconic}  and compare these parameters with what we know from Chapter \ref{TheConicSections}. 
+
+\smallskip
+
+We begin by assuming the conic section has eccentricity $e$, a focus $F$ at the origin and that the  directrix is the vertical line $x = -d$ as in the figure below.  
+
+\begin{center}
+\begin{mfpic}[20]{-5}{5}{-1}{6}
+\axes
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](3.75,4){\scriptsize $P(r,\theta)$}
+\dashed \polyline{(3,4), (-4,4)}
+\dashed \polyline{(0,0), (3,4)}
+\plotsymbol[3pt]{Asterisk}{(0, 0)}
+\point[3pt]{(3,4)}
+\arrow \reverse \arrow \polyline{(-4,-0.5), (-4,6)}
+\tlabel[cc](-4,-1){\scriptsize $x = -d$}
+\arrow \reverse \arrow \polyline{(0.25,4.5), (2.75,4.5)}
+\gclear \tlabelrect[cc](1.5,4.5){\scriptsize $r\cos(\theta)$}
+\arrow \reverse \arrow \polyline{(-3.75,4.5), (-0.25,4.5)}
+\gclear \tlabelrect[cc](-2,4.5){\scriptsize $d$}
+\tlabel[cc](0.75,-0.5){\scriptsize $O = F$}
+\arrow \parafcn{5,48,5}{1.5*dir(t)}
+\tlabel[cc](1.75,0.75){\scriptsize $\theta$}
+\tlabel[cc](1.5,2.5){\scriptsize $r$}
+\end{mfpic}
+\end{center}
+
+Using a polar coordinate representation $P(r,\theta)$ for a point on the conic with $r > 0$, we get
+
+\[ e =  \dfrac{\text{the distance from $P$ to $F$}}{\text{the distance from $P$ to $L$}} = \dfrac{r}{d+r\cos(\theta)} \]
+
+so that $r = e(d+r\cos(\theta))$.  Solving this equation for $r$, yields 
+
+
+\[ r = \dfrac{ed}{1-e\cos(\theta)}\]
+
+At this point, we convert the equation $r = e(d+r\cos(\theta))$ back into a rectangular equation in the variables $x$ and $y$.  If $e > 0$, but $e\neq 1$, the usual conversion process outlined in Section \ref{PolarCoordinates} gives\footnote{Turn $r = e(d+r\cos(\theta))$ into $r = e(d + x)$ and square both sides to get $r^{2} = e^{2}(d + x)^{2}$.  Replace $r^{2}$ with $x^{2} + y^{2}$, expand $(d + x)^{2}$, combine like terms, complete the square on $x$ and clean things up.}
+
+\[ \left( \frac{\left(1-e^2\right)^2}{e^2d^2}\right) \left(x - \dfrac{e^2 d}{1-e^2}\right)^2 + \left(\frac{1-e^2}{e^2d^2}\right) y^2 = 1\]
+
+
+If $0 < e < 1$, then $0< 1-e^2 < 1$ and, hence, $(1-e^2)^2 < 1-e^2$.  We leave it to the reader to show that this means we have  the equation of an ellipse centered at  $\left(\frac{e^2 d}{1-e^2}, 0\right)$  with major axis along the $x$-axis. 
+
+\smallskip
+
+Using the notation from Section \ref{Ellipses}, we have $a^2 = \frac{e^2 d^2}{\left(1-e^2\right)^2}$ and $b^2 = \frac{e^2 d^2}{1-e^2}$, so the major axis has length $\frac{2ed}{1-e^2}$ and the minor axis has length $\frac{2ed}{\sqrt{1-e^2}}$.  
+
+\smallskip
+
+Moreover, we find that one focus is $(0,0)$ and working through the formula given in  Definition \ref{ellipseeccentricity} gives the eccentricity to be $e$, as required. 
+
+\smallskip
+
+ If $e > 1$, then $1 - e^2 < 0$ but $(1-e^2)^2 > 0$ so the equation generates a hyperbola with center $\left(\frac{e^2 d}{1-e^2}, 0\right)$ whose transverse axis lies along the $x$-axis.  
+ 
+ \smallskip
+ 
+ Since such hyperbolas have the form $\frac{(x-h)^2}{a^2} -\frac{y^2}{b^2} = 1$, we need to take the \textit{opposite} reciprocal of the coefficient of $y^2$ to find $b^2$. 
+ 
+ \smallskip
+ 
+Doing this, we obtain\footnote{ Since $1 - e^2 < 0$ here, we rewrite $\left(1-e^2\right)^2 = \left(e^2-1\right)^2$ to help simplify things later on.}  $a^2 = \frac{e^2 d^2}{\left(1-e^2\right)^2} = \frac{e^2d^2}{\left(e^2-1\right)^2}$ and  $b^2 = -\frac{e^2 d^2}{1-e^2} = \frac{e^2d^2}{e^2-1}$, so the transverse axis has length  $\frac{2ed}{e^2-1}$ and the conjugate axis has length $\frac{2ed}{\sqrt{e^2-1}}$.  
+ 
+ \smallskip
+ 
+ Additionally, we verify that one focus is at $(0,0)$, and the formula given in Exercise \ref{hyperbolaeccentricity} in Section \ref{Hyperbolas} gives  the eccentricity is $e$ in this case as well. 
+ 
+ \smallskip
+ 
+ If $e=1$, the equation $r = \frac{ed}{1-e\cos(\theta)}$ reduces to $r = \frac{d}{1-\cos(\theta)}$ which translates to $y^2 = 2d\left(x + \frac{d}{2}\right)$.   
+ 
+ \smallskip
+ 
+The equation $y^2 = 2d\left(x + \frac{d}{2}\right)$ describes a parabola with vertex $\left(-\frac{d}{2}, 0\right)$ opening to the right.  
+
+\smallskip
+
+In the language of Section \ref{Parabolas}, $4p = 2d$ so $p = \frac{d}{2}$, the focus is $(0,0)$, the focal diameter is $2d$ and the directrix is $x = -d$, as required. 
+
+\smallskip
+
+ Hence, we have shown that in all cases, our `new' understanding  of `conic section', `focus', `eccentricity' and `directrix' as presented in Definition \ref{focusdirectrixeccentrityconic} correspond with the `old' definitions given in Chapter \ref{TheConicSections}. 
+ 
+\smallskip
+
+Before we summarize our findings, we note that in order to arrive at our general equation of a conic $r = \frac{ed}{1-e\cos(\theta)}$, we assumed that the directrix was the line $x = -d$ for $d > 0$. 
+
+\smallskip
+
+ We could have just as easily chosen the directrix to be $x = d$, $y = -d$ or $y = d$.  As the reader can verify, in these cases we obtain the forms  $r = \frac{ed}{1+e\cos(\theta)}$,  $r = \frac{ed}{1-e\sin(\theta)}$ and  $r = \frac{ed}{1+e\sin(\theta)}$, respectively. 
+ 
+ \smallskip
+ 
+ The key thing to remember is that in any of these cases, the directrix is always perpendicular to the major axis of an ellipse and it is always perpendicular to the transverse axis of the hyperbola.
+ 
+ \smallskip
+ 
+  For parabolas, knowing the focus is $(0,0)$ and the directrix also tells us which way the parabola opens.  
+ 
+ \smallskip
+ 
+ We have established the following theorem.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}  \label{polarformofconicsthm}  Suppose $e$ and $d$ are positive numbers.  Then
+
+\begin{itemize}
+
+\item  the graph of $r = \dfrac{ed}{1 - e\cos(\theta)}$ is the graph of a conic section with directrix $x = -d$.
+
+\item  the graph of $r = \dfrac{ed}{1 + e\cos(\theta)}$ is the graph of a conic section with directrix $x = d$.
+
+\item  the graph of $r = \dfrac{ed}{1 - e\sin(\theta)}$ is the graph of a conic section with directrix $y = -d$.
+
+\item  the graph of $r = \dfrac{ed}{1 + e\sin(\theta)}$ is the graph of a conic section with directrix $y = d$.
+
+
+\end{itemize}
+
+In each case above, $(0,0)$ is a focus of the conic and the number $e$ is the eccentricity of the conic. 
+
+\begin{itemize}
+
+\item If $0 < e < 1$, the graph is an ellipse.   The quantities $\dfrac{2ed}{1-e^2}$ and  $\dfrac{2ed}{\sqrt{1-e^2}}$ are the lengths of the major and minor axes, respectively.
+
+\item If $e = 1$, the graph is a parabola whose focal diameter is $2d$.
+
+\item If $e > 1$, the graph is a hyperbola.  The quantities    $\dfrac{2ed}{e^2-1}$ and $\dfrac{2ed}{\sqrt{e^2-1}}$ are the lengths of the transverse and conjugate axes, respectively.
+
+\end{itemize} 
+
+\smallskip
+
+\end{theorem}
+
+%% \ebm}
+
+\smallskip
+
+We test out Theorem \ref{polarformofconicsthm} in the next example.
+
+\smallskip
+
+\begin{example}  \label{polarconicgraphex}  Sketch the graphs of the following equations.
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item  \label{polarparabola} $r  = \dfrac{4}{1-\sin(\theta)}$
+
+\item  $r = \dfrac{12}{3 - \cos(\theta)}$  
+
+\item  $r = \dfrac{6}{1 + 2\sin(\theta)}$
+
+
+\end{enumerate}
+\end{multicols}
+
+
+
+{\bf Solution.}  \begin{enumerate}  \item From $r  = \frac{4}{1-\sin(\theta)}$, we first note $e =1$ which means we have a parabola on our hands.  
+
+\smallskip
+
+Since $ed = 4$, we have $d=4$ and given the form of the equation, the directrix at $y = -4$.  
+
+\smallskip
+
+Since the focus is at $(0,0)$, we know that the vertex is located at the point (in rectangular coordinates) $(0,-2)$ and must open upwards.  
+
+\smallskip
+
+With $d=4$, we have a focal diameter of $2d = 8$, so the parabola contains the points $(\pm 4, 0)$.  
+
+\smallskip
+
+Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below on the left.
+
+
+\item  We first rewrite $r = \frac{12}{3 - \cos(\theta)}$ in the form found in Theorem \ref{polarformofconicsthm}, namely $r = \frac{4}{1 - (1/3) \cos(\theta)}$.  
+
+\smallskip
+
+Since $e = \frac{1}{3}$ satisfies $0 < e < 1$, we know that the graph of this equation is an ellipse.  
+
+\smallskip
+
+Since $ed= 4$, we have $d = 12$ and, based on the form of the equation, the directrix is $x = -12$.  
+
+\smallskip
+
+Hence,  the ellipse has its major axis along the $x$-axis, which means we can find the vertices of the ellipse by finding where the ellipse intersects the $x$-axis.   
+
+\smallskip
+
+Since  $r(0) = 6$ and $r(\pi) = 3$,  our vertices are the rectangular points  $(-3,0)$ and $(6,0)$.  
+
+\smallskip
+
+The center of the ellipse is the midpoint of the vertices,  which in this case is $\left(\frac{3}{2}, 0\right)$.\footnote{As a quick check, we have from Theorem \ref{polarformofconicsthm} the major axis should have length $\frac{2ed}{1-e^2} = \frac{(2)(4)}{1-(1/3)^2} = 9$.}  
+
+\smallskip
+
+We know one focus is $(0,0)$, which is $\frac{3}{2}$ from the center $\left(\frac{3}{2}, 0\right)$ and this allows us to find the other focus $(3, 0)$, even though we are not asked to do so.  
+
+\smallskip
+
+Finally, we know from Theorem \ref{polarformofconicsthm} that the length of the minor axis is $\frac{2ed}{\sqrt{1-e^2}} =$ {\scriptsize $\frac{4}{\sqrt{1-(1/3)^2}}$} $= 6\sqrt{3}$ which means the endpoints of the minor axis are $\left(\frac{3}{2}, \pm 3\sqrt{2}\right)$. 
+
+\smallskip
+
+We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below on the right.
+
+
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[13]{-5}{5}{-5}{4}
+\axes
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3}
+\point[4pt]{(-4,0), (4,0), (0,-2)}
+\plotsymbol[3pt]{Asterisk}{(0, 0)}
+\arrow \reverse \arrow \polyline{(-5,-4), (5,-4)}
+\gclear \tlabelrect(0,-5){\scriptsize $y = -4$}
+\tlabelsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\normalsize
+\tcaption{$r = \frac{4}{1-\sin(\theta)}$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \plrfcn{-200,20,5}{4/(1-sind(t))}
+\end{mfpic} 
+
+&
+
+\begin{mfpic}[13]{-4}{7}{-6}{6}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\dashed \polyline{(-6,0), (-4,0)}
+\xmarks{-3,-2,-1,1,2,3,4,5,6}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\point[4pt]{(-3,0), (6,0), (1.5, 4.25), (1.5,-4.25)}
+\plotsymbol[3pt]{Asterisk}{(0, 0), (3,0)}
+\plotsymbol[3pt]{Cross}{(1.5,0)}
+\arrow \reverse \arrow \polyline{(-6,-6), (-6,6)}
+\gclear \tlabelrect(-6,-4){\scriptsize $x = -12$}
+\tlabelsep{5pt}
+\scriptsize
+\axislabels {x}{ {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\tcaption{$r = \frac{12}{3-\cos(\theta)}$}
+\penwd{1.25pt}
+\ellipse{(1.5,0),4.5,4.25}
+\end{mfpic} \\
+
+\end{tabular}
+\end{center}
+
+
+
+\item From $r = \frac{6}{1 + 2\sin(\theta)}$ we get $e = 2 > 1$ so the graph is a hyperbola.  
+
+\smallskip
+
+Since $ed = 6$, we get $d=3$, and from the form of the equation, we know the directrix is $y = 3$.  
+
+\smallskip
+
+Hence,  the transverse axis of the hyperbola lies along the $y$-axis, so we can find the vertices by looking where the hyperbola intersects the $y$-axis.  
+
+\smallskip
+
+We find $r\left( \frac{\pi}{2} \right) = 2$ and $r\left(\frac{3\pi}{2}\right) = -6$.  These two points correspond to the rectangular points $(0,2)$ and $(0,6)$ which puts the center of the hyperbola at $(0,4)$.  
+
+\smallskip
+
+Since one focus is at $(0,0)$,  $4$ units away from the center, we know the other focus is at $(0,8)$.  
+
+\smallskip
+
+According to Theorem \ref{polarformofconicsthm}, the conjugate axis has a length of $\frac{2ed}{\sqrt{e^2-1}} = \frac{(2)(6)}{\sqrt{2^2-1}} = 4 \sqrt{3}$.  This together with the location of the vertices give the slopes of the asymptotes as: $\pm \frac{2}{2\sqrt{3}}  = \pm \frac{\sqrt{3}}{3}$.  
+
+\smallskip
+
+Since the center of the hyperbola is $(0,4)$, the asymptotes are $y = \pm \frac{\sqrt{3}}{3} x + 4$.  
+
+\smallskip
+
+Using all of our work, we graph the hyperbola below.
+
+
+
+\begin{center}
+
+\begin{mfpic}[13]{-6}{6}{-1}{9}
+\axes
+\tlabel[cc](6,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\dashed \function{-5,5,0.1}{0.577*x+4}
+\dashed \function{-5,5,0.1}{4-0.577*x}
+\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\ymarks{1,2,3,5,6,7,8}
+\point[4pt]{(0,2), (0,6)}
+\plotsymbol[3pt]{Asterisk}{(0, 0), (0,8)}
+\plotsymbol[3pt]{Cross}{(0,4)}
+\arrow \reverse \arrow \polyline{(-6,3), (6,3)}
+\gclear \tlabelrect(0,3){\scriptsize $y = 3$}
+\tlabelsep{5pt}
+\scriptsize
+\axislabels {x}{ {$-5 \hspace{7pt} $} -5,{$-4 \hspace{7pt} $} -4,{$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
+\normalsize
+\tcaption{$r = \frac{6}{1 + 2\sin(\theta)}$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \plrfcn{5,175,5}{6/(1+2*sind(t))}
+\arrow \reverse \arrow \plrfcn{-125,-55,5}{6/(1+2*sind(t))}
+\end{mfpic}
+
+\end{center}
+
+\vspace{-0.15in} \qed
+
+\end{enumerate}
+
+\end{example}
+
+
+In light of Section \ref{rotationaxes}, the reader may wonder what the rotated form of the conic sections would look like in polar form.  
+
+\smallskip
+
+We know from Exercise \ref{polargraphtransformations} in Section \ref{PolarGraphs} that replacing $\theta$ with $(\theta - \phi)$ in an expression $r = f(\theta)$ rotates the graph of $r = f(\theta)$ counter-clockwise by an angle $\phi$.  
+
+\smallskip
+
+For instance, to graph $r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$ all we need to do is rotate the graph of  $r = \frac{4}{1-\sin\left(\theta\right)}$, which we obtained in Example \ref{polarconicgraphex} number \ref{polarparabola}, counter-clockwise by $\frac{\pi}{4}$ radians, as shown below.
+
+\begin{center}
+\begin{mfpic}[12]{-5}{5}{-5}{4}
+\axes
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3}
+\point[4pt]{\plr{(4,225)}, \plr{(4,45)}, \plr{(2,315)}}
+\plotsymbol[3pt]{Asterisk}{(0, 0)}
+\tlabelsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\normalsize
+
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)}
+\dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)}
+\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
+\rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)}
+\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
+\rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)}
+\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
+
+\tcaption{$r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \plrfcn{85,185,5}{0-4/sind(t-45)}
+\arrow \reverse \arrow \plrfcn{-155,65,5}{4/(1-sind(t-45))}
+\end{mfpic} 
+
+\end{center}
+
+
+
+Using rotations, we can greatly simplify the form of the conic sections presented in Theorem \ref{polarformofconicsthm}, since any three of the forms given there can be obtained from the fourth by rotating through some multiple of $\frac{\pi}{2}$.  
+
+\smallskip
+
+Moreover, since rotations do not affect lengths, all of the formulas for lengths Theorem \ref{polarformofconicsthm} remain intact. 
+
+\smallskip
+
+The formula in Theorem \ref{mostgeneralpolarformconic} below captures all the conic sections that have a focus at $(0,0)$.  It also includes circles centered at the origin by extending the concept of eccentricity to include $e=0$.  
+
+\smallskip
+
+While substituting $e=0$ into the equation given in Theorem \ref{mostgeneralpolarformconic} quickly reduces to a circle centered at the origin, the reader is best advised to think about this idea in light of Definition \ref{ellipseeccentricity} in Section \ref{Ellipses}.
+
+\smallskip
+
+
+
+\smallskip
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem} \label{mostgeneralpolarformconic}  Given constants $\ell > 0$, $e \geq 0$ and $\phi$, the graph of the equation \[ r = \dfrac{\ell}{1 - e\cos(\theta - \phi)}\] is a conic section with eccentricity $e$ and one focus at $(0,0)$.
+
+\begin{itemize}
+
+\item  If $e = 0$, the graph is a circle centered at $(0,0)$ with radius $\ell$.
+
+\item  If $e \neq 0$, then the conic has a focus at $(0,0)$. 
+
+\smallskip
+
+ Defining $d = \dfrac{\ell}{e}$, the directrix contains the point with polar coordinates $(-d,\phi)$.
+
+ \text{\tiny $\bullet$}  If $0 < e < 1$, the graph is an ellipse.   The quantities $\dfrac{2ed}{1-e^2}$ and  $\dfrac{2ed}{\sqrt{1-e^2}}$ are the lengths of the major and minor axes, respectively.
+
+ \text{\tiny $\bullet$}  If $e = 1$, the graph is a parabola whose focal diameter is $2d$.
+
+\text{\tiny $\bullet$}  If $e > 1$, the graph is a hyperbola.  The quantities    $\dfrac{2ed}{e^2-1}$ and $\dfrac{2ed}{\sqrt{e^2-1}}$ are the lengths of the transverse and conjugate axes, respectively.
+
+
+
+\end{itemize} 
+
+\smallskip
+
+\end{theorem}
+%% \ebm}
+
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforPolarConics}
+
+\closegraphsfile
+
+\end{document}

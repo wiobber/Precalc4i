@@ -1,0 +1,784 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Function Composition}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{FunctionComposition}
+
+\setcounter{footnote}{0}
+
+\label{FunctionComposition}
+
+In Section \ref{FunctionArithmetic}, we saw how the arithmetic of real numbers carried over into an arithmetic of functions.  In this section, we discuss another way to combine functions which is unique to functions and isn't shared with real numbers - function \textbf{composition}.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{functioncompositiondefn} Let $f$ and $g$ be functions where the real number $x$ is in the domain of $f$ and the real number $f(x)$ is in the domain of $g$.  The \index{function ! composite ! definition of}\index{composite function ! definition of}\textbf{composite} of $g$ with $f$, denoted $g \circ f$, and read `$g$ composed with $f$' is defined by the formula: $(g \circ f) (x) = g(f(x))$.
+
+\end{definition}
+%% \ebm}
+
+\smallskip
+
+To compute $(g \circ f)(x) $, we use the formula given in  Defintion \ref{functioncompositiondefn}:   $(g \circ f) (x) = g(f(x))$.  However, from a procedural viewpoint, Defintion \ref{functioncompositiondefn} tells us  the output from $g \circ f$ is found by taking the output from $f$, $f(x)$,  and then making that the input to $g$.   From this perspective, we see $g \circ f$ as a two step process taking an input $x$ and first applying the procedure $f$ then applying the procedure $g$.  Abstractly, we have
+
+\begin{center}
+
+\footnotesize
+
+\begin{mfpic}[10]{-10}{20}{-10}{10}
+\tlabel[cc](-2,6){$f$}
+\tlabel[cc](11,6){$g$}
+\tlabel[cc](4.5,-6){$g \circ f$}
+\tlabel[cc](-9,-1){$x$}
+\tlabel[cc](4,-1){$f(x)$}
+\tlabel[cc](18,-2){$g(f(x))$}
+\point[2pt]{(-9,0), (4,0), (18,0)} 
+\sclosed \curve{(-6,4), (-12,0), (-6,-5), (-3,0)}
+\sclosed \curve{(1,3), (6,0), (5,-4)}
+\sclosed \curve{(18,3), (15,0), (18,-5), (20,0)}
+\penwd{0.75pt}
+\arrow \curve{(-8.9,0.25), (-2,5), (3.9,0.25)}
+\arrow \curve{(4.1,0.25), (11,5), (17.9,0.25)}
+\arrow \curve{(-8.9,-0.25), (4.5,-5), (17.9,-0.25)}
+\end{mfpic}
+
+\end{center}
+
+\normalsize
+
+In the expression $g(f(x))$, the function $f$ is often called the `inside' function while $g$ is often called the `outside' function.  When evaluating  composite function values we present two methods in the example below:  the `inside out' and `outside in'  methods.  
+
+\begin{example}  Let $f(x) = x^2-4x$, $g(t) = 2-\sqrt{t+3}$, and $h(s) = \dfrac{2s}{s+1}$.  
+
+In numbers \ref{fcexvalfirst} - \ref{fcexvallast}, find the indicated function value.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item  $(g \circ f)(1)$ \label{fcexvalfirst}
+
+\item  $(f \circ g)(1)$
+
+\item  $(g \circ g)(6)$ \label{fcexvallast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+
+
+In numbers \ref{fcexformfirst} - \ref{fcexformlast}, find and simplify the indicated composite functions.  State the domain of each.
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(g \circ f)(x)$ \label{fcexformfirst}
+
+\item  $(f \circ g)(t)$
+
+\item  $(g \circ h)(s)$
+
+\item  $(h \circ g)(t)$ \label{hogex}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(h \circ h)(x)$
+
+\item  $(h \circ (g \circ f))(x)$  \label{hogoffirst}
+
+\item  $((h \circ g) \circ f)(x)$ \label{fcexformlast}
+
+\end{enumerate}
+\end{multicols}
+
+{\bf Solution.}  
+\begin{enumerate}
+
+\item  Using Definition \ref{functioncompositiondefn}, $(g \circ f)(1) = g(f(1))$.  Since $f(1) = (1)^2 - 4(1) = -3$ and $g(-3) = 2 - \sqrt{(-3)+3} = 2$, we have $(g \circ f)(1) = g(f(1)) = g(-3) = 2$.
+
+\item  By definition, $(f \circ g)(1) = f(g(1))$.  We find $g(1) = 2 - \sqrt{1+3} = 0$, and $f(0) = (0)^2-4(0) = 0$, so $(f \circ g)(1) = f(g(1)) = f(0) = 0$. Comparing this with our answer to the last problem, we see that $(g \circ f)(1) \neq (f \circ g)(1)$  which tells us function composition is not commutative,\footnote{That is, in general, $g \circ f \neq f \circ g$.  This shouldn't be too surprising, since, in general, the order of processes matters: adding eggs to a cake batter then baking the cake batter has a much different outcome than baking the cake batter then adding eggs.}
+
+\item  Since   $(g \circ g)(6) = g(g(6))$, we `iterate' the process $g$:   that is, we apply the process $g$ to $6$, then apply the process $g$ again. We find $g(6) = 2 - \sqrt{6+3} = -1$,  and $g(-1)  = 2 - \sqrt{(-1)+3} = 2 - \sqrt{2}$,   so $(g \circ g)(6) = g(g(6)) = g(-1) = 2-\sqrt{2}$.
+
+
+\item  By definition, $(g \circ f)(x) = g(f(x))$. We now illustrate \textit{two} ways to approach this problem.
+
+\begin{itemize}
+
+\item  \textit{inside out}:  We substitute $f(x) = x^2-4x$ in for $t$ in the expression $g(t)$ and get  \[(g \circ f)(x) = g(f(x)) = g\left(x^2-4x\right) = 2 - \sqrt{\left(x^2-4x\right)+3} = 2 - \sqrt{x^2-4x+3}\] Hence, $(g \circ f)(x) = 2 - \sqrt{x^2-4x+3}$.
+
+\item  \textit{outside in}:  We use the formula for $g$ first to get  \[(g \circ f)(x) = g(f(x)) = 2 - \sqrt{f(x)+3}  = 2 - \sqrt{\left(x^2-4x\right)+3} = 2 - \sqrt{x^2-4x+3}\] We get the same answer as before,  $(g \circ f)(x) = 2 - \sqrt{x^2-4x+3}$.
+
+\end{itemize} 
+
+To find the domain of $g \circ f$, we need to find the elements in the domain of $f$ whose outputs $f(x)$ are in the domain of $g$.  Since the domain of $f$ is all real numbers, we focus on finding the range elements compatible with $g$. Owing to the presence of the square root in the formula  $g(t) = 2 - \sqrt{t+3}$ we require $t \geq -3$.  Hence, we need $f(x) \geq -3$ or $x^2-4x \geq -3$.  To solve this inequality we rewrite as $x^2-4x + 3 \geq 0$ and use a sign diagram.  Letting  $r(x) = x^2-4x+3$, we find the zeros of $r$ to be $x = 1$ and $x = 3$ and obtain
+
+\begin{center}
+
+\begin{mfpic}[10]{-5}{5}{-1}{2}
+\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
+\xmarks{-2,2}
+\tlpointsep{6pt}
+\axislabels {x}{{$1$} -2, {$3$} 2}
+\tlabel[cc](-3.5,1){$(+)$}
+\tlabel[cc](-2,1){$0$}
+\tlabel[cc](0,1){$(-)$}
+\tlabel[cc](2,1){$0$}
+\tlabel[cc](3.5,1){$(+)$}
+\end{mfpic}
+
+\end{center}
+
+Our solution to $x^2-4x+3 \geq 0$, and hence the domain of $g \circ f$, is $(-\infty, 1] \cup [3,\infty)$.
+
+\item  To find $(f \circ g)(t)$, we find $f(g(t))$. 
+
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute the expression $g(t) = 2 - \sqrt{t+3}$ in for $x$ in the formula $f(x)$ and get 
+\begin{longtable}{rclr} $(f \circ g)(t)$ & = & $f(g(t))$ = $f\left(2-\sqrt{t+3}\right)$ & \\ [2pt]
+ & = & $\left(2-\sqrt{t+3}\right)^2 - 4\left(2-\sqrt{t+3}\right)$ & \\[2pt] 
+ & = & $4 - 4\sqrt{t+3} + \left(\sqrt{t+3}\right)^2 - 8 + 4 \sqrt{t+3}$ & \\ [2pt]
+ & = & $4 + t+3 - 8$ & \\ 
+ & = & $t-1$ & \\
+ \end{longtable}
+
+\item  \textit{outside in}:  We use the formula for $f(x)$ first to get
+\begin{longtable}{rclr} $(f \circ g)(t)$ & = & $f(g(t))$ = $\left(g(t)\right)^2 - 4\left(g(t)\right)$& \\ [2pt]
+ & = & $\left(2-\sqrt{t+3}\right)^2 - 4\left(2-\sqrt{t+3}\right)$ & \\[2pt] 
+ & = & $t-1$ & same algebra as before \\
+ \end{longtable}
+
+\end{itemize}
+
+Thus we get $(f \circ g)(t) = t-1$.  To find the domain of $f \circ g$, we look for the elements $t$ in the domain of $g$ whose outputs, $g(t)$ are in the domain of $f$.   As mentioned previously, the domain of $g$ is limited by the presence of the square root to  $\{ t \in \mathbb{R} \, | \, t \geq -3\}$  while the domain of $f$ is all real numbers.  Hence,  the domain of $f \circ g$ is restricted only by the domain of $g$ and is $\{ t \in \mathbb{R} \, | \, t \geq -3\}$ or, using interval notation,  $[-3, \infty)$.  Note that as with Example \ref{funcarithex}  in Section \ref{FunctionArithmetic}, had we used the simplified formula for $(f \circ g)(t) = t-1$  to determine domain, we would have arrived at the incorrect answer.
+
+
+
+\item  To find $(g \circ h)(s)$, we compute $g(h(s))$. 
+
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute $h(s)$ in for $t$ in the expression $g(t)$  to get 
+\begin{longtable}{rclr} $(g \circ h)(s)$ & = & $g(h(s))$ = $g\left(\dfrac{2s}{s+1}\right)$  & \\ [12pt]
+ & = & $2 - \sqrt{\left(\dfrac{2s}{s+1}\right)+3}$ & \\[12pt] 
+ & = & $2 - \sqrt{\dfrac{2s}{s+1} + \dfrac{3(s+1)}{s+1}}$ & get common denominators\\ [12pt]
+ & = & $2 - \sqrt{\dfrac{5s+3}{s+1}}$ & \\
+ \end{longtable}
+
+\item  \textit{outside in}:  We use the formula for $g(t)$ first to get
+\begin{longtable}{rclr} $(g \circ h)(s)$ & = & $g(h(s))$ = $2 - \sqrt{h(s)+3}$& \\ [2pt]
+  & = & $2 - \sqrt{\left(\dfrac{2s}{s+1}\right)+3}$ & \\[12pt] 
+ & = & $2 - \sqrt{\dfrac{5s+3}{s+1}}$ & get common denominators as before\\
+ \end{longtable}
+
+\end{itemize}
+
+To find the domain of $g \circ h$, we need the elements in the domain of $h$ so that $h(s)$ is in the domain of $g$.  Owing to the $s+1$ in the denominator of the expression  $h(s)$, we require $s \neq -1$.  Once again, because  of the square root in $g(t) = 2 - \sqrt{t+3}$, we need $t \geq -3$ or, in this case $h(s)  \geq -3$.  To use a sign diagram to solve, we rearrange this inequality:
+
+\[ \begin{array}{rclr}
+
+\dfrac{2s}{s+1} & \geq & -3 & \\ [10pt]
+\dfrac{2s}{s+1} +3 &   \geq & 0 & \\ [10pt]
+\dfrac{5s+3}{s+1}  & \geq &  0  & \text{get common denominators as before} \\ \end{array} \]
+
+ Defining $r(s) = \frac{5s+3}{s+1}$, we see $r$ is undefined at $s=-1$ (a carry over from the domain restriction of $h$) and $r(s) = 0$ at $s = -\frac{3}{5}$. Our sign diagram is
+
+\begin{center}
+
+\begin{mfpic}[10]{-5}{5}{-1}{2}
+\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
+\xmarks{-2,2}
+\tlpointsep{7pt}
+\axislabels {x}{{$-1 \hspace{7pt}$} -2, {$-\frac{3}{5} \hspace{7pt}$} 2}
+\tlabel[cc](-3.5,1){$(+)$}
+\tlabel[cc](-2,1){\textinterrobang}
+\tlabel[cc](0,1){$(-)$}
+\tlabel[cc](2,1){$0$}
+\tlabel[cc](3.5,1){$(+)$}
+\end{mfpic}
+
+\end{center}
+
+hence our  domain is $(-\infty, -1) \cup \left[-\frac{3}{5}, \infty\right)$.
+
+\item  We find $(h \circ g)(t)$ by finding $h(g(t))$.
+
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute the expression $g(t)$  for $s$ in the formula $h(s)$
+\begin{longtable}{rclr} $(h \circ g)(t)$ & = & $h(g(t))$ =$h\left(2-\sqrt{t+3}\right)$ & \\ [2pt]
+ & = & $\dfrac{2 \left(2-\sqrt{t+3} \right)}{\left(2-\sqrt{t+3}\right)+1}$ & \\[12pt] 
+ & = & $\dfrac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}$ & \\
+  \end{longtable}
+
+\item  \textit{outside in}:  We use the formula for $h(s)$ first to get
+\begin{longtable}{rclr} $(h \circ g)(t)$ & = & $h(g(t))$ = $\dfrac{2 \left(g(t)\right)}{\left( g(t)\right) + 1}$ & \\ [12pt]
+ & = & $\dfrac{2 \left(2-\sqrt{t+3} \right)}{\left(2-\sqrt{t+3}\right)+1}$ & \\[12pt] 
+ & = & $\dfrac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}$ & \\
+  \end{longtable}
+ 
+ \end{itemize}
+
+To find the domain of $h \circ g$, we need the elements of the domain of $g$ so that $g(t)$ is in the domain of $h$.  As we've seen already, for $t$ to be in the domain of $g$, $t \geq -3$. For $s$ to be in the domain of $h$, $s \neq -1$, so we require $g(t) \neq -1$.  Hence, we solve $g(t) = 2-\sqrt{t+3} = -1$ with the intent of excluding the solutions. Isolating the radical expression gives $\sqrt{t+3} = 3$ or $t = 6$.  Sure enough, we check $g(6)=-1$ so we exclude $t=6$ from the domain of $h \circ g$.  Our final answer is $[-3, 6) \cup (6, \infty)$.
+
+
+\item  To find $(h \circ h)(s)$ we find $h(h(s))$:
+
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute the expression $h(s)$ for $s$ in the expression $h(s)$ into $h$ to get
+\begin{longtable}{rclr} $(h \circ h)(s)$ & $=$ & $h(h(s)) =h\left(\dfrac{2s}{s+1}\right)$ & \\ [15pt]
+&=& $\dfrac{2\left(\dfrac{2s}{s+1}\right)}{\left(\dfrac{2s}{s+1}\right)+1}$ & \\ [25pt]
+ & = & $\dfrac{\dfrac{4s}{s+1}}{\dfrac{2s}{s+1}+1} \cdot \dfrac{(s+1)}{(s+1)}$ & \\ [25pt]
+& = & $\dfrac{\dfrac{4s}{s+1} \cdot (s+1)}{\left(\dfrac{2s}{s+1}\right)\cdot(s+1)+1\cdot(s+1)}$ & \\ [25pt]
+& = & $\dfrac{\dfrac{4s}{\cancelto{1}{(s+1})} \cdot \cancel{(s+1)}}{\dfrac{2s}{\cancelto{1}{(s+1)}}\cdot\cancel{(s+1)}+s+1}$ & \\ [25pt]
+& = & $\dfrac{4s}{3s+1}$ & \\ 
+ \end{longtable}
+
+\item  \textit{outside in}: This approach yields
+\begin{longtable}{rclr} $(h \circ h)(s)$ & = & $h(h(s)) = \dfrac{2 (h(s))}{h(s) + 1}$ & \\ [.25in]
+& = & $\dfrac{2\left(\dfrac{2s}{s+1}\right)}{\left(\dfrac{2s}{s+1}\right)+1}$ & \\[.35in] 
+& = & $\dfrac{4s}{3s+1}$ &  same algebra as before\\
+ \end{longtable}
+
+\end{itemize}
+
+To find the domain of $h \circ h$,  we need to find the elements in the domain of $h$ so that the outputs, $h(s)$ are also in the domain of $h$.  The only domain restriction for $h$ comes from the denominator: $s \neq -1$, so in addition to this, we also need $h(s) \neq -1$.  To this end, we solve $h(s) = -1$ and exclude the answers.  Solving   $\frac{2s}{s+1} = -1$ gives $s = -\frac{1}{3}$.  The domain of $h \circ h$ is $(-\infty, -1) \cup \left(-1, -\frac{1}{3}\right) \cup \left(-\frac{1}{3}, \infty\right)$. 
+
+\item  The expression $(h \circ (g \circ f))(x)$ indicates that we first find the composite, $g \circ f$ and compose the function $h$ with the result.  We know from number \ref{fcexformfirst} that $(g \circ f)(x) =  2 - \sqrt{x^2-4x+3}$ with domain $(-\infty, 1] \cup [3,\infty)$.  We now proceed as usual.
+
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute the expression $(g \circ f)(x)$ for $s$ in the expression $h(s)$ first to get
+\begin{longtable}{rclr} $(h \circ (g \circ f))(x)$ & = & $h((g \circ f)(x))=h\left(2 - \sqrt{x^2-4x+3}\right)$  & \\ [5pt]
+ & = & $\dfrac{2 \left(2 - \sqrt{x^2-4x+3}\right)}{\left(2 - \sqrt{x^2-4x+3}\right)+1}$ & \\ [20pt]
+ & = & $\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}$ & \\
+ \end{longtable}
+
+\item  \textit{outside in}:  We use the formula for $h(s)$ first to get
+\begin{longtable}{rclr} $(h \circ (g \circ f))(x)$ & = & $h((g \circ f)(x))=\dfrac{2 \left( (g \circ f)(x)\right)}{  \left( (g \circ f)(x)\right) + 1}$  & \\ [15pt]
+& = & $\dfrac{2 \left(2 - \sqrt{x^2-4x+3}\right)}{\left(2 - \sqrt{x^2-4x+3}\right)+1}$ & \\ [20pt]
+ & = & $\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}$ & \\
+ \end{longtable}
+ 
+ \end{itemize}
+ 
+To find the domain of $h \circ (g \circ f)$, we need the domain elements of $g \circ f$, $(-\infty, 1] \cup [3,\infty)$, so that $(g \circ f)(x)$ is in the domain of $h$.  As we've seen several times already, the only domain restriction for $h$ is $s \neq -1$, so we set  $(g \circ f)(x) = 2 - \sqrt{x^2-4x+3} = -1$ and exclude the solutions.     We get $\sqrt{x^2-4x+3} = 3$, and, after squaring both sides, we have $x^2-4x+3 = 9$.  We solve $x^2-4x-6 = 0$ using the quadratic formula and obtain $x = 2 \pm \sqrt{10}$.  The reader is encouraged to check that both of these numbers satisfy the original equation, $2 - \sqrt{x^2-4x+3} = -1$ and also belong to the domain of $g \circ f$, $(-\infty, 1] \cup [3,\infty)$, and so must be excluded from our final answer.\footnote{We can approximate $\sqrt{10} \approx 3$ so $2-\sqrt{10} \approx -1$ and $2+\sqrt{10} \approx 5$.}   Our final domain for $h \circ (f \circ g)$ is $(-\infty, 2 -\sqrt{10}) \cup (2 - \sqrt{10}, 1] \cup \left[3, 2 + \sqrt{10}\right) \cup \left(2+\sqrt{10}, \infty\right)$.
+
+\item  The expression $((h \circ g) \circ f)(x)$ indicates that we first find the composite $h \circ g$ and then compose that with $f$.  From number \ref{hogex}, we have \[(h \circ g)(t) = \frac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}\]  with domain $[-3, 6) \cup (6, \infty)$.
+\begin{itemize}
+
+\item  \textit{inside out}: We substitute the expression $f(x)$ for $t$ in the expression $(h \circ g)(t)$ to get 
+
+\[ \begin{array}{rclr}
+((h \circ g) \circ f)(x) & = & (h \circ g)(f(x)) = (h \circ g)\left(x^2-4x\right) & \\ [2pt]
+                         & = & \dfrac{4-2\sqrt{\left(x^2-4x\right)+3}}{3-\sqrt{\left(x^2-4x\right)+3}} & \\ [20pt]
+                         & = & \dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}} & \\ \end{array}\]
+
+\item  \textit{outside in}:  We use the formula for $(h \circ g)(t)$ first to get
+\begin{longtable}{rclr} $((h \circ g) \circ f)(x)$ & = & $(h \circ g)(f(x))=\dfrac{4-2\sqrt{(f(x))+3}}{3-\sqrt{f(x))+3}}$  & \\ [20pt]
+  & = & $\dfrac{4 - 2\sqrt{\left(x^2-4x\right)+3}}{3 - \sqrt{\left(x^2-4x\right)+3}}$ & \\[20pt]
+ & = & $\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}$ & \\
+ \end{longtable}
+ 
+ \end{itemize}
+
+ 
+Since the domain of $f$ is all real numbers, the challenge here to find the domain of $(h \circ g) \circ f$ is to determine the values $f(x)$ which are in the domain of  $h \circ g$,  $[-3, 6) \cup (6, \infty)$.  At first glance, it appears as if we have two (or three!) inequalities to solve:  $-3 \leq f(x) < 6$ and $f(x) > 6$.  Alternatively, we could solve $f(x) = x^2-4x \geq -3$ and exclude the solutions to $f(x) = x^2-4x = 6$ which is not only easier from a procedural point of view, but also easier since we've already done both calculations.   In number \ref{fcexformfirst}, we solved  $x^2-4x \geq -3$ and obtained the solution $(-\infty, 1] \cup [3, \infty)$ and in number \ref{hogoffirst}, we solved $x^2-4x-6 = 0$ and obtained $x = 2 \pm \sqrt{10}$.  Hence, the domain of $(h \circ g) \circ f$ is  $(-\infty, 2 -\sqrt{10}) \cup (2 - \sqrt{10}, 1] \cup \left[3, 2 + \sqrt{10}\right) \cup \left(2+\sqrt{10}, \infty\right)$. \qed
+
+\end{enumerate}
+
+\label{functioncompex1}
+\end{example}
+
+As previously mentioned, it should be clear from  Example \ref{functioncompex1} that, in general, $g \circ f \neq f \circ g$, in other words, function composition is not \textit{commutative}.  However, numbers \ref{hogoffirst} and  \ref{fcexformlast} demonstrate the \index{associative property ! for function composition} \textbf{associative} property of function composition.  That is, when composing three (or more) functions, as long as we keep the order the same, it doesn't matter which two functions we compose first.  We summarize the important properties of function composition in the theorem below.
+
+\medskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem}\label{functioncompprops}  \textbf{Properties of Function Composition:} Suppose $f$, $g$, and $h$ are functions. \index{function ! composite ! properties of} \index{composite function ! properties of}
+
+\begin{itemize}
+
+\item  \textbf{Associative Law of Composition:} $h \circ (g \circ f) = (h \circ g) \circ f$, provided the composite functions are defined.
+
+\item  \textbf{Composition Identity:}  The function $I(x) = x$ satisfies:  $ I \circ f = f \circ I =f$ for all functions, $f$.
+
+\end{itemize}
+
+\end{theorem}
+%% \ebm}
+
+\medskip
+
+By repeated applications of Definition \ref{functioncompositiondefn}, we find  $(h \circ (g \circ f))(x) = h((g \circ f)(x)) = h(g(f(x)))$.  Similarly, $((h \circ g) \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x)))$.  This establishes that the formulas for the two functions are the same.  We leave it to the reader to think about why the domains of these two functions are identical, too.  These two facts establish the equality $h \circ (g \circ f) = (h \circ g) \circ f$.  A consequence of the associativity of function composition is that there is no need for parentheses when we write $h \circ g \circ f$. The second property can also be verified using Definition \ref{functioncompositiondefn}.  Recall that the function $I(x) = x$ is called the \index{identity ! function} \textit{identity function} and was introduced in Exercise  \ref{identityexercise} in Section \ref{ConstantandLinearFunctions}.  If we compose the function $I$ with a function $f$, then we have $(I \circ f)(x) = I(f(x)) = f(x)$, and a similar computation shows $(f\circ I)(x) = f(I(x)) = f(x)$. This establishes that we have an identity for function composition much in the same way the function $I(x) = 1$ is an identity for function multiplication. 
+
+As we know, not all functions are described by formulas, and, moreover, not all functions are described by just \textit{one} formula.  The next example applies the concept of function composition to functions represented in various and sundry ways.
+
+\begin{example} \label{functioncompotherreprensex}  Consider the following functions:
+
+\begin{multicols}{2}
+\begin{itemize}
+
+\item $f(x) = 6x - x^2$ \vphantom{$g(t)  = \begin{cases} 
+      2t-1 &  \text{if $0 \leq t < 3$, } \\
+      t^2  & \text{if $t \geq 3$.} \\
+   \end{cases} $}
+
+\item $g(t) \begin{cases} 
+      2t-1 &  \text{if $-1 \leq t < 3$, } \\
+      t^2  & \text{if $t \geq 3$.} \\
+   \end{cases} $ 
+   
+\end{itemize}
+ \end{multicols}
+ 
+\begin{multicols}{2}
+\begin{itemize}
+   
+\item   $h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1)  \}$
+  
+\item  $s$ whose graph is given below:
+   
+\end{itemize}
+\end{multicols}
+
+\begin{center}
+
+\begin{mfpic}[15]{-3}{6}{-3}{4}
+\axes
+\tlabel[cc](6,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-2, -1, 0, 1, 2, 3, 4,5}
+\ymarks{-2, -1, 0, 1, 2, 3}
+\tcaption{\scriptsize $y = s(t)$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](-2, 3.5){$(-2,3)$}
+\tlabel[cc](1, 3.5){$(1,3)$}
+\tlabel[cc](2, -2.5){$(2,-2)$}
+\tlabel[cc](5, 0.5){$(5, 0)$}
+\axislabels {x}{{$-2 \hspace{7pt}$} -1,{$-2 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$2$} 2,{$-1$} -1,{$1$} 1}
+\normalsize
+\penwd{1.25pt}
+ \polyline{(-2, 3), (1, 3), (2, -2), (5, 0)}
+\point[4pt]{(-2,3), (1,3), (2,-2)}
+\pointfillfalse
+\point[4pt]{(5,0)}
+\end{mfpic}
+ 
+\end{center}
+
+\begin{enumerate}
+
+\item  Find and simplify the following function values:
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item $(g \circ f)(2)$
+
+\item $(h \circ g)(-1)$
+
+\item  $(h \circ s)(-2)$
+
+\item  $(f \circ s)(0)$
+
+\end{enumerate}
+
+\end{multicols}
+
+\item  Find and simplify a formula for $(g \circ f)(x)$.
+
+\item  Write $s \circ h$ as a set of ordered pairs.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  \begin{enumerate} \item To find $(g \circ f)(2) = g(f(2))$ we first find $f(2) = 6(2)-(2)^2 = 8$.  Since $8 \geq 3$, we use the rule $g(t) = t^2$ so $g(8) = (8)^2 = 64$.  Hence, $(g \circ f)(3) = g(f(3)) = g(8) = 64$.
+
+\item Since  $(h\circ g)(-1) = h(g(-1))$ we first need $g(-1)$.  Since $-1 \leq -1 < 3$, we use the rule $g(t) = 2t-1$ and find $g(-1) = 2(-1)-1 = -3$. Next, we need $h(-3)$.  Since  $(-3, 1) \in h$, we have that $h(-3) =1$.  Putting it all together, we find $(h\circ g)(-1)  = h(g(-1)) = h(-3) = 1$.
+
+\item To find  $(h \circ s)(-2) = h(s(-2))$ , we first need $s(-2)$.  We see the point $(-2,3)$ is on the graph of $s$, so $s(-2) = 3$.  Next, we see $(3,-1) \in h$, so $h(3) = -1$.  Hence,  $(h \circ s)(-2) = h(s(-2)) = h(3) = -1$.
+
+\item  To find $(f \circ s)(0) = f(s(0))$ we infer from the graph of $s$ that it contains the point $(0,3)$, so $s(0) = 3$. Sine $f(3) = 6(3) - (3)^2 = 9$, we have $(f \circ s)(0) = f(s(0)) = f(3) = 9$.
+
+
+\end{enumerate}
+
+\item  To find a formula for $(g \circ f)(x) = g(f(x))$, we substitute $f(x) = 6x-x^2$ in for $t$ in the formula for $g(t)$: 
+
+\[ (g \circ f)(x) = g(f(x)) = g(6x-x^2) =   \begin{cases}   2(6x-x^2) -1 &  \text{if $-1 \leq 6x-x^2  < 3$, } \\  (6x-x^2)^2  & \text{if $6x-x^2 \geq 3$.} \\ \end{cases}\]
+
+Simplifying each expression, we get  $ 2(6x-x^2) -1 = -2x^2+12x-1$  for the first piece and $(6x-x^2)^2 = x^4 - 12x^3 +36x^2$ for the second piece.  The real challenge comes in  solving the inequalities   $-1 \leq 6x-x^2  < 3$ and $6x-x^2 \geq 3$.  While we could solve each individually using a sign diagram, a graphical approach works best here.  We graph the parabola $y = 6x-x^2$, finding the vertex is $(3, 9)$ with intercepts $(0,0)$ and $(6,0)$ along with the horizontal lines $y = -1$ and $y=3$ below.  We determine the intersection points by solving $6x-x^2=-1$ and $6x-x^2=3$.  Using the quadratic formula, we find the solutions to each equation are $x = 3 \pm \sqrt{10}$ and $x = 3 \pm \sqrt{6}$, respectively. 
+
+\begin{center}
+
+\begin{mfpic}[15]{-2}{8}{-2}{10}
+\axes
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,10){\scriptsize $y$}
+\xmarks{ -1, 0, 1, 2, 3, 4,5,6,7}
+\ymarks{ -1, 0, 1, 2, 3,5,6,7,8,9}
+\tcaption{\scriptsize $y =  6x-x^2$, $y=-1$, $y=3$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](-2.25, -1.5){$(3-\sqrt{10},-1)$}
+\tlabel[cc](8, -1.5){$(3+\sqrt{10},-1)$}
+\gclear \tlabelrect(-1, 3.5){$(3-\sqrt{6},3)$}
+\tlabel[cc](7, 3.5){$(3+ \sqrt{6},3)$}
+
+\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$2$} 2,{$1$} 1,{$2$} 2,{$5$} 5,{$6$} 6,{$7$} 7,{$8$} 8,{$9$} 9}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-2, -1), (8,-1)}
+\arrow \reverse \arrow \polyline{(-2, 3), (8,3)}
+\arrow \reverse \arrow \function{-0.3, 6.3,0.1}{6*x-(x**2)}
+\point[4pt]{(3,9), (-0.1622, -1), (0.5505, 3), (0,0), (6,0), (5.449,3),  (6.162,-1)}
+\end{mfpic}
+ 
+\end{center}
+
+ From the graph, we see the parabola $y = 6x - x^2$ is between the lines $y = -1$ and $y=3$  from $x = 3- \sqrt{10}$ to $x= 3 - \sqrt{6}$ and again from  $x = 3+\sqrt{6}$ to $x=3+\sqrt{10}$.  Hence the solution to  $-1 \leq 6x-x^2  < 3$ is $[3- \sqrt{10}, 3 - \sqrt{6}) \cup (3+\sqrt{6}, 3+\sqrt{10}]$.  We also note $y = 6x-x^2$ is above the line $y=3$ for all $x$ between $x=3-\sqrt{6}$ and $3+\sqrt{6}$.  Hence, the solution to $6x-x^2 \geq 3$ is $[3-\sqrt{6}, 3+\sqrt{6}]$.  Hence, 
+
+\[ (g \circ f)(x) =  \begin{cases}   -2x^2+12x-1 &  \text{if $x \in [3- \sqrt{10}, 3 - \sqrt{6}) \cup (3+\sqrt{6}, 3+\sqrt{10}]$, } \\  x^4 - 12x^3 + +36x^2  & \text{if $x \in [3-\sqrt{6}, 3+\sqrt{6}]$.} \\ \end{cases}\]
+
+\item  Last but not least, we are tasked with representing $s \circ h$ as a set of ordered pairs.  Since $h$ is described by the discrete set of points $h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1)  \}$, we find $s \circ h$ point by point.  We keep the graph of $s$ handy and construct the table below to help us organize our work. 
+\begin{center}
+
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+\begin{mfpic}[15]{-3}{6}{-3}{4}
+\axes
+\tlabel[cc](6,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-2, -1, 0, 1, 2, 3, 4,5}
+\ymarks{-2, -1, 0, 1, 2, 3}
+\tcaption{\scriptsize $y = s(t)$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](-2, 3.5){$(-2,3)$}
+\tlabel[cc](1, 3.5){$(1,3)$}
+\tlabel[cc](2, -2.5){$(2,-2)$}
+\tlabel[cc](5, 0.5){$(5, 0)$}
+\axislabels {x}{{$-2 \hspace{7pt}$} -1,{$-2 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$2$} 2,{$-1$} -1,{$1$} 1}
+\normalsize
+\penwd{1.25pt}
+ \polyline{(-2, 3), (1, 3), (2, -2), (5, 0)}
+\point[4pt]{(-2,3), (1,3), (2,-2)}
+\pointfillfalse
+\point[4pt]{(5,0)}
+\end{mfpic}
+
+& 
+
+$ \begin{array}{|r||r|c|}  \hline
+
+x & h(x) & s(h(x)) \\ \hline
+
+-3 & 1 & 3 \\ \hline
+
+-2 & 6 &  \text{undefined} \\ \hline
+
+0 & -2 & 3 \\ \hline
+
+1 & 5 & \text{undefined} \\ \hline
+
+3 & -1 & 3 \\  \hline
+
+
+  \end{array} $
+  
+\\ 
+
+\end{tabular}  
+  
+  \end{center}
+  
+Since neither $6$ nor $5$ are in the domain of $s$, $-2$ and $1$ are not in the domain of $s \circ h$.  Hence, we get $s \circ h = \{ (-3,3), (0,3), (3,3) \}$. \qed
+
+
+\end{enumerate}
+
+\end{example}
+
+
+
+A useful skill in Calculus is to be able to take a complicated function and break it down into a composition of easier functions which our last example illustrates. As with Example \ref{funcarithdecompex}, we want to avoid trivial decompositions, which, when it comes to function composition, are those involving the identity function $I(x) = x$ as described in Theorem \ref{functioncompprops}.
+
+\begin{example}  \label{funccompdecompex} $~$
+
+\begin{enumerate}
+
+\item Write each of the following functions as a composition of two or more (non-identity) functions.  Check your answer by performing the function composition.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $F(x) = |3x-1|$
+
+\item $G(t) = \dfrac{2}{t^2+1}$
+
+\item  $H(s) = \dfrac{\sqrt{s}+1}{\sqrt{s}-1}$
+
+\end{enumerate}
+\end{multicols}
+
+\item For $F(x) = \sqrt{\dfrac{2x-1}{x^2+4}}$, find functions $f$, $g$, and $h$ to decompose $F$ nontrivially as $F = f \circ \left(\dfrac{g}{h} \right)$.
+
+
+\end{enumerate}
+
+{ \bf Solution.}  There are many approaches to this kind of problem, and we showcase a different methodology in each of the solutions below.
+
+\begin{enumerate}
+
+\item  \begin{enumerate}
+
+\item  Our goal is to express the function $F$ as $F = g \circ f$ for functions $g$ and $f$.  From Definition \ref{functioncompositiondefn}, we know $F(x) = g(f(x))$, and we can think of $f(x)$ as being the `inside' function and $g$ as being the `outside' function.  Looking at $F(x) = |3x-1|$ from an `inside versus outside' perspective, we can think of $3x-1$ being inside the absolute value symbols.  Taking this cue, we define $f(x) = 3x-1$.  At this point, we have $F(x) = |f(x)|$.  What is the outside function?  The function which takes the absolute value of its input, $g(x) = |x|$. Sure enough,  this checks: $(g \circ f)(x) = g(f(x)) = |f(x)| = |3x-1| = F(x)$.
+
+\item  We attack deconstructing $G$ from an operational approach.  Given an input $t$, the first step is to square $t$, then add $1$, then divide the result into $2$.  We will assign each of these steps a function so as to write $G$ as a composite of \textit{three} functions: $f$, $g$ and $h$.  Our first function, $f$, is the function that squares its input, $f(t) = t^2$.  The next function is the function that adds $1$ to its input, $g(t) = t+1$.  Our last function takes its input and divides it into $2$, $h(t) = \frac{2}{t}$.  The claim is that $G = h \circ g \circ f$ which checks:  \[(h \circ g \circ f)(t) = h(g(f(t))) = h(g\left(t^2\right)) = h\left(t^2+1\right)= \frac{2}{t^2+1} = G(x).\] 
+
+\item  If we look $H(s) = \frac{\sqrt{s}+1}{\sqrt{s}-1}$ with an eye towards building a complicated function from simpler functions, we see the expression $\sqrt{s}$ is a simple piece of the larger function.  If we define $f(s) = \sqrt{s}$, we have $H(s) = \frac{f(s)+1}{f(s)-1}$.  If we want to decompose $H = g \circ f$, then we can glean the formula for $g(s)$ by looking at what is being done to $f(s)$.  We take $g(s) = \frac{s+1}{s-1}$, and check below:  \[(g \circ f)(s) = g(f(s)) = \frac{f(s)+1}{f(s)-1} = \frac{\sqrt{s}+1}{\sqrt{s}-1} = H(s).\]  \qed
+
+\end{enumerate}
+
+\item To write $F = f \circ \left(\frac{g}{h} \right)$ means \[F(x) =  \sqrt{\dfrac{2x-1}{x^2+4}} = \left( f \circ \left(\dfrac{g}{h} \right) \right)(x) = f \left(  \left(\dfrac{g}{h} \right)(x) \right) = f \left( \dfrac{g(x)}{h(x)} \right).\]
+
+Working from the inside out, we have a rational expression with  numerator $g(x)$ and denominator $h(x)$.  Looking at the formula for $F(x)$, one choice is $g(x) = 2x-1$ and $h(x) = x^2+4$. Making these identifications, we have  \[ F(x) = \sqrt{\dfrac{2x-1}{x^2+4}} = \sqrt{\dfrac{g(x)}{h(x)}}.\]
+
+Since $F$ takes the square root of $\frac{g(x)}{h(x)}$, the our last function $f$ is the function that takes the square root of its input, i.e.,  $f(x) = \sqrt{x}$.  We leave it to the reader to check that, indeed, $F = f \circ \left(\frac{g}{h} \right)$. \qed
+
+\end{enumerate}
+
+\end{example}
+
+We close this section of a real-world application of function composition.
+
+\begin{example}\label{surfaceareaex1}  The surface area of a sphere is a function of its radius $r$ and is given by the formula $S(r) = 4 \pi r^2$.    Suppose a spherical balloon is inflated so that the radius of the sphere is increasing according to the formula $r(t) = 2t$, where $t$ is measured in minutes (min), $t \geq 0$, and $r$ is measured in centimeters (cm).  Find and interpret $(S \circ r)(t)$.
+
+\medskip
+
+{\bf Solution.}  The function  $S(r)$ gives the surface area of the sphere and $r(t)$ gives the radius of the sphere at a given time.    Given a specific time, $t$, we find the radius at that time, $r(t)$ and feed that into $S(r)$ to find the surface area. Hence,  the surface area $S$ is ultimately a function of time $t$ and we find $(S \circ r)(t) = S(r(t)) = 4 \pi (r(t))^2 = 4 \pi \left(2t\right)^2 = 16 \pi t^{2}$.  This formula allows us to compute the surface area directly given the time without going through the `intermediary variable' $r$. \qed
+
+\end{example}
+
+\subsection{Related Rates}
+\label{RelatedRates}
+
+In Section \ref{rocarithmetic}, we studied the difference operator, $\Delta$ and showed how average rates of change operate with the basic function arithmetic.  In this section, we explore how rates of change of composite functions are related to the rates of change of their constituent functions. As in that section, we'll use the formulation:
+
+\[ \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(x+\Delta x)-f(x)}{\Delta x}, \quad \Delta x \neq 0,\]
+
+ adjusting the names of functions and independent variables as needed. 
+ 
+ 
+ \medskip
+ 
+ As a motivational example, we revisit the scenario in  Example \ref{surfaceareaex1}.
+
+\medskip
+
+\begin{example}\label{surfaceareaex2chainrule}  The surface area of a sphere is a function of its radius $r$ and is given by the formula $S(r) = 4 \pi r^2$.  Suppose a spherical balloon is inflated so that the radius of the sphere is increasing according to the formula $r(t) = 2t$, where $t$ is measured in minutes (min), $t \geq 0$, and $r$ is measured in centimeters (cm). 
+
+\begin{enumerate}
+
+\item\label{dSdrex}  Find and simplify an expression for the average rate of change of $S$ with respect to $r$.   Find and interpret the average rate of change of $S$ with respect to $r$  over the interval $[1, 3]$.
+
+\item\label{drdtex} Find, simplify, and interpret an expression for the average rate of change of $r$ with respect to $t$.
+
+\item\label{dSdtex} Find and simplify an expression for the average rate of change of $S$ with respect to $t$.  Find and interpret the average rate of change of $S$ with respect to $t$  over the interval $\left[\frac{1}{2}, \frac{3}{2}\right]$.
+
+
+\item  Multiply your answers to \ref{dSdrex} and \ref{drdtex} and compare those to your answer in \ref{dSdtex}.
+
+\end{enumerate}
+
+{\bf Solution.}  It is important to note that as we work through the expressions below, the variables $r$ and $\Delta r$ as well as $t$ and $\Delta t$ are distinct. That is, they do not combine as `like terms.'
+
+\begin{enumerate}
+
+\item  We start by simplifying $\dfrac{\Delta[S(r)]}{\Delta r} = \dfrac{S(r+ \Delta r) - S(r)}{\Delta r}$:
+
+\begin{longtable}{rcl}
+
+ $\dfrac{\Delta[S(r)]}{\Delta r}$ & $=$ &$\dfrac{S(r+ \Delta r) - S(r)}{\Delta r}$   \\[10pt]
+                       & $=$ &   $\dfrac{4 \pi (r + \Delta r)^2 - 4 \pi r^2}{\Delta r}$ \\[10pt]
+                       & $=$ &$ \dfrac{4 \pi \left[r^2  + 2 r \, \Delta r + (\Delta r)^2\right] - 4 \pi r^2}{\Delta r}$ \\[10pt]   
+                         &$=$ &    $\dfrac{4 \pi r^2  + 8 \pi  r \, \Delta r + 4 \pi (\Delta r)^2 - 4 \pi r^2}{\Delta r}$  \\[10pt]   
+                         & $=$ &  $\dfrac{8 \pi  r \, \Delta r + 4 \pi (\Delta r)^2 }{\Delta r}$   \\[10pt]
+                         & $=$ &  $\dfrac{(\Delta r) \left(8 \pi  r + 4 \pi \, \Delta r \right) }{\Delta r}$  \\[10pt]
+                         & $=$ &  $\dfrac{\cancel{(\Delta r)} \left(8 \pi  r + 4 \pi \, \Delta r \right) }{\cancelto{1}{(\Delta r)}}$   \\[10pt]
+                         & $=$ & $8 \pi r + 4 \pi \, \Delta r$ \\ \end{longtable}
+                         
+To find the average rate of change of $S$ over the interval $[1,3]$, we take $r = 1$ and $\Delta r = 3  - 1 = 2$: \[ \dfrac{\Delta[S(r)]}{\Delta r} = 8 \pi (1) + 4\pi (2) = 16 \pi.\]  
+
+\medskip
+
+This means as the radius of the balloon increases from $1$ centimeter to $3$ centimeters, the surface area is increasing at an average rate of  $16 \pi \, \frac{\text{cm}^2}{\text{cm}} $.
+
+\medskip
+
+Note that the units  here, cm, do cancel and we could write the average rate of change as  $16 \pi$ cm.  This somewhat hides the fact this number represents a ratio.  Any time area and length are measured in compatible units, the ratio of units $\frac{\text{area}}{\text{length}}$ will simplify to units of length.\footnote{As always, context is key!}
+
+
+\item  Next, we simplify  $\dfrac{\Delta[r(t)]}{\Delta t} = \dfrac{r(t+ \Delta t) - r(t)}{\Delta t}$:
+
+\begin{longtable}{rcl}
+
+$ \dfrac{\Delta[r(t)]}{\Delta t}$ & $=$ & $\dfrac{r(t+ \Delta t) - r(t)}{\Delta t}$ \\[10pt]
+                          &$=$ &   $\dfrac{2(t+\Delta t)- 2t}{\Delta t}$ \\[10pt]
+                                  & $=$ &   $\dfrac{2t + 2 \Delta t - 2t}{\Delta t}$ \\[10pt]
+                                     & $=$ &   $\dfrac{ 2 \cancel{\Delta t} }{\cancelto{1}{(\Delta t)}}$ \\[10pt]
+                         &$=$ &    $2$ \\ \end{longtable}
+                         
+The fact that the average rate of change here is constant shouldn't be too surprising.  Note $r(t) = 2t$ is a linear function with slope $2$.  Hence, `$2$' is the (constant) rate of change of $r$.\footnote{We could probably have lead with that and avoided some tedious computations \ldots}  This means that the radius of the balloon is increasing at a constant rate of $2$ $\frac{\text{cm}}{\text{min}}$.
+
+
+                         
+\item  To find  $\dfrac{\Delta[S(t)]}{\Delta t} = \dfrac{S(t+ \Delta t) - S(t)}{\Delta t}$, we start with our answer from Example \ref{surfaceareaex1}:  $S(t) =  16 \pi t^{2}$ :
+
+\begin{longtable}{rcl}
+
+ $\dfrac{\Delta[S(t)]}{\Delta t}$ & $=$ &$\dfrac{S(t+ \Delta t) - S(t)}{\Delta t}$   \\[10pt]
+                         & $=$ & $\dfrac{16 \pi (t+ \Delta t)^2 - 16 \pi t^2}{\Delta t}$ \\[10pt]
+                         & $=$ & $\dfrac{16 \pi \left[ t^2 + 2 t \, \Delta t + (\Delta t)^2\right]  - 16 \pi t^2}{\Delta t}$ \\[10pt]
+                         & $=$ & $\dfrac{16 \pi t^2 + 32 \pi t \, \Delta t + 16 \pi (\Delta t)^2   - 16 \pi t^2}{\Delta t}$ \\[10pt]
+                         & $=$ & $\dfrac{32 \pi t \, \Delta t + 16 \pi (\Delta t)^2}{\Delta t}$ \\[10pt]
+                         & $=$ & $\dfrac{(\Delta t) (32 \pi t + 16 \pi \, \Delta t)}{\Delta t}$ \\[10pt]
+                         & $=$ & $\dfrac{\cancel{(\Delta t)} (32 \pi t + 16 \pi \, \Delta t)}{\cancelto{1}{(\Delta t)}}$ \\[10pt]
+                         & $=$ & $32 \pi t + 16 \pi \, \Delta t$  \\ \end{longtable}
+                         
+To find the average rate of change of $S$ over the interval $\left[\frac{1}{2}, \frac{3}{2}\right]$, we take $t = \frac{1}{2}$ and $\Delta t = \frac{3}{2} - \frac{1}{2} = 1$: \[\frac{\Delta[S(t)]}{\Delta t} = 32 \pi \left(\frac{1}{2}\right) + 16 \pi (1) = 32 \pi.\]
+
+\medskip
+
+This means the surface area of the balloon  is increasing at an average rate of $32 \pi$ $\frac{\text{cm}^2}{\text{min}}$ over the time span of $\frac{1}{2}$ minute ($30$ seconds) after the start of inflation to $\frac{3}{2}$ ($90$ seconds) after the start of inflation.
+
+                          
+\item  We begin with: 
+ 
+\[ \begin{array}{rcl}
+
+\dfrac{\Delta[S(r)]}{\Delta r}  \cdot \dfrac{\Delta[r(t)]}{\Delta t} & = & (8 \pi r + 4 \pi \, \Delta r)(2),   \\ \end{array} \]
+
+ which doesn't look like much unless we substitute $r = 2t$ and $\Delta r = 2 \Delta t$.  We get:
+
+\begin{longtable}{rcl}
+
+$\dfrac{\Delta[S(r)]}{\Delta r}  \cdot \dfrac{\Delta[r(t)]}{\Delta t}$ & $=$ & $(8 \pi r + 4 \pi \, \Delta r)(2)$   \\[10pt]
+                 & $=$ & $(8 \pi (2t) + 4 \pi \ (2 \Delta t)(2)$\\[10pt]
+                 & $=$ & $(16 \pi t + 8 \pi \,  \Delta t)(2)$\\[10pt]
+                  & $=$ & $32 \pi t + 16 \pi \,  \Delta t$ \\ \end{longtable} 
+                     
+We find in this case,   \[ \dfrac{\Delta[S(r)]}{\Delta r}  \cdot \dfrac{\Delta[r(t)]}{\Delta t}   =  \dfrac{\Delta[S(r)]}{\Delta t}.\] 
+
+Moreover, we note that the time interval $\frac{1}{2} \leq t \leq \frac{3}{2}$ corresponds to the interval $1 \leq r \leq 3$ so it makes sense to multiply our numerical answers as well: \[ \dfrac{\Delta[S(r)]}{\Delta r}  \cdot \dfrac{\Delta[r(t)]}{\Delta t} = 16 \pi \, \text{cm} \cdot 2 \, \frac{\text{cm}}{\text{min}} = 32 \pi \, \frac{\text{cm}^2}{\text{min}}.\]
+
+\hfill \qed
+	 
+\end{enumerate}
+
+
+\end{example}
+
+Example \ref{surfaceareaex2chainrule} verifies a property of rates we formalize below.
+
+\medskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}\label{relatedratesaroc} \textbf{Related Rates:} 
+Let $f$ and $u$ be functions where $u$ is defined over an interval containing $x$ and $x+\Delta x$ and $f$ is defined over an interval containing $u(x)$ and $u(x + \Delta x)$.  Then:
+\[ \dfrac{ \Delta[f(x)]}{\Delta x} =  \dfrac{ \Delta[f(u)]}{\Delta u}  \cdot  \dfrac{ \Delta[u(x)]}{\Delta x}, \quad \Delta x \neq 0,  \Delta u  \neq 0. \]
+
+\end{theorem}
+%% \ebm}
+
+\medskip
+
+If we think of $u$ as being an `intermediary' variable, Theorem \ref{relatedratesaroc} allows us to determine the rate of change of $f$ with respect to $x$ by multiplying the rate of change of $f$ with respect to this `intermediary' $u$ by the rate of change of the `intermediary' $u$ with respect to $x$.   That is, we are looking for rate  information on how $f$ depends on $x$ by decomposing the rate into two rates as visualized below.
+
+\begin{center}
+
+\footnotesize
+
+\begin{mfpic}[10]{-10}{20}{-10}{10}
+\tlabel[cc](-2,6){$\frac{\Delta[u(x)]}{\Delta x}$}
+\tlabel[cc](11,6){$\frac{\Delta[f(u)]}{\Delta u}$}
+\tlabel[cc](4.5,-6){$\frac{\Delta[f(x)]}{\Delta x}$}
+\tlabel[cc](-9,-1){$x$}
+\tlabel[cc](4,-1){$u(x)$}
+\tlabel[cc](18,-2){$f(u(x))$}
+\point[2pt]{(-9,0), (4,0), (18,0)} 
+\sclosed \curve{(-6,4), (-12,0), (-6,-5), (-3,0)}
+\sclosed \curve{(1,3), (6,0), (5,-4)}
+\sclosed \curve{(18,3), (15,0), (18,-5), (20,0)}
+\penwd{0.75pt}
+\arrow \curve{(-8.9,0.25), (-2,5), (3.9,0.25)}
+\arrow  \curve{(4.1,0.25), (11,5), (17.9,0.25)}
+\arrow  \curve{(-8.9,-0.25), (4.5,-5), (17.9,-0.25)}
+\end{mfpic}
+
+\end{center}
+
+\normalsize
+
+We close the section with one last example.
+
+\begin{example}\label{dragforceex} The drag force $F$, in Newtons (N), of a perfectly fine OER Precalculus Textbook which has been discarded off of a cliff because it didn't have enough Calculus in it is given by:  $F(v) = 0.6 \, v^2$, where $v$ is the speed of the book as it hurtles towards the Earth. If the speed is increasing at a constant rate of $9.8$ meters per second per second, $\frac{\text{m/s}}{\text{s}}$, determine the rate of change of $F$ with respect to time as the speed changes from $5$ $\frac{\text{m}}{\text{s}}$ to $6$ $\frac{\text{m}}{\text{s}}$
+
+\medskip
+
+{\bf Solution.} In this scenario, the drag force, $F$ depends directly on the speed, $v$ and the speed, $v$ depends directly on time.  (The longer the book falls, the faster it falls.\footnote{Well until it reaches \href{https://en.wikipedia.org/wiki/Terminal_velocity}{\underline{terminal velocity}} \ldots})  By Theorem \ref{relatedratesaroc}, we know \[ \dfrac{\Delta[F(t)]}{\Delta t} = \dfrac{\Delta[F(v)]}{\Delta v} \cdot \dfrac{\Delta v}{\Delta t}.\]
+We are told that the speed is increasing at a constant rate of $9.8$ meters per second per second, so we know $\frac{\Delta v}{\Delta t} = 9.8 \, \frac{\text{m/s}}{\text{s}}$ for all time (and hence, speeds.).  
+
+\medskip
+
+To find $\frac{\Delta[F(v)]}{\Delta v}$ as the speed changes from $5$ $\frac{\text{m}}{\text{s}}$ to $6$ $\frac{\text{m}}{\text{s}}$, we calculate:
+
+\[ \dfrac{\Delta[F(v)]}{\Delta v} = \dfrac{F(6) - F(5)}{6-5} = \dfrac{0.6 (6)^2 - 0.6 (5)^2}{1} = 6.6.\]
+
+The units on $\frac{\Delta[F(v)]}{\Delta v}$ would be the units of $F$, N, divided by the units of $v$, $\frac{\text{m}}{\text{s}}$ which works out\footnote{Note:  we could simplify this a bit farther.  A Newton, N, has units $\frac{\text{kg m}}{\text{s}^2}$, so some units could cancel  to give   $\frac{\text{kg}}{\text{s}}$.  We leave things as they are for now for a more simple calculation later.} to $\frac{\text{N s}}{\text{m}}$.  
+\medskip
+
+Hence, \[ \dfrac{\Delta[F(t)]}{\Delta t} =  \dfrac{\Delta[F(v)]}{\Delta v} \cdot \dfrac{\Delta v}{\Delta t} = \left(6.6 \,  \frac{\text{N s}}{\text{m}} \right) \left( 9.8  \, \frac{\text{m/s}}{\text{s}} \right) = 64.68 \, \frac{\text{N}}{\text{s}} .\]
+
+The force is increasing at an average rate of $64.68$ Newtons per second.  \qed
+
+\end{example}
+
+Note that we never needed to know explicitly how the speed, $v$, directly depended on time in order to answer the question posed in Example \ref{dragforceex}. All we needed was the rate.  
+
+\newpage
+
+\subsection{Exercises}
+%% SKIPPED %% \input{ExercisesforFunctionComposition}
+
+\closegraphsfile
+
+\end{document}

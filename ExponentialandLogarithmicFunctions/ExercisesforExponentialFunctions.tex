@@ -1,0 +1,622 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{TITLE}
+\mfpicnumber{1} \opengraphsfile{ExercisesforExponentialFunctions} % mfpic settings added 
+
+
+\label{ExercisesforExponentialFunctions}
+
+
+
+In Exercises \ref{graphexpfirsta} - \ref{graphexplasta}, sketch the graph of $g$ by starting with the graph of $f$ and using transformations.  Track at least three points of your choice and the horizontal asymptote through the transformations. State the domain and range of $g$.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  $f(x) = 2^{x}$, $g(x) = 2^{x} - 1$ \label{graphexpfirsta}
+
+\item  $f(x) = \left(\frac{1}{3}\right)^{x}$, $g(x) = \left(\frac{1}{3}\right)^{x-1}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = 3^{x}$, $g(x) = 3^{-x}+2$
+
+\item  $f(x) = 10^{x}$, $g(x) = 10^{\frac{x+1}{2}} - 20$  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(t) = (0.5)^{t}$, $g(t) = 100(0.5)^{0.1t}$
+
+\item  $f(t) = (1.25)^{t}$, $g(t) = 1 - (1.25)^{t-2}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(t) = e^{t}$, $g(t) = 8 - e^{-t}$
+
+\item  $f(t) = e^{t}$, $g(t) = 10e^{-0.1t}$ \label{graphexplasta}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+In Exercises, \ref{expformfirsta} - \ref{expformlasta}, the graph of an exponential function is given.  Find a formula for the function in the form $F(x) = a \cdot 2^{bx-h}+k$.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  \label{expformfirsta}  Points:  $\left(-2, -\frac{5}{2} \right)$,  $\left(-1, -2 \right)$, $\left(0, -1 \right)$, \\
+Asymptote:  $y = -3$. \\
+
+\begin{mfpic}[13]{-5}{3}{-4}{6}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2}
+\ymarks{-3, -2, -1, 1,2,3,4,5}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-4 \hspace{7pt}$} -4,{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3}
+\dashed \polyline{(-5,-3), (3,-3)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-4.5, 2.1, 0.1}{(2**(x+1))-3}
+\point[4pt]{(-2, -2.5), (-1,-2),(0,-1)}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  Points:  $\left(-1, 1 \right)$, $\left(0, 2 \right)$, $\left(1, \frac{5}{2} \right)$, \\
+Asymptote:  $y = 3$. \\
+
+\begin{mfpic}[13]{-4}{4}{-6}{4}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-5 step 1 until 3}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $-5$} -5}
+\dashed \polyline{(-4,3), (4,3)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-3, 3.1, 0.1}{3-(2**(-x))}
+\point[4pt]{(-1,1), (0,2), (1, 2.5)}
+\end{mfpic}
+
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Points:  $\left(\frac{5}{2}, \frac{1}{2} \right)$, $\left(3,1 \right)$, $\left(\frac{7}{2}, 2 \right)$, \\
+Asymptote:  $y = 0$. \\
+
+\begin{mfpic}[13]{-1}{5}{-1}{9}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\xmarks{1 step 1 until 4}
+\ymarks{1 step 1 until 8}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{1.25, 4.55, 0.1}{2**(2*x-6)}
+\point[4pt]{(2.5, 0.5), (3,1), (3.5,2) }
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  Points:  $\left(-\frac{1}{2}, 6 \right)$, $\left(0,3 \right)$, $\left(\frac{1}{2}, \frac{3}{2} \right)$, \\
+Asymptote:  $y = 0$.   \\
+
+\begin{mfpic}[13]{-4}{4}{-1}{9}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3,  {\scriptsize $7$} 7, {\scriptsize $8$} 8}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-0.79, 2, 0.1}{3*(2**(-2*x))}
+\point[4pt]{(-0.5, 6), (0,3), (0.5, 1.5)}
+\end{mfpic}
+
+
+\label{expformlasta} 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item 
+
+Find a formula for each graph in Exercises \ref{expformfirsta} - \ref{expformlasta} of the form $G(x) = a \cdot 4^{bx-h} + k$.
+  Did you change your solution methodology?    What is the relationship between your answers for $F(x)$ and $G(x)$ for each graph?
+
+\item \label{morethanoneforexpexercise} In Example \ref{expfcngraphsex} number \ref{findformulaforexpexample}, we obtained the solution  $F(x) = -2^{x+3} + 4$ as one formula for the given graph by making a simplifying assumption that $a = -1$.  This exercises explores if there are any other solutions for different choices of $a$.
+
+\begin{enumerate}
+
+\item  Show  $G(x) = -4 \cdot 2^{x+1} + 4$ also fits the data for the given graph, and use  properties of exponents to show $G(x) = F(x)$.  (Use the fact that $4 = 2^2$ \ldots)
+
+\item With help from your classmates, find solutions to  Example \ref{expfcngraphsex} number \ref{findformulaforexpexample} using $a = -8$, $a = -16$ and  $a = -\frac{1}{2}$.  Show all your solutions can be rewritten as: $F(x) = -2^{x+3} + 4$.
+
+\item  Using properties of exponents and the fact that the range of $2^{x}$ is $(0, \infty)$, show that any function of the form $f(x) = -a \cdot 2^{bx-h} + k$ for $a> 0$ can be rewritten as $f(x) = - 2^{c} \, 2^{bx-h} + k = -2^{bx-h+c} + k$.  Relabeling, this means every function of the form $f(x) = -a \cdot 2^{bx-h} + k$ with four parameters ($a$, $b$, $h$, and $k$) can be rewritten as $f(x) =  - 2^{bx - H} + k$, a formula with just three parameters:  $b$, $H$, and $k$.  Conclude that  \textit{every} solution to Example \ref{expfcngraphsex} number \ref{findformulaforexpexample} reduces to $F(x) = -2^{x+3} + 4$ .
+
+\end{enumerate}
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+In Exercises \ref{decomposebasicexpfirst} - \ref{decomposebasicexplast}, write the given function as a nontrivial decomposition of functions as directed.
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  For $f(x) = e^{-x} +1 $, find functions $g$ and $h$ so that $f=g+h$. \label{decomposebasicexpfirst}
+\item  For $f(x) = e^{2x} - x$, find functions $g$ and $h$ so that $f=g-h$. 
+\item  For $f(t) = t^2 e^{-t}$, find functions $g$ and $h$ so that $f=gh$.
+\item  For $r(x) = \dfrac{e^{x} - e^{-x}}{e^{x}+e^{-x}}$, find functions $f$ and $g$ so $r = \dfrac{f}{g}$.
+\item  For $k(x) = e^{-x^2}$, find functions $f$ and $g$  so that $k = g \circ f$.
+\item  For $s(x) =\sqrt{e^{2x} - 1}$, find functions $f$ and $g$ so $s = g \circ f$. \label{decomposebasicexplast}
+
+
+\item \label{preludetocompoundingexercise} The amount of money in a savings account, $A(t)$, in dollars,  $t$ years after an initial investment is made is given by: $A(t) = 500(1.05)^{t}$, for $t \geq 0$.
+
+\begin{enumerate}
+
+\item  Find and interpret $A(0)$, $A(1)$, and $A(2)$.  
+
+\item  Find and interpret the relative rate of change of $A$ over the intervals $[0,1]$, $[1,2]$, $[0,2]$.
+
+\item  Find, simplify, and interpret the relative rate of change of $A$ over the $[t, t+1]$.  Assume  $t \geq 0$.
+
+\item Use a graphing utility to estimate how long until the savings account is worth $\$1500$.  Round your answer to the nearest year.
+
+\end{enumerate}
+
+\pagebreak
+
+\item  Based on census data,\footnote{See \href{http://www.towncharts.com/Ohio/Demographics/Lake-County-OH-Demographics-data.html}{\underline{here}}.} the population of Lake County, Ohio, in 2010 was 230,041 and in 2015, the population was 229,437.  
+
+\begin{enumerate}
+
+\item  Show the percentage change in the population from 2010 to 2015 is approximately $-0.263 \%$.
+
+\item  If this percentage change remains constant, predict the population of Lake County in 2020.
+
+\item  \label{populationfiveyear} Assuming this percentage change per five years remains constant, find an expression for the population $P(t)$ of Lake County where $t$ is the number of five year intervals after 2010.  (So $t = 0$ corresponds to 2010, $t = 1$ corresponds to $2015$, $t = 2$ corresponds to $2020$, etc.)
+
+HINT:  Definitions \ref{expfcnpointbaseform} and \ref{rrc} and ensuing discussion on that page is useful here.
+
+\item  Use your answer to  \ref{populationfiveyear}  to predict the population of Lake County in the year 2017.  
+
+\item  Let $A(t)$  represent the population of Lake County $t$ years after 2010 where the we approximate the percentage change in population per year as $-\frac{0.263 \%}{5} = -0.0526 \%$.    Find a formula for $A(t)$ and compare your predictions with $A(t)$ to those given by $P(t)$.  In particular, what population does each model give for the year 2050?  Discuss any discrepancies with your classmates.
+
+\end{enumerate}
+
+
+\item \label{averageofarc}  Show that the average rate of change of a function over the interval  $[x, x+2]$ is average of the average rates of change of the function over the intervals $[x,x+1]$ and $[x+1, x+2]$.  Can the same be said for the average rate of change of the function over $[x, x+3]$ and the average of the average rates of change over $[x, x+1]$, $[x+1, x+2]$, and $[x+2, x+3]$?  Generalize.
+
+\item \label{exponentialchangeexercise}  If $f(x) = b^{x}$ where $b>0$, $b \neq 1$,  show $f(x_{0}+\Delta x) = f(x_{0}) b^{\Delta x}$.
+
+
+\item Which is larger: $e^{\pi}$ or $\pi^{e}$?  How do you know?  Can you find a proof that doesn't use technology?
+
+
+\item\label{derivativeofex} \begin{enumerate}  \item\label{diffquotex}  Use properties of exponential functions to show that if $f(x) = e^{x}$, then \[ f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} e^{x} \, \left( \frac{e^{h} - 1}{h} \right)\]
+
+\item\label{specialexlimit}    Numerically and graphically investigate the limit: $\ds{\lim_{h \rightarrow 0}}$ $\frac{e^{h} - 1}{h}$.
+
+\item  Use parts \ref{diffquotex} and \ref{specialexlimit} to show to your surprise and delight that the derivative of $e^{x}$ is \ldots  $e^{x}$.
+
+\item  Write the equations of the tangent lines to $y = e^{x}$ at the following points:
+
+\begin{enumerate}
+
+\item  $(0,1)$
+
+\item  $(1, e)$
+
+\item $\left(-1, e^{-1} \right)$
+
+\end{enumerate}
+
+\end{enumerate}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+ Range of $g$:  $(-1, \infty)$\\
+ Points:  $\left(-1, -\frac{1}{2} \right)$, $(0,0)$, $(1,1)$\\
+Asymptote: $y = -1$\\
+ 
+\begin{mfpic}[15]{-4}{4}{-2}{9}
+\point[4pt]{(-1,-0.5), (0,0), (1,1)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tcaption{$y = g(x) = 2^{x}-1$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-1,1,2,3,4,5,6,7,8}
+\tlabel[cc](-3,0.5){\tiny $-3 \hspace{7pt}$}
+\tlabel[cc](-2,0.5){\tiny $-2 \hspace{7pt}$}
+\tlabel[cc](-1,0.5){\tiny $-1 \hspace{7pt}$}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5, {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8}
+\dashed \polyline{(-4,-1),(4,-1)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-3.5, 3.1, 0.1}{(2**(x))-1}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  Domain of $g$:  $(-\infty, \infty)$ \\
+ Range of $g$:  $(0, \infty)$ \\
+  Points:  $(0,3)$, $(1,1)$, $\left(2, \frac{1}{3} \right)$\\
+ Asymptote: $y = 0$\\
+ 
+\begin{mfpic}[15]{-4}{4}{-1}{10}
+\point[4pt]{(0,3), (1,1), (2,0.3333)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,10){\scriptsize $y$}
+\tcaption{$y = g(x) = \left(\frac{1}{3}\right)^{x-1}$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8,9}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5, {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8, {\tiny $9$} 9}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-1.05, 3.5, 0.1}{3**(1-x)}
+\end{mfpic} 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+ Range of $g$:  $(2, \infty)$\\
+  Points:  $\left(1, \frac{7}{3} \right)$, $(0,3)$, $(-1,5)$\\
+  Asymptote:  $y = 2$ \\
+
+\begin{mfpic}[15]{-4}{4}{-1}{12}
+\point[4pt]{(1,2.3333), (0,3), (-1,5)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,12){\scriptsize $y$}
+\tcaption{$y = g(x) = 3^{-x}+2$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8,9,10,11}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5, {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8, {\tiny $9$} 9, {\tiny $10$} 10, {\tiny $11$} 11}
+\dashed \polyline{(-4,2),(4,2)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.05, 2.5, 0.1}{2+3**(0-x)}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+ Range of $g$:  $(-20, \infty)$\\
+  Points:  $\left(-1,-19 \right)$, $(1,-10)$, $(3,80)$\\
+  Asymptote:  $y = -20$\\
+ 
+\begin{mfpic}[15]{-3}{4}{-2}{9}
+\point[4pt]{(-1,-1.9), (1,-1), (3,8)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tcaption{$y = g(x) = 10^{\frac{x+1}{2}}-20$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-2,-1,1,2,3,4,5,6,7,8}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2,  {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $-10$} -1,{\tiny $10$} 1, {\tiny $20$} 2, {\tiny $30$} 3, {\tiny $40$} 4, {\tiny $50$} 5, {\tiny $60$} 6, {\tiny $70$} 7, {\tiny $80$} 8}
+\dashed \polyline{(-4,-2), (4,-2)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-3, 3.06, 0.1}{((10**((x+1)/2))-20)/10}
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+  Range of $g$:  $(0, \infty)$ \\
+  Points:  $(-10, 200)$, $(0, 100)$, $(10, 50)$\\
+  Asymptote: $y = 0$\\
+ 
+\begin{mfpic}[15]{-4}{4}{-1}{9}
+\point[4pt]{(-1,2), (0,1), (1, 0.5)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tcaption{ $y = g(t) = 100(0.5)^{0.1t}$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-30 \hspace{7pt}$} -3, {\tiny $-20 \hspace{7pt}$} -2, {\tiny $-10 \hspace{7pt}$} -1, {\tiny $10$} 1, {\tiny $20$} 2, {\tiny $30$} 3}
+\axislabels {y}{{\tiny $100$} 1, {\tiny $200$} 2, {\tiny $300$} 3, {\tiny $400$} 4, {\tiny $500$} 5, {\tiny $600$} 6, {\tiny $700$} 7, {\tiny $800$} 8}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-3, 3, 0.1}{0.5**x}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+  Range of $g$:  $(-\infty, 1)$ \\
+  Points:  $(1, 0.2)$, $(2,0)$, $(3,-0.25)$\\
+  Asymptote: $y = 1$\\
+ 
+\begin{mfpic}[10][8]{-8}{5}{-11}{11}
+\point[4pt]{(1,2), (2,0), (3, -2.5)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,11){\scriptsize $y$}
+\tcaption{ $y = g(t) = 1-(1.25)^{t-2}$}
+\xmarks{-8 step 1 until 4}
+\ymarks{-10 step 1 until 10}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-8 \hspace{7pt}$} -8,{\tiny $-6 \hspace{7pt}$} -6,{\tiny $-4 \hspace{7pt}$} -4,{\tiny $-2 \hspace{7pt}$} -2, {\tiny $2$} 2, {\tiny $4$} 4}
+\axislabels {y}{ {\tiny $0.2$} 2,  {\tiny $0.4$} 4,  {\tiny $0.6$} 6, {\tiny $0.8$} 8, {\tiny $1$} 10, {\tiny $-0.2$} -2, {\tiny $-0.4$} -4,  {\tiny $-0.6$} -6, {\tiny $-0.8$} -8, {\tiny $-1$} -10}
+ 
+\dashed \polyline{(-8, 10), (5, 10)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-8, 5, 0.1}{(1- (1.25**(x-2)))*10}
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+ Range of $g$:  $(-\infty, 8)$ \\
+  Points:  $\left(1, 8-e^{-1} \right) \approx (1, 7.63)$,  \\
+  $(0,7)$, $\left(-1,  8-e \right) \approx (1,5.28) $\\
+ Asymptote:  $y = 8$ \\
+ 
+\begin{mfpic}[15]{-4}{4}{-1}{9}
+\point[4pt]{(1,7.6321), (0,7), (-1,5.282)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tcaption{ $y = g(t) = 8-e^{-t}$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5, {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8}
+\dashed \polyline{(-4,8), (4,8)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.25, 2, 0.1}{8-exp(0-x)}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+
+\item  Domain of $g$:  $(-\infty, \infty)$\\
+ Range of $g$:  $(0, \infty)$\\
+ Points:  $\left(10, 10e^{-1} \right) \approx (10, 3.68)$ \\
+ $(0,10)$, $\left(-10, 10e \right) \approx (-10, 27.18)$  \\
+ Asymptote:  $y = 0$\\
+ 
+\begin{mfpic}[15]{-4}{4}{-1}{9}
+\point[4pt]{(1,0.3679), (0,1), (-1,2.718)}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tcaption{$y = g(t) = 10e^{-0.1t}$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5,6,7,8}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-10 \hspace{7pt}$} -1, {\tiny $10$} 1, {\tiny $20$} 2, {\tiny $30$} 3}
+\axislabels {y}{{\tiny $10$} 1, {\tiny $20$} 2, {\tiny $30$} 3, {\tiny $40$} 4, {\tiny $50$} 5, {\tiny $60$} 6, {\tiny $70$} 7, {\tiny $80$} 8}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.15, 2, 0.1}{exp(0-x)}
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $F(x) = 2^{x+1}-3$
+
+\item  $F(x) = -2^{-x} + 3$
+
+\item $F(x) = 2^{2x-6}$
+
+\item  $F(x) =3 \cdot 2^{-2x}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Since $2 = 4^{\frac{1}{2}}$, one way to obtain the formulas for $G(x)$ is to use properties of exponents.  For example, $F(x) = 2^{x+1}-3 = \left(4^{\frac{1}{2}}\right)^{x+1} -3 = 4^{\frac{1}{2}(x+1)} - 3 = 4^{\frac{1}{2} x + \frac{1}{2}} - 3$.  In order, the formulas for $G(x)$ are:
+
+\begin{multicols}{4}
+\begin{itemize}
+
+\item $G(x) = 4^{\frac{1}{2}x+\frac{1}{2}}-3$
+
+\item  $G(x) = -4^{-\frac{1}{2} x} + 3$
+
+\item $G(x) = 4^{x-3}$
+
+\item  $G(x) =3 \cdot 4^{-x}$
+
+\end{itemize}
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\addtocounter{enumi}{1}
+
+
+\item\footnote{Answers for Exercises \ref{decomposebasicexpfirst} - \ref{decomposebasicexplast} vary.  We list one solution for each problem.}$g(x)  = e^{-x}$ and $h(x) = 1$.
+\item $g(x) = e^{2x}$ and $h(x) = x$.
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item   $g(t) = t^2$ and $h(t) = e^{-t}$.
+\item   $f(x) = e^{x} - e^{-x}$ and $g(x) = e^{x}+e^{-x}$.
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+  \begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item   $f(x) = -x^2$ and $g(x) = e^{x}$.
+\item   $f(x) = e^{2x} -1$ and $g(x) = \sqrt{x}$.  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  \begin{enumerate}
+
+\item   $A(0) = 500$, so the principal is $\$500$.  $A(1) = 525$, so after $1$ year, there is $\$525$ in the savings account.   $A(2) =551.25$, so after $2$ years, there is $\$551.25$ in the savings account. 
+
+\item  The relative rate of change of $A$ over the intervals $[0,1]$ and $[1,2]$ is $0.05$ which means the savings account is growing by $5 \%$ each year for those two years.  Over the interval $[0,2]$, the relative rate of change is $0.1025$ meaning the account has grown by $10.25 \%$ over the course of the first two years.  Note this is greater than the sum of the two rates $5 \% + 5 \% = 10 \%$.  This is due to the `compounding effect' and will be discussed in greater detail in Section \ref{ExpLogApplications}.
+
+\item  The relative rate of change of $A$ over the $[t, t+1]$ is $0.05$. This means over the course of one year, the savings account grows by $5 \%$.
+
+\item Graphing $y= A(t)$ and $y = 1500$, we find they intersect when $t \approx 22.5$ so it takes approximately $22-23$ years for the savings account to grow to $\$1500$ in value.
+
+\end{enumerate}
+
+\item  \begin{enumerate}
+
+\item $\frac{229437-230041}{230041} \approx 0.263 \%$.
+
+\item  Since 2020 is five years after 2015, we expect the population to decrease by  $0.263 \%$ of 229437, or approximately 603 people.  Hence, we approximate the population in 2020 as 228834.
+
+\item  $P(t) = 230041(1-0.00263)^t = 230041(0.99737)^{t}$, $t \geq 0$.
+
+\item  Since 2017 is 7 years after 2010, we set $t = \frac{7}{5} = 1.4$ and find $P(1.4) \approx 229194$.  So the population is approximately 229, 194 in 2017.  
+
+\item  $A(t) = 230041(1 - 0.0005626)^{t} =  230041 (0.999474)^{t}$, $t \geq 0$.  Since 2050 is 40 years after 2010, using the model $P(t)$, we divide $\frac{40}{5} = 8$ and find $P(8) \approx 225,245$. On the other hand, $A(40) \approx 225,250$.  This is more than roundoff error.  There is a compounding effect which makes the functions $A(t)$ and $P(t)$ different. \footnote{See number \ref{preludetocompoundingexercise} above or, for more, see Section \ref{ExpLogApplications}.}
+
+\end{enumerate}
+
+\addtocounter{enumi}{3}
+
+\enlargethispage{0.25in}
+
+\item  \begin{enumerate}
+\addtocounter{enumii}{3}
+
+\item \begin{multicols}{3} \begin{enumerate} \item $y = x+1$ \item  $y = e \, x $  \item  $y = e^{-1} \, x + 2e^{-1}$  \end{enumerate}  \end{multicols} \end{enumerate}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+
+
+\end{document}

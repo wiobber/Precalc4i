@@ -1,0 +1,990 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Relations and Implicit Functions}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{Relations}
+
+\setcounter{footnote}{0}
+
+\label{Relations}
+
+
+Up until now in this text,  we have been exclusively special kinds of mappings called  \textit{functions}.  In this section, we broaden our horizons to study more general mappings called \textit{relations}.  The reader is encouraged to revisit Definition \ref{functiondefn} in Section \ref{FunctionsandtheirRepresentations} before proceeding with the definition of \textit{relation} below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition}
+
+\label{relationdefn}
+
+Given two sets $A$ and $B$, a  \index{relation! definition} \textbf{relation} from $A$ to $B$ is a process by which elements of $A$ are matched with (or `mapped to')  elements of $B$.  
+
+\end{definition}
+
+%% \ebm}
+
+\smallskip
+
+Unlike Definition \ref{functiondefn}, Definition \ref{relationdefn} puts no conditions on the process which maps elements of $A$ to elements of $B$. This means that while all functions are relations, not all relations need be functions.  For example, consider the mappings $f$ and $g$  below from Section \ref{FunctionsandtheirRepresentations}.  
+
+\begin{center}
+
+\begin{tabular}{cc}
+\begin{mfpic}[19]{-5}{5}{-5}{6}
+\tlabel[cc](-4.25,6){$N$ (inputs)}
+\tlabel[cc](-4.25,5){White Paw}
+\tlabel[cc](-4.25,3){Cooper}
+\tlabel[cc](-4.25,1){Bingo}
+\tlabel[cc](-4.25,-1){Kennie}
+\tlabel[cc](0,6){$f$}
+\tlabel[cc](3.5,5){cat}
+\tlabel[cc](3.5,3){lizard}
+\tlabel[cc](3.5,1){turtle}
+\tlabel[cc](3.5,6){$T$ (outputs)}
+
+
+\arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+\arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)}
+\arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)}
+\arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 1)}
+
+\end{mfpic}
+
+&
+\begin{mfpic}[19]{-5}{5}{-5}{6}
+\tlabel[cc](-3.5,6){$T$ (inputs)}
+\tlabel[cc](-3.5,5){cat}
+\tlabel[cc](-3.5,3){lizard}
+\tlabel[cc](-3.5,1){turtle}
+\tlabel[cc](0,6){$g$}
+\tlabel[cc](3.75,6){$N$ (outputs)}
+\tlabel[cc](3.75,5){White Paw}
+\tlabel[cc](3.75,3){Cooper}
+\tlabel[cc](3.75,1){Bingo}
+\tlabel[cc](3.75,-1){Kennie}
+\arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+\arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 3)}
+\arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 1)}
+\arrow[l 5pt] \polyline{(-2.5, 1), (2.5, -1)}
+\end{mfpic}   \\
+
+\end{tabular}
+
+\end{center}
+ 
+Both $f$ and $g$ are relations.  More specifically, $f$ is a \textit{function} from $N$ to $T$ while $g$ is merely  \textit{relation} from $T$ to $N$.  As with functions, we may describe general relations in a variety of different ways:  verbally, as mapping diagrams, or a set of ordered pairs.  For example, just as we may describe the function $f$ above as 
+
+\[ f = \{ (\text{White Paw}, \text{cat}), (\text{Cooper}, \text{cat}), (\text{Bingo}, \text{lizard}), (\text{Kennie}, \text{turtle}) \}, \]
+
+we may represent $g$ as 
+
+\[ g = \{ (\text{cat}, \text{White Paw}), (\text{cat}, \text{Cooper}), ( \text{lizard}, \text{Bingo}), (\text{turtle}, \text{Kennie}) \}. \]
+
+Note here  the grammar `$g$ is a relation \textit{from} $T$ \textit{to} $N$' is evidenced by the elements of $T$ being listed first in the ordered pairs (i.e., the abscissae) and the elements of $N$ being listed second (i.e., the ordinates.)
+
+\smallskip
+
+\textit{Unlike} functions, we do not use function notation when describing the input/output relationship for general relations.  For example, we may write `$f(\text{White Paw}) = \text{cat}$'  since $f$ maps the input `White Paw' to only one output, `cat.'  However, $g(\text{cat})$ is ambiguous since it could mean `White Paw' or `Cooper.'\footnote{In more advanced texts, we would write `$\text{cat} \, g \, \text{White Paw}$' and `$\text{cat} \,  g \, \text{Cooper}$' to indicate $g$ maps `cat' to both `White Paw' and `Cooper.'  Our study of relations, however, isn't deep enough to necessitate introducing and using this notation.  Similarly, we won't introduce the notions of `domain,' `codomain,' and `range' for relations, either.}
+
+\smallskip
+
+As with functions, our focus in this course will rest with relations of real numbers.  Consider the relation $R$ described as follows:  $R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}$.  Below on the left is a mapping diagram of $R$.  However, since $R$ relates real numbers, we can also create the graph of $R$ in the same way we graphed functions - by interpreting the ordered pairs which comprise $R$ as points in the plane.  Since we have no context, we use the default labels `$x$' for the horizontal axis and `$y$' for the vertical axis.
+
+\begin{center}
+
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+\begin{mfpic}[19]{-5}{5}{-5}{5}
+\tlabel[cc](-3.25,5){$-1$}
+\tlabel[cc](-3.25,3){$\hphantom{-}0$}
+\tlabel[cc](-3.25,1){$\hphantom{-}4$}
+\tlabel[cc](3,5){$-3$}
+\tlabel[cc](3,3){$-2$}
+\tlabel[cc](3,1){$\hphantom{-}1$}
+\tlabel[cc](3,-1){$\hphantom{-}3$}
+\arrow[l 5pt] \polyline{(-2.5, 5), (2.5, -1)}
+\arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)}
+\arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)}
+\arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 1)}
+\point[3pt]{(-2.5, 5), (2.5, -1), (-2.5, 3),(2.5, 5), (-2.5, 1), (2.5, 3), (2.5, 1)}
+\tcaption{A Mapping Diagram of $R$.}
+\end{mfpic}
+
+&
+
+
+\begin{mfpic}[19]{-5}{5}{-5}{5}
+\point[4pt]{(-1,3), (0,-3), (4,-2), (4,1)}
+\tlabel[cc](-1,2.5){\scriptsize $(-1,3)$}
+\tlabel[cc](4,-2.5){\scriptsize $(4,-2)$}
+\tlabel[cc](4,0.5){\scriptsize $(4,1)$}
+\tlabel[cc](1,-3){\scriptsize $(0,-3)$}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tcaption{The graph of $R$.}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+Our next example focuses on using relations to describe sets of points in the plane and vice-versa.
+
+\begin{example}  \label{relationgraphingexample}   $~$
+
+\begin{enumerate} 
+
+\item Graph the following relations. 
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  $S = \{ \left(k, 2^{k} \right) \, | \, k = 0, \pm 1, \pm 2 \}$
+
+\item  $P = \{ \left(j, j^2\right) \, | \, \text{$j$ is an integer} \}$
+
+\setcounter{HW}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumii}{\value{HW}}
+
+\item  $V = \{ (3,y) \, | \, \mbox{$y$ is a real number} \}$
+
+\item  $R = \{ (x,y) \, | \, \text{$x$ is a real number, $1 < y \leq 3$} \}$
+
+\setcounter{HW}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\item  Find a roster or set-builder description for each of the relations below.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $~$
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\point[4pt]{(0,0),(-3,1), (4,2), (-3,2)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\tcaption{The graph of $A$}
+\end{mfpic} 
+
+\item $~$
+
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\polyline{(-2,3), (4,3)}
+\point[4pt]{(-2,3)}
+\pointfillfalse
+\point[4pt]{(4,3)}
+\tcaption{The graph of $H$}
+\end{mfpic} 
+
+
+
+\setcounter{HW}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumii}{\value{HW}}
+
+\item $~$
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $s$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.1, 2.1, 0.1}{x**2}
+\tcaption{The graph of $Q$}
+\end{mfpic} 
+
+
+\item $~$
+
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\fillcolor[gray]{0.7}
+\gfill \rect{(-2.97,1.03), (3.97,4.75)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $v$}
+\tlabel[cc](0.5,5){\scriptsize $w$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow  \polyline{ (-3,1), (4,1), (4,5)}
+\arrow \dashed \polyline{(-3,1), (-3,5)}
+\pointfillfalse
+\point[4pt]{(-3,1)}
+\tcaption{The graph of $T$}
+\end{mfpic} 
+
+
+
+
+\setcounter{HW}{\value{enumii}}
+\end{enumerate}
+\end{multicols}
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item The relation $S$ is described using  \textit{set-builder notation}.\footnote{See Section \ref{AppSetTheory} to review this, if needed.}  To generate the ordered pairs  which belong to $S$, we substitute the given values of $k$, $k = 0, \pm 1, \pm 2$, into the formula $\left(k, 2^{k}\right)$. 
+
+\smallskip
+
+ Starting with $k=0$, we get $\left(0, 2^{0} \right) = (0,1)$.  For $k = 1$, we get $\left(1, 2^{1} \right) = (1,2)$, and for $k = -1$, we get $\left(-1, 2^{-1} \right) = \left(-1,\frac{1}{2} \right)$.  Continuing, we get  $\left(2, 2^{2} \right) = (2,4)$ for $k = 2$  and, finally $\left(-2, 2^{-2} \right) = \left(-2,\frac{1}{4} \right)$ for $k = -2$.  Hence, a \text{roster description} of $S$ is  $S = \{  \left(-2,\frac{1}{4} \right),  \left(-1,\frac{1}{2} \right),  \left(0,1 \right),  \left(1,2 \right),  \left(2,4 \right)\}$. 
+ 
+ \smallskip
+ 
+  When we graph $S$, we label the horizontal axis as the $k$-axis, since `$k$' was the variable chosen used to generate the ordered pairs and keep the default label `$y$' for the vertical axis. The graph of $S$ is below on the left.
+
+\item  To graph the relation $P = \{ \left(j, j^2\right) \, | \, \text{$j$ is an integer} \}$, we proceed as above when we graphed the relation $S$.  Here, $j$ is restricted to being an integer, which means $j = 0$, $\pm 1$, $\pm 2$, etc.  
+
+\smallskip
+
+Plugging in these sample values for $j$, we obtain the ordered pairs $(0,0)$, $(1, 1)$, $(-1,1)$, $(2,4)$, $(-2,4)$, etc.  Since the variable $j$ takes on only integer values,  we could write $P$ using the roster notation: $P = \{ (0,0), (\pm 1, 1), (\pm 2, 4), \dots \}$.   
+
+\smallskip
+
+We plot a few of these points and use some periods of ellipsis to indicate the complete graph contains additional points not in the current field of view.  The graph of $P$ is below on the right. 
+
+
+
+\begin{multicols}{2}
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\point[4pt]{(-2,0.25), (-1,0.5), (0,1), (1,2), (2,4)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $k$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\tcaption{The graph of $S$}
+\end{mfpic} 
+
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\point[4pt]{(0,0), (-1,1), (1,1), (-2,4), (2,4)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $j$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](2.5,4.5){\tiny \rotatebox{60}{$\cdots$}}
+\tlabel[cc](-2.5,4.5){\tiny \rotatebox{120}{$\cdots$}}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\tcaption{The graph of $P$}
+\end{mfpic} 
+
+
+\end{multicols}
+
+
+\item  Next, we come to the relation $V$,  described, once again, using set-builder notation.  In this case, $V$ consists of all ordered pairs of the form $(3,y)$ where $y$  is free to be whatever real number we like, without any restriction.\footnote{We'll revisit the concept of a `free variable' in Section \ref{LinSystems}.}  For example, $(3,0)$, $(3,-1)$, and $(3,117)$ all belong to $V$ as do $\left(3, \frac{1}{2}\right)$, $(3,-1.0342)$, $(3, \sqrt{2})$, etc. 
+
+\smallskip
+
+After plotting some sample points, becomes apparent that the ordered pairs which belong to  $V$ correspond to points which lie on the vertical line $x = 3$, and vice-versa. That is, every point on the line $x=3$ has coordinates which correspond to an ordered pair belonging to $V$. The graph of $V$ is below on the left.
+
+\item  In the relation $R = \{ (x,y) \, | \, 1 < y \leq 3 \}$, we see $y$ is restricted by the inequality $1 < y \leq 3$, but  $x$ is free to be whatever it likes.   
+
+\smallskip
+
+Since $x$ is unrestricted, this means whatever the graph of $R$ is, it will extend indefinitely off to the right and left.  The restriction $y > 1$ means all points on the graph of $R$ have a $y$-coordinate larger than one, so they are \textit{above} the horizontal line $y =1$.  The restriction $y \leq 3$, on the other hand,  means all the points on the graph of $R$ have a $y$-coordinate less than or equal to $3$, meaning they are either \textit{on} or \textit{below} the horizontal line $y = 3$.   
+
+\smallskip
+
+In other words, the graph of $R$ is the region in the plane between $y=1$ and $y=3$, including $y=3$ but not $y = 1$.  We signify this by \textit{shading} the region between these two horizontal lines.  
+
+\smallskip
+
+How do we communicate $y=1$ is not part of the graph?  One way is to visualize putting `holes' all along the line $y=1$ to indicate this is not part of the graph.  In practice, however, this looks cluttered and could be confusing.  Instead, we  `dash' the line $y = 1$ as seen below on the right. 
+
+
+\begin{multicols}{2}
+
+
+\begin{mfpic}[18]{-5}{5}{-3}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2,  {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$-1$} -1, {$-2$} -2}
+\normalsize
+\tcaption{The graph of $V$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(3, -2.5), (3, 2.5)}
+\end{mfpic}
+
+
+\begin{mfpic}[18]{-5}{5}{-1}{5}
+\fillcolor[gray]{0.7}
+\gfill \rect{(-4.8,1.03), (4.8,2.97)}
+
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
+\arrow \reverse \arrow \dashed \polyline{(-5,1), (5,1)}
+\tcaption{The graph of $R$}
+\end{mfpic}
+
+
+\end{multicols}
+
+\end{enumerate}
+
+\item  \begin{enumerate}
+
+\item  Since $A$ consists of finitely many points, we can describe $A$ using the roster method:  \[A = \{ (-3,2), (-3,1), (0,0), (4,2) \}.\]
+
+\item  The graph of $H$ appears to be a portion of the horizontal line $y=3$ from $x = -2$ (including $x = -2$) up to, but not including $x=4$.  Since it is impossible\footnote{Really impossible.  The interested reader is encouraged to research \href{http://en.wikipedia.org/wiki/Countable_set}{\underline{\textbf{countable}}} versus \href{http://en.wikipedia.org/wiki/Uncountable_set}{\underline{\textbf{uncountable}}} sets.}  to \textit{list} each and every one of these points, we'll opt to describe $H$ using set-builder as opposed to the roster method.  Taking a cue from the description of the relations $V$ and $R$ above, we write  $H = \{ (x, 3) \, | \, -2 \leq x < 4 \}$.
+
+
+\item  The graph of $Q$ appears to be the graph of the function $s = f(t) = t^2$.  Again, as the graph consists of infinitely many points, we will use set-builder notation to describe $Q$ out of necessity.  
+
+\smallskip
+
+There are a couple of different ways to do this.  Taking a cue from the relation $P$ above, we could write $Q = \{ (t, t^2) \, | \, \text{$t$ is a real number} \}$.  Alternatively, we could introduce the dependent variable, $s$ into the description by  writing  $Q = \{ (t, s) \, | \, s = t^2 \}$ where here the assumption is $x$ takes in all real number values.
+
+
+\item  As with the relation $R$ above, the relation $T$ describes a region in the plane,  The $v$-values appear to range between $-3$ (not including $-3$) and up to, and including, $v = 4$.  The only restriction on the $w$-values is that $w \geq 1$, so we have $T = \{ (v, w) \, | \, \text{$-3 < v \leq 4$, $w \geq 1$} \}$. \qed
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{example}
+
+As with functions, we can describe relations algebraically using equations.  For example, the equation $v^2+w^3 = 1$ relates two variables $v$ and $w$ each of which represent real numbers.  More formally, we can express this sentiment by defining the relation $R = \{ (v,w) \, | \, v^2+w^3 = 1\}$. An ordered pair $(v,w) \in R$ means $v$ and $w$ are  \textit{related} by the equation  $v^2+w^3 = 1$; that is, the pair $(v,w)$ \textit{satisfy} the equation.
+
+\smallskip
+
+For example, to show $(3,-2) \in R$, we check that when we substitute $v=3$ and $w=-2$, the equation $v^2+w^3 = 1$ is true. Sure enough, $(3)^2+(-2)^3 = 9  - 8 = 1$.  Hence, $R$ maps $3$ to $-2$.  Note, however, that $(-2,3) \notin R$ since $(-2)^2+(3)^3 = -8+27 \neq 1$ which means $R$ does not map $-2$ to $3$. 
+
+\smallskip
+
+When asked to `graph the equation'  $v^2+w^3 = 1$,  we really have two options.  We could graph the relation $R$ above.  In this case, we would be graphing $v^2+w^3 = 1$ on the $vw$-plane.\footnote{Recall this means the horizontal axis is labeled `$v$' and the vertical axis is labeled `$w$.'}   Alternatively, we  could define $S = \{ (w,v) \, | \, v^2+w^3 = 1 \}$ and graph $S$. This is equivalent to graphing $v^2+w^3 = 1$ on the $wv$-plane.  We do both in our next example.
+
+\begin{example}   \label{firstequgraph} Graph the equation $v^2 + w^3 = 1$ in  the $vw$- and $wv$-planes.  Include the axis-intercepts. 
+
+
+{\bf Solution.}  
+
+\begin{itemize}
+
+\item \textit{graphing in the $vw$-plane:}  We begin by finding the axis intercepts of the graph.  To obtain a point on the $v$-axis, we require $w = 0$.  To see if we have any $v$-intercepts on the graph of the equation $v^2+w^3 = 1$, we substitute $w=0$ into the equation and solve for $v$:  $v^2 + (0)^3 = 1$.  We get $v^2 = 1$ or $v = \pm 1$ so our two $v$-intercepts, as described in the $vw$-plane, are $(1,0)$ and $(-1,0)$. 
+
+\smallskip
+
+Likewise, to find $w$-intercepts of the graph, we substitute $v = 0$ into the equation $v^2+w^3 = 1$ and get $w^3 = 1$ or $w = 1$. Hence, he have only one $w$-intercept, $(0,1)$.  
+
+\smallskip
+
+One way to efficiently produce additional points is to solve the equation $v^2+w^3 = 1$ for one of the variables, say $w$, in terms of the other, $v$.  In this way, we are treating $w$ as the dependent variable and $v$ as the independent variable.  From  $v^2 + w^3 = 1$, we get $w^3 = 1 - v^2$ or $w = \sqrt[3]{1-v^2}$. 
+
+\smallskip
+
+We now substitute a value in for $v$, determine the corresponding value $w$, and plot the resulting point $(v,w)$.   We summarize our results below on the left.  By plotting additional points (or getting help from a graphing utility), we produce the graph below on the right.
+ 
+ \begin{center}
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+$\begin{array}{|r||c|c|}  \hline
+
+  v & w & (v,w) \\ \hline
+ -3 & -2 & (-3, -2) \\  \hline
+ -2 & -\sqrt[3]{3}& (-2,-\sqrt[3]{3}) \\  \hline
+ -1 & 0 & ( -1, 0) \\  \hline
+  0 & 1& ( 0 , 1) \\  \hline
+  1 & 0 & ( 1, 0) \\  \hline
+  2 & -\sqrt[3]{3}& (2,-\sqrt[3]{3}) \\  \hline
+  3 & -2 & (3, -2) \\  \hline
+
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-4}{4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $v$}
+\tlabel[cc](0.5,4){\scriptsize $w$}
+\tcaption{\scriptsize $v^2+w^3=1$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,   {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$2$} 2, {$3$} 3}
+\penwd{1.25pt}
+\arrow \reverse \parafcn{-2.5,1,0.1}{(sqrt(1-t^3),t)}
+\arrow \reverse \parafcn{-2.5,1,0.1}{(-1*sqrt(1-t^3),t)}
+\point[4pt]{(-3,-2),(-2,-1.4422), (-1,0), (0,1), (3,-2),(2,-1.4422), (1,0)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+\item \textit{graphing in the $wv$-plane:}  To graph $v^2+w^3 = 1$  in the $wv$-plane, all we need to do is reverse the coordinates of the ordered pairs we obtained for our graph in the $vw$-plane.  In particular, the $v$-intercepts are written $(0,1)$ and $(0,-1)$ and the $w$-intercept is written $(1,0)$.  Using the table below on the left we produce the graph below on the right.
+
+\begin{center}
+
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+$\begin{array}{|r||c|c|}  \hline
+
+  v & w & (w,v) \\ \hline
+ -3 & -2 &  (-2,-3) \\  \hline
+ -2 & -\sqrt[3]{3}& (-\sqrt[3]{3}, -2) \\  \hline
+ -1 & 0 & ( 0,-1) \\  \hline
+  0 & 1& ( 1 ,0) \\  \hline
+  1 & 0 & ( 0, 1) \\  \hline
+  2 & -\sqrt[3]{3}& (-\sqrt[3]{3},2) \\  \hline
+  3 & -2 & (-2,3) \\  \hline
+
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-4}{4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $w$}
+\tlabel[cc](0.5,4){\scriptsize $v$}
+\tcaption{\scriptsize $v^2+w^3=1$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,  {$-1 \hspace{7pt}$} -1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2,  {$2$} 2, {$3$} 3}
+\penwd{1.25pt}
+\arrow \reverse \parafcn{-2.5,1,0.1}{(t, sqrt(1-t^3))}
+\arrow \reverse \parafcn{-2.5,1,0.1}{(t, -1*sqrt(1-t^3))}
+\point[4pt]{(-2,-3),(-1.4422,-2), (0,-1), (1,0), (-2,3),(-1.4422,2), (0,1)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+
+
+\end{itemize}
+
+  \qed
+
+\end{example}
+
+Note that regardless of which geometric depiction we choose for $v^2+w^3 = 1$, the graph appears to be symmetric about the $w$-axis.  To prove this is the case, consider a generic point $(v,w)$ on the graph of   $v^2+w^3 = 1$ in the $vw$-plane. 
+
+\smallskip
+
+ To show the point symmetric about the $w$-axis, $(-v,w)$ is also on the graph of $v^2+w^3 = 1$, we need to show that the coordinates of the point $(-v,w)$ satisfy the equation $v^2+w^3 = 1$.  That is, we need to show $(-v)^2+w^3 = 1$.  Since $(-v)^2+w^3 = v^2 + w^3$, and we know by assumption $v^2 + w^3 = 1$, we get $(-v)^2+w^3 = v^2+w^3 = 1$,  proving $(-v,w)$ is also on the graph of the equation.  
+
+\smallskip
+
+The key reason our proof above is successful is that algebraically, the equation $v^2+w^3 = 1$ is unchanged if $v$ is replaced with $-v$.  Geometrically, this means the graph is the same if it undergoes a reflection across the $w$-axis. We generalize this reasoning in the following result.  Note that, as usual, we default to the more common $x$ and $y$-axis labels.
+  
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{symmetrytestequations} \textbf{Testing the Graph of an Equation for Symmetry:}
+
+To test the graph of an equation in the $xy$-plane for symmetry:
+
+\begin{itemize}
+
+\item about the $x$-axis:  substitute $(x,-y)$ into the equation and simplify. If the result is equivalent to the original equation, the graph is symmetric about the $x$-axis.
+
+\item about the $y$-axis:  substitute $(-x,y)$ into the equation and simplify. If the result is equivalent to the original equation, the graph is symmetric about the $y$-axis.
+
+\item about the origin:  substitute $(-x,-y)$ into the equation and simplify. If the result is equivalent to the original equation, the graph is symmetric about the origin.
+
+\end{itemize}
+
+\end{theorem}
+
+\index{symmetry ! testing an equation for} 
+
+%% \ebm}
+
+\smallskip
+
+Parts of Theorem  \ref{symmetrytestequations} should look familiar from our work with even and odd functions.  Indeed if a function $f$ is even,   $f(-x) = f(x)$.  Hence, the equation $y=f(-x)$ reduces to the equation $y=f(x)$, so the graph of $f$ is symmetric about the $y$-axis. 
+
+\smallskip
+
+ Likewise if $f$ is odd, then  $f(-x) = -f(x)$.  In this case, the equation  $-y = f(-x)$ reduces to  $-y = -f(x)$, or $y = f(x)$, proving the graph is symmetric about the origin.
+
+\smallskip
+
+When it comes to symmetry about the $x$-axis, most of the time this indicates a violation of the Vertical Line Test, which is why we haven't discussed that particular kind of symmetry until now.  
+
+\smallskip
+
+We put Theorem \ref{symmetrytestequations} to good use in the following example.
+
+\begin{example}  \label{graphssymmex} Graph each of the equations below in the $xy$-plane.  Find the axis intercepts, if any,  and prove any symmetry suggested by the graphs.  
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item $x^2-y^2 = 4$
+
+\item $(x-1)^2+4y^2 = 16$
+
+\end{enumerate}
+
+\end{multicols}
+
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item We begin graphing $x^2-y^2 = 4$ by checking for axis intercepts.  To check for $x$-intercepts, we set $y=0$ and solve $x^2 - (0)^2 = 4$.  We get $x = \pm 2$ and obtain two $x$-intercepts $(-2,0)$ and $(2,0)$.  
+
+\smallskip
+
+When looking for $y$-intercepts, we set $x=0$ and get $(0)^2 - y^2 = 4$ or $y^2 = -4$.  Since this equation has no real number solutions, we have no $y$-intercepts.  
+
+\smallskip
+
+In order to produce more points on the graph, we solve $x^2-y^2 = 4$ for $y$ and obtain $y = \pm \sqrt{x^2-4}$.  Since we know $x^2-4 \geq 0$ in order to produce real number results for $y$, we restrict our attention to $x \leq -2$ and $x \geq 2$.  Doing so produces the table below on the left.  Using these, we construct the graph below the right.
+
+\smallskip
+
+The graph certainly appears to be symmetric about both axes and the origin.  To prove this, we note that the equation $x^2-(-y)^2 = 4$ quickly reduces to $x^2-y^2 = 4$, proving the graph is symmetric about the $x$-axis. 
+
+\smallskip
+
+ Likewise, the equations $(-x)^2-y^2 = 4$ and $(-x)^2-(-y)^2 = 4$ also reduce to $x^2-y^2 = 4$, proving the graph is, indeed, symmetric about the $y$-axis and origin, respectively.
+
+\begin{center}
+
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+$\begin{array}{|r||c|c|}  \hline
+
+  x & y & (x,y) \\ \hline
+ -4 & \pm 2\sqrt{3} & (-4,  \pm 2\sqrt{3}) \\  \hline
+ -3 & \pm \sqrt{5} & (-3,\pm \sqrt{5}) \\  \hline
+ -2 & 0 & ( -2, 0) \\  \hline
+  2 & 0 & ( 2, 0) \\  \hline
+ 3 & \pm \sqrt{5} & (3,\pm \sqrt{5}) \\  \hline
+ 4 & \pm 2\sqrt{3} & (4,  \pm 2\sqrt{3}) \\  \hline
+
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $x^2-y^2=4$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4, -3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1,   {$1$} 1, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$2$} 2, {$3$} 3, {$4$} 4, {$-4$} -4}
+\penwd{1.25pt}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))}
+
+\point[4pt]{(-2,0), (2,0), (-3, 2.236), (-3, -2.236), (3, 2.236), (3, -2.236), (4, 3.464), (4, -3.464), (-4, 3.464), (-4, -3.464)}
+
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+
+
+\item  To determine if there are any $x$-intercepts on the graph of   $(x-1)^2+4y^2 = 16$, we set $y=0$ and solve $(x-1)^2+4(0)^2 = 16$.  This reduces to $(x-1)^2 = 16$ which gives $x = -3$ and $x=5$.  Hence, we have two $x$-intercepts, $(-3,0)$ and $(5,0)$.  
+
+\smallskip
+
+Looking for $y$-intercepts, we set $x=0$ and solve $(0-1)^2+4y^2 = 16$ or $1 + 4y^2 = 16$.  This gives $y^2 = \frac{15}{4}$ so $y= \pm \frac{\sqrt{15}}{2}$.  Hence, we have two $y$-intercepts:  $\left(0, \pm \frac{\sqrt{15}}{2} \right)$. 
+
+\smallskip
+
+In this case, it is slightly easier\footnote{Read this as we're avoiding fractions.} to solve for $x$ in terms of $y$.  From $(x-1)^2+4y^2 = 16$ we get $(x-1)^2 = 16-4y^2$ which gives $x = 1 \pm \sqrt{16-4y^2}$.  
+
+\smallskip
+
+Since we know $16-4y^2 \geq 0$ to produce real number results for $x$, we require $-2 \leq y \leq 2$.  Selecting values in that range produces the table below on the left.  Plotting these points, along with the $y$-intercepts produces the graph  on the right.
+
+\begin{center}
+
+\begin{tabular}{m{2.5in}m{2.5in}}
+
+$\begin{array}{|r||c|c|}  \hline
+
+  y & x & (x,y) \\ \hline
+ -2 & 1 & (1, -2) \\  \hline
+ -1 & 1 \pm 2\sqrt{3} & (1 \pm 2\sqrt{3},-1) \\  \hline
+  0 & 1 \pm 4 = -3, 5 & (-3, 0), (5,0)  \\  \hline
+  1 & 1 \pm 2 \sqrt{3} & (1 \pm 2\sqrt{3}, 1)  \\  \hline
+ 2 & 1  & (1, 2) \\  \hline
+ 
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-4}{6}{-4}{4}
+\axes
+\tlabel[cc](6,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\tcaption{\scriptsize $(x-1)^2+4y^2=16$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{ {$-4 \hspace{7pt}$} -4,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,   {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{  {$-1$} -1, {$1$} 1 , {$-3$} -3 , {$3$} 3 }
+\penwd{1.25pt}
+\parafcn{0,6.28,0.1}{(  1+4*cos(t) ,2*sin(t) )}
+
+\point[4pt]{(1,2), (1,-2), (-3,0), (5,0), (0, 1.936), (0, -1.936), (4.464, 1), (4.464, -1), (-2.464, 1), (-2.464, -1) }
+
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+The graph certainly appears to be symmetric about the $x$-axis. To check, we substitute $(-y)$ in for $y$ and get $(x-1)^2+4(-y)^2 = 16$ which reduces to $(x-1)^2+4y^2 = 16$.  
+
+\smallskip
+
+Owing to the placement of the $x$-intercepts, $(-3,0)$ and $(5,0)$, the graph is most certainly not symmetric about the $y$-axis nor about the origin.  \qed
+
+\end{enumerate}
+
+\end{example}
+
+Looking at the graphs of the equations $x^2-y^2 = 4$ and  $(x-1)^2+4y^2 = 16$ in Example \ref{graphssymmex}, it is evident neither of these equations represents $y$ as a function of $x$ nor $x$ as a function of $y$. (Do you see why?)  
+
+\smallskip
+
+With the concept of `function' being touted in the opening remarks of Section \ref{FunctionsandtheirRepresentations} as being one of the `universal tools' with which scientists and engineers solve a wide variety of problems, you may well wonder if we can't somehow apply what we know about functions to these sorts of relations.  It turns out that while, taken all at once, these equations do not describe functions, taken in parts, they do. 
+
+\smallskip
+
+For example, consider the equation $x^2 - y^2 = 4$.  Solving for $y$, we obtained $y = \pm \sqrt{x^2-4}$.  Defining $f_{1}(x) = \sqrt{x^2-4}$ and $f_{2}(x) = -\sqrt{x^2-4}$, we get a functional description for the upper and lower halves, or \textit{branches} of the curve, respectively.\footnote{There are many more ways to break this relation into functional parts.  We could, for instance, go piecewise and take portions of the graph which lie in Quadrants I and III as one function and leave the parts in Quadrants II and IV as the other;  we could look at this as being comprised of \textit{four} functions, and so on.} 
+
+\smallskip
+
+ If, for instance, we wanted to analyze this curve near $(3, -\sqrt{5})$, we could use the \textit{function} $f_{2}$ and all the associated function tools\footnote{including, when the time comes, Calculus} to do just that. 
+
+
+
+\begin{multicols}{3}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $x^2-y^2=4$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4, -3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1,   {$1$} 1, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$2$} 2, {$3$} 3, {$4$} 4, {$-4$} -4}
+\penwd{1.25pt}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))}
+
+\point[4pt]{(-2,0), (2,0), (-3, 2.236), (-3, -2.236), (3, 2.236), (3, -2.236), (4, 3.464), (4, -3.464), (-4, 3.464), (-4, -3.464)}
+
+\end{mfpic}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $f_{1}(x) = \sqrt{x^2-4}$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4, -3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1,   {$1$} 1, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$2$} 2, {$3$} 3, {$4$} 4, {$-4$} -4}
+\penwd{1.25pt}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))}
+
+\point[4pt]{(-2,0), (2,0), (-3, 2.236), (3, 2.236),  (4, 3.464), (-4, 3.464)}
+
+\end{mfpic}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $f_{2}(x) = -\sqrt{x^2-4}$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4, -3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1,   {$1$} 1, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$2$} 2, {$3$} 3, {$4$} 4, {$-4$} -4}
+\penwd{1.25pt}
+\arrow  \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))}
+\arrow  \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))}
+
+\point[4pt]{(-2,0), (2,0),  (-3, -2.236), (3, -2.236), (4, -3.464),  (-4, -3.464)}
+
+\end{mfpic}
+
+\end{multicols}
+
+In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y$ as a function of $x$ meaning that given any point $(x_{0},y_{0})$ on  $x^2 - y^2 = 4$, we can find a function $f$ defined (on an interval) containing $x_{0}$ so that $f(x_{0}) = y_{0}$ and whose graph lies on the curve $x^2 - y^2 = 4$. 
+
+\smallskip
+
+ Note that in this case, we are fortunate to have two \textit{explicit} formulas for functions that cover the entire curve,  namely $f_{1}(x) = \sqrt{x^2-4}$ and $f_{2}(x) = -\sqrt{x^2-4}$.   We explore this concept further in the next example.
+
+\begin{example} \label{implicitfcnex}  Consider the graph of the relation $R$ below.
+
+\begin{enumerate}
+
+\item  Explain why this curve does not represent $y$ as a function of $x$.
+\item Resolve the graph of $R$ into two or more graphs of implicitly defined functions.
+\item  Explain why this curve represents $x$ as a function of $y$ and find a formula for $x = g(y)$.
+
+
+\end{enumerate}
+
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-3}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tlabel[cc](-3,1){\scriptsize $(-2,1)$}
+\tlabel[cc](3,-1){\scriptsize $(2,-1)$}
+\tlabel[cc](0.75,0.5){\scriptsize $(0,0)$}
+\tlabel[cc](1.5,-2){\scriptsize $(0,-\sqrt{3})$}
+\tlabel[cc](-1.5,2){\scriptsize $(0,\sqrt{3})$}
+\tcaption{\scriptsize The graph of $R$}
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{ {$1$} 1, {$-1$} -1}
+\penwd{1.25pt}
+\arrow  \reverse \arrow \parafcn{-2.25,2.25,0.1}{(t^3-3*t, t)}
+
+\point[4pt]{(0,0), (0,-1.732),  (0, 1.732), (2, -1), (-2,1)}
+
+\end{mfpic}
+\end{center}
+
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item Using the Vertical Line Test, Theorem \ref{VLT}, we find several instances where vertical lines intersect the graph of $R$ more than once.  The $y$-axis, $x = 0$ is one such line.  We have $x = 0$ matched with \textit{three} different $y$-values:  $-\sqrt{3}$, $0$, and $\sqrt{3}$.
+
+\item  Since the maximum number of times a vertical line intersects the graph of $R$ is three, it stands to reason we need to resolve the graph of $R$ into at least three pieces. 
+
+\smallskip
+
+ One strategy is to begin at the far left and begin tracing the graph until it begins to `double back' and repeat $y$-coordinates.  Doing so we get three functions (represented by the bold solid lines) below. 
+
+\begin{center}
+
+\begin{multicols}{3}
+
+\begin{mfpic}[13.5]{-5}{5}{-3}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tlabel[cc](3.25,-1){\scriptsize $(2,-1)$}
+\tlabel[cc](1.5,-2){\scriptsize $(0,-\sqrt{3})$}
+\tcaption{\scriptsize $y = f_{1}(x)$}
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1}
+\axislabels {y}{ {$1$} 1, {$-1$} -1}
+\penwd{1.25pt}
+\arrow  \reverse \parafcn{-2.25, -1,0.1}{(t^3-3*t, t)}
+\dotted \parafcn{-1, 2.25,0.1}{(t^3-3*t, t)}
+
+\point[4pt]{(0,-1.732),  (2, -1) }
+
+\end{mfpic}
+
+
+
+\begin{mfpic}[13.5]{-5}{5}{-3}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tlabel[cc](-3.25,1){\scriptsize $(-2,1)$}
+\tlabel[cc](3.25,-1){\scriptsize $(2,-1)$}
+\tlabel[cc](0.75,0.5){\scriptsize $(0,0)$}
+\tcaption{\scriptsize $y = f_{2}(x)$}
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1}
+\axislabels {y}{ {$1$} 1, {$-1$} -1}
+\penwd{1.25pt}
+ \parafcn{-1,1,0.1}{(t^3-3*t, t)}
+\dotted \parafcn{1, 2.25,0.1}{(t^3-3*t, t)}
+\dotted \parafcn{-2.25, -1,0.1}{(t^3-3*t, t)}
+\point[4pt]{(0,0), (2, -1), (-2,1)}
+
+\end{mfpic}
+
+
+
+\begin{mfpic}[13.5]{-5}{5}{-3}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tlabel[cc](-3.25,1){\scriptsize $(-2,1)$}
+\tlabel[cc](-1.5,2){\scriptsize $(0,\sqrt{3})$}
+\tcaption{\scriptsize $y = f_{3}(x)$}
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-2,-1,1,2}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{ {$1$} 1, {$-1$} -1}
+\penwd{1.25pt}
+\arrow  \parafcn{1,2.25,0.1}{(t^3-3*t, t)}
+\dotted \parafcn{-2.25, 1,0.1}{(t^3-3*t, t)}
+\point[4pt]{(0, 1.732),  (-2,1)}
+
+\end{mfpic} 
+
+\end{multicols}
+\end{center}
+
+\item  To verify that $R$ represents $x$ as a function of $y$, we check to see if any $y$-value has more than one $x$ associated with it.  One way to do this is to employ the the Horizontal Line Test (Exercise \ref{HLTExercise} in Section \ref{FunctionsandtheirRepresentations}.)  Since every horizontal line intersects the graph at most once, $x$ is a function of $y$.  
+
+\smallskip
+
+Using Theorem \ref{complexfactorization} from Chapter \ref{PolynomialFunctions}, we get $x = (1)y(y-\sqrt{3})(y+\sqrt{3}) = y^3 - 3y$, a fact we can readily check using a graphing utility.  \qed
+
+\end{enumerate}
+
+\end{example}
+
+\enlargethispage{0.25in}
+
+Not all equations implicitly define $y$ as a function of $x$.  For a quick example,  take $x = 117$ or any other vertical line.  Even if an equation implicitly describes $y$ as a function of $x$ near one point, there's no guarantee we can find an explicit algebraic representation for that function.\footnote{An example of this is $y^5-y-x = 1$ near $(-1,0)$.}   
+
+\smallskip
+
+While the theory of implicit functions is well beyond the scope of this text, we will nevertheless see this concept come into play in Section \ref{InverseFunctions}.  For our purposes, it suffices to know that just because a relation is not a function doesn't mean we cannot find a way to apply what we know about functions to analyze the relation locally through a functional lens.  
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforRelations}
+
+\closegraphsfile
+
+\end{document}

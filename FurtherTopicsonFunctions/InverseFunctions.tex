@@ -1,0 +1,1515 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Inverse Functions}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{InverseFunctions}
+
+\setcounter{footnote}{0}
+
+\label{InverseFunctions}
+
+In  Section \ref{FunctionsandtheirRepresentations}, we defined functions as processes.  In this section, we seek to reverse, or `undo' those processes.    As in real life, we will find that some processes (like putting on socks and shoes) are reversible while some (like baking a cake) are not. 
+
+\smallskip
+
+
+Consider the function $f(x) = 3x+4$.   Starting with a real number input $x$, we  apply two steps in the following sequence:  first we multiply the input by $3$ and, second, we add $4$ to the result.  
+
+\smallskip
+
+To reverse this process, we seek a function $g$ which will undo each of these steps and take the output from $f$, $3x+4$, and return the input $x$.  If we think of the two-step process of first putting on socks then putting on shoes, to reverse the process, we first take off the shoes and then we take off the socks.  In much the same way, the function $g$ should undo each step of $f$ but in the opposite order.  That is, the function $g$ should first \textit{subtract} $4$ from the input $x$ then \textit{divide} the result by $3$. This leads us to the formula $g(x) = \frac{x-4}{3}$.
+
+\smallskip
+
+Let's check to see if the function $g$ does the job.  If $x=5$, then $f(5) = 3(5)+4 = 15+4 = 19$.  Taking the output $19$ from $f$, we substitute it into $g$ to get $g(19) = \frac{19-4}{3} = \frac{15}{3} = 5$, which is our original input to $f$. To check that $g$ does the job for all $x$ in the domain of $f$, we take the generic output from $f$, $f(x) = 3x+4$, and substitute that into $g$.  That is, we simplify  $g(f(x)) = g(3x+4) = \frac{(3x+4)-4}{3} = \frac{3x}{3} = x$, which is our original input to $f$.  If we carefully examine the arithmetic as we simplify $g(f(x))$, we actually see $g$ first `undoing' the addition of $4$, and then `undoing' the multiplication by $3$.  
+
+\smallskip
+
+Not only does $g$ undo $f$, but $f$ also undoes $g$.  That is, if we take the output from $g$, $g(x) = \frac{x-4}{3}$, and substitute that into $f$, we get $f(g(x)) = f\left(\frac{x-4}{3}\right) = 3 \left(\frac{x-4}{3}\right) + 4 = (x-4) + 4 = x$.  Using the language of function composition developed in Section \ref{FunctionComposition}, the statements $g(f(x)) = x$ and $f(g(x)) = x$ can be written as $(g \circ f)(x) = x$ and $(f \circ g)(x) = x$, respectively.\footnote{At the level of functions, $g \circ f = f \circ g = I$, where $I$ is the identity function as defined as $I(x) = x$ for all real numbers, $x$.}  Abstractly, we can visualize the relationship between $f$ and $g$ in the diagram below.  
+
+\begin{center}
+
+
+\begin{mfpic}[10]{-15}{15}{-10}{10}
+
+\tlabel[cc](0,6){$f$}
+
+\tlabel[cc](0,-6){$g$}
+\point[2pt]{(-7.5,0), (7.5,0)} 
+
+\ellipse{(-7.5,0),6,5}
+
+\ellipse{(7.5,0),6,5}
+
+\penwd{0.75pt}
+
+\arrow \curve{(-7.25,0.25), (0,5), (7.25,0.25)}
+
+\dashed \arrow \curve{(7.25,-0.25), (0,-5), (-7.25,-0.25)}
+
+\gclear \tlabelrect[cc](-7.5,-2){$x = g(f(x))$}
+
+\gclear \tlabelrect[cc](7.5,-2){$y = f(x)$}
+
+\end{mfpic}
+
+\end{center}
+
+The main idea to get from the diagram is that $g$ takes the outputs from $f$ and returns them to their respective inputs, and conversely, $f$ takes outputs from $g$ and returns them to their respective inputs.  We now have enough background to state the central definition of the section.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{inversefunctiondefn} Suppose $f$ and $g$ are two functions such that
+
+\begin{enumerate}
+
+\item  $(g \circ f)(x) = x$ for all $x$ in the domain of $f$
+
+ \textbf{and}
+
+\item  $(f \circ g)(x) = x$ for all $x$ in the domain of $g$
+
+\end{enumerate}
+
+then $f$ and $g$ are \index{function ! inverse ! definition of}\index{inverse ! of a function ! definition of}\textbf{inverses} of each other and the functions $f$ and $g$ are said to be \textbf{invertible}. \index{invertible ! function}
+
+\end{definition}
+%% \ebm}
+
+\smallskip
+
+If we abstract one step further, we can express the sentiment in Definition \ref{inversefunctiondefn} by saying that $f$ and $g$ are inverses if and only if  $g \circ f = I_{\text{\scriptsize $1$}}$ and $f \circ g = I_{\text{\scriptsize $2$}}$ where $I_{\text{\scriptsize $1$}}$ is the identity function restricted\footnote{The identity function $I$, first introduced in Exercise \ref{identityexercise} in Section \ref{ConstantandLinearFunctions} and mentioned in Theorem \ref{functioncompprops}, has a domain of all real numbers.  Since the domains of $f$ and $g$ may not be all real numbers, we need the restrictions listed here.} to the domain of $f$ and $I_{\text{\scriptsize $2$}}$ is the identity function restricted to the domain of $g$.  
+
+\smallskip
+
+In other words, $I_{\text{\scriptsize $1$}}(x) = x$ for all $x$ in the domain of $f$ and $I_{\text{\scriptsize $2$}}(x) = x$ for all $x$ in the domain of $g$.    Using this description of inverses along with the properties of function composition listed in Theorem  \ref{functioncompprops}, we can show that function inverses are unique.\footnote{In other words, invertible functions have exactly one inverse.}   
+
+\smallskip
+
+Suppose $g$ and $h$ are both inverses of a function $f$. By Theorem \ref{inversefunctionprops}, the domain of $g$ is equal to the domain of $h$, since both are the range of $f$.  This means the identity function $I_{\text{\scriptsize $2$}}$ applies both to the domain of $h$ and the domain of $g$.  Thus $h = h \circ I_{\text{\scriptsize $2$}} = h \circ (f \circ g) = (h \circ f) \circ g = I_{\text{\scriptsize $1$}} \circ g = g$, as required.
+
+\smallskip
+
+We summarize the important properties of invertible functions in the following theorem.\footnote{In the interests of full disclosure, the authors would like to admit that much of the discussion in the previous paragraphs could have easily been avoided had we appealed to the description of a function as a set of ordered pairs.  We make no apology for our discussion from a function composition standpoint, however, since it exposes the reader to more abstract ways of thinking of functions and inverses.  We will revisit this concept again in Chapter \ref{SystemsofEquationsandMatrices}.}  Apart from introducing notation, each of the results below are immediate consequences of the idea that inverse functions map the outputs from a function $f$  back to their corresponding inputs.
+
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}\textbf{Properties of Inverse Functions:} \label{inversefunctionprops} Suppose $f$ is an invertible function. \index{inverse ! of a function ! properties of} \index{function ! inverse ! properties of}
+
+\begin{itemize}
+
+\item  There is exactly one inverse function for $f$, denoted $f^{-1}$ (read `$f$-inverse')
+
+\item  The range of $f$ is the domain of $f^{-1}$ and the domain of $f$ is the range of $f^{-1}$
+
+\item  $f(a) = c$ if and only if $a = f^{-1}(c)$
+
+\textbf{NOTE:}  In particular,  for all $y$ in the range of $f$, the solution to $f(x) = y$ is $x = f^{-1}(y)$.
+
+\item  $(a,c)$ is on the graph of $f$ if and only if $(c,a)$ is on the graph of $f^{-1}$
+
+\textbf{NOTE:}  This means graph of $y=f^{-1}(x)$ is the reflection of the graph of $y=f(x)$ across  $y=x$.\footnote{See Example \ref{inversemidpointex1} in Section \ref{AppCartesianPlane} and Example \ref{inversemidpointex2} in Section \ref{AppLines}.}
+
+\item  $f^{-1}$ is an invertible function and $(f^{-1})^{-1} = f$.
+
+
+
+\end{itemize}
+
+\end{theorem}
+%% \ebm}
+
+\smallskip
+
+The notation $f^{-1}$ is an unfortunate choice since you've been programmed since Elementary Algebra to think of this as $\frac{1}{f}$.  This is most definitely \textit{not} the case since, for instance, $f(x) = 3x+4$ has as its inverse $f^{-1}(x) = \frac{x-4}{3}$, which is certainly different than $\frac{1}{f(x)} = \frac{1}{3x+4}$.  
+
+\smallskip
+
+Why does this confusing notation persist?  As we mentioned in Section \ref{FunctionComposition}, the identity function $I$ is to function composition what the real number $1$ is to real number multiplication.  The choice of notation $f^{-1}$ alludes to the property that $f^{-1} \circ f = I_{1}$ and $f \circ f^{-1} = I_{2}$, in much the same way as $3^{-1} \cdot 3 = 1$ and $3 \cdot 3^{-1} = 1$.  
+
+\smallskip
+
+Before we embark on an example, we demonstrate the pertinent parts of Theorem \ref{inversefunctionprops}  to the inverse pair $f(x) = 3x+4$ and $g(x) = f^{-1}(x) =  \frac{x-4}{3}$.  Suppose we wanted to solve $3x+4 = 7$.  Going through the usual machinations, we obtain $x = 1$.  
+
+\smallskip
+
+If we view this equation as $f(x) = 7$, however, then we are looking for the input $x$  corresponding to the output $f(x) = 7$.  This is exactly the question $f^{-1}$ was built to answer.  In other words, the solution to  $f(x) = 7$ is  $x = f^{-1}(7) =1$. In other words, the formula $f^{-1}(x)$ encodes all of the algebra required to `undo' what the formula $f(x)$ does to $x$.   More generally,  any time you have ever solved an equation, you have really been working through an inverse problem.
+
+\smallskip
+
+
+We also note the graphs of   $f(x) = 3x+4$ and $g(x) = f^{-1}(x) = \frac{x-4}{3}$ are easily seen to be reflections across the line $y=x$ as seen below.  In particular, note that the $y$-intercept $(0,4)$ on the graph of $y = f(x)$ corresponds to the $x$-intercept on the graph of $y = f^{-1}(x)$.  Indeed, the point $(0,4)$ on the graph of $y = f(x)$ can be interpreted as $(0,4) = (0,f(0)) = (f^{-1}(4), 4)$ just as the point $(4,0)$ on the graph of $y = f^{-1}(x)$ can be interpreted as $(4,0) = (4, f^{-1}(4)) = (f(0), 0)$.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+
+\dashed \function{-4.5,4.5,0.1}{x}
+\axes
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](-0.5,5){\scriptsize $y$}
+\tlabel[cc](-1,4){\scriptsize $(0,4)$}
+\tlabel[cc](4,-0.5){\scriptsize $(4,0)$}
+\tlabel[cc](-2.25,1){\scriptsize $y=f(x)$}
+\tlabel[cc](1.5,-1.5){\scriptsize $y=g(x)$}
+\tlabel[cc](2,1){\scriptsize $y=x$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3\hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1, {$-2$} -2,{$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+
+\arrow \reverse \arrow \function{-3,0.333,0.1}{3*x+4}
+\arrow \reverse \arrow \function{-5,5,0.1}{(x-4)/3}
+\point[4pt]{(0,4), (4,0)}
+\end{mfpic}
+
+Graphs of inverse functions $y = f(x) =3x+4 $ and $y =  f^{-1}(x) =  \dfrac{x-4}{3}$.
+
+\enlargethispage{0.1in}
+
+\end{center}
+
+\begin{example}  \label{inverseverifyex}  For each pair of functions $f$ and $g$ below:
+
+\begin{enumerate}
+
+\item  Verify each pair of functions $f$ and $g$ are inverses:  (a) algebraically and (b) graphically.
+
+\item  Use the fact $f$ and $g$ are inverses to solve $f(x) = 5$ and $g(x) = -3$
+
+\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+
+\item  $f(x) = \sqrt[3]{x-1} + 2$ and $g(x) = (x-2)^3+1$ \vphantom{ $f(t) = \dfrac{3t}{t+1}$ and $g(t) = \dfrac{t}{3-t}$}
+
+\item  $f(t) = \dfrac{2t}{t+1}$ and $g(t) = \dfrac{t}{2-t}$
+
+\end{itemize}
+
+\end{multicols}
+
+\newpage
+
+{\bf Solution.}
+
+\textit{Solution for $f(x) = \sqrt[3]{x-1} + 2$ and $g(x) = (x-2)^3+1$.}
+
+\begin{enumerate}
+
+\item  \begin{enumerate} \item To verify  $f(x) = \sqrt[3]{x-1} + 2$ and $g(x) = (x-2)^3+1$  are inverses, we appeal to Definition \ref{inversefunctiondefn} and show $(g \circ f)(x) = x$ and $(f \circ g)(x) = x$ for all real numbers, $x$.   
+
+\begin{multicols}{2}
+
+$\begin{array}{rcl}
+
+(g \circ f)(x) & = & g(f(x))  \\
+                   & = & g(\sqrt[3]{x-1} + 2)  \\
+                   & = & [ (\sqrt[3]{x-1} + 2)-2]^3 + 1  \\
+                   & = & (\sqrt[3]{x-1})^3 + 1  \\
+                   & = & x-1+1 \\ 
+                   & = & x \, \, \checkmark  \\
+\end{array}$
+
+
+$\begin{array}{rcl}
+
+(f \circ g)(x) & = & f(g(x))  \\
+                   & = & f((x-2)^3+1)  \\
+                   & = & \sqrt[3]{[(x-2)^3+1] -1}+2 \\
+                   & = & \sqrt[3]{(x-2)^3} +2\\
+                   & = & x-4+4  \\ 
+                   & = & x \, \, \checkmark \\
+\end{array}$
+
+\end{multicols}
+
+Since the root here, $3$, is odd, Theorem \ref{basicradicalpropseqineq} gives $(\sqrt[3]{x-1})^3 = x-1$ and $\sqrt[3]{(x-2)^3} = x-2$.
+
+\item To show $f$ and $g$ are inverses graphically, we graph $y = f(x)$ and $y = g(x)$ on the same set of axes and check to see if they are reflections about the line $y=x$.  
+
+\smallskip
+
+The graph of  $y =  f(x) = \sqrt[3]{x-1} + 2$ appears below on the left courtesy of Theorem \ref{linearrootgraphs} in Section \ref{RootRadicalFunctions}.  The graph of  $y = g(x) = (x-2)^3+1$ appears below in the middle thanks to Theorem \ref{linearmononialgraphs} in Section \ref{GraphsofPolynomials}.  
+
+\smallskip
+
+We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$, $(1,2)$ and $(2,1)$, $(2,3)$ and $(3,2)$.  When graphed on the same pair of axes, the two graphs certainly appear to be symmetric about the line $y=x$, as required.
+
+\begin{multicols}{3}
+
+\begin{mfpic}[15]{-4}{4}{-5}{5}
+\axes
+\xmarks{-3, -2,-1,1,2,3}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-1,1.25){\scriptsize $(0,1)$}
+\gclear \tlabelrect(0,2){\scriptsize $(1,2)$}
+\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
+\tcaption{\scriptsize $y=f(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1,{$2$} 2, {$3$} 3}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{0.42, 3.58, 0.1}{((t-2)**3+1, t)}
+\point[4pt]{(0,1), (1,2), (2,3)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-4}{4}{-5}{5}
+\axes
+\xmarks{-3, -2,-1,1,3}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
+\tlabel[cc](2.5,0.5){\scriptsize $(2,1)$}
+\tlabel[cc](3.75,2){\scriptsize $(3,2)$}
+\tcaption{\scriptsize $y=g(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2, {$-1\hspace{7pt}$} -1,  {$1$} 1, {$3$} 3}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{0.42, 3.58,  0.1}{(t, (t-2)**3+1)}
+\point[4pt]{(1,0), (2,1), (3,2)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-4}{4}{-5}{5}
+\axes
+\dashed \polyline{(-3.5, -3.5), (4.5, 4.5)}
+\xmarks{-3, -2,-1,1,3}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-1,1.25){\scriptsize $(0,1)$}
+\gclear \tlabelrect(0,2){\scriptsize $(1,2)$}
+\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
+\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
+\tlabel[cc](2.5,0.5){\scriptsize $(2,1)$}
+\tlabel[cc](3.75,2){\scriptsize $(3,2)$}
+\tcaption{\scriptsize $y=f(x)$, $y=g(x)$, $y=x$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1, {$3$} 3}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{0.42, 3.58, 0.1}{((t-2)**3+1, t)}
+\arrow \reverse \arrow \parafcn{0.42, 3.58,  0.1}{(t, (t-2)**3+1)}
+\point[4pt]{(0,1), (1,2), (2,3), (1,0), (2,1), (3,2)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{enumerate}
+
+\item Since $f$ and $g$ are inverses,  the solution to $f(x) = 5$ is $x = f^{-1}(5) = g(5) = (5-2)^3+1 = 28$.  To check, we find  $f(28) = \sqrt[3]{28-1}+2 = \sqrt[3]{27} + 2 = 3+2 = 5$, as required. 
+
+\smallskip
+
+ Likewise, the solution to $g(x) = -3$ is $x = g^{-1}(-3) = f(-3) = \sqrt[3]{(-3)-1} + 2 = 2 - \sqrt[3]{4}$.  Once again, to check, we find $g(2 - \sqrt[3]{4}) = (2 - \sqrt[3]{4}-2)^3 + 1 = (-\sqrt[3]{4})^3 +1 = -4+1 = -3$.
+\end{enumerate}
+
+\textit{Solution for  $f(t) = \dfrac{2t}{t+1}$ and $g(t) = \dfrac{t}{2-t}$.}
+
+\begin{enumerate}
+
+\item  \begin{enumerate}  \item Note the domain of $f$ excludes $t = -1$ and the domain of $g$ excludes $t=2$.  Hence, when simplifying $(g \circ f)(t)$ and $(f \circ g)(t)$, we tacitly assume $t \neq -1$ and $t \neq 2$, respectively. 
+
+\begin{multicols}{2}
+
+$\begin{array}{rcl}
+(g \circ f)(t) & = & g(f(t)) \\ [6pt]
+                  & = & g \left(\dfrac{2t}{t+1} \right) \\ [10pt]
+                
+                  & = & \dfrac{\dfrac{2t}{t+1} }{2 - \dfrac{2t}{t+1}} \\ [25pt]
+                  
+                 & = & \dfrac{\dfrac{2t}{t+1} }{2 - \dfrac{2t}{t+1}} \cdot \dfrac{(t+1)}{(t+1)} \\ [25pt]
+               
+                 & = & \dfrac{2t}{2(t+1) - 2t} \\ [10pt]
+             
+                 & = & \dfrac{2t}{2t+2-2t} \\ [8pt]
+                 
+                 & = & \dfrac{2t}{2} \\ [8pt]
+                
+                 & = & t \, \, \checkmark \\
+
+\end{array}$
+
+$\begin{array}{rcl}
+(f \circ g)(t) & = & f(g(t)) \\ [6pt]
+                 
+                  & = & f \left( \dfrac{t}{2-t} \right) \\ [10pt]
+                
+                  & = & \dfrac{2\left( \dfrac{t}{2-t} \right)}{\left( \dfrac{t}{2-t} \right)+1} \\ [25pt]
+               
+                 & = & \dfrac{2\left( \dfrac{t}{2-t} \right)}{\left( \dfrac{t}{2-t} \right)+1}\cdot \dfrac{(2-t)}{(2-t)} \\ [25pt]
+                 
+                 & = & \dfrac{2t}{t+(1)(2-t)} \\ [10pt]
+            
+                 & = & \dfrac{2t}{t+2-t)} \\ [8pt]
+            
+                 & = & \dfrac{2t}{2} \\ [8pt]
+           
+                 & = & t \, \, \checkmark \\
+
+\end{array}$
+
+\end{multicols}
+
+
+\item We graph $y=f(t)$ and $y=g(t)$ using the techniques discussed in Sections \ref{IntroRational} and \ref{RationalGraphs}.  
+
+\begin{multicols}{3}
+
+\begin{mfpic}[15]{-4}{5}{-5}{5}
+\axes
+\dashed \polyline{(-1,-5), (-1,5)}
+\dashed \polyline{(-4,2), (5,2)}
+\xmarks{-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
+\tlabel[cc](-2,-4.5){\scriptsize $t=-1$}
+\tlabel[cc](4,2.5){\scriptsize $y=2$}
+\tcaption{\scriptsize $y=f(t)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$4$} 4,{$3$} 3, {$1$} 1}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-4, -1.67, 0.1}{2*x/(x+1)}
+\arrow \reverse \arrow \function{-0.71, 5, 0.1}{2*x/(x+1)}
+\point[4pt]{(0,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-4}{5}{-5}{5}
+\axes
+\dashed \polyline{(2,-5), (2,5)}
+\dashed \polyline{(-4,-1), (5,-1)}
+\xmarks{-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
+\tlabel[cc](1,-4.5){\scriptsize $t=2$}
+\tlabel[cc](-3,-1.5){\scriptsize $y=-1$}
+\tcaption{\scriptsize $y=g(t)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{  {$-1\hspace{7pt}$} -1,  {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-4, 1.66, 0.1}{x/(2-x)}
+\arrow \reverse \arrow \function{2.5, 5, 0.1}{x/(2-x)}
+\point[4pt]{(0,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-4}{5}{-5}{5}
+\axes
+\dashed \polyline{(2,-5), (2,5)}
+\dashed \polyline{(-4,-1), (5,-1)}
+\dashed \polyline{(-1,-5), (-1,5)}
+\dashed \polyline{(-4,2), (5,2)}
+\dashed \polyline{(-3.5, -3.5), (4.5, 4.5)}
+\xmarks{-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
+\tlabel[cc](1,-4.5){\scriptsize $t=2$}
+\tlabel[cc](-3,-1.5){\scriptsize $y=-1$}
+\tlabel[cc](-2,-4.5){\scriptsize $t=-1$}
+\tlabel[cc](4,2.5){\scriptsize $y=2$}
+\tcaption{\scriptsize $y=f(t)$, $y=g(t)$, and $y = x$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{  {$-1\hspace{7pt}$} -1,  {$3$} 3, {$4$} 4}
+\axislabels {y}{{$1$} 1, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-4, 1.66, 0.1}{x/(2-x)}
+\arrow \reverse \arrow \function{2.5, 5, 0.1}{x/(2-x)}
+\arrow \reverse \arrow \function{-4, -1.67, 0.1}{2*x/(x+1)}
+\arrow \reverse \arrow \function{-0.71, 5, 0.1}{2*x/(x+1)}
+\point[4pt]{(0,0)}
+\end{mfpic}
+
+\end{multicols}
+
+We find the graph of $f$ has a vertical asymptote $t=-1$ and a horizontal asymptote $y = 2$ .  Corresponding to the \textit{vertical} asymptote $t=-1$ on the graph of $f$,  we find the graph of $g$ has a \textit{horizontal} asymptote $y=-1$.  
+
+\smallskip
+
+Likewise, the \textit{horizontal} asymptote $y=2$ on the graph of $f$ corresponds to the \textit{vertical} asymptote $t=2$ on the graph of $g$.  Both graphs share the intercept $(0,0)$.  When graphed together on the same set of axes, the graphs of $f$ and $g$ do appear to be symmetric about the line $y=t$. 
+
+
+\end{enumerate}
+
+
+
+\item  Don't let the fact that $f$ and $g$ in this case were defined using the independent variable, `$t$' instead of `$x$' deter you in your efforts to solve $f(x) = 5$.    Remember that, ultimately, the function $f$ here is the \textit{process} represented by the formula $f(t)$, and  is the same process (with the same inverse!) regardless of the letter used as the independent variable.  Hence, the solution to  $f(x) = 5$ is $x = f^{-1}(1) = g(5)$. We get $g(5) = \frac{5}{2-5} = -\frac{5}{3}$.  
+
+\smallskip
+
+To check, we find $f\left(-\frac{5}{3} \right) = \left(-\frac{10}{3}\right) / \left(-\frac{2}{3} \right) = 5$.  Similarly, we solve $g(x) = -3$ by finding $x = g^{-1}(-3) = f(-3) = \frac{-6}{-2} = 3$.  Sure enough, we find $g(3) = \frac{3}{2-3} = -3$. \qed
+
+\end{enumerate}
+
+\end{example}
+
+We now investigate under what circumstances a function is invertible. As a way to motivate the discussion, we consider  $f(x) = x^2$.  A likely candidate for the inverse is the function $g(x) = \sqrt{x}$.  However,  $(g\circ f)(x) = g(f(x)) = \sqrt{x^2} = |x|$, which is not equal to $x$ unless $x \geq 0$.  
+
+\smallskip
+
+For example, when $x=-2$,  $f(-2)= (-2)^2 = 4$, but $g(4) = \sqrt{4}=2$.  That is, $g$ failed to return the input $-2$ from its output $4$.  Instead, $g$ matches the output $4$ to a \textit{different} input, namely $2$, which satisfies $f(2) = 4$.  Schematically:
+
+\begin{center}
+
+
+\begin{mfpic}[10]{-15}{15}{-10}{10}
+\tlabel[cc](0,6){$f$}
+\tlabel[cc](0,-6){$g$}
+\point[2pt]{(-7.5,2), (-7.5,-2),(7.5,0)} 
+\ellipse{(-7.5,0),6,5}
+\ellipse{(7.5,0),6,5}
+\penwd{0.75pt}
+\arrow \polyline{(-7.5, 2), (7.25,0.25)}
+\arrow \polyline{(-7.5, -2), (7.25,-0.25)}
+\arrow \curve{(-3,4), (0,5), (3,4)}
+\dashed \arrow \curve{(7.25,-0.25), (0,-5), (-7.25,-2.25)}
+\gclear \tlabelrect[cc](-7.5,1){$x = -2$}
+\gclear \tlabelrect[cc](-7.5,-4){$x = 2$}
+\gclear \tlabelrect[cc](7.5,-1){$4$}
+\end{mfpic}
+
+\end{center}
+
+We see from the diagram that since both $f(-2)$ and $f(2)$ are $4$, it is impossible to construct a \textit{function} which takes $4$ back to \textit{both} $x=2$ and $x=-2$ since, by definition, a function can match $4$ with only \textit{one} number.
+
+\smallskip
+
+
+In general, in order for a function to be invertible, each output can come from only \textit{one} input.  Since, by definition, a function matches up each input to only \textit{one} output, invertible functions have the property that they match one input to one output and vice-versa.  We formalize this concept below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{onetoone} \index{one-to-one function}\index{function ! one-to-one} A function $f$ is said to be \index{function ! one-to-one} \textbf{one-to-one} if whenever $f(a) = f(b)$, then $a=b$. 
+
+\end{definition}
+%% \ebm}
+
+\smallskip
+
+Note that an equivalent way to state Definition \ref{onetoone} is that a function is one-to-one if \textit{different} inputs go to \textit{different} outputs. That is, if $a \neq b$, then $f(a) \neq f(b)$.
+
+\smallskip
+
+Before we solidify the connection between invertible functions and one-to-one functions, we take a moment to see what goes wrong graphically when trying to find the inverse of $f(x) = x^2$.
+
+\smallskip
+
+Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exists, is obtained from the graph of $y=x^2$  by reflecting $y=x^2$ about the line $y=x$.  Procedurally, this is accomplished by interchanging the $x$ and $y$ coordinates of each point on the graph of $y = x^2$.  Algebraically, we are swapping the variables `$x$' and `$y$' which results in the equation $x = y^2$ whose graph is below on the right. 
+
+\[ \begin{array}{ccc}
+
+
+\begin{mfpic}[15]{-3}{3}{-1}{8}
+\dashed \polyline{(-3,4), (3,4)}
+\tlabel[cc](-3.3,3.5){\scriptsize $(-2,4)$}
+\tlabel[cc](3,3.5){\scriptsize $(2,4)$}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\tcaption{\scriptsize $y=x^2$}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.75, 2.75, 0.1}{x**2}
+\point[4pt]{(-2,4), (2,4)}
+\end{mfpic}  
+
+&
+
+\stackrel{\stackrel{\text{\scriptsize reflect across $y=x$}}{\xrightarrow{\hspace{1.25in}}}}{\text{ \scriptsize switch $x$ and $y$ coordinates}} 
+
+&
+
+\begin{mfpic}[15]{-1}{8}{-3}{3}
+\axes
+\dashed \polyline{(4,-3), (4,3)}
+\tlabel[cc](4,-3.5){\scriptsize $(4,-2)$}
+\tlabel[cc](4,3.5){\scriptsize $(4,2)$}
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize $x=y^2$}
+\ymarks{-2,-1,1,2}
+\xmarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-2.75, 2.75, 0.1}{(t**2,t)}
+\point[4pt]{(4,-2), (4,2)}
+\end{mfpic} \end{array}\]
+
+We see immediately the graph of $x = y^2$ fails the Vertical Line Test, Theorem \ref{VLT}.  In particular,  the vertical line $x=4$ intersects the graph at two points, $(4,-2)$ and $(4,2)$ meaning the relation described by $x = y^2$ matches the $x$-value $4$ with two different $y$-values, $-2$ and $2$.  
+
+\smallskip
+
+Note that the \textit{vertical} line $x=4$ and the points $(4, \pm 2)$ on the graph of $x=y^2$ correspond to the \textit{horizontal} line $y=4$ and the points $(\pm 2, 4)$ on the graph of $y = x^2$ which brings us right back to the concept of one-to-one.  The fact that both $(-2,4)$ and $(2,4)$ are on the graph of $f$ means $f(-2)=f(2) = 4$.  Hence,  $f$ takes different inputs, $-2$ and $2$, to the same output, $4$, so $f$ is not one-to-one.
+
+\smallskip
+
+Recall the Horizontal Line Test from Exercise \ref{HLTExercise} in Section \ref{FunctionsandtheirRepresentations}.  Applying that result to the graph of $f$ we say the graph of $f$ `fails' the Horizontal Line Test  since the horizontal line $y=4$ intersects the graph of $y = x^2$ more than once.  This means that the equation $y=x^2$ does not represent $x$ is not a function of $y$.  
+
+\smallskip
+
+Said differently, the Horizontal Line Test detects when there is at least one $y$-value ($4$) which is matched to more than one $x$-value ($\pm 2$).   In other words, the Horizontal Line Test can be used to detect whether or not a function is one-to-one. 
+
+\smallskip
+
+So, to review, $f(x) = x^2$ is not invertible, not one-to-one, and its graph fails the Horizontal Line Test. It turns out that these three attributes:  being invertible, one-to-one, and having a graph that passes the Horizontal Line Test are mathematically equivalent.   That is to say if one if these things is true about a function, then they all are; it also means that, as in this case,  if one of these things \textit{isn't} true about a function, then \textit{none} of them are.  We summarize this result in the following theorem.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{inversefunctionequivalency} \textbf{Equivalent Conditions for Invertibility:}  \index{invertibility ! function}
+ 
+For a function $f$, either all of the following statements are true or none of them are:
+
+\begin{itemize}
+
+\item  $f$ is invertible.
+
+\item $f$ is one-to-one.
+
+\item  The graph of $f$ passes the Horizontal Line Test.\footnote{i.e., no horizontal line intersects the graph more than once.}
+
+\end{itemize}
+
+\end{theorem}
+%% \ebm}
+
+To prove Theorem \ref{inversefunctionequivalency}, we first suppose $f$ is invertible.  Then there is a function $g$ so that $g(f(x)) = x$ for all $x$ in the domain of $f$.    If $f(a) = f(b)$, then $g(f(a)) = g(f(b))$.  Since $g(f(x)) = x$, the equation $g(f(a)) = g(f(b))$ reduces to $a = b$. We've shown that if $f(a) = f(b)$, then $a = b$, proving $f$ is one-to-one.
+
+\smallskip
+
+Next, assume $f$ is one-to-one.  Suppose a horizontal line $y=c$ intersects the graph of $y = f(x)$ at the points $(a,c)$ and $(b,c)$.  This means $f(a) = c$ and $f(b) = c$ so $f(a) = f(b)$.  Since $f$ is one-to-one, this means $a=b$ so the points $(a,c)$ and $(b,c)$ are actually one in the same.  This establishes that each horizontal line can intersect the graph of $f$ at most once, so the graph of $f$ passes the Horizontal Line Test.
+
+\smallskip
+
+Last, but not least, suppose the graph of $f$ passes the Horizontal Line Test.  Let  $c$ be a real number in the range of $f$.  Then the horizontal line $y=c$ intersects the graph of $y=f(x)$ just \textit{once}, say at the point $(a,c) = (a, f(a))$.  Define the mapping $g$ so that $g(c) = g(f(a)) = a$.  The mapping $g$ is a \textit{function} since each horizontal line $y=c$ where $c$ is in the range of $f$ intersects the graph of $f$ only \textit{once}.  By construction, we have the domain of $g$ is the range of $f$ and that for all $x$ in the domain of $f$,$g(f(x)) = x$.  We leave it to the reader to show that for all $x$ in the domain of $g$, $f(g(x)) = x$, too.
+
+\smallskip
+
+Hence, we've shown:  first,  if $f$ invertible, then $f$ is one-to-one; second,   if $f$ is one-to-one, then the graph of $f$ passes the Horizontal Line Test; and third,  if $f$ passes the Horizontal Line Test, then $f$ is invertible.  Hence if $f$ is satisfies any one of these three conditions, we can show $f$ must satisfy the other two.\footnote{For example, if we know $f$ is one-to-one, we showed the graph of $f$ passes the HLT which, in turn, guarantees $f$ is invertible.}
+
+\smallskip
+
+We put this result to work in the next example.
+
+\smallskip
+
+\begin{example}  \label{inversefunctiononetooneex} Determine if the following functions are one-to-one: (a) analytically using Definition \ref{onetoone} and (b) graphically using the Horizontal Line Test.  For the functions that are one-to-one, graph the inverse.
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  $f(x) =x^2-2x+4$
+
+\item  $g(t) = \dfrac{2t}{1-t}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  \label{orderedpairinversefirst} $F = \{(-1,1), (0,2), (1,-3),  (2,1)\}$
+
+\item  \label{orderedpairinversesecond} $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$
+
+\end{enumerate}
+\end{multicols}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  \begin{enumerate} \item  To determine whether or not $f$ is one-to-one analytically, we assume  $f(a) = f(b)$ and work to see if we can deduce $a = b$.    As we work our way through the problem below on the left, we encounter a quadratic equation.  We rewrite the equation so it equals $0$ and factor by grouping. We get $a=b$ as one possibility, but we also get the possibility that $a=2-b$.  This suggests that $f$ may not be one-to-one.  Taking $b=0$, we get $a = 0$ or $a = 2$.  Since  $f(0) = 4$ and $f(2) = 4$, we have two different inputs with the same output, proving $f$ is neither one-to-one nor invertible.
+
+
+\item  We note that $f$ is a quadratic function and we graph $y=f(x)$ using the techniques presented in Section \ref{QuadraticFunctions}  below on the right.  We see the graph fails the Horizontal Line Test quite often - in particular, crossing the line $y=4$ at the points $(0,4)$ and $(2,4)$.
+
+\begin{center}
+
+\begin{tabular}{m{3in}m{3in}}
+
+$\begin{array}{rcl}
+
+f(a) & = & f(b)  \\
+a^2 - 2a+4 & = & b^2 - 2b+4 \\
+
+a^2 - 2a & = & b^2 - 2b \\
+
+a^2 - b^2 - 2a + 2b & = & 0  \\
+
+(a+b)(a-b) - 2(a-b) & = & 0 \\
+
+(a-b)((a+b) -2) & = & 0 \\
+
+a-b = 0 & \text{or} & a+b -2 = 0 \\
+
+a = b & \text{or} & a = 2-b \\
+
+\end{array} $
+
+&
+
+ \begin{mfpic}[15]{-3}{3}{-1}{7}
+
+\dashed \polyline{(-1,4), (3,4)}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4,5,6}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,7){\scriptsize $y$}
+\tcaption{\scriptsize $y=f(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-1,3,0.1}{(x**2)-(2*x)+4}
+\point[4pt]{(1,3)} 
+\end{mfpic} \\
+
+
+\end{tabular}
+
+\end{center}
+
+\end{enumerate}
+
+\item \begin{enumerate} \item We begin with the assumption that $g(a) = g(b)$ for $a$, $b$ in the domain of $g$ (That is, we assume $a \neq 1$ and $b \neq 1$.)  Through our work below on the left, we deduce $a=b$, proving $g$ is one-to-one.
+
+\item  We  graph $y=g(t)$ below on the right using the procedure outlined in Section \ref{RationalGraphs}.  We find the sole intercept is $(0,0)$ with asymptotes $t=1$ and $y = -2$. Based on our graph, the graph of $g$ appears to pass the Horizontal Line Test, verifying $g$ is one-to-one.
+
+\begin{center}
+
+\begin{tabular}{m{3in}m{3in}}
+
+$\begin{array}{rcl}
+g(a) & = & g(b)  \\ [3pt]
+\dfrac{2a}{1-a} & = & \dfrac{2b}{1-b}  \\ [6pt]
+2a(1-b) & = & 2b(1-a)  \\
+2a - 2ab & = & 2b - 2ba  \\
+2a & = & 2b  \\
+a & = & b \, \, \checkmark \\ 
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-7}{5}
+\dashed \polyline{(1,-7), (1,5)}
+\dashed \polyline{(-5,-2), (5,-2)}
+\axes
+\xmarks{-4, -3, -2,-1,1,2,3,4}
+\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](4,-1.5){\scriptsize $y=-2$}
+\gclear \tlabelrect(0, -6.5){\scriptsize $t = 1$}
+\tcaption{\scriptsize $y=g(t)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-1$} -1, {$-3$} -3, {$-4$} -4,{$-5$} -5, {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-5,0.7,0.1}{(2*x)/(1-x)}
+\arrow \reverse \arrow \function{1.4,5,0.1}{(2*x)/(1-x)}
+\point[4pt]{(0,0)}
+\end{mfpic} \\
+
+\end{tabular}
+\end{center}
+
+Since $g$ is one-to-one, $g$ is invertible.  Even though we do not have a \textit{formula} for $g^{-1}(t)$, we can nevertheless sketch the graph of $y = g^{-1}(t)$ by reflecting the graph of $y=g(t)$ across  $y = t$.  
+
+\smallskip
+
+Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the graph of $y = g^{-1}(t)$ will have a \textit{horizontal} asymptote $y = 1$.  Similarly, the \textit{horizontal} asymptote $y=-2$ on the graph of $g$ corresponds to a \textit{vertical} asymptote $t = -2$ on the graph of $g^{-1}$.  The point $(0,0)$ remains unchanged when we switch the $t$ and $y$ coordinates, so it is on both the graph of $g$ and $g^{-1}$.  
+
+\[ \begin{array}{ccc}
+
+
+\begin{mfpic}[15]{-5}{5}{-7}{5}
+\dashed \polyline{(1,-7), (1,5)}
+\dashed \polyline{(-5,-2), (5,-2)}
+\axes
+\xmarks{-4, -3, -2,-1,1,2,3,4}
+\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](4,-1.5){\scriptsize $y=-2$}
+\gclear \tlabelrect(0, -6.5){\scriptsize $t = 1$}
+\tcaption{\scriptsize $y=g(t)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-1$} -1, {$-3$} -3, {$-4$} -4,{$-5$} -5, {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-5,0.7,0.1}{(2*x)/(1-x)}
+\arrow \reverse \arrow \function{1.4,5,0.1}{(2*x)/(1-x)}
+\point[4pt]{(0,0)}
+\end{mfpic}
+
+&
+
+\stackrel{\stackrel{\text{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1.25in}}}}{\text{ \scriptsize switch $t$ and $y$ coordinates}} 
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-7}{5}
+\dashed \polyline{(-2,-7), (-2,5)}
+\dashed \polyline{(-5,1), (5,1)}
+\axes
+\xmarks{-4, -3, -2,-1,1,2,3,4}
+\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](4,1.5){\scriptsize $y=1$}
+\gclear \tlabelrect(-2, -6){\scriptsize $t=-2$}
+\tcaption{\scriptsize $y=g^{-1}(t)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-1$} -1, {$-2$} -2,{$-3$} -3, {$-4$} -4,{$-5$} -5, {$-6$} -6,  {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-5,-2.5,0.1}{x/(x+2)}
+\arrow \reverse \arrow \function{-1.66,5,0.1}{x/(x+2)}
+\point[4pt]{(0,0)}
+\end{mfpic}  \end{array}\]
+
+
+\end{enumerate}
+
+\item  \begin{enumerate} \item The function $F$ is given to us as a set of ordered pairs. Recall each ordered pair is of the form $(a, F(a))$.  Since  $(-1,1)$ and $(2,1)$ are both elements of $F$, this means $F(-1)=1$ and $F(2) = 1$.  Hence, we have two distinct inputs, $-1$ an $2$ with the same output, $1$, so $F$ is not one-to-one and, hence, not invertible.
+
+\item  To graph $F$, we plot the points in $F$ below on the left.  We see the horizontal line $y=1$ crosses the graph more than once.  Hence, the graph of $F$ fails the Horizontal Line Test.
+
+\begin{center}
+
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\point[4pt]{(-1,1), (0,2), (2,1), (1,-3)}
+\dashed \polyline{(-5,1), (5,1)}
+\axes
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $y=F(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+\end{enumerate}
+
+\item  Like the function $F$ above, the function $G$ is described as a set of ordered pairs.  Before we set about determining whether or not $G$ is one-to-one, we take a moment to show $G$ is, in fact, a function. That is, we must show that each real number input to $G$ is matched to only one output.  
+
+\smallskip
+
+We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and we know that when represented in this way, each ordered pair is of the form $(\text{input}, \text{output})$.  Hence, the inputs to $G$ are of the form $t^3+1$ and the outputs from $G$ are of the form $2t$.  To establish $G$ is a function, we must show that each input produces only one output.  If it should happen that $a^3+1 = b^3+1$, then we must show $2a = 2b$.  The equation $a^3+1 = b^3+1$ gives $a^3=b^3$, or  $a=b$. From this it follows that $2a=2b$ so $G$ is a function.
+
+\begin{enumerate}
+
+\item To show $G$ is one-to-one, we must show that if two outputs from $G$ are the same, the corresponding inputs must also be the same.  That is, we must show that if $2a=2b$, then $a^3+1 = b^3+1$.  We see almost immediately that if $2a=2b$ then $a=b$ so $a^3+1 = b^3+1$ as required.  This shows $G$ is one-to-one and, hence,  invertible.
+
+
+\item We graph $G$ below on the left  by plotting points in the default $xy$-plane by choosing different values for $t$.  For instance, $t=0$ corresponds to the point $(0^3+1, 2(0)) = (1,0)$, $t=1$ corresponds to the point $(1^3+1, 2(1)) = (2,2)$, $t=-1$ corresponds to the point $((-1)^3+1, 2(-1)) = (0, -2)$, etc.\footnote{Foreshadowing Section \ref{ParametricEquations}, we  could let $x= t^3+1$ so that $t = \sqrt[3]{x-1}$.  Hence, $y = 2t =  2\sqrt[3]{x-1}$.} Our graph appears to pass the Horizontal Line Test, confirming $G$ is one-to-one.  We obtain the graph of $G^{-1}$ below on the right by reflecting the graph of $G$ about the line $y=x$.
+
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+\[ \begin{array}{ccc}
+
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](1.25,-2){\scriptsize $(0,-2)$}
+\tlabel[cc](1.75,0.5){\scriptsize $(1,0)$}
+\tlabel[cc](1,2){\scriptsize $(2,2)$}
+\tcaption{\scriptsize $y=G(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.81, 1.58, 0.1}{(t**3+1, 2*t)}
+\point[4pt]{(0,-2), (1,0), (2,2)}
+\end{mfpic}
+
+
+&
+
+\stackrel{\stackrel{\text{\scriptsize reflect across $y=x$}}{\xrightarrow{\hspace{1.25in}}}}{\text{ \scriptsize switch $x$ and $y$ coordinates}} 
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\xmarks{-4,-3, -2,-1,1,2,3,4}
+\ymarks{-4,-3, -2,-1,1,2,3,4}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-3,0.5){\scriptsize $(-2,0)$}
+\tlabel[cc](0.75, 0.5){\scriptsize $(0,1)$}
+\tlabel[cc](3,2){\scriptsize $(2,2)$}
+\tcaption{\scriptsize $y=G^{-1}(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1,{$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.81, 1.58, 0.1}{(2*t, t**3+1)}
+\point[4pt]{(-2,0), (0,1), (2,2)}
+\end{mfpic}
+\end{array}\]
+
+\qed
+
+\end{example}
+
+ In Example \ref{inversefunctiononetooneex}, we showed the functions $G$ and  $g$ are invertible and graphed their inverses.  While graphs are perfectly fine representations of functions, we have seen where they aren't the most accurate.  Ideally, we would like to represent $G^{-1}$ and $g^{-1}$ in the same manner in which $G$ and $g$ are presented to us.  The key to doing this is to recall that inverse functions take outputs back to their associated inputs.
+ 
+ \smallskip
+ 
+ Consider $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$.  As mentioned in Example \ref{inversefunctiononetooneex}, the ordered pairs which comprise $G$ are in the form  $(\text{input}, \text{output})$.  Hence to find a compatible description for $G^{-1}$, we simply interchange the expressions in each of the coordinates to obtain  $G^{-1} = \{ (2t, t^3+1) \, | \, \text{$t$ is a real number.} \}$.
+ 
+  \smallskip
+ 
+Since the function $g$ was defined in terms of a formula we would like to find a formula representation for $g^{-1}$.  We apply the same logic as above.  Here, the input, represented by the independent variable $t$, and the output, represented by the dependent variable $y$, are related   by the  equation $y = g(t)$.  Hence, to exchange inputs and outputs,  we interchange the `$t$' and `$y$' variables.  Doing so, we obtain the equation $t = g(y)$  which is an \textit{implicit} description for $g^{-1}$.  Solving for $y$ gives an explicit formula for $g^{-1}$, namely $y = g^{-1}(t)$.  We demonstrate this technique below.
+
+ 
+ \[ \begin{array}{rclr}
+y & = & g(t) & \\ [5pt]
+y & = &  \dfrac{2t}{1-t} & \\ [7pt]
+t & = & \dfrac{2y}{1-y} & \text{interchange variables: $t$ and $y$} \\ [3pt]
+t(1-y) & = & 2y & \\ [3pt]
+t-ty & = & 2y & \\ [3pt]
+t & = & ty + 2y & \\ [3pt]
+t & = & y(t+2) & \text{factor}\\ [8pt]
+y & = & \dfrac{t}{t+2}
+\end{array} \]
+
+We claim $g^{-1}(t) = \frac{t}{t+2}$, and leave the algebraic verification of this to the reader.
+
+\smallskip
+
+  We generalize this approach below.  As always, we resort to the default `$x$' and `$y$'  labels for the independent and dependent variables, respectively. 
+  
+\smallskip
+ 
+%% \colorbox{ResultColor}{\bbm
+
+\phantomsection \label{inverseprocedure}
+
+\centerline{\textbf{Steps for finding a formula for the Inverse of a one-to-one function}} \index{inverse ! of a function ! solving for} \index{function ! inverse ! solving for}
+
+\begin{enumerate}
+
+\item  Write $y=f(x)$
+
+\item Interchange $x$ and $y$
+
+\item  Solve $x = f(y)$ for $y$ to obtain $y=f^{-1}(x)$
+
+\end{enumerate}
+
+%% \ebm}
+
+\smallskip 
+
+We now return to $f(x) = x^2$.  We know that $f$ is not one-to-one, and thus, is not invertible, but our goal here is to see what  way to see what goes wrong algebraically.
+
+
+\smallskip
+
+If we attempt to follow the algorithm above to find a formula for $f^{-1}(x)$, we start with the equation $y=x^2$ and interchange the  variables `$x$' and `$y$' to produce the equation $x = y^2$.  Solving for $y$ gives $y = \pm \sqrt{x}$.  It's this `$\pm$' which is causing the problem for us since this produces \textit{two} $y$-values for any $x>0$. 
+
+\smallskip
+
+
+Using the language of Section \ref{Relations},  the equation $x = y^2$ implicitly defines \textit{two} functions, $g_{1}(x) = \sqrt{x}$ and $g_{2}(x) = -\sqrt{x}$, each of which represents the top and bottom halves, respectively, of the graph of $x = y^2$.
+
+\begin{multicols}{3}
+
+\begin{mfpic}[15]{-1}{8}{-3}{3}
+\axes
+\tlabel[cc](4,-2.75){\scriptsize $(4,-2)$}
+\tlabel[cc](4,2.5){\scriptsize $(4,2)$}
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize $x=y^2$}
+\ymarks{-2,-1,1,2}
+\xmarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-2.75, 2.75, 0.1}{(t**2,t)}
+\point[4pt]{(4,-2), (4,2), (0,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-1}{8}{-3}{3}
+\axes
+\tlabel[cc](4,2.5){\scriptsize $(4,2)$}
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize $y = g_{1}(x) = \sqrt{x}$}
+\ymarks{-2,-1,1,2}
+\xmarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\penwd{1.25pt}
+\arrow  \parafcn{0, 2.75, 0.1}{(t**2,t)}
+\point[4pt]{ (4,2), (0,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-1}{8}{-3}{3}
+\axes
+\tlabel[cc](4,-2.75){\scriptsize $(4,-2)$}
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tcaption{\scriptsize $y = g_{2}(x) = -\sqrt{x}$}
+\ymarks{-2,-1,1,2}
+\xmarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\penwd{1.25pt}
+\arrow \reverse \parafcn{-2.75, 0, 0.1}{(t**2,t)}
+\point[4pt]{(4,-2), (0,0)}
+\end{mfpic}
+
+\end{multicols}
+
+Hence, in some sense, we have two  \textit{partial} inverses for $f(x) = x^2$:  $g_{1}(x) = \sqrt{x}$ returns the \textit{positive} inputs from $f$ and $g_{2}(x) = -\sqrt{x}$ returns the \textit{negative} inputs to $f$.  In order to view each of these functions as strict inverses, however, we need to split $f$ into two parts:  $f_{1}(x) = x^2$ for $x \geq 0$ and $f_{2}(x) = x^2$ for $x \leq 0$.
+
+\begin{multicols}{3}
+
+
+\begin{mfpic}[15]{-3}{3}{-1}{8}
+\tlabel[cc](-3.3,4){\scriptsize $(-2,4)$}
+\tlabel[cc](3,4){\scriptsize $(2,4)$}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\tcaption{\scriptsize $y=f(x) = x^2$}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.75, 2.75, 0.1}{x**2}
+\point[4pt]{(-2,4), (2,4),(0,0)}
+\end{mfpic}  
+
+\begin{mfpic}[15]{-3}{3}{-1}{8}
+\tlabel[cc](3,4){\scriptsize $(2,4)$}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\tcaption{\scriptsize $y=f_{1}(x) = x^2$, $x \geq 0$}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\penwd{1.25pt}
+ \arrow \function{0, 2.75, 0.1}{x**2}
+\point[4pt]{(2,4),(0,0)}
+\end{mfpic}  
+
+\begin{mfpic}[15]{-3}{3}{-1}{8}
+\tlabel[cc](-3.3,4){\scriptsize $(-2,4)$}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\tcaption{\scriptsize $y=f_{2}(x) = x^2$, $x \leq 0$}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\penwd{1.25pt}
+\arrow \reverse \function{-2.75, 0, 0.1}{x**2}
+\point[4pt]{(-2,4), (0,0)}
+\end{mfpic}  
+
+
+\end{multicols}
+
+
+We claim that $f_{1}$ and $g_{1}$ are an inverse function pair as are $f_{2}$ and $g_{2}$.  Indeed, we find:
+
+\begin{center}
+
+\begin{tabular}{m{2.25in}m{1.75in}m{2.25in}}
+
+$\begin{array}{rcl}
+
+(g_{1} \circ f_{1})(x) & = & g_{1}(f_{1}(x))  \\
+                                & = & g_{1}(x^2)  \\
+                                & = & \sqrt{x^2}   \\
+                                & = & |x|  = x,  \, \text{as $x \geq 0$.}  \\
+                                
+                                          
+\end{array}$
+
+&
+
+$\begin{array}{rcl}
+
+(f_{1} \circ g_{1})(x) & = & f_{1}(g_{1}(x))  \\
+                                & = & f_{1}(\sqrt{x})  \\
+                                & = & (\sqrt{x})^2   \\
+                                & = & x \\
+
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-1}{8}{-1}{8}
+\tlabel[cc](8,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\tcaption{\scriptsize $y=f_{1}(x) = x^2$, $x \geq 0$ and $y = g_{1}(x) = \sqrt{x}$} 
+\axes
+\dashed \polyline{(-0.5, -0.5), (6.5,6.5)}
+\xmarks{1,2,3,4,5,6,7}
+\ymarks{1,2,3,4,5,6,7}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
+\penwd{1.25pt}
+ \arrow \function{0, 2.75, 0.1}{x**2}
+  \arrow \function{0, 7.56, 0.1}{sqrt(x)}
+\point[4pt]{(2,4),(0,0), (4,2)}
+\end{mfpic}   \\
+
+\end{tabular}
+
+\end{center}
+
+
+
+\begin{center}
+
+\begin{tabular}{m{2.25in}m{1.75in}m{2.25in}}
+
+$\begin{array}{rcl}
+
+(g_{2} \circ f_{2})(x) & = & g_{2}(f_{2}(x))  \\
+                                & = & g_{2}(x^2)  \\
+                                & = & -\sqrt{x^2}   \\
+                                & = & - |x| \\
+                                & = & -(-x) = x, \, \text{as $x \leq 0$.}
+\end{array}$
+
+&
+
+$\begin{array}{rcl}
+
+(f_{2} \circ g_{2})(x) & = & f_{2}(g_{2}(x))  \\
+                                & = & f_{2}(-\sqrt{x})  \\
+                                & = & (-\sqrt{x})^2   \\
+                                 & = & (\sqrt{x})^2   \\
+                                & = & x \\
+
+\end{array}$
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $y=f_{2}(x) = x^2$, $x \leq 0$ and $y = g_{2}(x) = -\sqrt{x}$}
+\axes
+\dashed \polyline{(-3.5, -3.5), (3.5, 3.5)}
+\xmarks{-4, -3, -2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-4$ \hspace{7pt}} -4,{\scriptsize $-3$ \hspace{7pt}} -3,{\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $-1$} -1,  {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4 }
+\penwd{1.25pt}
+\arrow \reverse \function{-2.23, 0, 0.1}{x**2}
+\arrow  \function{0, 5, 0.1}{0-sqrt(x)}
+\point[4pt]{(-2,4), (0,0), (4,-2)}
+\end{mfpic}    \\
+
+\end{tabular}
+
+\end{center}
+
+Hence, by restricting the domain of $f$ we are able to produce invertible functions.   Said differently, in much the same way the equation $x = y^2$ implicitly describes a pair of \textit{functions}, the equation $y = x^2$ implicitly describes a pair of \textit{invertible} functions.
+
+\smallskip
+
+Our next example continues the theme of restricting the domain of a function to find inverse functions.
+
+\smallskip
+
+\begin{example} \label{inverserestrictionex} Graph the following functions to show they are one-to-one and find their inverses. Check your answers analytically using function composition and graphically.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item  $j(x) = x^2 - 2x + 4$, $x \leq 1$.
+
+\item  $k(t) = \sqrt{t+2} - 1$
+
+\end{enumerate}
+
+\end{multicols} 
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  The function $j$ is a restriction of the function $f$ from Example \ref{inversefunctiononetooneex}.  Since the domain of $j$ is restricted to $x \leq 1$, we are selecting only the `left half' of the parabola.  Hence, the graph of $j$, seen below on the left,  passes the Horizontal Line Test and thus $j$ is invertible. Below on the right, we find an explicit formula for $j^{-1}(x)$ using our standard algorithm.\footnote{Here, we use the Quadratic Formula to solve for $y$.  For `completeness,' we note you can (and should!) also consider solving for $y$ by `completing' the square.} 
+
+\begin{center}
+
+\begin{tabular}{m{1.75in}m{4.25in}}
+
+\begin{mfpic}[15]{-1}{3}{-1}{7}
+\axes
+\xmarks{1,2}
+\ymarks{1,2,3,4,5,6}
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,7){\scriptsize $y$}
+\tcaption{\scriptsize $y=j(x)$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$1$} 1, {$2$} 2}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \function{-1,1,0.1}{(x**2)-(2*x)+4}
+\point[4pt]{(1,3)}
+\end{mfpic}
+&
+
+$ \begin{array}{rclr}
+y & = & j(x) & \\
+y & = & x^2-2x+4, \, \, \, x \leq 1 \\
+x & = & y^2 - 2y+4, \, \, \, y \leq 1 & \text{switch $x$ and $y$} \\
+0 & = & y^2 - 2y + 4-x & \\
+y & = & \dfrac{2 \pm \sqrt{(-2)^2-4(1)(4-x)}}{2(1)} & \text{quadratic formula, $c=4-x$} \\ [10pt]
+y & = & \dfrac{2 \pm \sqrt{4x-12}}{2} & \\ [6pt]
+y & = & \dfrac{2 \pm \sqrt{4(x-3)}}{2} & \\ [6pt]
+y & = & \dfrac{2 \pm 2\sqrt{x-3}}{2} & \\ [6pt]
+y & = & \dfrac{2\left(1 \pm \sqrt{x-3}\right)}{2} & \\ [6pt]
+y & = & 1 \pm \sqrt{x-3} & \\
+y & = & 1 - \sqrt{x-3} & \text{since $y \leq 1$.} \\
+\end{array}$ \\
+
+\end{tabular}
+
+\end{center}
+
+Hence, $j^{-1}(x) = 1 - \sqrt{x-3}$.
+
+\smallskip
+
+To check our answer algebraically, we simplify $(j^{-1} \circ j)(x)$ and $(j \circ j^{-1})(x)$ Note the importance of the domain restriction  $x \leq 1$ when simplifying $(j^{-1} \circ j)(x)$.
+\begin{center}
+
+\begin{multicols}{2}
+
+$\begin{array}{rcl}
+\left(j^{-1} \circ j \right)(x) & = & j^{-1}(j(x)) \\ 
+& = & j^{-1}\left(x^2-2x+4\right), \, \, \, x \leq 1 \\
+& = & 1 - \sqrt{\left(x^2-2x+4\right)-3}  \\
+& = & 1 - \sqrt{x^2-2x+1}  \\
+& = & 1 - \sqrt{(x-1)^2} \\
+& = & 1 - |x-1|  \\
+& = & 1 - (-(x-1)) \, \,  \text{since $x \leq 1$}\\
+& = & x \, \, \checkmark \\
+\end{array}$
+
+
+
+$\begin{array}{rcl}
+\left(j \circ j^{-1} \right)(x) & = & j\left(j^{-1}(x)\right)  \\ 
+& = & j\left(1 - \sqrt{x-3}\right)  \\
+& = & \left(1 - \sqrt{x-3}\right)^2-2\left(1 - \sqrt{x-3}\right)+4  \\
+& = & 1 - 2\sqrt{x-3} + \left(\sqrt{x-3}\right)^2 -2 \\
+&      & + \, 2\sqrt{x-3}+4  \\
+& = & 1+ x-3 -2 +4 \\
+& = &  x \, \, \checkmark \\
+\end{array}$  
+
+\end{multicols}
+\end{center}
+
+We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric about the line $y=x$.
+
+\begin{center}
+
+\begin{mfpic}[15]{-1}{7}{-1}{7}
+\axes
+\dashed \polyline{(-1,-1), (7,7)}
+\xmarks{1,2,3,4,5,6}
+\ymarks{1,2,3,4,5,6}
+\tlabel[cc](-2,4){\scriptsize $y=j(x)$}
+\tlabel[cc](4,-2){\scriptsize $y=j^{-1}(x)$}
+\tlabel[cc](5.5,4){\scriptsize $y=x$}
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,7){\scriptsize $y$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$1$} 1, {$2$} 2,{$3$} 3, {$4$} 4,{$5$} 5, {$6$} 6}
+\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \function{-1,1,0.1}{(x**2)-(2*x)+4}
+\arrow \function{3,7,0.1}{1-sqrt(x-3)}
+\point[4pt]{(1,3), (3,1)}
+\end{mfpic}
+
+
+\end{center}
+
+
+\item  Graphing $y=k(t) =\sqrt{t+2} - 1$, we see  $k$ is one-to-one, so we proceed to find an formula for $k^{-1}$.
+
+\begin{center}
+
+\begin{tabular}{m{1.75in}m{4.25in}}
+
+\begin{mfpic}[15]{-3}{3}{-3}{3}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{-2,-1,1,2}
+\tcaption{\scriptsize $y=k(t)$}
+\tlabel[cc](3,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-2 \hspace{7pt} $} -2, {$-1 \hspace{7pt} $} -1,{$1$} 1, {$2$} 2}
+\axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{-2,3,0.1}{sqrt(x+2)-1}
+\point[4pt]{(-2,-1)}
+\end{mfpic} 
+
+&
+
+
+$\begin{array}{rclr}
+
+y & = & k(t) & \\
+
+y & = & \sqrt{t+2}-1 & \\
+
+t & = & \sqrt{y+2} - 1 & \text{switch $t$ and $y$} \\
+
+t+1 & = & \sqrt{y+2} & \\
+
+(t+1)^2 & = & \left(\sqrt{y+2}\right)^2 & \\
+
+t^2 + 2t + 1 & = & y + 2 & \\
+
+y & = & t^2 + 2t - 1 & \\
+
+\end{array}$
+
+\end{tabular}
+
+\end{center}
+
+
+We have $k^{-1}(t) = t^2+2t-1$.  Based on our experience, we know something isn't quite right.  We determined $k^{-1}$ is a quadratic function, and we have seen several times in this section that these are not one-to-one unless their domains are suitably restricted.  
+
+\smallskip
+
+Theorem \ref{inversefunctionprops} tells us that the domain of $k^{-1}$ is the range of $k$.  From the graph of $k$, we see that the range is $[-1, \infty)$, which means we restrict the domain of $k^{-1}$ to $t \geq -1$. 
+
+\smallskip
+
+We now check that this works in our compositions. Note the importance of the domain restriction, $t \geq -1$ when simplifying $(k \circ k^{-1})(t)$.
+
+
+
+\begin{multicols}{2}
+
+$ \begin{array}{rcl}
+\left(k^{-1} \circ k \right)(t) & = & k^{-1}(k(t))  \\ 
+& = & k^{-1}\left(\sqrt{t+2}-1\right)  \\
+& = & \left(\sqrt{t+2}-1\right)^2 + 2\left(\sqrt{t+2}-1\right) - 1 \\
+& = & \left(\sqrt{t+2}\right)^2 - 2\sqrt{t+2} + 1 \\
+&& + \, 2 \sqrt{t+2} - 2 - 1  \\
+& = &t+2 -2   \\
+& = & t \, \, \checkmark \\
+\end{array}$
+
+
+$\begin{array}{rcl}
+\left(k \circ k^{-1} \right)(t) & = & k\left( t^2+2t-1 \right), \, \, \, t \geq -1  \\ 
+& = & \sqrt{\left(t^2+2t-1\right)+2}-1  \\
+& = & \sqrt{t^2+2t+1}-1  \\
+& = & \sqrt{(t+1)^2}-1  \\
+& = & |t+1| -1  \\
+& = & t+1 -1, \, \,  \text{since $t \geq -1$} \\
+& = & t \, \, \checkmark \\
+\end{array}$
+
+\end{multicols}
+
+
+
+Graphically, everything checks out, provided that we remember the domain restriction on $k^{-1}$ means we take the right half of the parabola.
+
+\begin{center}
+
+\begin{mfpic}[25]{-3}{3}{-3}{3}
+
+\dashed \polyline{(-2,-2),(2,2)}
+\tlabel[cc](-1,1){\scriptsize $y=k(t)$}
+\tlabel[cc](1,-1){\scriptsize $y=k^{-1}(t)$}
+\point[3pt]{(-2,-1),(-1,-2)}
+\axes
+\xmarks{-2,-1,1,2}
+\ymarks{-2,-1,1,2}
+\tlabel[cc](3,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-2 \hspace{7pt} $} -2, {$-1 \hspace{7pt} $} -1,{$1$} 1, {$2$} 2}
+\axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{-2,3,0.1}{sqrt(x+2)-1}
+\arrow \function{-1,1.2,0.1}{(x**2)+(2*x)-1}
+\point[4pt]{(-2,-1), (-1,-2)}
+\end{mfpic}
+
+\end{center}
+
+\qed
+
+\end{enumerate}
+
+\end{example}
+
+Our last example of the section gives an application of inverse functions.  Recall in Example \ref{PortaBoyDemand} in Section \ref{ConstantandLinearFunctions}, we modeled the demand for PortaBoy game systems as the price per system, $p(x)$ as a function of the number of systems sold, $x$.  In the following example, we find $p^{-1}(x)$ and interpret what it means.
+
+
+
+\begin{example} \label{demandfunctionofprice} Recall the price-demand function for PortaBoy game systems is modeled by the formula $p(x) = -1.5x + 250$ for $0 \leq x \leq 166$  where $x$ represents the number of systems sold (the demand) and $p(x)$ is the price per system, in dollars.  
+
+\begin{enumerate}
+
+\item  Explain why $p$ is one-to-one and find a formula for $p^{-1}(x)$.  State the restricted domain.
+
+\item  Find and interpret $p^{-1}(220)$.
+
+\item  \label{maxprofitinverseex} Recall from Section \ref{QuadraticFunctions} that the  profit $P$, in dollars, as a result of selling $x$ systems is given by $P(x)= -1.5x^2+170x-150$.  Find and interpret $\left( P \circ p^{-1}\right)(x)$.  
+
+\item  Use your answer to part \ref{maxprofitinverseex} to determine the price per PortaBoy which would yield the maximum profit.  Compare with Example \ref{PortaBoyProfit}.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  Recall the graph of $p(x) = -1.5x + 250$, $0 \leq x \leq 166$, is a line segment from $(0,250)$ to $(166,1)$, and as such passes the Horizontal Line Test.  Hence, $p$ is one-to-one.  We find the expression for $p^{-1}(x)$ as usual and get $p^{-1}(x) =  \frac{500-2x}{3}$.  The domain of $p^{-1}$ should match the range of $p$, which is $[1,250]$, and as such, we restrict the domain of $p^{-1}$ to $1 \leq x \leq 250$.  
+
+\item  We find $p^{-1}(220) = \frac{500-2(220)}{3} = 20$.  Since the function $p$ took as inputs the number of systems sold and returned the price per system as the output, $p^{-1}$ takes the price per system as its input and returns the number of systems sold as its output.  Hence, $p^{-1}(220) = 20$ means $20$ systems will be sold in if the price is set at $\$ 220$ per system.
+
+\item  We compute $\left( P \circ p^{-1}\right)(x) = P \left(p^{-1}(x)\right) = P\left(\frac{500-2x}{3}\right) =  -1.5\left(\frac{500-2x}{3}\right)^2+170\left(\frac{500-2x}{3}\right)-150$. After a hefty amount of Elementary Algebra,\footnote{It is good review to actually do this!} we obtain $\left( P \circ p^{-1}\right)(x) = -\frac{2}{3} x^2 +220x - \frac{40450}{3}$.  
+
+\smallskip
+
+To understand what this means, recall that the original profit function $P$ gave us the profit as a function of the number of systems sold.  The function $p^{-1}$ gives us the number of systems sold as a function of the price.  Hence, when we compute $(P \circ p^{-1})(x) = P(p^{-1}(x))$, we input a price per system, $x$ into the function $p^{-1}$.  
+
+\smallskip
+
+The number $p^{-1}(x)$ is the number of systems sold at that price.  This number is then  fed into $P$ to return the  profit obtained by selling $p^{-1}(x)$ systems.  Hence, $\left(P \circ p^{-1}\right)(x)$ gives us the  profit (in dollars) as a function of the price per system, $x$.
+
+\item  We know from Section \ref{QuadraticFunctions} that the graph of $y = \left( P \circ p^{-1}\right)(x)$ is a parabola opening downwards.  The maximum profit is realized at the vertex. Since we are concerned only with the price per system, we need only find the $x$-coordinate of the vertex.  Identifying $a = -\frac{2}{3}$ and $b = 220$, we get, by the Vertex Formula, Equation \ref{vertexofquadraticfunctions},  $x = -\frac{b}{2a} = 165$.  
+
+\smallskip
+
+Hence, weekly profit is maximized if we set the price at $\$165$ per system.  Comparing this with our answer from Example \ref{PortaBoyProfit}, there is a slight discrepancy to the tune of $\$0.50$.  We leave it to the reader to balance the books appropriately.  \qed 
+
+\end{enumerate}
+
+\end{example}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforInverseFunctions}
+
+\closegraphsfile
+
+\end{document}

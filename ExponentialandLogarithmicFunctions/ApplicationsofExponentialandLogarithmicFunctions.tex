@@ -1,0 +1,738 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Applications of Exponential and Logarithmic Functions}
+
+
+\opengraphsfile{ApplicationsofExponentialandLogarithmicFunctions}
+
+\setcounter{footnote}{0}
+
+\label{ExpLogApplications}
+
+As we mentioned in Sections \ref{ExponentialFunctions} and \ref{LogarithmicFunctions}, exponential and logarithmic functions are used to model a wide variety of behaviors in the real world.  In the examples that follow, note that while the applications are drawn from many different disciplines, the mathematics remains essentially the same.  Due to the applied nature of the problems we will examine in this section, we will often express our final answers as decimal approximations (after finding exact answers first, of course!)
+
+\subsection{Applications of Exponential Functions}
+\label{expapp}
+
+Perhaps the most well-known application of exponential functions comes from the financial world.  Suppose you have $ \$ 100$ to invest at your local bank and they are offering a whopping $5 \, \%$ annual percentage interest rate.  This means that after one year, the bank will pay \textit{you} $5 \%$ of that $\$100$, or $ \$ 100(0.05) =\$ 5$ in interest, so you now have $\$105$. This is in accordance with the formula for  \textit{simple interest} which you have undoubtedly run across at some point before.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{interest ! simple} \index{simple interest} \label{simpleinterest} \textbf{Simple Interest:} 
+
+The amount of interest $I$ accrued at an annual rate $r$ on an investment\footnote{Called the \index{principal} \textbf{principal}} $P$ after $t$ years is  \[I = Prt\]  The amount  in the account after $t$ years, $A(t)$ is given by \[A(t) = P + I = P + Prt = P(1+rt)\]
+
+\end{eqn}
+
+%% \ebm}
+\smallskip
+
+Suppose, however, that six months into the year, you hear of a better deal at a rival bank.\footnote{Some restrictions may apply.} Naturally, you withdraw your money and try to invest it at the higher rate there.  Since six months is one half of a year, that initial $\$100$ yields $\$100(0.05)\left(\frac{1}{2}\right) = \$ 2.50$ in interest.  
+
+\smallskip
+
+You take your $\$102.50$ off to the competitor and find out that those restrictions which \textit{may} apply actually \underline{do} apply, so you return to your bank and re-deposit the $\$102.50$ for the remaining six months of the year. 
+
+\smallskip 
+
+To your surprise and delight, at the end of the year your statement reads $\$105.06$, not $\$105$ as you had expected.\footnote{Actually, the final balance should be $\$105.0625$.}  Where did those extra six cents come from?  
+
+\smallskip
+
+For the first six months of the year, interest was earned on the original principal of $\$100$, but for the second six months, interest was earned on $\$102.50$, that is, you earned interest on your interest.  This is the basic concept behind \textbf{compound interest}. 
+
+\smallskip
+
+In the previous discussion, we would say that the interest was compounded twice per year, or semiannually.\footnote{Using this convention, simple interest after one year is the same as compounding the interest only once.}  If more money can be earned by earning interest on interest already earned, one wonders what happens if the interest is compounded more often, say every three months -  $4$ times a year, or `quarterly.' 
+
+\smallskip
+
+In this case, the money is in the account for three months, or $\frac{1}{4}$ of a year, at a time.  After the first quarter, we have $A = P(1+rt) =  \$100 \left(1 + 0.05 \cdot \frac{1}{4} \right) = \$101.25$.  We now invest the $\$101.25$ for the next three months and find that at the end of the second quarter, we have $A =  \$101.25 \left(1 + 0.05 \cdot \frac{1}{4} \right)\approx \$102.51$.  Continuing in this manner, the balance at the end of the third quarter is $\$103.79$, and, at last, we obtain $\$105.08$.  The extra two cents hardly seems worth it, but we see that we do in fact get more money the more often we compound. 
+
+\smallskip
+
+In order to develop a formula for this phenomenon, we need to do some abstract calculations.  Suppose we wish to invest our principal $P$ at an annual rate $r$ and compound the interest $n$ times per year.  This means the money sits in the account $\frac{1}{n}^{\mbox{\tiny th}}$ of a year between compoundings.  Let $A_{k}$ denote the amount in the account after the $k^{\mbox{\tiny th}}$ compounding. 
+
+\smallskip
+
+Then $A_{\mbox{\tiny$1$}} = P\left(1 + r\left(\frac{1}{n}\right)\right)$ which simplifies to $A_{\mbox{\tiny$1$}} = P \left(1 + \frac{r}{n}\right)$.  After the second compounding, we use $A_{\mbox{\tiny$1$}}$ as our new principal and get $A_{\mbox{\tiny$2$}} = A_{\mbox{\tiny$1$}} \left(1 + \frac{r}{n}\right) = \left[P \left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right) = P \left(1 + \frac{r}{n}\right)^2$.  Continuing in this fashion, we get $A_{\mbox{\tiny$3$}} =P \left(1 + \frac{r}{n}\right)^3$, $A_{\mbox{\tiny$4$}} =P \left(1 + \frac{r}{n}\right)^4$, and so on, so that $A_{k} = P \left(1 + \frac{r}{n}\right)^k$.  
+
+\smallskip
+
+Since we compound the interest $n$ times per year, after $t$ years, we have $nt$ compoundings. We have just derived the general formula for compound interest below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{interest ! compound} \index{compound interest} \label{compoundinterest} \textbf{Compounded Interest:}  
+
+If an initial principal $P$ is invested at an annual rate $r$ and the interest is compounded $n$ times per year, the amount in the account after $t$ years, $A(t)$  is given by \[A(t) = P \left(1 + \frac{r}{n}\right)^{nt}\]
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip
+
+If we take $P = 100$, $r = 0.05$, and $n = 4$, Equation \ref{compoundinterest} becomes $A(t) = 100\left(1+ \frac{0.05}{4}\right)^{4t}$ which reduces to $A(t) = 100(1.0125)^{4t}$.  To check this new formula against our previous calculations, we find $A\left(\frac{1}{4}\right) = 100(1.0125)^{4 \left(\frac{1}{4}\right)} = 101.25$, $A\left(\frac{1}{2}\right) \approx \$102.51$, $A\left(\frac{3}{4}\right) \approx \$103.79$, and $A(1) \approx \$105.08$.
+
+\begin{example}  \label{compoundinterestex} Suppose $\$2000$ is invested in an account which offers $7.125 \%$ compounded monthly.
+
+\begin{enumerate}
+
+\item Express the amount $A(t)$ in the account as a function of the term of the investment $t$ in years.
+
+\item  How much is in the account after $5$ years? 
+
+\item  How long will it take for the initial investment to double?
+
+\item  Find and interpret the average rate of change\footnote{See Definition \ref{arc} in Section \ref{ConstantandLinearFunctions}.} of the amount in the account:
+
+\begin{itemize}
+
+\item  from the end of the fourth year to the end of the fifth year
+
+\item from the end of the thirty-fourth year to the end of the thirty-fifth year.
+
+\end{itemize}
+
+\pagebreak
+
+\item  Find and interpret the relative rate of change\footnote{See Definition \ref{rrc} in Section \ref{ExponentialFunctions}.} of the amount in the account: 
+
+\begin{itemize}
+
+\item  from the end of the fourth year to the end of the fifth year
+
+\item from the end of the thirty-fourth year to the end of the thirty-fifth year.
+
+\end{itemize}
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  Substituting $P = 2000$, $r = 0.07125$, and $n = 12$ (since interest is compounded \textit{monthly}) into Equation \ref{compoundinterest} yields $A(t) = 2000\left(1 + \frac{0.07125}{12}\right)^{12t}=2000 (1.0059375)^{12t}$.
+
+\item  To find the amount in the account after $5$ years, we compute $A(5) = 2000 (1.0059375)^{12(5)} \approx 2852.92$.  After $5$ years, we have approximately $\$2852.92$.
+
+\item  Our initial investment is $\$2000$, so to find the time it takes this to double, we need to find $t$ when $A(t) = 4000$.  That is, we need to solve $2000 (1.0059375)^{12t}=4000$, or $(1.0059375)^{12t}=2$.  
+
+\smallskip
+
+Taking natural logs as in Section \ref{ExponentialEquationsandInequalities}, we get $t = \frac{\ln(2)}{12 \ln(1.0059375)} \approx 9.75$.  Hence, it takes approximately $9$ years $9$ months for the investment to double.
+
+\item  Recall to find the average rate of change of $A$ over an interval $[a,b]$, we compute $\frac{A(b)-A(a)}{b-a}$.
+
+\begin{itemize}
+
+\item  The average rate of change of $A$  from the end of the fourth year to the end of the fifth year is $\frac{A(5)-A(4)}{5-4} \approx 195.63$.  
+
+\smallskip
+
+This means that the value of the investment is increasing at a rate of approximately $\$195.63$ per year between the end of the fourth and fifth years.
+
+\item  Likewise, the average rate of change of $A$  from the end of the thirty-fourth year to the end of the thirty-fifth year is $\frac{A(35)-A(34)}{35-34} \approx 1648.21$, so the value of the investment is increasing at a rate of approximately $\$1648.21$ per year during this time.
+
+\end{itemize}
+
+So, not only is it true that the longer you wait, the more money you have, but also the longer you wait, the faster the money increases.\footnote{In fact, the rate of increase of the amount in the account is exponential as well.  This is the quality that really defines exponential functions and we refer the reader to a course in Calculus.} 
+
+\item    Recall to find the relative rate of change of $A$ over an interval $[a,b]$, we compute $\frac{A(b)-A(a)}{A(a)}$.
+
+\begin{itemize}
+
+\item  The relative rate of change of $A$ from the end of the fourth year to the end of the fifth year is $\frac{A(5)-A(4)}{A(4)} \approx 0.07362$. 
+
+\smallskip
+
+This means that the amount in the account is increasing at a rate of approximately $7.362 \%$ per year between the end of the fourth and fifth years.
+
+\item Similarly, we find the relative rate of change of $A$ from the end  of the thirty-fourth year to the end of the thirty-fifth year to be $\frac{A(35)-A(34)}{A(34)} \approx  0.07362$ as well.  
+
+This means that the percentage growth from the thirty-fourth to thirty-fifth year is $7.362 \%$, the same as the percentage growth from the fourth to the fifth year.
+
+\end{itemize}
+
+We know from the remarks following Definition \ref{rrc} that for exponential functions, the relative rate of change over an interval of length $1$ is constant and, moreover, is equal to $b-1$ where $b$ is the base of the exponential function, $f(x) = a \cdot b^{x}$.  
+
+\smallskip
+
+In our scenario,  $A(t) = 2000 (1.0059375)^{12t} = 2000  \left[(1.0059375)^{12}\right]^{t} = 2000 \cdot (1.07362 \ldots)^t$.  Hence, the base is $b = 1.07362 \ldots$ and the relative rate of change is $b-1 = 0.07362 \ldots$.    
+
+\smallskip
+
+Note that the interest rate quoted to us at the beginning of this problem is $7.125 \%$ per year.  The rate $7.362 \%$ is called the `\textit{effective}' interest rate which factors in the effect of the compounding on the growth of the investment. \qed
+
+\end{enumerate}
+
+\end{example}
+
+We have observed that the more times you compound the interest per year, the more money you will earn in a year.  Let's push this notion to the limit.\footnote{See Section \ref{IntroLimits} to understand this pun.}  
+
+\smallskip
+
+Consider an investment of $\$ 1$ invested at $100 \%$ interest for $1$ year compounded $n$ times a year.  Equation \ref{compoundinterest} tells us that the amount of money in the account after $1$ year is $A = \left(1+\frac{1}{n}\right)^{n}$.  Below is a table of values relating $n$ and $A$.
+
+\[ \begin{array}{|r||r|}  
+
+\hline
+
+ n & A   \\ \hline
+1  & 2  \\  \hline
+2  & 2.25  \\  \hline
+4 & \approx 2.4414  \\  \hline
+12 & \approx 2.6130  \\  \hline
+360  & \approx  2.7145 \\  \hline
+1000  & \approx 2.7169 \\  \hline
+10000  & \approx 2.7181  \\  \hline
+100000 & \approx 2.7182  \\  \hline
+\end{array} \]
+
+As promised, the more compoundings per year, the more money there is in the account, but we also observe that the increase in money is greatly diminishing.  
+
+\smallskip
+
+We are witnessing a mathematical `tug of war'.  While we are compounding more times per year, and hence getting interest on our interest more often, the amount of time between compoundings is getting smaller and smaller, so there is less time to build up additional interest. 
+
+\smallskip
+
+With Calculus, we can show\footnote{Or define, depending on your point of view.} that $\ds{\lim_{n \rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = e}$, where $e$ is the natural base first presented in Section \ref{ExponentialFunctions}.  Taking the number of compoundings per year to infinity results in what is called  \textbf{continuously} compounded interest.  
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{whatise} Investing $\$1$ at $100 \%$ interest compounded continuously for one year returns $\$ e$. 
+
+\end{theorem}
+
+%% \ebm}
+
+\medskip
+
+Using the limit definition of $e$ along with some limit properties, we can derive a general formula for continuously compounded interest. 
+
+\medskip
+
+ Consider the limit $\ds{\lim_{n \rightarrow \infty} P\left(1 + \frac{r}{n}\right)^{nt}}$.   In order to use the limit definition of `$e$,' we need to make a substitution to make `$\left(1 + \frac{r}{n}\right)$' look like `$\left(1 + \frac{1}{\text{something}}\right)$.'  
+ 
+ \medskip
+ 
+If we let $u = \frac{n}{r}$, we get $n = r \, u$, so  $1 + \frac{r}{n} = 1 + \frac{r}{ru} = 1 + \frac{1}{u}$ and $nt = (ru)t  = urt$.  In the context of compound interest, $r > 0$, so $n \rightarrow \infty$ implies $u \rightarrow \infty$ and vice-versa so the limit becomes: 
+\[ \lim_{n \rightarrow \infty} P\left(1 + \frac{r}{n}\right)^{nt} =  \lim_{u \rightarrow \infty} P\left(1 + \frac{1}{u}\right)^{urt}.\]
+
+\smallskip
+
+Using Properties of Limits, Theorem \ref{LimitProp01}, we get:
+
+\[ \begin{array}{rclr} 
+
+\ds{\lim_{n \rightarrow \infty} P\left(1 + \frac{r}{n}\right)^{nt}} & = &  \ds{\lim_{u \rightarrow \infty} P\left(1 + \frac{1}{u}\right)^{urt}} & \\[10pt]
+                                                                                        & = & \ds{P \, \lim_{u \rightarrow \infty} \left(1 + \frac{1}{u}\right)^{urt}} & \text{Scalar Multiple Rule} \\[10pt]
+                                                                                        & = & \ds{P \, \lim_{u \rightarrow \infty} \left[\left(1 + \frac{1}{u}\right)^{u}\right]^{rt}} & \text{Properties of Exponents}\\[10pt]
+                                                                                        & = & \ds{P \, \left[  \lim_{u \rightarrow \infty} \left(1 + \frac{1}{u}\right)^{u} \right]^{rt}} & \text{Real Number Powers}\\[10pt]
+                                                                                        & = & Pe^{rt} & \text{Limit Definition of `$e$'.}\\ \end{array}\]
+                                                                                        
+A couple of remarks are in order.  First, in the limit $\ds{\lim_{n \rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} = e}$, the variable here, $n$, takes on natural number values, and as such, is a \textbf{discrete} variable, not a \textbf{continuous} one.\footnote{See Section \ref{geometricrepresentationssection} for a discussion of the difference, if needed!}  We'll revisit limits of discrete variables in Section \ref{sequencelimits}.  
+
+\medskip
+
+Second, when we use the limit definition of `$e$' in the above argument, we used  $\ds{\lim_{u \rightarrow \infty} \left(1+\frac{1}{u}\right)^{u} = e}$.  Like $n$, the variable $u$ is a discrete variable (not necessarily natural numbers, but discrete nonetheless).  Since both $n$ and $u$ are tending to infinity, this change in  dummy variable doesn't affect the limit.\footnote{Both $n$ and $u$ are taking discrete steps to infinity - one is doing so at just a slower pace.}
+
+\medskip
+
+Last, we note that the Real Numbers Power rule applies since $e \approx 2.718 > 0$.  We codify this result in the following theorem.
+
+\medskip
+
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{interest ! compounded continuously} \index{continuously compounded interest} \label{} \textbf{Continuously Compounded Interest:} 
+
+If an initial principal $P$ is invested at an annual rate $r$ and the interest is compounded continuously, the amount  in the account after $t$ years, $A(t)$ is given by  \[A(t) = P e^{rt} \]
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip
+
+It is worth noting that if we take the scenario of Example \ref{compoundinterestex} and compare monthly compounding to continuous compounding over $35$ years, we find that monthly compounding yields $A(35) = 2000 (1.0059375)^{12(35)}$ which is about  $\$ 24,\!035.28$, whereas continuously compounding gives $A(35) = 2000e^{0.07125 (35)}$ which is about  $\$ 24,\!213.18$ - a difference of less than $1 \%$.  
+
+\smallskip
+
+Equations \ref{compoundinterest} and \ref{continuouscompoundinterest} both use exponential functions to describe the growth of an investment.  It turns out, the same principles which govern compound interest are also used to model short term growth of populations.  As with many concepts in this text, these notions are best formalized using the language of Calculus.  Nevertheless, we do our best here.  
+
+\smallskip
+
+In Biology, \textbf{The Law of Uninhibited Growth} states as its premise that the \textit{instantaneous} \index{instantaneous rate of change} \index{rate of change ! instantaneous} rate at which a population increases at any time is directly proportional to the population at that time. In other words, the more organisms there are at a given moment, the faster they reproduce.  Formulating the law as stated results in a differential equation, which requires Calculus to solve.  Solving said differential equation gives us the formula below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{growth model ! uninhibited} \index{uninhibited growth} \label{lawofuninhibitedgrowth} \textbf{Uninhibited Growth:} 
+
+If a population increases according to The Law of Uninhibited Growth, the number of organisms at time $t$, $N(t)$  is given by the formula  \[N(t) = N_{\mbox{\tiny$0$}}e^{kt},\] where $N(0) = N_{\mbox{\tiny$0$}}$ (read `$N$ nought') is the initial number of organisms and $k>0$ is the constant of proportionality which satisfies the equation:
+
+\[  \dfrac{dN}{dt} = k \, N(t),\]
+
+where $\dfrac{dN}{dt}$ is the Leibniz notation\footnote{See the remark following Definition \ref{derivativefcndefn} on Section \ref{IntroductiontoDerivatives}.} notation for the derivative of $N$ with respect to $t$.
+
+\smallskip
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip 
+
+ It is worth taking some time to compare Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth}.  In  Equation \ref{continuouscompoundinterest}, we use $P$ to denote the initial investment;  in Equation \ref{lawofuninhibitedgrowth}, we use $N_{\mbox{\tiny$0$}}$ to denote the initial population.  In  Equation \ref{continuouscompoundinterest}, $r$ denotes the annual interest rate,  and so it shouldn't be too surprising that the $k$ in Equation \ref{lawofuninhibitedgrowth} corresponds to a growth rate as well.   While Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth} look entirely different, they both represent the same mathematical concept.
+
+\smallskip
+
+\begin{example}  In order to perform arthrosclerosis research, epithelial cells are harvested from discarded umbilical tissue and grown in the laboratory.  A technician observes that a culture of twelve thousand cells grows to five million cells in one week.  Assuming that the cells follow The Law of Uninhibited Growth, find a formula for the number of cells, in thousands, after $t$ days, $N(t)$.
+
+\smallskip
+
+{\bf Solution.}  We begin with $N(t) = N_{\mbox{\tiny$0$}}e^{kt}$.  Since $N(t)$ is to give the number of cells \textit{in thousands}, we have $N_{\mbox{\tiny$0$}} = 12$, so $N(t) = 12e^{kt}$. 
+
+Next, we need to determine the growth rate $k$.  We know that after one week, the number of cells has grown to five million.  Since $t$ measures days and the units of $N(t)$ are in thousands, this translates mathematically to $N(7) = 5000$ or  $12e^{7k} = 5000$.   Solving, we get $k = \frac{1}{7} \ln\left(\frac{1250}{3}\right)$, so  $N(t) = 12e^{ \frac{t}{7} \ln\left(\frac{1250}{3}\right)}$.  
+
+\smallskip
+
+Of course, in practice, we would approximate $k$ to some desired accuracy, say $k \approx 0.8618$, which we can interpret as an $86.18 \%$ daily growth rate for the cells. \qed
+
+\end{example}
+
+Whereas Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth} model the growth of quantities, we can use equations like them to describe the decline of quantities.  
+
+\smallskip
+
+One example we've seen already is Example \ref{cardepreciationex} in Section \ref{ExponentialFunctions}.  There, the value of a car decreased from its purchase price of $\$25,\!000$ to nothing at all.  
+
+\smallskip
+
+Another real world phenomenon which follows suit is radioactive decay.  There are elements which are unstable and emit energy spontaneously.  In doing so, the amount of the element itself diminishes.  
+
+\smallskip
+
+The assumption behind this model is that the rate of decay of an element at a particular time is directly proportional to the amount of the element present at that time.  In other words, the more of the element there is, the faster the element decays.  
+
+\smallskip
+
+This is precisely the same kind of hypothesis which drives The Law of Uninhibited Growth, and as such, the equation governing radioactive decay is hauntingly similar to Equation \ref{lawofuninhibitedgrowth} with the exception that the rate constant $k$ is negative.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{radioactive decay} \label{radioactivedecay} \textbf{Radioactive Decay:}
+
+ The amount of a radioactive element  at time $t$, $A(t)$ is given by the formula  \[A(t) = A_{\mbox{\tiny$0$}}e^{kt},\] where $A(0) = A_{\mbox{\tiny$0$}}$ is the initial amount of the element and  $k<0$ is the constant of proportionality which satisfies the equation
+
+\[ \dfrac{dA}{dt} = k \, A(t)\]
+
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip 
+
+\begin{example}  Iodine-131 is a commonly used radioactive isotope used to help detect how well the thyroid is functioning.  Suppose the decay of Iodine-131 follows the model given in Equation \ref{radioactivedecay}, and that the  half-life\footnote{The time it takes for half of the substance to decay.} of Iodine-131 is approximately $8$ days.  If $5$ grams of Iodine-131 is present initially, find a function which gives the amount of Iodine-131, $A$, in grams, $t$ days later.
+
+\smallskip
+
+{\bf Solution.} Since we start with $5$ grams initially, Equation \ref{radioactivedecay} gives $A(t) = 5e^{kt}$.  
+
+\smallskip
+
+Since the half-life is $8$ days, it takes $8$ days for half of the Iodine-131 to decay, leaving half of it behind.  Mathematically, this translates to  $A(8) = 2.5$, or $5e^{8k} = 2.5$.  We get $k = \frac{1}{8} \ln\left(\frac{1}{2}\right) = -\frac{\ln(2)}{8} \approx -0.08664$, which we can interpret as a loss of material at a rate of $8.664 \%$ daily.  
+
+\smallskip
+
+Hence, our final answer is $A(t) = 5 e^{-\frac{t\ln(2)}{8}} \approx 5 e^{-0.08664t}$. \qed
+
+\end{example}
+
+
+We now turn our attention to some more mathematically sophisticated models.  One such model is Newton's Law of Cooling, which we first encountered in Example \ref{exptempex} of Section \ref{ExponentialFunctions}.   
+
+\smallskip
+
+In that example we had a cup of coffee cooling from $160^{\circ}\mbox{F}$ to room temperature $70^{\circ}\mbox{F}$ according to the formula $T(t) = 70 + 90 e^{-0.1 t}$, where $t$ was measured in minutes.  In that situation, we knew the physical limit of the temperature of the coffee was room temperature,\footnote{The Second Law of Thermodynamics states that heat can spontaneously flow from a hotter object to a colder one, but not the other way around.  Thus, the coffee could not continue to release heat into the air so as to cool below room temperature.} and the differential equation which gives rise to our formula for $T(t)$ takes this into account.  
+
+\smallskip
+
+Whereas the radioactive decay model had a rate of decay at time $t$ directly proportional to the amount of the element which remained at time $t$, Newton's Law of Cooling states that the rate of cooling of the coffee at a given time $t$ is directly proportional to how much of a temperature \textit{gap} exists between the coffee at time $t$ and room temperature, not the temperature of the coffee itself.  In other words, the coffee cools faster when it is first served, and as its temperature nears room temperature, the coffee cools ever more slowly.
+
+\smallskip
+
+ Of course, if we take an item from the refrigerator and let it sit out in the kitchen, the object's temperature will rise to room temperature, and since the physics behind warming and cooling is the same, we combine both cases in the equation below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{Newton's Law of Cooling} \label{newtonslawofcooling} \textbf{Newton's Law of Cooling (Warming):}  
+
+The temperature of an object  at time $t$, $T(t)$ is given by the formula \[T(t) = T_{a} + \left(T_{\mbox{\tiny$0$}} - T_{a}\right) e^{-kt},\] where $T(0) = T_{\mbox{\tiny$0$}}$ is the initial temperature of the object, $T_{a}$ is the ambient temperature\footnote{That is, the temperature of the surroundings.} and $k>0$ is the constant of proportionality which satisfies the equation
+
+\[ \dfrac{dT}{dt} = k \, \left(T(t) - T_{a}\right)\]
+
+
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip 
+
+If we re-examine the situation in Example \ref{exptempex} with $T_{\mbox{\tiny$0$}} = 160$, $T_{a} = 70$, and $k = 0.1$, we get, according to Equation \ref{newtonslawofcooling}, $T(t) = 70 + (160 - 70)e^{-0.1t}$ which reduces to the original formula given in that example.  The rate constant $k = 0.1$ in this case indicates the coffee is cooling at a rate equal to $10 \%$ of the difference between the temperature of the coffee and its surroundings.  
+
+\smallskip
+
+Note in Equation \ref{newtonslawofcooling} that the constant $k$ is positive for both the cooling and warming scenarios.  What determines if the function $T(t)$ is increasing or decreasing is if $T_{\mbox{\tiny$0$}}$ (the initial temperature of the object) is greater than $T_{a}$ (the ambient temperature) or vice-versa, as we see in our next example.
+
+\smallskip
+
+\begin{example} \label{exptempex2} A roast initially at  $40^{\circ}\mbox{F}$ cooked in a $350^{\circ}\mbox{F}$ oven.  After $2$ hours, the temperature of the roast is $125^{\circ}\mbox{F}$.
+
+\begin{enumerate}
+
+\item  Assuming the temperature of the roast follows Newton's Law of Warming, find a formula for the temperature of the roast $T(t)$ as a function of its time in the oven, $t$, in hours.
+
+\item  The roast is done when the internal temperature reaches $165^{\circ}\mbox{F}$.  When will the roast be done?
+
+\end{enumerate}
+
+\pagebreak
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  The initial temperature of the roast is $40^{\circ}\mbox{F}$, so $T_{\mbox{\tiny$0$}} = 40$.  The environment in which we are placing the roast is the $350^{\circ}\mbox{F}$ oven, so $T_{a} = 350$. Newton's Law of Warming gives $T(t) = 350 + (40-350)e^{-kt}$, or after some simplification,  $T(t) = 350 - 310e^{-kt}$.  
+
+\smallskip
+
+To determine $k$, we use the fact that after $2$ hours, the roast is  $125^{\circ}\mbox{F}$, which means $T(2) = 125$.  This gives rise to the equation $350 - 310e^{-2k} = 125$ which yields $k = -\frac{1}{2} \ln \left( \frac{45}{62}  \right) \approx 0.1602$.  The temperature function is \[T(t) = 350 - 310 e^{\frac{t}{2} \ln \left( \frac{45}{62}  \right)} \approx 350- 310 e^{-0.1602 t}.\]
+
+
+\item  To find when the roast is done, we set $T(t) = 165$.  This gives $350- 310 e^{-0.1602 t} = 165$ whose solution is $t = -\frac{1}{0.1602} \ln \left( \frac{37}{62}  \right) \approx 3.22$.  Hence, the roast is done after roughly $3$ hours and $15$ minutes. \qed
+
+\end{enumerate}
+
+\end{example}
+
+If we had taken the time to graph $y=T(t)$ in Example \ref{exptempex2}, we would have found the horizontal asymptote to be $y = 350$, which corresponds to the temperature of the oven. We can also arrive at this conclusion analytically by applying  `number sense'.  
+
+\smallskip
+
+As $t \rightarrow \infty$, $-0.1602 t \approx \mbox{very big $(-)$}$ so that $e^{-0.1602 t} \approx \mbox{very small $(+)$}$.  The larger the value of $t$, the smaller $e^{-0.1602 t}$ becomes so that $T(t) \approx 350 -\mbox{very small $(+)$}$, which suggests the graph of $y=T(t)$ is approaching its horizontal asymptote $y=350$ from below.   Physically, this means the roast will eventually warm up to $350^{\circ}\mbox{F}$.\footnote{at which point it would be more toast than roast.}  
+
+\smallskip
+
+The function $T$  in this situation is sometimes called a \index{growth model ! limited} \textbf{limited} growth model, since the function $T$ remains bounded as $t \rightarrow \infty$.  If we apply the principles behind Newton's Law of Cooling to a biological example, it says the growth rate of a population is directly proportional to how much room the population has to grow.  In other words, the more room for expansion, the faster the growth rate. 
+
+\smallskip
+
+Our final model, the \textbf{logistic} growth model combines The Law of Uninhibited Growth with limited growth and states that the rate of growth of a population varies jointly with the population itself as well as the room the population has to grow.   
+
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \index{growth model ! logistic} \index{logistic growth} \label{logisticgrowth} \textbf{Logistic Growth:}  
+
+If a population behaves according to the assumptions of logistic growth, the number of organisms at time $t$, $N(t)$  is given by  \[N(t) =\dfrac{L}{1 + Ce^{-kLt}},\] where $N(0) = N_{\mbox{\tiny$0$}}$ is the initial population,  $L$ is the limiting population,\footnote{That is, $\ds{\lim_{t \rightarrow \infty} N(t) = L}$} and $C$ is a measure of how much room there is to grow given by \[C = \dfrac{L}{N_{\mbox{\tiny$0$}}} - 1.\] and $k > 0$ is the constant of proportionality which satisfies the equation
+
+\[  \dfrac{dN}{dt} = k \, N(t) \left(L - N(t)\right)\]
+
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip 
+
+The logistic function is used not only to model the growth of organisms, but is also often used to model the spread of disease and rumors.\footnote{Which can be just as damaging as diseases.}
+
+\smallskip
+
+\begin{example} \label{rumorex} The number of people $N(t)$, in hundreds, at a local community college who have heard the rumor `Carl's afraid of Sasquatch' can be modeled using the logistic equation
+
+\[N(t) = \dfrac{84}{1+2799e^{-t}},\]
+
+where $t\geq 0$ is the number of days after April 1, 2016.
+
+
+\begin{enumerate}
+
+\item  Find and interpret $N(0)$.
+
+\item  \label{ebrumorex} Find and interpret the end behavior of $N(t)$. 
+
+\item  \label{whenrumorex} How long until $4200$ people have heard the rumor?
+
+\item  Check your answers to \ref{ebrumorex} and \ref{whenrumorex} using a graphing utility.
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  We find $N(0) = \frac{84}{1+2799e^{0}} = \frac{84}{2800} = 0.03$.  Since $N(t)$ measures the number of people who have heard the rumor in hundreds, $N(0)$ corresponds to $3$ people.  Since $t=0$ corresponds to April 1, 2016, we may conclude that on that day, $3$ people have heard the rumor.\footnote{Or, more likely, three people started the rumor.  I'd wager Jeffey, Rosie, and JT started it.} 
+
+\item  We could simply note that $N(t)$ is written in the form of Equation \ref{logisticgrowth}, and identify $L = 84$.  However, to see better \textit{why} the answer is $84$, we proceed analytically.  
+
+Since the domain of $N$ is restricted to $t \geq 0$, the only end behavior of significance is $t \rightarrow \infty$. As we've seen before,\footnote{See, for example, Example \ref{exptempex}.} as $t \rightarrow \infty$, we have $1997 e^{-t} \rightarrow 0^{+}$ and so $N(t) \approx \frac{84}{1 + \text{\scriptsize very small $(+)$}} \approx 84$.  
+
+Hence, $\ds{\lim_{t \rightarrow \infty} N(t) = 84}$.     This means that as time goes by, the number of people who will have heard the rumor approaches $8400$. 
+
+\item  To find how long it takes until $4200$ people have heard the rumor, we set $N(t) = 42$.  Solving $\frac{84}{1+2799e^{-t}} = 42$ gives $t =  \ln(2799) \approx 7.937$, so   it takes around $8$ days until $4200$ people have heard the rumor.
+
+\item  Graphing $y=N(t)$ below, we see $y=84$ is the horizontal asymptote of the graph, confirming our answer to number  \ref{ebrumorex}, and the graph intersects the line $y=42$ at $t \approx 7.937 \approx \ln(2799) $, which confirms our answer to number \ref{whenrumorex}.
+
+\begin{center}
+
+\includegraphics[width=4in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx01.jpg} 
+
+
+\end{center}
+
+\end{enumerate}
+
+\qed
+
+\end{example}
+
+If we take the time to analyze the graph of $y=N(t)$ in Example \ref{rumorex}, we can see \textit{graphically} how logistic growth combines  features of uninhibited and limited growth.  
+
+\smallskip
+
+We can see graphically that there is an inflection point in the graph. In this case, the inflection point is called the \index{point of diminishing returns}\textbf{point of diminishing returns}.    Even though the function is still increasing through the inflection point (more people are hearing the rumor), the \textit{rate} at which it does so begins to decrease. 
+
+\smallskip
+
+With Calculus, one can show the point of diminishing returns always occurs at half the limiting population.\footnote{We'll explore this in the Exercises.}  (In our case, when $N(t)=42$.)  So with that in mind, we present two portions of the graph of $y=N(x)$, one on the interval $[0,8]$, the other on $[8,15]$. The former looks strikingly like uninhibited growth while the latter like limited growth.
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx02.jpg} &
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx03.jpg} \\
+
+$y = N(t)$ for $0 \leq t \leq 8$ &
+
+$y = N(t)$ for $8 \leq t \leq 15$
+
+\end{tabular}
+
+\end{center}
+
+
+\subsection{Applications of Logarithms}
+
+Just as many physical phenomena can be modeled by exponential functions, the same is true of logarithmic functions.   In Exercises \ref{Richterexercise},  \ref{decibelexercise} and \ref{pHexercise} of Section \ref{LogarithmicFunctions}, we showed that logarithms are useful in measuring the intensities of earthquakes (the Richter scale), sound (decibels) and acids and bases (pH).  We now present yet a different use of the a basic logarithm function, \href{http://en.wikipedia.org/wiki/Password_strength}{\underline{password strength}}.
+
+\smallskip
+
+\begin{example}  The \href{http://en.wikipedia.org/wiki/Information_entropy}{\underline{information entropy}} $H$, in bits, of a randomly generated password consisting of $L$ characters is given by $H = L \log_{2}(N)$, where $N$ is the number of possible symbols for each character in the password.  In general, the higher the entropy, the stronger the password. \index{password strength} \index{information entropy}
+
+\begin{enumerate}
+
+\item  If a $7$ character case-sensitive\footnote{That is, upper and lower case letters are treated as different characters.} password is comprised of  letters and numbers only, find the associated information entropy.
+
+\item  How many possible symbol options per character is required to produce a $7$ character password with an information entropy of $50$ bits?
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  There are $26$ letters in the alphabet, $52$ if upper and lower case letters are counted as different.  There are $10$ digits ($0$ through $9$) for a total of $N=62$ symbols.  Since the password is to be $7$ characters long, $L = 7$.  Thus, $H = 7 \log_{2}(62) = \frac{7 \ln(62)}{\ln(2)} \approx 41.68$.
+
+\item  We have $L = 7$ and $H=50$ and we need to find $N$.  Solving the equation $50 = 7 \log_{2}(N)$ gives $N = 2^{50/7} \approx 141.323$, so we would need $142$ different symbols to choose from.\footnote{Since there are only $94$ distinct ASCII keyboard characters, to achieve this strength, the number of characters in the password should be increased.} \qed
+
+\end{enumerate}
+
+\end{example}
+
+\smallskip
+
+Chemical systems known as \href{http://en.wikipedia.org/wiki/Buffer_solutions}{\underline{buffer solutions}} \index{buffer solution} have the ability to adjust to small changes in acidity to maintain a range of pH values.  Buffer solutions have a wide variety of applications from maintaining a healthy fish tank to regulating the pH levels in blood.  Our next example shows how the pH in a buffer solution is a little more complicated than the pH we first encountered in Exercise \ref{pHexercise} in Section \ref{LogarithmicFunctions}. 
+
+\smallskip
+
+\begin{example}  Blood is a buffer solution. When carbon dioxide is absorbed into the bloodstream it produces carbonic acid and lowers the pH.  The body compensates by producing bicarbonate, a weak base to partially neutralize the acid.   The equation\footnote{Derived from the \href{http://en.wikipedia.org/wiki/Henderson-Hasselbalch_equation}{\underline{Henderson-Hasselbalch Equation}}. See Exercise \ref{HendersonHasselbalch} in Section \ref{PropertiesofLogarithms}.  Hasselbalch himself was studying carbon dioxide dissolving in blood - a process called \href{http://en.wikipedia.org/wiki/Metabolic_acidosis}{\underline{metabolic acidosis}}.}   which models blood pH in this situation is $\mbox{pH} = 6.1 + \log\left(\frac{800}{x} \right)$, where $x$ is the partial pressure of carbon dioxide in arterial blood, measured in torr. Find the partial pressure of carbon dioxide in arterial blood if the pH is $7.4$.
+
+\smallskip
+
+{\bf Solution.}  We set $\mbox{pH} = 7.4$ and get $ 7.4 = 6.1 + \log\left(\frac{800}{x} \right)$, or $\log\left(\frac{800}{x} \right) = 1.3$.   We get $x = \frac{800}{10^{1.3}} \approx 40.09$.  Hence, the partial pressure of carbon dioxide in the blood is about $40$ torr. \qed
+
+
+\end{example}
+
+Another place logarithms are used is in data analysis. Suppose, for instance, we wish to model the spread of influenza A (H1N1), the so-called `Swine Flu'.  Below is data taken from the World Health Organization (\href{http://www.who.int/csr/disease/swineflu/updates/en/index.html}{\underline{WHO}}) where $t$ represents the number of days since April 28, 2009, and $N$ represents the number of confirmed cases of H1N1 virus worldwide.
+
+\[ \begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}  \hline
+
+t & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13  \\ \hline
+
+N & 148 & 257 &   367 & 658 & 898 & 1085 & 1490 & 1893 & 2371 & 2500 & 3440 & 4379 & 4694  \\ \hline \end{array} \]
+
+
+\[\begin{array}{|c||c||c|c|c|c|c|c|} \hline
+
+t & 14 & 15 & 16 & 17 & 18 & 19& 20  \\ \hline 
+
+N & 5251 & 5728 & 6497 & 7520 & 8451 & 8480 & 8829    \\ \hline \end{array} \]
+
+Making a scatter plot of the data treating $t$ as the independent variable and $N$ as the dependent variable gives the plot below on the left.  Which models are suggested by the shape of the data?  
+
+\smallskip
+
+Thinking back Section \ref{QuadraticFunctions}, we try a Quadratic Regression.  We find $N(t) \approx 16.713 t^2 +149.68t -233.15$ with $R^2 = 0.992$, indicating a pretty good fit.  However, is there any underlying scientific principle which would account for these data to be quadratic?  Are there other models which fit the data  better?
+
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx04.jpg} &
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx05.jpg} \\
+
+Scatterplot of the Data &
+
+A quadratic regression model \\
+
+\end{tabular}
+
+\end{center}
+
+To answer these questions, scientists often use logarithms in an attempt to `linearize' non-liner data sets such as the one before us.  To see how this could work, suppose we guessed the relationship between $N$ and $t$ is something from Section \ref{PowerFunctions},  $N(t) = a t^{p}$.  
+
+\smallskip
+
+By taking the natural logs of both sides and using the Product and Power Rules, in turn, we find that $\ln(N(t)) = \ln(a t^p) = \ln(a) + \ln(t^p) = \ln(a) + p \ln(t) =  p \ln(t) + \ln(a)$.   If we let  $x = \ln(t)$ and $y= \ln(N(t))$,  the model takes the form $y = p x + \ln(a)$ which is a \textit{linear} model with slope $p$ and $y$-intercept $\ln(a)$.  So, instead of plotting $N(t)$ versus $t$, we plot $y=\ln(N(t))$ versus $x=\ln(t)$ and find a linear regression for this data set.
+
+\[ \begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}  \hline
+
+\ln(t) & 0 & 0.693 & 1.099 & 1.386& 1.609 & 1.792 & 1.946 & 2.079 & 2.197 & 2.302 & 2.398 & 2.485 & 2.565  \\ \hline
+
+\ln(N) & 4.997  & 5.549 &  5.905 & 6.489 & 6.800 & 6.989 & 7.306 & 7.546 & 7.771 & 7.824 & 8.143 & 8.385 & 8.454  \\ \hline \end{array} \]
+
+
+\[\begin{array}{|c||c||c|c|c|c|c|c|} \hline
+
+\ln(t) & 2.639 & 2.708 & 2.773 & 2.833 & 2.890 & 2.944 & 2.996  \\ \hline 
+
+\ln(N) & 8.566 & 8.653 & 8.779 & 8.925 & 9.042 & 9.045 & 9.086    \\ \hline \end{array} \]
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx10.jpg} &
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx06a.jpg} \\
+
+linear regression: $\ln(N(t)) = p \ln(t) + \ln(a)$ &
+
+power function regression: $N(t) = at^{p}$ \\
+
+\end{tabular}
+
+\end{center}
+
+
+
+We see $r=0.991$, which is very close to $1$ indicating a very good fit.   The slope of the regression line is $m \approx 1.512$ which corresponds to our exponent $p$.  The $y$-intercept $b \approx 4.513$ corresponds to $\ln(a)$, so that $a \approx 91.201$.  Hence, we get the model $N = 91.201 t^{1.512}$. 
+
+\smallskip
+
+Of interest here is that the graphing utility we used, \href{https://www.desmos.com}{\underline{desmos}} has its own built-in power regression model.  If the `log mode'  square is checked, the graphing utility returns the \textit{same} model we obtained using our linearization (since the routine which determines the coefficients uses logarithms as well.)\footnote{If, however, we uncheck that box, we get a \textit{different} power function model, $N(t) = 62.318 t^{1.675}$ which chooses $a$ and $p$ directly to minimize the total squared error.  See \href{http://support.desmos.com/hc/en-us/articles/204349605}{\underline{here}} for more details.}
+
+\smallskip
+
+At this point, the quadratic model fits the data better, ostensibly because we have \textit{three} parameters we can adjust in the formula $N(t) = at^2+bt+c$ to minimize our error as opposed to just \textit{two} parameters in the formula $N(t) = a t^{p}$.  Neither  model, however, is based on any underlying scientific principle.
+
+\smallskip
+
+If we think about this situation from a scientific perspective, it does seem to make sense that, at least in the early stages of the outbreak, the more people who have the flu, the faster it will spread.  This suggests we fit the data to an uninhibited growth model.
+
+\smallskip
+
+As  written,  Equation \ref{lawofuninhibitedgrowth} gives uninhibited growth as  $N(t) = N_{\mbox{\tiny$0$}}e^{kt}$. Here, for simplicity's sake, we relabel $N_{\mbox{\tiny$0$}} = a$ and $e^{k} = b$ so that we are looking for parameters $a$ and $b$ so that $N(t) = a \cdot b^{t}$.
+
+\smallskip
+
+\phantomsection
+\label{swineflulinearized}
+If we assume $N(t) = a \cdot b^{t}$ then, taking logs as before, we get $\ln(N(t)) = t \ln(b) + \ln(a)$. If we let $y= \ln(N(t))$, then, once again, we get a linear model this time with slope $\ln(b)$ and $y$-intercept $\ln(a)$.  We present the results of the regression below.  While there is a strong correlation, $r = 0.962$, the plot doesn't instill the greatest of confidence in this model.
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx09.jpg} &
+
+\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx07a.jpg} \\
+
+linear regression: $\ln(N(t)) = t \ln(b) + \ln(a)$ &
+
+exponential regression: $N(t) = a \cdot b^{t}$ \\
+
+\end{tabular}
+
+\end{center}
+
+From the slope of the model, we have   $m = \ln(b) \approx 0.202$  so $b \approx 1.223$.  From the $y$-intercept of the model, we get $B = \ln(a) \approx  5.596$ so $a \approx 269.35$, so that our model is $N(t) = 269.35(1.223)^{t}$. Using the built-in exponential regression (again, with `log mode' checked) returns the model  $N(t) = 269.41 (1.223)^{t}$, the discrepancy between   $269.35$ and $269.41$ stemming ostensibly from round-off error.    
+
+\smallskip
+
+The exponential model didn't fit the data as well as the quadratic or power function model, but it stands to reason that, perhaps, the spread of the flu is not unlike that of the spread of a rumor and that a logistic model can be used to model the data.  Again, for simplicity, we abbreviate the model given in Equation \ref{logisticgrowth} from $N(t) =\frac{L}{1 + Ce^{-kLt}}$ to $N(t) = \frac{L}{1 + Ce^{Kt}}$.
+
+\smallskip
+
+Running the data, a logistic function appears to be an excellent fit, both judging by the graph as well as the coefficient of determination, $R^2 \approx 0.995$.  Moreover, the underlying principles which lead to the formulation of this model seem reasonable enough.
+
+
+
+
+ 
+ \begin{center}
+ \includegraphics[width=5in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx08.jpg} 
+ \end{center}
+
+
+
+  While the quadratic model also fits extremely well, our logistic model takes into account that only a finite number of people will ever get the flu (according to our model, $L=10,\!739$), whereas the quadratic model predicts no limit to the number of cases. As we have stated several times before in the text, mathematical models, regardless of their sophistication, are just that:  models, and they all have their limitations.\footnote{Speaking of limitations, as of June 3, 2009, there were 19,273 confirmed cases of influenza A (H1N1).  This is well above our prediction of 10,739.  Each time a new report is issued, the data set increases and the model must be recalculated.  We leave this recalculation to the reader.}
+
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforApplicationsofExponentialandLogarithmicFunctions}
+
+\closegraphsfile
+
+\end{document}

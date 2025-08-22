@@ -1,0 +1,1165 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Vectors}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{Vectors}
+
+\setcounter{footnote}{0}
+
+\label{Vectors}
+
+As we have seen numerous times in this book, Mathematics can be used to model and solve real-world problems.  For many applications, real numbers suffice; that is, real numbers with the appropriate units attached can be used to answer questions like ``How close is the nearest Sasquatch nest?''   
+
+\smallskip
+
+There are other times though, when these kinds of quantities do not suffice.  Perhaps it is important to know, for instance, how close the nearest Sasquatch nest is as well as the direction in which it lies.  To answer questions like these which involve both a quantitative answer, or \textit{magnitude}, along with a \textit{direction}, we use the mathematical objects called \index{vector ! definition of}\textbf{vectors}.\footnote{The word `vector' comes from the Latin \textit{vehere} meaning `to convey' or `to carry.'}    
+
+\smallskip
+
+A vector is represented geometrically as a directed line segment where the magnitude of the vector is taken to be the length of the line segment and the direction is made clear with the use of an arrow at one endpoint of the segment.   When referring to vectors in this text, we shall adopt\footnote{Other textbook authors use bold vectors such as \boldmath $v$.  We find that writing in bold font on the chalkboard is inconvenient at best, so we have chosen the `arrow' notation.} the `arrow' notation, so the symbol  $\vec{v}$ is read as `the vector $v$'. Below is a typical vector $\vec{v}$ with endpoints $P\left(1, 2\right)$ and $Q\left(4, 6\right)$. 
+
+\smallskip
+
+The point $P$  is called the \index{vector ! initial point}\textit{initial point} or \index{vector ! tail}\textit{tail} of  $\vec{v}$ and the point $Q$ is called the \index{vector ! terminal point}\textit{terminal point} or \index{vector ! head}\textit{head} of  $\vec{v}$.   Since we can reconstruct $\vec{v}$ completely from $P$ and $Q$, we write $\vec{v} = \overrightarrow{PQ}$, where the order of points $P$ (initial point) and $Q$ (terminal point) is important. (Think about this before moving on.)
+
+\begin{center}
+\begin{mfpic}[20]{0}{6}{0}{7}
+\point[4pt]{(1,2), (4,6)}
+\tlabel(-0.75,1.75){\scriptsize $P\left(1, 2 \right)$}
+\tlabel(4.25,6){\scriptsize $Q\left(4, 6 \right)$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\tcaption{\scriptsize $\vec{v} = \overrightarrow{PQ}$}
+\penwd{1.25pt}
+\arrow \polyline{(1,2),(4,6)}
+\end{mfpic}
+\end{center}
+
+While it is true that $P$ and $Q$ completely determine $\vec{v}$, it is important to note that since vectors are defined in terms of their two characteristics,  magnitude and direction, any directed line segment with the same length and direction as $\vec{v}$ is considered to be the same vector as $\vec{v}$, regardless of its initial point.
+
+\smallskip
+
+ In the case of our vector $\vec{v}$ above, any vector which moves three units to the right and four up\footnote{If this idea of `over' and `up' seems familiar, it should.  The slope of the line segment containing $\vec{v}$ is  $\frac{4}{3}$.} from its initial point to arrive at its terminal point is considered the same vector as $\vec{v}$.  The notation we use to capture this idea is the \index{vector ! component form} \textit{component form} of the vector, $\vec{v} = \left<3,4\right>$, where the first number, $3$, is called the $x$-\textit{component} \index{vector ! $x$-component} of $\vec{v}$ and the second number, $4$, is called the $y$-\textit{component} \index{vector ! $y$-component} of $\vec{v}$.  
+ 
+ \smallskip
+ 
+ For example, if we wanted to reconstruct $\vec{v} = \left<3,4\right>$ with initial point $P'(-2,3)$, then we would find the terminal point of $\vec{v}$ by adding $3$ to the $x$-coordinate and adding $4$ to the $y$-coordinate to obtain the terminal point $Q'(1,7)$, as seen below.
+
+\begin{center}
+\begin{mfpic}[20]{0}{6}{0}{6}
+\point[4pt]{(1,2), (4,6)}
+\tlabel(-1,1.75){\scriptsize $P'\left(-2, 3 \right)$}
+\tlabel(4.25,6){\scriptsize $Q'\left(1, 7 \right)$}
+\tlabel[cc](2.5,1.5){\scriptsize over $3$}
+\tlabel[cc](4.5,4){\scriptsize up $4$}
+\dashed \arrow \polyline{(1.25,2), (4,2)}
+\dashed \arrow \polyline{(4,2.25), (4,5.75)}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\tcaption{\scriptsize $\vec{v} = \left<3,4\right>$ with initial point $P'\left(-2, 3 \right)$.}
+\penwd{1.25pt}
+\arrow \polyline{(1,2),(4,6)}
+\end{mfpic}
+\end{center}
+
+The component form of a vector is what ties these very geometric objects back to Algebra and ultimately Trigonometry.  We generalize our example in our definition below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{definition} \label{componentformvector}  Suppose $\vec{v}$ is represented by a directed line segment with initial point $P\left(x_{\mbox{\tiny $0$}}, y_{\mbox{\tiny $0$}}\right)$ and terminal point $Q\left(x_{\mbox{\tiny $1$}}, y_{\mbox{\tiny $1$}}\right)$.  The \textbf{component form} of $\vec{v}$ is given by \index{component form of a vector}
+
+\[ \vec{v} = \overrightarrow{PQ} = \left< x_{\mbox{\tiny $1$}} - x_{\mbox{\tiny $0$}}, y_{\mbox{\tiny $1$}} - y_{\mbox{\tiny $0$}} \right> \]
+
+
+\end{definition}
+%% \ebm}
+
+\smallskip
+
+Using the language of components, we have that two vectors are equal if and only if their corresponding components are equal.  That is, $\left<v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}}\right> = \left<v_{\mbox{\tiny $1$}}', v_{\mbox{\tiny $2$}}'\right>$ if and only if $v_{\mbox{\tiny $1$}} = v_{\mbox{\tiny $1$}}'$ and $v_{\mbox{\tiny $2$}} = v_{\mbox{\tiny $2$}}'$. (Again, think about this before reading on.)  
+
+\smallskip
+
+We now set about defining operations on vectors.  Suppose we are given two vectors $\vec{v}$ and $\vec{w}$.  The sum, or \index{vector ! resultant} \textit{resultant} vector $\vec{v} + \vec{w}$ is obtained as follows.  First, plot $\vec{v}$.  Next, plot $\vec{w}$ so that its initial point is the terminal point of $\vec{v}$.  To plot the vector $\vec{v} + \vec{w}$ we begin at the initial point of $\vec{v}$ and end at the terminal point of $\vec{w}$.  It is helpful to think of the vector $\vec{v} + \vec{w}$ as the `net result' of moving along $\vec{v}$ then moving along $\vec{w}$.
+
+\begin{center}
+\begin{mfpic}[20]{0}{6}{0}{7}
+\point[3pt]{(0,0), (3,2), (4,6)}
+\tlabel[cc](1.5, 0.5){\scriptsize $\vec{v}$}
+\tlabel[cc](4, 4){\scriptsize $\vec{w}$}
+\tlabel[cc](1, 3.5){\scriptsize $\vec{v} + \vec{w}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,2)}
+\arrow \polyline{(3,2),(4,6)}
+\arrow \polyline{(0,0),(4,6)}
+\tcaption{\scriptsize $\vec{v}$, $\vec{w}$, and $\vec{v} + \vec{w}$}
+\end{mfpic}
+\end{center}
+
+Our next example makes good use of resultant vectors and reviews bearings and the Law of Cosines.\footnote{If necessary, review Sections \ref{bearings} and \ref{TheLawofCosines}.}  
+
+
+\begin{example} \label{vectorbearingex}  A plane leaves an airport with an airspeed\footnote{That is, the speed of the plane relative to the air around it. If there were no wind, plane's airspeed would be the same as its speed as observed from the ground.  How does wind affect this?  Keep reading!}  of 175 miles per hour at a  bearing of  N$40^{\circ}$E.  A 35 mile per hour wind is blowing at a bearing of S$60^{\circ}$E.  Find the true speed of the plane, rounded to the nearest mile per hour,  and the true bearing of the plane, rounded to the nearest degree.
+
+{\bf Solution:} For both the plane and the wind, we are given their speeds and their directions.  Coupling speed (as a magnitude) with direction is the concept of \textit{velocity} which we've seen a few times before.\footnote{See Section \ref{circularmotion}, for instance.} 
+
+\smallskip
+
+We let $\vec{v}$ denote the plane's velocity and $\vec{w}$ denote the wind's velocity in the diagram below.   The `true' speed and bearing is found by analyzing the resultant vector, $\vec{v} + \vec{w}$.  
+
+\smallskip
+
+From the vector diagram, we get a triangle, the lengths of whose sides are the magnitude of $\vec{v}$, which is 175, the magnitude of $\vec{w}$, which is 35, and the magnitude of $\vec{v} + \vec{w}$, which we'll call $c$. 
+
+\smallskip
+
+From the given bearing information, we go through the usual geometry to determine that the angle between the sides of length 35 and 175 measures $100^{\circ}$. 
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{mfpic}[15]{-1}{8}{-2}{9}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize E}
+\tlabel[cl](0.5,9){\scriptsize N}
+\arrow \parafcn{85,55,-5}{5*dir(t)}
+\tlabel[cc](1.88, 5.17){\scriptsize $40^{\circ}$}
+%\arrow \parafcn{5,45,5}{5*dir(t)}
+%\tlabel[cc](4.98, 2.32){\scriptsize $50^{\circ}$}
+\arrow \parafcn{275,325,-5}{1.5*dir(t)}
+\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
+%\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
+%\tlabel[cc](2.5, -0.52){\scriptsize $-30^{\circ}$}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\tlabel[cc](6.75, 8.04){\scriptsize $\vec{v}$}
+\tlabel[cc](2.16, -1.25){\scriptsize $\vec{w}$}
+\arrow \dashed \polyline{(0,0), (8.16,6.66)}
+\dotted \polyline{(1.73, -1), (8.16, 6.66)}
+\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
+\tlabel[cc](9,6.75){\scriptsize $\vec{v} + \vec{w}$}
+\normalsize
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (6.43, 7.66)}
+\arrow \polyline{(0,0), (1.73, -1)}
+\end{mfpic}
+
+&
+
+\hspace{0.75in}
+
+\begin{mfpic}[15]{-1}{8}{-2}{9}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize E}
+\tlabel[cl](0.5,9){\scriptsize N}
+\tlabel[cc](3,4.5){\scriptsize $175$}
+\tlabel[cc](5,3.5){\scriptsize $c$}
+\tlabel[cc](7.5, 7.5){\scriptsize $35$}
+\arrow \parafcn{85,55,-5}{3*dir(t)}
+\tlabel[cc](1.2, 3.3){\scriptsize $40^{\circ}$}
+%\arrow \parafcn{5,45,5}{5*dir(t)}
+%\tlabel[cc](4.98, 2.32){\scriptsize $50^{\circ}$}
+\arrow \parafcn{275,325,-5}{1.5*dir(t)}
+\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
+%\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
+%\tlabel[cc](2.5, -0.52){\scriptsize $-30^{\circ}$}
+%\setlength{\headlen}{4pt}
+%\headshape{1}{1}{true}
+%\tlabel[cc](6.75, 8.04){\scriptsize $\vec{v}$}
+%\arrow \polyline{(0,0), (1.73, -1)}
+%\tlabel[cc](2.16, -1.25){\scriptsize $\vec{w}$}
+%\dotted \polyline{(1.73, -1), (8.16, 6.66)}
+%\tlabel[cc](9,6.75){\scriptsize $\vec{v} + \vec{w}$}
+\arrow \reverse \arrow \shiftpath{(6.43, 7.66)} \parafcn{235, 325,5}{dir(t)}
+\tlabel[cc]{(6.5,6.25)}{\scriptsize $100^{\circ}$}
+\arrow \reverse \arrow \parafcn{41,49,1}{5*dir(t)}
+\tlabel[cc]{(3.9, 3.9)}{\scriptsize $\alpha$}
+\normalsize
+\dotted \polyline{(5.9,7.66), (6.9, 7.66)}
+\dotted \polyline{(6.43, 7.15), (6.43,8.15)}
+\dotted  \polyline{(0,0), (1.73, -1)}
+\penwd{1.25pt}
+\polyline{(0,0), (6.43, 7.66)}
+\polyline{(0,0), (8.16,6.66)}
+\polyline{(6.43, 7.66), (8.16, 6.66)}
+\end{mfpic}
+
+
+
+\\
+
+\end{tabular}
+
+\end{center}
+
+From the Law of Cosines, we determine $c = \sqrt{31850 - 12250\cos(100^{\circ})} \approx 184$, which means the true speed of the plane is (approximately) $184$ miles per hour. 
+
+\smallskip
+
+ To determine the true bearing of the plane, we need to determine the angle $\alpha$.  Using the Law of Cosines once more,\footnote{Or, since our given angle, $100^{\circ}$, is obtuse, we could use the Law of Sines without any ambiguity here.} we find $\cos(\alpha) = \frac{c^2+29400}{350c}$ so that $\alpha \approx 11^{\circ}$.  
+ 
+ \smallskip
+ 
+ Given the geometry of the situation, we add $\alpha$ to the given $40^{\circ}$ and find the true bearing of the plane to be (approximately) N$51^{\circ}$E. \qed
+
+\end{example}
+
+Our next step is to define addition of vectors component-wise to match the geometric action.\footnote{Adding vectors `component-wise' should seem hauntingly familiar.  Compare this with how matrix addition was defined in section \ref{MatArithmetic}. In more advanced courses. chief among them Linear Algebra, vectors are actaually \textit{defined} as $1\times n$ or $n \times 1$ matrices, depending on the situation.}
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{definition} \label{vectoradd}  Suppose $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ and $\vec{w} = \left<w_{\mbox{\tiny $1$}},w_{\mbox{\tiny $2$}}\right>$.  The vector $\vec{v} + \vec{w}$ is defined by \index{vector ! addition ! definition of}
+
+\[ \vec{v} + \vec{w}  = \left< v_{\mbox{\tiny $1$}} + w_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} + w_{\mbox{\tiny $2$}} \right> \]
+
+
+\end{definition}
+%% \ebm}
+
+\begin{example}  \label{vectoraddex}  Let  $\vec{v} = \left<3,4\right>$ and suppose  $\vec{w} = \overrightarrow{PQ}$ where $P(-3,7)$ and $Q(-2,5)$.  Find $\vec{v} + \vec{w}$ and interpret this sum geometrically.
+
+\medskip
+
+{\bf Solution.}  Before can add the vectors using Definition \ref{vectoradd}, we need to write  $\vec{w}$ in component form. Using Definition \ref{componentformvector}, we get $\vec{w} = \left<-2-(-3),5-7\right> = \left<1,-2\right>$.  Thus,
+
+  \[\vec{v} + \vec{w} =  \left<3,4\right> + \left<1,-2\right> =  \left< 3 + 1, 4 + (-2) \right> =  \left<4, 2\right>. \]
+                                        
+To visualize this sum, we draw $\vec{v}$ with its initial point at $(0,0)$ (for convenience) so that its terminal point is $(3,4)$.  Next, we graph $\vec{w}$ with its initial point at $(3,4)$.  Moving one to the right and two down, we find the terminal point of $\vec{w}$ to be $(4,2)$.  
+\begin{center}
+\begin{mfpic}[20]{-0.25}{5}{-0.5}{5}
+\axes
+\xmarks{1,2,3,4}
+\ymarks{1,2,3,4}
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,4.75){\scriptsize $y$}
+\point[3pt]{(0,0), (3,4), (4,2)}
+\tlabel[cc](1.5,2.5){\scriptsize $\vec{v}$}
+\tlabel[cc](4,3){\scriptsize $\vec{w}$}
+\tlabel[cc](2.5,0.5){\scriptsize $\vec{v} + \vec{w}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,4)}
+\arrow \polyline{(3,4),(4,2)}
+\arrow \polyline{(0,0),(4,2)}
+\tlpointsep{4pt}
+\axislabels{x}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2,{\scriptsize $3$} 3,{\scriptsize $4$}4}
+\axislabels{y}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2,{\scriptsize $3$} 3,{\scriptsize $4$}4}]
+\end{mfpic}
+\end{center}
+
+
+
+We see the vector $\vec{v} + \vec{w}$ has initial point $(0,0)$ and terminal point $(4,2)$ so its component form  is $\left<4,2\right>$. \qed
+
+\end{example}
+
+In order for vector addition to enjoy the same kinds of properties as real number addition, it is necessary to extend our definition of vectors to include a `zero vector', $\vec{0} = \left<0, 0\right>$.  
+
+\smallskip
+
+Geometrically,  $\vec{0}$ represents a point, which we can (very broadly) think of as a directed line segment with the same initial and terminal points.  The reader may well object to the inclusion of $\vec{0}$, since after all, vectors are supposed to have both a magnitude (length) and a direction.
+
+\smallskip
+
+  While it seems clear that the magnitude of $\vec{0}$ should be $0$, it is not clear what its direction is.  As we shall see, the direction of $\vec{0}$ is in fact undefined, but this minor hiccup in the natural flow of things is worth the benefits we reap by including $\vec{0}$ in our discussions.  We have the following theorem.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem} \label{vectoradditionprops}  \textbf{Properties of Vector Addition} \index{vector ! addition ! properties of}
+\begin{itemize}
+
+\item  \textbf{Commutative Property:}  For all vectors $\vec{v} \text{ and } \vec{w}$, $\vec{v} + \vec{w} = \vec{w} + \vec{v}$. \index{vector ! addition ! commutative property}\index{commutative property ! vector ! addition}
+
+\item  \textbf{Associative Property:}  For all vectors $\vec{u}, \vec{v} \text{ and } \vec{w}$, $\left(\vec{u} + \vec{v}\right) + \vec{w} = \vec{u} + \left(\vec{v} + \vec{w}\right)$. \index{vector ! addition ! associative property}\index{associative property ! vector ! addition}
+
+\item  \textbf{Identity Property:} \index{vector ! additive identity}  For all vectors $\vec{v}$,  \[\vec{v} + \vec{0} = \vec{0} + \vec{v} = \vec{v}.\] 
+
+The vector $\vec{0}$ acts as the additive identity for vector addition. 
+
+\item  \textbf{Inverse Property:} \index{vector ! additive inverse}  For every vector  $\vec{v} = \left< v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} \right>$, the vector $\vec{w} = \left< - v_{\mbox{\tiny $1$}}, -v_{\mbox{\tiny $2$}} \right>$ satisfies  \[\vec{v} + \vec{w} = \vec{w} + \vec{v} = \vec{0}.\] 
+
+That is, the additive inverse of a vector is the vector of the additive inverses of its components.
+
+\end{itemize}
+\end{theorem}
+%% \ebm}
+
+
+The properties in Theorem \ref{vectoradditionprops} are easily verified using the definition of vector addition,\footnote{The interested reader is encouraged to compare Theorem \ref{vectoradditionprops} and the ensuing discussion with Theorem \ref{matrixadditionprops} in Section \ref{MatArithmetic}.}  and are a direct consequence of the definition of vector addition along with properties inherited from real number arithmetic.
+
+\smallskip
+
+For the commutative property, we note that if $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ and $\vec{w} = \left<w_{\mbox{\tiny $1$}},w_{\mbox{\tiny $2$}}\right>$ then
+
+\[ \begin{array}{rcl} \vec{v} + \vec{w}  & = &  \left< v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} \right> +  \left<  w_{\mbox{\tiny $1$}}, w_{\mbox{\tiny $2$}} \right> \\
+& = & \left< v_{\mbox{\tiny $1$}} + w_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} + w_{\mbox{\tiny $2$}} \right> \\
+& = &  \left< w_{\mbox{\tiny $1$}} + v_{\mbox{\tiny $1$}}, w_{\mbox{\tiny $2$}} + v_{\mbox{\tiny $2$}} \right> \\
+& = & \vec{w} + \vec{v} \end{array} \]
+
+Geometrically, we can `see' the commutative property by realizing that the sums $\vec{v}+\vec{w}$ and $\vec{w} + \vec{v}$ are the same directed diagonal determined by the parallelogram below.
+
+
+\begin{center}
+\begin{mfpic}[20]{0}{6}{0}{7}
+\point[4pt]{(0,0), (1,4), (3,2), (4,6)}
+\tlabel[cc](1.5, 0.5){\scriptsize $\vec{v}$}
+\tlabel[cc](4, 4){\scriptsize$\vec{w}$}
+\tlabel[cc](2, 5){\scriptsize $\vec{v}$}
+\tlabel[cc](0, 2){\scriptsize $\vec{w}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,2)}
+\arrow \polyline{(3,2),(4,6)}
+\arrow \polyline{(0,0),(4,6)}
+\arrow \polyline{(0,0),(1,4)}
+\arrow \polyline{(1,4),(4,6)}
+\tlabelsep{-10pt}
+\tlabel(0,0){\rotatebox{56}{\hspace{.85in} \scriptsize $\vec{w}+\vec{v}$}}
+\tlabelsep{5pt}
+\tlabel(0,0){\rotatebox{56}{\hspace{0.75in} \scriptsize $\vec{v}+\vec{w}$}}
+\end{mfpic}
+
+Demonstrating the commutative property of vector addition.
+
+\end{center}
+
+The proofs of the associative and identity properties proceed similarly, and the reader is encouraged to verify them and provide accompanying diagrams.  
+
+\smallskip
+
+The additive identity property is likewise verified algebraically using a calculation.  If $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ , then
+
+ \[ \vec{v} + \vec{0} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> + \left<0, 0\right> = \left< v_{\mbox{\tiny $1$}} + 0, v_{\mbox{\tiny $2$}} + 0 \right> =  \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>  = \vec{v}.\]
+ 
+ From the commutative property of vector addition, we get that $\vec{0} + \vec{v} = \vec{v}$ as well.  Again, the reader is encouraged to visualize what this means geometrically.\footnote{Recall, $\vec{0}$ is represented geometrically as a point \ldots}
+ 
+\smallskip
+
+Regarding additive inverses, we can verify by direct computation that if $\vec{v} = \left< v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} \right>$ and  $\vec{w} = \left< - v_{\mbox{\tiny $1$}}, -v_{\mbox{\tiny $2$}} \right>$, 
+
+\[ \vec{v} + \vec{w} = \left< v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} \right> + \left< - v_{\mbox{\tiny $1$}}, -v_{\mbox{\tiny $2$}} \right> = \left<  v_{\mbox{\tiny $1$}} + ( - v_{\mbox{\tiny $1$}}), v_{\mbox{\tiny $2$}} + ( - v_{\mbox{\tiny $2$}}) \right> = <0,0> = \vec{0}.\]
+
+Once again, the commutative property of vector addition assures us  that, likewise, $\vec{w} + \vec{v} = \vec{0}$.
+
+\smallskip
+
+Moreover, additive inverses of vectors are \textit{unique}.    That is, given a vector $\vec{v} = \left<v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}}\right>$, there is precisely only \textit{one} vector $\vec{w}$ so that $\vec{v} + \vec{w} = \vec{0}$.
+
+\smallskip
+
+To see this, suppose a vector $\vec{w} = \left<w_{\mbox{\tiny $1$}},w_{\mbox{\tiny $2$}}\right>$ satisfies  $\vec{v} + \vec{w} = \vec{0}$.  By the definition of vector addition, we have $\left<v_{\mbox{\tiny $1$}} + w_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}} + w_{\mbox{\tiny $2$}}\right> = \left<0,0\right>$.  Hence, $v_{\mbox{\tiny $1$}} + w_{\mbox{\tiny $1$}} = 0$ and $v_{\mbox{\tiny $2$}} + w_{\mbox{\tiny $2$}} = 0$.  We get $w_{\mbox{\tiny $1$}} = -v_{\mbox{\tiny $1$}}$ and $w_{\mbox{\tiny $2$}}  = -v_{\mbox{\tiny $2$}} $ so that $\vec{w} = \left<-v_{\mbox{\tiny $1$}} , -v_{\mbox{\tiny $2$}} \right>$ as prescribed in Theorem \ref{vectoradditionprops}.  
+
+\smallskip
+
+Hence, every vector $\vec{v}$ has one, and only one, additive inverse.  In general, we denote the additive inverse of a vector $\vec{v}$ with the (highly suggestive) notation $- \vec{v}$.
+
+\smallskip
+
+ Geometrically, the vectors $\vec{v} = \left<v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}}\right>$ and $-\vec{v} = \left<-v_{\mbox{\tiny $1$}}, -v_{\mbox{\tiny $2$}}\right>$ have the same length, but opposite directions.  As a result, when adding the vectors geometrically, the sum $\vec{v} + (-\vec{v})$ results in starting at the initial point of $\vec{v}$ and ending back at the initial point of $\vec{v}$. That is,  the net result of moving $\vec{v}$ then $-\vec{v}$ is not moving at all.
+
+\begin{center}
+\begin{mfpic}[20]{0}{6}{0}{7}
+\tlabel[cc](1.5, 4.5){\scriptsize $\vec{v}$}
+\tlabel[cc](3.5, 3.5){\scriptsize $-\vec{v}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{2}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,2),(3,6)}
+\arrow \reverse \polyline{(2,2),(5,6)}
+\end{mfpic}
+\end{center}
+
+Using the additive inverse of a vector, we can define the difference of two vectors: $\vec{v} - \vec{w} = \vec{v} + (-\vec{w})$.  Looking at this at the level of components, we see if $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ and $\vec{w} = \left<w_{\mbox{\tiny $1$}},w_{\mbox{\tiny $2$}}\right>$ then  
+
+\[\begin{array}{rcl} \vec{v} - \vec{w} & = & \vec{v} + (-\vec{w}) \\
+&  = & \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> + \left<-w_{\mbox{\tiny $1$}},-w_{\mbox{\tiny $2$}}\right> \\
+& = &  \left<v_{\mbox{\tiny $1$}} + \left(-w_{\mbox{\tiny $1$}}\right),v_{\mbox{\tiny $2$}} + \left(-w_{\mbox{\tiny $2$}}\right) \right>\\
+& = &  \left<v_{\mbox{\tiny $1$}} -w_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}} - w_{\mbox{\tiny $2$}}\right> \\ \end{array} \]
+
+In other words, like vector addition, vector subtraction works component-wise.  
+
+\smallskip
+
+To interpret the vector $\vec{v} - \vec{w}$ geometrically, we note
+
+\[ \begin{array}{rcll} \vec{w} + \left(\vec{v} - \vec{w}\right) & = & \vec{w} + \left(\vec{v} +(-\vec{w})\right) & \text{Definition of Vector Subtraction} \\
+& = & \vec{w} + \left((-\vec{w})+\vec{v}\right) & \text{Commutativity of Vector Addition} \\
+& = & (\vec{w} + (-\vec{w})) + \vec{v} & \text{Associativity of Vector Addition} \\
+& = & \vec{0} + \vec{v} & \text{Definition of Additive Inverse}\\
+& = & \vec{v} & \text{Definition of Additive Identity} \\ \end{array} \]
+
+This means that the `net result' of moving along $\vec{w}$ then moving along  $\vec{v} - \vec{w}$ is just $\vec{v}$ itself.  
+
+\smallskip
+
+From the diagram below on the left, we see that  $\vec{v}-\vec{w}$ may be interpreted as the vector whose initial point is the terminal point of $\vec{w}$ and whose terminal point is the terminal point of $\vec{v}$.
+\begin{center}
+\begin{tabular}{cc}
+\hspace{.5in} \begin{mfpic}[20]{0}{6}{0}{7}
+\point[3pt]{(0,0), (1,4), (3,2)}
+\tlabel[cc](1.5, 0.5){\scriptsize$\vec{v}$}
+\tlabel[cc](0, 2){\scriptsize $\vec{w}$}
+\tlabel[cc](2.5, 3.5){\scriptsize$\vec{v} - \vec{w}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,2)}
+\arrow \polyline{(1,4),(3,2)}
+\arrow \polyline{(0,0),(1,4)}
+\end{mfpic}
+
+&
+\hspace{1in}
+
+\begin{mfpic}[20]{0}{6}{0}{7}
+\point[3pt]{(0,0), (1,4), (3,2), (4,6)}
+\tlabel[cc](1.5, 0.5){\scriptsize $\vec{v}$}
+\tlabel[cc](4, 4){\scriptsize$\vec{w}$}
+\tlabel[cc](2, 5){\scriptsize $\vec{v}$}
+\tlabel[cc](0, 2){\scriptsize $\vec{w}$}
+\tlabel[cc](2.5, 3.5){\scriptsize$\vec{v} - \vec{w}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,2)}
+\arrow \polyline{(3,2),(4,6)}
+\arrow \polyline{(1,4),(3,2)}
+\arrow \polyline{(0,0),(1,4)}
+\arrow \polyline{(1,4),(4,6)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\end{center}
+
+ It is also worth mentioning that in the parallelogram determined by the vectors $\vec{v}$ and $\vec{w}$ above on the right, the vector $\vec{v}-\vec{w}$ is one of the diagonals -- the other being $\vec{v} + \vec{w}$.
+
+\smallskip
+
+Next, we discuss \textit{scalar} multiplication -- that is, taking a real number times a vector.  We define scalar multiplication for vectors in the same way we  defined it for matrices in Section \ref{MatArithmetic}.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{scalarmultvector} \index{vector ! scalar multiplication ! definition of} \index{scalar multiplication ! vector ! definition of} If $k$ is a real number and $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$, we define $k\vec{v}$ by \[k\vec{v} = k\left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> =\left<k v_{\mbox{\tiny $1$}},k v_{\mbox{\tiny $2$}}\right> \]
+
+\end{definition}
+
+%% \ebm}
+
+\smallskip
+
+Scalar multiplication by $k$ in vectors can be understood geometrically as scaling the vector (if $k > 0$) or scaling the vector and reversing its direction (if $k < 0$) as demonstrated below.
+
+\begin{center}
+\begin{mfpic}[18]{0}{6}{0}{6}
+\tlabel[cc](0,3){\scriptsize $\vec{v}$}
+\tlabel[cc](2.5,4){\scriptsize $2\vec{v}$}
+\tlabel[cc](3.75,2.5){\scriptsize$\frac{1}{2}\vec{v}$}
+\tlabel[cc](5,1){\scriptsize $-2\vec{v}$}
+\dotted \polyline{(0,2), (6,2)}
+\setlength{\headlen}{5pt}
+\headshape{1}{2}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,2),(1,4)}
+\arrow \polyline{(2,2), (4, 6)}
+\arrow \polyline{(4,2),(4.5,3)}
+\arrow \polyline{(6,2), (5,0)}
+
+\end{mfpic}
+\end{center}
+
+
+Note  by definition \ref{scalarmultvector}, $(-1)\vec{v} = (-1)\left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> = \left<(-1)v_{\mbox{\tiny $1$}}, (-1)v_{\mbox{\tiny $2$}}\right> = \left<-v_{\mbox{\tiny $1$}},-v_{\mbox{\tiny $2$}}\right> = -\vec{v}$, which is what we would expect.   This and other properties of scalar multiplication are summarized in the theorem below. 
+
+\smallskip
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem}  \label{vectorscalarmultprops}\textbf{Properties of Scalar Multiplication} \index{vector ! scalar multiplication ! properties of} \index{scalar multiplication ! vector ! properties of}
+
+\begin{itemize}
+
+\item  \textbf{Associative Property:} \index{vector ! scalar multiplication ! associative property of} \index{scalar multiplication ! vector ! associative property of} \index{associative property ! vector ! scalar multiplication} For every  vector $\vec{v}$ and scalars  $k$ and $r$, $(kr)\vec{v} = k(r\vec{v})$.
+
+\item  \textbf{Identity Property:}  \index{vector ! scalar multiplication ! identity for} For all vectors $\vec{v}$, $1\vec{v} = \vec{v}$.
+
+\item  \textbf{Additive Inverse Property:} For all vectors $\vec{v}$, $-\vec{v} = (-1)\vec{v}$. \index{vector ! additive inverse}
+
+\item  \textbf{Distributive Property of Scalar Multiplication over Scalar Addition:} \index{vector ! scalar multiplication ! distributive properties} \index{distributive property ! vector ! scalar multiplication} \index{scalar multiplication ! vector ! distributive properties of} 
+
+For every  vector $\vec{v}$ and scalars  $k$ and $r$, \[(k+r)\vec{v} = k\vec{v} + r\vec{v}\]
+
+\item  \textbf{Distributive Property of Scalar Multiplication over Vector Addition:} 
+
+For all vectors $\vec{v}$ and $\vec{w}$ and scalars $k$, \[k(\vec{v}+\vec{w}) = k\vec{v} + k\vec{w}\] 
+
+\item  \textbf{Zero Product Property:}  \index{vector ! scalar multiplication ! zero product property} If $\vec{v}$ is vector and $k$ is a scalar, then 
+\[k\vec{v} = \vec{0} \quad \text{if and only if} \quad k=0 \quad \text{or} \quad \vec{v} =\vec{0}\]
+
+
+\end{itemize}
+
+\end{theorem}
+%% \ebm}
+\smallskip
+
+The proof of Theorem \ref{vectorscalarmultprops}, like the proof of Theorem \ref{vectoradditionprops}, ultimately boils down to the definition of scalar multiplication and properties of real numbers.  
+
+\smallskip
+
+For example, to prove the associative property, we let $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$.  If $k$ and $r$ are scalars then 
+
+\[\begin{array}{rcll}
+
+(kr) \vec{v} & = & (kr) \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> & \\ [3pt]
+						 & = &  \left<(kr) v_{\mbox{\tiny $1$}}, (kr) v_{\mbox{\tiny $2$}}\right> & \text{Definition of Scalar Multiplication} \\ [3pt]
+						 & = &   \left<k (r v_{\mbox{\tiny $1$}}),  k (r v_{\mbox{\tiny $2$}})\right> & \text{Associative Property of Real Number Multiplication} \\ [3pt]
+						 & = &   k\left<r v_{\mbox{\tiny $1$}},  r v_{\mbox{\tiny $2$}}\right> & \text{Definition of Scalar Multiplication} \\ [3pt]	
+ 						 & = &   k\left(r\left<v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}}\right>\right) & \text{Definition of Scalar Multiplication} \\ [3pt]
+						 & = & k(r\vec{v}) & \\ \end{array} \]
+						 
+The reader is invited to think about what this property means geometrically.  The remaining properties are proved similarly and are left as exercises.
+
+\smallskip
+
+Our next example demonstrates how Theorem \ref{vectorscalarmultprops} allows us to do the same kind of algebraic manipulations with vectors as we do with variables -- multiplication and division of vectors notwithstanding.  If the pedantry seems familiar, it should.  This is the same treatment we gave Example \ref{matrixaddscalarex} in Section \ref{MatArithmetic}.  As in that example,  we spell out the solution in excruciating detail to encourage the reader to think carefully about why each step is justified.
+
+
+
+\begin{example} \label{vectoreqnex}  Solve $5\vec{v} - 2\left(\vec{v} + \left<1,-2\right>\right) = \vec{0}$ for $\vec{v}$.
+
+\medskip
+
+{\bf Solution.}  
+
+\[ \begin{array}{rcl}
+
+5\vec{v} - 2\left(\vec{v} +\ \left<1,-2\right>\right) & = &  \vec{0} \\
+5\vec{v} + (-1)\left[ 2\left(\vec{v} +\left<1,-2\right>\right)\right] & = &  \vec{0}\\
+5\vec{v} + [(-1)(2)]\left(\vec{v} + \left<1,-2\right>\right) &  = &  \vec{0}\\
+5\vec{v} + (-2)\left(\vec{v} + \left<1,-2\right>\right)  &  = &  \vec{0}\\
+5\vec{v} + \left[(-2)\vec{v} + (-2)\left<1,-2\right> \right] &  = &  \vec{0}\\
+5\vec{v} + \left[(-2)\vec{v} + \left<(-2)(1),(-2)(-2)\right> \right] &  = &  \vec{0}\\
+\left[5\vec{v} + (-2)\vec{v}\right] + \left<-2,4\right> &  = &  \vec{0}\\
+(5 + (-2)) \vec{v} + \left<-2,4\right>  &  = &  \vec{0}\\
+3\vec{v} + \left<-2,4\right>  &  = &  \vec{0}\\
+\left(3\vec{v} + \left<-2,4\right>\right) + \left(- \left<-2,4\right>\right)  &  = &  \vec{0} + \left(- \left<-2,4\right>\right)\\
+3\vec{v} + \left[\left<-2,4\right> + \left(- \left<-2,4\right>\right)\right]  &  = &  \vec{0} +  (-1) \left<-2,4\right>\\
+3\vec{v} + \vec{0}  &  = &  \vec{0} +  \left<(-1)(-2),(-1)(4)\right>\\
+3\vec{v}   &  = &   \left<2,-4\right>\\[3pt]
+\frac{1}{3} \left(3\vec{v} \right)  &  = &   \frac{1}{3} \left(\left<2,-4\right>\right)\\[3pt]
+\left[\left(\frac{1}{3}\right) (3) \right]\vec{v}   &  = &   \left< \left(\frac{1}{3}\right)(2), \left(\frac{1}{3}\right)(-4)\right>\\[3pt]
+ 1 \vec{v} & = & \left< \frac{2}{3}, -\frac{4}{3} \right> \\[3pt]
+ \vec{v} & =&  \left< \frac{2}{3}, -\frac{4}{3} \right> \\
+\end{array} \]
+
+The reader is invited to check our solution in the original equation.  \qed
+
+
+\end{example}
+
+A vector whose initial point is $(0,0)$ is said to be in \index{vector ! standard position} \index{standard position of a vector} \textbf{standard position}.  If $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ is plotted in standard position, then its terminal point is necessarily $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$. (Once more, think about this before reading on.)  
+
+\begin{center}
+\begin{mfpic}[20]{-1}{5}{-0.5}{5}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,4.75){\scriptsize $y$}
+\arrow \parafcn{5,45,5}{1.5*dir(t)}
+\tlabel[cc](1.75, 0.75){$\theta$}
+\tlabel(0,1){\rotatebox{55}{\hspace{.1in} \scriptsize $\| \vec{v} \| = \sqrt{v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2}$}}
+\point[4pt]{(0,0), (3,4)}
+\tlabel(3.25,4){\scriptsize $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,4)}
+\end{mfpic}
+
+
+$\vec{v} =\left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$ in standard position.
+\end{center} 
+
+\phantomsection
+\label{polarformvectorsection} 
+
+Plotting a vector in standard position enables us to more easily quantify the concepts of magnitude and direction of the vector. 
+
+\smallskip
+
+Recall the magnitude of vector $\vec{v}$ is the length of the directed line segment representing $\vec{v}$.   When plotted in standard position, the length of this line segment  is none other than the distance from the origin $(0,0)$ to the point $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$.  Hence, the magnitude of $\vec{v}$, which we denote $\| \vec{v} \|$, is given by $\| \vec{v} \| = \sqrt{v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2}$.
+
+\smallskip
+
+Turning to the notion of direction, we note that the point  $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$ is on the terminal side of the angle $\theta$ depicted in the diagram above.   From Theorem \ref{cosinesinecircle}, we have $v_{\mbox{\tiny $1$}} = \| \vec{v} \| \cos(\theta)$ and $v_{\mbox{\tiny $2$}}  =  \| \vec{v} \| \sin(\theta)$. From the definition of scalar multiplication and vector equality, we get
+
+\[ \begin{array}{rcl} \vec{v} & = & \left< v_{\mbox{\tiny $1$}} , v_{\mbox{\tiny $2$}}  \right> \\ [3pt]
+															& = & \left< \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right> \\ [3pt]
+													    & = &  \| \vec{v} \| \left< \cos(\theta),\sin(\theta) \right> \\ \end{array} \]
+This motivates the following definition.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{definition} \label{polarformvector}  Suppose $\vec{v}$ is a vector with component form $\vec{v} =\left< v_{\mbox{\tiny $1$}} , v_{\mbox{\tiny $2$}}  \right>$.  Let $\theta$ be an angle in standard position whose terminal side contains the point $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$.
+
+\begin{itemize}
+
+\item  The \index{vector ! magnitude ! definition of} \textbf{magnitude} of $\vec{v}$, denoted $\| \vec{v} \|$, is given by $\| \vec{v} \| =   \sqrt{v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2}$
+
+\item If $\vec{v} \neq \vec{0}$, \index{vector ! direction ! definition of} the \textbf{(vector) direction} of $\vec{v}$, denoted $\bm\hat{v}$ is given by  $\bm\hat{v} = \left< \cos(\theta), \sin(\theta) \right>$
+
+\end{itemize}
+
+Taken together, we get $\vec{v} =  \left< \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right>$.
+
+\end{definition}
+%% \ebm}
+
+\smallskip
+
+A few remarks are in order.   First, we note that if  $\vec{v} \neq 0$ then  there are infinitely many  angles $\theta$ which satisfy Definition \ref{polarformvector}.   However, the fact that all of them must contain the same point $\left(v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right)$  on their terminal sides means they are all coterminal.  
+
+\smallskip
+
+Hence, if $\theta$ and $\theta'$ both satisfy the conditions of Definition \ref{polarformvector}, then $\cos(\theta) = \cos(\theta')$ and $\sin(\theta) = \sin(\theta')$, and as such, $ \left< \cos(\theta), \sin(\theta) \right> =  \left< \cos(\theta'), \sin(\theta') \right>$ making $\bm\hat{v}$ is well-defined.
+
+\smallskip
+
+For $\vec{0} = \left< 0, 0 \right>$, note that  $\| \vec{0} \| = \sqrt{0^2 + 0^2} = 0$.  Hence, $\| \vec{0} \|  \left< \cos(\theta), \sin(\theta) \right> = 0 \left< \cos(\theta), \sin(\theta) \right>  = <0,0>$ for \textit{every} angle $\theta$.  In other words, every angle $\theta$ satisfies the equation $\vec{v} =  \left< \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right>$  in  Definition \ref{polarformvector}, so for this reason,  $\bm\hat{0}$ is undefined. 
+
+\smallskip
+
+The following theorem summarizes the important facts about the magnitude and direction of a vector.
+
+\smallskip
+
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem}  \label{magdirprops}  \textbf{Properties of Magnitude and Direction}: Suppose $\vec{v}$ is a vector. \index{vector ! magnitude ! properties of} \index{vector ! direction ! properties of}
+
+\begin{itemize}
+
+\item $\| \vec{v} \| \geq 0$ and $\| \vec{v} \| = 0$ if and only if $\vec{v} = \vec{0}$
+
+\item  For all scalars $k$,  $\| k \, \vec{v} \| = |k| \| \vec{v} \|$.
+
+\item  If $\vec{v} \neq \vec{0}$ then $\vec{v} = \| \vec{v} \| \bm\hat{v}$, so that $\bm\hat{v} = \left(\dfrac{1}{\|\vec{v}\|}\right) \vec{v}$.
+
+\end{itemize}
+
+\end{theorem}
+
+\smallskip
+
+%% \ebm}
+
+\smallskip
+
+The proof of the first property in Theorem \ref{magdirprops} is a direct consequence of the definition of $\| \vec{v} \|$.  Given $\vec{v}  = \left< v_{\mbox{\tiny $1$}} ,v_{\mbox{\tiny $2$}}\right>$, then $\| \vec{v} \| = \sqrt{v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2}$ which is by definition greater than or equal to $0$.  Moreover, $\sqrt{v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2} = 0$ if and only of $v_{\mbox{\tiny $1$}}^2 + v_{\mbox{\tiny $2$}}^2 = 0$ if and only if $v_{\mbox{\tiny $1$}} = v_{\mbox{\tiny $2$}} = 0$.  Hence, $\| \vec{v} \| = 0$ if and only if $\vec{v} = \left<0,0\right> =  \vec{0}$, as required.
+
+\smallskip
+
+The second property is a result of the definition of magnitude and scalar multiplication along with a property of radicals. If $\vec{v} = \left< v_{\mbox{\tiny $1$}} ,v_{\mbox{\tiny $2$}}\right>$ and $k$ is a scalar then 
+
+\[ \begin{array}{rcll}
+
+\| k \, \vec{v} \| & = & \| k \left< v_{\mbox{\tiny $1$}}, v_{\mbox{\tiny $2$}}\right> \| & \\ [3pt]
+									 & = & \| \left<kv_{\mbox{\tiny $1$}},kv_{\mbox{\tiny $2$}}\right>\| & \text{Definition of scalar multiplication} \\ [3pt]
+									 & = & \sqrt{\left(kv_{\mbox{\tiny $1$}}\right)^2 + \left(kv_{\mbox{\tiny $2$}}\right)^2} & \text{Definition of magnitude} \\ [3pt]
+									 & = & \sqrt{k^2v_{\mbox{\tiny $1$}}^2 + k^2v_{\mbox{\tiny $2$}}^2} & \\[3pt]
+									 & = & \sqrt{k^2(v_{\mbox{\tiny $1$}}^2+v_{\mbox{\tiny $2$}}^2)} & \\ [3pt]
+									 & = & \sqrt{k^2} \sqrt{v_{\mbox{\tiny $1$}}^2+v_{\mbox{\tiny $2$}}^2} & \text{Product Rule for Radicals} \\ [3pt]
+									 & = & |k| \sqrt{v_{\mbox{\tiny $1$}}^2+v_{\mbox{\tiny $2$}}^2} & \text{Since $\sqrt{k^2} = |k|$} \\
+									 & = & |k| \| \vec{v} \| & \\
+\end{array} \]
+
+\smallskip
+
+The equation $\vec{v} = \| \vec{v} \| \bm\hat{v}$ in Theorem \ref{magdirprops} is a consequence of the definitions of $\| \vec{v} \|$ and $\bm\hat{v}$ and was worked out in the discussion just prior to Definition \ref{polarformvector} on page \pageref{polarformvectorsection}.  In words, the equation $\vec{v} = \| \vec{v} \| \bm\hat{v}$  says that any given vector is the product of its magnitude and its direction -- an important concept to keep in mind when studying and using vectors. 
+
+\smallskip
+
+The formula for   $\bm\hat{v}$ stated  in Theorem \ref{magdirprops}  is a consequence of solving $\vec{v} = \| \vec{v} \| \bm\hat{v}$  for $\bm\hat{v}$ by multiplying\footnote{Of course, to go from $\vec{v} = \| \vec{v} \| \bm\hat{v}$ to $\bm\hat{v} = \left( \frac{1}{\|\vec{v}\|}\right) \vec{v}$, we are essentially `dividing both sides' of the equation by the scalar $\| \vec{v} \|$.  The authors encourage the reader, however, to work out the details carefully to gain an appreciation of the properties in play.} both sides of the equation by $\frac{1}{\| \vec{v} \|}$ and using the properties of Theorem \ref{vectorscalarmultprops}.  We leave these details to the reader. We are overdue for an example.
+
+\newpage
+
+\begin{example} \label{polarformvecex} $~$
+
+\begin{enumerate}
+
+\item \label{resolvecomponents} Find the component form of the vector $\vec{v}$ with $\|\vec{v}\| = 5$ so that when $\vec{v}$ is plotted in standard position, it lies in Quadrant II and makes a $60^{\circ}$ angle\footnote{Due to the utility of vectors in `real-world' applications, we will usually use degree measure for the angle when giving the vector's direction.  That being said, since Carl doesn't want you to forget about radians, he's made sure there are examples and exercises which use them as well.} with the negative $x$-axis.
+
+\item  For $\vec{v} = \left<3, -3\sqrt{3}\right>$, find $\|\vec{v}\|$ and $\theta$, $0 \leq \theta < 2\pi$ so that $\vec{v} = \| \vec{v} \| \left<\cos(\theta), \sin(\theta)\right>$.
+
+\item For the vectors $\vec{v} = \left<3,4\right>$ and $\vec{w} = \left<1, -2\right>$, find the following.
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $\bm\hat{v}$
+
+\item  $\| \vec{v} \| -2 \|\vec{w}\|$
+
+\item  $\| \vec{v} -2\vec{w}\|$
+
+\item  $\| \bm\hat{w} \|$ \label{preludetounitvector}
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  We are told that $\| \vec{v} \| = 5$ and are given information about its direction, so we can use the formula $\vec{v} = \| \vec{v} \| \bm\hat{v}$ to get the component form of $\vec{v}$. 
+
+\smallskip
+
+ To determine $\bm\hat{v}$, we appeal to Definition \ref{polarformvector}.  Since $\vec{v}$ lies in Quadrant II and makes a  $60^{\circ}$ angle with the negative $x$-axis, one angle $\theta$ satisfying the criteria of  Definition \ref{polarformvector} is $\theta = 120^{\circ}$.  
+ 
+
+\begin{center}
+
+\begin{mfpic}[20]{-4}{4}{-1}{6}
+
+\axes
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4,5}
+\arrow \reverse \arrow \parafcn{125,175,5}{1.5*dir(t)}
+\arrow \parafcn{5,115,5}{1.5*dir(t)}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\tlabel[cc](4,-0.25){\scriptsize $x$}
+\tlabel[cc](0.25,6){\scriptsize $y$}
+\tlabel[cc](2.5,1){\scriptsize $\theta = 120^{\circ}$}
+\tlabel[cc](-2,1){\scriptsize $60^{\circ}$}
+\tlabel[cc](-1.25,3){\scriptsize $\vec{v}$}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (-2.5, 4.33)}
+\end{mfpic}
+
+\end{center} 
+
+Hence,  $\bm\hat{v} = \left< \cos\left(120^{\circ}\right), \sin\left(120^{\circ}\right) \right> = \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right>$, so  $\vec{v} = \| \vec{v} \| \bm\hat{v} = 5  \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right> =  \left< - \frac{5}{2} , \frac{5\sqrt{3}}{2} \right>$.
+
+
+\item  For $\vec{v} =  \left<3, -3\sqrt{3}\right>$, we get $\| \vec{v} \| = \sqrt{(3)^2+(-3\sqrt{3})^2} = 6$.  In light of Definition \ref{polarformvector}, we can find the $\theta$ we're after by finding a Quadrant IV angle whose terminal side contains the point  $(3, -3\sqrt{3})$.  
+
+\smallskip
+
+Going through the usual calculations, we find $\cos(\theta) = \frac{1}{2}$ and $\sin(\theta) = -\frac{\sqrt{3}}{2}$.  Hence,  $\theta = \frac{5\pi}{3}$.  
+
+\smallskip
+
+We may check our answer by verifying $6\left<\cos\left(\frac{5\pi}{3}\right), \sin\left(\frac{5\pi}{3}\right) \right>  = \left<3, -3\sqrt{3}\right> = \vec{v}$.
+
+\item  \begin{enumerate} \item  Since we are given the component form of $\vec{v}$, we'll use the formula $\bm\hat{v} = \left(\frac{1}{\|\vec{v}\|}\right) \vec{v}$.  For $\vec{v} = \left<3,4\right>$, we have $\| \vec{v} \| = \sqrt{3^2+4^2} = \sqrt{25} = 5$.  Hence, $\bm\hat{v} = \frac{1}{5} \left< 3, 4 \right> = \left<\frac{3}{5}, \frac{4}{5}\right>$.
+
+
+\item  We know from our work above that $\| \vec{v} \| = 5$, so to find  $\| \vec{v} \| -2 \|\vec{w}\|$, we need only find $\| \vec{w} \|$.  Since $\vec{w} = \left<1, -2\right>$, we get $\| \vec{w} \| = \sqrt{1^2+(-2)^2} = \sqrt{5}$.  Hence, $\| \vec{v} \| -2 \|\vec{w}\| = 5 - 2\sqrt{5}$.
+
+\item  In the expression $\| \vec{v} -2\vec{w}\|$, notice that the arithmetic on the vectors comes first, then the magnitude.  Hence, our first step is to find the component form of the vector $\vec{v} - 2\vec{w}$.  We get $\vec{v} - 2 \vec{w} = \left<3,4\right> - 2\left<1,-2\right> = \left<1, 8\right>$.  Hence,  $\| \vec{v} -2\vec{w}\| =  \| \left<1, 8\right>\| = \sqrt{1^2+8^2} = \sqrt{65}$.
+
+\item  One approach to find $\| \bm\hat{w} \|$, is to first find $\bm\hat{w}$ and then take the magnitude.
+
+\smallskip
+
+Using the formula  $\bm\hat{w} = \left(\frac{1}{\| \vec{w} \|}\right) \vec{w}$ along with $\| \vec{w} \| = \sqrt{5}$, which we found the in the previous problem, we get  $\bm\hat{w} = \frac{1}{\sqrt{5}} \left<1, -2\right> = \left< \frac{1}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right>  = \left< \frac{\sqrt{5}}{5}, -\frac{2\sqrt{5}}{5}\right>$.   
+
+\smallskip
+
+Hence, $\| \bm\hat{w} \| = \sqrt{\left( \frac{\sqrt{5}}{5}\right)^2 + \left(-\frac{2\sqrt{5}}{5}\right)^2} = \sqrt{\frac{5}{25} + \frac{20}{25}} = \sqrt{1} = 1$. 
+
+Alternatively, we can use Theorem \ref{magdirprops}.  Since $\bm\hat{w} = \left(\frac{1}{\| \vec{w} \|} \right) \vec{w}$, where $\frac{1}{\| \vec{w} \|}>0$ is a scalar,   \[ \| \bm\hat{w} \| = \left\|  \left(\frac{1}{\| \vec{w} \|} \right) \vec{w} \right\| = \frac{1}{\| \vec{w} \|} \| \vec{w} \| = \frac{\| \vec{w} \|}{\| \vec{w} \|} = 1.\] 
+
+For a third way to show $\| \bm\hat{w} \| = 1$, we can appeal to Definition \ref{polarformvector}.  Since $\bm\hat{w} = \left< \cos(\theta), \sin(\theta) \right>$ for some angle $\theta$, $\| \bm\hat{w} \| = \sqrt{\cos^{2}(\theta) + \sin^{2}(\theta)} = \sqrt{1} = 1$, where we have used the Pythagorean Identity, $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$.  No matter how we approach the problem, $\| \bm\hat{w} \| = 1$. \qed
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{example}
+
+Note that the second and third solutions to number \ref{preludetounitvector} in Example \ref{polarformvecex} above work for \textit{any} nonzero vector, $\vec{w}$.  We will have more to say about this shortly.
+
+The process exemplified by number \ref{resolvecomponents} in Example \ref{polarformvecex} above by which we take information about the magnitude and direction of a vector and find the component form of a vector is called \textbf{resolving} a vector into its components.  As an application of this process, we revisit Example \ref{vectorbearingex} below.
+
+
+\begin{example} \label{vectorbearingexresolve}  A plane leaves an airport with an airspeed of 175 miles per hour with bearing N$40^{\circ}$E.  A 35 mile per hour wind is blowing at a bearing of S$60^{\circ}$E.  Find the true speed of the plane, rounded to the nearest mile per hour,  and the true bearing of the plane, rounded to the nearest degree.
+
+\smallskip
+
+{\bf Solution:}  We proceed as we did in Example \ref{vectorbearingex} and let $\vec{v}$ denote the plane's velocity and $\vec{w}$ denote the wind's velocity, and set about determining $\vec{v} + \vec{w}$.  
+
+\smallskip
+
+If we regard the airport as being at the origin, the positive $y$-axis acting as due north and the positive $x$-axis acting as due east, we see that the vectors $\vec{v}$ and $\vec{w}$ are in standard position and their directions correspond to the angles $50^{\circ}$ and $-30^{\circ}$, respectively.  
+
+\smallskip
+
+Hence, the component form of $\vec{v} = 175\left<\cos(50^{\circ}), \sin(50^{\circ})\right> = \left<175\cos(50^{\circ}), 175\sin(50^{\circ})\right>$ and the component form of $\vec{w} = \left<35\cos(-30^{\circ}), 35\sin(-30^{\circ}) \right>$.  
+
+\smallskip
+
+Since we have no convenient way to express the exact values of cosine and sine of $50^{\circ}$, we leave both vectors in terms of cosines and sines.\footnote{Keeping things `calculator' friendly, for once!}  Adding corresponding components, we find the resultant vector $\vec{v} + \vec{w} = \left< 175\cos(50^{\circ}) + 35\cos(-30^{\circ}), 175\sin(50^{\circ}) + 35\sin(-30^{\circ})\right>$.  To find the `true' speed of the plane, we compute the magnitude of this resultant vector
+
+\[ \| \vec{v} + \vec{w}\| = \sqrt{ (175\cos(50^{\circ}) + 35\cos(-30^{\circ}))^2 + (175\sin(50^{\circ}) + 35\sin(-30^{\circ}))^2} \approx 184\]
+
+Hence, the `true' speed of the plane is approximately 184 miles per hour. 
+
+\smallskip
+
+ To find the true bearing, we need to find the angle $\theta$  whose terminal side when graphed in standard position contains $(x,y) = (175\cos(50^{\circ}) + 35\cos(-30^{\circ}), 175\sin(50^{\circ}) + 35\sin(-30^{\circ}))$.  
+ 
+ \smallskip
+ 
+ Since both of these coordinates are positive,\footnote{Yes, a calculator approximation is the quickest way to see this, but you can also use good old-fashioned inequalities and the fact that $45^{\circ} \leq 50^{\circ} \leq 60^{\circ}$.} we know $\theta$ is a Quadrant I angle, as depicted below.  Furthermore, \[\tan(\theta) = \frac{y}{x} = \frac{175\sin(50^{\circ}) + 35\sin(-30^{\circ})}{175\cos(50^{\circ}) + 35\cos(-30^{\circ})},\]
+
+so using the arctangent function,\footnote{We could just have easily used arcsine or arccosine here \ldots} we get $\theta \approx 39^{\circ}$.  Since, for the purposes of bearing, we need the angle between $\vec{v} + \vec{w}$ and the positive $y$-axis, we take the complement of $\theta$ and find the `true' bearing of the plane to be approximately N$51^{\circ}$E.
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{mfpic}[15]{-1}{8}{-2}{9}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize $x$  (E)}
+\tlabel[cl](0.5,9){\scriptsize $y$ (N)}
+\arrow \parafcn{85,55,-5}{3*dir(t)}
+\tlabel[cc](1.2, 3.3){\scriptsize $40^{\circ}$}
+\arrow \parafcn{5,45,5}{3*dir(t)}
+\tlabel[cc](3.2, 1.5){\scriptsize $50^{\circ}$}
+\arrow \parafcn{275,325,-5}{1.5*dir(t)}
+\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
+\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
+\tlabel[cc](2.3, -0.52){\scriptsize $-30^{\circ}$}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (6.43, 7.66)}
+\tlabel[cc](6.75, 8.04){\scriptsize $\vec{v}$}
+\arrow \polyline{(0,0), (1.73, -1)}
+\tlabel[cc](2.16, -1.25){\scriptsize $\vec{w}$}
+%\arrow \dashed \polyline{(0,0), (8.16,6.66)}
+%\dotted \polyline{(1.73, -1), (8.16, 6.66)}
+%\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
+%\tlabel[cc](9,6.75){\scriptsize $\vec{v} + \vec{w}$}
+
+\normalsize
+\end{mfpic}
+
+&
+\hspace{0.75in}
+
+\begin{mfpic}[15]{-1}{8}{-2}{9}
+\axes
+\tlabel[cl](8,-0.5){\scriptsize $x$ (E)}
+\tlabel[cl](0.5,9){\scriptsize $y$ (N)}
+\arrow \parafcn{5,35,5}{3*dir(t)}
+\tlabel[cc]{(4,1.2)}{\scriptsize $\theta \approx 39^{\circ}$}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (6.43, 7.66)}
+\tlabel[cc](6.75, 8.04){\scriptsize $\vec{v}$}
+\arrow \polyline{(0,0), (1.73, -1)}
+\tlabel[cc](2.16, -1.25){\scriptsize $\vec{w}$}
+\arrow \polyline{(0,0), (8.16,6.66)}
+\tlabel[cc](9,6.75){\scriptsize $\vec{v} + \vec{w}$}
+
+\normalsize
+\end{mfpic}
+
+
+
+\\
+
+\end{tabular}
+
+\end{center}
+
+\vspace{-.25in}
+\qed
+
+\end{example}
+
+In part \ref{preludetounitvector} of Example \ref{polarformvecex}, we saw that the length of the direction vector, $\bm\hat{w}$,  $\| \bm\hat{w} \| = 1$.  Vectors of length $1$  play such an important role that they are given a special name.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{definition} \label{unitvectordefn} \index{vector ! unit vector} \index{unit vector} \textbf{Unit Vectors:}   Let $\vec{v}$ be a vector. If $\| \vec{v} \| = 1$, we say that $\vec{v}$ is a \textbf{unit vector}.
+
+\end{definition}
+%% \ebm}
+\smallskip
+
+Note that if $\vec{v}$ is a unit vector, then necessarily,  $\vec{v} = \| \vec{v} \| \bm\hat{v} = 1 \cdot \bm\hat{v} = \bm\hat{v}$.  Conversely,  in the solution of part \ref{preludetounitvector} of Example \ref{polarformvecex}, two different arguments show for any nonzero vector $\vec{v}$, $\| \bm\hat{v} \| = 1$, so $\bm\hat{v}$ is a unit vector.  
+
+\smallskip
+
+In other words, unit vectors are direction vectors and vice-versa. Indeed, the vector $\bm\hat{v}$ which we have defined as `the \textit{direction} of $\vec{v}$' is often described as `the \textit{unit vector in the direction} of $\vec{v}$.'
+
+\smallskip
+
+  In practice, if $\vec{v}$ is a unit vector we write it as $\bm\hat{v}$ as opposed to $\vec{v}$ because we have reserved the `$\bm\hat{~}$' notation for unit vectors.  The process of multiplying a nonzero vector by the factor $\frac{1}{\| \vec{v} \|}$ to produce a unit vector is called \index{vector ! normalization} `\textbf{normalizing} the vector.'  
+  
+  \smallskip
+  
+   The terminal points of unit vectors, when plotted in standard position, lie on the Unit Circle. (You should take the time to show this.)  As a result, we visualize normalizing a nonzero vector $\vec{v}$ as shrinking\footnote{\ldots if $\| \vec{v} \| > 1$ \ldots} its terminal point, when plotted in standard position, back to the Unit Circle.
+
+\begin{center}
+
+\begin{mfpic}[20]{-4}{4}{-4}{4}
+\drawcolor[gray]{0.7}
+\circle{(0,0),2}
+\drawcolor[rgb]{0.33,0.33,0.33}
+\axes
+\tlabel[cl](4,-0.5){\scriptsize $x$}
+\tlabel[cl](0.5,4){\scriptsize $y$}
+\xmarks{-2,2}
+\ymarks{-2,2}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (2, 3.46)}
+\tlabel[cc](2.25, 3.46){$\vec{v}$}
+\tlabel[cc](1.5, 1.73){\text{\boldmath $\bm\hat{v}$}}
+\penwd{1.025}
+\setlength{\headlen}{4pt}
+\headshape{1}{1}{true}
+\arrow \polyline{(0,0), (1, 1.73)}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-1\hspace{7pt} $} -2, {$1$} 2}
+\axislabels {y}{{$-1$} -2,  {$1$} 2}
+\normalsize
+\end{mfpic}
+
+Visualizing vector normalization $\bm\hat{v} = \left( \frac{1}{\|\vec{v}\|} \right) \vec{v}$
+
+\end{center}
+
+Of all of the unit vectors, two deserve special mention.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{ihatjhatdefn}  \textbf{The Principal Unit Vectors:} $~$ \index{vector ! principal unit vectors, $\bm\hat{\text{i}}$, $\bm\hat{\text{j}}$} \index{principal unit vectors, $\bm\hat{\text{i}}$, $\bm\hat{\text{j}}$} 
+
+\begin{itemize}
+
+\item The vector $\bm\hat{\text{i}}$ is defined by $\bm\hat{\text{i}} = \left<1,0\right>$
+
+\item The vector $\bm\hat{\text{j}}$ is defined by $\bm\hat{\text{j}} = \left<0,1\right>$
+
+\end{itemize}
+
+\smallskip
+
+\end{definition}
+
+%% \ebm}
+
+\smallskip
+
+Geometrically, in the $xy$-plane, the vector $\bm\hat{\text{i}}$ as represents the positive $x$-direction, whereas the vector $\bm\hat{\text{j}}$ represents the positive $y$-direction.  We have the following `decomposition' theorem.\footnote{We will see a generalization of Theorem \ref{ijdecomp} in Section \ref{TheDotProduct}.  Stay tuned!}  
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{ijdecomp}  \textbf{Principal Vector Decomposition Theorem:} 
+
+ Let $\vec{v}$ be a vector with component form  $\vec{v} = \left< v_{\mbox{\tiny $1$}} ,v_{\mbox{\tiny $2$}}\right>$. Then $\vec{v} = v_{\mbox{\tiny $1$}} \bm\hat{\text{i}} + v_{\mbox{\tiny $2$}} \bm\hat{\text{j}}$. \index{vector ! Decomposition Theorem ! Principal}
+
+
+\end{theorem}
+
+%% \ebm}
+
+\smallskip
+
+The proof of Theorem \ref{ijdecomp} is straightforward. Since $\bm\hat{\text{i}} = \left<1,0\right>$ and $\bm\hat{\text{j}} = \left< 0,1\right>$, we have from the definition of scalar multiplication and vector addition that  
+
+\[v_{\mbox{\tiny $1$}} \bm\hat{\text{i}} + v_{\mbox{\tiny $2$}} \bm\hat{\text{j}} = v_{\mbox{\tiny $1$}}\left<1,0\right> + v_{\mbox{\tiny $2$}}\left<0,1\right> = \left<v_{\mbox{\tiny $1$}},0\right> + \left<0,v_{\mbox{\tiny $2$}}\right> = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> = \vec{v}\]
+
+Geometrically, the situation looks like this:
+
+
+\begin{center}
+\begin{mfpic}[20]{-1}{5}{-1}{5}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,5){\scriptsize $y$}
+\point[3pt]{(0,0)}
+\xmarks{1,3}
+\ymarks{1,4}
+\tlabel(3.25,4){\scriptsize $\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right>$}
+\tlabel[cc](3,-0.5){\scriptsize $v_{\mbox{\tiny $1$}} \bm\hat{\text{i}}$}
+\tlabel(-1,4){\scriptsize $v_{\mbox{\tiny $2$}} \bm\hat{\text{j}}$}
+\tlabel[cc](1,-0.5){\scriptsize $\bm\hat{\text{i}}$}
+\tlabel(-0.5,1){\scriptsize $\bm\hat{\text{j}}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0),(3,4)}
+\penwd{1.025}
+\arrow \polyline{(0,0), (1,0)}
+\arrow \polyline{(1,0), (3,0)}
+\arrow \polyline{(0,0), (0,1)}
+\arrow \polyline{(0,1), (0,4)}
+\tcaption{$\vec{v} = \left<v_{\mbox{\tiny $1$}},v_{\mbox{\tiny $2$}}\right> = v_{\mbox{\tiny $1$}}\bm\hat{\text{i}} + v_{\mbox{\tiny $2$}} \bm\hat{\text{j}}$.}
+\end{mfpic}
+
+\end{center} 
+
+We conclude this section with a classic example which demonstrates how vectors are used in physics to study forces.  A `force' is defined as a `push' or a `pull.'   The intensity of the push or pull is the magnitude of the force, and is  measured in Netwons (N) in the SI system or pounds (lbs.)$\!$ in the English system.\footnote{See also Section \ref{harmomicmotion}.} 
+
+\smallskip
+
+ The following example uses all of the concepts in this section, and should be studied in great detail.
+
+\begin{example} \label{forceex}  A $50$ pound speaker is  suspended from the ceiling by two support braces.   If one of them makes a $60^{\circ}$ angle with the ceiling and the other makes a $30^{\circ}$ angle with the ceiling, what are the tensions on each of the supports?
+
+
+{\bf Solution.}  We represent the problem schematically below along with  the corresponding vector diagram. 
+\begin{center}
+
+\begin{tabular}{cc}
+
+\begin{mfpic}[18]{-8}{3}{-5}{5}
+\hatchcolor[gray]{.7}
+\lhatch \rect{(-8,4), (3,5)}
+%\setlength{\headlen}{5pt}
+%\headshape{1}{1}{true}
+\polyline{(0,0),(2.31,4)}
+\polyline{(0,0),  (-6.93, 4)}
+\arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
+\arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
+\tlabel[cc](-4,3.25){$30^{\circ}$}
+\tlabel[cc](0,3.25){$60^{\circ}$}
+\tlabel[cc](0,-2){50 lbs.}
+\point[3pt]{(0,0), (-6.93,4), (2.31,4)}
+\penwd{1.025}
+\rect{(-8,4), (3,5)}
+\rect{(-2,-4),(2,0)}
+
+\end{mfpic}
+
+&
+
+\hspace{.5in}
+
+\begin{mfpic}[18]{-8}{3}{-5}{5}
+
+\dotted \polyline{(0,0), (-6.93,4)}
+\dotted \polyline{(0,0), (2.31,4)}
+\dotted \polyline{(-8,4), (3,4)}
+\arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
+\arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
+\tlabel[cc](-4,3.25){$30^{\circ}$}
+\tlabel[cc](0,3.25){$60^{\circ}$}
+\dashed \polyline{(-8,0), (3,0)}
+\arrow \reverse \arrow   \parafcn{155, 175, 5}{2*dir(t)}
+\arrow \reverse \arrow  \parafcn{5, 55, 5}{1.5*dir(t)}
+\tlabel[cc](-2.5,0.5){$30^{\circ}$}
+\tlabel[cc](2,1){$60^{\circ}$}
+\tlabel[cc](0.5,-2){$\vec{w}$}
+\tlabel[cc](2.5,3.4){$\vec{T_{\text{\tiny $1$}}}$}
+\tlabel[cc](-3,2.25){$\vec{T_{\text{\tiny $2$}}}$}
+\setlength{\headlen}{5pt}
+\headshape{1}{1}{true}
+\penwd{1.25pt}
+\arrow \polyline{(0,0), \plr{(4,60)}}
+\arrow \polyline{(0,0),  \plr{(4,150)} }
+\arrow \polyline{(0,0), (0,-4)}
+\point[4pt]{(0,0)}
+
+
+\end{mfpic}
+
+
+\\
+
+\end{tabular}
+
+\end{center} 
+ We have three forces acting on the speaker:  the weight of the speaker, which we'll call  $\vec{w}$, pulling the speaker directly downward, and the forces on the support rods, which we'll call $\vec{T_{\text{\tiny $1$}}}$ and $\vec{T_{\text{\tiny $2$}}}$ (for `tensions') acting upward at angles $60^{\circ}$ and $30^{\circ}$, respectively.  
+ 
+ \smallskip
+ 
+ We are looking for the tensions on the support, which are the magnitudes  $\| \vec{T_{\text{\tiny $1$}}} \|$  and  $\| \vec{T_{\text{\tiny $2$}}} \|$.   In order for the speaker to remain stationary,\footnote{This is the criteria for `static equilbrium'.} we require  $\vec{w} + \vec{T_{\text{\tiny $1$}}} + \vec{T_{\text{\tiny $2$}}} = \vec{0}$.  
+ 
+ \smallskip
+ 
+ Viewing the common initial point of these vectors as the origin and the dashed line as the $x$-axis, we use Theorem \ref{magdirprops} to get component representations for the three vectors involved. We can model the weight of the speaker as a vector pointing directly downwards with a magnitude of 50 pounds.  That is,  $\| \vec{w} \| = 50$ and $\bm\hat{w} = -\bm\hat{\text{j}} = \left<0,-1\right>$.  Hence, $\vec{w} = 50\left<0,-1\right> = \left<0,-50\right>$.  For the force in the first support, we get
+ 
+\[ \begin{array}{rcl}
+
+ \vec{T_{\text{\tiny $1$}}} &  = &  \| \vec{T_{\text{\tiny $1$}}} \|\left<\cos\left(60^{\circ}\right), \sin\left(60^{\circ}\right)\right> \\ [8pt]
+                            & =  & \left< \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|}{2} , \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|\sqrt{3}}{2}\right> \\ \end{array} \]
+                            
+For the second support, we note that the angle $30^{\circ}$ is measured from the negative $x$-axis, so the angle needed to write $\vec{T_{\text{\tiny $2$}}}$ in component form is $150^{\circ}$.  Hence
+
+\[ \begin{array}{rcl}
+
+\vec{T_{\text{\tiny $2$}}} & = & \| \vec{T_{\text{\tiny $2$}}} \|\left<\cos\left(150^{\circ}\right), \sin\left(150^{\circ}\right)\right>\\ [8pt]
+                           & =  & \left<-\dfrac{\| \vec{T_{\text{\tiny $2$}}} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{\tiny $2$}}} \|}{2} \right> \\ \end{array} \]
+                           
+The requirement $\vec{w} + \vec{T_{\text{\tiny $1$}}} + \vec{T_{\text{\tiny $2$}}} = \vec{0}$ gives us the vector equation:
+ 
+ \[ \begin{array}{rcl}
+ 
+\vec{w} + \vec{T_{\text{\tiny $1$}}} + \vec{T_{\text{\tiny $2$}}} &  = &  \vec{0}  \\ [8pt]
+
+\left<0,-50\right> + \left< \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|}{2} , \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|\sqrt{3}}{2}\right> +  \left<-\dfrac{\| \vec{T_{\text{\tiny $2$}}} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{\tiny $2$}}} \|}{2} \right> & = & \left<0, 0\right> \\ [8pt]
+
+\left< \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|}{2} -\dfrac{\| \vec{T_{\text{\tiny $2$}}} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|\sqrt{3}}{2} +  \dfrac{\| \vec{T_{\text{\tiny $2$}}} \|}{2} -50  \right> & = & \left<0, 0\right>  \\ 
+\end{array} \]
+
+Equating the corresponding components of the vectors on each side,  we get a system of linear equations in the variables $\| \vec{T_{\text{\tiny $1$}}} \| $ and   $\| \vec{T_{\text{\tiny $2$}}} \|$.
+
+\[\left\{ \begin{array}{lrcl} (E1) &  \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|}{2} -\dfrac{\| \vec{T_{\text{\tiny $2$}}} \|\sqrt{3}}{2} & = & 0 \\ [8pt]  (E2) &  \dfrac{\| \vec{T_{\text{\tiny $1$}}} \|\sqrt{3}}{2} +  \dfrac{\| \vec{T_{\text{\tiny $2$}}} \|}{2} -50 & = & 0 \\ \end{array} \right.\]
+
+From $(E1)$, we get $\| \vec{T_{\text{\tiny $1$}}} \| = \| \vec{T_{\text{\tiny $2$}}} \| \sqrt{3}$.  Substituting that into $(E2)$ gives $\frac{(\| \vec{T_{\text{\tiny $2$}}} \| \sqrt{3})\sqrt{3}}{2} +  \frac{\| \vec{T_{\text{\tiny $2$}}} \|}{2} - 50 = 0$.
+
+\smallskip
+
+Solving, we get  $2\| \vec{T_{\text{\tiny $2$}}} \| - 50 =0$, so  $\| \vec{T_{\text{\tiny $2$}}} \| = 25$ pounds.  Hence,   $\| \vec{T_{\text{\tiny $1$}}} \| = \| \vec{T_{\text{\tiny $2$}}} \| \sqrt{3} = 25 \sqrt{3}$ pounds.   \qed
+\end{example}
+
+
+Note that the sum of the tensions on the wires in Example \ref{forceex} exceed the $50$ pounds of the speaker.  Explaining why this happens is a good exercise and gets at the heart of the concept of vectors and resolution of forces.  Speaking of exercises \ldots
+
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforVectors}
+
+\closegraphsfile
+
+\end{document}

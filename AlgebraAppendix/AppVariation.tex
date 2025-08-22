@@ -1,0 +1,106 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Variation}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{AppVariation}
+
+\setcounter{footnote}{0}
+
+\label{AppVariation}
+
+In many instances in the sciences, equations are encountered as a result of fundamental natural laws which are typically a result of assuming certain basic relationships between variables.  These basic relationships are summarized in the definition below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{variation}  Suppose $x$, $y$ and $z$ are variable quantities.  We say
+
+\begin{itemize}
+
+\item  $y$ \index{variation ! direct}\index{direct variation}\textbf{varies directly with} (or is \textbf{directly proportional to}) $x$ if there is a constant $k$ such that \[y=kx\]
+
+\item  $y$ \index{variation ! inverse}\index{inverse variation}\textbf{varies inversely with} (or is \textbf{inversely proportional to}) $x$ if there is a constant $k$ such that \[y=\frac{k}{x}\]
+
+\item  $z$ \index{variation ! joint}\index{joint variation}\textbf{varies jointly with} (or is \textbf{jointly proportional to}) $x$ and $y$ if there is a constant $k$ such that \[z = kxy\]
+
+\end{itemize}
+
+The constant $k$ in the above definitions is called the \index{variation ! constant of proportionality}\index{constant of proportionality}\textbf{constant of proportionality}.
+
+\end{definition}
+
+%% \ebm}
+
+\smallskip
+
+\begin{example} \label{variationexample} Translate the following into mathematical equations using Definition \ref{variation}.
+
+\begin{enumerate}
+
+\item  \href{http://en.wikipedia.org/wiki/Hooke's_law}{\underline{Hooke's Law}}:  \index{Hooke's Law} The force $F$ exerted on a spring is directly proportional the extension $x$ of the spring.
+
+\item  \href{http://en.wikipedia.org/wiki/Boyle's_law}{\underline{Boyle's Law}}:  \index{Boyle's Law} At a constant temperature, the pressure $P$ of an ideal gas is inversely proportional to its volume $V$.  (We explore this one more deeply in Example \ref{BoyleslawRational}.
+
+\item  The volume $V$ of a right circular cone varies jointly with the height $h$ of the cone and the square of the radius $r$ of the base.
+
+\item  \href{http://en.wikipedia.org/wiki/Ohm's_law}{\underline{Ohm's Law}}:  \index{Ohm's Law} The current $I$ through a conductor between two points is directly proportional to the voltage $V$ between the points and inversely proportional to the resistance $R$ between the points.
+
+\item \label{gravitylaw} \href{http://en.wikipedia.org/wiki/Law_of_universal_gravitation}{\underline{Newton's Law of Universal Gravitation}}:  \index{Newton's Law of Universal Gravitation} Suppose two objects, one of mass $m$ and one of mass $M$, are positioned so that the distance between their centers of mass is $r$.  The gravitational force $F$ exerted on the two objects varies directly with the product of the two masses and inversely with the square of the distance between their centers of mass.
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item Applying the definition of direct variation, we get  $F = k x$ for some constant $k$.
+
+\item Since $P$ and $V$ are inversely proportional, we write $P = \frac{k}{V}$.
+
+\item  There is a bit of ambiguity here.  It's clear that the volume and the height of the cone are represented by the quantities $V$ and $h$, respectively, but does $r$ represent the radius of the base or the square of the radius of the base?  It is the former.  Usually, if an algebraic operation is specified (like squaring), it is meant to be expressed in the formula.  We apply Definition \ref{variation} to get $V = k h r^{2}$.  
+
+\item  Even though the problem doesn't use the phrase `varies jointly', it is implied by the fact that the current $I$ is related to two different quantities.  Since $I$ varies directly with $V$ but inversely with $R$, we write $I = \frac{k V}{R}$.
+
+\item We write the product of the masses $mM$ and the square of the distance as $r^2$.  We have that $F$ varies directly with $mM$ and inversely with $r^2$, so $F = \frac{kmM}{r^2}$.  \qed
+
+\end{enumerate}
+
+\end{example}
+
+\medskip
+
+A note about units is in order.  The formulas given in Example \ref{variationexample} above all have quantities from the ``real world'' and we would disappoint our friends who teach Science if we didn't remind you to pay attention to units when working with these equations.  The natural question that arises is ``What units does $k$ have?''  The answer is ``whatever works'' and by that we mean the units on $k$ will be whatever it takes to make the equation have the same units on both sides.
+
+\medskip 
+
+For example, in Hooke's Law we have that $F = kx$.  If $F$ is in newtons and $x$ is in meters then $k$ must be in $\frac{\text{newton}}{\text{meter}}$.  This can lead to some odd sounding units, such as the units on the constant $R$ in the Ideal Gas Law $PV = nRT$ (see Exercise \ref{idealgasexercise}) or no units at all (see Exercise \ref{coneexercisenounits}).  Unit conversions can mess things up as well - see Exercise \ref{coneexercisebadunits} for a sample of that kind of nonsense!
+
+\medskip
+
+We end this section with an example that first requires us to find the value of $k$ and then use it to solve another problem.
+
+\medskip
+
+\begin{example} \label{findingkinvariation} Suppose it takes 11 pounds of force to hold a spring 2 inches beyond its natural length.  What force is required to hold it 7 inches beyond natural length?
+
+\smallskip
+
+{\bf Solution.}  Using Hooke's Law with $F = 11$ pounds and $x = 2$ inches we solve $11 = k*2$ for $k$ and find $k = 5.5 \frac{\text{pound}}{\text{inch}}$.  Setting $x = 7$ in Hooke's Law with $k = 5.5$ yields $F = 5.5*7 = 38.5$ pounds of force.  (Check the units to convince yourself that this worked!)
+
+\end{example}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforAppVariation}
+
+\closegraphsfile
+
+\end{document}

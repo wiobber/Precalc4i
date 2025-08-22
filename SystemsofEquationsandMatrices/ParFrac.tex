@@ -1,0 +1,279 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Partial Fraction Decomposition}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{ParFrac}
+
+\setcounter{footnote}{0}
+
+\label{ParFrac}
+
+\setlength{\extrarowheight}{0pt}
+
+This section uses systems of linear equations to rewrite rational functions in a form more palatable to Calculus students. In College Algebra, the function 
+
+\begin{equation} \label{falg} f(x) = \dfrac{x^2-x-6}{x^4+x^2} \tag{1} \end{equation}
+
+is written in the best form possible to construct a sign diagram and to find zeros and asymptotes, but certain applications in Calculus require us to rewrite $f(x)$ as 
+
+\begin{equation} \label{fcalc} f(x) = \dfrac{x+7}{x^2+1} - \dfrac{1}{x} - \dfrac{6}{x^2}  \tag{2} \end{equation}
+
+If we are given the form of $f(x)$ in (\ref{fcalc}), it is a matter of Intermediate Algebra to determine a common denominator to obtain the form of $f(x)$ given in (\ref{falg}).  The focus of this section is to develop a method by which we start with $f(x)$ in the form of (\ref{falg}) and `resolve it into \index{partial fractions} \textit{partial fractions}' to obtain the form in (\ref{fcalc}).  Essentially, we need to reverse the least common denominator process.  
+
+Starting with the form of $f(x)$ in (\ref{falg}), we begin by factoring the denominator
+
+\[ \dfrac{x^2-x-6}{x^4+x^2} =  \dfrac{x^2-x-6}{x^2 \left(x^2+1\right)} \]
+
+We now think about which individual denominators could contribute to obtain  $x^2 \left(x^2+1\right)$ as the least common denominator.  Certainly $x^2$ and $x^2+1$, but are there any other factors?  Since $x^2+1$ is an irreducible quadratic\footnote{Recall this means it has no real zeros;  see Section \ref{ComplexZeros}.} there are no factors of it that have real coefficients which can contribute to the denominator.  
+
+The factor $x^2$, however, is not irreducible, since we can think of it as $x^2 = xx = (x-0)(x-0)$, a so-called `repeated' linear factor.\footnote{Recall this means $x=0$ is a zero of multiplicity $2$.}   This means it's possible that a term with a denominator of just $x$ contributed to the expression as well.  What about something like $x \left(x^2+1\right)$?  This, too, could contribute, but we would then wish to break down that denominator into $x$ and $\left(x^2+1\right)$, so we leave out a term of that form.  
+
+At this stage, we have guessed
+
+\[ \dfrac{x^2-x-6}{x^4+x^2} =  \dfrac{x^2-x-6}{x^2 \left(x^2+1\right)} = \dfrac{?}{x} + \dfrac{?}{x^2} + \dfrac{?}{x^2+1} \]
+
+Our next task is to determine what form the unknown numerators take. It stands to reason that since the expression $\frac{x^2-x-6}{x^4+x^2}$ is `proper' in the sense that the degree of the numerator is less than the degree of the denominator, we are safe to make the \href{http://en.wikipedia.org/wiki/Ansatz}{\underline{ansatz}} that all of the partial fraction resolvents are also.  This means that the numerator of the fraction with $x$ as its denominator is just a constant and the numerators on the terms involving the denominators $x^2$ and $x^2+1$ are at most linear polynomials.  
+
+In other words, we guess that there are real numbers $A$, $B$, $C$, $D$ and $E$ so that
+
+\[ \dfrac{x^2-x-6}{x^4+x^2} =  \dfrac{x^2-x-6}{x^2 \left(x^2+1\right)} = \dfrac{A}{x} + \dfrac{Bx+C}{x^2} + \dfrac{Dx+E}{x^2+1} \]
+
+However, if we look more closely at the term $\frac{Bx+C}{x^2}$, we see that $\frac{Bx+C}{x^2} = \frac{Bx}{x^2} + \frac{C}{x^2} = \frac{B}{x} + \frac{C}{x^2}$. The term $\frac{B}{x}$ has the same form as the term $\frac{A}{x}$ which means it contributes nothing new to our expansion.  Hence, we drop it and, after re-labeling, we find ourselves with our new guess:
+
+\[ \dfrac{x^2-x-6}{x^4+x^2} =  \dfrac{x^2-x-6}{x^2 \left(x^2+1\right)} = \dfrac{A}{x} + \dfrac{B}{x^2} + \dfrac{Cx+D}{x^2+1} \] 
+
+Our next task is to determine the values of our unknowns. Clearing denominators gives
+
+\[x^2 - x- 6 = Ax\left(x^2+1\right) + B\left(x^2+1\right) + (Cx+D)x^2 \]
+
+Gathering the like powers of $x$ we have
+
+\[x^2 - x - 6 = (A+C)x^3+(B+D)x^2+Ax + B \]
+
+In order for this to hold for all values of $x$ in the domain of $f$, we equate the coefficients of corresponding powers of $x$ on each side of the equation\footnote{We will justify this shortly.} and obtain the system of linear equations
+
+\[ \left\{ \begin{array}{lrcrl} 
+(E1) & A+C & = & 0 & \text{From equating coefficients of $x^{3}$} \\
+(E2) & B+D & = & 1 & \text{From equating coefficients of $x^{2}$} \\
+(E3) & A & = & -1 & \text{From equating coefficients of $x$} \\
+(E4) & B & = & -6 & \text{From equating the constant terms} \\
+\end{array} \right. \]
+
+To solve this system of equations, we could use any of the methods presented in Sections \ref{LinSystems} through \ref{Determinants}, but none of these methods are as efficient as the good old-fashioned substitution from High School algebra.  From $E3$, we have $A=-1$ and we substitute this into $E1$ to get $C = 1$.  Similarly, since $E4$ gives us $B=-6$, we have from $E2$ that $D = 7$.  We get
+
+\[ \dfrac{x^2-x-6}{x^4+x^2} =  \dfrac{x^2-x-6}{x^2 \left(x^2+1\right)} = -\dfrac{1}{x} - \dfrac{6}{x^2} + \dfrac{x+7}{x^2+1} \] 
+
+which matches the formula given in (\ref{fcalc}).  
+
+As we have seen in this opening example, resolving a rational function into partial fractions takes two steps:  first, we need to determine the \textit{form} of the decomposition, and then we need to determine the unknown coefficients which appear in said form. 
+
+Theorem \ref{realfactorization} guarantees that any polynomial with real coefficients can be factored over the real numbers as a product of linear factors and irreducible quadratic factors.  Once we have this factorization of the denominator of a rational function, the next theorem tells us the form the decomposition takes.  The reader is encouraged to review the Factor Theorem  (Theorem \ref{factorthm}) and its connection to the role of multiplicity to fully appreciate the statement of the following theorem.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}  \label{pfdecomp} Suppose $R(x) = \dfrac{N(x)}{D(x)}$ is a rational function where the degree of $N(x)$ less than the degree of $D(x)$ and $N(x)$ and $D(x)$ have no common factors.\footnote{In other words, $R(x)$ is a proper rational function which has been fully reduced.}
+
+\begin{itemize}
+
+\item  If $\alpha$ is a real zero of $D$ of multiplicity $m$ which corresponds to the linear factor $ax+b$, the partial fraction decomposition includes
+
+\[ \dfrac{A_{\mbox{\tiny$1$}}}{ax+b} + \dfrac{A_{\mbox{\tiny$2$}}}{(ax+b)^2} + \ldots + \dfrac{A_{m}}{(ax+b)^m} \]
+
+for real numbers $A_{\mbox{\tiny$1$}}$, $A_{\mbox{\tiny$2$}}$, \ldots $A_{m}$.
+
+\item  If $\alpha$ is a non-real zero of $D$ of multiplicity $m$ which corresponds to the irreducible quadratic $ax^2+bx+c$, the partial fraction decomposition includes  
+
+\[ \dfrac{B_{\mbox{\tiny$1$}}x + C_{\mbox{\tiny$1$}}}{ax^2+bx+c} + \dfrac{B_{\mbox{\tiny$2$}}x + C_{\mbox{\tiny$2$}}}{\left(ax^2+bx+c\right)^2} + \ldots +\dfrac{B_{m}x + C_{m}}{\left(ax^2+bx+c\right)^m} \]
+
+for real numbers $B_{\mbox{\tiny$1$}}$, $B_{\mbox{\tiny$2$}}$, \ldots $B_{m}$ and $C_{\mbox{\tiny$1$}}$, $C_{\mbox{\tiny$2$}}$, \ldots $C_{m}$. 
+
+\end{itemize}
+
+
+\end{theorem}
+
+%% \ebm}
+
+
+\smallskip
+
+The proof of Theorem \ref{pfdecomp} is best left to a course in Abstract Algebra.  Notice that the theorem provides for the general case, so we need to use subscripts, $A_{\mbox{\tiny$1$}}$, $A_{\mbox{\tiny$2$}}$, etc.,  to denote different unknown coefficients as opposed to the usual convention of $A$, $B$, etc..  The stress on multiplicities is to help us correctly group factors in the denominator.  For example, consider the rational function
+
+\[\dfrac{3x-1}{\left(x^2-1\right)\left(2-x-x^2\right)}\]
+
+Factoring the denominator to find the zeros, we get $(x+1)(x-1)(1-x)(2+x)$.  We find $x = -1$ and $x=-2$ are zeros of multiplicity one but that $x=1$ is a zero of multiplicity two due to the two different factors $(x-1)$ and $(1-x)$.  One way to handle this is to note that $(1-x) = -(x-1)$ so 
+
+\[\dfrac{3x-1}{(x+1)(x-1)(1-x)(2+x)} = \dfrac{3x-1}{-(x-1)^2(x+1)(x+2)} = \dfrac{1-3x}{(x-1)^2(x+1)(x+2)}\]
+
+from which we proceed with the partial fraction decomposition
+
+\[\dfrac{1-3x}{(x-1)^2(x+1)(x+2)} = \dfrac{A}{x-1} + \dfrac{B}{(x-1)^2} + \dfrac{C}{x+1} + \dfrac{D}{x+2}\]
+
+Turning our attention to non-real zeros, we note that the tool of choice to determine the irreducibility of a quadratic  $ax^2+bx+c$ is the discriminant, $b^2-4ac$.  If $b^2 - 4ac < 0$, the quadratic admits a \textit{pair} of non-real complex conjugate zeros.  Even though \textit{one} irreducible quadratic gives \textit{two} distinct non-real zeros, we list the terms with denominators involving a given irreducible quadratic only once to avoid duplication in the form of the decomposition.  The trick, of course, is factoring the denominator or otherwise finding the zeros and their multiplicities in order to apply Theorem \ref{pfdecomp}.  We recommend that the reader review the techniques set forth in Sections \ref{RealZeros} and \ref{ComplexZeros}. 
+
+Next, we state a theorem that if two polynomials are equal, the corresponding coefficients of the like powers of $x$ are equal.  This is the principal by which we shall determine the unknown coefficients in our partial fraction decomposition.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}  \label{polyequality} Suppose \[a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \cdots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}} = b_{m} x^{m} + m_{m-\mbox{\tiny$1$}} x^{m-\mbox{\tiny$1$}} + \cdots + b_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + b_{\mbox{\tiny $1$}} x + b_{\mbox{\tiny $0$}}\]
+
+for all $x$ in an open interval $I$.  Then $n=m$ and $a_{i} = b_{i}$ for all $i = 1 \ldots n$.
+
+
+\end{theorem}
+
+%% \ebm}
+
+
+\smallskip
+
+Believe it or not, the proof of Theorem \ref{polyequality} is a consequence of Theorem \ref{complexfactorization}.  Define $p(x)$ to be the difference of the left hand side of the equation in Theorem \ref{polyequality} and the right hand side.  Then $p(x) = 0$ for all $x$ in the open interval $I$.  If $p(x)$ were a nonzero polynomial of degree $k$, then, by Theorem \ref{complexfactorization}, $p$ could have at most $k$ zeros in $I$, $k$ being a \textit{finite} number.  Since $p(x) = 0$ for \textit{all} real numbers $x$ in $I$, $p$ has infinitely many zeros, and hence, $p$ is the zero polynomial.  This means there can be no nonzero terms in $p(x)$ and the theorem follows.  Arguably, the best way to make sense of either of the two preceding theorems is to work some examples.  
+
+\begin{example}  Resolve the following rational functions into partial fractions.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item  $R(x) = \dfrac{x+5}{2x^2-x-1}$
+
+\item  $f(z) = \dfrac{3}{z^3-2z^2+z}$
+
+\item  $F(s) = \dfrac{3}{s^3-s^2+s}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $r(x) = \dfrac{4x^3}{x^2-2}$
+
+\item  $G(z) = \dfrac{z^3+5z-1}{z^4+6z^2+9}$
+
+\item  $H(s) = \dfrac{8s^2}{s^4+16}$
+
+\end{enumerate}
+\end{multicols}
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  We begin by factoring the denominator to find $2x^2-x-1 = (2x+1)(x-1)$.  We get $x=-\frac{1}{2}$ and $x=1$ are both zeros of multiplicity one and thus we know
+
+\[\dfrac{x+5}{2x^2-x-1} = \dfrac{x+5}{(2x+1)(x-1)} = \dfrac{A}{2x+1} + \dfrac{B}{x-1}\]
+
+Clearing denominators, we get $x+5 = A(x-1) + B(2x+1)$ so that $x + 5 = (A+2B)x + B-A$.  Equating coefficients, we get the system
+
+\[ \left\{ \begin{array}{rcr}  A+2B & = & 1 \\ -A+B & = & 5 \\ \end{array} \right.\]
+
+This system is readily handled using the Addition Method from Section \ref{AppLinearSystems}, and after adding both equations, we get $3B = 6$ so $B = 2$.  Using back substitution, we find $A = -3$.  Our answer is easily checked by getting a common denominator and adding the fractions.
+
+\[\dfrac{x+5}{2x^2-x-1} = \dfrac{2}{x-1} -\dfrac{3}{2x+1} \]
+
+\item  Factoring the denominator gives $z^3-2z^2+z = z\left(z^2-2z+1\right) = z(z-1)^2$ which gives $z=0$ as a zero of multiplicity one and $z=1$ as a zero of multiplicity two. We have
+
+\[ \dfrac{3}{z^3-2z^2+z} = \dfrac{3}{z(z-1)^2} = \dfrac{A}{z} + \dfrac{B}{z-1} + \dfrac{C}{(z-1)^2} \]
+
+Clearing denominators, we get $3 = A(z-1)^2 + Bz(z-1)+Cz$, which, after gathering up the like terms becomes $3 = (A+B)z^2+(-2A-B+C)z + A$.  Our system is 
+ 
+\[ \left\{ \begin{array}{rcr}  A+B & = & 0 \\ -2A-B+C & = & 0 \\ A & = & 3 \end{array} \right.\]
+
+Substituting $A=3$ into $A+B = 0$ gives $B = -3$, and substituting both for $A$ and $B$ in $-2A-B+C = 0$ gives $C = 3$.  Our final answer is
+
+\[ \dfrac{3}{z^3-2z^2+z} = \dfrac{3}{z} - \dfrac{3}{z-1} + \dfrac{3}{(z-1)^2} \]
+
+\item  The denominator factors as $s\left(s^2-s+1\right)$.  We see immediately that $s=0$ is a zero of multiplicity one, but the zeros of $s^2-s+1$ aren't as easy to discern.  The quadratic doesn't factor easily, so we check the discriminant and find it to be $(-1)^2-4(1)(1) = -3 < 0$.  We find its zeros are not real so it is an irreducible quadratic.  The form of the partial fraction decomposition is then
+
+\[\dfrac{3}{s^3-s^2+s} = \dfrac{3}{s\left(s^2-s+1\right)} = \dfrac{A}{s} + \dfrac{Bs+C}{s^2-s+1}\]
+
+Clearing denominators gives $3 = A\left(s^2-s+1\right) + (Bs+C)s$ or $3 = (A+B)s^2 + (-A+C)s +A$, hence
+
+\[ \left\{ \begin{array}{rcr}  A+B & = & 0 \\ -A+C & = & 0 \\ A & = & 3 \end{array} \right.\]
+
+From $A=3$ and $A+B = 0$, we get $B = -3$.  From $-A+C = 0$, we get $C = A = 3$.  We get
+
+
+\[\dfrac{3}{s^3-s^2+s} =  \dfrac{3}{s} + \dfrac{3-3s}{s^2-s+1}\]
+
+\item  Since  $\frac{4x^3}{x^2-2}$ isn't proper, we first use long division and obtain a quotient of $4x$ with a remainder of $8x$.  Rewriting,  $\frac{4x^3}{x^2-2} = 4x + \frac{8x}{x^2-2}$ so we focus on resolving $\frac{8x}{x^2-2}$ into partial fractions.  The quadratic $x^2-2$, though it doesn't factor nicely, is, nevertheless, reducible. Solving $x^2-2 =0$ gives us $x = \pm \sqrt{2}$, so using Theorem \ref{complexfactorization},\footnote{Alternatively, we can recognize $x^2-2 = x^2-(\sqrt{2})^2$ and use the Difference of Squares formula on page \pageref{CommonFactoringFormulas}.} we have $x^2-2 = \left(x - \sqrt{2}\right)\left(x + \sqrt{2}\right)$. Hence,
+
+\[ \dfrac{8x}{x^2-2} = \dfrac{8x}{ \left(x - \sqrt{2}\right)\left(x + \sqrt{2}\right)} = \dfrac{A}{x - \sqrt{2}} + \dfrac{B}{x + \sqrt{2}} \]
+
+Clearing fractions, we get $8x = A\left(x + \sqrt{2}\right) + B\left(x - \sqrt{2}\right)$ or $8x = (A+B)x + (A-B)\sqrt{2}$ which gives
+
+
+\[ \left\{ \begin{array}{rcr}  A+B & = & 8 \\ (A-B)\sqrt{2} & = & 0 \\ \end{array} \right.\]
+
+From $(A-B)\sqrt{2}=0$, we get $A=B$, which, when substituted into $A+B = 8$ gives $B = 4$.  Hence, $A = B = 4$ and we get
+
+\[\dfrac{4x^3}{x^2-2} = 4x + \dfrac{8x}{x^2-2} = 4x + \dfrac{4}{x + \sqrt{2}} + \dfrac{4}{x - \sqrt{2}}\]
+
+\item  At first glance, the denominator $D(z) = z^4+6z^2+9$ appears irreducible. However, $D(z)$ has three terms, and the exponent on the first term is exactly twice that of the second.  Rewriting $D(z) = \left(z^2\right)^2 + 6z^2 + 9$, we see it is a quadratic in disguise and factor $D(z) = \left(z^2+3\right)^2$.  Since $z^2+3$ clearly has no real zeros, it is irreducible and the form of the decomposition is
+
+\[ \dfrac{z^3+5z-1}{z^4+6z^2+9} =  \dfrac{z^3+5z-1}{\left(z^2+3\right)^2} = \dfrac{Az+B}{z^2+3} + \dfrac{Cz+D}{\left(z^2+3\right)^2}\]
+
+After the usual clearing of denominators, we have $z^3 + 5z-1 = (Az+B)\left(z^2+3\right) + Cz + D$ which gives $z^3+5z-1 = Az^3 + Bz^2 + (3A+C)z + 3B+D$.  Our system is 
+
+\[ \left\{ \begin{array}{rcr} A & = & 1 \\ B & = & 0 \\ 3A + C & = & 5 \\ 3B+D & = & -1 \end{array} \right.\]
+
+We have $A = 1$ and $B = 0$ from which we get $C = 2$ and $D = -1$.  Our final answer is
+
+\[ \dfrac{z^3+5z-1}{z^4+6z^2+9} = \dfrac{z}{z^2+3} + \dfrac{2z-1}{\left(z^2+3\right)^2}\]
+
+\item  Once again, the difficulty in our last example is factoring the denominator.  In an attempt to get a quadratic in disguise, we write 
+
+\[s^4 + 16 = \left(s^2\right)^2 + 4^2 = \left(s^2\right)^2 + 8s^2 + 4^2 - 8s^2 = \left(s^2+4\right)^2 - 8s^2\]
+
+and obtain a difference of two squares:  $\left(s^2+4\right)^2$ and $8s^2 = \left(2s\sqrt{2}\right)^2$.  Hence,
+
+\[s^4 + 16 = \left(s^2 + 4 - 2s\sqrt{2}\right)\left(s^2 + 4 + 2s\sqrt{2}\right) =\left(s^2 - 2s\sqrt{2} + 4\right)\left(s^2 + 2s\sqrt{2}+4 \right)  \]
+
+The discriminant of both of these quadratics works out to be $-8 < 0$, which means they are irreducible.  We leave it to the reader to verify that, despite having the same discriminant, these quadratics have different zeros.  The partial fraction decomposition takes the form
+
+\[ \dfrac{8s^2}{s^4+16} = \dfrac{8s^2}{\left(s^2 - 2s\sqrt{2} + 4\right)\left(s^2 + 2s\sqrt{2}+4 \right)} = \dfrac{As+B}{s^2 - 2s\sqrt{2} + 4} + \dfrac{Cs+D}{s^2 + 2s\sqrt{2} + 4}\]
+
+We get $8s^2 = (As+B)\left(s^2 + 2s\sqrt{2}+4 \right) + (Cs+D)\left(s^2 - 2s\sqrt{2} + 4\right)$ or 
+
+\[8s^2 = (A+C)s^3 + (2A\sqrt{2} + B - 2C\sqrt{2}+D)s^2 + (4A + 2B\sqrt{2}+4C - 2D\sqrt{2})s + 4B + 4D \] which gives the system
+
+\[ \left\{ \begin{array}{rcr} A + C & = & 0 \\ 2A\sqrt{2} + B - 2C\sqrt{2}+D & = & 8 \\ 4A + 2B\sqrt{2}+4C - 2D\sqrt{2} & = & 0 \\ 4B + 4D  & = & 0 \end{array} \right.\]
+
+From $A+C = 0$, we get $A = -C$.  Likewise, from $4B + 4D = 0$, we get $B = -D$.  Substituting these into the remaining two equations gives
+
+\[ \left\{ \begin{array}{rcr}  -2C\sqrt{2} -D - 2C\sqrt{2}+D & = & 8 \\ -4C - 2D\sqrt{2}+4C - 2D\sqrt{2} & = & 0 \\ \end{array} \right.\] 
+
+or 
+
+\[ \left\{ \begin{array}{rcr}  -4C\sqrt{2}& = & 8 \\ -4D\sqrt{2} & = & 0 \\ \end{array} \right.\] 
+
+We get $C = -\sqrt{2}$ so that $A = -C = \sqrt{2}$ and $D = 0$ which means $B = -D = 0$.  We get
+
+\[ \dfrac{8s^2}{s^4+16} = \dfrac{s\sqrt{2}}{s^2 - 2s\sqrt{2} + 4} - \dfrac{s\sqrt{2}}{s^2 + 2s\sqrt{2} + 4}\]
+
+\qed
+
+\end{enumerate}
+
+\end{example}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforParFrac}
+
+\closegraphsfile
+
+\end{document}

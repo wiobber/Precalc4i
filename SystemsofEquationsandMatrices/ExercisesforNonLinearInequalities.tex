@@ -1,0 +1,237 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{TITLE}
+\mfpicnumber{1} \opengraphsfile{ExercisesforNonLinearInequalities} % mfpic settings added 
+
+
+\label{ExercisesforNonLinearInequalities}
+
+In Exercises \ref{nonlinearsysineqfirst} - \ref{nonlinearsysineqlast}, sketch the solution to each system of nonlinear inequalities in the plane.
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+%\setcounter{enumi}{\value{HW}}
+
+
+\item $\left\{\begin{array}{rcr}  x^{2} - y^{2} & \leq & 1 \\ x^{2} + 4y^{2} & \geq & 4  \end{array} \right.$ \label{nonlinearsysineqfirst}
+\item $\left\{\begin{array}{rcr}  x^{2} + y^{2} & < & 25 \\ x^{2} + (y - 3)^{2} & \geq & 10  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{\begin{array}{rcr}  (x - 2)^{2} + y^{2} & < & 1 \\ x^{2} + 4y^{2} & < & 4  \end{array} \right.$
+\item $\left\{\begin{array}{rcr}  y & > & 10x - x^{2} \\ y & < & x^{3} + 8  \end{array} \right.$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{\begin{array}{rcr}  x + 2y^{2} & > & 2 \\ x^{2} + 4y^{2} & \leq & 4  \end{array} \right.$
+\item $\left\{\begin{array}{rcr}  x^{2} + y^{2} & \geq & 25 \\ y - x & \leq & 1  \end{array} \right.$ \label{nonlinearsysineqlast}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+%\begin{enumerate}
+%\setcounter{enumi}{\value{HW}}
+
+\newpage
+
+\subsection{Answers}
+
+\begin{multicols}{2}
+\begin{enumerate}
+%\setcounter{enumi}{\value{HW}}
+
+\item $\left\{\begin{array}{rcr}  x^{2} - y^{2} & \leq & 1 \\ x^{2} + 4y^{2} & \geq & 4  \end{array} \right.$ \\
+
+\begin{mfpic}[15]{-3}{3}{-3}{3}
+\fillcolor[gray]{.7}
+\gfill \rect{(-2.8,-2.8),(2.8,2.8)}
+\gclear \btwnfcn{-3,-1,0.1}{sqrt((x**2) - 1)}{-sqrt((x**2) - 1)}
+\gclear \btwnfcn{1,3,0.1}{sqrt((x**2) - 1)}{-sqrt((x**2) - 1)}
+\gclear \btwnfcn{-2,2,0.1}{sqrt(1 - ((x**2)/4))}{-sqrt(1 - ((x**2)/4))}
+\function{-1.2649,1.2649,0.1}{sqrt(1 - ((x**2)/4))}
+\function{-1.2649,1.2649,0.1}{-sqrt(1 - ((x**2)/4))}
+\arrow \reverse \function{-3,-1.2649,0.1}{sqrt((x**2) - 1)}
+\arrow \reverse \function{-3,-1.2649,0.1}{-sqrt((x**2) - 1)}
+\arrow \function{1.2649,3,0.1}{sqrt((x**2) - 1)}
+\arrow \function{1.2649,3,0.1}{-sqrt((x**2) - 1)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-2,-1,1,2}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item $\left\{\begin{array}{rcr}  x^{2} + y^{2} & < & 25 \\ x^{2} + (y - 3)^{2} & \geq & 10  \end{array} \right.$\\
+
+\begin{mfpic}[10]{-6}{6}{-6}{5}
+\fillcolor[gray]{.7}
+\gfill \circle{(0,0),5}
+\dashed \circle{(0,0),5}
+\gclear \circle{(0,3),3.16228}
+\arc[t]{(-3,4),(0,-0.166228),(3,4)}
+\gclear \circle{(3,4),0.15}
+\circle{(3,4),0.15}
+\gclear \circle{(-3,4),0.15}
+\circle{(-3,4),0.15}
+\axes
+\tlabel[cc](6,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-5 step 1 until 5}
+\ymarks{-5 step 1 until 4}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{\begin{array}{rcr}  (x - 2)^{2} + y^{2} & < & 1 \\ x^{2} + 4y^{2} & < & 4  \end{array} \right.$ \\
+
+\begin{mfpic}[30]{0}{2.75}{-1.5}{1.5}
+\fillcolor[gray]{.7}
+\gfill \circle{(2,0),1}
+\gclear \btwnfcn{1.3333,2,0.1}{sqrt(1 - ((x**2)/4))}{sqrt(1 - ((x - 2)**2))}
+\gclear \btwnfcn{1.3333,2,0.1}{-sqrt(1 - ((x**2)/4))}{-sqrt(1 - ((x - 2)**2))}
+\gclear \btwnfcn{2,3,0.1}{-sqrt(1 - ((x - 2)**2))}{sqrt(1 - ((x - 2)**2))}
+\gclear \rect{(2.5,-1),(3,1)}
+\drawcolor{white} \arc[t]{(1.3333,-0.745356),(3,0),(1.3333,0.745356)}
+\drawcolor{white} \polyline{(2,-1),(2,1)}
+\drawcolor{black}
+\dashed \arc[t]{(1.3333,-0.745356),(1,0),(1.3333,0.745356)}
+\dashed \parafcn{-0.84107,0.84107,0.1}{(2*cos(t),sin(t))}
+
+\axes
+\tlabel[cc](2.75,-0.25){\scriptsize $x$}
+\tlabel[cc](0.25,1.5){\scriptsize $y$}
+\ymarks{-1,1}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$1$} 0.9, {$2$} 2.1}
+\axislabels {y}{{$-1$} -1, {$1$} 1}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  $\left\{\begin{array}{rcr}  y & > & 10x - x^{2} \\ y & < & x^{3} + 8  \end{array} \right.$ \\
+
+\begin{mfpic}[10][1]{-5}{7}{-28}{120}
+\fillcolor[gray]{.7}
+\gfill \btwnfcn{-4,1,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)}
+\gfill \btwnfcn{2,6.2,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)}
+\dashed \function{-4,1,0.1}{0.5*(10*x - (x**2))}
+\dashed \function{-4,1,0.1}{0.5*((x**3) + 8)}
+\arrow \dashed \function{2,6.2,0.1}{0.5*(10*x - (x**2))}
+\arrow \dashed \function{2,6.2,0.1}{0.5*((x**3) + 8)}
+\axes
+\tlabel[cc](7,-4){\scriptsize $x$}
+\tlabel[cc](0.5,120){\scriptsize $y$}
+\xmarks{-4 step 1 until 2}
+\ymarks{-28,4.5,8}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-56$} -28, {$9$} 4.5, {$16$} 8}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left\{\begin{array}{rcr}  x + 2y^{2} & > & 2 \\ x^{2} + 4y^{2} & \leq & 4  \end{array} \right.$ \\
+
+\begin{mfpic}[30]{-0.5}{2.5}{-1.5}{1.5}
+\fillcolor[gray]{.7}
+\gfill \btwnfcn{0,2,0.1}{sqrt(1 - (x/2))}{sqrt(1 - ((x**2)/4))}
+\gfill \btwnfcn{0,2,0.1}{-sqrt(1 - (x/2))}{-sqrt(1 - ((x**2)/4))}
+\parafcn{-1.5708, 1.5708,0.1}{(2*cos(t),sin(t))}
+\dashed \parafcn{-1,1,0.1}{(2 - (2*(t**2)), t)}
+\axes
+\gclear \circle{(2,0), 0.05}
+\circle{(2,0), 0.05}
+\gclear \circle{(0,1), 0.05}
+\circle{(0,1), 0.05}
+\gclear \circle{(0,-1), 0.05}
+\circle{(0,-1), 0.05}
+\tlabel[cc](2.5,-0.25){\scriptsize $x$}
+\tlabel[cc](0.25,1.5){\scriptsize $y$}
+\xmarks{1}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$1$} 1, {$2$} 2.1}
+\axislabels {y}{{$-1$} -1, {$1$} 1}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  $\left\{\begin{array}{rcr}  x^{2} + y^{2} & \geq & 25 \\ y - x & \leq & 1  \end{array} \right.$ \\
+
+\begin{mfpic}[6]{-7}{7}{-7}{8}
+\fillcolor[gray]{.7}
+\gfill \btwnfcn{-7,7,0.1}{-7}{1+x}
+\gclear \circle{(0,0), 5}
+\arc[t]{(-4,-3), (5,0), (3,4)}
+\arrow \reverse \function{-7,-4,0.1}{1+x}
+\arrow \function{3,7,0.1}{1+x}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\xmarks{-6 step 1 until 6}
+\ymarks{-6 step 1 until 7}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-5 \hspace{7pt}$} -5,  {$-3 \hspace{7pt}$} -3,  {$-1 \hspace{7pt}$} -1, {$1$} 1,  {$3$} 3,  {$5$} 5}
+\axislabels {y}{ {$-5$} -5,  {$-3$} -3,   {$1$} 1,  {$3$} 3,  {$5$} 5, {$7$} 7}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+\end{document}

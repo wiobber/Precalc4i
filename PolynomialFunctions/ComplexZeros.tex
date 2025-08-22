@@ -1,0 +1,351 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Complex Zeros and the Fundamental Theorem of Algebra}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{ComplexZeros}
+
+\setcounter{footnote}{0}
+
+\label{ComplexZeros}
+
+In Section \ref{RealZeros}, we were focused on finding the real zeros of a polynomial function.  In this section, we expand our horizons and look for the non-real zeros as well. By `non-real' here we mean we will be discussing `imaginary,' and, more generally, `complex' numbers.  Even though the monikers `non-real' and `imaginary' suggests these numbers play no role in `real' world applications, we assure you that electrical engineers live a `complex' life and these numbers are invaluable to them.\footnote{Even a cursory web search for `use of imaginary numbers in electrical engineering' provides a wealth of source material - enough to convince anyone of their importance to the field (pun intended.)  Most of it, however, requires more electrical background than the authors feel comfortable including in the text.  Be aware, however, that in electrical applications, the letter $j$ is used to represent $\sqrt{-1}$ since the letter $i$ is reserved for current.}  That being said, our main use of complex numbers in this section is to present some powerful structure theorems for polynomial functions (this is, after all, a math book!)  For a detailed review of the Complex Number system, we refer the reader to Section \ref{AppCmpNums}.  For us, it suffices to review the basic vocabulary.  
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{itemize}
+ 
+\item The imaginary unit $i = \sqrt{-1}$ satisfies the two following properties
+
+\begin{enumerate}
+
+\item  $i^2 = -1$
+
+\item  If $c$ is a real number with $c \geq 0$ then $\sqrt{-c} = i \sqrt{c}$
+
+\end{enumerate}
+
+\item The \textbf{complex numbers} are the set of numbers $\mathbb{C} = \{ a + bi \, | \, a, b \in \mathbb{R} \}$
+
+\item  Given a complex number $z = a+bi$, the \textbf{complex conjugate} of $z$, $\overline{z}  = \overline{a+bi} = a - bi$.
+
+\end{itemize}
+
+%% \ebm}
+
+Note that every real number is a complex number, that is $\mathbb{R} \subseteq \mathbb{C}$.  To see this, take your favorite real number, say $117$.  We may write $117 = 117 + 0 i$ which puts in the form $a + bi$.  Hence, we we speak of the `complex zeros' of a polynomial function, we are talking about not just the non-real, but also the real zeros.
+
+Complex numbers, by their very definition, are two dimensional creatures.  To see this, we may identify a complex number $z = a+bi$ with the point in the Cartesian plane $(a,b)$. The horizontal axis is called the `real' axis since points here have the form $(a,0)$ which corresponds to numbers of the form $z = a + 0i = a$ which are the real numbers. The vertical axis is called the `imaginary' axis since points here are of the form $(0,b)$ which correspond to numbers of the form $z = 0+bi = bi$,  the so-called `purely imaginary' numbers.  Below we plot some complex numbers on this so-called  `Complex Plane.'  Plotting a set of complex numbers this way is called an \href{https://en.wikipedia.org/wiki/Complex_plane}{\underline{Argand Diagram}}, and opens up a wealth of opportunities to explore many algebraic properties of complex numbers geometrically. For example, complex conjugation amounts to a reflection about the real axis, and multiplication by $i$ amounts to a $90^{\circ}$ rotation.\footnote{See Exercises \ref{cmpgeoalgexfirst} - \ref{cmpgeoalgexlast}.}  While we won't have much use for the Complex Plane in this section, it is worth introducing this concept now, if, for no other reason, it gives the reader a sense of the vastness of the complex number system and the role of the real numbers in it.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\axes
+\tlabel[cl](5,-0.5){\scriptsize Real Axis}
+\tlabel[cl](0.5,5){\scriptsize Imaginary Axis}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\point[3pt]{(0,0),(3,0), (-4,2), (0,-3)}
+\tlabel[cc](-4,2.5){\scriptsize $(-4,2) \longleftrightarrow z = -4+2i$}
+\tlabel[cl](0.25,-3){\scriptsize $(0,-3) \longleftrightarrow z = -3i$}
+\tlabel[cc](3,0.5){\scriptsize $(3,0) \longleftrightarrow z = 3$}
+\tlabel[cc](0.25,-0.35){\scriptsize $0$}
+\tlpointsep{5pt}
+\scriptsize
+\tcaption{\scriptsize The Complex Plane}
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4i$} -4, {$-3i$} -3, {$-2i$} -2, {$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
+\normalsize
+\end{mfpic}
+
+\end{center}
+
+
+
+
+Returning to zeros of polynomials, suppose we wish to find the zeros of $f(x) = x^2-2x+5$.  To solve the equation $x^2-2x+5 = 0$, we note that the quadratic doesn't factor nicely, so we resort to the Quadratic Formula, Equation \ref{quadraticformulafunction} and obtain \[ x = \dfrac{-(-2) \pm \sqrt{(-2)^2-4(1)(5)}}{2(1)} = \dfrac{2 \pm \sqrt{-16}}{2} = \dfrac{2 \pm 4i}{2} = 1 \pm 2i.\] Two things are important to note.  First, the zeros $1+2i$ and $1-2i$ are complex conjugates.  If ever we obtain non-real zeros to a quadratic function with \textbf{real number} coefficients, the zeros  will be a complex conjugate pair. (Do you see why?)  
+
+We could ask if all of the theory from Section\ref{Polydivision} holds for non-real zeros, in particular the division algorithm and the Remainder and Factor Theorems.  The answer is `yes.'  
+
+\[\begin{array}{rrrr}
+1+2i \, \, \vline & 1 & -2 & 5 \\
+
+  & \downarrow   &  1+2i  &  -5 \\ \hhline{~---} 
+  
+  & 1 & -1+2i &  \fbox{$0$}   \\
+
+\end{array}\]
+
+
+Indeed, the above shows $x^2-2x+5  = (x-[1+2i])(x-1+2i)= (x-[1+2i])(x-[1-2i])$ which demonstrates both  $(x-[1+2i])$ and  $(x-[1-2i])$ are factors of $x^2-2x+5$.\footnote{It is a good review of the algebra of complex numbers to start with  $(x-[1+2i])(x-[1-2i])$, perform the indicated operations, and simplify the result to $x^2-2x+5$.  See part 6 of  Example \ref{complexzeroex1}  in Section  \ref{AppCmpNums}.}
+
+
+ But how do we know if a general polynomial has any complex zeros at all?  We have many examples of polynomials with no real zeros.  Can there be polynomials with no zeros whatsoever?  The answer to that last question is ``No.'' and the theorem which provides that answer is \index{Fundamental Theorem of Algebra} The Fundamental Theorem of Algebra.
+
+
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem} \label{ftoa} \textbf{The Fundamental Theorem of Algebra:}  Suppose $f$ is a polynomial function with complex number coefficients of degree $n \geq 1$, then $f$ has at least one complex zero.
+
+\end{theorem}
+%% \ebm}
+
+
+
+The Fundamental Theorem of Algebra is an example of an `existence' theorem in Mathematics.  Like the Intermediate Value Theorem, Theorem \ref{IVT}, the Fundamental Theorem of Algebra  guarantees the existence of at least one zero, but gives us no algorithm to use in finding it.  In fact, as we mentioned in Section \ref{RealZeros}, there are polynomials whose real zeros, though they exist, cannot be expressed using the `usual' combinations of arithmetic symbols, and must be approximated.  It took mathematicians literally hundreds of years to prove the theorem in its full generality,\footnote{So if its profound nature and beautiful subtlety escape you, no worries!} and some of that history is recorded \href{http://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra}{\underline{here}}.  Note that the Fundamental Theorem of Algebra  applies to not only polynomial functions with real coefficients, but to those with complex number coefficients as well.  
+
+
+
+Suppose  $f$ is a polynomial function of degree $n \geq 1$.  The Fundamental Theorem of Algebra guarantees us at least one complex zero, $z_{\mbox{\tiny $1$}}$.  The Factor Theorem guarantees that $f(x)$ factors as $f(x) = \left(x - z_{\mbox{\tiny $1$}}\right) q_{\mbox{\tiny $1$}}(x)$ for a polynomial function $q_{\mbox{\tiny $1$}}$,  which has degree $n-1$.  If $n-1 \geq 1$, then the Fundamental Theorem of Algebra guarantees a complex zero of $q_{\mbox{\tiny $1$}}$ as well, say $z_{\mbox{\tiny $2$}}$, so then the Factor Theorem gives us $q_{\mbox{\tiny $1$}}(x) = \left(x - z_{\mbox{\tiny $2$}}\right) q_{\mbox{\tiny $2$}}(x)$, and hence $f(x) = \left(x - z_{\mbox{\tiny $1$}}\right) \left(x - z_{\mbox{\tiny $2$}}\right) q_{\mbox{\tiny $2$}}(x)$.  We can continue this process exactly $n$ times, at which point our quotient polynomial $q_{\mbox{\tiny $n$}}$ has degree $0$ so it's a constant.  This constant is none-other than the leading coefficient of $f$ which is carried down line by line each time we divide by factors of the form $x-c$.
+
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem} \label{complexfactorization} \textbf{Complex Factorization Theorem:} Suppose $f$ is a polynomial function with complex number coefficients.  If the degree of $f$ is $n$ and $n \geq 1$, then  $f$ has exactly $n$ complex zeros, counting multiplicity.  If $z_{\mbox{\tiny $1$}}$, $z_{\mbox{\tiny $2$}}$, \ldots, $z_{\mbox{\tiny $k$}}$ are the distinct zeros of $f$, with multiplicities $m_{\mbox{\tiny $1$}}$, $m_{\mbox{\tiny $2$}}$, \ldots, $m_{\mbox{\tiny $k$}}$, respectively, then $f(x) = a\left(x - z_{\mbox{\tiny $1$}}  \right)^{m_{\mbox{\tiny $1$}}}\left(x - z_{\mbox{\tiny $2$}}  \right)^{m_{\mbox{\tiny $2$}}} \cdots \left(x - z_{\mbox{\tiny $k$}}  \right)^{m_{\mbox{\tiny $k$}}}$. \index{Complex Factorization Theorem}
+
+\end{theorem}
+%% \ebm}
+
+\smallskip
+
+Theorem \ref{complexfactorization} says two important things:  first, every polynomial is a product of linear factors;  second, every polynomial function is completely determined by its zeros, their multiplicities, and its leading coefficient.  We put this theorem to good use in the next example.
+
+\begin{example}  Let $f(x) = 12x^5 - 20x^4+19x^3-6x^2-2x+1$.
+
+\begin{enumerate}
+
+\item Find all of the complex zeros of $f$ and state their multiplicities.  
+
+\item  Factor $f(x)$ using Theorem \ref{complexfactorization}
+
+\end{enumerate}
+
+{ \bf Solution.}
+
+\begin{enumerate}
+
+\item  Since $f$ is a fifth degree polynomial, we know that we need to perform at least three successful divisions to get the quotient down to a quadratic function.  At that point, we can find the remaining zeros using the Quadratic Formula, if necessary.  Using the techniques developed in Section \ref{RealZeros}:
+
+\[\begin{array}{rrrrrrr}
+\frac{1}{2} \, \, \vline& 12 & -20& 19  & -6 & -2 &1 \\
+
+  & \downarrow     &  6  &  -7  & 6 & 0 & -1\\ \hhline{~------} 
+
+ \frac{1}{2} \, \, \vline& 12 & -14 & 12  & 0 & -2 & \fbox{$0$} \\
+
+  & \downarrow     &  6 &  -4  & 4 & 2 &\\ \hhline{~-----} 
+  
+  -\frac{1}{3} \, \, \vline&  12 &  -8  & 8 & 4 &  \fbox{$0$} & \\
+    
+               & \downarrow &  -4  &  4  & -4  & & \\ \hhline{~----} 
+ 
+   & 12  &   -12 & 12& \fbox{0} &&   \\
+  
+
+
+\end{array}\]
+
+Our quotient is $12x^2 - 12x + 12$, whose zeros we find to be $\frac{1 \pm i \sqrt{3}}{2}$.  From Theorem \ref{complexfactorization}, we know $f$ has exactly $5$ zeros, counting multiplicities, and as such we have the zero $\frac{1}{2}$ with multiplicity $2$, and the zeros $-\frac{1}{3}$, $\frac{1 + i \sqrt{3}}{2}$ and $\frac{1 - i \sqrt{3}}{2}$, each of multiplicity $1$.
+
+\item  Applying Theorem \ref{complexfactorization}, we are guaranteed that $f$ factors as
+
+\[f(x) = 12 \left(x- \dfrac{1}{2}\right)^2 \left(x + \dfrac{1}{3}\right) \left(x - \left[\dfrac{1 + i \sqrt{3}}{2}\right]\right) \left(x - \left[\dfrac{1 - i \sqrt{3}}{2}\right]\right)\]
+
+\vspace{-.4in} \qed
+
+\end{enumerate}
+
+\end{example}
+
+A true test of Theorem \ref{complexfactorization} would be to take the factored form of $f(x)$ in the previous example and multiply it out\footnote{This is a good chance to test your algebraic mettle and see that all of this does actually work.} to see that it really does reduce to  $f(x) = 12x^5 - 20x^4+19x^3-6x^2-2x+1$.  When factoring a polynomial using Theorem \ref{complexfactorization}, we say that it is \index{polynomial function ! completely factored ! over the complex numbers} \textbf{factored completely over the complex numbers}, meaning that it is impossible to factor the polynomial any further using complex numbers.  If we wanted to  \index{polynomial function ! completely factored ! over the real numbers} completely factor $f(x)$ over the \textbf{real numbers} then we would have stopped short of finding the nonreal zeros of $f$ and factored $f$ using our work from the synthetic division to write $f(x) = \left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(12x^2 - 12x + 12\right)$, or $f(x) = 12\left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(x^2 - x + 1\right)$.  Since the zeros of $x^2-x+1$ are nonreal, we call $x^2-x+1$ an \index{quadratic function ! irreducible quadratic}\index{irreducible quadratic}\textbf{irreducible quadratic} meaning it is impossible to break it down any further using \textbf{real} numbers.  
+
+\smallskip
+
+The last two results of the section show us that, theoretically, the non-real zeros of polynomial functions with real number coefficients come exclusively from irreducible quadratics.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{conjugatepairsthm}\textbf{Conjugate Pairs Theorem:} If $f$ is a polynomial function with real number coefficients and $z$ is a complex zero of $f$, then so is $\overline{z}$. \index{Conjugate Pairs Theorem}
+
+\end{theorem}
+
+%% \ebm}
+
+\smallskip
+
+To prove the theorem, let 
+$ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}}$ be a polynomial function with real number coefficients.  If $z$ is a zero of $f$, then $f(z) = 0$, which means $a_{n} z^{n} + a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} z + a_{\mbox{\tiny $0$}} = 0$.  Next, we consider $f\left(\overline{z}\right)$ and apply Theorem \ref{conjugateprops} below.
+
+\[ \begin{array}{rclr}
+
+ f\left(\overline{z}\right) & = &  a_{n} \left(\overline{z}\right)^{n} + a_{n-\mbox{\tiny$1$}} \left(\overline{z}\right)^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}}\left( \overline{z}\right)^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} \overline{z} + a_{\mbox{\tiny $0$}} & \\ [3pt]
+ 
+ &  = & a_{n}\overline{z^{n}} + a_{n-\mbox{\tiny$1$}}\overline{z^{n-\mbox{\tiny$1$}}} + \ldots + a_{\mbox{\tiny $2$}}\overline{z^{\mbox{\tiny $2$}}} + a_{\mbox{\tiny $1$}} \overline{z} + a_{\mbox{\tiny $0$}} & \mbox{ since $\left(\overline{z}\right)^n = \overline{z^{n}}$}\\ [3pt]
+ 
+ & = & \overline{a_{n}}\overline{z^{n}} + \overline{a_{n-\mbox{\tiny$1$}}}\overline{z^{n-\mbox{\tiny$1$}}} + \ldots +  \overline{a_{\mbox{\tiny $2$}}}\overline{z^{\mbox{\tiny $2$}}} + \overline{a_{\mbox{\tiny $1$}}}\, \overline{z} + \overline{a_{\mbox{\tiny $0$}}} & \mbox{since the coefficients are real} \\ [3pt]
+ 
+ & = & \overline{a_{n} z^{n}} + \overline{a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}}} + \ldots +  \overline{a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}}} + \overline{a_{\mbox{\tiny $1$}} z} + \overline{a_{\mbox{\tiny $0$}}} &  \mbox{ since $\overline{z} \, \overline{w}=\overline{zw} $}\\ [3pt]
+ 
+ & = & \overline{a_{n} z^{n} + a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} z + a_{\mbox{\tiny $0$}}} & \mbox{ since $ \overline{z} + \overline{w} = \overline{z+w} $}\\ [3pt]
+ 
+ & = & \overline{f(z)} & \\ [3pt]
+ 
+ & = & \overline{0} & \\ [3pt]
+ 
+ & = & 0 & \\
+ 
+\end{array} \]
+
+This shows that $\overline{z}$ is a zero of $f$.  So, if $f$ is a polynomial function with real number coefficients, Theorem \ref{conjugatepairsthm} tells us that if $a+bi$ is a nonreal zero of $f$, then so is $a-bi$.  In other words, nonreal zeros of $f$ come in conjugate pairs.  The Factor Theorem kicks in to give us both $(x-[a+bi])$ and $(x-[a-bi])$ as factors of $f(x)$ which means $(x-[a+bi])(x-[a-bi]) = x^2 + 2a x + \left(a^2+b^2\right)$ is an irreducible quadratic factor of $f$.  As a result, we have our last theorem of the section.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+\begin{theorem}\label{realfactorization}\textbf{Real Factorization Theorem:} Suppose $f$ is a polynomial function with real number coefficients.  Then $f(x)$ can be factored into a product of linear factors corresponding to the real zeros of $f$ and irreducible quadratic factors which give the nonreal zeros of $f$. \index{Real Factorization Theorem}
+\end{theorem}
+%% \ebm}
+
+\smallskip
+
+We now present an example which pulls together all of the major ideas of this section.
+
+\begin{example}  Let $f(x) = x^4+64$.  
+
+\begin{enumerate}
+
+\item  Use synthetic division to show that $x=2+2i$ is a zero of $f$.
+
+\item  Find the remaining complex zeros of $f$.
+
+\item  Completely factor $f(x)$ over the complex numbers.
+
+\item  Completely factor $f(x)$ over the real numbers.
+
+\end{enumerate}
+
+{ \bf Solution.}
+
+\begin{enumerate}
+
+\item  Remembering to insert the $0$'s in the synthetic division tableau we have
+
+\[ \begin{array}{cccccc}
+ 2+2i \, \, \vline& 1 & 0 & 0  & 0 & 64 \\
+
+  & \downarrow     &  2+2i  &  8i & -16+16i & -64\\ \hhline{~-----} 
+  
+               & 1 &  2+2i  & 8i & -16+16i &  \fbox{$0$}  \\ \end{array}\]
+
+
+
+\item  Since $f$ is a fourth degree polynomial, we need to make two successful divisions to get a quadratic quotient.  Since $2+2i$ is a zero, we know from Theorem \ref{conjugatepairsthm} that $2-2i$ is also a zero.  We continue our synthetic division tableau.
+
+\[ \begin{array}{cccccc}
+  2+2i \, \, \vline& 1 & 0 & 0  & 0 & 64 \\
+
+  & \downarrow     &  2+2i  &  8i & -16+16i & -64\\ \hhline{~-----} 
+  
+  2-2i \, \, \vline  & 1 &  2+2i  & 8i & -16+16i &  \fbox{$0$}  \\
+    
+               & \downarrow &  2-2i  &  8-8i  & 16-16i &\\ \hhline{~----} 
+ 
+                & 1  &  4  & 8& \fbox{0} &   \\
+  
+
+
+\end{array}\]
+
+Our quotient polynomial is $x^2+4x+8$.  Using the quadratic formula, we solve $x^2+4x+8 = 0$ and find the remaining zeros are $-2+2i$ and $-2-2i$.  
+
+\item  Using Theorem \ref{complexfactorization}, we get $f(x) = (x-[2-2i])(x-[2+2i])(x-[-2+2i])(x-[-2-2i])$.
+
+\item  To find the irreducible quadratic factors of $f(x)$, we multiply the factors together which correspond to the conjugate pairs.  We find $(x-[2-2i])(x-[2+2i]) = x^2-4x+8$, and $(x-[-2+2i])(x-[-2-2i]) = x^2+4x+8$, so  $f(x) =  \left(x^2-4x+8\right) \left(x^2+4x+8\right)$. \qed
+
+\end{enumerate}
+
+\end{example}
+
+
+We close this section with an example where we are asked to manufacture a polynomial function with certain characteristics.
+
+\begin{example}  
+
+\begin{enumerate}
+
+\item Find a polynomial function $p$ of lowest degree that has integer coefficients and satisfies all of the following criteria:
+
+\begin{itemize}
+
+\item  the graph of $y=p(x)$ touches and rebounds from the $x$-axis at $\left(\frac{1}{3}, 0\right)$
+
+\item  $x=3i$ is a zero of $p$.
+
+\item  $\ds{\lim_{x \rightarrow -\infty} p(x) = -\infty}$   
+
+\item    $\ds{\lim_{x \rightarrow \infty} p(x) = -\infty}$   
+
+
+\end{itemize}
+
+\item  Find a possible formula for the polynomial function $p$ graphed below.  You may leave your answer in factored form.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.5pt}
+\arrow \reverse \arrow \function{-3.6, 2.75, 0.1}{(x**3+x**2-5*x+3)/3}
+\end{mfpic}
+
+\end{center}
+
+\end{enumerate}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item To solve this problem, we will need a good understanding of the relationship between the $x$-intercepts of the graph of a function and the zeros of a function, the Factor Theorem, the role of multiplicity, complex conjugates, the Complex Factorization Theorem, and end behavior of polynomial functions.  (In short, you'll need most of the major concepts of this chapter.)  Since the graph of $p$ touches the $x$-axis at $\left(\frac{1}{3}, 0\right)$, we know $x=\frac{1}{3}$ is a zero of even multiplicity.  Since we are after a polynomial of lowest degree, we need $x=\frac{1}{3}$ to have multiplicity exactly $2$. The Factor Theorem now tells us  $\left(x-\frac{1}{3}\right)^2$ is a factor of $p(x)$.  Since $x=3i$ is a zero and our final answer is to have integer (hence, real) coefficients, $x=-3i$ is also a zero.  The Factor Theorem kicks in again to give us $(x-3i)$ and $(x+3i)$ as factors of $p(x)$.  We are given no further information about zeros or intercepts so we conclude, by the Complex Factorization Theorem that $p(x) = a \left(x-\frac{1}{3}\right)^2 (x-3i)(x+3i)$ for some real number $a$.  Expanding this, we get $p(x) =  ax^4-\frac{2a}{3} x^3+\frac{82a}{9} x^2-6ax+a$.  In order to obtain integer coefficients, we know $a$ must be an integer multiple of $9$.  Our last concern is end behavior.  Since the leading term of $p(x)$ is $ax^4$, we need $a < 0$ to get  $\ds{\lim_{x \rightarrow -\infty} p(x) = -\infty}$    and  $\ds{\lim_{x \rightarrow \infty} p(x) = -\infty}$. Hence, if we choose $x=-9$, we get $p(x) = -9x^4+ 6 x^3 - 82 x^2+54x-9$.    We can verify our handiwork using the techniques developed in this chapter.  
+
+\item The first thing to note is the independent variable here is $t$, not $x$ as evidenced by the labeling on the horizontal axis.   Next, the graph appears to cross through the $t$-axis at $(-3,0)$ in a fairly linear fashion, so $t=-3$ is likely a zero of multiplicity $1$.   Also, the graph touches and rebounds at $(1,0)$, indicating $t=1$ is a zero of even multiplicity.  Since the graph doesn't appear too `flat,' we'll go with multiplicity $2$ (though there is really no way of telling.)     Using the Complex Factorization Theorem and assuming we have no non-real zeros, we now have $p(t) = a (t-(-3))(t-1)^2 = a(t+3)(t-1)^2$.  To determine the leading coefficient, $a$, we note the graph appears to have a $y$-intercept at $(0,1)$.  Solving $p(0) = 1$ gives $a(3)(-1)^2 = 1$ or $3a = 1$.  Hence, $a = \frac{1}{3}$ so $p(t) = \frac{1}{3} (t+3)(t-1)^2$. Since we may leave our answer in factored form, we are done. \qed
+
+\end{enumerate}
+
+\end{example}
+
+This example concludes our study of polynomial functions.\footnote{With the exception of the Exercises on the next page, of course.}  The last few sections have contained what is considered by many to be `heavy' Mathematics.  Like a heavy meal, heavy Mathematics takes time to digest.  Don't be overly concerned if it doesn't seem to sink in all at once, and pace yourself in the Exercises or you're liable to get mental cramps.  But before we get to the Exercises, we'd like to offer a bit of an epilogue.  
+
+\medskip
+
+\phantomsection
+\label{complexepilogue}
+
+Our main goal in presenting the material on the complex zeros of a polynomial was to give the chapter a sense of completeness.  Given that it can be shown that some polynomials have real zeros which cannot be expressed using the usual algebraic operations, and still others have no real zeros at all, it was nice to discover that every polynomial of degree $n \geq 1$ has $n$ complex zeros.  So like we said, it gives us a sense of closure.\footnote{This is a very deep math pun.}  As mentioned at the top of the section, complex numbers are very useful in many applied fields such as electrical engineering,  but most of the applications require science and mathematics well beyond precalculus material to fully understand them.  That does not mean you'll never be be able to understand them; in fact, it is the authors' sincere hope that all of you will reach a point in your studies when the glory, awe and splendor of complex numbers are revealed to you.  For now, however, the really good stuff is beyond the scope of this text. We invite you and your classmates to find a few examples of complex number applications and see what you can make of them. 
+
+\medskip
+
+For the remainder of the text, with the exception of Section \ref{PolarComplex} and a few exploratory exercises scattered about, we will restrict our attention to real numbers.  We do this primarily because the first Calculus sequence you will take, ostensibly the one that this text is preparing you for, studies only functions of real variables.  Also, lots of really cool scientific things don't require any deep understanding of complex numbers to study them, but they do need more Mathematics like exponential, logarithmic and trigonometric functions.  We believe it makes more sense pedagogically for you to learn about those functions now then take a course in Complex Function Theory in your junior or senior year once you've completed the Calculus sequence.  It is in that course that the true power of the complex numbers is released.  But for now, in order to fully prepare you for life immediately after Precalculus, we will say that functions like $f(x) = \frac{1}{x^{2} + 1}$, which we'll study in the very next chapter,  have a domain of all real numbers, even though we know $x^{2} + 1 = 0$ has two complex solutions, namely $x = \pm i$ which produce a `$0$' in the denominator.  Since $x^{2} + 1 > 0$ for all \textbf{real} numbers $x$, the fraction $\frac{1}{x^{2} + 1}$ is never undefined in the real variable setting.
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforComplexZeros}
+
+\closegraphsfile
+
+\end{document}

@@ -1,0 +1,133 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{TITLE}
+
+
+
+
+\begin{example} \label{IVTbisection} Use the Intermediate Value Theorem as applied to $f(x) = x^2-2$ to show $\sqrt{2}$ is between $1.41$ and $1.42$.
+
+\smallskip
+
+{\bf Solution.} Note first that $f$, being a polynomial function, is continuous.  Since  $f(1.41) = (1.41)^2-2 = -0.0119$ is negative and $f(1.42) = (1.42)^2  -2 = 0.0164$ is positive, we know $f$ has a zero, call it $c$,  between $1.41$ and $1.42$.  That is, there is some value $c$ between $1.41$ and $1.42$ with  $f(c) = c^2-2 =0$. Solving $c^2-2 = 0$ gives $c = \pm \sqrt{2}$.  Since $c > 0$, (it lies between $1.41$ and $1.42$), we have that $c = \sqrt{2}$.  Hence, we've shown $1.41 < \sqrt{2} < 1.42$. \qed
+\qed
+
+\end{example}
+
+The idea behind Example \ref{IVTbisection}  can be iterated and used to approximate $\sqrt{2}$ to as many decimal places as we like. We know $\sqrt{2}$ lies between $1.41$ and $1.42$, or, said differently, $\sqrt{2}$ lies in the interval $(1.41, 1.42)$.  If we chop this interval in half, in other words \textit{bisect} it, we have to intervals: $(1.41, 1.415)$ and $(1.415, 1.42)$.  We calculate $f(1.415) = 0.002225$.  Since $f(1.415)$ is positive and  $f(1.41)$ is negative, the Intermediate Value Theorem says the zero of $f$, $\sqrt{2}$,  lies between $1.41$ and $1.415$.  Now we `rinse and repeat.' Bisecting  $(1.41, 1.415)$ gives the two intervals: $(1.41, 1.4125)$  and  $(1.4125, 1.415)$. We find $f(1.4125)$ is negative.  Since $f(1.415)$ is positive, the Intermediate Value Theorem give $\sqrt{2}$ lies in $(1.4125, 1.415)$ or, in other words, $1.4125 < \sqrt{2} < 1.415$.   We can keep going and `trap' $\sqrt{2}$ between closer and closer numbers, and thereby get a better and better approximation.  This method is called the \index{Bisection Method} \textbf{Bisection Method}.  We will return to this in Section \ref{RealZeros}.
+
+Our primary use of the Intermediate Value Theorem is in the construction of sign diagrams, as in Section \ref{Inequalities}, since it guarantees us that polynomial functions are always positive $(+)$ or always negative $(-)$ on intervals which do not contain any of its zeros.  The general algorithm for polynomials is given below.
+
+\smallskip
+\\smallskip 
+
+\begin{example}  Construct a sign diagram for $f(x) = x^3 (x-3)^2 (x+2) \left(x^2+1\right)$.   Use it to give a rough sketch of the graph of  $y=f(x)$.  \label{polygraphex}
+
+\smallskip
+
+{\bf Solution.}  First, we find the zeros of $f$ by solving $x^3 (x-3)^2 (x+2)\left(x^2+1\right)=0$.   We get $x=0$, $x=3$ and $x=-2$. (The equation $x^2+1=0$ produces no real solutions.)  These three points divide the real number line into four intervals:  $(-\infty, -2)$, $(-2,0)$, $(0,3)$ and $(3,\infty)$.  We select the test values $x=-3$, $x=-1$, $x=1$ and $x=4$. We find $f(-3)$ is $(+)$, $f(-1)$ is $(-)$ and $f(1)$ is $(+)$ as is $f(4)$.  Wherever $f$ is $(+)$, its graph is above the $x$-axis;  wherever $f$ is $(-)$, its graph is below the $x$-axis.  The $x$-intercepts of the graph of $f$ are $(-2,0)$, $(0,0)$ and $(3,0)$.  Knowing $f$ is smooth and continuous allows us to sketch its graph.
+
+\begin{tabular}{m{0.5in}m{2.5in}m{2.5in}}
+
+&
+
+\begin{mfpic}[10]{-8}{8}{-2}{30}
+\arrow \reverse \arrow \polyline{(-8,0),(8,0)}
+\xmarks{-3,0,3}
+\arrow \polyline{(-5,-1.5),(-5,-0.5)}
+\arrow \polyline{(-1.5,-1.5),(-1.5,-0.5)}
+\arrow \polyline{(1.5,-1.5),(1.5,-0.5)}
+\arrow \polyline{(5,-1.5),(5,-0.5)}
+\tlpointsep{4pt}
+\axislabels {x}{{$-2$} -3, {$0$} 0, {$3$} 3 }
+\tlabel[cc](-5,1){$(+)$}
+\tlabel[cc](-5,-2.25){$-3$}
+\tlabel[cc](-3,1){$0$}
+\tlabel[cc](-1.5,1){$(-)$}
+\tlabel[cc](-1.75,-2.25){$-1$}
+\tlabel[cc](0,1){$0$}
+\tlabel[cc](1.5,1){$(+)$}
+\tlabel[cc](1.5,-2.25){$1$}
+\tlabel[cc](3,1){$0$}
+\tlabel[cc](5,1){$(+)$}
+\tlabel[cc](5,-2.25){$4$}
+\end{mfpic} 
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-2}{3}
+\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\point[3pt]{(-2,0), (0,0), (3,0)}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\tcaption{ \scriptsize A sketch of $y=f(x)$}
+\end{mfpic} 
+
+\end{tabular}
+
+\vspace{-.35in}
+
+\qed
+
+\end{example}
+
+A couple of notes about the Example \ref{polygraphex} are in order.  First, note that we purposefully did not label the $y$-axis in the sketch of the graph of $y=f(x)$.  This is because the sign diagram gives us the zeros and the relative position of the graph - it doesn't give us any information as to how high or low the graph strays from the $x$-axis.  Furthermore, as we have mentioned earlier in the text, without Calculus, the values of the relative maximum and minimum can only be found approximately using a calculator.  If we took the time to find the leading term of $f$, we would find it to be $x^8$.  Looking at the end behavior of $f$, we notice that it matches the end behavior of $y=x^8$.  This is no accident, as we find out in the next theorem.
+
+\medskip
+
+
+Let's return to the function in Example \ref{polygraphex}, $f(x) = x^3 (x-3)^2 (x+2)\left(x^2+1\right)$, whose sign diagram and graph are reproduced below for reference.  Theorem \ref{EBPolynomials} tells us that the end behavior is the same as that of its leading term $x^{8}$.  This tells us that the graph of $y=f(x)$ starts and ends above the $x$-axis.  In other words, $f(x)$ is $(+)$ as $x \rightarrow \pm \infty$, and as a result, we no longer need to evaluate $f$ at the test values $x=-3$ and $x=4$.  Is there a way to eliminate the need to evaluate $f$ at the other test values?  What we would really need to know is how the function behaves near its zeros - does it cross through the $x$-axis at these points, as it does at $x=-2$ and $x=0$, or does it simply touch and rebound like it does at $x=3$.  From the sign diagram, the graph of $f$ will cross the $x$-axis whenever the signs on either side of the zero switch (like they do at $x=-2$ and $x=0$);  it will touch when the signs are the same on either side of the zero (as is the case with $x=3$). What we need to determine is the reason behind whether or not the sign change occurs.
+
+\begin{tabular}{m{0.5in}m{2.5in}m{2.5in}}
+
+&
+
+\begin{mfpic}[10]{-8}{8}{-2}{2}
+\arrow \reverse \arrow \polyline{(-8,0),(8,0)}
+\xmarks{-3,0,3}
+\arrow \polyline{(-5,-1.5),(-5,-0.5)}
+\arrow \polyline{(-1.5,-1.5),(-1.5,-0.5)}
+\arrow \polyline{(1.5,-1.5),(1.5,-0.5)}
+\arrow \polyline{(5,-1.5),(5,-0.5)}
+\tlpointsep{4pt}
+\axislabels {x}{{$-2$} -3, {$0$} 0, {$3$} 3 }
+\tlabel[cc](-5,1){$(+)$}
+\tlabel[cc](-5,-2.25){$-3$}
+\tlabel[cc](-3,1){$0$}
+\tlabel[cc](-1.5,1){$(-)$}
+\tlabel[cc](-1.75,-2.25){$-1$}
+\tlabel[cc](0,1){$0$}
+\tlabel[cc](1.5,1){$(+)$}
+\tlabel[cc](1.5,-2.25){$1$}
+\tlabel[cc](3,1){$0$}
+\tlabel[cc](5,1){$(+)$}
+\tlabel[cc](5,-2.25){$4$}
+\end{mfpic} 
+
+&
+
+\begin{mfpic}[15]{-5}{5}{-2}{3}
+\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\point[3pt]{(-2,0), (0,0), (3,0)}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\tcaption{ \scriptsize A sketch of $y=f(x)$}
+\end{mfpic} 
+
+\end{tabular}
+
+
+
+
+
+
+
+
+
+\end{document}

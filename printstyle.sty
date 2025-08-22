@@ -1,0 +1,535 @@
+%
+% Adapted extract of KU Leuven printstyle 
+%
+
+\makeatletter
+\@ifclassloaded{xourse}{%
+    \typeout{Start loading printstyle (in a XOURSE)}%
+    \def\isXourse{true}   % automatically defined; pre 112022 it had to be set 'manually' in a xourse
+}{%
+    \typeout{Start loading printstyle (NOT in a XOURSE)}%
+}
+\makeatother
+
+\usepackage[yyyymmdd]{datetime}    % for \currenttime
+
+
+\usepackage{afterpage}
+\usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
+\usepackage{extramarks}
+
+
+\usepackage{qrcode}
+\usepackage{currfile}
+
+%% Size of the page
+\usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, a4paper]{geometry}
+
+% See https://en.wikibooks.org/wiki/LaTeX/Page_Layout 
+\voffset=-1in
+\hoffset=-1in
+
+\topmargin=1 cm
+\headheight=2.5cm
+\headsep=0.5cm
+\textheight=23cm
+\footskip=1.2cm
+\oddsidemargin=2.5cm
+\evensidemargin=2.5cm
+\textwidth=15.5cm
+\marginparsep=0.5cm
+%\marginparwidth=0cm
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5 pt}
+
+% For setting options
+\providebool{printpartfrontpage}
+\providebool{printactivitytitle}
+\providebool{printactivityqrcode}
+\providebool{printactivityurl}
+\providebool{printtableofcontents}
+\providebool{countpagenumbersbypart}
+
+% for PDF by activity, it makes sense not to include the title, as it is in the header already
+\printactivitytitlefalse     % overwrite AFTER loading printstyle ...
+\printtableofcontentstrue
+
+
+%
+% provide defaults for frontpage/headers/footers
+%  ( Overwrite in global.sty !)
+%
+\providecommand{\xmmodulename}{Module}
+\providecommand{\xmcoursename}{My Xourse}
+\providecommand{\xmlogo}{
+%    	\begin{minipage}[c]{2cm}\includegraphics[width=2cm]{./x_zomercursus/sedes.jpg}\end{minipage}
+}
+\providecommand{\xmorganisationname}{{\textsc{My Org}}}
+\providecommand{\xmdepartmentname}{{\textsc{My Department}}}
+\providecommand{\xmcourseversion}{\scriptsize{\yyyymmdddate\today\xmshowprintoptions.\the\currentminute}}
+
+\providecommand{\xmshowprintoptions}{%
+	\ifhandout H\fi%
+}
+
+\providecommand{\xmmodulenummer}{}   % print bv "Module xxx" op titelbladen
+\providecommand{\xmcopyright}{%
+  \ifdefined\doclicenseImage%
+    \doclicenseImage[imagewidth=2em]\doclicenseNameRef%
+  \fi%
+  \\
+  \xmorganisationname\ (\xmcourseversion)
+}
+
+% Used when printing qrcodes
+\providecommand\xmbaseurl{https://ximera.osu.edu/your-course-here/}
+
+
+\usepackage{authoraftertitle}    % provides \MyTitle, \MyAuthor etc
+
+% The main Front Cover
+\providecommand{\xmFrontCover}[1]{
+
+  \begin{titlepage}
+    \centering
+    \rule{\textwidth}{0.8pt}
+    \par\vspace{3mm}
+    {\LARGE \bfseries #1}
+    \par\vspace{3mm}
+    \par\rule{\textwidth}{0.8pt}
+    \par\vspace{5cm}
+    {\large \MyAuthor}
+    \par\vspace{1.5cm}
+    {\large \MyDate \par}
+    \vspace{2cm}
+    \rule{\textwidth}{1.2pt}
+    \vfill
+ \end{titlepage}
+}
+
+
+% The (optional) Part Cover (ie, at the start of each new \part)
+\providecommand{\xmPartCover}[1]{
+  \begin{titlepage}
+  \centering
+  {\LARGE \bfseries Part \thepart}
+  \par\vspace{1.5cm}
+  {\LARGE \bfseries #1}
+  % \par\vspace{1.5cm}
+  % {\large \MyAuthor}
+ \end{titlepage}
+}
+
+
+
+\def\xmmoduletitle{}   % will be set by \part
+
+% Color for header/foorter 
+\definecolor{xmheadercolor}{RGB}{2,117,219}
+\renewcommand{\headrulewidth}{3pt}
+
+
+\fancypagestyle{otherpage}{%  % 'normal' page, but eg not the first page of an activity
+    \renewcommand{\headrulewidth}{0.4pt}
+  % \rightmark = activity-titel
+  \makeatletter
+  \fancyhead{}  
+  \if@twoside
+      \fancyhead[RO]{\small{p.\textsc{\thepage}\\\ \\\ }}
+      \fancyhead[LE]{\small{p.\textsc{\thepage}\\\ \\\ }}
+      \fancyhead[C]{\ \\\ \\ {\makebox[\textwidth][c]{\selectfont\bfseries\color{black}\textsc{\firstleftmark}}}}
+
+      % Distinguish xourses vs activities
+      \ifdefined\isXourse  
+         \fancyhead[LO,RE]{\small{\textsc{\xmmodulename\  \arabic{part}: \xmmoduletitle}}\\ \ \\ \ } 
+      \fi
+
+      \fancyfoot[RO,LE]{\textsc{\small \xmcoursename\\\xmdepartmentname}}   %  versie enkel op eerste pagina
+      \fancyfoot[C]{}
+      \fancyfoot[LO,RE]{\xmcopyright}
+  \else% oneside
+      \fancyhead[R]{\small{p. \textsc{\thepage}\\\ \\\ }}
+      \fancyhead[C]{\ \\\ \\ {\makebox[\textwidth][c]{\selectfont\bfseries\color{black}\textsc{\firstleftmark}}}}
+
+      % Distinguish xourses vs activities
+      \ifdefined\isXourse  
+         \fancyhead[L]{\small{\textsc{\xmmodulename\  \arabic{part}: \xmmoduletitle}}\\ \ \\ \ } 
+      \fi
+
+      \fancyfoot[R]{\textsc{\small \xmcoursename\ \\\xmdepartmentname}}
+      \fancyfoot[C]{}
+      \fancyfoot[L]{\xmcopyright}
+  \fi
+  \makeatother   
+}
+
+\fancypagestyle{firstpage}{%  First page: colored banner with activity-title
+    \renewcommand{\headrulewidth}{0pt}
+  \makeatletter
+  \if@twoside
+      \fancyhead[RO]{\small{p.\textsc{\thepage}\\\ \\}} % Right on Odd pages
+      \fancyhead[LE]{\small{p.\textsc{\thepage}\\\ \\}} % Left on Even pages
+      \ifdefined\isXourse 
+          % NOT NEEDED: standrad LO/RE work better  (this overwrite pagenumbers on EVEN pages ???)     
+          %\fancyhead[LO]{\colorbox{white}{\makebox[\textwidth][l]{\small{\textsc{\xmmodulename\  \arabic{part}: \xmmoduletitle}}}}\\ \ }
+          %\fancyhead[RE]{\colorbox{white}{\makebox[\textwidth][r]{\small{\textsc{\xmmodulename\  \arabic{part}: \xmmoduletitle}}}}\\ \ }
+      \else
+          \fancyhead[LO]{\colorbox{xmheadercolor}{\parbox{\textwidth}{\makebox[\textwidth][l]{\small{\textsc{\phantom{M}}}\\ \ \\ \ }}}}
+          \fancyhead[RE]{\colorbox{xmheadercolor}{\parbox{\textwidth}{\makebox[\textwidth][r]{\small{\textsc{\phantom{M}}}\\ \ \\ \ }}}}
+      \fi
+      \fancyhead[C]{\ \\\ \\ \colorbox{xmheadercolor}{\makebox[\textwidth][c]{\selectfont\bfseries\color{black}\textsc{\firstleftmark}}}} 
+
+      \fancyfoot[RO,LE]{\textsc{\small \xmcoursename\\\xmdepartmentname}}
+      \fancyfoot[C]{}
+      \fancyfoot[LO,RE]{\xmcopyright}
+  \else%oneside
+      \fancyhead[R]{\small{p. \textsc{\thepage}\\\ \\}}
+      \ifdefined\isXourse      
+          \fancyhead[L]{\colorbox{white}{\makebox[\textwidth][l]{\small{\textsc{\xmmodulename\  \arabic{part}: \xmmoduletitle}}}}\\ \ \\\ }
+      \else
+          \fancyhead[L]{\colorbox{xmheadercolor}{\parbox{\textwidth}{\makebox[\textwidth][l]{\small{\textsc{\phantom{M}}} \\ \ \\ \ }}}
+          }
+      \fi
+      \fancyhead[C]{\ \\ \colorbox{xmheadercolor}{\makebox[\textwidth][c]{\selectfont\bfseries\color{black}\textsc{\firstleftmark}}}} 
+
+      \fancyfoot[R]{\textsc{\small \xmcoursename\\\xmdepartmentname}}
+      \fancyfoot[C]{}
+      \fancyfoot[L]{\xmcopyright}
+  \fi
+  \makeatother
+}
+
+\pagestyle{otherpage}
+
+
+%
+% Counting stuff:
+% Somewhat complex, because ONLINE (by default) Ximera counts chapters/sections itself
+%  This clashes with potential of \sections inside activities ...
+%
+% Defaults 
+%  use 2.5 for Chapter 5 in Part (Module) 2
+%  use 2.5.A for first \sectionstyle activity in that chapter
+%  ( other sections get numbers 2.5.1 etc)
+% The .A, .B are used to distinguish the two kinds of 'sections': the 'activities' do have URLs, the \sections don't ... 
+%
+\renewcommand{\thepart}{\arabic{part}}
+\renewcommand{\thetitlenumber}{\thepart.\arabic{titlenumber}}
+\renewcommand{\thesectiontitlenumber}{\thetitlenumber.\Alph{sectiontitlenumber}}
+
+%
+% defaults: will be overwitten infra
+%
+% \usepackage{titlesec}
+
+
+% \titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}[hang]{\normalfont\bfseries}{\thesubsubsection}{2em}{}
+% \titleformat{\paragraph}[hang]{\normalfont\bfseries}{\theparagraph}{3em}{}
+
+% % with colors (for testing)
+% %\titleformat{\subsection}[hang]{\color{blue}\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+% %\titleformat{\subsubsection}[hang]{\color{green}\normalfont\large\bfseries}{\thesubsubsection}{1em}{}
+% %\titleformat{\paragraph}[hang]{\color{brown}\normalfont\bfseries}{\theparagraph}{1em}{}
+% %%\counterwithin{subsubsection}{sectiontitlenumber}
+
+
+% \titlespacing*{\subsection}{0pt}{1.25ex plus 1ex minus .2ex}{0.2em}
+
+\usepackage{tocloft}
+
+% Define subsubsection entry in TOC
+
+\newlength{\cftparindent}      % extend 
+\newlength{\cftparnumwidth}
+
+\setlength{\cftsubsubsecindent}{2em}
+\setlength{\cftsubsecindent}{2em}
+\setlength{\cftsubsubsecnumwidth}{3em}
+
+
+\setlength{\cftparindent}{2em}  % Indentation for paragraphs
+\setlength{\cftparnumwidth}{5em} % Space for paragraph numbering
+
+% Customize subsubsection TOC entry
+\makeatletter
+\renewcommand{\l@subsubsection}{
+  \@dottedtocline{3}{\cftsubsubsecindent}{\cftsubsubsecnumwidth}
+}
+
+\renewcommand{\l@paragraph}{
+  \@dottedtocline{4}{\cftparindent}{\cftparnumwidth}
+}
+\makeatother
+
+\setlength{\cftsubsecnumwidth}{4em}  % Width for subsubsection number
+\setlength{\cftsubsubsecnumwidth}{4.5em}  % Width for subsubsection number
+%\setlength{\cftsubsubseclabelsep}{1em}    % Space between number and title
+
+
+% Update the maketitle command:
+%  - explicity here to be used for the XOURSE frontapge
+%  - in chapterstyle/sectionstyle: to reset counters etc.
+
+%
+% Prepare for MAIN FRONTPAGE (Front cover, optional tableofcontents)
+%
+% Store original \maketitle 
+\let\origsection\section
+\let\origsubsection\subsection
+\let\origsubsubsection\subsubsection
+
+\makeatletter
+% Redefine maketitle to give course packet title page and toc.
+\renewcommand{\maketitle}{
+  % \let\maketitle\othermaketitle % immediately reset maketitle to its usual definition.
+
+  % There's a difference between (full) xourses and (individual) activities)
+  \ifdefined\isXourse  
+      \xmFrontCover{\@title}
+  
+      % Show Table-of-contents ? 
+      \ifprinttableofcontents
+        \thispagestyle{empty}
+        \cleardoublepage
+        \thispagestyle{empty}
+        \afterpage{\thispagestyle{empty}}  
+        \tableofcontents  
+        \thispagestyle{empty}
+        \cleardoublepage
+      \fi 
+  \else
+    \markboth{\@title}{\@title}  % only needed in non-xourses ...
+  \fi
+  %  \markright{ \@title }   % NEEDED? fix wrong section on first page of activity    
+  \thispagestyle{firstpage} 
+  \afterpage{\thispagestyle{otherpage}}  
+  \chapterstyle   % sets default chapterstyle
+  } % end \renewcommand maketitle (voor MAIN FRONTPAGE)
+
+
+
+\renewcommand\chapterstyle{%
+  \def\maketitle{%
+
+    \let\section\origsubsection
+    \let\subsection\origsubsubsection
+    \let\subsubsection\paragraph
+    \addtocounter{titlenumber}{1}% Verhoog counter voor 'titlenumber' = 2e niveau
+
+     \ifprintactivitytitle    % if not, it's in the header ....
+        {\normalfont\Large\bfseries \thetitlenumber\hspace{1em} \@title}
+     \fi 
+     \ifprintactivityqrcode
+        \tikz[remember picture, overlay] 
+        \node[below right] at (current page.north east) {
+          \qrcode[hyperlink,height=1.5cm]{\xmbaseurl\currfiledir\currfilebase}
+        };
+        % \marginnote{\qrcode[hyperlink,height=1.5cm]{\xmbaseurl\currfiledir\currfilebase}}%[-2cm] % left
+     \fi
+     \ifprintactivityurl
+        \url{\xmbaseurl\currfiledir\currfilebase}
+     \fi
+    \phantomsection
+    \addcontentsline{toc}{section}{\textbf{\thetitlenumber\hspace{1em}\@title}}% Add to TOC
+
+    % Inside \chapterstyle, sections map to subsections     
+    % \renewcommand\xmsection\subsection
+    % \renewcommand\xmsubsection\subsubsection
+    \renewcommand{\thesubsection}{\thetitlenumber.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+    
+    {% Reset the per-chapter counters 
+         \setcounter{sectiontitlenumber}{0}
+         \setcounter{proposition}{0}
+         \setcounter{problem}{0}
+         \setcounter{definition}{0}
+         \setcounter{example}{0}
+        %  \setcounter{explanation}{0}
+         \setcounter{remark}{0}
+         \setcounter{notation}{0}
+         \setcounter{observation}{0}
+         \setcounter{theorem}{0}
+         \setcounter{warning}{0}
+        %  \setcounter{exercise}{0}
+        %  \setcounter{question}{0}
+         \setcounter{subsection}{0}
+         \setcounter{subsubsection}{0}         
+        %  \setcounter{hint}{0}         
+    }
+    
+    \markboth{\thetitlenumber\hspace{1em} \@title}{\thetitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity    
+    \thispagestyle{firstpage} 
+    \afterpage{\thispagestyle{otherpage}} 
+  }% end maketitle
+}
+
+% Similarly, redefine  maketitle to include activities in sectionstyle
+\renewcommand\sectionstyle{%
+  \def\maketitle{%
+  \let\section\origsubsubsection
+  \let\subsection\paragraph
+  \let\subsubsection\paragraph
+
+  \addtocounter{sectiontitlenumber}{1}% Verhoog counter voor 'sectiontitlenumber' = 3e niveau
+
+     \ifprintactivitytitle    % if not, it's in the header ....
+        {\normalfont\large\bfseries \thesectiontitlenumber\hspace{1em} \@title}
+     \fi
+     \ifprintactivityqrcode
+        \tikz[remember picture, overlay] 
+        \node[below right] at (current page.north east) {
+          \qrcode[hyperlink,height=1.5cm]{\xmbaseurl\currfiledir\currfilebase}
+        };
+        % \marginnote{\qrcode[hyperlink,height=1.5cm]{\xmbaseurl\currfiledir\currfilebase}}%[-2cm]
+     \fi
+     \ifprintactivityurl
+        \url{\xmbaseurl\currfiledir\currfilebase}
+     \fi
+    % Manually add anchor and contentsline
+    \phantomsection
+    \addcontentsline{toc}{subsection}{\textbf{\thesectiontitlenumber\hspace{1em}\@title}}% Voeg toe aan inhoudsopgave
+%    \addcontentsline{toc}{subsection}{\numberline{\thesectiontitlenumber}\@title}% Voeg toe aan inhoudsopgave
+
+    % Inside \sectionstyle, sections map to subsubsections 
+    % \renewcommand\xmsection\subsubsection
+    % \renewcommand\xmsubsection\paragraph
+    \renewcommand{\thesubsubsection}{\thesectiontitlenumber.\arabic{subsubsection}}
+    \renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+
+%    \counterwithin*{subsubsection}{subsection}   % doesn't work ... ?
+%    \setcounter{subsubsection}{0}     %% !!! deze lijn helpt de bookmarks in PDF omzeep !!!!
+
+    \markboth{\thesectiontitlenumber\hspace{1em} \@title}{\thesectiontitlenumber\hspace{1em} \@title}   % fix wrong section on last page of activity
+
+    \thispagestyle{firstpage} 
+    \afterpage{\thispagestyle{otherpage}} 
+  }
+}
+
+%% Redefine \part
+\renewcommand\part{%
+  \thispagestyle{empty}
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+%  \thispagestyle{plain}%
+%  \null\vfil    % causes whitespace at top of first page of new \part
+  \secdef\@part\@spart
+}
+
+% In a xourse, count pages by \part
+% todo: c/should be made optional? Especially to allow not using parts at all ?
+\ifdefined\isXourse
+ \ifcountpagenumbersbypart
+    \typeout{Counting pagenumbers by part}%
+    \counterwithin{page}{part}
+    \renewcommand{\thepage}{\thepart.\arabic{page}}   % 
+ \else
+    \typeout{Using continuous pagenumbers throughout the document}%
+    \renewcommand{\thepage}{\arabic{page}}   % 
+\fi
+\fi
+
+\makeatletter
+
+\def\@part[#1]#2{%
+  \def\xmmoduletitle{#1}       % set module title for use in header
+	\setcounter{titlenumber}{0}  % counter for 'chapters' per part (defined in  ximera.cls)
+    
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%  % Add to TOC (wth part-number)
+    \else
+      \addcontentsline{toc}{part}{#1}%                      % Add to TOC
+    \fi
+%    \markboth{#1}{#1}%
+%    \markboth{}{}%
+%    \markright{#1}   % fix wrong section on first page of activity    
+
+    \refstepcounter{page}  % Pagenumbers start from  1 within parts (default: from 0)
+    
+    \ifprintpartfrontpage
+       \renewcommand{\xmmodulenummer}{\textsc{\xmmodulename\  \arabic{part}}\\}
+       \xmPartCover{#1}
+    \fi
+    \thispagestyle{empty}
+    \cleardoublepage
+    \newpage
+
+% needed ???
+%    \thispagestyle{firstpage} 
+%    \afterpage{\thispagestyle{otherpage}}    
+     
+    % \@endpart    % ????
+}
+\def\@spart#1{% with \part* print \Huge title; not used/usable ?
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \Huge \bfseries #1\par}%
+    \@endpart}
+%\def\@endpart{\vfil\newpage
+%              \if@twoside
+%               \if@openright
+%                \null
+%                \thispagestyle{empty}%
+%                \newpage
+%               \fi
+%              \fi}
+\def\@endpart{}
+%
+%\patchcmd{\@part}% <cmd>
+%  {\protected@edef}% <search>
+%  {\def\arg{#1}\def\arg@{part}%
+%   \ifx\arg\arg@\stepcounter{page}\fi%
+%   \protected@edef}% <replace>
+%  {}{}% <success><failure>
+\makeatother
+
+% \renewcommand{\theHexercise}{\thetitlenumber.\theexercise}   % for hyperref ...
+\renewcommand{\theHdefinition}{\thetitlenumber.\thedefinition}   % for hyperref ...
+\renewcommand{\theHproposition}{\thetitlenumber.\theproposition}   % for hyperref ...
+\renewcommand{\theHexample}{\thetitlenumber.\theexample}   % for hyperref ...
+\renewcommand{\theHremark}{\thetitlenumber.\theremark}   % for hyperref ...
+\renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
+
+
+% \let\oldhypertarget\hypertarget
+% \let\oldhyperlink\hyperlink
+% \renewcommand{\hypertarget}[2]{%
+%   \label{ht@#1}\oldhypertarget{#1}{#2}%
+% }
+% \renewcommand{\hyperlink}[2]{%
+%   \ifcsname r@ht@#1\endcsname\oldhyperlink{#1}{#2}\else#2\fi
+% }
+
+
+
+%
+% localize newpages-between-activities based on \ifnonewpage
+%   (resumes and overwrites what's in xourse.cls)
+%
+%% \@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
+\ifdefined\isXourse  
+  \ifxake%
+    \renewcommand\activity[2][]{}%
+  \else
+    \makeatletter
+    \let\otherinput\input
+    \renewcommand{\activity}[2][]{%
+      \setkeys{activity}{#1}%
+      \renewcommand{\input}[1]{}%
+      \ifnonewpage%
+        \begingroup\skip@preamble\otherinput{#2}\endgroup\par\vspace{\topsep}%
+      \else%
+         \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
+      \fi%
+      \let\input\otherinput%
+    }%
+    \makeatother
+  \fi
+%\fi%

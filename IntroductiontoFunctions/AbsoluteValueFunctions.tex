@@ -1,0 +1,1227 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Absolute Value Functions}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{AbsoluteValueFunctions}
+
+\setcounter{footnote}{0}
+
+\label{AbsoluteValueFunctions}
+
+\subsection{Graphs of Absolute Value Functions}
+\label{GraphsofAbsoluteValueFunctions}
+
+In Section \ref{ConstantandLinearFunctions}, we revisited lines in a function context.  In this section, we revisit the absolute value in a similar manner, so it may be useful to refresh yourself with the basics in Section \ref{AppAbsValEqIneq}. Recall that the absolute value of a real number $x$, denoted $|x|$, can be  defined as the distance from $x$ to $0$ on the real number line.\footnote{More generally, $|x - c|$ is the distance from $x$ to $c$ on the number line.}  This definition is very useful for several applications, and lends itself well to solving equations and inequalities such as $|x - 2| + 1 = 5$ or $2|t + 1| > 4$.  
+
+\medskip
+
+We now wish to explore solving more complicated equations and inequalities, such as $|x - 2| + 1 = x$ and $2|t + 1| \geq t + 4$. We'll approach these types of problems from a function standpoint and use the interplay between the graphical and analytical representations of these functions to obtain solutions. The key to this section is understanding the absolute value from that function (or procedural) standpoint. 
+
+\medskip
+
+Consider a real number $x \geq 0$ such as $x = 0$, $x = \pi$ or $x = 117.42$.  When computing absolute values, we find $|0| = 0$, $|\pi| = \pi$ and $|117.42| = 117.42$.  In general,  if $x \geq 0$, the absolute value function does nothing to change the input, so $|x| = x$. On the other hand, if $x < 0$, say $x = -1$, $x = -\sqrt{42}$ or $x = -117.42$, we get $|-1| = 1$, $|-\sqrt{42}| = \sqrt{42}$ and $|-117.42| = 117.42$.  That is, if $x < 0$, $|x|$ returns the exact \textbf{opposite} of the input $x$, so  $|x| = -x$.  
+
+\medskip
+
+Putting these two observations together, we have the following.
+
+\medskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition}
+
+\label{absolutevaluepiecewise}
+
+The \index{absolute value ! definition of}\index{function ! absolute value}\textbf{absolute value} of a real number $x$, denoted $|x|$, is given by \[ |x| =  \begin{mycases} 
+      -x &  \text{if $x < 0$} \\
+      x & \text{if $x \geq 0$} \\
+   \end{mycases} \]
+
+\end{definition}
+
+%% \ebm}
+
+\medskip
+
+In Definition \ref{absolutevaluepiecewise}, it is \textbf{absolutely} essential to read `$-x$' as `the \textbf{opposite} of $x$' as \textbf{opposed} to `negative $x$' in order to avoid serious errors later.  To see that this description agrees with our previous experience, consider $|117.42|$.  Given that $117.42 \geq 0$, we use the rule $|x| = x$.  Hence, $|117.42| = 117.42$.  Likewise, $|0| = 0$.  To compute $|-\sqrt{42}|$, we note that $-\sqrt{42} < 0$ we use the rule $|x| = -x$ in this case.  We get $|-\sqrt{42}| = -(-\sqrt{42})$ (the opposite of $-\sqrt{42}$), so $|-\sqrt{42}| = -(-\sqrt{42}) = \sqrt{42}$.   
+
+\medskip
+
+Another way to view Definition \ref{absolutevaluepiecewise} is to think of $-x = (-1)x$ and $x = (1)x$.  That is,   $|x|$ multiplies negative inputs by $-1$ and  non-negative inputs by $1$.    This viewpoint is especially useful in graphing  $f(x) = |x|$.  For $x<0$,  $|x| = (-1)x$, so the graph of $y = |x|$ is the graph of  $y = -x = (-1) x$:  a line with slope $-1$ and $y$-intercept $(0,0)$.   Likewise, for $x \geq 0$, $|x| = x$, so the graph of $y = |x|$ is the graph of $y = x = (1)x$:  a line with slope $1$ and $y$-intercept $(0,0)$.  
+
+\medskip
+
+At the top of the next page we graph each piece and then put them together. Note that when graphing $f(x) = |x|$ for $x < 0$, we have a hole at $(0, 0)$ because the inequality $x < 0$ is strict. However, the point $(0, 0)$ is included in the graph of $f(x) = |x|$ for $x \geq 0$, so there is no hole in our final graph.
+
+\newpage
+
+\begin{center}
+
+\begin{multicols}{3}
+
+\begin{mfpic}[15]{-4}{4}{0}{5}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-3.25,2){\scriptsize $(-2,2)$}
+\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize $f(x) = |x|$, $x < 0$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
+\penwd{1.25pt}
+\arrow \reverse \polyline{( -4,4), (0,0)}
+\point[4pt]{(0,0), (-1,1), (-2,2)}
+\pointfillfalse
+\point[4pt]{(0,0)}
+\end{mfpic} 
+
+
+\begin{mfpic}[15]{-4}{4}{0}{5}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](3,2){\scriptsize $(2,2)$}
+\tlabel[cc](2,1){\scriptsize $(1,1)$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize $f(x) = |x|$, $x \geq 0$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
+\penwd{1.25pt}
+\arrow \polyline{(0,0), (4,4)}
+\point[4pt]{(0,0), (1,1), (2,2)}
+\point[4pt]{(0,0)}
+\end{mfpic} 
+
+
+
+
+\begin{mfpic}[15]{-4}{4}{0}{5}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-3.25,2){\scriptsize $(-2,2)$}
+\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
+\tlabel[cc](3,2){\scriptsize $(2,2)$}
+\tlabel[cc](2,1){\scriptsize $(1,1)$}
+\point[3pt]{(0,0)}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize $f(x) = |x|$}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-4,4),(0,0),(4,4)}
+\point[4pt]{(0,0), (1,1), (-1,1), (2,2), (-2,2)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+The graph of $f(x) = |x|$ is a very distinctive `$\vee$' shape and is worth remembering.  The point $(0, 0)$ on the graph is called the\index{vertex}\index{vertex ! absolute value function} \textbf{vertex}.  This terminology makes sense from a geometric viewpoint because $(0, 0)$ is the point where two lines meet to form an angle.  We will also see this term used in Section \ref{QuadraticFunctions} where, more generally, it corresponds to the graphical location of the sole maximum or minimum of a quadratic function.
+
+\medskip
+
+We put Definition \ref{absolutevaluepiecewise} to good use in the next example and review the basics of graphing along the way.
+
+
+\begin{example}   \label{absvaluegraph1} For each of the functions below, analytically find the zeros of the function and the axis intercepts of the graph, if any exist.  Rewrite the function using Definition \ref{absolutevaluepiecewise} as a piecewise-defined function and sketch its graph.  From the graph, determine the vertex, find the range of the function and any extrema, and then list the intervals over which the function is increasing, decreasing or constant.
+
+\begin{multicols}{4}
+\begin{enumerate}
+
+\item  $f(x) = |x - 3|$
+\item  $g(t) = |t| - 3$
+\item  $h(u) = |2u - 1| - 3$
+\item  $i(w) = 4 - 2|3w - 1|$ 
+
+\end{enumerate}
+\end{multicols}
+
+{\bf Solution.}  In what follows below, we will be doing quite a bit of substitution.  As we have mentioned before, when substituting one expression in for another, the use of parentheses or other grouping symbols is highly recommended.  Also, the dependent variable wasn't specified so we use the default $y$ in each case.
+
+\begin{enumerate}
+
+\item  To find the zeros of $f$, we solve $f(x) = 0$ or $|x - 3| = 0$.  We get $x = 3$ so  the sole $x$-intercept of the graph of $f$ is $(3, 0)$.  To find the $y$-intercept, we compute $f(0) = |0 - 3| = 3$ and obtain $(0,3)$.     Using Definition \ref{absolutevaluepiecewise} to rewrite the expression for $f(x)$ means that we substitute the expression $x - 3$ in for $x$ and simplify.  Note that when substituting the $x - 3$ in for $x$,  we do so for \textbf{every} instance of $x$  -- both in the formula (output) as well as the inequality (input). \[ \begin{array}{ccc}
+
+f(x) = |x - 3| = \begin{mycases} 
+      -(x - 3) &  \text{if $(x - 3) < 0$} \\
+      (x - 3)  & \text{if $(x - 3) \geq 0$} \\
+   \end{mycases} &
+   
+   \longrightarrow &
+   
+ f(x) = \begin{mycases} 
+      -x + 3 &  \text{if $x < 3$} \\
+     x - 3  & \text{if $x \geq 3$} \\
+   \end{mycases} \\ \end{array} \] As both pieces of the graph of $f$ are lines, we need just two points for each piece.    We already have two points for the graph: $(0, 3)$ and $(3, 0)$.    These two points both lie on the line $y = -x + 3$ but the strictness of the inequality means $f(x) = -x + 3$ only for $x < 3$, \underline{not} $x = 3$, so we would have a hole at $(3, 0)$ instead of a point there.  For $x \geq 3$, $f(x) = x - 3$, so the hole we thought we had  at $(3, 0)$ gets plugged because $f(3) = 3 - 3 = 0$.  We need just one more point for $f(x)$ where $x \geq 3$ and choose somewhat arbitrarily $x = 6$.  We find $f(6) = |6 - 3| = 3$ so our final point on the graph is $(6, 3)$.  Now that we have a complete graph,\footnote{We know it's complete because we did the Math - no trusting technology on this example!}  we see that the vertex is $(3, 0)$ and the range  is $[0, \infty)$.  The minimum of $f$ is $0$ when $x = 3$ and $f$ has no maximum.  Also, $f$  is decreasing over $(-\infty, 3]$ and increasing on $[3, \infty)$.  The graph is given below on the left.
+
+\item To find the zeros of $g$, we solve $g(t) = |t| - 3 = 0$ and get $|t| = 3$ or $t = \pm 3$.  Hence, the $t$-intercepts of the graph of $g$ are $(-3, 0)$ and $(3, 0)$.  To find the $y$-intercept, we compute $g(0) = |0| - 3 = -3$ and get $(0, -3)$.   To rewrite $g(t)$ has a piecewise defined function, we first substitute $t$ in for $x$ in Definition \ref{absolutevaluepiecewise} to get a piecewise definition of $|t|$.  This breaks the domain into two pieces: $t < 0$ and $t \geq 0$.  For $t<0$, $|t| = -t$, so $g(t) = |t| - 3 = (-t) - 3 = -t - 3$.  Likewise, for $t \geq 0$, $|t| = t$ so $g(t) = |t| - 3 = t - 3$. \[ \begin{array}{ccc}
+
+ |t|  = \begin{mycases} 
+     -t & \text{if $t  < 0$} \\
+     t  & \text{if $t \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+ g(t) = |t| - 3 =   \begin{mycases} 
+     -t  - 3&  \text{if $t  < 0$} \\
+     t  - 3 & \text{if $t \geq 0$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] Once again, we have two lines to graph, but in this case we have three points:  $(-3, 0)$, $(0, -3)$ and $(3, 0)$.  Both $(-3, 0)$ and $(0, -3)$ lie on $y = -t - 3$, but $g(t) = -t - 3$ only for $t < 0$.  This would yield a hole at $(0, -3)$, but, just like in the previous example,  the hole is plugged  thanks to the second piece of the function because $g(0) = 0 - 3 = -3$.  We also pick up the second $t$-intercept, $(3, 0)$ and this helps us complete our graph.   We see that the vertex is $(0, -3)$ and the range is  $[-3, \infty)$.  The minimum of $g$ is $-3$ at $t = 0$ and there is no maximum. Also, $g$ is decreasing on $(-\infty, 0]$ and increasing on $[0, \infty)$.  The graph of $g$ is shown below on the right.
+
+\begin{center}
+
+\begin{multicols}{2}
+ 
+\begin{mfpic}[15]{-1}{7}{-1}{5}
+
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{1,2,3,4,5,6}
+\ymarks{-1, 1,2,3,4}
+\tcaption{\scriptsize $f(x) = |x-3|$ \vphantom{$g(t) = |t|-3$}}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$1$} 1, {$2$} 2,  {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{ $-1$} -1, {$1$} 1, {$2$} 2,  {$4$} 4}
+\tlabel[cc](-1,3){$(0,3)$}
+\tlabel[cc](3,-0.5){$(3,0)$}
+\tlabel[cc](7,3){$(6,3)$}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-0.5,3.5),(3,0),(6.5,3.5)}
+\point[4pt]{(0,3), (3,0), (6,3)}
+\end{mfpic} 
+
+\begin{mfpic}[15]{-4}{4}{-4}{2}
+\axes
+\tlabel[cc](4.5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,2){\scriptsize $y$}
+\tcaption{\scriptsize $g(t) = |t|-3$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-4,-3,-2,-1,1}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-4$} -4,  {$-2$} -2,{ $-1$} -1, {$1$} 1}
+\tlabel[cc](-3.5,-0.65){$(-3,0)$}
+\tlabel[cc](3.5,-0.65){$(3,0)$}
+\tlabel[cc](-1.25,-3){$(0,-3)$}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-4,1), (0,-3), (4,1)}
+\point[4pt]{(0,-3),(3,0),(-3,0)}
+\end{mfpic} \\
+
+\end{multicols}
+
+\end{center}
+
+\item  Solving $h(u) = |2u - 1| - 3 = 0$ gives $|2u - 1| = 3$ or $2u - 1 = \pm 3$.  We get two zeros:  $u = -1$ and $u  = 2$ which correspond to two $u$-intercepts: $(-1, 0)$ and $(2, 0)$. We find $h(0) = |2(0) - 1| - 3 = -2$ so our $y$-intercept is $(0, -2)$.   To rewrite $h(u)$ as a piecewise defined function, we first rewrite $|2u - 1|$ as a piecewise function.  Substituting the expression $2u - 1$ in for $x$ in  Definition \ref{absolutevaluepiecewise} gives: \[ \begin{array}{ccc}
+
+ |2u - 1|  = \begin{mycases} 
+      -(2u - 1) &  \text{if $2u - 1  < 0$} \\
+     2u - 1 & \text{if $2u - 1 \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+ |2u - 1|  =   \begin{mycases} 
+     -2u + 1 &  \text{if $u < {\textstyle \frac{1}{2}}$} \\ 
+    2u - 1  & \text{if $u \geq {\textstyle \frac{1}{2}}$}\\
+   \end{mycases} \\ 
+   
+   \end{array}  \] Hence, for $u <  \frac{1}{2}$, $|2u - 1| = -2u + 1$ so $h(u) = |2u - 1| - 3 = (-2u + 1) - 3 = -2u - 2$.  Likewise, for $u \geq   \frac{1}{2}$, $|2u - 1| = 2u - 1$ so $h(u) = |2u - 1| - 3 = (2u - 1) - 3 = 2u - 4$. \[ \begin{array}{ccc}
+
+h(u)  =   |2u - 1| - 3 =  \begin{mycases} 
+    (-2u + 1) - 3 & \text{if $u < {\textstyle \frac{1}{2}}$} \\
+    (2u - 1) - 3  & \text{if $u \geq {\textstyle \frac{1}{2}}$} \\
+   \end{mycases} 
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+h(u)  =   \begin{mycases} 
+    -2u - 2  & \text{if $u < {\textstyle \frac{1}{2}}$} \\
+    2u - 4   & \text{if $u \geq {\textstyle \frac{1}{2}}$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] We have three points to help us graph $y = h(u)$:  $(-1, 0)$, $(0, -2)$ and $(2, 0)$. Unlike in the last two examples, these points do not give us information at the  value $u = \frac{1}{2}$ where the rule for $h(u)$ changes.  Substituting $u = \frac{1}{2}$ into the expression $-2u - 2$ gives $-3$, so from $h(u) = -2u - 2$, $u <  \frac{1}{2}$, we get a hole at $\left(\frac{1}{2}, -3 \right)$.  However, this hole is filled because  $h\left(\frac{1}{2}\right) = 2\left(\frac{1}{2}\right) - 4  = -3$ and this produces the vertex at $\left(\frac{1}{2}, -3 \right)$.   The range of $h$ is $[-3, \infty)$, with the minimum of $h$ being $-3$ at $t = \frac{1}{2}$. Moreover, $h$ is decreasing on $\left(-\infty, \frac{1}{2} \right]$  and increasing on $\left[ \frac{1}{2}, \infty \right)$.  The graph of $h$ is given below on the left.
+
+\item  Solving $i(w) = 4 - 2|3w - 1| = 0$ yields $|3w - 1| = 2$ or $3w - 1 = \pm 2$.  This gives two zeros, $w = -\frac{1}{3}$ and $w = 1$, which correspond to two $w$-intercepts, $\left(-\frac{1}{3}, 0 \right)$ and  $(1, 0)$.  Also, $i(0) = 4 - 2|3(0) - 1| = 2$, so the $y$-intercept of the graph is $(0, 2)$.  As in the previous example, the first step in rewriting $i(w)$ as a piecewise defined function is to rewrite  $|3w - 1|$ as a piecewise function.  Once again, we substitute the expression $3w - 1$ in for every occurrence of $x$ in Definition \ref{absolutevaluepiecewise}: \[ \begin{array}{ccc}
+
+ |3w - 1|  = \begin{mycases} 
+      -(3w - 1) &  \text{if $3w - 1  < 0$} \\
+     3w - 1  & \text{if $3w - 1 \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+ |3w - 1|  =   \begin{mycases} 
+     -3w + 1 &  \text{if $w <  {\textstyle \frac{1}{3}}$ } \\
+    3w - 1  & \text{if $w \geq  {\textstyle \frac{1}{3}}$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] Thus for $w <  \frac{1}{3}$, $|3w - 1| = -3w + 1$, so $i(w) = 4 - 2|3w - 1| = 4 - 2(-3w + 1) = 6w + 2$.  Likewise, for $w \geq  \frac{1}{3}$, $|3w - 1| = 3w - 1$ so $i(w) = 4 - 2|3w - 1|  = 4 - 2(3w - 1) = -6w + 6$. \[ \begin{array}{ccc}
+
+ i(w)  =  4 - 2 |3w - 1| =  \begin{mycases} 
+    4 - 2(-3w + 1) &  \text{if $w < {\textstyle \frac{1}{3}}$ } \\
+   4 - 2(3w - 1)  & \text{if $w \geq {\textstyle \frac{1}{3}}$} \\
+   \end{mycases} 
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+i(w)  =   \begin{mycases} 
+    6w + 2  &  \text{if $w < {\textstyle \frac{1}{3}}$ } \\
+    -6w + 6   & \text{if $w \geq {\textstyle \frac{1}{3}}$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] As with the previous example, we have three points on the graph of $i$: $\left(-\frac{1}{3}, 0 \right)$, $(0, 2)$ and  $(1, 0)$, but no information about happens at $w = \frac{1}{3}$.  Substituting this value of $w$ into the formula $6w + 2$ would produce a hole at $\left(\frac{1}{3}, 4\right)$.  As we've seen several times already, however, $i\left(\frac{1}{3}\right) = 4$ so we don't have a hole at $\left(\frac{1}{3}, 4\right)$ but, rather, the vertex.  From the graph we see that the range of $i$ is $(-\infty, 4]$ with the maximum of $i$ being $4$ when $w = \frac{1}{3}$. Also,  $i$ is increasing over $\left( -\infty, \frac{1}{3} \right]$ and decreasing on $\left[ \frac{1}{3}, \infty \right)$. Its graph is given below on the right.
+
+\medskip
+
+\begin{center}
+
+\begin{multicols}{2} 
+
+\begin{mfpic}[15]{-2}{3}{-3}{3}
+\axes
+\tlabel[cc](3.5,-0.5){\scriptsize $u$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tcaption{\vphantom{$\frac{S}{S}$} \scriptsize $h(u) = |2u - 1| - 3$}
+\xmarks{-1,1,2}
+\ymarks{-3,-2,-1,1,2}
+\scriptsize
+\tlabel[cc](-2,-0.5){$(-1,0)$}
+\tlabel[cc](-1,-2){$(0,-2)$}
+\tlabel[cc](2.5,-0.5){$(2,0)$}
+\tlabel[cc](0.5,-3.5){$\left(\frac{1}{2},-3 \right)$}
+\tlpointsep{4pt}
+\axislabels {x}{ {$1$} 1}
+\axislabels {y}{ {$1$} 1,  {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-2,2), (0.5,-3), (3, 2)}
+\point[4pt]{ (-1,0), (0,-2), (0.5,-3), (2,0)}
+\end{mfpic} 
+
+
+
+\begin{mfpic}[15][11.666666] {-2}{3}{-4}{5}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $w$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tcaption{\scriptsize $i(w) = 4 - 2|3w - 1|$}
+\xmarks{-1,1,2}
+\ymarks{-3,-2,-1,1,2,3,4}
+\scriptsize
+\tlabel[cc](1.33,4){$\left( \frac{1}{3}, 4\right)$}
+\tlabel[cc](1.5,0.5){$(1,0)$}
+\tlabel[cc](-.75,2){$(0,2)$}
+\tlabel[cc](-1.33,0.5){$\left( -\frac{1}{3}, 0\right)$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {y}{ {$-3$} -3, {$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-1,-4), (0.3333,4), (1.6667, -4)}
+\point[4pt]{ (-0.3333,0), (1,0), (0,2), (0.3333, 4)}
+\end{mfpic}  
+
+\end{multicols}
+
+\end{center}
+
+\end{enumerate}
+
+\end{example}
+
+\vspace{-.4in} \qed
+
+\medskip
+
+As we take a step back and look at the graphs produced in Example \ref{absvaluegraph1}, some patterns begin to emerge.  Indeed, each of the graphs has the common `$\vee$' shape (in the case of the function $i$ it's a `$\wedge$') with the vertex located at the $x$-value where the rule for each function changes from one formula to the other. It turns out that, independent variable labels aside, each and every function in Example \ref{absvaluegraph1} can be rewritten in the form $F(x) = a|x - h| + k$ for real number parameters $a$, $h$ and $k$.  
+
+\medskip
+
+Each of the functions from Example \ref{absvaluegraph1} is rewritten in this form below and we record the vertex along with the slopes of the lines in the graph.
+
+\begin{itemize}
+
+
+\item  $f(x) = |x - 3| = (1)|x - 3| + 0$: $\;\; a = 1$, $h = 3$, $k = 0; \;\;$ vertex $(3,0); \;\;$ slopes $\pm 1$
+
+\item  $g(t) = |t| - 3 = (1)|t - 0| + (-3)$:  $\;\; a = 1$, $h = 0$, $k = -3; \;\;$  vertex $(0, -3); \;\;$ slopes $\pm 1$
+
+\item  $h(u) = |2u - 1| - 3 = 2 \left| u - \frac{1}{2} \right| + (-3)$:  $\;\; a = 2$, $h = \frac{1}{2}$, $k = -3; \;\;$ vertex $\left(\frac{1}{2}, -3\right)$; $\;\;$ slopes $\pm 2$
+
+\item  $i(w) = 4 - 2|3w - 1|  = -6 \left| w - \frac{1}{3} \right| + 4$:  $\;\; a = -6$, $h = \frac{1}{3}$, $k = 4; \;\;$ vertex $\left(\frac{1}{3}, 4\right)$; $\;\;$ slopes $\pm 6$
+
+\end{itemize}
+
+
+These specific examples suggest the following theorem.
+
+\bigskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{linearabsvaluegraphs}  For real numbers $a$, $h$ and $k$ with $a \neq 0$, the graph of $F(x) = a|x - h| + k$ consists of parts of two lines  with slopes $\pm a$ which meet at a vertex $(h, k)$.  If $a > 0$, the shape resembles `$\vee$'.  If $a<0$, the shape resembles `$\wedge$'.  Moreover, the graph is symmetric about the line $x = h$.
+
+\end{theorem}
+
+%% \ebm}
+
+\bigskip
+
+{\bf Proof.} What separates Mathematics from the other sciences is its ability to actually \textbf{prove} patterns like the one stated in the theorem above as opposed to just \textbf{verifying} it by working more examples.  The proof of Theorem \ref{linearabsvaluegraphs} uses the exact same concepts as were used in Example \ref{absvaluegraph1}, just in a more general context by which we mean using letters as parameters instead of numbers.  
+
+\medskip
+
+The first step is to rewrite $|x - h|$ as a piecewise function.\[ \begin{array}{ccc}
+
+ |x - h|  = \begin{mycases} 
+      -(x - h) &  \text{if $x - h  < 0$ } \\
+     x - h  & \text{if $x - h \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+ |x - h|  =   \begin{mycases} 
+     -x + h &  \text{if $x <  h$} \\
+    x - h  & \text{if $x \geq h$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] We plug that work into $F(x)$ to rewrite it as a piecewise function.  For $x < h$, we have $|x - h| = -x + h$, so \[F(x) = a|x - h| + k = a(-x + h) + k = -ax + ah + k = -ax + (ah + k)\]  Similarly, for $x \geq h$, we have $|x - h| = x - h$, so \[F(x) = a|x - h| + k = a(x - h) + k = ax - ah + k = ax + (-ah + k)\]  Hence, \[ \begin{array}{ccc}
+
+F(x)  =  a|x - h| + k =  \begin{mycases} 
+     a(-x + h) + k &  \text{if $x < h$} \\
+   a(x - h) + k  & \text{if $x \geq h$} \\
+   \end{mycases} 
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+F(x)   =   \begin{mycases} 
+   -ax + (ah + k)  & \text{if $x < h$} \\
+    ax + (-ah + k)  & \text{if $x \geq h$} \\
+   \end{mycases} \\ 
+   
+   \end{array}  \] All three parameters, $a$, $h$ and $k$, are fixed (but arbitrary) real numbers.  Thus, for any given choice of $a$, $h$ and $k$ the numbers $ah + k$ and $-ah + k$ are also just numbers as opposed to variables.  This shows that the graph of $F$ is comprised of pieces of two \underline{lines}, $y = -ax + (ah + k)$ and $y = ax + (-ah + k)$, the former with slope $-a$ and the latter with slope $a$.  Note that substituting $x = h$ into $y = -ax + (ah + k)$ produces $y = -ah + (ah + k) = k$ and substituting $x = h$ into $y = ax + (-ah + k)$ also produces $y = ah + (-ah + k) = k$.  This tells us that the two linear pieces meet at the point $(h, k)$.  
+	
+\medskip
+
+If $a > 0$ then $-a < 0$ so the line $y = -ax + (ah + k)$, hence $F$, is decreasing on $(-\infty, h]$.  Similarly,  the line $y = ax + (-ah + k)$, hence $F$, is increasing on $[h, \infty)$.  This produces a `$\vee$' shape.  On the other hand, if $a < 0$ then $-a > 0$ which produces a `$\wedge$' shape because $F$ is increasing on $(-\infty, h]$ followed by decreasing on $[h, \infty)$. (Said another way, $-a > 0$ means that the first linear piece has a positive slope and $a < 0$ means that the second piece has a negative slope.)
+
+\medskip
+
+To show that the graph is symmetric about the line $x = h$, we need to show that if we move left or right the same distance away from $x = h$, then we get the same $y$-value on the graph.  Suppose we move $\Delta x$ to the right or left of $h$.  The $y$-values are the function values so we need to show that $F(a + \Delta x) = F(a - \Delta x)$.   Given that \[F(a + \Delta x) = a| a + \Delta x - a| + k = a |\Delta x| + k\] and  \[F(a - \Delta x) = a | a - \Delta x - a| + k = a|-\Delta x| + k = a|\Delta x| + k\] we see that $F(a + \Delta x) = F(a - \Delta x)$. Thus we have shown that the $y$-values on the graph on either side of $x = h$ are equal provided we move the same distance away from $x = a$. This completes the proof.\qed
+
+%\enlargethispage{.1in}
+\medskip
+
+The line $x = a$ in Theorem \ref{linearabsvaluegraphs} is called the \index{axis of symmetry ! of an absolute value function} \textbf{axis of symmetry} of the graph of $y = F(x)$.  This language is consistent with the basics of symmetry discussed in Section \ref{AppCartesianPlane} and we will build upon our work here in several upcoming sections.  For now, we simply present two graphs illustrating the concept of the axis of symmetry below.
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-5}{5}{-2}{5}
+\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
+\dashed \polyline{(0,0), (0,5)}
+\dashed \polyline{(-2,3), (2,3)}
+\arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)}
+\arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)}
+\arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)}
+\arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](1,-1.5){\scriptsize $\Delta x$}
+\tlabel[cc](-1,-1.5){\scriptsize $\Delta x$}
+\tlabel[cc](0,-0.5){\scriptsize $h$}
+\tlabel[cc](2,-0.5){\scriptsize $h + \Delta x$}
+\tlabel[cc](-2,-0.5){\scriptsize $h - \Delta x$}
+\tlabel[cc](-3.5,3){\scriptsize $F(h - \Delta x)$}
+\tlabel[cc](3.5,3){\scriptsize $F(h + \Delta x)$}
+\xmarks{-2,0,2}
+\tlpointsep{4pt}
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-4,5), (0,1), (4,5)}
+\point[4pt]{(-2,3), (2,3)}
+\end{mfpic}
+
+
+
+\begin{mfpic}[15]{-5}{5}{-2}{5}
+\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
+\dashed \polyline{(0,0), (0,5)}
+\dashed \polyline{(-2,3), (2,3)}
+\arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)}
+\arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)}
+\arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)}
+\arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)}
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](1,-1.5){\scriptsize $\Delta x$}
+\tlabel[cc](-1,-1.5){\scriptsize $\Delta x$}
+\tlabel[cc](0,-0.5){\scriptsize $h$}
+\tlabel[cc](2,-0.5){\scriptsize $h + \Delta x$}
+\tlabel[cc](-2,-0.5){\scriptsize $h - \Delta x$}
+\tlabel[cc](-3.5,3){\scriptsize $F(h - \Delta x)$}
+\tlabel[cc](3.5,3){\scriptsize $F(h + \Delta x)$}
+\xmarks{-2,0,2}
+\tlpointsep{4pt}
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-4,1), (0,5), (4,1)}
+\point[4pt]{(-2,3), (2,3)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\medskip
+
+While Theorem \ref{linearabsvaluegraphs} and its proof are specific to the particular family of absolute value functions, there are ideas here that apply to all functions.  Thus we wish to take a slight detour away from the main narrative to argue this result again from an even more generalized viewpoint. Our goal is to `build' the formula $F(x) = a|x - h| + k$ from $f(x) = |x|$ in three stages, each corresponding to the role of one of the parameters $a$, $h$ and $k$, and track the geometric changes that go along with each stage.  We will revisit all of the ideas described below in complete generality in Section \ref{Transformations}. 
+
+\medskip
+
+The graph of $f(x) = |x|$ consists of the points $\{ (c, |c|) \, | \, c \in \mathbb R\}$.\footnote{See the box on page \pageref{waystorepresentfunctionsbox}.  Also, we use `$c$'  as our dummy variable to avoid the confusion that would arise by over-using `$x$'.}    Consider $F_{1}(x) = |x - h|$.  The graph of $F_{1}$  is the set of points $\{ (x, |x - h|) \, | \, x \in \mathbb{R} \}$.  If we relabel $x - h = c$, then $x = c + h$, and as $x$ varies through all of the real numbers, so does $c$ and vice-versa.\footnote{That is, every real number $c$ can be written as $x - h$ for some $x$, and every real number $x$ can be written as $c + h$ for some $c$.}   
+
+\medskip
+
+Hence, we can write $\{ (x, |x - h|) \, | \, x \in \mathbb{R} \} = \{ (c + h, |c|) \, | \, c \in \mathbb{R} \}$.    If we fix a $y$-coordinate, $|c|$,  we see that the corresponding points on the graph of $f$ and $F_{1}$,  $(c, |c|)$ and $(c + h, |c|)$, respectively, differ only in that one is horizontally shifted by $h$.   In other words, to get the graph of $F_{1}$, we simply take the graph of $f$ and shift each point horizontally by adding $h$ to the $x$-coordinate.  Translating the graph in this manner preserves the `$\vee$' shape and symmetry, but moves the vertex from $(0, 0)$ to $(h, 0)$.
+
+\medskip
+
+Next, we examine $F_{2}(x) = a|x - h|$ and compare its graph to that of $F_{1}(x) = |x - h|$.  The graph of $F_{2}$ consists of the points $\{ (x, a|x - h|) \, | \, x \in \mathbb{R} \}$ whereas the graph of $F_{1}$ consists of the points $\{ (x, |x - h|) \, | \, x \in \mathbb{R} \}$.  The only difference between the points $(x, |x - h|)$ and $(x, a|x - h|)$ is that the $y$-coordinate of one is $a$ times the $y$-coordinate of the other.   If $a > 0$, all we are doing is scaling the $y$-axis by a factor of $a$.  As we've seen when plotting points and graphing functions, the scaling of the $y$-axis affects only the relative vertical displacement of points\footnote{See the discussion following Example \ref{timetempex1} regarding the plot of Skippy's data.} and not the overall shape.   
+
+\medskip
+
+If $a < 0$, then in addition to scaling the vertical axis, we are reflecting the points across the $x$-axis.\footnote{See the box on page \pageref{reflectionsinabox} in Section \ref{AppCartesianPlane}.} Such a transformation doesn't change the `$\vee$' shape except for flipping it upside-down to make it a `$\wedge$'.  In either case, the vertex $(h, 0)$ stays put at $(h, 0)$ because the $y$-value of the vertex is $0$ and $a \cdot 0 = 0$ regardless if $a > 0$ or $a < 0$.
+
+\medskip
+
+Last, we examine the graph of $F(x) = a|x - h| + k$ to see how it relates to the graph of $F_{2}(x) = a|x - h|$.  The graph of $F$ consists of the points $\{ (x, a|x - h| + k ) \, | \, x \in \mathbb{R} \}$ whereas the graph of $F_{2}$ consists of the points $\{ (x, a|x - h|) \, | \, x \in \mathbb{R} \}$.  The difference between the corresponding points $(x, a|x - h|)$ and $(x, a|x - h| + k )$ is the addition of $k$ in the $y$-coordinate of the latter.  Adding $k$ to each of the $y$-values translates the graph of $F_{2}$ vertically by $k$ units.  The basic shape doesn't change but the vertex goes from $(h, 0)$ to $(h, k)$.
+
+\medskip
+
+In summary, the graph of $F(x) = a|x - h| + k$ can be obtained from the graph of $f(x) = |x|$ in three steps:  first, add $h$ to each of the $x$-coordinates;  second, multiply each $y$-coordinate by $a$; and third, add $k$ to each $y$-coordinate.  Geometrically, these steps mean that we first move the graph left or right, then scale the $y$-axis by a factor of $a$ (and reflect across the $x$-axis if $a < 0$), and then move the graph up or down.  Throughout all of these \textbf{transformations}, the graph maintains its `$\vee$' or `$\wedge$' shape.
+
+\medskip
+
+Of course, not every function involving absolute values can be written in the form given in Theorem~\ref{linearabsvaluegraphs}. A good example of this is $G(x) = |x - 2| - x$.  However recognizing the ones that can be rewritten will greatly simplify the graphing process. In the next example, we graph four more absolute value functions, two using Theorem \ref{linearabsvaluegraphs} and two using Definition \ref{absolutevaluepiecewise}.
+
+\enlargethispage{.05in}
+
+\begin{example}   \label{absvaluegraph2} $~$
+
+\begin {enumerate}
+
+\item Graph each of the functions below using Theorem \ref{linearabsvaluegraphs} or by rewriting it as a piecewise defined function using Definition \ref{absolutevaluepiecewise}.  Find the zeros, axis-intercepts and the extrema (if any exist) and then list the intervals over which the function is increasing, decreasing or constant.
+
+\setlength\columnsep{5pt}
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\item  $F(x) = |x + 3| + 2$ \vphantom{ $f(x) = \dfrac{4 - |5 - 3x|}{2}$}
+
+\item  $f(t) = \dfrac{4 - |5 - 3t|}{2}$ 
+
+\item  $G(x) = |x - 2| - x$ \vphantom{ $f(x) = \dfrac{4 - |5 - 3x|}{2}$}
+
+\item $g(t) = |t - 2| - |t|$ \vphantom{ $f(x) = \dfrac{4 - |5 - 3x|}{2}$}
+
+\end{enumerate}
+
+\end{multicols}
+\setlength\columnsep{10pt}
+
+\pagebreak
+
+\item \label{absfunctionfromgraph} Use Theorem  \ref{linearabsvaluegraphs} to write a possible formula for $H(x)$ whose graph is given below:
+
+\begin{center}
+
+\begin{mfpic}[20]{-3}{3}{-3}{4}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{2,-1, 1, 2}
+\ymarks{-2,-1,1,2,3,4}
+\tcaption{\scriptsize $y=H(x)$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](-1.25, 1){$(0,1)$}
+\tlabel[cc](1, 3.5){$(1,3)$}
+\axislabels {x}{{$-2 \hspace{7pt}$} -2,   {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-2$} -2, {$2$} 2, {$3$} 3}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-2,-3), (1, 3), (4, -3)}
+\point[4pt]{(0,1), (1,3)}
+\end{mfpic}
+
+\end{center}
+
+\end{enumerate}
+
+%\medskip
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+
+\item Rewriting $F(x) = |x + 3| + 2 = (1)|x - (-3)| + 2$, we have $F(x)$ in the form stated in Theorem \ref{linearabsvaluegraphs} with $a = 1$, $h = -3$ and $k = 2$.  The vertex is $(-3, 2)$ and the graph will be a `$\vee$' shape.  Seeing as the vertex is already above the $x$-axis and the graph opens upwards, there are no $x$-intercepts on the graph of $F$, hence there are no zeros.\footnote{Alternatively, setting $|x + 3| + 2 = 0$ gives $|x + 3| = -2$. Absolute values are never negative thus we have no solution.}  With $F(0) = 5$, the $y$-intercept is $(0,5)$.  To get a third point, we can pick an arbitrary $x$-value to the left of the vertex or we could use symmetry: three units to the \textbf{right} of the vertex the $y$-value is $5$, so the same must be true three units to the \textbf{left} of the vertex, at $x = -6$.  Sure enough, $F(-6) = |-6 + 3| + 2 = |-3| + 2 = 5$.  The range of $F$ is $[2, \infty)$ with its minimum of $2$ when $x = -3$ and $F$ decreasing on $(-\infty, -3]$ then increasing on $[-3, \infty)$.  The graph is in the middle of the next page on the left.
+
+\item We see in the formula for $f(t)$ that $t$ appears only once to the first power inside the absolute values, so we proceed to rewrite it in the form $a|t-h|+k$: \[ \begin{array}{rcl}
+
+f(x) & =&  \dfrac{4 - |5-3t|}{2} \\ [10pt]
+      & = & - \dfrac{|5-3t|}{2} + \dfrac{4}{2} \\ [12pt]
+      & = & \left(-\dfrac{1}{2}\right) \left| (-3) \left( t - \dfrac{5}{3} \right) \right| + 2  \\  [12pt]
+     & = &  \left(-\dfrac{1}{2}\right) |-3|  \left| t - \dfrac{5}{3}  \right|  + 2 \\ [12pt]
+     & = & -\dfrac{3}{2}   \left| t - \dfrac{5}{3}  \right|  + 2.  \\ 
+     
+     \end{array} \] Matching up the constants in the formula $f(t)$ to the parameters of $F(x)$ in  Theorem \ref{linearabsvaluegraphs}, we identify $a = -\frac{3}{2}$, $h = \frac{5}{3}$ and $k = 2$.  Hence the vertex is $\left(\frac{5}{3}, 2 \right)$, and the graph is shaped like `$\wedge$' comprised of pieces of lines with slopes $\pm \frac{3}{2}$.  To find the zeros of $f$, we set $f(t) = 0$.  (We can use either expression here.)  Solving $-\frac{3}{2}   \left| t - \frac{5}{3}  \right|  + 2=0$, we get $ \left| t - \frac{5}{3}  \right| = \frac{4}{3}$, so $t - \frac{5}{3} = \pm \frac{4}{3}$.  Hence our zeros are $t = \frac{1}{3}$ and $t = 3$, producing the $t$-intercepts $\left(\frac{1}{3}, 0 \right)$ and $(3, 0)$.  Using either formula gives  $f(0) = -\frac{1}{2}$,  so our $y$-intercept is $\left(0, -\frac{1}{2}\right)$.  Plotting the vertex, along with the intercepts, gives us enough information to produce the graph below on the right.  The range is $(-\infty, 2]$  with a maximum of $2$ at $t = \frac{5}{3}$ and $f$ is increasing on $\left(-\infty, \frac{5}{3} \right]$ then decreasing on $\left[ \frac{5}{3}, \infty \right)$.
+
+\smallskip
+
+\begin{center}
+
+\begin{multicols}{2}
+\begin{mfpic}[15]{-7}{1}{-1}{6}
+\axes
+\tlabel[cc](1,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-6, -5,-4,-3,-2,-1}
+\ymarks{1,2,3,4,5}
+\tcaption{\scriptsize $F(x) = |x+3|+2$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](-7.25, 5){$(-6,5)$}
+\tlabel[cc](-3, 1.5){$(-3,2)$}
+\tlabel[cc](1, 5){$(0,5)$}
+\axislabels {x}{{$-6 \hspace{7pt}$} -6,{$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,   {$-1 \hspace{7pt}$} -1}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-7,6), (-3, 2), (1, 6)}
+\point[4pt]{(-6, 5), (-3, 2), (0, 5)}
+\end{mfpic}
+
+
+
+
+\begin{mfpic}[21]{-2}{5}{-2}{3}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-1, 2,3,4}
+\ymarks{-1,1,2}
+\tcaption{\scriptsize $f(t) = \dfrac{4 - |5-3t|}{2}$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](3.35, 0.25){$(3,0)$}
+\tlabel[cc](1.6667, 2.5){$\left( \frac{5}{3}, 2 \right)$}
+\tlabel[cc](0.75, -0.35){$\left( \frac{1}{3}, 0 \right)$}
+\tlabel[cc](-1, -0.5){$\left(0, - \frac{1}{2} \right)$}
+\axislabels {x}{ {$2$} 2, {$3$} 3}
+\axislabels {y}{ {$1$} 1, {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-1,-2), (1.6667, 2), (4.3333, -2)}
+\point[4pt]{(1.6667, 2), (0, -0.5), (0.3333,0), (3,0)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\item  We are unable to apply Theorem \ref{linearabsvaluegraphs} to $G(x) = |x-2| - x$ because there is an $x$ both inside and outside of the absolute value. We can, however, rewrite the function as a piecewise function using Definition \ref{absolutevaluepiecewise}. Our first step is to rewrite $|x-2|$ as a piecewise function: \[ \begin{array}{ccc}
+
+ |x-2|  = \begin{mycases} 
+      -(x - 2) &  \text{if $x - 2  < 0$} \\
+     x - 2  & \text{if $x - 2 \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+ |x - 2|  = \begin{mycases} 
+     -x + 2 &  \text{if $x < 2$} \\
+     x - 2  & \text{if $x \geq 2$} \\
+   \end{mycases}
+   
+   \end{array}  \] Hence, for $x < 2$, $|x - 2| = -x + 2$ so $G(x) = |x - 2| - x = (-x + 2) - x = -2x + 2$.  Likewise, for $x \geq 2$, $|x - 2| = x - 2$ so $G(x) = |x - 2| - x = x - 2 - x = -2$. \[ \begin{array}{ccc}
+
+G(x) = |x - 2| - x =  \begin{mycases} 
+     (-x + 2) - x &  \text{if $x < 2$} \\
+     (x - 2) - x  & \text{if $x \geq 2$} \\
+   \end{mycases} 
+   
+ &
+ 
+ \longrightarrow
+ 
+ &
+ 
+G(x) =  \begin{mycases} 
+     -2x + 2 &  \text{if $x < 2$} \\
+     -2 & \text{if $x \geq 2$} \\
+   \end{mycases}
+   
+   \end{array}  \] To find the zeros of $G$, we set $G(x) = 0$.  Solving $|x - 2| - x = 0$ can be problematic, given that $x$ is both inside and outside of the absolute values.\footnote{We'll return to this momentarily.}  We can, however, use the piecewise description of $G(x)$.  With $G(x) = -2x + 2$ for $x < 2$, we solve $-2x + 2 = 0$ to get $x = 1$. This works because $1 < 2$, so we have $x = 1$ as the zero of $G$ corresponding to the $x$-intercept $(1,0)$.  The other piece of $G(x)$ is $G(x) = -2$ which is never $0$.  For the $y$-intercept, we find $G(0) = 2$, and get $(0, 2)$.  
+	
+\medskip
+	
+To graph $y = G(x)$, we have the line $y = -2x + 2$ which contains $(0, 2)$ and $(1, 0)$ and continues to a hole at $(2, -2)$.  At this point, $G(x) = -2$ takes over and we have a horizontal line containing $(2, -2)$ extending indefinitely to the right.  The range of $G$ is $[-2, \infty)$ with a minimum value of $-2$ attained for all $x \geq 2$. Moreover, $G$ is decreasing on $(-\infty, 2]$ and then constant on $[2, \infty)$.  The graph is below on the left.
+ 
+  
+\item  Once again we are unable to use Theorem \ref{linearabsvaluegraphs} because $g(t) = |t - 2| - |t|$  has two absolute values with no apparent way to combine them.  Thus we proceed by re-writing the function $g$ with two separate applications of Definition \ref{absolutevaluepiecewise} to remove each instance of the absolute values.  To start with we have: \[ \begin{array}{ccc}
+
+ |t|  = \begin{mycases} 
+      -t &  \text{if $t  < 0$} \\
+     t  & \text{if $t \geq 0$} \\
+   \end{mycases}
+   
+ &
+ 
+\text{and}
+ 
+ &
+ 
+ |t - 2|  = \begin{mycases} 
+     -t + 2 &  \text{if $t < 2$} \\
+     t - 2  & \text{if $t \geq 2$} \\
+   \end{mycases}
+   
+   \end{array}  \] Taken together, these break the domain into \textbf{three} pieces:  $t < 0$, $0 \leq t < 2$ and $t \geq 2$.  For $t < 0$, $|t| = -t$ and $|t - 2| = -t + 2$.  Therefore $g(t) = |t - 2| - |t| = (-t + 2) - (-t) = 2$  for $t < 0$.  For $0 \leq t < 2$, $|t| = t$ and $|t - 2| = -t + 2$, so $g(t) = |t-2| - |t| = (-t+2) - t) = -2t + 2$.  
+	
+\medskip
+	
+Last, for $t \geq 2$, $|t| = t$ and $|t - 2| = t - 2$, so $g(t) = |t-2| - |t| = (t - 2) - (t) = -2$.  Putting all three parts together yields: \[ g(t) = |t - 2| - |t| = \begin{mycases} 
+      (-t + 2) - (-t) &  \text{if $t < 0$} \\
+      (-t + 2) - (t)  & \text{if $0 \leq t < 2$} \\
+      (t - 2) - (t) &  \text{if $t \geq 2$} 
+   \end{mycases} = \begin{mycases} 
+      2 &  \text{if $t < 0$} \\
+      -2t + 2  & \text{if $0 \leq t < 2$} \\
+      -2 &  \text{if $t \geq 2$} 
+   \end{mycases}\] As with the previous example, we'll delay discussing the absolute value algebra needed to find the zeros of $g$ and use the piecewise description instead.  To graph $g$, we have the horizontal line $y = 2$ up to, but not including, the point $(0, 2)$.  For $0 \leq t < 2$, we have the line $y = -2t + 2$ which has a $y$-intercept at $(0, 2)$ (thus picking up where the first part left off) and a $t$-intercept at $(1, 0)$. This piece ends with a hole at $(2, -2)$ which is promptly plugged by the horizontal line $y = -2$ for $t \geq 2$.  Hence the only zero of $t$ is $t = 1$. 
+	
+\medskip	
+	
+The range of $g$ is $[-2,2]$ with a minimum of $-2$ achieved for all $t \geq 2$, and a maximum of $2$ for $t \leq 0$. We note that $g$ is constant on $(-\infty, 0]$ and $[2, \infty)$, but with different values, and $g$ is decreasing on $[0, 2]$.  The graph is given below on the right.
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-2}{5}{-3}{4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-1, 0, 1, 2, 3, 4}
+\ymarks{-2, -1, 0, 1, 2, 3}
+\tcaption{\scriptsize $G(x) = |x-2| - x$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](0.75, 2){$(0,2)$}
+\tlabel[cc](1.5, 0.5){$(1,0)$}
+\tlabel[cc](1, -2){$(2,-2)$}
+\axislabels {x}{{$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-2$} -2,{$-1$} -1,{$1$} 1,{$2$} 2,  {$3$} 3}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-1,4), (2, -2), (5, -2)}
+\point[4pt]{(0,2), (1,0), (2,-2)}
+\end{mfpic}
+
+
+
+
+\begin{mfpic}[15]{-2}{5}{-3}{4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,4){\scriptsize $y$}
+\xmarks{-1, 0, 1, 2, 3, 4}
+\ymarks{-2, -1, 0, 1, 2, 3}
+\tcaption{\scriptsize $g(t) = |t-2| - |t|$}
+\tlpointsep{4pt}
+\scriptsize
+\tlabel[cc](0.75, 2){$(0,2)$}
+\tlabel[cc](1.5, 0.5){$(1,0)$}
+\tlabel[cc](1, -2){$(2,-2)$}
+\axislabels {x}{{$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-2$} -2,{$-1$} -1,{$1$} 1, {$3$} 3}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \polyline{(-2, 2), (0, 2), (2, -2), (5, -2)}
+\point[4pt]{(0,2), (1,0), (2,-2)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\end{enumerate}
+
+\pagebreak
+
+\item We are told to use Theorem \ref{linearabsvaluegraphs} to find a formula for $H(x)$ so we start with $H(x) = a|x - h| + k$ and look for real numbers $a$, $h$ and $k$ that make sense.  The vertex is labeled as $(1, 3)$, meaning $h = 1$ and $k = 3$.  Hence we know $H(x) = a|x - 1| + 3$, so all that is left for us to find is the value of $a$.  The only other point labeled for us is $(0, 1)$, meaning $H(0) = 1$.  Substituting $x = 0$ into our formula for $H(x)$ gives:  $H(0) = a|0 - 1| + 3 = a + 3$.  Given that $H(0) = 1$, we have $a + 3 = 1$, so $a = -2$.  Our final answer is $H(x) = -2|x-1|+3$. \qed
+
+\end{enumerate}
+
+\end{example}
+
+If nothing else, Example \ref{absvaluegraph2} demonstrates the value of \textbf{changing forms} of functions and the utility of the interplay between algebraic and graphical descriptions of functions.  These themes resonate time and time again in this and later courses in Mathematics.  
+
+\subsection{Graphical Solution Techniques for Equations and Inequalities}
+\label{EquationsInequalitiesGraphically}
+
+Consider the basic equation and related inequalities: $|x| = 3$, $|x| < 3$ and $|x| > 3$.  At some point you learned  how to solve these using properties of the absolute value inspired by the distance definition. (If not, see Section \ref{AppAbsValEqIneq}.)   While there is nothing wrong with this understanding, we wish to use these problems to motivate powerful graphical techniques which we'll use to solve more complicated equations and inequalities in this section, and in many other sections of the textbook.    
+
+\medskip
+
+To that end, let's call $f(x)  = |x|$ and $g(x) = 3$. If we graph $y = f(x)$ and $y = g(x)$ on the same set of axes then, by looking for $x$ values where $f(x) = g(x),$ we are looking for $x$-values which have the same $y$-value on both graphs. That is, the solutions to $f(x) = g(x)$ are the $x$-coordinates of the \textbf{intersection points} of the two graphs.  We graph $y = f(x) = |x|$ (the characteristic `$\vee$') along with $y = g(x) = 3$ (the horizontal line) below on the far left.  Indeed, the two graphs intersect at $(-3, 3)$ and $(3, 3)$ so our solutions to $f(x) = g(x)$ are the $x$-values of these points, $x = \pm 3$.    
+
+\begin{multicols}{3}
+
+
+\begin{mfpic}[15]{-5}{5}{0}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
+\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
+\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize Graphically solving $|x| = 3$.}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
+\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
+\penwd{1.25pt}
+\point[4pt]{(-3,3), (3,3)}
+\point[4pt]{(-3,0), (3,0)}
+\end{mfpic}
+
+
+\begin{mfpic}[15]{-5}{5}{0}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
+\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
+\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize Graphically solving $|x| < 3$.}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
+\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
+\penwd{1.25pt}
+ \polyline{(-3,3),(0,0),(3,3)}
+ \polyline{(-3,3), (3,3)}
+ \polyline{(-3,0), (3,0)}
+ \pointfillfalse
+\point[4pt]{(-3,3), (3,3)}
+\point[4pt]{(-3,0), (3,0)}
+\end{mfpic}
+
+
+\begin{mfpic}[15]{-5}{5}{0}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
+\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
+\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize Graphically solving $|x| > 3$.}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
+\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
+\penwd{1.25pt}
+\arrow \polyline{(-3,3),(-5,5)}
+\arrow \polyline{(3,3), (5,5)}
+\arrow \polyline{(-3,3),(-5,3)}
+\arrow \polyline{(3,3), (5,3)}
+\arrow \polyline{(-3,0),(-5,0)}
+\arrow \polyline{(3,0), (5,0)}
+ \pointfillfalse
+\point[4pt]{(-3,3), (3,3)}
+\point[4pt]{(-3,0), (3,0)}
+\end{mfpic}
+\end{multicols}
+
+Likewise, if we wish to solve $|x| < 3$, we can view this as a functional inequality $f(x) < g(x)$ which means we are looking for the $x$-values where the $f(x)$ values are less than the corresponding $g(x)$ values.  On the graphs, this means we'd be looking for the $x$-values where the $y$-values of $y = f(x)$ are less than, hence \textbf{below}, those on the graph of $y = g(x)$.  
+
+\medskip
+
+In the middle picture above we see that the graph of $f$ is below the graph of $g$ between $x = -3$ and $x = 3$, so our solution is $-3 < x < 3$, or in interval notation, $(-3, 3)$.   Finally, the inequality $|x| > 3$ is equivalent to $f(x) > g(x)$ so we are looking for the $x$-values where the graph of $f$ is \textbf{above} the graph of $g$.\footnote{Solving $f(x) > g(x)$ is equivalent to solving $g(x) < f(x)$ - that is, finding where the graph of $g$ is below the graph of $f$.} The picture on the far right on the previous page shows that this is true for all $x < -3$ or for all $x > 3$.  In interval notation, the solution set is $(-\infty, -3) \cup (3, \infty)$.
+
+\medskip
+
+The methodology and reasoning behind solving the above equation and inequalities extend to any pair of functions $f$ and $g$, since when graphed on the same set of axes, function outputs are always the dependent variable or the ordinate (second coordinate) of the ordered pairs which comprise the graph.  In general:
+
+\medskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{Graphical Interpretation of Equations and Inequalities}}
+
+\medskip
+
+Suppose $f$ and $g$ are functions whose domains and ranges are sets of real numbers.\index{inequality ! graphical interpretation}
+
+\begin{itemize}
+
+\item  The solutions to $f(x)=g(x)$ are the $x$-values where the graphs of $f$ and $g$ intersect.
+
+\item  The solution to $f(x) < g(x)$ is the set of $x$-values where the graph of $f$ is \textbf{below} the graph of $g$.
+
+\item  The solution to $f(x) > g(x)$ is the set of $x$-values where the graph of $f$ \textbf{above} the graph of $g$.
+
+\end{itemize}
+
+%% \ebm}
+
+\medskip
+
+Let's return to  Example \ref{absvaluegraph2} where were asked to find the zeros of the functions $G(x) = |x-2| -x$ and $g(t) = |t-2|-|t|$. In that Example, instead of tackling the algebra involving the absolute values head on we rewrote each function as a piecewise-defined function and obtained our solutions that way.  
+
+\medskip
+
+Let's see what this looks like graphically.  Note that solving $|x-2|-x=0$ is equivalent to solving $|x-2|=x$.  We graphed $y = |x-2|$ and $y=x$ on the same set of axes on the left of the top of the next page and it appears as if we have just one point of intersection, corresponding to just one solution. 
+
+\medskip
+
+Indeed, we can \textbf{show} that there is just one point of intersection.  The graph of  $y = |x-2|$ is comprised of parts of two lines, $y =-(x-2)$ and $y = x-2$. The first line has a slope of $-1$ and the second has slope $1$.  The line $y = x$ also has a slope $1$ meaning it and the `right half' of $y =|x-2|$  are parallel, so they never intersect.  If our graphs are accurate enough, we may even be able to guess that the solution is $x = 1$, which we can verify by  substituting $x = 1$ into $|x-2| = x$ and seeing that it checks.  
+
+\medskip
+
+Likewise, solving $|t-2| - |t| = 0$ is equivalent to solving $|t-2| = |t|$.  We graphed $y = |t-2|$ and $y=|t|$ on the right at the top of the next page and used the same arguments to get the solution $t = 1$ here as well.
+
+%\newpage
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-3}{7}{-1}{5}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](2.75, 4){\scriptsize $y = x$}
+\tlabel[cc](5.25, 1.5){\scriptsize $y = |x-2|$}
+\xmarks{-2,-1,0, 1,2,3,4,5,6}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize Graphically solving $|x-2| = x$.}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1,  {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)}
+\arrow \reverse \arrow \polyline{(-1, -1), (5,5)}
+\penwd{1.25pt}
+\point[4pt]{(1,1)}
+\point[4pt]{(1,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-3}{7}{-1}{5}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](2.75, 4){\scriptsize $y = |t|$}
+\tlabel[cc](5.25, 1.5){\scriptsize $y = |t-2|$}
+\xmarks{-2,-1,0, 1,2,3,4,5,6}
+\ymarks{1,2,3,4}
+\tcaption{\scriptsize Graphically solving $|t-2| = |t|$.}
+\tlpointsep{4pt}
+\axislabels {x}{ {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
+\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
+\arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)}
+\arrow \reverse \arrow \polyline{(-5, 5), (0,0), (5,5)}
+\penwd{1.25pt}
+\point[4pt]{(1,1)}
+\point[4pt]{(1,0)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\medskip
+
+There is more to see here.  Consider solving $|x-2|-x=0$ algebraically using the techniques from a previous Algebra course (or Section \ref{AppAbsValEqIneq}).  Our first step would be to isolate the absolute value quantity:  $|x-2| = x$.  We  then `drop' the absolute value by paying the price of a `$\pm$':  $x-2 = \pm x$.  This gives us two equations:  $x - 2 = x$ and $x - 2 = -x$.  The first equation, $x-2 = x$ reduces to $-2 = 0$ which has no solution.  The second equation, $x-2 = -x$, does have a solution, namely $x = 1$.  
+
+\medskip
+
+How does the algebra tie into the graphs above?  Instead of `dropping' the absolute value and tagging the right hand side with a $\pm$, we can think about the piecewise definition of $|x-2|$ and write $|x-2| = \pm(x-2)$ depending on if $x < 2$ or if $x \geq 2$.  That is, $|x-2| = x$ is more precisely equivalent to the two equations: $-(x-2) = x$ which is valid for  $x < 2$ or $x-2 = x$   which is valid for $x \geq 2$.  
+
+\medskip
+
+Graphically, the first equation is looking for intersection points between the `left half' of the `$\vee$' of $y = |x-2|$ and the line $y =x$.  Indeed, $-(x-2)=x$ is equivalent to $x-2 = -x$ from which we obtain our solution $x = 1$. Likewise, the second equation, $x-2 = x$  is looking for intersection points of the 	`right half' of the `$\vee$' and the line $y = x$, but there is none.  The equation $-2=0$ is telling us that for us to have any solutions, the lines $y = x-2$ and $y = x$, which have the same slope, must also have the same $y$-intercepts:  that is, $-2$ would have to equal $0$ and that's just silly.  
+
+\medskip
+
+Similarly, when solving $|t-2| - |t| = 0$ or $|t-2| = |t|$, we can use our graphs to prove that the only intersection point is when the `left half' of $y = |t-2|$ intersects the `right half' of $y = |t|$ - that is, when $-(t-2) = t$.  The moral of the story is this:  careful graphs can help us simplify the algebra, because we can narrow down the cases.  This is especially useful in solving inequalities, as we'll see in our next example.
+
+\begin{example} \label{abseqnineqex}  Solve the following equations and inequalities.  
+
+
+\begin{multicols}{4}
+\begin{enumerate}
+
+\item $4-|x| = 0.9x  - 3.6$ \vphantom{$|u+1|\geq \dfrac{u+4}{2}$}
+
+\item  $|t-3|  - |t|= 3$ \vphantom{$|u+1|\geq \dfrac{u+4}{2}$}
+
+\item $|x+1|\geq \dfrac{x+4}{2}$
+
+\item $2 < |t-1| \leq 5$ \vphantom{$|u+1|\geq \dfrac{u+4}{2}$}
+
+
+\end{enumerate}
+\end{multicols}
+
+
+{\bf Solution.}  
+\begin{enumerate}
+
+\item  We begin by graphing $y = 4 - |x|$ and $y = 0.9x - 3.6$ to look for intersection points. Using Theorem \ref{linearabsvaluegraphs}, we know that the graph of $y = 4-|x| = -|x|+4$ has a vertex at $(0,4)$ and is a `$\wedge$' shape, so there are $x$-intercepts to find.  Solving $4-|x| = 0$, we get $|x| = 4$, or  $x = \pm 4$.  Hence, we have two $x$-intercepts: $(-4,0)$ and $(4,0)$.    
+
+\medskip
+
+We know from Section \ref{AppLines} that the graph of $y = 0.9x - 3.6$ is a line with slope $0.9$ and $y$-intercept $(0, -3.6)$. To find the $x$-intercept here we solve $0.9x - 3.6 = 0$ and get $x = 4$.  Hence, $(4,0)$ is an $x$-intercept here as well, and we have stumbled upon one solution to $4-|x| = 0.9x - 3.6$, namely $x = 4$.  The question is if there are any other solutions.  Our graph (below on the left) certainly looks as if there is just one intersection point, but we know from Theorem \ref{linearabsvaluegraphs} that the slopes of the linear parts of $y = 4 - |x|$ are $\pm 1$.  The slope of $y =  0.9x - 3.6$ is $0.9$ and $0.9 \neq 1$ so we know that the left hand side of the`$\wedge$' must meet up with the graph of the line because they are not parallel.\footnote{See Theorem \ref{parallelperpendicularslopetheorem}.}
+
+\medskip
+
+Definition \ref{absolutevaluepiecewise} tells us that when $x<0$, $|x| = -x$, so $4-|x| = 4-(-x) = 4+x$.  Hence we set about solving  $4+x = 0.9x - 3.6$ and get $x = -76$. Both $x = -76$ and $x = 4$  check in our original equation, $4-|x| = 0.9x  - 3.6$, so we have found our two solutions.\footnote{Our picture shows only one of the solutions.  We encourage you to take the time with a graphing utility to get the picture to show both points of intersection.}
+
+\item  While we could graph  $y = |t-3| - |t|$ and $y = 3$ to help us find solutions, we choose to rewrite the equation as $|t-3|  = |t| +  3$.  This way, we have somewhat easier graphs to deal with, namely $y = |t-3|$ and $y = |t|+3$.  The first graph, $y = |t-3|$, has a vertex at $(3,0)$  and is shaped  like a   `$\vee$' with slopes $\pm 1$ and a  $y$-intercept of $(0, 3)$.  The second graph, $y = |t|+3$, has a vertex at $(0,3)$ and is also shaped like a  `$\vee$,' with slopes $\pm 1$, and has no $t$-intercepts.  
+
+\medskip
+
+To our surprise and delight, the graphs (below on the right) appear to overlap for $t \leq 0$.  Indeed, for $t \leq 0$, $|t-3| = -(t-3) = -t+3$ and $|t| + 3 = - t+3$.  Since the formulas are \textbf{identical} for these values of $t$, our solutions are all values of $t$ with $t \leq 0$.  Using interval notation, we state our solution as $(-\infty, 0]$. (The other parts of the graphs are non-intersecting parallel lines so we ignored them.)
+
+\begin{center}
+
+\begin{multicols}{2}
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\arrow \reverse \arrow \polyline{(-5,-1), (0,4),(5,-1)}
+\arrow \reverse \arrow \polyline{(-1.5, -5), (5, 0.9)}
+\tlabel[cc](3,3){\scriptsize $y = 4 - |x|$}
+\tlabel[cc](3, -3){\scriptsize $y =0.9x-3.6$}
+\tcaption{Solving $4-|x| = 0.9x - 3.6$.}
+\xmarks{-4 step 1 until 4}
+\ymarks{-4 step 1 until 4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,  {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize 
+\penwd{1.25pt} 
+\point[4pt]{(4,0)}
+\end{mfpic}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\arrow \reverse \arrow \polyline{(-2,5), (3,0),(5,2)}
+\arrow \reverse \arrow \polyline{(-2, 5), (0,3), (2, 5)}
+\xmarks{-4 step 1 until 4}
+\ymarks{-4 step 1 until 4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](3,2){\scriptsize $y=|t-3|$}
+\tlabel[cc](3,4.5){\scriptsize $y=|t|+3$}
+\tcaption{Solving $|t-3|-|t| = 3$.}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,  {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize 
+\penwd{1.25pt} 
+\arrow \polyline{(0,3), (-2,5)}
+\arrow \polyline{(0,0), (-5,0)}
+\point[4pt]{(0,3), (0,0)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\item  To solve $|x+1|\geq \frac{x+4}{2}$, we first graph $y = |x+1|$ and $y = \frac{x+4}{2} = \frac{1}{2} x + 2$.  The former is `$\vee$' shaped with a vertex at $(-1,0)$ and a $y$-intercept of $(0,1)$.  The latter is a line with $y$-intercept $(0,2)$, slope $m = \frac{1}{2}$ and $x$-intercept $(-4,0)$. The picture in the middle of the next page on the right shows two intersection points.  To find these, we solve the equations: $-(x+1) =  \frac{x+4}{2}$, obtaining $x = -2$,  and $x+1 = \frac{x+4}{2}$ obtaining $x = 2$.
+
+\medskip
+
+Graphically, the inequality  $|x+1|\geq \frac{x+4}{2}$ is looking for where the graph of $y = |x+1|$,  the `$\vee$,' intersects ($=$) or is above ($>$) the line  $y = \frac{x+4}{2}$.  The graph shows this happening whenever $x \leq -2$ or $x \geq 2$.  Using interval notation, our solution is $(-\infty, -2] \cup [2, \infty)$.  While we cannot check every single $x$ value individually, choosing test values $x < -2$, $x = 2$, $-2 < x < 2$, $x = 2$, and $x > 2$ to see if the original inequality  $|x+1|\geq \frac{x+4}{2}$ holds would help us verify our solution.
+
+
+\item  Recall that the inequality $2 < |t-1| \leq 5$ is an example of a `compound' inequality in that is two inequalities in one.\footnote{See Example \ref{linearineqreview} for examples of linear compound inequalities.}  The values of $t$ in the solution set need to satisfy $2 < |t-1|$ \textbf{and} $|t-1| \leq 5$.  To help us sort through the cases, we graph the horizontal lines $y =2$ and $y = 5$ along with the `$\vee$' shaped $y= |t-1|$ with vertex $(1,0)$ and $y$-intercept $(0,1)$.  
+
+\medskip
+
+Geometrically, we are looking for where $y = |t-1|$ is strictly \textbf{above} the line $y = 2$ but \textbf{below} (or meets)  the line $y = 5$.  Solving $|t-1| = 2$ gives $t = -1$ and $t = 3$ whereas solving $|t-1| = 5$ gives $t = -4$ or $t = 6$. Per the graph (below on the right), we see that $y = |t-1|$ lies between $y=2$ and $y=5$ when $-4 \leq t < -1$ and again when $3 < t \leq 6$. 
+
+\medskip
+
+In interval notation, our solution is $[-4, -1) \cup (3, 6]$.  As with the previous example, it is impossible to check each and every one of these solutions, but choosing $t$ values both in and around the solution intervals would give us some numerical confidence we have the correct and complete solution.
+
+\setlength\columnsep{-20pt}
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-5}{5}{-1}{5}
+\arrow \reverse \arrow \polyline{(-5,4), (-1,0),(4,5)}
+\arrow \reverse \arrow \polyline{(-5,-0.5),(5,4.5)}
+
+\xmarks{-4 step 1 until 4}
+\ymarks{1 step 1 until 4}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-3,3.5){\scriptsize $y=|x+1|$}
+\tlabel[cc](5,3.5){\scriptsize $y=\dfrac{x+4}{2}$}
+\tcaption{\scriptsize Solving $|x+1|\geq \dfrac{x+4}{2}$}
+\scriptsize
+\tlpointsep{4pt}
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize 
+\penwd{1.5pt} 
+\arrow \polyline{(-2,1), (-5,4)}
+\arrow \polyline{(-2,1), (-5,-0.5)}
+\arrow \polyline{(2,3), (4,5)}
+\arrow \polyline{(2,3), (5,4.5)}
+\arrow \polyline{(-2,0), (-5,0)}
+\arrow \polyline{(-2,0), (-5,0)}
+\arrow \polyline{(2,0), (5,0)}
+\point[4pt]{(-2,1),(2,3), (-2,0), (2,0)}
+\end{mfpic}
+
+
+\begin{mfpic}[12][10]{-9}{10}{-1}{9}
+\arrow \reverse \arrow \polyline{(-7,8),(1,0),(9,8)}
+\arrow \reverse \arrow \polyline{(-8,2),(9,2)}
+\arrow \reverse \arrow \polyline{(-8,5),(9,5)}
+\point[4pt]{(-4,5), (-4,0),   (6,5), (6,0)}
+\tcaption{\scriptsize Solving $2 < |t-1| \leq 5$}
+\xmarks{-8 step 1 until 9}
+\ymarks{1 step 1 until 8}
+\axes
+\tlabel[cc](10,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\tlabel[cc](-6,1.25){\scriptsize $y=2$}
+\tlabel[cc](-6,4.25){\scriptsize $y=5$}
+\tlabel[cc](-4,7){\scriptsize $y=|t-1|$}
+\tiny
+\tlpointsep{4pt}
+\axislabels {x}{{$-8 \hspace{7pt}$} -8, {$-7 \hspace{7pt}$} -7, {$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
+\normalsize 
+\penwd{1.5pt} 
+\polyline{(-4, 5), (-1,2)}
+\polyline{(3, 2), (6,5)}
+\polyline{(-4,0), (-1,0)}
+\polyline{(3,0), (6,0)}
+\pointfillfalse
+\point[4pt]{(-1,2), (-1,0), (3,0),(3,2), }
+\end{mfpic}
+
+\end{multicols}
+\setlength\columnsep{10pt}
+
+\end{enumerate}
+
+\vspace{-.25in} \qed
+
+\end{example}
+
+We will see the interplay of Algebra and Geometry throughout the rest of this course. In the Exercises, do not hesitate to use whatever mix of algebraic and graphical methods you deem necessary to solve the given equation or inequality.  Indeed, there is great value in checking your algebraic answers graphically and vice-versa.
+
+\medskip
+
+One of the classic applications of  inequalities involving absolute values is the notion of tolerances.\footnote{The underlying concept of Calculus can be phrased in terms of tolerances, so this is well worth your attention.} Recall that for real numbers $x$ and $c$, the quantity $|x-c|$ may be interpreted as the distance from $x$ to $c$.  Solving inequalities of the form $|x-c| \leq d$ for $d > 0$ can then be interpreted as finding all numbers $x$ which lie within $d$ units of $c$.  We can think of the number $d$ as a `tolerance' and our solutions $x$ as being within an accepted tolerance of $c$.  We use this principle in the next example.
+
+\begin{example}  Suppose a manufacturer needs to produce a $24$ inch by $24$ inch square piece of particle board as part of a home office desk kit. How close does the side of the piece of particle board need to be cut to $24$ inches to guarantee that the area of the piece is within a tolerance of $0.25$ square inches of the target area of $576$ square inches?  
+
+\medskip
+
+{\bf Solution.}   Let $x$ denote the length of the side of the square piece of particle board so that the area of the board is $x^2$ square inches.  Our tolerance specifies that the area of the board, $x^2$,   needs to be within $0.25$ square inches of $576$.  Mathematically,  this translates to  $|x^2 - 576| \leq 0.25$.  Rewriting, we get  $-0.25 \leq x^2 - 576 \leq 0.25$, or $575.75 \leq  x^2  \leq 576.25$.  At this point, we take advantage of the fact that the square root is increasing.\footnote{This means that for $a$, $b \geq 0$, if $a \leq b$, then $\sqrt{a} \leq \sqrt{b}$.}  Therefore, taking square roots preserves the inequality.  When simplifying, we keep in mind that since $x$ represents a length, $x>0$.
+
+\[ \begin{array}{rclr}
+
+575.75 \leq & x^2 & \leq 576.25 &  \\
+\sqrt{575.75} \leq & \sqrt{x^2} & \leq \sqrt{576.25} & \text{(take square roots.)} \\
+\sqrt{575.75} \leq & |x| & \leq \sqrt{576.25} & \text{($\sqrt{x^2} = |x|$)} \\ 
+\sqrt{575.75} \leq & x & \leq \sqrt{576.25} & \text{($|x| = x$ since $x>0$)} \\  \end{array} \]
+
+The side of the piece of particle board must be between $\sqrt{575.75} \approx 23.995$ and $\sqrt{576.25} \approx 24.005$ inches, a tolerance of (approximately) $0.005$ inches of the target length of $24$ inches, to ensure that the area is within $0.25$ square inches of $576$. \qed
+
+\end{example}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforAbsoluteValueFunctions}
+
+\closegraphsfile
+
+\end{document}

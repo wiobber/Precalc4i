@@ -1,0 +1,573 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Graphs of Functions}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{GraphsofFunctions}
+
+\setcounter{footnote}{0}
+
+\label{GraphsofFunctions}
+
+Up until this point in the text, we have primarily focused on studying particular \textit{families} of functions.  These families and their relationships to one another provide useful \textit{examples} of more abstract function structures and relationships.  The notions introduced in this chapter will not only provide us a more formal vocabulary with which to describe the connections between the function families we have already studied, but, more importantly,  give us additional lenses through which to  view  new families of functions that we'll encounter.
+
+\smallskip
+
+
+In this section, we review of the concepts associated with the graphs of functions.  We introduced the notion of the graph of a function  in Section \ref{FunctionsandtheirRepresentations}, and the vast majority of the graphs we have encountered in this text were generated from an algebraic representation of a function.  In this section, we define the functions geometrically from the outset and review the important concepts associated with the graphs of functions.
+
+\smallskip
+
+Recall the \textbf{domain} of a function is the set of inputs to the function and the \textbf{range} of a function is the set of outputs from the function.  When graphing a function whose domain and range are subsets of real numbers, we plot the ordered pairs $(\text{input}, \text{output})$ on the Cartesian plane.  Hence, the domain values are found on the horizontal axis while the range values are found on the vertical axis.
+
+\smallskip
+
+Recall from Definition \ref{absmaxmindefn} that the largest output from the function (if there is one) is called the \textbf{maximum} or, when there may be some confusion, the \textbf{absolute maximum} of the function.  Likewise, the smallest output from the function (again, if there is one) is called the \textbf{minimum} or \textbf{absolute minimum}.  
+
+\smallskip
+
+A concept related to `absolute' maximum and minimum is the concept of `local'  maximum and minimum as described in  Definition \ref{localmaxmindefn}.  Here, a point $(a,b)$ on the graph of a function $f$ is a \textbf{local maximum} if $b$ is the maximum function value for some open interval in the domain containing $a$.  The notion of `local' here meaning instead of surveying the entire domain, we instead restrict our attention to inputs `local' or `near' the input $a$.  The concept of \textbf{local minimum} is defined similarly.
+
+\smallskip
+
+Next, we review the notions of \textbf{increasing}, \textbf{decreasing}, and \textbf{constant} as described in Definition \ref{incdeccnstdefn}.  Recall a function is increasing over an interval if, as the inputs increase, do the outputs.  This means that, geometrically, the graph of the function rises as we move left to right.  Similarly, a function is decreasing over an interval if the outputs decrease as the inputs increase.  Geometrically, a decreasing function falls as we move left to right.  Finally, a function is constant over an interval if the output is the same regardless of the input.  If a function is constant over an interval, its graph remains `flat' - a horizontal line.
+
+\smallskip
+
+Last, and according to some\footnote{Jeff} least, we briefly review the notion of symmetry in the graphs of functions. Recall from Definition \ref{evenfunctiondefn} that a function $f$ is called \textbf{even} if $f(-x) = f(x)$ for all $x$ in the domain of $f$.  The graphs of even functions are symmetric about the vertical (usually $y$-) axis.  In a similar manner, Definition \ref{oddfunctiondefn} tells us a function $f$ is \textbf{odd} if $f(-x) = -f(x)$ for all $x$ in the domain of $f$.  Geometrically, the graphs of odd functions are symmetric about the origin.  
+
+\smallskip
+
+The next example reviews all of the aforementioned concepts as well as many more.
+
+\smallskip
+
+\begin{example}  Given the graph of $y = f(x)$ below, answer all of the following questions.
+\label{tame}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  Find the domain of $f$.
+
+\item  Find the range of $f$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Find the maximum, if it exists.
+
+\item  Find the minimum, if it exists.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  List the $x$-intercepts, if any exist.
+
+\item  List the $y$-intercepts, if any exist.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Find the zeros of $f$.
+
+\item  Solve $f(x) < 0$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Determine $f(2)$.
+
+\item  Solve $f(x) = -3$.  
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Find the number of solutions to $f(x) = 1$.
+
+\item  Does $f$ appear to be even, odd, or neither?
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  List the local maximums, if any exist.
+
+\item  List the local minimums, if any exist.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  List the intervals on which $f$ is increasing.
+
+\item  List the intervals on which $f$ is decreasing.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{center}
+
+\begin{mfpic}[20]{-5}{5}{-5}{5}
+\tlabel[cc](-3,0.5){\small $\left( -2, 0 \right)$}
+\tlabel[cc](2.5,0.5){\small $\left(2, 0 \right)$}
+\tlabel[cc](4,-3.5){\small $\left( 4, -3 \right)$}
+\tlabel[cc](-4,-3.5){\small $\left(-4, -3 \right)$}
+\tlabel[cc](1,3.5){\small $\left(0, 3 \right)$}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)}
+\penwd{1.25pt}
+\function{-4,4,.1}{3*cos(3.14159265*x/4)}
+\end{mfpic}
+
+\end{center}
+
+
+{\bf Solution.} 
+
+\begin{enumerate}
+
+\item  To find the domain of $f$, we proceed as in Section \ref{FunctionsandtheirRepresentations}.  By projecting the graph to the $x$-axis, we see that the portion of the $x$-axis which corresponds to a point on the graph is everything from $-4$ to $4$, inclusive.  Hence, the domain is $[-4,4]$.
+
+\item  To find the range, we project the graph to the $y$-axis.  We see that the $y$ values from $-3$ to $3$, inclusive, constitute the range of $f$.  Hence, our answer is $[-3,3]$.
+
+\item  The maximum value of $f$ is the largest $y$-coordinate which is $3$.
+
+\item  The minimum value of $f$ is the smallest $y$-coordinate which is $-3$.
+
+\item  The $x$-intercepts are the points on the graph with $y$-coordinate $0$, namely $(-2,0)$ and $(2,0)$.
+
+\item  The $y$-intercept is the point on the graph with $x$-coordinate $0$, namely $(0,3)$.
+
+\item  The zeros of $f$ are the $x$-coordinates of the $x$-intercepts of the graph of $y=f(x)$ which are $x=-2, 2$.
+
+\item  To solve $f(x) < 0$, we look for the $x$ values of the points on the graph where the $y = f(x)$ is negative.   Graphically, we are looking for where the graph is \textit{below}  the $x$-axis.  This happens for the $x$ values from $-4$ to $-2$ and again from $2$ to $4$.  So our answer is $[-4,-2) \cup (2,4]$.
+
+\item  Since the graph of $f$ is the graph of the equation $y=f(x)$, $f(2)$ is the $y$-coordinate of the point which corresponds to $x = 2$.  Since the point $(2,0)$ is on the graph, we have $f(2) = 0$.
+
+\item  To solve $f(x) = -3$, we look where $y = f(x) = -3$.  We find two points with a $y$-coordinate of $-3$, namely $(-4,-3)$ and $(4,-3)$.  Hence, the solutions to $f(x) = -3$ are $x = \pm 4$.
+
+\item As in the previous problem, to solve $f(x)=1$, we look for points on the graph where the $y$-coordinate is $1$.  If we imagine the horizontal like $y=1$ superimposed over the graph of $f$ as sketched below, we get two intersections.  Hence, even though these points aren't specified, we know there are \textit{two} points on the graph of $f$ whose $y$-coordinate is $1$.  Hence, there are two solutions to $f(x) = 1$.
+
+\begin{center}
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\dashed \arrow \reverse \arrow \polyline{(-4,1), (4,1)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](3,1.5){\scriptsize $y=1$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\point[4pt]{(-1.5673,1),(1.5673,1), (-4,-3), (4,-3)}
+\penwd{1.25pt}
+\function{-4,4,.1}{3*cos(3.14159265*x/4)}
+\end{mfpic}
+
+\end{center}
+
+
+\item  The graph appears to be symmetric about the $y$-axis.  This suggests\footnote{but does not prove} that $f$ is even.
+
+\item  The function has its only local maximum at $(0,3)$.
+
+\item  There are no local minimums.  Why don't $(-4, -3)$ and $(4, -3)$ count?  Let's consider the point $(-4, -3)$ for a moment.  Recall that, in the definition of local minimum, there needs to be an open interval containing  $x = -4$ which is in the domain of $f$.  In this case, there is no open interval containing $x=-4$ which lies entirely in the domain of $f$, $[-4,4]$.  Because we are unable to fulfill the requirements of the definition for a local minimum, we cannot claim that $f$ has one at $(-4, -3)$.  The point $(4, -3)$ fails for the same reason $-$ no open interval around $x = 4$ stays within the domain of $f$.
+
+\item  As we move from left to right, the graph rises from $(-4,-3)$ to $(0,3)$.  This means $f$ is increasing on the interval $[-4,0]$.  (Remember, the answer here is an interval on the $x$-axis.)
+
+\item  As we move from left to right, the graph falls from $(0,3)$ to $(4,-3)$.  This means $f$ is decreasing on the interval $[0,4]$.  (Again, the answer here is an interval on the $x$-axis.) \qed
+
+\end{enumerate}
+
+\end{example} 
+
+
+
+Our next example involves a more complicated function and asks more complicated questions.
+
+\begin{example} \label{generalfunctionbehaviorex} Consider the graph of the function $g$ below.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{8}{-10}{8}
+\tlabel[cc](-4,-3.75){\scriptsize $(-4,-3)$}
+\tlabel[cc](-4,0.5){\scriptsize $(-3,0)$}
+\tlabel[cc](-2.5,5.25){\scriptsize $(-2,4.5)$}
+\tlabel[cc](1,0.5){\scriptsize $(0,0)$}
+\tlabel[cc](3,-8.75){\scriptsize $(3,-8)$}
+\tlabel[cc](3.5,-5.25){\scriptsize $(4,-6)$}
+\tlabel[cc](5.5, -6.75){\scriptsize $(5,-6)$}
+\tlabel[cc](6.5,-0.75){\scriptsize $(6,0)$}
+\tlabel[cc](7,6.25){\scriptsize $(7,5.5)$}
+\tcaption{The graph of $y=g(t)$}
+\axes
+\tlabel[cc](8,-0.5){\scriptsize $t$}
+\tlabel[cc](0.5,8){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4,5,6,7}
+\ymarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4,  {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3,  {$4$} 4, {$5$} 5}
+\axislabels {y}{ {$-9$} -9,{$-8$} -8,{$-7$} -7, {$-6$} -6,{$-5$} -5,{$-4$} -4, {$-3$} -3,{$-2$} -2,{$-1$} -1, {$2$} 2, {$3$} 3 , {$2$} 2, {$3$} 3 ,{$4$} 4, {$5$} 5, {$6$} 6 ,{$7$} 7}
+\normalsize
+\point[4pt]{(-4,-3), (-3,0), (-2, 4.5), (0,0), (3, -8), (4,-6), (5,-6), (6,0), (7, 5.5)}
+\penwd{1.25pt}
+\function{-4,-2,0.1}{0.75*(x**2)+8.25*(x)+18}
+\function{-2, 3, 0.1}{-0.08333*(x**2)-2.41667*(x)}
+\function{3, 4, 0.1}{-2*(x**2)+16*(x)-38}
+\function{4, 5, 0.1}{-6}
+\function{5,7.01,0.1}{-0.25*(x**2)+8.75*(x)-43.5}
+\pointfillfalse
+\point[4pt]{(7,5.5), (0,0)}
+\end{mfpic}
+
+\end{center}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item  Find the domain of $g$.
+
+\item  Find the range of $g$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Find the maximum, if it exists.
+
+\item  Find the minimum, if it exists.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  List the local maximums, if any exist.
+
+\item  List the local minimums, if any exist.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Solve $(t^2-25) g(t) = 0$. \vphantom{$\dfrac{g(t)}{t^2+t-30}= 0$}
+
+\item  Solve $\dfrac{g(t)}{t^2+t-30} \geq 0$.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  Projecting the graph of $g$ to the $t$-axis, we see the domain contains values of $t$ from $-4$ up to, but not including $t=0$ and values greater than $t=0$ up to, but not including $t=7$.   Using interval notation, we write the domain as $[-4, 0) \cup (0,7)$.
+
+\item  Projecting the graph of $g$ to the $y$-axis, we see the range of $g$ contains all real numbers from $y=-8$ up to, but not including, $y = 5.5$.  Note that even though there is a hole in the graph at $(0,0)$, the points $(-3,0)$ and $(6,0)$ put $y=0$ in the range of $g$.  Hence, the range of $g$ is $[-8, 5.5)$.
+
+\item  Owing to the hole in the graph at $(7, 5.5)$, $g$ has no maximum.\footnote{There is no real number `right before' $5.5$ \ldots}
+
+\item  The minimum of $g$ is $-8$ which occurs at the point $(3,-8)$.
+
+\item  The point $(-2, 4.5)$ is clearly a local maximum, but there are actually infinitely many more.  Per Definition \ref{localmaxmindefn}, all points of the form $(t, -6)$ for $4 \leq t < 5$ are also local maximums.  For each of these points, we can find an open interval on the $t$ axis within which we produce no points on the graph higher than $(t,-6)$.  (You may think about `zooming in' on the point $(4.5, -6)$ to see how this works.)
+
+\item  The local minimums of the graph are $(3,-8)$ along with points of the form $(t,-6)$ for $4< t \leq 5$.  Note the point $(-4,-3)$ is not a local minimum since there is no open interval containing $t=-4$ which lies entirely within the domain of $g$.
+
+\item To solve $(t^2-25) g(t) = 0$, we use the zero product property of real numbers\footnote{see Section \ref{AppRealNumberArithmetic}, \pageref{propertiesofzero}} to conclude either $t^2-25 = 0$ or $g(t) = 0$.  
+
+\smallskip
+
+From $t^2-25 = 0$, we get $t = \pm 5$.  However, since $t=-5$ isn't in the domain of $g$, it cannot be regarded as a solution to the equation $(t^2-25)g(t) = 0$.  (If we substitute $t=-5$ into the equation, we'd get $((-5)^2-25)g(-5) = 0 \cdot g(-5)$.  Since  $g(-5)$ is undefined, so is $0 \cdot g(-5)$.)  
+
+\smallskip
+
+To solve $g(t) = 0$, we look for the zeros of $g$ which are $t = -3$ and $t = 6$. (Again, there is a hole at $(0,0)$, so $t=0$ doesn't count as a zero.)  Our final answer to $(t^2-25)g(t) = 0$ is $t = -3$, $5$, or $6$.
+
+\item To solve  $\frac{g(t)}{t^2+t-30} \geq 0$, we employ a sign diagram as we (most recently) have done in Section \ref{PowerEqIneq}.\footnote{Note that $g$ is continuous on its domain, and hence, it follows that  $\frac{g(t)}{t^2+t-30}$ is, too.  (Thank Calculus!)  This means the Intermediate Value Theorem applies so a Sign Diagram approach is valid.}  To that end, we define $F(t) = \frac{g(t)}{t^2+t-30}$ and we set about finding the domain of $f$.
+
+\smallskip
+
+First, we note that since $F$ is defined in terms of $g$, the domain of $F$ is restricted to some subset of the domain of $g$, namely $[-4, 0) \cup (0, 7)$.  Since  $t^2+t-30$ is in the denominator of $F(t)$, we must also exclude the values where $t^2+t-30 = (t+6)(t-5) = 0$.  Hence, we must exclude $t = -6$ (which isn't in the domain of $g$ in the first place) along with $t = 5$.  Hence, the domain of $F$ is $[-4, 0) \cup (0, 5) \cup (5,7)$.
+
+\smallskip
+
+Next, we find the zeros of $F$.  Setting $F(t) = \frac{g(t)}{t^2+t-30} = 0$ amounts to solving $g(t) = 0$. Graphically, we see this occurs when $t = -3$ and $t = 6$.  Hence, we need to select test values in each of the following intervals:  $[-4, -3)$, $(-3,0)$, $(0,5)$, $(5,6)$ and $(6, 7)$.  
+
+\smallskip
+
+For the interval $[-4,-3)$, we may choose $t=-4$.  $F(-4) = \frac{g(-4)}{(-4)^2+(-4)-30} = \frac{-3}{-18}>0$ so is $(+)$.  For the interval $(-3,0)$ we choose $t = -2$ and get $F(-2) = \frac{g(-2)}{(-2)^2+(-2) - 30} = \frac{4.5}{-28} < 0$ so is $(-)$.  For the interval $(0,5)$, we choose $t = 3$ and find $F(3) = \frac{g(3)}{(3)^2+(3) - 30} = \frac{-8}{-18}>0$ which is $(+)$ again.  
+
+\smallskip
+
+For the last two intervals, $(5,6)$ and $(6,7)$, we do not have specific function values for $g$.  However, all we are interested in is the \textit{sign} of the function over these intervals, and we can get that information about $g$ graphically.  
+
+\smallskip
+
+For the interval $(5,6)$, we choose $t = 5.5$ as our test value.  Since the graph of $y=g(t)$ is \textit{below} the $t$-axis when $t = 5.5$. we know $g(5.5)$ is $(-)$.  Hence, $F(5.5) = \frac{g(5.5)}{(5.5)^2+(5.5)-30} = \frac{(-)}{5.75}<0$ so is $(-)$.  Similarly, when $t = 6.5$, the graph of $y = g(t)$ is \textit{above} the $t$-axis so $F(6.5) = \frac{g(6.5)}{ (6.5)^2+(6.5)-30} = \frac{(+)}{18.75}>0$ so is $(+)$.  Putting all of this together, we get the sign diagram for $F(t) =  \frac{g(t)}{t^2+t-30}$ below:
+
+\begin{center}
+
+\begin{mfpic}[20]{0}{10}{-1}{1}
+
+\polyline{(0,0), (10,0)}
+\xmarks{0,2,4,6,8,10}
+\tlabel[cc](0,-0.5){$-4 \hspace{6pt}$}
+\tlabel[cc](0,0.5){$(+)$}
+\tlabel[cc](2,-0.5){$-3 \hspace{6pt}$}
+\tlabel[cc](2,0.5){$0$}
+\tlabel[cc](3,0.5){$(-)$}
+\tlabel[cc](4,-0.5){$0$}
+\tlabel[cc](4,0.5){\textinterrobang}
+\tlabel[cc](5,0.5){$(+)$}
+\tlabel[cc](6,-0.5){$5$}
+\tlabel[cc](6,0.5){\textinterrobang}
+\tlabel[cc](7,0.5){$(-)$}
+\tlabel[cc](8,-0.5){$6$}
+\tlabel[cc](8,0.5){$0$}
+\tlabel[cc](9,0.5){$(+)$}
+\tlabel[cc](10,-0.5){$7$}
+\tlabel[cc](10,0.5){\textinterrobang}
+\end{mfpic}
+\end{center}
+
+\smallskip
+
+Hence, $F(t) \geq 0$ on $[-4,-3] \cup (0,5) \cup [6, 7)$. \qed
+
+\end{enumerate}
+
+\end{example}
+
+Our last example focuses on symmetry.  The reader is encouraged to review the notes about symmetry as summarized on  page \pageref{reflectionsinabox} in Section \ref{AppCartesianPlane}.
+
+
+\begin{example} \label{evenoddcompleteexample}  Below are the partial graphs of functions $f$ and $g$.  
+
+\begin{enumerate}
+
+\item  If possible, complete the graphs of $f$ and $g$ assuming both functions are even.
+
+\item  If possible, complete the graphs of $f$ and $g$ assuming both functions are odd.
+
+\end{enumerate}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+ \function{0, 4, 0.1}{-5*sin(3.1415*x/4)}
+ \point[4pt]{(0,0), (4,0)}
+ \tcaption{Partial graph of $y = f(x)$}
+ \end{mfpic}
+ 
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
+ \point[4pt]{(0,-5), (4,5)}
+  \tcaption{Partial graph of $y = g(x)$}
+\end{mfpic}
+
+\end{multicols}
+
+
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  If $f$ and $g$ are even then their graphs are symmetric about the $y$-axis.  Hence, to complete each graph, we reflect each point on the graphs of $f$ and $g$ about the $y$-axis.
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+ \function{0, 4, 0.1}{-5*sin(3.1415*x/4)}
+  \function{-4, 0, 0.1}{5*sin(3.1415*x/4)}
+ \point[4pt]{(0,0), (4,0), (-4,0)}
+ \tcaption{The graph of $f$ assuming $f$ is even.}
+ \end{mfpic}
+ 
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
+\function{-4, 0, 0.1}{-5*cos(3.1415*x/4)}
+ \point[4pt]{(0,-5), (4,5), (-4,5)}
+  \tcaption{The graph of $g$ assuming $g$ is even.}
+\end{mfpic}
+
+\end{multicols}
+
+
+\item  If $f$ and $g$ are odd then their graphs are symmetric about the origin.  Hence, to complete each graph, we imagine reflecting each of the points on their graphs through the origin.  We complete the process on the graph of $f$ with no issues.   
+
+\smallskip
+
+However, when attempting to do the same with the graph of the function $g$, we find the point $(0,-5)$ is reflected to the point $(0,5)$.  Hence, this new graph doesn't pass the vertical line test and hence is not a function.  Therefore, $g$ cannot be odd.\footnote{We leave it as an exercise to show that if a function $f$ is odd and $0$ is in the domain of $f$, then, necessarily, $f(0) = 0$.}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+ \function{-4, 4, 0.1}{-5*sin(3.1415*x/4)}
+ \point[4pt]{(0,0), (4,0), (-4,0)}
+ \tcaption{The graph of $f$ assuming $f$ is odd.}
+ \end{mfpic}
+ 
+\begin{mfpic}[15]{-5}{5}{-6}{6}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,6){\scriptsize $y$}
+\xmarks{-4, -3,-2,-1,1,2,3,4}
+\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+\tlpointsep{5pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
+\function{-4, 0, 0.1}{5*cos(3.1415*x/4)}
+ \point[4pt]{(0,-5), (0,5), (4,5), (-4,-5)}
+  \tcaption{This graph fails the vertical line test.}
+\end{mfpic}
+
+\end{multicols}
+
+\end{enumerate}
+
+\qed
+\end{example}
+
+
+
+\newpage
+
+\subsection{Exercises}
+%% SKIPPED %% \input{ExercisesforGraphsofFunctions}
+
+\closegraphsfile
+
+\end{document}

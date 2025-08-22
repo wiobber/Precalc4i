@@ -1,0 +1,470 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{The Pythagorean Identities}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{FundamentalTrigonometricIdentities}
+
+\setcounter{footnote}{0}
+
+\label{FundamentalTrigonometricIdentities}
+
+\smallskip
+
+In section Section \ref{TheOtherCircularFunctions}, we first encountered the concept of an \textbf{identity} when discussing Theorem \ref{recipquotid}.   Recall that an identity is an equation which is true regardless of the choice of variable.  Identities are important in mathematics because they facilitate changing forms.\footnote{We've seen the utility of changing form throughout the text, most recently when we completed the square in Chapter \ref{TheConicSections} to put general quadratic equations into standard form in order to graph them.}
+
+\smallskip
+
+We take a moment to generalize Theorem \ref{recipquotid} below. 
+\smallskip
+
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{recipquotidfull}  \textbf{Reciprocal and Quotient Identities:} \index{Reciprocal Identities} \index{Quotient Identities}  The following relationships hold for all angles $\theta$ provided each side of each equation is defined.
+
+\begin{multicols}{4}
+
+\begin{itemize}
+
+\item $\sec(\theta) = \dfrac{1}{\cos(\theta)}$ 
+
+\item $\cos(\theta) = \dfrac{1}{\sec(\theta)}$
+
+\item $\csc(\theta) = \dfrac{1}{\sin(\theta)}$
+
+\item $\sin(\theta) = \dfrac{1}{\csc(\theta)}$
+
+\end{itemize}
+
+\end{multicols}
+
+
+\begin{multicols}{4}
+
+\begin{itemize}
+
+\item $\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)}$
+
+\item $\cot(\theta) = \dfrac{\cos(\theta)}{\sin(\theta)}$
+
+\item $\cot(\theta) = \dfrac{1}{\tan(\theta)}$
+
+\item $\tan(\theta) = \dfrac{1}{\cot(\theta)}$
+
+\end{itemize}
+
+\end{multicols}
+
+\smallskip
+
+\end{theorem}
+
+%% \ebm}
+
+\smallskip
+
+It is important to remember that the equivalences stated in Theorem \ref{recipquotidfull}  are valid only when \textit{all} quantities described therein are defined.  As an example, $\tan(0) = 0$, but $\tan(0) \neq \frac{1}{\cot(0)}$ since $\cot(0)$ is undefined.
+
+\smallskip
+
+When it comes down to it, the Reciprocal and Quotient Identities amount to giving different ratios on the Unit Circle different names.  The main focus of this section is on a more algebraic relationship between certain pairs of the circular functions: the \index{Pythagorean Identities}\index{Identities ! Pythagorean}\textbf{Pythagorean Identities}.
+
+\smallskip
+
+Recall in Definition \ref{sinecosineunitcircledefn}, the cosine and sine of an angle is defined as the $x$ and $y$-coordinate, respectively, of a point on the Unit Circle.  Since the coordinates of all points $(x,y)$ on the Unit Circle satisfy the equation $x^2+y^2 = 1$, we get for all angles $\theta$, $\left(\cos(\theta)\right)^2 + \left(\sin(\theta)\right)^2 = 1$.  An unfortunate\footnote{This is unfortunate from a `function notation' perspective. See Section \ref{TheInverseTrigonometricFunctions}.} convention, which the authors are compelled to perpetuate,  is to write $\left(\cos(\theta)\right)^2$ as $\cos^{2}(\theta)$ and $\left(\sin(\theta)\right)^2$ as $\sin^{2}(\theta)$. Rewriting the identity using this convention results in the following theorem, which is without a doubt one of the most important results in Trigonometry.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{cosinesinepythid} \textbf{The Pythagorean Identity:}  For any angle $\theta$, $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$.
+
+\end{theorem}
+
+%% \ebm} 
+
+\smallskip
+
+The moniker `Pythagorean' brings to mind the Pythagorean Theorem, from which both the Distance Formula and the equation for a circle are ultimately derived.\footnote{See Sections \ref{AppCartesianPlane} and \ref{Circles} for details.}  The word `Identity' reminds us that, regardless of the angle $\theta$, the equation in Theorem \ref{cosinesinepythid} is always true.  
+
+\smallskip
+
+If one of $\cos(\theta)$ or $\sin(\theta)$ is known, Theorem \ref{cosinesinepythid} can be used to determine the other, up to a ($\pm$) sign.  If, in addition, we know where the terminal side of $\theta$ lies when in standard position, then we can remove the ambiguity of the ($\pm$) and completely determine the missing value.\footnote{See the illustration following Example \ref{circularfunctionsex} to refresh yourself which circular functions are positive in which quadrants.}  We illustrate this approach in the following example.
+
+
+\smallskip
+
+\begin{example} \label{cosinesinepythidex} Use Theorem \ref{cosinesinepythid} and the given information  to find the indicated value.
+\begin{enumerate}
+
+\item If $\theta$ is a Quadrant II angle with  $\sin(\theta) = \frac{3}{5}$, find $\cos(\theta)$.
+
+\item If $\pi < t < \frac{3\pi}{2}$ with  $\cos(t) = -\frac{\sqrt{5}}{5}$, find $\sin(t)$.
+
+\item  If $\sin(\theta) = 1$, find $\cos(\theta)$.
+
+\end{enumerate}
+
+
+
+{\bf Solution.}  \begin{enumerate} \item  When we substitute $\sin(\theta) = \frac{3}{5}$ into The Pythagorean Identity, $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$, we obtain $\cos^{2}(\theta) + \frac{9}{25} = 1$.  Solving, we find $\cos(\theta) = \pm \frac{4}{5}$.  Since $\theta$ is a Quadrant II angle, we know $\cos(\theta)<0$.  Hence, we select  $\cos(\theta) = - \frac{4}{5}$.
+
+\item Here we're using the variable $t$ instead $\theta$ which usually corresponds to a real number variable instead of an angle.  As usual,  we associate real numbers $t$ with angles $\theta$ measuring $t$ radians,\footnote{See page \pageref{wrappingfunction} if you need a review of how we associate real numbers with angles in radian measure.} so the the Pythagorean Identity works equally well for all real numbers $t$ as it does for all angles $\theta$.
+
+\smallskip
+
+ Substituting $\cos(t) = -\frac{\sqrt{5}}{5}$ into $\cos^{2}(t) + \sin^{2}(t) = 1$ gives $\sin(t) = \pm \frac{2}{\sqrt{5}} = \pm \frac{2 \sqrt{5}}{5}$.  Since  $\pi < t < \frac{3\pi}{2}$, we know $t$ corresponds to a Quadrant III angle, so $\sin(t) <0$.   Hence,  $\sin(t) = -\frac{2 \sqrt{5}}{5}$.
+
+\item  When we substitute $\sin(\theta) = 1$ into $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$, we find $\cos(\theta) = 0$. \qed 
+
+\end{enumerate}
+
+\end{example}
+
+\smallskip
+
+The reader is encouraged to compare and contrast the solution strategies demonstrated in Example \ref{cosinesinepythidex} with those showcases in Examples \ref{advancedrefangleex} and \ref{cosinesinecircleex} in Section \ref{TheCircularFunctionsSineandCosine}.  
+
+\smallskip
+
+As with many tools in mathematics, identities give us a different way to approach and solve problems.\footnote{For example, factoring, completing the square, and the quadratic formula are three different (yet equivalent) ways to solve a quadratic equation.  See Section \ref{AppQuadEqus} for a refresher.}  As always, the key is to determine which approach makes the most sense (is more efficient, for instance) in the given scenario.  
+
+\smallskip
+
+
+Our next task is to use use the Reciprocal and Quotient Identities found in Theorem \ref{recipquotidfull} coupled with the Pythagorean Identity found in Theorem \ref{cosinesinepythid} to derive new Pythagorean-like identities for the remaining four circular functions.   
+
+\smallskip
+
+Assuming $\cos(\theta) \neq 0$, we may start with $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$ and divide both sides by $\cos^{2}(\theta)$ to obtain $1 + \frac{\sin^{2}(\theta)}{\cos^{2}(\theta)} = \frac{1}{\cos^{2}(\theta)}$.  Using properties of exponents along with the Reciprocal and Quotient Identities, this reduces to $1 + \tan^{2}(\theta) = \sec^{2}(\theta)$. 
+
+\smallskip
+
+ If $\sin(\theta) \neq 0$, we can divide both sides of the identity $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$ by $\sin^{2}(\theta)$, apply Theorem \ref{recipquotidfull} once again,  and obtain $\cot^{2}(\theta) + 1 = \csc^{2}(\theta)$.  
+ 
+ \smallskip
+ 
+ These three Pythagorean Identities are worth memorizing and they, along with some of their other common forms, are summarized in the following theorem.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{pythids}  \textbf{The Pythagorean Identities:} \index{Pythagorean Identities}
+
+\begin{enumerate}
+
+\item $\cos^{2}(\theta) + \sin^{2}(\theta) = 1$.
+
+\textbf{Common Alternate Forms:}
+
+\begin{itemize}
+
+\item  $1 - \sin^{2}(\theta) = \cos^{2}(\theta)$
+
+\item  $1 - \cos^{2}(\theta) = \sin^{2}(\theta)$
+
+\end{itemize}
+
+\item $1 + \tan^{2}(\theta) = \sec^{2}(\theta)$, provided $\cos(\theta) \neq 0$.
+
+\textbf{Common Alternate Forms:}
+
+\begin{itemize}
+
+\item  $\sec^{2}(\theta) - \tan^{2}(\theta) = 1$
+
+\item  $\sec^{2}(\theta) - 1 = \tan^{2}(\theta)$
+
+\end{itemize}
+
+\item $1 + \cot^{2}(\theta) = \csc^{2}(\theta)$, provided $\sin(\theta) \neq 0$.
+
+\textbf{Common Alternate Forms:}
+
+\begin{itemize}
+
+\item  $\csc^{2}(\theta) - \cot^{2}(\theta) = 1$
+
+\item  $\csc^{2}(\theta) - 1 = \cot^{2}(\theta)$
+
+\end{itemize}
+
+\end{enumerate}
+
+\smallskip
+
+\end{theorem}
+
+%% \ebm}
+
+\smallskip
+
+As usual, the formulas states in Theorem \ref{pythids} work equally well for (the applicable) angles as well as real numbers.
+
+\smallskip
+
+\begin{example} \label{usingidtofindvaluesex1}  Use Theorems \ref{recipquotidfull}   and \ref{pythids}  to find the indicated values.
+
+\begin{enumerate}
+
+\item  If $\theta$ is a Quadrant IV angle with $\sec(\theta) = 3$, find $\tan(\theta)$.
+
+\item   Find $\csc(t)$ if  $\pi < t < \frac{3\pi}{2}$ and $\cot(t) = 2$.
+
+\item  If $\theta$ is a Quadrant II angle with $\cos(\theta) = -\frac{3}{5}$, find the exact values of the remaining circular functions.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  Per Theorem  \ref{pythids}, $\tan^{2}(\theta) = \sec^{2}(\theta) -1$.  Since  $\sec(\theta) = 3$, we have $\tan^{2}(\theta) = (3)^2 - 1 = 8$, or  $\tan(\theta) = \pm \sqrt{8} = \pm 2 \sqrt{2}$. Since $\theta$ is a Quadrant IV angle, we know $\tan(\theta) < 0$ so $\tan(\theta) = -2\sqrt{2}$.
+
+\item  Again, using Theorem  \ref{pythids}, we have $\csc^{2}(t) = 1 + \cot^{2}(t)$, so we have $\csc^{2}(t) = 1 + (2)^2 = 5$.  This gives $\csc(t) = \pm \sqrt{5}$.  Since $\pi < t < \frac{3\pi}{2}$, $t$ corresponds to   a Quadrant III angle, so $\csc(t) = -\sqrt{5}$.
+
+\item  With five function values to find, we have our work cut out for us.  From Theorem \ref{recipquotidfull}, we know $\sec(\theta) = \frac{1}{\cos(\theta)}$, so we (quickly) get $\sec(\theta) = \frac{1}{-3/5} = - \frac{5}{3}$.  
+
+\smallskip
+
+Next, we go after $\sin(\theta)$  since between $\sin(\theta)$ and  $\cos(\theta)$, we can get all of the remaining values courtesy of Theorem \ref{recipquotidfull}. 
+
+\smallskip
+
+ From Theorem \ref{pythids}, we  have $\sin^{2}(\theta) = 1 - \cos^{2}(\theta)$,  so $\sin^{2}(\theta) = 1 - \left(\frac{3}{5}\right)^2 = 1 - \frac{9}{25} = \frac{16}{25}$.  Hence,  $\sin(\theta) = \pm \frac{4}{5}$ but since $\theta$ is a Quadrant II angle, we select $\sin(\theta) = \frac{4}{5}$.
+ 
+ \smallskip
+ 
+Back to  Theorem \ref{recipquotidfull}, we get $\csc(\theta) = \frac{1}{\sin(\theta)} = \frac{1}{4/5} = \frac{5}{4}$, $\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)} = \frac{4/5}{-3/5} = -\frac{4}{3}$, and $\cot(\theta) = \frac{\cos(\theta)}{\sin(\theta)} = \frac{-3/5}{4/5} = -\frac{3}{4}$.  \qed 
+
+
+\end{enumerate}
+
+
+
+\end{example}
+
+
+\smallskip
+
+Again, the reader is encouraged to study the solution methodology illustrated in  Example \ref{usingidtofindvaluesex1} as compared with that employed in Example \ref{circularfunctionscircleex} in Section \ref{TheOtherCircularFunctions}.
+
+\smallskip
+
+Trigonometric identities play an important role in not just Trigonometry, but in Calculus as well.  We'll use them in this book to find the values of the circular functions of an angle and solve equations and inequalities.  In Calculus, they are needed to simplify otherwise complicated expressions.  In the next example, we make good use of the Theorems \ref{recipquotidfull} and \ref{pythids}.
+
+\begin{example} \label{idornotex1} Verify the following identities. Assume that all quantities are defined.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item  $\tan(\theta) = \sin(\theta) \sec(\theta)$
+
+\item  $(\tan(t) - \sec(t)) (\tan(t) + \sec(t))  = -1$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item  $\sin^{2}(x) \cos^{3}(x) = \sin^{2}(x) \left(1 - \sin^{2}(x)\right) \cos(x)$ \vphantom{$\dfrac{\sec(x)}{1 - \tan(x)}$}
+
+\item  $\dfrac{\sec(t)}{1 - \tan(t)} = \dfrac{1}{\cos(t) - \sin(t)}$
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item  $6\sec(x) \tan(x) = \dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)}$
+
+\item  \label{pythconjex} $\dfrac{\sin(\theta)}{1 - \cos(\theta)} = \dfrac{1 + \cos(\theta)}{\sin(\theta)}$
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}  In verifying identities, we typically start with the more complicated side of the equation and use known identities to \textit{transform} it into the other side of the equation. 
+
+\begin{enumerate} 
+
+
+\item Starting with the right hand side of $\tan(\theta) = \sin(\theta) \sec(\theta)$, we use $\sec(\theta) = \frac{1}{\cos(\theta)}$ and find:  \[ \sin(\theta) \sec(\theta) = \sin(\theta) \dfrac{1}{\cos(\theta)} = \dfrac{\sin(\theta)}{\cos(\theta)} = \tan(\theta),\]
+
+where the last equality is courtesy of Theorem \ref{recipquotidfull}.
+
+\item Expanding the left hand side, we get:  $(\tan(t) - \sec(t)) (\tan(t) + \sec(t)) = \tan^{2}(t) - \sec^{2}(t)$.  From Theorem \ref{pythids}, we know  $\sec^{2}(t) - \tan^{2}(t) = 1$, which isn't \textit{quite} what we have. We are off by a negative sign ($-$),  so we factor it out:
+
+\[ (\tan(t) - \sec(t)) (\tan(t) + \sec(t)) = \tan^{2}(t) - \sec^{2}(t) = (-1)( \sec^{2}(t) - \tan^{2}(t)) = (-1)(1) = -1.\]
+
+\item  Starting with the right hand side,\footnote{We hope by this point a shift of variable to `$x$' instead of `$\theta$' or `$t$' is a non-issue.} we notice we have a quantity we can immediately simplify per Theorem \ref{pythids}:  $1 - \sin^{2}(x) = \cos^{2}(x)$ .  This increases the number of factors of cosine, (which is part of our goal in looking at the left hand side), so we proceed:
+
+\[ \sin^{2}(x) \left(1 - \sin^{2}(x)\right) \cos(x) = \sin^{2}(x) \cos^{2}(x) \cos(x) = \sin^{2}(x) \cos^{3}(x).\]
+
+\item  While both sides of our next identity contain fractions, the left side affords us more opportunities to use our identities.\footnote{Or, to put to another way, earn more partial credit if this were an exam question!} Substituting $\sec(t) = \frac{1}{\cos(t)}$ and $\tan(t) = \frac{\sin(t)}{\cos(t)}$, we get:
+
+
+\[ \begin{array}{rcl} \dfrac{\sec(t)}{1 - \tan(t)} & = & \dfrac{ \dfrac{1}{\cos(t)}}{1 - \dfrac{\sin(t)}{\cos(t)}} = \dfrac{ \dfrac{1}{\cos(t)}}{1 - \dfrac{\sin(t)}{\cos(t)}} \cdot \dfrac{\cos(t)}{\cos(t)} \\ [.4in]
+ & = & \dfrac{\left( \dfrac{1}{\cos(t)} \right) ( \cos(t) )}{\left(1 - \dfrac{\sin(t)}{\cos(t)}\right)(\cos(t))} = \dfrac{1}{(1)(\cos(t)) - \left(\dfrac{\sin(t)}{\cos(t)}\right)(\cos(t))} \\ [.4in]
+                                                           & = & \dfrac{1}{\cos(t) - \sin(t)}, \end{array} \]
+which is exactly what we had set out to show.  
+
+\item Starting with the right hand side, we can get started by obtaining common denominators to add:
+
+\[ \begin{array}{rcl}
+
+\dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)} & = & \dfrac{3(1 + \sin(x))}{(1-\sin(x))(1 + \sin(x))} - \dfrac{3(1-\sin(x))}{(1 + \sin(x))(1-\sin(x))} \\ [.25in]
+                                                        & = & \dfrac{3 + 3\sin(x)}{1 - \sin^{2}(x)} - \dfrac{3 - 3\sin(x)}{1 - \sin^{2}(x)} \\ [.25in]
+                                                        & = & \dfrac{(3 + 3\sin(x)) - (3 - 3\sin(x))}{1 - \sin^{2}(x)} \\ [.25in]                                                        																																	
+                                                        & = & \dfrac{6 \sin(x)}{1 - \sin^{2}(x)} \end{array} \]
+
+At this point, we have at least reduced the number of fractions from two to one, it may not be clear how to proceed.   When this happens, it isn't a bad idea to start working with the other side of the identity to get some clues how to proceed.
+
+\smallskip
+
+Using a reciprocal and quotient identity, we find $6\sec(x) \tan(x) = 6 \left(\frac{1}{\cos(x)}\right) \left(\frac{\sin(x)}{\cos(x)}\right) = \frac{6 \sin(x)}{\cos^{2}(x)}$.  
+
+\smallskip
+
+Theorem \ref{pythids} tells us $1 -  \sin^{2}(x) = \cos^{2}(x)$, which means to our surprise and delight, we are much closer to our goal that we may have originally thought:
+
+\[ \begin{array}{rcl}
+
+\dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)} & = & \dfrac{6 \sin(x)}{1 - \sin^{2}(x)}= \dfrac{6 \sin(x)}{\cos^{2}(x)} \\ [.25in]
+& = &  6 \left(\dfrac{1}{\cos(x)}\right)\left( \dfrac{\sin(x)}{\cos(x)}\right) = 6 \sec(x) \tan(x). \\ \end{array} \]
+
+\item  It is debatable which side of the identity is more complicated.  One thing which stands out is that the denominator on the left hand side is $1-\cos(\theta)$, while the numerator of the right hand side is $1+\cos(\theta)$.  This suggests the strategy of starting with the left hand side and multiplying the numerator and denominator by the quantity $1+\cos(\theta)$.   Theorem \ref{pythids} comes to our aid once more when we simplify $1-\cos^{2}(\theta) = \sin^{2}(\theta)$:
+
+\[ \begin{array}{rcl}
+
+
+\dfrac{\sin(\theta)}{1 - \cos(\theta)} & = & \dfrac{\sin(\theta)}{(1 - \cos(\theta))} \cdot \dfrac{(1 + \cos(\theta))}{(1 + \cos(\theta))} = \dfrac{\sin(\theta)(1 + \cos(\theta))}{(1 - \cos(\theta))(1 + \cos(\theta))} \\ [.25in]
+& = & \dfrac{\sin(\theta)(1 + \cos(\theta))}{1 - \cos^{2}(\theta)} = \dfrac{\sin(\theta)(1 + \cos(\theta))}{\sin^{2}(\theta)} \\ [.25in]
+& = & \dfrac{\cancel{\sin(\theta)}(1 + \cos(\theta))}{\cancel{\sin(\theta)}\sin(\theta)} = \dfrac{1 + \cos(\theta)}{\sin(\theta)} \end{array} \]
+
+\vspace{-.1in} \qed
+
+\end{enumerate}
+
+\end{example}
+
+In Example \ref{idornotex1} number \ref{pythconjex} above,  we see that multiplying  $1-\cos(\theta)$ by $1+\cos(\theta)$ produces a difference of squares that can be simplified to one term using Theorem \ref{pythids}.  
+
+\smallskip
+
+This is exactly the same kind of phenomenon that occurs when we multiply expressions such as $1 - \sqrt{2}$ by $1+\sqrt{2}$ or $3 - 4i$ by $3+4i$. In algebra, these sorts of expressions were called `conjugates.'\footnote{See Sections  \ref{AppCmpNums} and \ref{AppRadEqus}.}  
+
+\smallskip
+
+For this reason, the quantities $(1-\cos(\theta))$ and $(1+\cos(\theta))$ are called `Pythagorean Conjugates.'  Below is a list of other common Pythagorean Conjugates.  
+
+\smallskip
+
+\phantomsection
+\label{PythagoreanConjugates}
+\smallskip
+%% \colorbox{ResultColor}{\bbm
+
+\smallskip
+
+\centerline{\textbf{Pythagorean Conjugates}}  \index{Pythagorean Conjugates}
+
+\begin{itemize}
+
+\item $1 - \cos(\theta)$ and  $1+\cos(\theta)$:  $(1-\cos(\theta))(1+\cos(\theta)) = 1 - \cos^{2}(\theta) = \sin^{2}(\theta)$
+
+\item  $1-\sin(\theta)$ and $1 + \sin(\theta)$:  $(1-\sin(\theta))(1+\sin(\theta)) = 1 - \sin^{2}(\theta) = \cos^{2}(\theta)$
+
+\item  $\sec(\theta)-1$ and $\sec(\theta)+1$:  $(\sec(\theta)-1)(\sec(\theta)+1) = \sec^{2}(\theta) - 1 =  \tan^{2}(\theta)$
+
+\item  $\sec(\theta)-\tan(\theta)$ and $\sec(\theta)+\tan(\theta)$:  $(\sec(\theta)-\tan(\theta))(\sec(\theta)+\tan(\theta)) = \sec^{2}(\theta) - \tan^{2}(\theta) = 1$
+
+\item  $\csc(\theta)-1$ and $\csc(\theta)+1$:  $(\csc(\theta)-1)(\csc(\theta)+1) = \csc^{2}(\theta) - 1 =  \cot^{2}(\theta)$
+
+\item  $\csc(\theta)-\cot(\theta)$ and $\csc(\theta)+\cot(\theta)$:  $(\csc(\theta)-\cot(\theta))(\csc(\theta)+\cot(\theta)) = \csc^{2}(\theta) - \cot^{2}(\theta) = 1$
+
+\smallskip
+
+\end{itemize}
+
+%% \ebm}
+
+
+\smallskip
+
+Verifying trigonometric identities requires a healthy mix of tenacity and inspiration.  You will need to spend many hours struggling with them just to become proficient in the basics. 
+
+\smallskip
+
+ Like many things in life, there is no short-cut here -- there is no complete algorithm for verifying identities.  Nevertheless, a summary of some strategies which  may be helpful (depending on the situation) is provided below and ample practice is provided for you in the Exercises.
+ 
+ \smallskip
+
+\phantomsection
+\label{IdentityHelp}
+
+%% \colorbox{ResultColor}{\bbm
+
+\medskip
+
+\centerline{\textbf{Strategies for Verifying Identities}} 
+
+\begin{itemize}
+
+\item  Try working on the more complicated side of the identity.
+
+\item Use the Reciprocal and Quotient Identities in Theorem \ref{recipquotidfull} to write functions on one side of the identity in terms of the functions on the other side of the identity.  
+
+\smallskip
+
+Simplify the resulting complex fractions.
+
+\item Add rational expressions with unlike denominators by obtaining common denominators.
+
+\item  Use the Pythagorean Identities in Theorem \ref{pythids} to `exchange' sines and cosines, secants and tangents, cosecants and cotangents, and simplify sums or differences of squares to one term. 
+
+\item Multiply numerator \textbf{and} denominator by Pythagorean
+Conjugates in order to take advantage of the Pythagorean Identities in  Theorem \ref{pythids}.
+
+\item If you find yourself stuck working with one side of the identity, try starting with the other side of the identity and see if you can find a way to bridge the two parts of your work.
+
+\item  Try \textit{something}.  The more you work with identities, the better you'll get with identities.
+
+\smallskip
+
+
+\end{itemize}
+
+%% \ebm}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforFundamentalTrigonometricIdentities}
+
+
+\closegraphsfile
+
+\end{document}

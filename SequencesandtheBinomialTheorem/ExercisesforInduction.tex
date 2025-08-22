@@ -1,0 +1,110 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{TITLE}
+\mfpicnumber{1} \opengraphsfile{ExercisesforInduction} % mfpic settings added 
+
+
+In Exercises \ref{proofindfirst} - \ref{proofindlast}, prove each assertion using the Principle of Mathematical Induction.
+
+\begin{enumerate}
+
+\item  $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$ \label{proofindfirst}
+
+\item  $\displaystyle{ \sum_{j=1}^{n} j^3 = \dfrac{n^2(n+1)^2}{4}}$
+
+\item  $2^{n} > 500 n$ for $n > 12$
+
+\item  $3^{n} \geq n^3$ for $n \geq 4$
+
+\item  Use the Product Rule for Absolute Value to show  $\left|x^{n}\right| = |x|^{n}$ for all real numbers $x$ and all natural numbers $n \geq 1$
+
+\item  Use the Product Rule for Logarithms to show $\log\left(x^{n}\right) = n \log(x)$ for all real numbers $x > 0$ and all natural numbers $n \geq 1$.
+
+\item  $\left[ \begin{array}{cc} a & 0 \\ 0 & b \\ \end{array} \right]^{n} = \left[ \begin{array}{cc} a^{n} & 0 \\ 0 & b^{n} \\ \end{array} \right]$ for $n \geq 1$. \label{proofindlast}
+
+
+\item  Prove Equations \ref{arithgeoformula} and \ref{arithgeosum} for the case of geometric sequences.  That is:
+
+\begin{enumerate}
+
+\item \label{proofgeosequeneex} For the sequence  $a_{\mbox{\tiny $1$}} = a$, $a_{n\mbox{\tiny{$+1$}}} = r a_{n}$, $n \geq 1$, prove $a_{n} = ar^{n-1}$, $n \geq 1$.
+
+\item  \label{proofgeosumex} $\displaystyle{\sum_{j=1}^{n} a r^{j-1} = a \left( \dfrac{1-r^n}{1-r}\right)}$, if $r \neq 1$, $\displaystyle{\sum_{j=1}^{n} a r^{j-1} = na}$, if $r=1$.
+
+\end{enumerate}
+
+\item  Prove that the determinant of a lower triangular matrix is the product of the entries on the main diagonal.  (See Exercise \ref{triangularmatrices} in Section \ref{MatArithmetic}.)  Use this result to then show $\det\left(I_{n}\right) = 1$ where $I_{n}$ is the $n \times n$ identity matrix.
+
+\item  \label{limitpowerruleproof} Prove the Power Rule for Limits (see Theorem \ref{LimitProp01} in Section \ref{IntroductiontoLimits}): $\ds{\lim_{x \rightarrow a} \left[f(x)\right]^{n} = \left[\lim_{x \rightarrow a} f(x) \right]^{n}= L^{n}}$, where $n$ is any natural number.
+
+\item  Discuss the classic  `paradox' \href{http://en.wikipedia.org/wiki/All_horses_are_the_same_color}{\underline{All Horses are the Same Color}} problem with your classmates.
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Selected Answers}
+
+\begin{enumerate}
+
+\item  Let $P(n)$ be the sentence $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$. For the base case, $n=1$, we get
+
+\[ \begin{array}{rcl} 
+
+\displaystyle{ \sum_{j=1}^{1} j^2} & \stackrel{?}{=} &  \dfrac{(1)(1+1)(2(1)+1)}{6} \\ [15pt]
+ 1^2  & = & 1 \, \checkmark \\ \end{array} \]
+
+
+We now assume $P(k)$ is true and use it to show $P(k+1)$ is true.  We have
+
+
+\[ \begin{array}{rcl} 
+
+\displaystyle{ \sum_{j=1}^{k+1} j^2} & \stackrel{?}{=} &  \dfrac{(k+1)((k+1)+1)(2(k+1)+1)}{6} \\ [15pt]
+\displaystyle{ \sum_{j=1}^{k} j^2}  + (k+1)^2 &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6} \\ [15pt]
+\underbrace{\dfrac{k(k+1)(2k+1)}{6}}_{\text{Using $P(k)$}} + (k+1)^2 &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ 
+
+&& \\
+
+\dfrac{k(k+1)(2k+1)}{6} + \dfrac{6(k+1)^2}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{k(k+1)(2k+1)+6(k+1)^2}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)(k(2k+1)+6(k+1))}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)\left(2k^2+7k+6\right)}{6} &  \stackrel{?}{=}  & \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ [10pt]
+\dfrac{(k+1)(k+2)(2k+3)}{6} & = & \dfrac{(k+1)(k+2)(2k+3)}{6}  \, \checkmark \\ [10pt]
+ \end{array} \]
+ 
+ By induction, $\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}$ is true for all natural numbers $n \geq 1$.
+
+\addtocounter{enumi}{2}
+
+\item Let $P(n)$  be the sentence $3^n > n^3$.  Our base case is $n=4$ and we check $3^4 = 81$ and $4^3 = 64$ so that $3^4 > 4^3$ as required.  We now assume $P(k)$ is true, that is $3^k > k^3$, and try to show $P(k+1)$ is true.  We note that $3^{k+1} = 3 \cdot 3^{k} > 3k^3$ and so we are done if we can show $3k^3 > (k+1)^3$ for $k \geq 4$. We can solve the inequality $3x^3 > (x+1)^3$ using the techniques of Section \ref{RootRadicalFunctions}, and doing so gives us $x > \frac{1}{\sqrt[3]{3}-1} \approx 2.26.$  Hence, for $k \geq 4$, $3^{k+1} = 3 \cdot 3^{k} > 3k^3 > (k+1)^3$ so that $3^{k+1} > (k+1)^3$.   By induction, $3^n > n^3$ is true for all natural numbers $n \geq 4$.
+
+\addtocounter{enumi}{1}
+
+\item  Let $P(n)$ be the sentence $\log\left(x^n \right) = n \log(x)$.  For the duration of this argument, we assume $x > 0$. The base case $P(1)$ amounts checking that $\log\left(x^1\right) = 1 \log(x)$ which is clearly true.  Next we assume $P(k)$ is true, that is $\log\left(x^{k}\right) = k \log(x)$ and try to show $P(k+1)$ is true.  Using the Product Rule for Logarithms along with the induction hypothesis, we get
+
+ \[\log\left(x^{k+1}\right) = \log\left(x^{k} \cdot x\right) = \log\left(x^{k}\right) + \log(x) = k \log(x) + \log(x) = (k+1) \log(x) \]
+ 
+ Hence, $\log\left(x^{k+1}\right) = (k+1) \log(x)$.  By induction  $\log\left(x^n \right) = n \log(x)$ is true for all $x>0$ and all natural numbers $n \geq 1$.
+
+
+\addtocounter{enumi}{2}
+
+\item  Let $A$ be an $n \times n$ lower triangular matrix.  We proceed to prove the $\det(A)$ is the product of the entries along the main diagonal by inducting on $n$.  For $n=1$, $A = [a]$ and $\det(A) = a$, so the result is (trivially) true.  Next suppose the result is true for $k \times k$ lower triangular matrices.  Let $A$ be a $(k+1) \times (k+1)$ lower triangular matrix.  Expanding $\det(A)$ along the first row, we have
+
+\[ \det(A)  = \displaystyle{\sum_{p=1}^{n} a_{\mbox{\tiny$1$}p} C_{\mbox{\tiny$1$}p}} \]
+
+Since $a_{\mbox{\tiny$1$}p} = 0$ for $2 \leq p \leq k+1$, this simplifies $\det(A) = a_{\mbox{\tiny$11$}}C_{\mbox{\tiny$11$}}$.  By definition, we know that $C_{\mbox{\tiny$11$}} = (-1)^{1+1} \det\left(A_{\mbox{\tiny$11$}}\right) =\det\left(A_{\mbox{\tiny$11$}}\right)$ where $A_{\mbox{\tiny$11$}}$ is $k \times k$  matrix obtained by deleting the first row and first column of $A$. Since $A$ is lower triangular, so is $A_{\mbox{\tiny$11$}}$ and, as such, the induction hypothesis applies to $A_{\mbox{\tiny$11$}}$. In other words, $\det\left(A_{\mbox{\tiny$11$}}\right)$ is the product of the entries along $A_{\mbox{\tiny$11$}}$'s main diagonal.  Now, the entries on the main diagonal of $A_{\mbox{\tiny$11$}}$ are the entries $a_{\mbox{\tiny$22$}}$, $a_{\mbox{\tiny$33$}}$, \ldots, $a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})}$ from the main diagonal of $A$.  Hence,
+
+\[ \det(A) = a_{\mbox{\tiny$11$}} \det\left(A_{\mbox{\tiny$11$}}\right) = a_{\mbox{\tiny$11$}} \left(a_{\mbox{\tiny$22$}}a_{\mbox{\tiny$33$}} \cdots a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})} \right) = a_{\mbox{\tiny$11$}} a_{\mbox{\tiny$22$}}a_{\mbox{\tiny$33$}} \cdots a_{(k\mbox{\tiny$+1$})(k\mbox{\tiny$+1$})}\]
+
+We have $\det(A)$ is the product of the entries along its main diagonal.  This shows $P(k+1)$ is true, and, hence, by induction, the result holds for all $n \times n$ upper triangular matrices. The $n \times n$ identity matrix $I_{n}$ is a lower triangular matrix whose main diagonal consists of all $1$'s.  Hence,  $\det\left(I_{n}\right) = 1$, as required.
+
+\end{enumerate}
+
+
+
+
+\end{document}

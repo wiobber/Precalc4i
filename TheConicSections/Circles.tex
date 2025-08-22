@@ -1,0 +1,417 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Circles}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{Circles}
+
+\setcounter{footnote}{0}
+
+\setlength{\extrarowheight}{2pt}
+
+\label{Circles}
+
+Our next entry in the conic sections menagerie is the circle.  Recall from Geometry that a circle can be determined by fixing a point (called the center) and a positive number (called the radius) as follows. \index{circle ! radius of} \index{circle ! center of} \index{center ! of a circle} \index{radius ! of a circle}
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition} \label{circledefn}  A \textbf{circle} with center $(h,k)$ and radius $r>0$ is the set of all points $(x, y)$ in the plane whose distance to $(h,k)$ is $r$. \index{circle ! definition of} 
+
+\end{definition} 
+
+%% \ebm}
+
+\smallskip
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\arrow\reverse\arrow \polyline{(0.25,0.25), (2.55,2.55)}
+\tlabel(-0.5,-0.8){$(h,k)$}
+\tlabel(1,1.55){$r$}
+\plotsymbol[3pt]{Cross}{(0,0)}
+\point[3pt]{(2.8284,2.8284)}
+\tlabel(3,3){$(x,y)$}
+\penwd{1.25pt}
+\circle{(0,0),4}
+\end{mfpic}
+
+\end{center}
+
+From the diagram, we see that a point $(x,y)$ is on the circle if and only if its distance to $(h,k)$ is $r$.  We  express this relationship algebraically using the Distance Formula, Equation \ref{distanceformula}, as 
+
+\[r = \sqrt{(x - h)^2 + (y-k)^2}\]  
+By squaring both sides of this equation, we get an equivalent equation (since $r > 0$) which gives us the standard equation of a circle.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn}  \label{standardcircle} \index{circle ! standard equation} \textbf{The Standard Equation of a Circle:}  
+
+The equation of a circle with center $(h,k)$ and radius $r >0$ is $(x-h)^2 + (y-k)^2 = r^2.$
+
+\end{eqn}
+  
+%% \ebm}
+  
+\smallskip
+
+Note in the standard equation of a circle, \textit{both} of the variables squared.  This is a quick way to distinguish the equation of a circle from that of a parabola in which only \textit{one} of the variables is squared.   
+
+\smallskip
+
+ We put Equation \ref{standardcircle} to good use in the following example.
+
+\begin{example} $~$
+
+\begin{enumerate} 
+
+\item \label{circleex1} For each of the equations below:
+
+\begin{itemize}
+
+\item  Graph the equation in the $xy$-plane.
+
+\item  Find the center and radius.
+
+\end{itemize}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item $(x+2)^2+(y-1)^2 = 4$
+
+\item  \label{ctscircleex} $3x^2 - 6x + 3y^2 + 4y -4 = 0$
+
+\end{enumerate}
+
+\end{multicols}
+
+\item  Graph $f(x) = - \sqrt{4x-x^2}$.
+
+\newpage
+
+\item  Find the standard form of the circle satisfying the following characteristics:
+
+\begin{enumerate}
+
+\item  The points $(-1,3)$ and $(2,4)$ are the endpoints of a diameter.
+
+\item  The circle whose graph is below.
+
+\begin{center}
+
+\begin{mfpic}[15]{-5}{1}{-1}{5}
+\axes
+\xmarks{-4, -3, -2, -1, 0}
+\ymarks{1,2,3,4}
+\tlabel(1,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\tlabel[cc](-2, -0.5){\scriptsize $(-2,0)$}
+\tlabel[cc](1,2){\scriptsize $(0,2)$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$-4 \hspace{7pt}$} -4}
+\axislabels {y}{ {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\circle{(-2,2),2}
+\point[4pt]{(-2,0), (0,2)}
+\end{mfpic}
+
+\end{center}
+
+\end{enumerate}
+
+
+\end{enumerate}
+
+\smallskip
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item   
+
+\begin{enumerate}
+
+\item Rewriting  $(x+2)^2+(y-1)^2 = 4$ as  $(x-(-2))^2+(y-1)^2 = (2)^2$, we identify $h = -2$, $k=1$ and $r = 2$.  Thus we have a circle centered at $(-2,1)$ with a radius of $2$.  
+
+\smallskip
+
+To help us create a detailed graph, we start from the center $(-2,1)$ and move  two units to the left and two units up and down to the right to identify four points on the graph.\footnote{Note the center of the circle is \textit{not} on the graph of the circle!} We get $(-2-2, 1) = (-4,1)$, $(-2+2, 1) = (0,1)$,  $(-2, 1+2) = (-2,3)$ and $(-2,1-2) = (-2,-1)$.  Our graph is below on the left.
+
+\item In order to make use of Equation \ref{standardcircle}, we need to put $3x^2 - 6x + 3y^2 + 4y -4 = 0$ into standard form.  To that end, we complete the square on both the $x$ and $y$ terms and collect the constants to the other side of the equation as demonstrated below.
+
+
+\[ \begin{array}{rclr} 3x^2 - 6x + 3y^2 + 4y -4 & = & 0 & \\ 
+ 3x^2 - 6x + 3y^2 + 4y & = & 4 & \text{add $4$ to both sides} \\ [3pt]
+ 3\left(x^2 - 2x \right) + 3\left(y^2 + \dfrac{4}{3} y\right) & = & 4 & \text{factor out leading coefficients} \\ [10pt]
+ 3\left(x^2 - 2x + \underline{1} \right) + 3\left(y^2 + \dfrac{4}{3} y + \underline{\underline{\dfrac{4}{9}}} \right) & = & 4 + 3\underline{(1)} + 3\underline{\underline{\left(\dfrac{4}{9}\right)}} &  \text{complete the square in $x$, $y$} \\  [10pt]
+ 3(x - 1)^2 + 3\left(y + \dfrac{2}{3}\right)^2 & = & \dfrac{25}{3} & \text{factor} \\ [10pt]
+ (x - 1)^2 + \left(y + \dfrac{2}{3}\right)^2 & = & \dfrac{25}{9} & \text{divide both sides by $3$} \\ [10pt]
+ (x - 1)^2 + \left(y - \left(- \dfrac{2}{3} \right) \right)^2 & = & \left( \dfrac{5}{3} \right)^2 & \text{rewrite in the form of Equation \ref{standardcircle}.}
+ \end{array} \]
+ 
+
+From Equation \ref{standardcircle}, we identify $h = 1$,  $k =  - \frac{2}{3}$, and $r   = \frac{5}{3}$.  Hence, we have a circle with center  $\left(1, -\frac{2}{3}\right)$ and radius  $ \frac{5}{3}$.  
+
+\smallskip
+
+As above, we find four points on the circle by starting at the center  $\left(1, -\frac{2}{3}\right)$ and moving up, down, to the left, and to the right $ \frac{5}{3}$ units.  Doing so produces the following points: $\left(-\frac{2}{3}, -\frac{2}{3}\right)$ , $\left(\frac{8}{3}, -\frac{2}{3}\right)$ ,   $\left(1, 1\right)$, and $\left(1, -\frac{7}{3}\right)$.  Our graph is below on the right.
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[20]{-5}{2}{-2}{4}
+\axes
+\plotsymbol[3pt]{Cross}{(-2,1)}
+\tlabel[cc](-2, 1.5){\scriptsize $(-2,1)$}
+\tlabel[cc](1, 1){\scriptsize $(0,1)$}
+\tlabel[cc](-5, 1){\scriptsize $(-4,1)$}
+\tlabel[cc](-2, 3.5){\scriptsize $(-2,3)$}
+\tlabel[cc](-2, -1.5){\scriptsize $(-2,-1)$}
+\tcaption{\scriptsize The graph of $(x+2)^2+(y-1)^2 = 4$}
+\xmarks{-4, -3, -2,-1,0, 1}
+\ymarks{-1,0,1, 2,3}
+\tlabel(2,-0.25){\scriptsize $x$}
+\tlabel(0.25,4){\scriptsize $y$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
+\axislabels {y}{{$-1$} -1, {$1$} 1,  {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\circle{(-2,1),2}
+\point[4pt]{(0,1), (-4,1), (-2,3), (-2,-1)}
+\end{mfpic}
+
+\begin{mfpic}[20]{-2}{5}{-4}{2}
+\axes
+\plotsymbol[3pt]{Cross}{(1, -0.6666)}
+\tlabel[cc](-1.75, -0.6666){\scriptsize $\left(-\frac{2}{3}, -\frac{2}{3}\right)$}
+\tlabel[cc](3.5, -0.6666){\scriptsize $\left(\frac{8}{3}, -\frac{2}{3}\right)$}
+\tlabel[cc](1, 1.5){\scriptsize $\left(1, 1\right)$}
+\tlabel[cc](1, -2.8){\scriptsize $\left(1, -\frac{7}{3}\right)$}
+\tlabel[cc](1, -1.25){\scriptsize  $\left(1, -\frac{2}{3}\right)$}
+\tcaption{\scriptsize The graph of $3x^2 - 6x + 3y^2 + 4y -4 = 0$}
+\xmarks{-1, 1, 2, 3, 4}
+\ymarks{-3,-2,-1,1}
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$2$} 2}
+\axislabels {y}{{$-3$} -3,  {$1$} 1}
+\normalsize
+\penwd{1.25pt}
+\circle{(1,-0.6666),1.6666}
+\point[4pt]{(-0.6666,-0.6666), (2.6666,-0.6666), (1,1), (1,-2.3333)}
+\end{mfpic}
+
+\end{multicols}
+
+\end{center}
+
+\end{enumerate}
+
+\item  We are asked to graph $f(x) = - \sqrt{4x-x^2}$, which, at first glance, seems out of place in this section. However, to graph means we graph the equation  $y = -\sqrt{4x-x^2}$.  
+
+\smallskip
+
+Squaring both sides, we get  $y^2 = (-\sqrt{4x-x^2})^2$ or   $y^2 = 4x - x^2$.  Rearranging this equation gives $x^2-4x+y^2 = 0$.   Completing the square, we obtain $(x-2)^2 + y^2  = 4$ which, when rewritten as $(x-2)^2 + (y-0)^2 = (2)^2$ is precisely the standard form of a circle as written in Equation \ref{standardcircle}.  
+
+
+\smallskip
+
+With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a circle of radius $2$ centered at $(2,0)$.  However,  the graph we want isn't the \textit{entire} circle.\footnote{For one thing, the graph of a circle fails the Vertical Line Test so it does not represent $y$ as a function of $x$ in this case.}  Indeed, we want the graph of $y = -\sqrt{4x-x^2}$. Because of the `$-$ ',  we want the \textit{lower} semicircle, graphed below on the left.
+
+\item 
+
+\begin{enumerate}
+
+\item  We recall that a diameter of a circle is a line segment containing the center and two points on the circle.  We plot the data given to us below on the right.
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[20]{-2}{5}{-3}{3}
+\axes
+\plotsymbol[3pt]{Cross}{(2,0) }
+\tlabel[cc](2, -2.5){\scriptsize $(2,-2)$}
+\tlabel[cc](0.5, 0.25){\scriptsize $(0,0)$}
+\tlabel[cc](3.5, 0.25){\scriptsize $(4,0)$}
+\tlabel[cc](2, 0.25){\scriptsize $(2,0)$}
+\dotted \circle{(2,0),2}
+\tcaption{\scriptsize The graph of $f(x) = - \sqrt{4x-x^2}$.}
+\xmarks{-1, 1,  3, 4}
+\ymarks{-2,-1,1,2}
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,3){\scriptsize $y$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$1$} 1,  {$2$} 2, {$3$} 3}
+\axislabels {y}{{$-2$} -2,  {$-1$} -1,  {$1$} 1,  {$2$} 2}
+\normalsize
+\penwd{1.25pt}
+\plrfcn{90,180,5}{4*cosd(t)}
+\point[4pt]{(0,0), (2,-2), (4,0)}
+\end{mfpic}
+
+
+
+\begin{mfpic}[20]{-2}{4}{-0.5}{5.5}
+\axes
+\dashed \circle{(0.5,3.5),3.162277660/2}
+\point[4pt]{(-1,3), (2,4)}
+\plotsymbol[3pt]{Cross}{(0.5,3.5)}
+\xmarks{-2,-1,0,1,2,3}
+\ymarks{0,1,2,3,4,5}
+\tlabel(4,-0.25){ \scriptsize $x$}
+\tlabel(0.25,5.5){ \scriptsize $y$}
+\arrow \reverse \arrow \polyline{(0.75,3.583),(1.75,3.916)}
+\tlabel[cc](0.85,3){\scriptsize $(h,k)$}
+\tlabel[cc](1.15,4){\scriptsize $r$}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$}, 5}
+\normalsize
+
+\end{mfpic}
+
+
+\end{multicols}
+\end{center}
+
+Since the given points are endpoints of a diameter, we know their midpoint $(h, k)$ is the center of the circle.  Likewise, the diameter of the circle is the distance between the given points, so we can find the radius of the circle by taking half of this distance.  Using Equations \ref{midpointformula} and \ref{distanceformula}, respectively, we get:
+
+\begin{multicols}{2}
+
+$\begin{array}{rcl} (h,k) &  = & \left( \dfrac{x_{\text{\tiny$0$}} + x_{\text{\tiny$1$}}}{2},  \dfrac{y_{\text{\tiny$0$}} + y_{\text{\tiny$1$}}}{2} \right) \\ [8pt]
+&  = &  \left( \dfrac{-1+2}{2},  \dfrac{3+4}{2} \right) \\ [8pt]
+& = &  \left( \dfrac{1}{2},  \dfrac{7}{2} \right)   \\  [8pt]
+&& \\ \end{array}$
+
+$\begin{array}{rcl} r &  = & \dfrac{1}{2} \sqrt{\left(x_{\text{\tiny$1$}} - x_{\text{\tiny$0$}}\right)^2+\left(y_{\text{\tiny$1$}}-y_{\text{\tiny$0$}}\right)^2}  \\ [8pt]
+ &  = & \dfrac{1}{2} \sqrt{(2-(-1))^2+(4-3)^2} \\ [8pt]
+ & = & \dfrac{1}{2} \sqrt{3^2+1^2} \\ [8pt]
+ & = &\dfrac{\sqrt{10}}{2} \end{array} $
+ 
+ \end{multicols}
+ 
+ 
+Finally, since $\left( \frac{\sqrt{10}}{2} \right)^2 = \frac{10}{4} = \frac{5}{2}$, our answer becomes $\left(x - \frac{1}{2} \right)^2 + \left(y - \frac{7}{2} \right)^2 =\frac{5}{2}$
+
+\item  From the graph given to us, we are safe to assume the center of the circle is $(-2,2)$ since the circle appears to be \textit{tangent} to the coordinate axes at $(-2,0)$ and $(0,2)$.\footnote{Recall that for every point $P$ on the circle, the tangent line at $P$ is perpendicular to the radial line containing the center and $P$. Since the circle is tangent to the $x$-axis at $(-2,0)$, the center must lie on a line perpendicular to the $x$-axis which contains $(-2,0)$ or $x = -2$.  Likewise,  the circle is tangent to the $y$-axis at $(0,2)$,  the center must lie on $y=2$.  Hence the center is $(-2,2)$.}   Moreover, since the distance from $(-2,2)$ to either of $(-2,0)$ or $(0,2)$ is $2$, the radius of the circle is $2$.  Per Equation \ref{standardcircle}, our answer is $(x-(-2))^2 + (y-2)^2 = (2)^2$ or $(x+2)^2+(y-2)^2 = 4$. \qed
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{example}
+
+In number \ref{ctscircleex} above, we needed to transform a given equation into the standard form as stated in Equation \ref{standardcircle}.  We record these steps below.  Note that given an equation that represents a circle, \textit{both} variables need to be squared and the squared terms must have the \textit{same} coefficients.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\centerline{\textbf{To Write the Equation of a Circle in Standard Form}}
+
+\begin{enumerate}
+
+\item  Group common variables together on one side of the equation and put the constant on the other.
+
+\item  Complete the square on both variables as needed.
+
+\item  Divide both sides by the coefficient of the squares. (For circles, they will be the same.)
+
+\end{enumerate}
+
+%% \ebm}
+
+\smallskip
+
+It is possible to obtain equations like $(x-3)^2 + (y+1)^2 = 0$ or $(x-3)^2 + (y+1)^2 = -1$, neither of which describes a circle. (Do you see why not?)  The reader is encouraged to think about what, if any, points lie on the graphs of these two equations.  
+
+\smallskip
+
+We close this section with a brief discussion of the so-called  \textit{Unit Circle}.\footnote{Widely regarded as the most important circle in all of mathematics.}
+
+\bigskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition}
+
+The \textbf{Unit Circle} \index{Unit Circle ! definition of} \label{UnitCircle} is the circle centered at $(0,0)$ with a radius of $1$.  The standard equation of the Unit Circle is $x^2 + y^2 = 1.$
+
+\end{definition}
+
+%% \ebm}
+
+\smallskip
+
+In some ways, we may think of the Unit Circle as the progenitor of all circles.  Indeed, if we divide both sides of Equation \ref{standardcircle} by $r^2$, we obtain the alternate standard form of a circle below.  
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{eqn} \label{standardcirclealternate} \index{circle ! standard equation, alternate} \textbf{The Alternate Standard Equation of a Circle:}  The equation of a circle with center $(h,k)$ and radius $r >0$ is
+
+\[ \dfrac{(x-h)^2}{r^2} + \dfrac{(y-k)^2}{r^2} = 1 \]
+
+\end{eqn}
+
+%% \ebm}
+
+\smallskip
+
+Taking this one step further, we may rewrite Equation \ref{standardcirclealternate} as  \[ \left( \dfrac{x-h}{r} \right)^2 +  \left( \dfrac{y-k}{r} \right)^2 = 1. \] Hence, every circle can be obtained from the Unit Circle via the transformations discussed in Section \ref{Transformations}.\footnote{See Exercise \ref{circletransunitcircleexercise}.}
+
+\smallskip
+
+Our last example has us find some important points on the the Unit Circle.
+
+\smallskip
+
+\begin{example}  Find the points on the unit circle with $y$-coordinate $\frac{\sqrt{3}}{2}$.
+
+\medskip
+
+{\bf Solution.}  Note that all points $(x,y)$ on the Unit Circle satisfy the equation $x^2+y^2 = 1$. Hence, our first step is  to replace $y$ with $\frac{\sqrt{3}}{2}$ and solve for $x$. 
+
+ \[ \begin{array}{rclr} x^2 + y^2 & = & 1 & \\
+ x^2 + \left(\dfrac{\sqrt{3}}{2}\right)^2 & = & 1 &  \\ [13pt]
+ \dfrac{3}{4} + x^2 & = & 1 & \\
+ x^2 & = & \dfrac{1}{4} & \\
+ x  & = & \pm \sqrt{\dfrac{1}{4}} & \text{extract square roots} \\ [7pt]
+ x & = & \pm \dfrac{1}{2} & \\  \end{array} \]
+
+
+We find $x = \pm \frac{1}{2}$ so our final answers are  $\left(\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$ and $\left(-\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$.  \qed
+
+\end{example}
+
+\newpage
+
+\subsection{Exercises}
+
+%% SKIPPED %% \input{ExercisesforCircles}
+
+\closegraphsfile
+
+\end{document}

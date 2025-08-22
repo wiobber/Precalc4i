@@ -1,0 +1,1305 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Graphs of Secant, Cosecant, Tangent, and Cotangent Functions}
+
+
+\mfpicnumber{1}
+
+\opengraphsfile{GraphsofOtherCircularFunctions}
+
+\setcounter{footnote}{0}
+
+\label{GraphsofOtherCircularFunctions}
+
+
+\subsection{Graphs of the Secant and Cosecant Functions}
+\label{secantcosecantgraphsection}
+
+As mentioned at the end of Section \ref{TheOtherCircularFunctions}, one way to proceed with our analysis of the circular functions is to use what we know about the functions $\sin(t)$ and $\cos(t)$ to rewrite the four additional circular functions in terms of sine and cosine with help from Theorem \ref{recipquotid}.  We use this approach to analyze $F(t) = \sec(t)$.
+
+\smallskip
+
+Rewriting $F(t) = \sec(t)= \frac{1}{\cos(t)}$, we first note that  $F(t)$ is undefined whenever $\cos(t) = 0$.  Thanks to Example \ref{solveforangle} number \ref{cosineiszero}, we know $\cos(t) = 0$ whenever $t = \frac{\pi}{2} + \pi k$ for integers $k$.
+
+\smallskip
+
+This gives us one way to describe the domain of $F$:  $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  To get a better feel for the set of real numbers we're dealing with, we write out and graph the domain on the number line.
+
+\smallskip
+
+Running through a few values of $k$, we find some of the values excluded from the domain:   $t \neq  \pm \frac{\pi}{2}, \, \pm \frac{3\pi}{2}, \, \pm \frac{5\pi}{2}$.  Using these we can graph the domain on the number line below.
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-6}{6}{-1}{2}
+\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
+\xmarks{-5,-3,-1,1,3,5}
+\tlpointsep{4pt}
+\axislabels {x}{{\small $-\frac{5\pi}{2} \hspace{7pt}$} -5,{\small $-\frac{3\pi}{2} \hspace{7pt}$} -3, {\small $-\frac{\pi}{2} \hspace{7pt}$} -1,{\small $0$} 0,{\small $\frac{\pi}{2}$} 1,  {\small $\frac{3\pi}{2}$} 3,  {\small $\frac{5\pi}{2}$} 5}
+
+\penwd{1.5}
+\arrow \reverse \arrow \polyline{(-6,1), (6,1)}
+
+\penwd{0.75}
+
+\gclear \circle{(-5,1),0.15}
+\circle{(-5,1),0.15}
+
+\gclear \circle{(-3,1),0.15}
+\circle{(-3,1),0.15}
+
+\gclear \circle{(-1,1),0.15}
+\circle{(-1,1),0.15}
+
+\gclear \circle{(5,1),0.15}
+\circle{(5,1),0.15}
+
+\gclear \circle{(3,1),0.15}
+\circle{(3,1),0.15}
+
+\gclear \circle{(1,1),0.15}
+\circle{(1,1),0.15}
+
+\end{mfpic}
+
+\end{center}
+
+Expressing this set using interval notation is a bit of a challenge, owing to the infinitely many intervals present.  As a first attempt, we have:  $\ldots \cup \left( -\frac{5\pi}{2}, -\frac{3\pi}{2}\right) \cup \left( -\frac{3\pi}{2}, -\frac{\pi}{2}\right) \cup  \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3\pi}{2}\right) \cup  \left(\frac{3\pi}{2}, \frac{5\pi}{2}\right) \cup \ldots$, where, as usual, the periods of ellipsis indicate the pattern continues indefinitely.\footnote{We introduce an extended form of interval notation in Section \ref{extendedinterval} which gives us a more compact way to express this set. } Hence, for now, it suffices to know that the domain of $F(t) = \sec(t)$ excludes the odd multiples of $\frac{\pi}{2}$.
+
+\smallskip
+
+
+To find the range of $F$, we find it helpful once again to view  $F(t) = \sec(t) = \frac{1}{\cos(t)}$.   We know the range of $\cos(t)$ is $[-1,1]$, and since $F(t) = \sec(t) = \frac{1}{\cos(t)}$ is  undefined when $\cos(t) = 0$, we split our discussion into two cases: when $0 < \cos(t) \leq 1$ and when $-1 \leq \cos(t) < 0$. 
+
+\smallskip
+
+ If $0 < \cos(t) \leq 1$, then we can divide the inequality $\cos(t) \leq 1$ by  $\cos(t)$ to obtain  $\sec(t) = \frac{1}{\cos(t)} \geq 1$.  Moreover, we see as  $\cos(t) \rightarrow 0^{+}$, $\sec(t) \rightarrow \infty$.   If, on the other hand, if $-1 \leq \cos(t) < 0$, then dividing by $\cos(t)$ causes a reversal of the inequality so that $\sec(t) = \frac{1}{\cos(t)} \leq -1$.  In this case, as $\cos(t) \rightarrow 0^{-}$,  $\sec(t) \rightarrow -\infty$.   Since $\cos(t)$ admits all of the values in $[-1,1]$, the function $F(t) = \sec(t)$ admits all of the values in $(-\infty, -1] \cup [1,\infty)$.  
+
+\smallskip
+
+Since $\cos(t)$ is periodic with period $2\pi$, it shoudn't be too surprising to find that $\sec(t)$ is also.  Indeed, provided $\sec(\alpha)$ and  $\sec(\beta)$ are defined, $\sec(\alpha) = \sec(\beta)$ if and only if $\cos(\alpha) = \cos(\beta)$.  Said differently,  $\sec(t)$ `inherits' its period from $\cos(t)$. 
+
+\smallskip
+
+We now turn our attention to graphing $F(t) = \sec(t)$.  Using the table of values we tabulated when graphing $y = \cos(t)$ in Section \ref{GraphsofSineandCosine}, we can generate points on the graph of $y = \sec(t)$ by taking reciprocals.
+
+\smallskip
+
+Using the techniques developed in Section \ref{IntroRational}, we can more closely analyze the behavior of $F$ near the values excluded from its domain.  We find  as $t \rightarrow \frac{\pi}{2}^{-}$, $\cos(t) \rightarrow 0^{+}$, so $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{-}}\sec(t) = \infty}$.  Similarly, we get $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{+}}\sec(t) = -\infty}$, $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{-}}\sec(t) = -\infty}$, and $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{+}}\sec(t)  = \infty}$.  This means the lines $t = \frac{\pi}{2}$ and $t = \frac{3\pi}{2}$ are vertical asymptotes to the graph of $y = \sec(t)$.
+
+
+\smallskip
+
+Below on the right we graph a fundamental cycle of $y = \sec(t)$ \index{secant ! graph of} with the graph of the fundamental cycle of $y = \cos(t)$ dotted for reference.  
+
+\smallskip
+
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|r|}  
+
+\hline
+
+ t & \cos(t) & \sec(t) & (t,\sec(t)) \\ \hline
+0  & 1 & 1 & (0,1) \\ [2pt]   \hline
+\frac{\pi}{4}  & \frac{\sqrt{2}}{2} & \sqrt{2} & \left(\frac{\pi}{4}, \sqrt{2} \right) \\ [2pt] \hline 
+\frac{\pi}{2}  & 0 & \text{undefined} &  \\ [2pt] \hline 
+\frac{3\pi}{4}  & -\frac{\sqrt{2}}{2} & -\sqrt{2} & \left(\frac{3\pi}{4}, -\sqrt{2} \right) \\ [2pt] \hline 
+\pi & -1 & -1 &  (\pi, -1) \\ [2pt] \hline 
+\frac{5\pi}{4}  & -\frac{\sqrt{2}}{2} & -\sqrt{2} & \left(\frac{5\pi}{4}, -\sqrt{2} \right) \\ [2pt] \hline 
+\frac{3\pi}{2}  & 0 & \text{undefined} & \\ [2pt] \hline 
+\frac{7\pi}{4}  & \frac{\sqrt{2}}{2} & \sqrt{2} & \left(\frac{7\pi}{4}, \sqrt{2} \right) \\ [2pt] \hline 
+2\pi  & 1 &  1& (2\pi, 1) \\  [2pt] \hline
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[25]{-1}{7}{-4}{4}
+\point[4pt]{(0,1), (0.7854,1.4142),  (2.3562,-1.4142), (3.1416, -1), (3.9270,-1.4142),  (5.4978,1.4142), (6.2832,1)}
+\axes
+\tlabel[cc](7,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4){\scriptsize $y$}
+\tcaption{The `fundamental cycle' of $y = \sec(t)$.}
+\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {t}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
+\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\normalsize
+\dotted \function{0, 6.2832, 0.1}{cos(x)}
+\dashed \polyline{(1.5708, -4), (1.5708, 4)}
+\dashed \polyline{(4.7124, -4), (4.7124, 4)}
+\penwd{1.25pt}
+\arrow \function{0, 1.3181, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
+\arrow \reverse \function{4.9651, 6.28, 0.1}{1/cos(x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+To get a graph of the entire secant function, we paste copies of the fundamental cycle end to end to produce the graph below.  The graph suggests that $F(t) =\sec(t)$ is even. Indeed, since $\cos(t)$ is even, that is, $\cos(-t) = \cos(t)$, we have $\sec(-t) = \frac{1}{\cos(-t)} = \frac{1}{\cos(t)} = \sec(t)$.  Hence, along with its period,  the secant function inherits its symmetry from the cosine function.
+
+\begin{center}
+
+\begin{mfpic}[15]{-13}{13}{-4}{4}
+\point[4pt]{(0,1), (3.1416, -1), (6.2832,1)}
+\axes
+\tlabel[cc](13,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4){\scriptsize $y$}
+\tcaption{The graph of $y = \sec(t)$.}
+\tlpointsep{4pt}
+\dotted \function{-12.5664, 12.5664, 0.1}{cos(x)}
+\dashed \polyline{(1.5708, -4), (1.5708, 4)}
+\dashed \polyline{(4.7124, -4), (4.7124, 4)}
+\dashed \polyline{(7.8540, -4), (7.8540, 4)}
+\dashed \polyline{(10.9956, -4), (10.9956, 4)}
+\dashed \polyline{(-1.5708, -4), (-1.5708, 4)}
+\dashed \polyline{(-4.7124, -4), (-4.7124, 4)}
+\dashed \polyline{(-7.8540, -4), (-7.8540, 4)}
+\dashed \polyline{(-10.9956, -4), (-10.9956, 4)}
+\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{4.9651, 7.6013, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{8.1067, 10.7432, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{-1.8235, -4.460, -0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{-4.9651, -7.6013, -0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{-8.1067, -10.7432, -0.1}{1/cos(x)}
+\arrow \reverse \function{-11.2483, -12.5664, -0.1}{1/cos(x)}
+\arrow \reverse \function{11.2483, 12.5664, 0.1}{1/cos(x)}
+\penwd{1.5pt}
+\arrow \function{0, 1.3181, 0.1}{1/cos(x)}
+\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
+\arrow \reverse \function{4.9651, 6.28, 0.1}{1/cos(x)}
+\end{mfpic}
+
+\end{center}
+
+
+
+As one would expect, to graph $G(t) = \csc(t)$ we begin with $y = \sin(t)$ and take reciprocals of the corresponding $y$-values.  Here, we encounter issues at $t = 0$, $t = \pi$, $t = 2\pi$, and, in general, at all whole number multiples of $\pi$, so the domain of $G$ is $\{ t \, | \, t \neq  \pi k, \text{for integers $k$} \}$.  Not surprisingly, these values produce vertical asymptotes.  
+
+\smallskip
+
+Proceeding as above,  we graph produce the graph of the fundamental cycle of $y = \csc(t)$ below along with the dotted graph of $y=\sin(t)$ for reference.  
+
+\smallskip
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|r|}  
+
+\hline
+
+ x & \sin(x) & \csc(x) & (x,\csc(x)) \\ \hline
+0  & 0 & \text{undefined} &  \\ [2pt]   \hline
+\frac{\pi}{4}  & \frac{\sqrt{2}}{2} & \sqrt{2} & \left(\frac{\pi}{4}, \sqrt{2} \right) \\ [2pt] \hline 
+\frac{\pi}{2}  & 1 & 1 & \left(\frac{\pi}{2}, 1 \right) \\ [2pt] \hline 
+\frac{3\pi}{4}  & \frac{\sqrt{2}}{2} & \sqrt{2} & \left(\frac{3\pi}{4}, \sqrt{2} \right) \\ [2pt] \hline 
+\pi & 0 & \text{undefined} &   \\ [2pt] \hline 
+\frac{5\pi}{4}  & -\frac{\sqrt{2}}{2} & -\sqrt{2} & \left(\frac{5\pi}{4}, -\sqrt{2} \right) \\ [2pt] \hline 
+\frac{3\pi}{2}  & -1 & -1 & \left(\frac{3\pi}{2},-1 \right)\\ [2pt] \hline 
+\frac{7\pi}{4}  & -\frac{\sqrt{2}}{2} & -\sqrt{2} & \left(\frac{7\pi}{4}, -\sqrt{2} \right) \\ [2pt] \hline 
+2\pi  & 0 & \text{undefined} &  \\  [2pt] \hline
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[25]{-1}{7}{-4}{4.25}
+\point[4pt]{ (0.7854,1.4142), (1.5708, 1) ,(2.3562,1.4142), (4.7124, -1), (3.9270,-1.4142),  (5.4978,-1.4142)}
+\axes
+\tlabel[cc](7,-0.25){\scriptsize $x$}
+\tlabel[cc](0.25,4.25){\scriptsize $y$}
+\tcaption{The `fundamental cycle' of $y = \csc(t)$.}
+\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+\ymarks{-3,-2,-1,1,2,3}
+\tlpointsep{4pt}
+\scriptsize 
+\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
+\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
+\normalsize
+\dotted \function{0, 6.2832, 0.1}{sin(x)}
+\dashed \polyline{(3.1416, -4), (3.1416, 4)}
+\dashed \polyline{(6.2832, -4), (6.2832, 4)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\smallskip
+
+Pasting copies of the fundamental period of $y = \csc(t)$ end to end produces the graph below.  Since the graphs of  $y = \sin(t)$ and $y = \cos(t)$ are merely phase shifts of each other,  it is not too surprising to find the graphs of  $y = \csc(t)$ and $y = \sec(t)$ are as well. \index{cosecant ! graph of}
+
+\smallskip
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-13}{13}{-4}{4.25}
+\point[4pt]{ (1.5708, 1), (4.7124, -1)}
+\axes
+\tlabel[cc](13,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4.25){\scriptsize $y$}
+\tcaption{The graph of $y = \csc(t)$.}
+\tlpointsep{4pt}
+\dotted \function{-12.5664, 12.5664, 0.1}{sin(x)}
+\dashed \polyline{(3.1416, -4), (3.1416, 4)}
+\dashed \polyline{(6.2832, -4), (6.2832, 4)}
+\dashed \polyline{(-3.1416, -4), (-3.1416, 4)}
+\dashed \polyline{(-6.2832, -4), (-6.2832, 4)}
+\dashed \polyline{(9.4248, -4), (9.4248, 4)}
+\dashed \polyline{(12.5664, -4), (12.5664, 4)}
+\dashed \polyline{(-9.4248, -4), (-9.4248, 4)}
+\dashed \polyline{(-12.5664, -4), (-12.5664, 4)}
+\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{-0.2527, -2.889, -0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{-3.3943, -6.0306, -0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{6.5359, 9.1723, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{-6.5359, -9.1723, -0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{9.6775, 12.3138, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{-9.6775, -12.3138, -0.1}{1/sin(x)}
+\penwd{1.5pt}
+\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
+\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
+\end{mfpic}
+
+\end{center}
+
+As with the graph of secant, the graph below suggests symmetry.  Indeed, since the sine function is odd, that is $\sin(-t) = -\sin(t)$, so too is the cosecant function:  $\csc(-t) = \frac{1}{\sin(-t)} = -\frac{1}{\sin(t)} = -\csc(t)$.  Hence, the graph of $G(t) = \csc(t)$ is symmetric about the origin.
+
+\smallskip
+
+Note that, on the intervals between the vertical asymptotes, both $F(t) = \sec(t)$ and $G(t) = \csc(t)$ are continuous and smooth.  In other words, they are continuous and smooth \textit{on their domains}.\footnote{Just like the rational functions in Chapter \ref{RationalFunctions} are continuous and smooth on their domains because polynomials are continuous and smooth everywhere, the secant and cosecant functions are continuous and smooth on their domains since the cosine and sine functions are continuous and smooth everywhere.}  
+
+\smallskip
+
+The following theorem summarizes the properties of the secant and cosecant functions.  Note that all of these properties are direct results of them being reciprocals of the cosine and sine functions, respectively.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{secantcosecantfunctionprops}  \textbf{Properties of the Secant and Cosecant Functions} \index{secant ! properties of} \index{cosecant ! properties of}
+
+\begin{itemize}
+
+\item  The function $F(t) = \sec(t)$
+
+\begin{itemize}
+
+
+\item has domain $\left\{ t \, | \, t \neq \frac{\pi}{2} + \pi k, \, \,  \text{$k$ is an integer} \right\}$
+
+\item has range $(-\infty, -1] \cup [1, \infty)$
+
+\item  is continuous and smooth on its domain
+
+\item is even
+
+\item has period $2\pi$
+
+\end{itemize}
+
+\item  The function $G(t) = \csc(t)$
+
+\begin{itemize}
+
+\item has domain $\left\{ t \, | \,  t \neq \pi  k, \, \,  \text{$k$ is an integer} \right\}$
+
+\item has range $(-\infty, -1] \cup [1, \infty)$
+
+\item  is continuous and smooth on its domain
+
+\item is odd
+
+\item has period $2\pi$
+
+\end{itemize}
+
+\end{itemize}
+
+\smallskip
+
+\end{theorem}
+
+%% \ebm}
+
+\medskip
+
+
+In the next example, we discuss graphing more general secant and cosecant curves.  We make heavy use of the fact they are reciprocals of sine and cosine functions and apply what we learned in Section \ref{GraphsofSineandCosine}.
+  
+\begin{example}  \label{seccscgraphex} Graph one cycle of the following functions.  State the period of each.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item  $f(t) = 1 - 2 \sec(2t)$
+
+\item  $g(t) = \dfrac{\csc(- \pi t - \pi) - 5}{3}$
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  To graph $f(t) = 1 - 2 \sec(2t)$, we follow the same procedure as in Example \ref{cosinesinegraphex2}.  That is, we use the concept of frequency and phase shift to identify quarter marks, then substitute these values into the function to obtain the corresponding points.
+
+\smallskip
+
+If we think about a related \textit{cosine} curve, $y = 1 - 2\cos(2t) = -2\cos(2t) + 1$, we know from  Section \ref{GraphsofSineandCosine}, that the frequency is $\omega = 2$, so the period is $T = \frac{2\pi}{2} = \pi$. Since the phase $\phi = 0$, there is no phase shift.  Hence, the new quarter marks for this curve are $t=0$, $t=\frac{\pi}{4}$, $t=\frac{\pi}{2}$, $t=\frac{3\pi}{4}$, and $t=\pi$. 
+
+\smallskip
+
+Since we obtained the fundamental cycle of the secant curve from the fundamental cycle of the cosine curve, these same $t$-values are the new quarter marks for $f(t) = 1 - 2 \sec(2t)$.
+
+\smallskip
+
+Substituting these $t$ values $f(t)$, we get the table below on the left.  Note that if $f(t)$ exists, we have a point on the graph;  otherwise, we have found a vertical asymptote.\footnote{As with the examples in Section \ref{GraphsofSineandCosine}, note that we can partially check our answer since the argument of the secant function should simplify to the `original' quarter marks - the quadrantal angles.}
+
+\smallskip
+
+We graph one cycle of  $f(t) = 1 - 2 \sec(2t)$ below on the right along with the associated cosine curve,  $y = 1 - 2 \cos(2t)$ which is dotted, and confirm the period is $\pi - 0 = \pi$.
+ 
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & f(t) & (t,f(t))  \\ \hline
+0  & - 1 & (0,-1)  \\ [2pt]   \hline
+\frac{\pi}{4}  & \text{undefined} &  \\ [2pt] \hline 
+\frac{\pi}{2}  & 3 & \left(\frac{\pi}{2}, 3 \right)  \\ [2pt] \hline 
+\frac{3\pi}{4}  & \text{undefined} &  \\ [2pt] \hline 
+\pi & -1 &   (\pi, -1) \\ [2pt] \hline 
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[27][9]{-1}{4}{-7}{9}
+\point[4pt]{(0,-1), (1.5708,3),  (3.1416, -1)}
+\axes
+\tlabel[cc](4,-0.3){\scriptsize $x$}
+\tlabel[cc](0.25,9){\scriptsize $y$}
+\tcaption{One cycle of $y = 1-2\sec(2t)$.}
+\xmarks{0.7854, 1.5708, 2.3562, 3.1416}
+\ymarks{-1,1,2,3}
+\tlpointsep{4pt}
+\scriptsize 
+\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416}
+\normalsize
+\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
+\dotted \function{0, 3.1416, 0.1}{1 - 2*cos(2*x)}
+\dashed \polyline{(0.7854, -7), (0.7854, 9)}
+\dashed \polyline{(2.3562, -7), (2.3562, 9)}
+\penwd{1.25pt}
+\arrow \function{0, 0.6590, 0.1}{1-2/cos(2*x)}
+\arrow \reverse \arrow \function{0.9118, 2.230, 0.1}{1-2/cos(2*x)}
+\arrow \reverse \function{2.4826, 3.14, 0.1}{1-2/cos(2*x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+
+
+\item As with the previous example, we start graphing $g(t) = \frac{\csc(-\pi t- \pi ) - 5}{3}$ by first finding the quarter marks of the associated sine curve: $y =\frac{\sin(- \pi t - \pi ) - 5}{3} = \frac{1}{3} \sin( -\pi t - \pi) - \frac{5}{3}$.  
+
+\smallskip
+
+Since the coefficient of $t$ is negative, we make use of the odd property of sine to rewrite the function as:  $y = \frac{1}{3} \sin( - \pi t - \pi ) - \frac{5}{3} =  \frac{1}{3} \sin( -(\pi t + \pi) ) - \frac{5}{3} = -\frac{1}{3} \sin(\pi t  + \pi) - \frac{5}{3}$.
+
+\smallskip
+
+We find the frequency  is $\omega = \pi$, so the period is $T = \frac{2\pi}{\pi} = 2$.  The  phase is $\phi = \pi$, so the phase shift is $-\frac{\pi}{\pi} = -1$.  Hence the fundamental cycle $[0, 2\pi]$ is shifted to the interval $[-1,1]$ with quarter marks $t = -1$, $t = -\frac{1}{2}$, $t=0$, $t = \frac{1}{2}$ and $t=1$.
+
+\smallskip
+
+
+Substituting these $t$-values into $g(t)$, we generate the graph below on the right confirm the period is $1 - (-1) = 2$.   The associated sine curve, $y = \frac{\sin(- \pi t- \pi) - 5}{3}$, is dotted in as a reference.  
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & g(t) & (t,g(t))  \\ \hline
+-1  & \text{undefined} &   \\ [2pt]   \hline
+-\frac{1}{2}  & -2 & \left(-\frac{1}{2}, -2\right)  \\ [2pt] \hline 
+0 & \text{undefined} &   \\ [2pt] \hline 
+\frac{1}{2} & -\frac{4}{3} &  \left(\frac{1}{2}, -\frac{4}{3} \right)  \\ [2pt] \hline 
+1 & \text{undefined} &    \\ [2pt] \hline 
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[30]{-2}{2}{-3}{0.5}
+\point[4pt]{(0.5,-1.3333),  (-0.5, -2)}
+\axes
+\tlabel[cc](2,-0.3){\scriptsize $t$}
+\tlabel[cc](0.25,0.5){\scriptsize $y$}
+\tcaption{One cycle of $y = \frac{\csc(- \pi t - \pi ) - 5}{3}$.}
+\xmarks{-1, -0.5, 0.5, 1}
+\ymarks{-2,-1}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $-\frac{1}{2} \hspace{7pt}$} -0.5, {\scriptsize $\frac{1}{2}$} 0.5, {\scriptsize $1$} 1}
+\axislabels {y}{{\scriptsize $-2$} -2, {\scriptsize $-1$} -1}
+\dotted \function{-1, 1, 0.1}{(sin(3.14159 - 3.14159*x)-5)/3}
+\dashed \polyline{(-1, -3), (-1, -0.5)}
+\dashed \polyline{(1, -3), (1,-0.5)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{0.9196, 0.08040, -0.1}{((1/sin(3.14159 - 3.14159*x))-5)/3}
+\arrow \reverse \arrow \function{-0.08043, -0.9196, 0.1}{((1/sin(3.14159 - 3.14159*x))-5)/3}
+\end{mfpic} \\
+
+\end{tabular}
+
+  \qed
+
+\end{enumerate}
+
+\end{example}
+
+As suggested in Example \ref{seccscgraphex}, the concepts of frequency, period, phase shift, and baseline are alive and well with graphs of the secant and cosecant functions.  Since the secant and cosecant curves are unbounded, we do not have the concept of `amplitude' for these curves.  That being said, the amplitudes of the corresponding cosine and sine curves do play a role here - they measure how wide the gap  is between the baseline and the curve.  
+
+\smallskip
+
+We gather these observations in the  following result whose proof is a consequence of Theorem \ref{sinusoidform} and is relegated to Exercise \ref{sinusoidformseccscexercise}.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}  \label{secantcosecanttperiodphaseshift} For $\omega > 0$, the graphs of \[F(t) = A \sec( \omega t + \phi) +B \quad \text{and} \quad G(t) = A \csc( \omega t + \phi) +B  \]
+
+\begin{multicols}{2}
+
+\begin{itemize}
+
+\item  have period  $T = \dfrac{2\pi}{\omega}$
+
+\item  have phase shift $-\dfrac{\phi}{\omega}$
+
+
+\end{itemize}
+
+\end{multicols}
+
+\begin{itemize}
+
+\item  have  `baseline'  $B$ and have a vertical gap $|A|$ units between the the baseline and the graph.\footnote{In other words, the range of these functions is $(-\infty, B-|A|] \cup [B+|A|, \infty)$.}
+
+\end{itemize}
+
+\end{theorem}
+
+\smallskip
+
+%% \ebm}
+
+\smallskip
+
+We put Theorem \ref{secantcosecanttperiodphaseshift} to good use in the next example.
+
+\begin{example} \label{secantcosecantfromgraphex}  Below is the graph of one cycle of a secant (cosecant) function, $y = f(t)$.
+
+\begin{center}
+\begin{mfpic}[27][20]{-1.25}{5.75}{-5}{3}
+\point[4pt]{(0.5236,-2), (3.6652,0)}
+\axes
+\tlabel[cc](5.75,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,3){\scriptsize $y$}
+\xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236}
+\ymarks{1,2,-1,-2,-3,-4}
+\tlpointsep{4pt}
+\axislabels {x}{{$-\frac{\pi}{6}$} -1.0472, {$\frac{\pi}{12}$} 0.5236, {$\frac{\pi}{3}$} 2.0944, {$\frac{7\pi}{12}$} 3.6652, {$\frac{5\pi}{6}$} 5.236}
+\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $2$} 2}
+\dashed \polyline{(-1.0472,3),(-1.0472,-5)}
+\dashed \polyline{(2.0944,3),(2.0944,-5)}
+\dashed \polyline{(5.236,3),(5.236,-5)}
+%\dotted[1pt, 3pt] \function{-1.0472, 5.236, 0.1}{-sin(x + 1.0472)+1}
+%\dotted[1pt, 3pt] \function{0, 6.28, 0.1}{-sin(x + 1.0472)+1}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-0.794, 1.841, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\arrow \reverse \arrow \function{2.347, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
+\end{mfpic}
+\end{center}
+
+
+\begin{enumerate}
+
+\item  Write $f(t)$ in the form $F(t) = A \sec( \omega t + \phi) +B$ for $\omega > 0$.
+
+\item  Write $f(t)$ in the form $G(t) = A \csc( \omega t + \phi) +B$ for $\omega > 0$.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item  We first note the period:  $T = \frac{5\pi}{6} - \left(-\frac{\pi}{6}\right) = \pi$.  Since $T  = \frac{2\pi}{\omega} = \pi$, we get $\omega  = 2$.  
+
+\smallskip
+
+To find the phase $\phi$, we need to first determine the phase shift.  Recall that what is graphed here is only one \text{cycle} of the function, so by copying and pasting one more cycle, we identify what looks like a fundamental cycle of the secant function to us\footnote{Assuming $A>0$, that is.} as highlighted below on the left.
+
+\smallskip
+
+We get the phase shift is $\frac{7\pi}{12}$ so solving  $ -\frac{\phi}{2} = \frac{7\pi}{12} $, we get $\phi = - \frac{7\pi}{6}$.
+
+\smallskip
+
+To find the baseline, $B$, we take a cue from our work in Example \ref{fitsinusoidtodata1} in Section \ref{GraphsofSineandCosine}.  We find the average of the local minimums and maximums to be $\frac{-2+0}{2} = -1$, so $B = -1$.  Since there is a $1$ unit gap between the baseline and the graph of the function, we have $A = 1$.   Alternatively, we can sketch the corresponding cosine curve (dotted in the figure below) and determine $B$ and $A$ that way.
+
+\smallskip
+
+We find our final answer to be $f(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$.  As usual, we check our answer by graphing. 
+
+\smallskip
+
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{mfpic}[15]{-1.25}{12.5}{-5}{3}
+\point[4pt]{(3.6652,0), (9.948,0), (6.807, -2)}
+\axes
+\tlabel[cc](12.5,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,3){\scriptsize $y$}
+\xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236, 6.807, 8.377, 9.948, 11.519}
+\ymarks{1,2,-1,-2,-3,-4}
+\tlpointsep{4pt}
+\axislabels {x}{{$-\frac{\pi}{6}$} -1.0472, {$\frac{\pi}{12}$} 0.5236, {$\frac{\pi}{3}$} 2.0944, {$\frac{7\pi}{12}$} 3.6652, {$\frac{5\pi}{6}$} 5.236, {$\frac{13\pi}{12}$} 6.807, {$\frac{4\pi}{3}$} 8.377, {$\frac{19\pi}{12}$} 9.948,  {$\frac{11\pi}{6}$} 11.519}
+\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $2$} 2}
+\dashed \polyline{(-1.0472,3),(-1.0472,-5)}
+\dashed \polyline{(2.0944,3),(2.0944,-5)}
+\dashed \polyline{(5.236,3),(5.236,-5)}
+\dashed \polyline{(8.377,3),(8.377,-5)}
+\dashed \polyline{(11.519,3),(11.519,-5)}
+%\dotted[1pt, 3pt] \function{-1.0472, 5.236, 0.1}{-sin(x + 1.0472)-1}
+\dotted[1pt, 3pt] \function{3.6652, 9.948, 0.1}{-sin(x + 1.0472)-1}
+\arrow \reverse \arrow \function{-0.794, 1.841, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\arrow \reverse \arrow \function{2.347, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
+\arrow \reverse \arrow \function{8.62, 11.27, 0.1}{-1/(sin(x + 1.0472))-1}
+\penwd{1.25pt}
+\arrow \function{3.6652, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
+\arrow \reverse \arrow \function{5.4892, 8.1242, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\arrow \reverse \function{8.62, 9.948, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\end{mfpic}
+
+\begin{mfpic}[15]{-1.25}{12.5}{-5}{3}
+\point[4pt]{(3.6652,0), (9.948,0), (6.807, -2)}
+\axes
+\tlabel[cc](12.5,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,3){\scriptsize $y$}
+\xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236, 6.807, 8.377, 9.948, 11.519}
+\ymarks{1,2,-1,-2,-3,-4}
+\tlpointsep{4pt}
+\axislabels {x}{{$-\frac{\pi}{6}$} -1.0472, {$\frac{\pi}{12}$} 0.5236, {$\frac{\pi}{3}$} 2.0944, {$\frac{7\pi}{12}$} 3.6652, {$\frac{5\pi}{6}$} 5.236, {$\frac{13\pi}{12}$} 6.807, {$\frac{4\pi}{3}$} 8.377, {$\frac{19\pi}{12}$} 9.948,  {$\frac{11\pi}{6}$} 11.519}
+\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $2$} 2}
+\dashed \polyline{(-1.0472,3),(-1.0472,-5)}
+\dashed \polyline{(2.0944,3),(2.0944,-5)}
+\dashed \polyline{(5.236,3),(5.236,-5)}
+\dashed \polyline{(8.377,3),(8.377,-5)}
+\dashed \polyline{(11.519,3),(11.519,-5)}
+\dotted[1pt, 3pt] \function{2.0944, 8.377, 0.1}{-sin(x + 1.0472)-1}
+\arrow \reverse \arrow \function{-0.794, 1.841, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\arrow \reverse \arrow \function{8.62, 11.27, 0.1}{-1/(sin(x + 1.0472))-1}
+\arrow \reverse \function{8.62, 9.948, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{2.347, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
+\arrow \reverse \arrow \function{5.4892, 8.1242, 0.1}{-1/(sin(x + 1.0472)) - 1}
+\end{mfpic}
+
+\end{multicols}
+
+Extending the graph one more cycle.
+
+\end{center}
+
+
+
+\item  Since the secant and cosecant curves are phase shifts of each other, we could find a formula for $f(t)$ in terms of cosecants by shifting our formula $F(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$ .  We leave this to the reader.\footnote{See Exercise \ref{secantcosecantshiftexercise}.}  
+
+\smallskip
+
+Working `from scratch,' we would find $T = \pi$, $\omega = 2$, $B=-1$, and $A=1$ the same as above.\footnote{Again, assuming we want $A > 0$.}  To determine the phase shift, we refer to the figure above on the right.
+
+\smallskip
+
+Since the phase shift is $\frac{\pi}{3}$, we solve  $-\frac{\phi}{2} = \frac{\pi}{3}$ to get $\phi = -\frac{2\pi}{3}$. Putting all our work together, we get our final answer: $f(t) = \csc\left(2t - \frac{2\pi}{3} \right) - 1$.  Again, our best check here is to graph. \qed
+
+\end{enumerate}
+
+
+\end{example}
+
+We cannot stress enough that our answers to Example \ref{secantcosecantfromgraphex} are one of many.  For example, in Exercise \ref{NegativeAsecantcosecant}, we ask you to rework this example choosing $A<0$.  It is well worth the time to think about what relationships exist between the different answers, however.  For now, we move on to graphing the last pair of circular functions: tangent and cotangent curves.
+
+
+\subsection{Graphs of the Tangent and Cotangent Functions}
+
+Next, we turn our attention to the tangent and cotangent functions.  Viewing $J(t) = \tan(t) = \frac{\sin(t)}{\cos(t)}$, we find the domain of $J$ excludes all values where $\cos(t) = 0$.  Hence, the domain of $J$ is $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  Using this information along with the common values we derived in Section \ref{TheOtherCircularFunctions}, we create the table of values below on the left.
+
+\smallskip
+
+Investigating the behavior near the values excluded from the domain, we find as $t \rightarrow \frac{\pi}{2}^{-}$, $\sin(t) \rightarrow 1^{-}$ and $\cos(t) \rightarrow 0^{+}$. Hence,   $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{-}}\tan(t) = \infty}$ producing a vertical asymptote to the graph at $t = \frac{\pi}{2}$.  Similarly, we get that as $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{+}} \tan(t) = -\infty}$,   $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{-}} \tan(t) = \infty}$, and  $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{+}}\tan(t) = -\infty}$.
+
+\smallskip
+
+Putting all of this information together, we graph $y = \tan(t)$ over the interval $[0, 2\pi]$ below on the right.
+
+\smallskip
+
+\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & \tan(t) & (t,\tan(t)) \\ \hline
+0  & 0 & (0, 0) \\ [2pt]   \hline
+\frac{\pi}{4}  & 1 & \left(\frac{\pi}{4},1 \right) \\ [2pt] \hline 
+\frac{\pi}{2}  & \text{undefined} &  \\ [2pt] \hline 
+\frac{3\pi}{4}  & -1 & \left(\frac{3\pi}{4}, -1\right) \\ [2pt] \hline 
+\pi & 0 & (\pi, 0) \\ [2pt] \hline 
+\frac{5\pi}{4}  & 1 & \left(\frac{5\pi}{4}, 1 \right) \\ [2pt] \hline 
+\frac{3\pi}{2}  & \text{undefined} &  \\ [2pt] \hline 
+\frac{7\pi}{4}  & -1 & \left(\frac{7\pi}{4}, -1 \right) \\ [2pt] \hline 
+2\pi  & 0 & (2\pi, 0) \\  [2pt] \hline
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[25]{-1}{7}{-4}{4}
+\point[4pt]{(0,0), (0.7854,1), (2.3562,-1), (3.1416, 0), (3.9270,1),  (5.4978,-1), (6.2832,0)}
+\dashed \polyline{(1.5708,-4), (1.5708,4)}
+\dashed \polyline{(4.7124,-4), (4.7124,4)}
+\axes
+\tlabel[cc](7,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4){\scriptsize $y$}
+\tcaption{The graph of $y = \tan(t)$ over $[0,2\pi]$.}
+\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+\ymarks{-1,1}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
+\axislabels {y}{{$-1$} -1, {$1$} 1}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{0, 1.3258, 0.1}{tan(x)}
+\arrow \reverse \arrow \function{1.8158, 4.4674, 0.1}{tan(x)}
+\arrow \reverse \function{4.9574, 6.2832,0.1}{tan(x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\smallskip
+
+
+After the usual `copy and paste' procedure, we create the graph of $y = \tan(t)$ below: \index{tangent ! graph of}
+
+
+\begin{center}
+
+\begin{mfpic}[15]{-13}{13}{-4}{4}
+\point[4pt]{(-0.7854,-1), (0,0), (0.7854,1)}
+\axes
+\tlabel[cc](13,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4){\scriptsize $y$}
+\tcaption{The graph of $y = \tan(t)$.}
+\tlpointsep{4pt}
+\dashed \polyline{(1.5708, -4), (1.5708, 4)}
+\dashed \polyline{(4.7124, -4), (4.7124, 4)}
+\dashed \polyline{(7.8540, -4), (7.8540, 4)}
+\dashed \polyline{(10.9956, -4), (10.9956, 4)}
+\dashed \polyline{(-1.5708, -4), (-1.5708, 4)}
+\dashed \polyline{(-4.7124, -4), (-4.7124, 4)}
+\dashed \polyline{(-7.8540, -4), (-7.8540, 4)}
+\dashed \polyline{(-10.9956, -4), (-10.9956, 4)}
+\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)}
+\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{tan(x)}
+\arrow \reverse \arrow \function{4.9651, 7.6013, 0.1}{tan(x)}
+\arrow \reverse \arrow \function{8.1067, 10.7432, 0.1}{tan(x)}
+\arrow \reverse \arrow \function{-1.8235, -4.460, -0.1}{tan(x)}
+\arrow \reverse \arrow \function{-4.9651, -7.6013, -0.1}{tan(x)}
+\arrow \reverse \arrow \function{-8.1067, -10.7432, -0.1}{tan(x)}
+\arrow \reverse \function{-11.2483, -12.5664, -0.1}{tan(x)}
+\arrow \reverse \function{11.2483, 12.5664, 0.1}{tan(x)}
+\penwd{1.5pt}
+\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)}
+\end{mfpic}
+
+\end{center}
+
+
+\smallskip
+
+The graph of $y = \tan(t)$ suggests symmetry through the origin.  Indeed, tangent is odd since sine is odd and cosine is even:   $\tan(-t) = \frac{\sin(-t)}{\cos(-t)} = \frac{-\sin(t)}{\cos(t)} = -\tan(t)$.  
+
+\smallskip
+
+We also see the graph suggests the range of $J(t) = \tan(t)$ is all real numbers, $(-\infty, \infty)$.  We present one proof of this fact in Exercise \ref{rangeoftangentexercise}.
+
+\smallskip
+
+Moreover, as noted in Section \ref{TheOtherCircularFunctions}, the period of the tangent function is $\pi$, and we see that reflected in the graph. This means we can choose \textit{any} interval of length $\pi$ to serve as our `fundamental cycle.'  
+
+\smallskip
+
+We choose the cycle traced out  over the (open) interval $\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ as highlighted above.  In addition to the asymptotes at the endpoints $t = \pm \frac{\pi}{2}$, we use the `quarter marks' $t = \pm \frac{\pi}{4}$ and $t = 0$. 
+
+\smallskip
+
+It should be no surprise that $K(t) = \cot(t)$ behaves similarly to $J(t)=\tan(t)$.  Since $\cot(t) = \frac{\cos(t)}{\sin(t)}$, the domain of $K$ excludes the values where $\sin(t) = 0$:   $\{ t \, | \, t \neq  \pi k, \text{for integers $k$} \}$.
+
+\smallskip
+
+After analyzing the behavior of $K$ near the values excluded from its domain  along with plotting points, we graph $y = \cot(t)$ over the interval $[0,2\pi]$ below on the right. \index{cotangent ! graph of}
+
+\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & \cot(t) & (t, \cot(t)) \\ \hline
+0  & \text{undefined} &  \\ [2pt]   \hline
+\frac{\pi}{4}  & 1 & \left(\frac{\pi}{4},1 \right) \\ [2pt] \hline 
+\frac{\pi}{2}  & 0 & \left(\frac{\pi}{2},0 \right)  \\ [2pt] \hline 
+\frac{3\pi}{4}  & -1 & \left(\frac{3\pi}{4}, -1\right) \\ [2pt] \hline 
+\pi & \text{undefined} &  \\ [2pt] \hline 
+\frac{5\pi}{4}  & 1 & \left(\frac{5\pi}{4}, 1 \right) \\ [2pt] \hline 
+\frac{3\pi}{2}  & 0 & \left(\frac{3\pi}{2}, 0 \right) \\ [2pt] \hline 
+\frac{7\pi}{4}  & -1 & \left(\frac{7\pi}{4}, -1 \right) \\ [2pt] \hline 
+2\pi  & \text{undefined} &  \\  [2pt] \hline
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[25]{-1}{7}{-4}{4.25}
+\point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1), (3.9270,1), (4.7124,0), (5.4978,-1)}
+\dashed \polyline{(3.1416,-4), (3.1416,4)}
+\dashed \polyline{(6.2832,-4), (6.2832,4)}
+\axes
+\tlabel[cc](7,-0.25){\scriptsize $t$}
+\tlabel[cc](0.25,4.25){\scriptsize $y$}
+\tcaption{The graph of $y = \cot(t)$ over $[0,2\pi]$.}
+\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+\ymarks{-1,1}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
+\axislabels {y}{{$-1$} -1, {$1$} 1}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{0.2450, 2.8966, 0.1}{cot(x)}
+\arrow \reverse \arrow \function{3.3865, 6.0382,0.1}{cot(x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+\smallskip
+
+As usual, pasting copies end to end produces the graph of $K(t) = \cot(t)$ below.  \index{cotangent ! graph of}
+
+\begin{center}
+
+\begin{mfpic}[15]{-13}{13}{-4}{4.25}
+\point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1)}
+\axes
+\tlabel[cc](13,-0.25){\scriptsize $x$}
+\tlabel[cc](0.25,4.25){\scriptsize $y$}
+\tcaption{The graph of $y = \cot(x)$.}
+\tlpointsep{4pt}
+\dashed \polyline{(3.1416, -4), (3.1416, 4)}
+\dashed \polyline{(6.2832, -4), (6.2832, 4)}
+\dashed \polyline{(-3.1416, -4), (-3.1416, 4)}
+\dashed \polyline{(-6.2832, -4), (-6.2832, 4)}
+\dashed \polyline{(9.4248, -4), (9.4248, 4)}
+\dashed \polyline{(12.5664, -4), (12.5664, 4)}
+\dashed \polyline{(-9.4248, -4), (-9.4248, 4)}
+\dashed \polyline{(-12.5664, -4), (-12.5664, 4)}
+\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{cot(x)}
+\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{cot(x)}
+\arrow \reverse \arrow \function{-0.2527, -2.889, -0.1}{cot(x)}
+\arrow \reverse \arrow \function{-3.3943, -6.0306, -0.1}{cot(x)}
+\arrow \reverse \arrow \function{6.5359, 9.1723, 0.1}{cot(x)}
+\arrow \reverse \arrow \function{-6.5359, -9.1723, -0.1}{cot(x)}
+\arrow \reverse \arrow \function{9.6775, 12.3138, 0.1}{cot(x)}
+\arrow \reverse \arrow \function{-9.6775, -12.3138, -0.1}{cot(x)}
+\penwd{1.5pt}
+\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{cot(x)}
+\end{mfpic}
+
+\end{center}
+
+As with $J(t) = \tan(t)$, the graph of $K(t) = \cot(t)$ suggests $K$ is odd, a fact we leave to the reader to prove in Exercise \ref{cotisoddexercise}.  Also, we see that the period of cotangent (like tangent)  is $\pi$ and the range is $(-\infty, \infty)$.
+
+\smallskip
+
+We take as one fundamental cycle the graph as traced out over the interval $(0,\pi)$, highlighted above, with quarter marks:  $t= 0$, $t=\frac{\pi}{4}$, $t=\frac{\pi}{2}$, $t=\frac{3\pi}{4}$ and $t=\pi$. 
+
+\smallskip
+
+The properties of the tangent and cotangent functions are summarized below. As with Theorem \ref{secantcosecantfunctionprops}, each of the results below can be traced back to properties of the cosine and sine functions and the definition of the tangent and cotangent functions as quotients thereof. 
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{tangentcotangentfunctionprops}  \textbf{Properties of the Tangent and Cotangent Functions} \index{tangent ! properties of} \index{cotangent ! properties of}
+
+\begin{itemize}
+
+\item  The function $J(t) = \tan(t)$
+
+\begin{itemize}
+
+
+\item has domain $\left\{ t \, | \, t \neq \frac{\pi}{2} + \pi k, \, \,  \text{$k$ is an integer} \right\}$
+
+\item has range $(-\infty, \infty)$
+
+\item is continuous and smooth on its domain
+
+\item is odd
+
+\item has period $\pi$
+
+\end{itemize}
+
+\item  The function $K(t) = \cot(t)$
+
+\begin{itemize}
+
+\item has domain $\left\{ t \, | \, t \neq \pi  k, \, \,  \text{$k$ is an integer} \right\}$
+
+\item has range $(-\infty, \infty)$
+
+\item is continuous and smooth on its domain
+
+\item is odd
+
+\item has period $\pi$
+
+\smallskip
+
+\end{itemize}
+
+\end{itemize}
+
+\end{theorem}
+
+%% \ebm}
+
+
+\smallskip
+
+Unlike the secant and cosecant functions, the tangent and cotangent functions have different periods than sine and cosine.  Moreover,  in the case of the tangent function, the fundamental cycle we've chosen starts at $-\frac{\pi}{2}$ instead of $0$.  Nevertheless, we can use the same notions of period and phase shift to graph transformed versions of tangent and cotangent functions, since these results ultimately trace back to applying Theorem \ref{transformationsthm}.  We state a version of Theorem \ref{sinusoidform} for tangent and cotangent functions below. 
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem}  \label{tangentcotangentperiodphaseshift} For $\omega > 0$, the functions \[J(t) = A \tan(\omega t + \phi) + B \quad \text{and} \quad K(t) = A \cot(\omega t + \phi) + B  \]
+
+\begin{multicols}{2}
+
+\begin{itemize}
+
+\item  have period  $T = \dfrac{\pi}{\omega}$
+
+\item  have vertical shift or `baseline'  $B$
+
+\end{itemize}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+
+\item  The phase shift for $y = J(t)$ is $-\dfrac{\phi}{\omega} - \dfrac{\pi}{2 \omega}$.
+
+\item  The phase shift for $y = K(t)$ is $-\dfrac{\phi}{\omega}$.
+
+\end{itemize}
+
+\end{multicols}
+
+\end{theorem}
+
+\smallskip
+
+%% \ebm}
+
+
+\smallskip
+
+The proof of  the proof of  Theorem \ref{tangentcotangentperiodphaseshift} is left to the reader in Exercise \ref{sinusoidformtancotexercise}.  
+
+\smallskip
+
+We put Theorem \ref{tangentcotangentperiodphaseshift} to good use in the following example.
+
+
+
+\begin{example} \label{tancotgraphex} Graph one cycle of the following functions.  Find the period.
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item  $f(t) = 1 - \tan\left(\frac{t}{2} - \pi \right)$.
+
+\item  $g(t) = 2\cot\left(2\pi - \pi t \right) - 1$.
+
+\end{enumerate}
+
+\end{multicols}
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item Rewriting $f(t)$ so it fits the form in  Theorem \ref{tangentcotangentperiodphaseshift}, we get $f(t) = - \tan\left(\frac{1}{2} t  + (- \pi) \right) + 1$.   
+
+\smallskip
+
+With $\omega = \frac{1}{2}$, we find the period $T = \frac{\pi}{1/2} = 2 \pi$.  Since $\phi = -\pi$, the phase shift is $-\frac{(-\pi)}{1/2} - \frac{\pi}{2 (1/2)} = \pi$.
+
+\smallskip
+
+Hence, one cycle of $f(t)$ starts at $t=\pi$ and finishes at $t = \pi + 2\pi = 3\pi$.  Our quarter marks are $\frac{2\pi}{4} = \frac{\pi}{2}$ units apart and are $t  = \pi$, $t = \frac{3\pi}{2}$, $t = 2\pi$, $t  = \frac{5\pi}{2}$, and, finally, $t = 3\pi$.  
+
+\smallskip
+
+Substituting these $t$-values into $f(t)$, we find points on the graph and the vertical asymptotes.\footnote{Here, as with all tangent functions, we can partially check our new quarter marks by noting the argument of the tangent function simplifies, in each case,  to one of the original quarter marks of the interval $\left(-\frac{\pi}{2}, \frac{\pi}{2} \right)$.}
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & f(t) & (t,f(t))  \\ \hline
+\pi  & \text{undefined} &   \\ [2pt]   \hline
+\frac{3\pi}{2}  &  2 &  \left(\frac{3\pi}{2}, 2 \right) \\ [2pt] \hline 
+2 \pi & 1 &  (2\pi,1)  \\ [2pt] \hline 
+\frac{5\pi}{2}  & 0 &  \left(\frac{5\pi}{2}, 0 \right) \\ [2pt] \hline 
+3 \pi & \text{undefined} &   \\ [2pt] \hline 
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[20]{-4}{4}{-3}{5}
+\point[4pt]{(-1.5708,2),(0,1), (1.5708,0)}
+%\axes
+\arrow \polyline{(-4,0), (4,0)}
+\arrow \polyline{(-4,-3), (-4,5)}
+\tlabel[cc](4,-0.3){\scriptsize $t$}
+\tlabel[cc](-3.75,5){\scriptsize $y$}
+\tlabel[cc](-4,1){\scriptsize $-$}
+\tlabel[cc](-3.7,1){\scriptsize $1$}
+\tlabel[cc](-4,2){\scriptsize $-$}
+\tlabel[cc](-3.7,2){\scriptsize $2$}
+\tlabel[cc](-4,3){\scriptsize $-$}
+\tlabel[cc](-3.7,3){\scriptsize $3$}
+\tlabel[cc](-4,4){\scriptsize $-$}
+\tlabel[cc](-3.7,4){\scriptsize $4$}
+\tcaption{One cycle of $y = 1 - \tan\left(\frac{t}{2} - \pi \right)$.}
+\xmarks{ -3.1416, -1.5708, 1.5708, 3.1416}
+%\ymarks{-2,-1,1,2}
+\tlpointsep{4pt}
+\scriptsize
+%\tlabel[cc](-1.2, 2.5){$\left(\frac{3\pi}{2}, 2 \right)$}
+%\tlabel[cc](0.5, 1.5){$(2\pi,1)$}
+%\tlabel[cc](2, 0.5){$\left(\frac{5\pi}{2}, 0 \right)$}
+\axislabels {x}{{$\pi$} -3.1416,{$\frac{3\pi}{2}$} -1.5708, {$2\pi$} 0,  {$\frac{5\pi}{2}$} 1.5708, {$3\pi$} 3.1416}
+\normalsize
+%\axislabels {y}{{\scriptsize $-2$} -2,{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
+\dashed \polyline{(-3.1416, -3), (-3.1416, 5)}
+\dashed \polyline{(3.1416, -3), (3.1416, 5)}
+\gclear \tlabelrect(-3.75, 0){\scriptsize $)($}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-2.6516, 2.6516, 0.1}{1-tan(0.5*x)}
+\end{mfpic} \\
+
+\end{tabular}
+
+We confirm that the period is $3\pi - \pi = 2\pi$.
+
+\item  To put $g(t)$ into the form prescribed by Theorem \ref{tangentcotangentperiodphaseshift}, we make use of the odd property of cotangent:  $g(t) = 2\cot\left(2\pi - \pi t \right) - 1 = 2\cot( -[\pi t- 2\pi]) - 1 = -2 \cot(\pi t- 2\pi) - 1= -2 \cot(\pi t + (- 2\pi)) - 1$.
+
+\smallskip
+
+We identify $\omega = \pi$ so the period is $T = \frac{\pi}{\pi} = 1$.  Since $\phi = -2\pi$, the phase shift is $-\frac{-2\pi}{\pi} = 2$.  Hence, one cycle of $g(t)$ starts at $t = 2$ and ends at $t = 2+1 = 3$.  
+
+\smallskip
+
+Our quarter marks are $\frac{1}{4}$ units apart and are $t = 2$, $t = \frac{9}{4}$, $t = \frac{5}{2}$, $t = \frac{11}{4}$, and $t = 3$.  We generate the graph below.
+
+
+
+\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
+\setlength{\extrarowheight}{2pt}
+\[ \begin{array}{|r||r|r|}  
+
+\hline
+
+ t & g(t) & (t,g(t))  \\ \hline
+2  & \text{undefined} &   \\ [2pt]   \hline
+\frac{9}{4}  &  -3 &  \left(\frac{9}{4}, -3 \right) \\ [2pt] \hline 
+\frac{5}{2} & -1 &  \left( \frac{5}{2}, -1 \right)  \\ [2pt] \hline 
+\frac{11}{4}  & 1 &  \left(\frac{11}{4}, 1 \right) \\ [2pt] \hline 
+3 & \text{undefined} &  \\ [2pt] \hline 
+\end{array} \] \setlength{\extrarowheight}{0pt} &
+
+\begin{mfpic}[75][25]{0.5}{2.5}{-4}{2}
+\point[4pt]{(1.25,-3),(1.5,-1), (1.75,1)}
+%\axes
+\arrow \polyline{(0.5, 0), (2.5,0)}
+\arrow \polyline{(0.5,-4), (0.5, 2)} 
+\tlabel[cc](2.5,-0.3){\scriptsize $t$}
+\tlabel[cc](0.65,2){\scriptsize $y$}
+\tlabel[cc](0.5,-3){\scriptsize $-$}
+\tlabel[cc](0.65,-3){\scriptsize $-3$}
+\tlabel[cc](0.5,-2){\scriptsize $-$}
+\tlabel[cc](0.65,-2){\scriptsize $-2$}
+\tlabel[cc](0.5,-1){\scriptsize $-$}
+\tlabel[cc](0.65,-1){\scriptsize $-1$}
+\tlabel[cc](0.5,1){\scriptsize $-$}
+\tlabel[cc](0.65,1){\scriptsize $1$}
+\tcaption{One cycle of $y = 2\cot\left(2\pi - \pi t \right) - 1$.}
+\xmarks{ 1, 2, 1.25, 1.5, 1.75}
+%\ymarks{-3, -2, -1, 1}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $2$} 1,{\scriptsize $3$} 2,{\scriptsize $\frac{9}{4}$} 1.25,{\scriptsize $\frac{5}{2}$} 1.5,{\scriptsize $\frac{11}{4}$} 1.75}
+%\axislabels {y}{{\scriptsize $-1$} -1,{\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $1$} 1}
+\dashed \polyline{(1, -4), (1, 2)}
+\dashed \polyline{(2, -4), (2, 2)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{1.18,1.82 , 0.1}{-1-2*cot((3.1416*(x+1))- 6.2832)}
+\gclear \tlabelrect(0.75, 0){\scriptsize $)($}
+\end{mfpic} \\
+
+\end{tabular}
+
+We confirm the period is $3-2 = 1$. \qed
+
+\end{enumerate}
+\end{example}
+
+\begin{example} \label{tangentcotangentfromgraphex}  Below is the graph of one cycle of a tangent (cotangent) function, $y = f(t)$.
+
+\begin{center}
+\begin{mfpic}[50][24]{-.75}{3}{-4}{4}
+\point[4pt]{(0.2618,1), (1.0472, 0), (1.8326, -1)}
+\axes
+\tlabel[cc](3,-0.25){$t$}
+\tlabel[cc](0.15,4){$y$}
+\xmarks{-0.5236, 0.2618, 1.0472, 1.8326, 2.618}
+\ymarks{-1, 1}
+\tlpointsep{4pt}
+\axislabels {x}{{$-2$} -0.5236, {$2$} 0.2618, {$4$} 1.0472, {$7$} 1.8326, {$10$} 2.618}
+\axislabels {y}{{$-3$} -1, {$3$} 1}
+\dashed \polyline{(-0.5236,-4),(-0.5236,4)}
+\dashed \polyline{(2.618,-4),(2.618,4)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-0.278, 2.37, 0.1}{cot(x + 0.5236)}
+\end{mfpic}
+\end{center}
+
+\begin{enumerate}
+
+\item  Write $f(t)$ in the form $J(t) = A \tan( \omega t + \phi) +B$ for $\omega > 0$.
+
+\item  Write $f(t)$ in the form $K(t) = A \cot( \omega t + \phi) +B$ for $\omega > 0$.
+
+\end{enumerate}
+
+{\bf Solution.}
+
+\begin{enumerate}
+
+\item We first find the period $T = 10-(-2) = 12$.  Per Theorem \ref{tangentcotangentperiodphaseshift}, we know $\frac{\pi}{\omega} = 12$, or $\omega = \frac{\pi}{12}$.
+
+\smallskip
+
+Next, we look for the phase shift. We notice the cycle graphed for us is decreasing instead of the usual increasing we expect for a standard tangent cycle.  When this sort of thing happened in Examples \ref{fitsinusoidtodata1} and \ref{secantcosecantfromgraphex}, we pasted another cycle of the function and used that to help identify the phase shift in order to keep the value of $A> 0$.  Here, no amount of `copying and pasting' will produce an increasing cycle (do you see why?), so we know $A<0$ and use $-2$ as the phase shift.
+
+\smallskip
+
+The formula given in Theorem \ref{tangentcotangentperiodphaseshift} tells us $-\frac{\phi}{\omega} - \frac{\pi}{2 \omega} = -2$ so substituting $\omega =  \frac{\pi}{12}$ gives $\phi = -\frac{\pi}{3}$.
+
+\smallskip
+
+Next, we see the baseline here is still the $t$-axis, so $B=0$.  This means all that's left to find is $A$.  We have already established that $A<0$ to account for the reflection across the $t$-axis.   Moreover, the $y$-values of the points off of the baseline are $3$ units from the baseline, indicating a vertical stretch by a factor of $3$.  Hence, $A = -3$ and $f(t) = -3 \tan\left( \frac{\pi}{12} t - \frac{\pi}{3} \right)$.  As usual, the ultimate check is to graph.
+
+\item  We find $T = 12$, $\omega = \frac{\pi}{12}$, and $B = 0$ as above.  Since the fundamental cycle of cotangent is decreasing, we know $A>0$ and identify the phase shift as $-2$.  
+
+\smallskip
+
+Using Theorem \ref{tangentcotangentperiodphaseshift}, we know $-\frac{\phi}{\omega} = -2$ so substituting $\omega = \frac{\pi}{12}$, we get $\phi = \frac{\pi}{6}$.
+
+\smallskip
+
+As above, the vertical stretch is by a factor of $3$, so we take $A = 3$ for our final answer:  $f(t) = 3 \cot \left( \frac{\pi}{12} t  + \frac{\pi}{6}\right)$.  As always, we check our answer by graphing. \qed
+
+\end{enumerate}
+
+
+\end{example}
+
+
+Once again, our answers to Example \ref{tangentcotangentfromgraphex} are one of many, and we invite the reader to think about what all of the solutions would have in common.  We close this section with an application.
+
+\begin{example} \label{modelrocketsecanttangentex}  Let $\theta$ be the angle of inclination from an observation point on the ground 42 feet away from the launch site of a model rocket.  Assuming the rocket is launched directly upwards:
+
+\begin{enumerate}
+
+\item  Find a formula for  $f(\theta)$, the distance from the rocket to the ground (in feet) as a function of  $\theta$.  Find and interpret  $f\left( \frac{\pi}{3} \right)$.
+
+\item  Find a formula for  $g(\theta)$, the distance from the rocket to the observation point on the ground (in feet) as a function of  $\theta$.   Find and interpret  $g\left( \frac{\pi}{3} \right)$.
+
+\item  Find and interpret $\ds{ \lim_{\theta \rightarrow \frac{\pi}{2}^{-}} f(\theta)}$ and $\ds{ \lim_{\theta \rightarrow \frac{\pi}{2}^{-}} g(\theta)}$.
+\end{enumerate}
+
+{ \bf Solution.}
+
+We begin by sketching the scenario below.  Since the rocket us launched `directly upwards,' we may assume the rocket is launched at a $90^{\circ}$ angle which provides us with a right triangle.  
+\begin{center}
+
+
+\begin{mfpic}[15]{-5}{5}{-5}{5}
+\arrow \shiftpath{(0,-4.330)} \parafcn{5, 55, 5}{1.5*dir(t)}
+\tlabel(1.6,-3.75){$\theta$}
+
+\tlabel(2,-5.5){$42$ ft.}
+\tlabel(5.25,0){$f(\theta)$ ft.}
+\tlabel(5.25,4.330){rocket}
+\tlabel(-5.5,-4.330){observation point}
+\tlabel(0.25,0){$g(\theta)$ ft.}
+\polyline{(4.6, -4.330), (4.6,-3.930), (5, -3.930)}
+\dashed \polyline{(5,-4.330),(5,4.330),  (0,-4.330)}
+\plotsymbol[4pt]{Asterisk}{(5,4.330)}
+\plotsymbol[4pt]{Asterisk}{(0,-4.330)}
+\penwd{1.25pt}
+\polyline{(0,-4.330), (5,-4.330)}
+
+\end{mfpic}
+
+
+\end{center}
+
+\begin{enumerate}
+
+\item  From the remarks preceding Theorem \ref{circularfunctionscircle}, we know the definitions of the circular functions agree with those specified for acute angles in right triangles as described in  Definition \ref{righttriangletherest} in Section \ref{AppRightTrig}.  Hence, $\tan(\theta) = \frac{f(\theta)}{42}$, so $f(\theta) = 42 \tan(\theta)$. 
+
+\smallskip
+
+We find $f\left( \frac{\pi}{3} \right) =  42 \tan\left( \frac{\pi}{3} \right) = 30 \sqrt{3}$.  This means when the angle of inclination is $\frac{\pi}{3}$ or $60^{\circ}$, the rocket is  or $30 \sqrt{3} \approx 73$ feet off of the ground.
+
+\item Again, working with the triangle, we find $\sec(\theta) = \frac{g(\theta)}{42}$ so that $g(\theta) = 42 \sec(\theta)$.  We find $g\left( \frac{\pi}{3} \right) = 42 \sec\left( \frac{\pi}{3} \right) = 84$, so when the angle of inclination is $60^{\circ}$, the rocket is $84$ feet from the observation point on the ground.
+
+\item We find both $\ds{ \lim_{\theta \rightarrow \frac{\pi}{2}^{-}} f(\theta) = \infty}$ and $\ds{ \lim_{\theta \rightarrow \frac{\pi}{2}^{-}} g(\theta) = \infty}$, which we can verify graphically.  This means as the angle of inclination approaches $\frac{\pi}{2}$ or $90^{\circ}$,  the distances from the rocket to the ground and from to the rocket to the observation point increase without bound.   Barring the effects of drift or the curvature of space, this matches our intuition. \qed
+
+
+\end{enumerate}
+
+
+\end{example}
+
+
+
+\subsection{Extended Interval Notation}
+\label{extendedinterval}
+
+
+Using interval notation to describe the domains of the secant, cosecant, tangent, and cotangent functions is complicated by the fact there are infinitely many intervals to represent.  In this section, we introduce \index{interval notation ! extended}\index{extended interval notation}\textbf{extended interval notation} to handle these situations.
+
+\smallskip
+
+Let us return to the domain of $F(t) = \sec(t)$, $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  Using interval notation, we describe this set as: $\ldots \cup \left( -\frac{5\pi}{2}, -\frac{3\pi}{2}\right) \cup \left( -\frac{3\pi}{2}, -\frac{\pi}{2}\right) \cup  \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3\pi}{2}\right) \cup  \left(\frac{3\pi}{2}, \frac{5\pi}{2}\right) \cup \ldots$
+
+\smallskip
+
+In order to write this set in a more compact way, we let $t_{\mbox{\tiny $k$}}$ denote the  the $k$th real number excluded from the domain.  That is,  $t_{\mbox{\tiny $k$}} =  \frac{\pi}{2} + \pi k$.  (This is sequence notation from Chapter \ref{SequencesandtheBinomialTheorem}.)
+
+\smallskip
+
+Getting a common denominator and factoring out the $\pi$ in the numerator, we get  $t_{\mbox{\tiny $k$}} = \frac{(2k+1)\pi}{2}$.  The set we're after consists of the union of intervals determined by the successive points $t_{\mbox{\tiny $k$}}$:   $\left(t_{\mbox{\tiny $k$}}, t_{\mbox{\tiny $k+1$}}\right) = \left( \frac{(2k+1)\pi}{2},  \frac{(2k+3)\pi}{2}\right)$ where $k$ ranges through the integers.  We denote this union as:
+
+\[\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right).\]
+
+
+The reader should compare this notation with summation notation introduced in Section \ref{Summation}, in particular the notation used to describe geometric series in Theorem \ref{geoseries}.  In the same way the index $k$ in the series
+
+ \[\displaystyle{\sum_{k = 1}^{\infty} a r^{k-1}}\] 
+ 
+ never equals $\infty$, but rather, ranges through all of the natural numbers, the index $k$ in the union 
+ 
+ \[\displaystyle{\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right)}\] 
+ 
+ never equals $\infty$ or $-\infty$, but rather, this conveys the idea that $k$ ranges through all of the integers.  
+ 
+ \smallskip
+
+Using extended interval notation, we summarize the domains and ranges of all six circular functions below.
+
+\smallskip
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{theorem} \label{circularfunctionsdomainrange}  \textbf{Domains and Ranges of the Circular Functions} 
+
+\vspace{.2in}
+
+\begin{tabular}{ll}
+
+\hspace{.3in} $\bullet \, $ The function $f(t) = \cos(t)$ & \hspace{.8in} $\bullet \, $ The function $g(t) = \sin(t)$ \\
+  & \\
+\hspace{.5in} -- has domain $(-\infty, \infty)$ & \hspace{1in} -- has domain $(-\infty, \infty)$ \\ [4pt]
+\hspace{.5in} -- has range $[-1,1]$ & \hspace{1in} -- has range $[-1,1]$ \\ [4pt]
+
+\end{tabular}
+
+\medskip
+
+\begin{tabular}{ll}
+
+\hspace{.3in} $\bullet \, $ The function $F(t) = \sec(t)$ &   $\bullet \, $ The function $G(t) = \csc(t)$ \\
+  & \\
+\hspace{.5in} -- has domain $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right)}$  &  -- has domain $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left(k \pi ,(k+1) \pi \right)}$  \vphantom{ $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right)}$} \\ [4pt]
+\hspace{.5in} -- has range $(-\infty, -1] \cup [1, \infty) $ &   -- has range $(-\infty, -1] \cup [1, \infty) $ \\ [4pt]
+
+\end{tabular}
+
+\medskip
+
+\begin{tabular}{ll}
+
+\hspace{.3in} $\bullet \, $ The function $J(t) = \tan(t)$ &   $\bullet \, $ The function $K(t) = \cot(t)$ \\
+  & \\
+\hspace{.5in} -- has domain $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right)}$  &  -- has domain $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left(k \pi ,(k+1) \pi \right)}$  \vphantom{ $\displaystyle{\bigcup_{k = -\infty}^{\infty} \left( \frac{(2k+1)\pi}{2}, \frac{(2k+3) \pi}{2} \right)}$} \\ [4pt]
+\hspace{.5in} -- has range $(-\infty, \infty) $ &   -- has range $(-\infty, \infty) $ \\ [4pt]
+
+\end{tabular}
+
+\end{theorem}
+
+%% \ebm}
+
+
+\newpage
+
+\subsection{Exercises}
+%% SKIPPED %% \input{ExercisesforGraphsofOtherCircularFunctions}
+
+
+
+
+\closegraphsfile
+
+\end{document}
