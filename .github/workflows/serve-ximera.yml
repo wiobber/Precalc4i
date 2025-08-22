@@ -54,10 +54,10 @@ jobs:
           rm -rf ximera-downloads/with-answers
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
-          ./xmScripts/xmlatex bake  testxourse.tex --compile "html,handout.pdf" -f -j 5 || echo NOK
-          ./xmScripts/xmlatex frost testxourse.tex || echo NOK
-          ./xmScripts/xmlatex name  testxourse.tex || echo NOK
-          ./xmScripts/xmlatex serve testxourse.tex || echo NOK
+          ./xmScripts/xmlatex bake  course.tex testxourse.tex --compile "html,handout.pdf" -f -j 5 || echo NOK
+          ./xmScripts/xmlatex frost course.tex testxourse.tex || echo NOK
+          ./xmScripts/xmlatex name  course.tex testxourse.tex || echo NOK
+          ./xmScripts/xmlatex serve course.tex testxourse.tex || echo NOK
           # ./xmScripts/xmlatex ghaction
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
