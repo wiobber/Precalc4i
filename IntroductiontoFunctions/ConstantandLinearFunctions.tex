@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\begin{abstract} xxxxxx
+\begin{abstract}
 \end{abstract}
 \maketitle
 
@@ -126,7 +126,7 @@ Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vert
 
 In the graph on the left, $y$ always equals $3$ so we have $f(x) = 3$.  Procedurally, `$f(x) = 3$' says that the rule $f$ takes the input $x$, and, regardless of that input, gives the output $3$.  This is an example of what is called a \textbf{constant} function - a function which returns the \textbf{same} value regardless of the input.  Likewise, the function represented by the graph in the middle is $f(x) = -2$, and the graph on the right (the $x$-axis) is the graph of $f(x) = 0$.  In general, we have the following definition:
 
-\begin{definition} \label{constantfunction} A \textbf{constant function} is a function of the form \[ f(x) =  b\] where $b$ is real number.  The domain of a constant function is $(-\infty, \infty)$.
+\begin{definition} \label{constantfunction} A \index{function ! constant}\index{constant function ! as a horizontal line}\textbf{constant function} is a function of the form \[ f(x) =  b\] where $b$ is real number.  The domain of a constant function is $(-\infty, \infty)$.
 \end{definition}
 
 Some remarks about  Definition \ref{constantfunction} are in order.   First, note that we are using `$x$' as the independent variable, `$f$' as the function name, and  the letter `$b$' as a \index{parameter ! of a function} \textbf{parameter}.  In this context, a parameter is a fixed, but arbitrary, constant used to describe a \textbf{family} of functions.  Different values of $b$ determine different constant functions.  For example, $b = 3$ gives $f(x) = 3$, $b = -2$ gives $f(x) = -2$, and so on.  Once $b$ is chosen, however, it does not change as the independent variable, $x$, changes.   
@@ -233,19 +233,19 @@ One of the favorite piecewise-defined functions in mathematical circles is the \
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
 \item To find $\lfloor 0.785 \rfloor$, we note that $0 \leq 0.785  < 1$ so $\lfloor 0.785 \rfloor = 0$.  Given that $117$ is an integer, we have $\lfloor 117 \rfloor = 117$.  To find $\lfloor -2.001 \rfloor$, we note that $-3 \leq -2.001 < -2$, so $\lfloor -2.001 \rfloor = -3$. Finally, with $\pi \approx 3.14$, we get $\pi + 6  \approx 9.14$ and $9 \leq \pi+6 < 10$ so $\lfloor \pi + 6  \rfloor = 9$.
 
 \item  The first step in evaluating $\lfloor x \rfloor$ is to determine the interval $[k, k+1)$ containing $x$ so it seems reasonable that these are the intervals which produce the `pieces'.  In this case, there happen to be infinitely many pieces.  The inequality `$k \leq  x < k+1$' includes the left endpoint but excludes the right endpoint, so we have points at the left endpoints of our horizontal line segments while we have holes at the right endpoints. 
-
+\end{enumerate}
 
 
 A partial description of $\lfloor x \rfloor$ is given alongside a partial graph at the top of the next page.  (A full description or a complete graph would require infinitely large paper!) We use the vertical dots $\, \smash{\vdots} \,$ to indicate that both the rule and the graph continue indefinitely following the established pattern.\footnote{It is always dangerous to leave the rest of the pattern to the reader.  See, for instance, \href{http://www.math.kent.edu/~white/papers/pattern.pdf}{\underline{this paper}.}}
 
-\begin{multicols}{2} \raggedcolumns
+
 
 $ \lfloor x \rfloor = \begin{mycases} 
 \vdots & \\
@@ -262,7 +262,6 @@ $ \lfloor x \rfloor = \begin{mycases}
 5 & \text{if $\,\hphantom{-}5 \leq x < 6$} \\ 
 \smash{\vdots} & \end{mycases} $
 
-\columnbreak 
 
 % \begin{mfpic}[15]{-7}{7}{-7}{7}
 % \axes
@@ -334,12 +333,7 @@ $ \lfloor x \rfloor = \begin{mycases}
   % Caption
   \node[below=1cm] at (0,-7) {The graph of $y=\lfloor x \rfloor$.};
 \end{tikzpicture}
-
-
-\end{multicols}
-
-\end{enumerate}
-
+\end{explanation}
 \end{example}
 
 \subsection{Linear Functions}
@@ -347,7 +341,7 @@ $ \lfloor x \rfloor = \begin{mycases}
 
 Now that we've discussed the functions which correspond to horizontal lines, $y = b$, we move to discussing the functions which can be represented by lines of the form $y = mx + b$ where $m \neq 0$.  These functions are called \textbf{linear} functions and are described below.
 
-\begin{definition} \label{linearfunction} A \textbf{linear function} is a function of the form \[ f(x) = mx + b,\] where $m$ and $b$ are real numbers with $m \neq 0$.  The domain of a linear function is $(-\infty, \infty)$.
+\begin{definition}\label{linearfunction} A \index{function ! linear}\index{line ! linear function}\index{linear function}\textbf{linear function} is a function of the form \[ f(x) = mx + b,\] where $m$ and $b$ are real numbers with $m \neq 0$.  The domain of a linear function is $(-\infty, \infty)$.
 \end{definition}
 
 
@@ -368,9 +362,7 @@ The graph of a linear function is the graph of the line  $y = mx + b$.   Lines a
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition}
-
-\label{interceptdefns}
+\begin{definition}\label{interceptdefns}
 
 Suppose $f$ is a function represented by the graph of $y = f(x)$.
 
@@ -387,10 +379,6 @@ That is, $(c,0)$ is where the graph meets the $x$-axis.
 \end{itemize}
 
 \end{definition}
-
-%% \ebm}
-
-
 
 As is customary in this text, Definition \ref{interceptdefns} uses the default independent variable $x$, function name $f$, and dependent variable $y$, so these letters will change depending on the context.  Also note that the `zeros' of a function are the solutions to $f(x) = 0$ - so they are \textbf{real numbers}.  The $x$-intercepts are, on the other hand, \textbf{points} on the graph.  As a quick example, consider $f(x) = x-3$.  The zeros of $f$ are found by solving $f(x) = 0$, or $x-3=0$.  We get one solution, $x = 3$.  Therefore, $x=3$ is the \textbf{zero} of $f$ that corresponds graphically to the $x$-\textbf{intercept} $(3,0)$.  
 
@@ -544,7 +532,7 @@ From the graphs above, we see that regardless if $m>0$ or $m<0$, the range of li
 \item  The cost function $C(x)= 80x + 150$ is in slope-intercept form so we recognize the slope as the coefficient of $x$, $m = 80$.  With $m > 0$, the function $C$ is always increasing.  This means that it costs more money to make more game systems.  To interpret the slope as a rate of change, we note that the output, $C(x)$, is the cost in dollars, while the input, $x$,  is the number of PortaBoys produced:  \[ m = 80 = \dfrac{80}{1} =  \dfrac{\Delta [C(x)]}{\Delta x} = \dfrac{\$ 80}{1 \, \mbox{PortaBoy produced}}.\]  Hence, the cost to produce PortaBoys is increasing at a rate of $\$80$ per PortaBoy produced.  This is often called the \index{cost ! variable}\index{variable cost}\textbf{variable cost} for the venture. 
 
 
-\item  To find how many PortaBoys can be produced for $\$15, \! 000$, we solve $C(x) = 15000$, which means $80x+150 = 15000$.  This yields  $x = 185.625$.  We can produce only a whole number amount of PortaBoys so we are left with two options: produce $185$ or $186$ PortaBoys.  Given that $C(185) =  14950$ and $C(186) = 15030$, we would be over budget if we produced $186$ PortaBoys.  Hence, we can produce $185$ PortaBoys for $\$15, \! 000$ (with $\$50$ to spare). \qed
+\item  To find how many PortaBoys can be produced for $\$15, \! 000$, we solve $C(x) = 15000$, which means $80x+150 = 15000$.  This yields  $x = 185.625$.  We can produce only a whole number amount of PortaBoys so we are left with two options: produce $185$ or $186$ PortaBoys.  Given that $C(185) =  14950$ and $C(186) = 15030$, we would be over budget if we produced $186$ PortaBoys.  Hence, we can produce $185$ PortaBoys for $\$15, \! 000$ (with $\$50$ to spare). 
 
 \end{enumerate}
 
@@ -562,11 +550,11 @@ Indeed, the computations above are at the heart of what it means to be a linear 
 
 
 
-%% \colorbox{ResultColor}{\bbm
+
 
 \begin{eqn} \label{linearfunctionpointslope} The \index{linear function ! point-slope form} \index{point-slope form ! of a linear function} \textbf{point-slope form} of a linear function is \[ f(x) = f(x_{\mbox{\tiny $0$}}) + m (x - x_{\mbox{\tiny $0$}}) \]
 \end{eqn}
-%% \ebm}
+
 
 
 
@@ -592,65 +580,110 @@ Second, if we write $\Delta x = x - x_{\mbox{\tiny $0$}}$, then  $x = x_{\mbox{\
 
 \end{enumerate}
 
-\smallskip
-
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
 \item  We are asked to find a linear function $p(x)$ ostensibly because the retailer has only two data points and two points are all that is needed to determine a unique line.  We know that $20$ PortaBoys were sold  when the price was $220$ dollars and double that, so $40$ units, were sold when the price was $190$ dollars. Using the language of function notation, these statements translate to  $p(20)=220$ and $p(40)=190$, respectively.  We first find the slope \[ m = \dfrac{\Delta [p(x)]}{\Delta x} = \dfrac{190 - 220}{40 - 20} = \dfrac{-30}{20} = -1.5\] and then substitute it and a pair $(x_{\mbox{\tiny $0$}}, p(x_{\mbox{\tiny $0$}}))$ into the point-slope formula.  We have two choices:  $x_{\mbox{\tiny $0$}} = 20$ and $p(x_{\mbox{\tiny $0$}}) = 220$ or $x_{\mbox{\tiny $0$}} = 40$ and $p(x_{\mbox{\tiny $0$}}) = 190$.  We'll choose the former and invite the reader to use the latter - both will result in the same simplified expression.  The point-slope formula yields  \[p(x) = p(x_{\mbox{\tiny $0$}}) + m (x - x_{\mbox{\tiny $0$}}) = 220 + (-1.5)(x - 40)\] which simplifies to $p(x) = -1.5x + 250$.  (To check this algebraically, we can verify that $p(20) = 220$ and $p(40) = 190$.) To find the $y$-intercept of the graph, we substitute $x = 0$ and find $p(0) = 250$.  Hence our $y$-intercept is $(0, 250)$.  To find the $x$-intercept, we set $p(x) = 0$. Solving $-1.5x + 250 = 0$ gives $x = 166.\overline{6}$, so our $x$-intercept is $(166.\overline{6}, 0)$.\footnote{The exact value is $x = \frac{500}{3}$. Recall that the bar over the $6$ indicates that the decimal repeats.  See page \pageref{repeatingdecimalnote} for details.} The graph on the left is that of the line $y = -1.5x + 250$.  
 
-\smallskip
+
 
 \begin{center}
 
-\begin{tabular}{cc}
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {\scriptsize $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {\scriptsize $y$};
 
-\begin{mfpic}[15]{-1}{9}{-1}{7}
-\axes
-\tlabel[cc](9.5,0){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
-\tlabel[cc](8.5,0.75){\scriptsize $(166.\overline{6}, 0)$}
-\xmarks{1,2,3,4,5,6,7,8}
-\ymarks{1,2,3,4,5,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
-\axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(-1,5.6), (9,-0.4)}
-\point[4pt]{(0,5), (8.33,0)}
-\tcaption{ \scriptsize $y = -1.5x + 250$}
-\normalsize
-\end{mfpic} 
-&
+  % Axis labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {\scriptsize $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {\scriptsize $\yl$};
 
-\begin{mfpic}[15]{-1}{9}{-1}{7}
-\axes
-\tlabel[cc](9.5,0){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
-\tlabel[cc](8.5,0.75){\scriptsize $(166, 1)$}
-\xmarks{1,2,3,4,5,6,7,8}
-\ymarks{1,2,3,4,5,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
-\axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,  {$250$} 5, {$300$} 6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
-\axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
-\penwd{1.25pt}
-\polyline{(0,5), (8,0.02)}
-\point[4pt]{(0,5), (8,0.02)}
-\tcaption{ \scriptsize $y = p(x)$}
-\normalsize
-\end{mfpic} 
+  % Labels for points
+  \node at (1,5.5) {\scriptsize $(0,250)$};
+  \node at (8.5,0.75) {\scriptsize $(166.\overline{6}, 0)$};
+
+  % Line
+  \draw[thick,->,>=stealth] (-1,5.6)--(9,-0.4);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8.33,0) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {\scriptsize $y = -1.5x + 250$};
+\end{tikzpicture}
+
+% \begin{mfpic}[15]{-1}{9}{-1}{7}
+% \axes
+% \tlabel[cc](9.5,0){\scriptsize $x$}
+% \tlabel[cc](0.5,7){\scriptsize $y$}
+% \tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
+% \tlabel[cc](8.5,0.75){\scriptsize $(166.\overline{6}, 0)$}
+% \xmarks{1,2,3,4,5,6,7,8}
+% \ymarks{1,2,3,4,5,6}
+% \tlpointsep{4pt}
+% \scriptsize
+% \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
+% \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
+% \penwd{1.25pt}
+% \arrow \reverse \arrow  \polyline{(-1,5.6), (9,-0.4)}
+% \point[4pt]{(0,5), (8.33,0)}
+% \tcaption{ \scriptsize $y = -1.5x + 250$}
+% \normalsize
+% \end{mfpic} 
 
 
-\end{tabular}
+% \begin{mfpic}[15]{-1}{9}{-1}{7}
+% \axes
+% \tlabel[cc](9.5,0){\scriptsize $x$}
+% \tlabel[cc](0.5,7){\scriptsize $y$}
+% \tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
+% \tlabel[cc](8.5,0.75){\scriptsize $(166, 1)$}
+% \xmarks{1,2,3,4,5,6,7,8}
+% \ymarks{1,2,3,4,5,6}
+% \tlpointsep{4pt}
+% \scriptsize
+% \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
+% \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,  {$250$} 5, {$300$} 6}
+% \tlpointsep{4pt}
+% \scriptsize
+% \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
+% \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
+% \penwd{1.25pt}
+% \polyline{(0,5), (8,0.02)}
+% \point[4pt]{(0,5), (8,0.02)}
+% \tcaption{ \scriptsize $y = p(x)$}
+% \normalsize
+% \end{mfpic} 
+
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {\scriptsize $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {\scriptsize $y$};
+
+  % Axis ticks and labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {\scriptsize $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,5/250,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {\scriptsize $\yl$};
+
+  % Labels for points
+  \node at (1,5.5) {\scriptsize $(0, 250)$};
+  \node at (8.5,0.75) {\scriptsize $(166, 1)$};
+
+  % Line
+  \draw[thick] (0,5)--(8,0.02);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8,0.02) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {\scriptsize $y = p(x)$};
+\end{tikzpicture}
 
 \end{center}
 
@@ -664,10 +697,10 @@ Given that $x$ represents the number of PortaBoys sold, we need to choose to end
 
 \item  To determine the price which will move $150$ PortaBoys, we find $p(150) = -1.5(150) + 250 = 25$.  That is, the price would have to be $\$25$ per system.
 
-\item  If the price of a PortaBoy were set at $\$150$, we'd have $p(x) = 150$, or $-1.5x + 250 = 150$.  This yields $-1.5x = -100$ or $x = 66.\overline{6}$. Again our algebraic solution lies between two whole numbers, so we find $p(66) = 151$ and $p(67) = 149.5$.  If the price were set at $\$ 150$, we'd sell $66$ systems, since to sell $67$ systems, we'd have to drop the price just under $\$150$.  \qed
+\item  If the price of a PortaBoy were set at $\$150$, we'd have $p(x) = 150$, or $-1.5x + 250 = 150$.  This yields $-1.5x = -100$ or $x = 66.\overline{6}$. Again our algebraic solution lies between two whole numbers, so we find $p(66) = 151$ and $p(67) = 149.5$.  If the price were set at $\$ 150$, we'd sell $66$ systems, since to sell $67$ systems, we'd have to drop the price just under $\$150$.  
 
 \end{enumerate}
-
+\end{explanation}
 
 \end{example}
 
@@ -682,45 +715,79 @@ Our next two examples focus on writing formulas for piecewise-defined functions,
 
 \begin{center}
 
-\begin{mfpic}[15]{-5}{5}{-3}{6}
+% \begin{mfpic}[15]{-5}{5}{-3}{6}
 
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,6){\scriptsize $W$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\tlabel[cc](1,4.5){$(1,4)$}
-\tlabel[cc](1,2.5){$(1,2)$}
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.5pt}
-\arrow   \reverse \function{-5, 1, 0.1}{4}
-\arrow   \function{1, 5, 0.1}{3-x}
-\point[3.5pt]{(1,4)}
-\pointfillfalse
-\point[3.5pt]{(1,2)}
-\tcaption{$W = L(t)$}
-\end{mfpic}
+% \axes
+% \tlabel[cc](5,-0.5){\scriptsize $t$}
+% \tlabel[cc](0.5,6){\scriptsize $W$}
+% \xmarks{-4, -3,-2,-1,1,2,3,4}
+% \ymarks{-2,-1,1,2,3,4,5}
+% \tlpointsep{5pt}
+% \scriptsize
+% \tlabel[cc](1,4.5){$(1,4)$}
+% \tlabel[cc](1,2.5){$(1,2)$}
+% \axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+% \axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+% \normalsize
+% \penwd{1.5pt}
+% \arrow   \reverse \function{-5, 1, 0.1}{4}
+% \arrow   \function{1, 5, 0.1}{3-x}
+% \point[3.5pt]{(1,4)}
+% \pointfillfalse
+% \point[3.5pt]{(1,2)}
+% \tcaption{$W = L(t)$}
+% \end{mfpic}
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-3, ymax=6,
+    xtick={-4,-3,-2,-1,1,2,3,4},
+    ytick={-2,-1,1,2,3,4,5},
+    xlabel={$t$},
+    ylabel={$W$},
+    xlabel style={anchor=north},
+    ylabel style={anchor=east},
+    grid=none,
+    width=10cm, height=7cm,
+    every axis plot/.append style={thick}
+]
+
+% --- left horizontal segment y=4, for -5 <= x <= 1 ---
+\addplot[domain=-5:1,samples=2] {4};
+
+% --- right decreasing segment y=3-x, for 1 <= x <= 5 ---
+\addplot[domain=1:5,samples=2] {3-x};
+
+% --- filled point at (1,4) ---
+\addplot[only marks,mark=*,mark size=2pt] coordinates {(1,4)};
+\node[anchor=west,font=\scriptsize] at (axis cs:1,4.5) {$(1,4)$};
+
+% --- open point at (1,2) ---
+\addplot[only marks,mark=o,mark size=2pt] coordinates {(1,2)};
+\node[anchor=west,font=\scriptsize] at (axis cs:1,2.5) {$(1,2)$};
+
+\end{axis}
+\end{tikzpicture}
 
 \end{center}
 
 
-{\bf Solution.}   From the graph of $W = L(t)$ we see that there are two distinct pieces. Taking note of the point at $(1, 4)$, we get $L(t) = 4$ for $t \leq 1$.  To represent $L$ for $t>1$, we use the point-slope form of a linear function: $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\mbox{\,\tiny $0$}})$.  The only `point' labeled with this part of the graph is the hole at $(1, 2)$ and it isn't technically part of the graph, so we will avoid using it.\footnote{We actually could use the point $(1, 2)$ to find the equation of the \textbf{line} containing $(1, 2)$ and, say $(3, 0)$, which is $y = -t + 3$.  It's just that the graph of $L(t)$ and the line $y = -t + 3$ only agree for $t > 1$, so it would be incorrect to write $L(1) = 2$.}  Instead, we infer from the graph two other points: $(2, 1)$ and $(3, 0)$.  We get the slope to be \[m = \dfrac{\Delta W}{\Delta t} = \dfrac{\Delta [L(t)]}{\Delta t} = \dfrac{3 - 2}{0 - 1} = -1.\] Next, we choose a point to plug into  $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\,\mbox{\tiny $0$}})$.  We have two options:  $t_{\,\mbox{\tiny $0$}} = 2$ and $L(t_{\,\mbox{\tiny $0$}}) = 1$ or $t_{\,\mbox{\tiny $0$}} = 3$ and $L(t_{\,\mbox{\tiny $0$}}) = 0$.  Using the latter, we get $L(t) = 0 + (-1)(t - 3)$, or $L(t) = -t + 3$.  Putting this together with the first part, we get: \[ L(t) = \begin{mycases} 
+\begin{explanation} 
+From the graph of $W = L(t)$ we see that there are two distinct pieces. Taking note of the point at $(1, 4)$, we get $L(t) = 4$ for $t \leq 1$.  To represent $L$ for $t>1$, we use the point-slope form of a linear function: $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\mbox{\,\tiny $0$}})$.  The only `point' labeled with this part of the graph is the hole at $(1, 2)$ and it isn't technically part of the graph, so we will avoid using it.\footnote{We actually could use the point $(1, 2)$ to find the equation of the \textbf{line} containing $(1, 2)$ and, say $(3, 0)$, which is $y = -t + 3$.  It's just that the graph of $L(t)$ and the line $y = -t + 3$ only agree for $t > 1$, so it would be incorrect to write $L(1) = 2$.}  Instead, we infer from the graph two other points: $(2, 1)$ and $(3, 0)$.  We get the slope to be \[m = \dfrac{\Delta W}{\Delta t} = \dfrac{\Delta [L(t)]}{\Delta t} = \dfrac{3 - 2}{0 - 1} = -1.\] Next, we choose a point to plug into  $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\,\mbox{\tiny $0$}})$.  We have two options:  $t_{\,\mbox{\tiny $0$}} = 2$ and $L(t_{\,\mbox{\tiny $0$}}) = 1$ or $t_{\,\mbox{\tiny $0$}} = 3$ and $L(t_{\,\mbox{\tiny $0$}}) = 0$.  Using the latter, we get $L(t) = 0 + (-1)(t - 3)$, or $L(t) = -t + 3$.  Putting this together with the first part, we get: \[ L(t) = \begin{mycases} 
       4 &  \text{if $t \leq 1$} \\
       -t+3   & \text{if $t>1$} \\
    \end{mycases}
-\] Note that when $t = 1$ is substituted into the expression $-t + 3$, we get $2$, so the hole at $(1, 2)$ checks.\footnote{Alternatively, for $t$ values larger than $1$ but getting closer and closer to $1$, $L(t) \approx 2$.}    \qed
+\] Note that when $t = 1$ is substituted into the expression $-t + 3$, we get $2$, so the hole at $(1, 2)$ checks.\footnote{Alternatively, for $t$ values larger than $1$ but getting closer and closer to $1$, $L(t) \approx 2$.} 
+\end{explanation}
 
 \end{example}
 
 \begin{example}  \label{dataplanex} A popular F\={o}n-i smartphone carrier offers the following smartphone data plan: use any amount of data up to and including 4 gigabytes for $\$ 60$ per month with an `overage' charge of $ \$5$ per gigabyte.  Determine a formula that computes the cost in dollars as a function of using $g$ gigabytes of data per month. Graph your answer.
 
-
-
-{\bf Solution.}  It is clear from context that we are to use the variable $g$ (for `g'igabytes) as the independent variable.  We are asked to compute the cost so it seems natural to name the function $C$.  Hence, we are after a formula for $C(g)$.  Knowing that $g$ represents the amount of data used each month, we must have $g \geq 0$.  In order to get a feel for the formula for $C(g)$, we can choose some specific values for $g$ and determine the cost, $C(g)$.  For example, if we use no data at all, $1$ gigabyte of data,  or $3.796$ gigabytes of data, the cost is the same:  $\$60$.  Indeed, per the plan, for any amount of data up to and including $4$ gigabytes, the cost is $\$60$.  
+\begin{explanation}  
+It is clear from context that we are to use the variable $g$ (for `g'igabytes) as the independent variable.  We are asked to compute the cost so it seems natural to name the function $C$.  Hence, we are after a formula for $C(g)$.  Knowing that $g$ represents the amount of data used each month, we must have $g \geq 0$.  In order to get a feel for the formula for $C(g)$, we can choose some specific values for $g$ and determine the cost, $C(g)$.  For example, if we use no data at all, $1$ gigabyte of data,  or $3.796$ gigabytes of data, the cost is the same:  $\$60$.  Indeed, per the plan, for any amount of data up to and including $4$ gigabytes, the cost is $\$60$.  
 
 
 
@@ -736,34 +803,66 @@ We are graphing a line so we need to plot just one more point to determine the g
 
 \begin{center}
 
-\begin{mfpic}[20]{-1}{7}{-1}{5}
-\axes
-\gclear \tlabelrect(-0.05,0.5){$\asymp$}
-\tlabel[cc](7,-0.5){\scriptsize $g$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4,5,6}
-\ymarks{1,2,3,4}
-\scriptsize
-\tlabel[cc](-0.75, 1){$(0, 60)$}
-\tlabel[cc](4, 0.5){$(4, 60)$}
-\tlabel[cc](6.5, 2.5){$(6, 70)$}
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6 }
-\axislabels {y}{{$65$} 2,   {$70$} 3, {$75$} 4}
-\penwd{1.25pt}
-\arrow \polyline{(0, 1), (4, 1), (7, 4)}
-\point[3pt]{(0,1), (4, 1), (6,3) }
-\tcaption{ \scriptsize$y =C(g)$}
-\normalsize
-\end{mfpic} 
+% \begin{mfpic}[20]{-1}{7}{-1}{5}
+% \axes
+% \gclear \tlabelrect(-0.05,0.5){$\asymp$}
+% \tlabel[cc](7,-0.5){\scriptsize $g$}
+% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \xmarks{1,2,3,4,5,6}
+% \ymarks{1,2,3,4}
+% \scriptsize
+% \tlabel[cc](-0.75, 1){$(0, 60)$}
+% \tlabel[cc](4, 0.5){$(4, 60)$}
+% \tlabel[cc](6.5, 2.5){$(6, 70)$}
+% \tlpointsep{4pt}
+% \axislabels {x}{ {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6 }
+% \axislabels {y}{{$65$} 2,   {$70$} 3, {$75$} 4}
+% \penwd{1.25pt}
+% \arrow \polyline{(0, 1), (4, 1), (7, 4)}
+% \point[3pt]{(0,1), (4, 1), (6,3) }
+% \tcaption{ \scriptsize$y =C(g)$}
+% \normalsize
+% \end{mfpic} 
+
+\begin{tikzpicture}[scale=1]
+  % Axes
+  \draw[->] (-1,0) -- (7.5,0) node[below] {\scriptsize $g$};
+  \draw[->] (0,-0.5) -- (0,5) node[left] {\scriptsize $y$};
+
+  % Tick marks on x-axis
+  \foreach \x in {1,2,3,4,5,6} {
+    \draw (\x,0.1) -- (\x,-0.1);
+    \node[below] at (\x,-0.1) {\scriptsize $\x$};
+  }
+
+  % Tick marks on y-axis
+  \foreach \y/\label in {1/60,2/65,3/70,4/75} {
+    \draw (0.1,\y) -- (-0.1,\y);
+    \node[left] at (-0.1,\y) {\scriptsize $\label$};
+  }
+
+  % Polyline with arrow
+  \draw[thick,->] (0,1) -- (4,1) -- (7,4);
+
+  % Points
+  \foreach \pt in {(0,1),(4,1),(6,3)} {
+    \fill \pt circle (2pt);
+  }
+
+  % Labels for points
+  \node[below right] at (0,1) {\scriptsize $(0,60)$};
+  \node[below] at (4,1) {\scriptsize $(4,60)$};
+  \node[right] at (6,3) {\scriptsize $(6,70)$};
+
+  % Caption
+  \node at (3,-0.8) {\scriptsize $y = C(g)$};
+\end{tikzpicture}
+
 
 \end{center}
-
-\vspace*{-.35in} \qed
+\end{explanation}
 
 \end{example}
-
-\vspace*{-.1in}
 
 \subsection{Linear Regression}
 \label{LinearRegression}
@@ -774,10 +873,8 @@ We have demonstrated in this section that constant, linear, and piecewise combin
 
 In that example, $t$ represented the time (number of hours after 6 a.m.) and $T$ represented the outdoor temperature in degrees Fahrenheit. The data Skippy collected along with a plot of the function $T = f(t)$ are given below. Even though the data points as $t$ varies from $t = 0$ to $t = 8$ do not all lie on the same line - a fact we could prove analytically by checking slopes - there does appear to be a linear \textbf{trend} evident.  The same can be said for the data as $t$ varies from $t =8 $ to $t = 12$.  As we'll see, there are statistical methods which can produce  linear functions that are in some sense `closest' to all of the data, and they are represented below by the dashed lines below on the right. 
 
-
-\begin{multicols}{2} \raggedcolumns
-
- \vspace*{.17in} $\begin{array}{|c||c|}  \hline
+\begin{center}
+$\begin{array}{|c||c|}  \hline
 
  \text{$t$: hours after 6 a.m.}  & \text{$T$: temperature $^{\circ}$F} \\ \hline
  0 & 64  \\  \hline
@@ -787,28 +884,59 @@ In that example, $t$ represented the time (number of hours after 6 a.m.) and $T$
  8 & 83  \\  \hline
  10 &  83 \\  \hline
  12 & 82  \\  \hline
-
 \end{array}$
 
-\begin{mfpic}[15]{-1}{13}{-1}{10}
-\axes
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,10){\scriptsize $T$}
-\gclear \tlabelrect(-0.05,0.5){$\asymp$}
-\xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
-\ymarks{1,2,3,4,5,6,7,8,9}
-\point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
-\tlpointsep{4pt}
-\scriptsize
-\dashed \polyline{(0, 0.75), (8, 10)}
-\dashed \polyline{(8, 9.5), (12, 9)}
-\axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
-\axislabels {y}{{$64$} 1, {$66$} 2, {$68$} 3, {$72$} 4, {$74$} 5, {$76$} 6, {$78$} 7, {$80$} 8, {$82$} 9}
-\normalsize
-\tcaption{The graph of $T = f(t)$.}
-\end{mfpic} 
+% \begin{mfpic}[15]{-1}{13}{-1}{10}
+% \axes
+% \tlabel[cc](13,-0.5){\scriptsize $t$}
+% \tlabel[cc](0.5,10){\scriptsize $T$}
+% \gclear \tlabelrect(-0.05,0.5){$\asymp$}
+% \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
+% \ymarks{1,2,3,4,5,6,7,8,9}
+% \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
+% \tlpointsep{4pt}
+% \scriptsize
+% \dashed \polyline{(0, 0.75), (8, 10)}
+% \dashed \polyline{(8, 9.5), (12, 9)}
+% \axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
+% \axislabels {y}{{$64$} 1, {$66$} 2, {$68$} 3, {$72$} 4, {$74$} 5, {$76$} 6, {$78$} 7, {$80$} 8, {$82$} 9}
+% \normalsize
+% \tcaption{The graph of $T = f(t)$.}
+% \end{mfpic} 
 
-\end{multicols}
+\begin{tikzpicture}[scale=0.7]
+  % Axes
+  \draw[->] (-1,0) -- (13.5,0) node[below] {\scriptsize $t$};
+  \draw[->] (0,-0.5) -- (0,10.5) node[left] {\scriptsize $T$};
+
+  % Asymp symbol near y-axis
+  \node at (-0.4,0.5) {$\asymp$};
+
+  % X ticks and labels
+  \foreach \x in {1,...,12} {
+    \draw (\x,0.1) -- (\x,-0.1);
+    \node[below] at (\x,-0.1) {\scriptsize $\x$};
+  }
+
+  % Y ticks and labels
+  \foreach \y/\label in {1/64,2/66,3/68,4/72,5/74,6/76,7/78,8/80,9/82} {
+    \draw (0.1,\y) -- (-0.1,\y);
+    \node[left] at (-0.1,\y) {\scriptsize $\label$};
+  }
+
+  % Points
+  \foreach \pt in {(0,1),(2,2.5),(4,5.5),(6,8),(8,9.5),(10,9.5),(12,9)} {
+    \fill \pt circle (2.2pt);
+  }
+
+  % Dashed lines
+  \draw[dashed] (0,0.75) -- (8,10);
+  \draw[dashed] (8,9.5) -- (12,9);
+
+  % Caption
+  \node at (6,-1.2) {The graph of $T = f(t)$.};
+\end{tikzpicture}
+\end{center}
 
 
 How do we measure how `close' a set of points is to a given line?   Let's leave Skippy's data for the moment and focus on a smaller data set.  Suppose we collected three data points: $\{(1, 0.5), (3, 2), (4, 3)\}$.  At the top of the next page (on the left) we plot these points along with the line $y = 0.5 x + 0.5$.   The way we measure how close the line is to these points is by computing the \index{regression ! total squared error}\index{total squared error}\textbf{total squared (vertical) error} between the data points and the line as follows.   For each of our data points, we find the vertical distance between the point and the line.  To accomplish this, we need to find a point on the line directly above or below each data point.  In other words, we need a point on the line with the same $x$-coordinate as our data point.  
@@ -823,34 +951,60 @@ Using advanced mathematical machinery,\footnote{like Calculus or Linear Algebra 
 
 
 
-\begin{tabular}{m{2in}m{4in}}
-
-\begin{mfpic}[20]{-1}{5}{-1}{5}
-\dotted \polyline{(1,0.5),(1,1)}
-\dotted  \polyline{(4,3),(4,2.5)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1 step 1 until 4}
-\ymarks{1 step 1 until 4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow  \function{-1,5,0.1}{0.5*x+0.5}
-\point[4pt]{(1,0.5), (1,1), (3,2), (4,3), (4,2.5)}
-\end{mfpic}
-
-&
-
-\includegraphics[width=4in]{ConstantandLinearFunctionsGraphics/ThreePointRegression.jpg} \\
- 
-\end{tabular}
 
 
-\enlargethispage{.25in}
+% \begin{mfpic}[20]{-1}{5}{-1}{5}
+% \dotted \polyline{(1,0.5),(1,1)}
+% \dotted  \polyline{(4,3),(4,2.5)}
+% \axes
+% \tlabel[cc](5,-0.5){\scriptsize $x$}
+% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \xmarks{1 step 1 until 4}
+% \ymarks{1 step 1 until 4}
+% \tlpointsep{4pt}
+% \scriptsize
+% \axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+% \axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow  \function{-1,5,0.1}{0.5*x+0.5}
+% \point[4pt]{(1,0.5), (1,1), (3,2), (4,3), (4,2.5)}
+% \end{mfpic}
+
+\begin{center}
+    \begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-1, xmax=5,
+    ymin=-1, ymax=5,
+    xtick={1,2,3,4},
+    ytick={1,2,3,4},
+    xlabel={$x$},
+    ylabel={$y$},
+    axis equal image,
+    every axis x label/.style={at={(ticklabel* cs:1)},anchor=west},
+    every axis y label/.style={at={(ticklabel* cs:1)},anchor=south},
+    width=8cm, height=8cm,
+    enlargelimits=false,
+]
+
+% The function y = 0.5x + 0.5
+\addplot[domain=-1:5, thick] {0.5*x+0.5};
+
+% Dotted vertical segments
+\addplot[dotted, thick] coordinates {(1,0.5) (1,1)};
+\addplot[dotted, thick] coordinates {(4,3) (4,2.5)};
+
+% Points
+\addplot[only marks, mark=*] coordinates {
+    (1,0.5) (1,1) (3,2) (4,3) (4,2.5)
+};
+
+\end{axis}
+\end{tikzpicture}
+
+\includegraphics[width=4in]{ConstantandLinearFunctionsGraphics/ThreePointRegression.jpg}
+\end{center}
 
 Our graphing utility produces the model\footnote{We chose to use three decimal places for the approximations in this demonstration.  How many you get to use in reality varies from one application to another.} $y=mx+b$ where the slope is $m \approx 0.821$ and the $y$-coordinate of the $y$-intercept is $b \approx -0.357$.  The value $r$ is the \index{regression ! correlation coefficient}\index{correlation coefficient}\textbf{correlation coefficient} and is a measure of how close the data is to being on the same line.  The closer $|r|$ is to $1$, the better the linear fit.\footnote{The value $r^2$ is called the \index{regression ! coefficient of determination}\index{coefficient of determination}\textbf{coefficient of determination} and is also a measure of the goodness of fit. We refer the interested reader to a course in Statistics to explore the significance of $r$ and $r^2$.} Having $r \approx 0.997$ tells us that the points have a strong, positive correlation - that is, they are very close to being on a line with a positive slope, namely $y = 0.821x - 0.357$.   Indeed, the total squared error between our data set and this line is $E \approx 0.018$. The mathematics tells us that this is the smallest we can get $E$ by modifying the parameters $m$ and $b$, even though none of the data points actually lie on the line.  
 
@@ -866,7 +1020,7 @@ Now that we have this new mathematical machinery, let's revisit Skippy's time an
 
 \begin{center}
   
-\begin{multicols}{2}
+
   
 $\begin{array}{|c||c|}  \hline
 
@@ -877,10 +1031,7 @@ $\begin{array}{|c||c|}  \hline
  6 &  80 \\  \hline
  8 & 83  \\  \hline
 
-\end{array}$
-  
-
-	
+\end{array}$\quad\quad
 $\begin{array}{|c||c|}  \hline
 
  \text{$t$: hours after 6 a.m.}  & \text{$T$: temperature $^{\circ}$F} \\ \hline
@@ -891,7 +1042,7 @@ $\begin{array}{|c||c|}  \hline
 
 \end{array}$ 
   
-\end{multicols}
+
   
 \end{center}
 
@@ -899,9 +1050,7 @@ $\begin{array}{|c||c|}  \hline
   
 \end{enumerate}
 
-\pagebreak
-
-{\bf Solution.}
+\begin{explanation}
   
 \begin{enumerate}
   
@@ -925,9 +1074,10 @@ The slope in this case is $m = -0.25$ which corresponds to the temperature decre
 \includegraphics[width=6in]{./ConstantandLinearFunctionsGraphics/TimeTempRegression02.jpg}
 \end{center}
 
-\item  The time $7$ a.m. corresponds to $t = 1$. This falls between $t = 0$ and $t = 8$ so we use our first model.  Substituting $t = 1$ gives $T = F(1) = 2.55(1) + 63.6 \approx 66.2$.  Therefore, the model predicts the temperature to be $66.2^{\circ}$F at 7 a.m..  Likewise, $3$ p.m. corresponds to $t = 9$.  This is greater than $8$, so we use the second model: $T = G(9) =  -0.25(9) + 85.167 \approx  82.9$.  The model predicts the temperature at $3$ p.m. to be $82.9^{\circ}$F.   Based on the goodness of fit of each model, we have more confidence in the former prediction than in the latter.   \qed
+\item  The time $7$ a.m. corresponds to $t = 1$. This falls between $t = 0$ and $t = 8$ so we use our first model.  Substituting $t = 1$ gives $T = F(1) = 2.55(1) + 63.6 \approx 66.2$.  Therefore, the model predicts the temperature to be $66.2^{\circ}$F at 7 a.m..  Likewise, $3$ p.m. corresponds to $t = 9$.  This is greater than $8$, so we use the second model: $T = G(9) =  -0.25(9) + 85.167 \approx  82.9$.  The model predicts the temperature at $3$ p.m. to be $82.9^{\circ}$F.   Based on the goodness of fit of each model, we have more confidence in the former prediction than in the latter.   
   
 \end{enumerate}
+\end{explanation}
 \end{example}
  
 Examples \ref{PortaBoyCost}, \ref{PortaBoyDemand} and \ref{timetempregressionex} (among others)  represent three different levels of mathematical modeling.  In Example  \ref{PortaBoyCost},  the mathematical model (the cost function) was provided and our task was to use the model to \textbf{interpret} the mathematics in that context.    In Example  \ref{PortaBoyDemand}, we were given a minimal amount of information, namely, two data points, and then asked to \textbf{construct} a model which fit those data exactly.  Lastly, in Example \ref{timetempregressionex}, we were given several data points and we used statistical methods to construct a \textbf{best fit} model to the data. 
@@ -944,11 +1094,9 @@ As mentioned earlier in the section, the concepts of slope and the more general 
 
 
 
-%% \colorbox{ResultColor}{\bbm
+
 
 \begin{definition} \label{arc}  Let $f$ be a function defined on the interval $[a,b]$. 
-
-\smallskip
 
  The \index{average rate of change}\index{rate of change ! average}\textbf{average rate of change}  of $f$ over $[a,b]$ is defined as: \[ \dfrac{\Delta [f(x)]}{\Delta x} = \dfrac{f(b) - f(a)}{b-a} \]
 
@@ -956,7 +1104,7 @@ Geometrically, the average rate of change is the slope of the line\footnote{This
 
 \end{definition}
 
-%% \ebm}
+
 
 
 
@@ -990,7 +1138,7 @@ If $f$ is increasing over $[a,b]$, then the average rate of change will be posit
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1023,7 +1171,7 @@ Geometrically, the average rate of change of a function over an interval can be 
 
 
 
-\begin{multicols}{2}
+
 
 
 \includegraphics[width=2.75in]{./ConstantandLinearFunctionsGraphics/ARCRocketExample02.jpg}
@@ -1031,17 +1179,16 @@ Geometrically, the average rate of change of a function over an interval can be 
 \includegraphics[width=2.75in]{./ConstantandLinearFunctionsGraphics/ARCRocketExample03.jpg}
 
 
-\end{multicols}
 
 
-The graph above on the right depicts a dotted line through $(10, 500)$ and $(20,0)$ indicating a net decrease over that interval.  We also have a horizontal line ($0$ slope) containing the points $(5, 375)$ and $(15, 375)$, which shows no net change between those two points, despite the fact that the rocket rose to its maximum height then began its descent during the interval $[5, 15]$.   \qed
+The graph above on the right depicts a dotted line through $(10, 500)$ and $(20,0)$ indicating a net decrease over that interval.  We also have a horizontal line ($0$ slope) containing the points $(5, 375)$ and $(15, 375)$, which shows no net change between those two points, despite the fact that the rocket rose to its maximum height then began its descent during the interval $[5, 15]$.   
 
 
 
 
 \end{enumerate}
 
-
+\end{explanation}
 
 \end{example}
 
