@@ -26,21 +26,21 @@ In Chapter \ref{IntroductiontoFunctions}, we studied functions of the form $f(x)
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 Monomial functions, by definition, contain the constant functions along with a two parameter family of functions, $f(x) = ax^n$.  We use $x$ as the default independent variable here with $a$ and $n$ as parameters.  From Section \ref{SetsofRealNumbers}, we recall that the set $\mathbb{N} = \{ 1, 2, 3, \ldots \}$ is the set of natural numbers, so examples of monomial functions include $f(x) = 2x = 2x^{1}$, $g(t) = -0.1 t^2$, and $H(s) = \sqrt{2} \, s^{117}$.  Note that the function $f(x) = x^0$ is \textbf{not} a monomial function.  Even though $x^0 = 1$ for all \textbf{nonzero} values of $x$, $0^{0}$ is undefined,\footnote{More specifically, $0^0$ is an \textbf{indeterminate form.}  These are studied extensively in Calculus.} and hence $f(x) = x^0$ does \textbf{not} have a domain of $(-\infty, \infty)$.\footnote{This is why we do not describe monomial functions as having the form $f(x) = ax^n$ for any \textbf{whole} number $n$. See Section \ref{SetsofRealNumbers}}
 
-\medskip
+%\medskip
 
 We begin our study of the graphs of polynomial functions by studying graphs of monomial functions.  Starting with $f(x) = x^n$ where $n$ is even, we investigate the cases $n = 2$, $4$ and $6$ at the top of the next page.  Numerically, we see that if $-1 < x < 1$,  $x^n$ becomes much smaller as $n$ increases whereas if $x<-1$ or $x>1$, $x^n$ becomes much larger as $n$ increases.  These trends manifest themselves geometrically as  the graph `flattening'  for $|x|<1$  and `narrowing'  for $|x| > 1$ as $n$ increases.\footnote{Recall that $|x| < 1$ is equivalent to $-1<x<1$ and $|x|>1$ is equivalent to $x<-1$ or $x>1$.  Using absolute values allow us to describe these sets of real numbers more succinctly.}   
 
-\medskip
+%\medskip
 
-\begin{tabular}{m{2.5in}m{1.5in}m{1.25in}m{1.25in}}
+%\begin{tabular}{m{2.5in}m{1.5in}m{1.25in}m{1.25in}}
 %\raggedcolumns
 %\setlength\columnsep{0pt}
 %\begin{multicols}{4}
-
+\begin{center}
 $\begin{array}{|r||c|c|c|}  \hline
 x &  x^2 & x^4 & x^6 \\ \hline
  -2 & 4& 16& 64 \\  \hline
@@ -50,61 +50,65 @@ x &  x^2 & x^4 & x^6 \\ \hline
  0.5 & 0.25  &  0.0625 & 0.015625 \\  \hline
  1&  1 & 1&  1 \\  \hline
  2 & 4 & 16 & 64 \\ \hline \end{array}$
+\end{center}
 
-&
+\begin{center} 
+\desmos{mwhjdwxzii}{800}{600} 
+\end{center}
+%https://www.desmos.com/calculator/mwhjdwxzii
+
+
 %\columnbreak
 
 %\vspace{.2in}
 
-\begin{mfpic}[10]{-3.5}{3.5}{-1}{10}
-\axes
-\tlabel[cc](3.5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 10){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3.16228,3.16228,0.1}{x**2}
-\point[4pt]{(-1,1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=x^2$}
-\end{mfpic}
+% \begin{mfpic}[10]{-3.5}{3.5}{-1}{10}
+% \axes
+% \tlabel[cc](3.5, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 10){\scriptsize $y$}
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-3.16228,3.16228,0.1}{x**2}
+% \point[4pt]{(-1,1), (0,0), (1,1)}
+% \tcaption{\scriptsize $y=x^2$}
+% \end{mfpic}
 
 %\columnbreak
-&
+
+% \begin{mfpic}[10]{-2}{2}{-1}{10}
+% \axes
+% \tlabel[cc](2, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 10){\scriptsize $y$}
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.77828,1.77828,0.1}{x**4}
+% \point[4pt]{(-1,1), (0,0), (1,1)}
+% \tcaption{\scriptsize $y=x^4$}
+% \end{mfpic}
 
 
-\begin{mfpic}[10]{-2}{2}{-1}{10}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 10){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.77828,1.77828,0.1}{x**4}
-\point[4pt]{(-1,1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=x^4$}
-\end{mfpic}
 
-
-&
 %\columnbreak
 
-\begin{mfpic}[10]{-2}{2}{-1}{10}
-\tlabel[cc](2, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 10){\scriptsize $y$}
-\axes
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.4678,1.4678,0.1}{x**6}
-\point[4pt]{(-1,1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=x^6$\vphantom{$x^4$}}
-\end{mfpic}
+% \begin{mfpic}[10]{-2}{2}{-1}{10}
+% \tlabel[cc](2, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 10){\scriptsize $y$}
+% \axes
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.4678,1.4678,0.1}{x**6}
+% \point[4pt]{(-1,1), (0,0), (1,1)}
+% \tcaption{\scriptsize $y=x^6$\vphantom{$x^4$}}
+% \end{mfpic}
 
 
-\end{tabular}
+%\end{tabular}
 %\end{multicols}
 
 From the graphs, it appears as if the range of each of these functions is $[0, \infty)$.  When $n$ is even, $x^n \geq 0$ for all $x$ so the range of $f(x) = x^{n}$ is contained in $[0, \infty)$.  To show that the range of $f$ is all of $[0, \infty)$, we note that the equation $x^n  = c$ for $c \geq 0$ has (at least) one solution for every even integer $n$, namely  $x = \sqrt[n]{c}$. (See Section \ref{AppRadEqus} for a review of this notation.)  Hence, $f(\sqrt[n]{c}) = (\sqrt[n]{c})^n = c$ which shows that every non-negative real number is in the range of $f$.\footnote{This argument should sound familiar - see the comments regarding the range of $f(x) = x^2$ in Section \ref{QuadraticFunctions}.}
 
-\medskip
+%\medskip
 
 Another item worthy of note is the symmetry about the line $x =0$ a.k.a the $y$-axis. (See Definition \ref{symmetrydefn} for a review of this concept.) With $n$ being even, $f(-x) = (-x)^n = x^n = f(x)$.  At the level of points, we have that for all $x$, $(-x, f(-x)) = (-x,f(x))$.  Hence for every point $(x, f(x))$ on the graph of $f$,  the point symmetric about the $y$-axis, $(-x, f(x))$ is on the graph, too.  We give this sort of symmetry a name honoring its roots here with even-powered monomial functions:
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -116,16 +120,16 @@ Another item worthy of note is the symmetry about the line $x =0$ a.k.a the $y$-
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 An investigation of the odd powered monomial functions ($n \geq 3$) yields similar results with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.  Numerically we see that for $|x| > 1$ the values of $|x^n|$ increase as $n$ increases and the values of $|x^n|$ get closer to $0$ as $n$ increases.  This translates graphically into a flattening behavior on the interval $(-1, 1)$ and a narrowing elsewhere.  The graphs are shown on the top of the next page.
 
-\medskip
+%\medskip
 
 The range of these functions appear to be all real numbers, $(-\infty, \infty)$ which is algebraically sound as the equation $x^n = c$ has a solution for every real number,\footnote{Do you see the importance of $n$ being odd here?} namely $x = \sqrt[n]{c}$.  Hence, for every real number $c$,  choose $x = \sqrt[n]{c}$ so that $f(x) = f(\sqrt[n]{c}) = (\sqrt[n]{c})^n =c$.  This shows that every real number is in the range of $f$.
 
-\begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
-
+%\begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
+\begin{center}
 $\begin{array}{|r||c|c|c|}  \hline
 
  x &  x^3 & x^5 & x^7 \\ \hline
@@ -136,54 +140,57 @@ $\begin{array}{|r||c|c|c|}  \hline
  0.5 & 0.125  &  0.03125 & 0.0078125 \\  \hline
  1&  1 & 1&  1 \\  \hline
  2 & 8 & 32 & 128 \\  \hline
-
 \end{array}$
+\end{center}
 
-&
+\begin{center} 
+\desmos{cob9jmebti}{800}{600} 
+\end{center}
+%https://www.desmos.com/calculator/cob9jmebti
 
-\vspace{.2in}
+% \vspace{.2in}
 
-\begin{mfpic}[10]{-2}{2}{-5}{5}
-\tlabel[cc](2, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\axes
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{$y=x^3$}
-\end{mfpic}
+% \begin{mfpic}[10]{-2}{2}{-5}{5}
+% \tlabel[cc](2, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 5){\scriptsize $y$}
+% \axes
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
+% \point[4pt]{(-1,-1), (0,0), (1,1)}
+% \tcaption{$y=x^3$}
+% \end{mfpic}
 
-&
+% &
 
-\vspace{.2in}
+% \vspace{.2in}
 
-\begin{mfpic}[10]{-2}{2}{-5}{5}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.3800,1.3800,0.1}{x**5}
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{$y=x^5$}
-\end{mfpic}
+% \begin{mfpic}[10]{-2}{2}{-5}{5}
+% \axes
+% \tlabel[cc](2, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 5){\scriptsize $y$}
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.3800,1.3800,0.1}{x**5}
+% \point[4pt]{(-1,-1), (0,0), (1,1)}
+% \tcaption{$y=x^5$}
+% \end{mfpic}
 
-&
+% &
 
-\begin{mfpic}[10]{-2}{2}{-5}{5}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.2585,1.2585,0.1}{x**7}
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{$y=x^7$}
-\end{mfpic} \\
+% \begin{mfpic}[10]{-2}{2}{-5}{5}
+% \axes
+% \tlabel[cc](2, -0.5){\scriptsize $x$}
+% \tlabel[cc](0.5, 5){\scriptsize $y$}
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.2585,1.2585,0.1}{x**7}
+% \point[4pt]{(-1,-1), (0,0), (1,1)}
+% \tcaption{$y=x^7$}
+% \end{mfpic} \\
 
-\end{tabular}
+%\end{tabular}
 
 Here, since $n$ is odd,  $f(-x) = (-x)^n = -x^n = -f(x)$.  This means that whenever $(x, f(x))$ is on the graph, so is the point symmetric about the origin,  $(-x, -f(x))$. (Again, see Definition \ref{symmetrydefn}.) We generalize this property below.  Not surprisingly, we name it in honor of its odd powered heritage:
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -195,15 +202,15 @@ Here, since $n$ is odd,  $f(-x) = (-x)^n = -x^n = -f(x)$.  This means that whene
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 The most important thing to take from the discussion above is the basic shape and common points on the graphs of $y = x^n$ for each of the families when $n$ even and $n$ is odd.  While symmetry is nice and should be noted when present, even and odd symmetry are comparatively rare.  The point of Definitions \ref{evenfunctiondefn}  and \ref{oddfunctiondefn} is to give us the vocabulary to point out the symmetry when appropriate.  
 
-\medskip
+%\medskip
 
-Moving on, we take a cue from Theorem  \ref{linearabsvaluegraphs} and prove the following.
+Moving on, we take a cue from Theorem~\ref{linearabsvaluegraphs} and prove the following.
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -229,35 +236,35 @@ Moving on, we take a cue from Theorem  \ref{linearabsvaluegraphs} and prove the 
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 {\bf Proof.} Our goal is to start with the graph of $f(x) = x^n$ and build it up to the graph of $F(x) = a(x-h)^n+k$.  We begin by examining $F_{1}(x) = (x-h)^n$.  The graph of $f(x) = x^n$ can be described as the set of points $\{ (c, c^n) \, | \, c \in \mathbb{R} \}$.\footnote{We are using the dummy variable $c$ here instead of $x$ for reasons that will become apparent shortly.}  Likewise, the graph of $F_{1}$ can be described as the set of points $\{(x, (x-h)^n) \, | \, x \in \mathbb{R} \}$.   If we relabel $c =x-h$ so that $x = c+h$, then as $x$ varies through all real numbers so does $c$.\footnote{That is, for a fixed number $h$ every real number $c$ can be written as $x-h$ for some real number $x$, and every real number $x$ can be written as $c + h$ for some real number $c$.}   Hence, we can describe the graph of $F_{1}$ as $\{ (c+h, c^n) \, | \, c \in \mathbb{R} \}$. This means that we can obtain the graph of $F_{1}$ from the graph of $f$ by adding $h$ to each of the $x$-coordinates of the points on the graph of $f$ and that establishes the first step of the theorem.
 
-\medskip
+%\medskip
 
 Next, we consider the graph of $F_{2}(x) = a(x-h)^n$ as compared to the graph of $F_{1}(x) = (x-h)^n$.  The graph of $F_{1}$ is the set of points $\{ (x, (x-h)^n \, | \, x \in \mathbb{R} \}$ while the graph of $F_{2}$ is the set of points $\{ (x, a(x-h)^n) \, | \, x \in \mathbb{R} \}$.  The only difference between the points $(x, (x-h)^n)$ and $(x, a(x-h)^n)$ is that the $y$-coordinate in the latter is $a$ times the $y$-coordinate of the former.  
 
-\medskip
+%\medskip
 
 In other words, to produce the graph of $F_{2}$ from the graph of $F_{1}$, we take the $y$-coordinate of each point on the graph of $F_{1}$ and multiply it by $a$ to get the corresponding point on the graph of $F_{2}$.  If $a>0$, all we are doing is scaling the $y$-axis by $a$.  If $a<0$, then, in addition to scaling the $y$-axis, we are also reflecting each point across the $x$-axis.  In either case, we have established the second step of the theorem.
 
-\medskip
+%\medskip
 
 Last, we compare the graph of $F(x) = a(x-h)^n + k$ to that of $F_{2}(x) = a(x-h)^n$.  Once again, we view the graphs as sets of points in the plane.  The graph of $F_{2}$ is $\{ (x, a(x-h)^n) \, | \, x \in \mathbb{R} \}$ and the graph of $F$ is$\{ (x, a(x-h)^n+k) \, | \, x \in \mathbb{R} \}$.  Looking at the corresponding points, $(x, a(x-h)^n)$ and $(x, a(x-h)^n+k)$, we see that we can obtain all of the points on the graph of $F$ by adding $k$ to each of the $y$-coordinates to points on the graph of $F_{2}$. This is equivalent to  shifting every point vertically by $k$ units which establishes the third and final step in the theorem. \qed
 
-\medskip
+%\medskip
 
 This argument should sound familiar.  The proof we presented above is more-or-less the same argument we presented after the proof of Theorem \ref{linearabsvaluegraphs} in Section \ref{AbsoluteValueFunctions} but with `$| \cdot |$' replaced by `$(\cdot)^n$.'  Also note that using $n =2$ in Theorem \ref{linearmononialgraphs} establishes Theorem \ref{standardformgraph} in Section \ref{QuadraticFunctions}. 
 
-\medskip
+%\medskip
 
 We now use Theorem \ref{linearmononialgraphs} to graph two different ``transformed'' monomial functions. To provide the reader an opportunity to compare and contrast the graphical behaviors exhibited in the case when $n$ is even versus when $n$ is odd, we graph one of each case.
 
-\medskip
+%\medskip
 
 \begin{example} \label{linearmonomialex}  Use Theorem \ref{linearmononialgraphs} to graph the following functions.  Label at least three points on each graph. State the domain and range using interval notation.
 	
-\begin{multicols}{2}
+%\begin{multicols}{2}
 
 \begin{enumerate}
 
@@ -268,7 +275,7 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
 
 \end{enumerate}
 
-\end{multicols}
+%\end{multicols}
 
 
 {\bf Solution.} 
@@ -277,226 +284,238 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
 
 \item For  $f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3$, we identify $n = 4$, $a = -2$, $h = -1$, and $k = 3$.  Thus to graph $f$, we start with $y = x^4$ and perform the following steps, in sequence, tracking the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step:
 
-\newpage
+\begin{center}
+\geogebra{ewzqwnt9}{800}{600}
+\end{center}
+% https://www.geogebra.org/classic/ewzqwnt9
 
-Step 1:   add $-1$ to the $x$-coordinates of each of the points on the graph of $y=x^4$:
+% \newpage
 
-\[ \begin{array}[v]{ccc}
+% Step 1:   add $-1$ to the $x$-coordinates of each of the points on the graph of $y=x^4$:
+
+% \[ \begin{array}[v]{ccc}
 
 
-\begin{mfpic}[15]{-3}{3}{-1}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-2,1){$(-1,1)$}
-\tlabel[cc](1.75,1){$(1,1)$}
-\tlabel[cc](0.75,-0.5){$(0,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.5,1.5,0.1}{x**4}
-\point[4pt]{(-1,1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=x^4$}
-\end{mfpic}  
+% \begin{mfpic}[15]{-3}{3}{-1}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2,1){$(-1,1)$}
+% \tlabel[cc](1.75,1){$(1,1)$}
+% \tlabel[cc](0.75,-0.5){$(0,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.5,1.5,0.1}{x**4}
+% \point[4pt]{(-1,1), (0,0), (1,1)}
+% \tcaption{\scriptsize $y=x^4$}
+% \end{mfpic}  
 
-&
-\stackrel{\text{ \scriptsize add $-1$ to each $x$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
-&
+% &
+% \stackrel{\text{ \scriptsize add $-1$ to each $x$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
+% &
 
-\begin{mfpic}[15]{-3}{3}{-1}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.25, 5){$y$}
-\tlabel[cc](-3,1){$(-2,1)$}
-\tlabel[cc](0.75,1){$(0,1)$}
-\tlabel[cc](-1.25,-0.5){$(-1,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4}
-\point[4pt]{(-2,1), (-1,0), (0,1)}
-\tcaption{\scriptsize $y=(x+1)^4$}
-\end{mfpic} \\
+% \begin{mfpic}[15]{-3}{3}{-1}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.25, 5){$y$}
+% \tlabel[cc](-3,1){$(-2,1)$}
+% \tlabel[cc](0.75,1){$(0,1)$}
+% \tlabel[cc](-1.25,-0.5){$(-1,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4}
+% \point[4pt]{(-2,1), (-1,0), (0,1)}
+% \tcaption{\scriptsize $y=(x+1)^4$}
+% \end{mfpic} \\
 
- \text{\scriptsize  $(-1,1)$, $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(-2,1)$, $(-1,0)$, $(0,1)$} \\
+%  \text{\scriptsize  $(-1,1)$, $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(-2,1)$, $(-1,0)$, $(0,1)$} \\
  
- \end{array} \]
+%  \end{array} \]
 
-Step 2:   multiply the $y$-coordinates of each of the points on the graph of $y = (x+1)^4$ by $-2$:
+% Step 2:   multiply the $y$-coordinates of each of the points on the graph of $y = (x+1)^4$ by $-2$:
 
- \[ \begin{array}{ccc}
+%  \[ \begin{array}{ccc}
  
-\begin{mfpic}[15]{-3}{3}{-1}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.25, 5){$y$}
-\tlabel[cc](-3,1){$(-2,1)$}
-\tlabel[cc](0.75,1){$(0,1)$}
-\tlabel[cc](-1.25,-0.5){$(-1,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4}
-\point[4pt]{(-2,1), (-1,0), (0,1)}
-\tcaption{\scriptsize $y=(x+1)^4$}
-\end{mfpic}
-&
+% \begin{mfpic}[15]{-3}{3}{-1}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.25, 5){$y$}
+% \tlabel[cc](-3,1){$(-2,1)$}
+% \tlabel[cc](0.75,1){$(0,1)$}
+% \tlabel[cc](-1.25,-0.5){$(-1,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4}
+% \point[4pt]{(-2,1), (-1,0), (0,1)}
+% \tcaption{\scriptsize $y=(x+1)^4$}
+% \end{mfpic}
+% &
 
-\stackrel{\text{ \scriptsize multiply each $y$-coordinate by $-2$ }}{ \xrightarrow{\hspace{1.5in}}}
+% \stackrel{\text{ \scriptsize multiply each $y$-coordinate by $-2$ }}{ \xrightarrow{\hspace{1.5in}}}
 
-&
+% &
 
-\begin{mfpic}[15]{-3}{3}{-5}{1}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.25, 1){$y$}
-\tlabel[cc](-3.25,-2){$(-2,-2)$}
-\tlabel[cc](1,-2){$(0,-2)$}
-\tlabel[cc](-1.25, 0.5){$(-1,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)}
-\point[4pt]{(-2,-2), (-1,0), (0,-2)}
-\tcaption{\scriptsize $y=-2(x+1)^4$}
-\end{mfpic} \\
-
-
-\text{\scriptsize  $(-2,1)$, $(-1,0)$ , $(0,1)$ }& & \text{\scriptsize  $(-2,-2)$, $(-1,0)$ , $(0,-2)$ }\\ \end{array} \]
+% \begin{mfpic}[15]{-3}{3}{-5}{1}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.25, 1){$y$}
+% \tlabel[cc](-3.25,-2){$(-2,-2)$}
+% \tlabel[cc](1,-2){$(0,-2)$}
+% \tlabel[cc](-1.25, 0.5){$(-1,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)}
+% \point[4pt]{(-2,-2), (-1,0), (0,-2)}
+% \tcaption{\scriptsize $y=-2(x+1)^4$}
+% \end{mfpic} \\
 
 
+% \text{\scriptsize  $(-2,1)$, $(-1,0)$ , $(0,1)$ }& & \text{\scriptsize  $(-2,-2)$, $(-1,0)$ , $(0,-2)$ }\\ \end{array} \]
 
-Step 3:  add $3$ to the $y$-coordinates of each of the points on the graph of $y = -2(x+1)^4$:
 
-\[ \begin{array}{ccc}
+
+% Step 3:  add $3$ to the $y$-coordinates of each of the points on the graph of $y = -2(x+1)^4$:
+
+% \[ \begin{array}{ccc}
  
-\begin{mfpic}[15]{-3}{3}{-5}{1}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.25, 1){$y$}
-\tlabel[cc](-3.25,-2){$(-2,-2)$}
-\tlabel[cc](1,-2){$(0,-2)$}
-\tlabel[cc](-1.25, 0.5){$(-1,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)}
-\point[4pt]{(-2,-2), (-1,0), (0,-2)}
-\tcaption{\scriptsize $y=-2(x+1)^4$}
-\end{mfpic} 
+% \begin{mfpic}[15]{-3}{3}{-5}{1}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.25, 1){$y$}
+% \tlabel[cc](-3.25,-2){$(-2,-2)$}
+% \tlabel[cc](1,-2){$(0,-2)$}
+% \tlabel[cc](-1.25, 0.5){$(-1,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)}
+% \point[4pt]{(-2,-2), (-1,0), (0,-2)}
+% \tcaption{\scriptsize $y=-2(x+1)^4$}
+% \end{mfpic} 
 
-&
+% &
 
-\stackrel{\text{ \scriptsize add $3$ to each $y$-coordinate}}{ \xrightarrow{\hspace{1.5in}}}
+% \stackrel{\text{ \scriptsize add $3$ to each $y$-coordinate}}{ \xrightarrow{\hspace{1.5in}}}
 
-&
+% &
  
-\begin{mfpic}[15]{-3}{3}{-2}{4}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.5){$x$}
-\tlabel[cc](0.25, 4){$y$}
-\tlabel[cc](-3.25,1){$(-2,1)$}
-\tlabel[cc](1,1){$(0,1)$}
-\tlabel[cc](-1.25, 3.5){$(-1,3)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.25,0.25,0.1}{((-2)*((x+1)**4))+3}
-\point[4pt]{(-2,1), (-1,3), (0,1)}
-\tcaption{\scriptsize $y=-2(x+1)^4+3$}
-\end{mfpic}  \\
+% \begin{mfpic}[15]{-3}{3}{-2}{4}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.5){$x$}
+% \tlabel[cc](0.25, 4){$y$}
+% \tlabel[cc](-3.25,1){$(-2,1)$}
+% \tlabel[cc](1,1){$(0,1)$}
+% \tlabel[cc](-1.25, 3.5){$(-1,3)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-2.25,0.25,0.1}{((-2)*((x+1)**4))+3}
+% \point[4pt]{(-2,1), (-1,3), (0,1)}
+% \tcaption{\scriptsize $y=-2(x+1)^4+3$}
+% \end{mfpic}  \\
 
 
 
-\text{\scriptsize  $(-2,-2)$ , $(-1,0)$ , $(0,-2)$} & & \text{\scriptsize   $(-2,1)$, $(-1,3)$, $(0,1)$} \\
+% \text{\scriptsize  $(-2,-2)$ , $(-1,0)$ , $(0,-2)$} & & \text{\scriptsize   $(-2,1)$, $(-1,3)$, $(0,1)$} \\
  
- \end{array} \] The domain here is $(-\infty, \infty)$ while the range is $(-\infty, 3]$.
+%  \end{array} \] 
+ 
+ The domain here is $(-\infty, \infty)$ while the range is $(-\infty, 3]$.
  
  \item To use Theorem \ref{linearmononialgraphs} to graph $g(t) = \dfrac{(2t-1)^3}{5}$, we must rewrite the expression for $g(t)$: \[ g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3 \] We identify $n = 3$, $h = \frac{1}{2}$ and $a  = \frac{8}{5}$.  Hence, we start with the graph of $y = t^3$  and perform the following steps, in sequence, tracking the points $(-1,-1)$, $(0,0)$ and $(1,1)$ through each step:
 
-Step 1:   add $\frac{1}{2}$ to each of the $t$-coordinates of each of the points on the graph of $y=t^3$:
+% https://www.geogebra.org/classic/tyhknx2p
+\begin{center}
+\geogebra{tyhknx2p}{800}{600}
+\end{center}
 
-\[ \begin{array}{rcl}
+% Step 1:   add $\frac{1}{2}$ to each of the $t$-coordinates of each of the points on the graph of $y=t^3$:
 
-\begin{mfpic}[15]{-3}{3}{-5}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.25){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-2.5,-1){$(-1,-1)$}
-\tlabel[cc](1.75,1){$(1,1)$}
-\tlabel[cc](0.75,-0.5){$(0,0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.7,1.7,0.1}{x**3}
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=t^3$}
-\end{mfpic}  
+% \[ \begin{array}{rcl}
 
-&
-\stackrel{\text{ \scriptsize add $\frac{1}{2}$ to each $t$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
-&
+% \begin{mfpic}[15]{-3}{3}{-5}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.25){$t$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2.5,-1){$(-1,-1)$}
+% \tlabel[cc](1.75,1){$(1,1)$}
+% \tlabel[cc](0.75,-0.5){$(0,0)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.7,1.7,0.1}{x**3}
+% \point[4pt]{(-1,-1), (0,0), (1,1)}
+% \tcaption{\scriptsize $y=t^3$}
+% \end{mfpic}  
 
-\begin{mfpic}[15]{-3}{3}{-5}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.25){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-2,-1){$\left(-\frac{1}{2},-1 \right)$}
-\tlabel[cc](2.5,1){$\left(\frac{3}{2},1 \right)$}
-\tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3}
-\point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)}
-\tcaption{\scriptsize $y=\left(t - \frac{1}{2} \right)^3$}
-\end{mfpic} \\
+% &
+% \stackrel{\text{ \scriptsize add $\frac{1}{2}$ to each $t$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
+% &
 
- \text{\scriptsize  $(-1,-1)$, $(0,0)$, $(1,1)$} &  & \text{\scriptsize  $\left(-\frac{1}{2},-1 \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},1 \right)$} \\
+% \begin{mfpic}[15]{-3}{3}{-5}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.25){$t$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2,-1){$\left(-\frac{1}{2},-1 \right)$}
+% \tlabel[cc](2.5,1){$\left(\frac{3}{2},1 \right)$}
+% \tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3}
+% \point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)}
+% \tcaption{\scriptsize $y=\left(t - \frac{1}{2} \right)^3$}
+% \end{mfpic} \\
+
+%  \text{\scriptsize  $(-1,-1)$, $(0,0)$, $(1,1)$} &  & \text{\scriptsize  $\left(-\frac{1}{2},-1 \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},1 \right)$} \\
  
- \end{array} \]
+%  \end{array} \]
 
-Step 2: multiply each of the $y$-coordinates of the graph of $y = \left(t - \frac{1}{2}\right)^3$ by $\frac{8}{5}$.
+% Step 2: multiply each of the $y$-coordinates of the graph of $y = \left(t - \frac{1}{2}\right)^3$ by $\frac{8}{5}$.
 
-\[ \begin{array}{rcl}
+% \[ \begin{array}{rcl}
 
-\begin{mfpic}[15]{-3}{3}{-5}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.25){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-2,-1){$\left(-\frac{1}{2},-1 \right)$}
-\tlabel[cc](2.5,1){$\left(\frac{3}{2},1 \right)$}
-\tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3}
-\point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)}
-\tcaption{\scriptsize $y=\left(t - \frac{1}{2} \right)^3$}
-\end{mfpic}
+% \begin{mfpic}[15]{-3}{3}{-5}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.25){$t$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2,-1){$\left(-\frac{1}{2},-1 \right)$}
+% \tlabel[cc](2.5,1){$\left(\frac{3}{2},1 \right)$}
+% \tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3}
+% \point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)}
+% \tcaption{\scriptsize $y=\left(t - \frac{1}{2} \right)^3$}
+% \end{mfpic}
 
-&
-\stackrel{\text{ \scriptsize multiply each $y$-coordinate by $\frac{8}{5}$}}{ \xrightarrow{\hspace{1.5in}}}
-&
+% &
+% \stackrel{\text{ \scriptsize multiply each $y$-coordinate by $\frac{8}{5}$}}{ \xrightarrow{\hspace{1.5in}}}
+% &
 
-\begin{mfpic}[15]{-3}{3}{-5}{5}
-\axes
-\scriptsize
-\tlabel[cc](3, -0.25){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-2,-1){$\left(-\frac{1}{2},-\frac{8}{5} \right)$}
-\tlabel[cc](2.5,1){$\left(\frac{3}{2},\frac{8}{5} \right)$}
-\tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.96, 1.96,0.1}{1.6*((x-0.5)**3)}
-\point[4pt]{(-0.5,-1.6), (0.5,0), (1.5,1.6)}
-\tcaption{\scriptsize $y=\frac{8}{5}\left(t - \frac{1}{2} \right)^3$}
-\end{mfpic} \\
+% \begin{mfpic}[15]{-3}{3}{-5}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](3, -0.25){$t$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2,-1){$\left(-\frac{1}{2},-\frac{8}{5} \right)$}
+% \tlabel[cc](2.5,1){$\left(\frac{3}{2},\frac{8}{5} \right)$}
+% \tlabel[cc](0.75,-0.75){$\left(\frac{1}{2},0 \right)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-0.96, 1.96,0.1}{1.6*((x-0.5)**3)}
+% \point[4pt]{(-0.5,-1.6), (0.5,0), (1.5,1.6)}
+% \tcaption{\scriptsize $y=\frac{8}{5}\left(t - \frac{1}{2} \right)^3$}
+% \end{mfpic} \\
 
- \text{\scriptsize  $\left(-\frac{1}{2},-1 \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},1 \right)$} & & \text{\scriptsize  $\left(-\frac{1}{2},-\frac{8}{5} \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},\frac{8}{5} \right)$} \\
+%  \text{\scriptsize  $\left(-\frac{1}{2},-1 \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},1 \right)$} & & \text{\scriptsize  $\left(-\frac{1}{2},-\frac{8}{5} \right)$, $\left(\frac{1}{2},0 \right)$, $\left(\frac{3}{2},\frac{8}{5} \right)$} \\
  
- \end{array} \]
+%  \end{array} \]
  
  Both the domain and range of $g$ is $(-\infty, \infty)$. \qed
  
@@ -511,12 +530,12 @@ Example \ref{linearmonomialex} demonstrates two big ideas in mathematics:  first
 Next  we wish  to focus on the so-called  \index{polynomial function ! end behavior}\index{end behavior ! of a function graph}\textbf{end behavior} presented in each case.\footnote{Sometimes called the `long run' behavior.}  The end behavior of a function is a way to describe what is happening to the outputs from a function as the inputs approach the `ends' of the domain. Since domain of monomial functions is $(-\infty, \infty)$, we are looking to see what these functions do as their inputs `approach'  $\infty$ and $-\infty$.  The best we can do is sample inputs and outputs and infer general behavior from these observations.  The good news is we've wrestled with this concept before. Indeed, every time we add `arrows' to the graph of a function, we've indicated its end behavior.\footnote{We'll do a much more exhaustive look at what it means for variables to `approach' infinity in Section \ref{IntroLimits}.  Hopefully this informal discussion suffices for now.} Let's revisit  the graph of $f(x) = x^2$ using the table below.
 
 
- \medskip
+ %\medskip
  
  
-\begin{tabular}{m{2in}m{2.5in}}
+%\begin{tabular}{m{2in}m{2.5in}}
 
-
+\begin{center}
 $\begin{array}{|r||c|}  \hline
 
  x &  f(x) = x^2  \\ \hline
@@ -529,27 +548,33 @@ $\begin{array}{|r||c|}  \hline
  1000 & 1000000 \\  \hline
 
 \end{array}$
+\end{center}
 
-&
+% https://www.geogebra.org/classic/gwgvkeqy
+\begin{center}
+\geogebra{gwgvkeqy}{800}{600}
+\end{center}
 
-\begin{mfpic}[15][10]{-3.5}{3.5}{-1}{10}
-\axes
-\tlabel(3.5, 10){\scriptsize as $x \rightarrow \infty$, $f(x) \rightarrow \infty$}
-\tlabel(-9, 10){\scriptsize as $x \rightarrow -\infty$, $f(x) \rightarrow \infty$}
-\tlabel[cc](-3, -0.75){\scriptsize  $-\infty  \leftarrow x$}
-\tlabel[cc](3, -0.75){\scriptsize  $x \rightarrow \infty$}
- \function{-3.1623,3.1623,0.1}{x**2}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\penwd{1.5pt}
-\arrow \reverse  \function{-3.1623,-2,0.1}{x**2}
-\arrow  \function{2,3.1623,0.1}{x**2}
-\arrow \polyline{(-2,0), (-3.5,0)}
-\arrow \polyline{(2,0), (3.5,0)}
-\tcaption{\scriptsize $f(x)=x^2$}
-\end{mfpic}
+% &
+
+% \begin{mfpic}[15][10]{-3.5}{3.5}{-1}{10}
+% \axes
+% \tlabel(3.5, 10){\scriptsize as $x \rightarrow \infty$, $f(x) \rightarrow \infty$}
+% \tlabel(-9, 10){\scriptsize as $x \rightarrow -\infty$, $f(x) \rightarrow \infty$}
+% \tlabel[cc](-3, -0.75){\scriptsize  $-\infty  \leftarrow x$}
+% \tlabel[cc](3, -0.75){\scriptsize  $x \rightarrow \infty$}
+%  \function{-3.1623,3.1623,0.1}{x**2}
+% \tlabel[cc](0.5,10){\scriptsize $y$}
+% \penwd{1.5pt}
+% \arrow \reverse  \function{-3.1623,-2,0.1}{x**2}
+% \arrow  \function{2,3.1623,0.1}{x**2}
+% \arrow \polyline{(-2,0), (-3.5,0)}
+% \arrow \polyline{(2,0), (3.5,0)}
+% \tcaption{\scriptsize $f(x)=x^2$}
+% \end{mfpic}
 
 
-\end{tabular}
+% \end{tabular}
  
 As $x$ takes on negative values that are larger in absolute value,\footnote{these are technically `smaller and smaller' values because of how the real number line is ordered. For example, $x = -1000$ is smaller than $x = -100$ since $x = -1000$ is farther to the left than $x = -100$ on the number line. This being said, $|-1000| = 1000$ is larger than $|-100| = 100$ so in an imprecise, informal, and technically incorrect way, the number $-1000$ is a `larger' negative number than the number $-100$.  I would worry about pedants here but  hardly anyone reads these footnotes.}  we see $f(x)$ takes on larger and larger positive values, seemingly without bound.\footnote{That is, the $f(x)$ values grow larger than any positive number.  They are `\textbf{unbounded}.'  The algebra that proves this fact  is the same that shows the range of $f$ is $[0, \infty)$.}   It should be stressed that since `$-\infty$' and `$\infty$' aren't real numbers, we can't write `$f(-\infty) = \infty$,'  so in order to communicate this behavior, we write as $x \rightarrow -\infty$, $f(x) \rightarrow \infty$, or, more succinctly, $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$.  Note that this latter notation is borrowed from Calculus and is read `the \index{limit}limit as $x$ approaches $- \infty$ of $f(x)$ is $\infty$'.  
 
@@ -560,8 +585,8 @@ Similarly, observing the behavior of $f$ as $x \rightarrow \infty$,  we get that
 Repeating this investigation for  for $f(x) = x^3$,  we find as $\ds{ \lim_{x \rightarrow - \infty} f(x) =  -\infty}$ and $\ds{ \lim_{x \rightarrow \infty} f(x) = \infty}$.  This trend holds for all functions $f(x) = x^n$ where $n$ is odd. 
 
 
-\begin{tabular}{m{2in}m{2.5in}}
-
+%\begin{tabular}{m{2in}m{2.5in}}
+\begin{center}
 $\begin{array}{|r||c|}  \hline
 
  x &  f(x) = x^3  \\ \hline
@@ -574,32 +599,38 @@ $\begin{array}{|r||c|}  \hline
  1000 & 1000000000 \\  \hline
 
 \end{array}$
+\end{center}
 
-&
+% https://www.geogebra.org/classic/yz8gp47k
+\begin{center}
+\geogebra{yz8gp47k}{800}{600}
+\end{center}
 
-\begin{mfpic}[15][10]{-3.5}{3.5}{-5}{5}
-\axes
-\tlabel(2.5, 5){\scriptsize as $x \rightarrow \infty$, $f(x) \rightarrow \infty$}
-\tlabel(-8, -5){\scriptsize as $x \rightarrow -\infty$, $f(x) \rightarrow -\infty$}
-\tlabel[cc](-3, -0.75){\scriptsize  $-\infty  \leftarrow x$}
-\tlabel[cc](3, -0.75){\scriptsize  $x \rightarrow \infty$}
-\arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\penwd{1.5pt}
-\arrow \reverse  \function{-1.700,-1,0.1}{x**3}
-\arrow  \function{1,1.700,0.1}{x**3}
-\arrow \polyline{(-2,0), (-3.5,0)}
-\arrow \polyline{(2,0), (3.5,0)}
-\tcaption{\scriptsize $f(x)=x^3$}
-\end{mfpic} \\
+% &
 
-\end{tabular}
+% \begin{mfpic}[15][10]{-3.5}{3.5}{-5}{5}
+% \axes
+% \tlabel(2.5, 5){\scriptsize as $x \rightarrow \infty$, $f(x) \rightarrow \infty$}
+% \tlabel(-8, -5){\scriptsize as $x \rightarrow -\infty$, $f(x) \rightarrow -\infty$}
+% \tlabel[cc](-3, -0.75){\scriptsize  $-\infty  \leftarrow x$}
+% \tlabel[cc](3, -0.75){\scriptsize  $x \rightarrow \infty$}
+% \arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
+% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \penwd{1.5pt}
+% \arrow \reverse  \function{-1.700,-1,0.1}{x**3}
+% \arrow  \function{1,1.700,0.1}{x**3}
+% \arrow \polyline{(-2,0), (-3.5,0)}
+% \arrow \polyline{(2,0), (3.5,0)}
+% \tcaption{\scriptsize $f(x)=x^3$}
+% \end{mfpic} \\
 
-\medskip
+% \end{tabular}
+
+%\medskip
 
 Theorem \ref{endbehaviorofmonomials} summarizes the end behavior of monomial functions.  The results are a consequence of Theorem \ref{linearmononialgraphs} in that the end behavior of a function of the form $y = ax^n$  only differs from that of  $y = x^n$ if there is a reflection, that is, if $a<0$.    
 
-\medskip
+%\medskip
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -609,7 +640,7 @@ Theorem \ref{endbehaviorofmonomials} summarizes the end behavior of monomial fun
 Suppose $f(x) = a x^{n}$ where $a \neq 0$ is a real number and $n \in \mathbb{N}$.
 
 
-\medskip
+%\medskip
 
 \begin{itemize}
 \item If $n$ is even:
@@ -691,7 +722,7 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
  
  We are now in the position to discuss \textbf{polynomial} functions.  Simply stated, \textbf{poly}nomial functions are sums of \textbf{mon}omial functions.  The challenge becomes how to describe one of these beasts in general.  Up until now, we have used distinct letters to indicate different parameters in our definitions of function families.  In other words, we define constant functions as $f(x) = b$, linear functions as $f(x) = mx+b$, and quadratic functions as $f(x) = ax^2+bx+c$.  We even hinted at a function of the form $f(x) = ax^3+bx^2+cx+d$.  What happens if we wanted to describe a generic polynomial that required, say, 117 different parameters? Our work around is to use subscripted parameters,  $a_{\mbox{\tiny $k$}}$, that  denote the coefficient of $x^{k}$. For example, instead of writing a quadratic as $f(x) = ax^2+bx+c$, we describe it as $f(x) = a_{\mbox{\tiny $2$}} x^2 + a_{\mbox{\tiny $1$}} x + a_{\mbox{ \tiny$0$}}$, where $a_{\mbox{\tiny $2$}}$, $a_{\mbox{\tiny $1$}}$, and $a_{\mbox{ \tiny $0$}}$ are real numbers and $a_{\mbox{\tiny $2$}} \neq 0$.   As an added example, consider $f(x) = 4x^5 - 3x^2 + 2x - 5$.   We can re-write the formula for $f$ as $f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5).$ and identify  $a_{\mbox{\tiny $5$}} = 4$, $a_{\mbox{\tiny $4$}} = 0$, $a_{\mbox{\tiny $3$}} = 0$, $a_{\mbox{\tiny $2$}} = -3$, $a_{\mbox{\tiny $1$}} = 2$ and $a_{\mbox{\tiny $0$}} = -5$.   This is the notation we use in the following definition.
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -701,11 +732,11 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent variable with the $a_{\mbox{\tiny $k$}}$ each being a parameter.  Even though we specify $n  \in  \mathbb{N}$ so $n \geq 1$, the value of the $a_{\mbox{\tiny $k$}}$ are unrestricted. Hence, any constant function $f(x) = b$ can be written as $f(x) = 0 x + a_{\mbox{ \tiny$0$}}$, and so they are polynomials.  Polynomials have an associated vocabulary,\footnote{See Section \ref{AppPolyArith}.}  and hence, so do polynomial functions.
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -737,7 +768,7 @@ As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 Again, constant functions are split off in their own separate case Definition \ref{degreeandallthat} because of the ambiguity of $0^0$. (See the remarks following Definition \ref{monomialfunction}.)   A consequence of Definition \ref{degreeandallthat} is that we can now think of nonzero constant functions as `zeroth'  degree polynomial functions, linear functions as `first' degree polynomial functions, and quadratic functions as `second' degree polynomial functions.  
 
@@ -802,7 +833,7 @@ $y = f(x)$ and $y = x^3$ `near' $(0,0)$ & a `zoomed out' view \\
 \end{center}
 
 
-\medskip
+%\medskip
 
 This observation is borne out numerically as well.  Based on the table below, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, it certainly appears as if $f(x) \approx g(x)$.  One way to think about what is happening numerically is that  as $x \rightarrow \infty$ or $x \rightarrow -\infty$, the leading term $x^3$ \textbf{dominates} the lower order terms  $-75x$ and $250$.  In other words, $x^3$ grows so much faster than $-75 x$ and $250$ that these `lower order terms' don't contribute anything of significance to the $x^3$ so $f(x) \approx x^3$.    To see this, we rewrite $f(x)$ as\footnote{Since we are considering  $x \rightarrow \infty$ or $x \rightarrow -\infty$, we are not concerned with $x$ even being close to $0$, so these fractions will all be defined.}   \[f(x) = x^3  - 75x + 250 = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right).\]   As $x \rightarrow \infty$ or $x \rightarrow -\infty$, both $\frac{75}{x^2}$ and $\frac{250}{x^3}$ have constant numerators but denominators that are becoming unbounded.  As such, both  $\frac{75}{x^2}$ and $\frac{250}{x^3} \rightarrow 0$.  Therefore, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, \[ f(x) = x^3 - 75x+250  = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right) \approx x^3 (1 + 0 + 0) = x^3. \]
 
@@ -837,7 +868,7 @@ Algebraically, for $x \rightarrow  \infty$ or $x \rightarrow -\infty$, even with
 
 The results of these last two examples generalize below in Theorem \ref{EBPolynomials}.  
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -850,7 +881,7 @@ That is, the end behavior of a polynomial function is determined by its leading 
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 
 We argue Theorem \ref{EBPolynomials} using an argument similar to ones used above.  As $x \rightarrow \infty$ or $x \rightarrow -\infty$, 
@@ -859,19 +890,19 @@ We argue Theorem \ref{EBPolynomials} using an argument similar to ones used abov
 
 If this argument looks a little fuzzy, it should.  As with all things involving infinity, the precision of Calculus is required here\footnote{Which we'll touch on in Chapters \ref{RationalFunctions} and \ref{FirstStepsCalculus}.}  For now, we'll rely on number sense and algebraic intuition.
 
-\medskip
+%\medskip
 
 Now that we know how to determine the end behavior of polynomial functions,  it's time to investigate what happens `in between' the ends.  First and foremost, polynomial functions are  \index{continuous}\index{function ! continuous}\textbf{continuous}.  Recall from Section \ref{QuadraticFunctions} that, informally, graphs of continuous functions have no `breaks' or `holes' in them.\footnote{We'll revisit this concept in more formally in  Section \ref{LimitPropertiesandContinuity}.}   Since monomial functions are continuous (as far as we can tell) and polynomials are sums of monomial functions, it turns out that polynomial functions are continuous as well.  
  
-\medskip
+%\medskip
 
 Moreover, the graphs of monomial functions, hence polynomial functions, are  \index{smooth}\index{function ! smooth}\textbf{smooth}.  Once again, `smoothness' is a concept defined precisely in Calculus, but for us,  functions have no `corners' or `sharp turns'.  Below we find the graph of a function which is neither smooth nor continuous, and to its right we have a graph of a polynomial, for comparison.  
 
-\medskip
+%\medskip
 
 The function whose graph appears on the left fails to be continuous where it has a `break' or `hole' in the graph;  everywhere else, the function is continuous.  The function is continuous at the `corner' and the `cusp', but we consider these `sharp turns', so these are places where the function fails to be smooth.  Apart from these four places, the function is smooth and continuous.  Polynomial functions are smooth and continuous everywhere, as exhibited in the graph on the right.  
 
-\medskip
+%\medskip
 
 The notion of smoothness is what tells us graphically that, for example, $f(x) = |x|$, whose graph is the characteristic `$\vee$' shape, cannot be a polynomial function, even though it is a piecewise-defined function comprised of polynomial functions.   Knowing polynomial functions are continuous and smooth gives us an idea of how to `connect the dots' when sketching the graph from points that we're able to find analytically such as intercepts.
 
@@ -919,15 +950,15 @@ The notion of smoothness is what tells us graphically that, for example, $f(x) =
 
 Speaking of intercepts,  we next focus our attention on the behavior of the graphs of polynomial functions near their zeros.    Recall a zero $c$ of a function $f$ is a solution to $f(x) = 0$.  Geometrically, the zeros of a function are the $x$-coordinates of the $x$-intercepts of the graph of $y = f(x)$.    
 
-\medskip
+%\medskip
 
 Consider the polynomial function $f(x) = x^3 (x-2)^2 (x+1)$. To find the zeros of $f$, we set $f(x) =  x^3 (x-2)^2 (x+1) = 0$.  Since the expression $f(x)$ is already factored, we set each factor equal to zero.\footnote{in accordance with the Zero Product Property of the Real Numbers - see Section \ref{AppRealNumberArithmetic}.}  
 
-\medskip
+%\medskip
 
 Solving $x^3 = 0$ gives $x = 0$, $(x-2)^2 = 0$ gives $x = 2$, and $x+1 = 0$ gives $x = -1$.  Hence, our zeros are $x = -1$, $x = 0$, and $x = 2$.  
 
-\medskip
+%\medskip
 
 Below, we graph $y = f(x)$ and focus our attention near the $x$-intercepts $(-1,0)$, $(0,0)$ and $(2,0)$. 
 
@@ -942,23 +973,23 @@ $y = f(x) = x^3 (x-2)^2 (x+1)$
 
 We first note that the graph \textbf{crosses} through the $x$-axis at $(-1,0)$ and $(0,0)$, but the graph \textbf{touches} and \textbf{rebounds} at $(2,0)$.  Moreover, at $(-1,0)$, the graph crosses through the axis is a fairly `linear' fashion whereas there is a substantial amount of `flattening' going on near $(0,0)$.  Or aim is to explain these observations and generalize them.
 
-\medskip
+%\medskip
 
 First, let's look at what's happening with the formula  $f(x) =  x^3 (x-2)^2 (x+1)$  when  $x  \approx  -1$.   We know the $x$-intercept at $(-1,0)$ is due to the presence of the $(x+1)$ factor in the expression for $f(x)$.  So, in this sense, the factor $(x+1)$ is determining a major piece of the behavior of the graph near $x = -1$.   For that reason, we focus instead on the other two factors to see what contribution they make. 
 
-\medskip
+%\medskip
 
 We find when $x \approx -1$,  $x^3  \approx  (-1)^3 = -1$ and $(x-2)^2 \approx (-1-2)^2 = 9$.  Hence, $f(x) = x^3 (x-3)^2 (x+1) \approx (-1)^3 (-1-2)^2 (x+1) = -9(x+1)$.  Below on the left is a graph of $y = f(x)$ (the solid line) and the graph of $y = -9(x+1)$ (the dashed line.)  Sure enough, these graphs approximate one another near $x = -1$. 
 
-\medskip
+%\medskip
 
 Likewise, let's look near $x = 0$.  The $x$-intercept $(0,0)$ is due to the $x^3$ term.  For $x \approx 0$, $(x-2)^2 \approx (0-2)^2 = 4$ and $(x+1) \approx (0+1) = 1$, so $f(x) =  x^3 (x-3)^2 (x+1) \approx x^3 (-2)^2(1) = 4x^3$.  Below in the center picture, we have the graph of $y = f(x)$ (again, the solid line) and $y = 4x^3$ (the dashed line) near $x=0$.  Once again, the graphs verify our analysis.
 
-\medskip
+%\medskip
 
 Last, but not least, we analyze $f$ near $x = 2$.  Here, the intercept $(2,0)$ is due to the $(x-2)^2$ factor, so we look at the $x^3$ and $(x+1)$ factors.  If $x \approx 2$, $x^3 \approx (2)^3 = 8$ and $(x+1) \approx (2+1) = 3$.  Hence,  $f(x) =  x^3 (x-3)^2 (x+1) \approx (2)^3 (x-2)^2 (2+1) = 24(x-2)^2$.  Sure enough, as evidenced below on the right, the graphs of $y = f(x)$ and $y = 24(x-2)^2$.
 
-\medskip
+%\medskip
 
 \begin{tabular}{m{2in}m{2in}m{2in}}
 
@@ -983,11 +1014,11 @@ $y = f(x)$ and $y=24(x-2)^2$ \\
 
 \end{tabular}
 
-\medskip
+%\medskip
 
 We generalize our observations in Theorem \ref{polynomialbehaviornearzeros} below. Like many things we've seen in this text, a more precise statement and proof can be found in a course on Calculus.
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -998,35 +1029,35 @@ We generalize our observations in Theorem \ref{polynomialbehaviornearzeros} belo
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 Let's see how Theorem \ref{polynomialbehaviornearzeros}  applies to our findings regarding $f(x) =  x^3 (x-2)^2 (x+1)$. For $c = -1$, $(x-c) = (x-(-1)) = (x+1)$.  We  rewrite $f(x) =  x^3 (x-2)^2 (x+1) = (x-(-1))^1 \left[x^3(x-2)^2\right]$ and identify $m=1$ and $q(x) = x^3 (x-2)^2$.   We find $q(c) = q(-1) = (-1)^3(-1-2)^2 = -9$ so  Theorem \ref{polynomialbehaviornearzeros} says that near $(-1,0)$, the graph of $y=f(x)$ resembles $y = q(-1)(x-(-1))^1 = -9(x+1)$.  
 
-\medskip
+%\medskip
 
 For $c=0$, $(x-c) = (x-0) = x$ and we can rewrite $f(x) =  x^3 (x-2)^2 (x+1) = (x-0)^3 \left[(x-2)^2 (x+1)\right]$.  We identify $m=3$ and $q(x) = (x-2)^2(x+1)$.  In this case $q(c) = q(0) = (0-2)^2(0+1) = 4$, so  Theorem \ref{polynomialbehaviornearzeros} guarantees the graph  of $y = f(x)$ near $x=0$ resembles  $y = q(0)(x-0)^3 = 4x^3$.  
 
-\medskip
+%\medskip
 
 Lastly, for $c = 2$, we see $f(x) = (x-2)^2 \left[x^3 (x+1)\right]$ and  identify $m = 2$ and $q(x) = x^3(x+1)$.  We find $q(2) = 2^3 (2+1)= 24$, so  per Theorem \ref{polynomialbehaviornearzeros}, the graph of $y = f(x)$ resembles $y = 24(x-2)^2$ near $x=2$.
 
-\medskip
+%\medskip
 
 As we already mentioned,  the formal statement and proof of Theorem \ref{polynomialbehaviornearzeros} require Calculus.  For now, we can understand the theorem as follows.   
 
-\medskip
+%\medskip
 
 If we factor a polynomial function as $f(x) = (x-c)^m q(x)$ where $m \geq 1$,   then $x=c$ is a zero of $f$, since $f(c) = (c-c)^m q(c) = 0 \cdot q(c) = 0$.  The stipulation that $q(c) \neq 0$ means that we have essentially factored the expression $f(x) = (x-c)^m q(x) = (\text{going to $0$}) \cdot (\text{not going to $0$})$.
 
-\medskip   
+%\medskip   
 
 Thinking back to Theorem \ref{linearmononialgraphs}, the graph $y = q(c) (x-c)^m$ has an $x$-intercept at $(c,0)$, a basic overall shape determined by the exponent $m$, and end behavior determined by the sign of $q(c)$.   
 
-\medskip
+%\medskip
 
 The fact that \textbf{if} $x=c$ is a zero \textbf{then} we are guaranteed we can factor $f(x) = (x-c)^m q(x)$ were $q(c) \neq 0$ and, moreover, such a factorization is unique (so that there's only one value of $m$ possible for each zero) is a consequence of two theorems, Theorem \ref{polydivthm} and The Factor Theorem, Theorem \ref{factorthm} which we'll review in Section \ref{Polydivision}.  For now, we assume such a factorization is unique in order to define the following.
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -1036,11 +1067,11 @@ The fact that \textbf{if} $x=c$ is a zero \textbf{then} we are guaranteed we can
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 So, for $f(x) =  x^3 (x-2)^2 (x+1) = (x-0)^3(x-2)^2(x-(-1))^1$, $x=0$ is a zero of multiplicity $3$, $x=2$ is a zero of multiplicity $2$, and $x =-1$ is a zero of multiplicity $1$.  Theorems   \ref{EBPolynomials}  and \ref{polynomialbehaviornearzeros} give us the following:
 
-\medskip
+%\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -1058,11 +1089,11 @@ So, for $f(x) =  x^3 (x-2)^2 (x+1) = (x-0)^3(x-2)^2(x-(-1))^1$, $x=0$ is a zero 
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 Our next example showcases how all of the above theory can assist in sketching relatively good graphs of polynomial functions without the assistance of technology.
 
-\medskip
+%\medskip
 
 \begin{example} \label{graphfromtheory}   Let $p(x) = (2x-1)(x+1)(1-x^4)$.
 
@@ -1127,12 +1158,12 @@ Last but not least, we turn our attention to our last zero, $x = 1$, which we ob
 
 A couple of remarks about Example \ref{graphfromtheory} are in order.  First, notice that the factor $(x^2+1)$ was more of a spectator in our discussion of the zeros of $p$. Indeed, if we set $x^2+1 = 0$, we have $x^2=-1$ which provides no \textbf{real} solutions.\footnote{The solutions are $x = \pm i$ - see Section \ref{AppCmpNums}.}  That being said, the factor $x^2+1$ \textbf{does} affect the shape of the graph. \footnote{See Exercise \ref{comparegraphfromtheoryexample}.}
 
-\medskip
+%\medskip
 
 Next, when connecting up the graph from $(-1,0)$ to $(0,-1)$ to $\left(\frac{1}{2}, 0 \right)$, there really is no way for us to know how low the graph goes, or where the lowest point is between $x = -1$ and $x = \frac{1}{2}$  unless we plot more points.  Likewise, we have no idea how high the graph gets between $x = \frac{1}{2}$ and $x = 1$.  While there are ways to determine these points analytically, more often than not, finding them requires concepts from Calculus which we'll investigate later.   Since these points do play an important role in many applications, we'll need to discuss them in this course and, when required, we'll  use technology to find them.   For that reason, we have the following definition:
 
 
-\medskip
+%\medskip
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -1166,15 +1197,15 @@ Taken together, the local maximums and local minimums of a function, if they exi
 
 %% \ebm}
 
-\medskip
+%\medskip
 
 Once again, the terminology used in Definition \ref{localmaxmindefn}  blurs the line between the function $f$ and its outputs, $f(x)$.  Also, some textbooks use the terms `relative' minimum and `relative' maximum instead of the adjective `local.'  Lastly, note  the definition of local extrema requires an \textbf{open} interval exist in the domain containing $a$ in order for $(a, f(a))$ to be a candidate for a local maximum or local minimum. We'll have more to say about this in later chapters.  If our open interval happens to be $(-\infty, \infty)$, then our local extrema are the extrema of $f$ - we'll see an example of this momentarily.  
 
-\medskip
+%\medskip
 
 Below we use a graphing utility to graph $y= p(x) = (2x-1)(x+1)(1-x^4)$.    We first consider the point $(-1,0)$.   Even though there are points on the graph of $y = p(x)$ that are higher than $(-1,0)$,  locally, $(-1,0)$ is the top of a hill.  To satisfy Definition \ref{localmaxmindefn}, we need to provide an open interval on which $p(-1) = 0$ is the largest, or maximum function value. Note the definition requires us to provide \textbf{just one} open interval.  One that works is the interval $(-1.5, -0.5)$.   We could use any smaller interval or go as large as $\left(-\infty, \frac{1}{2} \right)$. 
 
-\medskip
+%\medskip
 
 Next we encounter  a `low' point at approximately $(-0.2353, -1.1211)$. More specifically, for all $x$ in the interval, say,  $(-0.5, 0)$, $p(x) \geq 1.1211$,  Hence, we have a local minimum at $(-0.2353, -1.1211)$.   Lastly, at $(0.811, 0.639)$, we are back to a high point.  In fact, $0.639$ isn't just a local maximum value, based on the graph, it is \textbf{the} maximum of $p$.  Here, we may choose the open interval $(-\infty, \infty)$ as the open interval required by Definition \ref{localmaxmindefn}, since for all $x$, $p(x) \leq 0.639$.   It is important to note that there is no minimum value of $p$ despite there being a local minimum value.\footnote{Some books use the adjectives `global' or `absolute' when describing the extreme values of a function to distinguish them from their local counterparts.} 
 
@@ -1262,11 +1293,11 @@ We close this section with a classic application of a third degree polynomial fu
 
 \item  From Geometry, we know that $\text{Volume} = \text{width} \times \text{height} \times \text{depth}$.  The key is to find each of these quantities in terms of $x$.  
 
-\medskip
+%\medskip
 
 From the figure, we see that the height of the box is $x$ itself.  The cardboard piece is initially $10$ inches wide.  Removing squares with a side length of $x$ inches from each corner leaves $10-2x$ inches for the width.\footnote{There's no harm in taking an extra step here and making sure this makes sense.  If we chopped out a $1$ inch square from each side, then the width would be $8$ inches, so chopping out $x$ inches would leave $10-2x$ inches.}   As for the depth, the cardboard is initially $12$ inches long, so after cutting out $x$ inches from each side, we would have $12-2x$ inches remaining. Hence, we get $V(x) = x(10-2x)(12-2x)$.  
 
-\medskip
+%\medskip
 
 To find a suitable applied domain, we note that to make a box at all we need $x > 0$.  Also the shorter of the two dimensions of the cardboard is $10$ inches, and since we are removing $2x$ inches from this dimension, we also require $10 - 2x > 0$ or $x < 5$.  Hence, our applied domain is $0 < x < 5$.
 
