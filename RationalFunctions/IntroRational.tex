@@ -878,38 +878,37 @@ A graphing utility verifies this claim, and from the graph, we see that  $\ds{\l
 
 As a side note, the graph of $f$ appears to be symmetric about the origin.  Sure enough, we find: $f(-x) = \frac{2(-x)}{(-x)^2-3} = -\frac{2x}{x^2-3} = -f(x)$, proving $f$ is odd.
 
+% https://www.desmos.com/calculator/df6apyni8k
+\begin{center}
+\desmos{df6apyni8k}{800}{600} 
+\end{center} 
+
 \item  As above, we find the values excluded from the domain of $g$ finding the zeros of the denominator.  Solving $t^2 - 9 = 0$ gives $t = \pm 3$.  In this case, we can simplify the formula for $g(t)$:  $\frac{t^2-t-6}{t^2-9} = \frac{(t-3)(t+2)}{(t-3)(t+3)} =\frac{\cancel{(t-3)}(t+2)}{\cancel{(t-3)}(t+3)} =  \frac{t+2}{t+3}$.   Hence, $g(t) = \frac{t+2}{t+3}$ provided $t \neq 3$.  
 
 Since the factor $(t+3)$, which corresponds to the zero $t = -3$, did not cancel from the denominator of $g(t)$, we expect a vertical asymptote to the graph at $t = -3$.  On the other hand, as $t \rightarrow 3$, $t+2 \rightarrow 5$ and $t+3 \rightarrow 6$ so $\frac{t+2}{t+3} \rightarrow \frac{3+2}{3+3} = \frac{5}{6}$.  This gives $\ds{\lim_{t \rightarrow 3} g(t)} =$  $\frac{5}{6}$.   Hence we have a hole in the graph of $y = g(t)$ at  $\left(3, \frac{5}{6}\right)$.
 
  Graphing $g$ we can definitely see the vertical asymptote $t=-3$:  as  $\ds{\lim_{t \rightarrow -3^{-}} g(t) = \infty}$ and $\ds{\lim_{t \rightarrow -3^{+}} g(t) = -\infty}$.  Near $t=3$, the graph seems to have no interruptions, but we know $g$ is undefined at $t=3$.  Depending on the graphing utility, we may or may not convince the display to show us the hole at $\left(3, \frac{5}{6}\right)$.
 
+
+
+% https://www.desmos.com/calculator/rpkble6dtp
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/VAorHoleEx01.jpg} & \includegraphics[width=3in]{./IntroRationalGraphics/VAorHoleEx02.jpg} \\
-
-The graph of $y=f(x)$  \hspace{0.75in} & The graph of $y=g(t)$ \\
-
-
-\end{tabular}
+\desmos{rpkble6dtp}{800}{600} 
 \end{center} 
 
 \item  Setting the denominator of the expression for $h(t)$ to $0$ gives $t^2+9 = 0$, which has no real solutions.  Accordingly, the graph of $y=h(t)$ (at least as much as we can discern from the technology) is devoid of both vertical asymptotes and holes.  Using terms defined in Section \ref{GraphsofPolynomials},  the function $h$ is both continuous and smooth.\footnote{We'll remind you more about continuous functions in Section \ref{RationalGraphs}  \ldots}
 
+% https://www.desmos.com/calculator/azhqh1fq88
+\begin{center}
+\desmos{azhqh1fq88}{800}{600} 
+\end{center} 
+
 \item  Setting the denominator of $r(t)$ to zero gives the equation $t^2+4t+4 = 0$.  We get  the (repeated!) solution $t=-2$.  Simplifying, we get  $\frac{t^2-t-6}{t^2+4t+4} = \frac{(t-3)(t+2)}{(t+2)(t+2)}  =  \frac{(t-3)\cancel{(t+2)}}{(t+2)\cancel{(t+2)}} =  \frac{t-3}{t+2}$.  Since  not all factors of $(t+2)$ cancelled from the denominator, $t=-2$ continues to produce a $0$ in the denominator.  Hence $t=-2$ is a vertical asymptote to the graph.  A graphing utility bears this out.  Specifically,     $\ds{\lim_{t \rightarrow -2^{-}} r(t) = \infty}$ and  $\ds{\lim_{t \rightarrow -2^{+}} r(t) = -\infty}$ .
 
+
+% https://www.desmos.com/calculator/zfbk9xwhqp
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/VAorHoleEx03.jpg} & \includegraphics[width=3in]{./IntroRationalGraphics/VAorHoleEx04.png} \\
-
-The graph of $y=h(t)$  \hspace{0.75in} & The graph of $y=r(t)$ \\
-
-
-\end{tabular}
+\desmos{zfbk9xwhqp}{800}{600} 
 \end{center} 
 
 \end{enumerate}
@@ -1090,19 +1089,24 @@ Graphically, as $s \rightarrow  -\infty$ or $s \rightarrow  \infty$ , the graph 
 
 As a side note, the graph of $F$ appears to be symmetric about the origin.  Indeed, $F(-s) = \frac{5(-s)}{(-s)^2+1} = -\frac{5s}{s^2+1}$ proving $F$ is odd.
 
+% https://www.desmos.com/calculator/xymlnyklim
+\begin{center}
+\desmos{xymlnyklim}{800}{600} 
+\end{center} 
+
 \item  As $x \rightarrow  -\infty$ or $x \rightarrow \infty$, $g(x) = \frac{x^2-4}{x+1} \approx \frac{x^2}{x} = x$, and while $y = x$ is a line, it is not a horizontal line.  Hence, we conclude the graph of $y = g(x)$ has no horizontal asymptotes.  Sure enough,  Theorem \ref{hathm} supports this since the degree of the numerator of $g(x)$ is $2$ which is greater than the degree of the denominator, $1$.   From the graph, we see that the graph of $y=g(x)$ doesn't appear to level off to a constant value, confirming there is no horizontal asymptote.\footnote{Sit tight!  We'll revisit this function and its end behavior shortly.}
 
+% https://www.desmos.com/calculator/rnoyel4hsv
 \begin{center}
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/HAEx01.jpg}  & \includegraphics[width=3in]{./IntroRationalGraphics/HAEx02.jpg} \\
-The graph of $y=F(s)$  & The graph of $y=g(x)$ \\
-
-
-\end{tabular}
+\desmos{rnoyel4hsv}{800}{600} 
 \end{center} 
 
 \item   As $t \rightarrow -\infty$ or $t \rightarrow \infty$,  $h(t) = \frac{6t^3-3t+1}{5-2t^3} \approx  \frac{6t^3}{-2t^3} = -3$.  Hence, $\ds{\lim_{t \rightarrow  -\infty} h(t) = -3}$ and $\ds{\lim_{t \rightarrow  \infty} h(t) = -3}$, indicating a horizontal asymptote $y = -3$.  Sure enough, since the degrees of the numerator and denominator of $h(t)$ are both three,  Theorem \ref{hathm} tells us $y = \frac{6}{-2} = -3$ is the horizontal asymptote.  We see from the graph of $y = h(t)$ that as $t \rightarrow -\infty$, $h(t) \rightarrow -3^{+}$, and as $t \rightarrow \infty$, $h(t) \rightarrow -3^{-}$.
+
+% https://www.desmos.com/calculator/l0cy41qgxa
+\begin{center}
+\desmos{l0cy41qgxa}{800}{600} 
+\end{center} 
 
 \item  If we apply Theorem \ref{EBPolynomials} to the term  $\frac{3x^2}{1-x^2}$ in the expression for $r(x)$, we find   $\frac{3x^2}{1-x^2} \approx \frac{3x^2}{-x^2} = -3$ as $x \rightarrow -\infty$ or $x \rightarrow \infty$.  It  seems reasonable to conclude, then, that  $\ds{\lim_{x \rightarrow  -\infty} r(x) = 2 - (-3) = 5}$ and likewise $\ds{\lim_{x \rightarrow  \infty} r(x) = 2 - (-3) = 5}$ so $y = 5$ is our horizontal asymptote. 
 
@@ -1112,16 +1116,10 @@ Both  calculations are borne out graphically below where it appears as if as $x 
 
  As a final note, the graph of $r$ appears to be symmetric about the $y$ axis.  We find $r(-x) = 2 - \frac{3(-x)^2}{1-(-x)^2} = 2 - \frac{3x^2}{1-x^2} = r(x)$, proving $r$ is even.
 
+% https://www.desmos.com/calculator/6xi4rywk3p
 \begin{center}
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/HAEx03.jpg}  & \includegraphics[width=3in]{./IntroRationalGraphics/HAEx04.jpg} \\
-The graph of $y=h(t)$  & The graph of $y=r(x)$ \\
-
-
-\end{tabular}
+\desmos{6xi4rywk3p}{800}{600} 
 \end{center} 
-
 \end{enumerate}
 
 \qed
@@ -1156,11 +1154,10 @@ $\begin{array}{|r||c|c|}  \hline
   \end{center}
   
   
+% https://www.desmos.com/calculator/zyeycofx4r
 \begin{center}
-   
-\includegraphics[width=4in]{./IntroRationalGraphics/SAEx01.jpg}
-
-\end{center}
+\desmos{zyeycofx4r}{800}{600} 
+\end{center} 
  
 The way we symbolize the relationship between the end behavior of $y=g(x)$ with that of the line $y=x-1$ is to write `as $x \rightarrow  -\infty$ and $x \rightarrow \infty$, $g(x) \rightarrow x-1$' in order to have some notational consistency with what we have done earlier in this section when it comes to end behavior.\footnote{Other notations include $g(x) \asymp x-1$ or $g(x) \sim x-1$.}  In this case, we say the line $y=x-1$ is a \index{asymptote ! slant (oblique)} \index{slant asymptote} \index{oblique asymptote} \textbf{slant asymptote}\footnote{Also called an `oblique' asymptote in some, ostensibly higher class (and more expensive), texts.}  to the graph of $y=g(x)$.  Informally, the graph of a rational function has a slant asymptote if, as $x \rightarrow -\infty$ or as $x \rightarrow \infty$, the graph resembles a non-horizontal, or `slanted' line.  More formally, we define a slant asymptote as follows.
 
@@ -1255,6 +1252,10 @@ In the same way that Theorem \ref{hathm} gives us an easy way to see if the grap
 \begin{enumerate}
 
 \item  The degree of the numerator is $2$ and the degree of the denominator is $1$, so Theorem \ref{sathm} guarantees us a slant asymptote.  To find it, we divide $1-x = -x+1$ into $x^2-4x+2$ and get a quotient of $-x+3$, so our slant asymptote is $y=-x+3$.  We confirm this graphically below.
+% https://www.desmos.com/calculator/5guwnabrtb
+\begin{center}
+\desmos{5guwnabrtb}{800}{600} 
+\end{center} 
 
 \item  As with the previous example, the degree of the numerator $g(t) = \frac{t^2-4}{t-2}$ is $2$ and the degree of the denominator is $1$, so Theorem \ref{sathm} applies.  In this case, 
 
@@ -1262,19 +1263,19 @@ In the same way that Theorem \ref{hathm} gives us an easy way to see if the grap
 
 so we have that the slant asymptote $y=t+2$ is identical to the graph of $y=g(t)$ except at $t=2$ (where the latter has a `hole' at $(2,4)$.) While the word `asymptote' has the connotation of `approaching but not equaling,' Definitions \ref{ha} and  \ref{sa} allow for these extreme cases.
 
+% https://www.desmos.com/calculator/fan3rfclao
 \begin{center}
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/SAEx02.jpg}  & \includegraphics[width=3in]{./IntroRationalGraphics/SAEx03.jpg} \\
-The graph of $y=f(x)$  & The graph of $y=g(t)$ \\
-
-
-\end{tabular}
+\desmos{fan3rfclao}{800}{600} 
 \end{center} 
 
 \item   For $h(x) = \frac{x^3+1}{x^2-4}$, the degree of the numerator is $3$ and the degree of the denominator is $2$ so again, we are guaranteed the existence of a slant asymptote.  The long division $\left(x^3+1 \right) \div \left(x^2-4\right)$ gives a quotient of just $x$, so our slant asymptote is the line $y=x$.  The graphing utility confirms this.  
 
 Note the graph of $h$ appears to be symmetric about the origin.  We check $h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}$.  However, $-h(x) = - \frac{x^3+1}{x^2-4}$, so it appears as if $h(-x) \neq -h(x)$ for all $x$.  Checking $x=1$, we find $h(1) = -\frac{2}{3}$ but $h(-1) = 0$ which shows the graph of $h$, is in fact,  \textbf{not} symmetric about the origin.
+
+% https://www.desmos.com/calculator/8d7qp8aqbz
+\begin{center}
+\desmos{8d7qp8aqbz}{800}{600} 
+\end{center} 
 
 \item  For our last example,  $r(t) = 2t-1+\frac{4t^3}{1-t^2}$, the expression $r(t)$ is not in the form to apply Theorem \ref{sathm} directly.  We can, nevertheless, appeal to the spirit of the theorem and use long division to rewrite the term $\frac{4t^3}{1-t^2} = -4t + \frac{4t}{1-t^2}$.  We then get:
 
@@ -1286,15 +1287,10 @@ Note the graph of $h$ appears to be symmetric about the origin.  We check $h(-x)
        
 As $t \rightarrow -\infty$ or $x \rightarrow \infty$,  Theorem \ref{EBPolynomials} gives  $\frac{4t}{1-t^2} \approx \frac{4t}{-t^2} = -\frac{4}{t} \rightarrow 0$.  Hence, as $t \rightarrow -\infty$ or $t \rightarrow \infty$, $r(t) \rightarrow -2t-1$, so $y = -2t-1$ is the slant asymptote to the graph as confirmed by the graphing utility below.  From a distance, the graph of $r$ appears to be symmetric about the origin.  However, if we look carefully, we see the $y$-intercept is $(0,-1)$, as borne out by the computation $r(0) = -1$.  Hence $r$ cannot be odd.\footnote{Do you see why?}
 
+% https://www.desmos.com/calculator/ba1wjcg3yx
 \begin{center}
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./IntroRationalGraphics/SAEx04.jpg}  & \includegraphics[width=3in]{./IntroRationalGraphics/SAEx05.jpg} \\
-The graph of $y=h(x)$  & The graph of $y=r(t)$ \\
-
-
-\end{tabular}
-\end{center}
+\desmos{ba1wjcg3yx}{800}{600} 
+\end{center} 
 
 \qed
 
@@ -1352,11 +1348,11 @@ You'll explore average cost (and its relation to variable cost) in Exercise \ref
 \item  Technically, the graph of $y = \overline{P}(x)$ has no slant asymptote since the domain of the function is restricted to $(0, 166]$.  That being said, if we were to let $x \rightarrow \infty$, the term $\frac{150}{x} \rightarrow 0$, so we'd  have $\overline{P}(x)  \rightarrow -1.5x + 170$.  This means the slant asymptote would be $y = -1.5x + 170$.  We graph $y = \overline{P}(x)$ and $y = -1.5x+170$.
 
   
-\begin{center}
-   
-\includegraphics[width=4in]{./IntroRationalGraphics/SAEx06.jpg}
-
+% https://www.desmos.com/calculator/hnnzvyr0yf
+\begin{center} 
+\desmos{hnnzvyr0yf}{800}{600} 
 \end{center}
+
 
 \item The slope of the slant asymptote $y = -1.5x+170$ is $-1.5$.  Allowing for $x \rightarrow \infty$, $\overline{P}(x) \approx -1.5 x + 170$ which means as we sell more systems, the average profit is \textbf{decreasing} at about a rate of $\$ 1.50$ per system.  If the number $1.5$ sounds familiar to this problem situation, it should.  In Example \ref{PortaBoyDemand} in Section \ref{ConstantandLinearFunctions}, we determined the slope of the demand function to be $-1.5$. In that situation, the $-1.5$ meant that in order to sell an additional system, the price had to drop by $\$ 1.50$.  The fact the average profit is decreasing at more or less this same rate means the loss in profit per system can be attributed to the reduction in price needed to sell each additional system.\footnote{We generalize this result in Exercise \ref{slantyintaverageprofitexercise}.} \qed
 
