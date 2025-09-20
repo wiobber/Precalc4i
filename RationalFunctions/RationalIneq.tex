@@ -98,18 +98,12 @@ Viewing the left hand side as a rational function $r(x)$ we make a sign diagram.
 We are interested in where $r(x) \geq 0$.  We see  $r(x) > 0$, or $(+)$, on the intervals $\left(-\infty, -\frac{1}{2}\right)$, $(0,1)$ and $(1, \infty)$.  We know $r(x) = 0$ when  $x = -\frac{1}{2}$ and $x = 0$.   Hence, $r(x) \geq 0$ on  $\left( - \infty, -\frac{1}{2} \right] \cup [0,1) \cup (1, \infty)$.
 
 \item  To check our answers graphically,  let $f(x) = \frac{x^3-2x+1}{x-1}$ and $g(x) = \frac{1}{2} x -1$. The solutions to $f(x)=g(x)$ are the $x$-coordinates of the points where the graphs of $y=f(x)$ and $y=g(x)$ intersect.  We graph both $f$ and $g$ below (the graph of $g$ is the line and is slightly lighter in color.) We find only two intersection points, $(-0.5, -1.25)$ and $(0,-1)$ which correspond to our solutions $x = -\frac{1}{2}$ and $x = 0$.   The solution to $f(x) \geq g(x)$ represents not only where the graphs meet, but the intervals over which the graph of $y=f(x)$ is above ($>$) the graph of $g(x)$.  From the graph, this \textit{appears} to happen on on $\left( - \infty, -\frac{1}{2} \right] \cup [0, \infty)$ which \textit{almost} matches the answer we found analytically.  We have to remember that $f$ is not defined at $x=1$,  so it cannot be included in our solution.\footnote{We invite the reader to show there is a hole in the graph of $y = f(x)$ at $(1,1)$.}
-\begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width=2.75in]{./RationalIneqGraphics/RatIneqEx01.jpg} & \includegraphics[width=2.75in]{./RationalIneqGraphics/RatIneqEx02.jpg}
 
 
-\end{tabular}
-
-\end{center} 
-
- \qed
+% https://www.desmos.com/calculator/qrwiqyv2bk
+\begin{center} 
+\desmos{qrwiqyv2bk}{800}{600} 
+\end{center}
 
 \end{enumerate}
 \end{example}  
@@ -140,7 +134,7 @@ The important take-away from Example \ref{rationalinequalityex} is not to clear 
 
 We define $r(t) = \frac{3t^2-4t}{(3t-2)^2}$ and set about constructing a sign diagram for $r$.  Solving  $(3t-2)^2 = 0$ gives $t = \frac{2}{3}$, our sole excluded value.  To find the zeros of $r$, we set $r(t) = \frac{3t^2-4t}{(3t-2)^2} = 0$ and solve $3t^2-4t = 0$.  Factoring gives $t(3t-4) = 0$ so our solutions are $t = 0$ and $t = \frac{4}{3}$. After choosing test values, we  get the sign diagram below on the left.   Since we are looking for where $r(t) \leq 0$, we are looking for where $r(t)$ is $(-)$ or $r(t) = 0$. Hence,  our final answer is $\left[0, \frac{2}{3} \right) \cup \left(\frac{2}{3}, \frac{4}{3} \right]$.  Below on the right,  we graph $f(t) = 2t(3t-1)^{-1}$ (the darker curve),   $g(t) = 3t^2(3t-2)^{-2}$, and  vertical asymptote $x = \frac{2}{3}$, the dashed line.  Sure enough, the graph of $f$ intersects the graph of $g$ when $t = 0$ and $t = \frac{4}{3}$.  Moreover, the graph of $f$ is below the graph of $g$ everywhere they are defined between these values, in accordance with our algebraic solution.
 
-\begin{tabular}{m{2.5in}m{2.5in}}
+
 
 \begin{mfpic}[10]{-6}{6}{-2}{2}
 \arrow \reverse \arrow \polyline{(-6,0),(6,0)}
@@ -156,14 +150,13 @@ We define $r(t) = \frac{3t^2-4t}{(3t-2)^2}$ and set about constructing a sign di
 \tlabel[cc](4.5,1){$(+)$}
 \end{mfpic} 
 
-&
-
-\includegraphics[width=2.75in]{./RationalIneqGraphics/RatIneqEx03.jpg} \\
-
-\end{tabular}
 
 
-\qed
+% https://www.desmos.com/calculator/mngh4jcrvl
+\begin{center} 
+\desmos{mngh4jcrvl}{800}{600} 
+\end{center}
+
 \end{example}
 
 One thing to note about Example \ref{morerationalineq} is that the quantity $(3t-2)^2 \geq 0$ for all values of $t$.  Hence, as long as we remember $t = \frac{2}{3}$ is excluded from consideration, we could actually multiply both sides of the inequality in  Example \ref{morerationalineq} by $(3t-2)^2$ to obtain $2t(3t-2) \leq 3t^2$.  We could then solve this (slightly easier) inequality using the methods of Section \ref{QuadraticFunctions} as long as we remember to exclude $t = \frac{2}{3}$  from our solution. Once again, the more you \textit{understand}, the less you have to \textit{memorize}.  If you know the `\textit{why}' behind an algorithm instead of just the `\textit{how},' you will know when you can short-cut it.
