@@ -54,9 +54,10 @@ jobs:
           ls -alrt
           chmod +x xmScripts/xmlatex
           rm -rf ximera-downloads/with-answers
+          rm -f /root/texmf/tex/latex/ximeraLatex/pgfsys-dvisvgm4ht.def   # causes File ended while scanning use of \AltlDisplayDollars.
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
-          ./xmScripts/xmlatex bake  course.tex testxourse.tex -f -j 5 
+          ./xmScripts/xmlatex bake  course.tex testxourse.tex -f -j 5 --compile html,handout.pdf
           ./xmScripts/xmlatex frost course.tex testxourse.tex 
           ./xmScripts/xmlatex name  course.tex testxourse.tex 
           ./xmScripts/xmlatex serve course.tex testxourse.tex 
