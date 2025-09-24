@@ -1,31 +1,4 @@
-\tikzset{
-\pgfplotsset{
-  fplot/.style={
-    xlabel={$x$},  % x-axis label
-    ylabel={$y$},  % y-axis label	
-	axis lines=middle,
-	axis equal image,
-	axis line style={->},
-	ticks=none,
-    samples=200,
-    smooth,
-    line width=1.25pt,
-	mark=none,
-	domain=-2:2,
-	clip=false,
-	% postaction={decorate},
-    % decoration={
-    %   markings,
-    %   mark=at position 1 with {\arrow{>}}
-    % }
-  },
-   fpplot/.style={
-    fplot,
-    variable=t,
-    parametric,
-   }
-}
-}
+
 
 \begin{tikzpicture}
 \begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-1, xmax=3, ymin=-1, ymax=3, width=100pt, height=100pt, scale only axis]
