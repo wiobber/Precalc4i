@@ -1,13 +1,15 @@
-\begin{mfpic}[15]{-3}{6}{-1}{1}
-\polyline{(-3,0),(0,0)}
-\arrow  \polyline{(3,0),(6,0)}
-\xmarks{-3,0,3}
-\tlabel[cc](-1.5,0.75){$(+)$}
-\tlabel[cc](-3,-0.75){$-3 \hspace{7pt}$}
-\tlabel[cc](-3,0.75){\textinterrobang}
-\tlabel[cc](0,-0.75){$0$}
-\tlabel[cc](0,0.75){$0$}
-\tlabel[cc](3,0.75){\textinterrobang}
-\tlabel[cc](3,-0.75){$3$}
-\tlabel[cc](4.5,0.75){$(+)$}
-\end{mfpic}
+\begin{tikzpicture}[x=15pt,y=15pt]
+\draw (-3,0) -- (0,0);
+\draw[->] (3,0) -- (6,0);
+\draw (-3,-0.1) -- (-3,0.1);
+\draw (0,-0.1) -- (0,0.1);
+\draw (3,-0.1) -- (3,0.1);
+\node at (-1.5,0.75){$(+)$};
+\node at (-3,-0.75){$-3 \hspace{7pt}$};
+\node at (-3,0.75){\textinterrobang};
+\node at (0,-0.75){$0$};
+\node at (0,0.75){$0$};
+\node at (3,0.75){\textinterrobang};
+\node at (3,-0.75){$3$};
+\node at (4.5,0.75){$(+)$};
+\end{tikzpicture}

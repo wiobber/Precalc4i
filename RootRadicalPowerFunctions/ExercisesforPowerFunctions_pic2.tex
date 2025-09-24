@@ -1,11 +1,12 @@
-\begin{mfpic}[20]{-4}{4}{-1}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](2,1){\scriptsize $(1,1)$}
-\tlabel[cc](0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow  \function{0, 1.5,0.1}{x**3.14}
-\point[4pt]{(0,0), (1,1)}
-\tcaption{$g(t)=t^{\pi}$ \vphantom{{$f(x)=x^{\frac{2}{3}}$}}}
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-1, ymax=4, width=160pt, height=100pt]
+\node at (axis cs:4,-0.5) {\scriptsize $t$};
+\node at (axis cs:0.5,4) {\scriptsize $y$};
+\node at (axis cs:2,1) {\scriptsize $(1,1)$};
+\node at (axis cs:0.5,-0.5) {\scriptsize $(0,0)$};
+\addplot[domain=0:1.5] {x^3.14};
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (1,1)};
+\node at (axis description cs:0.5,-0.12) {$g(t)=t^{\pi}$ \vphantom{{$f(x)=x^{\frac{2}{3}}$}}};
+\end{axis}
+\end{tikzpicture}

@@ -1,11 +1,12 @@
-\begin{mfpic}[20]{-4}{4}{-2}{3}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-3,-1.5){\scriptsize $(-3,-1)$}
-\tlabel[cc](-1.5,0.5){\scriptsize $(-1,0)$}
-\penwd{1.25pt}
-\arrow  \function{-3, -0.2,0.1}{(((x+3)/2)**3.14)-1}
-\point[4pt]{(-3,-1), (-1,0)}
-\tcaption{Domain:  $[-3, \infty)$, Range: $[-1, \infty)$}
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-2, ymax=3, width=160pt, height=100pt]
+\node at (axis cs:4,-0.5) {\scriptsize $t$};
+\node at (axis cs:0.5,3) {\scriptsize $y$};
+\node at (axis cs:-3,-1.5) {\scriptsize $(-3,-1)$};
+\node at (axis cs:-1.5,0.5) {\scriptsize $(-1,0)$};
+\addplot[domain=-3:-0.2] {(( (x+3)/2 )^3.14) - 1};
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(-3,-1) (-1,0)};
+\node at (axis description cs:0.5,-0.12) {Domain:  $[-3, \infty)$, Range: $[-1, \infty)$};
+\end{axis}
+\end{tikzpicture}

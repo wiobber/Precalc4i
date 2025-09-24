@@ -1,16 +1,17 @@
-\begin{mfpic}[15]{-5}{5}{-3}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\point[4pt]{(4,-1), (3,0), (0,1)}
-\ymarks{-2,-1,1,2,3,4}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\tiny
-\tlpointsep{4pt}
-\axislabels {y}{{$-2$} -2, {$-1$} -1, {$1$} 1,{$2$} 2, {$3$} 3,{$4$} 4 }
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1,  {$2$} 2, {$3$} 3,  {$4$} 4}
-\normalsize
-\penwd{1.25pt}
- \arrow \parafcn{-1,2,0.1}{(4-((t+1)**2),t)}
-  \tcaption{Domain:  $(-\infty, 4]$, Range: $[-1, \infty)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-5, xmax=5, ymin=-3, ymax=5,
+  width=150pt, height=120pt, scale only axis,
+  xtick={-4,-3,-2,-1,1,2,3,4},
+  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
+  ytick={-2,-1,1,2,3,4},
+  yticklabels={{$-2$},{$-1$},{ $1$},{ $2$},{ $3$},{ $4$}}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,5){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(4,-1) (3,0) (0,1)};
+\addplot+[fpplot, domain=-1:2, ->] ({4 - (t+1)^2},{t});
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 4]$, Range: $[-1, \infty)$};
+\end{axis}
+\end{tikzpicture}

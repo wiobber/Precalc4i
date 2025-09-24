@@ -1,11 +1,12 @@
-\begin{mfpic}[20]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1, -2.5){\scriptsize $(1,-2)$}
-\tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-\tlabel[cc](-0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{((t**3)+1,(2*(t**2))-2)}
-\point[4pt]{(0,0), (1,-2), (2,0)}
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fpplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-4, ymax=4, width=160pt, height=160pt]
+\node at (axis cs:4,-0.5) {\scriptsize $x$};
+\node at (axis cs:0.5,4) {\scriptsize $y$};
+\node at (axis cs:1,-2.5) {\scriptsize $(1,-2)$};
+\node at (axis cs:2.5,-0.5) {\scriptsize $(2,0)$};
+\node at (axis cs:-0.5,-0.5) {\scriptsize $(0,0)$};
+\addplot[domain=-1.5:1.5] ({t^3+1},{2*(t^2)-2});
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (1,-2) (2,0)};
+\end{axis}
+\end{tikzpicture}

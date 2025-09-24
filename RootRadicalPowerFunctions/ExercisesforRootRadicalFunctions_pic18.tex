@@ -1,18 +1,19 @@
-\begin{mfpic}[50][40]{-1.5}{1.5}{-1}{1.5}
-\axes
-\tlabel[cc](1.5,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,1.5){\scriptsize $y$}
-\tlabel[cc](-1,0.15){\scriptsize $-1\hspace{7pt}$}
-\tlabel[cc](0.7,0.7){\scriptsize $\approx (0.707, 0.5)$}
-\tlabel[cc](-0.7,-0.7){\scriptsize $\approx (-0.707, -0.5)$}
-\xmarks{-1,1}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$1$} 1}
-\axislabels {y}{{$1$} 1,{$-1$} -1}
-\normalsize
-\point[4pt]{(-1,0), (1,0),(0,0),  (-0.707, -0.5),  (0.707, 0.5)}
-\penwd{1.25pt}
-\parafcn{0,3.14159,0.1}{(cos(t),cos(t)*sin(t))}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-1.5, xmax=1.5, ymin=-1, ymax=1.5,
+  width=150pt, height=100pt, scale only axis,
+  xtick={-1,1},
+  xticklabels={,{$1$}},
+  ytick={-1,1},
+  yticklabels={{$-1$},{$1$}}
+]
+\node at (axis cs:1.5,-0.15){\scriptsize $t$};
+\node at (axis cs:0.25,1.5){\scriptsize $y$};
+\node at (axis cs:-1,0.15){\scriptsize $-1\hspace{7pt}$};
+\node at (axis cs:0.7,0.7){\scriptsize $\approx (0.707, 0.5)$};
+\node at (axis cs:-0.7,-0.7){\scriptsize $\approx (-0.707, -0.5)$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-1,0) (1,0) (0,0) (-0.707,-0.5) (0.707,0.5)};
+\addplot+[fpplot, domain=0:3.14159] ({cos(t)},{cos(t)*sin(t)});
+\end{axis}
+\end{tikzpicture}

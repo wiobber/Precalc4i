@@ -1,16 +1,17 @@
-\begin{mfpic}[20][15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{6pt}$} -3,{$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\point[4pt]{(-1,0), (1,0)}
-\penwd{1.25pt}
-\arrow \reverse \function{-1.9,-1,0.1}{x*sqrt((x**2)-1)}
-\arrow \function{1,1.9,0.1}{x*sqrt((x**2)-1)}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-4, xmax=4, ymin=-4, ymax=4,
+  width=160pt, height=120pt, scale only axis,
+  xtick={-3,-2,-1,1,2,3},
+  xticklabels={{$-3 \hspace{6pt}$},{$-2 \hspace{6pt}$},{$-1 \hspace{6pt}$},{ $1$},{ $2$},{ $3$}},
+  ytick={-3,-2,-1,1,2,3},
+  yticklabels={{$-3$},{$-2$},{$-1$},{ $1$},{ $2$},{ $3$}}
+]
+\node at (axis cs:4,-0.25){\scriptsize $t$};
+\node at (axis cs:0.25,4){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-1,0) (1,0)};
+\addplot+[fplot, domain=-1.9:-1, <-] {x*sqrt(x^2 - 1)};
+\addplot+[fplot, domain=1:1.9, ->] {x*sqrt(x^2 - 1)};
+\end{axis}
+\end{tikzpicture}

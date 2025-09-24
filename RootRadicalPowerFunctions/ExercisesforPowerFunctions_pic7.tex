@@ -1,12 +1,13 @@
-\begin{mfpic}[20]{-4}{4}{-1}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.5,2.25){\scriptsize $(1,2)$}
-\tlabel[cc](-1.75,2.25){\scriptsize $(-1,2)$}
-\tlabel[cc](0.75,3){\scriptsize $(0,3)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{(t**3,3-(t**2))}
-\point[4pt]{(-1,2), (0,3), (1,2)}
-\tcaption{Domain: $(-\infty, \infty)$, Range: $(-\infty,3]$} 
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fpplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-1, ymax=4, width=160pt, height=100pt]
+\node at (axis cs:4,-0.5) {\scriptsize $x$};
+\node at (axis cs:0.5,4) {\scriptsize $y$};
+\node at (axis cs:1.5,2.25) {\scriptsize $(1,2)$};
+\node at (axis cs:-1.75,2.25) {\scriptsize $(-1,2)$};
+\node at (axis cs:0.75,3) {\scriptsize $(0,3)$};
+\addplot[domain=-1.5:1.5] ({t^3},{3-(t^2)});
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(-1,2) (0,3) (1,2)};
+\node at (axis description cs:0.5,-0.12) {Domain: $(-\infty, \infty)$, Range: $(-\infty,3]$};
+\end{axis}
+\end{tikzpicture}

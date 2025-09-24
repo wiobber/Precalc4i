@@ -1,17 +1,16 @@
-\begin{mfpic}[15]{-4}{4}{-3}{3}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-2 step 1 until 2}
-\ymarks{-2 step 1 until 2}
-\tlpointsep{4pt}
-\tiny
-\axislabels {x}{ {$-2 \hspace{6pt}$} -2,{$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-2$} -2, {$-1$} -1,   {$1$} 1,   {$2$} 2}
-\normalsize
-\dashed \polyline{(-3,-3), (-3, 3)}
-\dashed \polyline{(3,-3), (3, 3)}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \function{-2.6,2.6,0.1}{4*x/((9-(x**2))**1.414)}
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-3, ymax=3, width=120pt, height=90pt,
+  xtick={-2,-1,1,2},
+  xticklabels={{$-2 \hspace{6pt}$},{$-1 \hspace{6pt}$},{$1$},{$2$}},
+  ytick={-2,-1,1,2},
+  yticklabels={{$-2$},{$-1$},{$1$},{$2$}}
+]
+\node at (axis cs:4,-0.5) {\scriptsize $t$};
+\node at (axis cs:0.5,4) {\scriptsize $y$};
+\addplot[dashed] coordinates {(-3,-3) (-3,3)};
+\addplot[dashed] coordinates {(3,-3) (3,3)};
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0)};
+\addplot[domain=-2.6:2.6] {4*x/((9 - (x^2))^1.414)};
+\end{axis}
+\end{tikzpicture}

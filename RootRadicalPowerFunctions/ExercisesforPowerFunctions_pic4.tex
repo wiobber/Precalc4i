@@ -1,12 +1,13 @@
-\begin{mfpic}[10][20]{-10}{10}{-2}{6}
-\axes
-\tlabel[cc](10, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 6){\scriptsize $y$}
-\tlabel[cc](-10, 0.5){\scriptsize $(-9,0)$}
-\tlabel[cc](-1.5,4.5){\scriptsize $(-1,4)$}
-\tlabel[cc](1.5,3){\scriptsize $(0,3)$}
-\tlabel[cc](7,0.5){\scriptsize $(6,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2.15,2.15 ,0.1}{((t**3)-1,4-(t**2))}
-\point[4pt]{(-9,0), (7,0), (0,3), (-1,4)}
-\end{mfpic}
+\begin{tikzpicture}
+
+\begin{axis}[fpplot, xlabel={}, ylabel={}, xmin=-10, xmax=10, ymin=-2, ymax=6, width=200pt, height=160pt]
+\node at (axis cs:10,-0.5) {\scriptsize $x$};
+\node at (axis cs:0.5,6) {\scriptsize $y$};
+\node at (axis cs:-10,0.5) {\scriptsize $(-9,0)$};
+\node at (axis cs:-1.5,4.5) {\scriptsize $(-1,4)$};
+\node at (axis cs:1.5,3) {\scriptsize $(0,3)$};
+\node at (axis cs:7,0.5) {\scriptsize $(6,0)$};
+\addplot[domain=-2.15:2.15] ({t^3-1},{4-(t^2)});
+\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(-9,0) (7,0) (0,3) (-1,4)};
+\end{axis}
+\end{tikzpicture}

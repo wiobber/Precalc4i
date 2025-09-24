@@ -1,0 +1,18 @@
+\begin{mfpic}[10][8]{-5}{5}{-7}{9}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,9){\scriptsize $y$}
+\xmarks{-4 step 1 until 4}
+\ymarks{-6 step 1 until 8}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
+\normalsize
+\dashed \polyline{(-5,5), (5,5)}
+\dashed \polyline{(-2,-7), (-2,9)}
+\point[4pt]{(0,0)}
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-5,-2.2,0.1}{(-5*x)/((-(x**3) - 8)**(1/3))}
+\arrow \reverse \arrow \function{-1.8,5,0.1}{(5*x)/(((x**3) + 8)**(1/3))}
+\end{mfpic}

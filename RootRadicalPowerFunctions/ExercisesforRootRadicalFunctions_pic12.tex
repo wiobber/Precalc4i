@@ -1,16 +1,17 @@
-\begin{mfpic}[3][15]{-45}{5}{-3}{1}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](1.5,1){\scriptsize $y$}
-\xmarks{-40,-30,-20,-10}
-\ymarks{-2,-1}
-\tlpointsep{4pt}
-\tiny
-\axislabels {x}{ {$-20 \hspace{5pt}$} -20, {$-10 \hspace{5pt}$} -10}
-\axislabels {y}{{$-2$} -2}
-\normalsize
-\point[4pt]{(0,-2),(-1,-1)}
-\penwd{1.25pt}
-\arrow \reverse \function{-45,0,0.1}{((-x)**0.125) - 2}
- \tcaption{Domain:  $(-\infty, 0]$, Range: $[-2, \infty)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-45, xmax=5, ymin=-3, ymax=1,
+  width=150pt, height=60pt, scale only axis,
+  xtick={-40,-30,-20,-10},
+  xticklabels={,,{$-20 \hspace{5pt}$},{$-10 \hspace{5pt}$}},
+  ytick={-2,-1},
+  yticklabels={{$-2$},}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:1.5,1){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(0,-2) (-1,-1)};
+\addplot+[fplot, domain=-45:0, <-] {(-x)^(0.125) - 2};
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 0]$, Range: $[-2, \infty)$};
+\end{axis}
+\end{tikzpicture}

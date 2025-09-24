@@ -1,13 +1,15 @@
-\begin{mfpic}[10]{-5}{8}{-1}{1}
-\polyline{(-5,0),(0,0)}
-\arrow  \polyline{(4,0),(8,0)}
-\xmarks{-5,0,4}
-\tlabel[cc](-5,-1){$-5 \hspace{7pt}$}
-\tlabel[cc](-5,1){$0$}
-\tlabel[cc](-2.5,1){$(+)$}
-\tlabel[cc](0,-1){$0$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](4,-1){$4$}
-\tlabel[cc](4,1){$0$}
-\tlabel[cc](6,1){$(+)$}
-\end{mfpic}
+\begin{tikzpicture}[x=10pt,y=10pt]
+\draw (-5,0) -- (0,0);
+\draw[->] (4,0) -- (8,0);
+\draw (-5,-0.1) -- (-5,0.1);
+\draw (0,-0.1) -- (0,0.1);
+\draw (4,-0.1) -- (4,0.1);
+\node at (-5,-1){$-5 \hspace{7pt}$};
+\node at (-5,1){$0$};
+\node at (-2.5,1){$(+)$};
+\node at (0,-1){$0$};
+\node at (0,1){$0$};
+\node at (4,-1){$4$};
+\node at (4,1){$0$};
+\node at (6,1){$(+)$};
+\end{tikzpicture}

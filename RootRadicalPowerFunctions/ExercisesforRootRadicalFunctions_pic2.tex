@@ -1,18 +1,17 @@
-\begin{mfpic}[15]{-5}{5}{-1}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-%\tlabel[cc](-1.5, 0.5){\scriptsize $(-1,0)$}
-%\tlabel[cc](-0.5,-1){\scriptsize $\left(0, \frac{1}{2} \right)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\penwd{1.25pt}
-\arrow \reverse \function{-5,1,0.1}{2*sqrt(1-x)}
-\point[4pt]{(1,0), (0,2)}
-\tcaption{ \scriptsize $x$-intercept $(1,0)$, $y$-intercept $(0,2)$}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-5, xmax=5, ymin=-1, ymax=5,
+  width=150pt, height=90pt, scale only axis,
+  xtick={-4,-3,-2,-1,1,2,3,4},
+  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
+  ytick={1,2,3,4},
+  yticklabels={{$1$},{$2$},{$3$},{$4$}}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,5){\scriptsize $y$};
+\addplot+[fplot, domain=-5:1, <-] {2*sqrt(1 - x)};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(1,0) (0,2)};
+\node[anchor=north] at (axis description cs:0.5,1.02){\scriptsize $x$-intercept $(1,0)$, $y$-intercept $(0,2)$};
+\end{axis}
+\end{tikzpicture}
