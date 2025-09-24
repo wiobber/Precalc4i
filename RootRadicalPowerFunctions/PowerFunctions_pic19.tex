@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-2, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
+    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
+    \node at (axis cs:1,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({(t^5+1)/2},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (0.5,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $F(x)=(2x-1)^{2.6}$};
+\end{tikzpicture}

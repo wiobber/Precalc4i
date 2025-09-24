@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=100pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=5,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,5){\scriptsize $y$};
+    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.5, line width=1.25pt, ->] ({t^4},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{4}}$};
+\end{tikzpicture}

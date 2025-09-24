@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-4, ymax=1,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,1){\scriptsize $y$};
+    \node at (axis cs:-2,-3){\scriptsize $(-2,-2)$};
+    \node at (axis cs:-3,0.5){\scriptsize $(-3,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,-2)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}$};
+\end{tikzpicture}

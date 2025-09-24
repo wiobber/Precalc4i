@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=170pt,
+    height=170pt,
+    xmin=-1, xmax=9,
+    ymin=-1, xmax=9,
+    ymax=9,
+    clip=false
+  ]
+    \node at (axis cs:9,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,9){\scriptsize $y$};
+    \node at (axis cs:5,8){\scriptsize $p>1$, concave up};
+    \node at (axis cs:6,1.5){\scriptsize $0<p<1$, concave down};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:1.75,0.75){\scriptsize $(1,1)$};
+    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t^2},{t});
+    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t},{t^2});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^p$ for varying values of $p$.};
+\end{tikzpicture}

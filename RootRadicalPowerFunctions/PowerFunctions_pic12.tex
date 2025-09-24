@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=60pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=3,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,3){\scriptsize $y$};
+    \node at (axis cs:-1.25,2.5){\scriptsize VA $x =0$};
+    \node at (axis cs:2.5,-0.5){\scriptsize HA $y =0$};
+    \node at (axis cs:1.5,1.5){\scriptsize $(1,1)$};
+    \addplot[fpplot, domain=0.45:2.5, line width=1.25pt, ->] ({1/(t^2)},{t});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{-\frac{1}{2}}$};
+\end{tikzpicture}

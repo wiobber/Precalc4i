@@ -269,3 +269,32 @@
 %% OTHERWITE 'Counter too large' errors   (Ximera sets this ot \Alph ...?)
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
+
+
+
+\pgfplotsset{
+  fplot/.style={
+    xlabel={$x$},  % x-axis label
+    ylabel={$y$},  % y-axis label	
+	axis lines=middle,
+	axis equal image,
+	axis line style={->},
+	ticks=none,
+    samples=200,
+    smooth,
+    line width=1.25pt,
+	mark=none,
+	domain=-2:2,
+	clip=false,
+	% postaction={decorate},
+    % decoration={
+    %   markings,
+    %   mark=at position 1 with {\arrow{>}}
+    % }
+  },
+   fpplot/.style={
+    fplot,
+    variable=t,
+    parametric,
+   }
+}
