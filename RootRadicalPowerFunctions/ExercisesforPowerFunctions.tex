@@ -4,6 +4,33 @@
 	\author{Stitz-Zeager}
 	\xmtitle{Exercises for Power Functions}{}
 
+\pgfplotsset{
+  fplot/.style={
+    xlabel={$x$},  % x-axis label
+    ylabel={$y$},  % y-axis label	
+	axis lines=middle,
+	axis equal image,
+	axis line style={->},
+	ticks=none,
+    samples=200,
+    smooth,
+    line width=1.25pt,
+	mark=none,
+	domain=-2:2,
+	clip=false,
+	% postaction={decorate},
+    % decoration={
+    %   markings,
+    %   mark=at position 1 with {\arrow{>}}
+    % }
+  },
+   fpplot/.style={
+    fplot,
+    variable=t,
+    parametric,
+   }
+}	
+
 
 In following exercises, use the given graphs along with Theorem \ref{linearrationalpowergraphs} to graph the given function.  Track at least two points and state the domain and range using interval notation.
 
