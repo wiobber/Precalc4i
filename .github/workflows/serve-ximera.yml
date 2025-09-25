@@ -2,8 +2,8 @@ name: Ximera Workflow
 
 on:
   push:    
-    # branches:
-    #     - 'main'
+    branches:
+        - 'main'
 
 jobs:
   build-ximera:
@@ -48,16 +48,15 @@ jobs:
           # XIMERA_URL: "https://test.xronos.clas.ufl.edu/"
           # XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
           XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: precalc4i*titles
+          XIMERA_NAME: precalc4i*main
           XM_COMPILE_SEQUENCE: "html,handout.pdf"
         run: |
           ls -alrt
           chmod +x xmScripts/xmlatex
           rm -rf ximera-downloads/with-answers
-          # rm -f /root/texmf/tex/latex/ximeraLatex/pgfsys-dvisvgm4ht.def   # causes File ended while scanning use of \AltlDisplayDollars.
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
-          ./xmScripts/xmlatex bake  course.tex testxourse.tex -f -j 5 --compile html,handout.pdf
+          ./xmScripts/xmlatex bake  course.tex testxourse.tex --compile "html" -f -j 5 
           ./xmScripts/xmlatex frost course.tex testxourse.tex 
           ./xmScripts/xmlatex name  course.tex testxourse.tex 
           ./xmScripts/xmlatex serve course.tex testxourse.tex 
@@ -74,7 +73,39 @@ jobs:
           key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
 
 
+  publish-ximera:
+    name: Publish Ximera Courses
+    needs: build-ximera # Waits for the build job to complete
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
 
+
+      - name: Restore ximera serve cache (only .git)
+        id: serve-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          fail-on-cache-miss: true
+          path: | 
+            xmScripts/**
+            .git/**
+          key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
+          
+      - name: Serve
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          # XIMERA_URL: ${{ vars.XIMERA_URL }}
+          # XIMERA_NAME: ${{ vars.XIMERA_NAME }}
+          XIMERA_URL: "https://xerxes.ximera.org/"
+          XIMERA_NAME: precalc4i
+        run: |
+          chmod +x xmScripts/xmlatex
+          env
+          ls -alrt
+          ./xmScripts/xmlatex name  
+          ./xmScripts/xmlatex serve 
+          echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
 
 
