@@ -1,8 +1,9 @@
-\documentclass{ximera}
+%%%% OLD %%%%% \documentclass{ximera}
 
 \begin{document}
 	\author{Stitz-Zeager}
-	\xmtitle{Exercises}
+	\xmtitle{Sign Diagram Stufffrom Old3-1}{}
+
 
 
 
@@ -21,7 +22,7 @@ The idea behind Example \ref{IVTbisection}  can be iterated and used to approxim
 Our primary use of the Intermediate Value Theorem is in the construction of sign diagrams, as in Section \ref{Inequalities}, since it guarantees us that polynomial functions are always positive $(+)$ or always negative $(-)$ on intervals which do not contain any of its zeros.  The general algorithm for polynomials is given below.
 
 \smallskip
-\\smallskip 
+\smallskip 
 
 \begin{example}  Construct a sign diagram for $f(x) = x^3 (x-3)^2 (x+2) \left(x^2+1\right)$.   Use it to give a rough sketch of the graph of  $y=f(x)$.  \label{polygraphex}
 
@@ -33,39 +34,13 @@ Our primary use of the Intermediate Value Theorem is in the construction of sign
 
 &
 
-\begin{mfpic}[10]{-8}{8}{-2}{30}
-\arrow \reverse \arrow \polyline{(-8,0),(8,0)}
-\xmarks{-3,0,3}
-\arrow \polyline{(-5,-1.5),(-5,-0.5)}
-\arrow \polyline{(-1.5,-1.5),(-1.5,-0.5)}
-\arrow \polyline{(1.5,-1.5),(1.5,-0.5)}
-\arrow \polyline{(5,-1.5),(5,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$-2$} -3, {$0$} 0, {$3$} 3 }
-\tlabel[cc](-5,1){$(+)$}
-\tlabel[cc](-5,-2.25){$-3$}
-\tlabel[cc](-3,1){$0$}
-\tlabel[cc](-1.5,1){$(-)$}
-\tlabel[cc](-1.75,-2.25){$-1$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](1.5,1){$(+)$}
-\tlabel[cc](1.5,-2.25){$1$}
-\tlabel[cc](3,1){$0$}
-\tlabel[cc](5,1){$(+)$}
-\tlabel[cc](5,-2.25){$4$}
-\end{mfpic} 
+\input{SignDiagramStufffromOld3-1_pic1.tex}
+ 
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-2}{3}
-\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\point[3pt]{(-2,0), (0,0), (3,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\tcaption{ \scriptsize A sketch of $y=f(x)$}
-\end{mfpic} 
+\input{SignDiagramStufffromOld3-1_pic2.tex}
+ 
 
 \end{tabular}
 
@@ -77,6 +52,8 @@ Our primary use of the Intermediate Value Theorem is in the construction of sign
 
 A couple of notes about the Example \ref{polygraphex} are in order.  First, note that we purposefully did not label the $y$-axis in the sketch of the graph of $y=f(x)$.  This is because the sign diagram gives us the zeros and the relative position of the graph - it doesn't give us any information as to how high or low the graph strays from the $x$-axis.  Furthermore, as we have mentioned earlier in the text, without Calculus, the values of the relative maximum and minimum can only be found approximately using a calculator.  If we took the time to find the leading term of $f$, we would find it to be $x^8$.  Looking at the end behavior of $f$, we notice that it matches the end behavior of $y=x^8$.  This is no accident, as we find out in the next theorem.
 
+\end{document}
+
 \medskip
 
 
@@ -86,39 +63,13 @@ Let's return to the function in Example \ref{polygraphex}, $f(x) = x^3 (x-3)^2 (
 
 &
 
-\begin{mfpic}[10]{-8}{8}{-2}{2}
-\arrow \reverse \arrow \polyline{(-8,0),(8,0)}
-\xmarks{-3,0,3}
-\arrow \polyline{(-5,-1.5),(-5,-0.5)}
-\arrow \polyline{(-1.5,-1.5),(-1.5,-0.5)}
-\arrow \polyline{(1.5,-1.5),(1.5,-0.5)}
-\arrow \polyline{(5,-1.5),(5,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$-2$} -3, {$0$} 0, {$3$} 3 }
-\tlabel[cc](-5,1){$(+)$}
-\tlabel[cc](-5,-2.25){$-3$}
-\tlabel[cc](-3,1){$0$}
-\tlabel[cc](-1.5,1){$(-)$}
-\tlabel[cc](-1.75,-2.25){$-1$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](1.5,1){$(+)$}
-\tlabel[cc](1.5,-2.25){$1$}
-\tlabel[cc](3,1){$0$}
-\tlabel[cc](5,1){$(+)$}
-\tlabel[cc](5,-2.25){$4$}
-\end{mfpic} 
+\input{SignDiagramStufffromOld3-1_pic3.tex}
+ 
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-2}{3}
-\arrow \reverse \arrow \function{-2.2,3.5, 0.1}{0.05*((x)**3)*(x+2)*((x-3)**2)} 
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\point[3pt]{(-2,0), (0,0), (3,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\tcaption{ \scriptsize A sketch of $y=f(x)$}
-\end{mfpic} 
+\input{SignDiagramStufffromOld3-1_pic4.tex}
+ 
 
 \end{tabular}
 

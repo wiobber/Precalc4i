@@ -57,53 +57,88 @@ Similarly,  the power rule for integer exponents:  $(x^n)^m = x^{nm}$ does not h
 
 \begin{multicols}{3}
 
-\begin{mfpic}[15]{-4}{4}{-4}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\point[3pt]{(0,0)}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3,4}
-\tcaption{\scriptsize $f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} = (x^{\frac{1}{2}})^2 = x$, $x \geq 0$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(4,4)}
-\point[4pt]{(0,0)}
-\end{mfpic}
-
-\begin{mfpic}[15]{-4}{4}{-4}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3,4}
-\tcaption{\scriptsize $g(x) =  x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x$ }
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{( -4,-4), (4,4)}
-\end{mfpic} 
+% \input{PowerFunctions_pic1.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=120pt,
+    height=135pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=5,
+    axis lines=middle,
+    x axis line style={->},
+    y axis line style={->},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-1,-2,-3,1,2,3,4},
+    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
+    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
+    tick style={black},
+    tick align=outside,
+    clip=false
+  ]
+    \addplot[->, line width=1.25pt] coordinates {(0,0) (4,4)};
+    \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0)};
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0)};
+    \node at (axis cs:4,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,5) {\scriptsize $y$};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} = (x^{\frac{1}{2}})^2 = x$, $x \geq 0$};
+\end{tikzpicture}
 
 
+% \input{PowerFunctions_pic2.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=120pt,
+    height=135pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=5,
+    axis lines=middle,
+    x axis line style={->},
+    y axis line style={->},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-1,-2,-3,1,2,3,4},
+    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
+    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
+    tick style={black},
+    tick align=outside,
+    clip=false
+  ]
+    \addplot[line width=1.25pt] coordinates {(-4,-4) (4,4)};
+    \node at (axis cs:4,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,5) {\scriptsize $y$};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $g(x) =  x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x$ };
+\end{tikzpicture}
+ 
 
-\begin{mfpic}[15]{-4}{4}{-4}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3,4}
-\tcaption{\scriptsize $h(x) = (x^2)^{\frac{1}{2}} = |x|$ }
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4,4), (0,0), (4,4)}
-\end{mfpic} 
+
+
+% \input{PowerFunctions_pic3.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=120pt,
+    height=135pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=5,
+    axis lines=middle,
+    x axis line style={->},
+    y axis line style={->},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-1,-2,-3,1,2,3,4},
+    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
+    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
+    tick style={black},
+    tick align=outside,
+    clip=false
+  ]
+    \addplot[line width=1.25pt] coordinates {(-4,4) (0,0)};
+    \addplot[line width=1.25pt] coordinates {(0,0) (4,4)};
+    \node at (axis cs:4,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,5) {\scriptsize $y$};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $h(x) = (x^2)^{\frac{1}{2}} = |x|$ };
+\end{tikzpicture}
+ 
 
 \end{multicols}
 
@@ -134,68 +169,99 @@ Next, we turn our attention to the graphs of $f(x) =x^r =  x^{\frac{m}{n}}$ for 
 
 \begin{tabular}{cccc}
 
-\begin{mfpic}[20]{0}{5}{0}{5}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,2,0.1}{(t^2,t)}
-\point[4pt]{(0,0), (1,1)}
-
-\tcaption{\scriptsize $f(x)=x^{\frac{1}{2}}$}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[20]{0}{5}{0}{5}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,1.5,0.1}{(t^4,t^3)}
-\point[4pt]{(0,0), (1,1)}
-\tcaption{\scriptsize $f(x)=x^{\frac{3}{4}}$}
-\end{mfpic}
-
-&
-
-
-\begin{mfpic}[20]{0}{5}{0}{5}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,1.35,0.1}{(t**4,t**5)}
-\point[4pt]{(0,0), (1,1)}
-
-\tcaption{\scriptsize $f(x)=x^{\frac{5}{4}}$}
-
-\end{mfpic}
-
+% \input{PowerFunctions_pic4.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=100pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=5,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,5){\scriptsize $y$};
+    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:2, line width=1.25pt, ->] ({t^2},{t});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{1}{2}}$};
+\end{tikzpicture}
 
 
 &
 
+% \input{PowerFunctions_pic5.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=100pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=5,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,5){\scriptsize $y$};
+    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.5, line width=1.25pt, ->] ({t^4},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{4}}$};
+\end{tikzpicture}
 
-\begin{mfpic}[20]{0}{5}{0}{5}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 5){\scriptsize $y$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,1.7,0.1}{(t**2,t**3)}
-\point[4pt]{(0,0), (1,1)}
 
-\tcaption{\scriptsize $f(x)=x^{\frac{3}{2}}$}
+&
 
-\end{mfpic} \\
+
+% \input{PowerFunctions_pic6.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=100pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=5,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,5){\scriptsize $y$};
+    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
+    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.35, line width=1.25pt, ->] ({t^4},{t^5});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{5}{4}}$};
+\end{tikzpicture}
+
+
+
+
+&
+
+
+% \input{PowerFunctions_pic7.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=100pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=5,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,5){\scriptsize $y$};
+    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
+    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.7, line width=1.25pt, ->] ({t^2},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{2}}$};
+\end{tikzpicture}
+ \\
 
 \end{tabular}
 
@@ -208,67 +274,100 @@ Below we graph several examples of $f(x) =x^r =  x^{\frac{m}{n}}$ where $n$ is o
 
 \begin{tabular}{cccc}
 
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](2,0.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-2.25,-0.75){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.3,1.3,0.1}{(t^5,t^3)}
-\point[4pt]{(0,0), (1,1), (-1,-1)}
-
-\tcaption{\scriptsize $f(x)=x^{\frac{3}{5}}$}
-\end{mfpic}
-
-&
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-1,1.75){\scriptsize $(-1,1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t^2)}
-\point[4pt]{(0,0), (1,1), (-1,1)}
-
-\tcaption{\scriptsize $f(x)=x^{\frac{2}{3}}$}
-\end{mfpic}
+% \input{PowerFunctions_pic8.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=120pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:2,0.75){\scriptsize $(1,1)$};
+    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:-2.25,-0.75){\scriptsize $(-1,-1)$};
+    \addplot[fpplot, domain=-1.3:1.3, line width=1.25pt, ->] ({t^5},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{5}}$};
+\end{tikzpicture}
 
 
 &
+% \input{PowerFunctions_pic9.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=120pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:-1,1.75){\scriptsize $(-1,1)$};
+    \addplot[fpplot, domain=-1.587:1.587, line width=1.25pt, ->] ({t^3},{t^2});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{2}{3}}$};
+\end{tikzpicture}
 
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.16,1.16,0.1}{(t^5,t^8)}
-\point[4pt]{(0,0), (1,1), (-1,1)}
-\tcaption{\scriptsize $f(x)=x^{\frac{8}{5}}$}
-\end{mfpic}
 
 
 &
 
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-2.25,-1){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.3,1.3,0.1}{(t^3,t^5)}
-\point[4pt]{(0,0), (1,1), (-1,-1)}
-\tcaption{\scriptsize $f(x)=x^{\frac{5}{3}}$}
+% \input{PowerFunctions_pic10.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=120pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
+    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:-2.25,1){\scriptsize $(-1,1)$};
+    \addplot[fpplot, domain=-1.16:1.16, line width=1.25pt, ->] ({t^5},{t^8});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{8}{5}}$};
+\end{tikzpicture}
 
-\end{mfpic}
+
+
+&
+
+% \input{PowerFunctions_pic11.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=120pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
+    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:-2.25,-1){\scriptsize $(-1,-1)$};
+    \addplot[fpplot, domain=-1.3:1.3, line width=1.25pt, ->] ({t^3},{t^5});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{5}{3}}$};
+\end{tikzpicture}
+
 
 \end{tabular}
 
@@ -280,40 +379,53 @@ When $r<0$, we have variables appear in the denominator which open the opportuni
 
 \begin{tabular}{m{2.5in}m{2.5in}}
 
-\begin{mfpic}[20]{0}{5}{0}{3}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-1.25,2.5){\scriptsize VA $x =0$}
+% \input{PowerFunctions_pic12.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=100pt,
+    height=60pt,
+    xmin=0, xmax=5,
+    ymin=0, ymax=3,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,3){\scriptsize $y$};
+    \node at (axis cs:-1.25,2.5){\scriptsize VA $x =0$};
+    \node at (axis cs:2.5,-0.5){\scriptsize HA $y =0$};
+    \node at (axis cs:1.5,1.5){\scriptsize $(1,1)$};
+    \addplot[fpplot, domain=0.45:2.5, line width=1.25pt, ->] ({1/(t^2)},{t});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{-\frac{1}{2}}$};
+\end{tikzpicture}
 
-\tlabel[cc](2.5, -0.5){\scriptsize HA $y =0$}
-
-\tlabel[cc](1.5,1.5){\scriptsize $(1,1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{0.45,2.5,0.1}{(1/(t**2),t)}
-\point[4pt]{(1,1)}
-\tcaption{\scriptsize $f(x)=x^{-\frac{1}{2}}$}
-
-\end{mfpic}
 
 &
 
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](-1.25,2.5){\scriptsize VA $x =0$}
-\tlabel[cc](2.5, -0.5){\scriptsize HA $y =0$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](-2.25,-1){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
- \arrow \reverse \arrow \parafcn{-2, -0.65,0.1}{(t,1/t**3)}
-\arrow  \reverse \arrow \parafcn{0.65,2,0.1}{(t,1/t**3)}
-\point[4pt]{(1,1), (-1,-1)}
+% \input{PowerFunctions_pic13.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=120pt,
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:-1.25,2.5){\scriptsize VA $x =0$};
+    \node at (axis cs:2.5,-0.5){\scriptsize HA $y =0$};
+    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
+    \node at (axis cs:-2.25,-1){\scriptsize $(-1,-1)$};
+    \addplot[fpplot, domain=-2:-0.65, line width=1.25pt, ->] ({t},{1/(t^3)});
+    \addplot[fpplot, domain=0.65:2, line width=1.25pt, ->] ({t},{1/(t^3)});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,1) (-1,-1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{-\frac{1}{3}}$};
+\end{tikzpicture}
 
-\tcaption{\scriptsize $f(x)=x^{-\frac{1}{3}}$}
-
-\end{mfpic}
 
 \\
 
@@ -377,35 +489,50 @@ The proof of Theorem \ref{linearrationalpowergraphs} is identical to that of The
 
 \begin{tabular}{m{2.5in}m{2.5in}}
 
-\begin{mfpic}[20]{-3}{3}{-4}{4}
-\axes
-\tlabel[cc](3, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.5,1){\scriptsize $(1,1)$}
-\tlabel[cc](-2,-1){\scriptsize $(-1,-1)$}
-\tlabel[cc](0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5,t**13)}
+% \input{PowerFunctions_pic14.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-3, xmax=3,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:3,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
+    \node at (axis cs:-2,-1){\scriptsize $(-1,-1)$};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-1,-1) (0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{2.6}$};
+\end{tikzpicture}
 
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{\scriptsize $f(x)=x^{2.6}$}
-
-\end{mfpic}
 
 &
 
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1,1.5){\scriptsize $(1,1)$}
-\tlabel[cc](0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8,t**3)}
-\point[4pt]{(0,0), (1,1)}
-\tcaption{\scriptsize $g(t)=t^{\frac{3}{8}}$}
-
-\end{mfpic} \\
+% \input{PowerFunctions_pic15.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-1, xmax=5,
+    ymin=-1, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1,1.5){\scriptsize $(1,1)$};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $g(t)=t^{\frac{3}{8}}$};
+\end{tikzpicture}
+ \\
 
 \end{tabular}
 
@@ -423,38 +550,52 @@ Step 1:   add $1$ to each of the $x$-coordinates of each of the points on the gr
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[20]{-3}{3}{-4}{4}
-\axes
-\tlabel[cc](3, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.5,1){\scriptsize $(1,1)$}
-\tlabel[cc](-2,-1){\scriptsize $(-1,-1)$}
-\tlabel[cc](0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5,t**13)}
+% \input{PowerFunctions_pic16.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-3, xmax=3,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:3,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
+    \node at (axis cs:-2,-1){\scriptsize $(-1,-1)$};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-1,-1) (0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=x^{2.6}$};
+\end{tikzpicture}
 
-\point[4pt]{(-1,-1), (0,0), (1,1)}
-\tcaption{\scriptsize $y=x^{2.6}$}
-
-\end{mfpic}
 &
 \stackrel{\text{ \scriptsize add $1$ to each $x$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[20]{-2}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](2.5,1){\scriptsize $(2,1)$}
-\tlabel[cc](-1,-1){\scriptsize $(0,-1)$}
-\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5+1,t**13)}
-
-\point[4pt]{(0,-1), (1,0), (2,1)}
-\tcaption{\scriptsize $y=(x-1)^{2.6}$}
-
-\end{mfpic}\\
+% \input{PowerFunctions_pic17.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-2, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:2.5,1){\scriptsize $(2,1)$};
+    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
+    \node at (axis cs:1.5,-0.5){\scriptsize $(1,0)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5+1},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (1,0) (2,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(x-1)^{2.6}$};
+\end{tikzpicture}
+\\
 
  \text{\scriptsize  $(-1,1)$, $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(0,-1)$, $(1,0)$, $(2,1)$} \\
  
@@ -464,37 +605,51 @@ Step 2:   divide each of the $x$-coordinates of each of the points on the graph 
 
 \[ \begin{array}[v]{rlc}
 
-\begin{mfpic}[20]{-2}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](2.5,1){\scriptsize $(2,1)$}
-\tlabel[cc](-1,-1){\scriptsize $(0,-1)$}
-\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5+1,t**13)}
+% \input{PowerFunctions_pic18.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-2, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:2.5,1){\scriptsize $(2,1)$};
+    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
+    \node at (axis cs:1.5,-0.5){\scriptsize $(1,0)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5+1},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (1,0) (2,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(x-1)^{2.6}$};
+\end{tikzpicture}
 
-\point[4pt]{(0,-1), (1,0), (2,1)}
-\tcaption{\scriptsize $y=(x-1)^{2.6}$}
-
-\end{mfpic}
 &
 \stackrel{\text{ \scriptsize divide to each $x$-coordinate by 2}}{\xrightarrow{\hspace{1.5in}}}
 &
-\begin{mfpic}[20]{-2}{4}{-4}{4}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1.5,1){\scriptsize $(1,1)$}
-\tlabel[cc](-1,-1){\scriptsize $(0,-1)$}
-\tlabel[cc](1,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{((t**5+1)/2,t**13)}
-
-\point[4pt]{(0,-1), (0.5,0), (1,1)}
-\tcaption{\scriptsize $F(x)=(2x-1)^{2.6}$}
-
-\end{mfpic}  \\
+% \input{PowerFunctions_pic19.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=160pt,
+    xmin=-2, xmax=4,
+    ymin=-4, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:4,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
+    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
+    \node at (axis cs:1,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
+    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({(t^5+1)/2},{t^13});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (0.5,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $F(x)=(2x-1)^{2.6}$};
+\end{tikzpicture}
+  \\
 
  \text{\scriptsize   $(0,-1)$, $(1,0)$, $(2,1)$} & & \text{\scriptsize  $(0,-1)$, $\left(\frac{1}{2},0 \right)$, $(1,1)$} \\
  
@@ -508,36 +663,52 @@ Step 1:   add $-3$ to each of the $t$-coordinates of each of the points on the g
 
 \[ \begin{array}[v]{rlc}
 
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-\axes
-\tlabel[cc](5, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](1,1.5){\scriptsize $(1,1)$}
-\tlabel[cc](0.5,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8,t**3)}
-\point[4pt]{(0,0), (1,1)}
-\tcaption{\scriptsize $y=t^{\frac{3}{8}}$}
-
-\end{mfpic} 
+% \input{PowerFunctions_pic20.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-1, xmax=5,
+    ymin=-1, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:5,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:1,1.5){\scriptsize $(1,1)$};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=t^{\frac{3}{8}}$};
+\end{tikzpicture}
+ 
 
 
 &
 \stackrel{\text{ \scriptsize add $-3$ to each $t$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[20]{-4}{2}{-1}{4}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](-2,1.5){\scriptsize $(-2,1)$}
-\tlabel[cc](-3,-0.5){\scriptsize $(-3,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8-3,t**3)}
-\point[4pt]{(-3,0), (-2,1)}
-\tcaption{\scriptsize $y=(t+3)^{\frac{3}{8}}$}
-
-\end{mfpic}   \\
+% \input{PowerFunctions_pic21.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-1, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:-2,1.5){\scriptsize $(-2,1)$};
+    \node at (axis cs:-3,-0.5){\scriptsize $(-3,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(t+3)^{\frac{3}{8}}$};
+\end{tikzpicture}
+   \\
 
  \text{\scriptsize  $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(-3,0)$, $(-2,1)$} \\
  
@@ -549,36 +720,52 @@ Step 1:   add $-3$ to each of the $t$-coordinates of each of the points on the g
 
 \[ \begin{array}[v]{rlc}
 
-\begin{mfpic}[20]{-4}{2}{-1}{4}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\tlabel[cc](-2,1.5){\scriptsize $(-2,1)$}
-\tlabel[cc](-3,-0.5){\scriptsize $(-3,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8-3,t**3)}
-\point[4pt]{(-3,0), (-2,1)}
-\tcaption{\scriptsize $y=(t+3)^{\frac{3}{8}}$}
+% \input{PowerFunctions_pic22.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-1, ymax=4,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,4){\scriptsize $y$};
+    \node at (axis cs:-2,1.5){\scriptsize $(-2,1)$};
+    \node at (axis cs:-3,-0.5){\scriptsize $(-3,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{t^3});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(t+3)^{\frac{3}{8}}$};
+\end{tikzpicture}
 
-\end{mfpic}
 
 
 &
 \stackrel{\text{ \scriptsize multiply each $y$-coordinate by $-2$}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[20]{-4}{2}{-4}{1}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 1){\scriptsize $y$}
-\tlabel[cc](-2,-3){\scriptsize $(-2,-2)$}
-\tlabel[cc](-3,0.5){\scriptsize $(-3,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3))}
-\point[4pt]{(-3,0), (-2,-2)}
-\tcaption{\scriptsize $y=-2(t+3)^{\frac{3}{8}}$}
-
-\end{mfpic} \\
+% \input{PowerFunctions_pic23.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-4, ymax=1,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,1){\scriptsize $y$};
+    \node at (axis cs:-2,-3){\scriptsize $(-2,-2)$};
+    \node at (axis cs:-3,0.5){\scriptsize $(-3,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,-2)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}$};
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize  $(-3,0)$, $(-2,1)$} & & \text{\scriptsize  $(-3,0)$, $(-2,-2)$} \\
  
@@ -589,36 +776,52 @@ Step 1:   add $-3$ to each of the $t$-coordinates of each of the points on the g
 
 \[ \begin{array}[v]{rlc}
 
-\begin{mfpic}[20]{-4}{2}{-4}{1}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 1){\scriptsize $y$}
-\tlabel[cc](-2,-3){\scriptsize $(-2,-2)$}
-\tlabel[cc](-3,0.5){\scriptsize $(-3,0)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3))}
-\point[4pt]{(-3,0), (-2,-2)}
-\tcaption{\scriptsize $y=-2(t+3)^{\frac{3}{8}}$}
+% \input{PowerFunctions_pic24.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-4, ymax=1,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,1){\scriptsize $y$};
+    \node at (axis cs:-2,-3){\scriptsize $(-2,-2)$};
+    \node at (axis cs:-3,0.5){\scriptsize $(-3,0)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,-2)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}$};
+\end{tikzpicture}
 
-\end{mfpic}
 
 
 &
 \stackrel{\text{ \scriptsize add $1$ to each  $y$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[20]{-4}{2}{-3}{2}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 2){\scriptsize $y$}
-\tlabel[cc](-2,-2){\scriptsize $(-2,-1)$}
-\tlabel[cc](-3,1.5){\scriptsize $(-3,1)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3)+1)}
-\point[4pt]{(-3,1), (-2,-1)}
-\tcaption{\scriptsize $y=-2(t+3)^{\frac{3}{8}}+1$}
-
-\end{mfpic} \\
+% \input{PowerFunctions_pic25.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=120pt,
+    height=100pt,
+    xmin=-4, xmax=2,
+    ymin=-3, ymax=2,
+    clip=false
+  ]
+    \node at (axis cs:2,-0.5){\scriptsize $t$};
+    \node at (axis cs:0.5,2){\scriptsize $y$};
+    \node at (axis cs:-2,-2){\scriptsize $(-2,-1)$};
+    \node at (axis cs:-3,1.5){\scriptsize $(-3,1)$};
+    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)+1});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,1) (-2,-1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}+1$};
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize  $(-3,0)$, $(-2,-2)$} & & \text{\scriptsize  $(-3,1)$, $(-2,-1)$} \\
  
@@ -716,17 +919,20 @@ For the  sign diagram, we note that $f$ has only one zero, $x=0$ and is undefine
 
 \includegraphics[width=3in]{./PowerFunctionsGraphics/RationalExpEx01.jpg} &
 
-\begin{mfpic}[20]{-4}{2}{-1}{1}
-\arrow \reverse \arrow \polyline{(-4,0),(2,0)}
-\xmarks{-2,0}
-\tlabel[cc](-3, 0.5){$(+)$}
-\tlabel[cc](-2,-0.5){$0$}
-\tlabel[cc](-2,0.5){$0$}
-\tlabel[cc](-1,0.5){$(+)$}
-\tlabel[cc](0,-0.5){$2$}
-\tlabel[cc](0,0.5){\textinterrobang}
-\tlabel[cc](1,0.5){$(+)$}
-\end{mfpic}  \\
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[<->, line width=1.25pt] (-4,0) -- (2,0);
+  \draw (-2,-0.12) -- (-2,0.12);
+  \draw (0,-0.12) -- (0,0.12);
+  \node at (-3, 0.5) {$(+)$};
+  \node at (-2,-0.5) {$0$};
+  \node at (-2,0.5) {$0$};
+  \node at (-1,0.5) {$(+)$};
+  \node at (0,-0.5) {$2$};
+  \node at (0,0.5) {\textinterrobang};
+  \node at (1,0.5) {$(+)$};
+\end{tikzpicture}
+  \\
 
 The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
@@ -758,24 +964,28 @@ For the sign diagram for $g(t)$, we note that $g$ has zeros $t = \pm 2$ and is u
 
  \includegraphics[width=3in]{./PowerFunctionsGraphics/RationalExpEx02.jpg} & 
  
-\begin{mfpic}[20][10]{-2}{7}{-1.5}{1.5}
-\arrow \polyline{(2,0), (-2,0)}
-\arrow \polyline{(3,0), (7,0)}
-\xmarks{0, 2, 3, 5}
-\tlabel[cc](-1,1){$(+)$}
-\tlabel[cc](0,-1){$-6 \hspace{7pt}$}
-\tlabel[cc](0,1){\textinterrobang}
-\tlabel[cc](1,1){$(-)$}
-\tlabel[cc](2,-1){$-2 \hspace{7pt}$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](3,-1){$2$}
-\tlabel[cc](3,1){$0$}
-\tlabel[cc](4,1){$(-)$}
-\tlabel[cc](5,-1){$6$}
-\tlabel[cc](5,1){\textinterrobang}
-\tlabel[cc](6,1){$(+)$}
-
-\end{mfpic} \\
+% \input{PowerFunctions_pic27.tex}
+\begin{tikzpicture}[x=20pt,y=10pt]
+  \draw[->, line width=0.8pt] (2,0) -- (-2,0);
+  \draw[->, line width=0.8pt] (3,0) -- (7,0);
+  \draw (0,-0.15) -- (0,0.15);
+  \draw (2,-0.15) -- (2,0.15);
+  \draw (3,-0.15) -- (3,0.15);
+  \draw (5,-0.15) -- (5,0.15);
+  \node at (-1,1){$(+)$};
+  \node at (0,-1){$-6 \hspace{7pt}$};
+  \node at (0,1){\textinterrobang};
+  \node at (1,1){$(-)$};
+  \node at (2,-1){$-2 \hspace{7pt}$};
+  \node at (2,1){$0$};
+  \node at (3,-1){$2$};
+  \node at (3,1){$0$};
+  \node at (4,1){$(-)$};
+  \node at (5,-1){$6$};
+  \node at (5,1){\textinterrobang};
+  \node at (6,1){$(+)$};
+\end{tikzpicture}
+ \\
 
 The graph of $y=g(t)$  \hspace{0.75in} &Sign Diagram for $g(t)$ \\
 
@@ -807,21 +1017,30 @@ In general, real number exponents inherit their properties from rational number 
 
 \begin{center}
 
-\begin{mfpic}[17]{-1}{9}{-1}{9}
-\axes
-\tlabel[cc](9, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 9){\scriptsize $y$}
-\tlabel[cc](5,8){\scriptsize $p>1$, concave up}
-\tlabel[cc](6,1.5){\scriptsize $0<p<1$, concave down}
-\tlabel[cc](0.5, -0.5){\scriptsize $(0,0)$}
-\tlabel[cc](1.75, 0.75){\scriptsize $(1,1)$}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 3,0.1}{(t**2,t)}
-\arrow  \parafcn{0, 3,0.1}{(t,t**2)}
-\point[4pt]{(0,0), (1,1)}
-\tcaption{\scriptsize $f(x) = x^p$ for varying values of $p$.}
+% \input{PowerFunctions_pic28.tex}
+\begin{tikzpicture}
+  \begin{axis}[
+    fplot,
+    width=170pt,
+    height=170pt,
+    xmin=-1, xmax=9,
+    ymin=-1, xmax=9,
+    ymax=9,
+    clip=false
+  ]
+    \node at (axis cs:9,-0.5){\scriptsize $x$};
+    \node at (axis cs:0.5,9){\scriptsize $y$};
+    \node at (axis cs:5,8){\scriptsize $p>1$, concave up};
+    \node at (axis cs:6,1.5){\scriptsize $0<p<1$, concave down};
+    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
+    \node at (axis cs:1.75,0.75){\scriptsize $(1,1)$};
+    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t^2},{t});
+    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t},{t^2});
+    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+  \end{axis}
+  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^p$ for varying values of $p$.};
+\end{tikzpicture}
 
-\end{mfpic}
 
 \end{center}
 

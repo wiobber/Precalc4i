@@ -43,52 +43,88 @@ In addition to having the common domain of $[0, \infty)$, the graphs of $f(x) = 
 
 \begin{tabular}{ccc}
 
-\begin{mfpic}[15]{0}{9}{0}{3}
-\axes
-\tlabel[cc](9, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{(t^2,t)}
-\point[4pt]{(0,0), (1,1)}
+% \input{RootRadicalFunctions_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=9,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:9,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
 
-\tcaption{\scriptsize $y=\sqrt{x}$}
-\end{mfpic}
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^2},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 
-\begin{mfpic}[15]{0}{9}{0}{3}
-\axes
-\tlabel[cc](9, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,1.732,0.1}{(t^4,t)}
-\point[4pt]{(0,0), (1,1)}
+% \input{RootRadicalFunctions_pic2.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=9,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:9,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
 
-\tcaption{\scriptsize $y=\sqrt[4]{x}$}
+\addplot+[domain=0:1.732, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^4},{\t});
 
-\end{mfpic}
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[4]{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 
 
-\begin{mfpic}[15]{0}{9}{0}{3}
+% \input{RootRadicalFunctions_pic3.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=9,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:9,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
 
-\axes
-\tlabel[cc](9, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,1.442,0.1}{(t^6,t)}
-\point[4pt]{(0,0), (1,1)}
+\addplot+[domain=0:1.442, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^6},{\t});
 
-\tcaption{\scriptsize $y=\sqrt[6]{x}$}
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
 
-\end{mfpic}
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[6]{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 \end{tabular}
@@ -100,58 +136,92 @@ The functions $f(x) = \sqrt[n]{x}$ for odd natural numbers $n \geq 3$ also follo
 
 
 
-\begin{mfpic}[15]{-4}{4}{-3}{3}
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-1.25,-1.75){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t)}
-\point[4pt]{(0,0), (1,1), (-1,-1)}
+% \input{RootRadicalFunctions_pic4.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=4,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:4,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+\node at (axis cs:-1.25,-1.75){\scriptsize $(-1,-1)$};
 
-\tcaption{\scriptsize $y=\sqrt[3]{x}$}
-\end{mfpic}
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[3]{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 
-\begin{mfpic}[15]{-4}{4}{-3}{3}
+% \input{RootRadicalFunctions_pic5.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=4,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:4,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+\node at (axis cs:-1.25,-1.75){\scriptsize $(-1,-1)$};
 
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-1.25,-1.75){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.319,1.319,0.1}{(t^5,t)}
+\addplot+[domain=-1.319:1.319, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^5},{\t});
 
-\point[4pt]{(0,0), (1,1), (-1,-1)}
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
 
-\tcaption{\scriptsize $y=\sqrt[5]{x}$}
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[5]{x}$};
+\end{axis}
+\end{tikzpicture}
 
-\end{mfpic}
 
 &
 
 
 
-\begin{mfpic}[15]{-4}{4}{-3}{3}
+% \input{RootRadicalFunctions_pic6.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=4,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:4,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+\node at (axis cs:-1.25,-1.75){\scriptsize $(-1,-1)$};
 
-\axes
-\tlabel[cc](4, -0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-1.25,-1.75){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.219,1.219,0.1}{(t^7,t)}
+\addplot+[domain=-1.219:1.219, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^7},{\t});
 
-\point[4pt]{(0,0), (1,1), (-1,-1)}
-\tcaption{\scriptsize $y=\sqrt[7]{x}$}
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
 
-\end{mfpic}
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[7]{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{tabular}
 
@@ -235,36 +305,63 @@ Step 1:   add $-3$ to each of the $x$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[15]{-4}{4}{-3}{3}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-1.25,-1.75){\scriptsize $(-1,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t)}
-\point[4pt]{(0,0), (1,1), (-1,-1)}
-\tcaption{\scriptsize $y=\sqrt[3]{x}$}
-\end{mfpic}
+% \input{RootRadicalFunctions_pic7.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=4,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:4,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
+\node at (axis cs:-1.25,-1.75){\scriptsize $(-1,-1)$};
+
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[3]{x}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 \stackrel{\text{ \scriptsize add $-3$ to each $x$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[15]{-7}{1}{-3}{3}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-2,1.75){\scriptsize $(-2,1)$}
-\tlabel[cc](-2,-0.5){\scriptsize $(-3,0)$}
-\tlabel[cc](-4.25,-1.75){\scriptsize $(-4,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,t)}
-\point[4pt]{(-2,1), (-3,0), (-4,-1)}
+% \input{RootRadicalFunctions_pic8.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-7, xmax=1,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:1,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:-2,1.75){\scriptsize $(-2,1)$};
+\node at (axis cs:-2,-0.5){\scriptsize $(-3,0)$};
+\node at (axis cs:-4.25,-1.75){\scriptsize $(-4,-1)$};
 
-\tcaption{\scriptsize $y=\sqrt[3]{x+3}$}
-\end{mfpic} \\
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3-3},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-2,1) (-3,0) (-4,-1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[3]{x+3}$};
+\end{axis}
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize  $(-1,1)$, $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(-4,-1)$, $(-3,0)$, $(-2,1)$} \\
  
@@ -277,37 +374,63 @@ Step 1:   add $-3$ to each of the $x$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[15]{-7}{1}{-3}{3}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-2,1.75){\scriptsize $(-2,1)$}
-\tlabel[cc](-2,-0.5){\scriptsize $(-3,0)$}
-\tlabel[cc](-4.25,-1.75){\scriptsize $(-4,-1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,t)}
-\point[4pt]{(-2,1), (-3,0), (-4,-1)}
+% \input{RootRadicalFunctions_pic9.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-7, xmax=1,
+  ymin=-3, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:1,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:-2,1.75){\scriptsize $(-2,1)$};
+\node at (axis cs:-2,-0.5){\scriptsize $(-3,0)$};
+\node at (axis cs:-4.25,-1.75){\scriptsize $(-4,-1)$};
 
-\tcaption{\scriptsize $y=\sqrt[3]{x+3}$}
-\end{mfpic}
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3-3},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-2,1) (-3,0) (-4,-1)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt[3]{x+3}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 \stackrel{\text{ \scriptsize  multiply each $y$-value by $-2$}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[15][7.5]{-7}{1}{-6}{6}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 6){\scriptsize $y$}
-\tlabel[cc](-2,-4){\scriptsize $(-2,-2)$}
-\tlabel[cc](-4,-1){\scriptsize $(-3,0)$}
-\tlabel[cc](-4,3.5){\scriptsize $(-4,2)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,-2*t)}
-\point[4pt]{(-2,-2), (-3,0), (-4,2)}
+% \input{RootRadicalFunctions_pic10.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-7, xmax=1,
+  ymin=-6, ymax=6,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:1,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,6){\scriptsize $y$};
+\node at (axis cs:-2,-4){\scriptsize $(-2,-2)$};
+\node at (axis cs:-4,-1){\scriptsize $(-3,0)$};
+\node at (axis cs:-4,3.5){\scriptsize $(-4,2)$};
 
-\tcaption{\scriptsize $y=-2\sqrt[3]{x+3}$}
-\end{mfpic}\\
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3-3},{-2*\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-2,-2) (-3,0) (-4,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=-2\sqrt[3]{x+3}$};
+\end{axis}
+\end{tikzpicture}
+\\
 
  \text{\scriptsize $(-4,-1)$, $(-3,0)$, $(-2,1)$} & & \text{\scriptsize  $(-4,2)$, $(-3,0)$, $(-2,-2)$} \\
  
@@ -319,37 +442,63 @@ Step 1:   add $-3$ to each of the $x$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[15][7.5]{-7}{1}{-6}{6}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 6){\scriptsize $y$}
-\tlabel[cc](-2,-4){\scriptsize $(-2,-2)$}
-\tlabel[cc](-4,-1){\scriptsize $(-3,0)$}
-\tlabel[cc](-4,3.5){\scriptsize $(-4,2)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,-2*t)}
-\point[4pt]{(-2,-2), (-3,0), (-4,2)}
+% \input{RootRadicalFunctions_pic11.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-7, xmax=1,
+  ymin=-6, ymax=6,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:1,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,6){\scriptsize $y$};
+\node at (axis cs:-2,-4){\scriptsize $(-2,-2)$};
+\node at (axis cs:-4,-1){\scriptsize $(-3,0)$};
+\node at (axis cs:-4,3.5){\scriptsize $(-4,2)$};
 
-\tcaption{\scriptsize $y=-2\sqrt[3]{x+3}$}
-\end{mfpic}
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3-3},{-2*\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-2,-2) (-3,0) (-4,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=-2\sqrt[3]{x+3}$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 \stackrel{\text{ \scriptsize  add $1$ to each $y$-value}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[15][7.5]{-7}{1}{-5}{7}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 7){\scriptsize $y$}
-\tlabel[cc](-2,-3){\scriptsize $(-2,-1)$}
-\tlabel[cc](-4,1){\scriptsize $(-3,1)$}
-\tlabel[cc](-4,4.5){\scriptsize $(-4,1)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,1-2*t)}
-\point[4pt]{(-2,-1), (-3,1), (-4,3)}
+% \input{RootRadicalFunctions_pic12.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-7, xmax=1,
+  ymin=-5, ymax=7,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:1,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,7){\scriptsize $y$};
+\node at (axis cs:-2,-3){\scriptsize $(-2,-1)$};
+\node at (axis cs:-4,1){\scriptsize $(-3,1)$};
+\node at (axis cs:-4,4.5){\scriptsize $(-4,1)$};
 
-\tcaption{\scriptsize $y=-2\sqrt[3]{x+3}+1$}
-\end{mfpic}\\
+\addplot+[domain=-1.587:1.587, samples=200, smooth, line width=1.25pt, <->, variable=\t, parametric]
+  ({\t^3-3},{1-2*\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-2,-1) (-3,1) (-4,3)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=-2\sqrt[3]{x+3}+1$};
+\end{axis}
+\end{tikzpicture}
+\\
 
 \text{\scriptsize  $(-4,2)$, $(-3,0)$, $(-2,-2)$}  & &\text{\scriptsize  $(-4,3)$, $(-3,1)$, $(-2,-1)$}  \\
  
@@ -365,38 +514,65 @@ Step 1:   add $-1$ to each of the $t$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[15]{0}{9}{0}{3}
-\axes
-\tlabel[cc](9, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](1,1.75){\scriptsize $(1,1)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,2)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{(t^2,t)}
-\point[4pt]{(0,0), (1,1), (4,2)}
+% \input{RootRadicalFunctions_pic13.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=0, xmax=9,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:9,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
+\node at (axis cs:1,1.75){\scriptsize $(1,1)$};
+\node at (axis cs:4,2.5){\scriptsize $(4,2)$};
 
-\tcaption{\scriptsize $y=\sqrt{t}$}
-\end{mfpic}
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^2},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (4,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{t}$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 &
 \stackrel{\text{ \scriptsize add $-1$ to each $t$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[15]{-1}{8}{0}{3}
-\axes
-\tlabel[cc](8, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-1,-0.5){\scriptsize $(-1,0)$}
-\gclear \tlabelrect(0,1.75){\scriptsize $(0,1)$}
-\tlabel[cc](3,2.5){\scriptsize $(3,2)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{(t^2-1,t)}
-\point[4pt]{(-1,0), (0,1), (3,2)}
+% \input{RootRadicalFunctions_pic14.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-1, xmax=8,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:8,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:-1,-0.5){\scriptsize $(-1,0)$};
+% The original used gclear to clear behind the label; we emulate with a white-filled node.
+\node[fill=white, inner sep=1pt] at (axis cs:0,1.75){\scriptsize $(0,1)$};
+\node at (axis cs:3,2.5){\scriptsize $(3,2)$};
 
-\tcaption{\scriptsize $y=\sqrt{t+1}$}
-\end{mfpic} \\
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^2-1},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-1,0) (0,1) (3,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{t+1}$};
+\end{axis}
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize  $(0,0)$, $(1,1)$, $(4,2)$} & & \text{\scriptsize  $(-1,0)$, $(0,1)$, $(3,2)$} \\
  
@@ -407,38 +583,66 @@ Step 1:   add $-1$ to each of the $t$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[15]{-1}{8}{0}{3}
-\axes
-\tlabel[cc](8, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](-1,-0.5){\scriptsize $(-1,0)$}
-\gclear \tlabelrect(0,1.75){\scriptsize $(0,1)$}
-\tlabel[cc](3,2.5){\scriptsize $(3,2)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{(t^2-1,t)}
-\point[4pt]{(-1,0), (0,1), (3,2)}
+% \input{RootRadicalFunctions_pic15.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-1, xmax=8,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:8,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:-1,-0.5){\scriptsize $(-1,0)$};
+% The original used gclear to clear behind the label; we emulate with a white-filled node.
+\node[fill=white, inner sep=1pt] at (axis cs:0,1.75){\scriptsize $(0,1)$};
+\node at (axis cs:3,2.5){\scriptsize $(3,2)$};
 
-\tcaption{\scriptsize $y=\sqrt{t+1}$}
-\end{mfpic}
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({\t^2-1},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(-1,0) (0,1) (3,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{t+1}$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 &
 \stackrel{\text{ \scriptsize divide each $t$-coordinate by $-2$:}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[25][15]{-4}{2}{0}{3}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$}
-\gclear \tlabelrect(0,1.75){\scriptsize $(0,1)$}
-\tlabel[cc](-1.5,1){\scriptsize $\left(-\frac{3}{2},2 \right)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t)}
-\point[4pt]{(0.5,0), (0,1), (-1.5,2)}
+% \input{RootRadicalFunctions_pic16.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=2,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:2,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
+% Emulating gclear with a white background for the label
+\node[fill=white, inner sep=1pt] at (axis cs:0,1.75){\scriptsize $(0,1)$};
+\node at (axis cs:-1.5,1){\scriptsize $\left(-\frac{3}{2},2 \right)$};
 
-\tcaption{\scriptsize $y=\sqrt{-2t+1}$}
-\end{mfpic} \\
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({( (\t^2-1)/(-2) )},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0.5,0) (0,1) (-1.5,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{-2t+1}$};
+\end{axis}
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize  $(-1,0)$, $(0,1)$, $(3,2)$} & & \text{\scriptsize  $\left(\frac{1}{2},0 \right)$, $(0,1)$, $\left(-\frac{3}{2},2 \right)$} \\
  
@@ -449,38 +653,66 @@ Step 1:   add $-1$ to each of the $t$-coordinates of each of the points on the g
 \[ \begin{array}[v]{rlc}
 
 
-\begin{mfpic}[25][15]{-4}{2}{0}{3}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 3){\scriptsize $y$}
-\tlabel[cc](0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$}
-\gclear \tlabelrect(0,1.75){\scriptsize $(0,1)$}
-\tlabel[cc](-1.5,1){\scriptsize $\left(-\frac{3}{2},2 \right)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t)}
-\point[4pt]{(0.5,0), (0,1), (-1.5,2)}
+% \input{RootRadicalFunctions_pic17.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=2,
+  ymin=0, ymax=3,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:2,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,3){\scriptsize $y$};
+\node at (axis cs:0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
+% Emulating gclear with a white background for the label
+\node[fill=white, inner sep=1pt] at (axis cs:0,1.75){\scriptsize $(0,1)$};
+\node at (axis cs:-1.5,1){\scriptsize $\left(-\frac{3}{2},2 \right)$};
 
-\tcaption{\scriptsize $y=\sqrt{-2t+1}$}
-\end{mfpic}
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({( (\t^2-1)/(-2) )},{\t});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0.5,0) (0,1) (-1.5,2)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.12){\scriptsize $y=\sqrt{-2t+1}$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 &
 \stackrel{\text{ \scriptsize multiply each $y$-coordinate by $\frac{1}{4}$:}}{\xrightarrow{\hspace{1.5in}}}
 &
 
-\begin{mfpic}[25]{-4}{2}{0}{2}
-\axes
-\tlabel[cc](2, -0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 2){\scriptsize $y$}
-\tlabel[cc](0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$}
-\gclear \tlabelrect(0,1){\scriptsize $\left(0, \frac{1}{4} \right)$}
-\tlabel[cc](-1.5,1){\scriptsize $\left(-\frac{3}{2}, \frac{1}{2} \right)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t/4)}
-\point[4pt]{(0.5,0), (0,0.25), (-1.5,0.5)}
+% \input{RootRadicalFunctions_pic18.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  xmin=-4, xmax=2,
+  ymin=0, ymax=2,
+  axis lines=middle,
+  axis line style={->},
+  ticks=none,
+  clip=false
+]
+\node at (axis cs:2,-0.5){\scriptsize $t$};
+\node at (axis cs:0.5,2){\scriptsize $y$};
+\node at (axis cs:0.5,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
+% Emulating gclear with a white background for the label
+\node[fill=white, inner sep=1pt] at (axis cs:0,1){\scriptsize $\left(0, \frac{1}{4} \right)$};
+\node at (axis cs:-1.5,1){\scriptsize $\left(-\frac{3}{2}, \frac{1}{2} \right)$};
 
-\tcaption{\scriptsize $y=\frac{1}{4}\sqrt{-2t+1}$}
-\end{mfpic} \\
+\addplot+[domain=0:3, samples=200, smooth, line width=1.25pt, ->, variable=\t, parametric]
+  ({( (\t^2-1)/(-2) )},{\t/4});
+
+\addplot+[only marks, mark=*, mark size=2pt] coordinates {(0.5,0) (0,0.25) (-1.5,0.5)};
+
+% Caption
+\node at (rel axis cs:0.5,-0.14){\scriptsize $y=\frac{1}{4}\sqrt{-2t+1}$};
+\end{axis}
+\end{tikzpicture}
+ \\
 
  \text{\scriptsize $\left(\frac{1}{2},0 \right)$, $(0,1)$, $\left(-\frac{3}{2},2 \right)$} & & \text{\scriptsize  $\left(\frac{1}{2},0 \right)$, $\left(0, \frac{1}{4} \right)$, $\left(-\frac{3}{2}, \frac{1}{2} \right)$} \\
  
@@ -623,17 +855,25 @@ To create a sign diagram for $f(x)$, we note that the function has zeros $x = 0$
 
 \includegraphics[width=3in]{./RootRadicalFunctionsGraphics/RadicalGraphEx01.jpg} &
 
-\begin{mfpic}[20]{-4}{2}{-1}{1}
-\arrow \reverse \arrow \polyline{(-4,0),(2,0)}
-\xmarks{-2,0}
-\tlabel[cc](-3, 0.5){$(-)$}
-\tlabel[cc](-2,-0.5){$0$}
-\tlabel[cc](-2,0.5){$0$}
-\tlabel[cc](-1,0.5){$(+)$}
-\tlabel[cc](0,-0.5){$2$}
-\tlabel[cc](0,0.5){$0$}
-\tlabel[cc](1,0.5){$(-)$}
-\end{mfpic} \\
+% \input{RootRadicalFunctions_pic19.tex}
+\begin{tikzpicture}
+% Number line with arrows at both ends
+\draw[<->] (-4,0) -- (2,0);
+
+% Tick marks
+\draw (-2,0.1) -- (-2,-0.1);
+\draw (0,0.1) -- (0,-0.1);
+
+% Labels
+\node at (-3,0.5){$(-)$};
+\node at (-2,-0.5){$0$};
+\node at (-2,0.5){$0$};
+\node at (-1,0.5){$(+)$};
+\node at (0,-0.5){$2$};
+\node at (0,0.5){$0$};
+\node at (1,0.5){$(-)$};
+\end{tikzpicture}
+ \\
 
 The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
@@ -666,17 +906,25 @@ To create a sign diagram for $g(t)$, we note that the function is undefined when
 
  \includegraphics[width=3in]{./RootRadicalFunctionsGraphics/RadicalGraphEx02.jpg}  &
  
-\begin{mfpic}[20]{-4}{2}{-1}{1}
-\arrow \reverse \arrow \polyline{(-4,0),(2,0)}
-\xmarks{-2,0}
-\tlabel[cc](-3, 0.5){$(+)$}
-\tlabel[cc](-2,-0.5){$-1 \hspace{7pt}$}
-\tlabel[cc](-2,0.5){\textinterrobang}
-\tlabel[cc](-1,0.5){$(-)$}
-\tlabel[cc](0,-0.5){$0$}
-\tlabel[cc](0,0.5){$0$}
-\tlabel[cc](1,0.5){$(+)$}
-\end{mfpic} \\
+% \input{RootRadicalFunctions_pic20.tex}
+\begin{tikzpicture}
+% Number line with arrows at both ends
+\draw[<->] (-4,0) -- (2,0);
+
+% Tick marks
+\draw (-2,0.1) -- (-2,-0.1);
+\draw (0,0.1) -- (0,-0.1);
+
+% Labels
+\node at (-3,0.5){$(+)$};
+\node at (-2,-0.5){$-1 \hspace{7pt}$};
+\node at (-2,0.5){$?$};
+\node at (-1,0.5){$(-)$};
+\node at (0,-0.5){$0$};
+\node at (0,0.5){$0$};
+\node at (1,0.5){$(+)$};
+\end{tikzpicture}
+ \\
 
 The graph of $y=g(t)$  \hspace{0.75in} & Sign Diagram for $g(t)$  \\
 
@@ -704,14 +952,21 @@ Since the domain of $h$ is all real number and the only zero of $h$ is $x=0$, th
 
 \includegraphics[width=3in]{./RootRadicalFunctionsGraphics/RadicalGraphEx03.jpg} &
 
-\begin{mfpic}[20]{-4}{2}{-1}{1}
-\arrow \reverse \arrow \polyline{(-2,0),(2,0)}
-\xmarks{0}
-\tlabel[cc](-1,0.5){$(-)$}
-\tlabel[cc](0,-0.5){$0$}
-\tlabel[cc](0,0.5){$0$}
-\tlabel[cc](1,0.5){$(+)$}
-\end{mfpic} \\
+% \input{RootRadicalFunctions_pic21.tex}
+\begin{tikzpicture}
+% Number line with arrows at both ends
+\draw[<->] (-2,0) -- (2,0);
+
+% Tick mark
+\draw (0,0.1) -- (0,-0.1);
+
+% Labels
+\node at (-1,0.5){$(-)$};
+\node at (0,-0.5){$0$};
+\node at (0,0.5){$0$};
+\node at (1,0.5){$(+)$};
+\end{tikzpicture}
+ \\
 
 The graph of $y=h(x)$  \hspace{0.75in} & Sign Diagram for $h(x)$ \\
 
@@ -739,17 +994,25 @@ To construct the sign diagram for $r(t)$ we note $r$ has two zeros, $t = \pm \fr
 
  \includegraphics[width=3in]{./RootRadicalFunctionsGraphics/RadicalGraphEx04.jpg} &
   
- \begin{mfpic}[20][10]{0}{4}{-1.5}{1.5}
-\arrow \polyline{(2,0), (0,0)}
-\arrow \polyline{(3,0), (5,0)}
-\xmarks{2,3}
-\tlabel[cc](2,-1){$-\frac{1}{2} \hspace{7pt}$}
-\tlabel[cc](1,1){$(-)$}
-\tlabel[cc](4,1){$(+)$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](3,1){$0$}
-\tlabel[cc](3,-1){$\frac{1}{2}$}
-\end{mfpic}
+ % \input{RootRadicalFunctions_pic22.tex}
+\begin{tikzpicture}
+% Directed segments
+\draw[->] (2,0) -- (0,0);
+\draw[->] (3,0) -- (5,0);
+
+% Tick marks
+\draw (2,0.1) -- (2,-0.1);
+\draw (3,0.1) -- (3,-0.1);
+
+% Labels
+\node at (2,-1){$-\frac{1}{2} \hspace{7pt}$};
+\node at (1,1){$(-)$};
+\node at (4,1){$(+)$};
+\node at (2,1){$0$};
+\node at (3,1){$0$};
+\node at (3,-1){$\frac{1}{2}$};
+\end{tikzpicture}
+
 \\
 
 The graph of $y=r(t)$  \hspace{0.75in} & Sign Diagram for $r(t)$. \\
@@ -779,39 +1042,40 @@ We end this section with a classic application of root functions.
 \end{enumerate}
 
 \begin{center}
-\begin{mfpic}[12]{-1}{15}{-1}{9}
+% \input{RootRadicalFunctions_pic23.tex}
+\begin{tikzpicture}
+% Marks on the x-axis
+\draw (0,0.1) -- (0,-0.1);
+\draw (4,0.1) -- (4,-0.1);
 
-\xmarks{0, 4}
+% Vertical two-way arrowed segment
+\draw[<->] (0,8.75) -- (0,0.25);
 
-\arrow \reverse \arrow \polyline{(0,8.75),(0,0.25)}
+% Horizontal two-way arrowed segments
+\draw[<->] (0.25,0) -- (3.75,0);
+\draw[<->] (4.25,0) -- (9.75,0);
 
-\arrow \reverse \arrow \polyline{(0.25,0),(3.75,0)}
+% Bottom route line with arrows
+\draw[<->] (0,-1) -- (10,-1);
 
-\arrow \reverse \arrow \polyline{(4.25,0),(9.75,0)}
+% Dashed guide
+\draw[dashed] (4,0) -- (0,9);
 
-\arrow \reverse \arrow \polyline{(0,-1),(10,-1)}
+% Points
+\fill (0,9) circle (1.5pt);
+\fill (10,0) circle (1.5pt);
 
-\dashed \polyline{(4,0),(0,9)}
+% Labels
+\node at (1.25,9){\scriptsize Outpost};
+\node at (12,0){\scriptsize Junction Box};
+\node at (7,0.5){$x$};
+\node at (2,0.5){$y$};
+\node at (3,4.5){$z$};
+\node at (5,-.5){\scriptsize Route $117$};
+\node at (5,-2){\scriptsize $50$ miles};
+\node[rotate=90] at (-0.5,0){\hspace{1.5in} \scriptsize $30$ miles};
+\end{tikzpicture}
 
-\point[3pt]{(0,9), (10,0)}
-
-\tlabel[cc](1.25,9){\scriptsize Outpost}
-
-\tlabel[cc](12,0){\scriptsize Junction Box}
-
-\tlabel[cc](7,0.5){$x$}
-
-\tlabel[cc](2,0.5){$y$}
-
-\tlabel[cc](3,4.5){$z$}
-
-\tlabel[cc](5,-.5){\scriptsize Route $117$}
-
-\tlabel[cc](5,-2){\scriptsize $50$ miles}
-
-\tlabel[cc](-0.5,0){\rotatebox{90}{\hspace{1.5in} \scriptsize $30$ miles}}
-
-\end{mfpic}
 \end{center}
 
 
