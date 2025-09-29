@@ -9,59 +9,251 @@
 
 In Exercises \ref{radicalgraphexfirst} - \ref{radicalgraphexlast},  given the pair of functions $f$ and $F$, sketch the graph of $y=F(x)$ by starting with the graph of $y = f(x)$ and using Theorem \ref{linearrootgraphs}.   Track at least two points and state the domain and range using interval notation.
 
-\begin{multicols}{2}
-\begin{enumerate}
 
-\item $f(x) = \sqrt{x}$, $F(x) = \sqrt{x+3}-2$ \label{radicalgraphexfirst}
-\item $f(x) = \sqrt{x}$, $F(x) = \sqrt{4-x}-1$ 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+% Transformed Exercises with Solutions
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\item $f(x) = \sqrt[3]{x}$, $F(x) = \sqrt[3]{x-1}-2$ 
-\item $f(x) = \sqrt[3]{x}$, $F(x) = -\sqrt[3]{8x + 8} + 4$ 
+\begin{question}
+$f(x) = \sqrt{x}$, $F(x) = \sqrt{x+3}-2$
+\begin{solution}
+$F(x) = \sqrt{x+3}-2$ \\ 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+% \input{ExercisesforRootRadicalFunctions_pic5.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-5, xmax=5, ymin=-3, ymax=5,
+  width=150pt, height=120pt, scale only axis,
+  xtick={-4,-3,-2,-1,1,2,3,4},
+  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
+  ytick={-2,-1,1,2,3,4},
+  yticklabels={{$-2$},{$-1$},{ $1$},{ $2$},{ $3$},{ $4$}}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,5){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-3,-2) (-2,-1) (1,0)};
+\addplot+[fpplot, domain=-2:0.8, ->] ({(t+2)^2 - 3},{t});
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[-3, \infty)$, Range: $[-2, \infty)$};
+\end{axis}
+\end{tikzpicture}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
-\item $f(x) = \sqrt[4]{x}$, $F(x) = \sqrt[4]{x-1}-2$
-\item $f(x) = \sqrt[4]{x}$, $F(x) = -3\sqrt[4]{x - 7} +1$
+\vfill
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+$f(x) = \sqrt{x}$, $F(x) = \sqrt{4-x}-1$ 
 
-\item $f(x) = \sqrt[5]{x}$, $F(x) = \sqrt[5]{x + 2} + 3$
-\item $f(x) = \sqrt[8]{x}$, $F(x) = \sqrt[8]{-x} - 2$ \label{radicalgraphexlast}
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{solution}
+$F(x) = \sqrt{4-x}-1 = \sqrt{-x+4} - 1$ \\
 
-In Exercises \ref{findformulaforsqrtgraphfirst} - \ref{findformulaforsqrtgraphlast}, find a formula for each function below in the form $F(x) = a\sqrt{bx-h}+k$.
+% \input{ExercisesforRootRadicalFunctions_pic6.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-5, xmax=5, ymin=-3, ymax=5,
+  width=150pt, height=120pt, scale only axis,
+  xtick={-4,-3,-2,-1,1,2,3,4},
+  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
+  ytick={-2,-1,1,2,3,4},
+  yticklabels={{$-2$},{$-1$},{ $1$},{ $2$},{ $3$},{ $4$}}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,5){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(4,-1) (3,0) (0,1)};
+\addplot+[fpplot, domain=-1:2, ->] ({4 - (t+1)^2},{t});
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 4]$, Range: $[-1, \infty)$};
+\end{axis}
+\end{tikzpicture}
 
-\smallskip
 
-\textbf{NOTE:}  There may be more than one solution!
 
-\begin{multicols}{2}
+\end{solution}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item $~$ \label{findformulaforsqrtgraphfirst}  $y=F(x)$ %$F(x) = -\sqrt{x+4}+2$
+\begin{question}
+$f(x) = \sqrt[3]{x}$, $F(x) = \sqrt[3]{x-1}-2$
+\begin{solution}
+$F(x) = \sqrt[3]{x-1}-2$ \\ 
+
+% \input{ExercisesforRootRadicalFunctions_pic7.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-10, xmax=12, ymin=-5, ymax=1,
+  width=176pt, height=78pt, scale only axis,
+  xtick={-9,-7,-5,-3,-1,1,3,5,7,9,11},
+  xticklabels={{$-9 \hspace{6pt}$},{$-7 \hspace{6pt}$},{$-5 \hspace{6pt}$},{$-3 \hspace{6pt}$},{$-1 \hspace{6pt}$},{ $1$},{ $3$},{ $5$},{ $7$},{ $9$},{ $11$}},
+  ytick={-4,-3,-2,-1},
+  yticklabels={{$-4$},{$-3$},{$-2$},{$-1$}}
+]
+\node at (axis cs:12,-0.5){\scriptsize $x$};
+\node at (axis cs:0.75,1){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-7,-4) (0,-3) (1,-2) (2,-1) (9,0)};
+\addplot+[fpplot, domain=-4.2:0.2, <->] ({(t + 2)^3 + 1},{t});
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
+\end{axis}
+\end{tikzpicture}
+
+
+\vfill
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt[3]{x}$, $F(x) = -\sqrt[3]{8x + 8} + 4$ 
+
+\begin{solution}
+$F(x) = -\sqrt[3]{8x + 8} + 4$\\
+
+% \input{ExercisesforRootRadicalFunctions_pic8.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-7, xmax=9, ymin=-1, ymax=8,
+  width=160pt, height=81pt, scale only axis,
+  xtick={-5,-3,-1,1,3,5,7},
+  xticklabels={{$-5 \hspace{6pt}$},{$-3 \hspace{6pt}$},{$-1 \hspace{6pt}$},{ $1$},{ $3$},{ $5$},{ $7$}},
+  ytick={1,2,3,4,5,6,7},
+  yticklabels={{$1$},{$2$},{$3$},{$4$},{$5$},{$6$},{$7$}}
+]
+\node at (axis cs:9,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,8){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-2,6) (-1,4) (0,2) (7,0)};
+\addplot+[fplot, domain=-7:-1, <-] {2*( (abs(-x - 1))^(1/3) * sign(-x - 1) ) + 4};
+\addplot+[fplot, domain=-1:8.5, ->] {-2*( (abs(x + 1))^(1/3) * sign(x + 1) ) + 4};
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt[4]{x}$, $F(x) = \sqrt[4]{x-1}-2$
+\begin{solution}
+$F(x) = \sqrt[4]{x-1}-2$\\
+
+% \input{ExercisesforRootRadicalFunctions_pic9.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-1, xmax=22, ymin=-3, ymax=1,
+  width=184pt, height=100pt, scale only axis,
+  xtick={1,3,5,7,9,11,13,15,17,19,21},
+  xticklabels={{$1$},{ $3$},{ $5$},{ $7$},{ $9$},{ $11$},{ $13$},{ $15$},{ $17$},{ $19$},{ $21$}},
+  ytick={-2,-1},
+  yticklabels={{$-2$},{$-1$}}
+]
+\node at (axis cs:22,-0.75){\scriptsize $x$};
+\node at (axis cs:0.5,1){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(1,-2) (2,-1) (17,0)};
+\addplot+[fpplot, domain=-2:0.12, ->] ({(t + 2)^4 + 1},{t});
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[1, \infty)$, Range: $[-2, \infty)$};
+\end{axis}
+\end{tikzpicture}
+
+
+\vfill
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt[4]{x}$, $F(x) = -3\sqrt[4]{x - 7} +1$
+
+\begin{solution}
+$F(x) = -3\sqrt[4]{x - 7} +1$\\
+
+% \input{ExercisesforRootRadicalFunctions_pic10.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-1, xmax=25, ymin=-6, ymax=2,
+  width=130pt, height=104pt, scale only axis,
+  xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23},
+  xticklabels={,,,,,{$6$},,,,,,{$8$},,,,,,{$23$},,},
+  ytick={-5,-4,-3,-2,-1,0,1},
+  yticklabels={{$-5$},{$-4$},{$-3$},{$-2$},{$-1$},,{$1$}}
+]
+\node at (axis cs:25,-0.5){\scriptsize $x$};
+\node at (axis cs:0.5,2){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(7,1) (8,-2) (23,-5)};
+\addplot+[fplot, domain=7:25, ->] {1 - 3*((x - 7)^(0.25))};
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[7, \infty)$, Range: $(-\infty, 1]$};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt[5]{x}$, $F(x) = \sqrt[5]{x + 2} + 3$
+\begin{solution}
+$F(x) = \sqrt[5]{x + 2} + 3$\\
+
+% \input{ExercisesforRootRadicalFunctions_pic11.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-37, xmax=33, ymin=-1, ymax=6,
+  width=140pt, height=70pt, scale only axis,
+  xtick={-34,-2,30},
+  xticklabels={{$-34 \hspace{5pt}$},{$-2 \hspace{5pt}$},{ $30$}},
+  ytick={1,2,3,4,5},
+  yticklabels={{$1$},{$2$},{$3$},{$4$},{$5$}}
+]
+\node at (axis cs:33,-0.5){\scriptsize $x$};
+\node at (axis cs:2,6){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-34,1) (-3,2) (-2,3) (-1,4) (30,5)};
+\addplot+[fplot, domain=-2:33, ->] {(x + 2)^(0.20) + 3};
+\addplot+[fplot, domain=-37:-2, <-] {-( (-x - 2)^(0.20) ) + 3};
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt[8]{x}$, $F(x) = \sqrt[8]{-x} - 2$ 
+\begin{solution}
+$F(x) = \sqrt[8]{-x} - 2$\\
+
+% \input{ExercisesforRootRadicalFunctions_pic12.tex}
+\begin{tikzpicture}
+\begin{axis}[
+  fplot,
+  xmin=-45, xmax=5, ymin=-3, ymax=1,
+  width=150pt, height=60pt, scale only axis,
+  xtick={-40,-30,-20,-10},
+  xticklabels={,,{$-20 \hspace{5pt}$},{$-10 \hspace{5pt}$}},
+  ytick={-2,-1},
+  yticklabels={{$-2$},}
+]
+\node at (axis cs:5,-0.5){\scriptsize $x$};
+\node at (axis cs:1.5,1){\scriptsize $y$};
+\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(0,-2) (-1,-1)};
+\addplot+[fplot, domain=-45:0, <-] {(-x)^(0.125) - 2};
+\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 0]$, Range: $[-2, \infty)$};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+$~$   $y=F(x)$ %$F(x) = -\sqrt{x+4}+2$
 
 % \input{ExercisesforRootRadicalFunctions_pic1.tex}
 \begin{tikzpicture}
@@ -82,11 +274,14 @@ In Exercises \ref{findformulaforsqrtgraphfirst} - \ref{findformulaforsqrtgraphla
 \node[anchor=north] at (axis description cs:0.5,1.02){\scriptsize $x$,$y$-intercept $(0,0)$};
 \end{axis}
 \end{tikzpicture}
- 
+\begin{solution}
+One solution is: $F(x) = -\sqrt{x+4}+2$
+\end{solution}
 
+\end{question}
 
-
-\item $~$ \label{findformulaforsqrtgraphlast} $y = F(x)$ %$F(x) =2\sqrt{-x+1}$
+\begin{question}
+$~$  $y = F(x)$ %$F(x) =2\sqrt{-x+1}$
 
 % \input{ExercisesforRootRadicalFunctions_pic2.tex}
 \begin{tikzpicture}
@@ -109,23 +304,15 @@ In Exercises \ref{findformulaforsqrtgraphfirst} - \ref{findformulaforsqrtgraphla
  
 
 
-\setcounter{HW}{\value{enumi}}
+\begin{solution}
+One solution is: $F(x) =2\sqrt{-x+1}$
 
-\end{enumerate}
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-In Exercises \ref{findformulaforcubedrootgraphfirst} - \ref{findformulaforcubedrootgraphlast}, find a formula for each function below in the form $F(x) = a\sqrt[3]{bx-h}+k$.
-
-\smallskip
-
-\textbf{NOTE:}  There may be more than one solution!
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $~$ \label{findformulaforcubedrootgraphfirst}  $y=F(x)$ %$F(x) = -\sqrt[3]{2x+1}$
+\begin{question}
+$~$   $y=F(x)$ %$F(x) = -\sqrt[3]{2x+1}$
 
 % \input{ExercisesforRootRadicalFunctions_pic3.tex}
 \begin{tikzpicture}
@@ -146,11 +333,14 @@ In Exercises \ref{findformulaforcubedrootgraphfirst} - \ref{findformulaforcubedr
 \node[anchor=north] at (axis description cs:0.5,1.02){\scriptsize $x$-intercept $\left(-\frac{1}{2}, 0\right)$,$y$-intercept $(0,-1)$};
 \end{axis}
 \end{tikzpicture}
- 
+\begin{solution}
+One solution is:  $F(x) = -\sqrt[3]{2x+1}$
+\end{solution}
 
+\end{question}
 
-
-\item $~$ \label{findformulaforcubedrootgraphlast} $y = F(x)$ %$F(x) =2\sqrt[3]{x-1}-2$
+\begin{question}
+$~$  $y = F(x)$ %$F(x) =2\sqrt[3]{x-1}-2$
 
 % \input{ExercisesforRootRadicalFunctions_pic4.tex}
 \begin{tikzpicture}
@@ -174,510 +364,76 @@ In Exercises \ref{findformulaforcubedrootgraphfirst} - \ref{findformulaforcubedr
  
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{solution}
+One solution is:  $F(x) =2\sqrt[3]{x-1}-2$
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{solution}
 
+\end{question}
 
+\begin{question}
+Use the fact that the $n$th root functions are increasing to solve the following polynomial inequalities:
 
-\item  \label{rootstosolvepolyineq} Use the fact that the $n$th root functions are increasing to solve the following polynomial inequalities:
 
-\begin{multicols}{3}
 
-\begin{enumerate}
+\begin{solution}
+\end{solution}
 
-\item  $x^3 \leq 64$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-\infty, 4]$
+\end{question}
 
-\item  $2 - t^5 <  34$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-2, \infty)$
+\begin{question}
+$x^3 \leq 64$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-\infty, 4]$
+\begin{solution}
+$(-\infty, 4]$  \vphantom{$\left[ \frac{1}{2}, \infty \right)$}
+\end{solution}
 
-\item $\dfrac{(2z+1)^3}{4} \geq 2$ % $\left[ -\frac{1}{2}, \infty \right)$
+\end{question}
 
-\setcounter{HWindent}{\value{enumii}}
+\begin{question}
+$2 - t^5 <  34$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-2, \infty)$
+\begin{solution}
+$(-2, \infty)$ \vphantom{$\left[ \frac{1}{2}, \infty \right)$}
+\end{solution}
 
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-For the following inequalities, remember $\sqrt[n]{x^{n}} = |x|$ if $n$ is even:
+\begin{question}
+$\dfrac{(2z+1)^3}{4} \geq 2$ % $\left[ -\frac{1}{2}, \infty \right)$
 
-\begin{multicols}{3}
+\begin{solution}
+$\left[ \frac{1}{2}, \infty \right)$
 
-\begin{enumerate}
-\setcounter{enumii}{\value{HWindent}}
+\end{solution}
 
-\item  $x^4 \leq 16$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $[-2,2]$
+\end{question}
 
-\item  $6-t^6 < -58$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-\infty, -2) \cup (2, \infty)$
+\begin{question}
+$x^4 \leq 16$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $[-2,2]$
+\begin{solution}
+$[-2,2]$
+\end{solution}
 
-\item $\dfrac{(2z+1)^4}{3} \geq 27$ % $(-\infty, -2] \cup [1, \infty)$
+\end{question}
 
-\end{enumerate}
+\begin{question}
+$6-t^6 < -58$  \vphantom{$\dfrac{(2x+1)^3}{4} < 2$ }  % $(-\infty, -2) \cup (2, \infty)$
+\begin{solution}
+$(-\infty, -2) \cup (2, \infty)$
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{question}
+$\dfrac{(2z+1)^4}{3} \geq 27$ % $(-\infty, -2] \cup [1, \infty)$
+\begin{solution}
+$(-\infty, -2] \cup [1, \infty)$
+\end{solution}
 
+\end{question}
 
-For each function in Exercises \ref{algfcngraphexfirst} - \ref{algfcngraphexlast} below 
-
-\begin{itemize}
-
-\item Analytically:
-
-\begin{multicols}{3}
-
-\begin{itemize}
-
-\item find the domain.
-
-\item find the axis intercepts.
-
-\item analyze the end behavior.
-
-\end{itemize}
-
-\end{multicols}
-
-\item Graph the function with help from a graphing utility and determine:
-
-\begin{multicols}{2}
-
-\begin{itemize}
-
-\item  the range.
-
-\item the local extrema, if they exist.
-
-\end{itemize}
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{itemize}
-
-\item intervals of increase/decrease.
-
-\item any `unusual steepness' or `local' verticality.
-
-\end{itemize}
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{itemize}
-
-\item  vertical asymptotes.
-
-\item  horizontal / slant asymptotes.
-
-\end{itemize}
-
-\end{multicols}
-
-\item Construct a sign diagram for each function using the intercepts and graph.
-
-\item  Comment on any observed symmetry.
-
-
-\end{itemize}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\item $f(x) = \sqrt{1 - x^{2}}$ \label{algfcngraphexfirst}
-\item $f(x) = \sqrt{x^2-1}$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $g(t) = t \sqrt{1-t^2}$
-\item $g(t) = t \sqrt{t^2-1}$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $f(x) = \sqrt[4]{\dfrac{16x}{x^{2} - 9}}$
-\item $f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}$
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $g(t) = \sqrt{t(t + 5)(t - 4)}$
-\item $g(t) = \sqrt[3]{t^{3} + 3t^{2} - 6t - 8}$ \label{algfcngraphexlast}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  Rework Example \ref{SasquatchCable} so that the outpost is 10 miles from Route 117 and the nearest junction box is 30 miles down the road for the post.
-
-
-\item  The volume $V$ of a right cylindrical cone depends on the radius of its base $r$ and its height $h$ and is given by the formula $V = \frac{1}{3} \pi r^2 h$.  The surface area $S$ of a right cylindrical cone also depends on $r$ and $h$ according to the formula $S = \pi r \sqrt{r^2+h^2}$.  In the following problems, suppose a cone is to have a volume of 100 cubic centimeters. 
-
-\begin{enumerate}
-
-\item  \label{heightintermsofr} Use the formula for volume to find the height as a function of $r$, $h(r)$.
-\item  Use the formula for surface area along with  your answer to \ref{heightintermsofr} to find the surface area as a function of $r$, $S(r)$.
-\item  Use your calculator to find the values of $r$ and $h$ which minimize the surface area.  What is the minimum surface area?  Round your answers to two decimal places.
-
-\end{enumerate}
-
-
-\item \label{pendulumproblem} The period of a pendulum in seconds is given by \[T = 2\pi \sqrt{\dfrac{L}{g}}\](for small displacements) where $L$ is the length of the pendulum in meters and $g = 9.8$ meters per second per second is the acceleration due to gravity.  My Seth-Thomas antique schoolhouse clock needs $T = \frac{1}{2}$ second and I can adjust the length of the pendulum via a small dial on the bottom of the bob.  At what length should I set the pendulum?
-
-
-\item According to Einstein's Theory of Special Relativity, the observed mass  of an object is a function of how fast the object is traveling.  Specifically, if  $m_{r}$ is the mass of the object at rest, $v$ is the speed of the object and $c$ is the speed of light, then the observed mass of the object $m(v)$ is given by:
-\[m(v) = \dfrac{m_{r}}{\sqrt{1 - \dfrac{v^{2}}{c^{2}}}}\] 
-
-\begin{enumerate}
-
-\item Find the applied domain of the function.
-
-\item Compute $m(.1c), \, m(.5c), \, m(.9c)$ and $m(.999c)$.
-
-\item Find $\ds{\lim_{v \rightarrow c^{-}} m(v)}$.
-
-\item How slowly must the object be traveling so that the observed mass is no greater than 100 times its mass at rest?
-
-\end{enumerate}
-
-
-\item Find the inverse of $k(x) = \dfrac{2x}{\sqrt{x^{2} - 1}}$.
-
-
-
-
-\end{enumerate}
-
-\newpage
-
-\subsection{Answers}
-
-\begin{multicols}{2}
-\begin{enumerate}
-
-
-\item $F(x) = \sqrt{x+3}-2$ \\ 
-
-% \input{ExercisesforRootRadicalFunctions_pic5.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-5, xmax=5, ymin=-3, ymax=5,
-  width=150pt, height=120pt, scale only axis,
-  xtick={-4,-3,-2,-1,1,2,3,4},
-  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
-  ytick={-2,-1,1,2,3,4},
-  yticklabels={{$-2$},{$-1$},{ $1$},{ $2$},{ $3$},{ $4$}}
-]
-\node at (axis cs:5,-0.5){\scriptsize $x$};
-\node at (axis cs:0.5,5){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-3,-2) (-2,-1) (1,0)};
-\addplot+[fpplot, domain=-2:0.8, ->] ({(t+2)^2 - 3},{t});
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[-3, \infty)$, Range: $[-2, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-
-\columnbreak
-
-\item $F(x) = \sqrt{4-x}-1 = \sqrt{-x+4} - 1$ \\
-
-% \input{ExercisesforRootRadicalFunctions_pic6.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-5, xmax=5, ymin=-3, ymax=5,
-  width=150pt, height=120pt, scale only axis,
-  xtick={-4,-3,-2,-1,1,2,3,4},
-  xticklabels={$-4 \hspace{7pt}$,$-3 \hspace{7pt}$,$-2 \hspace{7pt}$,$-1 \hspace{7pt}$,{ $1$},{ $2$},{ $3$},{ $4$}},
-  ytick={-2,-1,1,2,3,4},
-  yticklabels={{$-2$},{$-1$},{ $1$},{ $2$},{ $3$},{ $4$}}
-]
-\node at (axis cs:5,-0.5){\scriptsize $x$};
-\node at (axis cs:0.5,5){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(4,-1) (3,0) (0,1)};
-\addplot+[fpplot, domain=-1:2, ->] ({4 - (t+1)^2},{t});
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 4]$, Range: $[-1, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-
-\item $F(x) = \sqrt[3]{x-1}-2$ \\ 
-
-% \input{ExercisesforRootRadicalFunctions_pic7.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-10, xmax=12, ymin=-5, ymax=1,
-  width=176pt, height=78pt, scale only axis,
-  xtick={-9,-7,-5,-3,-1,1,3,5,7,9,11},
-  xticklabels={{$-9 \hspace{6pt}$},{$-7 \hspace{6pt}$},{$-5 \hspace{6pt}$},{$-3 \hspace{6pt}$},{$-1 \hspace{6pt}$},{ $1$},{ $3$},{ $5$},{ $7$},{ $9$},{ $11$}},
-  ytick={-4,-3,-2,-1},
-  yticklabels={{$-4$},{$-3$},{$-2$},{$-1$}}
-]
-\node at (axis cs:12,-0.5){\scriptsize $x$};
-\node at (axis cs:0.75,1){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-7,-4) (0,-3) (1,-2) (2,-1) (9,0)};
-\addplot+[fpplot, domain=-4.2:0.2, <->] ({(t + 2)^3 + 1},{t});
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-
-\columnbreak
-
-\item $F(x) = -\sqrt[3]{8x + 8} + 4$\\
-
-% \input{ExercisesforRootRadicalFunctions_pic8.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-7, xmax=9, ymin=-1, ymax=8,
-  width=160pt, height=81pt, scale only axis,
-  xtick={-5,-3,-1,1,3,5,7},
-  xticklabels={{$-5 \hspace{6pt}$},{$-3 \hspace{6pt}$},{$-1 \hspace{6pt}$},{ $1$},{ $3$},{ $5$},{ $7$}},
-  ytick={1,2,3,4,5,6,7},
-  yticklabels={{$1$},{$2$},{$3$},{$4$},{$5$},{$6$},{$7$}}
-]
-\node at (axis cs:9,-0.5){\scriptsize $x$};
-\node at (axis cs:0.5,8){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-2,6) (-1,4) (0,2) (7,0)};
-\addplot+[fplot, domain=-7:-1, <-] {2*( (abs(-x - 1))^(1/3) * sign(-x - 1) ) + 4};
-\addplot+[fplot, domain=-1:8.5, ->] {-2*( (abs(x + 1))^(1/3) * sign(x + 1) ) + 4};
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-
-\item $F(x) = \sqrt[4]{x-1}-2$\\
-
-% \input{ExercisesforRootRadicalFunctions_pic9.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-1, xmax=22, ymin=-3, ymax=1,
-  width=184pt, height=100pt, scale only axis,
-  xtick={1,3,5,7,9,11,13,15,17,19,21},
-  xticklabels={{$1$},{ $3$},{ $5$},{ $7$},{ $9$},{ $11$},{ $13$},{ $15$},{ $17$},{ $19$},{ $21$}},
-  ytick={-2,-1},
-  yticklabels={{$-2$},{$-1$}}
-]
-\node at (axis cs:22,-0.75){\scriptsize $x$};
-\node at (axis cs:0.5,1){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(1,-2) (2,-1) (17,0)};
-\addplot+[fpplot, domain=-2:0.12, ->] ({(t + 2)^4 + 1},{t});
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[1, \infty)$, Range: $[-2, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-
-\columnbreak
-
-\item $F(x) = -3\sqrt[4]{x - 7} +1$\\
-
-% \input{ExercisesforRootRadicalFunctions_pic10.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-1, xmax=25, ymin=-6, ymax=2,
-  width=130pt, height=104pt, scale only axis,
-  xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23},
-  xticklabels={,,,,,{$6$},,,,,,{$8$},,,,,,{$23$},,},
-  ytick={-5,-4,-3,-2,-1,0,1},
-  yticklabels={{$-5$},{$-4$},{$-3$},{$-2$},{$-1$},,{$1$}}
-]
-\node at (axis cs:25,-0.5){\scriptsize $x$};
-\node at (axis cs:0.5,2){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(7,1) (8,-2) (23,-5)};
-\addplot+[fplot, domain=7:25, ->] {1 - 3*((x - 7)^(0.25))};
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $[7, \infty)$, Range: $(-\infty, 1]$};
-\end{axis}
-\end{tikzpicture}
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\newpage
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $F(x) = \sqrt[5]{x + 2} + 3$\\
-
-% \input{ExercisesforRootRadicalFunctions_pic11.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-37, xmax=33, ymin=-1, ymax=6,
-  width=140pt, height=70pt, scale only axis,
-  xtick={-34,-2,30},
-  xticklabels={{$-34 \hspace{5pt}$},{$-2 \hspace{5pt}$},{ $30$}},
-  ytick={1,2,3,4,5},
-  yticklabels={{$1$},{$2$},{$3$},{$4$},{$5$}}
-]
-\node at (axis cs:33,-0.5){\scriptsize $x$};
-\node at (axis cs:2,6){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(-34,1) (-3,2) (-2,3) (-1,4) (30,5)};
-\addplot+[fplot, domain=-2:33, ->] {(x + 2)^(0.20) + 3};
-\addplot+[fplot, domain=-37:-2, <-] {-( (-x - 2)^(0.20) ) + 3};
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, \infty)$, Range: $(-\infty, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\item $F(x) = \sqrt[8]{-x} - 2$\\
-
-% \input{ExercisesforRootRadicalFunctions_pic12.tex}
-\begin{tikzpicture}
-\begin{axis}[
-  fplot,
-  xmin=-45, xmax=5, ymin=-3, ymax=1,
-  width=150pt, height=60pt, scale only axis,
-  xtick={-40,-30,-20,-10},
-  xticklabels={,,{$-20 \hspace{5pt}$},{$-10 \hspace{5pt}$}},
-  ytick={-2,-1},
-  yticklabels={{$-2$},}
-]
-\node at (axis cs:5,-0.5){\scriptsize $x$};
-\node at (axis cs:1.5,1){\scriptsize $y$};
-\addplot+[only marks, mark=*, mark size=1.5pt] coordinates {(0,-2) (-1,-1)};
-\addplot+[fplot, domain=-45:0, <-] {(-x)^(0.125) - 2};
-\node[anchor=north] at (axis description cs:0.5,1.02){Domain:  $(-\infty, 0]$, Range: $[-2, \infty)$};
-\end{axis}
-\end{tikzpicture}
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item One solution is: $F(x) = -\sqrt{x+4}+2$
-
-
-\item One solution is: $F(x) =2\sqrt{-x+1}$
-
-\setcounter{HW}{\value{enumi}}
-
-\end{enumerate}
-
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item One solution is:  $F(x) = -\sqrt[3]{2x+1}$
-
-\item One solution is:  $F(x) =2\sqrt[3]{x-1}-2$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item 
-
-\begin{multicols}{3}
-
-\begin{enumerate}
-
-\item   $(-\infty, 4]$  \vphantom{$\left[ \frac{1}{2}, \infty \right)$}
-
-\item   $(-2, \infty)$ \vphantom{$\left[ \frac{1}{2}, \infty \right)$}
-
-\item $\left[ \frac{1}{2}, \infty \right)$
-
-\setcounter{HWindent}{\value{enumii}}
-
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-
-\begin{enumerate}
-\setcounter{enumii}{\value{HWindent}}
-
-\item   $[-2,2]$
-
-\item   $(-\infty, -2) \cup (2, \infty)$
-
-\item   $(-\infty, -2] \cup [1, \infty)$
-
-\end{enumerate}
-
-\end{multicols}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\item \begin{multicols}{2}
+\begin{question}
+$f(x) = \sqrt{1 - x^{2}}$
+\begin{solution}
 $f(x) = \sqrt{1 - x^2}$\\
 Domain: $[-1, 1]$\\
 Intercepts: $(-1,0)$, $(1,0)$ \\
@@ -703,7 +459,7 @@ Sign Diagram: \\
 
 
 
-\columnbreak
+
 
 Graph: \\
 
@@ -731,11 +487,17 @@ Graph: \\
 
 Note:  $f$ is even.
 
-\end{multicols}
+
 
 \pagebreak
+\end{solution}
 
-\item \begin{multicols}{2}
+\end{question}
+
+\begin{question}
+$f(x) = \sqrt{x^2-1}$
+
+\begin{solution}
 $f(x) = \sqrt{x^2-1}$\\
 Domain: $(-\infty, -1] \cup [1,\infty)$\\
 Intercepts: $(-1,0)$, $(1,0)$\\
@@ -762,7 +524,7 @@ Sign Diagram: \\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 Graph: \\
 
@@ -789,12 +551,13 @@ Graph: \\
 
 
 Note:  $f$ is even.
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-
-
-\item \begin{multicols}{2}
+\begin{question}
+$g(t) = t \sqrt{1-t^2}$
+\begin{solution}
 $g(t) = t\sqrt{1-t^2}$\\
 Domain: $[-1,1]$\\
 Intercepts: $(-1,0)$, $(0,0)$, $(1,0)$\\
@@ -823,7 +586,7 @@ Sign Diagram:\\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 Graph:\\
 
@@ -850,10 +613,14 @@ Graph:\\
 
 
 Note:  $g$ is odd.
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-\item \begin{multicols}{2}
+\begin{question}
+$g(t) = t \sqrt{t^2-1}$
+
+\begin{solution}
 $g(t) = t\sqrt{t^2-1}$\\
 Domain: $(-\infty, -1] \cup [1,\infty)$\\
 Intercepts: $(-1,0)$, $(1,0)$\\
@@ -880,7 +647,7 @@ Sign Diagram:\\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 Graph:\\
 
@@ -906,12 +673,13 @@ Graph:\\
 
 
 Note:  $g$ is odd.
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-
-
-\item \begin{multicols}{2} 
+\begin{question}
+$f(x) = \sqrt[4]{\dfrac{16x}{x^{2} - 9}}$
+\begin{solution}
 $f(x) = \sqrt[4]{\dfrac{16x}{x^2 - 9}}$\\
 Domain: $(-3, 0] \cup (3, \infty)$\\
 Intercept: $(0,0)$\\
@@ -942,7 +710,7 @@ Sign Diagram: \\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 
 Graph:\\
@@ -966,11 +734,13 @@ Graph:\\
 \addplot+[fplot, domain=3.05:9, <->] {( (16*x)/((x^2) - 9) )^(0.25)};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
-\end{multicols}
-
-\item \begin{multicols}{2} 
+\begin{question}
+$f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}$
+\begin{solution}
 $f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}$\\
 Domain: $(-\infty, -2) \cup (-2, \infty)$\\
 Intercept:  $(0,0)$\\
@@ -997,7 +767,7 @@ Sign Diagram:\\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 Graph: \\
 
@@ -1021,13 +791,13 @@ Graph: \\
 \addplot+[fplot, domain=-1.8:5, <->] {(5*x)/( (abs((x^3) + 8))^(1/3) * sign((x^3) + 8) )};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
-\end{multicols}
-
-
-
-\item \begin{multicols}{2} 
+\begin{question}
+$g(t) = \sqrt{t(t + 5)(t - 4)}$
+\begin{solution}
 $g(t) = \sqrt{t(t + 5)(t - 4)}$\\
 Domain: $[-5, 0] \cup [4, \infty)$\\
 Intercepts  $(-5,0)$, $(0,0)$, $(4,0)$\\
@@ -1059,7 +829,7 @@ Sign Diagram:\\
 \end{tikzpicture}
 
 
-\columnbreak
+
 
 Graph:\\
 % \input{ExercisesforRootRadicalFunctions_pic26.tex}
@@ -1081,13 +851,14 @@ Graph:\\
 \addplot+[fplot, domain=4:5.5, ->] {sqrt(x^3 + x^2 - 20*x)};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
+\begin{question}
+$g(t) = \sqrt[3]{t^{3} + 3t^{2} - 6t - 8}$ 
 
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
+\begin{solution}
 $g(t) = \sqrt[3]{t^{3} + 3t^{2} - 6t - 8}$\\
 Domain: $(-\infty, \infty)$\\
 Intercepts:  $(-4,0)$, $(-1,0)$, $(0,-2)$, $(2,0)$\\
@@ -1100,7 +871,7 @@ Increasing:  $\approx (-\infty, -2.732]$, $[0.732, \infty)$\\
 Decreasing: $\approx [-2.732, 0.732]$\\
 Unusual steepness at $t = -4, t = -1$ and $t = 2$\\
 
-\columnbreak
+
 
 
 Sign Diagram:\\
@@ -1154,51 +925,82 @@ Graph:\\
 
 
 
-\end{multicols}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
 
 
+\end{solution}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item $C(x) = 15x+20\sqrt{100+(30-x)^2}$, $0 \leq x \leq 30$.  The calculator gives the absolute minimum at approximately $(18.66, 582.29)$.  This means to minimize the cost, approximately 18.66 miles of cable should be run along Route 117 before turning off the road and heading towards the outpost.  The minimum cost to run the cable is approximately $\$582.29$.
+\begin{question}
+Rework Example \ref{SasquatchCable} so that the outpost is 10 miles from Route 117 and the nearest junction box is 30 miles down the road for the post.
+\begin{solution}
+$C(x) = 15x+20\sqrt{100+(30-x)^2}$, $0 \leq x \leq 30$.  The calculator gives the absolute minimum at approximately $(18.66, 582.29)$.  This means to minimize the cost, approximately 18.66 miles of cable should be run along Route 117 before turning off the road and heading towards the outpost.  The minimum cost to run the cable is approximately $\$582.29$.
+\end{solution}
 
+\end{question}
 
+\begin{question}
+The volume $V$ of a right cylindrical cone depends on the radius of its base $r$ and its height $h$ and is given by the formula $V = \frac{1}{3} \pi r^2 h$.  The surface area $S$ of a right cylindrical cone also depends on $r$ and $h$ according to the formula $S = \pi r \sqrt{r^2+h^2}$.  In the following problems, suppose a cone is to have a volume of 100 cubic centimeters. 
 
-\item 
+\begin{solution}
+\end{solution}
 
-\begin{enumerate}
-\item  $h(r) = \frac{300}{\pi r^2}$, $r > 0$.
-\item  $S(r) = \pi r \sqrt{r^2+\left(\frac{300}{\pi r^2}\right)^2} = \frac{\sqrt{\pi^2 r^6+90000}}{r}$, $r>0$
-\item  The calculator gives the absolute minimum at the point $\approx (4.07, 90.23)$.  This means the radius should be (approximately) 4.07 centimeters and the height should be 5.76 centimeters to give a minimum surface area of 90.23 square centimeters.
+\end{question}
 
+\begin{question}
+Use the formula for volume to find the height as a function of $r$, $h(r)$.
+\begin{solution}
+$h(r) = \frac{300}{\pi r^2}$, $r > 0$.
+\end{solution}
 
-\end{enumerate}
+\end{question}
 
+\begin{question}
+Use the formula for surface area along with  your answer to \ref{heightintermsofr} to find the surface area as a function of $r$, $S(r)$.
+\begin{solution}
+$S(r) = \pi r \sqrt{r^2+\left(\frac{300}{\pi r^2}\right)^2} = \frac{\sqrt{\pi^2 r^6+90000}}{r}$, $r>0$
+\end{solution}
 
-\item $9.8 \left(\dfrac{1}{4\pi}\right)^{2} \approx 0.062$ meters or $6.2$ centimeters
+\end{question}
 
-\item \begin{enumerate}
+\begin{question}
+Use your calculator to find the values of $r$ and $h$ which minimize the surface area.  What is the minimum surface area?  Round your answers to two decimal places.
+\begin{solution}
+The calculator gives the absolute minimum at the point $\approx (4.07, 90.23)$.  This means the radius should be (approximately) 4.07 centimeters and the height should be 5.76 centimeters to give a minimum surface area of 90.23 square centimeters.
+\end{solution}
 
-\item $[0, c)$
+\end{question}
 
-\item $m(.1c) = \dfrac{m_{r}}{\sqrt{.99}} \approx 1.005m_{r}$,  $m(.5c) = \dfrac{m_{r}}{\sqrt{.75}} \approx 1.155m_{r}$,  $m(.9c) = \dfrac{m_{r}}{\sqrt{.19}} \approx 2.294m_{r}$, $m(.999c) = \dfrac{m_{r}}{\sqrt{.0.001999}} \approx 22.366m_{r}$.
+\begin{question}
+Find the applied domain of the function.
+\begin{solution}
+$[0, c)$
+\end{solution}
 
-\item $\ds{\lim_{v \rightarrow c^{-}} m(x) \rightarrow \infty}$;   as the object's velocity approaches the speed of light, mass becomes infinite.
+\end{question}
 
-\item If the object is traveling no faster than approximately $0.99995$ times the speed of light, then its observed mass will be no greater than $100m_{r}$.
+\begin{question}
+Compute $m(.1c), \, m(.5c), \, m(.9c)$ and $m(.999c)$.
+\begin{solution}
+$m(.1c) = \dfrac{m_{r}}{\sqrt{.99}} \approx 1.005m_{r}$,  $m(.5c) = \dfrac{m_{r}}{\sqrt{.75}} \approx 1.155m_{r}$,  $m(.9c) = \dfrac{m_{r}}{\sqrt{.19}} \approx 2.294m_{r}$, $m(.999c) = \dfrac{m_{r}}{\sqrt{.0.001999}} \approx 22.366m_{r}$.
+\end{solution}
 
-\end{enumerate}
+\end{question}
 
+\begin{question}
+Find $\ds{\lim_{v \rightarrow c^{-}} m(v)}$.
+\begin{solution}
+$\ds{\lim_{v \rightarrow c^{-}} m(x) \rightarrow \infty}$;   as the object's velocity approaches the speed of light, mass becomes infinite.
+\end{solution}
 
-\item $k^{-1}(x) = \dfrac{x}{\sqrt{x^{2} - 4}}$
+\end{question}
 
+\begin{question}
+How slowly must the object be traveling so that the observed mass is no greater than 100 times its mass at rest?
+\begin{solution}
+If the object is traveling no faster than approximately $0.99995$ times the speed of light, then its observed mass will be no greater than $100m_{r}$.
+\end{solution}
 
-
-\end{enumerate}
-
+\end{question}
 
 \end{document}

@@ -4,34 +4,6 @@
 	\author{Stitz-Zeager}
 	\xmtitle{Exercises for Power Functions}{}
 
-\pgfplotsset{
-  fplot/.style={
-    xlabel={$x$},  % x-axis label
-    ylabel={$y$},  % y-axis label	
-	axis lines=middle,
-	axis equal image,
-	axis line style={->},
-	ticks=none,
-    samples=200,
-    smooth,
-    line width=1.25pt,
-	mark=none,
-	domain=-2:2,
-	clip=false,
-	% postaction={decorate},
-    % decoration={
-    %   markings,
-    %   mark=at position 1 with {\arrow{>}}
-    % }
-  },
-   fpplot/.style={
-    fplot,
-    variable=t,
-    parametric,
-   }
-}	
-
-
 In following exercises, use the given graphs along with Theorem \ref{linearrationalpowergraphs} to graph the given function.  Track at least two points and state the domain and range using interval notation.
 
 
@@ -61,7 +33,7 @@ In following exercises, use the given graphs along with Theorem \ref{linearratio
 \end{image}
 
 
-\begin{multicols}{2}
+
 
 \begin{question} $F(x) = (x-2)^{\frac{2}{3}}-1$ \label{powergraphexfirst} 
 
@@ -76,8 +48,8 @@ In following exercises, use the given graphs along with Theorem \ref{linearratio
 		\node[below left=0.5cm,blue,align=left] at (axis cs:0,0) 
 		  {$F(x)=(x-2)^{\frac{2}{3}}-1$\\
 		  Domain:  $(-\infty, \infty)$, Range:  $[-1, \infty)$}; 
-	\end{axis}
-	}
+		\end{axis}
+		}
 
 
 \end{solution}
@@ -87,21 +59,21 @@ In following exercises, use the given graphs along with Theorem \ref{linearratio
 
 \begin{question} $G(t) = (t+3)^{\pi} +1$ \end{question}
 
-\end{multicols}
 
-\begin{multicols}{2}
+
+
 \begin{question} $F(x) = 3-x^{\frac{2}{3}}$  \end{question}
 \begin{question} $G(t) = (1-t)^{\pi}-2$  \vphantom{$F(x) = 3-x^{\frac{2}{3}}$ } \end{question}
 
-\end{multicols}
 
 
-\begin{multicols}{2}
+
+
 
 \begin{question} $F(x) =(2x+5)^{\frac{2}{3}}+1$ \vphantom{$G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1$} \end{question}
 \begin{question} $G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1$ \label{powergraphexlast} \end{question}
 
-\end{multicols}
+
 
 
 In Exercises \ref{findformulaforpowergraphfirst} - \ref{findformulaforpowergraphlast}, find a formula for each function below in the form $F(x) = a(bx-h)^{\frac{2}{3}}+k$.
@@ -148,7 +120,7 @@ For each function in following exercises,
 
 \item Analytically:
 
-\begin{multicols}{3}
+
 
 \begin{itemize}
 
@@ -160,11 +132,11 @@ For each function in following exercises,
 
 \end{itemize}
 
-\end{multicols}
+
 
 \item Graph the function with help from a graphing utility and determine:
 
-\begin{multicols}{2}
+
 
 \begin{itemize}
 
@@ -174,9 +146,9 @@ For each function in following exercises,
 
 \end{itemize}
 
-\end{multicols}
 
-\begin{multicols}{2}
+
+
 
 \begin{itemize}
 
@@ -186,9 +158,9 @@ For each function in following exercises,
 
 \end{itemize}
 
-\end{multicols}
 
-\begin{multicols}{2}
+
+
 
 \begin{itemize}
 
@@ -198,7 +170,7 @@ For each function in following exercises,
 
 \end{itemize}
 
-\end{multicols}
+
 
 \item Construct a sign diagram for each function using the intercepts and graph.
 
@@ -227,10 +199,11 @@ For each function in following exercises,
 \end{question}
 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
-\item \label{powerarcexercise}For each function $f(x)$ listed below, compute the average rate of change over the indicated interval.\footnote{See Definition \ref{arc} in Section \ref{AverageRateofChange} for a review of this concept, as needed.}  What trends do you observe?  How do your answers manifest themselves graphically?  Compare the results of this exercise with those of Exercise \ref{monomialarcexercise} in Section \ref{GraphsofPolynomials} and Exercise \ref{laurentarcexercise} in Section \ref{IntroRational}
+% Transformed Exercises with Solutions
+
+\begin{question}
+For each function $f(x)$ listed below, compute the average rate of change over the indicated interval.\footnote{See Definition \ref{arc} in Section \ref{AverageRateofChange} for a review of this concept, as needed.}  What trends do you observe?  How do your answers manifest themselves graphically?  Compare the results of this exercise with those of Exercise \ref{monomialarcexercise} in Section \ref{GraphsofPolynomials} and Exercise \ref{laurentarcexercise} in Section \ref{IntroRational}
 
 \[ \begin{array}{|r||c|c|c|c|}  \hline
 
@@ -241,56 +214,8 @@ For each function in following exercises,
  x^{\pi}  &&&&   \\  \hline
 
 \end{array} \]
-
-\item \label{WindChillTemperature} The \href{http://www.nws.noaa.gov/om/windchill/windchillglossary.shtml}{\underline{National Weather Service}} uses the following formula to calculate the wind chill: \[ W = 35.74 + 0.6215 \, T_{a} - 35.75\, V^{0.16} + 0.4275 \, T_{a} \, V^{0.16}  \] where $W$ is the wind chill temperature in $^{\circ}$F, $T_{a}$ is the air temperature in $^{\circ}$F, and  $V$ is the wind speed in miles per hour.  Note that $W$ is defined only for air temperatures at or lower than $50^{\circ}$F and wind speeds above $3$ miles per hour.
-
-\begin{enumerate}
-
-\item  Suppose the air temperature is $42^{\circ}$ and the wind speed is $7$ miles per hour. Find the wind chill temperature.  Round your answer to two decimal places.
-
-\item  Suppose the air temperature is $37^{\circ}$F and the wind chill temperature is $30^{\circ}$F.  Find the wind speed.  Round your answer to two decimal places. 
-
-\end{enumerate}
-
-\item  As a follow-up to Exercise \ref{WindChillTemperature}, suppose the air temperature is $28^{\circ}$F.  
-
-\begin{enumerate}
-
-\item Use the formula from Exercise \ref{WindChillTemperature} to find an expression for the wind chill temperature as a function of the wind speed, $W(V)$.  
-
-\item  \label{WindChill0} Solve $W(V) = 0$, round your answer to two decimal places,  and interpret.  
-
-\item  Graph the function $W$ using a graphing utility and check your answer to part \ref{WindChill0}. 
-
-
-\end{enumerate}
-
-
-\item \label{pursuitfurther} Suppose Fritzy the Fox, positioned at a point $(x,y)$ in the first quadrant, spots Chewbacca the Bunny at $(0,0)$.   Chewbacca begins to run along a fence (the positive $y$-axis) towards his warren.  Fritzy, of course, takes chase and constantly adjusts his direction so that he is always running directly at Chewbacca.  If Chewbacca's speed is $v_{\mbox{\tiny$1$}}$ and  Fritzy's speed is $v_{\mbox{\tiny$2$}}$, the path Fritzy will take to intercept Chewbacca, provided $v_{\mbox{\tiny$2$}}$ is directly proportional to, but not equal to, $v_{\mbox{\tiny$1$}}$ is modeled by
-
-\[ y = \dfrac{1}{2} \left(\dfrac{x^{1+ v_{1}/v_{2}}}{1+v_{\mbox{\tiny$1$}}/v_{\mbox{\tiny$2$}}}- \dfrac{x^{1-v_{\mbox{\tiny$1$}}/v_{\mbox{\tiny$2$}}}}{1-v_{\mbox{\tiny$1$}}/v_{\mbox{\tiny$2$}}}\right) + \dfrac{v_{\mbox{\tiny$1$}} v_{\mbox{\tiny$2$}}}{v_{\mbox{\tiny$2$}}^2-v_{\mbox{\tiny$1$}}^2} \]
-
-\begin{enumerate}
-
-\item  Determine the path that Fritzy will take if he runs exactly twice as fast as Chewbacca;  that is, $v_{\mbox{\tiny$2$}} = 2v_{\mbox{\tiny$1$}}$. Use your calculator to graph this path for $x \geq 0$.  What is the significance of the $y$-intercept of the graph?
-
-\item  Determine the path Fritzy will take if Chewbacca runs exactly twice as fast as he does;  that is, $v_{\mbox{\tiny$1$}} = 2v_{\mbox{\tiny$2$}}$.  Use a graphing utility to graph this path for $x > 0$.  Describe the behavior of $y$ as $x \rightarrow 0^{+}$ and interpret this physically.
-
-\item  With the help of your classmates, generalize parts (a) and (b) to two cases:  $v_{\mbox{\tiny$2$}} > v_{\mbox{\tiny$1$}}$ and $v_{\mbox{\tiny$2$}} < v_{\mbox{\tiny$1$}}$.   We will discuss the case of $v_{\mbox{\tiny$1$}} = v_{\mbox{\tiny$2$}}$ in Exercise \ref{pursuitlog} in Section \ref{ExpLogApplications}.
-
-\end{enumerate}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-\newpage
-
-\subsection{Answers}
-
-\begin{multicols}{2}
-\begin{enumerate}
-
-\item  $F(x) = (x-2)^{\frac{2}{3}}-1$ \\
+\begin{solution}
+$F(x) = (x-2)^{\frac{2}{3}}-1$ \\
 
 % \input{ExercisesforPowerFunctions_pic5.tex}
 \begin{tikzpicture}
@@ -306,13 +231,15 @@ For each function in following exercises,
 \node at (axis description cs:0.5,-0.12) {Domain:  $(-\infty, \infty)$, Range:  $[-1, \infty)$};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
+\begin{question}
+The \href{http://www.nws.noaa.gov/om/windchill/windchillglossary.shtml}{\underline{National Weather Service}} uses the following formula to calculate the wind chill: \[ W = 35.74 + 0.6215 \, T_{a} - 35.75\, V^{0.16} + 0.4275 \, T_{a} \, V^{0.16}  \] where $W$ is the wind chill temperature in $^{\circ}$F, $T_{a}$ is the air temperature in $^{\circ}$F, and  $V$ is the wind speed in miles per hour.  Note that $W$ is defined only for air temperatures at or lower than $50^{\circ}$F and wind speeds above $3$ miles per hour.
 
-\columnbreak
-
-
-\item $G(t) = (t+3)^{\pi} +1$ \vphantom{$F(x) = (x-2)^{\frac{2}{3}}-1$}\\
+\begin{solution}
+$G(t) = (t+3)^{\pi} +1$ \vphantom{$F(x) = (x-2)^{\frac{2}{3}}-1$}\\
 
 % \input{ExercisesforPowerFunctions_pic6.tex}
 \begin{tikzpicture}
@@ -330,14 +257,14 @@ For each function in following exercises,
 
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\item  $F(x) = 3-x^{\frac{2}{3}} = (-1)x^{\frac{2}{3}} + 3$  \\
+\end{question}
+
+\begin{question}
+Suppose the air temperature is $42^{\circ}$ and the wind speed is $7$ miles per hour. Find the wind chill temperature.  Round your answer to two decimal places.
+\begin{solution}
+$F(x) = 3-x^{\frac{2}{3}} = (-1)x^{\frac{2}{3}} + 3$  \\
 
 % \input{ExercisesforPowerFunctions_pic7.tex}
 \begin{tikzpicture}
@@ -353,13 +280,14 @@ For each function in following exercises,
 \node at (axis description cs:0.5,-0.12) {Domain: $(-\infty, \infty)$, Range: $(-\infty,3]$};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
-
-\columnbreak
-
-
-\item  $G(t) = (1-t)^{\pi}-2 = ((-1)t+1)^{\pi}-2$  \vphantom{$F(x) = 3-x^{\frac{2}{3}}$} \\
+\begin{question}
+Suppose the air temperature is $37^{\circ}$F and the wind chill temperature is $30^{\circ}$F.  Find the wind speed.  Round your answer to two decimal places.
+\begin{solution}
+$G(t) = (1-t)^{\pi}-2 = ((-1)t+1)^{\pi}-2$  \vphantom{$F(x) = 3-x^{\frac{2}{3}}$} \\
 
 % \input{ExercisesforPowerFunctions_pic8.tex}
 \begin{tikzpicture}
@@ -376,14 +304,14 @@ For each function in following exercises,
 \end{tikzpicture}
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\item  $F(x) =(2x+5)^{\frac{2}{3}}+1$ \vphantom{$G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1$}  \\
+\end{question}
+
+\begin{question}
+Use the formula from Exercise \ref{WindChillTemperature} to find an expression for the wind chill temperature as a function of the wind speed, $W(V)$.
+\begin{solution}
+$F(x) =(2x+5)^{\frac{2}{3}}+1$ \vphantom{$G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1$}  \\
 
 % \input{ExercisesforPowerFunctions_pic9.tex}
 \begin{tikzpicture}
@@ -399,13 +327,14 @@ For each function in following exercises,
 \node at (axis description cs:0.5,-0.12) {Domain: $(-\infty, \infty)$, Range: $[1, \infty)$};
 \end{axis}
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
-
-\columnbreak
-
-
-\item  $G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1= \left( \frac{1}{2} \, t + \frac{3}{2}\right)^{\pi} -1$\\
+\begin{question}
+Solve $W(V) = 0$, round your answer to two decimal places,  and interpret.
+\begin{solution}
+$G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1= \left( \frac{1}{2} \, t + \frac{3}{2}\right)^{\pi} -1$\\
 
 % \input{ExercisesforPowerFunctions_pic10.tex}
 \begin{tikzpicture}
@@ -422,31 +351,31 @@ For each function in following exercises,
 \end{tikzpicture}
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
-\begin{multicols}{2}
+\end{question}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+Graph the function $W$ using a graphing utility and check your answer to part \ref{WindChill0}.
+\begin{solution}
+One solution is: $F(x) = 2(x-1)^{\frac{2}{3}}-2$
+\end{solution}
 
-\item One solution is: $F(x) = 2(x-1)^{\frac{2}{3}}-2$
+\end{question}
 
-\item  One solution is: $F(x) =-(x+1)^{\frac{2}{3}} + 4$
+\begin{question}
+Determine the path that Fritzy will take if he runs exactly twice as fast as Chewbacca;  that is, $v_{\mbox{\tiny$2$}} = 2v_{\mbox{\tiny$1$}}$. Use your calculator to graph this path for $x \geq 0$.  What is the significance of the $y$-intercept of the graph?
+\begin{solution}
+One solution is: $F(x) =-(x+1)^{\frac{2}{3}} + 4$
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\end{solution}
 
-\end{multicols}
+\end{question}
 
-\newpage
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item \begin{multicols}{2} 
+\begin{question}
+Determine the path Fritzy will take if Chewbacca runs exactly twice as fast as he does;  that is, $v_{\mbox{\tiny$1$}} = 2v_{\mbox{\tiny$2$}}$.  Use a graphing utility to graph this path for $x > 0$.  Describe the behavior of $y$ as $x \rightarrow 0^{+}$ and interpret this physically.
+\begin{solution}
 $f(x) = x^{\frac{2}{3}}(x - 7)^{\frac{1}{3}}$\\
 Domain: $(-\infty, \infty)$\\
 Intercepts: $(0,0)$, $(7,0)$\\
@@ -474,7 +403,7 @@ Graph: \\
 
 
 \vfill
-\columnbreak
+
 
 $\ds{\lim_{x \rightarrow - \infty} f(x) = - \infty}$, $\ds{\lim_{x \rightarrow \infty} f(x) = \infty}$\footnote{Using Calculus it can be shown that $y = x - \frac{7}{3}$ is a slant asymptote of this graph.}\\
 Range: $(-\infty, \infty)$\\
@@ -500,13 +429,13 @@ Sign Diagram:\\
 \node at (7,1){$0$};
 \node at (8.5,1){$(+)$};
 \end{tikzpicture}
+\end{solution}
 
+\end{question}
 
-
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
+\begin{question}
+With the help of your classmates, generalize parts (a) and (b) to two cases:  $v_{\mbox{\tiny$2$}} > v_{\mbox{\tiny$1$}}$ and $v_{\mbox{\tiny$2$}} < v_{\mbox{\tiny$1$}}$.   We will discuss the case of $v_{\mbox{\tiny$1$}} = v_{\mbox{\tiny$2$}}$ in Exercise \ref{pursuitlog} in Section \ref{ExpLogApplications}.
+\begin{solution}
 $f(x) = x^{\frac{3}{2}}(x - 7)^{\frac{1}{3}}$\\
 Graph: \\
 % \input{ExercisesforPowerFunctions_pic13.tex}
@@ -530,7 +459,7 @@ Graph: \\
 
 
 \vfill
-\columnbreak
+
 
 Domain: $[0, \infty)$\\
 Intercepts: $(0,0)$, $(7,0)$\\
@@ -558,417 +487,10 @@ Sign Diagram:\\
 
 
 
-\end{multicols}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
 
+\end{solution}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item \begin{multicols}{2} 
- $g(t) = 2t(t+3)^{-\frac{1}{3}}$ \\
-Graph: \\
-
-% \input{ExercisesforPowerFunctions_pic15.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-10, xmax=5, ymin=-10, ymax=10, width=150pt, height=100pt,
-  xtick={-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4},
-  xticklabels={$-9 \hspace{6pt}$,$-8 \hspace{6pt}$,$-7 \hspace{6pt}$,$-6 \hspace{6pt}$,$-5 \hspace{6pt}$,$-4 \hspace{6pt}$,$-3 \hspace{6pt}$,$-2 \hspace{6pt}$,$-1 \hspace{6pt}$,{$1$},{$2$},{$3$},{$4$}},
-  ytick={-8,-6,-4,-2,2,4,6,8},
-  yticklabels={{$-8$},{$-6$},{$-4$},{$-2$},{$2$},{$4$},{$6$},{$8$}}
-]
-\node at (axis cs:5,-0.5) {\scriptsize $t$};
-\node at (axis cs:0.5,10) {\scriptsize $y$};
-\node at (axis cs:-6,5) {\scriptsize $\approx (-4.5, 7.862)$};
-\addplot[dashed] coordinates {(-3,-9) (-3,10)};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (-4.5,7.862)};
-\addplot[domain=-9:-3.2] {-(2*x)/((-x-3)^(1/3))};
-\addplot[domain=-2.8:0] {(2*x)/((x+3)^(1/3))};
-\addplot[domain=0:5] {(2*x)/((x+3)^(1/3))};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-\columnbreak
-
-Domain: $(-\infty, -3) \cup (-3, \infty)$\\
-Intercept: $(0,0)$\\
-$\ds{\lim_{t \rightarrow -\infty} g(t) = \infty}$\\
-$\ds{\lim_{t \rightarrow \infty} g(t) = \infty}$\\
-Range: $(-\infty, \infty)$\\
-Local minimum: $\approx (-4.5, 7.862)$\\
-Increasing: $\approx [-4.5, -3)$, $(-3,\infty)$ \\
-Decreasing: $\approx (-\infty, -4.5]$\\
-Vertical Asymptote:  $t = -3$\\
-Sign Diagram:\\
-
-\smallskip
-
-% \input{ExercisesforPowerFunctions_pic16.tex}
-\begin{tikzpicture}[x=10pt,y=10pt]
-\draw[<->, line width=1.25pt] (-3,0) -- (10,0);
-\foreach \xx in {0,7} {\draw (\xx,-0.15) -- (\xx,0.15);}
-\node at (-1.5,1){$(+)$};
-\node at (0,-1){$-3 \hspace{6pt}$};
-\node at (0,1){\textinterrobang};
-\node at (3.5,1){$(-)$};
-\node at (7,-1){$0$};
-\node at (7,1){$0$};
-\node at (8.5,1){$(+)$};
-\end{tikzpicture}
-
-
-
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
-$g(t)= t^{\frac{3}{2}}(t-2)^{-\frac{1}{2}}$\\
-Domain:  $(2, \infty)$\\
-$\ds{\lim_{t \rightarrow \infty} g(t) = \infty}$\\
-Graph: \\
-% \input{ExercisesforPowerFunctions_pic17.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-1, xmax=10, ymin=-1, ymax=10, width=165pt, height=110pt,
-  xtick={1,2,3,4,5,6,7,8,9},
-  xticklabels={{$1$},{$2$},{$3$},{$4$},{$5$},{$6$},{$7$},{$8$},{$9$}},
-  ytick={1,3,5,7,9},
-  yticklabels={{$1$},{$3$},{$5$},{$7$},{$9$}}
-]
-\node at (axis cs:10,-0.5) {\scriptsize $t$};
-\node at (axis cs:0.5,10) {\scriptsize $y$};
-\addplot[dashed] coordinates {(2,5) (2,9)};
-\addplot[dashed] coordinates {(4,5) (9,10)};
-\node[fill=white, inner sep=1pt] at (axis cs:3,4) {\scriptsize $\approx (3, 5.196)$};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(3,5.196)};
-\addplot[domain=2.1:8.75] {(x^1.5)*((x - 2)^(-0.5))};
-\end{axis}
-\end{tikzpicture}
-
-
-
-\vfill
-\columnbreak
-$\ds{\lim_{t \rightarrow \infty} g(t) = \infty}$\footnote{Using Calculus it can be shown that $y = t+1$ is a slant asymptote of this graph.}\\
-Range:  $\approx [5.196, \infty)$\\
-Local minimum:  $\approx (3, 5.196)$\\
-Increasing: $\approx [3, \infty)$\\
-Decreasing: $\approx (2,3]$\\
-Vertical asymptote:  $t = 2$\\
-Sign Diagram:\\
-
-\smallskip
-
-% \input{ExercisesforPowerFunctions_pic18.tex}
-\begin{tikzpicture}[x=15pt,y=15pt]
-\draw[<-, line width=1.25pt] (0,0) -- (4,0);
-\foreach \xx in {0} {\draw (\xx,-0.12) -- (\xx,0.12);}
-\node at (0,-0.5){$2$};
-\node at (0,0.5){\textinterrobang};
-\node at (2,0.5){$(+)$};
-\end{tikzpicture}
-
-
-
-\end{multicols}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item \begin{multicols}{2} 
- $f(x) = x^{0.4}(3-x)^{0.6}$ \\
-Graph: \\
-% \input{ExercisesforPowerFunctions_pic19.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-2, xmax=5, ymin=-2, ymax=4, width=140pt, height=120pt,
-  xtick={-1,1,2,4},
-  xticklabels={{$-1 \hspace{6pt}$},{$1$},{$2$},{$4$}},
-  ytick={-1,2,3,4},
-  yticklabels={{$-1$},{$2$},{$3$},{$4$}}
-]
-\node at (axis cs:5,-0.5) {\scriptsize $x$};
-\node at (axis cs:0.5,4) {\scriptsize $y$};
-\node at (axis cs:2,2) {\scriptsize $\approx (1.2, 1.531)$};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (3,0) (1.2,1.531)};
-\addplot[domain=0:3] {(x^0.4)*((3 - x)^0.6)};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-\columnbreak
-
-
-Domain: $[0,3]$\\
-Intercepts: $(0,0)$, $(3,0)$\\
-Range: $\approx [0, 1.5]$\\
-Increasing: $\approx [0, 1.2]$ \\
-Decreasing: $\approx [1.2, 3]$\\
-Unusual Steepness:\footnote{Note you may need to zoom in to see this.}  $x=0$, $x = 3$\\
-Sign Diagram:\\
-
-\smallskip
-
-% \input{ExercisesforPowerFunctions_pic20.tex}
-\begin{tikzpicture}[x=10pt,y=10pt]
-\draw[line width=1.25pt] (0,0) -- (7,0);
-\foreach \xx in {0,7} {\draw (\xx,-0.15) -- (\xx,0.15);}
-\node at (0,-1){$0$};
-\node at (0,1){$0$};
-\node at (3.5,1){$(+)$};
-\node at (7,-1){$3$};
-\node at (7,1){$0$};
-\end{tikzpicture}
-
-
-
-
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
- $f(x) = x^{0.5}(3-x)^{0.5}$ \\
-Graph: \\
-% \input{ExercisesforPowerFunctions_pic21.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-2, xmax=5, ymin=-2, ymax=4, width=140pt, height=120pt,
-  xtick={-1,1,2,4},
-  xticklabels={{$-1 \hspace{6pt}$},{$1$},{$2$},{$4$}},
-  ytick={-1,1,2,3},
-  yticklabels={{$-1$},{$1$},{$2$},{$3$}}
-]
-\node at (axis cs:5,-0.5) {\scriptsize $x$};
-\node at (axis cs:0.5,4) {\scriptsize $y$};
-\node at (axis cs:2,2) {\scriptsize $\approx (1.5, 1.5)$};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (3,0) (1.5,1.5)};
-\addplot[domain=0:3] {(x^0.5)*((3 - x)^0.5)};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-\columnbreak
-
-Domain: $[0,3]$\\
-Intercepts: $(0,0)$, $(3,0)$\\
-Range: $\approx [0, 1.5]$\\
-Increasing: $\approx [0, 1.5]$ \\
-Decreasing: $\approx [1.5, 3]$\\
-Unusual Steepness:\footnote{Note you may need to zoom in to see this.}  $x=0$, $x = 3$\\
-Sign Diagram:\\
-
-\smallskip
-
-% \input{ExercisesforPowerFunctions_pic22.tex}
-\begin{tikzpicture}[x=10pt,y=10pt]
-\draw[line width=1.25pt] (0,0) -- (7,0);
-\foreach \xx in {0,7} {\draw (\xx,-0.15) -- (\xx,0.15);}
-\node at (0,-1){$0$};
-\node at (0,1){$0$};
-\node at (3.5,1){$(+)$};
-\node at (7,-1){$3$};
-\node at (7,1){$0$};
-\end{tikzpicture}
-
-\end{multicols}
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-\newpage
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item \begin{multicols}{2} 
-$g(t) = 4t (9-t^2)^{-\sqrt{2}}$\\
-Graph: \\
-% \input{ExercisesforPowerFunctions_pic23.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-3, ymax=3, width=120pt, height=90pt,
-  xtick={-2,-1,1,2},
-  xticklabels={{$-2 \hspace{6pt}$},{$-1 \hspace{6pt}$},{$1$},{$2$}},
-  ytick={-2,-1,1,2},
-  yticklabels={{$-2$},{$-1$},{$1$},{$2$}}
-]
-\node at (axis cs:4,-0.5) {\scriptsize $t$};
-\node at (axis cs:0.5,4) {\scriptsize $y$};
-\addplot[dashed] coordinates {(-3,-3) (-3,3)};
-\addplot[dashed] coordinates {(3,-3) (3,3)};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0)};
-\addplot[domain=-2.6:2.6] {4*x/((9 - (x^2))^1.414)};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-\columnbreak
- Domain: $(-3, 3)$\\
-Intercepts: $(0,0)$\\
-Range: $(-\infty, \infty)$\\
-$\ds{\lim_{t \rightarrow -3^{+}} g(t) = -\infty}$, $\ds{\lim_{t \rightarrow 3^{-}} g(t) = \infty}$ \\
-Vertical asymptotes:  $t = -3$ and $t = 3$\\
-Increasing: $(-3,3)$ \\
-Sign Diagram:\\
-
-\smallskip
-
-% \input{ExercisesforPowerFunctions_pic24.tex}
-\begin{tikzpicture}[x=10pt,y=10pt]
-\draw[line width=1.25pt] (-5,0) -- (5,0);
-\foreach \xx in {-5,0,5} {\draw (\xx,-0.15) -- (\xx,0.15);}
-\node at (-5,-1){$-3 \hspace{6pt}$};
-\node at (-5,1){\textinterrobang};
-\node at (-2.5,1){$(-)$};
-\node at (0,-1){$0$};
-\node at (0,1){$0$};
-\node at (2.5,1){$(+)$};
-\node at (5,-1){$3$};
-\node at (5,1){\textinterrobang};
-\end{tikzpicture}
-
-
-Note:  $g$ is odd
-
-\end{multicols}
-
-\item \begin{multicols}{2} 
-$g(t) = 3(t^2+1)^{-\pi}$ \\
-Domain: $(-\infty, \infty)$\\
-Graph: \\
-% \input{ExercisesforPowerFunctions_pic25.tex}
-\begin{tikzpicture}
-
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-4, xmax=4, ymin=-1, ymax=4, width=160pt, height=100pt,
-  xtick={-3,-2,-1,1,2,3},
-  xticklabels={{$-3 \hspace{6pt}$},{$-2 \hspace{6pt}$},{$-1 \hspace{6pt}$},{$1$},{$2$},{$3$}},
-  ytick={1,2,3},
-  yticklabels={{$1$},{$2$},{$3$}}
-]
-\node at (axis cs:4,-0.5) {\scriptsize $t$};
-\node at (axis cs:0.5,4) {\scriptsize $y$};
-\addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,3)};
-\addplot[domain=-3:3] {3/(((x^2)+1)^3.14)};
-\end{axis}
-\end{tikzpicture}
-
-
-\vfill
-\columnbreak
-
-Intercept: $(0,3)$\\
-$\ds{\lim_{t \rightarrow -\infty} g(t) =0}$ \\
-$\ds{\lim_{t \rightarrow \infty} g(t) =0}$ \\
-Range: $(0, 3]$\\
-Increasing: $(-\infty, 0]$ \\
-Decreasing: $[0, \infty)$\\
-Horizontal asymptote:  $y =0$\\
-Sign Diagram:\\
-
-\vspace*{-0.2in}
-
-% \input{ExercisesforPowerFunctions_pic26.tex}
-\begin{tikzpicture}[x=10pt,y=10pt]
-\draw[<->, line width=1.25pt] (-5,0) -- (5,0);
-\node at (0,1){$(+)$};
-\end{tikzpicture}
-
-
-Note:  $g$ is even
-
-\end{multicols}
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item As in  Exercise \ref{monomialarcexercise} in Section \ref{GraphsofPolynomials} and Exercise \ref{laurentarcexercise} in Section \ref{IntroRational}, the slopes of these curves near $x = 1$ approach the value of the exponent on $x$.
-
-\[ \begin{array}{|r||c|c|c|c|}  \hline
-
- f(x) &  [0.9, 1.1] & [0.99, 1.01] &[0.999, 1.001] & [0.9999, 1.0001]  \\ \hline
- x^{\frac{1}{2}} & 0.5006 & \approx \frac{1}{2} & \approx \frac{1}{2} & \approx \frac{1}{2} \\ [5pt] \hline
- x^{\frac{2}{3}} & 0.6672 & 0.6667 & \approx \frac{2}{3} & \approx \frac{2}{3}  \\ [5pt] \hline
- x^{-0.23} & -0.2310 & \approx -0.23 &\approx -0.23 &  \approx -0.23  \\  \hline
- x^{\pi}  &3.1544 & 3.1417 & \approx \pi & \approx \pi   \\  \hline
-
-\end{array} \]
-
-\item
-
-\begin{enumerate}
-
-\item  $W \approx 37.55^{\circ}$F.
-
-\item  $V \approx 9.84$ miles per hour.
-
-\end{enumerate}
-
-\item 
-
-\begin{enumerate}
-
-\item $W(V) = 53.142 - 23.78 V^{0.16}$.  Since we are told in Exercise \ref{WindChillTemperature} that wind chill is only effect for wind speeds of more than 3 miles per hour, we restrict the domain to $V > 3$.
-
-\item $W(V)=0$ when $V \approx 152.29$.  This means, according to the model, for the wind chill temperature to be $0^{\circ}$F, the wind speed needs to be $152.29$ miles per hour.
-
-\newpage
-
-\item The graph of $y = W(V)$ is below.  \\
-
-\centerline{\includegraphics[height=1.75in]{./PowerFunctionsGraphics/WINDCHILL.jpg}}
-
-\end{enumerate}
-
-
-
-\item \begin{enumerate}
-
-\item  $y = \frac{1}{3}x^{\frac{3}{2}} - x^{\frac{1}{2}} + \frac{2}{3}$.  The point $\left(0,\frac{2}{3}\right)$ is when Fritzy's path crosses Chewbacca's path - in other words, where Fritzy catches Chewbacca.
-
-\begin{center} 
-
-\includegraphics[height=2in]{./PowerFunctionsGraphics/PURSUIT01.jpg}
-
- $y = \frac{1}{3}x^{\frac{3}{2}} - x^{\frac{1}{2}} + \frac{2}{3}$
-
-\end{center}
-
-\item $y = \frac{1}{6}x^3+\frac{1}{2}x^{-1} - \frac{2}{3}$.  We find as $x \rightarrow 0^{+}$, $y \rightarrow \infty$ which means, in this case, Fritzy's pursuit never ends;  he never catches Chewbacca. This makes sense since Chewbacca has a head start and is running faster than Fritzy.
-
-\begin{center} 
-
-\includegraphics[height=2in]{./PowerFunctionsGraphics/PURSUIT02.jpg}
-
- $y = \frac{1}{6}x^3+\frac{1}{2}x^{-1} - \frac{2}{3}$
-
-\end{center}
-
-
-\end{enumerate}
-
-
-
-
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-
+\end{question}
 
 \end{document}
