@@ -12,660 +12,495 @@ In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of 
 
 \begin{center}
 
-\begin{mfpic}[15]{-6}{6}{-6}{6}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](-5,-5.5){\scriptsize $(-5,-5)$}
-\tlabel[cc](-5,0.5){\scriptsize $(-4,0)$}
-\tlabel[cc](-3,4.5){\scriptsize $(-3,4)$}
-\tlabel[cc](-1,2){\scriptsize $(-2,2)$}
-\tlabel[cc](-2,-0.5){\scriptsize $(-1,0)$}
-\tlabel[cc](1,-1.5){\scriptsize $(0,-1)$}
-\tlabel[cc](1.75,-0.5){\scriptsize $(1,0)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,1){\scriptsize $(3,1)$}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-5 \hspace{7pt}$} -5,  {$3$} 3, {$4$} 4, {$5$} 5}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2, {$1$} 1, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\point[4pt]{(-5, -5), (-4, 0), (-3, 4), (-2,2), (-1,0), (0,-1), (1,0), (2,3), (3,1)}
-\penwd{1.25pt}
-\polyline{(-5,-5), (-4,0), (-3,4), (-2,2), (-1,0)}
-\function{-1, 1, 0.1}{(x**2)-1}
-\polyline{(1,0), (2,3), (3,1)}
-\tcaption{$y=f(x)$}
-\end{mfpic}
+% \input{ExercisesforGraphsofFunctions_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-6, xmax=6, ymin=-6, ymax=6]
+  \addplot[fgraph] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)};
+  \addplot[fgraph, domain=-1:1] {x^2 - 1};
+  \addplot[fgraph] coordinates {(1,0) (2,3) (3,1)};
+  \addplot[only marks, mark=*] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)};
+  \node[flabel, label=below left :{$(-5,-5)$}] at (axis cs:-5,-5) {};
+  \node[flabel, label=above left :{$(-4,0)$}]  at (axis cs:-4, 0) {};
+  \node[flabel, label=above left :{$(-3,4)$}]  at (axis cs:-3, 4) {};
+  \node[flabel, label=above left :{$(-2,2)$}]  at (axis cs:-2, 2) {};
+  \node[flabel, label=below left :{$(-1,0)$}]  at (axis cs:-1, 0) {};
+  \node[flabel, label=below right:{$(0,-1)$}]  at (axis cs: 0,-1) {};
+  \node[flabel, label=below right:{$(1,0)$}]   at (axis cs: 1, 0) {};
+  \node[flabel, label=above right:{$(2,3)$}]   at (axis cs: 2, 3) {};
+  \node[flabel, label=above right:{$(3,1)$}]   at (axis cs: 3, 1) {};
+  \node at (rel axis cs:0.5,0) [below] {$y=f(x)$};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{center}
 
 
-\begin{multicols}{2}
-\begin{enumerate}
 
 
-\item  Find the domain of $f$. \label{usefuncgraphfirst}
-\item  Find the range of $f$.
+% Transformed Exercises with Solutions
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the domain of $f$.
+\begin{solution}
+$[-5,3]$
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  Find the maximum, if it exists.
-\item  Find the minimum, if it exists. \label{usefuncgraphlast}
+\begin{question}
+Find the range of $f$.
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{solution}
+$[-5,4]$
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  List the local maximums, if any exist.
-\item  List the local minimums, if any exist.
+\begin{question}
+Find the maximum, if it exists.
+\begin{solution}
+$f(-3) = 4$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{solution}
 
-\item  List the intervals where $f$ is increasing.
-\item  List the intervals where $f$ is decreasing.
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the minimum, if it exists. 
 
+\begin{solution}
+$f(-5) = -5$
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  Determine $f(-2)$.
-\item  Solve $f(x) = 4$.
+\begin{question}
+List the local maximums, if any exist.
+\begin{solution}
+$(-3,4)$,  $(2,3)$
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+List the local minimums, if any exist.
 
-\item  List the $x$-intercepts, if any exist.
-\item  List the $y$-intercepts, if any exist.
+\begin{solution}
+$(0,-1)$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  Find the zeros of $f$.
-\item  Solve $f(x) \geq 0$.
+\begin{question}
+List the intervals where $f$ is increasing.
+\begin{solution}
+$[-5,-3]$, $[0,2]$
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+List the intervals where $f$ is decreasing.
 
-\item  Find the number of solutions to $f(x) = 1$.
-\item   Find the number of solutions to $|f(x)| = 1$.
+\begin{solution}
+$[-3,0]$, $[2,3]$
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
+\begin{question}
+Determine $f(-2)$.
+\begin{solution}
+$f(-2) = 2$
 
 
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item   Solve $(x^2-x-2)f(x) = 0$
-\item   Solve  $(x^2-x-2)f(x) > 0$
+\begin{question}
+Solve $f(x) = 4$.
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{solution}
+$x=-3$
+\end{solution}
 
-With help from your classmates:
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+List the $x$-intercepts, if any exist.
+\begin{solution}
+$(-4,0)$, $(-1,0)$, $(1,0)$
+\end{solution}
 
-\item   Find the domain of $R(x) = \dfrac{1}{f(x)}$
-\item   Find the range of $R(x) = \dfrac{1}{f(x)}$
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+List the $y$-intercepts, if any exist.
 
+\begin{solution}
+$(0,-1)$
 
-\newpage
+\end{solution}
 
-In Exercises \ref{usesecondfuncgraphfirst} - \ref{usesecondfuncgraphlast}, use the graph of $y =g(t)$ given below to answer the  question.
+\end{question}
 
+\begin{question}
+Find the zeros of $f$.
+\begin{solution}
+$-4$, $-1$, $1$
+\end{solution}
 
-\begin{center}
+\end{question}
 
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](-4,0.5){\scriptsize $(-4,0) \hspace{6pt}$}
-\tlabel[cc](-2,-5.5){\scriptsize $(-2,-5) \hspace{6pt}$}
-\tlabel[cc](1,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](2,2.5){\scriptsize $(2,3)$}
-\tlabel[cc](2,5.5){\scriptsize $(2,5)$}
-\tlabel[cc](4,-0.5){\scriptsize $(4,0)$}
-\xmarks{-3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{-4, 4, 0.1}{5*sin(x*3.14159/4)}
-\point[4pt]{ (-2, -5), (0, 0), (4,0), (2,3), (-4,0)}
-\pointfillfalse
-\point[4pt]{(2,5)}
-\tcaption{$y=g(t)$}
-\end{mfpic}
+\begin{question}
+Solve $f(x) \geq 0$.
 
-\end{center}
+\begin{solution}
+$[-4,-1]$, $[1,3]$
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  Find the domain of $g$. \label{usesecondfuncgraphfirst}
-\item  Find the range of $g$.
+\begin{question}
+Find the number of solutions to $f(x) = 1$.
+\begin{solution}
+$4$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  Find the maximum, if it exists.
-\item  Find the minimum, if it exists. \label{usesecondfuncgraphlast}
+\begin{question}
+Find the number of solutions to $|f(x)| = 1$.
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{solution}
+$6$
+\end{solution}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item  List the local maximums, if any exist.
-\item  List the local minimums, if any exist.
+\begin{question}
+Solve $(x^2-x-2)f(x) = 0$
+\begin{solution}
+$x=-4, -1,1,2$
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+Solve  $(x^2-x-2)f(x) > 0$
 
-\item  List the intervals where $g$ is increasing.
-\item  List the intervals where $g$ is decreasing.
+\begin{solution}
+$(-4,-1) \cup (-1,1) \cup (2,3)$ 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{solution}
 
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+Find the domain of $R(x) = \dfrac{1}{f(x)}$
+\begin{solution}
+To find the domain of $R(x) = \frac{1}{f(x)}$, we start with the domain of $f$ and exclude values where $f(x) = 0$.  Hence, the domain of $R$ is $[-5,-4) \cup (-4,-1) \cup (-1,1) \cup (1,3]$.
+\end{solution}
 
-\item  Determine $g(2)$.
-\item  Solve $g(t) = -5$.
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the range of $R(x) = \dfrac{1}{f(x)}$
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{solution}
+To find the range of $R(x) = \frac{1}{f(x)}$, we start with the range of $f$ (excluding $0$)  and take reciprocals.  If $-5 \leq y < 0$, then $\frac{1}{y} \leq -\frac{1}{5}$.  If $0 < y \leq 4$, then $\frac{1}{y} \geq \frac{1}{4}$. Hence the range of $R$ is $\left(-\infty, -\frac{1}{5} \right] \cup \left[ \frac{1}{4}, \infty \right)$. 
 
-\item  List the $t$-intercepts, if any exist.
-\item  List the $y$-intercepts, if any exist.
+\end{solution}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{question}
+Find the domain of $g$.
+\begin{solution}
+$[-4,4]$
+\end{solution}
 
-\item  Find the zeros of $g$.
-\item  Solve $g(t) \leq 0$.
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the range of $g$.
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{solution}
+$[-5,5)$
+\end{solution}
 
-\item  Find the domain of $G(t) = \dfrac{g(t)}{t+2}$.
-\item  Solve $\dfrac{g(t)}{t+2} \leq 0$.
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the maximum, if it exists.
+\begin{solution}
+none
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{solution}
 
-\item  How many solutions are there to $[g(t)]^2 = 9$?
-\item  Does $g$ appear to be even, odd, or neither?
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{question}
+Find the minimum, if it exists. 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{solution}
+$g(-2) = -5$
+\end{solution}
 
-\item  Prove that if $f$ is an odd function and $0$ is in the domain of $f$, then $f(0) = 0$.
+\end{question}
 
-\item  Let $R(x)$ be the function defined as:  $R(x) = 1$ if $x$ is a rational number, $R(x) = 0$ if $x$ is an irrational number. With help from your classmates, try to graph $R$.  What difficulties do you encounter?
+\begin{question}
+List the local maximums, if any exist.
+\begin{solution}
+none
+\end{solution}
+
+\end{question}
+
+\begin{question}
+List the local minimums, if any exist.
+
+\begin{solution}
+$(-2,-5)$, $(2,3)$
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+List the intervals where $g$ is increasing.
+\begin{solution}
+$[-2,2)$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+List the intervals where $g$ is decreasing.
+
+\begin{solution}
+$[-4, -2]$, $(2,4]$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Determine $g(2)$.
+\begin{solution}
+$g(2) = 3$
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Solve $g(t) = -5$.
+
+\begin{solution}
+$t=-2$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+List the $t$-intercepts, if any exist.
+\begin{solution}
+$(-4,0)$, $(0,0)$, $(4,0)$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+List the $y$-intercepts, if any exist.
+
+\begin{solution}
+$(0,0)$
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Find the zeros of $g$.
+\begin{solution}
+$-4$, $0$, $4$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Solve $g(t) \leq 0$.
+
+\begin{solution}
+$[-4,0] \cup \{4\}$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Find the domain of $G(t) = \dfrac{g(t)}{t+2}$.
+\begin{solution}
+$[-4,-2) \cup (-2.4]$
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Solve $\dfrac{g(t)}{t+2} \leq 0$.
+
+\begin{solution}
+$\{-4\} \cup (-2,0] \cup \{4\}$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+How many solutions are there to $[g(t)]^2 = 9$?
+\begin{solution}
+$5$
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Does $g$ appear to be even, odd, or neither?
+
+\begin{solution}
+Neither.
+
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Prove that if $f$ is an odd function and $0$ is in the domain of $f$, then $f(0) = 0$.
+\begin{solution}
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Let $R(x)$ be the function defined as:  $R(x) = 1$ if $x$ is a rational number, $R(x) = 0$ if $x$ is an irrational number. With help from your classmates, try to graph $R$.  What difficulties do you encounter?
 
 NOTE:  Between every pair of real numbers, there is both a rational and an irrational number \ldots
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{solution}
+Local maximum: $(0,1)$, no local minimum.  Increasing: $(0,2]$, decreasing: $[-2,0)$.
+\end{solution}
 
-\newpage
+\end{question}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item Consider the graph of the function $f$ given below.  
-
-\begin{center}
-
-\begin{mfpic}[15]{-3}{3}{-3.5}{4}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3.75){\scriptsize $y$}
-\tlabel[cc](2,1){\scriptsize $(1,1)$}
-\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
-\xmarks{-2,-1,1,2}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$2$} 2, {$3$} 3}
-\normalsize
-\point[4pt]{(-1, 1), (0, 1), (1, 1)}
-\penwd{1.25pt}
-\arrow \reverse \function{-3,-1,0.1}{2*x + 3}
-\polyline{(-1, 1), (1,1)}
-\arrow \function{1,3,0.1}{x}
-\end{mfpic}
-
-\end{center}
-
-\begin{enumerate}
-
-\item Explain why $f$ has a local maximum but not a local minimum at the point $(-1, 1)$.
-
-\item Explain why  $f$ has a local minimum but not a local maximum at the point $(1, 1)$.
-
-\item Explain why $f$ has a local maximum AND a local minimum at the point $(0, 1)$.
-
-\item Explain why $f$ is constant on the interval $[-1, 1]$ and thus has both a local maximum AND a local minimum at every point $(x, f(x))$ where $-1 < x < 1$.
-
-\end{enumerate}
-
-\item Explain why  the function $g$ whose graph is given below does \underline{not} have a local maximum at $(-3, 5)$ nor does it have a local minimum at $(3, -3)$.  Find its extrema, both local and absolute and find the intervals on which $g$ is increasing and those on which $g$ is decreasing.
+\begin{question}
+Consider the graph of the function $f$ given below.  
 
 \begin{center}
 
-\begin{mfpic}[15]{-4}{4}{-4.5}{6}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.75){\scriptsize $y$}
-\tlabel[cc](-3,5.5){\scriptsize $(-3,5) \hspace{6pt}$}
-\tlabel[cc](2,0.5){\scriptsize $(2,0)$}
-\tlabel[cc](-1.5,-4){\scriptsize $(0,-4)$}
-\tlabel[cc](3,-3.5){\scriptsize $(3,-3)$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$3$} 3}
-\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\point[4pt]{(-3,5), (0,-4), (2,0), (3,-3)}
-\penwd{1.25pt}
-\function{-3,2,0.1}{x**2 - 4}
-\polyline{(2,0), (3, -3)}
-\end{mfpic}
+% \input{ExercisesforGraphsofFunctions_pic3.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-3.5, ymax=4]
+  \addplot[fgraph, domain=-3:-1] {2*x + 3};
+  \addplot[fgraph] coordinates {(-1,1) (1,1)};
+  \addplot[fgraph, domain=1:3] {x};
+  \addplot[only marks, mark=*] coordinates {(-1,1) (0,1) (1,1)};
+  \node[flabel, label=above left :{$(-1,1)$}] at (axis cs:-1,1) {};
+  \node[flabel, label=above right:{$(1,1)$}]  at (axis cs: 1,1) {};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{center}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-\newpage
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-
-
-\item  For each function below, find the local maximum or local minimum and list the interval over which the function is increasing and the interval over which the function is decreasing. 
-
-\begin{multicols}{2}
-\begin{enumerate}
-
-\item \begin{mfpic}[15]{-3}{3}{-2}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{-1,1,2,3,4}
-\tcaption{Function I}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\point[4pt]{(-2,4), (0, 1), (2,4)}
-\penwd{1.25pt}
-\function{-2,2,0.1}{x**2}
-\pointfillfalse
-\point[4pt]{(0,0)}
-\end{mfpic}
-
-\item \begin{mfpic}[15]{-3}{3}{-2}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{-1,1,2,3,4}
-\tcaption{Function II}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\point[4pt]{(-2,0), (0, 1), (2,0)}
-\function{-2,2,0.1}{4 - x**2}
-\pointfillfalse
-\point[4pt]{(0,4)}
-\end{mfpic}
-
-\setcounter{HWindent}{\value{enumii}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumii}{\value{HWindent}}
-
-\item \begin{mfpic}[15]{-3}{3}{-2}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{-1,1,2,3,4}
-\tcaption{Function III}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\point[4pt]{(-2,4), (0, -1), (2,4)}
-\function{-2,2,0.1}{x**2}
-\pointfillfalse
-\point[4pt]{(0,0)}
-\end{mfpic}
-
-\item \begin{mfpic}[15]{-3}{3}{-1}{6}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5}
-\tcaption{Function IV}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\point[4pt]{(-2,0), (0, 5), (2,0)}
-\function{-2,2,0.1}{4 - x**2}
-\pointfillfalse
-\point[4pt]{(0,4)}
-\end{mfpic}
-
-\end{enumerate}
-
-\end{multicols}
-
-\end{enumerate}
-
-
-
-\newpage
-
-\subsection{Answers}
-
-\begin{multicols}{3}
-\begin{enumerate}
-
-\item  $[-5,3]$
-\item  $[-5,4]$
-\item  $f(-3) = 4$
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-
-\item  $f(-5) = -5$
-\item  $(-3,4)$,  $(2,3)$
-\item  $(0,-1)$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-
-\item  $[-5,-3]$, $[0,2]$
-\item  $[-3,0]$, $[2,3]$
-\item  $f(-2) = 2$
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $x=-3$
-\item $(-4,0)$, $(-1,0)$, $(1,0)$
-\item  $(0,-1)$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $-4$, $-1$, $1$
-\item  $[-4,-1]$, $[1,3]$
-\item  $4$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $6$
-\item  $x=-4, -1,1,2$
-\item  $(-4,-1) \cup (-1,1) \cup (2,3)$ 
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item To find the domain of $R(x) = \frac{1}{f(x)}$, we start with the domain of $f$ and exclude values where $f(x) = 0$.  Hence, the domain of $R$ is $[-5,-4) \cup (-4,-1) \cup (-1,1) \cup (1,3]$.
-
-\item  To find the range of $R(x) = \frac{1}{f(x)}$, we start with the range of $f$ (excluding $0$)  and take reciprocals.  If $-5 \leq y < 0$, then $\frac{1}{y} \leq -\frac{1}{5}$.  If $0 < y \leq 4$, then $\frac{1}{y} \geq \frac{1}{4}$. Hence the range of $R$ is $\left(-\infty, -\frac{1}{5} \right] \cup \left[ \frac{1}{4}, \infty \right)$. 
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $[-4,4]$ 
-\item  $[-5,5)$
-\item  none
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $g(-2) = -5$
-\item  none
-\item  $(-2,-5)$, $(2,3)$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $[-2,2)$
-\item  $[-4, -2]$, $(2,4]$
-\item  $g(2) = 3$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $t=-2$
-\item $(-4,0)$, $(0,0)$, $(4,0)$
-\item  $(0,0)$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $-4$, $0$, $4$
-\item  $[-4,0] \cup \{4\}$
-\item $[-4,-2) \cup (-2.4]$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $\{-4\} \cup (-2,0] \cup \{4\}$
-\item  $5$
-\item Neither.
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-\addtocounter{enumi}{4}
-\item \begin{enumerate}
-\item Local maximum: $(0,1)$, no local minimum.  Increasing: $(0,2]$, decreasing: $[-2,0)$.
-\item No local maximum,  local minimum: $(0,1)$.  Increasing: $[-2,0)$, decreasing: $(0,2]$.
-\item No local maximum,  local minimum: $(0,-1)$.  Increasing: $[0,2]$, decreasing: $[-2,0]$.
-\item Local maximum: $(0,5)$, no local minimum.  Increasing: $[-2,0]$, decreasing: $[0,2]$.
-\end{enumerate}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-
+\begin{solution}
+No local maximum,  local minimum: $(0,1)$.  Increasing: $[-2,0)$, decreasing: $(0,2]$.
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Explain why $f$ has a local maximum but not a local minimum at the point $(-1, 1)$.
+\begin{solution}
+No local maximum,  local minimum: $(0,-1)$.  Increasing: $[0,2]$, decreasing: $[-2,0]$.
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Explain why  $f$ has a local minimum but not a local maximum at the point $(1, 1)$.
+\begin{solution}
+Local maximum: $(0,5)$, no local minimum.  Increasing: $[-2,0]$, decreasing: $[0,2]$.
+\end{solution}
+
+\end{question}
+
+\begin{question}
+Explain why $f$ has a local maximum AND a local minimum at the point $(0, 1)$.
+\end{question}
+
+\begin{question}
+Explain why $f$ is constant on the interval $[-1, 1]$ and thus has both a local maximum AND a local minimum at every point $(x, f(x))$ where $-1 < x < 1$.
+\end{question}
+
+\begin{question}
+For each function below, find the local maximum or local minimum and list the interval over which the function is increasing and the interval over which the function is decreasing. 
+
+
+\end{question}
+
+\begin{question}
+% \input{ExercisesforGraphsofFunctions_pic5.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
+  \addplot[fgraph, domain=-2:2] {x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (0,1) (2,4)};
+  \addplot[only marks, mark=o] coordinates {(0,0)};
+  \node at (rel axis cs:0.5,0) [below] {Function I};
+\end{axis}
+\end{tikzpicture}
+\end{question}
+
+\begin{question}
+% \input{ExercisesforGraphsofFunctions_pic6.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
+  \addplot[fgraph, domain=-2:2] {4 - x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,0) (0,1) (2,0)};
+  \addplot[only marks, mark=o] coordinates {(0,4)};
+  \node at (rel axis cs:0.5,0) [below] {Function II};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{question}
+
+\begin{question}
+% \input{ExercisesforGraphsofFunctions_pic7.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
+  \addplot[fgraph, domain=-2:2] {x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (0,-1) (2,4)};
+  \addplot[only marks, mark=o] coordinates {(0,0)};
+  \node at (rel axis cs:0.5,0) [below] {Function III};
+\end{axis}
+\end{tikzpicture}
+\end{question}
+
+\begin{question}
+% \input{ExercisesforGraphsofFunctions_pic8.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=6]
+  \addplot[fgraph, domain=-2:2] {4 - x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,0) (0,5) (2,0)};
+  \addplot[only marks, mark=o] coordinates {(0,4)};
+  \node at (rel axis cs:0.5,0) [below] {Function IV};
+\end{axis}
+\end{tikzpicture}
+\end{question}
 
 \end{document}
