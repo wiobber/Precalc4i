@@ -269,6 +269,12 @@
 
 
 
+\tikzset{
+ flabel/.style={
+    circle, fill=blue, inner sep=2pt,
+   }
+}
+
 \pgfplotsset{
   fplot/.style={
     xlabel={$x$},  % x-axis label
@@ -276,10 +282,10 @@
 	axis lines=middle,
 	axis equal image,
 	axis line style={->},
-	ticks=none,
+	% ticks=none,
     samples=200,
     smooth,
-    line width=1.25pt,
+    % line width=1.25pt,
 	mark=none,
 	domain=-2:2,
 	clip=false,
@@ -293,5 +299,11 @@
     fplot,
     variable=t,
     parametric,
+   },
+   fgraph/.style={
+    thick, blue
+   },
+   flabel/.style={
+    circle, fill=blue, inner sep=2pt,
    }
 }
