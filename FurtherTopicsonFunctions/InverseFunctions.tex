@@ -35,7 +35,23 @@ Not only does $g$ undo $f$, but $f$ also undoes $g$.  That is, if we take the ou
 \begin{center}
 
 
-\input{InverseFunctions_pic1.tex}
+% \input{InverseFunctions_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-15, xmax=15, ymin=-10, ymax=10]
+  \addplot[dashed, domain=-15:15] {0}; % baseline if needed
+  \draw (axis cs:-7.5,0) ellipse [x radius=6, y radius=5];
+  \draw (axis cs:7.5,0) ellipse [x radius=6, y radius=5];
+  \addplot[fgraph, domain=-7.25:7.25, samples=50] ({x}, {5 - (25/52)*(x)^2}); % simple smooth arc (approx)
+  \addplot[fgraph, domain=-7.25:7.25, samples=50, dashed] ({x}, {-5 + (25/52)*(x)^2}); % dashed opposite arc
+  \draw[->] (axis cs:-7.25,0.25) .. controls (axis cs:0,5) .. (axis cs:7.25,0.25);
+  \draw[->, dashed] (axis cs:7.25,-0.25) .. controls (axis cs:0,-5) .. (axis cs:-7.25,-0.25);
+  \addplot[only marks, mark=*] coordinates {(-7.5,0) (7.5,0)};
+  \node[flabel, label=above :{$f$}] at (axis cs:0,6) {};
+  \node[flabel, label=below :{$g$}] at (axis cs:0,-6) {};
+  \node[flabel, label=above :{$x = g(f(x))$}] at (axis cs:-7.5,-2) {};
+  \node[flabel, label=above :{$y = f(x)$}]     at (axis cs: 7.5,-2) {};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{center}
@@ -132,7 +148,21 @@ We also note the graphs of   $f(x) = 3x+4$ and $g(x) = f^{-1}(x) = \frac{x-4}{3}
 
 \begin{center}
 
-\input{InverseFunctions_pic2.tex}
+% \input{InverseFunctions_pic2.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed, domain=-5:5] {x};
+  \addplot[fgraph, domain=-3:0.333] {3*x + 4};
+  \addplot[fgraph, domain=-5:5] {(x - 4)/3};
+  \addplot[only marks, mark=*] coordinates {(0,4) (4,0)};
+  \node[flabel, label=above left :{$(0,4)$}] at (axis cs:0,4) {};
+  \node[flabel, label=below right:{$(4,0)$}] at (axis cs:4,0) {};
+  \node[flabel, label=above left :{$y=f(x)$}] at (axis cs:-2,2) {};
+  \node[flabel, label=below right:{$y=g(x)$}] at (axis cs: 2,-1.5) {};
+  \node[flabel, label=above right:{$y=x$}]    at (axis cs: 2, 2) {};
+  \node at (axis description cs:0.5,-0.1) {$f$ and $g$ are inverses};
+\end{axis}
+\end{tikzpicture}
 
 
 Graphs of inverse functions $y = f(x) =3x+4 $ and $y =  f^{-1}(x) =  \dfrac{x-4}{3}$.
@@ -212,13 +242,48 @@ We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$
 
 \begin{multicols}{3}
 
-\input{InverseFunctions_pic3.tex}
+% \input{InverseFunctions_pic3.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
+  \addplot[fpplot, domain=0.42:3.58] ({(t - 2)^3 + 1},{t});
+  \addplot[only marks, mark=*] coordinates {(0,1) (1,2) (2,3)};
+  \node[flabel, label=above right:{$(0,1)$}] at (axis cs:0,1) {};
+  \node[flabel, label=above right:{$(1,2)$}] at (axis cs:1,2) {};
+  \node[flabel, label=above right:{$(2,3)$}] at (axis cs:2,3) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(x)$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic4.tex}
+% \input{InverseFunctions_pic4.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
+  \addplot[fgraph, domain=0.42:3.58] {(x - 2)^3 + 1};
+  \addplot[only marks, mark=*] coordinates {(1,0) (2,1) (3,2)};
+  \node[flabel, label=below right:{$(1,0)$}] at (axis cs:1,0) {};
+  \node[flabel, label=above right:{$(2,1)$}] at (axis cs:2,1) {};
+  \node[flabel, label=above right:{$(3,2)$}] at (axis cs:3,2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=g(x)$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic5.tex}
+% \input{InverseFunctions_pic5.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
+  \addplot[dashed, domain=-3.5:4.5] {x};
+  \addplot[fpplot, domain=0.42:3.58] ({(t - 2)^3 + 1},{t});
+  \addplot[fgraph,  domain=0.42:3.58] {(x - 2)^3 + 1};
+  \addplot[only marks, mark=*] coordinates {(0,1) (1,2) (2,3) (1,0) (2,1) (3,2)};
+  \node[flabel, label=above left :{$(0,1)$}] at (axis cs:0,1) {};
+  \node[flabel, label=above right:{$(1,2)$}] at (axis cs:1,2) {};
+  \node[flabel, label=above right:{$(2,3)$}] at (axis cs:2,3) {};
+  \node[flabel, label=below right:{$(1,0)$}] at (axis cs:1,0) {};
+  \node[flabel, label=above right:{$(2,1)$}] at (axis cs:2,1) {};
+  \node[flabel, label=above right:{$(3,2)$}] at (axis cs:3,2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(x),\ y=g(x),\ y=x$};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{multicols}
@@ -284,13 +349,59 @@ $\begin{array}{rcl}
 
 \begin{multicols}{3}
 
-\input{InverseFunctions_pic6.tex}
+% \input{InverseFunctions_pic6.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed] coordinates {(-1,-5) (-1,5)};
+  \addplot[dashed, domain=-4:5] {2};
+  \addplot[fgraph, domain=-4:-1.67] {2*x/(x + 1)};
+  \addplot[fgraph, domain=-0.71:5]  {2*x/(x + 1)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=below       :{$t=-1$}] at (axis cs:-1,-4.5) {};
+  \node[flabel, label=above right:{$y=2$}]   at (axis cs:4, 2) {};
+  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(t)$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic7.tex}
+% \input{InverseFunctions_pic7.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed] coordinates {(2,-5) (2,5)};
+  \addplot[dashed, domain=-4:5] {-1};
+  \addplot[fgraph, domain=-4:1.66] {x/(2 - x)};
+  \addplot[fgraph, domain=2.5:5]   {x/(2 - x)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=below       :{$t=2$}]   at (axis cs:2,-4.5) {};
+  \node[flabel, label=below left :{$y=-1$}]  at (axis cs:-3,-1) {};
+  \node[flabel, label=below right:{$(0,0)$}] at (axis cs: 0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=g(t)$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic8.tex}
+% \input{InverseFunctions_pic8.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed] coordinates {(2,-5) (2,5)};
+  \addplot[dashed, domain=-4:5] {-1};
+  \addplot[dashed] coordinates {(-1,-5) (-1,5)};
+  \addplot[dashed, domain=-4:5] {2};
+  \addplot[dashed, domain=-3.5:4.5] {x};
+  \addplot[fgraph, domain=-4:1.66] {x/(2 - x)};
+  \addplot[fgraph, domain=2.5:5]   {x/(2 - x)};
+  \addplot[fgraph, domain=-4:-1.67] {2*x/(x + 1)};
+  \addplot[fgraph, domain=-0.71:5]  {2*x/(x + 1)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=below       :{$t=2$}]   at (axis cs: 2,-4.5) {};
+  \node[flabel, label=below left :{$y=-1$}]  at (axis cs:-3,-1) {};
+  \node[flabel, label=below       :{$t=-1$}]  at (axis cs:-1,-4.5) {};
+  \node[flabel, label=above right:{$y=2$}]   at (axis cs: 4, 2) {};
+  \node[flabel, label=above right:{$(0,0)$}] at (axis cs: 0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(t),\ y=g(t),\ y=x$};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{multicols}
@@ -325,7 +436,23 @@ For example, when $x=-2$,  $f(-2)= (-2)^2 = 4$, but $g(4) = \sqrt{4}=2$.  That i
 \begin{center}
 
 
-\input{InverseFunctions_pic9.tex}
+% \input{InverseFunctions_pic9.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-15, xmax=15, ymin=-10, ymax=10]
+  \draw (axis cs:-7.5,0) ellipse [x radius=6, y radius=5];
+  \draw (axis cs:7.5,0)  ellipse [x radius=6, y radius=5];
+  \addplot[only marks, mark=*] coordinates {(-7.5,2) (-7.5,-2) (7.5,0)};
+  \draw[->] (axis cs:-7.5, 2) -- (axis cs:7.25, 0.25);
+  \draw[->] (axis cs:-7.5,-2) -- (axis cs:7.25,-0.25);
+  \draw[->] (axis cs:-3,4) .. controls (axis cs:0,5) .. (axis cs:3,4);
+  \draw[->, dashed] (axis cs:7.25,-0.25) .. controls (axis cs:0,-5) .. (axis cs:-7.25,-2.25);
+  \node[flabel, label=above :{$f$}]            at (axis cs:0, 6) {};
+  \node[flabel, label=below :{$g$}]            at (axis cs:0,-6) {};
+  \node[flabel, label=above :{$x = -2$}]       at (axis cs:-7.5, 1) {};
+  \node[flabel, label=below :{$x = 2$}]        at (axis cs:-7.5,-4) {};
+  \node[flabel, label=above :{$4$}]            at (axis cs: 7.5,-1) {};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{center}
@@ -361,7 +488,17 @@ Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exis
 \[ \begin{array}{ccc}
 
 
-\input{InverseFunctions_pic10.tex}
+% \input{InverseFunctions_pic10.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
+  \addplot[dashed, domain=-3:3] {4};
+  \addplot[fgraph, domain=-2.75:2.75] {x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (2,4)};
+  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
+  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4) {};
+  \node at (axis description cs:0.5,-0.1) {$y=x^2$};
+\end{axis}
+\end{tikzpicture}
   
 
 &
@@ -370,7 +507,17 @@ Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exis
 
 &
 
-\input{InverseFunctions_pic11.tex}
+% \input{InverseFunctions_pic11.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
+  \addplot[dashed] coordinates {(4,-3) (4,3)};
+  \addplot[fpplot, domain=-2.75:2.75] ({t^2},{t});
+  \addplot[only marks, mark=*] coordinates {(4,-2) (4,2)};
+  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
+  \node[flabel, label=above right:{$(4,2)$}]  at (axis cs:4, 2) {};
+  \node at (axis description cs:0.5,-0.1) {$x=y^2$};
+\end{axis}
+\end{tikzpicture}
  \end{array}\]
 
 We see immediately the graph of $x = y^2$ fails the Vertical Line Test, Theorem \ref{VLT}.  In particular,  the vertical line $x=4$ intersects the graph at two points, $(4,-2)$ and $(4,2)$ meaning the relation described by $x = y^2$ matches the $x$-value $4$ with two different $y$-values, $-2$ and $2$.  
@@ -490,7 +637,16 @@ a = b & \text{or} & a = 2-b \\
 
 &
 
- \input{InverseFunctions_pic12.tex}
+ % \input{InverseFunctions_pic12.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=7]
+  \addplot[dashed, domain=-1:3] {4};
+  \addplot[fgraph, domain=-1:3] {x^2 - 2*x + 4};
+  \addplot[only marks, mark=*] coordinates {(1,3)};
+  \node[flabel, label=above right:{$(1,3)$}] at (axis cs:1,3) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(x)$};
+\end{axis}
+\end{tikzpicture}
  \\
 
 
@@ -519,7 +675,20 @@ a & = & b \, \, \checkmark \\
 
 &
 
-\input{InverseFunctions_pic13.tex}
+% \input{InverseFunctions_pic13.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-7, ymax=5]
+  \addplot[dashed, domain=-5:5] {-2};
+  \addplot[dashed] coordinates {(1,-7) (1,5)};
+  \addplot[fgraph, domain=-5:0.7] {2*x/(1 - x)};
+  \addplot[fgraph, domain=1.4:5] {2*x/(1 - x)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=above right:{$(0,0)$}] at (axis cs:0,0) {};
+  \node[flabel, label=above left :{$y=-2$}]  at (axis cs:4,-2) {};
+  \node[flabel, label=below       :{$t=1$}]  at (axis cs:1,-6.5) {};
+  \node at (axis description cs:0.5,-0.1) {$y=g(t)$};
+\end{axis}
+\end{tikzpicture}
  \\
 
 \end{tabular}
@@ -534,7 +703,20 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 \[ \begin{array}{ccc}
 
 
-\input{InverseFunctions_pic14.tex}
+% \input{InverseFunctions_pic14.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-7, ymax=5]
+  \addplot[dashed, domain=-5:5] {-2};
+  \addplot[dashed] coordinates {(1,-7) (1,5)};
+  \addplot[fgraph, domain=-5:0.7] {2*x/(1 - x)};
+  \addplot[fgraph, domain=1.4:5] {2*x/(1 - x)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=above right:{$(0,0)$}] at (axis cs:0,0) {};
+  \node[flabel, label=above left :{$y=-2$}]  at (axis cs:4,-2) {};
+  \node[flabel, label=below       :{$t=1$}]  at (axis cs:1,-6.5) {};
+  \node at (axis description cs:0.5,-0.1) {$y=g(t)$};
+\end{axis}
+\end{tikzpicture}
 
 
 &
@@ -543,7 +725,20 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 
 &
 
-\input{InverseFunctions_pic15.tex}
+% \input{InverseFunctions_pic15.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-7, ymax=5]
+  \addplot[dashed, domain=-5:5] {1};
+  \addplot[dashed] coordinates {(-2,-7) (-2,5)};
+  \addplot[fgraph, domain=-5:-2.5] {x/(x + 2)};
+  \addplot[fgraph, domain=-1.66:5] {x/(x + 2)};
+  \addplot[only marks, mark=*] coordinates {(0,0)};
+  \node[flabel, label=below       :{$t=-2$}] at (axis cs:-2,-6) {};
+  \node[flabel, label=above right:{$y=1$}]   at (axis cs:4, 1) {};
+  \node[flabel, label=above right:{$(0,0)$}] at (axis cs:0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=g^{-1}(t)$};
+\end{axis}
+\end{tikzpicture}
   \end{array}\]
 
 
@@ -556,7 +751,18 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 \begin{center}
 
 
-\input{InverseFunctions_pic16.tex}
+% \input{InverseFunctions_pic16.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed, domain=-5:5] {1};
+  \addplot[only marks, mark=*] coordinates {(-1,1) (0,2) (2,1) (1,-3)};
+  \node[flabel, label=above left :{$(-1,1)$}] at (axis cs:-1, 1) {};
+  \node[flabel, label=above right:{$(0,2)$}]  at (axis cs: 0, 2) {};
+  \node[flabel, label=below right:{$(2,1)$}]  at (axis cs: 2, 1) {};
+  \node[flabel, label=below right:{$(1,-3)$}] at (axis cs: 1,-3) {};
+  \node at (axis description cs:0.5,-0.1) {$y=F(x)$};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{center}
@@ -585,7 +791,17 @@ We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and 
 \[ \begin{array}{ccc}
 
 
-\input{InverseFunctions_pic17.tex}
+% \input{InverseFunctions_pic17.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[fpplot, domain=-1.81:1.58] ({t^3 + 1},{2*t});
+  \addplot[only marks, mark=*] coordinates {(0,-2) (1,0) (2,2)};
+  \node[flabel, label=below right:{$(0,-2)$}] at (axis cs:0,-2) {};
+  \node[flabel, label=above right:{$(1,0)$}]  at (axis cs:1, 0) {};
+  \node[flabel, label=above right:{$(2,2)$}]  at (axis cs:2, 2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=G(x)$};
+\end{axis}
+\end{tikzpicture}
 
 
 
@@ -595,7 +811,17 @@ We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and 
 
 &
 
-\input{InverseFunctions_pic18.tex}
+% \input{InverseFunctions_pic18.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[fpplot, domain=-1.81:1.58] ({2*t},{t^3 + 1});
+  \addplot[only marks, mark=*] coordinates {(-2,0) (0,1) (2,2)};
+  \node[flabel, label=above right:{$(-2,0)$}] at (axis cs:-2,0) {};
+  \node[flabel, label=above right:{$(0,1)$}]  at (axis cs: 0,1) {};
+  \node[flabel, label=above right:{$(2,2)$}]  at (axis cs: 2,2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=G^{-1}(x)$};
+\end{axis}
+\end{tikzpicture}
 
 \end{array}\]
 
@@ -667,13 +893,41 @@ Using the language of Section \ref{Relations},  the equation $x = y^2$ implicitl
 
 \begin{multicols}{3}
 
-\input{InverseFunctions_pic19.tex}
+% \input{InverseFunctions_pic19.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
+  \addplot[fpplot, domain=-2.75:2.75] ({t^2},{t});
+  \addplot[only marks, mark=*] coordinates {(4,-2) (4,2) (0,0)};
+  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
+  \node[flabel, label=above right:{$(4,2)$}]  at (axis cs:4, 2) {};
+  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs:0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$x=y^2$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic20.tex}
+% \input{InverseFunctions_pic20.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
+  \addplot[fgraph, domain=0:7.56] {sqrt(x)};
+  \addplot[only marks, mark=*] coordinates {(4,2) (0,0)};
+  \node[flabel, label=above right:{$(4,2)$}] at (axis cs:4,2) {};
+  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
+  \node at (axis description cs:0.5,-0.1) {$y = g_{1}(x) = \sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
 
 
-\input{InverseFunctions_pic21.tex}
+% \input{InverseFunctions_pic21.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
+  \addplot[fgraph, domain=0:7.56] {-sqrt(x)};
+  \addplot[only marks, mark=*] coordinates {(4,-2) (0,0)};
+  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
+  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs:0, 0) {};
+  \node at (axis description cs:0.5,-0.1) {$y = g_{2}(x) = -\sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{multicols}
@@ -683,13 +937,41 @@ Hence, in some sense, we have two  \textit{partial} inverses for $f(x) = x^2$:  
 \begin{multicols}{3}
 
 
-\input{InverseFunctions_pic22.tex}
+% \input{InverseFunctions_pic22.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
+  \addplot[fgraph, domain=-2.75:2.75] {x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (2,4) (0,0)};
+  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
+  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4) {};
+  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs: 0,0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f(x) = x^2$};
+\end{axis}
+\end{tikzpicture}
   
 
-\input{InverseFunctions_pic23.tex}
+% \input{InverseFunctions_pic23.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
+  \addplot[fgraph, domain=0:2.75] {x^2};
+  \addplot[only marks, mark=*] coordinates {(2,4) (0,0)};
+  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs:2,4) {};
+  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs:0,0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x) = x^2,\ x \ge 0$};
+\end{axis}
+\end{tikzpicture}
   
 
-\input{InverseFunctions_pic24.tex}
+% \input{InverseFunctions_pic24.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
+  \addplot[fgraph, domain=-2.75:0] {x^2};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (0,0)};
+  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
+  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs: 0,0) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f_{2}(x) = x^2,\ x \le 0$};
+\end{axis}
+\end{tikzpicture}
   
 
 
@@ -725,7 +1007,19 @@ $\begin{array}{rcl}
 
 &
 
-\input{InverseFunctions_pic25.tex}
+% \input{InverseFunctions_pic25.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-1, ymax=8]
+  \addplot[dashed, domain=-1:8] {x};
+  \addplot[fgraph, domain=0:2.75] {x^2};
+  \addplot[fgraph, domain=0:7.56] {sqrt(x)};
+  \addplot[only marks, mark=*] coordinates {(2,4) (0,0) (4,2)};
+  \node[flabel, label=above right:{$(2,4)$}] at (axis cs:2,4) {};
+  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
+  \node[flabel, label=below right:{$(4,2)$}] at (axis cs:4,2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x)=x^2,\ x\ge0 \quad \text{and} \quad y=g_{1}(x)=\sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
    \\
 
 \end{tabular}
@@ -761,7 +1055,19 @@ $\begin{array}{rcl}
 
 &
 
-\input{InverseFunctions_pic26.tex}
+% \input{InverseFunctions_pic26.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[dashed, domain=-5:5] {x};
+  \addplot[fgraph, domain=-2.23:0] {x^2};
+  \addplot[fgraph, domain=0:5] {-sqrt(x)};
+  \addplot[only marks, mark=*] coordinates {(-2,4) (0,0) (4,-2)};
+  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2, 4) {};
+  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs: 0, 0) {};
+  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs: 4,-2) {};
+  \node at (axis description cs:0.5,-0.1) {$y=f_{2}(x)=x^2,\ x\le0 \quad \text{and} \quad y=g_{2}(x)=-\sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
     \\
 
 \end{tabular}
@@ -800,7 +1106,15 @@ Our next example continues the theme of restricting the domain of a function to 
 
 \begin{tabular}{m{1.75in}m{4.25in}}
 
-\input{InverseFunctions_pic27.tex}
+% \input{InverseFunctions_pic27.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=3, ymin=-1, ymax=7]
+  \addplot[fgraph, domain=-1:1] {x^2 - 2*x + 4};
+  \addplot[only marks, mark=*] coordinates {(1,3)};
+  \node[flabel, label=above right:{$(1,3)$}] at (axis cs:1,3) {};
+  \node at (axis description cs:0.5,-0.1) {$y=j(x)$};
+\end{axis}
+\end{tikzpicture}
 
 &
 
@@ -861,7 +1175,21 @@ We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric a
 
 \begin{center}
 
-\input{InverseFunctions_pic28.tex}
+% \input{InverseFunctions_pic28.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=7]
+  \addplot[dashed, domain=-1:7] {x};
+  \addplot[fgraph, domain=-1:1] {x^2 - 2*x + 4};
+  \addplot[fgraph, domain=3:7] {1 - sqrt(x - 3)};
+  \addplot[only marks, mark=*] coordinates {(1,3) (3,1)};
+  \node[flabel, label=above right:{$(1,3)$}] at (axis cs:1,3) {};
+  \node[flabel, label=below right:{$(3,1)$}] at (axis cs:3,1) {};
+  \node[flabel, label=above left :{$y=j(x)$}]       at (axis cs:-0.5,4) {};
+  \node[flabel, label=below right:{$y=j^{-1}(x)$}]  at (axis cs:4,-0.5) {};
+  \node[flabel, label=above right:{$y=x$}]          at (axis cs:5.5,5.5) {};
+  \node at (axis description cs:0.5,-0.1) {$j$ and $j^{-1}$};
+\end{axis}
+\end{tikzpicture}
 
 
 
@@ -874,7 +1202,15 @@ We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric a
 
 \begin{tabular}{m{1.75in}m{4.25in}}
 
-\input{InverseFunctions_pic29.tex}
+% \input{InverseFunctions_pic29.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-3, ymax=3]
+  \addplot[fgraph, domain=-2:3] {sqrt(x + 2) - 1};
+  \addplot[only marks, mark=*] coordinates {(-2,-1)};
+  \node[flabel, label=below right:{$(-2,-1)$}] at (axis cs:-2,-1) {};
+  \node at (axis description cs:0.5,-0.1) {$y=k(t)$};
+\end{axis}
+\end{tikzpicture}
  
 
 &
@@ -946,7 +1282,21 @@ Graphically, everything checks out, provided that we remember the domain restric
 
 \begin{center}
 
-\input{InverseFunctions_pic30.tex}
+% \input{InverseFunctions_pic30.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-3, ymax=3]
+  \addplot[dashed, domain=-3:3] {x};
+  \addplot[fgraph, domain=-2:3] {sqrt(x + 2) - 1};
+  \addplot[fgraph, domain=-1:1.2] {x^2 + 2*x - 1};
+  \addplot[only marks, mark=*] coordinates {(-2,-1) (-1,-2)};
+  \node[flabel, label=above left :{$(-2,-1)$}] at (axis cs:-2,-1) {};
+  \node[flabel, label=below right:{$(-1,-2)$}] at (axis cs:-1,-2) {};
+  \node[flabel, label=above left :{$y=k(t)$}]        at (axis cs:-1, 1) {};
+  \node[flabel, label=below right:{$y=k^{-1}(t)$}]   at (axis cs: 1,-1) {};
+  \node[flabel, label=above right:{$y=x$}]           at (axis cs: 2, 2) {};
+  \node at (axis description cs:0.5,-0.1) {$k$ and $k^{-1}$};
+\end{axis}
+\end{tikzpicture}
 
 
 \end{center}
