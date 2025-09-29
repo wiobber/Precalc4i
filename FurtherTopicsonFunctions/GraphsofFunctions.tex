@@ -150,26 +150,19 @@ The next example reviews all of the aforementioned concepts as well as many more
 
 \begin{center}
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\tlabel[cc](-3,0.5){\small $\left( -2, 0 \right)$}
-\tlabel[cc](2.5,0.5){\small $\left(2, 0 \right)$}
-\tlabel[cc](4,-3.5){\small $\left( 4, -3 \right)$}
-\tlabel[cc](-4,-3.5){\small $\left(-4, -3 \right)$}
-\tlabel[cc](1,3.5){\small $\left(0, 3 \right)$}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)}
-\penwd{1.25pt}
-\function{-4,4,.1}{3*cos(3.14159265*x/4)}
-\end{mfpic}
+% \input{GraphsofFunctions_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5, domain=-4:4]
+  \addplot[fgraph, domain=-4:4] {3*cos(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-2,0) (2,0) (4,-3) (-4,-3) (0,3)};
+  \node[flabel, label=above right:{$\left( -2, 0 \right)$}]  at (axis cs:-2, 0) {};
+  \node[flabel, label=above right:{$\left( 2, 0 \right)$}]   at (axis cs: 2, 0) {};
+  \node[flabel, label=below right:{$\left( 4, -3 \right)$}]  at (axis cs: 4,-3) {};
+  \node[flabel, label=below left :{$\left(-4, -3 \right)$}]  at (axis cs:-4,-3) {};
+  \node[flabel, label=above right:{$\left( 0, 3 \right)$}]   at (axis cs: 0, 3) {};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{center}
 
@@ -201,23 +194,16 @@ The next example reviews all of the aforementioned concepts as well as many more
 \item As in the previous problem, to solve $f(x)=1$, we look for points on the graph where the $y$-coordinate is $1$.  If we imagine the horizontal like $y=1$ superimposed over the graph of $f$ as sketched below, we get two intersections.  Hence, even though these points aren't specified, we know there are \textit{two} points on the graph of $f$ whose $y$-coordinate is $1$.  Hence, there are two solutions to $f(x) = 1$.
 
 \begin{center}
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\dashed \arrow \reverse \arrow \polyline{(-4,1), (4,1)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](3,1.5){\scriptsize $y=1$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\point[4pt]{(-1.5673,1),(1.5673,1), (-4,-3), (4,-3)}
-\penwd{1.25pt}
-\function{-4,4,.1}{3*cos(3.14159265*x/4)}
-\end{mfpic}
+% \input{GraphsofFunctions_pic2.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5, domain=-4:4]
+  \addplot[fgraph, domain=-4:4] {3*cos(deg(pi*x/4))};
+  \addplot[fgraph, dashed, domain=-4:4] {1};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-1.5673,1) (1.5673,1) (-4,-3) (4,-3)};
+  \node[flabel, label=above right:{\scriptsize $y=1$}] at (axis cs:3,1.3) {};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{center}
 
@@ -244,37 +230,29 @@ Our next example involves a more complicated function and asks more complicated 
 
 \begin{center}
 
-\begin{mfpic}[15]{-5}{8}{-10}{8}
-\tlabel[cc](-4,-3.75){\scriptsize $(-4,-3)$}
-\tlabel[cc](-4,0.5){\scriptsize $(-3,0)$}
-\tlabel[cc](-2.5,5.25){\scriptsize $(-2,4.5)$}
-\tlabel[cc](1,0.5){\scriptsize $(0,0)$}
-\tlabel[cc](3,-8.75){\scriptsize $(3,-8)$}
-\tlabel[cc](3.5,-5.25){\scriptsize $(4,-6)$}
-\tlabel[cc](5.5, -6.75){\scriptsize $(5,-6)$}
-\tlabel[cc](6.5,-0.75){\scriptsize $(6,0)$}
-\tlabel[cc](7,6.25){\scriptsize $(7,5.5)$}
-\tcaption{The graph of $y=g(t)$}
-\axes
-\tlabel[cc](8,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4,5,6,7}
-\ymarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4,  {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3,  {$4$} 4, {$5$} 5}
-\axislabels {y}{ {$-9$} -9,{$-8$} -8,{$-7$} -7, {$-6$} -6,{$-5$} -5,{$-4$} -4, {$-3$} -3,{$-2$} -2,{$-1$} -1, {$2$} 2, {$3$} 3 , {$2$} 2, {$3$} 3 ,{$4$} 4, {$5$} 5, {$6$} 6 ,{$7$} 7}
-\normalsize
-\point[4pt]{(-4,-3), (-3,0), (-2, 4.5), (0,0), (3, -8), (4,-6), (5,-6), (6,0), (7, 5.5)}
-\penwd{1.25pt}
-\function{-4,-2,0.1}{0.75*(x**2)+8.25*(x)+18}
-\function{-2, 3, 0.1}{-0.08333*(x**2)-2.41667*(x)}
-\function{3, 4, 0.1}{-2*(x**2)+16*(x)-38}
-\function{4, 5, 0.1}{-6}
-\function{5,7.01,0.1}{-0.25*(x**2)+8.75*(x)-43.5}
-\pointfillfalse
-\point[4pt]{(7,5.5), (0,0)}
-\end{mfpic}
+% \input{GraphsofFunctions_pic3.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=8, ymin=-10, ymax=8]
+  \addplot[fgraph, domain=-4:-2] {0.75*(x^2) + 8.25*x + 18};
+  \addplot[fgraph, domain=-2:3]  {-0.08333*(x^2) - 2.41667*x};
+  \addplot[fgraph, domain=3:4]   {-2*(x^2) + 16*x - 38};
+  \addplot[fgraph, domain=4:5]   {-6};
+  \addplot[fgraph, domain=5:7.01]{-0.25*(x^2) + 8.75*x - 43.5};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-4,-3) (-3,0) (-2,4.5) (0,0) (3,-8) (4,-6) (5,-6) (6,0) (7,5.5)};
+  \addplot[fgraph, only marks, mark=o, mark size=2pt, mark options={line width=1pt}] coordinates {(7,5.5) (0,0)};
+  \node[flabel, label=below left :{$(-4,-3)$}]   at (axis cs:-4,-3) {};
+  \node[flabel, label=above left :{$(-3,0)$}]    at (axis cs:-3, 0) {};
+  \node[flabel, label=above right:{$(-2,4.5)$}]  at (axis cs:-2,4.5) {};
+  \node[flabel, label=above right:{$(0,0)$}]     at (axis cs: 0, 0) {};
+  \node[flabel, label=below right:{$(3,-8)$}]    at (axis cs: 3,-8) {};
+  \node[flabel, label=below right:{$(4,-6)$}]    at (axis cs: 4,-6) {};
+  \node[flabel, label=below right:{$(5,-6)$}]    at (axis cs: 5,-6) {};
+  \node[flabel, label=above right:{$(6,0)$}]     at (axis cs: 6, 0) {};
+  \node[flabel, label=above right:{$(7,5.5)$}]   at (axis cs: 7,5.5) {};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $y=g(t)$};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{center}
 
@@ -380,27 +358,29 @@ For the interval $(5,6)$, we choose $t = 5.5$ as our test value.  Since the grap
 
 \begin{center}
 
-\begin{mfpic}[20]{0}{10}{-1}{1}
+% \input{GraphsofFunctions_pic4.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=0, xmax=10, ymin=-1, ymax=1]
+  \addplot[fgraph] coordinates {(0,0) (10,0)};
+  \node[flabel, label=below:{$-4$}]            at (axis cs:0,0)   {};
+  \node[flabel, label=above:{$(+)$}]           at (axis cs:0,0.5) {};
+  \node[flabel, label=below:{$-3$}]            at (axis cs:2,0)   {};
+  \node[flabel, label=above:{$0$}]             at (axis cs:2,0.5) {};
+  \node[flabel, label=above:{$(-)$}]           at (axis cs:3,0.5) {};
+  \node[flabel, label=below:{$0$}]             at (axis cs:4,0)   {};
+  \node[flabel, label=above:{\textinterrobang}]at (axis cs:4,0.5) {};
+  \node[flabel, label=above:{$(+)$}]           at (axis cs:5,0.5) {};
+  \node[flabel, label=below:{$5$}]             at (axis cs:6,0)   {};
+  \node[flabel, label=above:{\textinterrobang}]at (axis cs:6,0.5) {};
+  \node[flabel, label=above:{$(-)$}]           at (axis cs:7,0.5) {};
+  \node[flabel, label=below:{$6$}]             at (axis cs:8,0)   {};
+  \node[flabel, label=above:{$0$}]             at (axis cs:8,0.5) {};
+  \node[flabel, label=above:{$(+)$}]           at (axis cs:9,0.5) {};
+  \node[flabel, label=below:{$7$}]             at (axis cs:10,0)  {};
+  \node[flabel, label=above:{\textinterrobang}]at (axis cs:10,0.5){};
+\end{axis}
+\end{tikzpicture}
 
-\polyline{(0,0), (10,0)}
-\xmarks{0,2,4,6,8,10}
-\tlabel[cc](0,-0.5){$-4 \hspace{6pt}$}
-\tlabel[cc](0,0.5){$(+)$}
-\tlabel[cc](2,-0.5){$-3 \hspace{6pt}$}
-\tlabel[cc](2,0.5){$0$}
-\tlabel[cc](3,0.5){$(-)$}
-\tlabel[cc](4,-0.5){$0$}
-\tlabel[cc](4,0.5){\textinterrobang}
-\tlabel[cc](5,0.5){$(+)$}
-\tlabel[cc](6,-0.5){$5$}
-\tlabel[cc](6,0.5){\textinterrobang}
-\tlabel[cc](7,0.5){$(-)$}
-\tlabel[cc](8,-0.5){$6$}
-\tlabel[cc](8,0.5){$0$}
-\tlabel[cc](9,0.5){$(+)$}
-\tlabel[cc](10,-0.5){$7$}
-\tlabel[cc](10,0.5){\textinterrobang}
-\end{mfpic}
 \end{center}
 
 \smallskip
@@ -426,39 +406,25 @@ Our last example focuses on symmetry.  The reader is encouraged to review the no
 
 \begin{multicols}{2}
 
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
- \function{0, 4, 0.1}{-5*sin(3.1415*x/4)}
- \point[4pt]{(0,0), (4,0)}
- \tcaption{Partial graph of $y = f(x)$}
- \end{mfpic}
+% \input{GraphsofFunctions_pic5.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=0:4]
+  \addplot[fgraph, domain=0:4] {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = f(x)$};
+\end{axis}
+\end{tikzpicture}
+
  
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
- \point[4pt]{(0,-5), (4,5)}
-  \tcaption{Partial graph of $y = g(x)$}
-\end{mfpic}
+% \input{GraphsofFunctions_pic6.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=0:4]
+  \addplot[fgraph, domain=0:4] {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (4,5)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = g(x)$};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{multicols}
 
@@ -472,41 +438,27 @@ Our last example focuses on symmetry.  The reader is encouraged to review the no
 
 \begin{multicols}{2}
 
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
- \function{0, 4, 0.1}{-5*sin(3.1415*x/4)}
-  \function{-4, 0, 0.1}{5*sin(3.1415*x/4)}
- \point[4pt]{(0,0), (4,0), (-4,0)}
- \tcaption{The graph of $f$ assuming $f$ is even.}
- \end{mfpic}
+% \input{GraphsofFunctions_pic7.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
+  \addplot[fgraph, domain=0:4]  {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph, domain=-4:0] { 5*sin(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0) (-4,0)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is even.};
+\end{axis}
+\end{tikzpicture}
+
  
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
-\function{-4, 0, 0.1}{-5*cos(3.1415*x/4)}
- \point[4pt]{(0,-5), (4,5), (-4,5)}
-  \tcaption{The graph of $g$ assuming $g$ is even.}
-\end{mfpic}
+% \input{GraphsofFunctions_pic8.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
+  \addplot[fgraph, domain=0:4]  {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, domain=-4:0] {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (4,5) (-4,5)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $g$ assuming $g$ is even.};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{multicols}
 
@@ -519,40 +471,26 @@ However, when attempting to do the same with the graph of the function $g$, we f
 
 \begin{multicols}{2}
 
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
- \function{-4, 4, 0.1}{-5*sin(3.1415*x/4)}
- \point[4pt]{(0,0), (4,0), (-4,0)}
- \tcaption{The graph of $f$ assuming $f$ is odd.}
- \end{mfpic}
+% \input{GraphsofFunctions_pic9.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=-4:4]
+  \addplot[fgraph, domain=-4:4] {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0) (-4,0)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is odd.};
+\end{axis}
+\end{tikzpicture}
+
  
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{0, 4, 0.1}{-5*cos(3.1415*x/4)}
-\function{-4, 0, 0.1}{5*cos(3.1415*x/4)}
- \point[4pt]{(0,-5), (0,5), (4,5), (-4,-5)}
-  \tcaption{This graph fails the vertical line test.}
-\end{mfpic}
+% \input{GraphsofFunctions_pic10.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
+  \addplot[fgraph, domain=0:4]  {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, domain=-4:0] { 5*cos(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (0,5) (4,5) (-4,-5)};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {This graph fails the vertical line test.};
+\end{axis}
+\end{tikzpicture}
+
 
 \end{multicols}
 

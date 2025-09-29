@@ -32,24 +32,19 @@ Our motivational example for the results in this section is the graph of $y = f(
 
 \begin{tabular}{m{2.5in} m{2.5in}}
 
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+% \input{Transformations_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=6, ymin=-1, ymax=6]
+  \addplot[fgraph] coordinates {(0,1) (2,3) (4,3) (5,5)};
+  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(0,1) (2,3) (4,3) (5,5)};
+  \node[flabel, label=above right:{$(0,1)$}] at (axis cs:0,1){};
+  \node[flabel, label=above right:{$(2,3)$}] at (axis cs:2,3){};
+  \node[flabel, label=below right:{$(4,3)$}] at (axis cs:4,3){};
+  \node[flabel, label=above right:{$(5,5)$}] at (axis cs:5,5){};
+  \node at (rel axis cs:0.5,-0.08){$y=f(x)$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 &
@@ -98,6 +93,7 @@ Geometrically, adding $2$ to the $y$-coordinate of a point moves the point $2$ u
 \[ \begin{array}{ccc}
 
 
+% \input{Transformations_pic2.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{8}
 
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
@@ -118,12 +114,14 @@ Geometrically, adding $2$ to the $y$-coordinate of a point moves the point $2$ u
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift up $2$ units}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize add $2$ to each $y$-coordinate}} 
 
 & 
 
+% \input{Transformations_pic3.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{8}
 
 \tlabel[cc](-1,3){\scriptsize $(0,3)$}
@@ -142,7 +140,8 @@ Geometrically, adding $2$ to the $y$-coordinate of a point moves the point $2$ u
 \penwd{1.25pt}
 \polyline{(0,3), (2,5), (4,5), (5,7)}
 \point[4pt]{(0,3), (2,5), (4,5), (5,7)}
-\end{mfpic} \end{array}\]
+\end{mfpic}
+ \end{array}\]
  
 You'll note that the domain of $f$ and the domain of $g$ are the same, namely $[0,5]$, but that the range of $f$ is $[1,5]$ while the range of $g$ is $[3,7]$.  In general, shifting a function vertically like this will leave the domain unchanged, but could very well affect the range.  
 
@@ -206,6 +205,7 @@ In summary, the points $(0,1)$, $(2,3)$, $(4,3)$ and $(5,5)$ on the graph of $y=
 
 \[\begin{array}{ccc}
 
+% \input{Transformations_pic4.tex}
 \begin{mfpic}[15]{-3}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -223,7 +223,8 @@ In summary, the points $(0,1)$, $(2,3)$, $(4,3)$ and $(5,5)$ on the graph of $y=
 \penwd{1.25pt}
 \polyline{(0,1), (2,3), (4,3), (5,5)}
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic} 
+\end{mfpic}
+ 
 
 &
 
@@ -231,6 +232,7 @@ In summary, the points $(0,1)$, $(2,3)$, $(4,3)$ and $(5,5)$ on the graph of $y=
 
 & 
 
+% \input{Transformations_pic5.tex}
 \begin{mfpic}[15]{-3}{6}{-1}{6}
 \tlabel[cc](-3,1){\scriptsize $(-2,1)$}
 \tlabel[cc](-1,3){\scriptsize $(0,3)$}
@@ -249,6 +251,7 @@ In summary, the points $(0,1)$, $(2,3)$, $(4,3)$ and $(5,5)$ on the graph of $y=
 \polyline{(-2,1), (0,3), (2,3), (3,5)}
 \point[4pt]{(-2,1), (0,3), (2,3), (3,5)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -336,6 +339,7 @@ To prove Theorem \ref{hshifts}, we first note the domains of $f$ and $F$ may be 
 
 \begin{multicols}{2}
 
+% \input{Transformations_pic6.tex}
 \begin{mfpic}[15]{-3}{6}{-1}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -361,6 +365,8 @@ To prove Theorem \ref{hshifts}, we first note the domains of $f$ and $F$ may be 
 
 
 
+
+% \input{Transformations_pic7.tex}
 \begin{mfpic}[15]{-3}{6}{-1}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -383,6 +389,7 @@ To prove Theorem \ref{hshifts}, we first note the domains of $f$ and $F$ may be 
 \pointfillfalse
 \point[4pt]{(4.5,2)}
 \end{mfpic}
+
 
  
  
@@ -458,6 +465,7 @@ $y = \dfrac{x^{\frac{2}{3}}}{x+2}$ (lighter color) and $y = \dfrac{(x-2)^{\frac{
 
 \[\begin{array}{ccc}
 
+% \input{Transformations_pic8.tex}
 \begin{mfpic}[15]{-3}{8}{-1}{5}
 \axes
 \tlabel[cc](8,-0.5){\scriptsize $x$}
@@ -481,12 +489,14 @@ $y = \dfrac{x^{\frac{2}{3}}}{x+2}$ (lighter color) and $y = \dfrac{(x-2)^{\frac{
 \point[4pt]{(4,3)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift right  $2$ units}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize add $2$ to each $x$-coordinate}} 
 
 & 
 
+% \input{Transformations_pic9.tex}
 \begin{mfpic}[15]{-3}{8}{-1}{5}
 \axes
 \tlabel[cc](8,-0.5){\scriptsize $x$}
@@ -510,6 +520,7 @@ $y = \dfrac{x^{\frac{2}{3}}}{x+2}$ (lighter color) and $y = \dfrac{(x-2)^{\frac{
 \point[4pt]{(6,3)}
 \end{mfpic}
 
+
 \end{array}\]
 
 We can check our answer by showing each ordered pair $(x,y)$ listed on our final graph satisfies the equation $y = f(x-2)$.  Starting with $(0,0)$, we substitute $x=0$ into $y=f(x-2)$ and get $y = f(0-2) = f(-2)$.  Since $(-2,0)$ is on the graph of $f$, we know $f(-2) = 0$.  Hence, $y = f(0-2) = f(-2) = 0$, showing the point $(0,0)$ is on the graph of $y=f(x-2)$.  We invite the reader to check the remaining points.
@@ -518,28 +529,20 @@ We can check our answer by showing each ordered pair $(x,y)$ listed on our final
 
 \[\begin{array}{ccc}
 
-\begin{mfpic}[15]{-3}{6}{-1}{6}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-2, -1, 0, 1, 2, 3, 4,5}
-\ymarks{0, 1, 2, 3,4,5}
-\tcaption{\scriptsize $y = f(x)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](-2.25, -0.5){$(-2,0)$}
-\tlabel[cc](-1, 3){$(0,3)$}
-\tlabel[cc](2, 4.5){$(2,4)$}
-\tlabel[cc](4, 2.5){$(4,3)$}
-\axislabels {x}{{$1$} 1, {$2$} 2,  {$3$} 3,{$4$} 4, {$5$} 5}
-\axislabels {y}{{$2$} 2,{$1$} 1,{$4$} 4,{$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{-2, 4, 0.1}{(x+2)*(6-x)/4}
-\point[4pt]{(-2,0), (2,4), (0,3)}
-\pointfillfalse
-\point[4pt]{(4,3)}
-\end{mfpic}
+% \input{Transformations_pic10.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-3, xmax=6, ymin=-1, ymax=6]
+  \addplot[fgraph, domain=-2:4] {(x+2)*(6-x)/4};
+  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(-2,0) (0,3) (2,4)};
+  \addplot[only marks, mark=o,  mark size=1.75pt] coordinates {(4,3)};
+  \node[flabel, label=below left :{$(-2,0)$}] at (axis cs:-2,0){};
+  \node[flabel, label=above right:{$(0,3)$}]  at (axis cs: 0,3){};
+  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4){};
+  \node[flabel, label=below right:{$(4,3)$}]  at (axis cs: 4,3){};
+  \node at (rel axis cs:0.5,-0.08){$y = f(x)$};
+\end{axis}
+\end{tikzpicture}
+
 
 &
 
@@ -547,6 +550,7 @@ We can check our answer by showing each ordered pair $(x,y)$ listed on our final
 
 & 
 
+% \input{Transformations_pic11.tex}
 \begin{mfpic}[15]{-3}{6}{-1}{6}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -570,6 +574,7 @@ We can check our answer by showing each ordered pair $(x,y)$ listed on our final
 \point[4pt]{(4,4)}
 \end{mfpic}
 
+
 \end{array}\]
 
 To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we substitute  $x=-2$ into $y=f(-2)+1$ to get $y = f(-2)+1$.  Since $(-2,0)$ is on the graph of $f$, we know $f(-2) = 0$.  Hence, $y = f(-2)+1 =0+1 = 1$.  This proves $(-2,1)$ is on the graph of $y=f(x)+1$.  We encourage the reader to check the remaining points in kind. 
@@ -578,6 +583,7 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
 
 \[\begin{array}{ccc}
 
+% \input{Transformations_pic12.tex}
 \begin{mfpic}[15]{-4}{6}{-1}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -601,12 +607,14 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
 \point[4pt]{(4,3)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift left $1$ unit}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize subtract $1$ from each $x$-coordinate}} 
 
 & 
 
+% \input{Transformations_pic13.tex}
 \begin{mfpic}[15]{-4}{6}{-1}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -630,12 +638,14 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
 \point[4pt]{(3,3)}
 \end{mfpic}
 
+
 \end{array}\]
 
 Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the graph of $y=f(x+1)$.  Writing $f(x+1)-2=f(x+1)+(-2) = f(x+1)+k$, we identify $k=-2$ so  Theorem \ref{vshifts} instructs us to add $-2$ to (subtract $2$ from) each of the $y$-coordinates on the graph of $y = f(x+1)$, thereby shifting the graph \textit{down} two units.
 
 \[\begin{array}{ccc}
 
+% \input{Transformations_pic14.tex}
 \begin{mfpic}[15]{-4}{6}{-3}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -659,6 +669,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
 \point[4pt]{(3,3)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift down $2$ units}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize subtract $2$ from each $y$-coordinate}} 
@@ -666,6 +677,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
 & 
 
 
+% \input{Transformations_pic15.tex}
 \begin{mfpic}[15]{-4}{6}{-3}{5}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -688,6 +700,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
 \pointfillfalse
 \point[4pt]{(3,1)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -760,6 +773,7 @@ Applying Theorem \ref{reflections} to the graph of $y=f(x)$ given at the beginni
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic16.tex}
 \begin{mfpic}[14]{-1}{6}{-6}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -779,12 +793,14 @@ Applying Theorem \ref{reflections} to the graph of $y=f(x)$ given at the beginni
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect across $x$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic17.tex}
 \begin{mfpic}[14]{-1}{6}{-6}{6}
 \tlabel[cc](-1.25,-1){\scriptsize $(0,-1)$}
 \tlabel[cc](2,-3.5){\scriptsize $(2,-3)$}
@@ -804,6 +820,7 @@ Applying Theorem \ref{reflections} to the graph of $y=f(x)$ given at the beginni
 \point[4pt]{(0,-1), (2,-3), (4,-3), (5,-5)}
 \end{mfpic}
 
+
 \end{array}\]
 
 By reflecting the graph of $f$ across the $y$-axis, we obtain the graph of $y=f(-x)$.
@@ -822,6 +839,7 @@ x & -x & g(x)=f(-x) & (x, g(x)) \\ \hline
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic18.tex}
 \begin{mfpic}[13]{-6}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -841,12 +859,14 @@ x & -x & g(x)=f(-x) & (x, g(x)) \\ \hline
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect across $y$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic19.tex}
 \begin{mfpic}[13]{-6}{6}{-1}{6}
 \tlabel[cc](1,1){\scriptsize $(0,1)$}
 \tlabel[cc](-2,3.5){\scriptsize $(-2,3)$}
@@ -865,6 +885,7 @@ x & -x & g(x)=f(-x) & (x, g(x)) \\ \hline
 \polyline{(0,1), (-2,3), (-4,3), (-5,5)}
 \point[4pt]{(0,1), (-2,3), (-4,3), (-5,5)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -914,6 +935,7 @@ Use Theorems  \ref{vshifts},  \ref{hshifts} and \ref{reflections}  to answer the
 
 \begin{multicols}{2}
 
+% \input{Transformations_pic20.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -936,6 +958,8 @@ Use Theorems  \ref{vshifts},  \ref{hshifts} and \ref{reflections}  to answer the
 
 
 
+
+% \input{Transformations_pic21.tex}
 \begin{mfpic}[15]{-4}{2}{-2}{5}
 \axes
 \tlabel[cc](2,-0.5){\scriptsize $x$}
@@ -956,6 +980,7 @@ Use Theorems  \ref{vshifts},  \ref{hshifts} and \ref{reflections}  to answer the
 \arrow \reverse \arrow \function{-3.5, 1.5, 0.1}{4-(2**(x+1))}
 \point[4pt]{(-1,3), (0,2), (1,0)}
 \end{mfpic}
+
  
 \end{multicols}
 
@@ -1057,6 +1082,7 @@ $t =  s^3-s^2$ (lighter color)  and $t=-s^3-s^2$  &  $y = \dfrac{t+4}{3-t}$ (lig
  
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic22.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1078,12 +1104,14 @@ $t =  s^3-s^2$ (lighter color)  and $t=-s^3-s^2$  &  $y = \dfrac{t+4}{3-t}$ (lig
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect across $y$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic23.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1103,6 +1131,7 @@ $t =  s^3-s^2$ (lighter color)  and $t=-s^3-s^2$  &  $y = \dfrac{t+4}{3-t}$ (lig
 \arrow \reverse \arrow \function{-2.5, 2.5, 0.1}{2**(-x)}
 \point[4pt]{(0,1), (-1,2), (-2,4)}
 \end{mfpic}
+
 
 
 \end{array}\]
@@ -1112,6 +1141,7 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
  
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic24.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1133,12 +1163,14 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift up $1$ unit}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize add $1$ to each $y$-coordinate}} 
 
 &
 
+% \input{Transformations_pic25.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1161,6 +1193,7 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
 \end{mfpic}
 
 
+
 \end{array}\]
 
 To check our answer, we begin with the point $(0,2)$.  Substituting $x=0$ into $y=f(-x)+1$, we get $y=f(-0)+1 = f(0)+1$.  Since the point $(0,1)$ is on the graph of $f$, we know $f(0) = 1$.  Hence, $y = f(0)+1= 1+1=2$, so $(0,2)$ is, indeed, on the graph of $y=f(-x)+1$.  We leave it to the reader to check the remaining points.
@@ -1174,6 +1207,7 @@ To check our answer, we begin with the point $(0,2)$.  Substituting $x=0$ into $
   
    \[ \begin{array}{ccc}
 
+% \input{Transformations_pic26.tex}
 \begin{mfpic}[15]{-3}{3}{-1}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1195,12 +1229,14 @@ To check our answer, we begin with the point $(0,2)$.  Substituting $x=0$ into $
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift left $2$ units}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize subtract $2$ from each $x$-coordinate}} 
 
 &
 
+% \input{Transformations_pic27.tex}
 \begin{mfpic}[15]{-5}{1}{-1}{6}
 \axes
 \tlabel[cc](1,-0.5){\scriptsize $x$}
@@ -1220,6 +1256,7 @@ To check our answer, we begin with the point $(0,2)$.  Substituting $x=0$ into $
 \arrow \reverse \arrow \function{-4.5, 0.5, 0.1}{2**(x+2)}
 \point[4pt]{(-2,1), (-1,2), (0,4)}
 \end{mfpic}
+
 
 
 \end{array}\]
@@ -1228,6 +1265,7 @@ Next, we use Theorem \ref{reflections} to graph $y=f(-x+2)$ starting with the gr
 
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic28.tex}
 \begin{mfpic}[15]{-5}{1}{-1}{6}
 \axes
 \tlabel[cc](1,-0.5){\scriptsize $x$}
@@ -1249,12 +1287,14 @@ Next, we use Theorem \ref{reflections} to graph $y=f(-x+2)$ starting with the gr
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect about the $y$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic29.tex}
 \begin{mfpic}[15]{-1}{5}{-1}{6}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -1274,6 +1314,7 @@ Next, we use Theorem \ref{reflections} to graph $y=f(-x+2)$ starting with the gr
 \arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{2**(-x+2)}
 \point[4pt]{(2,1), (1,2), (0,4)}
 \end{mfpic}
+
 
 
 \end{array}\]
@@ -1294,6 +1335,7 @@ We proceed below to obtain the graph of $y=-f(-x+2)$ from $y=f(-x+2)$ by multipl
 
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic30.tex}
 \begin{mfpic}[15]{-1}{5}{-1}{6}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -1314,12 +1356,14 @@ We proceed below to obtain the graph of $y=-f(-x+2)$ from $y=f(-x+2)$ by multipl
 \point[4pt]{(2,1), (1,2), (0,4)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect about the $x$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic31.tex}
 \begin{mfpic}[15]{-1}{5}{-6}{1}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -1339,6 +1383,7 @@ We proceed below to obtain the graph of $y=-f(-x+2)$ from $y=f(-x+2)$ by multipl
 \arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{0-2**(-x+2)}
 \point[4pt]{(2,-1), (1,-2), (0,-4)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -1346,6 +1391,7 @@ Finally, we take care of the vertical shift.  Per Theorem \ref{vshifts}, we grap
 
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic32.tex}
 \begin{mfpic}[15]{-1}{5}{-6}{1}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -1366,12 +1412,14 @@ Finally, we take care of the vertical shift.  Per Theorem \ref{vshifts}, we grap
 \point[4pt]{(2,-1), (1,-2), (0,-4)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift up $1$ unit}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize add $1$ to each of the $y$-coordinates}} 
 
 &
 
+% \input{Transformations_pic33.tex}
 \begin{mfpic}[15]{-1}{5}{-5}{2}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -1392,6 +1440,7 @@ Finally, we take care of the vertical shift.  Per Theorem \ref{vshifts}, we grap
 \arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{1-2**(-x+2)}
 \point[4pt]{(2,0), (1,-1), (0,-3)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -1480,6 +1529,7 @@ Suppose we wish to graph the function $g(x) =2 f(x)$ where $f(x)$ is the functio
 
 \begin{tabular}{m{2in}m{3in}}
 
+% \input{Transformations_pic34.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -1498,6 +1548,7 @@ Suppose we wish to graph the function $g(x) =2 f(x)$ where $f(x)$ is the functio
 \polyline{(0,1), (2,3), (4,3), (5,5)}
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
+
  
 &
 
@@ -1521,6 +1572,7 @@ Graphing, we get:
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic35.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{11}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -1540,6 +1592,7 @@ Graphing, we get:
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $2$}} 
@@ -1547,6 +1600,7 @@ Graphing, we get:
 &
 
 
+% \input{Transformations_pic36.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{11}
 \tlabel[cc](-1,2){\scriptsize $(0,2)$}
 \tlabel[cc](2,6.5){\scriptsize $(2,6)$}
@@ -1566,6 +1620,7 @@ Graphing, we get:
 \point[4pt]{(0,2), (2,6), (4,6), (5,10)}
 \end{mfpic}
 
+
 \end{array} \]
 
 In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$ so that $g(a) = 2 f(a) = 2b$ puts $(a,2b)$ on the graph of $g$.  In other words, to obtain the graph of $g$, we multiply all of the $y$-coordinates of the points on the graph of $f$ by $2$.  Multiplying all of the $y$-coordinates of all of the points on the graph of $f$ by $2$ causes what is known as a `vertical scaling\footnote{Also called a `vertical stretch,' `vertical expansion' or `vertical dilation' by a factor of $2$.} by a factor of $2$.'
@@ -1576,6 +1631,7 @@ If we wish to graph $y = \frac{1}{2} f(x)$, we multiply the all of the $y$-coord
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic37.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -1595,12 +1651,14 @@ If we wish to graph $y = \frac{1}{2} f(x)$, we multiply the all of the $y$-coord
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $\frac{1}{2}$}} 
 
 &
 
+% \input{Transformations_pic38.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{6}
 \tlabel[cc](-1,0.5){\scriptsize $\left(0,\frac{1}{2}\right)$}
 \tlabel[cc](2,2){\scriptsize $\left(2,\frac{3}{2}\right)$}
@@ -1619,6 +1677,7 @@ If we wish to graph $y = \frac{1}{2} f(x)$, we multiply the all of the $y$-coord
 \polyline{(0,0.5), (2,1.5), (4,1.5), (5,2.5)}
 \point[4pt]{(0,0.5), (2,1.5), (4,1.5), (5,2.5)}
 \end{mfpic}
+
 
 \end{array} \]
 
@@ -1704,6 +1763,7 @@ In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$.  Hence $g\left(\
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic39.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -1723,12 +1783,14 @@ In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$.  Hence $g\left(\
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $\frac{1}{2}$}} 
 
 &
 
+% \input{Transformations_pic40.tex}
 \begin{mfpic}[15]{-1}{6}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](1,3.5){\scriptsize $(1,3)$}
@@ -1748,12 +1810,14 @@ In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$.  Hence $g\left(\
 \point[4pt]{(0,1), (1,3), (2,3), (2.5,5)}
 \end{mfpic}
 
+
 \end{array}\]
 
 If, on the other hand, we wish to graph $y = f\left( \frac{1}{2} x\right)$, we end up multiplying the $x$-coordinates of the points on the graph of $f$ by $2$ which results in a horizontal scaling\footnote{Also called `horizontal stretch,'  `horizontal expansion' or `horizontal dilation' by a factor of $2$.} by a factor of $2$, as demonstrated below.
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic41.tex}
 \begin{mfpic}[12]{-1}{11}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](2,3.5){\scriptsize $(2,3)$}
@@ -1773,12 +1837,14 @@ If, on the other hand, we wish to graph $y = f\left( \frac{1}{2} x\right)$, we e
 \point[4pt]{(0,1), (2,3), (4,3), (5,5)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $2$}} 
 
 &
 
+% \input{Transformations_pic42.tex}
 \begin{mfpic}[12]{-1}{11}{-1}{6}
 \tlabel[cc](-1,1){\scriptsize $(0,1)$}
 \tlabel[cc](4,3.5){\scriptsize $(4,3)$}
@@ -1797,6 +1863,7 @@ If, on the other hand, we wish to graph $y = f\left( \frac{1}{2} x\right)$, we e
 \polyline{(0,1), (4,3), (8,3), (10,5)}
 \point[4pt]{(0,1), (4,3), (8,3), (10,5)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -1884,6 +1951,7 @@ Use Theorems  \ref{vshifts},  \ref{hshifts}, \ref{reflections}, \ref{vscalings} 
 
 \begin{tabular}{m{2.5in}m{2.5in}}
 
+% \input{Transformations_pic43.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -1905,8 +1973,10 @@ Use Theorems  \ref{vshifts},  \ref{hshifts}, \ref{reflections}, \ref{vscalings} 
 \end{mfpic}
 
 
+
 &
 
+% \input{Transformations_pic44.tex}
 \begin{mfpic}[15][7.5]{-4}{3}{-6}{6}
 \axes
 \tlabel[cc](3,-0.5){\scriptsize $x$}
@@ -1926,7 +1996,8 @@ Use Theorems  \ref{vshifts},  \ref{hshifts}, \ref{reflections}, \ref{vscalings} 
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-2.5, 2.5, 0.1}{(2-2**t,2*t)}
 \point[4pt]{(1,0), (0,2), (-2,4)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{tabular}
 
@@ -2089,6 +2160,7 @@ Beginning with the vertical scaling by a factor of $\frac{1}{2}$, we use Theorem
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic45.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2110,12 +2182,14 @@ Beginning with the vertical scaling by a factor of $\frac{1}{2}$, we use Theorem
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $\frac{1}{2}$}} 
 
 &
 
+% \input{Transformations_pic46.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2134,7 +2208,8 @@ Beginning with the vertical scaling by a factor of $\frac{1}{2}$, we use Theorem
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,t/2)}
 \point[4pt]{(1,0), (2,0.5), (4,1)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2144,6 +2219,7 @@ Next, we reflect the graph of $y = \frac{1}{2} f(x)$ across the $x$-axis to prod
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic47.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2164,12 +2240,14 @@ Next, we reflect the graph of $y = \frac{1}{2} f(x)$ across the $x$-axis to prod
 \point[4pt]{(1,0), (2,0.5), (4,1)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect about the $x$-axis }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic48.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2188,7 +2266,8 @@ Next, we reflect the graph of $y = \frac{1}{2} f(x)$ across the $x$-axis to prod
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2)}
 \point[4pt]{(1,0), (2,-0.5), (4,-1)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2197,6 +2276,7 @@ Finally, we shift the graph of $y = -\frac{1}{2} f(x)$ vertically up $\frac{1}{2
  
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic49.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2215,7 +2295,8 @@ Finally, we shift the graph of $y = -\frac{1}{2} f(x)$ vertically up $\frac{1}{2
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2)}
 \point[4pt]{(1,0), (2,-0.5), (4,-1)}
-\end{mfpic} 
+\end{mfpic}
+ 
  
 
 
@@ -2225,6 +2306,7 @@ Finally, we shift the graph of $y = -\frac{1}{2} f(x)$ vertically up $\frac{1}{2
 
 &
 
+% \input{Transformations_pic50.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2243,7 +2325,8 @@ Finally, we shift the graph of $y = -\frac{1}{2} f(x)$ vertically up $\frac{1}{2
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2+0.5)}
 \point[4pt]{(1,0.5), (2,0), (4,-0.5)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2251,6 +2334,7 @@ Note that as with horizontal scalings and reflections about the $y$-axis, the or
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic51.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2272,12 +2356,14 @@ Note that as with horizontal scalings and reflections about the $y$-axis, the or
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize reflect across the $x$-axis }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $-1$}} 
 
 &
 
+% \input{Transformations_pic52.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2296,7 +2382,8 @@ Note that as with horizontal scalings and reflections about the $y$-axis, the or
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-2.5, 2.5, 0.1}{(2**t,-t)}
 \point[4pt]{(1,0), (2,-1), (4,-2)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2306,6 +2393,7 @@ Next, we vertically scale the graph of $y=-f(x)$  by multiplying each of the $y$
  
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic53.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2326,12 +2414,14 @@ Next, we vertically scale the graph of $y=-f(x)$  by multiplying each of the $y$
 \point[4pt]{(1,0), (2,-1), (4,-2)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $\frac{1}{2}$}} 
 
 &
 
+% \input{Transformations_pic54.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2350,7 +2440,8 @@ Next, we vertically scale the graph of $y=-f(x)$  by multiplying each of the $y$
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2)}
 \point[4pt]{(1,0), (2,-0.5), (4,-1)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2359,6 +2450,7 @@ Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before,
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic55.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2377,7 +2469,8 @@ Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before,
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2)}
 \point[4pt]{(1,0), (2,-0.5), (4,-1)}
-\end{mfpic} 
+\end{mfpic}
+ 
  
 
 
@@ -2387,6 +2480,7 @@ Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before,
 
 &
 
+% \input{Transformations_pic56.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2405,7 +2499,8 @@ Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before,
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-3, 2.55, 0.1}{(2**t,-t/2+0.5)}
 \point[4pt]{(1,0.5), (2,0), (4,-0.5)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2427,6 +2522,7 @@ Note that in the preceding example, since none of the transformations included a
   
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic57.tex}
 \begin{mfpic}[15]{-1}{6}{-3}{3}
 \axes
 \tlabel[cc](6,-0.5){\scriptsize $x$}
@@ -2448,12 +2544,14 @@ Note that in the preceding example, since none of the transformations included a
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize shift left $\frac{1}{2}$ unit }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize subtract $\frac{1}{2}$ from each $x$-coordinate}} 
 
 &
 
+% \input{Transformations_pic58.tex}
 \begin{mfpic}[15]{-2}{5}{-3}{3}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -2474,7 +2572,8 @@ Note that in the preceding example, since none of the transformations included a
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-2.5, 2.5, 0.1}{((2**t) - 0.5,t)}
 \point[4pt]{(0.5,0), (1.5,1), (3.5,2)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2484,6 +2583,7 @@ Next, we graph $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ starting with $y 
 
 \[ \begin{array}{ccc}
 
+% \input{Transformations_pic59.tex}
 \begin{mfpic}[15]{-2}{5}{-3}{3}
 \axes
 \tlabel[cc](5,-0.5){\scriptsize $x$}
@@ -2507,12 +2607,14 @@ Next, we graph $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ starting with $y 
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply eac $x$-coordinate by $2$}} 
 
 &
 
+% \input{Transformations_pic60.tex}
 \begin{mfpic}[11][15]{-2}{10}{-3}{3}
 \axes
 \tlabel[cc](10,-0.5){\scriptsize $x$}
@@ -2533,7 +2635,8 @@ Next, we graph $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ starting with $y 
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-2.5, 2.4, 0.1}{(   2*((2**t) - 0.5),t)}
 \point[4pt]{(1,0), (3,1), (7,2)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2542,6 +2645,7 @@ Finally, we reflect the graph of $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$
 
  \[ \begin{array}{ccc}
 
+% \input{Transformations_pic61.tex}
 \begin{mfpic}[11][15]{-2}{10}{-3}{3}
 \axes
 \tlabel[cc](10,-0.5){\scriptsize $x$}
@@ -2565,12 +2669,14 @@ Finally, we reflect the graph of $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$
 \end{mfpic}
 
 
+
 &
 
 \stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $2$}} 
 
 &
 
+% \input{Transformations_pic62.tex}
 \begin{mfpic}[11][15]{-10}{2}{-3}{3}
 \axes
 \tlabel[cc](2,-0.5){\scriptsize $x$}
@@ -2593,7 +2699,8 @@ Finally, we reflect the graph of $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$
 
 
 \point[4pt]{(-1,0), (-3,1), (-7,2)}
-\end{mfpic} \\
+\end{mfpic}
+ \\
  
 \end{array} \]
 
@@ -2718,6 +2825,7 @@ We make good use of Theorem \ref{transformationsthm}  in the following example.
 
 \begin{center}
 
+% \input{Transformations_pic63.tex}
 \begin{mfpic}[15]{-5}{5}{-4}{4}
 \tlabel[cc](-3,0.5){\small $\left( -2, 0 \right)$}
 \tlabel[cc](2.5,0.5){\small $\left(2, 0 \right)$}
@@ -2738,6 +2846,7 @@ We make good use of Theorem \ref{transformationsthm}  in the following example.
 \function{-4,4,.1}{3*cos(3.14159265*x/4)}
 \point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)}
 \end{mfpic}
+
 
 \end{center}
 
@@ -2794,6 +2903,7 @@ To graph $g$, we plot each of the points in the table above and connect them in 
 
 \[ \begin{array}{cc}
 
+% \input{Transformations_pic64.tex}
 \begin{mfpic}[15]{-5}{5}{-4}{7}
 \tlabel[cc](-3,0.5){\scriptsize $\left( -2, 0 \right)$}
 \tlabel[cc](2.5,0.5){\scriptsize $\left(2, 0 \right)$}
@@ -2813,8 +2923,10 @@ To graph $g$, we plot each of the points in the table above and connect them in 
 \point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)}
 \end{mfpic}
 
+
 &
 
+% \input{Transformations_pic65.tex}
 \begin{mfpic}[15]{-5}{5}{-4}{7}
 \tlabel[cc](-1.5,7){\scriptsize $\left( -\frac{3}{2}, \frac{13}{2} \right)$}
 \tlabel[cc](-1.75,2){\scriptsize $\left(-\frac{1}{2}, 2 \right)$}
@@ -2833,6 +2945,7 @@ To graph $g$, we plot each of the points in the table above and connect them in 
 \function{-1.5,2.5,.1}{2-4.5*cos(3.14159265*(1-2*x)/4 )}
 \point[4pt]{(-1.5,6.5), (-0.5,2), (0.5,-2.5), (1.5,2), (2.5,6.5)}
 \end{mfpic}
+
 
 \end{array}\]
 
@@ -2967,6 +3080,7 @@ For example, consider the graphs of $y=f(x)$ and $y=g(x)$ below.
 \[ \begin{array}{ccc}
 \phantomsection
 \label{relatedbyabsgraphs}
+% \input{Transformations_pic66.tex}
 \begin{mfpic}[14]{-1}{6}{-6}{6}
 \tlabel[cc](1,-5){\scriptsize $(0,-5)$}
 \tlabel[cc](1,0.5){\scriptsize $(2,0)$}
@@ -2986,6 +3100,7 @@ For example, consider the graphs of $y=f(x)$ and $y=g(x)$ below.
 \point[4pt]{(0,-5), (2,0), (4,3), (5,3)}
 \end{mfpic}
 
+
 &
 
 \stackrel{\stackrel{}{\xrightarrow{\hspace{1in}}}}{\mbox{}} 
@@ -2993,6 +3108,7 @@ For example, consider the graphs of $y=f(x)$ and $y=g(x)$ below.
 &
 
 
+% \input{Transformations_pic67.tex}
 \begin{mfpic}[14]{-1}{6}{-6}{6}
 \tlabel[cc](1,5){\scriptsize $(0,5)$}
 \tlabel[cc](2,-0.5){\scriptsize $(2,0)$}
@@ -3011,6 +3127,7 @@ For example, consider the graphs of $y=f(x)$ and $y=g(x)$ below.
 \polyline{(0,5), (2,0), (4,3), (5,3)}
 \point[4pt]{(0,5), (2,0), (4,3), (5,3)}
 \end{mfpic}
+
 
 \end{array}\]
 

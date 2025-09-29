@@ -35,28 +35,8 @@ Not only does $g$ undo $f$, but $f$ also undoes $g$.  That is, if we take the ou
 \begin{center}
 
 
-\begin{mfpic}[10]{-15}{15}{-10}{10}
+\input{InverseFunctions_pic1.tex}
 
-\tlabel[cc](0,6){$f$}
-
-\tlabel[cc](0,-6){$g$}
-\point[2pt]{(-7.5,0), (7.5,0)} 
-
-\ellipse{(-7.5,0),6,5}
-
-\ellipse{(7.5,0),6,5}
-
-\penwd{0.75pt}
-
-\arrow \curve{(-7.25,0.25), (0,5), (7.25,0.25)}
-
-\dashed \arrow \curve{(7.25,-0.25), (0,-5), (-7.25,-0.25)}
-
-\gclear \tlabelrect[cc](-7.5,-2){$x = g(f(x))$}
-
-\gclear \tlabelrect[cc](7.5,-2){$y = f(x)$}
-
-\end{mfpic}
 
 \end{center}
 
@@ -152,30 +132,8 @@ We also note the graphs of   $f(x) = 3x+4$ and $g(x) = f^{-1}(x) = \frac{x-4}{3}
 
 \begin{center}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
+\input{InverseFunctions_pic2.tex}
 
-\dashed \function{-4.5,4.5,0.1}{x}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](-0.5,5){\scriptsize $y$}
-\tlabel[cc](-1,4){\scriptsize $(0,4)$}
-\tlabel[cc](4,-0.5){\scriptsize $(4,0)$}
-\tlabel[cc](-2.25,1){\scriptsize $y=f(x)$}
-\tlabel[cc](1.5,-1.5){\scriptsize $y=g(x)$}
-\tlabel[cc](2,1){\scriptsize $y=x$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3\hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$-2$} -2,{$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-
-\arrow \reverse \arrow \function{-3,0.333,0.1}{3*x+4}
-\arrow \reverse \arrow \function{-5,5,0.1}{(x-4)/3}
-\point[4pt]{(0,4), (4,0)}
-\end{mfpic}
 
 Graphs of inverse functions $y = f(x) =3x+4 $ and $y =  f^{-1}(x) =  \dfrac{x-4}{3}$.
 
@@ -254,70 +212,14 @@ We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$
 
 \begin{multicols}{3}
 
-\begin{mfpic}[15]{-4}{4}{-5}{5}
-\axes
-\xmarks{-3, -2,-1,1,2,3}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-1,1.25){\scriptsize $(0,1)$}
-\gclear \tlabelrect(0,2){\scriptsize $(1,2)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tcaption{\scriptsize $y=f(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1,{$2$} 2, {$3$} 3}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{0.42, 3.58, 0.1}{((t-2)**3+1, t)}
-\point[4pt]{(0,1), (1,2), (2,3)}
-\end{mfpic}
+\input{InverseFunctions_pic3.tex}
 
-\begin{mfpic}[15]{-4}{4}{-5}{5}
-\axes
-\xmarks{-3, -2,-1,1,3}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
-\tlabel[cc](2.5,0.5){\scriptsize $(2,1)$}
-\tlabel[cc](3.75,2){\scriptsize $(3,2)$}
-\tcaption{\scriptsize $y=g(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2, {$-1\hspace{7pt}$} -1,  {$1$} 1, {$3$} 3}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{0.42, 3.58,  0.1}{(t, (t-2)**3+1)}
-\point[4pt]{(1,0), (2,1), (3,2)}
-\end{mfpic}
 
-\begin{mfpic}[15]{-4}{4}{-5}{5}
-\axes
-\dashed \polyline{(-3.5, -3.5), (4.5, 4.5)}
-\xmarks{-3, -2,-1,1,3}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-1,1.25){\scriptsize $(0,1)$}
-\gclear \tlabelrect(0,2){\scriptsize $(1,2)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](1.5,-0.5){\scriptsize $(1,0)$}
-\tlabel[cc](2.5,0.5){\scriptsize $(2,1)$}
-\tlabel[cc](3.75,2){\scriptsize $(3,2)$}
-\tcaption{\scriptsize $y=f(x)$, $y=g(x)$, $y=x$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1, {$3$} 3}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{0.42, 3.58, 0.1}{((t-2)**3+1, t)}
-\arrow \reverse \arrow \parafcn{0.42, 3.58,  0.1}{(t, (t-2)**3+1)}
-\point[4pt]{(0,1), (1,2), (2,3), (1,0), (2,1), (3,2)}
-\end{mfpic}
+\input{InverseFunctions_pic4.tex}
+
+
+\input{InverseFunctions_pic5.tex}
+
 
 \end{multicols}
 
@@ -382,81 +284,14 @@ $\begin{array}{rcl}
 
 \begin{multicols}{3}
 
-\begin{mfpic}[15]{-4}{5}{-5}{5}
-\axes
-\dashed \polyline{(-1,-5), (-1,5)}
-\dashed \polyline{(-4,2), (5,2)}
-\xmarks{-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](-2,-4.5){\scriptsize $t=-1$}
-\tlabel[cc](4,2.5){\scriptsize $y=2$}
-\tcaption{\scriptsize $y=f(t)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$4$} 4,{$3$} 3, {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4, -1.67, 0.1}{2*x/(x+1)}
-\arrow \reverse \arrow \function{-0.71, 5, 0.1}{2*x/(x+1)}
-\point[4pt]{(0,0)}
-\end{mfpic}
+\input{InverseFunctions_pic6.tex}
 
-\begin{mfpic}[15]{-4}{5}{-5}{5}
-\axes
-\dashed \polyline{(2,-5), (2,5)}
-\dashed \polyline{(-4,-1), (5,-1)}
-\xmarks{-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](1,-4.5){\scriptsize $t=2$}
-\tlabel[cc](-3,-1.5){\scriptsize $y=-1$}
-\tcaption{\scriptsize $y=g(t)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{  {$-1\hspace{7pt}$} -1,  {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4, 1.66, 0.1}{x/(2-x)}
-\arrow \reverse \arrow \function{2.5, 5, 0.1}{x/(2-x)}
-\point[4pt]{(0,0)}
-\end{mfpic}
 
-\begin{mfpic}[15]{-4}{5}{-5}{5}
-\axes
-\dashed \polyline{(2,-5), (2,5)}
-\dashed \polyline{(-4,-1), (5,-1)}
-\dashed \polyline{(-1,-5), (-1,5)}
-\dashed \polyline{(-4,2), (5,2)}
-\dashed \polyline{(-3.5, -3.5), (4.5, 4.5)}
-\xmarks{-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](0.75,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](1,-4.5){\scriptsize $t=2$}
-\tlabel[cc](-3,-1.5){\scriptsize $y=-1$}
-\tlabel[cc](-2,-4.5){\scriptsize $t=-1$}
-\tlabel[cc](4,2.5){\scriptsize $y=2$}
-\tcaption{\scriptsize $y=f(t)$, $y=g(t)$, and $y = x$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{  {$-1\hspace{7pt}$} -1,  {$3$} 3, {$4$} 4}
-\axislabels {y}{{$1$} 1, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4, 1.66, 0.1}{x/(2-x)}
-\arrow \reverse \arrow \function{2.5, 5, 0.1}{x/(2-x)}
-\arrow \reverse \arrow \function{-4, -1.67, 0.1}{2*x/(x+1)}
-\arrow \reverse \arrow \function{-0.71, 5, 0.1}{2*x/(x+1)}
-\point[4pt]{(0,0)}
-\end{mfpic}
+\input{InverseFunctions_pic7.tex}
+
+
+\input{InverseFunctions_pic8.tex}
+
 
 \end{multicols}
 
@@ -490,21 +325,8 @@ For example, when $x=-2$,  $f(-2)= (-2)^2 = 4$, but $g(4) = \sqrt{4}=2$.  That i
 \begin{center}
 
 
-\begin{mfpic}[10]{-15}{15}{-10}{10}
-\tlabel[cc](0,6){$f$}
-\tlabel[cc](0,-6){$g$}
-\point[2pt]{(-7.5,2), (-7.5,-2),(7.5,0)} 
-\ellipse{(-7.5,0),6,5}
-\ellipse{(7.5,0),6,5}
-\penwd{0.75pt}
-\arrow \polyline{(-7.5, 2), (7.25,0.25)}
-\arrow \polyline{(-7.5, -2), (7.25,-0.25)}
-\arrow \curve{(-3,4), (0,5), (3,4)}
-\dashed \arrow \curve{(7.25,-0.25), (0,-5), (-7.25,-2.25)}
-\gclear \tlabelrect[cc](-7.5,1){$x = -2$}
-\gclear \tlabelrect[cc](-7.5,-4){$x = 2$}
-\gclear \tlabelrect[cc](7.5,-1){$4$}
-\end{mfpic}
+\input{InverseFunctions_pic9.tex}
+
 
 \end{center}
 
@@ -539,23 +361,8 @@ Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exis
 \[ \begin{array}{ccc}
 
 
-\begin{mfpic}[15]{-3}{3}{-1}{8}
-\dashed \polyline{(-3,4), (3,4)}
-\tlabel[cc](-3.3,3.5){\scriptsize $(-2,4)$}
-\tlabel[cc](3,3.5){\scriptsize $(2,4)$}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y=x^2$}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.75, 2.75, 0.1}{x**2}
-\point[4pt]{(-2,4), (2,4)}
-\end{mfpic}  
+\input{InverseFunctions_pic10.tex}
+  
 
 &
 
@@ -563,23 +370,8 @@ Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exis
 
 &
 
-\begin{mfpic}[15]{-1}{8}{-3}{3}
-\axes
-\dashed \polyline{(4,-3), (4,3)}
-\tlabel[cc](4,-3.5){\scriptsize $(4,-2)$}
-\tlabel[cc](4,3.5){\scriptsize $(4,2)$}
-\tlabel[cc](8,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\scriptsize $x=y^2$}
-\ymarks{-2,-1,1,2}
-\xmarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2.75, 2.75, 0.1}{(t**2,t)}
-\point[4pt]{(4,-2), (4,2)}
-\end{mfpic} \end{array}\]
+\input{InverseFunctions_pic11.tex}
+ \end{array}\]
 
 We see immediately the graph of $x = y^2$ fails the Vertical Line Test, Theorem \ref{VLT}.  In particular,  the vertical line $x=4$ intersects the graph at two points, $(4,-2)$ and $(4,2)$ meaning the relation described by $x = y^2$ matches the $x$-value $4$ with two different $y$-values, $-2$ and $2$.  
 
@@ -698,24 +490,8 @@ a = b & \text{or} & a = 2-b \\
 
 &
 
- \begin{mfpic}[15]{-3}{3}{-1}{7}
-
-\dashed \polyline{(-1,4), (3,4)}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5,6}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1,3,0.1}{(x**2)-(2*x)+4}
-\point[4pt]{(1,3)} 
-\end{mfpic} \\
+ \input{InverseFunctions_pic12.tex}
+ \\
 
 
 \end{tabular}
@@ -743,27 +519,8 @@ a & = & b \, \, \checkmark \\
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-7}{5}
-\dashed \polyline{(1,-7), (1,5)}
-\dashed \polyline{(-5,-2), (5,-2)}
-\axes
-\xmarks{-4, -3, -2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4,-1.5){\scriptsize $y=-2$}
-\gclear \tlabelrect(0, -6.5){\scriptsize $t = 1$}
-\tcaption{\scriptsize $y=g(t)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-3$} -3, {$-4$} -4,{$-5$} -5, {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5,0.7,0.1}{(2*x)/(1-x)}
-\arrow \reverse \arrow \function{1.4,5,0.1}{(2*x)/(1-x)}
-\point[4pt]{(0,0)}
-\end{mfpic} \\
+\input{InverseFunctions_pic13.tex}
+ \\
 
 \end{tabular}
 \end{center}
@@ -777,27 +534,8 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 \[ \begin{array}{ccc}
 
 
-\begin{mfpic}[15]{-5}{5}{-7}{5}
-\dashed \polyline{(1,-7), (1,5)}
-\dashed \polyline{(-5,-2), (5,-2)}
-\axes
-\xmarks{-4, -3, -2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4,-1.5){\scriptsize $y=-2$}
-\gclear \tlabelrect(0, -6.5){\scriptsize $t = 1$}
-\tcaption{\scriptsize $y=g(t)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,{$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-3$} -3, {$-4$} -4,{$-5$} -5, {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5,0.7,0.1}{(2*x)/(1-x)}
-\arrow \reverse \arrow \function{1.4,5,0.1}{(2*x)/(1-x)}
-\point[4pt]{(0,0)}
-\end{mfpic}
+\input{InverseFunctions_pic14.tex}
+
 
 &
 
@@ -805,27 +543,8 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-7}{5}
-\dashed \polyline{(-2,-7), (-2,5)}
-\dashed \polyline{(-5,1), (5,1)}
-\axes
-\xmarks{-4, -3, -2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4,1.5){\scriptsize $y=1$}
-\gclear \tlabelrect(-2, -6){\scriptsize $t=-2$}
-\tcaption{\scriptsize $y=g^{-1}(t)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4,{$-3\hspace{7pt}$} -3,  {$-1\hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2,{$-3$} -3, {$-4$} -4,{$-5$} -5, {$-6$} -6,  {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5,-2.5,0.1}{x/(x+2)}
-\arrow \reverse \arrow \function{-1.66,5,0.1}{x/(x+2)}
-\point[4pt]{(0,0)}
-\end{mfpic}  \end{array}\]
+\input{InverseFunctions_pic15.tex}
+  \end{array}\]
 
 
 \end{enumerate}
@@ -837,21 +556,8 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
 \begin{center}
 
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(-1,1), (0,2), (2,1), (1,-3)}
-\dashed \polyline{(-5,1), (5,1)}
-\axes
-\xmarks{-4,-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tcaption{\scriptsize $y=F(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1,{$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\input{InverseFunctions_pic16.tex}
+
 
 \end{center}
 
@@ -879,25 +585,8 @@ We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and 
 \[ \begin{array}{ccc}
 
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.25,-2){\scriptsize $(0,-2)$}
-\tlabel[cc](1.75,0.5){\scriptsize $(1,0)$}
-\tlabel[cc](1,2){\scriptsize $(2,2)$}
-\tcaption{\scriptsize $y=G(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.81, 1.58, 0.1}{(t**3+1, 2*t)}
-\point[4pt]{(0,-2), (1,0), (2,2)}
-\end{mfpic}
+\input{InverseFunctions_pic17.tex}
+
 
 
 &
@@ -906,25 +595,8 @@ We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and 
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3, -2,-1,1,2,3,4}
-\ymarks{-4,-3, -2,-1,1,2,3,4}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-3,0.5){\scriptsize $(-2,0)$}
-\tlabel[cc](0.75, 0.5){\scriptsize $(0,1)$}
-\tlabel[cc](3,2){\scriptsize $(2,2)$}
-\tcaption{\scriptsize $y=G^{-1}(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4\hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2\hspace{7pt}$} -2,  {$-1\hspace{7pt}$} -1, {$1$} 1,{$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,  {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.81, 1.58, 0.1}{(2*t, t**3+1)}
-\point[4pt]{(-2,0), (0,1), (2,2)}
-\end{mfpic}
+\input{InverseFunctions_pic18.tex}
+
 \end{array}\]
 
 \qed
@@ -995,54 +667,14 @@ Using the language of Section \ref{Relations},  the equation $x = y^2$ implicitl
 
 \begin{multicols}{3}
 
-\begin{mfpic}[15]{-1}{8}{-3}{3}
-\axes
-\tlabel[cc](4,-2.75){\scriptsize $(4,-2)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,2)$}
-\tlabel[cc](8,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\scriptsize $x=y^2$}
-\ymarks{-2,-1,1,2}
-\xmarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2.75, 2.75, 0.1}{(t**2,t)}
-\point[4pt]{(4,-2), (4,2), (0,0)}
-\end{mfpic}
+\input{InverseFunctions_pic19.tex}
 
-\begin{mfpic}[15]{-1}{8}{-3}{3}
-\axes
-\tlabel[cc](4,2.5){\scriptsize $(4,2)$}
-\tlabel[cc](8,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\scriptsize $y = g_{1}(x) = \sqrt{x}$}
-\ymarks{-2,-1,1,2}
-\xmarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\penwd{1.25pt}
-\arrow  \parafcn{0, 2.75, 0.1}{(t**2,t)}
-\point[4pt]{ (4,2), (0,0)}
-\end{mfpic}
 
-\begin{mfpic}[15]{-1}{8}{-3}{3}
-\axes
-\tlabel[cc](4,-2.75){\scriptsize $(4,-2)$}
-\tlabel[cc](8,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\scriptsize $y = g_{2}(x) = -\sqrt{x}$}
-\ymarks{-2,-1,1,2}
-\xmarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\penwd{1.25pt}
-\arrow \reverse \parafcn{-2.75, 0, 0.1}{(t**2,t)}
-\point[4pt]{(4,-2), (0,0)}
-\end{mfpic}
+\input{InverseFunctions_pic20.tex}
+
+
+\input{InverseFunctions_pic21.tex}
+
 
 \end{multicols}
 
@@ -1051,54 +683,14 @@ Hence, in some sense, we have two  \textit{partial} inverses for $f(x) = x^2$:  
 \begin{multicols}{3}
 
 
-\begin{mfpic}[15]{-3}{3}{-1}{8}
-\tlabel[cc](-3.3,4){\scriptsize $(-2,4)$}
-\tlabel[cc](3,4){\scriptsize $(2,4)$}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x) = x^2$}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.75, 2.75, 0.1}{x**2}
-\point[4pt]{(-2,4), (2,4),(0,0)}
-\end{mfpic}  
+\input{InverseFunctions_pic22.tex}
+  
 
-\begin{mfpic}[15]{-3}{3}{-1}{8}
-\tlabel[cc](3,4){\scriptsize $(2,4)$}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y=f_{1}(x) = x^2$, $x \geq 0$}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
- \arrow \function{0, 2.75, 0.1}{x**2}
-\point[4pt]{(2,4),(0,0)}
-\end{mfpic}  
+\input{InverseFunctions_pic23.tex}
+  
 
-\begin{mfpic}[15]{-3}{3}{-1}{8}
-\tlabel[cc](-3.3,4){\scriptsize $(-2,4)$}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y=f_{2}(x) = x^2$, $x \leq 0$}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \function{-2.75, 0, 0.1}{x**2}
-\point[4pt]{(-2,4), (0,0)}
-\end{mfpic}  
+\input{InverseFunctions_pic24.tex}
+  
 
 
 \end{multicols}
@@ -1133,22 +725,8 @@ $\begin{array}{rcl}
 
 &
 
-\begin{mfpic}[15]{-1}{8}{-1}{8}
-\tlabel[cc](8,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y=f_{1}(x) = x^2$, $x \geq 0$ and $y = g_{1}(x) = \sqrt{x}$} 
-\axes
-\dashed \polyline{(-0.5, -0.5), (6.5,6.5)}
-\xmarks{1,2,3,4,5,6,7}
-\ymarks{1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
- \arrow \function{0, 2.75, 0.1}{x**2}
-  \arrow \function{0, 7.56, 0.1}{sqrt(x)}
-\point[4pt]{(2,4),(0,0), (4,2)}
-\end{mfpic}   \\
+\input{InverseFunctions_pic25.tex}
+   \\
 
 \end{tabular}
 
@@ -1183,22 +761,8 @@ $\begin{array}{rcl}
 
 &
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tcaption{\scriptsize $y=f_{2}(x) = x^2$, $x \leq 0$ and $y = g_{2}(x) = -\sqrt{x}$}
-\axes
-\dashed \polyline{(-3.5, -3.5), (3.5, 3.5)}
-\xmarks{-4, -3, -2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-4$ \hspace{7pt}} -4,{\scriptsize $-3$ \hspace{7pt}} -3,{\scriptsize $-2$ \hspace{7pt}} -2, {\scriptsize $-1$ \hspace{7pt}} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2,  {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $-1$} -1,  {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4 }
-\penwd{1.25pt}
-\arrow \reverse \function{-2.23, 0, 0.1}{x**2}
-\arrow  \function{0, 5, 0.1}{0-sqrt(x)}
-\point[4pt]{(-2,4), (0,0), (4,-2)}
-\end{mfpic}    \\
+\input{InverseFunctions_pic26.tex}
+    \\
 
 \end{tabular}
 
@@ -1236,22 +800,8 @@ Our next example continues the theme of restricting the domain of a function to 
 
 \begin{tabular}{m{1.75in}m{4.25in}}
 
-\begin{mfpic}[15]{-1}{3}{-1}{7}
-\axes
-\xmarks{1,2}
-\ymarks{1,2,3,4,5,6}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tcaption{\scriptsize $y=j(x)$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \function{-1,1,0.1}{(x**2)-(2*x)+4}
-\point[4pt]{(1,3)}
-\end{mfpic}
+\input{InverseFunctions_pic27.tex}
+
 &
 
 $ \begin{array}{rclr}
@@ -1311,26 +861,8 @@ We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric a
 
 \begin{center}
 
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\dashed \polyline{(-1,-1), (7,7)}
-\xmarks{1,2,3,4,5,6}
-\ymarks{1,2,3,4,5,6}
-\tlabel[cc](-2,4){\scriptsize $y=j(x)$}
-\tlabel[cc](4,-2){\scriptsize $y=j^{-1}(x)$}
-\tlabel[cc](5.5,4){\scriptsize $y=x$}
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$1$} 1, {$2$} 2,{$3$} 3, {$4$} 4,{$5$} 5, {$6$} 6}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \function{-1,1,0.1}{(x**2)-(2*x)+4}
-\arrow \function{3,7,0.1}{1-sqrt(x-3)}
-\point[4pt]{(1,3), (3,1)}
-\end{mfpic}
+\input{InverseFunctions_pic28.tex}
+
 
 
 \end{center}
@@ -1342,22 +874,8 @@ We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric a
 
 \begin{tabular}{m{1.75in}m{4.25in}}
 
-\begin{mfpic}[15]{-3}{3}{-3}{3}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{-2,-1,1,2}
-\tcaption{\scriptsize $y=k(t)$}
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{7pt} $} -2, {$-1 \hspace{7pt} $} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \function{-2,3,0.1}{sqrt(x+2)-1}
-\point[4pt]{(-2,-1)}
-\end{mfpic} 
+\input{InverseFunctions_pic29.tex}
+ 
 
 &
 
@@ -1428,27 +946,8 @@ Graphically, everything checks out, provided that we remember the domain restric
 
 \begin{center}
 
-\begin{mfpic}[25]{-3}{3}{-3}{3}
+\input{InverseFunctions_pic30.tex}
 
-\dashed \polyline{(-2,-2),(2,2)}
-\tlabel[cc](-1,1){\scriptsize $y=k(t)$}
-\tlabel[cc](1,-1){\scriptsize $y=k^{-1}(t)$}
-\point[3pt]{(-2,-1),(-1,-2)}
-\axes
-\xmarks{-2,-1,1,2}
-\ymarks{-2,-1,1,2}
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{7pt} $} -2, {$-1 \hspace{7pt} $} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \function{-2,3,0.1}{sqrt(x+2)-1}
-\arrow \function{-1,1.2,0.1}{(x**2)+(2*x)-1}
-\point[4pt]{(-2,-1), (-1,-2)}
-\end{mfpic}
 
 \end{center}
 

@@ -86,26 +86,19 @@ We put these definitions to work for us in the next example.
 
 \begin{center}
 
-\begin{mfpic}[15]{-2}{5}{-3}{4}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-1, 0, 1, 2, 3, 4}
-\ymarks{-2, -1, 0, 1, 2, 3}
-\tcaption{\scriptsize $y = s(t)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](1, -2.5){$(0,-2)$}
-\tlabel[cc](2, 0.5){$(1,0)$}
-\tlabel[cc](2, 2.5){$(2,2)$}
-\tlabel[cc](-2, -2.5){$(-2, -2)$}
-\axislabels {x}{{$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$2$} 2,{$-1$} -1,{$1$} 1, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
- \arrow \polyline{(-2, -2), (0, -2), (2, 2), (5, 2)}
-\point[4pt]{(-2,-2), (0,-2), (1,0), (2,2)}
-\end{mfpic}
+% \input{FunctionArithmetic_pic1.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-2, xmax=5, ymin=-3, ymax=4, domain=-2:5]
+  \addplot[fgraph] coordinates {(-2,-2) (0,-2) (2,2) (5,2)};
+  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-2,-2) (0,-2) (1,0) (2,2)};
+  \node[flabel, label=below left :{$(-2,-2)$}] at (axis cs:-2,-2) {};
+  \node[flabel, label=below right:{$(0,-2)$}]  at (axis cs: 0,-2) {};
+  \node[flabel, label=above left :{$(1,0)$}]   at (axis cs: 1, 0) {};
+  \node[flabel, label=above right:{$(2,2)$}]   at (axis cs: 2, 2) {};
+  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = s(t)$};
+\end{axis}
+\end{tikzpicture}
+
 
  
 \end{center}
@@ -444,23 +437,29 @@ We imagine the product $u_{1} \, v_{1}$ as being the area of a rectangle with wi
 
 \begin{tabular}{cc}
 
-\begin{mfpic}[35]{-1}{7}{-1}{4}
-\tlabel[cc](-0.25,1){$u_{1}$}
-\tlabel[cc](2,-0.25){$v_{1}$}
-\tlabel[cc](2,1){$u_{1} \, v_{1}$}
-\penwd{1.25pt}
-\polyline{(0,0), (0,2), (4,2), (4,0), (0,0)}
-\end{mfpic} 
+% \input{FunctionArithmetic_pic2.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:4]
+  \addplot[fgraph] coordinates {(0,0) (0,2) (4,2) (4,0) (0,0)};
+  \node[flabel, label=right:{$u_{1}$}]       at (axis cs:-0.25,1) {};
+  \node[flabel, label=above:{$v_{1}$}]       at (axis cs:2,-0.25) {};
+  \node[flabel, label=above:{$u_{1} \, v_{1}$}] at (axis cs:2,1) {};
+\end{axis}
+\end{tikzpicture}
+ 
 
 & 
 
-\begin{mfpic}[35]{-1}{7}{-1}{4}
-\tlabel[cc](-0.25,1.5){$u_{2}$}
-\tlabel[cc](3,-0.25){$v_{2}$}
-\tlabel[cc](3,1.5){$u_{2} \, v_{2}$}
-\penwd{1.25pt}
-\polyline{(0,0), (0,3), (6,3), (6,0), (0,0)}
-\end{mfpic}  \\
+% \input{FunctionArithmetic_pic3.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:6]
+  \addplot[fgraph] coordinates {(0,0) (0,3) (6,3) (6,0) (0,0)};
+  \node[flabel, label=right:{$u_{2}$}]          at (axis cs:-0.25,1.5) {};
+  \node[flabel, label=above:{$v_{2}$}]          at (axis cs:3,-0.25)   {};
+  \node[flabel, label=above:{$u_{2} \, v_{2}$}] at (axis cs:3,1.5)     {};
+\end{axis}
+\end{tikzpicture}
+  \\
 
 \end{tabular}
 
@@ -471,20 +470,23 @@ From $\Delta u = u_{2} - u_{1}$, we get $u_{2} = u_{1} + \Delta u$ and, likewise
 \begin{center}
 
 
-\begin{mfpic}[40]{-1}{7}{-1}{4}
-\tlabel[cc](-0.3,2.5){$\Delta u$}
-\tlabel[cc](-0.3,1){$u_{1}$}
-\tlabel[cc](2,-0.25){$v_{1}$}
-\tlabel[cc](5,-0.25){$\Delta v$}
-\tlabel[cc](2,1){$u_{1} \, v_{1}$}
-\tlabel[cc](2,2.5){$v_{1} \,  \Delta u $}
-\tlabel[cc](5,1){$u_{1} \, \Delta v$}
-\tlabel[cc](5,2.5){$\Delta u \,  \Delta v $}
-\penwd{1.25pt}
-\polyline{(0,0), (0,3), (6,3), (6,0), (0,0)}
-\dashed \polyline{(0,2), (6,2)}
-\dashed \polyline{(4,3), (4,0)}
-\end{mfpic}  
+% \input{FunctionArithmetic_pic4.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:6]
+  \addplot[fgraph] coordinates {(0,0) (0,3) (6,3) (6,0) (0,0)};
+  \addplot[fgraph, dashed, domain=0:6] {2};
+  \addplot[fgraph, dashed] coordinates {(4,0) (4,3)};
+  \node[flabel, label=right:{$\Delta u$}]                 at (axis cs:-0.3,2.5) {};
+  \node[flabel, label=right:{$u_{1}$}]                    at (axis cs:-0.3,1)   {};
+  \node[flabel, label=above:{$v_{1}$}]                    at (axis cs:2,-0.25)  {};
+  \node[flabel, label=above:{$\Delta v$}]                 at (axis cs:5,-0.25)  {};
+  \node[flabel, label=above:{$u_{1} \, v_{1}$}]           at (axis cs:2,1)      {};
+  \node[flabel, label=above:{$v_{1} \, \Delta u$}]        at (axis cs:2,2.5)    {};
+  \node[flabel, label=above:{$u_{1} \, \Delta v$}]        at (axis cs:5,1)      {};
+  \node[flabel, label=above:{$\Delta u \, \Delta v$}]     at (axis cs:5,2.5)    {};
+\end{axis}
+\end{tikzpicture}
+  
 
 
 \end{center}
