@@ -12,25 +12,55 @@ In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of 
 
 \begin{center}
 
-% \input{ExercisesforGraphsofFunctions_pic1.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-6, xmax=6, ymin=-6, ymax=6]
-  \addplot[fgraph] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)};
-  \addplot[fgraph, domain=-1:1] {x^2 - 1};
-  \addplot[fgraph] coordinates {(1,0) (2,3) (3,1)};
-  \addplot[only marks, mark=*] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)};
-  \node[flabel, label=below left :{$(-5,-5)$}] at (axis cs:-5,-5) {};
-  \node[flabel, label=above left :{$(-4,0)$}]  at (axis cs:-4, 0) {};
-  \node[flabel, label=above left :{$(-3,4)$}]  at (axis cs:-3, 4) {};
-  \node[flabel, label=above left :{$(-2,2)$}]  at (axis cs:-2, 2) {};
-  \node[flabel, label=below left :{$(-1,0)$}]  at (axis cs:-1, 0) {};
-  \node[flabel, label=below right:{$(0,-1)$}]  at (axis cs: 0,-1) {};
-  \node[flabel, label=below right:{$(1,0)$}]   at (axis cs: 1, 0) {};
-  \node[flabel, label=above right:{$(2,3)$}]   at (axis cs: 2, 3) {};
-  \node[flabel, label=above right:{$(3,1)$}]   at (axis cs: 3, 1) {};
-  \node at (rel axis cs:0.5,0) [below] {$y=f(x)$};
-\end{axis}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-6, xmax=6,
+    ymin=-6, ymax=6,
+    xtick={-5,-4,-3,-2,-1,1,2,3,4,5},
+    xticklabels={$-5$,$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$,$5$},
+    ytick={-5,-4,-3,-2,-1,1,2,3,4,5},
+    yticklabels={$-5$,$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$,$5$},
+    axis line style={->},
+    width=11cm, height=11cm,
+    clip=false
+  ]
+    % Axis labels
+    \node at (axis cs:6,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,6) {\scriptsize $y$};
+
+    % Labeled points
+    \addplot[only marks, mark=*] coordinates {
+      (-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)
+    };
+    \node at (axis cs:-5,-5.5) {\scriptsize $(-5,-5)$};
+    \node at (axis cs:-5,0.5)  {\scriptsize $(-4,0)$};
+    \node at (axis cs:-3,4.5)  {\scriptsize $(-3,4)$};
+    \node at (axis cs:-1,2)    {\scriptsize $(-2,2)$};
+    \node at (axis cs:-2,-0.5) {\scriptsize $(-1,0)$};
+    \node at (axis cs:1,-1.5)  {\scriptsize $(0,-1)$};
+    \node at (axis cs:1.75,-0.5) {\scriptsize $(1,0)$};
+    \node at (axis cs:2,3.5)   {\scriptsize $(2,3)$};
+    \node at (axis cs:4,1)     {\scriptsize $(3,1)$};
+
+    % First polyline
+    \addplot[thick] coordinates {
+      (-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)
+    };
+
+    % Function y = x^2 - 1
+    \addplot[domain=-1:1, samples=200, thick] {x^2 - 1};
+
+    % Second polyline
+    \addplot[thick] coordinates {
+      (1,0) (2,3) (3,1)
+    };
+
+    % Caption
+    \node[below] at (rel axis cs:0.5,0) {$y=f(x)$};
+  \end{axis}
 \end{tikzpicture}
+
 
 
 \end{center}
@@ -40,176 +70,146 @@ In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of 
 
 % Transformed Exercises with Solutions
 
-\begin{question}
+\begin{problem}
 Find the domain of $f$.
-\begin{solution}
-$[-5,3]$
-\end{solution}
+$\answer{[-5,3]}$
 
-\end{question}
 
-\begin{question}
+\end{problem}
+
+\begin{problem}
 Find the range of $f$.
+$\answer{[-5,4]}$
 
-\begin{solution}
-$[-5,4]$
-\end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the maximum, if it exists.
 \begin{solution}
 $f(-3) = 4$
-
-
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the minimum, if it exists. 
-
 \begin{solution}
 $f(-5) = -5$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the local maximums, if any exist.
 \begin{solution}
 $(-3,4)$,  $(2,3)$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the local minimums, if any exist.
-
 \begin{solution}
 $(0,-1)$
-
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the intervals where $f$ is increasing.
 \begin{solution}
 $[-5,-3]$, $[0,2]$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the intervals where $f$ is decreasing.
-
 \begin{solution}
 $[-3,0]$, $[2,3]$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
-Determine $f(-2)$.
-\begin{solution}
-$f(-2) = 2$
+\begin{problem}
+Determine $f(-2)$.  $f(-2) = \answer{2}$
 
+\end{problem}
 
-\end{solution}
-
-\end{question}
-
-\begin{question}
+\begin{problem}
 Solve $f(x) = 4$.
+$x=\answer{-3}$
 
-\begin{solution}
-$x=-3$
-\end{solution}
+\end{problem}
 
-\end{question}
-
-\begin{question}
+\begin{problem}
 List the $x$-intercepts, if any exist.
 \begin{solution}
 $(-4,0)$, $(-1,0)$, $(1,0)$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the $y$-intercepts, if any exist.
+$\answer{(0,-1)}$
 
-\begin{solution}
-$(0,-1)$
+\end{problem}
 
-\end{solution}
-
-\end{question}
-
-\begin{question}
+\begin{problem}
 Find the zeros of $f$.
 \begin{solution}
 $-4$, $-1$, $1$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Solve $f(x) \geq 0$.
-
 \begin{solution}
 $[-4,-1]$, $[1,3]$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the number of solutions to $f(x) = 1$.
-\begin{solution}
-$4$
+$\answer{4}$
+\end{problem}
 
-\end{solution}
-
-\end{question}
-
-\begin{question}
+\begin{problem}
 Find the number of solutions to $|f(x)| = 1$.
+$\answer{6}$
 
-\begin{solution}
-$6$
-\end{solution}
+\end{problem}
 
-\end{question}
-
-\begin{question}
+\begin{problem}
 Solve $(x^2-x-2)f(x) = 0$
 \begin{solution}
 $x=-4, -1,1,2$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Solve  $(x^2-x-2)f(x) > 0$
 
 \begin{solution}
 $(-4,-1) \cup (-1,1) \cup (2,3)$ 
-
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the domain of $R(x) = \dfrac{1}{f(x)}$
 \begin{solution}
 To find the domain of $R(x) = \frac{1}{f(x)}$, we start with the domain of $f$ and exclude values where $f(x) = 0$.  Hence, the domain of $R$ is $[-5,-4) \cup (-4,-1) \cup (-1,1) \cup (1,3]$.
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the range of $R(x) = \dfrac{1}{f(x)}$
 
 \begin{solution}
@@ -217,52 +217,97 @@ To find the range of $R(x) = \frac{1}{f(x)}$, we start with the range of $f$ (ex
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+In Exercises \ref{usesecondfuncgraphfirst} - \ref{usesecondfuncgraphlast}, use the graph of $y =g(t)$ given below to answer the  question.
+\begin{center}
+    
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-6, ymax=6,
+    xtick={-3,-2,-1,1,2,3,4},
+    xticklabels={$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+    ytick={-5,-4,-3,-2,-1,1,2,3,4,5},
+    yticklabels={$-5$,$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$,$5$},
+    axis line style={->},
+    width=11cm, height=11cm,
+    clip=false
+  ]
+    % Axis labels
+    \node at (axis cs:5,-0.5) {\scriptsize $t$};
+    \node at (axis cs:0.5,6) {\scriptsize $y$};
+
+    % Labels near points
+    \node at (axis cs:-4,0.5)  {\scriptsize $(-4,0)$};
+    \node at (axis cs:-2,-5.5) {\scriptsize $(-2,-5)$};
+    \node at (axis cs:1,-0.5)  {\scriptsize $(0,0)$};
+    \node at (axis cs:2,2.5)   {\scriptsize $(2,3)$};
+    \node at (axis cs:2,5.5)   {\scriptsize $(2,5)$};
+    \node at (axis cs:4,-0.5)  {\scriptsize $(4,0)$};
+
+    % Function y = 5 sin(pi/4 * x)
+    \addplot[thick, domain=-4:4, samples=200] {5*sin(deg(x*pi/4))};
+
+    % Solid points
+    \addplot[only marks, mark=*] coordinates {
+      (-2,-5) (0,0) (4,0) (2,3) (-4,0)
+    };
+
+    % Open circle at (2,5)
+    \addplot[only marks, mark=o, mark size=2pt, thick] coordinates {(2,5)};
+
+    % Caption
+    \node[below] at (rel axis cs:0.5,0) {$y=g(t)$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{problem}\label{usesecondfuncgraphfirst}
 Find the domain of $g$.
 \begin{solution}
 $[-4,4]$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the range of $g$.
 
 \begin{solution}
 $[-5,5)$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the maximum, if it exists.
 \begin{solution}
 none
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the minimum, if it exists. 
 
 \begin{solution}
 $g(-2) = -5$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the local maximums, if any exist.
 \begin{solution}
 none
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the local minimums, if any exist.
 
 \begin{solution}
@@ -270,52 +315,52 @@ $(-2,-5)$, $(2,3)$
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the intervals where $g$ is increasing.
 \begin{solution}
 $[-2,2)$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the intervals where $g$ is decreasing.
 
 \begin{solution}
 $[-4, -2]$, $(2,4]$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Determine $g(2)$.
 \begin{solution}
 $g(2) = 3$
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Solve $g(t) = -5$.
 
 \begin{solution}
 $t=-2$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the $t$-intercepts, if any exist.
 \begin{solution}
 $(-4,0)$, $(0,0)$, $(4,0)$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 List the $y$-intercepts, if any exist.
 
 \begin{solution}
@@ -323,52 +368,52 @@ $(0,0)$
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the zeros of $g$.
 \begin{solution}
 $-4$, $0$, $4$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Solve $g(t) \leq 0$.
 
 \begin{solution}
 $[-4,0] \cup \{4\}$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Find the domain of $G(t) = \dfrac{g(t)}{t+2}$.
 \begin{solution}
 $[-4,-2) \cup (-2.4]$
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Solve $\dfrac{g(t)}{t+2} \leq 0$.
 
 \begin{solution}
 $\{-4\} \cup (-2,0] \cup \{4\}$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 How many solutions are there to $[g(t)]^2 = 9$?
 \begin{solution}
 $5$
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}\label{usesecondfuncgraphlast}
 Does $g$ appear to be even, odd, or neither?
 
 \begin{solution}
@@ -376,16 +421,16 @@ Neither.
 
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Prove that if $f$ is an odd function and $0$ is in the domain of $f$, then $f(0) = 0$.
 \begin{solution}
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Let $R(x)$ be the function defined as:  $R(x) = 1$ if $x$ is a rational number, $R(x) = 0$ if $x$ is an irrational number. With help from your classmates, try to graph $R$.  What difficulties do you encounter?
 
 NOTE:  Between every pair of real numbers, there is both a rational and an irrational number \ldots
@@ -395,9 +440,9 @@ NOTE:  Between every pair of real numbers, there is both a rational and an irrat
 Local maximum: $(0,1)$, no local minimum.  Increasing: $(0,2]$, decreasing: $[-2,0)$.
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Consider the graph of the function $f$ given below.  
 
 \begin{center}
@@ -421,39 +466,39 @@ Consider the graph of the function $f$ given below.
 No local maximum,  local minimum: $(0,1)$.  Increasing: $[-2,0)$, decreasing: $(0,2]$.
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Explain why $f$ has a local maximum but not a local minimum at the point $(-1, 1)$.
 \begin{solution}
 No local maximum,  local minimum: $(0,-1)$.  Increasing: $[0,2]$, decreasing: $[-2,0]$.
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Explain why  $f$ has a local minimum but not a local maximum at the point $(1, 1)$.
 \begin{solution}
 Local maximum: $(0,5)$, no local minimum.  Increasing: $[-2,0]$, decreasing: $[0,2]$.
 \end{solution}
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Explain why $f$ has a local maximum AND a local minimum at the point $(0, 1)$.
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Explain why $f$ is constant on the interval $[-1, 1]$ and thus has both a local maximum AND a local minimum at every point $(x, f(x))$ where $-1 < x < 1$.
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 For each function below, find the local maximum or local minimum and list the interval over which the function is increasing and the interval over which the function is decreasing. 
 
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 % \input{ExercisesforGraphsofFunctions_pic5.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
@@ -463,9 +508,9 @@ For each function below, find the local maximum or local minimum and list the in
   \node at (rel axis cs:0.5,0) [below] {Function I};
 \end{axis}
 \end{tikzpicture}
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 % \input{ExercisesforGraphsofFunctions_pic6.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
@@ -477,9 +522,9 @@ For each function below, find the local maximum or local minimum and list the in
 \end{tikzpicture}
 
 
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 % \input{ExercisesforGraphsofFunctions_pic7.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-3, xmax=3, ymin=-2, ymax=5]
@@ -489,9 +534,9 @@ For each function below, find the local maximum or local minimum and list the in
   \node at (rel axis cs:0.5,0) [below] {Function III};
 \end{axis}
 \end{tikzpicture}
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 % \input{ExercisesforGraphsofFunctions_pic8.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=6]
@@ -501,6 +546,6 @@ For each function below, find the local maximum or local minimum and list the in
   \node at (rel axis cs:0.5,0) [below] {Function IV};
 \end{axis}
 \end{tikzpicture}
-\end{question}
+\end{problem}
 
 \end{document}
