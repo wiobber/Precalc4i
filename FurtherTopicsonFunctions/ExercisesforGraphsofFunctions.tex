@@ -7,58 +7,28 @@
 \mfpicnumber{1} \opengraphsfile{ExercisesforGraphsofFunctions} % mfpic settings added 
 
 
-In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of $y = f(x)$ given below to answer the  question.
+In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of $y = f(x)$ given below to answer the question.
 
 
 \begin{center}
 
 \begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
-    xmin=-6, xmax=6,
-    ymin=-6, ymax=6,
-    xtick={-5,-4,-3,-2,-1,1,2,3,4,5},
-    xticklabels={$-5$,$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$,$5$},
-    ytick={-5,-4,-3,-2,-1,1,2,3,4,5},
-    yticklabels={$-5$,$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$,$5$},
-    axis line style={->},
-    width=11cm, height=11cm,
-    clip=false
-  ]
-    % Axis labels
-    \node at (axis cs:6,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,6) {\scriptsize $y$};
-
-    % Labeled points
-    \addplot[only marks, mark=*] coordinates {
-      (-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)
-    };
-    \node at (axis cs:-5,-5.5) {\scriptsize $(-5,-5)$};
-    \node at (axis cs:-5,0.5)  {\scriptsize $(-4,0)$};
-    \node at (axis cs:-3,4.5)  {\scriptsize $(-3,4)$};
-    \node at (axis cs:-1,2)    {\scriptsize $(-2,2)$};
-    \node at (axis cs:-2,-0.5) {\scriptsize $(-1,0)$};
-    \node at (axis cs:1,-1.5)  {\scriptsize $(0,-1)$};
-    \node at (axis cs:1.75,-0.5) {\scriptsize $(1,0)$};
-    \node at (axis cs:2,3.5)   {\scriptsize $(2,3)$};
-    \node at (axis cs:4,1)     {\scriptsize $(3,1)$};
-
-    % First polyline
-    \addplot[thick] coordinates {
-      (-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)
-    };
-
-    % Function y = x^2 - 1
-    \addplot[domain=-1:1, samples=200, thick] {x^2 - 1};
-
-    % Second polyline
-    \addplot[thick] coordinates {
-      (1,0) (2,3) (3,1)
-    };
-
-    % Caption
-    \node[below] at (rel axis cs:0.5,0) {$y=f(x)$};
-  \end{axis}
+\begin{axis}[fplot, xmin=-6, xmax=6, ymin=-6, ymax=6]
+  \addplot[fgraph] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)};
+  \addplot[fgraph, domain=-1:1] {x^2 - 1};
+  \addplot[fgraph] coordinates {(1,0) (2,3) (3,1)};
+  \addplot[only marks, mark=*] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)};
+  \node[flabel, label=below left :{$(-5,-5)$}] at (axis cs:-5,-5) {};
+  \node[flabel, label=above left :{$(-4,0)$}]  at (axis cs:-4, 0) {};
+  \node[flabel, label=above left :{$(-3,4)$}]  at (axis cs:-3, 4) {};
+  \node[flabel, label=above left :{$(-2,2)$}]  at (axis cs:-2, 2) {};
+  \node[flabel, label=below left :{$(-1,0)$}]  at (axis cs:-1, 0) {};
+  \node[flabel, label=below right:{$(0,-1)$}]  at (axis cs: 0,-1) {};
+  \node[flabel, label=below right:{$(1,0)$}]   at (axis cs: 1, 0) {};
+  \node[flabel, label=above right:{$(2,3)$}]   at (axis cs: 2, 3) {};
+  \node[flabel, label=above right:{$(3,1)$}]   at (axis cs: 3, 1) {};
+  \node at (rel axis cs:0.5,0) [below] {$y=f(x)$};
+\end{axis}
 \end{tikzpicture}
 
 
