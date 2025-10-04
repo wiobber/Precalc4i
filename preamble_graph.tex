@@ -1,0 +1,204 @@
+
+%% Default \begin{tikzpicture} options
+\tikzset{
+ xmGraphTikz/.style={},
+ panel/.style={},
+ }
+
+ %% Default \begin{axis} options
+\pgfplotsset{
+ xmGraphPlot/.style={},
+ xmGraphPlotAxis/.style={
+  xlabel={$x$},  % x-axis label
+  ylabel={$y$},  % y-axis label	
+	axis lines=middle,
+	axis equal image,
+	axis line style={->},
+%   panel,
+ },
+  panel/.code={\def\xmGraphShowPanel{true}}, % sets a macro when applied
+  % xmGraphShowDesmos/.code={\def\xmGraphShowDesmos{true}}, % sets a macro when applied
+  % % xmGraphShowDesmos/.default={true}, 
+  % xmGraphNoDesmos/.code={\let\xmGraphShowDesmos\undefined}, 
+  % % xmGraphShowDesmos,
+  xmGraphShowCommand/.code={\def\xmGraphShowCommand{true}}, % sets a macro when applied
+  % xmGraphShowTikZ/.code={\def\xmGraphShowTikZ{true}}, % sets a macro when applied
+  % xmGraphNoTikZ/.code={\let\xmGraphShowTikZ\undDefInEd}, % sets a macro when applied
+  xmDesmosWidth/.store in=\xmDesmosWidth,
+  xmDesmosWidth/.default=600px,
+  xmDesmosHeight/.store in=\xmDesmosHeight,
+  xmDesmosHeight/.default=300px,
+}
+
+\def\xmGraphShowDesmos{true}  % default NOT inside the style: DOES NOT WORK
+
+\ExplSyntaxOn
+% Helper function to process each item
+%%% The 'multi'-part, with f(x),g(x,f(x), does NOT yet work )
+\cs_new_protected:Nn \__multiplot_get_function:n {
+  % Check if the item contains slashes (legend and/or options separator)
+  % IN 2025 ? \seq_set_split_with_nested:nnnN { / } { | | } { #1 } \l_tmpa_seq
+  \seq_set_split:Nnn \l_tmpa_seq { // } { #1 }
+  \int_case:nn { \seq_count:N \l_tmpa_seq } {
+    { 1 } {
+      % No legend, no options: just plot function
+         #1
+    }
+    { 2 } {
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpa_tl  % function
+      \l_tmpa_tl
+    }
+    { 3 } {
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpa_tl  % function
+      \l_tmpa_tl
+    }
+  }
+}
+
+\cs_new_protected:Nn \__multiplot_process:nn {
+  % Check if the item contains slashes (legend and/or options separator)
+  % IN 2025 ? \seq_set_split_with_nested:nnnN { / } { | | } { #1 } \l_tmpa_seq
+  \seq_set_split:Nnn \l_tmpa_seq { // } { #2 }
+  \int_case:nn { \seq_count:N \l_tmpa_seq } {
+    { 1 } {
+      % No legend, no options: just plot function
+      \addplot[xmGraphPlot, #1] { #2 };
+    }
+    { 2 } {
+      % Has legend: plot function and add legend entry
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpa_tl  % function
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpb_tl  % legend
+      \addplot[xmGraphPlot, #1] { \l_tmpa_tl };
+      % Only add legend if not empty
+      %\tl_if_empty:NF \l_tmpb_tl {
+        \addlegendentry{\l_tmpb_tl}
+      %}
+    }
+    { 3 } {
+      % Has legend and options: plot function with custom options
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpa_tl  % function
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpb_tl  % legend
+      \seq_pop_left:NN \l_tmpa_seq \l_tmpc_tl  % options
+      \addplot[xmGraphPlot, #1,  \l_tmpc_tl] { \l_tmpa_tl };
+      % Only add legend if not empty
+      \tl_if_empty:NF \l_tmpb_tl {
+        \addlegendentry{\l_tmpb_tl}
+        }
+    }
+  }
+}
+
+\cs_new_protected:Nn \xmultiplot:nn {
+  \clist_map_inline:nn { #2 } {
+    \__multiplot_process:nn { #1 } { ##1 }
+  }
+}
+
+\NewDocumentCommand \xmGraphPlot { o m } { \xmultiplot:nn {#1} {#2} }
+\NewDocumentCommand \xmGraphGetFunction { m } { \__multiplot_get_function:n {#1} }
+\ProvideDocumentCommand \xmGraphLegend { m } {}
+\ProvideDocumentCommand \xmGraphExtra { m } {}
+
+\ExplSyntaxOff
+
+% \newcommand\GetKeyFromStyle[2]{%
+%   \pgfkeys{/pgfplots/.cd,#1}%
+%   \pgfkeysvalueof{/pgfplots/#2}%
+% }
+
+\newcommand\GetPGFplotsKeyFromStyle[2]{%
+  % #1 = style name
+  % #2 = key name
+  \pgfkeys{/pgfplots/.cd,#1}% activate style
+  %\typeout{KEY #2 in #1}
+  \pgfkeysifdefined{/pgfplots/#2}{%
+    \pgfkeysvalueof{/pgfplots/#2}%
+   % \typeout{KEY found: #2 in #1: \pgfkeysvalueof{/pgfplots/#2}}
+  }{%
+    \pgfkeysifdefined{/pgfplots/axis/#2}{%
+      \pgfkeysvalueof{/pgfplots/axis/#2}%
+      %\typeout{KEY axis found: #2 in #1: \pgfkeysvalueof{/pgfplots/#2}}
+    }{%
+    %\pgfkeysifdefined{/pgfplots/.@cmd/#2}{TRUE}{FALSE}%
+      % undefined → return empty
+    }%
+  }%
+}
+
+
+\newcommand{\xmgraph}[2][]{
+  \begingroup
+  \ifdefined\xmGraphShowDesmos    % generic tikz-options confuse the pgfkeys ...
+    \typeout{SETTING tmpstyle (\xmGraphShowDesmos\  for #1)}
+    \pgfplotsset{   %% The #1 will process the additional options, so that \xmGraphShowTikZ works !!!
+      tmpstyle/.style={
+        /pgfplots/xmGraphPlot,        % apply plot keys
+        /pgfplots/xmGraphPlotAxis,    % apply axis keys
+        #1                            % allow overrides
+      }
+    }
+    \pgfkeys{/pgfplots/.cd,#1}        % activate style
+  \else
+    \typeout{SKIPPING tmpstyle for #1}
+  \fi
+%
+  \ifdefined\HCode
+    \HCode{\Hnewline<div class="xmdesmos">}
+  \else
+    \def\xmGraphShowTikZ{true}  %% ALWAYS show TikZ in PDF !!!
+  \fi
+%
+  % Debugging/convenience : Automatically add the command to the output
+  \ifdefined\xmGraphShowCommand
+  \ifdefined\HCode
+    \HCode{<h1> Command: \string\graph[#1] for  }\detokenize{#2} \HCode{</h1> }
+  \else
+     {\Large\bf With options #1 }
+  \fi
+  \fi
+%
+  % Do the DESMOS part
+  \ifdefined\HCode\ifdefined\xmGraphShowDesmos
+    \HCode{<div class='desmos-placeholder' data-options='}
+        %%% still an issue with $x$ vs x   (Desmos prints the $'s !)
+        % \def\myval{\GetPGFplotsKeyFromStyle}tmpstyle}{xlabel}
+        % xlabel=\HCode{\myval},
+        xmax=\GetPGFplotsKeyFromStyle{tmpstyle}{xmax},
+        xmin=\GetPGFplotsKeyFromStyle{tmpstyle}{xmin},  
+        ymin=\GetPGFplotsKeyFromStyle{tmpstyle}{ymin},
+        ymax=\GetPGFplotsKeyFromStyle{tmpstyle}{ymax},
+        \ifdefined\xmGraphShowPanel    panel=true, \fi
+        \ifdefined\xmDesmosWidth       xmDesmosWidth=\xmDesmosWidth, \fi
+        \ifdefined\xmDesmosHeight      xmDesmosHeight=\xmDesmosHeight, \fi
+        \if\relax\detokenize\expandafter{\GetPGFplotsKeyFromStyle{tmpstyle}{axis equal image}}\relax
+          axis equal image=true,
+        \fi
+    \HCode{' data-graph='}\detokenize{#2}\HCode{'"></div>}%
+  \fi\fi%
+  % Do the TIKZ part
+  \ifdefined\xmGraphShowTikZ%
+    \begin{tikzpicture}[xmGraphTikz]
+    \begin{axis}[xmGraphPlotAxis,#1] 
+      % \xmGraphPlot[]{#2}    
+      \addplot[xmGraphPlot] { #2 };
+      % \xmGraphPlot[#1]{#2} 
+      \xmGraphLegend{}
+      \xmGraphExtra{}
+    \end{axis}
+    \end{tikzpicture}
+  \fi
+  \ifdefined\HCode
+    \HCode{\Hnewline</div> <!-- class desmos --> }  
+  \fi
+\endgroup
+}
+
+% \ExplSyntaxOn
+% \bool_set_true:N \l__trace_errors_bool
+% \ExplSyntaxOff
+
+
+\ifdefined\xmGraphNoRedefine    % This would give the ximera.4ht version
+\else
+  \AtBeginDocument{\let\graph\xmgraph}
+\fi
