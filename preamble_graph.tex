@@ -126,7 +126,7 @@
 }
 
 
-\newcommand{\xmgraph}[2][]{
+\newcommand{\xmGraph}[2][]{
   \begingroup
   \ifdefined\xmGraphShowDesmos    % generic tikz-options confuse the pgfkeys ...
     \typeout{SETTING tmpstyle (\xmGraphShowDesmos\  for #1)}
@@ -198,7 +198,7 @@
 % \ExplSyntaxOff
 
 
-\ifdefined\xmGraphNoRedefine    % This would give the ximera.4ht version
-\else
-  \AtBeginDocument{\let\graph\xmgraph}
-\fi
+% \ifdefined\xmGraphNoRedefine    % This would give the ximera.4ht version
+% \else
+%   \AtBeginDocument{\let\graph\xmgraph}
+% \fi
