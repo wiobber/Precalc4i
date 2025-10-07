@@ -5,120 +5,78 @@
 	\xmtitle{Exercises for Rational Graphs (TRANSFORMED)}{}
 
 
-Suppose $r$ is a rational function.  You can graph the function $r$ using the following six-step procedure:
+\begin{problem} 
+  The graph of a rational function $r$ can be made using the following six-step procedure:
+  \begin{enumerate}
+      \item  Find the domain of $r$.
+      \item  Reduce $r(x)$ to lowest terms, if applicable.\footnote{This helps us determine limits for the next step.}
+      \item  Determine the location of any vertical asymptotes or holes in the graph, if they exist. 
+      \item  Find the axis intercepts, if they exist.
+      \item  Analyze the end behavior of $r$.  Find the horizontal or slant asymptote, if one exists.
+      \item  Use a sign diagram and plot additional points, as needed, to sketch the graph.\footnote{It doesn't hurt to check for symmetry at this point, if convenient.}
+  \end{enumerate}
 
- \pgfplotsset{
+  Apply this procedure for each of the following functions.
+
+  %% This is just a local wrapper around \xmgraph{f(x)=x2}, so that one does not have to copy all the 'boilerplate' \begin{question} etc
+  %%   BUT: is has the disadvantage that one can not (easily) vary the solution for individual functions (extra zero's/intercepts/...)
+  %% If this is needed/wanted, it will be better to not use the \myExerciseSixStepGraph wrapper. Chatgpt should happily unwind this when asked ;-)
+  \NewDocumentCommand{\myExerciseSixStepGraph} { O{} m }{
+      \begin{question}  $#2$  %%%%% \xmGraphGetFunctionMath{#2} 
+         \begin{solution} \xmGraph[#1]{#2} \end{solution}
+      \end{question}
+  }
+
+  % Set properties for the graphs of this problem.
+  \pgfplotsset{
     xmGraphPlot/.append style={
        panel,
-      xmin=-7, xmax=5, ymin=-5, ymax=5,
+       xmin=-7, xmax=5, ymin=-5, ymax=5,
     },
     xmGraphPlotAxis/.append style={
        restrict y to domain=-10:10,    % prevents spurious 'vertical jump', ie asymptote
-       },
-}
+    },
+  }
 
-\begin{problem} For each of the following functions: 
-    \begin{enumerate}
-        \item  Find the domain of $r$.
-        \item  Reduce $r(x)$ to lowest terms, if applicable.\footnote{This helps us determine limits for the next step.}
-        \item  Determine the location of any vertical asymptotes or holes in the graph, if they exist. 
-        \item  Find the axis intercepts, if they exist.
-        \item  Analyze the end behavior of $r$.  Find the horizontal or slant asymptote, if one exists.
-        \item  Use a sign diagram and plot additional points, as needed, to sketch the graph.\footnote{It doesn't hurt to check for symmetry at this point, if convenient.}
-    \end{enumerate}
+  %  Optionally overwrite with  
+  %    \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^2-t-12}{t^2+t-6}}
+  %    \xmGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^2-t-12}{t^2+t-6}}
+  %
 
-    %% This is just a local wrapper around \xmgraph{f(x)=x2}, so that one does not have to copy all the 'boilerplate' \begin{question} etc
-    %%   BUT: is has the disadvantage that one can not (easily) vary the solution for individual functions (extra zero's/intercepts/...)
-    %% If this is needed/wanted, it will be better to not use the \myExerciseSixStepGraph wrapper. Chatgpt should happily unwind this when asked ;-)
-    \NewDocumentCommand{\myExerciseSixStepGraph} { O{} m }{
-        \begin{question}  $#2$  %%%%% \xmGraphGetFunctionMath{#2} 
-
-            \begin{solution} \xmGraph[#1]{#2} \end{solution}
-        \end{question}
-    }
-
-%     \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^2-t-12}{t^2+t-6}}
-\myExerciseSixStepGraph{f(x) = \frac{4}{x + 2}}
-\myExerciseSixStepGraph{f(x) = 5x(6-2x)^{-1}}
-\myExerciseSixStepGraph{g(t) = t^{-2}}
-\myExerciseSixStepGraph{g(t) = \frac{1}{t^{2} + t - 12}}
-\myExerciseSixStepGraph{r(z) = \frac{2z - 1}{-2z^{2} - 5z + 3}}
-\myExerciseSixStepGraph{r(z) = \frac{z}{z^{2} + z - 12}}
-\myExerciseSixStepGraph{f(x) = 4x(x^2+4)^{-1}}
-\myExerciseSixStepGraph{f(x) = 4x(x^2-4)^{-1}}
-\myExerciseSixStepGraph{g(t) = \frac{t^2-t-12}{t^2+t-6}}
-\myExerciseSixStepGraph{g(t) = 3- \frac{5t-25}{t^2-9}}
-\myExerciseSixStepGraph{r(z) = \frac{z^2-z-6}{z+1}}
-\myExerciseSixStepGraph{r(z) =-z-2+\frac{6}{3-z}}
-\myExerciseSixStepGraph{f(x) = \frac{x^3+2x^2+x}{x^2-x-2}}
-\myExerciseSixStepGraph{f(x) = \frac{5x}{9-x^2} - x}
-\myExerciseSixStepGraph{g(t) =\frac{1}{2}t-1 + \frac{t+1}{t^2+1}}
-\myExerciseSixStepGraph{g(t) = \frac{t^{2} - 2t + 1}{t^{3} + t^{2} - 2t}}
-\myExerciseSixStepGraph{y = f(x)}
-\myExerciseSixStepGraph{f(x) = \frac{1}{x - 2}}
-\myExerciseSixStepGraph{y = F(x)}
-\myExerciseSixStepGraph{y = g(t)}
-\myExerciseSixStepGraph{y = G(t)}
-\myExerciseSixStepGraph{f(x) = \frac{1}{x^{2} + 1}}
-\myExerciseSixStepGraph{f(x) = \frac{x}{x^{2} + 1}}
-\myExerciseSixStepGraph{f(x) = \frac{x^{2}}{x^{2} + 1}}
-\myExerciseSixStepGraph{f(x) = \frac{x^{3}}{x^{2} + 1}}
+  \myExerciseSixStepGraph{f(x) = \frac{4}{x + 2}}
+  \myExerciseSixStepGraph{f(x) = 5x(6-2x)^{-1}}
+  \myExerciseSixStepGraph{g(t) = t^{-2}}
+  \myExerciseSixStepGraph{g(t) = \frac{1}{t^{2} + t - 12}}
+  \myExerciseSixStepGraph{r(z) = \frac{2z - 1}{-2z^{2} - 5z + 3}}
+  \myExerciseSixStepGraph{r(z) = \frac{z}{z^{2} + z - 12}}
+  \myExerciseSixStepGraph{f(x) = 4x(x^2+4)^{-1}}
+  \myExerciseSixStepGraph{f(x) = 4x(x^2-4)^{-1}}
+  \myExerciseSixStepGraph{g(t) = \frac{t^2-t-12}{t^2+t-6}}
+  \myExerciseSixStepGraph{g(t) = 3- \frac{5t-25}{t^2-9}}
+  \myExerciseSixStepGraph{r(z) = \frac{z^2-z-6}{z+1}}
+  \myExerciseSixStepGraph{r(z) =-z-2+\frac{6}{3-z}}
+  \myExerciseSixStepGraph{f(x) = \frac{x^3+2x^2+x}{x^2-x-2}}
+  \myExerciseSixStepGraph{f(x) = \frac{5x}{9-x^2} - x}
+  \myExerciseSixStepGraph{g(t) =\frac{1}{2}t-1 + \frac{t+1}{t^2+1}}
+  \myExerciseSixStepGraph{g(t) = \frac{t^{2} - 2t + 1}{t^{3} + t^{2} - 2t}}
+  \myExerciseSixStepGraph{y = f(x)}
+  \myExerciseSixStepGraph{f(x) = \frac{1}{x - 2}}
+  \myExerciseSixStepGraph{y = F(x)}
+  \myExerciseSixStepGraph{y = g(t)}
+  \myExerciseSixStepGraph{y = G(t)}
+  \myExerciseSixStepGraph{f(x) = \frac{1}{x^{2} + 1}}
+  \myExerciseSixStepGraph{f(x) = \frac{x}{x^{2} + 1}}
+  \myExerciseSixStepGraph{f(x) = \frac{x^{2}}{x^{2} + 1}}
+  \myExerciseSixStepGraph{f(x) = \frac{x^{3}}{x^{2} + 1}}
 
 \end{problem}
-
-
-% \begin{problem} For each of the following functions: 
-%     \begin{enumerate}
-%         \item  Find the domain of $r$.
-%         \item  Reduce $r(x)$ to lowest terms, if applicable.\footnote{This helps us determine limits for the next step.}
-%         \item  Determine the location of any vertical asymptotes or holes in the graph, if they exist. 
-%         \item  Find the axis intercepts, if they exist.
-%         \item  Analyze the end behavior of $r$.  Find the horizontal or slant asymptote, if one exists.
-%         \item  Use a sign diagram and plot additional points, as needed, to sketch the graph.\footnote{It doesn't hurt to check for symmetry at this point, if convenient.}
-%     \end{enumerate}
-
-    % \NewDocumentCommand{\myExerciseSixStepGraph} { o m }{
-    %     \begin{question} % \xmGraphGetFunctionMath{#2}
-    %         \begin{solution} \xmGraph[#1]{#2} \end{solution}
-    %     \end{question}
-    % }
-    % \newcommand{\myExerciseSixStepGraph}[2][]{
-    %     \begin{question} $#2$
-    %         \begin{solution} \graph[#1]{#2} \end{solution}
-    %     \end{question}
-    % }
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{r(z) = \frac{2z - 1}{-2z^{2} - 5z + 3}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^2-t-12}{t^2+t-6}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{f(x) = \frac{x^3+2x^2+x}{x^2-x-2}}
-
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{4/(x+2)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{5*x*(6-2*x)^{(-1)}}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{t^(-2)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{(1)/(t^(2) + t - 12)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{(2z - 1)/(-2z^(2) - 5z + 3)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{(z)/(z^(2) + z - 12)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{4x(x^2+4)^(-1)}
-    % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{4x(x^2-4)^(-1)}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^2-t-12}{t^2+t-6}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = 3- \frac{5t-25}{t^2-9}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{r(z) = \frac{z^2-z-6}{z+1}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{r(z) =-z-2+\frac{6}{3-z}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{f(x) = \frac{x^3+2x^2+x}{x^2-x-2}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{f(x) = \frac{5x}{9-x^2} - x}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) =\frac{1}{2}t-1 + \frac{t+1}{t^2+1}}
-%     % \myExerciseSixStepGraph[xmin=-7, xmax=5, ymin=-5, ymax=5]{g(t) = \frac{t^{2} - 2t + 1}{t^{3} + t^{2} - 2t}}
-
-% \end{problem}
 
 
 \begin{problem}\label{rationalfromgraphfirst}
 Find a possible formula for the function whose graph is given.
 
-\begin{question}
-$y = f(x)$
-
-\begin{tikzpicture}
-  \begin{axis}[
+\pgfplotsset{
+    myPlotOptions/.style={
     axis lines=middle,
     xmin=-2, xmax=6,
     ymin=-4, ymax=4,
@@ -129,7 +87,14 @@ $y = f(x)$
     axis line style={->},
     width=11cm, height=8cm,
     clip=false
-  ]
+    }
+}
+
+\begin{question}
+$y = f(x)$
+
+\begin{tikzpicture}
+  \begin{axis}[myPlotOptions]
     % Axis labels
     \node at (axis cs:6,-0.5) {\scriptsize $x$};
     \node at (axis cs:0.5,4) {\scriptsize $y$};
@@ -164,18 +129,7 @@ $f(x) = \dfrac{1}{x - 2}$
 $y = F(x)$
 
 \begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
-    xmin=-2, xmax=6,
-    ymin=-4, ymax=4,
-    xtick={-1,0,1,2,3,4,5},
-    xticklabels={$-1$,$0$,$1$,$2$,$3$,$4$,$5$},
-    ytick={-3,-2,-1,1,2,3},
-    yticklabels={$-3$,$-2$,$-1$,$1$,$2$,$3$},
-    axis line style={->},
-    width=11cm, height=8cm,
-    clip=false
-  ]
+  \begin{axis}[myPlotOptions]
     % Axis labels
     \node at (axis cs:6,-0.5) {\scriptsize $x$};
     \node at (axis cs:0.5,4) {\scriptsize $y$};
@@ -207,17 +161,14 @@ $y = F(x)$
 $y = g(t)$
 
 \begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
+  \begin{axis}[myPlotOptions,
     xmin=-5, xmax=5,
     ymin=-5, ymax=5,
     xtick={-4,-3,-2,-1,1,2,3,4},
     xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
     ytick={-4,-3,-2,-1,1,2,3,4},
     yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
-    axis line style={->},
     width=10cm, height=10cm,
-    clip=false
   ]
     % Axis labels
     \node at (axis cs:5,-0.5) {\scriptsize $t$};
@@ -244,21 +195,17 @@ $y = g(t)$
 \end{question}
 
 \begin{question}
-Find a possible formula for the function whose graph is given.
 $y = G(t)$
 
 \begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
+  \begin{axis}[myPlotOptions,
     xmin=-5, xmax=5,
     ymin=-5, ymax=5,
     xtick={-4,-3,-2,-1,1,2,3,4},
     xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
     ytick={-4,-3,-2,-1,1,2,3,4},
     yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
-    axis line style={->},
     width=10cm, height=10cm,
-    clip=false
   ]
     % Axis labels
     \node at (axis cs:5,-0.5) {\scriptsize $t$};
@@ -288,46 +235,30 @@ $y = G(t)$
 
 \end{problem}
 
+\begin{question}
+  Let $g(x) = \displaystyle \frac{x^{4} - 8x^{3} + 24x^{2} - 72x + 135}{x^{3} - 9x^{2} + 15x - 7}.\;$  With the help of your classmates:
 
-
-\begin{question} %% was  problem
-Let $g(x) = \displaystyle \frac{x^{4} - 8x^{3} + 24x^{2} - 72x + 135}{x^{3} - 9x^{2} + 15x - 7}.\;$  With the help of your classmates:
-
-\begin{itemize}
-
-\item  find the $x$- and $y$- intercepts of the graph of $g$.
-
-\item   find all of the asymptotes of the graph of $g$ and any holes in the graph, if they exist.
-
-\item find the intervals on which the function is increasing, the intervals on which it is decreasing and the local maximums and minimums, if any exist.
-
-\item sketch the graph of $g$, using more than one picture if necessary to show all of the important features of the graph.
-
-\end{itemize}
+  \begin{itemize}
+    \item  find the $x$- and $y$- intercepts of the graph of $g$.
+    \item   find all of the asymptotes of the graph of $g$ and any holes in the graph, if they exist.
+    \item find the intervals on which the function is increasing, the intervals on which it is decreasing and the local maximums and minimums, if any exist.
+    \item sketch the graph of $g$, using more than one picture if necessary to show all of the important features of the graph.
+  \end{itemize}
 \end{question} %% was  problem
 
-\begin{question} %% was  problem\label{rationalneedcalcfirst}
-Example \ref{carefulanalysisneeded} showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.  Without Calculus, we may need to use graphing utilities to reveal the hidden behavior of rational functions.  Working with your classmates, use a graphing utility to examine the graphs the rational function given.  Compare and contrast their features.  Which features can the six-step process reveal and which features cannot be detected by it?   
+\begin{problem} %% was  problem\label{rationalneedcalcfirst}
+  Example \ref{carefulanalysisneeded} showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.  Without Calculus, we may need to use graphing utilities to reveal the hidden behavior of rational functions.  Working with your classmates, use a graphing utility to examine the graphs the rational function given.  Compare and contrast their features. 
+  \\ 
+  Which features can the six-step process reveal and which features cannot be detected by it ?   
 
-$f(x) = \dfrac{1}{x^{2} + 1}$
-\end{question} %% was  problem
+  \begin{question} $f(x) = \dfrac{1}{x^{2} + 1}$     \end{question} 
 
-\begin{question} %% was  problem
-Example \ref{carefulanalysisneeded} showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.  Without Calculus, we may need to use graphing utilities to reveal the hidden behavior of rational functions.  Working with your classmates, use a graphing utility to examine the graphs the rational function given.  Compare and contrast their features.  Which features can the six-step process reveal and which features cannot be detected by it?   
+  \begin{question} $f(x) = \dfrac{x}{x^{2} + 1}$     \end{question} 
 
-$f(x) = \dfrac{x}{x^{2} + 1}$ 
-\end{question} %% was  problem
+  \begin{question} $f(x) = \dfrac{x^{2}}{x^{2} + 1}$ \end{question}
 
-\begin{question} %% was  problem
-Example \ref{carefulanalysisneeded} showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.  Without Calculus, we may need to use graphing utilities to reveal the hidden behavior of rational functions.  Working with your classmates, use a graphing utility to examine the graphs the rational function given.  Compare and contrast their features.  Which features can the six-step process reveal and which features cannot be detected by it?  
+  \begin{question} $f(x) = \dfrac{x^{3}}{x^{2} + 1}$ \end{question} 
 
-$f(x) = \dfrac{x^{2}}{x^{2} + 1}$ 
-\end{question} %% was  problem
-
-\begin{question} %% was  problem\label{rationalneedcalclast}
-Example \ref{carefulanalysisneeded} showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.  Without Calculus, we may need to use graphing utilities to reveal the hidden behavior of rational functions.  Working with your classmates, use a graphing utility to examine the graphs the rational function given.  Compare and contrast their features.  Which features can the six-step process reveal and which features cannot be detected by it?   
-
-$f(x) = \dfrac{x^{3}}{x^{2} + 1}$
-\end{question} %% was  problem
+\end{problem}
 
 \end{document}
