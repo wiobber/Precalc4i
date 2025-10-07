@@ -43,286 +43,297 @@ $f(x) = 2x^3$ and $g(t) = -t^2-2t-3$
 $f(x) = \sqrt{x+3}$ and  $g(t) = 2t-1$
 \end{problem}
 
+\begin{problem}
+$f(x) = \sqrt{4-x}$ and $g(t) = \sqrt{t+2}$
+\end{problem}
 
-\item  $f(x) = \sqrt{4-x}$ and $g(t) = \sqrt{t+2}$
+\begin{problem}
+$f(x) = 2x$ and  $g(t) = \dfrac{1}{2t+1}$
+\end{problem} 
 
+\begin{problem}
+$f(x) = x^2$ and $g(t) = \dfrac{3}{2t-3}$
+\end{problem}   
 
+\begin{problem}
+$f(x) = x^2$ and  $g(t) = \dfrac{1}{t^2}$
+\end{problem} 
 
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $f(x) = 2x$ and  $g(t) = \dfrac{1}{2t+1}$
-\item  $f(x) = x^2$ and $g(t) = \dfrac{3}{2t-3}$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
-
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $f(x) = x^2$ and  $g(t) = \dfrac{1}{t^2}$
-\item  $f(x) = x^2+1$ and $g(t) = \dfrac{1}{t^2+1}$ \label{basicarithonelast}
-
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}\label{basicarithonelast}
+$f(x) = x^2+1$ and $g(t) = \dfrac{1}{t^2+1}$
+\end{problem}   
 
 \end{question}
-%\end{multicols}
 
 
-
+\begin{question}
 Exercises \ref{arithfromgraphfirst} - \ref{arithfromgraphlast} refer to the functions $f$ and $g$ whose graphs are below. 
 
-%\begin{multicols}{2}
 
-\begin{mfpic}[19]{-5}{5}{-5}{5}
-\tlabel[cc](-3,0.5){\small $\left( -2, 0 \right)$}
-\tlabel[cc](2.5,0.5){\small $\left(2, 0 \right)$}
-\tlabel[cc](4,-3.5){\small $\left( 4, -3 \right)$}
-\tlabel[cc](-4,-3.5){\small $\left(-4, -3 \right)$}
-\tlabel[cc](1,3.5){\small $\left(0, 3 \right)$}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$4$} 4}
-\normalsize
-\point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)}
-\penwd{1.25pt}
-\function{-4,4,.1}{3*cos(3.14159265*x/4)}
-\tcaption{$y = f(x)$}
-\end{mfpic}
+\begin{tikzpicture}[baseline]
+  % === Left Graph: y = f(x) ===
+  \begin{axis}[
+      name=leftplot,
+      axis lines=middle,
+      xmin=-5, xmax=5,
+      ymin=-5, ymax=5,
+      xtick={-4,-3,-2,-1,1,2,3,4},
+      ytick={-4,-3,-2,-1,1,2,4},
+      xlabel={$x$},
+      ylabel={$y$},
+      width=7.5cm,
+      height=7.5cm,
+      grid=none,
+      ticklabel style={font=\scriptsize},
+      label style={font=\scriptsize},
+    ]
 
+    % Function curve
+    \addplot[thick, domain=-4:4, samples=200] {3*cos(deg(pi*x/4))};
 
-\begin{mfpic}[19]{-5}{5}{-5}{5}
-\tlabel[cc](-4,-2.5){\small $\left( -4, -2 \right)$}
-\tlabel[cc](-2,0.5){\small $\left(-1, 0 \right)$}
-\tlabel[cc](-1,2){\small $\left( 0,2 \right)$}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$4$} 4, {$3$} 3}
-\normalsize
-\point[4pt]{(-4,-2), (-1,0), (0,2)}
-\penwd{1.25pt}
-\polyline{(-4,-2), (-1,0), (0,2)}
-\arrow \polyline{(0,2), (5,2)}
-\tcaption{$y = g(t)$}
-\end{mfpic}
+    % Points
+    \addplot[only marks, mark=*] coordinates {
+      (-2,0) (2,0) (4,-3) (-4,-3) (0,3)
+    };
 
+    % Labels — all slightly nudged inward
+    \node[font=\small, anchor=west] at (axis cs:-3.6,-2.6) {$( -4, -3 )$};
+    \node[font=\small, anchor=east] at (axis cs:-2.2,0.4) {$( -2, 0 )$};
+    \node[font=\small, anchor=west] at (axis cs:2.3,0.4) {$( 2, 0 )$};
+    \node[font=\small, anchor=east] at (axis cs:3.5,-2.5) {$( 4, -3 )$}; % nudged inward
+    \node[font=\small, anchor=south east] at (axis cs:-0.3,3) {$( 0, 3 )$};
 
-%\end{multicols}
+    % Function name on plot
+    \node[font=\scriptsize, anchor=west, fill=white, inner sep=1pt]
+      at (axis cs:1.2,2.5) {$y = f(x)$};
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+  \end{axis}
 
-\item $(f + g)(-4)$ \label{arithfromgraphfirst}
-\item $(f + g)(0)$
-\item $(f- g)(4)$
+  % === Right Graph: y = g(t) ===
+  \begin{axis}[
+      at={(leftplot.east)},
+      anchor=west,
+      xshift=2.5cm,
+      axis lines=middle,
+      xmin=-5, xmax=5,
+      ymin=-5, ymax=5,
+      xtick={-4,-3,-2,-1,1,2,3,4},
+      ytick={-4,-3,-2,-1,1,3,4},
+      xlabel={$t$},
+      ylabel={$y$},
+      width=7.5cm,
+      height=7.5cm,
+      grid=none,
+      ticklabel style={font=\scriptsize},
+      label style={font=\scriptsize},
+    ]
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+    % Line segments and arrow
+    \addplot[thick] coordinates {(-4,-2) (-1,0) (0,2)};
+    \addplot[thick, -{Stealth[length=2mm]}] coordinates {(0,2) (5,2)};
 
+    % Points
+    \addplot[only marks, mark=*] coordinates {
+      (-4,-2) (-1,0) (0,2)
+    };
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+    % Labels (nudged inward)
+    \node[font=\small, anchor=west] at (axis cs:-3.8,-2.4) {$( -4, -2 )$};
+    \node[font=\small, anchor=west] at (axis cs:-0.9,0.5) {$( -1, 0 )$};
+    \node[font=\small, anchor=west] at (axis cs:-0.3,2.3) {$( 0, 2 )$};
 
-\item $(fg)(-4)$ 
-\item $(fg)(-2)$
-\item $(fg)(4)$
+    % Function name on plot
+    \node[font=\scriptsize, anchor=west, fill=white, inner sep=1pt]
+      at (axis cs:1.3,2.1) {$y = g(t)$};
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+  \end{axis}
+\end{tikzpicture}
 
-\enlargethispage{0.5in}
+\begin{problem}\label{arithfromgraphfirst}
+$(f + g)(-4)$
+\end{problem}
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(f + g)(0)$
+\end{problem}
+ 
+\begin{problem}
+$(f- g)(4)$
+\end{problem} 
 
-\item $\left(\dfrac{f}{g}\right)(0)$
-\item $\left(\dfrac{f}{g}\right)(2)$
-\item $\left(\dfrac{g}{f}\right)(-1)$ 
+\begin{problem}
+$(fg)(-4)$
+\end{problem}  
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$(fg)(-2)$
+\end{problem} 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(fg)(4)$
+\end{problem} 
 
-\item Find the domains of $f+g$, $f-g$,  $fg$, $\dfrac{f}{g}$ and $\dfrac{g}{f}$.  \label{arithfromgraphlast}
+\begin{problem}
+$\left(\dfrac{f}{g}\right)(0)$
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}
+$\left(\dfrac{f}{g}\right)(2)$
+\end{problem}
 
+\begin{problem}
+$\left(\dfrac{g}{f}\right)(-1)$ 
+\end{problem}
+
+\begin{problem}\label{arithfromgraphlast}
+Find the domains of $f+g$, $f-g$,  $fg$, $\dfrac{f}{g}$ and $\dfrac{g}{f}$.
+\end{problem}
+
+\end{question}
+
+\begin{question}
 In Exercises \ref{reformarithfirst} - \ref{reformarithlast}, let $f$ be the function defined by \[f = \{(-3, 4), (-2, 2), (-1, 0), (0, 1), (1, 3), (2, 4), (3, -1)\}\] and let $g$ be the function defined by \[g = \{(-3, -2), (-2, 0), (-1, -4), (0, 0), (1, -3), (2, 1), (3, 2)\}\] Compute the indicated value if it exists.
 
+\begin{problem}\label{reformarithfirst}
+$(f + g)(-3)$
+\end{problem}
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(f - g)(2)$
+\end{problem}
 
-\item $(f + g)(-3)$ \label{reformarithfirst}
-\item $(f - g)(2)$
-\item $(fg)(-1)$
+\begin{problem}
+$(fg)(-1)$
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$(g + f)(1)$
+\end{problem}
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(g - f)(3)$
+\end{problem}
 
-\item $(g + f)(1)$
-\item $(g - f)(3)$
-\item $(gf)(-3)$
+\begin{problem}
+$(gf)(-3)$
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$\left(\frac{f}{g}\right)(-2)$
+\end{problem} 
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$\left(\frac{f}{g}\right)(-1)$
+\end{problem}  
 
-\item $\left(\frac{f}{g}\right)(-2)$
-\item $\left(\frac{f}{g}\right)(-1)$
-\item $\left(\frac{f}{g}\right)(2)$
+\begin{problem}
+$\left(\frac{f}{g}\right)(2)$
+\end{problem}  
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$\left(\frac{g}{f}\right)(-1)$
+\end{problem}  
 
-%\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$\left(\frac{g}{f}\right)(3)$
+\end{problem}
 
-\item $\left(\frac{g}{f}\right)(-1)$
-\item $\left(\frac{g}{f}\right)(3)$
-\item $\left(\frac{g}{f}\right)(-3)$ \label{reformarithlast}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}\label{reformarithlast}
+$\left(\frac{g}{f}\right)(-3)$ 
+\end{problem}
 
+\end{question}
+
+\begin{question}
 In Exercises \ref{basicarithtwofirst} - \ref{basicarithtwolast}, use the pair of functions $f$ and $g$ to find the domain of the indicated function then find and simplify an expression for it.
-
-%\begin{multicols}{4}
 \begin{itemize}
-
 \item  $(f+g)(x)$
 \item  $(f-g)(x)$
 \item  $(fg)(x)$
 \item  $\left(\frac{f}{g}\right)(x)$
-
 \end{itemize}
-%\end{multicols}
 
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{basicarithtwofirst}
+$f(x) = 2x+1$ and $g(x) = x-2$ 
+\end{problem}
 
-\item $f(x) = 2x+1$ and $g(x) = x-2$ \label{basicarithtwofirst}
-\item $f(x) = 1-4x$ and $g(x) = 2x-1$
+\begin{problem}
+$f(x) = 1-4x$ and $g(x) = 2x-1$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$f(x) = x^2$ and $g(x) = 3x-1$
+\end{problem}
 
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$f(x) = x^2-x$ and $g(x) = 7x$
+\end{problem}
 
-\item $f(x) = x^2$ and $g(x) = 3x-1$
-\item $f(x) = x^2-x$ and $g(x) = 7x$
+\begin{problem}
+$f(x) = x^2-4$ and $g(x) = 3x+6$
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$f(x) = -x^2+x+6$ and $g(x) = x^2-9$
+\end{problem} 
 
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$f(x) = \dfrac{x}{2}$ and $g(x) = \dfrac{2}{x}$
+\end{problem} 
 
-\item $f(x) = x^2-4$ and $g(x) = 3x+6$
-\item $f(x) = -x^2+x+6$ and $g(x) = x^2-9$
+\begin{problem}
+$f(x) =x-1$ and $g(x) = \dfrac{1}{x-1}$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
+\begin{problem}
+$f(x) = x$ and $g(x) = \sqrt{x+1}$
+\end{problem}
 
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{basicarithtwolast}
+$f(x) =\sqrt{x-5}$ and $g(x) = f(x) = \sqrt{x-5}$
+\end{problem}
 
-\item $f(x) = \dfrac{x}{2}$ and $g(x) = \dfrac{2}{x}$
-\item $f(x) =x-1$ and $g(x) = \dfrac{1}{x-1}$
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
-
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item $f(x) = x$ and $g(x) = \sqrt{x+1}$
-\item $f(x) =\sqrt{x-5}$ and $g(x) = f(x) = \sqrt{x-5}$ \label{basicarithtwolast}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
-
+\begin{question}
 In Exercises \ref{decomposebasicfirst} - \ref{decomposebasiclast}, write the given function as a nontrivial decomposition of functions as directed.
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{decomposebasicfirst}
+For $p(z) = 4z-z^3$, find functions $f$ and $g$ so that $p=f-g$.
+\end{problem}
+  
+\begin{problem}
+For $p(z) = 4z-z^3$, find functions $f$ and $g$ so that $p=f+g$.
+\end{problem} 
 
-\item  For $p(z) = 4z-z^3$, find functions $f$ and $g$ so that $p=f-g$. \label{decomposebasicfirst}
-\item  For $p(z) = 4z-z^3$, find functions $f$ and $g$ so that $p=f+g$.
-\item  For $g(t) = 3t|2t-1|$, find functions $f$ and $h$  so that $g = fh$.
-\item  For $r(x) = \dfrac{3-x}{x+1}$, find functions $f$ and $g$ so $r = \dfrac{f}{g}$.
-\item  For $r(x) = \dfrac{3-x}{x+1}$, find functions $f$ and $g$ so $r = fg$. \label{decomposebasiclast}
+\begin{problem}
+For $g(t) = 3t|2t-1|$, find functions $f$ and $h$  so that $g = fh$.
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}
+For $r(x) = \dfrac{3-x}{x+1}$, find functions $f$ and $g$ so $r = \dfrac{f}{g}$.
+\end{problem} 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item    Can $f(x) = x$ be decomposed as $f = g-h$ where $g(x) = x+\dfrac{1}{x}$ and $h(x) = \dfrac{1}{x}$?
-
-\item   Discuss with your classmates how to phrase the quantities revenue and profit in Definition \ref{revenueprofitdefns} terms of function arithmetic as defined in Definition \ref{functionarithmeticdefn}.
- 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}\label{decomposebasiclast}
+For $r(x) = \dfrac{3-x}{x+1}$, find functions $f$ and $g$ so $r = fg$.
+\end{problem} 
 
 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\end{question}
 
-\item \label{posnegdecompexercise}  In this exercise, we explore decomposing a function into its positive and negative parts.  Given a function $f$, we define the \index{positive part of a function}\textbf{positive part} of $f$, denoted $f_{+}$ and \index{negative part of a function}\textbf{negative part} of $f$, denoted $f_{-}$ by:
+\begin{problem}
+Can $f(x) = x$ be decomposed as $f = g-h$ where $g(x) = x+\dfrac{1}{x}$ and $h(x) = \dfrac{1}{x}$? 
+\end{problem}
+
+\begin{problem}
+Discuss with your classmates how to phrase the quantities revenue and profit in Definition \ref{revenueprofitdefns} terms of function arithmetic as defined in Definition \ref{functionarithmeticdefn}.
+\end{problem}
+
+
+\begin{problem}\label{posnegdecompexercise}  
+In this exercise, we explore decomposing a function into its positive and negative parts.  Given a function $f$, we define the \index{positive part of a function}\textbf{positive part} of $f$, denoted $f_{+}$ and \index{negative part of a function}\textbf{negative part} of $f$, denoted $f_{-}$ by:
 
 \[ f_{+}(x) = \dfrac{f(x) + |f(x)|}{2}, \qquad \text{and} \qquad f_{-}(x) = \dfrac{f(x) - |f(x)|}{2}. \]
 
@@ -351,156 +362,7 @@ Why is $f_{+}$ called the `positive part' of $f$ and $f_{-}$ called the `negativ
 \item Use Definition \ref{absolutevaluepiecewise} to rewrite the expressions for $f_{+}(x)$ and $f_{-}(x)$ as piecewise defined functions.
 
 \end{enumerate}  
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  Let $U$ be the unit step function defined in Exercise \ref{unitstepexercise} in Section \ref{ConstantandLinearFunctions}.  For each function $f(t)$ below:
-
-\begin{itemize}
-
-\item  Write $(Uf)(t)$ as a piecewise-defined function.
-
-\item  Graph $y = f(t)$ and $y = (Uf)(t)$.
-
-\end{itemize}
-
-%\begin{multicols}{3}
-
-\begin{enumerate}
-
-\item $f(t) = t-3$
-
-
-
-\item  $f(t) = |t+2|$
-
-
-
-\item  $f(t) =(t-1)^2$
-
-
-
-\setcounter{HW}{\value{enumii}}
-
-\end{enumerate}
-
-%\end{multicols}
-
-%\begin{multicols}{3}
-
-\begin{enumerate}
-
-\setcounter{enumii}{\value{HW}}
-
-\item  $f(t) =(t+1)^{-1}$
-
-
-
-\item  $f(t) = \sqrt[3]{t-1}$ \vphantom{ $f(t) =(t+1)^{-1}$}
-
-
-
-\item  $f(t) = (t-2)^{\frac{2}{3}}$ \vphantom{ $f(t) =(t+1)^{-1}$}
-
-
-
-\setcounter{HW}{\value{enumii}}
-
-\end{enumerate}
-
-%\end{multicols}
-
-\begin{enumerate}
-
-\setcounter{enumii}{\value{HW}}
-
-\item  Write a general formula for $(Uf)(t)$ for a function $f$.  (Assume the domain of $f$ is $(-\infty, \infty)$.)
-
-
-
-\item  Explain how to obtain the graph of $y=(Uf)(t)$ from $y=f(t)$.
-
-
-\item The function $U(t)$ is used to model a change in state from `off' to `on' (like flipping a light switch.)  How does this relate to your observations?
-
-
-
-\item  Use the graph of $y=f(t)$ below to graph $y=(Uf)(t)$.
-
-\begin{center}
-
-\begin{mfpic}[15]{-5}{5}{-4}{4}
-\tlabel[cc](-2.25,-3.5){\scriptsize $\left( -2, -3 \right)$}
-\tlabel[cc](2,3.5){\scriptsize $\left(2, 3 \right)$}
-\tlabel[cc](-4.25,0.5){\scriptsize $\left(-4, 0 \right)$}
-\tlabel[cc](0.75,-0.5){\scriptsize $\left(0, 0 \right)$}
-\axes
-\tcaption{ \scriptsize$y = f(t)$}
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{ {$-3$} -3, {$-2$} -2,  {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\function{-4,2,.1}{3*sin(3.14159265*x/4)}
-\point[4pt]{(-2,-3), (2,3),  (-4,0), (0,0)}
-\end{mfpic}
-
-\end{center}
-
-
-\end{enumerate}
-
-\item Use Example \ref{densityexample} as a guide to help find the following uncertainties.  
-
-\begin{enumerate}
-
-\item  A chemist combines the solutions from two graduated cylinders into a beaker.  The volume of the first solution, $A$, an acid,  is read as $A_{1} = 101 \pm 0.5$ milliliters (mL). The volume of the second solution,  a base, $B$,  is measured to be $B_{1} = 16 \pm 0.5$ mL.    Estimate the percent propagated error in calculating the volume of the combined solution as $V = A_{1} + B_{1} = 101 + 16 = 117$ mL.
-
-\item  A student measures the length, $\ell$, and width, $w$,  of a piece of paper.  They find  $\ell_{1} = 280 \pm 0.5$ millimeters (mm) $w_{1} = 216 \pm 0.5$ mm.    Estimate the percent propagated error in calculating the area of the piece of paper as $A = \ell_{1} \, w_{1} = 280 \times 216 = 60480 \, \text{mm}^2$.
-
-\item  An airplane passenger  observers a car travel a distance $d_{1} = 1320 \pm 2$ feet (ft) in time $t_{1}  = 15 \pm 0.5$ seconds (s).  Estimate the percent propagated error in calculating the speed of the car as $v = \frac{d_{1}}{t_{1}} = \frac{1320}{15} = 88 \, \frac{\text{ft}}{\text{s}}$.
-
-\end{enumerate}
-
-\item\label{AverageCostMarginalCostExercise} Let us return to Example \ref{marginalsetupex} where  $C(x) = .03x^{3} - 4.5x^{2} + 225x + 250$ denotes the cost, in dollars,  of producing $x$ PortaBoy game systems. Recall the \index{average cost}\index{cost ! average}\textbf{average cost}\footnote{First mentioned in Definition \ref{averagecostprofit} in Section \ref{IntroRational}.} is defined as $\overline{C}(x) = \frac{C(x)}{x}$, $x > 0$,  is the cost per item.
-
-\begin{enumerate}
-
-\item\label{ACexercise1} Find and interpret $\overline{C}(75)$.
-
-\item\label{MCexercise1}  Define  the \index{marginal cost}\index{cost ! marginal}\textbf{marginal cost} $MC(x) = C(x+1) - C(x)$.   Find and interpret $MC(75)$.
-
-\item  How do your answers to parts \ref{ACexercise1} and \ref{MCexercise1} compare?
-
-\item Graph $y = \overline{C}(x)$ with help from a graphing utility.  What is happening graphically near $x = 75$?
-
-\item  Use Theorem \ref{functionarithmeticaroc} to show that, in general, $\text{ARoC}[ \overline{C}(x)] = 0$ when $MC(x) = \overline{C}(x)$.
-
-\smallskip
-
-\textbf{HINT:}  Note that, by definition, $MC(x) = C(x+1) - C(x) = \Delta[C(x)]$ when $\Delta x = 1$.  
-
-\smallskip
-
-Hence,  $\text{ARoC}[C(x)] = \frac{\Delta[C(x)]}{\Delta x} = \frac{\Delta[C(x)]}{1} = \Delta[C(x)] = MC(x)$ in this case \ldots 
-
-\end{enumerate}
-
-\setcounter{HW}{\value{enumi}}
-
-\end{enumerate}
-
-
-\newpage
 
 \end{document}
