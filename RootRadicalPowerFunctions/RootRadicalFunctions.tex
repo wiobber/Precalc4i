@@ -978,39 +978,44 @@ We end this section with a classic application of root functions.
 \begin{center}
 % \input{RootRadicalFunctions_pic23.tex}
 \begin{tikzpicture}
+\fill[white](-2,-2) rectangle (12,9.5);
 % Marks on the x-axis
 \draw (0,0.1) -- (0,-0.1);
-\draw (4,0.1) -- (4,-0.1);
+%\draw (4,0.1) -- (4,-0.1);
 
 % Vertical two-way arrowed segment
-\draw[<->] (0,8.75) -- (0,0.25);
+\draw[<->] (0,5.75) -- (0,0.25);
 
 % Horizontal two-way arrowed segments
 \draw[<->] (0.25,0) -- (3.75,0);
-\draw[<->] (4.25,0) -- (9.75,0);
+\draw[-, red, line width=1.5pt] (4.,0) -- (9.75,0);
 
 % Bottom route line with arrows
 \draw[<->] (0,-1) -- (10,-1);
 
-% Dashed guide
-\draw[dashed] (4,0) -- (0,9);
+% Diagonal
+\draw[-, red, line width=1.5pt] (4,0) -- (0.25,5.75);
 
-% Points
-\fill (0,9) circle (1.5pt);
-\fill (10,0) circle (1.5pt);
+% Junction Box Point
+%\fill (0,6) circle (5pt);
+\fill (10,0) circle (5pt);
 
 % Labels
-\node at (1.25,9){\scriptsize Outpost};
-\node at (12,0){\scriptsize Junction Box};
-\node at (7,0.5){$x$};
-\node at (2,0.5){$y$};
-\node at (3,4.5){$z$};
+\node at (1,8.75){\scriptsize Outpost};
+\node[inner sep=0pt, anchor=south west] (cabin) at (-1.75,5.75)
+  {\includegraphics[width=40mm]{./RootRadicalFunctionsGraphics/observationStation.png}};
+\node at (11,0){\scriptsize Junction Box};
+\node at (7,0.25){$x$};
+\node at (2,0.25){$y$};
+\node at (2.5,2.7){$z$};
 \node at (5,-.5){\scriptsize Route $117$};
-\node at (5,-2){\scriptsize $50$ miles};
-\node[rotate=90] at (-0.5,0){\hspace{1.5in} \scriptsize $30$ miles};
+\node at (5,-1.5){\scriptsize $50$ miles};
+\node[rotate=90] at (-0.5,0){\hspace{2in} \scriptsize $30$ miles};
 \end{tikzpicture}
 
 \end{center}
+
+
 
 
 
