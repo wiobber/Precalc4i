@@ -581,7 +581,7 @@ Since we have yet to develop any analytic means to solve equations like $25(0.8)
 
  
 
-We find $y = V(t)$ and $y = 12.5$ intersect at (approximately) $(3.106 12.5)$ which means the car depreciates to half its initial value in (approximately) $3.11$ years.  Similarly, we find the car depreciates to one-quarter its initial value after (approximately) $6.23$ years.\footnote{It turns out that it takes exactly twice as long for the car to depreciate to one-quarter of its initial value as it takes to depreciate to half its initial value. Can you see why?}
+We find $y = V(t)$ and $y = 12.5$ intersect at (approximately) $(3.106, 12.5)$ which means the car depreciates to half its initial value in (approximately) $3.11$ years.  Similarly, we find the car depreciates to one-quarter its initial value after (approximately) $6.23$ years.\footnote{It turns out that it takes exactly twice as long for the car to depreciate to one-quarter of its initial value as it takes to depreciate to half its initial value. Can you see why?}
 
  % https://www.geogebra.org/graphing/nwavgwu6
 \begin{center}
@@ -692,7 +692,7 @@ We close this section with another important application of exponential function
 
 \item  Since $T(0) =70 + 90 e^{-0.1 (0)} = 160$,   the temperature of the coffee when it is served is $160^{\circ}\mbox{F}$.
 
-\item  To graph $y = T(t)$ using transformations, we start with the basic function, $f(t)=e^{t}$.  As in Example \ref{expfcngraphsex}, we track the points $(-1, e^{-1}) \approx (-1, 0.368)$, $(0,1)$, and $(1, e) \approx (1, 2.718)$, along wth the horizontal asymptote $y = 0$ through each of transformations.
+\item  To graph $y = T(t)$ using transformations, we start with the basic function, $f(t)=e^{t}$.  As in Example \ref{expfcngraphsex}, we track the points $(-1, e^{-1}) \approx (-1, 0.368)$, $(0,1)$, and $(1, e) \approx (1, 2.718)$, along with the horizontal asymptote $y = 0$ through each of transformations.
 
  
 
@@ -708,50 +708,10 @@ Next, we multiply the $y$-values of the points on this new graph by $90$ which e
 
 Tracking points, we have $(-1, e^{-1})  \rightarrow (10, e^{-1}) \rightarrow (10, 90e^{-1}) \rightarrow (10, 90e^{-1}+70) \approx (10, 103.112)$, $(0,1) \rightarrow (0,1) \rightarrow (0,90) \rightarrow (0, 160)$, and $(1,e) \rightarrow (-10, e) \rightarrow (-10, 90e) \rightarrow (-10, 90e+70) \approx (-10, 314.62)$.  The horizontal asymptote $y=0$ is unaffected by the horizontal expansion, reflection about the $y$-axis, and the vertical stretch.  The vertical shift moves the horizontal asymptote up $70$ units, $y = 0 \rightarrow y = 70$. After restricting the domain to $t \geq 0$, we get the graph below on the right.
 
-\[\begin{array}{ccc}
-
-\begin{mfpic}[15]{-4}{4}{-1}{8}
-\axes
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](0,-1.5){\scriptsize H.A. $y=0$}
-\tlabel[cc](4,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize $y = f(t)=e^{t}$}
-\ymarks{1,2,3,4,5,6,7}
-\xmarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $2$} 2,{\scriptsize $3$} 3,{\scriptsize $4$} 4,{\scriptsize $5$} 5,{\scriptsize $6$} 6,{\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3, 2, 0.1}{exp(x)}
-\point[4pt]{(0,1),(1,2.718), (-1,0.368)}
-\end{mfpic}
-
-&
-
-\stackrel{\xrightarrow{\hspace{1in}}}{\text{\scriptsize Theorem  \ref{transformationsthm}}} 
-
-&
-
-\begin{mfpic}[15]{-1}{11}{-1}{10}
-\dashed \polyline{(-1,3.5),(11,3.5)}
-\axes
-\tlabel[cc](9,2.5){\scriptsize H.A. $y=70$}
-\tlabel[cc](11,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\tlabel[cc](-1, 8){\scriptsize $(0, 160)$}
-\tcaption{\scriptsize $y = T(t)$}
-\ymarks{1,2,3,4,5,6,7,8,9}
-\xmarks{1,2,3,4,5,6,7,8,9,10}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $2$} 1, {\scriptsize $4$} 2, {\scriptsize $6$} 3, {\scriptsize $8$} 4,{\scriptsize $10$} 5, {\scriptsize $12$} 6, {\scriptsize $14$} 7, {\scriptsize $16$} 8, {\scriptsize $18$} 9, {\scriptsize $20$} 10}
-\axislabels {y}{{\scriptsize $20$} 1, {\scriptsize $40$} 2, {\scriptsize $60$} 3,{\scriptsize $80$} 4, {\scriptsize $100$} 5, {\scriptsize $120$} 6,{\scriptsize $140$} 7, {\scriptsize $180$} 9}
-\penwd{1.25pt}
-\arrow \function{0, 10, 0.1}{(90*exp(0-0.2*x)+70)/20}
-\point[4pt]{(0,8),(5,5.15)}
-\end{mfpic} \\
-
-\end{array}\]
+% https://www.geogebra.org/classic/maxqgrzd
+\begin{center}
+    \geogebra{maxqgrzd}{800}{600}
+\end{center}
 
 \item  We can determine $\lim\limits_{t \rightarrow \infty} T(t)$ two ways.  First, we can employ  the `number sense' developed in Chapter \ref{RationalFunctions}.    
 
