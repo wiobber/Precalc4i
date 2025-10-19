@@ -16,7 +16,7 @@
 
 In Section \ref{ExponentialFunctions}, we saw exponential functions $f(x) = b^x$  are are one-to-one which means they are invertible.   In this section, we explore their inverses, the \textit{logarithmic functions} which are called `logs' for short.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -25,12 +25,12 @@ In Section \ref{ExponentialFunctions}, we saw exponential functions $f(x) = b^x$
 \end{definition}
 
 %% \ebm}
-\smallskip
+ 
 
 We have special notations for the common base, $b=10$, and the natural base, $b=e$.
 
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -47,64 +47,26 @@ We have special notations for the common base, $b=10$, and the natural base, $b=
 \end{definition}
 
 %% \ebm}
-\smallskip
+ 
 
 Since logs are defined as the inverses of exponential functions, we can use Theorems \ref{inversefunctionprops} and \ref{expfcnprops} to tell us about logarithmic functions.  For example, we know that the domain of a log function is the range of an exponential function, namely $(0, \infty)$, and that the range of a log function is the domain of an exponential function, namely $(-\infty, \infty)$.   
 
-\smallskip
+ 
 
 Moreover, since we know the basic shapes of $y = f(x) = b^{x}$ for the different cases of $b$, we can obtain the graph of $y = f^{-1}(x) = \log_{b}(x)$ by reflecting the graph of $f$ across the line $y=x$.  The $y$-intercept $(0,1)$ on the graph of $f$  corresponds to an $x$-intercept of $(1,0)$ on the graph of $f^{-1}$.  The horizontal asymptotes $y=0$ on the graphs of the exponential functions become vertical asymptotes $x=0$ on the log graphs.  
 
-\[ \begin{array}{cc}
+% https://www.desmos.com/calculator/qatyujujep
 
-\begin{mfpic}[15]{-3}{5}{-3}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1}
-\ymarks{1}
-\arrow \reverse \arrow \function{-2.3, 2.3, 0.1}{2**x}
-\point[2pt]{(0,1)}
-\dashed \polyline{(-1,-1), (5,5)}
-\tlabel[cc](3,-4){\scriptsize $y =b^{x}$, $b > 1$}
-\tlabel[cc](-1.5,1){\scriptsize $(0,1)$}
-\tlabel[cc](1.5,-0.5){\scriptsize \text{\boldmath $(0,1)$}}
-\tlabel[cc](3,-5){\scriptsize \mbox{\boldmath $y = \log_{b}(x)$}, $b > 1$}
-\penwd{1.5pt}
-\arrow \reverse \arrow \parafcn{-2.3,2.3,0.1}{(2^t,t)}
-\point[4pt]{(1,0)}
-\end{mfpic}
-
-& 
-
-\hspace{1.5in}
-
-\begin{mfpic}[15]{-3}{5}{-3}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1}
-\ymarks{1}
-\arrow \reverse \arrow \function{-2.3, 2.3, 0.1}{(0.5)**x}
-\point[2pt]{(0,1)}
-\tlabel[cc](-1.5,1){\scriptsize $(0,1)$}
-\tlabel[cc](0.75,-0.75){\scriptsize \text{\boldmath $(0,1)$}}
-\dashed \polyline{(-1,-1), (5,5)}
-\tlabel[cc](3,-4){\scriptsize $y =b^{x}$, $0 < b < 1$}
-\tlabel[cc](3,-5){\scriptsize \mbox{\boldmath $y = \log_{b}(x)$}, $0 < b < 1$}
-\penwd{1.5pt}
-\arrow \reverse \arrow \parafcn{-2.3,2.3,0.1}{(2^t,-t)}
-\point[4pt]{(1,0)}
-\end{mfpic}
-
-\end{array}\]
+\begin{center}
+    \desmos{qatyujujep}{800}{600}
+\end{center}
 
 Procedurally,  logarithmic functions  `undo' the exponential functions.  Consider the function $f(x) = 2^{x}$.  When we evaluate $f(3) = 2^{3} = 8$, the input $3$ becomes the exponent on the base $2$ to produce the real number $8$.  The function $f^{-1}(x) = \log_{2}(x)$ then takes the number $8$ as its input and returns the exponent $3$ as its output.  In symbols, $\log_{2}(8) = 3$. 
 
-\smallskip
+ 
 
 More generally, $\log_{2}(x)$ is the exponent you put on $2$ to get $x$.  Thus, $\log_{2}(16) = 4$, because $2^{4} = 16$.  The following theorem summarizes the basic properties of logarithmic functions, all of which come from the fact that they are inverses of exponential functions. 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -196,24 +158,24 @@ More generally, $\log_{2}(x)$ is the exponent you put on $2$ to get $x$.  Thus, 
 
 %% \ebm}
 
-\smallskip
+ 
 
 As we have mentioned, Theorem \ref{logfcnprops} is a consequence of Theorems \ref{inversefunctionprops} and \ref{expfcnprops}.  However, it is worth the reader's time to understand Theorem \ref{logfcnprops} from an exponent perspective.  
 
 
-\smallskip
+ 
 
 As an example, we know that the domain of $g(x) = \log_{2}(x)$ is $(0,\infty)$.  Why?  Because the range of $f(x) = 2^{x}$ is $(0,\infty)$.  In a way, this says everything, but at the same time, it doesn't. 
 
-\smallskip
+ 
 
 To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\infty)$,  consider trying to compute $\log_{2}(-1)$.   We are searching for the exponent we put on $2$ to give us $-1$.  In other words, we are looking for $x$ that satisfies $2^{x} = -1$.  There is no such real number, since all powers of $2$ are positive. 
 
-\smallskip
+ 
 
  While what we have said is exactly the same thing as saying `the domain of $g(x) = \log_{2}(x)$ is $(0,\infty)$ because the range of $f(x) = 2^{x}$ is $(0,\infty)$', we feel it is in a student's best interest to understand the statements in Theorem \ref{logfcnprops} at this level instead of just merely memorizing the facts.
  
-\smallskip
+ 
  
  Our first example gives us practice computing logarithms as well as constructing basic graphs.
  
@@ -313,18 +275,18 @@ To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\inf
 
 \item  We can use Theorem \ref{logfcnprops} directly to simplify  $2^{\log_{2}(8)} = 8$. 
 
-\smallskip
+ 
 
 We can also understand this problem by first finding $\log_{2}(8)$.  By definition, $\log_{2}(8)$ is the exponent we put on $2$ to get $8$.  Since $8 = 2^3$, we have $\log_{2}(8) = 3$.  
 
 
-\smallskip
+ 
 
 We now substitute to find $2^{\log_{2}(8)} = 2^3 = 8$.
 
 \item  From Theorem \ref{logfcnprops}, we know $117^{\log_{117}(6)}=6$,\footnote{It is worth a moment of your time to think your way through why $117^{\log_{117}(6)}=6$.  By definition, $\log_{117}(6)$ is the exponent we put on $117$ to get $6$.  What are we doing with this exponent?  We are putting it on $117$, so we get $6$.} but we cannot directly apply this formula to the expression $117^{-\log_{117}(6)}$ without first using a property of exponents. (Can you see why?)
 
-\smallskip
+ 
 
 Rather, we find: $117^{-\log_{117}(6)} = \frac{1}{117^{\log_{117}(6)}}  = \frac{1}{6}$. 
  
@@ -338,22 +300,22 @@ Rather, we find: $117^{-\log_{117}(6)} = \frac{1}{117^{\log_{117}(6)}}  = \frac{
 
 
 
-\smallskip
+ 
 
 First we choose some `control points' on the graph of  $f(x) = \log_{\frac{1}{3}}(x)$.  Since we are instructed to track three points (and the vertical asymptote, $x = 0$) through the transformations, we choose the points corresponding  to powers of $\frac{1}{3}$:  $\left( \frac{1}{3}, 1 \right)$, $(1,0)$, and $(3, -1)$,  respectively.   
 
 
-\smallskip
+ 
 
 Next, we note $F(x) = \log_{\frac{1}{3}} \left( \frac{x}{2} \right) + 1 = f \left(\frac{x}{2}\right) + 1$.   Per Theorem  \ref{transformationsthm}, we first multiply the $x$-coordinates of the points on the graph of $y = f(x)$ by $2$, horizontally expanding the graph by a factor of $2$.   Next, we add $1$ to the $y$-coordinates of each point on this new graph, vertically shifting the graph up $1$.  
 
 
-\smallskip
+ 
 
 Looking at each point, we  get  $\left( \frac{1}{3}, 1 \right) \rightarrow \left( \frac{2}{3}, 1 \right) \rightarrow \left( \frac{2}{3}, 2 \right)$, $(1,0) \rightarrow (2,0) \rightarrow (2,1)$, and $(3,-1) \rightarrow  (6,-1) \rightarrow  (6,0)$.  The horizontal asymptote, $x = 0$ remains unchanged under the horizontal stretch and the vertical shift.   
 
 
-\smallskip
+ 
 
 Below we graph $y = f(x) = \log_{\frac{1}{3}}(x)$ on the left and  $y = F(x) = \log_{\frac{1}{3}} \left( \frac{x}{2} \right) + 1$ on the right.
 
@@ -410,28 +372,28 @@ As always we can check our answer by verifying each of the points $\left(\frac{2
 
 
 
-\smallskip
+ 
 
 
 We choose points corresponding to powers of $e$ on the graph of $g(t) = \ln(t)$:   $(e^{-1}, -1) \approx (0.368, -1)$, $(1,0)$, and $(e,1) \approx (2.718,1)$, respectively.  
 
 
-\smallskip
+ 
 
 Since $G(t) =-\ln(2-t) = -\ln(-t+2) = -g(-t+2)$,  Theorem  \ref{transformationsthm} instructs us to first subtract $2$ from each of the $t$-coordinates of the points on the graph of $g(t) = \ln(t)$, shifting the graph to the left two units.   
 
 
-\smallskip
+ 
 
 Next, we  multiply (divide) the $t$-coordinates of points on this new graph by $-1$ which reflects the graph across the $y$-axis. Lastly, we multiply each of the $y$-coordinates of this second graph by $-1$, reflecting it across the $t$-axis.
 
 
-\smallskip
+ 
 
 Tracking points, we have $(e^{-1}, -1) \rightarrow (e^{-1}-2, -1) \rightarrow (-e^{-1}+2, -1) \rightarrow (- e^{-1}+2, 1) \approx ( 1.632, 1)$, $(1,0) \rightarrow (-1,0) \rightarrow (1,0) \rightarrow (1,0)$, and $(e,1) \rightarrow (e-2, 1) \rightarrow (-e+2,1) \rightarrow (-e+2, -1) \approx ( -0.718,-1)$.  The vertical asymptote is affected by the horizontal shift and the reflection about the $y$-axis only:  $t = 0 \rightarrow t = -2 \rightarrow t=2$.  
 
 
-\smallskip
+ 
 
 We graph $g(t) = \ln(t)$ below on the left and the transformed function $G(t) = -\ln(-t+2)$ below on the right.   As usual, we can check our answer by verifying the indicated points do, in fact, lie on the graph of $y = G(t)$ along with checking the behavior as $t \rightarrow -\infty$ and $t \rightarrow 2^{-}$.
 
@@ -488,18 +450,24 @@ We graph $g(t) = \ln(t)$ below on the left and the transformed function $G(t) = 
 \item Since we are told to assume the base of the exponential function is $2$, we assume the function $F(x)$ is the result of the transforming the graph of $f(x) = \log_{2}(x)$ using Theorem \ref{transformationsthm}.  This means we are tasked with finding values for $a$, $b$, $h$, and $k$ so that $F(x) = af(bx-h)+k = a \log_{2}(bx-h)+k$.  
 
 
-\smallskip
+ 
 
 Since the vertical asymptote to the graph of $y=f(x) = \log_{2}(x)$ is $x=0$ and the vertical asymptote to the graph $y = F(x)$ is $x=4$, we know we have a vertical shift of $4$ units. Moreover, since the curve approaches the vertical asymptote from the \textit{left}, we also know we have a reflection about the $y$-axis, so $b<0$.  Since the recipe in Theorem \ref{transformationsthm} instructs us to perform the vertical shift \textit{before} the reflection across the $y$-axis, we take $h=-4$ and assume for simplicity $b = -1$ so $F(x) = a \log_{2}(-x+4)+k$.  
 
-\smallskip
+ 
 
 To determine $a$ and $k$, we make use of the two points on the graph.  Since $(-4,0)$ is on the graph of $F$, $F(-4) = a \log_{2}(-(-4)+4) + k = 0$.  This reduces to $a \log_{2}(8)+k = 0$ or $3a+k=0$.  Next, we use the point $(0,-1)$ to get $F(0) = a \log_{2}(-(0)+4) +k = -1$. This reduces to $a \log_{2}(4) + k = -1$ or $2a+k = -1$.  From $3a+k=0$, we get $k=-3a$ which when substituted into $2a+k=-1$ gives $2a +(-3a) = -1$ or $a = 1$.  Hence, $k = -3a = -3(1) = -3$.
 
 
-\smallskip
+ 
 
 Putting all of this work together we find $F(x) = \log_{2}(-x+4)-3$.  As always, we can check our answer by verifying $F(-4) = 0$, $F(0) = -1$, $\ds{\lim_{x \rightarrow -\infty} F(x) = \infty}$, and $\ds{\lim_{x \rightarrow 4^{-}} F(x) =  -\infty}$. We leave these details to the reader.\footnote{As with Exercise \ref{expfcngraphsex} in Section \ref{ExponentialFunctions},  we may well wonder if our solution to this problem  is the  \textit{only} solution since we made a simplifying assumption that $b=-1$.  We leave this for a thoughtful discussion in Exercise \ref{morethanoneforlogexercise} in Section \ref{PropertiesofLogarithms}.}
+
+% https://www.geogebra.org/classic/tdy7cegd
+
+\begin{center}
+    \geogebra{tdy7cegd}{800}{600}
+\end{center}
 
 \end{enumerate}
 
@@ -529,45 +497,45 @@ Up until this point, restrictions on the domains of functions came from avoiding
 
 Note that in this case, we can graph $f$ using transformations, which we do so here for extra practice. 
 
-\smallskip
+ 
 
 
 Taking a cue from Theorem \ref{transformationsthm}, we rewrite $f(x) = 2 \log_{10}(-x+3) -1$ and  view this function as a transformed version of $h(x) = \log_{10}(x)$. 
 
 
 
-\smallskip
+ 
 
 To graph $y = \log(x) = \log_{10}(x)$,  We select three points to track corresponding to powers of $10$:  $(0.1, -1)$, $(1,0)$ and $(10,1)$, along with the vertical asymptote $x=0$.   
 
 
-\smallskip
+ 
 
 Since $f(x) = 2h(-x+3)-1$, Theorem \ref{transformationsthm} tells us that to obtain the destinations of these points, we first subtract $3$ from the $x$-coordinates (shifting the graph left $3$ units), then divide (multiply) by the $x$-coordinates by $-1$ (causing a reflection across the $y$-axis).   
 
 
-\smallskip
+ 
 
 Next, we multiply the $y$-coordinates by $2$ which results in a vertical stretch by a factor of $2$, then we finish by subtracting $1$ from the $y$-coordinates which shifts the graph down $1$ unit.  
 
 
-\smallskip
+ 
 
 Tracking points, we find:   $(0.1, -1) \rightarrow  (-2.9, -1) \rightarrow (2.9, -1) \rightarrow (2.9, -2) \rightarrow (2.9, -3)$, $(1,0) \rightarrow (-2,0) \rightarrow (2,0) \rightarrow (2,0) \rightarrow (2,-1)$, and  $(10,1) \rightarrow (7,1) \rightarrow (-7,1) \rightarrow (-7,2) \rightarrow (-7,1)$.  The vertical shift and reflection about the $y$-axis affects the vertical asymptote:  $x = 0 \rightarrow x = -3 \rightarrow x = 3$.  
 
 
-\smallskip
+ 
 
 Plotting these three points along with the vertical asymptote produces the graph of $f$ as seen above.
 
 
 \item  To find the domain of $g$, we need to solve the inequality $\frac{x}{x-1} > 0$ using a sign diagram.\footnote{See Section \ref{RationalGraphs} for a review of this process, if needed.}  
 
-\smallskip
+ 
 
 If we define $r(x) = \frac{x}{x-1}$, we find $r$ is undefined at $x=1$ and $r(x) = 0$ when $x=0$.  Choosing some test values, we generate the sign diagram below on the left.  
 
-\smallskip
+ 
 
 We find $ \frac{x}{x-1} > 0$ on $(-\infty, 0) \cup (1, \infty)$ which is the domain of  $g$. The graph below confirms this.
 
@@ -596,7 +564,7 @@ We find $ \frac{x}{x-1} > 0$ on $(-\infty, 0) \cup (1, \infty)$ which is the dom
 
   We can tell from the graph of $g$ that it is not the result of Section \ref{Transformations} transformations being applied to the graph $y = \ln(x)$, (do you see why?)  so barring a more detailed analysis using Calculus, producing a graph using a graphing utility is the best we can do.  
   
-  \smallskip
+   
 
 One thing worthy of note, however, is the end behavior of $g$.  The graph suggests that $\ds{\lim_{x \rightarrow -\infty} g(x) = 0}$ and  $\ds{\lim_{x \rightarrow \infty} g(x) = 0}$.  We can verify this analytically.  Using results  from Chapter \ref{RationalFunctions} and continuity, we know that $\ds{\lim_{x \rightarrow -\infty} \frac{x}{x+1} = 1}$ and  $\ds{\lim_{x \rightarrow \infty} \frac{x}{x+1} = 1}$.  Hence, it stands to reason that \[\ds{\lim_{x \rightarrow -\infty} g(x) = \lim_{x \rightarrow -\infty}  \ln \left(\frac{x}{x-1}\right) = ln(1) = 0}\] and, likewise,  $\ds{\lim_{x \rightarrow -\infty} g(x) = ln(1) = 0}$.  \qed
 
@@ -644,15 +612,15 @@ While logarithms have some interesting applications of their own which you'll ex
 
 \item   To graph $f(x) = 2^{x-1} - 3$ using  Theorem \ref{transformationsthm}, we first identify $g(x) = 2^{x}$ and note  $f(x) = g(x-1)-3$.  Choosing the `control points' of  $\left(-1, \frac{1}{2}\right)$, $(0,1)$ and $(1, 2)$ on the graph of $g$ along with the horizontal asymptote $y=0$, we implement the algorithm set forth in Theorem \ref{transformationsthm}.  
 
-\smallskip
+ 
 
 First, we first add $1$ to the $x$-coordinates of the points on the graph of $g$ which shifts the the graph of $g$ to the right one unit.   Next, we subtract $3$ from each of the $y$-coordinates on this new graph, shifting the graph down $3$ units to get the graph of $f$.
 
-\smallskip
+ 
 
 Looking point-by-point, we have  $\left(-1, \frac{1}{2}\right) \rightarrow \left(0, \frac{1}{2}\right) \rightarrow \left(0, -\frac{5}{2}\right)$,  $(0,1)  \rightarrow (1,1)  \rightarrow  (1,-2)$, and, finally, $(1, 2) \rightarrow (2, 2) \rightarrow (2, -1)$.  The horizontal asymptote is affected only by the vertical shift, $y = 0 \rightarrow y = -3$.  
 
-\smallskip
+ 
 
 From the graph of $f$, we get the domain is $(-\infty, \infty)$ and the range is $(-3, \infty)$.
 
@@ -700,38 +668,38 @@ From the graph of $f$, we get the domain is $(-\infty, \infty)$ and the range is
 
 \item  The graph of $f$ passes the Horizontal Line Test so $f$ is one-to-one, hence invertible.  
 
-\smallskip
+ 
 
 To find a formula for $f^{-1}(x)$, we normally set $y=f(x)$, interchange the $x$ and $y$, then proceed to solve for $y$.  Doing so in this situation leads us to the equation $x = 2^{y-1}-3$.  We have yet to discuss how to solve this kind of equation, so we will attempt to find the formula for $f^{-1}$ procedurally.  
 
-\smallskip
+ 
 
 Thinking of $f$ as a process, the formula $f(x) = 2^{x-1}-3$ takes an input $x$ and applies the steps: first subtract $1$.   Second put the result of the first step as the exponent on $2$.   Last, subtract $3$ from the result of the second step.
 
-\smallskip
+ 
 
 Clearly, to undo subtracting $1$, we will add $1$, and similarly we undo subtracting $3$ by adding $3$.  How do we undo the second step?  The answer is we use the logarithm.  
 
-\smallskip
+ 
 
 By definition, $\log_{2}(x)$ undoes exponentiation by $2$.  Hence, $f^{-1}$ should: first,  add $3$.  Second,  take the logarithm base $2$ of the result of the first step. Lastly,  add $1$ to the result of the second ste.  In symbols, $f^{-1}(x) = \log_{2}(x+3)+1$.  
 
 
 \item  To graph $f^{-1}(x) = \log_{2}(x+3)+1$ using Theorem \ref{transformationsthm}, we start with $j(x) = \log_{2}(x)$ and track the points $\left(\frac{1}{2},-1\right)$, $(1,0)$ and $(2, 1)$ on the graph of $j$ along with the vertical asymptote $x=0$ through the transformations.
 
-\smallskip
+ 
 
 Since $f^{-1}(x) = j(x+3)+1$, we first subtract $3$ from each of the $x$-coordinates of each of the points on the graph of $y=j(x)$ shifting the graph of $j$ to the left three units.  We then add $1$ to each of the $y$-coordinates of the points on this new graph, shifting the graph up one unit. 
 
-\smallskip
+ 
 
 Tracking points, we get   $\left(\frac{1}{2},-1\right) \rightarrow \left(-\frac{5}{2},-1\right) \rightarrow \left(-\frac{5}{2},0\right)$, $(1,0) \rightarrow (-2,1) \rightarrow (-2,2)$, and $(2, 1) \rightarrow (-1, 1) \rightarrow (-1, 2)$.  
 
-\smallskip
+ 
 
 The vertical asymptote is only affected by the horizontal shift, so we have $x = 0 \rightarrow x = -3$.
 
-\smallskip
+ 
 
 From the graph below, we  get the  domain of $f^{-1}$ is $(-3, \infty)$, which matches the range of $f$, and the range of $f^{-1}$ is $(-\infty, \infty)$, which matches the domain of $f$, in accordance with Theorem \ref{inversefunctionprops}.
 
@@ -779,7 +747,7 @@ From the graph below, we  get the  domain of $f^{-1}$ is $(-3, \infty)$, which m
 
 \item  We now verify that $f(x) = 2^{x-1}-3$ and $f^{-1}(x) = \log_{2}(x+3)+1$ satisfy the composition requirement for inverses.  When simplifying $(f^{-1} \circ f)(x)$ we assume $x$ can be any real number while when simplifying $(f \circ f^{-1})(x)$, we restrict our attention to $x > -3$. (Do you see why?)  
 
-\smallskip
+ 
 
 Note the use of the inverse properties of exponential and logarithmic functions  from Theorem \ref{logfcnprops} when it comes to simplifying expressions of the form $\log_{2}(2^{u})$ and $2^{\log_{2}(u)}$. 
 
@@ -853,11 +821,11 @@ $\begin{array}{rcl}
 
 \item  Viewing $2^{x-1} - 3 = 4$ as $f(x) = 4$, we apply $f^{-1}$ to `undo' $f$ to get $f^{-1}(f(x)) = f^{-1}(4)$, which reduces to $x = f^{-1}(4)$.  Since we have shown (algebraically and graphically!) that $f^{-1}(x) =  \log_{2}(x+3) + 1$, we get  $x = f^{-1}(4) = \log_{2}(4+3) + 1 = \log_{2}(7) + 1$. 
 
-\smallskip
+ 
 
 Alternatively, we know from Theorem \ref{inversefunctionprops} that $f(x) = 4$ is equivalent to $x = f^{-1}(4)$ directly.
 
-\smallskip
+ 
 
 
 Note  that since, by definition,  $2^{\log_{2}(7)} = 7$,  $2^{( \log_{2}(7) + 1)-1} - 3 = 2^{\log_{2}(7)} - 3  = 7 - 3 = 4$, as required.
