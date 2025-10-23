@@ -217,7 +217,7 @@ To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\inf
 
 \item  Graph the following functions by starting with a basic  logarithmic function and using transformations, Theorem \ref{transformationsthm}.  Track at least three points and the vertical asymptote through the transformations.
 
-\begin{multicols}{2}
+
 
 \begin{enumerate}
 
@@ -227,7 +227,7 @@ To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\inf
 
 \end{enumerate}
 
-\end{multicols}
+
 
 \item \label{findformulaforlogexample} Find a formula for the graph of the function below.  Assume the base of the logarithm is $2$.
 
@@ -319,51 +319,11 @@ Looking at each point, we  get  $\left( \frac{1}{3}, 1 \right) \rightarrow \left
 
 Below we graph $y = f(x) = \log_{\frac{1}{3}}(x)$ on the left and  $y = F(x) = \log_{\frac{1}{3}} \left( \frac{x}{2} \right) + 1$ on the right.
 
-\[\begin{array}{ccc}
+% https://www.geogebra.org/classic/cg8cjnue
 
-\begin{mfpic}[15]{-1}{9}{-4}{4}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\tlabel[cc](3,-1.75){\scriptsize $(3,-1)$}
-\tlabel[cc](0.75,-0.75){\scriptsize $(1,0)$}
-\tlabel[cc](1.25, 1){\scriptsize $\left(\frac{1}{3}, 1 \right)$}
-\tcaption{\scriptsize $y = f(x) = \log_{\frac{1}{3}}(x) $}
-\xmarks{1,2,3,4,5,6,7,8}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.9, 3, 0.1}{((1/3)**t, t)}
-\point[4pt]{(3,-1), (1,0), (0.3333,1)}
-\end{mfpic}
-
-&
-
-\stackrel{\xrightarrow{\hspace{1in}}}{\text{\scriptsize Theorem  \ref{transformationsthm}}} 
-
-&
-
-\begin{mfpic}[15]{-1}{9}{-3}{5}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](6,-0.5){\scriptsize $(6,0)$}
-\tlabel[cc](2.75,1.25){\scriptsize $(2,1)$}
-\tlabel[cc](1.5,2){\scriptsize $\left(\frac{2}{3}, 2 \right)$}
-\tcaption{\scriptsize $y = F(x) = \log_{\frac{1}{3}} \left( \frac{x}{2} \right) + 1$}
-\xmarks{1,2,3,4,5,6,7,8}
-\ymarks{-2,-1,1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-0.3, 4, 0.1}{( 2*((1/3)**(t-1)) , t)}
-\point[4pt]{(6,0), (2,1), (0.6666,2)}
-\end{mfpic} \\
-
-\end{array}\]
+\begin{center}
+    \geogebra{cg8cjnue}{800}{600}
+\end{center}
 
 As always we can check our answer by verifying each of the points $\left(\frac{2}{3}, 2\right)$, $(2,1)$, , and  $(6,0)$,  is on the graph of $F(x) =  \log_{\frac{1}{3}} \left( \frac{x}{2} \right) + 1$ by checking $F\left( \frac{2}{3} \right) = 2$, $F(2) = 1$, and $F(6) = 0$.  We can check the end behavior as well, that is, $\ds{\lim_{x \rightarrow 0^{+}} F(x) = \infty}$ and as $\ds{\lim_{x \rightarrow \infty} F(x) \rightarrow -\infty}$.  We leave these calculations to the reader.
 
@@ -397,53 +357,11 @@ Tracking points, we have $(e^{-1}, -1) \rightarrow (e^{-1}-2, -1) \rightarrow (-
 
 We graph $g(t) = \ln(t)$ below on the left and the transformed function $G(t) = -\ln(-t+2)$ below on the right.   As usual, we can check our answer by verifying the indicated points do, in fact, lie on the graph of $y = G(t)$ along with checking the behavior as $t \rightarrow -\infty$ and $t \rightarrow 2^{-}$.
 
-\[\begin{array}{ccc}
+% https://www.geogebra.org/classic/e6xe62cw
 
-\begin{mfpic}[15]{-1}{9}{-4}{4}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\tlabel[cc](1.75, -1){\scriptsize $(e^{-1},-1)$}
-\tlabel[cc](0.75,0.75){\scriptsize $(1,0)$}
-\tlabel[cc](2.7, 1.75){\scriptsize $(e,1)$}
-\tcaption{\scriptsize $y = g(t)  =\ln(t)$}
-\xmarks{1,2,3,4,5,6,7,8}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $2$} 2,{\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2, 2.15, 0.1}{((2.718)**t, t)}
-\point[4pt]{(0.368,-1), (1,0), (2.718,1)}
-\end{mfpic}
-
-&
-
-\stackrel{\xrightarrow{\hspace{1in}}}{\text{\scriptsize Theorem  \ref{transformationsthm}}} 
-
-&
-
-\begin{mfpic}[15]{-7}{3}{-4}{4}
-\axes
-\dashed \polyline{(2, -3.5), (2, 3.5)}
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\tlabel[cc](1.25,-0.75){\scriptsize $(1,0)$}
-\tlabel[cc](2,-4){\scriptsize $t=2$}
-\tlabel[cc](-2.5, -0.75){\scriptsize $(-e+2,-1)$}
-\tcaption{\scriptsize $y = G(t)  =-\ln(-t+2)$}
-\xmarks{-6,-5,-4,-3,-2,-1,1,2}
-\ymarks{-3,-2,-1,1,2,3}
-\gclear \tlabelrect[cc](-0.5,1){\scriptsize $(-e^{-1}+2,1)$}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-6 \hspace{7pt}$} -6,{\scriptsize $-5 \hspace{7pt}$} -5}
-\axislabels {y}{ {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2, 2.15, 0.1}{(2 - ((2.718)**(-t)), t)}
-\point[4pt]{ (1.632,1), (1,0), (-0.718,-1)}
-\end{mfpic}\\
-
-\end{array}\]
+\begin{center}
+    \geogebra{e6xe62cw}{800}{600}
+\end{center}
 
 \end{enumerate}
 
@@ -452,7 +370,7 @@ We graph $g(t) = \ln(t)$ below on the left and the transformed function $G(t) = 
 
  
 
-Since the vertical asymptote to the graph of $y=f(x) = \log_{2}(x)$ is $x=0$ and the vertical asymptote to the graph $y = F(x)$ is $x=4$, we know we have a vertical shift of $4$ units. Moreover, since the curve approaches the vertical asymptote from the \textit{left}, we also know we have a reflection about the $y$-axis, so $b<0$.  Since the recipe in Theorem \ref{transformationsthm} instructs us to perform the vertical shift \textit{before} the reflection across the $y$-axis, we take $h=-4$ and assume for simplicity $b = -1$ so $F(x) = a \log_{2}(-x+4)+k$.  
+Since the vertical asymptote to the graph of $y=f(x) = \log_{2}(x)$ is $x=0$ and the vertical asymptote to the graph $y = F(x)$ is $x=4$, we know we have a horizontal shift of $4$ units. Moreover, since the curve approaches the vertical asymptote from the \textit{left}, we also know we have a reflection about the $y$-axis, so $b<0$.  Since the recipe in Theorem \ref{transformationsthm} instructs us to perform the horizontal shift \textit{before} the reflection across the $y$-axis, we take $h=-4$ and assume for simplicity $b = -1$ so $F(x) = a \log_{2}(-x+4)+k$.  
 
  
 
