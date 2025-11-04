@@ -29,36 +29,13 @@ Let $F$ be a point in the plane and $D$ be a line not containing $F$.   A \index
 
 %% \ebm}
 
-\medskip
+
 
 Schematically, we have the following.
 
+% https://www.geogebra.org/classic/swpj4meu
 \begin{center}
-
-\begin{mfpic}[15]{-7}{7}{0}{5}
-\dashed \polyline{(0,2), (0,0), (0,-2)}
-\dashed \polyline{(0,2), (2, 0.5), (2, -2)}
-\dashed \polyline{(0,2), (-2,0.5), (-2, -2)}
-\dashed  \polyline{(0,2), (4,2), (4, -2)}
-\dashed  \polyline{(0,2), (-4,2), (-4, -2)}
-\dashed \polyline{(0,2), (6,4.5), (6, -2)}
-\dashed  \polyline{(0,2), (-6,4.5), (-6, -2)}
-\plotsymbol[3pt]{Asterisk}{(0, 2)}
-\tlabel[cc](6.5, -2.5){$D$}
-\tlabel[cc](0, 2.5){$F$}
-\arrow \reverse \arrow \function{-6.5, 6.5, 0.1}{-2}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6.25,6.25,0.1}{(x**2)/8}
-\point[4pt]{(0,0)}
-\point[4pt]{(2,0.5)}
-\point[4pt]{(-2,0.5)}
-\point[4pt]{(4,2)}
-\point[4pt]{(-4,2)}
-\point[4pt]{(6,4.5)}
-\point[4pt]{(-6,4.5)}
-\tlabel[cc](0.5,-0.5){$V$}
-\end{mfpic}
-
+\geogebra{swpj4meu}{800}{600}
 \end{center}
 
 Each dashed line from the point $F$ to a point on the curve has the same length as the dashed line from the point on the curve to the line $D$.  The point suggestively labeled $V$ is, as you may expect, the \textbf{vertex}.  The \index{parabola ! vertex} \index{vertex ! of a parabola} vertex is the point on the parabola closest to the focus.  
@@ -138,52 +115,9 @@ Notice that in the standard equation of the parabola above, only one of the vari
 \smallskip
 
 Before embarking on an example,  we take a moment to better illustrate the affect of the focal length  $|p|$ on the graph of a parabola.  Below we sketch three parabolas with focal length $0.5$, $1$, and $2$.  In each case, the focus is denoted by an `$\ast$.'  In general, as the focal length $|p|$ increases, the parabola becomes wider.
-
+ % https://www.geogebra.org/classic/rscgdtbm
 \begin{center}
-
-\begin{tabular}{m{1.5in}m{2in}m{3in}}
-
-\begin{mfpic}[15]{-3}{3}{0}{5}
-\plotsymbol[3pt]{Asterisk}{(0, 0.5)}
-\tcaption{$p = 0.5$}
-\tlabel[cc](0, 1.5){$F$}
-\dashed \polyline{(-1,0.5), (1,0.5)}
-\tlabel[cc](0,-0.5){$V$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,3,0.1}{(x**2)/2}
-\point[4pt]{(0,0), (-1,0.5), (1,0.5)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-5}{5}{0}{5}
-\plotsymbol[3pt]{Asterisk}{(0, 1)}
-\tcaption{$p = 1$}
-\tlabel[cc](0, 1.5){$F$}
-\dashed \polyline{(-2,1), (2,1)}
-\tlabel[cc](0,-0.5){$V$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.2,4.2,0.1}{(x**2)/4}
-\point[4pt]{(0,0), (2,1), (-2,1)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-7}{7}{0}{5}
-\plotsymbol[3pt]{Asterisk}{(0, 2)}
-\tcaption{$p = 2$}
-\tlabel[cc](0, 1.5){$F$}
-\dashed \polyline{(-4,2), (4,2)}
-\tlabel[cc](0,-0.5){$V$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6.2,6.2,0.1}{(x**2)/8}
-\point[4pt]{(0,0), (4,2), (-4,2)}
-\end{mfpic}
-
-\\
-
-\end{tabular}
-
+\geogebra{rscgdtbm}{800}{600}
 \end{center}
 
 The dashed line segment in each of the illustrations above is called the \textit{latus rectum} of the parabola.  More specifically, the \index{parabola ! latus rectum} \index{latus rectum of a parabola}\textbf{latus rectum} of a parabola is the line segment with endpoints on the parabola which contains the focus and is parallel to the directrix.\footnote{Hence, the endpoints of the latus rectum are  two points on `opposite' sides of the parabola.}   
@@ -343,48 +277,9 @@ If $p>0$, the parabola opens to the right;  if $p < 0$, it opens to the left.
 
 As we saw in  Section \ref{InverseFunctions}, when we reflect a horizontal line across the line $y=x$, we obtain a vertical line, and, as a result, the directrix of a \textit{horizontal} parabola is a \textit{vertical} line. Moreover, the focus of a horizontal parabola is either to the \textit{left} or \text{right} of the directrix.  Schematically:
 
+% https://www.geogebra.org/classic/vumxajqy
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[13]{0}{5}{-7}{7}
-\plotsymbol[3pt]{Asterisk}{(-2, 0)}
-\tlabel[cc](-2.5, 0){$F$}
-\arrow \reverse \arrow \parafcn{-6.5, 6.5, 0.1}{(2,t)}
-\tlabel[cc](2.5, 6.5){$D$}
-\tlabel[cc](0.5,0){$V$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-6.25,6.25,0.1}{-((t**2)/8,t)}
-\point[4pt]{(0,0)}
-\end{mfpic}
-
-&
-
-
-\begin{mfpic}[13]{0}{5}{-7}{7}
-\plotsymbol[3pt]{Asterisk}{(2, 0)}
-\tlabel[cc](2.5, 0){$F$}
-\arrow \reverse \arrow \parafcn{-6.5, 6.5, 0.1}{(-2,t)}
-\tlabel[cc](-2.5, 6.5){$D$}
-\tlabel[cc](-0.5,0){$V$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-6.25,6.25,0.1}{((t**2)/8,t)}
-\point[4pt]{(0,0)}
-\end{mfpic}
-
- \\
-
-$p< 0$ 
-
-&
-
-
-
-$p>0$ \\
-
-
-\end{tabular}
-
+\geogebra{vumxajqy}{800}{600}
 \end{center}
 
 
@@ -643,14 +538,9 @@ As we have seen, not all equations which describe parabolas will immediately mat
 \label{paraboloid}
 In studying quadratic functions, we have seen parabolas used to model physical phenomena such as the trajectories of projectiles.  Other applications of the parabola concern its \index{parabola ! reflective property}`reflective property' which necessitates knowing about the focus of a parabola.  For example, many satellite dishes are formed in the shape of a \index{paraboloid} \textbf{paraboloid of revolution} as depicted below.
 
+% https://www.desmos.com/3d/ua0nafkkly
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width=2.5in]{./ParabolasGraphics/Paraboloid01.jpg} & \includegraphics[width=2.5in]{./ParabolasGraphics/Paraboloid02.jpg} \\
-
-\end{tabular}
-
+\desmosThreeD{ua0nafkkly}{600}
 \end{center}
 
 Every cross section through the vertex of the paraboloid is a parabola with the same focus.  To see why this is important, imagine the dashed lines below as electromagnetic waves heading towards a parabolic dish.   It turns out that the waves reflect off the parabola and concentrate at the focus which then becomes the optimal place for the receiver. 
