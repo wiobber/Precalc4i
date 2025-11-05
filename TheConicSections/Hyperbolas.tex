@@ -532,28 +532,9 @@ Hyperbolas can be used in so-called `\href{http://en.wikipedia.org/wiki/Trilater
 
 \item Since Jeff hears Sasquatch sooner, it is closer to Jeff than it is to Carl.  Since the speed of sound is $760$ miles per hour, we can determine how much closer Sasquatch is to Jeff by multiplying \[760 \, \frac{\mbox{miles}}{\mbox{hour}} \times \frac{ 1 \, \mbox{hour}}{ 3600 \, \mbox{seconds}} \times 9 \, \mbox{seconds}  = 1.9 \, \mbox{miles}\]  This means that Sasquatch is $1.9$ miles closer to Jeff than it is to Carl.  In other words, Sasquatch must lie on a path where \[\text{(the distance to Carl)} - \text{(the distance to Jeff)} = 1.9\]  This is exactly the situation in the definition of a hyperbola, Definition \ref{hyperboladefn}.  In this case, Jeff and Carl are located at the foci,\footnote{We usually like to be the \textit{center} of attention, but being the \textit{focus} of attention works equally well.} and our fixed distance $d$ is 1.9.  For simplicity, we assume the hyperbola is centered at $(0,0)$ with its foci at $(-5, 0)$ and $(5, 0)$.  Schematically:
 
+% https://www.geogebra.org/classic/nnwjq4mb
 \begin{center}
-
-\begin{mfpic}[15]{-7}{7}{-7}{7}
-\axes
-\tlabel(7,-0.5){\scriptsize $x$}
-\tlabel(0.5,7){\scriptsize $y$}
-\xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
-\tlabel[cc](-5,0.5){\scriptsize Jeff}
-\tlabel[cc](5,0.5){\scriptsize Carl}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,  {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(0.95*cosh(t),4.91*sinh(t))}
-\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
-\end{mfpic}
-
+\geogebra{nnwjq4mb}{800}{600}
 \end{center}
 
 
@@ -573,62 +554,9 @@ The second hyperbola is vertical, so it must be of the form $\frac{(y-3)^2}{b^2}
 
 Kai heard the Sasquatch call after Jeff, so Kai is farther from Sasquatch than Jeff.  Thus Sasquatch must lie on the southern branch of the hyperbola \[ \dfrac{(y-3)^2}{3.61} - \dfrac{(x+5)^2}{5.39} = 1.\] Looking at the western branch of the hyperbola determined by Jeff and Carl along with the southern branch of the hyperbola determined by Kai and Jeff, we see that there is exactly one point in common, and this is where Sasquatch must have been when it called.
 
-
+% https://www.geogebra.org/classic/sjsdyuqz
 \begin{center}
-
-\begin{tabular}{cc}
-\begin{mfpic}[12.5]{-10}{7}{-7}{7}
-\axes
-\tlabel(7,-0.5){\scriptsize $x$}
-\tlabel(0.5,7){\scriptsize $y$}
-\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
-
-\dotted[1pt, 3pt] \arrow \reverse \arrow \parafcn{-1.1,1.2,0.1}{(0.95*cosh(t),4.91*sinh(t))}
-\dotted[1pt, 3pt] \arrow \reverse \arrow \parafcn{-1.1,1.2,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
-\tlabel[cc](-5,0.5){\scriptsize Jeff}
-\tlabel[cc](5,0.5){\scriptsize Carl}
-\tlabel[cc](-5, 6.5){\scriptsize Kai}
-\plotsymbol[3pt]{Asterisk}{(-5,0),(5,0),(-5,6)}
-\plotsymbol[3pt]{Cross}{(0,0),(-5,3)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-9 \hspace{7pt}$} -9,{$-8 \hspace{7pt}$} -8,{$-7 \hspace{7pt}$} -7,{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt} $} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3+1.9*cosh(t))}
-\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3 - 1.9*cosh(t))}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[12.5]{-10}{7}{-7}{7}
-\axes
-\tlabel(7,-0.5){\scriptsize $x$}
-\tlabel(0.5,7){\scriptsize $y$}
-\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-6, -5,-4,-3,-2,-1,1,2,3,4,5,6}
-
-\tlabel[cc](-5,0.5){\scriptsize Jeff}
-\tlabel[cc](5,0.5){\scriptsize Carl}
-\tlabel[cc](-5, 6.5){\scriptsize Kai}
-\plotsymbol[3pt]{Asterisk}{(-5,0),(5,0),(-5,6)}
-\plotsymbol[3pt]{Cross}{(0,0),(-5,3)}
-\tlabel[cc](-2.9,-1.4){\scriptsize Sasquatch}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-9 \hspace{7pt}$} -9,{$-8 \hspace{7pt}$} -8,{$-7 \hspace{7pt}$} -7,{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.5,1.5,0.1}{(-5+2.32164*sinh(t),3 - 1.9*cosh(t))} 
-\arrow \reverse \arrow \parafcn{-1.1,1.1,0.1}{(-0.95*cosh(t),4.91*sinh(t))}
-\point[4pt]{(-0.9628865,-0.8112885)}
-\end{mfpic} \\
-
-\end{tabular}
-
+\geogebra{sjsdyuqz}{800}{600}
 \end{center}
 
 To determine the coordinates of this point of intersection exactly, we would need techniques for solving systems of non-linear equations (which we won't see until Section \ref{NonLinearEquations}), so we use a graphing utility.  Doing so, we get Sasquatch is approximately at $(-0.9629, -0.8113)$. \qed   
