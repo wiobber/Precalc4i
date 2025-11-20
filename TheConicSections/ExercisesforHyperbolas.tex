@@ -372,10 +372,15 @@ In Exercises \ref{buildhypefromgraphfirst} - \ref{buildhypefromgraphlast}, find 
 
 \begin{problem}
 The location of an earthquake's epicenter $-$ the point on the surface of the Earth directly above where the earthquake actually occurred $-$ can be determined by a process similar to how we located Sasquatch in Example \ref{FindtheSasquatch}.  (As we said back in Exercise \ref{Richterexercise} in Section \ref{LogarithmicFunctions}, earthquakes are complicated events and it is not our intent to provide a complete discussion of the science involved in them.  Instead, we refer the interested reader to a course in Geology or the U.S. Geological Survey's Earthquake Hazards Program found \href{http://earthquake.usgs.gov/}{\underline{here}}.)  Our technique works only for relatively small distances because we need to assume that the Earth is flat in order to use hyperbolas in the plane.  The P-waves (``P'' stands for Primary) of an earthquake in Sasquatchia travel at 6 kilometers per second.\footnote{Depending on the composition of the crust at a specific location, P-waves can travel between 5 kps and 8 kps.}  Station A records the waves first. Then Station B, which is 100 kilometers due north of Station A, records the waves 2 seconds later.  Station C, which is 150 kilometers due west of Station A records the waves 3 seconds after that (a total of 5 seconds after Station A). Where is the epicenter?
+
+\begin{solution}
+    By placing Station A at $(0, -50)$ and Station B at $(0, 50)$, the two second time difference yields the hyperbola $\frac{y^{2}}{36} - \frac{x^{2}}{2464} = 1$ with foci A and B and center $(0, 0)$.  Placing Station C at $(-150, -50)$ and using foci A and C gives us a center of $(-75, -50)$ and the hyperbola $\frac{(x + 75)^{2}}{225} - \frac{(y + 50)^{2}}{5400} = 1$.  The point of intersection of these two hyperbolas which is closer to A than B and closer to A than C is $(-57.8444, -9.21336)$ so that is the epicenter.  
+\end{solution}
+
 \end{problem}
 
 
-\begin{question}\item \label{hyperbolaeccentricity} 
+\begin{question}\label{hyperbolaeccentricity} 
     
 The notion of eccentricity introduced for ellipses in Definition \ref{ellipseeccentricity} in Section \ref{Ellipses} is the same for hyperbolas in that we can define the eccentricity $e$ of a hyperbola as 
 
@@ -416,6 +421,11 @@ On page \pageref{paraboloid} in Section \ref{Parabolas}, we discussed paraboloid
 \end{mfpic}
 
 \end{center} 
+
+\begin{solution}
+    
+The tower may be modeled (approximately)\footnote{The exact value underneath $(y - 330)^{2}$ is $\frac{52707600}{1541}$ in case you need more precision.} by $\frac{x^2}{12100} - \frac{(y-330)^2}{34203} = 1$.  To find the height, we plug in $x = 137.5$ which yields $y \approx 191$ or $y \approx 469$.  Since the top of the tower is above the narrowest point, we get the tower is approximately 469 feet tall.
+\end{solution}
 
 \end{problem}
 
