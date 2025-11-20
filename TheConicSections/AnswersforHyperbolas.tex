@@ -1,0 +1,824 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Answers for Hyperbolas}{}
+
+
+\mfpicnumber{1} \opengraphsfile{ExercisesforHyperbolas} % mfpic settings added 
+
+\subsection{Answers}
+
+\begin{enumerate}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$
+
+Center $(0, 0)$\\
+Transverse axis on $y = 0$\\
+Conjugate axis on $x = 0$\\
+Vertices $(4, 0), (-4, 0)$\\
+Foci $(5, 0), (-5, 0)$\\
+Asymptotes $y = \pm \frac{3}{4} x$\\
+
+\begin{mfpic}[12][9]{-7}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-6 step 1 until 6}
+\ymarks{-6 step 1 until 6}
+\point[4pt]{(4,0),(-4,0)}
+\dotted[1pt, 3pt] \polyline{(-4,3), (4,3), (4, -3), (-4,-3), (-4,3)}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{0.75*x}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{-0.75*x}
+\plotsymbol[4pt]{Cross}{(0,0)}
+\plotsymbol[4pt]{Asterisk}{(5,0), (-5,0)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-5,5,0.1}{(sqrt(16 + (1.778*(t**2))),t)}
+\arrow \reverse \arrow \parafcn{-5,5,0.1}{(-sqrt(16 + (1.778*(t**2))),t)}
+\end{mfpic}
+
+\end{multicols}
+
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{y^{2}}{9} - \dfrac{x^{2}}{16} = 1$
+
+Center $(0, 0)$\\
+Transverse axis on $x = 0$\\
+Conjugate axis on $y = 0$\\
+Vertices $(0, 3), (0, -3)$\\
+Foci $(0, 5), (0, -5)$\\
+Asymptotes $y = \pm \frac{3}{4} x$\\
+
+\begin{mfpic}[12][9]{-7}{7}{-7}{7}
+\axes
+\tlabel(7,-0.5){\scriptsize $x$}
+\tlabel(0.5,7){\scriptsize $y$}
+\xmarks{-6 step 1 until 6}
+\ymarks{-6 step 1 until 6}
+\point[4pt]{(0,3),(0,-3)}
+\dotted[1pt, 3pt] \polyline{(-4,3), (4,3), (4, -3), (-4,-3), (-4,3)}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{0.75*x}
+\arrow \reverse \arrow \dashed \function{-7,7,0.1}{-0.75*x}
+\plotsymbol[4pt]{Cross}{(0,0)}
+\plotsymbol[4pt]{Asterisk}{(0,5), (0,-5)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-7,7,0.1}{sqrt(9 + (0.5625*(x**2)))}
+\arrow \reverse \arrow \function{-7,7,0.1}{-sqrt(9 + (0.5625*(x**2)))}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x - 2)^{2}}{4} - \dfrac{(y + 3)^{2}}{9} = 1$
+
+Center $(2, -3)$\\
+Transverse axis on $y = -3$\\
+Conjugate axis on $x = 2$\\
+Vertices $(0, -3), (4, -3)$\\
+Foci $(2 + \sqrt{13}, -3), (2 - \sqrt{13}, -3)$\\
+Asymptotes $y = \pm \frac{3}{2}(x - 2) - 3$\\
+
+\begin{mfpic}[12][9]{-4}{8}{-11}{5}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-3 step 1 until 7}
+\ymarks{-10 step 1 until 4}
+\point[4pt]{(0,-3),(4,-3)}
+\dotted[1pt, 3pt] \polyline{(0,0), (4,0), (4, -6), (0,-6), (0,0)}
+\arrow \function{4,7,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \function{4,7,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{-1.5*x}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{(1.5*x) - 6}
+\plotsymbol[4pt]{Cross}{(2,-3)}
+\plotsymbol[4pt]{Asterisk}{(5.60555,-3), (-1.60555,-3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-10$} -10, {$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{4,7,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \function{4,7,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\end{mfpic}
+
+\end{multicols}
+
+\pagebreak
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(y - 3)^{2}}{11} - \dfrac{(x - 1)^{2}}{10} = 1$
+
+Center $(1, 3)$\\
+Transverse axis on $x = 1$\\
+Conjugate axis on $y = 3$\\
+Vertices $(1, 3 + \sqrt{11}), (1, 3 - \sqrt{11})$\\
+Foci $(1, 3 + \sqrt{21}), (1, 3 - \sqrt{21})$\\
+Asymptotes $y = \pm \frac{\sqrt{110}}{10}(x - 1) + 3$\\
+
+\begin{mfpic}[12][9]{-6}{8}{-4}{10}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,10){\scriptsize $y$}
+\xmarks{-5 step 1 until 7}
+\ymarks{-3 step 1 until 9}
+\point[4pt]{(1,6.16228),(1,-0.16228)}
+\dotted[1pt, 3pt] \polyline{(-2.3166,6.16228), (4.3166,6.16228), (4.3166,-0.16228), (-2.3166,-0.16228), (-2.3166,6.16228)}
+\arrow \reverse \arrow \dashed \function{-6,8,0.1}{0.95346*(x - 1) + 3}
+\arrow \reverse \arrow \dashed \function{-6,8,0.1}{-0.95346*(x - 1) + 3}
+\plotsymbol[4pt]{Cross}{(1,3)}
+\plotsymbol[4pt]{Asterisk}{(1,7.58258), (1,-1.58258)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-5.5,7.5,0.1}{3 + sqrt(10 + (0.90909*((x-1)**2)))}
+\arrow \reverse \arrow \function{-5.5,7.5,0.1}{3 - sqrt(10 + (0.90909*((x-1)**2)))}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x + 4)^{2}}{16} - \dfrac{(y - 4)^{2}}{1} = 1$
+
+Center $(-4, 4)$\\
+Transverse axis on $y = 4$\\
+Conjugate axis on $x = -4$\\
+Vertices $(-8, 4), (0, 4)$\\
+Foci $(-4 + \sqrt{17}, 4), (-4 - \sqrt{17}, 4)$\\
+Asymptotes $y = \pm \frac{1}{4}(x +4) +4$\\
+
+\begin{mfpic}[12][12]{-12}{4}{-1}{6}
+\axes
+\tlabel(4,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-11 step 1 until 3}
+\ymarks{1 step 1 until 5}
+\point[4pt]{(-8,4),(0,4)}
+\dotted[1pt, 3pt] \polyline{(-8,5), (0,5), (0,3), (-8,3), (-8,5)}
+\arrow \reverse \arrow \dashed \function{-12,4,0.1}{0.25*x + 5}
+\arrow \reverse \arrow \dashed \function{-12,4,0.1}{-0.25*x + 3}
+\plotsymbol[4pt]{Cross}{(-4,4)}
+\plotsymbol[4pt]{Asterisk}{(0.123106,4), (-8.123106,4)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-11 \hspace{6pt}$} -11, {$-10 \hspace{6pt}$} -10, {$-9 \hspace{6pt}$} -9, {$-8 \hspace{6pt}$} -8, {$-7 \hspace{6pt}$} -7, {$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{0,4,0.1}{4 + sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \reverse \function{-12,-8,0.1}{4 + sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \function{0,4,0.1}{4 - sqrt((0.0625*((x + 4)**2)) - 1)}
+\arrow \reverse \function{-12,-8,0.1}{4 - sqrt((0.0625*((x + 4)**2)) - 1)}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x+1)^2}{9} - \dfrac{(y-3)^2}{4} = 1$
+
+Center $(-1, 3)$\\
+Transverse axis on $y=3$\\
+Conjugate axis on $x=-1$\\
+Vertices $(2, 3), (-4, 3)$\\
+Foci $\left(-1+\sqrt{13}, 3\right), \left(-1-\sqrt{13}, 3\right)$\\
+Asymptotes $y = \pm \frac{2}{3} (x+1)+3$\\
+
+\begin{mfpic}[12]{-8}{6}{-1}{6}
+\axes
+\tlabel(6,-0.5){\scriptsize $x$}
+\tlabel(0.5,6){\scriptsize $y$}
+\xmarks{-7 step 1 until 5}
+\ymarks{1 step 1 until 5}
+\point[4pt]{(2,3),(-4,3)}
+\dotted \polyline{(-4,1), (-4,5), (2, 5), (2,1),(-4,1)}
+\arrow \reverse \arrow \dashed \function{-7,5,0.1}{(2/3)*(x+1)+3}
+\arrow \reverse \arrow \dashed \function{-7,5,0.1}{3-(2/3)*(x+1)}
+\plotsymbol[4pt]{Cross}{(-1,3)}
+\plotsymbol[4pt]{Asterisk}{(2.6056,3), (-4.6056,3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-7 \hspace{6pt}$} -7,{$-6 \hspace{6pt}$} -6,{$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.4,1.4,0.1}{(3*cosh(t)-1,2*sinh(t)+3)}
+\arrow \reverse \arrow \parafcn{-1.4,1.4,0.1}{(-3*cosh(t)-1,2*sinh(t)+3)}
+\end{mfpic}
+
+\end{multicols}
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(y+2)^2}{16} - \dfrac{(x-5)^2}{20} = 1$
+
+Center $(5, -2)$\\
+Transverse axis on $x=5$\\
+Conjugate axis on $y=-2$\\
+Vertices $(5,2), (5,-6)$\\
+Foci $\left(5,4 \right), \left(5,-8\right)$\\
+Asymptotes $y = \pm \frac{2\sqrt{5}}{5} (x-5)-2$\\
+
+\begin{mfpic}[10]{-2}{12}{-9}{5}
+\axes
+\tlabel(12,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-1 step 1 until 11}
+\ymarks{-8 step 1 until 4}
+\point[4pt]{(5,2),(5,-6)}
+\dotted \polyline{(0.5279,-6), (0.5279,2), (9.4721, 2), (9.4721,-6),(0.5279,-6)}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0.89442*(x-5)-2}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0-2-0.89442*(x-5)}
+\plotsymbol[4pt]{Cross}{(5,-2)}
+\plotsymbol[4pt]{Asterisk}{(5,4), (5,-8)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11}
+\axislabels {y}{{$-8$} -8,{$-7$} -7,{$-6$} -6,{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,4*cosh(t)-2)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,0-4*cosh(t)-2)}
+\end{mfpic}
+
+\end{multicols}
+
+\pagebreak
+
+\item \begin{multicols}{2} \raggedcolumns
+$\dfrac{(x-4)^2}{8} - \dfrac{(y-2)^2}{18} = 1$
+
+Center $(4, 2)$\\
+Transverse axis on $y=2$\\
+Conjugate axis on $x=4$\\
+Vertices $\left(4+2\sqrt{2},2\right), \left(4-2\sqrt{2},2\right)$\\
+Foci $\left(4+\sqrt{26},2 \right), \left(4-\sqrt{26},2\right)$\\
+Asymptotes $y = \pm \frac{3}{2} (x-4)+2$\\
+
+\begin{mfpic}[10]{-3}{11}{-4}{10}
+\axes
+\tlabel(9,-0.5){\scriptsize $x$}
+\tlabel(0.5,10){\scriptsize $y$}
+\xmarks{-2 step 1 until 10}
+\ymarks{-3 step 1 until 9}
+\point[4pt]{(6.8284,2),(1.1716,2)}
+\dotted \polyline{(1.1716,-2.2426), (1.1716,6.2426), (6.8284, 6.2426), (6.8284,-2.2426),(1.1716,-2.2426)}
+\arrow \reverse \arrow \dashed \function{-1,9,0.1}{1.5*(x-4)+2}
+\arrow \reverse \arrow \dashed \function{-1,9,0.1}{2-1.5*(x-4)}
+\plotsymbol[4pt]{Cross}{(4,2)}
+\plotsymbol[4pt]{Asterisk}{(9.0990,2), (-1.0990,2)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10}
+\axislabels {y}{ -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(2.8284*cosh(t)+4,4.2426*sinh(t)+2)}
+\arrow \reverse \arrow \parafcn{-1.2,1.2,0.1}{(0-2.8284*cosh(t)+4,4.2426*sinh(t)+2)}
+\end{mfpic}
+
+\end{multicols}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+
+\item $\dfrac{x^{2}}{3} - \dfrac{(y - 5)^{2}}{12} = 1$
+
+Center $(0, 5)$\\
+Transverse axis on $y = 5$\\
+Conjugate axis on $x = 0$\\
+Vertices $(\sqrt{3}, 5), (-\sqrt{3}, 5)$\\
+Foci $(\sqrt{15}, 5), (-\sqrt{15}, 5)$\\
+Asymptotes $y = \pm 2x + 5$
+
+\item $\dfrac{(y + 2)^{2}}{5} - \dfrac{(x - 3)^{2}}{18} = 1$
+
+Center $(3, -2)$\\
+Transverse axis on $x = 3$\\
+Conjugate axis on $y = -2$\\
+Vertices $(3, -2 + \sqrt{5}), (3, -2 - \sqrt{5})$\\
+Foci $(3, -2 + \sqrt{23}), (3, -2 - \sqrt{23})$\\
+Asymptotes $y = \pm \frac{\sqrt{10}}{6}(x - 3) - 2$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x-3)^{2}}{25} - \dfrac{(y+1)^{2}}{9} = 1$
+
+Center $(3, -1)$\\
+Transverse axis on $y=-1$\\
+Conjugate axis on $x=3$\\
+Vertices $(8, -1), (-2, -1)$\\
+Foci $\left(3+\sqrt{34}, -1 \right), \left(3-\sqrt{34}, -1 \right)$\\
+Asymptotes $y = \pm \frac{3}{5}(x - 3) - 1$
+
+
+
+\item $\dfrac{(y+4)^{2}}{6} - \dfrac{(x+2)^{2}}{5} = 1$
+
+Center $(-2, -4)$\\
+Transverse axis on $x=-2$\\
+Conjugate axis on $y=-4$\\
+Vertices $\left(-2,-4+\sqrt{6} \right), \left(-2,-4-\sqrt{6} \right)$\\
+Foci $\left(-2, -4+\sqrt{11} \right), \left(-2, -4-\sqrt{11} \right)$\\
+Asymptotes $y = \pm \frac{\sqrt{30}}{5}(x + 2) - 4$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $~$
+
+
+For number \ref{oddhypeone}:
+
+\begin{itemize}
+
+\item  $f(x) = \frac{3}{4} \sqrt{x^2-16}$ represents the upper half of the hyperbola.
+
+\item  $g(x) =  -\frac{3}{4} \sqrt{x^2-16}$ represents the lower half of the hyperbola.
+
+\end{itemize}
+
+For number \ref{oddhypethree}:
+
+\begin{itemize}
+
+\item  $f(x) = -3 + \frac{3}{2} \sqrt{x^2-4x} $ represents the upper half of the hyperbola.
+
+\item  $g(x) = -3 -  \frac{3}{2} \sqrt{x^2-4x} $ represents the lower half of the hyperbola.
+
+\end{itemize}
+For number \ref{oddhypefive}:
+
+\begin{itemize}
+
+\item  $f(x) = 4 + \frac{1}{4} \sqrt{x^2+8x} $ represents the upper half of the hyperbola.
+
+\item  $g(x) = 4 - \frac{1}{4} \sqrt{x^2+8x}  $ represents the lower half of the hyperbola.
+
+\end{itemize}
+
+
+For number \ref{oddhypeseven}:
+
+\begin{itemize}
+
+\item  $f(x) = -2 + \frac{2}{5} \sqrt{5x^2-50x+225}$ represents the upper half of the hyperbola.
+
+\item  $g(x) =-2 - \frac{2}{5} \sqrt{5x^2-50x+225}$ represents the lower half of the hyperbola.
+
+\end{itemize}
+
+For number \ref{oddhypenine}:
+
+\begin{itemize}
+
+\item  $f(x) = 5+2 \sqrt{x^2-3}$ represents the upper half of the hyperbola.
+
+\item  $g(x) = 5-2 \sqrt{x^2-3}$ represents the lower half of the hyperbola.
+
+\end{itemize}
+
+For number \ref{oddhypeeleven}:
+
+\begin{itemize}
+
+\item  $f(x) = -1+ \frac{3}{5} \sqrt{x^2-6x-16}$ represents the upper half of the hyperbola.
+
+\item  $g(x) = -1- \frac{3}{5} \sqrt{x^2-6x-16} $ represents the lower half of the hyperbola.
+
+\end{itemize}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = \sqrt{x^2-4}$
+
+\begin{mfpic}[15]{-4}{4}{-1}{5}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-2, -0.5){\scriptsize $(-2,0)$}
+\tlabel[cc](2, -0.5){\scriptsize $(2, 0)$}
+\xmarks{-3 step 1 until 3}
+\ymarks{0 step 1 until 4}
+\tlpointsep{4pt}
+\scriptsize
+%\axislabels {x}{ {$-3 \hspace{7pt}$} -3,  {$1$} 1,  {$3$} 3}
+\axislabels {y}{ {$1$} 1, {$2$} 2, {$3$} 3}
+\penwd{1.25pt}
+\arrow \reverse \ \function{-4,-2,0.1}{sqrt(x^2-4)}
+\arrow \function{2,4,0.1}{sqrt(x^2-4)}
+\point[4pt]{(-2,0), (2,0)}
+\normalsize
+\end{mfpic} 
+
+\vfill
+
+\columnbreak
+
+\item $g(x) = - \sqrt{x^2-4x}$
+
+\begin{mfpic}[15]{-3}{7}{-4.5}{1.5}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,1.5){\scriptsize $y$}
+\tlabel[cc](-0.75, 0.5){\scriptsize $(0,0)$}
+\tlabel[cc](4, 0.5){\scriptsize $(4,0)$}
+\xmarks{-2 step 1 until 6}
+\ymarks{-4 step 1 until -1}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$5$} 5, {$6$} 6, {$-1 \hspace{6pt}$} -1,{$-2 \hspace{6pt}$} -2 }
+\axislabels {y}{{$-3$} -3, {$-4$} -4}
+\penwd{1.25pt}
+\arrow \reverse \function{-3, 0, 0.1}{-sqrt((x**2)-4*x)}
+\arrow  \function{4, 7, 0.1}{-sqrt((x**2)-4*x)}
+\point[4pt]{(0,0), (4,0)}
+\normalsize
+\end{mfpic} 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $f(x) = -2\sqrt{x^2+2x-3}$
+
+\begin{mfpic}[15]{-5}{3}{-6}{2}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,2){\scriptsize $y$}
+\tlabel[cc](-3, 0.5){\scriptsize $(-3,0)$}
+\tlabel[cc](1, 0.5){\scriptsize $(1,0)$}
+\xmarks{-4 step 1 until 2}
+\ymarks{-5 step 1 until 1}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$-1 \hspace{7pt}$} -1, {$-2 \hspace{7pt}$} -2,{$-4 \hspace{7pt}$} -4, {$2$} 2}
+\axislabels {y}{ {$1$} 1, {$-2$} -2,{$-3$} -3,  {$-1$} -1,  {$-5$} -5,  {$-4$} -4}
+\penwd{1.25pt}
+\arrow \reverse \function{-4.5,-3,0.1}{-2*sqrt((x**2)+(2*x)-3)}
+\arrow \function{1,2.5,0.1}{-2*sqrt((x**2)+(2*x)-3)}
+\point[4pt]{(-3,0), (1,0)}
+\normalsize
+\end{mfpic} 
+
+
+\item  $g(x) = -2 + 2\sqrt{x^2-9}$
+
+\begin{mfpic}[15]{-5}{5}{-3}{5}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](-3, -2.5){\scriptsize $(-3,-2)$}
+\tlabel[cc](3, -2.5){\scriptsize $(3,-2)$}
+\xmarks{-4 step 1 until 4}
+\ymarks{-2 step 1 until 4}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{ {$-1 \hspace{7pt}$} -1, {$-2 \hspace{7pt}$} -2,{$-4 \hspace{7pt}$} -4, {$2$} 2, {$1$} 1, {$4$} 4}
+\axislabels {y}{ {$4$} 4, {$2$} 2,{$3$} 3,{$1$} 1, {$-1$} -1, {$-2$} -2}
+\penwd{1.25pt}
+\arrow \reverse \function{-5,-3,0.1}{-2+2*sqrt((x**2)-9)}
+\arrow  \function{3,5,0.1}{-2+2*sqrt((x**2)-9)}
+\point[4pt]{(-3,-2), (3,-2)}
+\normalsize
+\end{mfpic} 
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\dfrac{x^2}{16} - \dfrac{y^2}{16} = 1$
+
+\item $\dfrac{(y-4)^2}{4} - \dfrac{(x-4)^2}{3} = 1$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(y - 7)^{2}}{16} - \dfrac{(x - 3)^{2}}{9} = 1$
+\item $\dfrac{(x - 4)^{2}}{16} - \dfrac{(y - 1)^{2}}{33} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{y^{2}}{25} - \dfrac{x^{2}}{39} = 1$
+\item $\dfrac{x^{2}}{16} - \dfrac{y^{2}}{9} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 8)^{2}}{25} - \dfrac{(y - 2)^{2}}{4} = 1$
+\item $\dfrac{(x - 6)^{2}}{256} - \dfrac{(y - 5)^{2}}{64} = 1$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(x-1)^2 = 4(y+3)$ \\
+
+\begin{mfpic}[15]{-4}{5}{-5}{1}
+\axes
+\xmarks{-3 step 1 until 4}
+\ymarks{-4 step 1 until 0}
+\arrow \reverse \arrow \polyline{(-5,-4),(5,-4)}
+\plotsymbol[4pt]{Asterisk}{(1,-2)}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\point[4pt]{(3,-2),(1,-3),(-1,-2)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \function{-3,5,0.1}{((x -1)**2)/4 - 3}
+\end{mfpic}
+
+
+\vfill
+
+\columnbreak
+
+
+\item $(x-4)^2+(y+2)^2 = 9$ \\
+
+\begin{mfpic}[20]{-1}{8}{-6}{2}
+\axes
+\plotsymbol[4pt]{Cross}{(4,-2)}
+\xmarks{1,4,7}
+\ymarks{-5,-2,1}
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,2){\scriptsize $y$}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$1$} 1,{$4$} 4,{$7$} 7}
+\axislabels {y}{{$-5$} -5, {$-2$} -2, {$1$} 1 }
+\normalsize
+\penwd{1.25pt}
+\circle{(4,-2),3}
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1$\\
+
+\begin{mfpic}[15]{-1}{5}{-7}{1}
+\axes
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\xmarks{1 step 1 until 4}
+\ymarks{-6 step 1 until 0}
+\plotsymbol[4pt]{Asterisk}{(2, -0.7639), (2,-5.23606)}
+\plotsymbol[4pt]{Cross}{(2,-3)}
+\point[4pt]{(2,0), (2,-6), (0,-3), (4,-3)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\penwd{1.25pt}
+\ellipse{(2,-3),2,3}
+\end{mfpic} 
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(x - 2)^{2}}{4} - \dfrac{(y + 3)^{2}}{9} = 1$ \\
+
+\begin{mfpic}[12][9]{-4}{8}{-11}{5}
+\axes
+\tlabel(8,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-3 step 1 until 7}
+\ymarks{-10 step 1 until 4}
+\point[4pt]{(0,-3),(4,-3)}
+\dotted[1pt, 3pt] \polyline{(0,0), (4,0), (4, -6), (0,-6), (0,0)}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{-1.5*x}
+\arrow \reverse \arrow \dashed \function{-3,7,0.1}{(1.5*x) - 6}
+\plotsymbol[4pt]{Cross}{(2,-3)}
+\plotsymbol[4pt]{Asterisk}{(5.60555,-3), (-1.60555,-3)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
+\axislabels {y}{{$-10$} -10, {$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{4,7,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 + sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \function{4,7,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\arrow \reverse \function{-3,0,0.1}{-3 - sqrt((2.25*((x - 2)**2)) - 9)}
+\end{mfpic}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(y + 4)^{2} = 4x$ \\
+
+\begin{mfpic}[15]{-2}{5}{-9}{1}
+\axes
+\xmarks{-1 step 1 until 4}
+\ymarks{-8 step 1 until 0}
+\arrow \reverse \arrow \polyline{(-1,-9),(-1,1)}
+\plotsymbol[4pt]{Asterisk}{(1,-4)}
+\tlabel(5,-0.5){\scriptsize $x$}
+\tlabel(0.5,1){\scriptsize $y$}
+\point[4pt]{(0,-4),(1,-2),(1,-6)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\penwd{1.25pt}
+\arrow \function{0,5,0.1}{-4-(2*sqrt(x))}
+\arrow \function{0,5,0.1}{-4+(2*sqrt(x))}
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(x-1)^2}{1}+\dfrac{y^2}{4}=0$ \\
+The graph is the point $(1,0)$ only.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1$ \\
+
+
+\begin{mfpic}[18]{-3}{5}{-6}{1}
+\axes
+\tlabel(5,-0.25){\scriptsize $x$}
+\tlabel(0.25,1){\scriptsize $y$}
+\xmarks{-2 step 1 until 4}
+\ymarks{-5 step 1 until -1}
+\plotsymbol[4pt]{Asterisk}{(3.2361,-3), (-1.2361,-3)}
+\plotsymbol[4pt]{Cross}{(1,-3)}
+\point[4pt]{(4,-3), (-2,-3), (1,-1), (1,-5)}
+\tlpointsep{4pt}
+\scriptsize
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
+\normalsize
+\penwd{1.25pt}
+\ellipse{(1,-3),3,2}
+\end{mfpic} 
+
+\vfill
+
+\columnbreak
+
+\item  $(x-3)^2+(y+2)^2=-1$ \\
+There is no graph.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\dfrac{(x+3)^2}{2}+\dfrac{(y-1)^2}{1} = -\dfrac{3}{4}$ \\
+There is no graph.
+
+\vfill
+
+\columnbreak
+
+\item $\dfrac{(y+2)^2}{16} - \dfrac{(x-5)^2}{20} = 1$ \\
+
+\begin{mfpic}[10]{-2}{12}{-9}{5}
+\axes
+\tlabel(12,-0.5){\scriptsize $x$}
+\tlabel(0.5,5){\scriptsize $y$}
+\xmarks{-1 step 1 until 11}
+\ymarks{-8 step 1 until 4}
+\point[4pt]{(5,2),(5,-6)}
+\dotted \polyline{(0.5279,-6), (0.5279,2), (9.4721, 2), (9.4721,-6),(0.5279,-6)}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0.89442*(x-5)-2}
+\arrow \reverse \arrow \dashed \function{-2,12,0.1}{0-2-0.89442*(x-5)}
+\plotsymbol[4pt]{Cross}{(5,-2)}
+\plotsymbol[4pt]{Asterisk}{(5,4), (5,-8)}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-1 \hspace{6pt}$}{-1}, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11}
+\axislabels {y}{{$-8$} -8,{$-7$} -7,{$-6$} -6,{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\penwd{1.25pt}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,4*cosh(t)-2)}
+\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(4.4721*sinh(t)+5,0-4*cosh(t)-2)}
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\addtocounter{enumi}{1}
+
+\item By placing Station A at $(0, -50)$ and Station B at $(0, 50)$, the two second time difference yields the hyperbola $\frac{y^{2}}{36} - \frac{x^{2}}{2464} = 1$ with foci A and B and center $(0, 0)$.  Placing Station C at $(-150, -50)$ and using foci A and C gives us a center of $(-75, -50)$ and the hyperbola $\frac{(x + 75)^{2}}{225} - \frac{(y + 50)^{2}}{5400} = 1$.  The point of intersection of these two hyperbolas which is closer to A than B and closer to A than C is $(-57.8444, -9.21336)$ so that is the epicenter.  
+
+\item  \begin{enumerate} \setcounter{enumii}{1} \item $\dfrac{x^2}{9} - \dfrac{y^2}{27} = 1$. \end{enumerate}
+
+\item  The tower may be modeled (approximately)\footnote{The exact value underneath $(y - 330)^{2}$ is $\frac{52707600}{1541}$ in case you need more precision.} by $\frac{x^2}{12100} - \frac{(y-330)^2}{34203} = 1$.  To find the height, we plug in $x = 137.5$ which yields $y \approx 191$ or $y \approx 469$.  Since the top of the tower is above the narrowest point, we get the tower is approximately 469 feet tall.
+
+\end{enumerate}
+
+
+\end{document}
