@@ -744,75 +744,9 @@ It is high time for an example.
 
 Geometrically we have approximated the area under the graph of $f$ to be $10$ square units by the adding the areas of the shaded rectangles shaded below on the left.  (Note that since $f(x_{4}) = f(4) = 0$, the fourth `rectangle' has $0$ height.)
 
+% https://www.geogebra.org/classic/cmxnab2q
 \begin{center}
-
-\begin{multicols}{2}
-
-\begin{mfpic}[20]{-1}{5}{-1}{5}
- \fillcolor[gray]{0.7}
-
-\gfill \btwnfcn{0,1,0.1}{0}{3}
- \gfill \btwnfcn{1,2,0.1}{0}{4}
- \gfill \btwnfcn{2,3,0.1}{0}{3}
-
-\point[4pt]{(0,0), (1,3), (2,4), (3,3), (4,0)}
-
-\polyline{(1,0), (1,3), (0,3), (0,0)}
-\polyline{(2,0), (2,4), (1, 4), (1,0)}
-\polyline{(3,0), (3,3), (2,3)}
-
-
-\axes
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\xmarks{1,2,3,4}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-
- \function{0, 4, 0.1}{4*x-(x**2)}
- 
-   \tcaption{Visualizing $RS_{\, 4}$}
-\end{mfpic}
-
-
-\begin{mfpic}[20]{-1}{5}{-1}{5}
- \fillcolor[gray]{0.7}
-\gfill \btwnfcn{0,0.5,0.1}{0}{1.75}
-\gfill \btwnfcn{0.5,1,0.1}{0}{3}
- \gfill \btwnfcn{1,1.5,0.1}{0}{3.75}
- \gfill \btwnfcn{1.5,2,0.1}{0}{4}
-  \gfill \btwnfcn{2,2.5,0.1}{0}{3.75}
- \gfill \btwnfcn{2.5,3,0.1}{0}{3}
-  \gfill \btwnfcn{3,3.5,0.1}{0}{1.75}
-
-\point[4pt]{(0,0), (0.5, 1.75), (1,3), (1.5, 3.75), (2,4), (2.5, 3.75), (3,3), (3.5, 1.75), (4,0)}
-\polyline{(0.5,0), (0.5,1.75), (0,1.75), (0,0)}
-\polyline{(1,0), (1,3), (0.5,3), (0.5,0)}
-\polyline{(1.5,0), (1.5,3.75), (1,3.75), (1,0)}
-\polyline{(2,0), (2,4), (1.5, 4), (1.5,0)}
-\polyline{(2.5,0), (2.5,3.75), (2, 3.75), (2,0)}
-\polyline{(3,0), (3,3), (2.5,3), (2.5,0)}
-\polyline{(3.5,0), (3.5,1.75), (3,1.75), (3,0)}
-\axes
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](5, -0.5){\scriptsize $x$}
-\xmarks{0.5, 1,1.5, 2,2.5, 3,3.5, 4}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-
- \function{0, 4, 0.1}{4*x-(x**2)}
- 
-   \tcaption{Visualizing $RS_{\, 8}$}
-\end{mfpic}
-
-\end{multicols}
-
+\geogebra{cmxnab2q}{800}{600}
 \end{center}
 
 To find $RS_{8}$, we divide the interval $[0,4]$ into $8$ equal pieces, so each has length $\Delta x = \frac{4}{8} = 0.5$ units.  This produces the right endpoints: $x_{1} = 0.5$, $x_{2} = 1$, $x_{3} = 1.5$, $x_{4} = 2$, $x_{5} = 2.5$, $x_{6} = 3$, $x_{7} = 3.5$, $x_{8} = 4$.  In addition to the function values we used to compute $RS_{4}$, we need  $f(0.5) = 1.75$,  $f(1.5) = 3.75$,  $f(2.5) = 3.75$, and  $f(3.5) = 1.75$.  Hence, 
