@@ -30,7 +30,7 @@ For example, let's take a look at some of the pets in the Stitz household.  Tayl
 
 To help identify which process $f$ or $g$ is a function and  why the other is not, we create  \index{diagram ! mapping} \textbf{mapping diagrams} for $f$ and $g$ below.  In each case, we organize the inputs in a column on the left and the outputs on a column on the right.  We draw an arrow connecting each input to its corresponding output(s).  Note that the arrows communicate the grammatical bias: the arrow originates at the input and points to the output.
 
-\end{document}
+
 
 \begin{tikzpicture}[>=stealth, node distance=8mm]
 
@@ -93,6 +93,7 @@ The process $f$ is a function since $f$ matches each of its inputs (each pet nam
 As you might expect, with functions being such an important concept in Mathematics, we need to build a vocabulary to assist us when discussing them.  To that end, we have the following definitions.\footnote{Please refer to Section \ref{AppSetTheory} for a review of the terminology used in these definitions.}
 
 
+
 \begin{definition}\label{domainrangedefns}
 
 
@@ -150,7 +151,7 @@ Some remarks about Definition \ref{domainrangedefns} are in order.  First, and m
   plot[smooth] coordinates {(-8.75,0.25) (0,5) (6.75,0.25)};
 
 \end{tikzpicture}
-
+\end{document}
 In the preceding pet example, the symbol $f(\text{Bingo})$, read `$f$ of Bingo', is asking what type of pet Bingo is, so $f(\text{Bingo}) = \text{lizard}$.  The fact that $f$ is a function means $f(\text{Bingo})$ is unambiguous because $f$ matches the name `Bingo' to only one pet type, namely `lizard'. In contrast, if we tried to use the notation `$g(\text{cat})$' to indicate what pet name $g$ matched to `cat', we have \textbf{two} possibilities, White Paw and Cooper, with no way to determine which one (or both) is indicated.  
 
 Continuing to apply Definition \ref{domainrangedefns} to our pet example, we find that the domain of the function $f$ is $N$, the set of pet names.  Finding the range takes a little more work, mostly because it's easy to be caught off guard by the notation used in the definition of `range'.  The description of the range as `$\{ f(a) \, | \, a \in A \}$' is an example of `set-builder' notation.  In English,  `$\{ f(a) \, | \, a \in A \}$'  reads as `the set of $f(a)$ such that $a$ is in $A$'.  In other words, the range consists of all of the outputs from $f$ - all of the $f(a)$ values - as $a$ varies through each of the elements in the domain $A$.   Note that while every element of the set $A$ is, by definition, an element of the domain of $f$, not every element of the set $B$ is necessarily part of the range of $f$.\footnote{For purposes of completeness, the set $B$ is called the \index{codomain ! definition} \textbf{codomain} of $f$.  For us, the concepts of domain and range suffice since our codomain will most always be the set of real numbers, $\mathbb{R}$.}
