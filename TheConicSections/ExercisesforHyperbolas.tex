@@ -4,7 +4,7 @@
 	\author{Stitz-Zeager}
 	\xmtitle{Exercises for Hyperbolas}{}
 
-\mfpicnumber{1} \opengraphsfile{ExercisesforHyperbolas} % mfpic settings added 
+%\mfpicnumber{1} \opengraphsfile{ExercisesforHyperbolas} % mfpic settings added 
 
 
 \label{ExercisesforHyperbolas}
@@ -231,64 +231,53 @@ In Exercises \ref{semihyperbolafunctionfirst} - \ref{semihyperbolafunctionlast},
 In Exercises \ref{buildhypefromgraphfirst} - \ref{buildhypefromgraphlast}, find an equation for the hyperbola whose graph is given.
 
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\label{buildhypefromgraphfirst}  % $\dfrac{x^2}{16} - \dfrac{y^2}{16} = 1$
 
-\item $~$ \label{buildhypefromgraphfirst}  % $\dfrac{x^2}{16} - \dfrac{y^2}{16} = 1$
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[8][13]{-6}{6}{-5}{5}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](3.25, 3){\scriptsize $(5,3)$}
-\tlabel[cc](-2.25, 0.75){\scriptsize $(-4,0)$}
-\tlabel[cc](2.75, 0.75){\scriptsize $(4,0)$}
-\xmarks{-5 step 1 until 5}
-\ymarks{-4 step 1 until 4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{   {$-2 \hspace{7pt}$} -2, {$2$} 2}
-\axislabels {y}{ {$-4$} -4, {$-2$} -2, {$-3$} -3, {$-1$} -1,  {$2$} 2,  {$3$} 3,  {$4$} 4  }
-\penwd{1.25pt}
-\arrow \reverse \function{-6, -4, 0.1}{sqrt((x**2) - 16)}
-\arrow \reverse \function{-6, -4, 0.1}{-sqrt((x**2) - 16)}
-\arrow  \function{4, 6, 0.1}{sqrt((x**2) - 16)}
-\arrow \function{4, 6, 0.1}{-sqrt((x**2) - 16)}
-\point[4pt]{(4,0), (-4,0), (5,3)}
-\normalsize
-\end{mfpic} 
+% Axes
+\draw[->] (-6,0) -- (6,0) node[below] {\scriptsize $x$};
+\draw[->] (0,-5) -- (0,5) node[left] {\scriptsize $y$};
 
-\vfill
+% Points
+\filldraw[black] (4,0) circle (2pt) node[above right] {\scriptsize $(4,0)$};
+\filldraw[black] (-4,0) circle (2pt) node[above left] {\scriptsize $(-4,0)$};
+\filldraw[black] (5,3) circle (2pt) node[above right] {\scriptsize $(5,3)$};
 
-\columnbreak
+% Hyperbola branches
+\draw[->] plot[domain=4:6,samples=100] (\x,{sqrt((\x)^2-16)});
+\draw[->] plot[domain=4:6,samples=100] (\x,{-sqrt((\x)^2-16)});
+\draw[->] plot[domain=-6:-4,samples=100] (\x,{sqrt((\x)^2-16)});
+\draw[->] plot[domain=-6:-4,samples=100] (\x,{-sqrt((\x)^2-16)});
 
-\item $~$  \label{buildhypefromgraphlast} % $\dfrac{(y-4)^2}{4} - \dfrac{(x-4)^2}{3} = 1$
+\end{tikzpicture}
 
-\begin{mfpic}[13][10]{-3}{9}{-2}{10}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\tlabel[cc](1.25, -1){\scriptsize $(1,0)$}
-\tlabel[cc](6.5,-1){\scriptsize $(7,0)$}
-\tlabel[cc](4, 5.25){\scriptsize $(4,6)$}
-\tlabel[cc](4,2.75){\scriptsize $(4,2)$}
-\xmarks{-2 step 1 until 8}
-\ymarks{1 step 1 until 8}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$3$} 3, {$4$} 4, {$5$} 5,  {$8$} 8, {$-1 \hspace{6pt}$} -1, {$-2 \hspace{6pt}$} -2}
-\axislabels {y}{{$1$} 1, {$3$} 3, {$2$} 2,{$4$} 4, {$5$} 5,  {$6$} 6, {$7$} 7, {$8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1,9,0.1}{4+0.666*sqrt(3*(x**2)-24*x+57)}
-\arrow \reverse \arrow \function{-1,9,0.1}{4-0.666*sqrt(3*(x**2)-24*x+57)}
-\point[4pt]{(4,2), (4,6), (1,0), (7,0)}
-\normalsize
-\end{mfpic} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+
+
+\label{buildhypefromgraphlast} % $\dfrac{(y-4)^2}{4} - \dfrac{(x-4)^2}{3} = 1$
+
+\begin{tikzpicture}[scale=0.8]
+
+% Axes
+\draw[->] (-3,0) -- (9,0) node[below] {\scriptsize $x$};
+\draw[->] (0,-2) -- (0,10) node[left] {\scriptsize $y$};
+
+% Points
+\filldraw[black] (1,0) circle (2pt) node[below] {\scriptsize $(1,0)$};
+\filldraw[black] (7,0) circle (2pt) node[below] {\scriptsize $(7,0)$};
+\filldraw[black] (4,2) circle (2pt) node[above left] {\scriptsize $(4,2)$};
+\filldraw[black] (4,6) circle (2pt) node[above left] {\scriptsize $(4,6)$};
+
+% Function branches
+\draw[->, domain=-1:9, samples=200] plot (\x,{4+0.666*sqrt(3*(\x)^2-24*\x+57)});
+\draw[->, domain=-1:9, samples=200] plot (\x,{4-0.666*sqrt(3*(\x)^2-24*\x+57)});
+
+% Optional: ticks (can be added similarly if needed)
+
+\end{tikzpicture}
+
+
 
 \end{question}
 
@@ -424,7 +413,7 @@ The graph is the point $(1,0)$ only.
     $x^2 + y^2-6x+4y+14=0$
 
 \begin{solution}
-    \item  $(x-3)^2+(y+2)^2=-1$ \\
+  $(x-3)^2+(y+2)^2=-1$ \\
 There is no graph.
 \end{solution}
     
@@ -488,20 +477,28 @@ The notion of eccentricity introduced for ellipses in Definition \ref{ellipseecc
 On page \pageref{paraboloid} in Section \ref{Parabolas}, we discussed paraboloids of revolution when studying the design of satellite dishes and parabolic mirrors.  In much the same way, `natural draft' cooling towers are often shaped as \index{hyperboloid} \textbf{hyperboloids of revolution}.  Each vertical cross section of these towers is a hyperbola.  Suppose the a natural draft cooling tower has the cross section below. Suppose the tower is 450 feet wide at the base,  275 feet wide at the top, and 220 feet at its narrowest point (which occurs 330 feet above the ground.)  Determine the height of the tower to the nearest foot.
 \begin{center}
 
-\begin{mfpic}[20]{-3}{3}{0}{5}
-\curve{(3,0), (1.5,3), (2,5)}
-\curve{(-3,0), (-1.5,3), (-2,5)}
-\point[4pt]{(3,0), (1.5,3), (2,5), (-3,0), (-1.5,3), (-2,5)}
-\arrow \reverse \arrow \polyline{(-2.75,0), (2.75,0)}
-\tlabel[cc](0,-0.5){\scriptsize $450$ ft}
-\arrow \reverse \arrow \polyline{(-1.25,3), (1.25,3)}
-\tlabel[cc](0,2.5){\scriptsize $220$ ft}
-\arrow \reverse \arrow \polyline{(-1.75,5), (1.75,5)}
-\tlabel[cc](0,5.5){\scriptsize $275$ ft}
-\arrow \reverse \arrow \polyline{(5,0.25), (5,2.75)}
-\dotted \polyline{(1.5,3), (5,3)}
-\gclear \tlabelrect[cc]{(5,1.5)}{\scriptsize $330$ ft}
-\end{mfpic}
+\begin{tikzpicture}[scale=1]
+
+% Curves
+\draw[thick] plot [smooth] coordinates {(3,0) (1.5,3) (2,5)};
+\draw[thick] plot [smooth] coordinates {(-3,0) (-1.5,3) (-2,5)};
+
+% Points
+\foreach \x/\y in {3/0, 1.5/3, 2/5, -3/0, -1.5/3, -2/5}
+    \filldraw[black] (\x,\y) circle (2pt);
+
+% Horizontal arrows
+\draw[<->] (-2.75,0) -- (2.75,0) node[midway, below] {\scriptsize 450 ft};
+\draw[<->] (-1.25,3) -- (1.25,3) node[midway, above] {\scriptsize 220 ft};
+\draw[<->] (-1.75,5) -- (1.75,5) node[midway, above] {\scriptsize 275 ft};
+
+% Vertical arrow
+\draw[<->, dotted] (1.5,3) -- (5,3);
+\draw[<->] (5,0.25) -- (5,2.75);
+\node at (5,1.5) {\scriptsize 330 ft};
+
+\end{tikzpicture}
+
 
 \end{center} 
 
