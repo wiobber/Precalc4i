@@ -31,50 +31,62 @@ For example, let's take a look at some of the pets in the Stitz household.  Tayl
 To help identify which process $f$ or $g$ is a function and  why the other is not, we create  \index{diagram ! mapping} \textbf{mapping diagrams} for $f$ and $g$ below.  In each case, we organize the inputs in a column on the left and the outputs on a column on the right.  We draw an arrow connecting each input to its corresponding output(s).  Note that the arrows communicate the grammatical bias: the arrow originates at the input and points to the output.
 
 
-% \begin{center}
+\begin{center}
+\begin{tikzpicture}[>=stealth, node distance=8mm]
 
-% \begin{tabular}{cc}
-% \begin{mfpic}[19]{-5}{5}{2}{6}
-% \tlabel[cc](-4.25,6){$N$ (inputs)}
-% \tlabel[cc](-4.25,5){White Paw}
-% \tlabel[cc](-4.25,4){Cooper}
-% \tlabel[cc](-4.25,3){Bingo}
-% \tlabel[cc](-4.25,2){Kennie}
-% \tlabel[cc](0,6){$f$}
-% \tlabel[cc](3.5,5){cat}
-% \tlabel[cc](3.5,4){lizard}
-% \tlabel[cc](3.5,3){turtle}
-% \tlabel[cc](3.5,6){$T$ (outputs)}
+% ---------- Left diagram: f ----------
+\begin{scope}
+% Column titles
+\node at (-3.5,6) {$N$ (inputs)};
+\node at (0,6) {$f$};
+\node at (3.5,6) {$T$ (outputs)};
 
+% Left nodes
+\node (wp) at (-3.5,5) {White Paw};
+\node (co) at (-3.5,4) {Cooper};
+\node (bi) at (-3.5,3) {Bingo};
+\node (ke) at (-3.5,2) {Kennie};
 
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 4), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 4)}
-% \arrow[l 5pt] \polyline{(-2.5, 2), (2.5, 3)}
+% Right nodes
+\node (cat) at (3.5,5) {cat};
+\node (liz) at (3.5,4) {lizard};
+\node (tur) at (3.5,3) {turtle};
 
-% \end{mfpic}
+% Arrows
+\draw[->] (wp) -- (cat);
+\draw[->] (co) -- (cat);
+\draw[->] (bi) -- (liz);
+\draw[->] (ke) -- (tur);
+\end{scope}
 
-% &
-% \begin{mfpic}[19]{-5}{5}{2}{6}
-% \tlabel[cc](-3.5,6){$T$ (inputs)}
-% \tlabel[cc](-3.5,5){cat}
-% \tlabel[cc](-3.5,4){lizard}
-% \tlabel[cc](-3.5,3){turtle}
-% \tlabel[cc](0,6){$g$}
-% \tlabel[cc](3.75,6){$N$ (outputs)}
-% \tlabel[cc](3.75,5){White Paw}
-% \tlabel[cc](3.75,4){Cooper}
-% \tlabel[cc](3.75,3){Bingo}
-% \tlabel[cc](3.75,2){Kennie}
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 4)}
-% \arrow[l 5pt] \polyline{(-2.5, 4), (2.5, 3)}
-% \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 2)}
-% \end{mfpic}   \\
+% ---------- Right diagram: g ----------
+\begin{scope}[xshift=9cm]
+% Column titles
+\node at (-3.5,6) {$T$ (inputs)};
+\node at (0,6) {$g$};
+\node at (3.75,6) {$N$ (outputs)};
 
-% \end{tabular}
+% Left nodes
+\node (cat2) at (-3.5,5) {cat};
+\node (liz2) at (-3.5,4) {lizard};
+\node (tur2) at (-3.5,3) {turtle};
 
-% \end{center}
+% Right nodes
+\node (wp2) at (3.75,5) {White Paw};
+\node (co2) at (3.75,4) {Cooper};
+\node (bi2) at (3.75,3) {Bingo};
+\node (ke2) at (3.75,2) {Kennie};
+
+% Arrows
+\draw[->] (cat2) -- (wp2);
+\draw[->] (cat2) -- (co2);
+\draw[->] (liz2) -- (bi2);
+\draw[->] (tur2) -- (ke2);
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+
 
 The process $f$ is a function since $f$ matches each of its inputs (each pet name) to just one output (the pet's type).   The fact that different inputs (White Paw and Cooper) are matched to the same output (cat) is fine.   On the other hand, $g$ matches the input `cat' to the two different outputs  `White Paw' and `Cooper', so $g$ is not a function.    Functions are favored in mathematical circles because they are processes which produce only one answer (output) for any given query (input).  In this scenario, for instance, there is only one answer to the question: `What type of pet is White Paw?' but there is more than one answer to the question `Which of Taylor's pets are cats?'  
 
@@ -107,28 +119,39 @@ Said differently, the range of a function is the set of outputs from the functio
 
 Some remarks about Definition \ref{domainrangedefns} are in order.  First, and most importantly, the notation `$f(a)$' in Definition \ref{domainrangedefns}  introduces yet another mathematical use for parentheses.  Parentheses are used in some cases as grouping symbols, to represent ordered pairs, and to delineate intervals of real numbers.  More often than not, the use of parentheses in expressions like `$f(a)$' is confused with multiplication.   As always, paying attention to the context is key.  If $f$ is a function and `$a\,$' is in the domain of $f$, then `$f(a)$'  is the output from $f$ when you input $a$.  The diagram below provides a nice generic picture to keep in mind when thinking of a function as a mapping process with input `$a\,$' and output `$f(a)$'.
 
-% \begin{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.9, >=stealth]
 
-% %\scriptsize
+% Labels
+\node at (0,6) {$f$};
 
-% \begin{mfpic}[10]{-10}{10}{-10}{10}
-% \tlabel[cc](0,6){$f$}
-% \tlabel[cc](-9,-1){$a$}
-% \tlabel[cc](-9,-3){input}
-% \tlabel[cc](7,-1){$ f(a)$}
-% \tlabel[cc](7,-3){output}
-% \point[2pt]{(-9,0), (7,0)} 
-% \sclosed \curve{(-6,7), (-12,0), (-6,-9), (-7,0)}
-% \tlabel[cc](-9,-10){$A$}
-% \sclosed \curve{(6,7), (11,0), (5,-8)}
-% \tlabel[cc](7,-10){$B$}
-% \penwd{0.75pt}
-% \arrow \curve{(-8.75,0.25), (0,5), (6.75,0.25)}
-% \end{mfpic}
+\node at (-9,-1) {$a$};
+\node at (-9,-3) {input};
 
-% \end{center}
+\node at (7,-1) {$f(a)$};
+\node at (7,-3) {output};
 
-%\normalsize
+% Points on the x-axis
+\fill (-9,0) circle (2pt);
+\fill (7,0) circle (2pt);
+
+% Left set A (closed curve)
+\draw[line width=0.75pt]
+  plot[smooth cycle] coordinates {(-6,7) (-12,0) (-6,-9) (-7,0)};
+\node at (-9,-10) {$A$};
+
+% Right set B (closed curve)
+\draw[line width=0.75pt]
+  plot[smooth cycle] coordinates {(6,7) (11,0) (5,-8)};
+\node at (7,-10) {$B$};
+
+% Arrow representing the function
+\draw[->, line width=0.75pt]
+  plot[smooth] coordinates {(-8.75,0.25) (0,5) (6.75,0.25)};
+
+\end{tikzpicture}
+\end{center}
+
 
 In the preceding pet example, the symbol $f(\text{Bingo})$, read `$f$ of Bingo', is asking what type of pet Bingo is, so $f(\text{Bingo}) = \text{lizard}$.  The fact that $f$ is a function means $f(\text{Bingo})$ is unambiguous because $f$ matches the name `Bingo' to only one pet type, namely `lizard'. In contrast, if we tried to use the notation `$g(\text{cat})$' to indicate what pet name $g$ matched to `cat', we have \textbf{two} possibilities, White Paw and Cooper, with no way to determine which one (or both) is indicated.  
 
@@ -209,7 +232,7 @@ While the concept of a function is very general in scope, we will be focusing pr
 
 \begin{enumerate}
 
-\item 
+\item .
 
 \begin{itemize}
 
@@ -369,30 +392,30 @@ Hence, we have codified $f$ using the formula $f(x) = 3x + 5$.   In other words,
 \begin{enumerate} 
 
 \item  To find $h(-1)$, we substitute $-1$ for $t$  in the expression $-t\,^{2} + 3t + 4$. It is highly recommended that you be generous with parentheses here in order to avoid common mistakes: \[ \begin{array}{rclr}  
-h(-1) & = & -(-1)^2 + 3(-1) + 4 & \\ [2pt]
-      & = & -(1) + (-3) + 4 & \\ [2pt]
+h(-1) & = & -(-1)^2 + 3(-1) + 4 & \\  
+      & = & -(1) + (-3) + 4 & \\  
       & = & 0 .& \\ 
       \end{array} \] Similarly, $h(0) = -(0)^2 + 3(0) + 4 = 4$, and $h(2) = -(2)^2 + 3(2) + 4 = -4 + 6 + 4 = 6$.
 
 \item To find $h(2x)$, we substitute $2x$ for $t$: \[ \begin{array}{rclr}  
-h(2x) & = & -(2x)^2 + 3(2x) + 4 & \\ [2pt]
-      & = & -(4x^2) + (6x) + 4 & \\ [2pt]
+h(2x) & = & -(2x)^2 + 3(2x) + 4 & \\  
+      & = & -(4x^2) + (6x) + 4 & \\  
       & = & -4x^2+6x+4. & \\ 
       \end{array} \] The expression $2h(x)$ means that we multiply the expression $h(x)$ by $2$.  We first get $h(x)$ by substituting $x$ for $t$:  $h(x) = -x^2 + 3x + 4$.  Hence, \[ \begin{array}{rclr}  
-2h(x) & = & 2\left(-x^2 + 3x + 4\right) & \\ [2pt]
+2h(x) & = & 2\left(-x^2 + 3x + 4\right) & \\  
       & = & -2x^2 + 6x + 8. \\ 
       \end{array} \]
 
 \item  To find $h(t + 2)$, we substitute the quantity $t + 2$ in place of $t$: \[ \begin{array}{rclr}  
-h(t + 2) & = & -(t + 2)^2 + 3(t + 2) + 4 & \\ [2pt]
-         & = & -\left(t\,^{2} + 4t + 4\right) + (3t + 6) + 4 & \\ [2pt]
-         & = & -t\,^{2} - 4t - 4 + 3t + 6 + 4 &  \\ [2pt]
+h(t + 2) & = & -(t + 2)^2 + 3(t + 2) + 4 & \\  
+         & = & -\left(t\,^{2} + 4t + 4\right) + (3t + 6) + 4 & \\  
+         & = & -t\,^{2} - 4t - 4 + 3t + 6 + 4 &  \\  
          & = & -t\,^{2} - t + 6. & 
        \end{array} \] To find $h(t) + 2$, we add $2$ to the expression for $h(t)$ \[ \begin{array}{rclr}  
-h(t) + 2 & = & \left(-t\,^{2} + 3t + 4\right) + 2  & \\ [2pt]
+h(t) + 2 & = & \left(-t\,^{2} + 3t + 4\right) + 2  & \\  
          & = & -t\,^{2} + 3t + 6. \\ 
          \end{array} \] From our work above, we see that $h(2) = 6$ so \[ \begin{array}{rclr}  
-h(t) + h(2) & = & \left(-t\,^{2} + 3t + 4\right) + 6  & \\ [2pt]
+h(t) + h(2) & = & \left(-t\,^{2} + 3t + 4\right) + 6  & \\  
             & = & -t\,^{2} + 3t + 10. \\ 
             \end{array} \]
 
@@ -516,43 +539,90 @@ On the next page we present two plots, both of which are graphs of the function 
 
  
 
-% \begin{tabular}{cc}
+\begin{center}
 
-% \begin{mfpic}[15]{-1}{13}{-1}{10}
-% \axes
-% \tlabel[cc](13,-0.5){\scriptsize $t$}
-% \tlabel[cc](0.5,10){\scriptsize $T$}
-% \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
-% \ymarks{1,2,3,4,5,6,7,8,9}
-% \point[3pt]{(0, 6.4), (2, 6.7), (4, 7.5), (6, 8.0), (8, 8.3), (10, 8.3), (12, 8.2)}
-% \tlpointsep{4pt}
-% \scriptsize
-% \axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
-% \axislabels {y}{ {$10$} 1, {$20$} 2, {$30$} 3, {$40$} 4, {$50$} 5, {$60$} 6, {$70$} 7, {$80$} 8, {$90$} 9}
-% \normalsize
-% \tcaption{The graph of $T = f(t)$.}
-% \end{mfpic}
-% &
 
-% \begin{mfpic}[15]{-1}{13}{-1}{10}
-% \axes
-% \tlabel[cc](13,-0.5){\scriptsize $t$}
-% \tlabel[cc](0.5,10){\scriptsize $T$}
-% \gclear \tlabelrect(-0.05,0.5){$\asymp$}
-% \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
-% \ymarks{1,2,3,4,5,6,7,8,9}
-% \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
-% \tlpointsep{4pt}
-% \scriptsize
-% \axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
-% \axislabels {y}{{$64$} 1, {$66$} 2, {$68$} 3, {$72$} 4, {$74$} 5, {$76$} 6, {$78$} 7, {$80$} 8, {$82$} 9}
-% \normalsize
-% \tcaption{The graph of $T = f(t)$.}
-% \end{mfpic} \\
+%---------------- LEFT GRAPH ----------------%
+\begin{tikzpicture}[scale=0.9]
 
-% \end{tabular}
+% Axes
+\draw[->] (-1,0) -- (13.5,0);
+\draw[->] (0,-1) -- (0,10.5);
 
-%\label{firsttimewebreaktheaxis}
+% Axis labels
+\node[below] at (13,0) {\scriptsize $t$};
+\node[left]  at (0,10) {\scriptsize $T$};
+
+% Tick marks (x)
+\foreach \x in {1,...,12}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick marks (y)
+\foreach \y in {1,...,9}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Axis labels
+\foreach \x in {1,...,12}
+  \node[below] at (\x,-0.3) {\scriptsize \x};
+
+\foreach \y/\lab in {
+  1/10,2/20,3/30,4/40,5/50,6/60,7/70,8/80,9/90}
+  \node[left] at (-0.3,\y) {\scriptsize \lab};
+
+% Points
+\foreach \x/\y in {
+  0/6.4, 2/6.7, 4/7.5, 6/8.0, 8/8.3, 10/8.3, 12/8.2}
+  \fill (\x,\y) circle (2pt);
+
+% Caption
+\node at (6,-1.2) {\scriptsize The graph of $T=f(t)$.};
+
+\end{tikzpicture}
+
+
+%---------------- RIGHT GRAPH ----------------%
+\begin{tikzpicture}[scale=0.9]
+
+% Axes
+\draw[->] (-1,0) -- (13.5,0);
+\draw[->] (0,-1) -- (0,10.5);
+
+% Axis labels
+\node[below] at (13,0) {\scriptsize $t$};
+\node[left]  at (0,10) {\scriptsize $T$};
+
+% Axis-break symbol
+\node at (-0.2,0.6) {$\asymp$};
+
+% Tick marks (x)
+\foreach \x in {1,...,12}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick marks (y)
+\foreach \y in {1,...,9}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Axis labels
+\foreach \x in {1,...,12}
+  \node[below] at (\x,-0.3) {\scriptsize \x};
+
+\foreach \y/\lab in {
+  1/64,2/66,3/68,4/72,5/74,6/76,7/78,8/80,9/82}
+  \node[left] at (-0.3,\y) {\scriptsize \lab};
+
+% Points
+\foreach \x/\y in {
+  0/1, 2/2.5, 4/5.5, 6/8, 8/9.5, 10/9.5, 12/9}
+  \fill (\x,\y) circle (2pt);
+
+% Caption
+\node at (6,-1.2) {\scriptsize The graph of $T=f(t)$.};
+
+\end{tikzpicture}
+
+
+\end{center}
+
 
 If you found yourself wanting to connect the dots in the graphs above, you're not alone.  As it stands, however, the function $f$ matches only seven inputs to seven outputs, so those seven points - and just those seven points - comprise the graph of $f$.  That being said, common everyday experience tells us that while the data Skippy collected in his table gives some good information about the relationship between time and temperature on a given day, it is by no means a complete description of the relationship.  
 
@@ -572,31 +642,58 @@ In the meantime, our next example involves a function whose domain is (almost) a
 
 \begin{example}  \label{functiongraphex01} Consider the graph below.  
 
-% \begin{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \tlabel[cc](2,-3.25){\scriptsize $(1,-3)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \end{mfpic} 
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
 
-% \end{center}
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Selected axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function y = x^2 - 4
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x, {\x*\x - 4});
+
+% Filled points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+
+% Open point
+\draw (1,-3) circle (2pt);
+
+% Point labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+\node[right] at (1.1,-3.25) {\scriptsize $(1,-3)$};
+
+\end{tikzpicture}
+\end{center}
+
 
 
 \begin{enumerate}
@@ -630,53 +727,112 @@ In the meantime, our next example involves a function whose domain is (almost) a
 
 To solve $F(v) = 0$, we are looking for the $v$-values where the output, or associated $w$ value, is $0$.  Hence, we are looking for points on the graph with a $w$-coordinate of $0$.  We find two such points, $(-2,0)$ and $(2,0)$, so our solutions to $F(v) = 0$ are $v = \pm 2$.  Pictures highlighting the relevant graphical features are given at the top of the next page.
 
-% 
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-% \hspace*{0.01in} \begin{tabular}{cc}
+%================ LEFT GRAPH =================
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$-3 \hspace{7pt}$} -3, {$-4 \hspace{7pt}$} -4,{$1$} 1,{$3$} 3, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \tcaption{Finding $F(0) = -4$.}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \end{mfpic} 
-% &
 
-% \hspace*{0.05in} \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \tcaption{Solving $F(v) = 0$.}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \end{mfpic} 
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
 
-% \end{tabular}
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (-3,-0.35) {\scriptsize $-3$};
+\node[below] at (-4,-0.35) {\scriptsize $-4$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (3,-0.35)  {\scriptsize $3$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x, {\x*\x - 4});
+
+% Points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+\draw (1,-3) circle (2pt);
+
+% Label
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+
+% Caption
+\node at (0,-5.75) {\scriptsize Finding $F(0)=-4$.};
+
+\end{tikzpicture}
+
+%================ RIGHT GRAPH =================
+\begin{tikzpicture}
+
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
+
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x, {\x*\x - 4});
+
+% Points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+\draw (1,-3) circle (2pt);
+
+% Labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+
+% Caption
+\node at (0,-5.75) {\scriptsize Solving $F(v)=0$.};
+
+
+
+\end{tikzpicture}
+\end{center}
+
 
  
 
@@ -684,64 +840,124 @@ To solve $F(v) = 0$, we are looking for the $v$-values where the output, or asso
 
  
 
-% \begin{tabular}{cc}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \arrow \polyline{(2,4), (2,1)}
-% \arrow \polyline{(-3,-4), (-3,-1)}
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \tlabel[cc](2,-3.25){\scriptsize $(1,-3)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \gclear \tlabelrect[cc](-3,-3){\scriptsize project up}
-% \gclear \tlabelrect[cc](2,2){\scriptsize project down}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \end{mfpic} 
-% &
+%================ LEFT GRAPH =================
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \tlabel[cc](2,-3.25){\scriptsize $(1,-3)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \pointfillfalse
-% \point[3pt]{(1,-3)}
-% \pointfilltrue
-% \penwd{1.25pt}
-% \arrow \polyline{(-2,0), (4.9,0)}
-% \point[3pt]{(0,-4), (2,0)}
-% \point[4pt]{ (-2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,0)}
-% \end{mfpic} 
-  
 
-% \end{tabular}
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
+
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1)--(\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Projection arrows
+\draw[->] (2,4) -- (2,1);
+\draw[->] (-3,-4) -- (-3,-1);
+
+% Function
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x,{\x*\x-4});
+
+% Filled points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+
+% Open point
+\draw (1,-3) circle (2pt);
+
+% Labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
+
+% Text boxes
+\node[draw, fill=white, inner sep=2pt] at (-3,-3) {\scriptsize project up};
+\node[draw, fill=white, inner sep=2pt] at (2,2) {\scriptsize project down};
+
+\end{tikzpicture}
+
+%================ RIGHT GRAPH =================
+\begin{tikzpicture}
+
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
+
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1)--(\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function
+\draw[thick, domain=-2:3, samples=200]
+  plot (\x,{\x*\x-4});
+
+% Horizontal arrow on x-axis
+\draw[->, thick] (-2,0) -- (4.9,0);
+
+% Filled points
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+\fill (-2,0) circle (2pt);
+
+% Open points
+\draw (1,-3) circle (2pt);
+\draw (1,0) circle (2pt);
+
+% Labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
+
+
+
+\end{tikzpicture}
+\end{center}
+
 
 
 To find the range of $F$, we need to describe the set of outputs - in this case, the $w$-values on the graph.  Here, we project the graph to the $w$-axis.  Vertically, the graph starts at $(0,-4)$ so our range starts at $w=-4$.  Note that even  though there is a hole at $(1,-3)$, the $w$-value $-3$ is covered by what \textbf{appears} to be the point $(-1,-3)$ on the graph.\footnote{For all we know, it could be $(-0.992, -3)$.} The arrow indicates that the graph extends upwards indefinitely so the range of $F$ is   $\{ w \, |  \, w \geq -4 \}$  or, in interval notation, $[-4, \infty)$.   Regarding extrema, $F$ has a minimum of $-4$ when $v = 0$, but given that the graph extends upwards indefinitely, $F$ has  no maximum. 
@@ -752,64 +968,122 @@ Pictures showing the projection of the graph onto the $w$-axis are given below.
 
  
 
-% \begin{tabular}{cc}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \tlabel[cc](2,-3.25){\scriptsize $(1,-3)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \tlabel[cc](-3,-2){\scriptsize  project right}
-% \gclear \tlabelrect[cc](2,2.5){\scriptsize  project left}
-% \penwd{0.5pt}
-% \gclear \arrow \polyline{(3,2.15), (1,2.15)}
-% \gclear \arrow \polyline{(-4,-2.35), (-2,-2.35)}
-% \end{mfpic}
-% &
+%================ LEFT GRAPH =================
 
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \tlabel[cc](2.5,-0.5){\scriptsize $(2,0)$}
-% \tlabel[cc](-3,-0.5){\scriptsize $(-2,0)$}
-% \tlabel[cc](1,-4.25){\scriptsize $(0,-4)$}
-% \tlabel[cc](2,-3.25){\scriptsize $(1,-3)$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$4$} 4}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[3pt]{(-2,0), (2,0)}
-% \pointfillfalse
-% \point[3pt]{(1,-3)}
-% \pointfilltrue
-% \penwd{1.25pt}
-% \arrow \polyline{(0,-4), (0,5)}
-% \point[4pt]{(0,-4)}
-% \end{mfpic} 
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
+
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1)--(\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x,{\x*\x-4});
+
+% Filled points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+
+% Open point
+\draw (1,-3) circle (2pt);
+
+% Labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
+
+% Projection text
+\node at (-3,-2) {\scriptsize project right};
+\node[draw, fill=white, inner sep=2pt] at (2,2.5) {\scriptsize project left};
+
+% Projection arrows
+\draw[->, thin] (3,2.15) -- (1,2.15);
+\draw[->, thin] (-4,-2.35) -- (-2,-2.35);
+
+\end{tikzpicture}
+
+%================ RIGHT GRAPH =================
+\begin{tikzpicture}
+
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
+
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1)--(\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Function
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x,{\x*\x-4});
+
+% Filled points
+\fill (-2,0) circle (2pt);
+\fill (2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+
+% Open point
+\draw (1,-3) circle (2pt);
+
+% Vertical projection arrow
+\draw[->, thick] (0,-4) -- (0,5);
+
+% Labels
+\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
+\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
+\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
+\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
 
 
-% \end{tabular}
+\end{tikzpicture}
+\end{center}
+
 
 \end{enumerate}
 
@@ -847,36 +1121,57 @@ Logically, these statements are saying two different things. The first says that
 Applying the Vertical Line Test to the graph given in Example \ref{functiongraphex01}, we see below that all of the vertical lines meet the graph at most once (several are shown for illustration) showing $w$ is a function of $v$.  Notice that some of the lines ($x = -3$ and $x = 1$, for example) don't hit the graph at all.  This is fine because the Vertical Line Test is looking for lines that hit the graph more than once.  It does not say \textbf{exactly} once so missing the graph altogether is permitted.
 
 
-% \begin{center}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-% \begin{mfpic}[15]{-5}{5}{-5}{5}
-% \axes
-% \arrow \reverse \arrow \polyline{(-3,-4.25), (-3,4.25)}
-% \arrow \reverse \arrow \polyline{(-2.5,-4.25), (-2.5,4.25)}
-% \arrow \reverse \arrow \polyline{(-1.5,-4.25), (-1.5,4.25)}
-% \arrow \reverse \arrow \polyline{(-1,-4.25), (-1,4.25)}
-% \arrow \reverse \arrow \polyline{(0.5,-4.25), (0.5,4.25)}
-% \arrow \reverse \arrow \polyline{(2,-4.25), (2,4.25)}
-% \arrow \reverse \arrow \polyline{(2.5,-4.25), (2.5,4.25)}
-% \arrow \reverse \arrow \polyline{(1.5,-4.25), (1.5,4.25)}
-% \arrow \reverse \arrow \polyline{(1,-4.25), (1,4.25)}
-% \tlabel[cc](5,-0.5){\scriptsize $v$}
-% \tlabel[cc](0.5,5){\scriptsize $w$}
-% \xmarks{-4 step 1 until 4 }
-% \ymarks{-4 step 1 until 4}
-% \tlpointsep{5pt}
-% \scriptsize
-% \axislabels {x}{{$-1 \hspace{7pt}$} -1,{$-3 \hspace{7pt}$} -3, {$1$} 1, {$4$} 4, {$3$} 3}
-% \axislabels {y}{{$-3$} -3,{$-2$} -2,  {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-% \normalsize
-% \penwd{1.25pt}
-% \arrow \function{-2,3,0.1}{x**2-4}
-% \point[4pt]{(-2,0), (0,-4), (2,0)}
-% \pointfillfalse
-% \point[4pt]{(1,-3)}
-% \end{mfpic} 
+% Axes
+\draw[->] (-5,0) -- (5.5,0);
+\draw[->] (0,-5) -- (0,5.5);
 
-% \end{center}
+% Axis labels
+\node[below] at (5,0) {\scriptsize $v$};
+\node[left]  at (0,5) {\scriptsize $w$};
+
+% Ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1)--(\x,-0.1);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Axis numbers
+\node[below] at (-1,-0.35) {\scriptsize $-1$};
+\node[below] at (-3,-0.35) {\scriptsize $-3$};
+\node[below] at (1,-0.35)  {\scriptsize $1$};
+\node[below] at (3,-0.35)  {\scriptsize $3$};
+\node[below] at (4,-0.35)  {\scriptsize $4$};
+
+\node[left] at (-0.35,-3) {\scriptsize $-3$};
+\node[left] at (-0.35,-2) {\scriptsize $-2$};
+\node[left] at (-0.35,-1) {\scriptsize $-1$};
+\node[left] at (-0.35,1)  {\scriptsize $1$};
+\node[left] at (-0.35,2)  {\scriptsize $2$};
+\node[left] at (-0.35,3)  {\scriptsize $3$};
+\node[left] at (-0.35,4)  {\scriptsize $4$};
+
+% Vertical test lines (double arrows)
+\foreach \x in {-3,-2.5,-1.5,-1,0.5,1,1.5,2,2.5}
+  \draw[<->, thin] (\x,-4.25) -- (\x,4.25);
+
+% Function y = x^2 - 4
+\draw[thick, domain=-2:3, samples=200, ->]
+  plot (\x,{\x*\x-4});
+
+% Filled points
+\fill (-2,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+
+% Open point
+\draw (1,-3) circle (2pt);
+
+\end{tikzpicture}
+\end{center}
+
 
 There is also a geometric test to determine if the graph above represents $v$ as a function of $w$.  We introduce this aptly-named  \textbf{Horizontal Line Test} in Exercise \ref{HLTExercise} and revisit it in Sections \ref{Relations} and \ref{InverseFunctions}.  
 
@@ -936,27 +1231,26 @@ Our last example of the section uses the interplay between algebraic and graphic
 
 \begin{example} \label{volumeex1}    The United States Postal Service mandates that when shipping parcels using `Parcel Select' service,  the sum of the length (the longest dimension) and the girth (the distance around the thickest part of the parcel perpendicular to the length) must not exceed 130 inches.\footnote{See \href{http://pe.usps.com/text/qsg300/Q201e.htm}{{here}}.}  Suppose we wish to ship a rectangular box whose girth forms a square measuring $x$ inches per side as shown below.
 
-% \begin{center}
+\begin{tikzpicture}[scale=0.7]
 
-% \begin{mfpic}[10]{-6}{12}{-1}{17}
-% \polyline{(0,0),(-4,3)}
-% \polyline{(-4,3), (-4,8)}
-% \polyline{(-4,8),(0,5)}
-% \polyline{(0,5),(0,0)}
-% \polyline{(0,0),(12,9)}
-% \polyline{(0,5),(12,14)}
-% \polyline{(-4,8),(8,17)}
-% \polyline{(8,17),(12,14)}
-% \polyline{(12,14),(12,9)}%6
-% \arrow \reverse \arrow \polyline{(0.5,-0.125),(12,8.5)}
-% \tlabel[cc](9,4){length}
-% \arrow \reverse \arrow \polyline{(-4, 2.5), (-0.5,-0.125)}
-% \tlabel[cc](-3,0.5){ $x$}
-% \arrow \reverse \arrow \polyline{(-4.5, 3), (-4.5,8)}
-% \tlabel[cc](-5,5){$x$}
-% \end{mfpic}
+% Polylines / "faces"
+\draw[thick] (0,0) -- (-4,3);
+\draw[thick] (-4,3) -- (-4,8);
+\draw[thick] (-4,8) -- (0,5);
+\draw[thick] (0,5) -- (0,0);
+\draw[thick] (0,0) -- (12,9);
+\draw[thick] (0,5) -- (12,14);
+\draw[thick] (-4,8) -- (8,17);
+\draw[thick] (8,17) -- (12,14);
+\draw[thick] (12,14) -- (12,9);
 
-% \end{center}
+% Arrows
+\draw[->] (0.5,-0.125) -- (12,8.5) node[midway, above] {length};
+\draw[->] (-4,2.5) -- (-0.5,-0.125) node[midway, left] {$x$};
+\draw[->] (-4.5,3) -- (-4.5,8) node[midway, left] {$x$};
+
+\end{tikzpicture}
+
 
 It turns out\footnote{We'll skip the explanation for now because we want to focus on just the different representations of the function. Rest assured, you'll be asked to construct this very model in Exercise \ref{girthbox1} in Section \ref{GraphsofPolynomials}.} that the volume of a box, $V(x)$, measured in cubic inches,  whose length plus girth is exactly 130 inches is given by the formula: $V(x) = x^2 (130-4x)$ for $0 < x \leq 26$.
 
@@ -990,7 +1284,7 @@ It seems natural to start with what's happening near $x = 0$.  Even though the e
 
 Moving forward, we start with $x = 5$ and sample $V$ at steps of $5$ in its domain.  Our goal is to graph $y = V(x)$, so we plot our points $(x, V(x))$  using  the domain as a guide to help us set the horizontal bounds (i.e., the bounds on $x$) and the sample values from the range to help us set the vertical bounds (i.e., the bounds on $y$).   The right endpoint, $x = 26$, is included in the domain $0 < x \leq 26$ so we finish the graph by plotting the point $(26, V(26)) = (26,17576)$.  At the top of the next page on the left is the table of data and on the right is a graph produced with some help from \href{https://www.desmos.com/}{{desmos}}.
   
-\begin{tabular}{m{1.9 in}m{4in}}
+
 $
 \begin{array}{|r||c|c|}  \hline
   x & V(x) & (x,V(x)) \\ \hline
@@ -1002,15 +1296,15 @@ $
   25 & 18, \! 750 & ( 25, 18, \! 750) \\  \hline
   26 & 17, \! 576 &  (26,17, \! 576) \\ \hline
 \end{array}$
-&
+
 \includegraphics[width=4in]{./FunctionsandtheirRepresentationsGraphics/VolumeEx01.jpg}  \\
 \\
 %\centerline{Sampling $V$}
 {Sampling $V$}
-&
+
 %\centerline{The graph of $y = V(x)$}
 {The graph of $y = V(x)$}
-\end{tabular}
+
 
 
 \item  The largest volume in this case refers to the maximum of $V$.  The biggest $y$-value in our table of data is $20, \! 000$ cubic inches which occurs at $x = 20$ inches, but the graph produced by the graphing utility indicates that there are points on the graph of $V$ with $y$-values (hence $V(x)$ values) greater than $20, \! 000$.  Indeed, the graph continues to rise to the right of $x = 20$ and the graphing utility reports the maximum $y$-value to be $y \approx 20, \! 342.593$ when $x \approx 21.667$.  Rounding to two decimal places, we find the maximum volume obtainable under these conditions is about $20, \! 342.59$ cubic inches which occurs when the length and width of the square side of the box are approximately $21.67$ inches.\footnote{We could also find the length of the box in this case as well.  The sum of length and girth is 130 inches so the length is 130 minus the girth, or $130 - 4x \approx 130 - 4(21.67) = 43.32$ inches.}  
@@ -1074,8 +1368,7 @@ If $f$ is a function whose domain and range are subsets of real numbers, then $f
 Note: An important consequence of the last bulleted item is that the point $(a, b)$ is on the graph of $y = f(x)$ if and only if $f(a) = b.$\label{FundamentalGraphingPrinciple}
 
 
-%\subsection{Exercises}
-%\input{ExercisesforFunctionsandtheirRepresentations}
+
 
 
 %\closegraphsfile
