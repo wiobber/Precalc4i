@@ -31,7 +31,7 @@ For example, let's take a look at some of the pets in the Stitz household.  Tayl
 To help identify which process $f$ or $g$ is a function and  why the other is not, we create  \index{diagram ! mapping} \textbf{mapping diagrams} for $f$ and $g$ below.  In each case, we organize the inputs in a column on the left and the outputs on a column on the right.  We draw an arrow connecting each input to its corresponding output(s).  Note that the arrows communicate the grammatical bias: the arrow originates at the input and points to the output.
 
 
-\begin{center}
+
 \begin{tikzpicture}[>=stealth, node distance=8mm]
 
 % ---------- Left diagram: f ----------
@@ -85,7 +85,7 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 \draw[->] (tur2) -- (ke2);
 
 \end{tikzpicture}
-\end{center}
+
 
 
 The process $f$ is a function since $f$ matches each of its inputs (each pet name) to just one output (the pet's type).   The fact that different inputs (White Paw and Cooper) are matched to the same output (cat) is fine.   On the other hand, $g$ matches the input `cat' to the two different outputs  `White Paw' and `Cooper', so $g$ is not a function.    Functions are favored in mathematical circles because they are processes which produce only one answer (output) for any given query (input).  In this scenario, for instance, there is only one answer to the question: `What type of pet is White Paw?' but there is more than one answer to the question `Which of Taylor's pets are cats?'  
@@ -119,8 +119,8 @@ Said differently, the range of a function is the set of outputs from the functio
 
 Some remarks about Definition \ref{domainrangedefns} are in order.  First, and most importantly, the notation `$f(a)$' in Definition \ref{domainrangedefns}  introduces yet another mathematical use for parentheses.  Parentheses are used in some cases as grouping symbols, to represent ordered pairs, and to delineate intervals of real numbers.  More often than not, the use of parentheses in expressions like `$f(a)$' is confused with multiplication.   As always, paying attention to the context is key.  If $f$ is a function and `$a\,$' is in the domain of $f$, then `$f(a)$'  is the output from $f$ when you input $a$.  The diagram below provides a nice generic picture to keep in mind when thinking of a function as a mapping process with input `$a\,$' and output `$f(a)$'.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.9, >=stealth]
+
+\begin{tikzpicture}[scale=0.5]
 
 % Labels
 \node at (0,6) {$f$};
@@ -150,8 +150,6 @@ Some remarks about Definition \ref{domainrangedefns} are in order.  First, and m
   plot[smooth] coordinates {(-8.75,0.25) (0,5) (6.75,0.25)};
 
 \end{tikzpicture}
-\end{center}
-
 
 In the preceding pet example, the symbol $f(\text{Bingo})$, read `$f$ of Bingo', is asking what type of pet Bingo is, so $f(\text{Bingo}) = \text{lizard}$.  The fact that $f$ is a function means $f(\text{Bingo})$ is unambiguous because $f$ matches the name `Bingo' to only one pet type, namely `lizard'. In contrast, if we tried to use the notation `$g(\text{cat})$' to indicate what pet name $g$ matched to `cat', we have \textbf{two} possibilities, White Paw and Cooper, with no way to determine which one (or both) is indicated.  
 
@@ -232,7 +230,7 @@ While the concept of a function is very general in scope, we will be focusing pr
 
 \begin{enumerate}
 
-\item .
+\item :
 
 \begin{itemize}
 
@@ -250,7 +248,7 @@ While the concept of a function is very general in scope, we will be focusing pr
 
 \item  Solving $f(t) = 83$ means finding all of the input (time) values $t$  which produce an output value of $83$.  From the data, we see that the temperature is $83$ when the time is $8$ or $10$, so the solution to $f(t) = 83$ is $t = 8$ or $t = 10$.  This means the outdoor temperature is $83^{\circ}$F at 2 p.m. (8 hours after 6 a.m.) and at 4 p.m. (10 hours after 6 a.m.).
 
-\item  The range of $f$ is the set of all of the outputs from $f$, or in this case, the outside recorded temperatures.  Based on the data, we get $\{ 64, 67, 75, 80, 82, 83\}$.  (Here again, we list elements of a set only once.)  The lowest recorded temperature of the day is  $64^{\circ}$F and the highest recorded temperature of the day is  $83^{\circ}$F. \qed
+\item  The range of $f$ is the set of all of the outputs from $f$, or in this case, the outside recorded temperatures.  Based on the data, we get $\{ 64, 67, 75, 80, 82, 83\}$.  (Here again, we list elements of a set only once.)  The lowest recorded temperature of the day is  $64^{\circ}$F and the highest recorded temperature of the day is  $83^{\circ}$F.  
 
 \end{enumerate}
 
@@ -260,15 +258,10 @@ While the concept of a function is very general in scope, we will be focusing pr
 
 A few remarks about Example \ref{timetempex1} are in order.  First, note that $f(2+4)$, $f(2)+f(4)$ and $f(2)+4$ all work out to be numerically different, and more importantly, all represent different things.\footnote{You may be wondering why one would ever compute these quantities.  Rest assured that we will use expressions like these in examples throughout the text.  For now, it suffices just to know that they are different.}  One of the common mistakes students make is to misinterpret expressions like these, so it's important to pay close attention to the syntax here.
 
- 
-
 Next,  when solving $f(t) = 83$, the variable `$t\,$' is being used as a convenient `dummy' variable or placeholder in the sense that solving $f(t) = 83$ produces the same solutions as solving $f(x) = 83$, $f(w) = 83$,  or even $f(?) = 83$.  All of these equations are asking for the same thing:  what inputs to $f$ produce an output of $83$.  The choice of the letter `$t\,$' here makes sense since the inputs are {\bf t}ime values.  Throughout the text, we will endeavor to use meaningful labels when working in applied situations, but the fact remains that the choice of letters (or symbols) is completely arbitrary. 
-
- 
 
 Finally, given that the range in this example was a finite set of real numbers, we could find the smallest and largest elements of it.  Here, they correspond to the coolest and warmest temperatures of the day, respectively, but the meaning would change if the function related different quantities.  In many applications involving functions, the end goal is to find the minimum or maximum values of the outputs of those functions (called\index{optimization}\index{function ! optimization} \textbf{optimizing} the function) so for that reason, we have the following definition.  
 
- 
 
 \begin{definition}\label{absmaxmindefn}
 
@@ -289,7 +282,6 @@ That is, the maximum of $f$ is the largest output from $f$, if it exists.
 \end{itemize}
 
 \end{definition}
-
 
 
 Definition \ref{absmaxmindefn} is an example where the name of the function, $f$, is being used almost synonymously with its outputs in that when we speak of `the minimum and maximum of the \textbf{function} $f\,$' we are really talking about the minimum and maximum values of the \textbf{outputs} $f(x)$ as $x$ varies through the domain of $f$.  Thus we say that the \index{function ! (absolute) maximum}\index{maximum ! intuitive definition of} maximum of $f$ is $83$ and the \index{function ! (absolute, global) minimum}\index{minimum ! intuitive definition of} minimum of $f$ is $64$ when referring to the highest and lowest recorded temperatures in the previous example.  
@@ -421,7 +413,7 @@ h(t) + h(2) & = & \left(-t\,^{2} + 3t + 4\right) + 6  & \\
 
 \end{enumerate}
 
-\item   We know $h(-1) = 0$ from above, so $t=-1$ should be one of the answers to $h(t) = 0$.  In order to see if there are any more, we set  $h(t) = -t^2+3t+4 = 0$. Factoring\footnote{You may need to review Section \ref{AppFactoring}.} gives $-(t+1)(t-4) = 0$, so we get $t=-1$ (as expected) along with $t=4$. \qed   
+\item   We know $h(-1) = 0$ from above, so $t=-1$ should be one of the answers to $h(t) = 0$.  In order to see if there are any more, we set  $h(t) = -t^2+3t+4 = 0$. Factoring\footnote{You may need to review Section \ref{AppFactoring}.} gives $-(t+1)(t-4) = 0$, so we get $t=-1$ (as expected) along with $t=4$.     
          
 \end{enumerate}
 \end{example}
@@ -510,7 +502,7 @@ t & = & \sqrt[3]{\dfrac{16 - u^{4}}{u}} & \text{extract cube roots.} \\
 
 \end{array} \] Although it's a bit cumbersome, as long as $u \neq 0$ the expression  $\sqrt[3]{\frac{16-u^4}{u}}$ will produce just one value of $t$ for each value of $u$.  What if $u = 0$? In that case, the equation $u^{4} + t^{3}u = 16$ reduces to $0 = 16$ - which is never true - so we don't need to worry about that case.\footnote{Said differently, $u = 0$ is not in the domain of the function represented by the equation $u^{4} + t^{3}u = 16$.}  Hence, $u^{4} + t^{3}u = 16$ represents $t$ as a function of $u$.
 
-\item  In order to determine if  $u^{4} + t^{3}u = 16$ represents $u$ as a function of $t$, we could attempt to solve $u^{4} + t^{3}u = 16$ for $u$ in terms of $t$, but we won't get very far.\footnote{Try it for yourself!}  Instead, we take a different approach and experiment with looking for solutions for $u$ for specific values of $t$.  If we let $t = 0$, we get $u^{4} = 16$ which gives $u = \pm \sqrt[4]{16} = \pm 2$.  Hence, $t = 0$ corresponds to more than one $u$-value which means  $u^{4}  +t^{3}u = 16$  does not represent $u$ as a function of $t$.  \qed
+\item  In order to determine if  $u^{4} + t^{3}u = 16$ represents $u$ as a function of $t$, we could attempt to solve $u^{4} + t^{3}u = 16$ for $u$ in terms of $t$, but we won't get very far.\footnote{Try it for yourself!}  Instead, we take a different approach and experiment with looking for solutions for $u$ for specific values of $t$.  If we let $t = 0$, we get $u^{4} = 16$ which gives $u = \pm \sqrt[4]{16} = \pm 2$.  Hence, $t = 0$ corresponds to more than one $u$-value which means  $u^{4}  +t^{3}u = 16$  does not represent $u$ as a function of $t$.   
 
 \end{enumerate}
 
@@ -723,7 +715,7 @@ In the meantime, our next example involves a function whose domain is (almost) a
 
 \item The value $F(0)$ is the output from $F$ when  $v = 0$.  The points on the graph of $F$ are of the form $(v, F(v))$ thus we are looking for the $w$-coordinate of the point on the graph where $v = 0$.  Given that the point $(0,-4)$  is labeled on the graph, we can be sure $F(0) = -4$.  
 
-\smallskip
+ 
 
 To solve $F(v) = 0$, we are looking for the $v$-values where the output, or associated $w$ value, is $0$.  Hence, we are looking for points on the graph with a $w$-coordinate of $0$.  We find two such points, $(-2,0)$ and $(2,0)$, so our solutions to $F(v) = 0$ are $v = \pm 2$.  Pictures highlighting the relevant graphical features are given at the top of the next page.
 
@@ -1087,7 +1079,7 @@ Pictures showing the projection of the graph onto the $w$-axis are given below.
 
 \end{enumerate}
 
-\item  Finally, to determine if $v$ is a function of $w$, we look to see if each $w$-value is paired with only one $v$-value on the graph.  We have points on the graph, namely $(-2,0)$ and $(2,0)$, that clearly show us that $w = 0$ is matched with the \textbf{two} $v$-values $v = 2$ and $v = -2$.  Hence, $v$ is not a function of $w$. \qed
+\item  Finally, to determine if $v$ is a function of $w$, we look to see if each $w$-value is paired with only one $v$-value on the graph.  We have points on the graph, namely $(-2,0)$ and $(2,0)$, that clearly show us that $w = 0$ is matched with the \textbf{two} $v$-values $v = 2$ and $v = -2$.  Hence, $v$ is not a function of $w$.  
 
 \end{enumerate}
 
@@ -1107,7 +1099,7 @@ Before moving on to our next example, it is worth noting that the geometric argu
 
 \end{theorem}
 
-\bigskip
+  
 
 Let's take a minute to discuss the phrase `if and only if' used in Theorem \ref{VLT}.   The statement `the graph represents $y$ as a function of $x$ \textbf{if and only if} no vertical line intersects the graph more than once' is actually saying two things.  First, it's saying `the graph represents $y$ as a function of $x$  \textbf{if} no vertical line intersects the graph more than once' and, second,  `the graph represents $y$ as a function of $x$  \textbf{only if} no vertical line intersects the graph more than once'.   
 
@@ -1320,7 +1312,7 @@ Finding the maximum volume using the graph of $y = V(x)$.
 
  
 
-It is worth noting that while the function $V$ has a maximum, it did not have a minimum.  Even though $V(x)>0$ for all $x$ in its domain,\footnote{said differently, the values of $V(x)$ are \textbf{bounded below} by $0$.} the presence of the hole at $(0,0)$ means that $0$ is not in the range of $V$.  Hence, based on our model, we can never make a box with a  `smallest' volume.\footnote{How realistic is this?}  \qed
+It is worth noting that while the function $V$ has a maximum, it did not have a minimum.  Even though $V(x)>0$ for all $x$ in its domain,\footnote{said differently, the values of $V(x)$ are \textbf{bounded below} by $0$.} the presence of the hole at $(0,0)$ means that $0$ is not in the range of $V$.  Hence, based on our model, we can never make a box with a  `smallest' volume.\footnote{How realistic is this?}   
 
 \end{enumerate}
 \end{example}
@@ -1329,20 +1321,16 @@ It is worth noting that while the function $V$ has a maximum, it did not have a 
 
 Example \ref{volumeex1} typifies the interplay between Algebra and Geometry which lies ahead.  Both the algebraic description of  $V$: $V(x) = x^2 (130 - 4x)$ for $0 < x \leq 26$, and the graph of $y=V(x)$ were useful in describing aspects of the physical situation at hand.  Wherever possible, we'll use the algebraic representations of functions to \textbf{analytically} produce \textbf{exact} answers to certain problems and use the graphical descriptions to check the reasonableness of our answers. 
 
- 
-
 That being said, we'll also encounter problems which we simply \textbf{cannot} answer analytically (such as determining the maximum volume in the previous example), so we will be forced to resort to using technology (specifically graphing technology) in order to find \textbf{approximate} solutions.  The most important thing to keep in mind is that while technology may \textbf{suggest} a result, it is ultimately Mathematics that \textbf{proves} it. 
-
- 
 
 We close this section with a summary of the different ways to represent functions.
 
-\bigskip
+  
 
 
 \centerline{\textbf{Ways to Represent a Function}} \label{waystorepresentfunctionsbox}
 
-\smallskip
+ 
 
 Suppose $f$ is a function with domain $A$.  Then $f$ can be represented:
 
