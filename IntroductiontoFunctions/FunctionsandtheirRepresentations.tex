@@ -35,7 +35,7 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 \begin{tikzpicture}[>=stealth, node distance=8mm]
 
 % ---------- Left diagram: f ----------
-\begin{scope}
+
 % Column titles
 \node at (-3.5,6) {$N$ (inputs)};
 \node at (0,6) {$f$};
@@ -57,10 +57,11 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 \draw[->] (co) -- (cat);
 \draw[->] (bi) -- (liz);
 \draw[->] (ke) -- (tur);
-\end{scope}
+\end{tikzpicture}
 
 % ---------- Right diagram: g ----------
-\begin{scope}[xshift=9cm]
+\begin{tikzpicture}
+
 % Column titles
 \node at (-3.5,6) {$T$ (inputs)};
 \node at (0,6) {$g$};
@@ -82,7 +83,6 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 \draw[->] (cat2) -- (co2);
 \draw[->] (liz2) -- (bi2);
 \draw[->] (tur2) -- (ke2);
-\end{scope}
 
 \end{tikzpicture}
 \end{center}
