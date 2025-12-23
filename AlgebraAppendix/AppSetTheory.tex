@@ -57,7 +57,7 @@ In general, there are three ways to describe sets and those methods are listed b
 
 Let $S$ be the set described \textit{verbally} as the set of letters that make up the word ``smolko''.  A  \emph{roster} description of $S$ is $\left\{ s, m, o, l, k \right\}$. Note that we listed `o' only once, even though it appears twice in the word ``smolko''.  Also, the order of the elements doesn't matter, so $\left\{ k,  l,  m, o, s \right\}$ is also a roster description of $S$.  A \emph{set-builder} description of $S$ is: $\{ x \, | \, \mbox{$x$ is a letter in the word ``smolko''}\}$.  The way to read this is `The set of elements $x$ \underline{such that} $x$ is a letter in the word ``smolko''.'   In each of the above cases, we may use the familiar equals sign `$=$' and write  $S = \left\{ s, m, o, l, k \right\}$ or $S = \{ x \, | \, \mbox{$x$ is a letter in the word ``smolko''}\}$.  
 
-Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$.  We express these ideas of set inclusion and exclusion mathematically using the symbols $m \in S$ (read `$m$ \underline{is in} $S$') and $q \mathbb{N}otin S$ (read `$q$ \underline{is not in} $S$').  More precisely, we have the following.
+Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$.  We express these ideas of set inclusion and exclusion mathematically using the symbols $m \in S$ (read `$m$ \underline{is in} $S$') and $q \notin S$ (read `$q$ \underline{is not in} $S$').  More precisely, we have the following.
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -67,7 +67,7 @@ Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$. 
 
 \item If $x$ is an element of $A$ then we write $x \in A$\index{set ! inclusion}\index{$\in$} which is read `$x$ is in $A$'.
 
-\item If $x$ is \emph{not} an element of $A$ then we write $x \mathbb{N}otin A$\index{set ! exclusion}\index{$\mathbb{N}otin$} which is read `$x$ is not in $A$'.
+\item If $x$ is \emph{not} an element of $A$ then we write $x \notin A$\index{set ! exclusion}\index{$\notin$} which is read `$x$ is not in $A$'.
 
 \end{itemize}
 
@@ -91,7 +91,7 @@ Given sets $A$ and $B$, we say that the set $A$ is a \textbf{subset}\index{subse
 
 %% \ebm}
 
-In our previous example, $C \subseteq S$ yet not vice-versa since $o \in S$ but $o \mathbb{N}otin C$.  Additionally, the set of vowels $V = \{ a, e, i, o, u\}$, while it does have an element in common with $S$, is not a subset of $S$. (As an added note,  $S$ is not a subset of $V$, either.)  We could, however, \textit{build} a set which contains both $S$ and $V$ as subsets by gathering all of the elements in both $S$ and $V$ together into a single set, say $U = \{ s, m, o, l, k, a, e, i, u\}$.   Then $S \subseteq U$ and $V \subseteq U$.  The set $U$ we have built is called the \textbf{union} of the sets $S$ and $V$ and is denoted $S \cup V$.    Furthermore, $S$ and $V$ aren't completely \textit{different} sets since they both contain the letter `o.'  The \textbf{intersection} of two sets is the set of elements (if any) the two sets have in common. In this case, the intersection of $S$ and $V$ is $\{ o\}$, written $S \cap V = \{ o \}$.  We formalize these ideas below.
+In our previous example, $C \subseteq S$ yet not vice-versa since $o \in S$ but $o \notin C$.  Additionally, the set of vowels $V = \{ a, e, i, o, u\}$, while it does have an element in common with $S$, is not a subset of $S$. (As an added note,  $S$ is not a subset of $V$, either.)  We could, however, \textit{build} a set which contains both $S$ and $V$ as subsets by gathering all of the elements in both $S$ and $V$ together into a single set, say $U = \{ s, m, o, l, k, a, e, i, u\}$.   Then $S \subseteq U$ and $V \subseteq U$.  The set $U$ we have built is called the \textbf{union} of the sets $S$ and $V$ and is denoted $S \cup V$.    Furthermore, $S$ and $V$ aren't completely \textit{different} sets since they both contain the letter `o.'  The \textbf{intersection} of two sets is the set of elements (if any) the two sets have in common. In this case, the intersection of $S$ and $V$ is $\{ o\}$, written $S \cap V = \{ o \}$.  We formalize these ideas below.
 
  
 
@@ -125,7 +125,7 @@ Returning to the sets $C$ and $V$  above, $C \cup V = \{ s, m, l, k, a, e, i, o,
 
 \begin{definition} \label{emptysetdefn}
 
-The \textbf{Empty Set} is the set which contains no elements and is denoted $\emptyset$.\index{set ! empty}\index{empty set}  That is, \[\emptyset=\{ \}=\{x\,|\,\mbox{$x \mathbb{N}eq x$}\}.\]  
+The \textbf{Empty Set} is the set which contains no elements and is denoted $\emptyset$.\index{set ! empty}\index{empty set}  That is, \[\emptyset=\{ \}=\{x\,|\,\mbox{$x \neq x$}\}.\]  
 
 \end{definition}
 
@@ -270,7 +270,7 @@ The playground for most of this text is the set of \textbf{Real Numbers}.  Much 
 
 \begin{definition} \label{realnumberdefn}
 
-A \textbf{real number}\index{real number ! set of}\index{real number ! definition of} is any number which possesses a decimal representation.  The set of real numbers is denoted by the character $\R$.  
+A \textbf{real number}\index{real number ! set of}\index{real number ! definition of} is any number which possesses a decimal representation.  The set of real numbers is denoted by the character $\mathbb{R}$.  
 
 \end{definition}
 
@@ -293,13 +293,13 @@ Certain subsets of the real numbers are worthy of note and are listed below.  In
 
 \item The \textbf{Natural Numbers}:\index{natural number ! set of}\index{natural number ! definition of} $\mathbb{N}= \{ 1, 2, 3,  \ldots\}$ The periods of ellipsis `$\ldots$' here indicate that the natural numbers contain $1$, $2$, $3$ `and so forth'.
 
-\item The \textbf{Whole Numbers}:\index{whole number ! set of}\index{whole number ! definition of} $\W = \{ 0, 1, 2, \ldots \}.$
+\item The \textbf{Whole Numbers}:\index{whole number ! set of}\index{whole number ! definition of} $\mathbb{W} = \{ 0, 1, 2, \ldots \}.$
 
 \item The \textbf{Integers}:\index{integer ! set of}\index{integer ! definition of} $\mathbb Z=\{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \} = \{ 0, \pm 1, \pm 2, \pm 3, \ldots\}.$\footnote{The symbol $\pm$ is read `plus or minus' and it is a shorthand notation which appears throughout the text.  Just remember that $x = \pm 3$ means $x = 3$ or $x = -3$.}
 
-\item The \textbf{Rational Numbers}:\index{rational number ! set of}\index{rational number ! definition of} $\Q=\left\{\frac{a}{b} \, | \, a \in \mathbb Z \, \mbox{and} \, b \in \mathbb Z \, \mbox{where} \, b \mathbb{N}eq 0\right\}$.  \underline{Ratio}nal numbers are the \underline{ratio}s of integers where the denominator is not zero.  It turns out that another way to describe the rational numbers\footnote{See Section \ref{Summation}.} is: \[\Q=\{x\,|\,\mbox{$x$ possesses a repeating or terminating decimal representation}\}\]
+\item The \textbf{Rational Numbers}:\index{rational number ! set of}\index{rational number ! definition of} $\Q=\left\{\frac{a}{b} \, | \, a \in \mathbb Z \, \mbox{and} \, b \in \mathbb Z \, \mbox{where} \, b \neq 0\right\}$.  \underline{Ratio}nal numbers are the \underline{ratio}s of integers where the denominator is not zero.  It turns out that another way to describe the rational numbers\footnote{See Section \ref{Summation}.} is: \[\Q=\{x\,|\,\mbox{$x$ possesses a repeating or terminating decimal representation}\}\]
 
-\item The \textbf{Irrational Numbers}:\index{irrational number ! set of}\index{irrational number ! definition of} $\mathbb P = \{x\,|\,\mbox{$x \in \R$ but $x \mathbb{N}otin \Q$}\}$.\footnote{Examples here include number $\pi$ (See Section \ref{AppAngles}), $\sqrt{2}$ and $0.101001000100001\ldots$.}  That is, an \underline{ir}rational number is a real number which isn't rational.  Said differently, \[\mathbb P = \{x\,|\,\mbox{$x$ possesses a decimal representation which neither repeats nor terminates}\}\]
+\item The \textbf{Irrational Numbers}:\index{irrational number ! set of}\index{irrational number ! definition of} $\mathbb P = \{x\,|\,\mbox{$x \in \mathbb{R}$ but $x \notin \mathbb{Q}$}\}$.\footnote{Examples here include number $\pi$ (See Section \ref{AppAngles}), $\sqrt{2}$ and $0.101001000100001\ldots$.}  That is, an \underline{ir}rational number is a real number which isn't rational.  Said differently, \[\mathbb P = \{x\,|\,\mbox{$x$ possesses a decimal representation which neither repeats nor terminates}\}\]
 
 \end{enumerate}
 
@@ -307,7 +307,7 @@ Certain subsets of the real numbers are worthy of note and are listed below.  In
 
  
 
-Note that every natural number is a whole number which, in turn, is an integer.   Each integer is a rational number (take $b =1$ in the above definition for $\Q$) and since every rational number is a real number\footnote{Thanks to long division!}  the sets $\mathbb{N}$, $\W$, $\mathbb Z$, $\Q$, and  $\R$ are nested like \href{http://en.wikipedia.org/wiki/Matryoshka_doll}{\underline{Matryoshka dolls}}. More formally, these sets form a subset chain:  $\mathbb{N} \subseteq \W \subseteq \mathbb Z \subseteq \mathbb{Q}\subseteq \R$.  The reader is encouraged to sketch a Venn Diagram depicting $\R$ and all of the subsets mentioned above.  
+Note that every natural number is a whole number which, in turn, is an integer.   Each integer is a rational number (take $b =1$ in the above definition for $\mathbb{Q}$) and since every rational number is a real number\footnote{Thanks to long division!}  the sets $\mathbb{N}$, $\mathbb{W}$, $\mathbb Z$, $\mathbb{Q}$, and  $\mathbb{R}$ are nested like \href{http://en.wikipedia.org/wiki/Matryoshka_doll}{\underline{Matryoshka dolls}}. More formally, these sets form a subset chain:  $\mathbb{N} \subseteq \mathbb{W} \subseteq \mathbb Z \subseteq \mathbb{Q}\subseteq \mathbb{R}$.  The reader is encouraged to sketch a Venn Diagram depicting $\mathbb{R}$ and all of the subsets mentioned above.  
 
  
 
@@ -331,7 +331,7 @@ It is time to put all of this together in an example.
 
 \end{enumerate}
 
-\item  What is another name for $\mathbb{N} \cup \Q$?  What about  $\mathbb{Q}\cup \mathbb P$?
+\item  What is another name for $\mathbb{N} \cup \mathbb{Q}$?  What about  $\mathbb{Q}\cup \mathbb P$?
 
 \end{enumerate}
 
@@ -340,8 +340,6 @@ It is time to put all of this together in an example.
 \begin{enumerate}
 
 \item  To find roster descriptions for each of these sets, we need to list their elements.   Starting with the set $P = \{ 2^{n} \, | \, n \in \mathbb{N} \}$, we substitute natural number values $n$ into the formula $2^n$.  For $n = 1$ we get $2^1 = 2$,  for $n = 2$ we get $2^2 = 4$, for $n = 3$ we get $2^3 = 8$ and for $n = 4$ we get $2^4 = 16$.  Hence  $P$ describes the powers of $2$, so a roster description for $P$ is $P = \{ 2, 4, 8, 16, \ldots \}$ where the `$\ldots$' indicates the that pattern continues.\footnote{This isn't the most \textit{precise} way to describe this set - it's always dangerous to use `$\ldots$' since we assume that the pattern is clearly demonstrated and thus made evident to the reader.  Formulas are more precise because the pattern is clear.}  
-
- 
 
 Proceeding in the same way, we generate elements in $E = \{ 2n \, | \, n \in \mathbb Z \}$ by plugging in integer values of $n$ into the formula $2n$.  Starting with $n = 0$ we obtain $2(0) = 0$.  For $n = 1$ we get $2(1) = 2$, for $n = -1$ we get $2(-1) = -2$ for $n = 2$, we get $2(2) = 4$ and for $n = -2$ we get $2(-2) = -4$.  As $n$  moves through the integers, $2n$ produces all of the \textit{even} integers.\footnote{This shouldn't be too surprising, since an even integer is \textit{defined} to be an integer multiple of $2$.} A roster description for  $E$ is $E = \{ 0, \pm 2, \pm 4, \ldots \}$.
 
@@ -353,11 +351,11 @@ So suppose $s \in S$.  What can be said about $s$?  We know there is some real n
 
 \item  \begin{enumerate} \item The set $A$ contains no natural numbers.\footnote{Carl was tempted to include $0.\overline{9}$ in the set $A$, but thought better of it.  See Section \ref{Summation} for details.}  Clearly $\frac{4}{5}$ is a rational number as is $-117$ (which can be written as $\frac{-117}{1}$). It's the last two numbers listed in $A$, $0.20\overline{2002}$ and $0.202002000200002 \ldots$, that warrant some discussion.  First, recall that the `line' over the digits $2002$ in $0.20\overline{2002}$ (called the vinculum) indicates that these digits repeat, so it is a rational number.\footnote{So $0.20\overline{2002} = 0.20200220022002 \ldots$.}  As for the number $0.202002000200002 \ldots$, the `$\ldots$' indicates the pattern of adding an extra `$0$' followed by a `$2$' is what defines this real number.  Despite the fact there is a \textit{pattern} to this decimal, this decimal is \textit{not repeating}, so it is not a rational number - it is, in fact, an irrational number.  All of the elements of $A$ are real numbers, since all of them can be expressed as decimals (remember that $\frac{4}{5} = 0.8$).
 
-\item  The set $A \cap \W = \{ x \, | \, \text{$x \in A$ and $x \in \W$} \}$ is another way of saying we are looking for the set of numbers in $A$ which are whole numbers.  Since $A$ contains no whole numbers, $A \cap \W = \emptyset$.  Similarly, $A \cap \mathbb Z$ is looking for the set of numbers in $A$ which are integers.  Since $-117$ is the only integer in $A$,  $A \cap \mathbb Z = \{ -117 \}$. For the set $A \cap \mathbb P$, as discussed in part (a), the number $0.202002000200002 \ldots$ is irrational, so $A \cap \mathbb P = \{ 0.202002000200002 \ldots \}$.
+\item  The set $A \cap \mathbb{W} = \{ x \, | \, \text{$x \in A$ and $x \in \W$} \}$ is another way of saying we are looking for the set of numbers in $A$ which are whole numbers.  Since $A$ contains no whole numbers, $A \cap \mathbb{W} = \emptyset$.  Similarly, $A \cap \mathbb Z$ is looking for the set of numbers in $A$ which are integers.  Since $-117$ is the only integer in $A$,  $A \cap \mathbb Z = \{ -117 \}$. For the set $A \cap \mathbb P$, as discussed in part (a), the number $0.202002000200002 \ldots$ is irrational, so $A \cap \mathbb P = \{ 0.202002000200002 \ldots \}$.
 
 \end{enumerate}
 
-\item  The set $\mathbb{N} \cup \mathbb{Q}= \{ x \, | \, \text{$x \in \mathbb{N}$ or $x \in \Q$} \}$ is the union of the set of natural numbers with the set of rational numbers.  Since every natural number is a rational number, $\mathbb{N}$ doesn't contribute any new elements to $\Q$, so $\mathbb{N} \cup \mathbb{Q}= \Q$.\footnote{In fact, anytime $A \subseteq B$, $A \cup B = B$ and vice-versa.  See the exercises.}  For the  set $\mathbb{Q}\cup \mathbb P$, we note that every real number is either rational or not, hence $\mathbb{Q}\cup \mathbb P = \R$, pretty much by the definition of the set $\mathbb P$.  \qed
+\item  The set $\mathbb{N} \cup \mathbb{Q}= \{ x \, | \, \text{$x \in \mathbb{N}$ or $x \in \mathbb{Q}$} \}$ is the union of the set of natural numbers with the set of rational numbers.  Since every natural number is a rational number, $\mathbb{N}$ doesn't contribute any new elements to $\mathbb{Q}$, so $\mathbb{N} \cup \mathbb{Q}= \mathbb{Q}$.\footnote{In fact, anytime $A \subseteq B$, $A \cup B = B$ and vice-versa.  See the exercises.}  For the  set $\mathbb{Q}\cup \mathbb P$, we note that every real number is either rational or not, hence $\mathbb{Q}\cup \mathbb P = \mathbb{R}$, pretty much by the definition of the set $\mathbb P$.  \qed
 
 
 \end{enumerate}
@@ -365,7 +363,7 @@ So suppose $s \in S$.  What can be said about $s$?  We know there is some real n
 
 \end{example}
 
-As you may recall, we often visualize the set of real numbers $\R$ as a line where each point on the line corresponds to one and only one real number.  Given two different real numbers $a$ and $b$,  we write $a < b$ if $a$ is located to the left of $b$ on the number line, as shown below.
+As you may recall, we often visualize the set of real numbers $\mathbb{R}$ as a line where each point on the line corresponds to one and only one real number.  Given two different real numbers $a$ and $b$,  we write $a < b$ if $a$ is located to the left of $b$ on the number line, as shown below.
 
 \begin{center}
 
@@ -384,7 +382,7 @@ The real number line with two numbers $a$ and $b$ where $a < b$.
 
 \end{center}
 
-While this notion seems innocuous, it is worth pointing out that this convention is rooted in two deep properties of real numbers.  The first property is that $\R$ is  \href{http://en.wikipedia.org/wiki/Complete_metric_space}{\underline{complete}}. This means that there are no `holes' or `gaps' in the real number line.\footnote{Alas, this intuitive feel for what it means to be `complete' is as good as it gets at this level.  Completeness is given a much more precise meaning later in courses like Analysis and Topology.} Another way to think about this is that if you choose any two distinct (different) real numbers, and look between them, you'll find a solid line segment (or interval) consisting of infinitely many real numbers.  The next result tells us what types of numbers we can expect to find.
+While this notion seems innocuous, it is worth pointing out that this convention is rooted in two deep properties of real numbers.  The first property is that $\mathbb{R}$ is  \href{http://en.wikipedia.org/wiki/Complete_metric_space}{\underline{complete}}. This means that there are no `holes' or `gaps' in the real number line.\footnote{Alas, this intuitive feel for what it means to be `complete' is as good as it gets at this level.  Completeness is given a much more precise meaning later in courses like Analysis and Topology.} Another way to think about this is that if you choose any two distinct (different) real numbers, and look between them, you'll find a solid line segment (or interval) consisting of infinitely many real numbers.  The next result tells us what types of numbers we can expect to find.
 
  
 
@@ -393,7 +391,7 @@ While this notion seems innocuous, it is worth pointing out that this convention
 
 %% \colorbox{ResultColor}{\bbm
 
-\centerline{\textbf{Density Property of $\Q$ and $\mathbb P$ in $\R$}}
+\centerline{\textbf{Density Property of $\mathbb{Q}$ and $\mathbb P$ in $\mathbb{R}$}}
 
 Between any two distinct real numbers, there is at least one rational number and one irrational number.  It then follows that between any two distinct real numbers there will be \underline{infinitely many} rational and \underline{infinitely many} irrational numbers.
 
@@ -401,11 +399,11 @@ Between any two distinct real numbers, there is at least one rational number and
 
  
 
-The root word `dense' here communicates the idea that rationals and irrationals are `thoroughly mixed' into $\R$.   The reader is encouraged to think about how one would find both a rational and an irrational number between, say, $0.9999$ and $1$. Once you've done that, try doing the same thing for the numbers $0.\overline{9}$ and $1$. (`Try' is the operative word, here.\footnote{Again, see Section \ref{Summation} for details.})
+The root word `dense' here communicates the idea that rationals and irrationals are `thoroughly mixed' into $\mathbb{R}$.   The reader is encouraged to think about how one would find both a rational and an irrational number between, say, $0.9999$ and $1$. Once you've done that, try doing the same thing for the numbers $0.\overline{9}$ and $1$. (`Try' is the operative word, here.\footnote{Again, see Section \ref{Summation} for details.})
 
  
 
-The second property $\R$ possesses that lets us view it as a line is that the set is \href{http://en.wikipedia.org/wiki/Total_order}{\underline{totally ordered}}. This means that given any two real numbers $a$ and $b$, either $a < b$, $a > b$ or $a = b$ which allows us to arrange the numbers from least (left) to greatest (right). This property is given below.\index{trichotomy}
+The second property $\mathbb{R}$ possesses that lets us view it as a line is that the set is \href{http://en.wikipedia.org/wiki/Total_order}{\underline{totally ordered}}. This means that given any two real numbers $a$ and $b$, either $a < b$, $a > b$ or $a = b$ which allows us to arrange the numbers from least (left) to greatest (right). This property is given below.\index{trichotomy}
 
  
 
@@ -657,7 +655,7 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 \hline
 
 &  & \\
-\shortstack{$\R$ \\ \hfill}& \shortstack{$(-\infty,\infty)$ \\ \hfill} & 
+\shortstack{$\mathbb{R}$ \\ \hfill}& \shortstack{$(-\infty,\infty)$ \\ \hfill} & 
 
 \begin{mfpic}[10]{-3}{3}{-2}{2} 
 \backgroundcolor[gray]{.95}
@@ -718,7 +716,7 @@ We close this section with an example that ties together some of the concepts pr
 
 \setcounter{enumii}{\value{HW}}
 
-\item  $\{ x \, | \, x \mathbb{N}eq \pm 3 \}$
+\item  $\{ x \, | \, x \neq \pm 3 \}$
 
 \item  $\{ x \, | \, -1 < x \leq 3 \,\, \text{or} \,\, x = 5\}$
 
@@ -779,7 +777,7 @@ $(-\infty, -2] \cup [2, \infty)$
 
 \end{center}
 
-\item  For the set $\{ x \, | \, x \mathbb{N}eq \pm 3 \}$, we proceed as before and exclude both $x=3$ and $x=-3$ from our set. (Refer back to page \pageref{setsofnumbersboxonthispage} for a discussion about $x = \pm 3$)  This breaks the number line into \textit{three} intervals, $(-\infty, -3)$, $(-3,3)$ and $(3, \infty)$.   Since the set describes real numbers which come from the first, second \textit{or} third interval, we have $\{ x \, | \, x \mathbb{N}eq \pm 3 \} = (-\infty, -3) \cup (-3,3) \cup (3, \infty)$.
+\item  For the set $\{ x \, | \, x \neq \pm 3 \}$, we proceed as before and exclude both $x=3$ and $x=-3$ from our set. (Refer back to page \pageref{setsofnumbersboxonthispage} for a discussion about $x = \pm 3$)  This breaks the number line into \textit{three} intervals, $(-\infty, -3)$, $(-3,3)$ and $(3, \infty)$.   Since the set describes real numbers which come from the first, second \textit{or} third interval, we have $\{ x \, | \, x \neq \pm 3 \} = (-\infty, -3) \cup (-3,3) \cup (3, \infty)$.
 
 
 \begin{center}
@@ -884,12 +882,11 @@ To find $A \cup B$, we need to find the numbers in at least one of $A$ or $B$.  
 
 \end{example}
 
-\mathbb{N}ewpage
 
-\subsection{Exercises}
+%\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforAppSetTheory}
 
-\closegraphsfile
+%\closegraphsfile
 
 \end{document}
