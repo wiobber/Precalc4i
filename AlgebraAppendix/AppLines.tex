@@ -215,38 +215,49 @@ A couple of notes about Equation \ref{slope} are in order.  First, don't ask why
 
 A few comments about Example \ref{slopeex} are in order.  First, if the slope is positive then the resulting line is said to be `increasing', meaning as we move from left to right,\footnote{That is, as we increase the $x$-values \ldots} the $y$-values are getting larger.\footnote{We'll have more to say about this idea in Section \ref{ConstantandLinearFunctions}.}  Similarly, if the slope is negative, we say the line is `decreasing', since as we move from left to right, the $y$-values are getting smaller.  A slope of $0$ results in a horizontal line which we say is `constant', since the $y$-values here remain unchanged as we move from left to right,  and an undefined slope results in a vertical line.\footnote{Some authors use the unfortunate moniker `no slope' when a slope is undefined.  It's easy to confuse the notions of `no slope' with `slope of $0$'.  For this reason, we will describe slopes of vertical lines as `undefined'.}   
 
-\medskip
 
-Second, the larger the slope is in absolute value, the steeper the line.  You may recall from Intermediate Algebra that slope can be described as the ratio `$\frac{\mbox{\small rise}}{\mbox{\small run}}$'.  For example, if the slope works out to be $\frac{1}{2}$, we can interpret this as a `rise' of $1$ unit upward for every `run' of $2$ units to the right:
+Second, the larger the slope is in absolute value, the steeper the line.  You may recall from Intermediate Algebra that slope can be described as the ratio `$\frac{\text{rise}}{\text{run}}$'.  For example, if the slope works out to be $\frac{1}{2}$, we can interpret this as a `rise' of $1$ unit upward for every `run' of $2$ units to the right:
 
 \begin{center}
+\begin{tikzpicture}[scale=1.1]
 
-\begin{mfpic}[20]{-2}{4}{0}{5}
-\point[3pt]{(-1,2),(1,3), (3,4)}
-\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
-\dashed \polyline{(-1,2), (1,2), (1,3), (3,3), (3,4)}
-\tlabel[cc](2,2.5){\tiny `over $2$'}
-\tlabel[t](3.25,3.5){\tiny `up $1$'}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-1,1,2,3}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\end{mfpic}
+% Axes
+\draw[->] (-2,0) -- (4.5,0) node[right] {\scriptsize $x$};
+\draw[->] (0,0) -- (0,5.5) node[above] {\scriptsize $y$};
 
+% Axis ticks and labels
+\foreach \x in {-1,1,2,3}
+  \draw (\x,0.1) -- (\x,-0.1) node[below] {\tiny $\x$};
+
+\foreach \y in {1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y) node[left] {\tiny $\y$};
+
+% Main arrow (trend line)
+\draw[<->, thick] (-2,1.5) -- (4,4.5);
+
+% Dashed step path
+\draw[dashed]
+  (-1,2) -- (1,2) -- (1,3) -- (3,3) -- (3,4);
+
+% Points
+\foreach \x/\y in {-1/2, 1/3, 3/4}
+  \fill (\x,\y) circle (2pt);
+
+% Labels
+\node at (2,2.5) {\tiny over $2$};
+\node[above] at (3.25,3.5) {\tiny up $1$};
+
+\end{tikzpicture}
 \end{center}
+
 
 
 In this way, we may view the slope as  `the \textbf{rate of change} of $y$ with respect to $x$'.  From the expression \[ m = \dfrac{\Delta y}{\Delta x}\] we get $\Delta y = m \Delta x$ so that the $y$-values change `$m$' times as fast as the $x$-values.  We'll have more to say about this concept in Section \ref{ConstantandLinearFunctions} when we explore applications of linear functions;  presently, we will keep our attention focused on the analytic geometry of lines.  To that end, our next task is to find algebraic equations that describe lines and we start with a discussion of vertical and horizontal lines.
 
-\pagebreak
 
 Consider the two lines shown below: $V$ (for `V'ertical Line) and $H$ (for `H'orizontal Line).    
 
-\smallskip
+
 
 \hspace{1in} \begin{tabular}{m{2in}m{3in}}
 
@@ -651,13 +662,12 @@ As usual, the labels of the axes in the problem will dictate the labels on the i
 
 The last little bit of analytic geometry we need to review about lines are the concepts of `parallel' and `perpendicular' lines.  Parallel lines do not intersect,\footnote{Well, at least in Euclidean Geometry \dots} and hence, parallel lines necessarily have the same slope.  Perpendicular lines intersect at a right ($90^{\circ}$) angle.   The relationship between these slopes is somewhat more complicated, and is summarized below.
 
-\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
 %\smallskip
 
-\begin{theorem}  Suppose line $L_1$ has slope $m_1$ and line $L_{\mbox{\tiny$2$}}$ has slope $m_{\mbox{\tiny$2$}}$:
+\begin{theorem}  Suppose line $L_1$ has slope $m_1$ and line $L_2$ has slope $m_2$:
 
 
 \label{parallelperpendicularslopetheorem}
@@ -665,11 +675,11 @@ The last little bit of analytic geometry we need to review about lines are the c
 
 \begin{itemize}
 
-\item $L_1$ and $L_{\mbox{\tiny$2$}}$ are parallel (written $L_1 \parallel L_{\mbox{\tiny$2$}}$) if and only if $m_1 = m_{\mbox{\tiny$2$}}$.
+\item $L_1$ and $L_2$ are parallel (written $L_1 \parallel L_2$) if and only if $m_1 = m_2$.
 
-\item If $m_1 \neq 0$ and  $m_{\mbox{\tiny$2$}} \neq 0$ then $L_1$ and $L_{\mbox{\tiny$2$}}$ are perpendicular (written $L_1 \perp L_{\mbox{\tiny$2$}}$) if and only if $m_1 m_{\mbox{\tiny$2$}} = -1$.
+\item If $m_1 \neq 0$ and  $m_2 \neq 0$ then $L_1$ and $L_2$ are perpendicular (written $L_1 \perp L_2$) if and only if $m_1 m_2 = -1$.
 
-\textbf{NOTE:} $m_1 m_{\mbox{\tiny$2$}} = -1$  is equivalent to $m_{\mbox{\tiny$2$}} = -\dfrac{1}{m_1}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
+\textbf{NOTE:} $m_1 m_2 = -1$  is equivalent to $m_2 = -\dfrac{1}{m_1}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
 
 \end{itemize}
 
@@ -685,11 +695,11 @@ The last little bit of analytic geometry we need to review about lines are the c
 \tlabel[cc](5,-0.5){\scriptsize $x$}
 \tlabel[cc](0.5,5){\scriptsize $y$}
 \tlabel[cc](4.5,4){\scriptsize $L_1$}
-\tlabel[cc](3.5,5){\scriptsize $L_{\mbox{\tiny$2$}}$}
+\tlabel[cc](3.5,5){\scriptsize $L_2$}
 \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
 \arrow \reverse \arrow \polyline{(-2,0), (3,5)} 
 \tlpointsep{4pt}
-\tcaption{$L_1 \parallel L_{\mbox{\tiny$2$}}$, $m_1 = m_{\mbox{\tiny$2$}}$}
+\tcaption{$L_1 \parallel L_2$, $m_1 = m_2$}
 \axes
 
 \end{mfpic} \hspace{1.5in} & 
@@ -698,14 +708,14 @@ The last little bit of analytic geometry we need to review about lines are the c
 \tlabel[cc](5,-0.5){\scriptsize $x$}
 \tlabel[cc](0.5,5){\scriptsize $y$}
 \tlabel[cc](4.5,4){\scriptsize $L_1$}
-\tlabel[cc](5,-1){\scriptsize $L_{\mbox{\tiny$2$}}$}
+\tlabel[cc](5,-1){\scriptsize $L_2$}
 \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
 \arrow \reverse \arrow \polyline{(-1,5), (4.5,-0.5)}
 \polyline{(2,2), (1.75, 2.25), (2,2.5), (2.25, 2.25)} 
 \point[3pt]{(2,2)}
 \tlpointsep{4pt}
 \axes
-\tcaption{$L_1 \perp L_{\mbox{\tiny$2$}}$, $m_1 m_{\mbox{\tiny$2$}} = -1$}
+\tcaption{$L_1 \perp L_2$, $m_1 m_2 = -1$}
 
 \end{mfpic} \\
 
@@ -715,7 +725,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 \end{center}
 
 
-A few remarks about Theorem \ref{parallelperpendicularslopetheorem} are in order.  First off, the theorem assumes that the slopes of the lines exist.  The reader is encouraged to think about the case when one (or both) of the slopes don't exist.  Along those same lines, the reader is encouraged to think about why the stipulations $m_1 \neq 0$ and $m_{\mbox{\tiny$2$}} \neq 0$ appear in the statement regarding slopes of perpendicular lines, and what happens in this case as well.  (Think geometrically!)   In Exercise \ref{perpendicularlineproof}, you'll prove the assertion about the slopes of perpendicular lines.  For now, we accept it as true and use it in the following example.
+A few remarks about Theorem \ref{parallelperpendicularslopetheorem} are in order.  First off, the theorem assumes that the slopes of the lines exist.  The reader is encouraged to think about the case when one (or both) of the slopes don't exist.  Along those same lines, the reader is encouraged to think about why the stipulations $m_1 \neq 0$ and $m_2 \neq 0$ appear in the statement regarding slopes of perpendicular lines, and what happens in this case as well.  (Think geometrically!)   In Exercise \ref{perpendicularlineproof}, you'll prove the assertion about the slopes of perpendicular lines.  For now, we accept it as true and use it in the following example.
 
 \begin{example}  For line $y = 2x-1$ and the point $(3,4)$, find:
 
