@@ -22,8 +22,8 @@ In Section \ref{Distance}, we concerned ourselves with the finite line segment b
 \begin{mfpic}[15]{0}{4}{0}{4}
 \point[3pt]{(1,3), (3,1)}
 \arrow \reverse \arrow \polyline{(0,4),(4,0)}
-\tlabel(1.5,3){\small $P\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$}
-\tlabel(3.5,1){\small $Q\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$}
+\tlabel(1.5,3){\small $P\left(x_0, y_0\right)$}
+\tlabel(3.5,1){\small $Q\left(x_1, y_1\right)$}
 \end{mfpic}
 
 \end{center}
@@ -36,11 +36,11 @@ To give a sense of the `steepness' of the line, we recall that we can compute th
 
 %\smallskip
 
-\begin{eqn} \label{slope} The \index{slope ! definition} \textbf{slope} $m$ of the line containing the points $P\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$ and $Q\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$ is: \index{line ! slope of} \index{slope ! of a line}
+\begin{eqn} \label{slope} The \index{slope ! definition} \textbf{slope} $m$ of the line containing the points $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$ is: \index{line ! slope of} \index{slope ! of a line}
 
-\[ m  = \dfrac{y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}}{x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}} = \dfrac{\Delta y}{\Delta x},\]
+\[ m  = \dfrac{y_1 - y_0}{x_1 - x_0} = \dfrac{\Delta y}{\Delta x},\]
 
-provided $x_{\mbox{\tiny$1$}} \neq x_{\mbox{\tiny$0$}}$, that is, $\Delta x \neq 0$.
+provided $x_1 \neq x_0$, that is, $\Delta x \neq 0$.
 
 \end{eqn}
 
@@ -48,7 +48,7 @@ provided $x_{\mbox{\tiny$1$}} \neq x_{\mbox{\tiny$0$}}$, that is, $\Delta x \neq
 
 \medskip
 
-A couple of notes about Equation \ref{slope} are in order.  First, don't ask why we use the letter `$m$' to represent slope.  There are many explanations out there, but apparently no one really knows for sure.\footnote{See  \href{http://mathforum.org/dr.math/faq/faq.terms.html}{\underline{www.mathforum.org}} or \href{http://mathworld.wolfram.com/Slope.html}{\underline{www.mathworld.wolfram.com}} for discussions on this topic.} Secondly, the stipulation  $x_{\mbox{\tiny$1$}} \neq x_{\mbox{\tiny$0$}}$ (or $\Delta x \neq 0$) ensures that we aren't trying to divide by zero.  The reader is invited to pause to think about what is happening geometrically when the `change in $x$' is $0$; the anxious reader can skip along to the next example.
+A couple of notes about Equation \ref{slope} are in order.  First, don't ask why we use the letter `$m$' to represent slope.  There are many explanations out there, but apparently no one really knows for sure.\footnote{See  \href{http://mathforum.org/dr.math/faq/faq.terms.html}{\underline{www.mathforum.org}} or \href{http://mathworld.wolfram.com/Slope.html}{\underline{www.mathworld.wolfram.com}} for discussions on this topic.} Secondly, the stipulation  $x_1 \neq x_0$ (or $\Delta x \neq 0$) ensures that we aren't trying to divide by zero.  The reader is invited to pause to think about what is happening geometrically when the `change in $x$' is $0$; the anxious reader can skip along to the next example.
 
 \begin{example}  Find the slope of the line containing the following pairs of points, if it exists.  Plot each pair of points and the line containing them.
 
@@ -425,7 +425,7 @@ Of course, we may be working on axes which aren't labeled with the `usual' $x$'s
  
 \pagebreak
 
-Using the concept of slope, we can develop equations for the other varieties of lines.  Suppose a line has a slope of $m$ and contains the point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$.  Suppose $(x,y)$ is another point on the line, as indicated below.
+Using the concept of slope, we can develop equations for the other varieties of lines.  Suppose a line has a slope of $m$ and contains the point $\left(x_0, y_0\right)$.  Suppose $(x,y)$ is another point on the line, as indicated below.
 
 \begin{center}
 
@@ -433,7 +433,7 @@ Using the concept of slope, we can develop equations for the other varieties of 
 \point[3pt]{(-1,2), (3,4)}
 \arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
 \dashed \polyline{(-1,2), (3,2), (3,4)}
-\tlabel[t](-1.5,1.5){$\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$}
+\tlabel[t](-1.5,1.5){$\left(x_0, y_0\right)$}
 \tlabel[t](3.5,4){$\left(x, y \right)$}
 \end{mfpic}
 
@@ -448,9 +448,9 @@ Equation \ref{slope} yields
 \setlength{\extrarowheight}{2pt}
 
 \[ \begin{array}{rclr}  
-                      m & = & \dfrac{y - y_{\mbox{\tiny$0$}}}{x-x_{\mbox{\tiny$0$}}} & \\
-m\left(x - x_{\mbox{\tiny$0$}}\right) & = & y - y_{\mbox{\tiny$0$}} & \\ 
-              y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right) & \\
+                      m & = & \dfrac{y - y_0}{x-x_0} & \\
+m\left(x - x_0\right) & = & y - y_0 & \\ 
+              y - y_0 & = & m\left(x - x_0\right) & \\
    \end{array} \]
 
 which is known as the \textbf{point-slope form} of a line.
@@ -459,14 +459,14 @@ which is known as the \textbf{point-slope form} of a line.
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn} \label{pointslope} The\index{point-slope form of a line}\index{line ! point-slope form} \textbf{point-slope form} of the line with slope $m$ containing the point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$ is the equation \[y - y_{\mbox{\tiny$0$}}  =  m\left(x - x_{\mbox{\tiny$0$}}\right)\] $ $ \vspace{-.2in}
+\begin{eqn} \label{pointslope} The\index{point-slope form of a line}\index{line ! point-slope form} \textbf{point-slope form} of the line with slope $m$ containing the point $\left(x_0, y_0\right)$ is the equation \[y - y_0  =  m\left(x - x_0\right)\] $ $ \vspace{-.2in}
 \end{eqn}
 
 %% \ebm}
 
 \medskip
 
-A few remarks about Equation \ref{pointslope} are in order. First, note that if the slope $m = 0$, then the line is horizontal and Equation \ref{pointslope} reduces to  $y - y_{\mbox{\tiny$0$}} = 0$ or $y = y_{\mbox{\tiny$0$}}$, as prescribed by Equation \ref{verticalhorizontallines}.\footnote{Here we have $y_{\mbox{\tiny$0$}}$ as the constant whereas in the Equation we used the letter $b$. The form $y =$ constant is what matters.} Second, we may need to change the letters in Equation \ref{pointslope} from `$x$' and `$y$' depending on the context, so while  Equation \ref{pointslope} should be committed to memory, it should be understood that `$x$' refers to whichever variable is used to label the horizontal axis, and $y$ refers to whichever variable is used to label the vertical axis. Lastly, while Equation \ref{pointslope} is, by far, the easiest way to \textit{construct} the equation of a line given a point and a slope, more often than not, the equation is solved for $y$ and simplified into the form below.
+A few remarks about Equation \ref{pointslope} are in order. First, note that if the slope $m = 0$, then the line is horizontal and Equation \ref{pointslope} reduces to  $y - y_0 = 0$ or $y = y_0$, as prescribed by Equation \ref{verticalhorizontallines}.\footnote{Here we have $y_0$ as the constant whereas in the Equation we used the letter $b$. The form $y =$ constant is what matters.} Second, we may need to change the letters in Equation \ref{pointslope} from `$x$' and `$y$' depending on the context, so while  Equation \ref{pointslope} should be committed to memory, it should be understood that `$x$' refers to whichever variable is used to label the horizontal axis, and $y$ refers to whichever variable is used to label the vertical axis. Lastly, while Equation \ref{pointslope} is, by far, the easiest way to \textit{construct} the equation of a line given a point and a slope, more often than not, the equation is solved for $y$ and simplified into the form below.
 
 \medskip
 
@@ -580,13 +580,13 @@ The second equation,  $2x+4y = 3$, is a general form of a line.  To get two poin
 
 \end{tabular}
 
-\item We'll assume we're using the familiar $(x,y)$ axis labels and begin by finding the slope of the line using Equation \ref{slope}:  $m = \frac{\Delta y}{\Delta x} = \frac{1 - 3}{2 - (-1)} = -\frac{2}{3}$.  Next, we substitute this result, along with one of the given points, into the point-slope equation of the line, Equation \ref{pointslope}. We have two options for the point $\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$. We'll use $(-1,3)$ and leave it to the reader to check that using $(2,1)$ results in the same equation.  Substituting into the point-slope form of the line, we get 
+\item We'll assume we're using the familiar $(x,y)$ axis labels and begin by finding the slope of the line using Equation \ref{slope}:  $m = \frac{\Delta y}{\Delta x} = \frac{1 - 3}{2 - (-1)} = -\frac{2}{3}$.  Next, we substitute this result, along with one of the given points, into the point-slope equation of the line, Equation \ref{pointslope}. We have two options for the point $\left(x_0, y_0\right)$. We'll use $(-1,3)$ and leave it to the reader to check that using $(2,1)$ results in the same equation.  Substituting into the point-slope form of the line, we get 
 
 \vspace{-.1in}
 
 \setlength{\extrarowheight}{10pt}
 \[\begin{array}{rclr} 
-y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right)  & \\
+y - y_0 & = & m\left(x - x_0\right)  & \\
 y - 3 & = & -\dfrac{2}{3} \left(x - (-1)\right) & \\
 y - 3 & = & -\dfrac{2}{3} \left(x +1 \right) & \\
 y - 3& = & -\dfrac{2}{3}x - \dfrac{2}{3}\\
@@ -601,7 +601,7 @@ We can check our answer by showing that both $(-1,3)$ and $(2,1)$ are on the gra
 \item  From the graph, we see that the points $(0,5)$ and $(5,0)$ are on the line, so we may proceed as we did in the previous problem.  Here, however,  we use `$t$' in place of `$x$' and `$s$' in place of `$y$' in accordance to the axis labels given.  We find the slope $m = \frac{\Delta s}{\Delta t} = \frac{0 - 5}{5 - 0} = -1$.  As before, we have two points to choose from to substitute into the point-slope formula, and, as before, we'll select one of them, $(0,5)$ and leave the computations with $(5,0)$ to the reader.  
 
 \[\begin{array}{rclr} 
-s - s_{\mbox{\tiny$0$}} & = & m\left(t - t_{\mbox{\tiny$0$}}\right)  & \\
+s - s_0 & = & m\left(t - t_0\right)  & \\
 s - 5 & = & (-1) \left(t -0 \right) & \\
 s- 5 & = &-t & \\
 s& = & -t + 5.\\
@@ -631,11 +631,11 @@ While every point on a line holds value and meaning,\footnote{Lines missing poin
 
 \item  A point on a graph which is also on the $x$-axis is called an \index{$x$-intercept} \textbf{\boldmath $x$-intercept} of the graph.  To determine the $x$-intercept(s) of a graph, set $y = 0$ in the equation and solve for $x$.
 
-\textbf{NOTE:}  $x$-intercepts always have the form:  $(x_{\mbox{\tiny$0$}},0)$.
+\textbf{NOTE:}  $x$-intercepts always have the form:  $(x_0,0)$.
 
 \item  A point on a graph which is also on the $y$-axis is called an \index{$y$-intercept} \textbf{\boldmath $y$-intercept} of the graph. To determine the $y$-intercept(s) of a graph, set $x = 0$ in the equation and solve for $y$.
 
-\textbf{NOTE:}  $y$-intercepts always have the form:  $(0,y_{\mbox{\tiny$0$}})$.
+\textbf{NOTE:}  $y$-intercepts always have the form:  $(0,y_0)$.
 
 \end{itemize}
 
@@ -657,7 +657,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 
 %\smallskip
 
-\begin{theorem}  Suppose line $L_{\mbox{\tiny$1$}}$ has slope $m_{\mbox{\tiny$1$}}$ and line $L_{\mbox{\tiny$2$}}$ has slope $m_{\mbox{\tiny$2$}}$:
+\begin{theorem}  Suppose line $L_1$ has slope $m_1$ and line $L_{\mbox{\tiny$2$}}$ has slope $m_{\mbox{\tiny$2$}}$:
 
 
 \label{parallelperpendicularslopetheorem}
@@ -665,11 +665,11 @@ The last little bit of analytic geometry we need to review about lines are the c
 
 \begin{itemize}
 
-\item $L_{\mbox{\tiny$1$}}$ and $L_{\mbox{\tiny$2$}}$ are parallel (written $L_{\mbox{\tiny$1$}} \parallel L_{\mbox{\tiny$2$}}$) if and only if $m_{\mbox{\tiny$1$}} = m_{\mbox{\tiny$2$}}$.
+\item $L_1$ and $L_{\mbox{\tiny$2$}}$ are parallel (written $L_1 \parallel L_{\mbox{\tiny$2$}}$) if and only if $m_1 = m_{\mbox{\tiny$2$}}$.
 
-\item If $m_{\mbox{\tiny$1$}} \neq 0$ and  $m_{\mbox{\tiny$2$}} \neq 0$ then $L_{\mbox{\tiny$1$}}$ and $L_{\mbox{\tiny$2$}}$ are perpendicular (written $L_{\mbox{\tiny$1$}} \perp L_{\mbox{\tiny$2$}}$) if and only if $m_{\mbox{\tiny$1$}} m_{\mbox{\tiny$2$}} = -1$.
+\item If $m_1 \neq 0$ and  $m_{\mbox{\tiny$2$}} \neq 0$ then $L_1$ and $L_{\mbox{\tiny$2$}}$ are perpendicular (written $L_1 \perp L_{\mbox{\tiny$2$}}$) if and only if $m_1 m_{\mbox{\tiny$2$}} = -1$.
 
-\textbf{NOTE:} $m_{\mbox{\tiny$1$}} m_{\mbox{\tiny$2$}} = -1$  is equivalent to $m_{\mbox{\tiny$2$}} = -\dfrac{1}{m_{\mbox{\tiny$1$}}}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
+\textbf{NOTE:} $m_1 m_{\mbox{\tiny$2$}} = -1$  is equivalent to $m_{\mbox{\tiny$2$}} = -\dfrac{1}{m_1}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
 
 \end{itemize}
 
@@ -684,12 +684,12 @@ The last little bit of analytic geometry we need to review about lines are the c
 \begin{mfpic}[15]{-1}{5}{-1}{5}
 \tlabel[cc](5,-0.5){\scriptsize $x$}
 \tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4.5,4){\scriptsize $L_{\mbox{\tiny$1$}}$}
+\tlabel[cc](4.5,4){\scriptsize $L_1$}
 \tlabel[cc](3.5,5){\scriptsize $L_{\mbox{\tiny$2$}}$}
 \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
 \arrow \reverse \arrow \polyline{(-2,0), (3,5)} 
 \tlpointsep{4pt}
-\tcaption{$L_{\mbox{\tiny$1$}} \parallel L_{\mbox{\tiny$2$}}$, $m_{\mbox{\tiny$1$}} = m_{\mbox{\tiny$2$}}$}
+\tcaption{$L_1 \parallel L_{\mbox{\tiny$2$}}$, $m_1 = m_{\mbox{\tiny$2$}}$}
 \axes
 
 \end{mfpic} \hspace{1.5in} & 
@@ -697,7 +697,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 \begin{mfpic}[15]{-1}{5}{-1}{5}
 \tlabel[cc](5,-0.5){\scriptsize $x$}
 \tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4.5,4){\scriptsize $L_{\mbox{\tiny$1$}}$}
+\tlabel[cc](4.5,4){\scriptsize $L_1$}
 \tlabel[cc](5,-1){\scriptsize $L_{\mbox{\tiny$2$}}$}
 \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
 \arrow \reverse \arrow \polyline{(-1,5), (4.5,-0.5)}
@@ -705,7 +705,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 \point[3pt]{(2,2)}
 \tlpointsep{4pt}
 \axes
-\tcaption{$L_{\mbox{\tiny$1$}} \perp L_{\mbox{\tiny$2$}}$, $m_{\mbox{\tiny$1$}} m_{\mbox{\tiny$2$}} = -1$}
+\tcaption{$L_1 \perp L_{\mbox{\tiny$2$}}$, $m_1 m_{\mbox{\tiny$2$}} = -1$}
 
 \end{mfpic} \\
 
@@ -715,7 +715,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 \end{center}
 
 
-A few remarks about Theorem \ref{parallelperpendicularslopetheorem} are in order.  First off, the theorem assumes that the slopes of the lines exist.  The reader is encouraged to think about the case when one (or both) of the slopes don't exist.  Along those same lines, the reader is encouraged to think about why the stipulations $m_{\mbox{\tiny$1$}} \neq 0$ and $m_{\mbox{\tiny$2$}} \neq 0$ appear in the statement regarding slopes of perpendicular lines, and what happens in this case as well.  (Think geometrically!)   In Exercise \ref{perpendicularlineproof}, you'll prove the assertion about the slopes of perpendicular lines.  For now, we accept it as true and use it in the following example.
+A few remarks about Theorem \ref{parallelperpendicularslopetheorem} are in order.  First off, the theorem assumes that the slopes of the lines exist.  The reader is encouraged to think about the case when one (or both) of the slopes don't exist.  Along those same lines, the reader is encouraged to think about why the stipulations $m_1 \neq 0$ and $m_{\mbox{\tiny$2$}} \neq 0$ appear in the statement regarding slopes of perpendicular lines, and what happens in this case as well.  (Think geometrically!)   In Exercise \ref{perpendicularlineproof}, you'll prove the assertion about the slopes of perpendicular lines.  For now, we accept it as true and use it in the following example.
 
 \begin{example}  For line $y = 2x-1$ and the point $(3,4)$, find:
 
@@ -732,14 +732,14 @@ A few remarks about Theorem \ref{parallelperpendicularslopetheorem} are in order
 \begin{enumerate}
 
 \item Since $y = 2x-1$ is already in slope-intercept form, we have the slope $m = 2$.  To find the line parallel to this line containing $(3,4)$, we use the point-slope form with $m = 2$ to get: \[\begin{array}{rclr} 
-y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right)  & \\
+y - y_0 & = & m\left(x - x_0\right)  & \\
 y - 4 & = & 2 \left(x - 3\right) & \\
 y - 4 & = & 2x - 6 & \\
 y& = & 2x-2\\
 \end{array} \] Algebraically, we can verify that the slope is indeed $2$ and that when $x =3$ we get $y = 4$.  Using a graphing utility with a window centered at the point $(3, 4)$,  we graph both $y = 2x-1$ and $y = 2x-2$ below on the left and observe that they appear to be parallel.
 
 \item To find the line perpendicular to $y = 2x-1$ containing $(3,4)$, we use the slope $m = -\frac{1}{2}$ in the point-slope formula:\[\begin{array}{rclr} 
-y - y_{\mbox{\tiny$0$}} & = & m\left(x - x_{\mbox{\tiny$0$}}\right)  & \\ [3pt]
+y - y_0 & = & m\left(x - x_0\right)  & \\ [3pt]
 y - 4 & = & -\dfrac{1}{2} \left(x - 3\right) & \\ [10pt]
 y - 4 & = & -\dfrac{1}{2} x + \dfrac{3}{2} & \\ [10pt]
 y& = & -\dfrac{1}{2} x + \dfrac{11}{2}\\
