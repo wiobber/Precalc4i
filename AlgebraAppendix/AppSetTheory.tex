@@ -18,7 +18,7 @@
 
 We begin this section with the definition of a concept that is central to all of Mathematics.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -30,17 +30,14 @@ A \textbf{set}\index{set ! definition of} is a well-defined collection of object
 
 %% \ebm}
 
-\medskip
+ 
 
 For example, the collection of letters that make up the word ``smolko'' is well-defined and is a set, but the collection of the worst Math teachers in the world is \textbf{not} well-defined and therefore is \textbf{not} a set.\footnote{For a more thought-provoking example, consider the collection of all things that do not contain themselves - this leads to the famous paradox known as \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\underline{Russell's Paradox}}.}  
 
-\smallskip
-
 In general, there are three ways to describe sets and those methods are listed below.
 
-\medskip
-
-\phantomsection \label{waystodescribesets}
+ 
+\label{waystodescribesets}
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -58,15 +55,9 @@ In general, there are three ways to describe sets and those methods are listed b
 
 %% \ebm}
 
-\medskip
-
 Let $S$ be the set described \textit{verbally} as the set of letters that make up the word ``smolko''.  A  \emph{roster} description of $S$ is $\left\{ s, m, o, l, k \right\}$. Note that we listed `o' only once, even though it appears twice in the word ``smolko''.  Also, the order of the elements doesn't matter, so $\left\{ k,  l,  m, o, s \right\}$ is also a roster description of $S$.  A \emph{set-builder} description of $S$ is: $\{ x \, | \, \mbox{$x$ is a letter in the word ``smolko''}\}$.  The way to read this is `The set of elements $x$ \underline{such that} $x$ is a letter in the word ``smolko''.'   In each of the above cases, we may use the familiar equals sign `$=$' and write  $S = \left\{ s, m, o, l, k \right\}$ or $S = \{ x \, | \, \mbox{$x$ is a letter in the word ``smolko''}\}$.  
 
-\smallskip
-
-Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$.  We express these ideas of set inclusion and exclusion mathematically using the symbols $m \in S$ (read `$m$ \underline{is in} $S$') and $q \notin S$ (read `$q$ \underline{is not in} $S$').  More precisely, we have the following.
-
-\medskip
+Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$.  We express these ideas of set inclusion and exclusion mathematically using the symbols $m \in S$ (read `$m$ \underline{is in} $S$') and $q \mathbb{N}otin S$ (read `$q$ \underline{is not in} $S$').  More precisely, we have the following.
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -76,7 +67,7 @@ Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$. 
 
 \item If $x$ is an element of $A$ then we write $x \in A$\index{set ! inclusion}\index{$\in$} which is read `$x$ is in $A$'.
 
-\item If $x$ is \emph{not} an element of $A$ then we write $x \notin A$\index{set ! exclusion}\index{$\notin$} which is read `$x$ is not in $A$'.
+\item If $x$ is \emph{not} an element of $A$ then we write $x \mathbb{N}otin A$\index{set ! exclusion}\index{$\mathbb{N}otin$} which is read `$x$ is not in $A$'.
 
 \end{itemize}
 
@@ -84,11 +75,11 @@ Notice that  $m$ is in $S$ but many other letters, such as $q$, are not in $S$. 
 
 %% \ebm}
 
-\medskip
+ 
 
 Now let's consider the set $C =  \{ x \, | \, \mbox{$x$ is a consonant in the word ``smolko''}\}$.  A roster description of $C$ is  $C = \{ s, m, l, k\}$.  Note that by construction, every element of $C$ is also in $S$.  We express this relationship by stating that the set $C$ is a \textbf{subset} of the set $S$, which is written in symbols as $C \subseteq S$.  The more formal definition is given at the top of the next page.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -100,11 +91,9 @@ Given sets $A$ and $B$, we say that the set $A$ is a \textbf{subset}\index{subse
 
 %% \ebm}
 
-\medskip
+In our previous example, $C \subseteq S$ yet not vice-versa since $o \in S$ but $o \mathbb{N}otin C$.  Additionally, the set of vowels $V = \{ a, e, i, o, u\}$, while it does have an element in common with $S$, is not a subset of $S$. (As an added note,  $S$ is not a subset of $V$, either.)  We could, however, \textit{build} a set which contains both $S$ and $V$ as subsets by gathering all of the elements in both $S$ and $V$ together into a single set, say $U = \{ s, m, o, l, k, a, e, i, u\}$.   Then $S \subseteq U$ and $V \subseteq U$.  The set $U$ we have built is called the \textbf{union} of the sets $S$ and $V$ and is denoted $S \cup V$.    Furthermore, $S$ and $V$ aren't completely \textit{different} sets since they both contain the letter `o.'  The \textbf{intersection} of two sets is the set of elements (if any) the two sets have in common. In this case, the intersection of $S$ and $V$ is $\{ o\}$, written $S \cap V = \{ o \}$.  We formalize these ideas below.
 
-In our previous example, $C \subseteq S$ yet not vice-versa since $o \in S$ but $o \notin C$.  Additionally, the set of vowels $V = \{ a, e, i, o, u\}$, while it does have an element in common with $S$, is not a subset of $S$. (As an added note,  $S$ is not a subset of $V$, either.)  We could, however, \textit{build} a set which contains both $S$ and $V$ as subsets by gathering all of the elements in both $S$ and $V$ together into a single set, say $U = \{ s, m, o, l, k, a, e, i, u\}$.   Then $S \subseteq U$ and $V \subseteq U$.  The set $U$ we have built is called the \textbf{union} of the sets $S$ and $V$ and is denoted $S \cup V$.    Furthermore, $S$ and $V$ aren't completely \textit{different} sets since they both contain the letter `o.'  The \textbf{intersection} of two sets is the set of elements (if any) the two sets have in common. In this case, the intersection of $S$ and $V$ is $\{ o\}$, written $S \cap V = \{ o \}$.  We formalize these ideas below.
-
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -122,31 +111,31 @@ In our previous example, $C \subseteq S$ yet not vice-versa since $o \in S$ but 
 
 %% \ebm}
 
-\medskip
+ 
 
 The key words in Definition \ref{intersectionunion} to focus on are the conjunctions:  `intersection' corresponds to `and' meaning the elements have to be in \textit{both} sets to be in the intersection, whereas `union' corresponds to `or' meaning the elements have to be in one set, or the other set (or both).  Please note that this mathematical use of the word `or' differs than how we use `or' in spoken English.  In Math, we use the \emph{inclusive or} which allows for the element to be in both sets.  At a restaurant if you're asked ``Do you want fries or a salad?'' you must pick one and only one.  This is known as the \emph{exclusive or} and it plays a role in other Math classes.  For our purposes it is good enough to say that for an element to belong to the union of two sets it must belong to \textit{at least one} of them.
 
-\smallskip
+ 
 
 Returning to the sets $C$ and $V$  above, $C \cup V = \{ s, m, l, k, a, e, i, o, u\}$.\footnote{Which just so happens to be the same set as $S \cup V$.}  Their intersection, however, creates a bit of notational awkwardness since $C$ and $V$ have no elements in common.  While we could write $C \cap V = \{ \}$, this sort of thing happens often enough that we give the set with no elements a name. 
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
 \begin{definition} \label{emptysetdefn}
 
-The \textbf{Empty Set} is the set which contains no elements and is denoted $\emptyset$.\index{set ! empty}\index{empty set}  That is, \[\emptyset=\{ \}=\{x\,|\,\mbox{$x \neq x$}\}.\]  
+The \textbf{Empty Set} is the set which contains no elements and is denoted $\emptyset$.\index{set ! empty}\index{empty set}  That is, \[\emptyset=\{ \}=\{x\,|\,\mbox{$x \mathbb{N}eq x$}\}.\]  
 
 \end{definition}
 
 %% \ebm}
 
-\medskip
+ 
 
 As promised, the empty set is the set containing no elements since no matter what `$x$' is, `$x = x$.'  Like the number `$0$,'  the empty set plays a vital role in mathematics.\footnote{Sadly, the full extent of the empty set's role will not be explored in this text.} We introduce it here more as a symbol of convenience as opposed to a contrivance\footnote{Actually, the empty set can be used to generate numbers -  mathematicians can create something from nothing!} because saying that $C \cap V = \emptyset$ is unambiguous whereas $\{ \}$ looks like a typographical error.    
 
-\medskip
+ 
 
 A nice way to visualize the relationships between sets and set operations is to draw a  \href{http://en.wikipedia.org/wiki/Venn_diagram}{\underline{\textbf{Venn Diagram}}}\index{diagram ! Venn Diagram}\index{Venn Diagram}.  A Venn Diagram for the sets $S$, $C$ and $V$ is drawn at the top of the next page.  
 
@@ -177,7 +166,7 @@ A Venn Diagram for $C$, $S$ and $V$.
 
 In the Venn Diagram above we have three circles - one for each of the sets $C$, $S$ and $V$.  We visualize the area enclosed by each of these circles as the elements of each set.  Here, we've spelled out the elements for definitiveness.  Notice that the circle representing the set $C$ is completely inside the circle representing $S$.  This is a geometric way of  showing that $C \subseteq S$.  Also, notice that the circles representing $S$ and $V$ overlap on the letter `o'.  This common region is how we visualize $S \cap V$.  Notice that since $C \cap V = \emptyset$, the circles which represent $C$ and $V$ have no overlap whatsoever.  
 
-\medskip
+ 
 
 All of these circles lie in a rectangle labeled $U$ for the `universal' set.  A universal set contains all of the elements under discussion, so it could always be taken as the union of all of the sets in question, or an even larger set.  In this case, we could take $U = S \cup V$ or $U$ as the set of letters in the entire alphabet.  The reader may well wonder if there is an ultimate universal set which contains \textit{everything}.  The short answer is `no' and we refer you once again to \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\underline{Russell's Paradox}}.  The usual triptych of Venn Diagrams indicating generic sets $A$ and  $B$ along with $A \cap B$ and $A \cup B$ is given below.
 
@@ -275,7 +264,7 @@ The one major limitation of Venn Diagrams is that they become unwieldy if more t
 
 The playground for most of this text is the set of \textbf{Real Numbers}.  Much of the ``real world'' can be quantified using real numbers: the temperature at a given time, the revenue generated by selling a certain number of products and the maximum population of Sasquatch which can inhabit a particular region are just three basic examples.   A succinct, but nonetheless incomplete\footnote{Math pun intended!} definition of a real number is given below.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -287,11 +276,11 @@ A \textbf{real number}\index{real number ! set of}\index{real number ! definitio
 
 %% \ebm}
 
-\medskip
+ 
 
 Certain subsets of the real numbers are worthy of note and are listed below.  In fact, in more advanced texts,\footnote{See, for instance, Landau's \underline{Foundations of Analysis}.}   the real numbers are \textit{constructed} from some of these subsets.  
 
-\medskip
+ 
 
 \phantomsection
 \label{setsofnumbersboxonthispage}
@@ -302,25 +291,25 @@ Certain subsets of the real numbers are worthy of note and are listed below.  In
 
 \begin{enumerate}
 
-\item The \textbf{Natural Numbers}:\index{natural number ! set of}\index{natural number ! definition of} $\N= \{ 1, 2, 3,  \ldots\}$ The periods of ellipsis `$\ldots$' here indicate that the natural numbers contain $1$, $2$, $3$ `and so forth'.
+\item The \textbf{Natural Numbers}:\index{natural number ! set of}\index{natural number ! definition of} $\mathbb{N}= \{ 1, 2, 3,  \ldots\}$ The periods of ellipsis `$\ldots$' here indicate that the natural numbers contain $1$, $2$, $3$ `and so forth'.
 
 \item The \textbf{Whole Numbers}:\index{whole number ! set of}\index{whole number ! definition of} $\W = \{ 0, 1, 2, \ldots \}.$
 
 \item The \textbf{Integers}:\index{integer ! set of}\index{integer ! definition of} $\mathbb Z=\{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \} = \{ 0, \pm 1, \pm 2, \pm 3, \ldots\}.$\footnote{The symbol $\pm$ is read `plus or minus' and it is a shorthand notation which appears throughout the text.  Just remember that $x = \pm 3$ means $x = 3$ or $x = -3$.}
 
-\item The \textbf{Rational Numbers}:\index{rational number ! set of}\index{rational number ! definition of} $\Q=\left\{\frac{a}{b} \, | \, a \in \mathbb Z \, \mbox{and} \, b \in \mathbb Z \, \mbox{where} \, b \neq 0\right\}$.  \underline{Ratio}nal numbers are the \underline{ratio}s of integers where the denominator is not zero.  It turns out that another way to describe the rational numbers\footnote{See Section \ref{Summation}.} is: \[\Q=\{x\,|\,\mbox{$x$ possesses a repeating or terminating decimal representation}\}\]
+\item The \textbf{Rational Numbers}:\index{rational number ! set of}\index{rational number ! definition of} $\Q=\left\{\frac{a}{b} \, | \, a \in \mathbb Z \, \mbox{and} \, b \in \mathbb Z \, \mbox{where} \, b \mathbb{N}eq 0\right\}$.  \underline{Ratio}nal numbers are the \underline{ratio}s of integers where the denominator is not zero.  It turns out that another way to describe the rational numbers\footnote{See Section \ref{Summation}.} is: \[\Q=\{x\,|\,\mbox{$x$ possesses a repeating or terminating decimal representation}\}\]
 
-\item The \textbf{Irrational Numbers}:\index{irrational number ! set of}\index{irrational number ! definition of} $\mathbb P = \{x\,|\,\mbox{$x \in \R$ but $x \notin \Q$}\}$.\footnote{Examples here include number $\pi$ (See Section \ref{AppAngles}), $\sqrt{2}$ and $0.101001000100001\ldots$.}  That is, an \underline{ir}rational number is a real number which isn't rational.  Said differently, \[\mathbb P = \{x\,|\,\mbox{$x$ possesses a decimal representation which neither repeats nor terminates}\}\]
+\item The \textbf{Irrational Numbers}:\index{irrational number ! set of}\index{irrational number ! definition of} $\mathbb P = \{x\,|\,\mbox{$x \in \R$ but $x \mathbb{N}otin \Q$}\}$.\footnote{Examples here include number $\pi$ (See Section \ref{AppAngles}), $\sqrt{2}$ and $0.101001000100001\ldots$.}  That is, an \underline{ir}rational number is a real number which isn't rational.  Said differently, \[\mathbb P = \{x\,|\,\mbox{$x$ possesses a decimal representation which neither repeats nor terminates}\}\]
 
 \end{enumerate}
 
 %% \ebm}
 
-\medskip
+ 
 
-Note that every natural number is a whole number which, in turn, is an integer.   Each integer is a rational number (take $b =1$ in the above definition for $\Q$) and since every rational number is a real number\footnote{Thanks to long division!}  the sets $\N$, $\W$, $\mathbb Z$, $\Q$, and  $\R$ are nested like \href{http://en.wikipedia.org/wiki/Matryoshka_doll}{\underline{Matryoshka dolls}}. More formally, these sets form a subset chain:  $\N \subseteq \W \subseteq \mathbb Z \subseteq \Q \subseteq \R$.  The reader is encouraged to sketch a Venn Diagram depicting $\R$ and all of the subsets mentioned above.  
+Note that every natural number is a whole number which, in turn, is an integer.   Each integer is a rational number (take $b =1$ in the above definition for $\Q$) and since every rational number is a real number\footnote{Thanks to long division!}  the sets $\mathbb{N}$, $\W$, $\mathbb Z$, $\Q$, and  $\R$ are nested like \href{http://en.wikipedia.org/wiki/Matryoshka_doll}{\underline{Matryoshka dolls}}. More formally, these sets form a subset chain:  $\mathbb{N} \subseteq \W \subseteq \mathbb Z \subseteq \mathbb{Q}\subseteq \R$.  The reader is encouraged to sketch a Venn Diagram depicting $\R$ and all of the subsets mentioned above.  
 
-\smallskip
+ 
 
 It is time to put all of this together in an example.
 
@@ -328,9 +317,9 @@ It is time to put all of this together in an example.
 
 \begin{enumerate}
 
-\item  Write a roster description for $P = \{ 2^{n} \, | \, n \in \N \}$  and $E = \{ 2n \, | \, n \in \mathbb Z \}$.
+\item  Write a roster description for $P = \{ 2^{n} \, | \, n \in \mathbb{N} \}$  and $E = \{ 2n \, | \, n \in \mathbb Z \}$.
 
-\item Write a verbal description for $S = \{ x^2 \, | \, x \in \R \}$.
+\item Write a verbal description for $S = \{ x^2 \, | \, x \in \mathbb{R}\}$.
 
 \item Let $A = \{-117, \frac{4}{5}, 0.20\overline{2002}, 0.202002000200002 \ldots\}$. 
 
@@ -342,7 +331,7 @@ It is time to put all of this together in an example.
 
 \end{enumerate}
 
-\item  What is another name for $\N \cup \Q$?  What about  $\Q \cup \mathbb P$?
+\item  What is another name for $\mathbb{N} \cup \Q$?  What about  $\mathbb{Q}\cup \mathbb P$?
 
 \end{enumerate}
 
@@ -350,15 +339,13 @@ It is time to put all of this together in an example.
 
 \begin{enumerate}
 
-\item  To find roster descriptions for each of these sets, we need to list their elements.   Starting with the set $P = \{ 2^{n} \, | \, n \in \N \}$, we substitute natural number values $n$ into the formula $2^n$.  For $n = 1$ we get $2^1 = 2$,  for $n = 2$ we get $2^2 = 4$, for $n = 3$ we get $2^3 = 8$ and for $n = 4$ we get $2^4 = 16$.  Hence  $P$ describes the powers of $2$, so a roster description for $P$ is $P = \{ 2, 4, 8, 16, \ldots \}$ where the `$\ldots$' indicates the that pattern continues.\footnote{This isn't the most \textit{precise} way to describe this set - it's always dangerous to use `$\ldots$' since we assume that the pattern is clearly demonstrated and thus made evident to the reader.  Formulas are more precise because the pattern is clear.}  
+\item  To find roster descriptions for each of these sets, we need to list their elements.   Starting with the set $P = \{ 2^{n} \, | \, n \in \mathbb{N} \}$, we substitute natural number values $n$ into the formula $2^n$.  For $n = 1$ we get $2^1 = 2$,  for $n = 2$ we get $2^2 = 4$, for $n = 3$ we get $2^3 = 8$ and for $n = 4$ we get $2^4 = 16$.  Hence  $P$ describes the powers of $2$, so a roster description for $P$ is $P = \{ 2, 4, 8, 16, \ldots \}$ where the `$\ldots$' indicates the that pattern continues.\footnote{This isn't the most \textit{precise} way to describe this set - it's always dangerous to use `$\ldots$' since we assume that the pattern is clearly demonstrated and thus made evident to the reader.  Formulas are more precise because the pattern is clear.}  
 
-\smallskip
+ 
 
 Proceeding in the same way, we generate elements in $E = \{ 2n \, | \, n \in \mathbb Z \}$ by plugging in integer values of $n$ into the formula $2n$.  Starting with $n = 0$ we obtain $2(0) = 0$.  For $n = 1$ we get $2(1) = 2$, for $n = -1$ we get $2(-1) = -2$ for $n = 2$, we get $2(2) = 4$ and for $n = -2$ we get $2(-2) = -4$.  As $n$  moves through the integers, $2n$ produces all of the \textit{even} integers.\footnote{This shouldn't be too surprising, since an even integer is \textit{defined} to be an integer multiple of $2$.} A roster description for  $E$ is $E = \{ 0, \pm 2, \pm 4, \ldots \}$.
 
-\item  One way to verbally describe $S$ is to say that $S$ is the `set of all squares of real numbers'.  While this isn't incorrect, we'd like to take this opportunity to delve a little deeper.\footnote{Think of this as an opportunity to stop and smell the mathematical roses.}  What makes the set $S = \{ x^2 \, | \, x \in \R \}$ a little trickier to wrangle than the sets $P$ or $E$ above is that the dummy variable here, $x$, runs through all \textit{real} numbers.  Unlike the natural numbers or the integers, the real numbers cannot be listed in any methodical way.\footnote{This is a nontrivial statement.  Interested readers are directed to a discussion of \href{http://en.wikipedia.org/wiki/Cantor's_diagonal_argument}{\underline{Cantor's Diagonal Argument}}.}  Nevertheless, we can select some real numbers, square them and get a sense of what kind of numbers lie in $S$.  For $x = -2$, $x^2 = (-2)^2 = 4$ so $4$ is in $S$, as are $\left(\frac{3}{2}\right)^2 = \frac{9}{4}$ and $(\sqrt{117})^2 = 117$.  Even things like $(-\pi)^2$ and $(0.101001000100001 \ldots)^2$ are in $S$.  
-
-\smallskip
+\item  One way to verbally describe $S$ is to say that $S$ is the `set of all squares of real numbers'.  While this isn't incorrect, we'd like to take this opportunity to delve a little deeper.\footnote{Think of this as an opportunity to stop and smell the mathematical roses.}  What makes the set $S = \{ x^2 \, | \, x \in \mathbb{R}\}$ a little trickier to wrangle than the sets $P$ or $E$ above is that the dummy variable here, $x$, runs through all \textit{real} numbers.  Unlike the natural numbers or the integers, the real numbers cannot be listed in any methodical way.\footnote{This is a nontrivial statement.  Interested readers are directed to a discussion of \href{http://en.wikipedia.org/wiki/Cantor's_diagonal_argument}{\underline{Cantor's Diagonal Argument}}.}  Nevertheless, we can select some real numbers, square them and get a sense of what kind of numbers lie in $S$.  For $x = -2$, $x^2 = (-2)^2 = 4$ so $4$ is in $S$, as are $\left(\frac{3}{2}\right)^2 = \frac{9}{4}$ and $(\sqrt{117})^2 = 117$.  Even things like $(-\pi)^2$ and $(0.101001000100001 \ldots)^2$ are in $S$.  
 
 So suppose $s \in S$.  What can be said about $s$?  We know there is some real number $x$ so that $s = x^2$.  Since $x^2 \geq 0$ for any real number $x$, we know $s \geq 0$.  This tells us that everything in $S$ is a non-negative real number.\footnote{This means $S$ is a subset of the non-negative real numbers.}  This begs the question:  are \underline{all} of the non-negative real numbers in $S$?  Suppose $n$ is a non-negative real number, that is, $n \geq 0$.  If $n$ were in $S$, there would be a real number $x$ so that $x^2=n$.  As you may recall, we can solve $x^2 = n$ by `extracting square roots':  $x = \pm \sqrt{n}$.  Since $n \geq 0$, $\sqrt{n}$ is a real number.\footnote{This is called the `square root closed property' of the non-negative real numbers.}  Moreover, $(\sqrt{n})^2 = n$ so $n$ is the square of a real number which means $n \in S$. Hence, $S$ is the set of non-negative real numbers.
 
@@ -370,7 +357,7 @@ So suppose $s \in S$.  What can be said about $s$?  We know there is some real n
 
 \end{enumerate}
 
-\item  The set $\N \cup \Q = \{ x \, | \, \text{$x \in \N$ or $x \in \Q$} \}$ is the union of the set of natural numbers with the set of rational numbers.  Since every natural number is a rational number, $\N$ doesn't contribute any new elements to $\Q$, so $\N \cup \Q = \Q$.\footnote{In fact, anytime $A \subseteq B$, $A \cup B = B$ and vice-versa.  See the exercises.}  For the  set $\Q \cup \mathbb P$, we note that every real number is either rational or not, hence $\Q \cup \mathbb P = \R$, pretty much by the definition of the set $\mathbb P$.  \qed
+\item  The set $\mathbb{N} \cup \mathbb{Q}= \{ x \, | \, \text{$x \in \mathbb{N}$ or $x \in \Q$} \}$ is the union of the set of natural numbers with the set of rational numbers.  Since every natural number is a rational number, $\mathbb{N}$ doesn't contribute any new elements to $\Q$, so $\mathbb{N} \cup \mathbb{Q}= \Q$.\footnote{In fact, anytime $A \subseteq B$, $A \cup B = B$ and vice-versa.  See the exercises.}  For the  set $\mathbb{Q}\cup \mathbb P$, we note that every real number is either rational or not, hence $\mathbb{Q}\cup \mathbb P = \R$, pretty much by the definition of the set $\mathbb P$.  \qed
 
 
 \end{enumerate}
@@ -399,7 +386,7 @@ The real number line with two numbers $a$ and $b$ where $a < b$.
 
 While this notion seems innocuous, it is worth pointing out that this convention is rooted in two deep properties of real numbers.  The first property is that $\R$ is  \href{http://en.wikipedia.org/wiki/Complete_metric_space}{\underline{complete}}. This means that there are no `holes' or `gaps' in the real number line.\footnote{Alas, this intuitive feel for what it means to be `complete' is as good as it gets at this level.  Completeness is given a much more precise meaning later in courses like Analysis and Topology.} Another way to think about this is that if you choose any two distinct (different) real numbers, and look between them, you'll find a solid line segment (or interval) consisting of infinitely many real numbers.  The next result tells us what types of numbers we can expect to find.
 
-\medskip
+ 
 
 \phantomsection
 \label{densityofqandp}
@@ -412,15 +399,15 @@ Between any two distinct real numbers, there is at least one rational number and
 
 %% \ebm}
 
-\medskip
+ 
 
 The root word `dense' here communicates the idea that rationals and irrationals are `thoroughly mixed' into $\R$.   The reader is encouraged to think about how one would find both a rational and an irrational number between, say, $0.9999$ and $1$. Once you've done that, try doing the same thing for the numbers $0.\overline{9}$ and $1$. (`Try' is the operative word, here.\footnote{Again, see Section \ref{Summation} for details.})
 
-\smallskip
+ 
 
 The second property $\R$ possesses that lets us view it as a line is that the set is \href{http://en.wikipedia.org/wiki/Total_order}{\underline{totally ordered}}. This means that given any two real numbers $a$ and $b$, either $a < b$, $a > b$ or $a = b$ which allows us to arrange the numbers from least (left) to greatest (right). This property is given below.\index{trichotomy}
 
-\medskip
+ 
 
 \phantomsection
 \label{trichotomy}
@@ -433,7 +420,7 @@ If $a$ and $b$ are real numbers then exactly one of the following statements is 
 
 %% \ebm}
 
-\medskip
+ 
 
 Segments of the real number line are called \textbf{intervals}.\index{interval ! definition of}  They play a huge role not only in this text but also in the Calculus curriculum so we need a concise way to describe them.  We start by examining a few examples of the \textbf{interval notation}\index{interval ! notation for} associated with some specific sets of numbers.  
 
@@ -520,15 +507,15 @@ As you can glean from the table, for intervals with finite endpoints we start by
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \centerline{\textbf{Interval Notation}}
 
-\medskip
+ 
 
 \hspace{.5in} Let $a$ and $b$ be real numbers with $a<b$.
 
-\smallskip
+ 
 
 \begin{center}
 
@@ -687,20 +674,20 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 
 \end{center}
 
-\smallskip
+ 
 \vspace{-.1in}
 
 %% \ebm}
 
-\medskip
+ 
 
 Intervals of the forms $(a, b), (-\infty, b)$ and $(a, \infty)$ are said to be {\bf open} intervals.\index{interval ! open}\index{open interval}  Those of the forms $[a, b], (-\infty, b]$ and $[a, \infty)$ are said to be {\bf closed} intervals.\index{interval ! closed}\index{closed interval}  
 
-\medskip
+ 
 
 Unfortunately, the words `open' and `closed' are not antonyms here because the empty set $\emptyset$ and the set $(-\infty, \infty)$ are simultaneously open and closed\footnote{You don't need to worry about that fact until you take an advanced course in Topology.} while the intervals $(a, b]$ and $[a, b)$ are neither open nor closed.  The inclusion or exclusion of an endpoint might seem like a terribly small thing to fuss about but these sorts of technicalities in the language become important in Calculus so we feel the need to put this material in the Precalculus book.
 
-\medskip
+ 
 %\enlargethispage{.25in}
 
 We close this section with an example that ties together some of the concepts presented earlier.  Specifically, we demonstrate how to use interval notation along with the concepts of union and intersection to describe a variety of sets on the real number line.  In many sections of the text to come you will need to be fluent with this notation so take the time to study it deeply now.
@@ -731,7 +718,7 @@ We close this section with an example that ties together some of the concepts pr
 
 \setcounter{enumii}{\value{HW}}
 
-\item  $\{ x \, | \, x \neq \pm 3 \}$
+\item  $\{ x \, | \, x \mathbb{N}eq \pm 3 \}$
 
 \item  $\{ x \, | \, -1 < x \leq 3 \,\, \text{or} \,\, x = 5\}$
 
@@ -792,7 +779,7 @@ $(-\infty, -2] \cup [2, \infty)$
 
 \end{center}
 
-\item  For the set $\{ x \, | \, x \neq \pm 3 \}$, we proceed as before and exclude both $x=3$ and $x=-3$ from our set. (Refer back to page \pageref{setsofnumbersboxonthispage} for a discussion about $x = \pm 3$)  This breaks the number line into \textit{three} intervals, $(-\infty, -3)$, $(-3,3)$ and $(3, \infty)$.   Since the set describes real numbers which come from the first, second \textit{or} third interval, we have $\{ x \, | \, x \neq \pm 3 \} = (-\infty, -3) \cup (-3,3) \cup (3, \infty)$.
+\item  For the set $\{ x \, | \, x \mathbb{N}eq \pm 3 \}$, we proceed as before and exclude both $x=3$ and $x=-3$ from our set. (Refer back to page \pageref{setsofnumbersboxonthispage} for a discussion about $x = \pm 3$)  This breaks the number line into \textit{three} intervals, $(-\infty, -3)$, $(-3,3)$ and $(3, \infty)$.   Since the set describes real numbers which come from the first, second \textit{or} third interval, we have $\{ x \, | \, x \mathbb{N}eq \pm 3 \} = (-\infty, -3) \cup (-3,3) \cup (3, \infty)$.
 
 
 \begin{center}
@@ -837,7 +824,7 @@ $(-\infty, -2] \cup [2, \infty)$
 
 \item  We start by graphing $A = [-5,3)$ and $B = (1, \infty)$ on the number line.  To find $A\cap B$, we need to find the numbers common to both $A$ and $B$; in other words, we need to find the overlap of the two intervals.  Clearly, everything between $1$ and $3$ is in both $A$ and $B$.  However, since $1$ is in $A$ but not in $B$, $1$ is not in the intersection.  Similarly, since $3$ is in $B$ but not in $A$, it isn't in the intersection either.  Hence, $A \cap B = (1,3)$.  
 
-\medskip
+ 
 
 To find $A \cup B$, we need to find the numbers in at least one of $A$ or $B$.  Graphically, we shade $A$ and $B$ along with it.   Notice here that even though $1$ isn't in $B$, it is in $A$, so it's in the union along with all of the other elements of $A$ between $-5$ and $1$.  A similar argument goes for the inclusion of $3$ in the union.  The result of shading both $A$ and $B$ together gives us $A \cup B = [-5,\infty)$.
 
@@ -897,7 +884,7 @@ To find $A \cup B$, we need to find the numbers in at least one of $A$ or $B$.  
 
 \end{example}
 
-\newpage
+\mathbb{N}ewpage
 
 \subsection{Exercises}
 
