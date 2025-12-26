@@ -2,38 +2,42 @@
 
 \begin{document}
 	\author{Stitz-Zeager}
-	\xmtitle{Exercises for App Cartesian Plane}{}
+	\xmtitle{Exercises for Cartesian Plane}{}
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforAppCartesianPlane} % mfpic settings added 
 
 
 \label{ExercisesforAppCartesianPlane}
 
-\begin{enumerate}
-%\setcounter{enumi}{\value{HW}}
-
-\item Plot and label the points $\;A(-3, -7)$,  $\;B(1.3, -2)$,  $\;C(\pi, \sqrt{10})$,  $\;D(0, 8)$,  $\;E(-5.5, 0)$,  $\;F(-8, 4)$, $\;G(9.2, -7.8)$ and $H(7, 5)$ in the Cartesian Coordinate Plane given below. 
- 
-\label{cartexerciseone}
+\begin{problem}\label{cartexerciseone}
+Plot and label the points $\;A(-3, -7)$,  $\;B(1.3, -2)$,  $\;C(\pi, \sqrt{10})$,  $\;D(0, 8)$,  $\;E(-5.5, 0)$,  $\;F(-8, 4)$, $\;G(9.2, -7.8)$ and $H(7, 5)$ in the Cartesian Coordinate Plane given below. 
 
 \begin{center}
+\begin{tikzpicture}[scale=0.6]
 
-\begin{mfpic}[15]{-10}{10}{-10}{10}
-\axes
-\tlabel[cc](10,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
-\ymarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-9 \hspace{7pt}$} -9, {$-8 \hspace{7pt}$} -8, {$-7 \hspace{7pt}$} -7, {$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\axislabels {y}{{$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\normalsize
-\end{mfpic}
+% Axes
+\draw[->] (-10,0) -- (10.5,0) node[right] {\scriptsize $x$};
+\draw[->] (0,-10) -- (0,10.5) node[above] {\scriptsize $y$};
 
+% Tick marks and labels on x-axis
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {\scriptsize $\x$};
+}
+
+% Tick marks and labels on y-axis
+\foreach \y in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {\scriptsize $\y$};
+}
+
+\end{tikzpicture}
 \end{center}
 
-\item \label{quadsymmpointexercise} For each point given in Exercise \ref{cartexerciseone} above
+\end{problem}
+
+\begin{problem}
+    \label{quadsymmpointexercise} For each point given in Exercise \ref{cartexerciseone} above
 
 \begin{itemize}
 \item Identify the quadrant or axis in/on which the point lies.
@@ -42,79 +46,71 @@
 \item Find the point symmetric to the given point about the origin.
 
 \end{itemize}
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-
-\end{enumerate}
-
+\begin{question}
 In Exercises \ref{distmidfirst} - \ref{distmidlast}, find the distance $d$ between the points and the midpoint $M$ of the line segment which connects them.
 
+\begin{problem}\label{distmidfirst}
+$(1,2)$, $(-3,5)$
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(3, -10)$, $(-1, 2)$
+\end{problem}  
 
-\item $(1,2)$, $(-3,5)$ \label{distmidfirst}
-\item $(3, -10)$, $(-1, 2)$ 
+\begin{problem}
+$\left( \dfrac{1}{2}, 4\right)$, $\left(\dfrac{3}{2}, -1\right)$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$\left(- \dfrac{2}{3}, \dfrac{3}{2} \right)$, $\left(\dfrac{7}{3}, 2\right)$ 
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\item  
+\item 
 
-\item $\left( \dfrac{1}{2}, 4\right)$, $\left(\dfrac{3}{2}, -1\right)$ 
-\item $\left(- \dfrac{2}{3}, \dfrac{3}{2} \right)$, $\left(\dfrac{7}{3}, 2\right)$ 
+\begin{problem}
+$\left( \dfrac{24}{5}, \dfrac{6}{5} \right)$, $\left( -\dfrac{11}{5}, -\dfrac{19}{5} \right)$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$\left(\sqrt{2}, \sqrt{3}\right)$, $\left(-\sqrt{8}, -\sqrt{12}\right)$ $\left( \dfrac{6}{5} \right)$
+\end{problem}
 
+\begin{problem}
+$\left(2 \sqrt{45}, \sqrt{12} \right)$, $\left(\sqrt{20}, \sqrt{27} \right)$. 
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{distmidlast}
+$\left(-\dfrac{\sqrt{3}}{2}, \dfrac{1}{2} \right)$, $\left(\dfrac{\sqrt{3}}{2}, -\dfrac{1}{2} \right)$
+\end{problem}
 
-\item  $\left( \dfrac{24}{5}, \dfrac{6}{5} \right)$, $\left( -\dfrac{11}{5}, -\dfrac{19}{5} \right)$.
-\item $\left(\sqrt{2}, \sqrt{3}\right)$, $\left(-\sqrt{8}, -\sqrt{12}\right)$ \vphantom{$\left( \dfrac{6}{5} \right)$}
+\end{question}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+Let's assume that we are standing at the origin and the positive $y$-axis points due North while the positive $x$-axis points due East.  Our Sasquatch-o-meter tells us that Sasquatch is 3 miles West and 4 miles South of our current position.  What are the coordinates of his position?  How far away is he from us?  If he runs 7 miles due East what would his new position be?
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $\left(2 \sqrt{45}, \sqrt{12} \right)$, $\left(\sqrt{20}, \sqrt{27} \right)$. \vphantom{$\left(-\dfrac{\sqrt{3}}{2}, \dfrac{1}{2} \right)$, $\left(\dfrac{\sqrt{3}}{2}, -\dfrac{1}{2} \right)$ }
-\item $\left(-\dfrac{\sqrt{3}}{2}, \dfrac{1}{2} \right)$, $\left(\dfrac{\sqrt{3}}{2}, -\dfrac{1}{2} \right)$ \label{distmidlast}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item Let's assume that we are standing at the origin and the positive $y$-axis points due North while the positive $x$-axis points due East.  Our Sasquatch-o-meter tells us that Sasquatch is 3 miles West and 4 miles South of our current position.  What are the coordinates of his position?  How far away is he from us?  If he runs 7 miles due East what would his new position be?
-
-\item \label{distanceothercases} Verify the Distance Formula \ref{distanceformula} for the cases when:
+\begin{problem}\label{distanceothercases} Verify the Distance Formula \ref{distanceformula} for the cases when:
 
 \begin{enumerate}
 
-\item The points are arranged vertically.  (Hint: Use $P(a, y_{\mbox{\tiny$0$}})$ and $Q(a, y_{\mbox{\tiny$1$}})$.)
-\item The points are arranged horizontally. (Hint: Use $P(x_{\mbox{\tiny$0$}}, b)$ and $Q(x_{\mbox{\tiny$1$}}, b)$.)
+\item The points are arranged vertically.  (Hint: Use $P(a, y_0)$ and $Q(a, y_1)$.)
+\item The points are arranged horizontally. (Hint: Use $P(x_0, b)$ and $Q(x_1, b)$.)
 \item The points are actually the same point. (You shouldn't need a hint for this one.)
 
 \end{enumerate}
+\end{problem}
 
-\item \label{verifymidpointformula} Verify the Midpoint Formula by showing the distance between $P(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$ and $M$ and the distance between $M$ and $Q(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$ are both half of the distance between $P$ and $Q$. 
+\begin{problem}\label{verifymidpointformula} 
+Verify the Midpoint Formula by showing the distance between $P(x_1, y_1)$ and $M$ and the distance between $M$ and $Q(x_2, y_2)$ are both half of the distance between $P$ and $Q$. 
+\end{problem}
 
-\item Show that the points $A$, $\;B$ and $C$ below are the vertices of a right triangle.
+\begin{problem}
+Show that the points $A$, $\;B$ and $C$ below are the vertices of a right triangle.
+\end{problem}
 
-\begin{multicols}{2}
 
 \begin{enumerate}
 
@@ -122,21 +118,24 @@ In Exercises \ref{distmidfirst} - \ref{distmidlast}, find the distance $d$ betwe
 
 \item   $A(-3, 1)$, $\;B(4, 0)$ and $C(0, -3)$
 
-
 \end{enumerate}
-\end{multicols}
 
-\item Find a point $D(x, y)$ such that the points $A(-3, 1). \, B(4, 0), \, C(0, -3)$ and $D$ are the corners of a square.  Justify your answer.
+\begin{problem}
+Find a point $D(x, y)$ such that the points $A(-3, 1). \, B(4, 0), \, C(0, -3)$ and $D$ are the corners of a square.  Justify your answer.
+\end{problem}
 
-\item  Suppose the distance between  $C(h,k)$ and $P(x,y)$ is $r$.  Use the distance formula to show \[(x-h)^2 + (y-k)^2 = r^2\]
+\begin{problem}
+Suppose the distance between  $C(h,k)$ and $P(x,y)$ is $r$.  Use the distance formula to show \[(x-h)^2 + (y-k)^2 = r^2\]
 
 We will see this formula (and its cousins) in Chapter \ref{TheConicSections}.
+\end{problem}
 
+\begin{problem}
+Let $P(x,y)$ be a point in the plane and let $Q$ be the result of reflecting $P$ about the $x$-axis, $y$-axis, or origin.  Show the distance from the origin to $P$ is the same as the distance from the origin to $Q$.  
+\end{problem}
 
-\item  Let $P(x,y)$ be a point in the plane and let $Q$ be the result of reflecting $P$ about the $x$-axis, $y$-axis, or origin.  Show the distance from the origin to $P$ is the same as the distance from the origin to $Q$.  
-
-
-\item \label{scalingdistance} Let $O(0,0)$ (that is, $O$ is the origin),  $P(-2,1)$, $Q(-4,2)$, and $R(6,-3)$.  
+\begin{problem}\label{scalingdistance}
+Let $O(0,0)$ (that is, $O$ is the origin),  $P(-2,1)$, $Q(-4,2)$, and $R(6,-3)$.  
 
 \begin{enumerate}
 
@@ -147,9 +146,10 @@ We will see this formula (and its cousins) in Chapter \ref{TheConicSections}.
 \item  For a generic point $P(x,y)$, let $Q(kx, ky)$ be the point obtained from $P$ by multiplying both the $x$ and $y$ coordinates of $P$ by the same number, $k$.  Show the distance from $O$ to $Q$ is exactly $|k|$ times the distance from $O$ to $P$.  Explain what these results mean geometrically. (We'll revisit this in Theorem \ref{magdirprops} in Section \ref{Vectors}.)
 
 \end{enumerate}
+\end{problem}
 
-
-\item \label{distancemetricprops} In this exercise, we explore some of the properties of distance.  For brevity, we'll adopt the notation `$d(P,Q)$' to denote the distance between points $P$ and $Q$.
+\begin{problem}\label{distancemetricprops}
+In this exercise, we explore some of the properties of distance.  For brevity, we'll adopt the notation `$d(P,Q)$' to denote the distance between points $P$ and $Q$.
 \begin{enumerate}  
 
 \item  (Non-negative Property) Explain why $d(P,Q) \geq 0$ for any two points in the plane.
@@ -176,58 +176,64 @@ We will see this formula (and its cousins) in Chapter \ref{TheConicSections}.
 Under what conditions does $d(P,R) = d(P,Q) + d(Q,R)$?
 
 \end{enumerate} 
+\end{problem}
+
+\begin{problem}\label{taxidistance}
+(Another way to measure distance.) In this text, we defined the distance between two points as the length of the line segment connecting the two points.  Depending on the situation, however, there may be better ways to describe how far one location is from another.  Consider the situation below on the left.  Suppose $P$ and $Q$ are locations on a city grid, and a taxi is hailed at point $P$ to travel to point $Q$.  In this situation, diagonal movement is impossible,\footnote{Maybe `discouraged' or `difficult' would be better word choices.} so the taxi is limited to traveling horizontally and vertically. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+
+% ---------- Left grid ----------
+\draw[gray!70] (0,0.75) -- (0,3.25);
+\draw[gray!70] (1,0.75) -- (1,3.25);
+\draw[gray!70] (2,0.75) -- (2,3.25);
+\draw[gray!70] (3,0.75) -- (3,3.25);
+
+\draw[gray!70] (0,1) -- (3.25,1);
+\draw[gray!70] (0,2) -- (3.25,2);
+\draw[gray!70] (0,3) -- (3.25,3);
+
+% Points
+\fill (0,1) circle (2pt);
+\fill (3,3) circle (2pt);
+
+% Labels
+\node[below] at (0,0.25) {\scriptsize $P(x_0,y_0)$};
+\node[above] at (3,3.75) {\scriptsize $Q(x_1,y_1)$};
+
+% ---------- Right grid ----------
+\draw[gray!70] (10,0.75) -- (10,3.25);
+\draw[gray!70] (11,0.75) -- (11,3.25);
+\draw[gray!70] (12,0.75) -- (12,3.25);
+\draw[gray!70] (13,0.75) -- (13,3.25);
+
+\draw[gray!70] (10,1) -- (13.25,1);
+\draw[gray!70] (10,2) -- (13.25,2);
+\draw[gray!70] (10,3) -- (13.25,3);
+
+% Points
+\fill (10,1) circle (2pt);
+\fill (13,3) circle (2pt);
+\fill (13,1) circle (2pt);
+
+% Labels
+\node[below] at (11.5,0.25) {\scriptsize $|x_1-x_0|$};
+\node[right] at (14.25,2) {\scriptsize $|y_1-y_0|$};
+\node[below] at (10,0.5) {\scriptsize $P$};
+\node[above] at (13,3.5) {\scriptsize $Q$};
+
+% Distance arrows
+\draw[<->] (10.1,1) -- (12.9,1);
+\draw[<->] (13,1.1) -- (13,2.9);
+
+\end{tikzpicture}
+\end{center}
 
 
+From the diagram, we see the horizontal distance  is $\left|x_1 - x_0\right|$ and the vertical distance is $\left|y_1 - y_0\right|$, so the total distance the taxi needs to travel to get from $P$ to $Q$ is given by:
 
-\item \label{taxidistance} (Another way to measure distance.) In this text, we defined the distance between two points as the length of the line segment connecting the two points.  Depending on the situation, however, there may be better ways to describe how far one location is from another.  Consider the situation below on the left.  Suppose $P$ and $Q$ are locations on a city grid, and a taxi is hailed at point $P$ to travel to point $Q$.  In this situation, diagonal movement is impossible,\footnote{Maybe `discouraged' or `difficult' would be better word choices.} so the taxi is limited to traveling horizontally and vertically.  
-
-\hspace{.8in} \begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-
-\drawcolor[gray]{0.7}
-
-\drawcolor[gray]{0.7}
-\polyline{(0,0.75), (0,3.25)}
-\polyline{(1,0.75), (1,3.25)}
-\polyline{(2,0.75), (2,3.25)}
-\polyline{(3,0.75), (3,3.25)}
-\polyline{(0,1), (3.25,1)}
-\polyline{(0,2), (3.25,2)}
-\polyline{(0,3), (3.25,3)}
-\point[3pt]{(0,1), (3,3)}
-\tlabel[cc](0,0.25){\scriptsize $P\left(x_{\mbox{\tiny$0$}}, y_{\mbox{\tiny$0$}}\right)$}
-\tlabel[cc](3,3.75){\scriptsize $Q\left(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}}\right)$}
-
-\end{mfpic} & 
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-
-\drawcolor[gray]{0.7}
-\polyline{(0,0.75), (0,3.25)}
-\polyline{(1,0.75), (1,3.25)}
-\polyline{(2,0.75), (2,3.25)}
-\polyline{(3,0.75), (3,3.25)}
-\polyline{(0,1), (3.25,1)}
-\polyline{(0,2), (3.25,2)}
-\polyline{(0,3), (3.25,3)}
-\point[3pt]{(0,1), (3,3), (3,1)}
-\tlabel[cc](1.5,0.25){\scriptsize $\left|x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}\right|$}
-\tlabel[cc](4.25,2){\scriptsize $\left|y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}\right|$}
-\tlabel[cc](0,0.5){\scriptsize $P$}
-\tlabel[cc](3,3.5){\scriptsize $Q$}
-\drawcolor[gray]{0.0}
-\arrow \reverse \arrow \polyline{(0.1,1), (2.9,1)}
-\arrow \reverse \arrow \polyline{(3,1.1), (3,2.9)}
-
-\end{mfpic} \\ 
-
-\end{tabular}
-
-\medskip
-
-From the diagram, we see the horizontal distance  is $\left|x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}\right|$ and the vertical distance is $\left|y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}\right|$, so the total distance the taxi needs to travel to get from $P$ to $Q$ is given by:
-
-\[ d_{T} =  \left|x_{\mbox{\tiny$1$}} - x_{\mbox{\tiny$0$}}\right| + \left|y_{\mbox{\tiny$1$}} - y_{\mbox{\tiny$0$}}\right| \]
+\[ d_{T} =  \left|x_1 - x_0\right| + \left|y_1 - y_0\right| \]
 
 We call $d_{T}$ the `taxi distance' from $P$ to $Q$.  
 
@@ -242,12 +248,12 @@ We call $d_{T}$ the `taxi distance' from $P$ to $Q$.
 \item Think about ways to define a `midpoint' using the taxi distance.  What would your formula be?  To help you get started, play around with the origin $(0,0)$ as one point and the point $(4,2)$ as the other.
 
 \end{enumerate}
+\end{problem}
 
+\begin{problem}\label{orderedtripleexercise}
+The world is not flat.\footnote{There are those who disagree with this statement.  Look them up on the Internet some time when you're bored.}  Thus the Cartesian Plane cannot possibly be the end of the story.  Discuss with your classmates how you would extend Cartesian Coordinates to represent the three dimensional world.  What would the Distance and Midpoint formulas look like, assuming those concepts make sense at all?
+\end{problem}
 
-\item \label{orderedtripleexercise} The world is not flat.\footnote{There are those who disagree with this statement.  Look them up on the Internet some time when you're bored.}  Thus the Cartesian Plane cannot possibly be the end of the story.  Discuss with your classmates how you would extend Cartesian Coordinates to represent the three dimensional world.  What would the Distance and Midpoint formulas look like, assuming those concepts make sense at all?
-
-\end{enumerate}
-
-
+ 
 
 \end{document}
