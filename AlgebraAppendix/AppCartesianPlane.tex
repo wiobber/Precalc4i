@@ -18,73 +18,88 @@
 In order to visualize the pure excitement that is Precalculus, we need to unite Algebra and Geometry.  Simply put, we must find a way to draw algebraic things.  Let's start with possibly the greatest mathematical achievement of all time: the \index{Cartesian coordinate plane} \textbf{Cartesian Coordinate Plane}.\footnote{So named in honor of \href{http://en.wikipedia.org/wiki/Descartes}{\underline{Ren\'{e} Descartes}}.}  Imagine two real number lines crossing at a right angle at $0$ as drawn below.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.6]
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+% Axes
+\draw[->] (-10,0) -- (10.5,0) node[right] {\scriptsize $x$};
+\draw[->] (0,-10) -- (0,10.5) node[above] {\scriptsize $y$};
 
+% Tick marks and labels on x-axis
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {\scriptsize $\x$};
+}
+
+% Tick marks and labels on y-axis
+\foreach \y in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {\scriptsize $\y$};
+}
+
+\end{tikzpicture}
 \end{center}
-
-\medskip
 
 The horizontal number line is usually called the \index{$x$-axis} \textbf{\boldmath $x$-axis} while the vertical number line is usually called the \index{$y$-axis} \textbf{\boldmath $y$-axis}. As with things in the `real' world, however, it's best not to get too caught up with labels. Think of $x$ and $y$ as generic label placeholders, in much the same way as the variables $x$ and $y$ are placeholders for real numbers.  The letters we choose to identify with the axes depend on the context.  For example, if we were plotting the relationship between time and the number of Sasquatch sightings, we might label the horizontal axis as the $t$-axis (for `time') and the vertical axis the $N$-axis (for `number' of sightings.)  As with the usual number line, we imagine these axes extending off indefinitely in both directions.\footnote{Usually extending off  towards infinity is indicated by arrows, but here, the arrows are used to indicate the \textit{direction} of increasing values of $x$ and $y$.}
   Having two number lines allows us to locate the positions of points off of the number lines as well as points on the lines themselves.  
 
-\medskip
+ 
 
 For example, consider the point $P$ on the next page.  To use the numbers on the axes to label this point, we imagine dropping a vertical line from the $x$-axis to $P$ and extending a horizontal line from the $y$-axis to $P$.  This process is sometimes called `projecting' the point $P$ to the $x$- (respectively $y$-) axis.  We then describe the point $P$ using the \index{ordered pair} \textbf{ordered pair} $(2,-4)$.  The first number in the ordered pair is called the \index{abscissa} \textbf{abscissa} or \index{$x$-coordinate} \textbf{\boldmath $x$-coordinate} and the second is called the \index{ordinate} \textbf{ordinate} or \index{$y$-coordinate} \textbf{\boldmath $y$-coordinate}.  Again, the names of the coordinates can vary depending on the context of the application. If, as in the previous paragraph, the horizontal axis represented time and the vertical axis represented the number of Sasquatch sightings, the first coordinate would be called the $t$-coordinate and the second coordinate would be the $N$-coordinate. What's important is that we maintain the convention that the abscissa (first coordinate) always corresponds to the horizontal position, while the ordinate (second coordinate) always corresponds to the vertical position.  Taken together, the ordered pair $(2,-4)$ comprise the \index{coordinates ! Cartesian}\index{Cartesian coordinates}\textbf{Cartesian coordinates}\footnote{Also called the `rectangular coordinates' of $P$ -- see Section \ref{PolarCoordinates} for more details.} of the point $P$. 
 
-\medskip
-
 In practice, the distinction between a point and its coordinates is blurred; for example, we often speak of `the point $(2,-4)$'.  We can think of $(2,-4)$ as instructions on how to reach $P$ from the \index{origin} {\bf origin} $(0, 0)$ by moving $2$ units to the right and $4$ units downwards.  Notice that the order in the \underline{ordered} pair is important, as are the signs of the numbers in the pair. If we wish to plot the point $(-4,2)$, we would move to the left $4$ units from the origin and then move upwards $2$ units, as below on the right.
 
-\medskip
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
 
-\hspace{.1in} \begin{tabular}{m{3in}m{3in}}
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\gfill \circle{(2,-4),0.1}
-\tlabel[cc](2.5,-4){\scriptsize $P$}
-\dashed \polyline{(2,0),(2,-4),(0,-4)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} &
+% Axes
+\draw[->] (-5,0) -- (5,0) node[right] {\scriptsize $x$};
+\draw[->] (0,-5) -- (0,5) node[above] {\scriptsize $y$};
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\gfill \circle{(2,-4),0.1}
-\tlabel[cc](3.5,-4){\scriptsize $P(2, -4)$}
-\dashed \polyline{(2,0),(2,-4),(0,-4)}
-\gfill \circle{(-4,2),0.1}
-\tlabel[cc](-4,2.5){\scriptsize $(-4,2)$}
-\dashed \polyline{(-4,0),(-4,2),(0,2)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\end{mfpic} \\
+% Tick marks and labels on x-axis
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {\scriptsize $\x$};
+}
 
-\end{tabular}
+% Tick marks and labels on y-axis
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {\scriptsize $\y$};
+}
+
+% Dotted lines and point P
+\draw[dotted] (2,0) -- (2,-4);
+\draw[dotted] (0,-4) -- (2,-4);
+\node[fill,circle,inner sep=1pt,label=right:{\scriptsize $P$}] at (2,-4){}; 
+
+
+% ---------- Right grid ----------
+% Axes
+\draw[->] (10,0) -- (20,0) node[right] {\scriptsize $x$};
+\draw[->] (15,-5) -- (15,5) node[above] {\scriptsize $y$};
+
+% Tick marks and labels on x-axis
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x+15,0.15) -- (\x+15,-0.15);
+  \node[below] at (\x+15,-0.15) {\scriptsize $\x$};
+}
+
+% Tick marks and labels on y-axis
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (15.15,\y) -- (15-0.15,\y);
+  \node[left] at (15-0.15,\y) {\scriptsize $\y$};
+}
+
+% Dotted lines and point P
+\draw[dotted] (17,0) -- (17,-4);
+\draw[dotted] (15,-4) -- (17,-4);
+\node[fill,circle,inner sep=1pt,label=right:{\scriptsize $P (2,-4)$} ] at (17,-4){}; 
+\draw[dotted] (11,0) -- (11,2);
+\draw[dotted] (11,2) -- (15,2);
+\node[fill,circle,inner sep=1pt,label=left:{\scriptsize $(-4,2)$} ] at (11,2){}; 
+
+\end{tikzpicture}
+\end{center}
 
 When we speak of the Cartesian Coordinate Plane, we mean the set of all possible ordered pairs $(x,y)$ as $x$ and $y$ take values from the real numbers.  Below is a summary of some basic, but nonetheless important, facts about Cartesian coordinates.
 
@@ -118,7 +133,7 @@ When we speak of the Cartesian Coordinate Plane, we mean the set of all possible
 
 \begin{example} Plot the following points: $A(5,8)$, $B\left(-\frac{5}{2}, 3\right)$, $C(-5.8, -3)$, $D(4.5, -1)$, $E(5,0)$, $F(0,5)$, $G(-7,0)$, $H(0, -9)$, $O(0,0)$.(The letter $O$ is almost always reserved for the origin.)
 
-\medskip
+ 
 
 {\bf Solution.}  To plot these points, we start at the origin and move to the right if the $x$-coordinate is positive; to the left if it is negative.   Next, we move up if the $y$-coordinate is positive or down if it is negative.  If the $x$-coordinate is $0$, we start at the origin and move along the $y$-axis only.  If the  $y$-coordinate is $0$ we move along the $x$-axis only.
 
@@ -200,7 +215,7 @@ For example, $(1,2)$ lies in Quadrant I, $(-1,2)$ in Quadrant II, $(-1,-2)$ in Q
 
 One of the most important concepts in all of Mathematics is \textbf{symmetry}.\footnote{According to Carl.  Jeff thinks symmetry is overrated.}  There are many types of symmetry in Mathematics, but three of them can be discussed easily using Cartesian Coordinates.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -226,7 +241,7 @@ Two points $(a,b)$ and $(c,d)$ in the plane are said to be
 
 %% \ebm}
 
-\medskip
+ 
 
 Schematically,
 
@@ -269,7 +284,7 @@ In the above figure, $P$ and $S$ are symmetric about the $x$-axis, as are $Q$ an
 
 Check your answer by plotting the points.
 
-\medskip
+ 
 
 {\bf Solution.} The figure after Definition \ref{symmetrydefn} gives us a good way to think about finding symmetric points in terms of taking the opposites of the $x$- and/or $y$-coordinates of $P(-2,3)$.
 
@@ -317,7 +332,7 @@ Check your answer by plotting the points.
 
 One way to visualize the processes in the previous example is with the concept of a \index{reflection ! of a point} \textbf{reflection}.  If we start with our point $(-2,3)$ and pretend that the $x$-axis is a mirror, then the reflection of $(-2,3)$ across the $x$-axis would lie at $(-2,-3)$.  If we pretend that the $y$-axis is a mirror, the reflection of $(-2,3)$ across that axis would be $(2,3)$.  If we reflect across the $x$-axis and then the $y$-axis, we would go from $(-2,3)$ to $(-2,-3)$ then to $(2,-3)$, and so we would end up at the point symmetric to $(-2,3)$ about the origin.  We summarize and generalize this process below.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -344,7 +359,7 @@ One way to visualize the processes in the previous example is with the concept o
 
 Another fundamental concept in Geometry is the notion of length.  If we are going to unite Algebra and Geometry using the Cartesian Plane, then we need to develop an algebraic understanding of what distance in the plane means.  Before we can do that, we need to state what we believe is the most important theorem in all of Geometry: \href{http://en.wikipedia.org/wiki/Pythagorean_Theorem}{\underline{The Pythagorean Theorem.}}
 
-\medskip
+ 
  
 %% \colorbox{ResultColor}{\bbm
 
@@ -371,7 +386,7 @@ Another fundamental concept in Geometry is the notion of length.  If we are goin
 
 %% \ebm}
 
-\medskip
+ 
 
 A proof of this theorem will be given in Section \ref{QDensity}.  The theorem actually says two different things.  If we know that $a^{2} + b^{2} = c^{2}$ then the angle $C$ must be a right angle.  If we know geometrically that $C$ is already a right angle then we have that $a^{2} + b^{2} = c^{2}$.  We need the latter statement in the discussion which follows.  
 
@@ -379,7 +394,7 @@ A proof of this theorem will be given in Section \ref{QDensity}.  The theorem ac
 
 Suppose we have two points, $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right),$ in the plane. By the \index{distance ! definition} \textbf{distance} $d$  between $P$ and $Q$, we mean the length of the line segment joining $P$ with $Q$.  (Remember, given any two distinct points in the plane, there is a unique line containing both points.)  Our goal now is to create an algebraic formula to compute the distance between these two points. Consider the generic situation below on the left.
 
-\medskip
+ 
 
 \hspace{.8in} \begin{tabular}{m{2.5in}m{2.75in}}
 
@@ -406,7 +421,7 @@ Suppose we have two points, $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)
 
 \end{tabular}
 
-\medskip
+ 
 
 With a little more imagination, we can envision a right triangle whose hypotenuse has length $d$ as drawn above on the right.  From the latter figure, we see that the lengths of the legs of the triangle are $\left|x_1 - x_0\right|$ and $\left|y_1 - y_0\right|$ so the Pythagorean Theorem gives us
  
@@ -415,7 +430,7 @@ With a little more imagination, we can envision a right triangle whose hypotenus
  
 (Do you remember why we can replace the absolute value notation with parentheses?)  By extracting the square root of both sides of the second equation and using the fact that distance is never negative, we get
  
-\medskip
+ 
  
 %% \colorbox{ResultColor}{\bbm
 
@@ -429,7 +444,7 @@ With a little more imagination, we can envision a right triangle whose hypotenus
 
 %% \ebm}
 
-\medskip
+ 
 
 A couple of remarks about Equation \ref{distanceformula} are in order.  First, it is not always the case that the points $P$ and $Q$ lend themselves to constructing such a triangle.  If the points $P$ and $Q$ are arranged vertically or horizontally, or describe the exact same point, we cannot use the above geometric argument to derive the distance formula.  It is left to the reader in Exercise \ref{distanceothercases} to verify Equation \ref{distanceformula} for these cases.  Second, distance is a `length'.  So, technically, the number we obtain from the distance formula has some attached units of length. In this text, we'll adopt the convention that the phrase `units' refers to some generic units of length.\footnote{As a result, we'll measure area with `square units,' or units$^{2}$ and volume with `cubic units,' or units$^{3}$.}   Our next example gives us an opportunity to test drive the distance formula as well as brush up on some arithmetic and prerequisite algebra.
 
@@ -457,7 +472,7 @@ A couple of remarks about Equation \ref{distanceformula} are in order.  First, i
 \end{enumerate}
 \end{multicols}
 
-\medskip
+ 
 
 \flushleft {\bf Solution.}  In each case, we apply the distance formula, Equation \ref{distanceformula} with the first point listed taken as  $\left(x_0, y_0\right)$ and the second point taken as $\left(x_1, y_1\right)$.\footnote{This choice is completely arbitrary.  The reader is encouraged to work these examples taking the first point listed as $\left(x_1, y_1\right)$ and the second point listed as $\left(x_0, y_0\right)$ and verifying the distance works out to be the same.  Can you see why the order of the subtraction in Equation \ref{distanceformula} ultimately doesn't matter?}
 
@@ -479,7 +494,7 @@ A couple of remarks about Equation \ref{distanceformula} are in order.  First, i
 
 \setlength{\extrarowheight}{2pt}
 
-\medskip
+ 
 
 So the distance is $3 \sqrt{5}$ units.
 
@@ -499,7 +514,7 @@ So the distance is $3 \sqrt{5}$ units.
 
 \setlength{\extrarowheight}{2pt}
 
-\medskip
+ 
 
 So the distance is $\frac{\sqrt{1009}}{60}$ units.
 
@@ -519,7 +534,7 @@ So the distance is $\frac{\sqrt{1009}}{60}$ units.
 
 \setlength{\extrarowheight}{2pt}
 
-\medskip
+ 
 
 So the distance is $4\sqrt{3}$ units.
 
@@ -535,7 +550,7 @@ So the distance is $4\sqrt{3}$ units.
 
 \setlength{\extrarowheight}{2pt}
 
-\medskip
+ 
 
 As tempting as it may look, $\sqrt{x^2+y^2}$ does not, in general, reduce to $x + y$ or even $|x| + |y|$.  So, in this case, the best we can do is state that the distance is $\sqrt{x^2+y^2}$ units. \qed
 
@@ -562,7 +577,7 @@ Related to finding the distance between two points is the problem of finding the
 
 If we think of reaching $M$ by going `halfway over' and `halfway up' we get the following formula. 
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -576,7 +591,7 @@ If we think of reaching $M$ by going `halfway over' and `halfway up' we get the 
 
 %% \ebm}
 
-\medskip
+ 
 
 If we let $d$ denote the distance between $P$ and $Q$, we leave it as Exercise \ref{verifymidpointformula} to show that the distance between $P$ and $M$ is $d/2$ which is the same as the distance between $M$ and $Q$.  This suffices to show that Equation \ref{midpointformula} gives the coordinates of the midpoint.
 
@@ -607,7 +622,7 @@ Find the midpoint of the line segment connecting the following pairs of points:
 \end{enumerate}
 \end{multicols}
 
-\medskip
+ 
 
 {\bf Solution.}  As with Example \ref{distanceexample1}, in each case, we apply the midpoint formula, Equation \ref{midpointformula} with the first point listed taken as  $\left(x_0, y_0\right)$ and the second point taken as $\left(x_1, y_1\right)$.\footnote{As in Example \ref{distanceexample1}, this choice is also completely arbitrary.  The reader is encouraged to work these examples taking the first point listed as $\left(x_1, y_1\right)$ and the second point listed as $\left(x_0, y_0\right)$ and verifying the midpoint works out to be the same.  Can you see why the order of the points in Equation \ref{midpointformula} doesn't matter?}  We also note that midpoints are \textit{points}, which means all of our answers should be \textit{ordered pairs}.
 
@@ -674,7 +689,7 @@ We close with a more abstract application of the Midpoint Formula.  We will expa
 
 \begin{example} \label{inversemidpointex1} If $a \neq b$, show that the line $y = x$ equally divides the line segment with endpoints $(a,b)$ and $(b,a)$.
 
-\medskip
+ 
 
 {\bf Solution.}  To prove the claim, we use Equation \ref{midpointformula} to find the midpoint  
 
