@@ -59,7 +59,7 @@ x &f(x) = x^2 \\ \hline
 \end{array}$
 
 \begin{image}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\LARGE
         \begin{axis}[
           domain=-3:3,
           xmin=-3, xmax=3,
@@ -74,27 +74,46 @@ x &f(x) = x^2 \\ \hline
             axis y line=center,
             xlabel={$x$},
             ylabel={$y$},
-            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west,
+    font=\Large
+  },
+  ylabel style={font=\Large},
           ]
 \addplot[smooth, thick, blue] {x^2};
 \addplot[
   only marks,
   mark=*,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=west}
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
 ]
 coordinates {
   (1,1) [$(1,1)$]
   (2,4) [$(2,4)$]
   (3/2,9/4) [$(\frac{3}{2},\frac{9}{4})$]
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=3pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
   (-1,1) [$(-1,1)$]
   (-2,4) [$(-2,4)$]
   (-3/2,9/4) [$\left(-\frac{3}{2},\frac{9}{4}\right)$]
 };
 
 
-\node[anchor=west] at (2.3,4.5) {$y=x^2$};
+\node[anchor=west, color=blue] at (2.2,4.7) {$y=x^2$};
       \end{axis}
         \end{tikzpicture}
 \end{image}
