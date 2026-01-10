@@ -41,12 +41,10 @@ The most basic quadratic function is $f(x) = x^2$, the squaring function, whose 
 
 Indeed, the range of $f(x) = x^2$ appears to be $[0, \infty)$ from the graph. We can substantiate this algebraically since for all $x$, $f(x) = x^2 \geq 0$.  This tells us that the range of $f$ is a subset of $[0, \infty)$.  To show that the range of $f$ actually \text{equals} $[0, \infty)$, we need to show that every real number $c$ in $[0, \infty)$ is in the range of $f$.  That is, for every $c \geq 0$, we have to show $c$ is an output from $f$.  In other words, we have to show there is a real number $x$ so that  $f(x) = x^2 = c$.  Choosing $x = \sqrt{c}$, we find $f(x) = f(\sqrt{c}) = (\sqrt{c})^2 = c$, as required.\footnote{We'll revisit this argument (with an inequality) in Section \ref{IntroLimits}.} 
 
-\medskip
 
 \begin{center}
 
-\setlength\columnsep{-10pt}
-\begin{multicols}{2}
+
 
 $\begin{array}{|c||c|}  \hline
 
@@ -58,40 +56,50 @@ x &f(x) = x^2 \\ \hline
  1 &  1 \\  \hline
 \frac{3}{2} & \frac{9}{4} \vphantom{\frac{1}{1_{Y}}} \\ \hline
  2 & 4  \\  \hline
-
 \end{array}$
 
-\columnbreak
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-1, ymax=5,
+          width=6in,
+          height=6in,
+          xtick={-2,-1,0,1,2},
+            xticklabels={$-2$,$-1$,$0$, $1$, $2$},
+           ytick={1,2,3, 4},
+            yticklabels={$1$,$2$,$3$, $4$},  
+            axis x line=center,
+            axis y line=center,
+            xlabel={$x$},
+            ylabel={$y$},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west}
+          ]
+\addplot[smooth, thick, blue] {x^2};
+\addplot[
+  only marks,
+  mark=*,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west}
+]
+coordinates {
+  (1,1) [$(1,1)$]
+  (2,4) [$(2,4)$]
+  (3/2,9/4) [$(\frac{3}{2},\frac{9}{4})$]
+  (-1,1) [$(-1,1)$]
+  (-2,4) [$(-2,4)$]
+  (-3/2,9/4) [$\left(-\frac{3}{2},\frac{9}{4}\right)$]
+};
 
-\begin{mfpic}[20]{-3}{3}{0}{5.5}
 
-\axes
-\tlabel[cc](-3,4){\scriptsize $(-2,4)$}
-\tlabel[cc](-2.5,2.25){\scriptsize $\left(-\frac{3}{2},\frac{9}{4}\right)$}
-\tlabel[cc](-2,1){\scriptsize $(-1,1)$}
-\tlabel[cc](0,-0.5){\scriptsize $(0,0)$}
-\tlabel[cc](1.75,1){\scriptsize $(1,1)$}
-\tlabel[cc](2.25,2.25){\scriptsize $\left(\frac{3}{2},\frac{9}{4}\right)$}
-\tlabel[cc](2.75,4){\scriptsize $(2,4)$}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.5){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{1,2,3,4}
-\tcaption{$f(x) = x^2$}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.2,2.2,0.1}{x**2}
-\point[4pt]{(-2,4), (-1.5,2.25), (-1,1), (0,0), (1,1), (1.5,2.25), (2,4)}
-\end{mfpic}  \\
-
-\end{multicols}
-\setlength\columnsep{10pt}
-
+\node[anchor=west] at (2.3,4.5) {$y=x^2$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \end{center}
 
-\medskip
 
 The techniques we used to graph many of the absolute value functions in Section \ref{AbsoluteValueFunctions} can be applied to quadratic functions, too.  In fact, knowing the graph of $f(x) = x^2$ enables us to graph \textbf{every} quadratic function, but there's some extra work involved.  We start with the following theorem:
 
