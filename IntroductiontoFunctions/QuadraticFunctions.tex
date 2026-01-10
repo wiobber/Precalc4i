@@ -83,11 +83,11 @@ x &f(x) = x^2 \\ \hline
   },
   ylabel style={font=\Large},
           ]
-\addplot[smooth, thick, blue] {x^2};
+\addplot[smooth, line width=3pt, blue] {x^2};
 \addplot[
   only marks,
   mark=*,
-  mark size=3pt,
+  mark size=4pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
@@ -102,7 +102,20 @@ coordinates {
 \addplot[
   only marks,
   mark=*,
-  mark size=3pt,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=5pt, yshift=-5pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=east,
