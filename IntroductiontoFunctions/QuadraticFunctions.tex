@@ -1185,57 +1185,12 @@ x^2 - x + \frac{1}{4} & \leq &  6 + \frac{1}{4} \\ [3pt]
 
 To that end, we look at the inequality $x^2 \leq x+6$ graphically.  Identifying $f(x) = x^2$ and $g(x) = x+6$ , we graph $f$ and $g$ on the same set of axes below on the left and look for where the graph of $f$ (the parabola) meets or is below the graph of $g$ (the line).  There are two points of intersection which we determine by solving  $f(x) = g(x)$ or $x^2=x+6$.  As usual, we rewrite this equation as $x^2-x-6 = 0$ in order to use the primary tools we've developed to handle these types\footnote{Namely ones with a nonzero coefficient of `$x$'.} of quadratic equations: factoring, or failing that, the Quadratic Formula.  We find $x^2-x-6 = (x+2)(x-3)$ so we get two solutions to $(x+2)(x-3) = 0$, namely $x = -2$ and $x = 3$.  Putting these together with the graph, we obtain the same solution:  $[-2,3]$.  
 
+% https://www.desmos.com/calculator/vduhlovrae
+% https://www.desmos.com/calculator/7kboi4ddjw
 \begin{center}
+\desmos{vduhlovrae}{800}{600}
 
-\begin{multicols}{2}
-
-\begin{mfpic}[15]{-4}{4}{-1}{10}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\xmarks{-3 step 1 until 3}
-\ymarks{1 step 1 until 9}
-\scriptsize
-\tlabel[cc](-3,4){\scriptsize $(-2,4)$}
-\tlabel[cc](4,9){\scriptsize $(3,9)$}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\tcaption{\scriptsize Solving $x^2 \leq x+6$.}
-\normalsize
-\arrow \reverse \arrow \function{-3.15,3.15,0.1}{x**2}
-\arrow \reverse \arrow \polyline{(-4,2), (4,10)}
-\penwd{1.25pt}
-\function{-2,3,0.1}{x**2}
-\polyline{(-2,4), (3,9)}
-\point[4pt]{(-2,0),(3,0), (-2,4), (3,9)}
-\polyline{(-2,0), (3,0)}
-\end{mfpic}
-
-
-\begin{mfpic}[11.78]{-4}{4}{-7}{7}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel[cc](-3.5,0.5){\scriptsize $(-2,0)$}
-\tlabel[cc](2,0.5){\scriptsize $(3,0)$}
-\xmarks{-3 step 1 until 3}
-\ymarks{-5 step 1 until 6}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-6$} -6,  {$-4$} -4,{$-2$} -2,   {$2$} 2, {$4$} 4,  {$6$} 6}
-\tcaption{\scriptsize Solving $x^2-x-6 \leq 0$.}
-\normalsize
-\arrow \reverse \arrow \function{-3,4,0.1}{x**2-x-6}
-\penwd{1.25pt}
-\function{-2,3,0.1}{x**2-x-6}
-\polyline{(-2,0), (3,0)}
-\point[4pt]{(-2,0),(3,0)}
-\end{mfpic}
-
-\end{multicols}
-
+\desmos{7kboi4ddjw}{800}{600}
 \end{center}
 
 Yet a third way to attack $x^2 \leq x+6$ is to rewrite the inequality as $x^2-x-6 \leq 0$.  Here, we graph $f(x) = x^2-x-6$ to look for where the graph meets or is below the graph of $g(x) = 0$, a.k.a. the $x$-axis.  Doing so requires us to find the zeros of $f$, that is, solve $f(x) = x^2-x-6=0$ from which we obtain $x =-2$ and $x = 3$ as before.  We find the same solution, $[-2,3]$ as is showcased in the graph at the bottom of the previous page on the right.  
