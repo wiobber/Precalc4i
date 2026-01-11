@@ -922,9 +922,9 @@ We'll talk more about what we mean by a `repeated' zero and how to compute `non-
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
-         ymin=-4, ymax=5,
+         ymin=-4, ymax=7,
           width=2in,
-          height=2in,
+          height=3in,
           xtick=\empty,
           xticklabels=\empty,
             axis x line=center,
@@ -932,7 +932,7 @@ We'll talk more about what we mean by a `repeated' zero and how to compute `non-
             x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
           ]
 \addplot[smooth, line width=1.5pt, blue] {x^2-1};
-\draw[-,dashed] (0,-1.5)--(0,5);
+\draw[-,dashed, gray] (0,-1.5)--(0,5);
 
 \addplot[
   only marks,
@@ -948,6 +948,7 @@ coordinates {
   (1,0)
   };
 \node[anchor=north] at (0,-1.5) {$b^2-4ac>0$};
+\node[anchor=south, gray] at (0,5) {$x=-\frac{b}{2a}$};
       \end{axis}
         \end{tikzpicture}
         \quad\quad\quad \quad\quad\quad
@@ -955,9 +956,9 @@ coordinates {
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
-         ymin=-4, ymax=5,
+         ymin=-4, ymax=7,
           width=2in,
-          height=2in,
+          height=3in,
           xtick=\empty,
           xticklabels=\empty,
             axis x line=center,
@@ -965,7 +966,7 @@ coordinates {
             x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
           ]
 \addplot[smooth, line width=1.5pt, blue] {x^2};
-\draw[-,dashed] (0,-1.5)--(0,5);
+\draw[-,dashed, gray] (0,-1.5)--(0,5);
 \addplot[
   only marks,
   mark=*,
@@ -979,6 +980,7 @@ coordinates {
   (0,0)
   };
 \node[anchor=north] at (0,-1.5) {$b^2-4ac=0$};
+\node[anchor=south, gray] at (0,5) {$x=-\frac{b}{2a}$};
       \end{axis}
         \end{tikzpicture}
         \quad\quad\quad \quad\quad\quad
@@ -986,9 +988,9 @@ coordinates {
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
-         ymin=-4, ymax=5,
+         ymin=-4, ymax=7,
           width=2in,
-          height=2in,
+          height=3in,
           xtick=\empty,
           xticklabels=\empty,
             axis x line=center,
@@ -996,8 +998,10 @@ coordinates {
             x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
           ]
 \addplot[smooth, line width=1.5pt, blue] {x^2+1};
-\draw[-,dashed] (0,-1.5)--(0,5);
+\draw[-,dashed, gray] (0,-1.5)--(0,5);
 \node[anchor=north] at (0,-1.5) {$b^2-4ac<0$};
+
+\node[anchor=south, gray] at (0,5) {$x=-\frac{b}{2a}$};
 
       \end{axis}
         \end{tikzpicture}        
