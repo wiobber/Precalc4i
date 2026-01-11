@@ -765,7 +765,7 @@ Since $g(0) = 6$, we get the $y$-intercept to be $(0,6)$.  Using symmetry, we al
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=east,
-    yshift=-10pt}
+    xshift=-10pt}
 ]
 coordinates {
   (-2,6) [$(-2, 6)$]
@@ -918,7 +918,7 @@ We'll talk more about what we mean by a `repeated' zero and how to compute `non-
 
 \begin{center}
 \begin{image}
-\begin{tikzpicture}[scale=1]font=\LARGE
+\begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
@@ -929,9 +929,9 @@ We'll talk more about what we mean by a `repeated' zero and how to compute `non-
           xticklabels=\empty,
             axis x line=center,
             axis y line=none,
-            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1pt},
           ]
-\addplot[smooth, line width=3pt, blue] {x^2-1};
+\addplot[smooth, line width=1.5pt, blue] {x^2-1};
 \draw[-,dashed] (0,-1.5)--(0,5);
 
 \addplot[
@@ -950,8 +950,8 @@ coordinates {
 \node[anchor=north] at (0,-1.5) {$b^2-4ac>0$};
       \end{axis}
         \end{tikzpicture}
-        \quad\quad\quad
-\begin{tikzpicture}[scale=1]font=\LARGE
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
@@ -962,9 +962,9 @@ coordinates {
           xticklabels=\empty,
             axis x line=center,
             axis y line=none,
-            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1pt},
           ]
-\addplot[smooth, line width=3pt, blue] {x^2};
+\addplot[smooth, line width=1.5pt, blue] {x^2};
 \draw[-,dashed] (0,-1.5)--(0,5);
 \addplot[
   only marks,
@@ -981,8 +981,8 @@ coordinates {
 \node[anchor=north] at (0,-1.5) {$b^2-4ac=0$};
       \end{axis}
         \end{tikzpicture}
-        \quad\quad\quad
-\begin{tikzpicture}[scale=1]font=\LARGE
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-2:2,
           xmin=-3, xmax=3,
@@ -993,9 +993,9 @@ coordinates {
           xticklabels=\empty,
             axis x line=center,
             axis y line=none,
-            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=10pt,width=8pt]}-{Latex[length=10pt,width=8pt]}, line width=1pt},
           ]
-\addplot[smooth, line width=3pt, blue] {x^2+1};
+\addplot[smooth, line width=1.5pt, blue] {x^2+1};
 \draw[-,dashed] (0,-1.5)--(0,5);
 \node[anchor=north] at (0,-1.5) {$b^2-4ac<0$};
 
