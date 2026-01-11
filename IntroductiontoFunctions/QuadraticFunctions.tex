@@ -1075,31 +1075,10 @@ Said differently, the \textbf{revenue} is the amount of money \textbf{collected}
 
 \item Knowing the zeros of $P$, we have two $x$-intercepts: $\left( \frac{170 - 20 \sqrt{70}}{3},0\right) \approx (0.89,0)$ and $\left( \frac{170 + 20 \sqrt{70}}{3},0\right) \approx (112.44,0)$.  Since $P(0)=-150$, we get the  $y$-intercept is $(0,-150)$.  To find the vertex, we appeal to Equation \ref{vertexofquadraticfunctions}.  Substituting $a = -1.5$ and $b=170$, we get $x = -\frac{170}{2(-1.5)} = \frac{170}{3} = 56.\overline{6}$.  To find the $y$-coordinate of the vertex, we compute $P\left( \frac{170}{3} \right) = \frac{14000}{3} = 4666.\overline{6}$.  Hence, the vertex is $(56.\overline{6}, 4666.\overline{6})$.  The domain is restricted $0 \leq x \leq 166$ and we find $P(166) = -13264$.  Attempting to plot all of these points on the same graph to any sort of scale is challenging.  Instead, we present a portion of the graph for  $0 \leq x \leq 113$.  Even with this, the intercepts near the origin are crowded.
 
+% https://www.desmos.com/calculator/9qarfctjwf
 \begin{center}
-
-\begin{mfpic}[15][20]{-1}{12.5}{-1}{6}
-
-\tlabel[cc](13,0){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](5.667,5.333){\scriptsize $(56.\overline{6}, 4666.\overline{6})$}
-\tlabel[cc](12, -0.5){\scriptsize $\approx (112.44, 0)$}
-\tlabel[cc](-1.25, -0.5){\scriptsize $(0, -150)$}
-\tlabel[cc](1.75, 0.25){\scriptsize $\approx (0.89, 0)$}
-\tcaption{\scriptsize $y = P(x)$}
-\axes
-\xmarks{1 step 1 until 10}
-\ymarks{1 step 1 until 5}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$20$} 2,  {$40$} 4,{$60$} 6, {$80$} 8,  {$100$} 10}
-\axislabels {y}{{$1000$} 1, {$2000$} 2, {$3000$} 3, {$4000$} 4, {$5000$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{0,11.3,0.1}{((-1.5)*((10*x)**2)+1700*x-150)/1000}
-\point[4pt]{(0,-0.150),(5.667,4.667),(0.089,0),(11.244,0)}
-\end{mfpic}
-
-\end{center}
+\desmos{9qarfctjwf}{800}{600}
+ \end{center}
 
 \item   From the vertex, we see that the maximum of $P$ is $4666.\overline{6}$ when $x = 56.\overline{6}$.  As before, $x$ represents the number of PortaBoy systems produced and sold, so we cannot produce and sell  $56.\overline{6}$ systems.  Hence, by comparing  $P(56) = 4666$ and $P(57)=4666.5$,  we conclude that we will make a maximum profit of $\$ 4666.50$ if we sell $57$ game systems.
 
@@ -1166,58 +1145,10 @@ Our next example is classic application of optimizing a quadratic function.
 
 We are also told that the total amount of fencing available is $200$ feet, which means $w + \ell + w = 200$, or, $\ell+2w = 200$.  We now have two equations, $A = w \ell$ and $\ell+2w = 200$.  In order to use the tools given to us in this section to \textbf{maximize} $A$, we need to use the information given to write $A$ as a function of just \textbf{one} variable, either $w$ or $\ell$. This is where we use the equation $\ell+2w = 200$.  Solving for $\ell$, we find $\ell = 200-2w$, and we substitute this into our equation for $A$.  We get $A = w \ell = w(200-2w) = 200w-2w^2$.  We now have $A$ as a function of $w$, $A = f(w) = 200w-2w^2 = -2w^2+200w$. 
 
+% https://www.geogebra.org/classic/mxxvbanv
+
 \begin{center}
-
-\setlength\columnsep{0pt}
-
-\begin{multicols}{2}
-
-\begin{mfpic}[15]{-4}{4}{0}{4}
-\fillcolor[gray]{0.8}
-\gfill \rect{(-4,2), (4,4)}
-
-\dashed \polyline{(-3,2), (-3,0.5), (3,0.5), (3,2)}
-\tlabel[cc](-3.5,1.25){$w$}
-\tlabel[cc](0,0){$\ell$}
-\tlabel[cc](3.5, 1.25){$w$}
-\tlabel[cc](0,1.25){pasture}
-\tlabel[cc](0,3){river} 
-
-\penwd{1.25pt}
-\polyline{(-4,2), (4,2)}
-\polyline{(-4,4), (4,4)}
-
-
-\end{mfpic}
-
-\begin{mfpic}[15]{-1}{10.75}{-1}{6}
-\axes
-\tlabel[cc](11,0){\scriptsize  $w$}
-\tlabel[cc](0.5,6){\scriptsize  $A$}
-\tlabel[cc](5,5.5){\scriptsize  $(50, 5000)$}
-\tlabel[cc](-0.75,-0.5){\scriptsize  $(0, 0)$}
-\tlabel[cc](10,-0.5){\scriptsize $(100, 0)$}
-\tlabel[cc](5,5.5){\scriptsize  $(50, 5000)$}
-\tcaption{\scriptsize $A = f(w)$}
-\xmarks{1 step 1 until 10}
-\ymarks{1 step 1 until 5}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{ {$10$} 1, {$30$} 3,  {$50$} 5,{$70$} 7}
-\axislabels {y}{{$1000$} 1, {$2000$} 2, {$3000$} 3, {$4000$} 4, {$5000$} 5}
-\normalsize
-\penwd{1.25pt}
-\function{0,10,0.1}{(0-0.2)*(x**2) + 2*x}
-\point[4pt]{(5,5)}
-\pointfillfalse
-\point[4pt]{(0,0), (10,0)}
-
-\end{mfpic}
-
-\end{multicols}
-
-\setlength\columnsep{10pt}
-
+    \geogebra{mxxvbanv}{800}{600}
 \end{center}
 
 Before we go any further, we need to find the applied domain of $f$ so that we know what values of $w$ make sense in this situation.\footnote{Donnie would be very upset if, for example, we told him the width of the pasture needs to be $-50$ feet.}  Given that $w$ represents the width of the pasture we need $w > 0$.  Likewise, $\ell$ represents the length of the pasture, so $\ell = 200-2w > 0$.  Solving this latter inequality yields $w < 100$.  Hence, the function we wish to maximize is $f(w) = -2w^2 + 200w$ for $0 < w < 100$.  We know two things about the quadratic function $f$: the graph of $A = f(w)$ is a parabola and (since the coefficient of $w^2$ is $-2$) the parabola opens downwards.  
