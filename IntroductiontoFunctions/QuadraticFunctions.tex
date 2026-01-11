@@ -1148,7 +1148,7 @@ We are also told that the total amount of fencing available is $200$ feet, which
 % https://www.geogebra.org/classic/mxxvbanv
 
 \begin{center}
-    \geogebra{mxxvbanv}{800}{600}
+    \geogebra{mxxvbanv}{800}{500}
 \end{center}
 
 Before we go any further, we need to find the applied domain of $f$ so that we know what values of $w$ make sense in this situation.\footnote{Donnie would be very upset if, for example, we told him the width of the pasture needs to be $-50$ feet.}  Given that $w$ represents the width of the pasture we need $w > 0$.  Likewise, $\ell$ represents the length of the pasture, so $\ell = 200-2w > 0$.  Solving this latter inequality yields $w < 100$.  Hence, the function we wish to maximize is $f(w) = -2w^2 + 200w$ for $0 < w < 100$.  We know two things about the quadratic function $f$: the graph of $A = f(w)$ is a parabola and (since the coefficient of $w^2$ is $-2$) the parabola opens downwards.  
@@ -1195,57 +1195,39 @@ To that end, we look at the inequality $x^2 \leq x+6$ graphically.  Identifying 
 
 Yet a third way to attack $x^2 \leq x+6$ is to rewrite the inequality as $x^2-x-6 \leq 0$.  Here, we graph $f(x) = x^2-x-6$ to look for where the graph meets or is below the graph of $g(x) = 0$, a.k.a. the $x$-axis.  Doing so requires us to find the zeros of $f$, that is, solve $f(x) = x^2-x-6=0$ from which we obtain $x =-2$ and $x = 3$ as before.  We find the same solution, $[-2,3]$ as is showcased in the graph at the bottom of the previous page on the right.  
 
-\medskip
+
 
 One advantage to using this last approach is that we are essentially concerned with \text{one} function and its \textbf{zeros}.  This approach can be generalized to all functions - not just quadratics, so we take the time to develop this method more thoroughly now.  
 
-\phantomsection
-\label{firstsigndiagram}
 
-\medskip
 
 Consider the graph of $f(x) = x^2-x-6$ below  The zeros of $f$ are $x=-2$ and $x=3$ and they divide the domain (the $x$-axis) into three intervals:  $(-\infty, -2)$, $(-2,3)$ and $(3, \infty)$.  For every number in $(-\infty, -2)$, the graph of $f$ is above the $x$-axis; in other words, $f(x) > 0$ for all $x$ in $(-\infty, -2)$. Similarly, $f(x) < 0$ for all $x$ in $(-2,3)$, and $f(x) > 0$ for all $x$ in $(3, \infty)$.  We represent this schematically with the {\bf sign diagram} below.\index{inequality ! sign diagram}\index{sign diagram ! for quadratic inequality} 
 
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-4:6,
+          xmin=-4, xmax=6,
+         ymin=-1.5, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={-2, 3},
+          xticklabels={$-2$, $3$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+          ]
+\node[anchor=north, red] at (4,1) {$(+)$};
+\node[anchor=north, blue] at (0.5,1) {$(-)$};
+\node[anchor=north, red] at (-3,1) {$(+)$};
+\node[anchor=north, gray] at (-2,1) {$0$};
+\node[anchor=north, gray] at (3,1) {$0$};
 
-\begin{multicols}{2}
-
-\begin{mfpic}[12]{-4}{4}{-7}{7}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel[cc](-3.5,0.5){\scriptsize $(-2,0)$}
-\tlabel[cc](2,0.5){\scriptsize $(3,0)$}
-\xmarks{-3 step 1 until 3}
-\ymarks{-5 step 1 until 6}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-6$} -6,  {$-4$} -4,{$-2$} -2,   {$2$} 2, {$4$} 4,  {$6$} 6}
-\tcaption{ $f(x) = x^2-x-6$.}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,4,0.1}{x**2-x-6}
-\point[4pt]{(-2,0),(3,0)}
-\end{mfpic} 
-
-\columnbreak
-
-\vspace*{0.75in}
-\begin{mfpic}[15]{-5}{5}{-5}{6}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{-2,2}
-\tcaption{A sign diagram for $f(x) = x^2-x-6$}
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$3$} 2}
-\tlabel[cc](-3.5,1){$(+)$}
-\tlabel[cc](-2,1){$0$}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](3.5,1){$(+)$}
-\end{mfpic}
-
-\end{multicols}
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{center}
 
