@@ -1228,6 +1228,54 @@ Consider the graph of $f(x) = x^2-x-6$ below  The zeros of $f$ are $x=-2$ and $x
       \end{axis}
         \end{tikzpicture}
 \end{image}
+\end{center}
+
+\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:4,
+          xmin=-4, xmax=4,
+          ymin=-7, ymax=7,
+          width=5in,
+          height=7in,
+          xtick={-3, -1, 1, 2},
+            xticklabels={$-3$,$-1$,$1$,$2$},
+           ytick={-6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6},
+            yticklabels={$-6$,$\,$, $-4$, $\,$, $-2$, $\,$,$\,$,$2$,$\,$, $4$,$\,$,$6$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, blue] {x^2-x-6};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    yshift=5pt,xshift=-10pt}
+]
+coordinates {
+  (-2,0) [$(-2, 0)$]
+  (3,0) [$(3, 0)$]
+  };
+
+\node[anchor=south, color=blue] at (2,5) {$f(x)=x^2-x-6$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{center}
 
@@ -1336,60 +1384,40 @@ We are solving $2x^2+x-3 \leq 0$ so we need solutions to $2x^2+x-3 < 0$ as well 
 
 To verify our solution graphically, we refer to the original inequality, $2x^2 \leq 3-x$.  We let $g(x) = 2x^2$ and $h(x)=3-x$.  We are looking for the $x$ values where the graph of $g$ is below that of $h$ (the solution to $g(x) < h(x)$) as well as the points of intersection (the solutions to $g(x)=h(x)$).  The graphs of $g$ and $h$ are given on the right with the sign chart on the left.
 
-
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={-1.5, 1},
+          xticklabels={$-\frac{3}{2}$, $1$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+          ]
+\node[anchor=north, red] at (-2.5,1) {$(+)$};
+\node[anchor=north, blue] at (-0.25,1) {$(-)$};
+\node[anchor=north, red] at (2,1) {$(+)$};
+\node[anchor=north, gray] at (-1.5,1) {$0$};
+\node[anchor=north, gray] at (1,1) {$0$};
 
-\begin{multicols}{2}
+\draw[->, gray] (0,-1.5)--(0,-0.5);
+\node[anchor=north, gray] at (0,-2) {$0$};
+\draw[->, gray] (-2,-1.5)--(-2,-0.5);
+\node[anchor=north, gray] at (-2,-2) {$-2$};
+\draw[->, gray] (2,-1.5)--(2,-0.5);
+\node[anchor=north, gray] at (2,-2) {$2$};
 
-\vspace*{.25in}
-
-\begin{mfpic}[15]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{-2,2}
-\arrow \polyline{(-3.5,-1.5),(-3.5,-0.5)}
-\arrow \polyline{(0,-1.5),(0,-0.5)}
-\arrow \polyline{(3.5,-1.5),(3.5,-0.5)}
-\tlpointsep{4pt}
-%\scriptsize
-\axislabels {x}{{$-\frac{3}{2} \hspace{7pt}$} -2, {$1$} 2}
-\tlabel[cc](-3.5,1){$(+)$}
-\tlabel[cc](-2,1){$0$}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](3.5,1){$(+)$}
-\tlabel[cc](-3.75,-2.25){$-2$}
-\tlabel[cc](-0.1,-2.25){$0$}
-\tlabel[cc](3.4,-2.25){$2$}
-%\normalsize
-\end{mfpic}  
-
-\columnbreak
-
-\begin{mfpic}[20][10]{-3}{3}{-1}{8}
-\arrow \reverse \arrow \function{-2,2,0.1}{2*(x**2)}
-\arrow \reverse \arrow \polyline{(-3,6),(2.5,0.5)}
-\xmarks{-2 step 1 until 2}
-\ymarks{1 step 1 until 7}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\tlabel[cc](2.75,6){\scriptsize $y=2x^2$}
-\tlabel[cc](3,1.75){\scriptsize $y=3-x$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7}
-\normalsize 
-\penwd{1.25pt} 
- \function{-1.5,1,0.1}{2*(x**2)}
- \polyline{(-1.5,4.5),(1,2)}
-\polyline{(-1.5,0), (1,0)}
-\point[4pt]{(-1.5,0), (1,0), (-1.5, 4.5), (1,2)}
-\end{mfpic}
-
-\end{multicols}
-
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \end{center}
+
 
 \item Once again, we re-write  $t^2-2t > 1$ as $t^2-2t-1>0$ and we identify $f(t)=t^2-2t-1$.  When we go to find the zeros of $f$, we find, to our chagrin, that the quadratic $t^2-2t-1$ doesn't factor nicely.  Hence, we resort to  the Quadratic Formula and find $t=1 \pm \sqrt{2}$.  As before, these zeros divide the number line into three pieces.  To help us decide on test values, we approximate $1 - \sqrt{2} \approx -0.4$ and $1 + \sqrt{2} \approx 2.4$.  We choose $t=-1$, $t=0$ and $t=3$ as our test values and find $f(-1)= 2$, which is $(+)$; $f(0)=-1$ which is $(-)$; and $f(3)=2$ which is $(+)$ again.  Our solution to $t^2-2t-1>0$ is where we have $(+)$, so, in interval notation $\left(-\infty, 1-\sqrt{2}\right) \cup \left(1+\sqrt{2},\infty\right)$.  
 
@@ -1398,62 +1426,37 @@ To verify our solution graphically, we refer to the original inequality, $2x^2 \
 To check the inequality $t^2 - 2t > 1$ graphically, we set $g(t) = t^2-2t$ and $h(t)=1$.  We are looking for the $t$ values where the graph of $g$ is above the graph of $h$.  As before we present the graphs on the right and the sign chart on the left.
 
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=-2:4,
+          xmin=-2, xmax=4,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={-0.4, 1.4},
+          xticklabels={$1-\sqrt{2}$, $1+\sqrt{2}$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+          ]
+\node[anchor=north, red] at (-1.5,1) {$(+)$};
+\node[anchor=north, blue] at (0.5,1) {$(-)$};
+\node[anchor=north, red] at (3,1) {$(+)$};
+\node[anchor=north, gray] at (-0.4,1) {$0$};
+\node[anchor=north, gray] at (1.4,1) {$0$};
 
-\begin{multicols}{2}
+\draw[->, gray] (-1.5,-1.5)--(-1.5,-0.5);
+\node[anchor=north, gray] at (-1.5,-2) {$-1$};
+\draw[->, gray] (0.5,-1.5)--(0.5,-0.5);
+\node[anchor=north, gray] at (0.5,-2) {$0$};
+\draw[->, gray] (3,-1.5)--(3,-0.5);
+\node[anchor=north, gray] at (3,-2) {$3$};
 
-\vspace*{.25in}
-
-\begin{mfpic}[14]{-8}{8}{-2}{2}
-\arrow \reverse \arrow \polyline{(-8,0),(8,0)}
-\xmarks{-3,3}
-\arrow \polyline{(-6,-1.5),(-6,-0.5)}
-\arrow \polyline{(0,-1.5),(0,-0.5)}
-\arrow \polyline{(6,-1.5),(6,-0.5)}
-\tlpointsep{4pt}
-%\scriptsize
-\axislabels {x}{{$1-\sqrt{2}$} -3, {$1+\sqrt{2}$} 3}
-\tlabel[cc](-6,1){$(+)$}
-\tlabel[cc](-3,1){$0$}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](3,1){$0$}
-\tlabel[cc](6,1){$(+)$}
-\tlabel[cc](-6,-2.25){$-1$}
-\tlabel[cc](0,-2.25){$0$}
-\tlabel[cc](6,-2.25){$3$}
-%\normalsize
-\end{mfpic} 
-
-\columnbreak
-
-\begin{mfpic}[20]{-4}{4}{-1}{4}
-\arrow \reverse \arrow \function{-1.23,3.21,0.1}{(x**2)-2*x}
-\arrow \reverse \arrow \function{-4,4,0.1}{1}
-\xmarks{-3 step 1 until 3}
-\ymarks{1 step 1 until 3}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\tlabel[cc](-2.5,1.25){\scriptsize $y=1$}
-\tlabel[cc](2.75,-1){\scriptsize $y=t^2-2t$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$2$} 2, {$3$} 3}
-\normalsize 
-\penwd{1.25pt} 
-\arrow \reverse \function{-1.23,-0.4142,0.1}{(x**2)-2*x}
-\arrow \function{2.4142,3.21,0.1}{(x**2)-2*x}
-\arrow \polyline{(-0.4142,0), (-4,0)}
-\arrow \polyline{(2.4142,0), (4,0)}
-\arrow \polyline{(-0.4142,1), (-4,1)}
-\arrow \polyline{(2.4142,1), (4,1)}
-\pointfillfalse
-\point[4pt]{(-0.4142,0),(2.4142,0)}
-\point[4pt]{(-0.4142,1),(2.4142,1)}
-\end{mfpic}
-
-\end{multicols}
-
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \end{center}
 
 
