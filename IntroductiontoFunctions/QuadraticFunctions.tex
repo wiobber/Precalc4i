@@ -1504,54 +1504,77 @@ Graphically, we solve $x^2+1 \leq 2x$ by graphing $g(x) = x^2+1$ and $h(x)=2x$. 
  Next, we turn our attention to the case $t \geq 1$.  Here, $|t-1| = t-1$, so our original inequality becomes $2t-t^2 \geq (t-1)-1$, or $t^2-t-2 \leq 0$.  Setting $g(t) = t^2-t-2$, we find the zeros of $g$ to be $t=-1$ and $t=2$.  Of these, only $t=2$ lies in the region $t\geq 1$, so we ignore $t=-1$.  Our test intervals are now $[1,2)$ and $(2,\infty)$.  We choose $t=1$ and $t=3$ as our test values and find $g(1) = -2$ and $g(3) = 4$.  Hence, our solution to $g(t) = t^2-t-2 \leq 0$, in this region is $[1,2)$.
 
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=-1.2:1,
+          xmin=-1.2, xmax=1.03,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={0, 1},
+          xticklabels={$0$, $1$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={{Latex[length=5pt,width=3pt]}-, line width=1pt},
+          ]
+\node[anchor=north, red] at (-0.5,1) {$(+)$};
+\node[anchor=north, blue] at (0.5,1) {$(-)$};
 
-\begin{multicols}{2}
+\draw[->, gray] (-0.5,-1.5)--(-0.5,-0.5);
+\node[anchor=north, gray] at (-0.5,-2) {$-1$};
+\draw[->, gray] (0.5,-1.5)--(0.5,-0.5);
+\node[anchor=north, gray] at (0.5,-2) {$1/2$};
 
-\begin{mfpic}[15]{-5}{5.5}{-2}{2}
-\arrow \reverse \polyline{(-5,0),(5,0)}
-\xmarks{0}
-\arrow \polyline{(-2.5,-1.5),(-2.5,-0.5)}
-\arrow \polyline{(2.5,-1.25),(2.5,-0.5)}
-\tlpointsep{4pt}
-%\scriptsize
-\axislabels {x}{{$0$} 0}
-\tlabel[cc](-2.5,1){$(+)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](2.5,1){$(-)$}
-\tlabel[cc](-2.5,-2.25){$-1$}
-\tlabel[cc](2.5,-2.25){$\frac{1}{2}$}
-\gclear \circle{(5,0),0.2}
-\circle{(5,0),0.2}
-\tlabel[cc](5,-0.75){$1$}
-%\normalsize
-\end{mfpic}  
+\draw[fill=white] (1,0) circle[radius=2.5pt];
+\node[anchor=north, gray] at (0,1) {$0$};
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 Solving $2t-t^2 \geq |t-1|-1$ for $t < 1$. 
 
-\columnbreak
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=1:4,
+          xmin=0.96, xmax=4,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={2},
+          xticklabels={$2$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=5pt,width=3pt]}, line width=1pt},
+          ]
+\node[anchor=north, red] at (3,1) {$(+)$};
+\node[anchor=north, blue] at (1.5,1) {$(-)$};
 
-\begin{mfpic}[15]{-5}{5.5}{-2}{2}
-\arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-\arrow \polyline{(-5,-1.5),(-5,-0.5)}
-\arrow \polyline{(2.5,-1.5),(2.5,-0.5)}
-\tlpointsep{4pt}
-%\scriptsize
-\axislabels {x}{{$2$} 0}
-\tlabel[cc](-2.5,1){$(-)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](2.5,1){$(+)$}
-\tlabel[cc](2.5,-2.25){$3$}
-\gfill \circle{(-5,0),0.2}
-\tlabel[cc](-5,-2.25){$1$}
-%\normalsize
-\end{mfpic} 
+\draw[->, gray] (1,-1.5)--(1,-0.5);
+\node[anchor=north, gray] at (1,-2) {$1$};
+\draw[->, gray] (3,-1.5)--(3,-0.5);
+\node[anchor=north, gray] at (3,-2) {$3$};
 
+\draw[fill=black] (1,0) circle[radius=2.5pt];
+\node[anchor=north, gray] at (2,1) {$0$};
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 Solving $2t-t^2 \geq |t-1|-1$ for $t \geq 1$.  
-
-\end{multicols}
-
 \end{center}
+
+
+
+
+
+
+
+
 
 Combining these into one sign diagram, we have that our solution is $[0,2]$.  Graphically, to check $2t-t^2 \geq |t-1|-1$, we set $h(t) = 2t-t^2$ and $i(t) = |t-1|-1$ and look for the $t$ values where the graph of $h$ intersects or is above the the graph of $i$ The combined sign chart is given on the left and the graphs are on the right.
 
