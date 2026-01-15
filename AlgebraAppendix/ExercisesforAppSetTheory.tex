@@ -2,20 +2,23 @@
 
 \begin{document}
 	\author{Stitz-Zeager}
-	\xmtitle{Exercises for App Set Theory}{}
+	\xmtitle{Exercises for Set Theory}{}
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforAppSetTheory} % mfpic settings added 
 
 
 \label{ExercisesforAppSetTheory}
 
-\begin{enumerate}
+\begin{problem}
+Find a verbal description for $O = \{ 2n-1 \, | \, n \in \N\}$    
+\end{problem}
 
-\item  Find a verbal description for $O = \{ 2n-1 \, | \, n \in \N\}$
-
-\item  Find a roster description for $X = \{ z^2 \, | \, z \in \mathbb{Z}\}$
-
-\item  Let $A = \left\{ -3, -1.02, -\dfrac{3}{5}, 0.57, 1.\overline{23}, \sqrt{3}, 5.2020020002 \ldots, \dfrac{20}{10}, 117 \right\}$ 
+\begin{problem}
+Find a roster description for $X = \{ z^2 \, | \, z \in \mathbb{Z}\}$    
+\end{problem}
+ 
+\begin{problem}
+Let $A = \left\{ -3, -1.02, -\dfrac{3}{5}, 0.57, 1.\overline{23}, \sqrt{3}, 5.2020020002 \ldots, \dfrac{20}{10}, 117 \right\}$ 
 
 \begin{enumerate}
 
@@ -24,11 +27,11 @@
 \item  Find $A \cap \mathbb{Z}$
 \item  Find $A \cap \Q$
 
-
 \end{enumerate}
+\end{problem}
 
-
-\item Fill in the chart below. 
+\begin{problem}
+Fill in the chart below. 
 
 \begin{center}
 \begin{tabular}{|c|c|c|} \hline
@@ -49,14 +52,24 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 
  &  & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\tlpointsep{4pt}
-\axislabels {x}{{$2 \hspace{4pt} $} -3, {$7$} 3}
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(3,0)}
-\pointfillfalse
-\point[3pt]{(-3,0)}
-\end{mfpic}   \\
+\begin{tikzpicture}[xscale=0.6, yscale=1.2]
+
+% Horizontal axis line (same coordinates, half width visually)
+\draw (-3,0) -- (3,0);
+
+% Filled point at (3,0)
+\fill (3,0) circle (2pt);
+
+% Open point at (-3,0)
+\draw (-3,0) circle (2pt);
+
+% Endpoint labels
+\node[below] at (-3,0) {$2$};
+\node[below] at (3,0) {$7$};
+
+\end{tikzpicture}
+
+   \\
 \hline
 
  &  & \\
@@ -71,13 +84,23 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
  
 & & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\tlpointsep{4pt}
-\axislabels {x}{{$5 \hspace{4pt} $} -3, {$7$} 3}
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(-3,0), (3,0)}
+\begin{tikzpicture}[xscale=0.4, yscale=1.2]
 
-\end{mfpic}   \\
+% Horizontal axis line (same coordinates, half width visually)
+\draw (-3,0) -- (3,0);
+
+% Filled point at (3,0)
+\fill (3,0) circle (2pt);
+
+% Open point at (-3,0)
+\fill (-3,0) circle (2pt);
+
+% Endpoint labels
+\node[below] at (-3,0) {$5$};
+\node[below] at (3,0) {$7$};
+
+\end{tikzpicture}
+   \\
 \hline
 
 &  & \\
@@ -92,14 +115,23 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 
  &  &  
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\tlpointsep{4pt}
-\axislabels {x}{{$4 \hspace{4pt} $} -3}
-\arrow \polyline{(-3,0), (3,0)}
-\pointfillfalse
-\point[3pt]{(-3,0)}
+\begin{tikzpicture}[xscale=0.4, yscale=1.2]
 
-\end{mfpic}   \\
+% Horizontal axis line (same coordinates, half width visually)
+\draw (-3,0) -- (3,0);
+
+% Filled point at (3,0)
+\fill (3,0) circle (2pt);
+
+% Open point at (-3,0)
+\draw (-3,0) circle (2pt);
+
+% Endpoint labels
+\node[below] at (-3,0) {$4$};
+\node at (3,0) {$>$};
+
+\end{tikzpicture}
+   \\
 \hline
 
  &  & \\
@@ -111,145 +143,152 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 
 \end{center}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\end{problem}
 
-\newpage
+\begin{question}
+In Exercises \ref{findunionintfirst} - \ref{findunionintlast}, find the indicated intersection or union and simplify if possible.  Express your answers in interval notation.    
 
-In Exercises \ref{findunionintfirst} - \ref{findunionintlast}, find the indicated intersection or union and simplify if possible.  Express your answers in interval notation. 
+\begin{problem}\label{findunionintfirst}
+$(-1,5] \cap [0,8)$ 
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(-1,1) \cup [0,6]$
+\end{problem}
 
-\item  $(-1,5] \cap [0,8)$ \label{findunionintfirst}
-\item  $(-1,1) \cup [0,6]$
-\item $(-\infty,4]\cap (0,\infty)$
+\begin{problem}
+$(-\infty,4]\cap (0,\infty)$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$(-\infty,0) \cap [1,5]$
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$(-\infty, 0) \cup [1,5]$
+\end{problem}
 
-\item $(-\infty,0) \cap [1,5]$
-\item $(-\infty, 0) \cup [1,5]$
-\item $(-\infty, 5] \cap [5,8)$ \label{findunionintlast}
+\begin{problem}\label{findunionintlast}
+$(-\infty, 5] \cap [5,8)$ 
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
+\begin{question}
 In Exercises \ref{writeintervalfirst} - \ref{writeintervallast}, write the set using interval notation.   
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{writeintervalfirst}
+$\{x\,|\, x \neq 5 \}$ 
+\end{problem}
 
-\item  $\{x\,|\, x \neq 5 \}$ \label{writeintervalfirst}
-\item  $\{x\,|\, x \neq -1 \}$
-\item  $\{x\,|\, x \neq -3,\, 4 \}$
+\begin{problem}
+$\{x\,|\, x \neq -1 \}$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$\{x\,|\, x \neq -3,\, 4 \}$
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$\{x\,|\, x \neq 0, \, 2 \}$
+\end{problem}
 
-\item  $\{x\,|\, x \neq 0, \, 2 \}$
-\item  $\{x\,|\, x \neq 2, \, -2 \}$
-\item  $\{x\,|\, x \neq 0,\, \pm 4 \}$
+\begin{problem}
+$\{x\,|\, x \neq 2, \, -2 \}$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$\{x\,|\, x \neq 0,\, \pm 4 \}$
+\end{problem}
+\begin{problem}
+$\{x\,|\, x \leq -1 \, \text{or} \, x \geq 1 \}$
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$\{x\,|\, x < 3 \, \text{and} \, x \geq 2 \}$
+\end{problem}
 
-\item $\{x\,|\, x \leq -1 \, \text{or} \, x \geq 1 \}$
-\item $\{x\,|\, x < 3 \, \text{and} \, x \geq 2 \}$
-\item $\{x\,|\, x \leq -3 \, \text{or} \, x > 0 \}$
+\begin{problem}
+$\{x\,|\, x \leq -3 \, \text{or} \, x > 0 \}$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+  $\{x\,|\, x \leq 2 \, \text{and} \, x > 3 \}$  
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$\{x\,|\, x > 2 \, \text{or} \, x = \pm 1 \}$  
+\end{problem}
 
-\item $\{x\,|\, x \leq 2 \, \text{and} \, x > 3 \}$
-\item $\{x\,|\, x > 2 \, \text{or} \, x = \pm 1 \}$
-\item $\{x\,|\,  3 < x < 13 \, \text{and} \, x \neq 4 \}$ \label{writeintervallast}
+\begin{problem}\label{writeintervallast}
+$\{x\,|\,  3 < x < 13 \, \text{and} \, x \neq 4 \}$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
+\begin{question}
 For Exercises \ref{shadevennfirst} - \ref{shadevennlast}, use the blank Venn Diagram below with $A$, $B$, and $C$ in it as a guide to help you shade the following sets.
 
 \begin{center}
-\begin{mfpic}[40]{-2}{2}{-2}{2}
-  
-	\circle{(.5,-.875),1} %Circle C
-   \circle{(0,0),1} % Circle A
-   \circle{(.875,0),1} % Circle B
-   \tlabel[cc](-1.25, 0){$A$}
-   \tlabel[cc](2.125, 0){$B$}
-   \tlabel[cc](0.5,-2.125){$C$}
-	\tlabel[cc](2.375, 1.5){$U$}
-	\rect{(-1.75,-2.625), (2.625, 1.75)}
-\end{mfpic}
+\begin{tikzpicture}[scale=2]
+
+% Circles
+\draw (0.5,-0.875) circle (1);   % Circle C
+\draw (0,0) circle (1);          % Circle A
+\draw (0.875,0) circle (1);      % Circle B
+
+% Labels
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (0.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+
+% Rectangle
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\end{tikzpicture}
 
 \end{center}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{shadevennfirst}
+$A \cup C$
+\end{problem}
 
-\item  $A \cup C$ \label{shadevennfirst}
+\begin{problem}
+$B \cap C$
+\end{problem}
 
-\item  $B \cap C$
+\begin{problem}
+$(A \cup B) \cup C$
+\end{problem}
 
-\item  $(A \cup B) \cup C$
+\begin{problem}
+$(A \cap B) \cap C$ 
+\end{problem}
+
+\begin{problem}\label{intoverunion}
+$A \cap (B \cup C)$
+\end{problem}
+
+\begin{problem}\label{shadevennlast}
+$(A \cap B) \cup (A \cap C)$
+\end{problem}
+
+\end{question}
 
 
+\begin{problem}
+Explain how your answers to problems \ref{intoverunion} and \ref{shadevennlast} show $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.  Phrased differently, this shows `intersection \textit{distributes} over union.'  Discuss with your classmates if  `union' distributes over `intersection.'  Use a Venn Diagram to support your answer.
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+Show that $A \subseteq B$ if and only if $A \cup B = B$.
+\end{problem}
 
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+Let $A = \{1,3,5,7,9\}, B = \{2,4,6,8,10\}, C = \{1,6,9\}$ and $D = \{2,7,10\}$.  Draw one Venn Diagram that shows all four of these sets.  What sort of difficulties do you encounter?  
+\end{problem}
 
-\item  $(A \cap B) \cap C$ 
-
-\item  $A \cap (B \cup C)$ \label{intoverunion}
-
-\item  $(A \cap B) \cup (A \cap C)$ \label{shadevennlast}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  Explain how your answers to problems \ref{intoverunion} and \ref{shadevennlast} show $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.  Phrased differently, this shows `intersection \textit{distributes} over union.'  Discuss with your classmates if  `union' distributes over `intersection.'  Use a Venn Diagram to support your answer.
-
-\item Show that $A \subseteq B$ if and only if $A \cup B = B$.
-
-\item Let $A = \{1,3,5,7,9\}, B = \{2,4,6,8,10\}, C = \{1,6,9\}$ and $D = \{2,7,10\}$.  Draw one Venn Diagram that shows all four of these sets.  What sort of difficulties do you encounter?
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
 
 
 \end{document}
