@@ -645,13 +645,13 @@ Suppose $f(x) = a x^{n}$ where $a \neq 0$ is a real number and $n \in \mathbb{N}
 \begin{itemize}
 \item If $n$ is even:
 
+if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \lim_{x \rightarrow  \infty} f(x) = \infty}$.
 
-
-if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \lim_{x \rightarrow  \infty} f(x) = \infty}$: 
+for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \lim_{x \rightarrow  \infty} f(x) =  - \infty}$
 
 \begin{center}
 \begin{image}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]\LARGE
         \begin{axis}[
           domain=-3:3,
           xmin=-3, xmax=3,
@@ -667,21 +667,11 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 \addplot[smooth, domain=-3:-1, line width=1.5pt, blue] {x^2};
 \addplot[smooth, domain=1:3, line width=1.5pt, blue] {x^2};
 
-\node[anchor=south, gray] at (0,2) {$a>0$};
+\node[anchor=south, gray] at (0,2) {$a>0$, $n$ is even};
       \end{axis}
         \end{tikzpicture}
-\end{image}
-\end{center}
-
-
-
-
-  
- for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \lim_{x \rightarrow  \infty} f(x) =  - \infty}$:   
- 
-\begin{center}
-\begin{image}
-\begin{tikzpicture}[scale=1]
+\quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]\LARGE
         \begin{axis}[
           domain=-3:3,
           xmin=-3, xmax=3,
@@ -697,7 +687,7 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 \addplot[smooth, domain=-3:-1, line width=1.5pt, blue] {-x^2};
 \addplot[smooth, domain=1:3, line width=1.5pt, blue] {-x^2};
 
-\node[anchor=south, gray] at (0,-2) {$a<0$};
+\node[anchor=south, gray] at (0,-2) {$a<0$, $n$ is even};
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -706,13 +696,13 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 
 \item If $n$ is odd:
 
+ for $a >  0$,$\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \lim_{x \rightarrow \infty} f(x) = \infty}$.
 
-
- for $a >  0$,$\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \lim_{x \rightarrow \infty} f(x) = \infty}$:
+ for $a <  0$,$\ds{ \lim_{x \rightarrow - \infty} f(x) =   \infty}$ and  $\ds{ \lim_{x \rightarrow \infty} f(x) = - \infty}$.
   
 \begin{center}
 \begin{image}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]\LARGE
         \begin{axis}[
           domain=-3:3,
           xmin=-3, xmax=3,
@@ -728,22 +718,11 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 \addplot[smooth, domain=-3:-1, line width=1.5pt, blue] {x^3};
 \addplot[smooth, domain=1:3, line width=1.5pt, blue] {x^3};
 
-\node[anchor=south, gray] at (0,2) {$a>0$};
+\node[anchor=south, gray] at (0,2) {$a>0$, $n$ is odd};
       \end{axis}
         \end{tikzpicture}
-\end{image}
-\end{center} 
-
-
-
-
-
-
- for $a <  0$,$\ds{ \lim_{x \rightarrow - \infty} f(x) =   \infty}$ and  $\ds{ \lim_{x \rightarrow \infty} f(x) = - \infty}$:
-
-\begin{center}
-\begin{image}
-\begin{tikzpicture}[scale=1]
+\quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]\LARGE
         \begin{axis}[
           domain=-3:3,
           xmin=-3, xmax=3,
@@ -759,7 +738,7 @@ if  $a > 0$,  $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$ and  $\ds{ \li
 \addplot[smooth, domain=-3:-1, line width=1.5pt, blue] {-x^3};
 \addplot[smooth, domain=1:3, line width=1.5pt, blue] {-x^3};
 
-\node[anchor=south, gray] at (0,2) {$a<0$};
+\node[anchor=south, gray] at (0,2) {$a<0$, $n$ is odd};
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -902,16 +881,9 @@ This observation is borne out numerically as well.  Based on the table below, as
 
 Next, consider  $g(x) = -0.01x^4 + 5x^2$.  Following the logic of the above example, we would expect the end behavior of $y=g(x)$ to mimic that of $y = -0.01 x^4$.  When we graph $y = g(x)$ (solid line) on the same set of axes as $y = -0.01x^4$ (dashed line), a view near the origin seems to suggest the exact opposite.  However, zooming out reveals that the two graphs do share the same end behavior.\footnote{Or at least they appear to within the limits of the technology.}
 
-
+% https://www.desmos.com/calculator/zhquadlbfj
 \begin{center}
-\begin{tabular}{cc}
-
-\includegraphics[height=2in]{./GraphsofPolynomialsGraphics/PolyEBEx2a.jpg} & \includegraphics[height=2in]{./GraphsofPolynomialsGraphics/PolyEBEx2b.jpg}  \\
-
-$y = g(x)$ and $y = x^4$ `near' $(0,0)$ & a `zoomed out' view \\
-
-
-\end{tabular}
+\desmos{zhquadlbfj}{800}{600}
 \end{center}
 
 Algebraically, for $x \rightarrow  \infty$ or $x \rightarrow -\infty$, even with the small coefficient of $-0.01$, $-0.01x^4$ dominates the $5x^2$ term so $g(x) \approx -0.01 x^4$.  More precisely, \[g(x) = -0.01x^4+5x^2 = x^4 \left(-0.01 + \frac{5}{x^2} \right) \approx x^4(-0.01 + 0)= -0.01x^4. \]
