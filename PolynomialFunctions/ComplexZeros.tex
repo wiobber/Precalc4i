@@ -43,24 +43,50 @@ Complex numbers, by their very definition, are two dimensional creatures.  To se
 
 \begin{center}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cl](5,-0.5){\scriptsize Real Axis}
-\tlabel[cl](0.5,5){\scriptsize Imaginary Axis}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0),(3,0), (-4,2), (0,-3)}
-\tlabel[cc](-4,2.5){\scriptsize $(-4,2) \longleftrightarrow z = -4+2i$}
-\tlabel[cl](0.25,-3){\scriptsize $(0,-3) \longleftrightarrow z = -3i$}
-\tlabel[cc](3,0.5){\scriptsize $(3,0) \longleftrightarrow z = 3$}
-\tlabel[cc](0.25,-0.35){\scriptsize $0$}
-\tlpointsep{5pt}
-\scriptsize
-\tcaption{\scriptsize The Complex Plane}
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4i$} -4, {$-3i$} -3, {$-2i$} -2, {$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
-\normalsize
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-5:5,
+          xmin=-5, xmax=5,
+          ymin=-5, ymax=5,
+          width=6in,
+          height=6in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$,$-3$, $-2$,$-1$, $1$, $2$, $3$, $4$},
+           ytick={-4,-3,-2,-1,1,2,3,4},
+            yticklabels={$-4i$,$-3i$, $-2i$, $-i$, $i$, $2i$,$3i$, $4i$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={Real Axis},
+            ylabel={Imaginary Axis},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=10pt}
+]
+coordinates {
+  (-4,2) [$(-4, 2)\leftrightarrow z=-4+2i$]
+  (3,0) [$(3, 0)\leftrightarrow z=3$]
+};
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{center}
 
@@ -296,20 +322,37 @@ We close this section with an example where we are asked to manufacture a polyno
 
 \begin{center}
 
-\begin{mfpic}[15]{-5}{5}{-6}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-5$} -5,{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.5pt}
-\arrow \reverse \arrow \function{-3.6, 2.75, 0.1}{(x**3+x**2-5*x+3)/3}
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-5, xmax=5,
+          ymin=-6, ymax=6,
+          width=5in,
+          height=7in,
+          xtick={-4, -3,-2, -1, 1, 2,3,4},
+            xticklabels={$-4$, $-3$, $-2$, $-1$,$1$,$2$, $3$, $4$},
+           ytick={-5, -4, -3, -2, -1, 1, 2, 3, 4, 5},
+            yticklabels={$-5$,$-4$, $-3$, $-2$, $-1$,$1$,$2$, $3$, $4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, blue] {(1/3)*(x+3)*(x-1)^2};
+
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{center}
 
