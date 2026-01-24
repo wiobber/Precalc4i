@@ -116,14 +116,9 @@ Since $f$ is a fourth degree polynomial, we know that our quotient is a third de
  Our quotient polynomial is now $2x^2 - 3$.  Setting this to zero gives $2x^2 - 3 = 0$, or $x^2 = \frac{3}{2}$, which gives us $x = \pm \, \frac{\sqrt{6}}{2}$.  Based on our division work, we know that $-1$ has a multiplicity of \textbf{at least} $2$. The Factor Theorem tells us our remaining zeros, $\pm \, \frac{\sqrt{6}}{2}$, each have multiplicity at least $1$.  However, Theorem \ref{nzerosreal} tells us $f$ can have at most $4$ real zeros, counting multiplicity, and so we conclude that $-1$ is of multiplicity \textbf{exactly} $2$ and $\pm \, \frac{\sqrt{6}}{2} \approx \pm 1.225$ each has multiplicity $1$. Thus, we were incorrect in thinking  $-1$ was a zero of multiplicity $3$.  Sure enough, if we adjust zoom in near $(-1,0)$ using graphing utility, we find the graph of $y = f(x)$ touches and rebounds from the $x$-axis at $(-1,0)$, typical behavior near a zero of even multiplicity. The lesson here is, once again, technology may \textbf{suggest} a result, but it is only the mathematics which can \textbf{prove} (or in this case, \textbf{disprove}) it.  
 
 \end{enumerate}
-
+% https://www.desmos.com/calculator/radpekcxv6
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx01a.jpg}  &\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx01b.jpg}
-
-\end{tabular}
+\desmos{radpekcxv6}{800}{600}
 \end{center}
 
  \qed
@@ -158,14 +153,9 @@ Our next example shows how even a mild-mannered polynomial can cause problems.
 
 \item  Graphing $y=f(x)$ on the interval $[-13,13]$ produces the graph below on the left.  Zooming in a bit gives the graph below on the right.  Based on the graph, none of our rational zeros will work. (Do you see why not?)
 
-
+% https://www.desmos.com/calculator/s2bbir5mak
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx02a.jpg}  &\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx02b.jpg}
-
-\end{tabular}
+\desmos{s2bbir5mak}{800}{600}
 \end{center} 
 
 \item  From the graph, we know $f$ has two real zeros, one positive, and one negative.  Our only hope at this point is to try and find the zeros of $f$ by setting $f(x)=x^4+x^2-12=0$ and solving.  If we stare at this equation long enough, we may recognize it as a `quadratic in disguise' or `quadratic in form'. (See Section \ref{AppQuadEqus}.)   In other words, we have three terms: $x^4$, $x^2$ and $12$, and the exponent on the first term, $x^4$, is exactly twice that of the second term, $x^2$.  We may rewrite this as $\left(x^2\right)^2 + \left(x^2\right) - 12 = 0$.  To better see the forest for the trees, we momentarily replace $x^2$ with the variable $u$.  In terms of $u$, our equation becomes $u^2 + u - 12 = 0$, which we can readily factor as $(u+4)(u-3) = 0$.  In terms of $x$, this means $x^4+x^2-12= \left(x^2-3\right) \left(x^2 + 4 \right)=0$. We get $x^2 = 3$, which gives us $x = \pm \sqrt{3}$, or $x^2=-4$, which admits no real solutions.  Since $\sqrt{3} \approx 1.73$, the two zeros match what we expected from the graph.  Turning our attention now to multiplicities, the Factor Theorem guarantees that since $x = \pm \sqrt{3}$ are zeros, $(x- \sqrt{3})$ and $(x + \sqrt{3})$ are factors of $f(x)$.  We've already partially factored  $f(x)$ as $f(x)  = \left(x^2-3\right) \left(x^2 + 4 \right)$.  Since $x^2+4$ as no real zeros, we know both $(x-\sqrt{3})$ and $(x+\sqrt{3})$ must divide $x^2-3$.  By Theorem \ref{nzerosreal},  $x^2-3$ can only have a total of two zeros, including multiplicities, so we are forced to conclude $x = \pm \sqrt{3}$ are each zeros of multiplicity $1$ of $x^2-3$, and hence, $f(x)$.\footnote{Alternatively, we could recognize $x^2 -3 = x^2-(\sqrt{3})^2 = (x-\sqrt{3})(x+\sqrt{3})$, but the above argument works for all quadratic functions, even those which aren't as easy to factor.} \qed
@@ -328,24 +318,9 @@ Setting the quotient polynomial equal to zero yields $2x^2 - 3 = 0$, so that $x^
 
 \item  We know the end behavior of $y=f(x)$ resembles that of its leading term $y=2x^4$.  This means that the graph enters the scene in Quadrant II and exits in Quadrant I.  Since $\pm \, \frac{\sqrt{6}}{2}$ are zeros of multiplicity $1$, we have that the graph crosses through the $x$-axis at the points $\left( -\frac{\sqrt{6}}{2}, 0 \right)$ and $\left( \frac{\sqrt{6}}{2}, 0 \right)$ in a fairly linear fashion.  Since $-1$ is a zero of multiplicity $2$, the graph of $y=f(x)$ touches and rebounds off the $x$-axis at $(-1,0)$ in a parabolic manner.  Last, but not least, since $f(0) = -3$, we get the  $y$-intercept is $(0,-3)$.  Putting all of this together results in the graph below.
 
+% https://www.desmos.com/calculator/mwvyebekgp
 \begin{center}
-
-\begin{mfpic}[20]{-4}{4}{-5}{4}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\scriptsize
-\tlabel[cc](-4,-0.5){\scriptsize $\left( -\frac{\sqrt{6}}{2}, 0 \right)$}
-\tlabel[cc](2,-0.5){\scriptsize $\left( \frac{\sqrt{6}}{2}, 0 \right)$}
-\tlabel[cc](-0.75,-1){\scriptsize $(0, -3)$}
-\tlabel[cc](-1,0.5){\scriptsize $(-1, 0)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3.5,3.25,0.1}{0.1*(x+3)*((x+1)**2)*(x-3)}
-\point[4pt]{(-3,0),(-1,0),(3,0), (0,-0.9)}
-\tcaption{\scriptsize $y = f(x) = 2x^4+4x^3-x^2-6x-3$}
-\end{mfpic}
-
+\desmos{mwvyebekgp}{800}{600}
 \end{center}
 
 \qed
@@ -458,25 +433,37 @@ The quotient polynomial is $2x^2 + 6$ which has no real zeros so we get $x=-\fra
 \item Our first step is to rewrite this inequality so as to compare a function $f(x)$ to $0$.  We have two options, but choose $2x^5-3x^4+6x^3-8x^2+3 \leq 0$, since  we found the zeros of $p(x) = 2x^5-3x^4+6x^3-8x^2+3$ to be $x=-\frac{1}{2}$ and $x=1$. We construct our sign diagram below using the test values $-1$, $0$, and $2$.
 
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=-2:3,
+          xmin=-2, xmax=3,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={-0.5, 1},
+          xticklabels={$-\frac{1}{2}$, $1$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+          ]
+\node[anchor=north, blue] at (-1.5,1) {$(-)$};
+\node[anchor=north, red] at (0.25,1) {$(+)$};
+\node[anchor=north, red] at (2,1) {$(+)$};
+\node[anchor=north, gray] at (-0.5,1) {$0$};
+\node[anchor=north, gray] at (1,1) {$0$};
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{-2,2}
-\arrow \polyline{(-3.5,-1.5),(-3.5,-0.5)}
-\arrow \polyline{(0,-1.5),(0,-0.5)}
-\arrow \polyline{(3.5,-1.5),(3.5,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$-\frac{1}{2} \hspace{7pt}$} -2, {$1$} 2}
-\tlabel[cc](-3.5,1){$(-)$}
-\tlabel[cc](-2,1){$0$}
-\tlabel[cc](0,1){$(+)$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](3.5,1){$(+)$}
-\tlabel[cc](-3.5,-2.25){$-1$}
-\tlabel[cc](0,-2.25){$0$}
-\tlabel[cc](3.5,-2.25){$2$}
-\end{mfpic} 
+\draw[->, gray] (0.25,-1.5)--(0.25,-0.5);
+\node[anchor=north, gray] at (0.25,-2) {$0$};
+\draw[->, gray] (-1.5,-1.5)--(-1.5,-0.5);
+\node[anchor=north, gray] at (-1.5,-2) {$-1$};
+\draw[->, gray] (2,-1.5)--(2,-0.5);
+\node[anchor=north, gray] at (2,-2) {$2$};
 
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \end{center}
 
 The solution to $p(x) < 0$ is $\left(-\infty, -\frac{1}{2}\right)$, and we know $p(x) = 0$ at $x=-\frac{1}{2}$ and $x=1$.  Hence, the solution to $p(x) \leq 0$ is $\left(-\infty, -\frac{1}{2}\right] \cup \left\{1\right\}$.  
@@ -484,13 +471,9 @@ The solution to $p(x) < 0$ is $\left(-\infty, -\frac{1}{2}\right)$, and we know 
 
 \item To interpret this solution graphically, we set $f(x) = 2x^5+6x^3+3$ and $g(x) = 3x^4+8x^2$.  Recall from Section \ref{AbsoluteValueFunctions} the solution to $f(x) \leq g(x)$ is the set of $x$ values for which the graph of $f$ is below the graph of $g$ (where $f(x) < g(x)$) along with the $x$ values where the two graphs intersect ($f(x) = g(x)$).  Graphing $f$ and $g$ using a graphing utility produces the graph below on the left.  (The end behavior should tell you which is which.)  We see that the graph of $f$ is below the graph of $g$ on $\left(-\infty, -\frac{1}{2}\right)$. However, it is difficult to see what is happening near $x=1$.  Zooming in (and making the graph of $g$ lighter), we see that the graphs of $f$ and $g$ do intersect at $x=1$, but the graph of $g$ remains below the graph of $f$ on either side of $x = 1$.
 
+% https://www.desmos.com/calculator/jt9mkygqqz
 \begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx03a.jpg}  &\includegraphics[width = 3in, height=2in]{./RealZerosGraphics/RealZerosEx03b.jpg}
-
-\end{tabular}
+\desmos{jt9mkygqqz}{800}{600}
 \end{center} 
 
 \qed
