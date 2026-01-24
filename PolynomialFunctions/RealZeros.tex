@@ -493,32 +493,48 @@ Next up is an application problem torn  from page \pageref{LCDmaxprofit} in the 
 
 \begin{center}
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\polyline{(-5,0),(5,0)}
-\point[3pt]{(-5,0), (5,0)}
-\xmarks{-2,2}
-\arrow \polyline{(-5,-1.5),(-5,-0.5)}
-\arrow \polyline{(0,-1.5),(0,-0.5)}
-\arrow \polyline{(5,-1.5),(5,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1+\sqrt{2} \hspace{7pt}$} -2, {\scriptsize $5$} 2}
-\tlabel[cc](-5,1){$(-)$}
-\tlabel[cc](-2,1){$0$}
-\tlabel[cc](0,1){$(+)$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](-5,-2.25){$0$}
-\tlabel[cc](0,-2.25){$3$}
-\tlabel[cc](5,-2.25){$10.07$}
-\tlabel[cc](5,1){$(-)$}
-\end{mfpic} 
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=0:10.1,
+          xmin=-0.13, xmax=10.13,
+         ymin=-3, ymax=1.5,
+          width=4in,
+          height=2in,
+          xtick={2.41, 5},
+          xticklabels={$1+\sqrt{2}$, $5$},
+          tick style={line width=1.2pt},
+            axis x line=center,
+            axis y line=none,
+            x axis line style={line width=1pt},
+          ]
+\node[anchor=north, blue] at (0.5,1) {$(-)$};
+\node[anchor=north, red] at (3.75,1) {$(+)$};
+\node[anchor=north, blue] at (9.5,1) {$(-)$};
+
+\draw[->, gray] (0.05,-1.5)--(0.05,-0.5);
+\node[anchor=north, gray] at (0.05,-2) {$0$};
+\draw[->, gray] (3.75,-1.5)--(3.75,-0.5);
+\node[anchor=north, gray] at (3.75,-2) {$3$};
+\draw[->, gray] (10,-1.5)--(10,-0.5);
+\node[anchor=north, gray] at (9.4,-2) {$10.07$};
+
+\draw[fill=black] (0,0) circle[radius=2.95pt];
+\draw[fill=black] (10,0) circle[radius=2.95pt];
+\node[anchor=north, gray] at (2.41,1) {$0$};
+\node[anchor=north, gray] at (5,1) {$0$};
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{center}
 
 We see immediately that $P(x)>0$ on $(1+\sqrt{2},5)$.  Since $x$ measures the number of TVs in \textbf{hundreds}, $x = 1 + \sqrt{2}$ corresponds to $241.4\ldots$ TVs.  Since we can't produce a fractional part of a TV, we need to choose between producing 241 and 242 TVs.  From the sign diagram, we see that $P(2.41) < 0$ but $P(2.42)>0$ so, in this case we take the next \textbf{larger} integer value and set the minimum production to 242 TVs.  At the other end of the interval, we have $x=5$ which corresponds to $500$ TVs.  Here, we take the next \textbf{smaller} integer value, $499$ TVs to ensure that we make a profit.  Hence, in order to make a profit, at least 242, but no more than 499 TVs need to be produced.  We graph $y = P(x)$ below using a graphing utility and see $P(x) > 0$ between $x \approx 2.414$ and $x = 5$, as predicted.
+
+% https://www.desmos.com/calculator/h86diucouq
 \begin{center}
-
-\includegraphics[width = 4in]{./RealZerosGraphics/RealZerosEx04.jpg}
-
+\desmos{h86diucouq}{800}{600}
 \end{center}  
 
  \qed
