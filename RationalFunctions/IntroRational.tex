@@ -662,7 +662,7 @@ coordinates {
   (1,1) [$(1,1)$]
   };
 \node[anchor=north] at (-1.5,3) {VA: $t=0$};
-\node[anchor=south, blue] at (2,3) {$y=x^{-1}$};
+\node[anchor=south, blue] at (2,3) {$y=t^{-1}$};
       \end{axis}
         \end{tikzpicture}
         \quad\quad\quad \quad\quad\quad
@@ -742,52 +742,132 @@ coordinates {
 
 Step 2:   multiply each of the $y$-coordinates of each of the points on the graph of $y = \frac{1}{t+1}$ by $-3$. 
 
-\[ \begin{array}{ccc}
+\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-5:3,
+          xmin=-5.5, xmax=3.5,
+         ymin=-4.5, ymax=4.5,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$t$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-5:-1.25, line width=1.5pt, blue] {1/(x+1)};
+\addplot[smooth,domain=-0.75:3, line width=1.5pt, blue] {1/(x+1)};
+\draw[-,dashed, gray] (-1,-4.5)--(-1,4.5);
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-8pt}
+]
+coordinates {
+  (-2,-1) [$(-2,-1)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+  };
+\node[anchor=north] at (-2.5,3) {VA: $t=-1$};
+\node[anchor=south, blue] at (2,3) {$y=(t+1)^{-1}$};
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
 
-\begin{mfpic}[15]{-6}{4}{-5}{5}
-\axes
-\dashed \polyline{(-1,-5), (-1,5)}
-\scriptsize
-\tlabel[cc](4, -0.5){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-3, -1.5){$(-2,-1)$}
-\tlabel[cc](1, 1.5){$(0,1)$}
-\tlabel[cc](-2, 4){$t= -1$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6,-1.2,0.1}{1/(x+1)}
-\arrow \reverse \arrow \function{-0.8,4,0.1}{1/(x+1)}
-\point[4pt]{(-2,-1), (0,1)}
-\tcaption{\scriptsize $y= \frac{1}{t+1}$}
-\end{mfpic} 
+\node[anchor=south] at (0,1.5) {Multiply each $y$-coordinate};
+\node[anchor=south] at (0,0.5) {by $-3$};
 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-5:3,
+          xmin=-5.5, xmax=3.5,
+         ymin=-4.5, ymax=4.5,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$t$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-5:-1.25, line width=1.5pt, blue] {-3/(x+1)};
+\addplot[smooth,domain=-0.75:3, line width=1.5pt, blue] {-3/(x+1)};
+\draw[-,dashed, gray] (-1,-4.5)--(-1,4.5);
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-8pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (0,-3) [$(0,-3)$]
+  };
+\node[anchor=north] at (-2.5,-3) {VA: $t=-1$};
+\node[anchor=south, blue] at (-3.5,-1) {$y=-3(t+1)^{-1}$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-&
-\stackrel{\text{ \scriptsize multiply each $y$-coordinate by $-3$}}{\xrightarrow{\hspace{1.5in}}}
-&
-
-\begin{mfpic}[15]{-6}{4}{-5}{5}
-\axes
-\dashed \polyline{(-1,-5), (-1,5)}
-\scriptsize
-\tlabel[cc](4, -0.5){$t$}
-\tlabel[cc](0.5, 5){$y$}
-\tlabel[cc](-3, 3){$(-2,3)$}
-\tlabel[cc](1, -3){$(0,-3)$}
-\tlabel[cc](-2, -4){$t= -1$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6,-1.6,0.1}{0-3/(x+1)}
-\arrow \reverse \arrow \function{-0.4,4,0.1}{0-3/(x+1)}
-\point[4pt]{(-2,3), (0,-3)}
-\tcaption{\scriptsize $y= \frac{-3}{t+1}$}
-\end{mfpic} \\
-
-\text{\scriptsize   $(-2,1)$,  $(0,1)$} & & \text{\scriptsize    $(-2,3)$,  $(0,-3)$} \\
- 
- \end{array} \]
+\end{center}
  
  Step 3:   add $2$ to each of the  $y$-coordinates of each of the points on the graph of $y = \frac{-3}{t+1}$.  This moves the horizontal asymptote from $y = 0$ to $y = 2$. 
 
