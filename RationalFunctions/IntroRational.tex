@@ -371,7 +371,7 @@ Step 1:   add $\frac{3}{2}$ to each of the $x$-coordinates of each of the points
           ]
 \addplot[smooth,domain=-4:-0.37, line width=1.5pt, blue] {1/x^2};
 \addplot[smooth,domain=0.37:4, line width=1.5pt, blue] {x^(-2)};
-\draw[-,dashed, gray] (0,-1.5)--(0,5);
+\draw[-,dashed, gray] (0,-1.5)--(0,8);
 
 \addplot[
   only marks,
@@ -441,7 +441,7 @@ coordinates {
             ylabel={$y$},
           ]
 \addplot[smooth,domain=-2.5:1.13, line width=1.5pt, blue] {1/(x-1.5)^2};
-\addplot[smooth,domain=1.87:5.5, line width=1.5pt, blue] {(x-1.5)^(-2)};
+\addplot[smooth,domain=1.87:5, line width=1.5pt, blue] {(x-1.5)^(-2)};
 \draw[-,dashed, gray] (1.5,-1.5)--(1.5,8);
 
 \addplot[
@@ -477,51 +477,135 @@ coordinates {
 \end{center}
 
 Step 2:   multiply each of the $y$-coordinates of each of the points on the graph of $y = \left(x - \frac{3}{2} \right)^{-2}$ by $\frac{1}{4}$. 
- \[ \begin{array}{ccc}
+
+\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:5.5,
+          xmin=-2.5, xmax=5.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2.5:1.13, line width=1.5pt, blue] {1/(x-1.5)^2};
+\addplot[smooth,domain=1.87:5, line width=1.5pt, blue] {(x-1.5)^(-2)};
+\draw[-,dashed, gray] (1.5,-1.5)--(1.5,8);
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-8pt}
+]
+coordinates {
+  (0.5,1) [$\left(\frac{1}{2},1\right)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt}
+]
+coordinates {
+  (2.5,1) [$\left(\frac{5}{2},1\right)$]
+  };
+\node[anchor=north] at (2.8,-0.1) {VA: $x=3/2$};
+\node[anchor=south, blue] at (3.8,5.2) {$y=\left(x-\frac{3}{2}\right)^{-2}$};
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+
+\node[anchor=south] at (0,1.5) {Multiply each};
+\node[anchor=south] at (0,0.5) {$y$-coordinate by $1/4$};
+
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:5.5,
+          xmin=-2.5, xmax=5.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2.5:1.35, line width=1.5pt, blue] {1/4*1/(x-1.5)^2};
+\addplot[smooth,domain=1.65:5, line width=1.5pt, blue] {0.25*(x-1.5)^(-2)};
+\draw[-,dashed, gray] (1.5,-1.5)--(1.5,8);
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-8pt}
+]
+coordinates {
+  (0.5,0.25) [$\left(\frac{1}{2},\frac{1}{4}\right)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt}
+]
+coordinates {
+  (2.5,0.25) [$\left(\frac{5}{2},\frac{1}{4}\right)$]
+  };
+\node[anchor=north] at (2.8,-0.1) {VA: $x=3/2$};
+\node[anchor=south, blue] at (3.8,5.2) {$y=\frac{1}{4}\left(x-\frac{3}{2}\right)^{-2}$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+\end{center}
+
  
-\begin{mfpic}[15]{-3.5}{6.5}{-1}{9}
-\axes
-\dashed \polyline{(1.5, -1), (1.5,9)}
-\scriptsize
-\tlabel[cc](6.5, -0.5){$x$}
-\tlabel[cc](0.5, 9){$y$}
-\gclear \tlabelrect[cc](-0.5, 1){$\left(\frac{1}{2} ,1 \right)$}
-\tlabel[cc](3.5, 1){$\left(\frac{5}{2} ,1 \right)$}
-\gclear \tlabelrect[cc](1.5, -0.5){$x = \frac{3}{2}$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3.5,1.1667,0.1}{1/((x-1.5)**2)}
-\arrow \reverse \arrow \function{1.8333,6.5,0.1}{1/((x-1.5)**2)}
-\point[4pt]{(0.5,1), (2.5,1)}
-\tcaption{\scriptsize $y = \left(x - \frac{3}{2} \right)^{-2}$}
-\end{mfpic} 
-
-&
-
-\stackrel{\text{ \scriptsize multiply each $y$-coordinate by $\frac{1}{4}$ }}{ \xrightarrow{\hspace{1.5in}}}
-
-&
-
-\begin{mfpic}[15]{-3.5}{6.5}{-1}{9}
-\axes
-\dashed \polyline{(1.5, -1), (1.5,9)}
-\scriptsize
-\tlabel[cc](6.5, -0.5){$x$}
-\tlabel[cc](0.5, 9){$y$}
-\gclear \tlabelrect[cc](-0.5, 0.5){$\left(\frac{1}{2} ,\frac{1}{4} \right)$}
-\tlabel[cc](3.5, 0.5){$\left(\frac{5}{2} ,\frac{1}{4} \right)$}
-\gclear \tlabelrect[cc](1.5, -0.5){$x = \frac{3}{2}$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3.5,1.3333,0.1}{0.25/((x-1.5)**2)}
-\arrow \reverse \arrow \function{1.6667,6.5,0.1}{0.25/((x-1.5)**2)}
-\point[4pt]{(0.5,0.25), (2.5,0.25)}
-\tcaption{\scriptsize $y = \frac{1}{4} \left(x - \frac{3}{2} \right)^{-2}$}
-\end{mfpic} \\
-
-
-\text{\scriptsize  $\left(\frac{1}{2} ,1 \right)$,  $\left(\frac{5}{2} ,1 \right)$} & &\text{\scriptsize  $\left(\frac{1}{2} ,\frac{1}{4} \right)$,  $\left(\frac{5}{2} , \frac{1}{4} \right)$}  \\ \end{array} \]
-
 
 Since we did not shift the graph vertically, the horizontal asymptote remains $y = 0$.  We can determine the domain and range of $f$ by tracking the changes to the domain and range of our progenitor function, $y = x^{-2}$.  We get the domain and range of $f$ is  $\left(-\infty, \frac{3}{2} \right) \cup \left(\frac{3}{2}, \infty \right)$ and the range of $f$ is $(-\infty, 0) \cup (0, \infty)$. 
 
