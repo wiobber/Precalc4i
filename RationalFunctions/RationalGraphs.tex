@@ -126,48 +126,75 @@ Notice that if we substituted in $x = \text{$-1$ trillion}$, essentially the sam
 We interpret these findings graphically below on the right.
 
 \begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-12, ymax=12,
+          width=6in,
+          height=4in,
+          xtick={-2,-1,1,2},
+            xticklabels={$-2$,$-1$, $1$, $2$},
+           ytick=\empty,
+          yticklabels=\empty,
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+\addplot[smooth,domain=-2.5:-2.1, line width=3pt, blue,-stealth] {0.3/(x+2)-9};
+\addplot[smooth,domain=-1.9:-1.5, line width=3pt, blue,stealth-] {0.3/(x+2)+9};
+\addplot[smooth,domain=1.5:1.9, line width=3pt, blue, -stealth] {0.3/(x-2)-9};
+\addplot[smooth,domain=2.1:2.5, line width=3pt, blue,stealth-] {0.3/(x-2)+9};
 
-\begin{tabular}{cc}
+ \draw[-,dashed, gray] (-2,-12)--(-2,12);
+ \draw[-,dashed, gray] (2,-12)--(2,12);
 
-\begin{mfpic}[15]{-4}{4}{-5}{5}
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-\dashed \polyline{(-2,-4.5), (-2,4.5)}
-\dashed \polyline{(2,-4.5), (2,4.5)}
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\axes
-\xmarks{-3 step 1 until 3}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3\hspace{7pt}$} -3, {$-1\hspace{7pt}$} -1,  {$1$} 1, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \curve{(-2.75,-3),(-2.5,-3.25), (-2.25,-4)}
-\arrow \reverse \curve{(-1.75,4),(-1.5,3.25), (-1.25,3)}
-\arrow \curve{(1.25,-3), (1.5,-3.25) , (1.75,-4)}
-\arrow \curve{(2.75,3),(2.5,3.25), (2.25,4)}
-\end{mfpic}
+Behavior near $x=\pm 2$
 
-&
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-2, ymax=2,
+          width=6in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+          ytick=\empty,
+          yticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+\addplot[smooth,domain=-2.5:-1.5, line width=3pt, blue,stealth-] {1/(0.5*x)+0.5};
+\addplot[smooth,domain=1.5:2.5, line width=3pt, blue,-stealth] {1/(0.5*x)-0.5};
 
-\begin{mfpic}[15]{-4.75}{4.75}{-2}{2}
-\tlabel[cc](4.75,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
-\axes
-\ymarks{-1 step 1 until 1}
-\tiny
-\tlpointsep{4pt}
-\axislabels {y}{{$-1$} -1, {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\arrow \curve{(2.5,0.85), (3,0.35), (4.25, 0.15)}
-\arrow \curve{(-2.5,-0.85), (-3,-0.35), (-4.25, -0.15)}
-\end{mfpic} \\
-
-behavior near $x = \pm 2$  & end behavior
-
-\end{tabular}
-
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+End behavior
 \end{center}
 
 \item  Lastly, we construct a sign diagram for $f(x)$.  The $x$-values excluded from the domain of $f$ are $x = \pm 2$, and the only zero of $f$ is $x=0$.  Displaying these appropriately on the number line gives us four test intervals, and we choose the test values\footnote{In this particular case, we don't need test values since our analysis of the behavior of $f$ near the vertical asymptotes and our end behavior analysis have given us the signs on each of the test intervals.  In general, however, this won't always be the case, so for demonstration purposes, we continue with our usual construction.} $x=-3$, $x=-1$, $x=1$ and $x=3$.  We find $f(-3)$ is $(-)$, $f(-1)$ is $(+)$, $f(1)$ is $(-)$ and $f(3)$ is $(+)$.  As we begin our sketch, it certainly appears as if the graph could be symmetric about the origin.  Taking a moment to check for symmetry, we find $f(-x) = \frac{3(-x)}{(-x)^2-4} = -\frac{3x}{x^2-4} = -f(x)$.  Hence, $f$ is odd and the graph of $y = f(x)$ is symmetric about the origin. Putting all of our work together, we get the graph below.
