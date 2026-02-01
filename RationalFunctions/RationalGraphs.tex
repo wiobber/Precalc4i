@@ -543,52 +543,96 @@ Note we can use this formula for $h(x)$ in our analysis of the graph of $h$ as l
 
 \end{itemize}
 
-We sketch the end behavior below on the right.
+We sketch the end behavior below.
  
  \begin{center}
- 
- \begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-5:1,
+          xmin=-5, xmax=1,
+          ymin=-12, ymax=12,
+          width=6in,
+          height=4in,
+          xtick={-3},
+            xticklabels={$-3$},
+           ytick=\empty,
+          yticklabels=\empty,
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  mark options={blue,
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
+]
+coordinates {
+  (-1,0)
+};
+           
+\addplot[smooth,domain=-2.5:-2.1, line width=3pt, blue,-stealth] {0.3/(x+2)-9};
+\addplot[smooth,domain=-1.9:-1.5, line width=3pt, blue,stealth-] {0.3/(x+2)+9};
+\addplot[smooth,domain=-1.2:-0.8, line width=3pt, blue] {-10*x-10};
 
-\begin{mfpic}[15]{-4}{1}{-5}{5}
 
-\dashed \polyline{(-2,-4.5), (-2,4.5)}
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\axes
-\xmarks{-2,-1}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$-3\hspace{7pt}$} -3}
-\normalsize
-\penwd{1.25pt}
-\arrow \curve{(-2.75,-3),(-2.5,-3.25), (-2.25,-4)}
-\arrow \reverse \curve{(-1.75,4),(-1.5,3.25), (-1.25,3)}
-\curve{(-1.25,0.5), (-1,0), (-0.75,-0.5)}
-\pointfillfalse
-\point[4pt]{(-1,0)}
-\end{mfpic}
+ \draw[-,dashed, gray,line width=1.5pt,] (-2,-12)--(-2,12);
+ \draw[-,dashed, gray,line width=1.5pt,] (3,-12)--(3,12);
 
-&
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-\begin{mfpic}[15]{-4.75}{4.75}{-4.75}{4.75}
+Behavior near $x=-2$ and $x=-1$
 
-\dashed \function{-1.7,2.7,0.1}{2*x-1}
-\tlabel[cc](4.75,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4.75){\scriptsize $y$}
-\axes
-\ymarks{-4 step 4 until 1}
-\tiny
-\tlpointsep{4pt}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2,{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \curve{(-1.25,-4), (-1.5,-4.2), (-1.7, -4.75)}
-\arrow \curve{(2.25,4), (2.5,4.2), (2.75, 4.75)}
-\end{mfpic} \\
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-6:5,
+          xmin=-6, xmax=5,
+          ymin=-14, ymax=5,
+          width=6in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+          ytick={-1},
+            yticklabels={$-1$},
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+\addplot[smooth,domain=1.3:2.5, line width=3pt, blue,-stealth]{(2*x^3+5*x^2+4*x+1)/(x^2+3*x+2)};
 
-behavior near $x = -2$ and $x=-1$ & end behavior
+\addplot[smooth,domain=-5:-3.8, line width=3pt, blue,stealth-]{(2*x^3+5*x^2+4*x+1)/(x^2+3*x+2)};
 
-\end{tabular}
+
+\addplot[smooth,dashed, gray, line width=1.5pt] {2*x-1};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+End behavior
 
 \end{center}
 
