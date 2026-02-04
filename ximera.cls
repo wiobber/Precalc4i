@@ -522,7 +522,7 @@
 \ifhandout
 \setbox0\vbox\bgroup
 \else
-\begin{trivlist}\item[\hskip \labelsep\small\slshape\bfseries \GetTranslation{hint}:\hspace{2ex}]
+\begin{trivlist}\item[\hskip \labelsep\small\slshape\bfseries \GetTranslation{Hint}:\hspace{2ex}]
 \small\slshape
 \fi
 \stepcounter{hintLevel}
@@ -538,7 +538,7 @@
 
 \ifhints
 \renewenvironment{hint}{
-\begin{trivlist}\item[\hskip \labelsep\small\slshape\bfseries \GetTranslation{hint}:\hspace{2ex}]
+\begin{trivlist}\item[\hskip \labelsep\small\slshape\bfseries \GetTranslation{Hint}:\hspace{2ex}]
 \small\slshape
 }
 {
@@ -550,7 +550,8 @@
 \let\endabstract\relax
 \NewEnviron{abstract}{\protected@xdef\theabstract{\BODY}}
 \let\@emptyauthor\@author
-\def\author#1{\gdef\@author{#1}\gdef\@authorfoot{#1}}
+\def\@authorfootnote{\gdef\@thefnmark{}\@footnotetext}
+\def\author#1{\gdef\@author{#1}}
 \def\@author{\@latex@warning@no@line{No \noexpand\author given}}
 \def\and{and }
 
@@ -578,7 +579,7 @@
   \ifnumbers\addcontentsline{toc}{section}{\thetitlenumber~\@title}\else\addcontentsline{toc}{section}{\@title}\fi
   \vskip .6em\noindent\textit\theabstract\setcounter{problem}{0}\setcounter{section}{0}\setcounter{subsection}{0}\par\vspace{2em}
   %\ifnooutcomes\else\let\thefootnote\relax\footnote{Learning outcomes: \theoutcomes}\fi% Depreciated with new outcome mechanism.
-  \ifnoauthor\else\ifcsname @authorfoot\endcsname \footnote{Author(s):~\@author}\fi \fi
+  \ifnoauthor\else\@authorfootnote{Author(s):~\@author}\fi
   \aftergroup\@afterindentfalse
   \aftergroup\@afterheading}
 
@@ -644,7 +645,15 @@
 \NewEnviron{image}[1][3in]{%
   \begin{center}\resizebox{#1}{!}{\BODY}\end{center}% resize and center
 }
-\newcommand{\alt}[1]{}
+\newcommand{\alt}[1]{}       %% Deprecated
+
+\providecommand\xmaltprint{}
+%% use \undef\xmaltprint to NOT have \xmalt output in the PDF
+\newcommand{\xmalt}[1]{%     %% see infra for HTML implementation;  2026, J. Kuan
+  \ifdefined\xmaltprint%
+     {\footnotesize\color{gray}Alt text: #1}%
+  \fi%
+}
 
 
 \DefineVerbatimEnvironment{javascript}{Verbatim}{numbers=left,frame=lines,label=JavaScript,labelposition=topline}
