@@ -756,13 +756,13 @@ for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \
 \subsection{Polynomial Functions}
 \label{PolynomialFunctionsSubsection}
  
- We are now in the position to discuss \textbf{polynomial} functions.  Simply stated, \textbf{poly}nomial functions are sums of \textbf{mon}omial functions.  The challenge becomes how to describe one of these beasts in general.  Up until now, we have used distinct letters to indicate different parameters in our definitions of function families.  In other words, we define constant functions as $f(x) = b$, linear functions as $f(x) = mx+b$, and quadratic functions as $f(x) = ax^2+bx+c$.  We even hinted at a function of the form $f(x) = ax^3+bx^2+cx+d$.  What happens if we wanted to describe a generic polynomial that required, say, 117 different parameters? Our work around is to use subscripted parameters,  $a_{\mbox{\tiny $k$}}$, that  denote the coefficient of $x^{k}$. For example, instead of writing a quadratic as $f(x) = ax^2+bx+c$, we describe it as $f(x) = a_{\mbox{\tiny $2$}} x^2 + a_{\mbox{\tiny $1$}} x + a_{\mbox{ \tiny$0$}}$, where $a_{\mbox{\tiny $2$}}$, $a_{\mbox{\tiny $1$}}$, and $a_{\mbox{ \tiny $0$}}$ are real numbers and $a_{\mbox{\tiny $2$}} \neq 0$.   As an added example, consider $f(x) = 4x^5 - 3x^2 + 2x - 5$.   We can re-write the formula for $f$ as $f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5).$ and identify  $a_{\mbox{\tiny $5$}} = 4$, $a_{\mbox{\tiny $4$}} = 0$, $a_{\mbox{\tiny $3$}} = 0$, $a_{\mbox{\tiny $2$}} = -3$, $a_{\mbox{\tiny $1$}} = 2$ and $a_{\mbox{\tiny $0$}} = -5$.   This is the notation we use in the following definition.
+ We are now in the position to discuss \textbf{polynomial} functions.  Simply stated, \textbf{poly}nomial functions are sums of \textbf{mon}omial functions.  The challenge becomes how to describe one of these beasts in general.  Up until now, we have used distinct letters to indicate different parameters in our definitions of function families.  In other words, we define constant functions as $f(x) = b$, linear functions as $f(x) = mx+b$, and quadratic functions as $f(x) = ax^2+bx+c$.  We even hinted at a function of the form $f(x) = ax^3+bx^2+cx+d$.  What happens if we wanted to describe a generic polynomial that required, say, 117 different parameters? Our work around is to use subscripted parameters,  $a_k$, that  denote the coefficient of $x^{k}$. For example, instead of writing a quadratic as $f(x) = ax^2+bx+c$, we describe it as $f(x) = a_2 x^2 + a_1 x + a_{\mbox{ \tiny$0$}}$, where $a_2$, $a_1$, and $a_{\mbox{ \tiny $0$}}$ are real numbers and $a_2 \neq 0$.   As an added example, consider $f(x) = 4x^5 - 3x^2 + 2x - 5$.   We can re-write the formula for $f$ as $f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5).$ and identify  $a_5 = 4$, $a_4 = 0$, $a_3 = 0$, $a_2 = -3$, $a_1 = 2$ and $a_0 = -5$.   This is the notation we use in the following definition.
 
 %\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{polynomialfunction} A \index{function ! polynomial}\index{polynomial function ! definition of}\textbf{polynomial function} is a function of the form \[ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}},\] where $a_{\mbox{\tiny $0$}}$, $a_{\mbox{\tiny $1$}}$, \ldots, $a_{n}$ are real numbers and $n \in \mathbb{N}$.  The domain of a polynomial function is $(-\infty, \infty)$.
+\begin{definition} \label{polynomialfunction} A \index{function ! polynomial}\index{polynomial function ! definition of}\textbf{polynomial function} is a function of the form \[ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0,\] where $a_0$, $a_1$, \ldots, $a_{n}$ are real numbers and $n \in \mathbb{N}$.  The domain of a polynomial function is $(-\infty, \infty)$.
 
 \end{definition}
 
@@ -770,7 +770,7 @@ for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \
 
 %\medskip
 
-As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent variable with the $a_{\mbox{\tiny $k$}}$ each being a parameter.  Even though we specify $n  \in  \mathbb{N}$ so $n \geq 1$, the value of the $a_{\mbox{\tiny $k$}}$ are unrestricted. Hence, any constant function $f(x) = b$ can be written as $f(x) = 0 x + a_{\mbox{ \tiny$0$}}$, and so they are polynomials.  Polynomials have an associated vocabulary,\footnote{See Section \ref{AppPolyArith}.}  and hence, so do polynomial functions.
+As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent variable with the $a_k$ each being a parameter.  Even though we specify $n  \in  \mathbb{N}$ so $n \geq 1$, the value of the $a_k$ are unrestricted. Hence, any constant function $f(x) = b$ can be written as $f(x) = 0 x + a_{\mbox{ \tiny$0$}}$, and so they are polynomials.  Polynomials have an associated vocabulary,\footnote{See Section \ref{AppPolyArith}.}  and hence, so do polynomial functions.
 
 %\medskip
 
@@ -780,7 +780,7 @@ As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent
 
 \begin{itemize}
 
-\item Given $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}}$ with $n \in \mathbb{N}$ and $a_{n} \neq 0$, we say 
+\item Given $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0$ with $n \in \mathbb{N}$ and $a_{n} \neq 0$, we say 
 
 \begin{itemize}
 
@@ -790,11 +790,11 @@ As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent
 
 \item  The real number $a_{n}$ is called the \index{polynomial function ! leading coefficient}\index{leading coefficient of a polynomial}\textbf{leading coefficient} of the polynomial $f$.
 
-\item  The real number $a_{\mbox{\tiny $0$}}$ is called the \index{polynomial function ! constant term}\index{constant term of a polynomial}\textbf{constant term} of the polynomial $f$.
+\item  The real number $a_0$ is called the \index{polynomial function ! constant term}\index{constant term of a polynomial}\textbf{constant term} of the polynomial $f$.
 
 \end{itemize}
 
-\item  If $f(x) = a_{\mbox{\tiny $0$}}$, and $a_{\mbox{\tiny $0$}} \neq 0$, we say $f$ has degree $0$.
+\item  If $f(x) = a_0$, and $a_0 \neq 0$, we say $f$ has degree $0$.
 
 \item  If $f(x) = 0$, we say $f$ has no degree.\footnote{Some authors say $f(x) = 0$ has degree $-\infty$ for reasons not even we will go into.}
 
@@ -896,7 +896,7 @@ The results of these last two examples generalize below in Theorem \ref{EBPolyno
 
 \begin{theorem} \label{EBPolynomials}\index{end behavior ! polynomial}\textbf{End Behavior for Polynomial Functions:} 
 
-The end behavior of  polynomial function $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}}$ with $a_{n} \neq 0$ matches the end behavior of $y = a_{n} x^{n}$.  
+The end behavior of  polynomial function $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0$ with $a_{n} \neq 0$ matches the end behavior of $y = a_{n} x^{n}$.  
 
 That is, the end behavior of a polynomial function is determined by its leading term.
 \end{theorem}
