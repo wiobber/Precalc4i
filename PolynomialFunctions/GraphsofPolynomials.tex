@@ -756,13 +756,13 @@ for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \
 \subsection{Polynomial Functions}
 \label{PolynomialFunctionsSubsection}
  
- We are now in the position to discuss \textbf{polynomial} functions.  Simply stated, \textbf{poly}nomial functions are sums of \textbf{mon}omial functions.  The challenge becomes how to describe one of these beasts in general.  Up until now, we have used distinct letters to indicate different parameters in our definitions of function families.  In other words, we define constant functions as $f(x) = b$, linear functions as $f(x) = mx+b$, and quadratic functions as $f(x) = ax^2+bx+c$.  We even hinted at a function of the form $f(x) = ax^3+bx^2+cx+d$.  What happens if we wanted to describe a generic polynomial that required, say, 117 different parameters? Our work around is to use subscripted parameters,  $a_k$, that  denote the coefficient of $x^{k}$. For example, instead of writing a quadratic as $f(x) = ax^2+bx+c$, we describe it as $f(x) = a_2 x^2 + a_1 x + a_{\mbox{ \tiny$0$}}$, where $a_2$, $a_1$, and $a_{\mbox{ \tiny $0$}}$ are real numbers and $a_2 \neq 0$.   As an added example, consider $f(x) = 4x^5 - 3x^2 + 2x - 5$.   We can re-write the formula for $f$ as $f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5).$ and identify  $a_5 = 4$, $a_4 = 0$, $a_3 = 0$, $a_2 = -3$, $a_1 = 2$ and $a_0 = -5$.   This is the notation we use in the following definition.
+ We are now in the position to discuss \textbf{polynomial} functions.  Simply stated, \textbf{poly}nomial functions are sums of \textbf{mon}omial functions.  The challenge becomes how to describe one of these beasts in general.  Up until now, we have used distinct letters to indicate different parameters in our definitions of function families.  In other words, we define constant functions as $f(x) = b$, linear functions as $f(x) = mx+b$, and quadratic functions as $f(x) = ax^2+bx+c$.  We even hinted at a function of the form $f(x) = ax^3+bx^2+cx+d$.  What happens if we wanted to describe a generic polynomial that required, say, 117 different parameters? Our work around is to use subscripted parameters,  $a_k$, that  denote the coefficient of $x^{k}$. For example, instead of writing a quadratic as $f(x) = ax^2+bx+c$, we describe it as $f(x) = a_2 x^2 + a_1 x + a_0$, where $a_2$, $a_1$, and $a_0$ are real numbers and $a_2 \neq 0$.   As an added example, consider $f(x) = 4x^5 - 3x^2 + 2x - 5$.   We can re-write the formula for $f$ as $f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5).$ and identify  $a_5 = 4$, $a_4 = 0$, $a_3 = 0$, $a_2 = -3$, $a_1 = 2$ and $a_0 = -5$.   This is the notation we use in the following definition.
 
 %\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{polynomialfunction} A \index{function ! polynomial}\index{polynomial function ! definition of}\textbf{polynomial function} is a function of the form \[ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0,\] where $a_0$, $a_1$, \ldots, $a_{n}$ are real numbers and $n \in \mathbb{N}$.  The domain of a polynomial function is $(-\infty, \infty)$.
+\begin{definition} \label{polynomialfunction} A \index{function ! polynomial}\index{polynomial function ! definition of}\textbf{polynomial function} is a function of the form \[ f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_2 x^2 + a_1 x + a_0,\] where $a_0$, $a_1$, \ldots, $a_{n}$ are real numbers and $n \in \mathbb{N}$.  The domain of a polynomial function is $(-\infty, \infty)$.
 
 \end{definition}
 
@@ -770,7 +770,7 @@ for $a < 0$, $\ds{ \lim_{x \rightarrow - \infty} f(x) =  - \infty}$ and  $\ds{ \
 
 %\medskip
 
-As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent variable with the $a_k$ each being a parameter.  Even though we specify $n  \in  \mathbb{N}$ so $n \geq 1$, the value of the $a_k$ are unrestricted. Hence, any constant function $f(x) = b$ can be written as $f(x) = 0 x + a_{\mbox{ \tiny$0$}}$, and so they are polynomials.  Polynomials have an associated vocabulary,\footnote{See Section \ref{AppPolyArith}.}  and hence, so do polynomial functions.
+As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent variable with the $a_k$ each being a parameter.  Even though we specify $n  \in  \mathbb{N}$ so $n \geq 1$, the value of the $a_k$ are unrestricted. Hence, any constant function $f(x) = b$ can be written as $f(x) = 0 x + a_0$, and so they are polynomials.  Polynomials have an associated vocabulary,\footnote{See Section \ref{AppPolyArith}.}  and hence, so do polynomial functions.
 
 %\medskip
 
@@ -780,7 +780,7 @@ As usual, $x$ is used in Definition \ref{polynomialfunction}  as the independent
 
 \begin{itemize}
 
-\item Given $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0$ with $n \in \mathbb{N}$ and $a_{n} \neq 0$, we say 
+\item Given $f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_2 x^2 + a_1 x + a_0$ with $n \in \mathbb{N}$ and $a_{n} \neq 0$, we say 
 
 \begin{itemize}
 
@@ -896,7 +896,7 @@ The results of these last two examples generalize below in Theorem \ref{EBPolyno
 
 \begin{theorem} \label{EBPolynomials}\index{end behavior ! polynomial}\textbf{End Behavior for Polynomial Functions:} 
 
-The end behavior of  polynomial function $f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_2 x^2 + a_1 x + a_0$ with $a_{n} \neq 0$ matches the end behavior of $y = a_{n} x^{n}$.  
+The end behavior of  polynomial function $f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_2 x^2 + a_1 x + a_0$ with $a_{n} \neq 0$ matches the end behavior of $y = a_{n} x^{n}$.  
 
 That is, the end behavior of a polynomial function is determined by its leading term.
 \end{theorem}
@@ -908,7 +908,7 @@ That is, the end behavior of a polynomial function is determined by its leading 
 
 We argue Theorem \ref{EBPolynomials} using an argument similar to ones used above.  As $x \rightarrow \infty$ or $x \rightarrow -\infty$, 
 
-\[ f(x) =  x^{n} \left( a_{n} +\dfrac{a_{n-\mbox{\tiny$1$}}}{x}+ \ldots + \dfrac{a_{\mbox{\tiny$2$}}}{x^{n-2}} + \dfrac{a_{\mbox{\tiny$1$}}}{x^{n-1}}+\dfrac{a_{\mbox{\tiny$0$}}}{x^{n}}\right) \approx x^n( a_{n} + 0 +\ldots 0) = a_{n} x^n \]
+\[ f(x) =  x^{n} \left( a_{n} +\dfrac{a_{n-1}}{x}+ \ldots + \dfrac{a_2}{x^{n-2}} + \dfrac{a_1}{x^{n-1}}+\dfrac{a_0}{x^{n}}\right) \approx x^n( a_{n} + 0 +\ldots 0) = a_{n} x^n \]
 
 If this argument looks a little fuzzy, it should.  As with all things involving infinity, the precision of Calculus is required here\footnote{Which we'll touch on in Chapters \ref{RationalFunctions} and \ref{FirstStepsCalculus}.}  For now, we'll rely on number sense and algebraic intuition.
 
