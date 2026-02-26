@@ -171,8 +171,8 @@ Geometrically, adding $2$ to the $y$-coordinate of a point moves the point $2$ u
             major tick length=6pt,
             axis x line=center,
             axis y line=center,
-            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=0.8pt},
             xlabel={$x$},
             ylabel={$y$},
            every axis x label/.style={
@@ -181,9 +181,9 @@ Geometrically, adding $2$ to the $y$-coordinate of a point moves the point $2$ u
   }
           ]
 %% lines
-\draw[blue, line width=3.5pt] (0,1)--(2,3);
-\draw[blue, line width=3.5pt] (4,3)--(2,3);
-\draw[blue, line width=3.5pt] (4,3)--(5,5);
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
 %% Regular points, labeled
 \addplot[
@@ -244,8 +244,9 @@ coordinates {
             x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
           ]
  
-\node[anchor=south] at (0,1.5) {Shift up $2$ units};
-\node[anchor=south] at (0,0.5) {add $2$ to each $y$-coordinate};
+\node[anchor=south] at (0,0.5) {Shift up $2$ units};
+\node[anchor=north] at (0,-0.5) {add $2$};
+\node[anchor=north] at (0,-1.5) {to each $y$-coordinate};
  
       \end{axis}
         \end{tikzpicture}
@@ -265,8 +266,8 @@ coordinates {
             major tick length=6pt,
             axis x line=center,
             axis y line=center,
-            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=0.8pt},
             xlabel={$x$},
             ylabel={$y$},
            every axis x label/.style={
@@ -275,9 +276,9 @@ coordinates {
   }
           ]
 %% lines
-\draw[blue, line width=3.5pt] (0,3)--(2,5);
-\draw[blue, line width=3.5pt] (4,5)--(2,5);
-\draw[blue, line width=3.5pt] (4,5)--(5,7);
+\draw[blue, line width=1.5pt] (0,3)--(2,5);
+\draw[blue, line width=1.5pt] (4,5)--(2,5);
+\draw[blue, line width=1.5pt] (4,5)--(5,7);
 
 %% Regular points, labeled
 \addplot[
