@@ -128,5 +128,132 @@ coordinates {
 \end{image}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4.5, xmax=4.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-4:-0.37, line width=1.5pt, blue] {1/x^2};
+\addplot[smooth,domain=0.37:4, line width=1.5pt, blue] {x^(-2)};
+\draw[-,dashed, gray] (0,-1.5)--(0,8);
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (-1,1) [$(-1,1)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (1,1) [$(1,1)$]
+  };
+\node[anchor=north, gray] at (1.5,-0.1) {VA: $x=0$};
+\node[anchor=south, blue] at (-1.5,5) {$y=x^{-2}$};
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,1.5) {Add $3/2$};
+\node[anchor=south] at (0,0.5) {to each $x$-coordinate};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:5.5,
+          xmin=-2.5, xmax=5.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2.5:1.13, line width=1.5pt, blue] {1/(x-1.5)^2};
+\addplot[smooth,domain=1.87:5, line width=1.5pt, blue] {(x-1.5)^(-2)};
+\draw[-,dashed, gray] (1.5,-1.5)--(1.5,8);
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-8pt}
+]
+coordinates {
+  (0.5,1) [$\left(\frac{1}{2},1\right)$]
+  };
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt}
+]
+coordinates {
+  (2.5,1) [$\left(\frac{5}{2},1\right)$]
+  };
+\node[anchor=north, gray] at (2.8,-0.1) {VA: $x=3/2$};
+\node[anchor=south, blue] at (3.8,5.2) {$y=\left(x-\frac{3}{2}\right)^{-2}$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+ 
+\end{center}
 
 \end{document}
