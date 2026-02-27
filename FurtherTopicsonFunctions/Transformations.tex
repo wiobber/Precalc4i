@@ -2067,32 +2067,85 @@ Simply put, rigid transformations preserve the distances between points on the g
 
 Suppose we wish to graph the function $g(x) =2 f(x)$ where $f(x)$ is the function whose graph is given at the beginning of the section. From its graph, we can build a table of values for $g$ as before.
 
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=6,
+          width=6in,
+          height=6in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2,3, 4, 5},
+            yticklabels={$2$,$3$,$4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=3.5pt] (0,1)--(2,3);
+\draw[blue, line width=3.5pt] (4,3)--(2,3);
+\draw[blue, line width=3.5pt] (4,3)--(5,5);
+
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
+
+  };
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \begin{center}
 
-\begin{tabular}{m{2in}m{3in}}
 
-% \input{Transformations_pic34.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
-
- 
-&
 
 \[ \begin{array}{|c||c|c|c|c|}  
 
@@ -2106,64 +2159,182 @@ Suppose we wish to graph the function $g(x) =2 f(x)$ where $f(x)$ is the functio
 
 \end{array} \] 
 
-\end{tabular}
 
 \end{center}
 
 Graphing, we get:
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=11,
+          width=2in,
+          height=4in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2,3, 4, 5, 6,7,8,9,10},
+            yticklabels={$2$,$3$,$4$, $5$,$6$,$7$,$8$,$9$,$10$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
-% \input{Transformations_pic35.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{11}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,11){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5,6,7,8,9,10}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8, {\scriptsize $9$} 9,  {\scriptsize $10$} 10 }
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
 
-&
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
 
-\stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $2$}} 
+  };
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,1.5) {vertical scaling};
+\node[anchor=south] at (0,0.5) {by a factor of $2$};
+\node[anchor=north] at (0,-0.5) {multiply each};
+\node[anchor=north] at (0,-1.5) {$y$-coordinate by $2$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=11,
+          width=2in,
+          height=4in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={1,3, 4, 5, 6,7,8,9,10},
+            yticklabels={$1$,$3$,$4$, $5$,$6$,$7$,$8$,$9$,$10$},   
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,2)--(2,6);
+\draw[blue, line width=1.5pt] (4,6)--(2,6);
+\draw[blue, line width=1.5pt] (4,6)--(5,10);
 
-&
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,2) [$(0,2)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,6) [$(2,6)$]
+  (5,10) [$(5,10)$]
+  };
 
-% \input{Transformations_pic36.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{11}
-\tlabel[cc](-1,2){\scriptsize $(0,2)$}
-\tlabel[cc](2,6.5){\scriptsize $(2,6)$}
-\tlabel[cc](4,5.5){\scriptsize $(4,6)$}
-\tlabel[cc](5,10.5){\scriptsize $(5,10)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,11){\scriptsize $y$}
-\tcaption{\scriptsize $y= 2f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5,6,7,8,9,10}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8, {\scriptsize $9$} 9,  {\scriptsize $10$} 10 }
-\penwd{1.25pt}
-\polyline{(0,2), (2,6), (4,6), (5,10)}
-\point[4pt]{(0,2), (2,6), (4,6), (5,10)}
-\end{mfpic}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,6) [$(4,6)$]
 
-
-\end{array} \]
+  };
+      \end{axis}
+        \end{tikzpicture}        
+\end{image}
 
 In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$ so that $g(a) = 2 f(a) = 2b$ puts $(a,2b)$ on the graph of $g$.  In other words, to obtain the graph of $g$, we multiply all of the $y$-coordinates of the points on the graph of $f$ by $2$.  Multiplying all of the $y$-coordinates of all of the points on the graph of $f$ by $2$ causes what is known as a `vertical scaling\footnote{Also called a `vertical stretch,' `vertical expansion' or `vertical dilation' by a factor of $2$.} by a factor of $2$.'
 
