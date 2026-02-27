@@ -1074,57 +1074,177 @@ Applying Theorem \ref{reflections} to the graph of $y=f(x)$ given at the beginni
 
 \end{array} \] 
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-6, ymax=6,
+          width=2in,
+          height=4in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={-5,-4,-3,-2,-1,2,3, 4, 5},
+            yticklabels={$-5$,$-4$,$-3$,$-2$,$-1$, $2$,$3$,$4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
-% \input{Transformations_pic16.tex}
-\begin{mfpic}[14]{-1}{6}{-6}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{-1,-2,-3,-4,-5,1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $-1$} -1,{\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $-5$} -5, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
 
-&
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
 
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $x$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $-1$}} 
+  };
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,0.5) {reflect across $x$-axis};
+\node[anchor=north] at (0,-0.5) {multiply each};
+\node[anchor=north] at (0,-1.5) {$y$-coordinate by $-1$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-6, ymax=6,
+          width=2in,
+          height=4in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$,$4$,$5$},
+           ytick={-5,-4,-3,-2,-1,2,3, 4, 5},
+            yticklabels={$-5$,$-4$,$-3$,$-2$,$-1$, $2$,$3$,$4$, $5$},   
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,-1)--(2,-3);
+\draw[blue, line width=1.5pt] (4,-3)--(2,-3);
+\draw[blue, line width=1.5pt] (4,-3)--(5,-5);
 
-&
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+   (0,-1) [$(0,-1)$]
+ 
+};
 
-% \input{Transformations_pic17.tex}
-\begin{mfpic}[14]{-1}{6}{-6}{6}
-\tlabel[cc](-1.25,-1){\scriptsize $(0,-1)$}
-\tlabel[cc](2,-3.5){\scriptsize $(2,-3)$}
-\tlabel[cc](4,-2.5){\scriptsize $(4,-3)$}
-\tlabel[cc](5,-5.5){\scriptsize $(5,-5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=-f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{-1,-2,-3,-4,-5,1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $-5$} -5,{\scriptsize $1$} 1,{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,-1), (2,-3), (4,-3), (5,-5)}
-\point[4pt]{(0,-1), (2,-3), (4,-3), (5,-5)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (2,-3) [$(2,-3)$]
+  (5,-5) [$(5,-5)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (4,-3) [$(4,-3)$]
 
-\end{array}\]
+  };
+      \end{axis}
+        \end{tikzpicture}        
+\end{image}
+
 
 By reflecting the graph of $f$ across the $y$-axis, we obtain the graph of $y=f(-x)$.
 
@@ -1140,57 +1260,176 @@ x & -x & g(x)=f(-x) & (x, g(x)) \\ \hline
 
 \end{array} \]
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2,3, 4, 5},
+            yticklabels={$2$,$3$,$4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
-% \input{Transformations_pic18.tex}
-\begin{mfpic}[13]{-6}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{-1,-2,-3,-4,-5,1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $-2\hspace{7pt}$} -2, {\scriptsize $-3\hspace{7pt}$} -3, {\scriptsize $-4\hspace{7pt}$} -4, {\scriptsize $-5\hspace{7pt}$} -5, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
 
-&
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
 
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $-1$}} 
+  };
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,0.5) {reflect across $y$-axis};
+\node[anchor=north] at (0,-0.5) {multiply each};
+\node[anchor=north] at (0,-1.5) {$x$-coordinate by $-1$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-6, xmax=1,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={-5,-4,-3,-2,-1},
+            xticklabels={$-5$,$-4$,$-3$,$-2$,$-1$},
+           ytick={2,3, 4, 5},
+            yticklabels={$2$,$3$,$4$, $5$},   
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(-2,3);
+\draw[blue, line width=1.5pt] (-4,3)--(-2,3);
+\draw[blue, line width=1.5pt] (-4,3)--(-5,5);
 
-&
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+   (0,1) [$(0,1)$]
+ 
+};
 
-% \input{Transformations_pic19.tex}
-\begin{mfpic}[13]{-6}{6}{-1}{6}
-\tlabel[cc](1,1){\scriptsize $(0,1)$}
-\tlabel[cc](-2,3.5){\scriptsize $(-2,3)$}
-\tlabel[cc](-4,2.5){\scriptsize $(-4,3)$}
-\tlabel[cc](-5,5.5){\scriptsize $(-5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(-x)$}
-\axes
-\xmarks{-1,-2,-3,-4,-5,1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $-2\hspace{7pt}$} -2, {\scriptsize $-3\hspace{7pt}$} -3, {\scriptsize $-4\hspace{7pt}$} -4, {\scriptsize $-5\hspace{7pt}$} -5, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (-2,3), (-4,3), (-5,5)}
-\point[4pt]{(0,1), (-2,3), (-4,3), (-5,5)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  (-5,5) [$(-5,5)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (-4,3) [$(-4,3)$]
 
-\end{array}\]
+  };
+      \end{axis}
+        \end{tikzpicture}        
+\end{image}
 
 \begin{example}  \label{reflectionsex}  
 
