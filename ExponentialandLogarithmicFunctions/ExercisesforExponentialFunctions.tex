@@ -10,168 +10,277 @@
 \label{ExercisesforExponentialFunctions}
 
 
-
+\begin{question}
 In Exercises \ref{graphexpfirsta} - \ref{graphexplasta}, sketch the graph of $g$ by starting with the graph of $f$ and using transformations.  Track at least three points of your choice and the horizontal asymptote through the transformations. State the domain and range of $g$.
 
-\begin{multicols}{2}
-\begin{enumerate}
+\begin{problem}\label{graphexpfirsta}
+$f(x) = 2^{x}$, $g(x) = 2^{x} - 1$
+\end{problem}  
 
-\item  $f(x) = 2^{x}$, $g(x) = 2^{x} - 1$ \label{graphexpfirsta}
+\begin{problem}
+$f(x) = \left(\frac{1}{3}\right)^{x}$, $g(x) = \left(\frac{1}{3}\right)^{x-1}$    
+\end{problem}
 
-\item  $f(x) = \left(\frac{1}{3}\right)^{x}$, $g(x) = \left(\frac{1}{3}\right)^{x-1}$
+\begin{problem}
+$f(x) = 3^{x}$, $g(x) = 3^{-x}+2$
+\end{problem} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$f(x) = 10^{x}$, $g(x) = 10^{\frac{x+1}{2}} - 20$ 
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$f(t) = (0.5)^{t}$, $g(t) = 100(0.5)^{0.1t}$
+\end{problem}
+  
+\begin{problem}
+$f(t) = (1.25)^{t}$, $g(t) = 1 - (1.25)^{t-2}$
+\end{problem}
 
-\item  $f(x) = 3^{x}$, $g(x) = 3^{-x}+2$
+\begin{problem}
+$f(t) = e^{t}$, $g(t) = 8 - e^{-t}$
+\end{problem}  
 
-\item  $f(x) = 10^{x}$, $g(x) = 10^{\frac{x+1}{2}} - 20$  
+\begin{problem}\label{graphexplasta}
+$f(t) = e^{t}$, $g(t) = 10e^{-0.1t}$   
+\end{problem}  
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $f(t) = (0.5)^{t}$, $g(t) = 100(0.5)^{0.1t}$
-
-\item  $f(t) = (1.25)^{t}$, $g(t) = 1 - (1.25)^{t-2}$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $f(t) = e^{t}$, $g(t) = 8 - e^{-t}$
-
-\item  $f(t) = e^{t}$, $g(t) = 10e^{-0.1t}$ \label{graphexplasta}
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
+\begin{question}
 In Exercises, \ref{expformfirsta} - \ref{expformlasta}, the graph of an exponential function is given.  Find a formula for the function in the form $F(x) = a \cdot 2^{bx-h}+k$.
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  \label{expformfirsta}  Points:  $\left(-2, -\frac{5}{2} \right)$,  $\left(-1, -2 \right)$, $\left(0, -1 \right)$, \\
+\begin{problem}\label{expformfirsta}
+Points:  $\left(-2, -\frac{5}{2} \right)$,  $\left(-1, -2 \right)$, $\left(0, -1 \right)$, \\
 Asymptote:  $y = -3$. \\
 
-\begin{mfpic}[13]{-5}{3}{-4}{6}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4, -3,-2,-1,1,2}
-\ymarks{-3, -2, -1, 1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-4 \hspace{7pt}$} -4,{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3}
-\dashed \polyline{(-5,-3), (3,-3)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.5, 2.1, 0.1}{(2**(x+1))-3}
-\point[4pt]{(-2, -2.5), (-1,-2),(0,-1)}
-\end{mfpic}
+\begin{tikzpicture}[scale=0.6]
 
-\vfill
+% Axes
+\draw[->] (-5,0) -- (3,0);
+\draw[->] (0,-4) -- (0,6);
 
-\columnbreak
+% Axis labels
+\node at (3,-0.5) {\scriptsize $x$};
+\node at (0.5,6) {\scriptsize $y$};
 
-\item  Points:  $\left(-1, 1 \right)$, $\left(0, 2 \right)$, $\left(1, \frac{5}{2} \right)$, \\
-Asymptote:  $y = 3$. \\
+% Tick marks (x)
+\foreach \x in {-4,-3,-2,-1,1,2}
+  \draw (\x,0.1) -- (\x,-0.1);
 
-\begin{mfpic}[13]{-4}{4}{-6}{4}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-5 step 1 until 3}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-1$} -1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $-5$} -5}
-\dashed \polyline{(-4,3), (4,3)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3, 3.1, 0.1}{3-(2**(-x))}
-\point[4pt]{(-1,1), (0,2), (1, 2.5)}
-\end{mfpic}
+% Tick labels (x)
+\node at (-4,-0.4) {\scriptsize $-4$};
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (2,-0.4) {\scriptsize $2$};
+
+% Tick marks (y)
+\foreach \y in {-3,-2,-1,1,2,3,4,5}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y)
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,4) {\scriptsize $4$};
+\node at (0.4,5) {\scriptsize $5$};
+\node at (0.4,-1) {\scriptsize $-1$};
+\node at (0.4,-2) {\scriptsize $-2$};
+\node at (0.4,-3) {\scriptsize $-3$};
+
+% Dashed horizontal line y = -3
+\draw[dashed] (-5,-3) -- (3,-3);
+
+% Function: y = 2^(x+1) - 3
+\draw[domain=-4.5:2.1,smooth,thick,<->] 
+  plot (\x,{2^(\x+1) - 3});
+
+% Points
+\fill (-2,-2.5) circle (2pt);
+\fill (-1,-2) circle (2pt);
+\fill (0,-1) circle (2pt);
+
+\end{tikzpicture}
+
+\end{problem} 
+
+\begin{problem}
+Points:  $\left(-1, 1 \right)$, $\left(0, 2 \right)$, $\left(1, \frac{5}{2} \right)$, 
+Asymptote:  $y = 3$. 
+
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-4,0) -- (4,0);
+\draw[->] (0,-6) -- (0,4);
+
+% Axis labels
+\node at (4,-0.5) {\scriptsize $x$};
+\node at (0.5,4) {\scriptsize $y$};
+
+% Tick marks (x)
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x)
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (2,-0.4) {\scriptsize $2$};
+\node at (3,-0.4) {\scriptsize $3$};
+
+% Tick marks (y)
+\foreach \y in {-5,-4,-3,-2,-1,1,2,3}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y)
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,-1) {\scriptsize $-1$};
+\node at (0.4,-2) {\scriptsize $-2$};
+\node at (0.4,-3) {\scriptsize $-3$};
+\node at (0.4,-4) {\scriptsize $-4$};
+\node at (0.4,-5) {\scriptsize $-5$};
+
+% Dashed horizontal line y = 3
+\draw[dashed] (-4,3) -- (4,3);
+
+% Function: y = 3 - 2^{-x}
+\draw[domain=-3:3.1,smooth,thick,<->,samples=100]
+  plot (\x,{3 - 2^(-\x)});
+
+% Points
+\fill (-1,1) circle (2pt);
+\fill (0,2) circle (2pt);
+\fill (1,2.5) circle (2pt);
+
+\end{tikzpicture}
+
+\end{problem} 
+
+\begin{problem}
+Points:  $\left(\frac{5}{2}, \frac{1}{2} \right)$, $\left(3,1 \right)$, $\left(\frac{7}{2}, 2 \right)$, \\
+Asymptote:  $y = 0$. 
+
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-1,0) -- (5,0);
+\draw[->] (0,-1) -- (0,9);
+
+% Axis labels
+\node at (5,-0.5) {\scriptsize $x$};
+\node at (0.5,9) {\scriptsize $y$};
+
+% Tick marks (x)
+\foreach \x in {1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x)
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (2,-0.4) {\scriptsize $2$};
+\node at (3,-0.4) {\scriptsize $3$};
+\node at (4,-0.4) {\scriptsize $4$};
+
+% Tick marks (y)
+\foreach \y in {1,2,3,4,5,6,7,8}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y)
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,4) {\scriptsize $4$};
+\node at (0.4,5) {\scriptsize $5$};
+\node at (0.4,6) {\scriptsize $6$};
+\node at (0.4,7) {\scriptsize $7$};
+\node at (0.4,8) {\scriptsize $8$};
+
+% Function: y = 2^(2x - 6)
+\draw[domain=1.25:4.55,smooth,thick,<->,samples=100]
+  plot (\x,{2^(2*\x - 6)});
+
+% Points
+\fill (2.5,0.5) circle (2pt);
+\fill (3,1) circle (2pt);
+\fill (3.5,2) circle (2pt);
+
+\end{tikzpicture}
+
+\end{problem}
+ 
+
+
+\begin{problem}\label{expformlasta} 
+Points:  $\left(-\frac{1}{2}, 6 \right)$, $\left(0,3 \right)$, $\left(\frac{1}{2}, \frac{3}{2} \right)$, \\
+Asymptote:  $y = 0$.
+
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-4,0) -- (4,0);
+\draw[->] (0,-1) -- (0,9);
+
+% Axis labels
+\node at (4,-0.5) {\scriptsize $x$};
+\node at (0.5,9) {\scriptsize $y$};
+
+% Tick marks (x)
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x)
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (2,-0.4) {\scriptsize $2$};
+\node at (3,-0.4) {\scriptsize $3$};
+
+% Tick marks (y)
+\foreach \y in {1,2,3,4,5,6,7,8}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y) (only selected ones shown, matching mfpic)
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,7) {\scriptsize $7$};
+\node at (0.4,8) {\scriptsize $8$};
+
+% Function: y = 3 * 2^(-2x)
+\draw[domain=-0.79:2,smooth,thick,<->,samples=100]
+  plot (\x,{3*2^(-2*\x)});
+
+% Points
+\fill (-0.5,6) circle (2pt);
+\fill (0,3) circle (2pt);
+\fill (0.5,1.5) circle (2pt);
+
+\end{tikzpicture}
+\end{problem}  
 
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  Points:  $\left(\frac{5}{2}, \frac{1}{2} \right)$, $\left(3,1 \right)$, $\left(\frac{7}{2}, 2 \right)$, \\
-Asymptote:  $y = 0$. \\
-
-\begin{mfpic}[13]{-1}{5}{-1}{9}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,9){\scriptsize $y$}
-\xmarks{1 step 1 until 4}
-\ymarks{1 step 1 until 8}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{1.25, 4.55, 0.1}{2**(2*x-6)}
-\point[4pt]{(2.5, 0.5), (3,1), (3.5,2) }
-\end{mfpic}
-
-\vfill
-
-\columnbreak
-
-\item  Points:  $\left(-\frac{1}{2}, 6 \right)$, $\left(0,3 \right)$, $\left(\frac{1}{2}, \frac{3}{2} \right)$, \\
-Asymptote:  $y = 0$.   \\
-
-\begin{mfpic}[13]{-4}{4}{-1}{9}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,9){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4,5,6,7,8}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3,  {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.79, 2, 0.1}{3*(2**(-2*x))}
-\point[4pt]{(-0.5, 6), (0,3), (0.5, 1.5)}
-\end{mfpic}
 
 
-\label{expformlasta} 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\end{question}
 
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
-
-\item 
-
+\begin{problem}
 Find a formula for each graph in Exercises \ref{expformfirsta} - \ref{expformlasta} of the form $G(x) = a \cdot 4^{bx-h} + k$.
-  Did you change your solution methodology?    What is the relationship between your answers for $F(x)$ and $G(x)$ for each graph?
+  Did you change your solution methodology?    What is the relationship between your answers for $F(x)$ and $G(x)$ for each graph?    
+\end{problem}
 
-\item \label{morethanoneforexpexercise} In Example \ref{expfcngraphsex} number \ref{findformulaforexpexample}, we obtained the solution  $F(x) = -2^{x+3} + 4$ as one formula for the given graph by making a simplifying assumption that $a = -1$.  This exercises explores if there are any other solutions for different choices of $a$.
+
+\begin{problem}\label{morethanoneforexpexercise}
+In Example \ref{expfcngraphsex} number \ref{findformulaforexpexample}, we obtained the solution  $F(x) = -2^{x+3} + 4$ as one formula for the given graph by making a simplifying assumption that $a = -1$.  This exercises explores if there are any other solutions for different choices of $a$.
 
 \begin{enumerate}
 
@@ -180,25 +289,39 @@ Find a formula for each graph in Exercises \ref{expformfirsta} - \ref{expformlas
 \item With help from your classmates, find solutions to  Example \ref{expfcngraphsex} number \ref{findformulaforexpexample} using $a = -8$, $a = -16$ and  $a = -\frac{1}{2}$.  Show all your solutions can be rewritten as: $F(x) = -2^{x+3} + 4$.
 
 \item  Using properties of exponents and the fact that the range of $2^{x}$ is $(0, \infty)$, show that any function of the form $f(x) = -a \cdot 2^{bx-h} + k$ for $a> 0$ can be rewritten as $f(x) = - 2^{c} \, 2^{bx-h} + k = -2^{bx-h+c} + k$.  Relabeling, this means every function of the form $f(x) = -a \cdot 2^{bx-h} + k$ with four parameters ($a$, $b$, $h$, and $k$) can be rewritten as $f(x) =  - 2^{bx - H} + k$, a formula with just three parameters:  $b$, $H$, and $k$.  Conclude that  \textit{every} solution to Example \ref{expfcngraphsex} number \ref{findformulaforexpexample} reduces to $F(x) = -2^{x+3} + 4$ .
-
-\end{enumerate}
-\setcounter{HW}{\value{enumi}}
 \end{enumerate}
 
+\end{problem}
+
+\begin{question}
 In Exercises \ref{decomposebasicexpfirst} - \ref{decomposebasicexplast}, write the given function as a nontrivial decomposition of functions as directed.
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{decomposebasicexpfirst}
+For $f(x) = e^{-x} +1 $, find functions $g$ and $h$ so that $f=g+h$.
+\end{problem}
 
-\item  For $f(x) = e^{-x} +1 $, find functions $g$ and $h$ so that $f=g+h$. \label{decomposebasicexpfirst}
-\item  For $f(x) = e^{2x} - x$, find functions $g$ and $h$ so that $f=g-h$. 
-\item  For $f(t) = t^2 e^{-t}$, find functions $g$ and $h$ so that $f=gh$.
+\begin{problem}
+For $f(x) = e^{2x} - x$, find functions $g$ and $h$ so that $f=g-h$.
+\end{problem}  
+
+\begin{problem}
+For $f(t) = t^2 e^{-t}$, find functions $g$ and $h$ so that $f=gh$.
 \item  For $r(x) = \dfrac{e^{x} - e^{-x}}{e^{x}+e^{-x}}$, find functions $f$ and $g$ so $r = \dfrac{f}{g}$.
-\item  For $k(x) = e^{-x^2}$, find functions $f$ and $g$  so that $k = g \circ f$.
-\item  For $s(x) =\sqrt{e^{2x} - 1}$, find functions $f$ and $g$ so $s = g \circ f$. \label{decomposebasicexplast}
+\end{problem}
 
+\begin{problem}
+For $k(x) = e^{-x^2}$, find functions $f$ and $g$  so that $k = g \circ f$.
+\end{problem}
 
-\item \label{preludetocompoundingexercise} The amount of money in a savings account, $A(t)$, in dollars,  $t$ years after an initial investment is made is given by: $A(t) = 500(1.05)^{t}$, for $t \geq 0$.
+\begin{problem}\label{decomposebasicexplast}
+For $s(x) =\sqrt{e^{2x} - 1}$, find functions $f$ and $g$ so $s = g \circ f$.
+\end{problem}
+
+\end{question}
+
+\begin{problem}\label{preludetocompoundingexercise}
+
+The amount of money in a savings account, $A(t)$, in dollars,  $t$ years after an initial investment is made is given by: $A(t) = 500(1.05)^{t}$, for $t \geq 0$.
 
 \begin{enumerate}
 
@@ -211,10 +334,11 @@ In Exercises \ref{decomposebasicexpfirst} - \ref{decomposebasicexplast}, write t
 \item Use a graphing utility to estimate how long until the savings account is worth $\$1500$.  Round your answer to the nearest year.
 
 \end{enumerate}
+  
+\end{problem} 
 
-\pagebreak
-
-\item  Based on census data,\footnote{See \href{http://www.towncharts.com/Ohio/Demographics/Lake-County-OH-Demographics-data.html}{\underline{here}}.} the population of Lake County, Ohio, in 2010 was 230,041 and in 2015, the population was 229,437.  
+\begin{problem}
+Based on census data,\footnote{See \href{http://www.towncharts.com/Ohio/Demographics/Lake-County-OH-Demographics-data.html}{\underline{here}}.} the population of Lake County, Ohio, in 2010 was 230,041 and in 2015, the population was 229,437.  
 
 \begin{enumerate}
 
@@ -231,17 +355,24 @@ HINT:  Definitions \ref{expfcnpointbaseform} and \ref{rrc} and ensuing discussio
 \item  Let $A(t)$  represent the population of Lake County $t$ years after 2010 where the we approximate the percentage change in population per year as $-\frac{0.263 \%}{5} = -0.0526 \%$.    Find a formula for $A(t)$ and compare your predictions with $A(t)$ to those given by $P(t)$.  In particular, what population does each model give for the year 2050?  Discuss any discrepancies with your classmates.
 
 \end{enumerate}
+   
+\end{problem} 
+  
+\begin{problem}\label{averageofarc}  
+Show that the average rate of change of a function over the interval  $[x, x+2]$ is average of the average rates of change of the function over the intervals $[x,x+1]$ and $[x+1, x+2]$.  Can the same be said for the average rate of change of the function over $[x, x+3]$ and the average of the average rates of change over $[x, x+1]$, $[x+1, x+2]$, and $[x+2, x+3]$?  Generalize.
+\end{problem}
 
+\begin{problem}\label{exponentialchangeexercise}  
+If $f(x) = b^{x}$ where $b>0$, $b \neq 1$,  show $f(x_{0}+\Delta x) = f(x_{0}) b^{\Delta x}$.
+    
+\end{problem}
 
-\item \label{averageofarc}  Show that the average rate of change of a function over the interval  $[x, x+2]$ is average of the average rates of change of the function over the intervals $[x,x+1]$ and $[x+1, x+2]$.  Can the same be said for the average rate of change of the function over $[x, x+3]$ and the average of the average rates of change over $[x, x+1]$, $[x+1, x+2]$, and $[x+2, x+3]$?  Generalize.
+\begin{problem}
+Which is larger: $e^{\pi}$ or $\pi^{e}$?  How do you know?  Can you find a proof that doesn't use technology?   
+\end{problem}
 
-\item \label{exponentialchangeexercise}  If $f(x) = b^{x}$ where $b>0$, $b \neq 1$,  show $f(x_{0}+\Delta x) = f(x_{0}) b^{\Delta x}$.
-
-
-\item Which is larger: $e^{\pi}$ or $\pi^{e}$?  How do you know?  Can you find a proof that doesn't use technology?
-
-
-\item\label{derivativeofex} \begin{enumerate}  \item\label{diffquotex}  Use properties of exponential functions to show that if $f(x) = e^{x}$, then \[ f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} e^{x} \, \left( \frac{e^{h} - 1}{h} \right)\]
+\begin{problem}\label{derivativeofex}
+\begin{enumerate}  \item\label{diffquotex}  Use properties of exponential functions to show that if $f(x) = e^{x}$, then \[ f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} e^{x} \, \left( \frac{e^{h} - 1}{h} \right)\]
 
 \item\label{specialexlimit}    Numerically and graphically investigate the limit: $\ds{\lim_{h \rightarrow 0}}$ $\frac{e^{h} - 1}{h}$.
 
@@ -259,12 +390,10 @@ HINT:  Definitions \ref{expfcnpointbaseform} and \ref{rrc} and ensuing discussio
 
 \end{enumerate}
 
-\end{enumerate}
+\end{enumerate}   
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+ 
 
-
-\newpage
 
 \end{document}
