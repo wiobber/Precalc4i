@@ -1,0 +1,243 @@
+\documentclass{ximera}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Answers for Non Linear Equations}{}
+
+\mfpicnumber{1} \opengraphsfile{ExercisesforNonLinearEquations} % mfpic settings added 
+
+
+\label{AnswersforNonLinearEquations}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $(\pm 2, 0)$, $\left(\pm \sqrt{3}, -1\right)$ \\
+\begin{mfpic}[15]{-3}{3}{-5}{3}
+\arrow \reverse \arrow \function{-2.5,2.5,0.1}{x**2 - 4}
+\circle{(0,0),2}
+\point[3pt]{(2,0), (-2,0), (1.7320,-1), (-1.7320,-1)}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-4,-3,-2,-1,1,2}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item No solution \\
+
+\begin{mfpic}[15]{-3}{3}{-6}{3}
+\arrow \reverse \arrow \function{-2.75,2.75,0.1}{x**2 - 5}
+\circle{(0,0),2}
+\axes
+\tlabel[cc](3,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-2,-1,1,2}
+\ymarks{-4,-3,-2,-1,1,2}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $(0, \pm 4)$ \\
+\begin{mfpic}[10]{-5}{5}{-5}{5}
+\ellipse{(0,0), 2, 4}
+\circle{(0,0),4}
+\point[3pt]{(0,4), (0,-4)}
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  $(\pm 4,0)$ \\
+\begin{mfpic}[10]{-7}{7}{-5}{5}
+\arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*cosh(t), 3*sinh(t))}
+\arrow \reverse \arrow \parafcn{-1, 1,0.1}{(0-4*cosh(t), 3*sinh(t))}
+\circle{(0,0),4}
+\point[3pt]{(4,0), (-4,0)}
+\axes
+\tlabel[cc](7,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-6 \hspace{7pt}$} -6,{$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  $\left(\pm \frac{4 \sqrt{7}}{5}, \pm \frac{12 \sqrt{2}}{5}  \right)$ \\
+\begin{mfpic}[10]{-5}{5}{-5}{5}
+\arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*sinh(t), 3*cosh(t))}
+\arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*sinh(t), 0-3*cosh(t))}
+\circle{(0,0),4}
+\point[3pt]{(2.1166,3.3941), (2.1166, -3.3941), (-2.1166,3.3941), (-2.1166,-3.3941) }
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\vfill
+
+\columnbreak
+
+\item  $\left( 1 + \sqrt{7}, -1 + \sqrt{7}  \right)$, $\left( 1 - \sqrt{7}, -1 - \sqrt{7}  \right)$ \\
+\begin{mfpic}[10]{-5}{5}{-5}{5}
+\arrow \reverse \arrow \function{-3,5,0.1}{x-2}
+\circle{(0,0),4}
+\point[3pt]{(3.6458,1.6458), (-1.6458, -3.6458) }
+\axes
+\tlabel[cc](5,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,5){\scriptsize $y$}
+\xmarks{-4,-3,-2,-1,1,2,3,4}
+\ymarks{-4,-3,-2,-1,1,2,3,4}
+\tlpointsep{4pt}
+\tiny
+\axislabels {x}{{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
+\normalsize
+\end{mfpic}
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left( \pm \frac{2 \sqrt{10}}{5}, \pm \frac{\sqrt{15}}{5} \right)$
+\item $(0, 1)$
+\item $(0, \pm 1), \; (2, 0)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+\item $\left( \frac{4}{3}, \pm \frac{\sqrt{5}}{3} \right)$
+\item $(3, 4), \; (-4, -3)$
+\item $(\pm 3, 4)$
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(-4, -56), \; (1, 9), \; (2, 16)$
+\item $(-2,2)$, $(2,-2)$
+\item $(3, 4)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item  Initially, there are $\frac{250000}{49} \approx 5102$ bacteria.  It will take $\frac{5\ln(49/5)}{\ln(7/5)} \approx 33.92$ minutes for the colony to grow to 50,000 bacteria.
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $\left( -\sqrt[3]{5}, 49 \right)$
+\item No solution
+\item $\left( e^{-5}, \pm \sqrt{7} \right)$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $(1, 4, 8), \; (-1, 4, 8)$
+
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item $x = 10, \; y = 10, \; z = 10, \lambda = \frac{2}{5}$
+
+\setcounter{HW}{\value{enumi}}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{HW}}
+
+\item \begin{enumerate} 
+
+\addtocounter{enumii}{2}
+
+\item $x^{4} + 4 = (x^{2} - 2x + 2)(x^{2} + 2x + 2)$
+
+\end{enumerate}
+
+\item $x^{4} + 6x^{2} - 5x + 6 = (x^{2} - x + 1)(x^{2} + x + 6)$
+
+\end{enumerate}
+
+
+\end{document}
