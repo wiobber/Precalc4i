@@ -88,124 +88,225 @@ For each of the equations given in Exercises \ref{parabolasketchfirst} - \ref{st
  In Exercises \ref{buildparafromgraphfirst} - \ref{buildparafromgraphlast}, find an equation for the parabola whose graph is given.
 
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{buildparafromgraphfirst}
 
-\item $~$ \label{buildparafromgraphfirst}
+\begin{tikzpicture}[scale=0.6]
 
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1, 1){\scriptsize $(0,2)$}
-\tlabel[cc](-2.25,-3.75){\scriptsize $(-2,-6)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2, -1, 1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{ 1, {$4$} 2, {$6$} 3, {$8$} 4, {$-4$} -2, {$-6$} -3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.8,0.8,0.1}{(x+2)**2-3}
-\point[4pt]{(-2,-3), (0,1)}
-\normalsize
-\end{mfpic} 
+% Axes
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
 
-\vfill
+% Axis labels
+\node at (5,-0.5) {\scriptsize $x$};
+\node at (0.5,5) {\scriptsize $y$};
 
-\columnbreak
+% Extra point labels
+\node at (1,1) {\scriptsize $(0,2)$};
+\node at (-2.25,-3.75) {\scriptsize $(-2,-6)$};
 
-\item $~$
+% Tick marks (x)
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
 
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-1.25, 4.25){\scriptsize $(0,4)$}
-\tlabel[cc](3,0.75){\scriptsize $(\sqrt{2},0)$}
-\tlabel[cc](-3.25,0.75){\scriptsize $(-\sqrt{2},0)$}
-\xmarks{-3,,-1,1,3}
-\ymarks{-4,-3,-2, -1, 1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-2 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 3}
-\axislabels {y}{{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3,  {$-2$} -2, {$-3$} -3, {$-4$} -4}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,3,0.1}{4-(x**2)}
-\point[4pt]{(0,4), (-2,0), (2,0)}
-\normalsize
-\end{mfpic} 
+% Tick labels (x)
+\node at (-4,-0.4) {\scriptsize $-4$};
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (2,-0.4) {\scriptsize $2$};
+\node at (3,-0.4) {\scriptsize $3$};
+\node at (4,-0.4) {\scriptsize $4$};
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+% Tick marks (y)
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y) -- custom scaling
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $4$};
+\node at (0.4,3) {\scriptsize $6$};
+\node at (0.4,4) {\scriptsize $8$};
+\node at (0.4,-2) {\scriptsize $-4$};
+\node at (0.4,-3) {\scriptsize $-6$};
+
+% Function: y = (x+2)^2 - 3
+\draw[domain=-4.8:0.8,smooth,thick,<->,samples=100]
+  plot (\x,{(\x+2)^2 - 3});
+
+% Points
+\fill (-2,-3) circle (2pt);
+\fill (0,1) circle (2pt);
+
+\end{tikzpicture}
+\end{problem}
+
+\begin{problem}
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
+
+% Axis labels
+\node at (5,-0.5) {\scriptsize $x$};
+\node at (0.5,5) {\scriptsize $y$};
+
+% Special point labels
+\node at (-1.25,4.25) {\scriptsize $(0,4)$};
+\node at (3,0.75) {\scriptsize $(\sqrt{2},0)$};
+\node at (-3.25,0.75) {\scriptsize $(-\sqrt{2},0)$};
+
+% Tick marks (x) — note sparse/irregular mfpic input
+\foreach \x in {-3,-1,1,3}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x) — custom values
+\node at (-3,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (1,-0.4) {\scriptsize $1$};
+\node at (3,-0.4) {\scriptsize $2$};
+
+% Tick marks (y)
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y)
+\node at (0.4,-1) {\scriptsize $-1$};
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,-2) {\scriptsize $-2$};
+\node at (0.4,-3) {\scriptsize $-3$};
+\node at (0.4,-4) {\scriptsize $-4$};
+
+% Function: y = 4 - x^2
+\draw[domain=-3:3,smooth,thick,<->,samples=100]
+  plot (\x,{4 - (\x)^2});
+
+% Points
+\fill (0,4) circle (2pt);
+\fill (-2,0) circle (2pt);
+\fill (2,0) circle (2pt);
+
+\end{tikzpicture}
+\end{problem}
+
+\begin{problem}
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-6,0) -- (5,0);
+\draw[->] (0,-3) -- (0,7);
+
+% Axis labels
+\node at (5,-0.5) {\scriptsize $x$};
+\node at (0.5,7) {\scriptsize $y$};
+
+% Special point labels
+\node at (-5.5,2) {\scriptsize $(-4,2)$};
+\node at (1,4.75) {\scriptsize $(0,4)$};
+\node at (1,-1) {\scriptsize $(0,0)$};
+
+% Tick marks (x)
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x) (only selected ones shown)
+\node at (-4,-0.4) {\scriptsize $-4$};
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (4,-0.4) {\scriptsize $4$};
+
+% Tick marks (y)
+\foreach \y in {-2,-1,1,2,3,4,5,6}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y)
+\node at (0.4,1) {\scriptsize $1$};
+\node at (0.4,2) {\scriptsize $2$};
+\node at (0.4,3) {\scriptsize $3$};
+\node at (0.4,5) {\scriptsize $5$};
+\node at (0.4,6) {\scriptsize $6$};
+\node at (0.4,-1) {\scriptsize $-1$};
+\node at (0.4,-2) {\scriptsize $-2$};
+
+% Functions: y = 2 ± sqrt(x+4)
+\draw[domain=-4:5,smooth,thick,->,samples=100]
+  plot (\x,{2 - sqrt(\x+4)});
+\draw[domain=-4:5,smooth,thick,->,samples=100]
+  plot (\x,{2 + sqrt(\x+4)});
+
+% Points
+\fill (-4,2) circle (2pt);
+\fill (0,0) circle (2pt);
+\fill (0,4) circle (2pt);
+
+\end{tikzpicture}
+\end{problem}
+ 
+
+\begin{problem}\label{buildparafromgraphlast} 
+
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
+
+% Axis labels
+\node at (5,-0.5) {\scriptsize $x$};
+\node at (0.5,5) {\scriptsize $y$};
+
+% Special point labels
+\node at (1.25,2) {\scriptsize $(0,4)$};
+\node at (1.5,-2) {\scriptsize $(0,-4)$};
+\node at (2,-0.75) {\scriptsize $(1,0)$};
+
+% Tick marks (x)
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.1) -- (\x,-0.1);
+
+% Tick labels (x)
+\node at (-4,-0.4) {\scriptsize $-4$};
+\node at (-3,-0.4) {\scriptsize $-3$};
+\node at (-2,-0.4) {\scriptsize $-2$};
+\node at (-1,-0.4) {\scriptsize $-1$};
+\node at (4,-0.4) {\scriptsize $4$};
+
+% Tick marks (y)
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.1,\y) -- (-0.1,\y);
+
+% Tick labels (y) — scaled
+\node at (0.4,1) {\scriptsize $2$};
+\node at (0.4,2) {\scriptsize $4$};
+\node at (0.4,3) {\scriptsize $6$};
+\node at (0.4,4) {\scriptsize $8$};
+\node at (0.4,-1) {\scriptsize $-2$};
+\node at (0.4,-2) {\scriptsize $-4$};
+\node at (0.4,-3) {\scriptsize $-6$};
+\node at (0.4,-4) {\scriptsize $-8$};
+
+% Functions: y = ± 2 sqrt(1 - x)
+\draw[domain=-5:1,smooth,thick,<-,samples=100]
+  plot (\x,{2*sqrt(1-\x)});
+\draw[domain=-5:1,smooth,thick,<-,samples=100]
+  plot (\x,{-2*sqrt(1-\x)});
+
+% Points
+\fill (1,0) circle (2pt);
+\fill (0,2) circle (2pt);
+\fill (0,-2) circle (2pt);
+
+\end{tikzpicture}
+\end{problem}
 
 
-\pagebreak
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
 
-\item $~$   
 
-\begin{mfpic}[13]{-6}{5}{-3}{7}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel[cc](-5.5, 2){\scriptsize $(-4,2)$}
-\tlabel[cc](1, 4.75){\scriptsize $(0,4)$}
-\tlabel[cc](1, -1){\scriptsize $(0, 0)$}
-%\tlabel[cc](-0.5,-1){\scriptsize $\left(0, \frac{1}{2} \right)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-2 step 1 until 6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,  {$4$} 4}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3,  {$5$} 5,{$6$} 6, {$-1$} -1, {$-2$} -2}
-\penwd{1.25pt}
-\arrow  \function{-4,5,0.1}{2-sqrt(x+4)}
-\arrow  \function{-4,5,0.1}{2+sqrt(x+4)}
-\point[4pt]{(-4,2), (0,0), (0,4)}
-%\tcaption{ \scriptsize $x$,$y$-intercept $(0,0)$}
-\normalsize
-\end{mfpic} 
-
-\vfill
-
-\columnbreak
-
-\item $~$ \label{buildparafromgraphlast} 
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.25,2){\scriptsize $(0,4)$}
-\tlabel[cc](1.5,-2){\scriptsize $(0,-4)$}
-\tlabel[cc](2,-0.75){\scriptsize $(1,0)$}
-%\tlabel[cc](-1.5, 0.5){\scriptsize $(-1,0)$}
-%\tlabel[cc](-0.5,-1){\scriptsize $\left(0, \frac{1}{2} \right)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4 step 1 until 4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,   {$4$} 4}
-\axislabels {y}{{$2$} 1, {$4$} 2, {$6$} 3, {$8$} 4, {$-2$} -1, {$-4$} -2, {$-6$} -3, {$-8$} -4}
-\penwd{1.25pt}
-\arrow \reverse \function{-5,1,0.1}{2*sqrt(1-x)}
-\arrow \reverse \function{-5,1,0.1}{-2*sqrt(1-x)}
-\point[4pt]{(1,0), (0,2), (0,-2)}
-%\tcaption{ \scriptsize $x$-intercept $(1,0)$, $y$-intercept $(0,2)$}
-\normalsize
-\end{mfpic} 
-
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
 
 \end{question}
 
