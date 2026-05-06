@@ -215,6 +215,11 @@ coordinates {
 
 \end{center}
 
+\begin{explanation}
+We are instructed to use Theorem \ref{standardformgraph}, so we know $H(x) = a(x-h)^2 + k$ for some choice of parameters $a$, $h$ and $k$.  The vertex is $(1,3)$ so we know $h = 1$ and $k = 3$, and hence $H(x) = a(x-1)^2 + 3$.  To find the value of $a$, we use the fact that the $y$-intercept, as labeled, is $(0,1)$. This means $H(0) = 1$, or $a(0-1)^2+ 3 = 1$.  This reduces to $a+3 = 1$ or $a =-2$.  Our final answer\footnote{The reader is encouraged to compare this example with number \ref{absfunctionfromgraph} of Example \ref{absvaluegraph2}.} is $H(x) = -2(x - 1)^2 + 3$.   
+\end{explanation}
+
+
 \end{example}
 
 \begin{example}\label{parabolaex1} $~$
@@ -530,7 +535,7 @@ coordinates {
 
 \end{enumerate}
 
-\item  We are instructed to use Theorem \ref{standardformgraph}, so we know $H(x) = a(x-h)^2 + k$ for some choice of parameters $a$, $h$ and $k$.  The vertex is $(1,3)$ so we know $h = 1$ and $k = 3$, and hence $H(x) = a(x-1)^2 + 3$.  To find the value of $a$, we use the fact that the $y$-intercept, as labeled, is $(0,1)$. This means $H(0) = 1$, or $a(0-1)^2+ 3 = 1$.  This reduces to $a+3 = 1$ or $a =-2$.  Our final answer\footnote{The reader is encouraged to compare this example with number \ref{absfunctionfromgraph} of Example \ref{absvaluegraph2}.} is $H(x) = -2(x - 1)^2 + 3$. \qed
+
 
 
 \end{explanation}
@@ -585,17 +590,19 @@ f(x) &  = & a(x-h)^2 + k  \\
 
 \begin{example}  \label{parabolaex2} Graph the following functions.  Find the vertex, zeros and axis-intercepts, if any exist. Find the extrema and then list the intervals over which the function is increasing, decreasing or constant.
 
-\begin{multicols}{2}
+
 \begin{enumerate}
 
 \item  $f(x) = x^2-4x+3$.
 \item  $g(t) = 6 - 4t -2t^2$
 
 \end{enumerate}
-\end{multicols}
 
 
-{\bf Solution.} 
+
+\begin{explanation}
+    
+
 
 \begin{enumerate}
 
@@ -616,8 +623,6 @@ The reader is encouraged to start with $f(x) = (x-2)^2-1$, perform the indicated
 \medskip
 
 We have two equivalent expressions for $f(x)$ so we could use either the general form or vertex form.  We solve the former and leave it to the reader to solve the latter to see that we get the same results either way.  To solve $x^2 - 4x + 3 = 0$, we factor: $(x-3)(x-1) = 0$ and obtain $x = 1$ and $x =3$.  We get two $x$-intercepts, $(1,0)$ and $(3,0)$. 
-
-\medskip
 
 To find the $y$-intercept, we need $f(0)$. We use the general form and find that the $y$-intercept is $(0,3)$.  From symmetry, we know the point  $(4,3)$ is also on the graph. The range of $f$ is $[-1,\infty)$  with the minimum $-1$ at $x = 2$. Finally, $f$ is decreasing on $(-\infty, 2]$ and increasing from $[2, \infty)$. %The graph is given on the left at the bottom the next page.
 
@@ -713,8 +718,7 @@ $g(t)$ & $=$ & $-2(t+1)^2 + 2 + 6$ & \\ [6pt]
 $g(t)$ & $=$ & $-2(t+1)^2+8$  & \text{Solve for $g(t)$.}\\ \end{longtable}
 
 We can check our answer by expanding  $-2(t+1)^2+8$ and show that it simplifies to  $-2t^2 - 4t+6$.  From the vertex form, we find that the vertex is $(-1,8)$ and that the parabola opens downwards.  Setting $g(t) = -2t^2 - 4t+6= 0$, we factor to get $-2(t-1)(t+3) = 0$ so $t = -3$ and $t = 1$.  Hence, our two $t$-intercepts are $(-3,0)$ and $(1,0)$.  
-		
-\medskip
+
 		
 Since $g(0) = 6$, we get the $y$-intercept to be $(0,6)$.  Using symmetry, we also have the point $(-2,6)$ on the graph.  The range is $(-\infty, 8]$ with a maximum of $8$ when $t = -1$. Finally we note that $g$ is increasing on $(-\infty, -1]$ and decreasing on $[-1, \infty)$.  %The graph is below on the right.
 
@@ -809,6 +813,8 @@ coordinates {
 
 
 \end{enumerate}
+
+\end{explanation}
 
 \end{example}
 
@@ -1045,7 +1051,7 @@ Said differently, the \textbf{revenue} is the amount of money \textbf{collected}
 
 \end{enumerate}
 
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1075,7 +1081,7 @@ Said differently, the \textbf{revenue} is the amount of money \textbf{collected}
 \item  To find the average rate of change of $P$ over $[0, 57]$, we compute \[ \frac{\Delta [P(x)]}{\Delta x} = \frac{P(57) - P(0)}{57-0} = \frac{4666.5 - (-150)}{57} = 84.5. \]This means that as the number of systems produced and sold ranges from $0$ to $57$, the average profit per system is increasing at a rate of $\$ 84.50$.  In other words, for each additional system produced and sold, the profit increased by $\$84.50$ on average. \qed
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 We hope Example \ref{PortaBoyProfit}  shows the value of using a continuous model to describe a discrete situation.  True, we could have `run the numbers' and computed $P(1)$, $P(2)$, \ldots,  $P(166)$ to eventually determine the maximum profit, but the vertex formula made much quicker work of the problem.  
@@ -1096,7 +1102,7 @@ Along these same lines, in our next example we revisit Skippy's temperature data
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1114,20 +1120,17 @@ Along these same lines, in our next example we revisit Skippy's temperature data
  \qed
  
  \end{enumerate}
- 
+\end{explanation}
  \end{example}
 
 It is interesting how close the predictions from  Examples \ref{timetempregressionex} and  \ref{TimeTempQRex} despite one using linear models and one using a quadratic model.  Which model is the `better' model?  We leave that discussion to the reader and their classmates.
-
-\medskip
 
 Our next example is classic application of optimizing a quadratic function.
 
 \begin{example} \label{donniealpaca} Much to Donnie's surprise and delight, he inherits a large parcel of land in Ashtabula County from one of his (e)strange(d) relatives so the time is right for him to pursue his dream of raising alpaca.  He wishes to build a rectangular pasture and estimates that he has enough money for 200 linear feet of fencing material.  If he makes the pasture adjacent to a river (so that no fencing is required on that side), what are the dimensions of the pasture which maximize the area?  What is the maximum area?  If an average alpaca needs 25 square feet of grazing area, how many alpaca can Donnie keep in his pasture?
 
-\pagebreak
 
-{\bf Solution.} We are asked to find the dimensions of the pasture which would give a maximum area, so we begin by sketching the diagram seen below on the left.  We let $w$ denote the width of the pasture and we let $\ell$ denote the length of the pasture.  The units given to us in the statement of the problem are feet, so we assume that $w$ and $\ell$ are measured in feet.  The area of the pasture, which we'll call $A$, is related to $w$ and $\ell$ by the equation $A = w \ell$.  Since $w$ and $\ell$ are both measured in feet, $A$ has units of $\text{feet}^2$, or square feet.  
+\begin{explanation} We are asked to find the dimensions of the pasture which would give a maximum area, so we begin by sketching the diagram seen below on the left.  We let $w$ denote the width of the pasture and we let $\ell$ denote the length of the pasture.  The units given to us in the statement of the problem are feet, so we assume that $w$ and $\ell$ are measured in feet.  The area of the pasture, which we'll call $A$, is related to $w$ and $\ell$ by the equation $A = w \ell$.  Since $w$ and $\ell$ are both measured in feet, $A$ has units of $\text{feet}^2$, or square feet.  
 
 \medskip
 
@@ -1144,7 +1147,7 @@ Before we go any further, we need to find the applied domain of $f$ so that we k
 \medskip
 
 This means that there is a maximum value to be found, and we know it occurs at the vertex.  Using the vertex formula, we find $w = -\frac{200}{2(-2)} = 50$, and $A = f(50) = -2(50)^2 + 200(50) = 5000$.  Since $w=50$ lies in the applied domain, $0 < w < 100$, we have that the area of the pasture is maximized when the width is $50$ feet.  To find the length, we use $\ell = 200-2w$ and find $ \ell = 200-2(50) = 100$, so the length of the pasture is $100$ feet.  The maximum area is $A =f(50) = 5000$, or $5000$ square feet.  If an average alpaca requires 25 square feet of pasture, Donnie can raise $\frac{5000}{25} = 200$ average alpaca. \qed
-
+\end{explanation}
 \end{example}
 
 The function $f$ in Example \ref{donniealpaca} is called the\index{objective function}\index{optimization ! objective function} \textbf{objective function} for this problem - it's the function we're trying to optimize.  In the case above, we were trying to maximize $f$. The equation  $\ell+2w = 200$ along with the inequalities $w>0$ and $\ell >0$ are called the\index{constraint}\index{optimization ! constraint} \textbf{constraints}.   As we saw in this example, and as we'll see again and again, the constraint equation is used to rewrite the objective function in terms of just one of the variables where constraint inequalities, if any, help determine the applied domain.
@@ -1358,7 +1361,7 @@ We practice this approach in the following example.
 \end{enumerate}
 \end{multicols}
 
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1816,7 +1819,7 @@ coordinates {
 \end{image}
 \end{center}
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 \vspace{-.4in} \qed
@@ -1829,7 +1832,7 @@ We end this section with an example that combines quadratic inequalities with pi
 
 \smallskip
 
-{\bf Solution.}  Using the definition of absolute value, Definition \ref{absolutevaluepiecewise} and the sign diagram we constructed for $f(x) = x^2-x-6$ near the beginning of the subsection, we get: \small \[ \begin{array}{ccc} 
+\begin{explanation}Using the definition of absolute value, Definition \ref{absolutevaluepiecewise} and the sign diagram we constructed for $f(x) = x^2-x-6$ near the beginning of the subsection, we get: \small \[ \begin{array}{ccc} 
 
 g(x) = |x^2-x-6| = 
 
@@ -1946,7 +1949,7 @@ coordinates {
       -f(x) &  \text{if $f(x)  < 0$, } \\
      f(x)  & \text{if $f(x)  \geq 0$.} \\
    \end{cases}  \]  The function $g$ is defined so that when $f(x)$ is negative (i.e., when its graph is below the $x$-axis), the graph of $g$ is the refection of the graph of $f$ across the $x$-axis.   This is a general method  to graph functions of the form $g(x) = |f(x)|$.  Indeed, the graph of $g(x) = |x|$ can be obtained by reflection the portion of the line $f(x) =x$ which is below the $x$-axis back above the $x$-axis creating the characteristic `$\vee$' shape.\footnote{See Exercise \ref{makeaveewithabsval} in Section \ref{AbsoluteValueFunctions}.}  \qed
-	
+\end{explanation}
 \end{example}
 
 
