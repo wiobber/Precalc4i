@@ -32,7 +32,14 @@ Monomial functions, by definition, contain the constant functions along with a t
 
 %\medskip
 
-We begin our study of the graphs of polynomial functions by studying graphs of monomial functions.  Starting with $f(x) = x^n$ where $n$ is even, we investigate the cases $n = 2$, $4$ and $6$ using Desmos. Adjusting the slider, we can observe that as $n$ increases, the graphs `flatten'  for $-1<x<1$  and `narrow'  for $x<-1$ or $x>1$.    Numerically, we see that if $|x|<1$,  $x^n$ becomes much smaller as $n$ increases whereas if $|x|>1$, $x^n$ becomes much larger as $n$ increases.\footnote{Recall that $|x| < 1$ is equivalent to $-1<x<1$ and $|x|>1$ is equivalent to $x<-1$ or $x>1$.  Using absolute values allow us to describe these sets of real numbers more succinctly.}   
+We begin our study of the graphs of polynomial functions by studying graphs of monomial functions.  Starting with $f(x) = x^n$ where $n$ is even, we investigate the cases $n = 2$, $4$ and $6$ using Desmos. 
+
+\begin{center} 
+\desmos{mwhjdwxzii}{800}{600} 
+\end{center}
+%https://www.desmos.com/calculator/mwhjdwxzii
+
+Adjusting the slider, we can observe that as $n$ increases, the graphs `flatten'  for $-1<x<1$  and `narrow'  for $x<-1$ or $x>1$.    Numerically, we see that if $|x|<1$,  $x^n$ becomes much smaller as $n$ increases whereas if $|x|>1$, $x^n$ becomes much larger as $n$ increases.\footnote{Recall that $|x| < 1$ is equivalent to $-1<x<1$ and $|x|>1$ is equivalent to $x<-1$ or $x>1$.  Using absolute values allow us to describe these sets of real numbers more succinctly.}   
 
 %\medskip
 
@@ -52,10 +59,7 @@ x &  x^2 & x^4 & x^6 \\ \hline
  2 & 4 & 16 & 64 \\ \hline \end{array}$
 \end{center}
 
-\begin{center} 
-\desmos{mwhjdwxzii}{800}{600} 
-\end{center}
-%https://www.desmos.com/calculator/mwhjdwxzii
+
 
 
 %\columnbreak
@@ -122,7 +126,14 @@ Another item worthy of note is the symmetry about the line $x =0$ a.k.a the $y$-
 
 %\medskip
 
-Using Desmos, we can investigate some odd powered monomial functions ($n \geq 3$).  As the slider increases $n$ from $3$ to $5$ to $7$, we see similar behavior to even powered monomials with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.  Numerically we see that for $|x| > 1$ the values of $|x^n|$ increase as $n$ increases and the values of $|x^n|$ get closer to $0$ as $n$ increases.  This translates graphically into a flattening behavior on the interval $(-1, 1)$ and a narrowing elsewhere.  The graphs are shown on the top of the next page.
+We now turn our attention to functions of the form $f(x) = x^{n}$ for odd powers of $n$ ($n \geq 3$) and investigate three examples using Desmos:
+
+\begin{center} 
+\desmos{cob9jmebti}{800}{600} 
+\end{center}
+%https://www.desmos.com/calculator/cob9jmebti
+
+As the slider increases $n$ from $3$ to $5$ to $7$, we see similar behavior to even powered monomials with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.  Numerically we see that for $|x| > 1$ the values of $|x^n|$ increase as $n$ increases and the values of $|x^n|$ get closer to $0$ as $n$ increases.  This translates graphically into a flattening behavior on the interval $(-1, 1)$ and a narrowing elsewhere.  The graphs are shown on the top of the next page.
 
 %\medskip
 
@@ -143,10 +154,7 @@ $\begin{array}{|r||c|c|c|}  \hline
 \end{array}$
 \end{center}
 
-\begin{center} 
-\desmos{cob9jmebti}{800}{600} 
-\end{center}
-%https://www.desmos.com/calculator/cob9jmebti
+
 
 % \vspace{.2in}
 
@@ -282,7 +290,7 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
 
 \begin{enumerate}
 
-\item For  $f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3$, we identify $n = 4$, $a = -2$, $h = -1$, and $k = 3$.  Thus to graph $f$, we start with $y = x^4$ and perform the following steps, in sequence, tracking the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step:
+\item For  $f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3$, we identify $n = 4$, $a = -2$, $h = -1$, and $k = 3$.  Using GeoGebra, we start with the graph of $y = x^4$ and perform the following steps, in sequence, tracking the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step:
 
 \begin{center}
 \geogebra{ewzqwnt9}{800}{600}
@@ -426,7 +434,7 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
  
  The domain here is $(-\infty, \infty)$ while the range is $(-\infty, 3]$.
  
- \item To use Theorem \ref{linearmononialgraphs} to graph $g(t) = \dfrac{(2t-1)^3}{5}$, we must rewrite the expression for $g(t)$: \[ g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3 \] We identify $n = 3$, $h = \frac{1}{2}$ and $a  = \frac{8}{5}$.  Hence, we start with the graph of $y = t^3$  and perform the following steps, in sequence, tracking the points $(-1,-1)$, $(0,0)$ and $(1,1)$ through each step:
+ \item To use Theorem \ref{linearmononialgraphs} to graph $g(t) = \dfrac{(2t-1)^3}{5}$, we must rewrite the expression for $g(t)$: \[ g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3 \] We identify $n = 3$, $h = \frac{1}{2}$ and $a  = \frac{8}{5}$.  Using GeoGebra, we start with the graph of $y = t^3$  and perform the following steps, in sequence, tracking the points $(-1,-1)$, $(0,0)$ and $(1,1)$ through each step:
 
 % https://www.geogebra.org/classic/tyhknx2p
 \begin{center}
@@ -550,10 +558,7 @@ $\begin{array}{|r||c|}  \hline
 \end{array}$
 \end{center}
 
-% https://www.geogebra.org/classic/gwgvkeqy
-\begin{center}
-\geogebra{gwgvkeqy}{800}{600}
-\end{center}
+
 
 % &
 
@@ -577,6 +582,13 @@ $\begin{array}{|r||c|}  \hline
 % \end{tabular}
  
 As $x$ takes on negative values that are larger in absolute value,\footnote{these are technically `smaller and smaller' values because of how the real number line is ordered. For example, $x = -1000$ is smaller than $x = -100$ since $x = -1000$ is farther to the left than $x = -100$ on the number line. This being said, $|-1000| = 1000$ is larger than $|-100| = 100$ so in an imprecise, informal, and technically incorrect way, the number $-1000$ is a `larger' negative number than the number $-100$.  I would worry about pedants here but  hardly anyone reads these footnotes.}  we see $f(x)$ takes on larger and larger positive values, seemingly without bound.\footnote{That is, the $f(x)$ values grow larger than any positive number.  They are `\textbf{unbounded}.'  The algebra that proves this fact  is the same that shows the range of $f$ is $[0, \infty)$.}   It should be stressed that since `$-\infty$' and `$\infty$' aren't real numbers, we can't write `$f(-\infty) = \infty$,'  so in order to communicate this behavior, we write as $x \rightarrow -\infty$, $f(x) \rightarrow \infty$, or, more succinctly, $\ds{ \lim_{x \rightarrow - \infty} f(x) = \infty}$.  Note that this latter notation is borrowed from Calculus and is read `the \index{limit}limit as $x$ approaches $- \infty$ of $f(x)$ is $\infty$'.  
+
+Graphing $f(x) = x^2$ using GeoGebra, we can use the embedded slider to `zoom out' to see what these data mean visually:
+
+% https://www.geogebra.org/classic/gwgvkeqy
+\begin{center}
+\geogebra{gwgvkeqy}{800}{600}
+\end{center}
 
 Graphically, the farther to the left we select inputs on the $x$-axis, the farther up the $y$-axis the output (function) values are.  We indicate this by attaching an  `arrow' on the graph in Quadrant II indicating the graph continues to head upward to the left.  
 
@@ -853,7 +865,7 @@ Find the degree, leading term, leading coefficient and constant term of the foll
 \end{example}
 
 
-We now turn our attention to graphs of polynomial functions. Since polynomial functions are sums of monomial functions, it stands to reason that some of of the properties of those graphs carry over to more general polynomials. We first discuss end behavior.  Consider $f(x) = x^3-75x+250$.   Below  is the graph of  $f(x)$ (solid line) along with the graph of its leading term, $y = x^3$ (dashed line.)  Below on the left is a view `near' the origin while below on the right is a `zoomed out' view.  Near the origin, the graphs have little in common, but as we look farther out, it becomes that the functions begin to look quite similar.  
+We now turn our attention to graphs of polynomial functions. Since polynomial functions are sums of monomial functions, it stands to reason that some of of the properties of those graphs carry over to more general polynomials. We first discuss end behavior.  Consider $f(x) = x^3-75x+250$.  Using Desmos, we graph $y = f(x)$ along with the graph of its leading term, $y = x^3$. Near the origin, the two graphs look quite different; however, as we zoom out, the two graphs begin look similar:
 
 % https://www.desmos.com/calculator/q8yxe5ibzo
 
@@ -864,7 +876,7 @@ We now turn our attention to graphs of polynomial functions. Since polynomial fu
 
 %\medskip
 
-This observation is borne out numerically as well.  Based on the table below, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, it certainly appears as if $f(x) \approx g(x)$.  One way to think about what is happening numerically is that  as $x \rightarrow \infty$ or $x \rightarrow -\infty$, the leading term $x^3$ \textbf{dominates} the lower order terms  $-75x$ and $250$.  In other words, $x^3$ grows so much faster than $-75 x$ and $250$ that these `lower order terms' don't contribute anything of significance to the $x^3$ so $f(x) \approx x^3$.    To see this, we rewrite $f(x)$ as\footnote{Since we are considering  $x \rightarrow \infty$ or $x \rightarrow -\infty$, we are not concerned with $x$ even being close to $0$, so these fractions will all be defined.}   \[f(x) = x^3  - 75x + 250 = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right).\]   As $x \rightarrow \infty$ or $x \rightarrow -\infty$, both $\frac{75}{x^2}$ and $\frac{250}{x^3}$ have constant numerators but denominators that are becoming unbounded.  As such, both  $\frac{75}{x^2}$ and $\frac{250}{x^3} \rightarrow 0$.  Therefore, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, \[ f(x) = x^3 - 75x+250  = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right) \approx x^3 (1 + 0 + 0) = x^3. \]
+This observation is borne out numerically as well.  Based on the table below, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, it certainly appears as if $f(x) \approx g(x)$:
 
 \[ \begin{array}{|r||c|c|c|c|c|c|}  \hline
 
@@ -878,8 +890,12 @@ This observation is borne out numerically as well.  Based on the table below, as
 
 \end{array} \]
 
+One way to think about what is happening numerically is that  as $x \rightarrow \infty$ or $x \rightarrow -\infty$, the leading term $x^3$ \textbf{dominates} the lower order terms  $-75x$ and $250$.  In other words, $x^3$ grows so much faster than $-75 x$ and $250$ that these `lower order terms' don't contribute anything of significance to the $x^3$ so $f(x) \approx x^3$.    To see this, we rewrite $f(x)$ as\footnote{Since we are considering  $x \rightarrow \infty$ or $x \rightarrow -\infty$, we are not concerned with $x$ even being close to $0$, so these fractions will all be defined.}   \[f(x) = x^3  - 75x + 250 = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right).\]   As $x \rightarrow \infty$ or $x \rightarrow -\infty$, both $\frac{75}{x^2}$ and $\frac{250}{x^3}$ have constant numerators but denominators that are becoming unbounded.  As such, both  $\frac{75}{x^2}$ and $\frac{250}{x^3} \rightarrow 0$.  Therefore, as $x \rightarrow \infty$ or $x \rightarrow -\infty$, \[ f(x) = x^3 - 75x+250  = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right) \approx x^3 (1 + 0 + 0) = x^3. \]
 
-Next, consider  $g(x) = -0.01x^4 + 5x^2$.  Following the logic of the above example, we would expect the end behavior of $y=g(x)$ to mimic that of $y = -0.01 x^4$.  When we graph $y = g(x)$ (solid line) on the same set of axes as $y = -0.01x^4$ (dashed line), a view near the origin seems to suggest the exact opposite.  However, zooming out reveals that the two graphs do share the same end behavior.\footnote{Or at least they appear to within the limits of the technology.}
+
+
+
+Next, consider  $g(x) = -0.01x^4 + 5x^2$.  Following the logic of the above example, we would expect the end behavior of $y=g(x)$ to mimic that of $y = -0.01 x^4$.  When we use Desmos to graph $y = g(x)$ and $y = -0.01x^4$, a view near the origin seems to suggest the exact opposite.  However, zooming out reveals that the two graphs do share the same end behavior.\footnote{Or at least they appear to within the limits of the technology.}
 
 % https://www.desmos.com/calculator/zhquadlbfj
 \begin{center}
@@ -1009,7 +1025,7 @@ Solving $x^3 = 0$ gives $x = 0$, $(x-2)^2 = 0$ gives $x = 2$, and $x+1 = 0$ give
 
 %\medskip
 
-Below, we graph $y = f(x)$ and focus our attention near the $x$-intercepts $(-1,0)$, $(0,0)$ and $(2,0)$. 
+Using Desmos, we graph $y = f(x)$.  By selecting each $x$-intercept, we can note the behavior of the graph near each of these points:
 
 % https://www.desmos.com/calculator/1dhsdbnhiq
 \begin{center}
@@ -1017,7 +1033,7 @@ Below, we graph $y = f(x)$ and focus our attention near the $x$-intercepts $(-1,
 \end{center}
 
 
-We first note that the graph \textbf{crosses} through the $x$-axis at $(-1,0)$ and $(0,0)$, but the graph \textbf{touches} and \textbf{rebounds} at $(2,0)$.  Moreover, at $(-1,0)$, the graph crosses through the axis is a fairly `linear' fashion whereas there is a substantial amount of `flattening' going on near $(0,0)$.  Or aim is to explain these observations and generalize them.
+  We first note that the graph \textbf{crosses} through the $x$-axis at $(-1,0)$ and $(0,0)$, but the graph \textbf{touches} and \textbf{rebounds} at $(2,0)$.  Moreover, at $(-1,0)$, the graph crosses through the axis is a fairly `linear' fashion whereas there is a substantial amount of `flattening' going on near $(0,0)$.  Or aim is to explain these observations and generalize them.
 
 %\medskip
 
@@ -1025,21 +1041,27 @@ First, let's look at what's happening with the formula  $f(x) =  x^3 (x-2)^2 (x+
 
 %\medskip
 
-We find when $x \approx -1$,  $x^3  \approx  (-1)^3 = -1$ and $(x-2)^2 \approx (-1-2)^2 = 9$.  Hence, $f(x) = x^3 (x-3)^2 (x+1) \approx (-1)^3 (-1-2)^2 (x+1) = -9(x+1)$.  Below on the left is a graph of $y = f(x)$ (the solid line) and the graph of $y = -9(x+1)$ (the dashed line.)  Sure enough, these graphs approximate one another near $x = -1$. 
+We find when $x \approx -1$,  $x^3  \approx  (-1)^3 = -1$ and $(x-2)^2 \approx (-1-2)^2 = 9$.  Hence, $f(x) = x^3 (x-3)^2 (x+1) \approx (-1)^3 (-1-2)^2 (x+1) = -9(x+1)$. 
 
 %\medskip
 
-Likewise, let's look near $x = 0$.  The $x$-intercept $(0,0)$ is due to the $x^3$ term.  For $x \approx 0$, $(x-2)^2 \approx (0-2)^2 = 4$ and $(x+1) \approx (0+1) = 1$, so $f(x) =  x^3 (x-3)^2 (x+1) \approx x^3 (-2)^2(1) = 4x^3$.  Below in the center picture, we have the graph of $y = f(x)$ (again, the solid line) and $y = 4x^3$ (the dashed line) near $x=0$.  Once again, the graphs verify our analysis.
+Near $x = 0$.  The $x$-intercept $(0,0)$ is due to the $x^3$ term.  For $x \approx 0$, $(x-2)^2 \approx (0-2)^2 = 4$ and $(x+1) \approx (0+1) = 1$, so $f(x) =  x^3 (x-3)^2 (x+1) \approx x^3 (-2)^2(1) = 4x^3$.
 
 %\medskip
 
-Last, but not least, we analyze $f$ near $x = 2$.  Here, the intercept $(2,0)$ is due to the $(x-2)^2$ factor, so we look at the $x^3$ and $(x+1)$ factors.  If $x \approx 2$, $x^3 \approx (2)^3 = 8$ and $(x+1) \approx (2+1) = 3$.  Hence,  $f(x) =  x^3 (x-3)^2 (x+1) \approx (2)^3 (x-2)^2 (2+1) = 24(x-2)^2$.  Sure enough, as evidenced below on the right, the graphs of $y = f(x)$ and $y = 24(x-2)^2$.
+Last, but not least, we analyze $f$ near $x = 2$.  Here, the intercept $(2,0)$ is due to the $(x-2)^2$ factor, so we look at the $x^3$ and $(x+1)$ factors.  If $x \approx 2$, $x^3 \approx (2)^3 = 8$ and $(x+1) \approx (2+1) = 3$.  Hence,  $f(x) =  x^3 (x-3)^2 (x+1) \approx (2)^3 (x-2)^2 (2+1) = 24(x-2)^2$. 
+
+Using Desmos, we graph $f$ and can select to display the graphs of $y=-9(x+1)$, $y = 4x^3$, and $y=24(x-2)^2$.  
 
 % https://www.desmos.com/calculator/xffavvx8ge
+
+
 
 \begin{center}
     \desmos{xffavvx8ge}{800}{600}
 \end{center}
+
+Near $(-1,0)$, the graph of $f$ closely resembles the line $y = -9(x+1)$.  Near $(0,0)$, the graph of $f$ closely resembles the graph of the cubic monomial $y = 4x^3$.  Finally, near $(2,0)$, the graph resembles the parabola $y=24(x-2)^2$. 
 
 We generalize our observations in Theorem \ref{polynomialbehaviornearzeros} below. Like many things we've seen in this text, a more precise statement and proof can be found in a course on Calculus.
 
