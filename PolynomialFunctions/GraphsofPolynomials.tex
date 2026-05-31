@@ -126,18 +126,14 @@ Another item worthy of note is the symmetry about the line $x =0$ a.k.a the $y$-
 
 %\medskip
 
-We now turn our attention to functions of the form $f(x) = x^{n}$ for odd powers of $n$ ($n \geq 3$) and investigate three examples using Desmos:
+We now turn our attention to functions of the form $f(x) = x^{n}$ for odd powers of $n$ ($n \geq 3$) and investigate three examples using Desmos.
 
 \begin{center} 
 \desmos{cob9jmebti}{800}{600} 
 \end{center}
 %https://www.desmos.com/calculator/cob9jmebti
 
-As the slider increases $n$ from $3$ to $5$ to $7$, we see similar behavior to even powered monomials with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.  Numerically we see that for $|x| > 1$ the values of $|x^n|$ increase as $n$ increases and the values of $|x^n|$ get closer to $0$ as $n$ increases.  This translates graphically into a flattening behavior on the interval $(-1, 1)$ and a narrowing elsewhere.  The graphs are shown on the top of the next page.
-
-%\medskip
-
-The range of these functions appear to be all real numbers, $(-\infty, \infty)$ which is algebraically sound as the equation $x^n = c$ has a solution for every real number,\footnote{Do you see the importance of $n$ being odd here?} namely $x = \sqrt[n]{c}$.  Hence, for every real number $c$,  choose $x = \sqrt[n]{c}$ so that $f(x) = f(\sqrt[n]{c}) = (\sqrt[n]{c})^n =c$.  This shows that every real number is in the range of $f$.
+As the slider increases $n$ from $3$ to $5$ to $7$, we see similar behavior to even powered monomials with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.  Numerically we see that for $|x| > 1$ the values of $|x^n|$ increase as $n$ increases and the values of $|x^n|$ get closer to $0$ as $n$ increases.  This translates graphically into a flattening behavior on the interval $(-1, 1)$ and a narrowing elsewhere. 
 
 %\begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
 \begin{center}
@@ -195,6 +191,12 @@ $\begin{array}{|r||c|c|c|}  \hline
 % \end{mfpic} \\
 
 %\end{tabular}
+
+%\medskip
+
+The range of these functions appear to be all real numbers, $(-\infty, \infty)$ which is algebraically sound as the equation $x^n = c$ has a solution for every real number,\footnote{Do you see the importance of $n$ being odd here?} namely $x = \sqrt[n]{c}$.  Hence, for every real number $c$,  choose $x = \sqrt[n]{c}$ so that $f(x) = f(\sqrt[n]{c}) = (\sqrt[n]{c})^n =c$.  This shows that every real number is in the range of $f$.
+
+
 
 Here, since $n$ is odd,  $f(-x) = (-x)^n = -x^n = -f(x)$.  This means that whenever $(x, f(x))$ is on the graph, so is the point symmetric about the origin,  $(-x, -f(x))$. (Again, see Definition \ref{symmetrydefn}.) We generalize this property below.  Not surprisingly, we name it in honor of its odd powered heritage:
 
@@ -290,7 +292,7 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
 
 \begin{enumerate}
 
-\item For  $f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3$, we identify $n = 4$, $a = -2$, $h = -1$, and $k = 3$.  Using GeoGebra, we start with the graph of $y = x^4$ and perform the following steps, in sequence, tracking the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step:
+\item For  $f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3$, we identify $n = 4$, $a = -2$, $h = -1$, and $k = 3$.  GeoGebra helps us visualize the steps prescribed in Theorem \ref{linearmononialgraphs}  to transform the graph of $y = x^4$ to the graph of $f$.  We track the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step.
 
 \begin{center}
 \geogebra{ewzqwnt9}{800}{600}
@@ -434,7 +436,7 @@ We now use Theorem \ref{linearmononialgraphs} to graph two different ``transform
  
  The domain here is $(-\infty, \infty)$ while the range is $(-\infty, 3]$.
  
- \item To use Theorem \ref{linearmononialgraphs} to graph $g(t) = \dfrac{(2t-1)^3}{5}$, we must rewrite the expression for $g(t)$: \[ g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3 \] We identify $n = 3$, $h = \frac{1}{2}$ and $a  = \frac{8}{5}$.  Using GeoGebra, we start with the graph of $y = t^3$  and perform the following steps, in sequence, tracking the points $(-1,-1)$, $(0,0)$ and $(1,1)$ through each step:
+ \item To use Theorem \ref{linearmononialgraphs} to graph $g(t) = \dfrac{(2t-1)^3}{5}$, we must rewrite the expression for $g(t)$: \[ g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3 \] We identify $n = 3$, $h = \frac{1}{2}$ and $a  = \frac{8}{5}$.  Once again,  GeoGebra helps us visualize the steps indicated in Theorem \ref{linearmononialgraphs} to transform the graph of $y = t^3$ to the graph of $g$.  In this case, we track the points $(-1,-1)$, $(0,0)$ and $(1,1)$ through each step.
 
 % https://www.geogebra.org/classic/tyhknx2p
 \begin{center}
@@ -1025,7 +1027,7 @@ Solving $x^3 = 0$ gives $x = 0$, $(x-2)^2 = 0$ gives $x = 2$, and $x+1 = 0$ give
 
 %\medskip
 
-Using Desmos, we graph $y = f(x)$.  By selecting each $x$-intercept, we can note the behavior of the graph near each of these points:
+Using Desmos, we graph $y = f(x)$.  By selecting each $x$-intercept, we can note the behavior of the graph near each of these points.
 
 % https://www.desmos.com/calculator/1dhsdbnhiq
 \begin{center}
@@ -1306,24 +1308,30 @@ Taken together, the local maximums and local minimums of a function, if they exi
 
 %\medskip
 
-Once again, the terminology used in Definition \ref{localmaxmindefn}  blurs the line between the function $f$ and its outputs, $f(x)$.  Also, some textbooks use the terms `relative' minimum and `relative' maximum instead of the adjective `local.'  Lastly, note  the definition of local extrema requires an \textbf{open} interval exist in the domain containing $a$ in order for $(a, f(a))$ to be a candidate for a local maximum or local minimum. We'll have more to say about this in later chapters.  If our open interval happens to be $(-\infty, \infty)$, then our local extrema are the extrema of $f$ - we'll see an example of this momentarily.  
+Once again, the terminology used in Definition \ref{localmaxmindefn}  blurs the line between the function $f$ and its outputs, $f(x)$.  Also, some textbooks use the terms `relative' minimum and `relative' maximum instead of the adjective `local.'  Lastly, note  the definition of local extrema requires an \textbf{open} interval exist in the domain containing $a$ in order for $(a, f(a))$ to be a candidate for a local maximum or local minimum. We'll have more to say about this in later chapters.  If our open interval happens to be $(-\infty, \infty)$, then our local extrema are the extrema of $f$.  
 
 %\medskip
 
-Below we use a graphing utility to graph $y= p(x) = (2x-1)(x+1)(1-x^4)$.    We first consider the point $(-1,0)$.   Even though there are points on the graph of $y = p(x)$ that are higher than $(-1,0)$,  locally, $(-1,0)$ is the top of a hill.  To satisfy Definition \ref{localmaxmindefn}, we need to provide an open interval on which $p(-1) = 0$ is the largest, or maximum function value. Note the definition requires us to provide \textbf{just one} open interval.  One that works is the interval $(-1.5, -0.5)$.   We could use any smaller interval or go as large as $\left(-\infty, \frac{1}{2} \right)$. 
-
-%\medskip
-
-Next we encounter  a `low' point at approximately $(-0.2353, -1.1211)$. More specifically, for all $x$ in the interval, say,  $(-0.5, 0)$, $p(x) \geq 1.1211$,  Hence, we have a local minimum at $(-0.2353, -1.1211)$.   Lastly, at $(0.811, 0.639)$, we are back to a high point.  In fact, $0.639$ isn't just a local maximum value, based on the graph, it is \textbf{the} maximum of $p$.  Here, we may choose the open interval $(-\infty, \infty)$ as the open interval required by Definition \ref{localmaxmindefn}, since for all $x$, $p(x) \leq 0.639$.   It is important to note that there is no minimum value of $p$ despite there being a local minimum value.\footnote{Some books use the adjectives `global' or `absolute' when describing the extreme values of a function to distinguish them from their local counterparts.} 
+Let's take a moment to analyze the graph of $p(x) = (2x-1)(x+1)(1-x^4)$ furnished by Desmos.  
 
 % https://www.desmos.com/calculator/tvasqgiwxh
 \begin{center}
 \desmos{tvasqgiwxh}{800}{600}
 \end{center}
 
+We first consider the point $(-1,0)$.   Even though there are points on the graph of $y = p(x)$ that are higher than $(-1,0)$,  locally, $(-1,0)$ is the top of a hill.  To satisfy Definition \ref{localmaxmindefn}, we need to provide an open interval on which $p(-1) = 0$ is the largest, or maximum function value. Note the definition requires us to provide \textbf{just one} open interval.  One that works is the interval $(-1.5, -0.5)$.   We could use any smaller interval or go as large as $\left(-\infty, \frac{1}{2} \right)$. 
+
+%\medskip
+
+Next we encounter  a `low' point at approximately $(-0.2353, -1.1211)$. More specifically, for all $x$ in the interval, say,  $(-0.5, 0)$, $p(x) \geq 1.1211$,  Hence, we have a local minimum at $(-0.2353, -1.1211)$.   Lastly, at $(0.811, 0.639)$, we are back to a high point.  In fact, $0.639$ isn't just a local maximum value, based on the graph, it is \textbf{the} maximum of $p$.  Here, we may choose the open interval $(-\infty, \infty)$ as the open interval required by Definition \ref{localmaxmindefn}, since for all $x$, $p(x) \leq 0.639$.   It is important to note that there is no minimum value of $p$ despite there being a local minimum value.\footnote{Some books use the adjectives `global' or `absolute' when describing the extreme values of a function to distinguish them from their local counterparts.} 
+
+
+
 We close this section with a classic application of a third degree polynomial function.
 
 \begin{example}  \label{boxnotopex} A box with no top is to be fashioned from a $10$ inch $\times$ $12$ inch piece of cardboard by cutting out congruent squares from each corner of the cardboard and then folding the resulting tabs.  Let $x$ denote the length of the side of the square which is removed from each corner.
+
+Using the GeoGebra interactive below, we can adjust one slider to change the size of the squares removed from the cardboard and use the other slider to see how the piece cardboard with the squares removed folds into a box with no top.
 
 % https://www.geogebra.org/classic/fs4upmsr
 
@@ -1353,7 +1361,7 @@ From the figure, we see that the height of the box is $x$ itself.  The cardboard
 
 To find a suitable applied domain, we note that to make a box at all we need $x > 0$.  Also the shorter of the two dimensions of the cardboard is $10$ inches, and since we are removing $2x$ inches from this dimension, we also require $10 - 2x > 0$ or $x < 5$.  Hence, our applied domain is $0 < x < 5$.
 
-\item  Using a graphing utility, we find a local maximum at approximately $(1.811, 96.771)$.  Because the domain of $V$ is restricted to the interval $(0,5)$,  the maximum of $V$ is here as well.
+\item  Using the GeoGebra interactive below, we can adjust the slider for the size of the cutout, $x$, and see not only the corresponding point on the graph of $V$, but also the resulting box.  
 
 % \begin{center}
 
@@ -1366,6 +1374,8 @@ To find a suitable applied domain, we note that to make a box at all we need $x 
 \begin{center}
 \geogebra{jwq6bpjg}{800}{600}
 \end{center}
+
+We find a local maximum at approximately $(1.811, 96.771)$, but because the domain of $V$ is restricted to the interval $(0,5)$, the maximum of $V$ is here as well.
 
 This means the maximum volume attainable is approximately $96.77$ cubic inches when we remove squares approximately $1.81$ inches per side.\qed
  

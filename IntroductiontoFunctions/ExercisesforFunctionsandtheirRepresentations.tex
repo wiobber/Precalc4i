@@ -9,79 +9,79 @@
 \end{abstract}
 \maketitle
 
+\begin{question}
 
-%In Exercises \ref{mappingfirst} - \ref{mappinglast}, d
-
-
+In Exercises \ref{mappingfirst} - \ref{mappinglast}, determine whether or not the mapping diagram represents a function. Explain your reasoning. If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
 \begin{problem}\label{mappingfirst}
-Determine whether or not the mapping diagram represents a function. Explain your reasoning. If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
-MAP FOR PROBLEM 1 goes here
+\begin{tikzpicture}[>=Stealth]
+
+% Left labels
+\node at (-4.25,5) {Tennant};
+\node at (-4.25,3) {Smith};
+\node at (-4.25,1) {Calpadi};
+
+% Center label
+\node at (0,6) {$M$};
+
+% Right labels
+\node at (3.5,5) {Eleven};
+\node at (3.5,3) {Twelve};
+\node at (3.5,1) {Thirteen};
+\node at (3.5,-1) {Fourteen};
+
+% Arrows
+\draw[->] (-2.5,5) -- (2.5,5);
+\draw[->] (-2.5,5) -- (2.5,3);
+\draw[->] (-2.5,3) -- (2.5,1);
+\draw[->] (-2.5,1) -- (2.5,-1);
+
+\end{tikzpicture}
 \end{problem} 
-
-
-
-% \begin{mfpic}[19]{-5}{5}{-5}{6}
-% \tlabel[cc](-4.25,5){Tennant}
-% \tlabel[cc](-4.25,3){Smith}
-% \tlabel[cc](-4.25,1){Calpadi}
-% \tlabel[cc](0,6){$M$}
-% \tlabel[cc](3.5,5){Eleven}
-% \tlabel[cc](3.5,3){Twelve}
-% \tlabel[cc](3.5,1){Thirteen}
-% \tlabel[cc](3.5,-1){Fourteen}
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 3)}
-% \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 1)}
-% \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, -1)}
-% \end{mfpic} 
 
 
 
 \begin{problem}\label{mappinglast}
-Determine whether or not the mapping diagram represents a function. Explain your reasoning. If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
-    MAP FOR PROBLEM 2 goes here
+\begin{tikzpicture}[>=Stealth]
+
+% Left labels
+\node at (-4.25,5) {Hartnell};
+\node at (-4.25,3) {Cushing};
+\node at (-4.25,1) {Hurndall};
+\node at (-4.25,-1) {Troughton};
+
+% Center label
+\node at (0,6) {$C$};
+
+% Right labels
+\node at (3.5,5) {One};
+\node at (3.5,3) {Two};
+\node at (3.5,1) {Three};
+
+% Arrows
+\draw[->] (-2.5,5) -- (2.5,5);
+\draw[->] (-2.5,3) -- (2.5,5);
+\draw[->] (-2.5,1) -- (2.5,5);
+\draw[->] (-2.5,-1) -- (2.5,3);
+
+\end{tikzpicture}
 \end{problem} 
+    
+\end{question}
+
+\begin{question}
+    
+In Exercises \ref{tablefirst} - \ref{tablelast}, determine whether or not the data in the given table represents $y$ as a function of $x$.  Explain your reasoning.  If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
 
-
-% \begin{mfpic}[19]{-5}{5}{-5}{6}
-% \tlabel[cc](-4.25,5){Hartnell}
-% \tlabel[cc](-4.25,3){Cushing}
-% \tlabel[cc](-4.25,1){Hurndall}
-% \tlabel[cc](-4.25,-1){Troughton}
-% \tlabel[cc](0,6){$C$}
-% \tlabel[cc](3.5,5){One}
-% \tlabel[cc](3.5,3){Two}
-% \tlabel[cc](3.5,1){Three}
-% \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 5)}
-% \arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 3)}
-% \end{mfpic}
-
-%\setcounter{HW}{\value{enumi}}
-
-
-
-%In Exercises \ref{tablefirst} - \ref{tablelast}, d
-
-
-
-
-
-
-
-%\setcounter{enumi}{\value{HW}}
 \begin{problem}
-Determine whether or not the data in the given table represents $y$ as a function of $x$.  Explain your reasoning.  If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
 \label{tablefirst}
     \[\begin{array}{|r||r|}  \hline
 
-$x$  & \hphantom{\text{$-$}} $y$  \\ \hline
+x  &  y  \\ \hline
  -3 &  3 \\  \hline
  -2 & 2  \\  \hline
   -1 &  1  \\  \hline
@@ -94,11 +94,10 @@ $x$  & \hphantom{\text{$-$}} $y$  \\ \hline
 \end{problem}
 
 \begin{problem}\label{tablelast}
-Determine whether or not the data in the given table represents $y$ as a function of $x$.  Explain your reasoning.  If the mapping does represent a function, state the domain, range, and represent the function as a set of ordered pairs.
 
     \[\begin{array}{|r||r|}  \hline
 
-\hphantom{\text{$-$}} $x$  &$y$  \\ \hline
+ x  & y  \\ \hline
 
  0 & 0 \\  \hline
  1 & 1  \\  \hline
@@ -111,19 +110,10 @@ Determine whether or not the data in the given table represents $y$ as a functio
 \end{array}\]
 \end{problem}
 
+\end{question}
 
 
 
-
-
-%\setcounter{HW}{\value{enumi}}
-
-
-
-
-%\begin{enumerate}
-
-%\setcounter{enumi}{\value{HW}}
 
 \begin{problem} 
 Suppose $W$ is the set of words in the English language and we set up a mapping from $W$ into the set of natural numbers $\mathbb{N}$ as follows: $\text{word} \rightarrow \text{number of letters in the word}$.  Explain why this mapping is a function.  What would you need to know to determine the range of the function?
@@ -140,52 +130,49 @@ Suppose $W$ is the set of words in the English language and we set up a mapping 
   Under what conditions would the time of day be a function of the outdoor temperature?   
 \end{problem}
 
-%\setcounter{HW}{\value{enumi}}
+\begin{question}
 
-%For the functions $f$ described in Exercises \ref{buildfunctionfirst} - \ref{buildfunctionlast}, 
+For the functions $f$ described in Exercises \ref{buildfunctionfirst} - \ref{buildfunctionlast}, find $f(2)$, and find and simplify an expression for $f(x)$ that takes a real number $x$ and performs the following three steps in the order given.
 
-
-%\begin{enumerate}
-%\setcounter{enumi}{\value{HW}}
 
 \begin{problem}\label{buildfunctionfirst}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:   (1) multiply by 2; (2) add 3; (3) divide by 4. 
+(1) multiply by 2; (2) add 3; (3) divide by 4. 
+
+    
+\end{problem}
+
+
+\begin{problem}
+(1) add 3; (2) multiply by 2; (3) divide by 4. 
+
+\end{problem}
+
+\begin{problem}
+(1) divide by 4; (2) add 3; (3) multiply by 2.
+
+\end{problem}
+
+
+\begin{problem}
+(1) multiply by 2; (2) add 3; (3) take the square root.
 
     Find $f(2)$, and find and simplify an expression for $f(x)$.
 \end{problem}
 
 
 \begin{problem}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:    (1) add 3; (2) multiply by 2; (3) divide by 4. 
-
-    Find $f(2)$, and find and simplify an expression for $f(x)$.
-\end{problem}
-
-\begin{problem}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:   (1) divide by 4; (2) add 3; (3) multiply by 2.
-
-    Find $f(2)$, and find and simplify an expression for $f(x)$.
-\end{problem}
-
-
-\begin{problem}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:    (1) multiply by 2; (2) add 3; (3) take the square root.
-
-    Find $f(2)$, and find and simplify an expression for $f(x)$.
-\end{problem}
-
-
-\begin{problem}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:   (1) add 3; (2) multiply by 2; (3) take the square root.
+(1) add 3; (2) multiply by 2; (3) take the square root.
 
     Find $f(2)$, and find and simplify an expression for $f(x)$.
 \end{problem}
 
 \begin{problem}\label{buildfunctionlast}
-    Suppose $f(x)$ is a function that takes a real number $x$ and performs the following three steps in the order given:   (1) add 3; (2) take the square root; (3) multiply by 2.
+(1) add 3; (2) take the square root; (3) multiply by 2.
 
     Find $f(2)$, and find and simplify an expression for $f(x)$.
 \end{problem}
+    
+\end{question}
 
 
 \begin{question}
@@ -277,15 +264,15 @@ $f(x) = x^2 - 3x + 2$,
 $f(x) = 6$
 
 \begin{itemize}
-\item $f(3) = 6$
-\item $f(-1) =6$
-\item $f\left(\frac{3}{2} \right) = 6$
-\item  $f(4x) = 6$
-\item $4f(x) = 24$
-\item $f(-x) = 6$
-\item  $f(x-4) = 6$ 
-\item $f(x) - 4 = 2$
-\item  $f\left(x^2\right) = 6$
+\item $f(3) = \answer{6}$
+\item $f(-1) =\answer{6}$
+\item $f\left(\frac{3}{2} \right) = \answer{6}$
+\item  $f(4x) = \answer{6}$
+\item $4f(x) = \answer{24}$
+\item $f(-x) = \answer{6}$
+\item  $f(x-4) = \answer{6}$ 
+\item $f(x) - 4 = \answer{2}$
+\item  $f\left(x^2\right) = \answer{6}$
 \end{itemize}
 
 \end{problem}  
@@ -294,15 +281,15 @@ $f(x) = 6$
 $f(x) = 0$
 
 \begin{itemize}
-\item $f(3) = 0$
-\item $f(-1) =0$
-\item $f\left(\frac{3}{2} \right) = 0$
-\item  $f(4x) = 0$
-\item $4f(x) = 0$
-\item $f(-x) = 0$
-\item  $f(x-4) = 0$ 
-\item $f(x) - 4 = -4$
-\item  $f\left(x^2\right) = 0$
+\item $f(3) = \answer{0}$
+\item $f(-1) =\answer{0}$
+\item $f\left(\frac{3}{2} \right) = \answer{0}$
+\item  $f(4x) = \answer{0}$
+\item $4f(x) = \answer{0}$
+\item $f(-x) = \answer{0}$
+\item  $f(x-4) = \answer{0}$ 
+\item $f(x) - 4 = \answer{-4}$
+\item  $f\left(x^2\right) = \answer{0}$
 \end{itemize}
 
 \end{problem}  
@@ -518,8 +505,6 @@ $y = x^{3} - x$
 \end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $y = \sqrt{x - 2}$
 
 \begin{multipleChoice}
@@ -529,8 +514,6 @@ $y = \sqrt{x - 2}$
 \end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x^{3}y = -4$ 
 
 \begin{multipleChoice}
@@ -542,200 +525,189 @@ $x^{3}y = -4$
 \end{multipleChoice}
 \end{problem}
 
-%\setcounter{HW}{\value{enumi}}
-
-%\setcounter{enumi}{\value{HW}}
-
 \begin{problem}
 $x^{2} - y^{2} = 1$ 
 
 \begin{multipleChoice}
     \choice{Yes, $y$ is a function of $x$.}
-    \choice[correct]{No, $y$ is a not a function of $x$.
+    \choice[correct]{No, $y$ is a not a function of $x$.}
     \begin{feedback}
-        You cannot solve for y without using $\pm$ when you take the square root of both sides of your equation.
-    \end{feedback}}
+        We cannot solve for y without using $\pm$ when we take the square root of both sides of our equation.
+    \end{feedback}
 \end{multipleChoice}
 \end{problem}
 
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $y = \frac{x}{x^{2} - 9}$ 
+
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
 \end{problem}
 
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x = -6$
+\begin{multipleChoice}
+    \choice{Yes, $y$ is a function of $x$.}
+    \choice[correct]{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
 \end{problem}
 
-%\setcounter{HW}{\value{enumi}}
-
-%\setcounter{enumi}{\value{HW}}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x = y^2 + 4$
+\begin{multipleChoice}
+    \choice{Yes, $y$ is a function of $x$.}
+    \choice[correct]{No, $y$ is a not a function of $x$.}
+    \begin{feedback}
+        We cannot solve for y without using $\pm$ when we take the square root of both sides of our equation.
+    \end{feedback}
+\end{multipleChoice}
 \end{problem}  
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $y = x^2 + 4$
-\end{problem} 
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
+\end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x^2 + y^2 = 4$
+\begin{multipleChoice}
+    \choice{Yes, $y$ is a function of $x$.}
+    \choice[correct]{No, $y$ is a not a function of $x$.}
+    \begin{feedback}
+        We cannot solve for y without using $\pm$ when we take the square root of both sides of our equation.
+    \end{feedback}
+\end{multipleChoice}
 \end{problem}
 
-%\setcounter{HW}{\value{enumi}}
-
-%\setcounter{enumi}{\value{HW}}
-
-
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $y = \sqrt{4-x^2}$
-\end{problem} 
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
+\end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x^2 - y^2 = 4$
+\begin{multipleChoice}
+    \choice{Yes, $y$ is a function of $x$.}
+    \choice[correct]{No, $y$ is a not a function of $x$.}
+    \begin{feedback}
+        We cannot solve for y without using $\pm$ when we take the square root of both sides of our equation.
+    \end{feedback}
+\end{multipleChoice}
 \end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x^3 + y^3 = 4$
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \begin{feedback}
+        Yes, in fact, $y=\sqrt[3]{4-x^3}$.
+    \end{feedback}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
 \end{problem}
 
 
-%\setcounter{HW}{\value{enumi}}
-
-%\setcounter{enumi}{\value{HW}}
-
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $2x + 3y = 4$
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \begin{feedback}
+        Yes, in fact, $y=-\frac{2}{3}x+\frac{4}{3}$.
+    \end{feedback}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
 \end{problem}
 
 \begin{problem}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $2xy = 4$
+\begin{multipleChoice}
+    \choice[correct]{Yes, $y$ is a function of $x$.}
+    \begin{feedback}
+        Yes, in fact, $y=\frac{4}{2x}$.
+    \end{feedback}
+    \choice{No, $y$ is a not a function of $x$.}
+\end{multipleChoice}
 \end{problem}
 
 \begin{problem}\label{equfunctionlast}
-Determine whether or not the following equation represents $y$ as a function of $x$.
-
 $x^2 = y^2$
+\begin{multipleChoice}
+    \choice{Yes, $y$ is a function of $x$.}
+    \choice[correct]{No, $y$ is a not a function of $x$.}
+    \begin{feedback}
+        We cannot solve for y without using $\pm$ when we take the square root of both sides of our equation.
+    \end{feedback}
+\end{multipleChoice}
 \end{problem}
 
 \end{question}
 
-
-
-
-%\setcounter{enumi}{\value{HW}}
+\begin{question}
+Exercises \ref{setfunctionfirst} - \ref{setfunctionlast} give a set of points in the $xy$-plane. Determine if $y$ is a function of $x$. If so, state the
+domain and range.
 
 \begin{problem}\label{setfunctionfirst}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 \{$(-3, 9)$, $\;(-2, 4)$, $\;(-1, 1)$, $\;(0, 0)$, $\;(1, 1)$, $\;(2, 4)$, $\;(3, 9)\}$ 
 \end{problem}
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\left\{ (-3,0), (1,6), (2,-3), (4,2), (-5,6), (4,-9), (6,2) \right\}$
 \end{problem}    
 
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\left\{ (-3,0), (-7,6), (5,5), (6,4), (4,9), (3,0) \right\}$
 \end{problem}    
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\left\{ (1,2), (4,4), (9,6), (16,8), (25,10), (36, 12), \ldots \right\}$
 \end{problem}    
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 \{($x, y) \, | \, x$ is an odd integer, and $y$ is an even integer\}
 \end{problem}   
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 \{$(x, 1) \, | \, x$ is an irrational number\}
 \end{problem}   
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ (1,0), (2,1), (4,2), (8,3), (16,4), (32, 5), \ldots \}$
 \end{problem}   
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ \ldots (-3,9), (-2,4), (-1,1), (0,0), (1,1), (2,4), (3,9), \ldots \}$
 \end{problem}   
 
-%\setcounter{HW}{\value{enumi}}
-
-
-
-%\setcounter{enumi}{\value{HW}}
-
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ (-2, y) \, | \, -3 < y < 4\}$
 \end{problem}   
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ (x,3) \, | \,  -2 \leq x < 4\}$
 \end{problem}    
 
-%\setcounter{HW}{\value{enumi}}
-
-
-
-%\setcounter{enumi}{\value{HW}}
-
 
 \begin{problem}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ \left(x,x^2\right) \, | \, \text{$x$ is a real number} \}$
 \end{problem}    
 
 \begin{problem}\label{setfunctionlast}
-  Given the following set of points in the $xy$-plane, determine if $y$ is a function of $x$.  If so, state the domain and range.  
-
 $\{ \left(x^2,x\right) \, | \, \text{$x$ is a real number} \}$
 \end{problem}     
-
-%\setcounter{HW}{\value{enumi}}
-
-%\setcounter{enumi}{\value{HW}}
+    
+\end{question}
 
 \begin{problem}\label{HLTExercise} The Vertical Line Test is a quick way to determine from a graph if the vertical axis variable is a function of the horizontal axis variable. If we are given a graph and asked to determine if the horizontal axis variable is a function of the vertical axis variable, we can use horizontal lines instead of vertical lines to check.  Using Theorem \ref{VLT} as a guide,  formulate a `Horizontal Line Test.'  (We'll refer back to this exercise in Section \ref{InverseFunctions}.)
 \end{problem}
