@@ -96,7 +96,7 @@ x & - & 2 \, \vline& x^3 & + & 4x^2 & - & 5x & - & 14 \\
 \[
 \begin{array}{r}
  x^2 + 6x + 7 \\
- x - 2 \Big)\overline{\, x^3 + 4x^2 - 5x - 14 \,} \\
+ x - 2 \quad \overline{)\quad x^3 + 4x^2 - 5x - 14 \,} \\
  -\underline{(x^3 - 2x^2)} \phantom{- 5x - 14} \\
  6x^2 - 5x \phantom{- 14} \\
  -\underline{(6x^2 - 12x)} \phantom{- 14} \\
@@ -258,7 +258,7 @@ If you take the time to work back through the original division problem, you wil
 
  & & - 2 \, \, \vline& \, \, x^3 & + & 4x^2 & - & 5x & - & 14 \\
 
- &  &  &   & &   2x^2 &  & 12x &  & 14 \\ \hhline{~~~-------} 
+ &  &  &   & &   2x^2 &  & 12x &  & 14 \\ & & & \cline{1-7} 
  &  &  & x^3  &  & 6 x^2 &  & 7x &  &0  \\  
 \end{array}\]
 
@@ -276,12 +276,21 @@ We've streamlined things quite a bit so far, but we can still do more.  Let's ta
 \[ \begin{array}{rrrrr}
 
 
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   &&   2 &   12 &   14 \\ \hhline{~----} 
+  2 \,\, | & 1 & 4 & -5  & -14 \\
+   &  & 2 &   12 &   14 \\ &  \cline{1-4}
   & 1  &   6  &  7 &  0  \\  
 \end{array}\]
 
+\[
+\begin{array}[t]{r@{\;}l}
+ 2 & \begin{array}[t]{|rrrr}
+  1 & 4 & -5 & -14 \\
+   & 2 & 12 & 14 \\
+  \cline{1-4}
+  1 & 6 & 7 &  0 \\
+ \end{array}
+\end{array}
+\]
 
 
 We have constructed a \index{polynomial division ! synthetic division}\index{synthetic division tableau}\textbf{synthetic division tableau} for this polynomial division problem.  Let's re-work our division problem using this tableau to see how it greatly streamlines the division process.  
