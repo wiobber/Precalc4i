@@ -853,96 +853,96 @@ coordinates {
 
 \item  We recognize  $F(x) = f(x-2) =f(x-h)$. With $h=2$, Theorem \ref{hshifts} tells us to add $2$ to each of the $x$-coordinates of the points on the graph of $f$, moving the graph of $f$ to the \textit{right} two units.
 
-\begin{image}
-\begin{tikzpicture}[scale=1]
-        \begin{axis}[
-          domain=-3:6,
-          xmin=-2, xmax=6,
-          ymin=-1, ymax=5,
-          width=2in,
-          height=2in,
-          xtick={-1,0,1,2,3,4,5},
-            xticklabels={$-1$,$0$, $1$, $2$,$3$,$4$,$5$},
-           ytick={1,2, 4},
-            yticklabels={$1$,$2$, $4$},  
-            tick style={line width=1.2pt},
-            major tick length=6pt,
-            axis x line=center,
-            axis y line=center,
-            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
-             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
-            xlabel={$x$},
-            ylabel={$y$},
-           every axis x label/.style={
-    at={(current axis.right of origin)},
-    anchor=west
-  }
-          ]
-\addplot[smooth,domain=-2:4, line width=1.5pt, blue] {-0.25*x^2+x+3};
-\addplot[
-  only marks,
-  mark=*,
-  mark size=2pt,
-  mark options={
-    fill=white},
-  nodes near coords,
-  point meta=explicit symbolic,
-  every node near coord/.style={anchor=north,
-    xshift=0pt}
-]
-coordinates {
-   (4,3) [$(4,3)$]
- };
+% \begin{image}
+% \begin{tikzpicture}[scale=1]
+%         \begin{axis}[
+%           domain=-3:6,
+%           xmin=-2, xmax=6,
+%           ymin=-1, ymax=5,
+%           width=2in,
+%           height=2in,
+%           xtick={-1,0,1,2,3,4,5},
+%             xticklabels={$-1$,$0$, $1$, $2$,$3$,$4$,$5$},
+%            ytick={1,2, 4},
+%             yticklabels={$1$,$2$, $4$},  
+%             tick style={line width=1.2pt},
+%             major tick length=6pt,
+%             axis x line=center,
+%             axis y line=center,
+%             x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+%              y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+%             xlabel={$x$},
+%             ylabel={$y$},
+%            every axis x label/.style={
+%     at={(current axis.right of origin)},
+%     anchor=west
+%   }
+%           ]
+% \addplot[smooth,domain=-2:4, line width=1.5pt, blue] {-0.25*x^2+x+3};
+% \addplot[
+%   only marks,
+%   mark=*,
+%   mark size=2pt,
+%   mark options={
+%     fill=white},
+%   nodes near coords,
+%   point meta=explicit symbolic,
+%   every node near coord/.style={anchor=north,
+%     xshift=0pt}
+% ]
+% coordinates {
+%    (4,3) [$(4,3)$]
+%  };
 
-\addplot[
-  only marks,
-  mark=*,
-  mark size=2pt,
-  nodes near coords,
-  point meta=explicit symbolic,
-  every node near coord/.style={anchor=east,
-    xshift=-5pt, yshift=0pt}
-]
-coordinates {
-  (0,3) [$(0,3)$]
-   (-2,0) [$(-2,0)$]
-  };
+% \addplot[
+%   only marks,
+%   mark=*,
+%   mark size=2pt,
+%   nodes near coords,
+%   point meta=explicit symbolic,
+%   every node near coord/.style={anchor=east,
+%     xshift=-5pt, yshift=0pt}
+% ]
+% coordinates {
+%   (0,3) [$(0,3)$]
+%    (-2,0) [$(-2,0)$]
+%   };
 
-\addplot[
-  only marks,
-  mark=*,
-  mark size=2pt,
-  nodes near coords,
-  point meta=explicit symbolic,
-  every node near coord/.style={anchor=south,
-    xshift=0pt}
-]
-coordinates {
-  (2,4) [$(2,4)$]
-  };
-      \end{axis}
-        \end{tikzpicture}
-\quad\quad\quad \quad\quad\quad
-\begin{tikzpicture}[scale=1]
-        \begin{axis}[
-          domain=-2:2,
-          xmin=-3, xmax=3,
-         ymin=-4, ymax=4,
-          width=2in,
-          height=2in,
-          xtick=\empty,
-          xticklabels=\empty,
-            axis x line=center,
-            axis y line=none,
-            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
-          ]
+% \addplot[
+%   only marks,
+%   mark=*,
+%   mark size=2pt,
+%   nodes near coords,
+%   point meta=explicit symbolic,
+%   every node near coord/.style={anchor=south,
+%     xshift=0pt}
+% ]
+% coordinates {
+%   (2,4) [$(2,4)$]
+%   };
+%       \end{axis}
+%         \end{tikzpicture}
+% \quad\quad\quad \quad\quad\quad
+% \begin{tikzpicture}[scale=1]
+%         \begin{axis}[
+%           domain=-2:2,
+%           xmin=-3, xmax=3,
+%          ymin=-4, ymax=4,
+%           width=2in,
+%           height=2in,
+%           xtick=\empty,
+%           xticklabels=\empty,
+%             axis x line=center,
+%             axis y line=none,
+%             x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+%           ]
  
-\node[anchor=south] at (0,0.5) {Shift right $2$ units};
-\node[anchor=north] at (0,-0.5) {add $2$ to};
-\node[anchor=north] at (0,-1.5) {each $x$-coordinate};
+% \node[anchor=south] at (0,0.5) {Shift right $2$ units};
+% \node[anchor=north] at (0,-0.5) {add $2$ to};
+% \node[anchor=north] at (0,-1.5) {each $x$-coordinate};
  
-      \end{axis}
-        \end{tikzpicture}
+      % \end{axis}
+      %   \end{tikzpicture}
 %         \quad\quad\quad \quad\quad\quad  
 % \begin{tikzpicture}[scale=1]
 %         \begin{axis}[
@@ -1024,7 +1024,7 @@ coordinates {
 %   };
 %       \end{axis}
 %         \end{tikzpicture}
-\end{image} 
+%\end{image} 
 
 
 We can check our answer by showing each ordered pair $(x,y)$ listed on our final graph satisfies the equation $y = f(x-2)$.  Starting with $(0,0)$, we substitute $x=0$ into $y=f(x-2)$ and get $y = f(0-2) = f(-2)$.  Since $(-2,0)$ is on the graph of $f$, we know $f(-2) = 0$.  Hence, $y = f(0-2) = f(-2) = 0$, showing the point $(0,0)$ is on the graph of $y=f(x-2)$.  We invite the reader to check the remaining points.
