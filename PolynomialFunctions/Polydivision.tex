@@ -13,30 +13,34 @@
 
 \label{Polydivision}
 
+In Section \ref{GraphsofPolynomials} we saw how much of the `local' behavior of the graph of a polynomial function is  determined by the zeros of the polynomial function.  In that section, the polynomial functions we were given were mostly, if not completely, factored which greatly simplified the process for determining zeros.  In this section, we revisit the relationship between zeros and factors with the ultimate aim of taking a polynomial function given to us in the form stated in Definition \ref{polynomialfunction}  and determining its zeros. 
+
+\medskip
+%Carl's Comment - I like this interactive - but maybe a better place for it would be in Appendix on Polynomial Arithmetic.
+
+As we'll soon see, the process of finding zeros of a polynomial function is equivalent to factoring said polynomial... and factoring a polynomial is equivalent\footnote{like it or not!} to dividing polynomials.\footnote{DON'T PANIC!  We promise things won't be as terrible as you remember.}  While a robust review of polynomial division can be found in the Appendix, Section \ref{polylongdiv}, the GeoGebra interactive below should dust off enough of the rust to jumpstart our discussion here using a numerical example. 
+
 %https://www.geogebra.org/classic/hcnhz5nv
 \begin{center}
 \geogebra{hcnhz5nv}{800}{600}
 \end{center}
 
+ We now turn our attention to the problem at hand:  finding the zeros of a polynomial function.  Suppose we wish to determine the zeros of  $f(x) = x^3 + 4x^2-5x-14$.  Setting $f(x)=0$ results in the polynomial equation $x^3 + 4x^2-5x-14=0$.   Despite all of the factoring techniques we learned (and forgot!) in Intermediate Algebra, this equation foils\footnote{pun intended} us at every turn. Knowing that the zeros of $f$ correspond to $x$-intercepts on the graph of $y=f(x)$, Desmos to graph $f$ and identify the $x$-intercepts we can see.\footnote{Are these \textbf{all} the $x$-intercepts?  Stay tuned!}
 
-In Section \ref{GraphsofPolynomials} we saw how much of the `local' behavior of the graph of a polynomial function is  determined by the zeros of the polynomial function.  In that section, the polynomial functions we were given were mostly, if not completely, factored which greatly simplified the process for determining zeros.  In this section, we revisit the relationship between zeros and factors with the ultimate aim of taking a polynomial function given to us in the form stated in Definition \ref{polynomialfunction}  and determining its zeros. 
-
-\medskip
-
- We start by way of example:  suppose we wish to determine the zeros of  $f(x) = x^3 + 4x^2-5x-14$.  Setting $f(x)=0$ results in the polynomial equation $x^3 + 4x^2-5x-14=0$.   Despite all of the factoring techniques we learned (and forgot!) in Intermediate Algebra, this equation foils\footnote{pun intended} us at every turn. Knowing that the zeros of $f$ correspond to $x$-intercepts on the graph of $y=f(x)$, we use a graphing utility to produce the graph below on the left.  
+ % https://www.desmos.com/calculator/patxuugdfe
+\begin{center}
+    \desmos{patxuugdfe}{800}{600}
+\end{center}
  
- \medskip
+ 
  
  The graph suggests that the function has three zeros, one of which appears to be $x=2$ and two others for whom we are provided what we assume to be decimal approximations:  $x \approx -4.414$ and $x \approx -1.586$.    We can verify if these are zeros easily enough.   We find  $f(2) =(2)^2 + 4(2)^2-5(2)-14 = 0$,  but  $f(-4.414) \approx 0.0039$ and $f(-1.586) \approx 0.0022$,  While these last two values are probably by some measures,  `close' to $0$, they are not \textbf{exactly} equal to $0$.  The question becomes:  is there a way to use the fact that $x=2$ is a zero to obtain the other two zeros?  
  
  \medskip
  
- Based on our experience, if $x=2$ is a zero, it seems that there should be a factor of $(x-2)$ lurking around in the factorization of $f(x)$.  In other words, we should expect that $x^3 + 4x^2-5x-14=(x-2) \, q(x)$, where $q(x)$ is some other polynomial.  How could we find such a $q(x)$, if it even exists?  The answer comes from our old friend, polynomial division. (See Section \ref{polylongdiv}.) Below on the right, we perform the long division:  $(x^3 + 4x^2-5x-14) \div (x-2)$ and obtain $x^2+6x+7$.
+ Based on our experience, if $x=2$ is a zero, it seems that there should be a factor of $(x-2)$ lurking around in the factorization of $f(x)$.  In other words, we should expect that $x^3 + 4x^2-5x-14=(x-2) \, q(x)$, where $q(x)$ is some other polynomial.  How could we find such a $q(x)$, if it even exists?  The answer comes from our old friend, polynomial division. (Again, see Section \ref{polylongdiv} for a mroe detailed review.) Below on the right, we perform the long division:  $(x^3 + 4x^2-5x-14) \div (x-2)$ and obtain $x^2+6x+7$.
  
-% https://www.desmos.com/calculator/patxuugdfe
-\begin{center}
-    \desmos{patxuugdfe}{800}{600}
-\end{center}
+
 
 
 
