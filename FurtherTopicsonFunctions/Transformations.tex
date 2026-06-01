@@ -2762,58 +2762,177 @@ coordinates {
 
 If, on the other hand, we wish to graph $y = f\left( \frac{1}{2} x\right)$, we end up multiplying the $x$-coordinates of the points on the graph of $f$ by $2$ which results in a horizontal scaling\footnote{Also called `horizontal stretch,'  `horizontal expansion' or `horizontal dilation' by a factor of $2$.} by a factor of $2$, as demonstrated below.
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2,3, 4, 5},
+            yticklabels={$2$,$3$,$4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
-% \input{Transformations_pic41.tex}
-\begin{mfpic}[12]{-1}{11}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](11,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5,6,7,8,9,10}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8, {\scriptsize $9$} 9, {\scriptsize $10$} 10}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
 
-&
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
 
-\stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $2$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $2$}} 
+  };
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,1.5) {horizontal scaling};
+\node[anchor=south] at (0,0.5) {by a factor of $2$};
+\node[anchor=north] at (0,-0.5) {multiply each};
+\node[anchor=north] at (0,-1.5) {$x$-coordinate by $2$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=11,
+          ymin=-1, ymax=6,
+          width=4in,
+          height=2in,
+          xtick={1, 2,3,4,5, 6, 7, 8, 9, 10},
+            xticklabels={$1$,$2$,$3$, $4$, $5$, $6$, $7$, $8$, $9$, $10$},
+           ytick={2, 3, 4, 5},
+            yticklabels={$2$, $3$,$4$, $5$},   
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(4,3);
+\draw[blue, line width=1.5pt] (4,3)--(8,3);
+\draw[blue, line width=1.5pt] (10,5)--(8,3);
 
-&
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
-% \input{Transformations_pic42.tex}
-\begin{mfpic}[12]{-1}{11}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](4,3.5){\scriptsize $(4,3)$}
-\tlabel[cc](8,2.5){\scriptsize $(8,3)$}
-\tlabel[cc](10,5.5){\scriptsize $(10,5)$}
-\tlabel[cc](11,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=g(x) = f\left( \frac{1}{2} x \right)$}
-\axes
-\xmarks{1,2,3,4,5,6,7,8,9,10}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8, {\scriptsize $9$} 9, {\scriptsize $10$} 10}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (4,3), (8,3), (10,5)}
-\point[4pt]{(0,1), (4,3), (8,3), (10,5)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
+  (10,5) [$(10,5)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    yshift=-5pt}
+]
+coordinates {
+  (8,3) [$(8,3)$]
 
-\end{array}\]
-
+  };
+      \end{axis}
+        \end{tikzpicture}        
+\end{image}
 We have the following theorem.
 
 \smallskip
