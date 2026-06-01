@@ -2514,68 +2514,7 @@ coordinates {
         \end{tikzpicture}        
 \end{image}
 
-
-
-
-\[ \begin{array}{ccc}
-
-% \input{Transformations_pic37.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
-
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize vertical scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $\frac{1}{2}$}} 
-
-&
-
-% \input{Transformations_pic38.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,0.5){\scriptsize $\left(0,\frac{1}{2}\right)$}
-\tlabel[cc](2,2){\scriptsize $\left(2,\frac{3}{2}\right)$}
-\tlabel[cc](4,1){\scriptsize $\left(4,\frac{3}{2}\right)$}
-\tlabel[cc](5,3){\scriptsize $\left(5,\frac{5}{2}\right)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=\frac{1}{2} f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $1$} 1,{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,0.5), (2,1.5), (4,1.5), (5,2.5)}
-\point[4pt]{(0,0.5), (2,1.5), (4,1.5), (5,2.5)}
-\end{mfpic}
-
-
-\end{array} \]
-
 These results are generalized in the following theorem.
-
-\smallskip
-
-%% \colorbox{ResultColor}{\bbm
-
-%\smallskip
 
 \begin{theorem} \label{vscalings}\index{graph ! vertical scaling}\textbf{Vertical Scalings.} Suppose $f$ is a function and $a>0$ is a real number. 
 
@@ -2649,57 +2588,177 @@ x & 2x & g(x)=f(2x) & (x, g(x)) \\ \hline
 
 In general, if $(a,b)$ is on the graph of $f$, then $f(a) = b$.  Hence $g\left(\frac{a}{2}\right) = f\left(2 \cdot \frac{a}{2}\right) = f(a) = b$ so that $\left(\frac{a}{2}, b\right)$ is on the graph of $g$.  In other words, to graph $g$ we divide the $x$-coordinates of the points on the graph of $f$ by $2$.  This results in a horizontal scaling\footnote{Also called `horizontal shrink,' `horizontal compression' or `horizontal contraction' by a factor of $2$.} by a factor of $\frac{1}{2}$.
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2,3, 4, 5},
+            yticklabels={$2$,$3$,$4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(2,3);
+\draw[blue, line width=1.5pt] (4,3)--(5,5);
 
-% \input{Transformations_pic39.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](2,3.5){\scriptsize $(2,3)$}
-\tlabel[cc](4,2.5){\scriptsize $(4,3)$}
-\tlabel[cc](5,5.5){\scriptsize $(5,5)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=f(x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (2,3), (4,3), (5,5)}
-\point[4pt]{(0,1), (2,3), (4,3), (5,5)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  (5,5) [$(5,5)$]
+  };
 
-&
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (4,3) [$(4,3)$]
 
-\stackrel{\stackrel{\mbox{\scriptsize horizontal scaling by a factor of $\frac{1}{2}$ }}{\xrightarrow{\hspace{1.7in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $\frac{1}{2}$}} 
+  };
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,1.5) {horizontal scaling};
+\node[anchor=south] at (0,0.5) {by a factor of $1/2$};
+\node[anchor=north] at (0,-0.5) {multiply each};
+\node[anchor=north] at (0,-1.5) {$x$-coordinate by $1/2$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-1, xmax=6,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={1, 2,3,4,5},
+            xticklabels={$1$,$2$,$3$, $4$, $5$},
+           ytick={2, 3, 4, 5},
+            yticklabels={$2$, $3$,$4$, $5$},   
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            y axis line style={-{Latex[length=5pt,width=4pt]}, line width=0.8pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\draw[blue, line width=1.5pt] (0,1)--(1,3);
+\draw[blue, line width=1.5pt] (1,3)--(2,3);
+\draw[blue, line width=1.5pt] (2.5,5)--(2,3);
 
-&
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+ 
+};
 
-% \input{Transformations_pic40.tex}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\tlabel[cc](-1,1){\scriptsize $(0,1)$}
-\tlabel[cc](1,3.5){\scriptsize $(1,3)$}
-\tlabel[cc](2,2.5){\scriptsize $(2,3)$}
-\tlabel[cc](2.5,5.5){\scriptsize $\left(\frac{5}{2},5\right)$}
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tcaption{\scriptsize $y=g(x) = f(2x)$}
-\axes
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\axislabels {y}{{\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5}
-\penwd{1.25pt}
-\polyline{(0,1), (1,3), (2,3), (2.5,5)}
-\point[4pt]{(0,1), (1,3), (2,3), (2.5,5)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (1,3) [$(1,3)$]
+  (2.5,5) [$(\frac{5}{2},5)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    yshift=-5pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
 
-\end{array}\]
+  };
+      \end{axis}
+        \end{tikzpicture}        
+\end{image}
 
 If, on the other hand, we wish to graph $y = f\left( \frac{1}{2} x\right)$, we end up multiplying the $x$-coordinates of the points on the graph of $f$ by $2$ which results in a horizontal scaling\footnote{Also called `horizontal stretch,'  `horizontal expansion' or `horizontal dilation' by a factor of $2$.} by a factor of $2$, as demonstrated below.
 
