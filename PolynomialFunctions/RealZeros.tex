@@ -82,9 +82,15 @@ At this stage, we know not only the interval in which all of the zeros of $f(x) 
 
 \begin{enumerate}
 
-\item  In Example \ref{CBex}, we determined all of the real zeros of $f$ lie in the interval $[-4, 4]$, so we restrict our attention to that portion of the $x$-axis.
+\item  In Example \ref{CBex}, we determined all of the real zeros of $f$ lie in the interval $[-4, 4]$, so we use Desmos to graph $f$ restricted to that portion of the $x$-axis.
 
-\item  In Example \ref{RZTex}, we learned that any rational zero of $f$ must be in the list $\left\{\pm \, \frac{1}{2}, \pm \, 1, \pm \, \frac{3}{2}, \pm \, 3\right\}$.  From the graph, it looks as if we can rule out any of the positive rational zeros, since the graph seems to cross the $x$-axis at $x \approx 1.225$.  On the negative side, $x=-1$ looks good. Indeed,  the shape  of the graph near $(-1,0)$ suggests that if $x=-1$ is a zero, it is of multiplicity at least three.  We set about synthetically dividing:
+% https://www.desmos.com/calculator/radpekcxv6
+\begin{center}
+\desmos{radpekcxv6}{800}{600}
+\end{center}
+
+
+\item  In Example \ref{RZTex}, we learned that any rational zero of $f$ must be in the list $\left\{\pm \, \frac{1}{2}, \pm \, 1, \pm \, \frac{3}{2}, \pm \, 3\right\}$.  From the graph, it looks as if we can rule out any of the positive rational zeros, since the graph seems to cross the $x$-axis at $x \approx 1.225$.  On the negative side, $x=-1$ looks good, while the other negative real root displayed, $x \approx - 1.225$ is, like its positive counterpart,  likely an approximation of an irrational zero. The shape  of the graph near $(-1,0)$ suggests that if $x=-1$ is a zero, it is of multiplicity at least two.  We set about synthetically dividing:
  
 \[\begin{array}{rrrrrr}
 
@@ -113,13 +119,9 @@ Since $f$ is a fourth degree polynomial, we know that our quotient is a third de
 
 \end{array}\]
 
- Our quotient polynomial is now $2x^2 - 3$.  Setting this to zero gives $2x^2 - 3 = 0$, or $x^2 = \frac{3}{2}$, which gives us $x = \pm \, \frac{\sqrt{6}}{2}$.  Based on our division work, we know that $-1$ has a multiplicity of \textbf{at least} $2$. The Factor Theorem tells us our remaining zeros, $\pm \, \frac{\sqrt{6}}{2}$, each have multiplicity at least $1$.  However, Theorem \ref{nzerosreal} tells us $f$ can have at most $4$ real zeros, counting multiplicity, and so we conclude that $-1$ is of multiplicity \textbf{exactly} $2$ and $\pm \, \frac{\sqrt{6}}{2} \approx \pm 1.225$ each has multiplicity $1$. Thus, we were incorrect in thinking  $-1$ was a zero of multiplicity $3$.  Sure enough, if we adjust zoom in near $(-1,0)$ using graphing utility, we find the graph of $y = f(x)$ touches and rebounds from the $x$-axis at $(-1,0)$, typical behavior near a zero of even multiplicity. The lesson here is, once again, technology may \textbf{suggest} a result, but it is only the mathematics which can \textbf{prove} (or in this case, \textbf{disprove}) it.  
+ Our quotient polynomial is now $2x^2 - 3$.  Setting this to zero gives $2x^2 - 3 = 0$, or $x^2 = \frac{3}{2}$, which gives us $x = \pm \, \frac{\sqrt{6}}{2}$.  Based on our division work, we know that $-1$ has a multiplicity of \textbf{at least} $2$. The Factor Theorem tells us our remaining zeros, $\pm \, \frac{\sqrt{6}}{2}$, each have multiplicity at least $1$.  However, Theorem \ref{nzerosreal} tells us $f$ can have at most $4$ real zeros, counting multiplicity, and so we conclude that $-1$ is of multiplicity \textbf{exactly} $2$ and $\pm \, \frac{\sqrt{6}}{2} \approx \pm 1.225$ each has multiplicity $1$. If we zoom in near $(-1,0)$ on our Desmos graph, we find the graph of $y = f(x)$ touches and rebounds from the $x$-axis at $(-1,0)$, typical behavior near a zero of multiplicity 2.   Doing the same near the other two $x$-intercepts shows the graph of $f$ crosses through the $x$-axis in a linear fashion.\footnote{Near $\left(\frac{\sqrt{6}}{2}, 0\right)$, the graph looks nearly vertical!  Indeed, using Theorem \ref{polynomialbehaviornearzeros}, we find the graph of $f$ here is closely approximated by $y = \left(12 + 5 \sqrt{6}\right)\left(x-\frac{\sqrt{6}}{2}\right)$, which has a slope of rougly $24.25$. } 
 
 \end{enumerate}
-% https://www.desmos.com/calculator/radpekcxv6
-\begin{center}
-\desmos{radpekcxv6}{800}{600}
-\end{center}
 
  \qed
 
@@ -151,14 +153,14 @@ Our next example shows how even a mild-mannered polynomial can cause problems.
 
 \item  Applying the Rational Zeros Theorem with constant term $a_0 = -12$ and leading coefficient $a_4 = 1$, we get the list $\{\pm \, 1$, $\pm \, 2$, $\pm \, 3$, $\pm \, 4$, $\pm \, 6$, $\pm \, 12\}$.
 
-\item  Graphing $y=f(x)$ on the interval $[-13,13]$ produces the graph below on the left.  Zooming in a bit gives the graph below on the right.  Based on the graph, none of our rational zeros will work. (Do you see why not?)
+\item  Graphing $y=f(x)$ on the interval $[-13,13]$ using Desmos shows $x$-intercepts at (roughly) $(\pm 1.732, 0)$, which means none of our rational zeros will work. (Why not?)
 
 % https://www.desmos.com/calculator/s2bbir5mak
 \begin{center}
 \desmos{s2bbir5mak}{800}{600}
 \end{center} 
 
-\item  From the graph, we know $f$ has two real zeros, one positive, and one negative.  Our only hope at this point is to try and find the zeros of $f$ by setting $f(x)=x^4+x^2-12=0$ and solving.  If we stare at this equation long enough, we may recognize it as a `quadratic in disguise' or `quadratic in form'. (See Section \ref{AppQuadEqus}.)   In other words, we have three terms: $x^4$, $x^2$ and $12$, and the exponent on the first term, $x^4$, is exactly twice that of the second term, $x^2$.  We may rewrite this as $\left(x^2\right)^2 + \left(x^2\right) - 12 = 0$.  To better see the forest for the trees, we momentarily replace $x^2$ with the variable $u$.  In terms of $u$, our equation becomes $u^2 + u - 12 = 0$, which we can readily factor as $(u+4)(u-3) = 0$.  In terms of $x$, this means $x^4+x^2-12= \left(x^2-3\right) \left(x^2 + 4 \right)=0$. We get $x^2 = 3$, which gives us $x = \pm \sqrt{3}$, or $x^2=-4$, which admits no real solutions.  Since $\sqrt{3} \approx 1.73$, the two zeros match what we expected from the graph.  Turning our attention now to multiplicities, the Factor Theorem guarantees that since $x = \pm \sqrt{3}$ are zeros, $(x- \sqrt{3})$ and $(x + \sqrt{3})$ are factors of $f(x)$.  We've already partially factored  $f(x)$ as $f(x)  = \left(x^2-3\right) \left(x^2 + 4 \right)$.  Since $x^2+4$ as no real zeros, we know both $(x-\sqrt{3})$ and $(x+\sqrt{3})$ must divide $x^2-3$.  By Theorem \ref{nzerosreal},  $x^2-3$ can only have a total of two zeros, including multiplicities, so we are forced to conclude $x = \pm \sqrt{3}$ are each zeros of multiplicity $1$ of $x^2-3$, and hence, $f(x)$.\footnote{Alternatively, we could recognize $x^2 -3 = x^2-(\sqrt{3})^2 = (x-\sqrt{3})(x+\sqrt{3})$, but the above argument works for all quadratic functions, even those which aren't as easy to factor.} \qed
+\item  From the graph, we know $f$ has two real zeros, one positive, and one negative.  Our only hope at this point is to try and find the zeros of $f$ by setting $f(x)=x^4+x^2-12=0$ and solving.  If we stare at this equation long enough, we may recognize it as a `quadratic in disguise' or `quadratic in form'. (See Section \ref{AppQuadEqus}.)   In other words, we have three terms: $x^4$, $x^2$ and $12$, and the exponent on the first term, $x^4$, is exactly twice that of the second term, $x^2$.  We may rewrite this as $\left(x^2\right)^2 + \left(x^2\right) - 12 = 0$.  To better see the forest for the trees, we momentarily replace $x^2$ with the variable $u$.  In terms of $u$, our equation becomes $u^2 + u - 12 = 0$, which we can readily factor as $(u+4)(u-3) = 0$.  In terms of $x$, this means $x^4+x^2-12= \left(x^2-3\right) \left(x^2 + 4 \right)=0$. We get $x^2 = 3$, which gives us $x = \pm \sqrt{3}$, or $x^2=-4$, which admits no real solutions.  Since $\sqrt{3} \approx 1.73$, the two zeros match what we expected from the graph.  Turning our attention now to multiplicities, the Factor Theorem guarantees that since $x = \pm \sqrt{3}$ are zeros, $(x- \sqrt{3})$ and $(x + \sqrt{3})$ are factors of $f(x)$.  We've already partially factored  $f(x)$ as $f(x)  = \left(x^2-3\right) \left(x^2 + 4 \right)$.  Since $x^2+4$ as no real zeros, we know both $(x-\sqrt{3})$ and $(x+\sqrt{3})$ must divide $x^2-3$.  By Theorem \ref{nzerosreal},  $x^2-3$ can only have a total of two zeros, including multiplicities, so we are forced to conclude $x = \pm \sqrt{3}$ are each zeros of multiplicity $1$ of $x^2-3$, and hence, $f(x)$, too.\footnote{Alternatively, we could recognize $x^2 -3 = x^2-(\sqrt{3})^2 = (x-\sqrt{3})(x+\sqrt{3})$, but the above argument works for all quadratic functions, even those which aren't as easy to factor.} \qed
 
 \end{enumerate}
 
@@ -469,7 +471,7 @@ The quotient polynomial is $2x^2 + 6$ which has no real zeros so we get $x=-\fra
 The solution to $p(x) < 0$ is $\left(-\infty, -\frac{1}{2}\right)$, and we know $p(x) = 0$ at $x=-\frac{1}{2}$ and $x=1$.  Hence, the solution to $p(x) \leq 0$ is $\left(-\infty, -\frac{1}{2}\right] \cup \left\{1\right\}$.  
 
 
-\item To interpret this solution graphically, we set $f(x) = 2x^5+6x^3+3$ and $g(x) = 3x^4+8x^2$.  Recall from Section \ref{AbsoluteValueFunctions} the solution to $f(x) \leq g(x)$ is the set of $x$ values for which the graph of $f$ is below the graph of $g$ (where $f(x) < g(x)$) along with the $x$ values where the two graphs intersect ($f(x) = g(x)$).  Graphing $f$ and $g$ using a graphing utility produces the graph below on the left.  (The end behavior should tell you which is which.)  We see that the graph of $f$ is below the graph of $g$ on $\left(-\infty, -\frac{1}{2}\right)$. However, it is difficult to see what is happening near $x=1$.  Zooming in (and making the graph of $g$ lighter), we see that the graphs of $f$ and $g$ do intersect at $x=1$, but the graph of $g$ remains below the graph of $f$ on either side of $x = 1$.
+\item To interpret this solution graphically, we set $f(x) = 2x^5+6x^3+3$ and $g(x) = 3x^4+8x^2$.  Recall from Section \ref{AbsoluteValueFunctions} the solution to $f(x) \leq g(x)$ is the set of $x$ values for which the graph of $f$ is below the graph of $g$ (where $f(x) < g(x)$) along with the $x$ values where the two graphs intersect ($f(x) = g(x)$).  Graphing $f$ and $g$ using Desmos, we see that the graph of $f$ is below the graph of $g$ on $\left(-\infty, -\frac{1}{2}\right)$. However, it is difficult to see what is happening near $x=1$.  Zooming in near $(1,11)$, we see that the graphs of $f$ and $g$ do intersect at $x=1$, but the graph of $g$ remains below the graph of $f$ on either side of $x = 1$.
 
 % https://www.desmos.com/calculator/jt9mkygqqz
 \begin{center}
@@ -530,7 +532,7 @@ Next up is an application problem torn  from page \pageref{LCDmaxprofit} in the 
 
 \end{center}
 
-We see immediately that $P(x)>0$ on $(1+\sqrt{2},5)$.  Since $x$ measures the number of TVs in \textbf{hundreds}, $x = 1 + \sqrt{2}$ corresponds to $241.4\ldots$ TVs.  Since we can't produce a fractional part of a TV, we need to choose between producing 241 and 242 TVs.  From the sign diagram, we see that $P(2.41) < 0$ but $P(2.42)>0$ so, in this case we take the next \textbf{larger} integer value and set the minimum production to 242 TVs.  At the other end of the interval, we have $x=5$ which corresponds to $500$ TVs.  Here, we take the next \textbf{smaller} integer value, $499$ TVs to ensure that we make a profit.  Hence, in order to make a profit, at least 242, but no more than 499 TVs need to be produced.  We graph $y = P(x)$ below using a graphing utility and see $P(x) > 0$ between $x \approx 2.414$ and $x = 5$, as predicted.
+We see immediately that $P(x)>0$ on $(1+\sqrt{2},5)$.  Since $x$ measures the number of TVs in \textbf{hundreds}, $x = 1 + \sqrt{2}$ corresponds to $241.4\ldots$ TVs.  Since we can't produce a fractional part of a TV, we need to choose between producing 241 and 242 TVs.  From the sign diagram, we see that $P(2.41) < 0$ but $P(2.42)>0$ so, in this case we take the next \textbf{larger} integer value and set the minimum production to 242 TVs.  At the other end of the interval, we have $x=5$ which corresponds to $500$ TVs.  Here, we take the next \textbf{smaller} integer value, $499$ TVs to ensure that we make a profit.  Hence, in order to make a profit, at least 242, but no more than 499 TVs need to be produced.  We graph $y = P(x)$ using Desmos and see $P(x) > 0$ (above the $x$-axis) between $x \approx 2.414$ and $x = 5$, as predicted.
 
 % https://www.desmos.com/calculator/h86diucouq
 \begin{center}
