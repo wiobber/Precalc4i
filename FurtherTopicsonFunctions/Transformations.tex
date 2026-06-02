@@ -1207,7 +1207,7 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
 \item  We are asked to graph $F(x) = f(x+1) -2$.  As above, when we have more than one modification to do, we work from the inside out and build up to $F(x)=f(x+1)-2$  from $f(x)$ in stages.   First, we apply Theorem \ref{hshifts} to graph $y=f(x+1)$ from $y=f(x)$.   Rewriting $f(x+1) = f(x-(-1))$, we identify $h=-1$,  so we add  $-1$ to (subtract $1$ from) each of the $x$-coordinates on the graph of $f$, shifting it to the \textit{left} $1$ unit.
 
 \begin{image}
- \begin{tikzpicture}[scale=1]
+ \begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-3:6,
            xmin=-2, xmax=6,
@@ -1276,7 +1276,7 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
        \end{axis}
          \end{tikzpicture}
  \quad\quad\quad \quad\quad\quad
- \begin{tikzpicture}[scale=1]
+ \begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-2:2,
            xmin=-3, xmax=3,
@@ -1297,7 +1297,7 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
        \end{axis}
          \end{tikzpicture}
          \quad\quad\quad \quad\quad\quad  
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-3:3,
            xmin=-4, xmax=6,
@@ -1389,7 +1389,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
            width=2in,
            height=2in,
            xtick={-2,-1,1,2,3,4,5},
-             xticklabels={$\,$, $-1$, $1$, $2$,$3$,$4$,$5$},
+             xticklabels={$\,$, $\,$, $1$, $2$,$3$,$4$,$5$},
             ytick={-2,-1,1,2,3,4},
              yticklabels={$-2$, $-1$, $1$,$2$,$\,$, $4$},  
              tick style={line width=1.2pt},
@@ -1489,10 +1489,10 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
            ymin=-3, ymax=5,
            width=2in,
            height=2in,
-           xtick={1,2,3,4,5},
-             xticklabels={$1$, $2$,$3$,$4$,$5$},
-            ytick={1,2,3,4},
-             yticklabels={$1$,$2$,$3$,$4$}, 
+           xtick={-3,-2,-1,1,2,3,4,5},
+             xticklabels={$\,$,$\,$,$\,$,$1$, $2$,$3$,$4$,$5$},
+            ytick={-2,-1,1,2,3,4},
+             yticklabels={$-2$,$-1$, $\,$,$2$,$3$,$4$}, 
              tick style={line width=1.2pt},
              major tick length=6pt,
              axis x line=center,
@@ -1515,8 +1515,8 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
      fill=white},
    nodes near coords,
    point meta=explicit symbolic,
-   every node near coord/.style={anchor=north,
-     xshift=0pt}
+   every node near coord/.style={anchor=west,
+     xshift=2pt}
  ]
  coordinates {
     (3,1) [$(3,1)$]
