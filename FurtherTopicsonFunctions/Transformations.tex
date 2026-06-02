@@ -1381,7 +1381,7 @@ To check our answer, we proceed as above.  Starting with the point $(-2,1)$, we 
 Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the graph of $y=f(x+1)$.  Writing $f(x+1)-2=f(x+1)+(-2) = f(x+1)+k$, we identify $k=-2$ so  Theorem \ref{vshifts} instructs us to add $-2$ to (subtract $2$ from) each of the $y$-coordinates on the graph of $y = f(x+1)$, thereby shifting the graph \textit{down} two units.
 
 \begin{image}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-3:3,
            xmin=-4, xmax=6,
@@ -1461,7 +1461,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
        \end{axis}
          \end{tikzpicture}
           \quad\quad\quad \quad\quad\quad
- \begin{tikzpicture}[scale=1]
+ \begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-2:2,
            xmin=-3, xmax=3,
@@ -1482,17 +1482,17 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
        \end{axis}
          \end{tikzpicture}
          \quad\quad\quad \quad\quad\quad  
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
          \begin{axis}[
            domain=-3:3,
            xmin=-4, xmax=6,
            ymin=-3, ymax=5,
            width=2in,
            height=2in,
-           xtick={-2,-1,1,2,3,4,5},
-             xticklabels={$-2$, $-1$, $1$, $2$,$3$,$4$,$5$},
-            ytick={-2,-1,1,2,3,4},
-             yticklabels={$-2$, $-1$, $1$,$2$,$3$, $4$}, 
+           xtick={1,2,3,4,5},
+             xticklabels={$1$, $2$,$3$,$4$,$5$},
+            ytick={1,2,3,4},
+             yticklabels={$1$,$2$,$3$,$4$}, 
              tick style={line width=1.2pt},
              major tick length=6pt,
              axis x line=center,
@@ -1554,7 +1554,7 @@ Next, we apply Theorem \ref{vshifts}  to graph $y = f(x+1)-2$ starting with the 
    nodes near coords,
    point meta=explicit symbolic,
    every node near coord/.style={anchor=north east,
-     xshift=0pt,yshift=-5pt}
+     xshift=0pt,yshift=0pt}
  ]
  coordinates {
      (-3,-2) [$(-3,-2)$]
