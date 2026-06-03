@@ -4771,7 +4771,82 @@ For example, consider the graphs of $y=f(x)$ and $y=g(x)$ below.
 
 In Exercise \ref{relatedbyabsexercise}, we explore a non-linear transformation and revisit the pair of functions $f$ and $g$ then.
 
+%%%%%%%%%%%%%%%%%%% javascript test %%%%%%%%%%%%%%%%%%%%%%
 
+\begin{javascript}
+ 
+// Create slider
+var slider = document.createElement('input');
+slider.type = 'range';
+slider.min = '-2';
+slider.max = '2';
+slider.step = '0.01';
+slider.value = '1';
+document.currentScript.parentNode.appendChild(slider);
+ 
+// Create label
+var label = document.createElement('p');
+document.currentScript.parentNode.appendChild(label);
+ 
+// Create canvas
+var canvas = document.createElement('canvas');
+canvas.width = 500;
+canvas.height = 400;
+canvas.style.border = '1px solid #ccc';
+document.currentScript.parentNode.appendChild(canvas);
+ 
+var ctx = canvas.getContext('2d');
+ 
+var cx = 250, cy = 220, scale = 60;
+function px(x) { return cx + x * scale; }
+function py(y) { return cy - y * scale; }
+ 
+function draw() {
+  var a = parseFloat(slider.value);
+  var fa = a * a;
+  var slope = 2 * a;
+ 
+  label.textContent = 'a = ' + a.toFixed(2) +
+    '   |   point: (' + a.toFixed(2) + ', ' + fa.toFixed(2) + ')' +
+    '   |   slope: ' + slope.toFixed(2);
+ 
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+  // Axes
+  ctx.strokeStyle = '#aaa';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(500, cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, 400); ctx.stroke();
+ 
+  // Parabola
+  ctx.strokeStyle = 'steelblue';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (var x = -4; x <= 4; x += 0.01) {
+    var y = x * x;
+    x <= -4 ? ctx.moveTo(px(x), py(y)) : ctx.lineTo(px(x), py(y));
+  }
+  ctx.stroke();
+ 
+  // Tangent line
+  ctx.strokeStyle = 'green';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(px(-4), py(slope * (-4 - a) + fa));
+  ctx.lineTo(px( 4), py(slope * ( 4 - a) + fa));
+  ctx.stroke();
+ 
+  // Point
+  ctx.beginPath();
+  ctx.arc(px(a), py(fa), 5, 0, Math.PI * 2);
+  ctx.fillStyle = 'red';
+  ctx.fill();
+}
+ 
+slider.addEventListener('input', draw);
+draw();
+ 
+\end{javascript}
 
 
 
