@@ -2398,7 +2398,7 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
 \begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-3:6,
-          xmin=-3, xmax=3,
+          xmin=-3, xmax=4,
           ymin=-1, ymax=6,
           width=2in,
           height=2.5in,
@@ -2419,7 +2419,7 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
     anchor=west
   }
           ]
-\addplot[smooth,domain=-2.5:2.3, line width=1.5pt, blue] {2^x};
+\addplot[smooth,domain=-2.5:2.3, line width=1.5pt, blue] {2^(-x)};
 
 \addplot[
   only marks,
@@ -2427,15 +2427,15 @@ Next, we use Theorem \ref{vshifts} to obtain the graph of $y =f(-x)+1$ from the 
   mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=west,
-    xshift=5pt, yshift=0pt}
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
 ]
 coordinates {
   (0,1) [$(0,1)$]
-   (1,2) [$(1,2)$]
-   (2,4) [$(2,4)$]
+   (-1,2) [$(-1,2)$]
+   (-2,4) [$(-2,4)$]
   };
-  \node[anchor=east, color=blue] at (-0.8,1) {$y=f(x)$};
+  \node[anchor=west, color=blue] at (0.8,1) {$y=f(-x)$};
       \end{axis}
         \end{tikzpicture}
 \quad\quad\quad \quad\quad\quad
@@ -2463,7 +2463,7 @@ coordinates {
 \begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-3:6,
-          xmin=-3, xmax=3,
+          xmin=-3, xmax=4,
           ymin=-1, ymax=6,
           width=2in,
           height=2.5in,
@@ -2484,7 +2484,7 @@ coordinates {
     anchor=west
   }
           ]
-\addplot[smooth,domain=-2.5:2.3, line width=1.5pt, blue] {1+2^x};
+\addplot[smooth,domain=-2.5:3, line width=1.5pt, blue] {2^(-x)+1};
 \draw[-,dashed, line width=1pt, gray] (-3,1)--(3,1);
 
 \addplot[
@@ -2493,15 +2493,15 @@ coordinates {
   mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=west,
-    xshift=5pt, yshift=0pt}
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
 ]
 coordinates {
   (0,2) [$(0,2)$]
-   (1,3) [$(1,3)$]
-   (2,5) [$(2,5)$]
+   (-1,3) [$(-1,3)$]
+   (-2,5) [$(-2,5)$]
   };
-  \node[anchor=east, color=blue] at (-0.8,2) {$y=f(x)$};
+  \node[anchor=west, color=blue] at (0,0.5) {$y=f(-x)+1$};
       \end{axis}
         \end{tikzpicture}
 
