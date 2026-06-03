@@ -2519,119 +2519,229 @@ To check our answer, we begin with the point $(0,2)$.  Substituting $x=0$ into $
   
   Working from the inside out, we see we have a reflection about the $y$-axis indicated as well as a horizontal shift.  From our work above, we know we first handle the shift:  that is, we apply Theorem \ref{hshifts} to  graph $y=f(x+2) = f(x-(-2))$ by adding $-2$ to (subtracting $2$ from) the $x$-coordinates of the points on the graph of $y=f(x)$.
   
-   \[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-3:6,
+          xmin=-3, xmax=3,
+          ymin=-1, ymax=6,
+          width=2in,
+          height=2in,
+          xtick={-2,-1,1,2},
+            xticklabels={$-2$, $-1$,$1$, $2$},
+           ytick={2,3, 4,5},
+            yticklabels={$2$,$3$, $4$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-2.5:2.3, line width=1.5pt, blue] {2^x};
 
-% \input{Transformations_pic26.tex}
-\begin{mfpic}[15]{-3}{3}{-1}{6}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-2, -1, 0, 1, 2}
-\ymarks{ 0, 1, 2, 3,4,5}
-\tcaption{\scriptsize $y = f(x)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](1, 1){$(0,1)$}
-\tlabel[cc](2, 2){$(1,2)$}
-\tlabel[cc](2.75, 4){$(2,4)$}
-\axislabels {x}{{\scriptsize $-2 \hspace{7pt}$} -2,{\scriptsize $-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2}
-\axislabels {y}{{$2$} 2,{$3$} 3,{$4$} 4,{$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.5, 2.5, 0.1}{2**x}
-\point[4pt]{(0,1), (1,2), (2,4)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt, yshift=0pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+   (1,2) [$(1,2)$]
+   (2,4) [$(2,4)$]
+  };
+  \node[anchor=east, color=blue] at (-0.8,1) {$y=f(x)$};
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,0.5) {shift left $2$ units};
+\node[anchor=north] at (0,-0.5) {subtract $2$ from each};
+\node[anchor=north] at (0,-1.5) {$x$-coordinate};
+ 
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad\quad\quad\quad\quad\quad     
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4.5:1,
+          xmin=-5, xmax=4,
+          ymin=-1, ymax=6,
+          width=2.5in,
+          height=2in,
+          xtick={-4,-3,-2,-1,1,2},
+            xticklabels={$-4$,$-3$, $-2$, $-1$,$1$,$2$},
+           ytick={1,2,3,5},
+            yticklabels={$1$, $2$,$\,$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$\,$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-4:1, line width=1.5pt, blue] {2^(x+2)};
 
-
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize shift left $2$ units}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize subtract $2$ from each $x$-coordinate}} 
-
-&
-
-% \input{Transformations_pic27.tex}
-\begin{mfpic}[15]{-5}{1}{-1}{6}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4,-3, -2, -1, 0}
-\ymarks{ 0, 1, 2, 3,4,5}
-\tcaption{\scriptsize $y = f(x+2)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](-3.25, 1){$(-2,1)$}
-\tlabel[cc](-2.25, 2){$(-1,2)$}
-\tlabel[cc](-1, 4){$(0,4)$}
-\axislabels {x}{{\scriptsize $-4 \hspace{7pt}$} -4,{\scriptsize $-3 \hspace{7pt}$} -3,{\scriptsize $-2 \hspace{7pt}$} -2,{\scriptsize $-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$2$} 2,{$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.5, 0.5, 0.1}{2**(x+2)}
-\point[4pt]{(-2,1), (-1,2), (0,4)}
-\end{mfpic}
-
-
-
-\end{array}\]
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (-2,1) [$(-2,1)$]
+   (-1,2) [$(-1,2)$]
+   (0,4) [$(0,4)$]
+  };
+  \node[anchor=west, color=blue] at (0,4) {$y=f(x+2)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 Next, we use Theorem \ref{reflections} to graph $y=f(-x+2)$ starting with the graph of $y = f(x+2)$ by multiplying each of the $x$-coordinates of the points of the graph of $y=f(x+2)$ by $-1$.  This reflects the graph of $f(x+2)$ about the $y$-axis.
 
- \[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4.5:1,
+          xmin=-5, xmax=4,
+          ymin=-1, ymax=6,
+          width=2.5in,
+          height=2in,
+          xtick={-4,-3,-2,-1,1,2},
+            xticklabels={$-4$,$-3$, $-2$, $-1$,$1$,$2$},
+           ytick={1,2,3,5},
+            yticklabels={$1$, $2$,$\,$, $5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$\,$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-4:1, line width=1.5pt, blue] {2^(x+2)};
 
-% \input{Transformations_pic28.tex}
-\begin{mfpic}[15]{-5}{1}{-1}{6}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-4,-3, -2, -1, 0}
-\ymarks{ 0, 1, 2, 3,4,5}
-\tcaption{\scriptsize $y = f(x+2)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](-3.25, 1){$(-2,1)$}
-\tlabel[cc](-2.25, 2){$(-1,2)$}
-\tlabel[cc](-1, 4){$(0,4)$}
-\axislabels {x}{{\scriptsize $-4 \hspace{7pt}$} -4,{\scriptsize $-3 \hspace{7pt}$} -3,{\scriptsize $-2 \hspace{7pt}$} -2,{\scriptsize $-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$2$} 2,{$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.5, 0.5, 0.1}{2**(x+2)}
-\point[4pt]{(-2,1), (-1,2), (0,4)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (-2,1) [$(-2,1)$]
+   (-1,2) [$(-1,2)$]
+   (0,4) [$(0,4)$]
+  };
+  \node[anchor=west, color=blue] at (0,4) {$y=f(x+2)$};
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,0.5) {reflect about the $y$-axis};
+\node[anchor=north] at (0,-0.5) {multiply each };
+\node[anchor=north] at (0,-1.5) {$x$-coordinate by $-1$};
+ 
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad\quad\quad\quad\quad\quad     
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:4,
+          xmin=-4, xmax=5,
+          ymin=-1, ymax=6,
+          width=2.5in,
+          height=2in,
+          xtick={-2,-1,1,2,3,4},
+            xticklabels={$-2$,$-1$,$1$,$2$,$3$,$4$},
+           ytick={1,2,3,5},
+            yticklabels={$1$, $2$,$3$, $\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-1:4, line width=1.5pt, blue] {2^(-x+2)};
 
-
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect about the $y$-axis}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize multiply each $x$-coordinate by $-1$}} 
-
-&
-
-% \input{Transformations_pic29.tex}
-\begin{mfpic}[15]{-1}{5}{-1}{6}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{0,1,2,3,4}
-\ymarks{ 0, 1, 2, 3,4,5}
-\tcaption{\scriptsize $y = f(-x+2)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](3, 1){$(2,1)$}
-\tlabel[cc](1.75, 2){$(1,2)$}
-\tlabel[cc](1, 4){$(0,4)$}
-\axislabels {x}{{$1$} 1, {$2$} 2,{$3$} 3, {$4$} 4}
-\axislabels {y}{{$2$} 2,{$3$} 3,{$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{2**(-x+2)}
-\point[4pt]{(2,1), (1,2), (0,4)}
-\end{mfpic}
-
-
-
-\end{array}\]
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt, yshift=0pt}
+]
+coordinates {
+  (2,1) [$(2,1)$]
+   (1,2) [$(1,2)$]
+   (0,4) [$(0,4)$]
+  };
+  \node[anchor=east, color=blue] at (-0.1,4) {$y=f(-x+2)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 We have the graph of $y=f(-x+2)$ and need to build towards the graph of $y=-f(-x+2)+1$.  The transformations that remain are a reflection about the $x$-axis and a vertical shift.  The question is which to do first.  
 
