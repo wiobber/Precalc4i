@@ -2118,12 +2118,12 @@ coordinates {
 \begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-4:2,
-          xmin=-4, xmax=5.5,
+          xmin=-4, xmax=5,
           ymin=-1.5, ymax=5,
           width=2.5in,
           height=2.5in,
-          xtick={-3,-2,-1},
-            xticklabels={$-3$,$-2$, $-1$},
+          xtick={-3,-2,-1,2,3,4},
+            xticklabels={$-3$,$-2$, $-1$, $2$, $3$,$4$},
            ytick={-1,1,2,3, 4},
             yticklabels={$-1$, $1$,$2$,$3$, $4$},  
             tick style={line width=1.2pt},
@@ -2140,7 +2140,7 @@ coordinates {
   }
           ]
 \addplot[smooth,domain=-3.1:1.9, line width=1.5pt, blue] {-2^(x+1)+4};
-\draw[-,dashed, gray] (-4,4)--(5.5,4);
+\draw[-,dashed, line width=1pt, gray] (-4,4)--(5.5,4);
 
  \addplot[
   only marks,
@@ -2186,11 +2186,8 @@ coordinates {
 \end{image}
 
  
- 
+ Note that the $x$-axis, $y=0$, is a horizontal asymptote to the graph of $y = f(x)$ and the line $y=4$ is a horizontal asymptote to the graph of $y = g(x)$. 
 
-\begin{observation}
-The $x$-axis, $y=0$, is a horizontal asymptote to the graph of $y = f(x)$ and the line $y=4$ is a horizontal asymptote to the graph of $y = g(x)$. 
-\end{observation}
  
  \end{enumerate}
  
