@@ -15,10 +15,7 @@
 
 Now that we have defined the concept of a function, we'll spend the rest of Chapter \ref{IntroductiontoFunctions} revisiting families of curves from prior courses in Algebra by viewing them through a `function lens'.  We start with lines and refer the reader to Section \ref{AppLines} for a review of the basic properties of lines.  The simplest lines are vertical and horizontal lines.  We leave it to the reader (see Exercise \ref{whynoverticallineshere}) to think about why we eschew vertical lines in our discussion here, and begin with a functional description of horizontal lines.  
 
-
 Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vertical Line Test, Theorem \ref{VLT}, tells us that each describes $y$ as a function of $x$ so the question becomes how to represent these functions algebraically. The key here is to remember that the equation relating the independent variable $x$,  the dependent variable  $y$, and the function $f$ is given by $y = f(x)$.
-
-\end{document}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -130,13 +127,9 @@ In the graph on the left, $y$ always equals $3$ so we have $f(x) = 3$.  Procedur
 \begin{definition} \label{constantfunction} A \index{function ! constant}\index{constant function ! as a horizontal line}\textbf{constant function} is a function of the form \[ f(x) =  b\] where $b$ is real number.  The domain of a constant function is $(-\infty, \infty)$.
 \end{definition}
 
-Some remarks about  Definition \ref{constantfunction} are in order.   First, note that we are using `$x$' as the independent variable, `$f$' as the function name, and  the letter `$b$' as a \index{parameter ! of a function} \textbf{parameter}.  In this context, a parameter is a fixed, but arbitrary, constant used to describe a \textbf{family} of functions.  Different values of $b$ determine different constant functions.  For example, $b = 3$ gives $f(x) = 3$, $b = -2$ gives $f(x) = -2$, and so on.  Once $b$ is chosen, however, it does not change as the independent variable, $x$, changes.   
-
-
+Some remarks about  Definition \ref{constantfunction} are in order.   First, note that we are using `$x$' as the independent variable, `$f$' as the function name, and  the letter `$b$' as a \index{parameter ! of a function} \textbf{parameter}.  In this context, a parameter is a fixed, but arbitrary, constant used to describe a \textbf{family} of functions.  Different values of $b$ determine different constant functions.  For example, $b = 3$ gives $f(x) = 3$, $b = -2$ gives $f(x) = -2$, and so on.  Once $b$ is chosen, however, it does not change as the independent variable, $x$, changes. 
 
 Also note that we are using the generic defaults for function names and independent variables, namely $f$ and $x$, respectively.   The functions  $G(t) = \sqrt{\pi}$ and $Z(\rho) = 0$ are also fine examples of constant functions.  Recall that inherent in the definition of a function is the notion of domain, so we record (as part of the definition) that a constant function has domain $(-\infty, \infty)$.  The range of a constant function is the set $\{b \}$.  The value $b$ in this case is both the maximum and minimum of $f$, attained at each value in its domain.\footnote{It gets much weirder than that as we explore other more complicated functions.  The key is to pay attention to the precision in the definitions of the terms involved in the discussion. Stay tuned!}\label{rangeofconstantismaxandmin}
-
-
 
 The next example showcases an application of constant functions and introduces the notion of a \textbf{piecewise-defined} function.
 
@@ -168,8 +161,6 @@ p(A) = \begin{cases}
 \item  Now that we've had some practice interpreting function values, we can begin to verbalize what the function is really saying.  In the first `piece' of the function, the inequality $0 \leq A < 6$  describes ticket holders under the age of 6 years and  the inequality $A \geq 50$ describes ticket holders fifty years old or or older.  For  folks in these two age demographics, $p(A) = 5.75$ so the price per ticket is $\$ 5.75$.  For everyone else, that is for folks at least $6$ but younger than $50$, the price is $\$7.25$ per ticket.
 
 \item   The independent variable here is specified as $A$, so we'll label our horizontal axis that way.  The dependent variable remains unspecified so we can use the default $y$.  The graph of $y = p(A)$ consists of three horizontal line pieces:  the first is $y = 5.75$ for $0 \leq A < 6$, the second piece is $y = 7.25$ for $6 \leq A < 50$, and the last piece is $y = 5.75$ for $A \geq 50$.  
-
-
 
 For the first piece, note that $A = 0$ is included in the inequality $0 \leq A < 6$ but $A = 6$ is not.  For this reason, we have a point indicated at $(0, 5.75)$ but leave a hole\footnote{See our discussion about holes in graphs in Example \ref{volumeex1} in Section \ref{FunctionsandtheirRepresentations}.} at $(6, 5.75)$.  Similarly, to graph the second piece, we begin with a point at $(6, 7.25)$ and continue the horizontal line to a hole at $(50, 7.25)$.  Lastly,  we finish the graph with a point at $(50, 5.75)$ and continue to the right indefinitely.\footnote{The domain of $p$ is $[0, \infty)$ by definition, even though few 327 year olds are out and about these days.} Note the scaling on the horizontal axis compared to the vertical axis.
 
@@ -213,8 +204,6 @@ For the first piece, note that $A = 0$ is included in the inequality $0 \leq A <
         7.25 & \text{if $6 \leq A < 50$} 
       \end{cases}$};
 \end{tikzpicture}
-
-
 \end{center}
 
 \end{enumerate}
@@ -1296,4 +1285,4 @@ The graph above on the right depicts a dotted line through $(10, 500)$ and $(20,
 
 An important lesson from the last example is that average rates of change give us a snapshot of what is happening \textbf{at the endpoints} of an interval, but not necessarily what happens \textbf{over the course} of the interval.  Calculus gives us tools to compute slopes \textbf{at} points which correspond to  \textbf{instantaneous} rates of changes.  While we don't quite have the machinery to properly express these ideas, we can hint at them in the Exercises. Speaking of exercises \ldots 
 
-
+\end{document}

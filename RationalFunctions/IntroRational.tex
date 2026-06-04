@@ -42,14 +42,11 @@ As with polynomial functions, we begin our study of rational functions with what
 
 %% \ebm}
 
-Laurent monomial functions are named in honor of \href{https://en.wikipedia.org/wiki/Pierre_Alphonse_Laurent}{\underline{Pierre Alphonse Laurent}} and generalize the notion of `monomial function' from Chapter \ref{PolynomialFunctions} to terms with negative exponents. Our study of these functions begins with an analysis of   $r(x) = \frac{1}{x} = x^{-1}$, the reciprocal function. The first item worth  noting is that $r(0)$ is not defined owing to the presence of $x$  in the denominator.  That is, the domain of $r$ is $\{ x \in \mathbb{R} \, | \, x \neq 0\}$ or, using interval notation, $(-\infty, 0) \cup (0, \infty)$.   Of course excluding $0$ from the domain of $r$ serves only to pique our curiosity about the behavior of $r(x)$ when $x \approx 0$.  Thinking from a number sense perspective, the closer the denominator of $\frac{1}{x}$ is to $0$, the larger the value of the  fraction (in absolute value.)\footnote{Technically speaking, $-1 \times 10^{117}$ is a `small' number (since it is very far to the left on the number line.)  However, it's absolute value, $1 \times 10^{117}$ is very large.  If you read footnotes, you've seen this clarification before \ldots (see Section \ref{GraphsofPolynomials}.)}  So it stands to reason that as $x$ gets closer and closer to $0$, the values for $r(x) = \frac{1}{x}$ should grow larger and larger (in absolute value.)  This is borne out in the table below on the left where it is apparent that for $x \approx 0$, $r(x)$ is becoming unbounded.
+Laurent monomial functions are named in honor of \href{https://en.wikipedia.org/wiki/Pierre_Alphonse_Laurent}{\underline{Pierre Alphonse Laurent}} and generalize the notion of `monomial function' from Chapter \ref{PolynomialFunctions} to terms with negative exponents. Our study of these functions begins with an analysis of   $r(x) = \frac{1}{x} = x^{-1}$, the reciprocal function. The first item worth  noting is that $r(0)$ is not defined owing to the presence of $x$  in the denominator.  That is, the domain of $r$ is $\{ x \in \mathbb{R} \, | \, x \neq 0\}$ or, using interval notation, $(-\infty, 0) \cup (0, \infty)$.   Of course excluding $0$ from the domain of $r$ serves only to pique our curiosity about the behavior of $r(x)$ when $x \approx 0$.  Thinking from a number sense perspective, the closer the denominator of $\frac{1}{x}$ is to $0$, the larger the value of the  fraction (in absolute value.)\footnote{Technically speaking, $-1 \times 10^{117}$ is a `small' number (since it is very far to the left on the number line.)  However, it's absolute value, $1 \times 10^{117}$ is very large.  If you read footnotes, you've seen this clarification before \ldots (see Section \ref{GraphsofPolynomials}.)}  So it stands to reason that as $x$ gets closer and closer to $0$, which we'll denote as `$x \rightarrow 0$,' the values for $r(x) = \frac{1}{x}$ should grow larger and larger (in absolute value.)  This is borne out in the table below.  
 
 
-
-As we investigate the end behavior of $r$, we find that as $x \rightarrow -\infty$ and as $x \rightarrow \infty$, $r(x) \approx 0$. Again, number sense agrees here with the data, since as the denominator of $\frac{1}{x}$ becomes unbounded, the value of the fraction should diminish.\footnote{We'll talk more about this end behavior shortly - stay tuned!} That being said, we could ask if the graph ever reaches the $x$-axis.  If we attempt to solve $y = r(x) = \frac{1}{x} = 0$. we arrive at the contradiction $1 = 0$ hence, $0$ is not in the range of $r$.  Every other real number besides $0$ is in the range of $r$, however.  To see this, let $c \neq 0$ be a real number.  Then $\frac{1}{c}$ is defined and, moreover, $r \left(\frac{1}{c} \right) = \frac{1}{(1/c)} = c$.  This shows $c$ is in the range of $r$.  Hence, the range of $r$ is $\{ y \in \mathbb{R} \, | \, y \neq 0\}$ or, using interval notation,  $(-\infty, 0) \cup (0, \infty)$.  
-
-\begin{center}
-\begin{tabular}{m{2in}m{2in}m{2in}}
+%\begin{center}
+%\begin{tabular}{m{2in}m{2in}m{2in}}
 
 $\begin{array}{|r||c|}  \hline
 
@@ -65,23 +62,19 @@ $\begin{array}{|r||c|}  \hline
  0.01 & 100  \\  \hline
   \end{array} $
   
-  &
+ % &
   
-  $\begin{array}{|r||c|}  \hline
+  % https://www.geogebra.org/classic/tuaxyby6
 
-  x & r(x) = \frac{1}{x}  \\ \hline
- -100000 & -0.00001  \\  \hline 
- -10000 &  -0.0001 \\  \hline 
- -1000 & -0.001  \\  \hline 
- -100 & -0.01  \\  \hline
-0 & \text{undefined} \\  \hline
- 100 & 0.01  \\  \hline
- 1000 & 0.001  \\  \hline 
- 10000 & 0.0001 \\  \hline
- 100000 & 0.00001  \\  \hline  
-  \end{array} $
+
+If you're curious as to what all this means graphically, feel free to adjust the sliders on the GeoGebra interactive below.
+
+
+\begin{center}
+\geogebra{tuaxyby6}{800}{600}
+\end{center}
   
-  &
+%  &
   
 % \begin{mfpic}[15]{-5}{5}{-5}{5}
 % \axes
@@ -100,31 +93,15 @@ $\begin{array}{|r||c|}  \hline
 
 
 
-\end{tabular}
-\end{center}
+%\end{tabular}
+%\end{center}
 
-% https://www.geogebra.org/classic/tuaxyby6
-
-\begin{center}
-\geogebra{tuaxyby6}{800}{600}
-\end{center}
-
-% https://www.geogebra.org/classic/vfvtz6gs
-
-\begin{center}
-\geogebra{vfvtz6gs}{800}{600}
-\end{center}
-
-
-
-Like we did in Section \ref{GraphsofPolynomials}, we'll borrow some notation from Calculus in order for us to codify the behavior as $x \rightarrow 0$.  First off, note that the behavior of $r$ differs depending on which direction we approach $0$.  We describe the values $x<0$ but $x \rightarrow 0$  (such as $x = -0.01$, $-0.001$, etc.)  as  `$x$ approaching $0$ \textbf{from the left},' written as $x \rightarrow 0^{-}$.  If we think of these numbers as all being $x$-values where  $x  = \text{`$0-$ a little bit'}$, the  the `$-$' in the notation `$x \rightarrow 0^{-}$' makes better sense.  For these values,  the function values $r(x) \rightarrow -\infty$.   Using the limit notation introduced in Section \ref{GraphsofPolynomials}, we'd write: $\ds{ \lim_{x \rightarrow 0^{-}} r(x) = - \infty}$.  
+Like we did in Section \ref{GraphsofPolynomials}, we're borrowing some notation from Calculus in order for us to codify the behavior as $x \rightarrow 0$ in the GeoGebra interactive above.  First off, note that the behavior of $r$ differs depending on which direction we approach $0$.  We describe the values $x<0$ but $x \rightarrow 0$  (such as $x = -0.01$, $-0.001$, etc.)  as  `$x$ approaching $0$ \textbf{from the left},' written as $x \rightarrow 0^{-}$.  If we think of these numbers as all being $x$-values where  $x  = \text{`$0-$ a little bit'}$, the  the `$-$' in the notation `$x \rightarrow 0^{-}$' makes better sense.  For these values,  the function values $r(x) \rightarrow -\infty$.   Using the limit notation introduced in Section \ref{GraphsofPolynomials}, we'd write: $\ds{ \lim_{x \rightarrow 0^{-}} r(x) = - \infty}$.  
 
 
 Similarly, we say `as $x$ approaches $0$ \textbf{from the right},' that is as $x \rightarrow 0^{+}$, $r(x) \rightarrow \infty$, or, more succinctly, $\ds{ \lim_{x \rightarrow 0^{+}} r(x) =  \infty}$.  As before, we understand `from the right' means we are using $x$ values slightly to the \textbf{right} of $0$ on the number line:  numbers such as $x =0.001.$ These numbers could described as `$0 + \text{a little bit}$,' which justifies the `$+$' in the notation `$x \rightarrow 0^{+}$.'
 
-We can also use this notation to describe the end behavior, but here the numerical roles are reversed.  We see as $x \rightarrow -\infty$, $r(x) \rightarrow 0^{-}$ and as $x \rightarrow \infty$, $r(x) \rightarrow 0^{+}$.  When it comes to codifying these results using Calculus, we write $\ds{ \lim_{x \rightarrow -\infty} r(x) =  0}$ and $\ds{ \lim_{x \rightarrow \infty} r(x) =  0}$.  Note that, unfortunately, we lose the directionality here on the limiting value - that is, we do not write $\ds{ \lim_{x \rightarrow -\infty} r(x) =  0^{-}}$ or $\ds{ \lim_{x \rightarrow \infty} r(x) =  0^{+}}$.  Without getting too much into formal definitions, the reason is that if limiting values are finite, we express them as real numbers.\footnote{We will, of course, offer more detail if the situation presents itself.}  Period.
-
-The way we describe what is happening graphically is to say the line $x = 0$ is a  \index{asymptote ! vertical ! intuitive definition of}\index{vertical asymptote ! intuitive definition of}\textbf{vertical asymptote}  to the graph of $y = r(x)$ and the line $y = 0$ is a \index{asymptote ! horizontal ! intuitive definition of}\index{horizontal asymptote ! intuitive definition of}\textbf{horizontal asymptote} to the graph of $y = r(x)$.  Roughly speaking, asymptotes are lines which approximate functions as either the inputs or outputs become unbounded. 
+The way we describe what is happening graphically in this case is to say the line $x = 0$ is a  \index{asymptote ! vertical ! intuitive definition of}\index{vertical asymptote ! intuitive definition of}\textbf{vertical asymptote}  to the graph of $y = r(x)$.  More generally:
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -132,6 +109,62 @@ The way we describe what is happening graphically is to say the line $x = 0$ is 
 
 \end{definition}
 %% \ebm}
+
+Roughly speaking, a vertical asymptote is a vertical line which approximates the graph of a function when the outputs from the function become unbounded near a finite input value.\footnote{The graph of the function is torn asunder.}
+
+Let's now investigate the end behavior of $r$. We find that as $x \rightarrow -\infty$ and as $x \rightarrow \infty$, $r(x) \approx 0$. Again, number sense agrees here with the data, since as the denominator of $\frac{1}{x}$ becomes unbounded, the value of the fraction should diminish. That being said, we could ask if the graph ever reaches the $x$-axis.  If we attempt to solve $y = r(x) = \frac{1}{x} = 0$. we arrive at the contradiction $1 = 0$ hence, $0$ is not in the range of $r$.  Every other real number besides $0$ is in the range of $r$, however.  To see this, let $c \neq 0$ be a real number.  Then $\frac{1}{c}$ is defined and, moreover, $r \left(\frac{1}{c} \right) = \frac{1}{(1/c)} = c$.  This shows $c$ is in the range of $r$.  Hence, the range of $r$ is $\{ y \in \mathbb{R} \, | \, y \neq 0\}$ or, using interval notation,  $(-\infty, 0) \cup (0, \infty)$. 
+
+Below is a table which gives numerical evidence to support our conclusions followed by a GeoGebra interactive with adjustable sliders to help visualize this behavior
+
+%\begin{center}
+%\begin{tabular}{m{2in}m{2in}m{2in}}
+
+$\begin{array}{|r||c|}  \hline
+
+  x & r(x) = \frac{1}{x}  \\ \hline
+ -100000 & -0.00001  \\  \hline 
+ -10000 &  -0.0001 \\  \hline 
+ -1000 & -0.001  \\  \hline 
+ -100 & -0.01  \\  \hline
+0 & \text{undefined} \\  \hline
+ 100 & 0.01  \\  \hline
+ 1000 & 0.001  \\  \hline 
+ 10000 & 0.0001 \\  \hline
+ 100000 & 0.00001  \\  \hline  
+  \end{array} $
+  
+  %&
+
+  % https://www.geogebra.org/classic/vfvtz6gs
+
+\begin{center}
+\geogebra{vfvtz6gs}{800}{600}
+\end{center}
+  
+% \begin{mfpic}[15]{-5}{5}{-5}{5}
+% \axes
+% \scriptsize
+% \tlabel[cc](5, -0.5){$x$}
+% \tlabel[cc](0.5, 5){$y$}
+% \tlabel[cc](-2, -1.5){$(-1,-1)$}
+% \tlabel[cc](2, 1.5){$(1,1)$}
+% \normalsize
+% \penwd{1.25pt}
+% \arrow \reverse \arrow \function{-5,-0.2,0.1}{1/x}
+% \arrow \reverse \arrow \function{0.2,5,0.1}{1/x}
+% \point[4pt]{(-1,-1), (1,1)}
+% \tcaption{\scriptsize $y=r(x) = \frac{1}{x}$}
+% \end{mfpic}\\
+
+
+
+%%\end{center}
+
+Once again, we can more succinctly describe this behavior if we borrow some notation from Calculus.  We see as $x \rightarrow -\infty$, $r(x) \rightarrow 0^{-}$ and as $x \rightarrow \infty$, $r(x) \rightarrow 0^{+}$.  When it comes to codifying these results using Calculus, we write $\ds{ \lim_{x \rightarrow -\infty} r(x) =  0}$ and $\ds{ \lim_{x \rightarrow \infty} r(x) =  0}$.  Note that, unfortunately, we lose the directionality here on the limiting value - that is, we do not write $\ds{ \lim_{x \rightarrow -\infty} r(x) =  0^{-}}$ or $\ds{ \lim_{x \rightarrow \infty} r(x) =  0^{+}}$.  Without getting too much into formal definitions, the reason is that if limiting values are finite, we express them as real numbers.\footnote{We will, of course, offer more detail if the situation presents itself.}  Period.
+
+ In this case, we say the line $y = 0$ is a \index{asymptote ! horizontal ! intuitive definition of}\index{horizontal asymptote ! intuitive definition of}\textbf{horizontal asymptote} to the graph of $y = r(x)$.  Roughly speaking, a horizontal asymptote is a horizontal line which approximates the graph of a function as the input become unbounded. 
+
+
 
 \medskip
 
@@ -145,7 +178,7 @@ The way we describe what is happening graphically is to say the line $x = 0$ is 
 \medskip
 
 
-The behaviors illustrated in the graph $r(x) = \frac{1}{x}$ are typical of functions of the form $f(x) = \frac{1}{x^n} = x^{-n}$ for natural numbers, $n$.  As with the monomial functions discussed in Section \ref{GraphsofPolynomials}, the patterns that develop primarily depend on whether $n$ is odd or even.  Having thoroughly discussed the graph of $y = \frac{1}{x} = x^{-1}$, we graph it along with $y = \frac{1}{x^3} = x^{-3}$ and $y = \frac{1}{x^5} = x^{-5}$ below.  Note the points $(-1,-1)$ and $(1,1)$ are common to all three graphs as are the asymptotes $x = 0$ and $y = 0$.  As the $n$ increases, the graphs become steeper for $|x| < 1$  and flatten out more quickly for $|x|>1$.  Both the domain and range in each case appears to be $(-\infty, 0) \cup (0, \infty)$.  Indeed, owing to the $x$ in the denominator of $f(x) = \frac{1}{x^n}$, $f(0)$, and only $f(0)$,  is undefined. Hence the domain is $(-\infty, 0) \cup (0, \infty)$.  When thinking about the range, note the equation  $f(x)= \frac{1}{x^n}  = c$ has the solution $x = \sqrt[n]{\frac{1}{c}}$ as long as $c \neq 0$.  Thus means $f\left( \sqrt[n]{\frac{1}{c}} \right) = c$ for every nonzero real number $c$.  If $c = 0$, we are in the same situation as before:  $\frac{1}{x^n} = 0$ has no real solution.  This establishes the range is $(-\infty, 0) \cup (0, \infty)$.  Finally, each of the graphs appear to be symmetric about the origin.  Indeed, since $n$ is odd, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = -x^{-n} = -f(x)$, proving every member of this function family is odd.  
+The behaviors illustrated in the graph $r(x) = \frac{1}{x}$ are typical of functions of the form $f(x) = \frac{1}{x^n} = x^{-n}$ for natural numbers, $n$.  As with the monomial functions discussed in Section \ref{GraphsofPolynomials}, the patterns that develop primarily depend on whether $n$ is odd or even.  Having thoroughly discussed the graph of $y = \frac{1}{x} = x^{-1}$, we graph it along with $y = \frac{1}{x^3} = x^{-3}$ and $y = \frac{1}{x^5} = x^{-5}$ using Desmos below.  Note the points $(-1,-1)$ and $(1,1)$ are common to all three graphs as are the asymptotes $x = 0$ and $y = 0$.  As the $n$ increases, the graphs become steeper for $|x| < 1$  and flatten out more quickly for $|x|>1$.  Both the domain and range in each case appears to be $(-\infty, 0) \cup (0, \infty)$.  Indeed, owing to the $x$ in the denominator of $f(x) = \frac{1}{x^n}$, $f(0)$, and only $f(0)$,  is undefined. Hence the domain is $(-\infty, 0) \cup (0, \infty)$.  When thinking about the range, note the equation  $f(x)= \frac{1}{x^n}  = c$ has the solution $x = \sqrt[n]{\frac{1}{c}}$ as long as $c \neq 0$.  Thus means $f\left( \sqrt[n]{\frac{1}{c}} \right) = c$ for every nonzero real number $c$.  If $c = 0$, we are in the same situation as before:  $\frac{1}{x^n} = 0$ has no real solution.  This establishes the range is $(-\infty, 0) \cup (0, \infty)$.  Finally, each of the graphs appear to be symmetric about the origin.  Indeed, since $n$ is odd, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = -x^{-n} = -f(x)$, proving every member of this function family is odd.  
 
 \begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
 
@@ -215,7 +248,7 @@ $\begin{array}{|r||c|c|c|}  \hline
 \desmos{qdhc5piwqf}{800}{600} 
 \end{center}
 
-We repeat the same experiment with functions of the form $f(x) = \frac{1}{x^{n}} = x^{-n}$ where $n$ is even. $y = \frac{1}{x^2} = x^{-2}$, $y = \frac{1}{x^4} = x^{-4}$ and $y = \frac{1}{x^6} = x^{-6}$.  These graphs all share the points $(-1,1)$ and $(1,1)$, and asymptotes $x = 0$ and $y = 0$.  Note here that both $\ds{\lim_{x \rightarrow 0^{-}} f(x) = \infty}$ and $\ds{\lim_{x \rightarrow 0^{+}} f(x) = \infty}$, so we may simply write $\ds{\lim_{x \rightarrow 0} f(x) = \infty}$. 
+We repeat the same experiment with functions of the form $f(x) = \frac{1}{x^{n}} = x^{-n}$ where $n$ is even. We graph $y = \frac{1}{x^2} = x^{-2}$, $y = \frac{1}{x^4} = x^{-4}$ and $y = \frac{1}{x^6} = x^{-6}$ using Desmos below.  These graphs all share the points $(-1,1)$ and $(1,1)$, and asymptotes $x = 0$ and $y = 0$.  Note here that both $\ds{\lim_{x \rightarrow 0^{-}} f(x) = \infty}$ and $\ds{\lim_{x \rightarrow 0^{+}} f(x) = \infty}$, so we may simply write $\ds{\lim_{x \rightarrow 0} f(x) = \infty}$. 
 
 The same remarks about the steepness for $|x|<1$ and the flattening for $|x|>1$ also apply. For the same reasons as given above, the domain of each of these functions is $(-\infty, 0) \cup (0, \infty)$.  When it comes to the range, the fact $n$ is even tells us there are  solutions to $\frac{1}{x^n} = c$ only if $c>0$. It follows that the range is $(0, \infty)$ for each of these functions.  Concerning symmetry, as $n$ is even, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = x^{-n} = f(x)$, proving each member of this function family is even.  Hence,  the graphs of these functions are symmetric about the $y$-axis.
 
