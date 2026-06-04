@@ -178,7 +178,13 @@ Once again, we can more succinctly describe this behavior if we borrow some nota
 \medskip
 
 
-The behaviors illustrated in the graph $r(x) = \frac{1}{x}$ are typical of functions of the form $f(x) = \frac{1}{x^n} = x^{-n}$ for natural numbers, $n$.  As with the monomial functions discussed in Section \ref{GraphsofPolynomials}, the patterns that develop primarily depend on whether $n$ is odd or even.  Having thoroughly discussed the graph of $y = \frac{1}{x} = x^{-1}$, we graph it along with $y = \frac{1}{x^3} = x^{-3}$ and $y = \frac{1}{x^5} = x^{-5}$ using Desmos below.  Note the points $(-1,-1)$ and $(1,1)$ are common to all three graphs as are the asymptotes $x = 0$ and $y = 0$.  As the $n$ increases, the graphs become steeper for $|x| < 1$  and flatten out more quickly for $|x|>1$.  Both the domain and range in each case appears to be $(-\infty, 0) \cup (0, \infty)$.  Indeed, owing to the $x$ in the denominator of $f(x) = \frac{1}{x^n}$, $f(0)$, and only $f(0)$,  is undefined. Hence the domain is $(-\infty, 0) \cup (0, \infty)$.  When thinking about the range, note the equation  $f(x)= \frac{1}{x^n}  = c$ has the solution $x = \sqrt[n]{\frac{1}{c}}$ as long as $c \neq 0$.  Thus means $f\left( \sqrt[n]{\frac{1}{c}} \right) = c$ for every nonzero real number $c$.  If $c = 0$, we are in the same situation as before:  $\frac{1}{x^n} = 0$ has no real solution.  This establishes the range is $(-\infty, 0) \cup (0, \infty)$.  Finally, each of the graphs appear to be symmetric about the origin.  Indeed, since $n$ is odd, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = -x^{-n} = -f(x)$, proving every member of this function family is odd.  
+The behaviors illustrated in the graph $r(x) = \frac{1}{x}$ are typical of functions of the form $f(x) = \frac{1}{x^n} = x^{-n}$ for natural numbers, $n$.  As with the monomial functions discussed in Section \ref{MonomialFunctions}, the patterns that develop primarily depend on whether $n$ is odd or even.  Having thoroughly discussed the graph of $y = \frac{1}{x} = x^{-1}$,  we graph it along with $y = \frac{1}{x^3} = x^{-3}$ and $y = \frac{1}{x^5} = x^{-5}$ using Desmos below.  Note the points $(-1,-1)$ and $(1,1)$ are common to all three graphs as are the asymptotes $x = 0$ and $y = 0$.  As the $n$ increases, the graphs become steeper for $|x| < 1$  and flatten out more quickly for $|x|>1$.  The table of values accompanying the graph helps us understand this behavior numerically.\footnote{This is a bit of a reverse (inverse?) of the behavior we saw with the monomial functions in Section \ref{MonomialFunctions} \ldots can you reason why?}  
+
+% https://www.desmos.com/calculator/qdhc5piwqf
+
+\begin{center} 
+\desmos{qdhc5piwqf}{800}{600} 
+\end{center}
 
 \begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
 
@@ -242,16 +248,17 @@ $\begin{array}{|r||c|c|c|}  \hline
 
 \end{tabular}
 
-% https://www.desmos.com/calculator/qdhc5piwqf
-
-\begin{center} 
-\desmos{qdhc5piwqf}{800}{600} 
-\end{center}
+Both the domain and range in each case appears to be $(-\infty, 0) \cup (0, \infty)$.  Indeed, owing to the $x$ in the denominator of $f(x) = \frac{1}{x^n}$, $f(0)$, and only $f(0)$,  is undefined. Hence the domain is $(-\infty, 0) \cup (0, \infty)$.  When thinking about the range, note the equation  $f(x)= \frac{1}{x^n}  = c$ has the solution $x = \sqrt[n]{\frac{1}{c}}$ as long as $c \neq 0$.  Thus means $f\left( \sqrt[n]{\frac{1}{c}} \right) = c$ for every nonzero real number $c$.  If $c = 0$, we are in the same situation as before:  $\frac{1}{x^n} = 0$ has no real solution.  This establishes the range is $(-\infty, 0) \cup (0, \infty)$.  Finally, each of the graphs appear to be symmetric about the origin.  Indeed, since $n$ is odd, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = -x^{-n} = -f(x)$, proving every member of this function family is odd.  
 
 We repeat the same experiment with functions of the form $f(x) = \frac{1}{x^{n}} = x^{-n}$ where $n$ is even. We graph $y = \frac{1}{x^2} = x^{-2}$, $y = \frac{1}{x^4} = x^{-4}$ and $y = \frac{1}{x^6} = x^{-6}$ using Desmos below.  These graphs all share the points $(-1,1)$ and $(1,1)$, and asymptotes $x = 0$ and $y = 0$.  Note here that both $\ds{\lim_{x \rightarrow 0^{-}} f(x) = \infty}$ and $\ds{\lim_{x \rightarrow 0^{+}} f(x) = \infty}$, so we may simply write $\ds{\lim_{x \rightarrow 0} f(x) = \infty}$. 
 
 The same remarks about the steepness for $|x|<1$ and the flattening for $|x|>1$ also apply. For the same reasons as given above, the domain of each of these functions is $(-\infty, 0) \cup (0, \infty)$.  When it comes to the range, the fact $n$ is even tells us there are  solutions to $\frac{1}{x^n} = c$ only if $c>0$. It follows that the range is $(0, \infty)$ for each of these functions.  Concerning symmetry, as $n$ is even, $f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = x^{-n} = f(x)$, proving each member of this function family is even.  Hence,  the graphs of these functions are symmetric about the $y$-axis.
 
+% https://www.desmos.com/calculator/fbzv77wpjb
+
+\begin{center} 
+\desmos{fbzv77wpjb}{800}{600} 
+\end{center}
 
 \begin{tabular}{m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
 
@@ -315,11 +322,7 @@ $\begin{array}{|r||c|c|c|}  \hline
 
 \end{tabular}
 
-% https://www.desmos.com/calculator/fbzv77wpjb
 
-\begin{center} 
-\desmos{fbzv77wpjb}{800}{600} 
-\end{center}
 
 Not surprisingly, we have an analog to Theorem \ref{linearmononialgraphs} for this family of Laurent monomial functions.
 
@@ -1070,7 +1073,7 @@ We take time now to focus on behaviors of the graphs of rational functions near 
 
 \item  To find when the population reaches $100,\! 000$, we first need to remember that $P(t)$ is measured in \textbf{thousands}.  In other words, $100,\! 000$ bacteria corresponds to $P(t) = 100$.  Hence, we need to solve  $P(t) = \frac{100}{(5-t)^2} = 100$.  Clearing denominators and dividing by $100$ gives $(5-t)^2=1$, which, after extracting square roots, produces $t = 4$ or $t=6$.  Of these two solutions, only $t=4$ in our domain, so this is the solution we keep.  Hence, it takes $4$ days for the population of bacteria to reach $100,\! 000$.
 
-\item After a slight re-write, we have $P(t) = \frac{100}{(5-t)^2} = \frac{100}{[(-1)(t-5)]^2} = \frac{100}{(t-5)^2}$.  Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t^2}$ below on the left.  After shifting the graph to the right $5$ units and stretching it vertically by a factor of $100$ (note, the graphs are not to scale!), we restrict the domain to  $0 \leq t < 5$ to arrive at the graph of $y = P(t)$ below on the right.
+\item After a slight re-write, we have $P(t) = \frac{100}{(5-t)^2} = \frac{100}{[(-1)(t-5)]^2} = \frac{100}{(t-5)^2}$.  Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t^2}$.  After shifting the graph to the right $5$ units and stretching it vertically by a factor of $100$, we restrict the domain to  $0 \leq t < 5$ to arrive at the graph of $y = P(t)$.  We 
 
 
 \item From the graph, we see as  $t \rightarrow 5^{-}$, $P(t) \rightarrow \infty$, so $\ds{\lim_{t \rightarrow 5^{-}} P(t) = \infty}$ . This means that the population of bacteria is increasing without bound as we near 5 days, which cannot actually happen.  For this reason, $t=5$ is called the `doomsday' for this population. There is no way any environment can support infinitely many bacteria, so shortly before $t = 5$ the environment would collapse. 
