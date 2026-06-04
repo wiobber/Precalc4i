@@ -2863,7 +2863,7 @@ coordinates {
    (1,-2) [$(1,-2)$]
    (0,-4) [$(0,-4)$]
   };
-  \node[anchor=east, color=blue, font=\tiny] at (-0.1,-3.5) {$y=f(-x+2)$};
+  \node[anchor=east, color=blue, font=\tiny] at (-0.1,-3.5) {$y=-f(-x+2)$};
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -2871,60 +2871,117 @@ coordinates {
 
 Finally, we take care of the vertical shift.  Per Theorem \ref{vshifts}, we graph $y=-f(-x+2)+1$ by adding $1$ to the $y$-coordinates of each of the points on the graph of $y=-f(-x+2)$.  This moves the graph up one unit, including the horizontal asymptote:  $y=0+1 = 1$.
 
- \[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-1:4,
+          xmin=-4, xmax=5,
+          ymin=-6, ymax=1,
+          width=2.2in,
+          height=2in,
+          xtick={-2,-1,1,2,3,4},
+            xticklabels={$-2$,$-1$,$1$,$\,$,$\,$,$\,$},
+           ytick={-5,-4,-3,-2,-1},
+            yticklabels={$\,$, $\,$,$-3$, $-2$,$\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-1:4, line width=1.5pt, blue] {-2^(-x+2)};
 
-% \input{Transformations_pic32.tex}
-\begin{mfpic}[15]{-1}{5}{-6}{1}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,1){\scriptsize $y$}
-\xmarks{0,1,2,3,4}
-\ymarks{ 0, -1, -2, -3,-4,- 5}
-\tcaption{\scriptsize $y = - f(-x+2)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](3, -1.25){$(2,-1)$}
-\tlabel[cc](2, -2.25){$(1,-2)$}
-\tlabel[cc](1, -4){$(0,-4)$}
-\axislabels {x}{{$1$} 1, {$2$} 2}
-\axislabels {y}{{$-2$} -2,{$-3$} -3,{$-4$} -4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{0-2**(-x+2)}
-\point[4pt]{(2,-1), (1,-2), (0,-4)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt, yshift=0pt}
+]
+coordinates {
+  (2,-1) [$(2,-1)$]
+   (1,-2) [$(1,-2)$]
+   (0,-4) [$(0,-4)$]
+  };
+  \node[anchor=east, color=blue, font=\tiny] at (-0.1,-3.5) {$y=-f(-x+2)$};
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad \quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-2, xmax=2,
+         ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=none,
+            x axis line style={-{Latex[length=10pt,width=3pt]}, line width=1pt},
+          ]
+ 
+\node[anchor=south] at (0,0.5) {shift up $1$ unit};
+\node[anchor=north] at (0,-0.5) {add $1$ to each };
+\node[anchor=north] at (0,-1.5) {$y$-coordinate};
+ 
+      \end{axis}
+        \end{tikzpicture}
+\quad\quad\quad\quad\quad\quad\quad\quad     
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-1:4,
+          xmin=-4, xmax=5,
+          ymin=-5, ymax=2,
+          width=2.2in,
+          height=2in,
+          xtick={-2,-1,1,3,4},
+            xticklabels={$-2$,$-1$,$\,$,$\,$,$\,$,$\,$},
+           ytick={-4,-3,-2,-1,1},
+            yticklabels={$\,$,$-3$, $-2$,$\,$,$\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-1:4, line width=1.5pt, blue] {-2^(-x+2)+1};
+\draw[-,dashed, line width=1pt, gray] (-4,1)--(4.5,1);
 
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize shift up $1$ unit}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize add $1$ to each of the $y$-coordinates}} 
-
-&
-
-% \input{Transformations_pic33.tex}
-\begin{mfpic}[15]{-1}{5}{-5}{2}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
-\xmarks{0,1,2,3,4}
-\ymarks{ 1, 0, -1, -2, -3,-4}
-\tcaption{\scriptsize $y = - f(-x+2)+1 = F(x)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](2.5, -0.5){$(2,0)$}
-\tlabel[cc](2, -1.25){$(1,-1)$}
-\tlabel[cc](1, -3){$(0,-3)$}
-\axislabels {x}{{$1$} 1}
-\axislabels {y}{{$-2$} -2,{$-3$} -3,{$1$} 1}
-\normalsize
-\dashed \polyline{(-1,1), (5,1)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.5, 4.5, 0.1}{1-2**(-x+2)}
-\point[4pt]{(2,0), (1,-1), (0,-3)}
-\end{mfpic}
-
-
-\end{array}\]
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=2pt, yshift=-1pt}
+]
+coordinates {
+  (2,0) [$(2,0)$]
+   (1,-1) [$(1,-1)$]
+   (0,-3) [$(0,-3)$]
+  };
+  \node[anchor=east, color=blue, font=\tiny] at (-0.1,-3.5) {$y=-f(-x+2)+1$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 To check, we begin with the point $(2,0)$.  Substituting $x=2$ into $y=1 - f(2-x)$, we obtain $y = 1-f(2-2) = 1-f(0)$.  Since $(0,1)$ is on the graph of $f$, we know $f(0) = 1$.  This means $y = 1-f(2-2) = 1-f(0)= 1-1 = 0$.  This proves $(2,0)$ is on the graph of  $y=1 - f(2-x)$, and we recommend the reader check the remaining points.
  
