@@ -105,12 +105,12 @@ The way we describe what is happening graphically in this case is to say the lin
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{va} The line $x=c$ is called a \index{asymptote ! vertical ! formal definition of}\index{vertical asymptote ! formal definition of}\textbf{vertical asymptote} of the graph of a function $y=f(x)$  if either of the limits $\ds{ \lim_{x \rightarrow c^{-}} f(x)}$ or  $\ds{ \lim_{x \rightarrow c^{+}} f(x)}$ (or both) result in $\infty$ or $-\infty$.
+\begin{definition} \label{va} The line $x=c$ is called a \index{asymptote ! vertical ! formal definition of}\index{vertical asymptote ! formal definition of}\textbf{vertical asymptote} of the graph of a function $y=f(x)$  if either of the limits $\ds{ \lim_{x \rightarrow c^{-}} f(x)}$ or  $\ds{ \lim_{x \rightarrow c^{+}} f(x)}$ (or both)\footnote{Technically speaking, the `or both' comment is superfluous in a mathematics textbook since the `or' used in mathematical definitions is the `inclusive or' from logic meaning `one or the other or both.'  This won't fly with other choices offered in life - such as when you go to RSVP for dinner selections at milestone life events.  Responding to `chicken or fish' with `yes' or `both' won't win you any friends outside math pedant circles.} result in $\infty$ or $-\infty$.
 
 \end{definition}
 %% \ebm}
 
-Roughly speaking, a vertical asymptote is a vertical line which approximates the graph of a function when the outputs from the function become unbounded near a finite input value.\footnote{The graph of the function is torn asunder.}
+Roughly speaking, a vertical asymptote is a vertical line which approximates the graph of a function when the outputs from the function become unbounded near a finite input value.\footnote{Note that the Vertical Line Test, Theorem \ref{VLT}, prohibits the graph of a function from ever being part of a vertical line.  In this case, in trying to approximate the vertical line, the graph is torn asunder.}
 
 Let's now investigate the end behavior of $r$. We find that as $x \rightarrow -\infty$ and as $x \rightarrow \infty$, $r(x) \approx 0$. Again, number sense agrees here with the data, since as the denominator of $\frac{1}{x}$ becomes unbounded, the value of the fraction should diminish. That being said, we could ask if the graph ever reaches the $x$-axis.  If we attempt to solve $y = r(x) = \frac{1}{x} = 0$. we arrive at the contradiction $1 = 0$ hence, $0$ is not in the range of $r$.  Every other real number besides $0$ is in the range of $r$, however.  To see this, let $c \neq 0$ be a real number.  Then $\frac{1}{c}$ is defined and, moreover, $r \left(\frac{1}{c} \right) = \frac{1}{(1/c)} = c$.  This shows $c$ is in the range of $r$.  Hence, the range of $r$ is $\{ y \in \mathbb{R} \, | \, y \neq 0\}$ or, using interval notation,  $(-\infty, 0) \cup (0, \infty)$. 
 
@@ -1073,16 +1073,17 @@ We take time now to focus on behaviors of the graphs of rational functions near 
 
 \item  To find when the population reaches $100,\! 000$, we first need to remember that $P(t)$ is measured in \textbf{thousands}.  In other words, $100,\! 000$ bacteria corresponds to $P(t) = 100$.  Hence, we need to solve  $P(t) = \frac{100}{(5-t)^2} = 100$.  Clearing denominators and dividing by $100$ gives $(5-t)^2=1$, which, after extracting square roots, produces $t = 4$ or $t=6$.  Of these two solutions, only $t=4$ in our domain, so this is the solution we keep.  Hence, it takes $4$ days for the population of bacteria to reach $100,\! 000$.
 
-\item After a slight re-write, we have $P(t) = \frac{100}{(5-t)^2} = \frac{100}{[(-1)(t-5)]^2} = \frac{100}{(t-5)^2}$.  Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t^2}$.  After shifting the graph to the right $5$ units and stretching it vertically by a factor of $100$, we restrict the domain to  $0 \leq t < 5$ to arrive at the graph of $y = P(t)$.  We 
-
-
-\item From the graph, we see as  $t \rightarrow 5^{-}$, $P(t) \rightarrow \infty$, so $\ds{\lim_{t \rightarrow 5^{-}} P(t) = \infty}$ . This means that the population of bacteria is increasing without bound as we near 5 days, which cannot actually happen.  For this reason, $t=5$ is called the `doomsday' for this population. There is no way any environment can support infinitely many bacteria, so shortly before $t = 5$ the environment would collapse. 
-
+\item After a slight re-write, we have $P(t) = \frac{100}{(5-t)^2} = \frac{100}{[(-1)(t-5)]^2} = \frac{100}{(t-5)^2}$.  Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t^2}$.  After shifting the graph to the right $5$ units and stretching it vertically by a factor of $100$, we restrict the domain to  $0 \leq t < 5$ to arrive at the graph of $y = P(t)$.  We use Desmos to graph both $y = \frac{1}{t^2}$ alongside $y=P(t)$ below.
 
 % https://www.desmos.com/calculator/gjrtnqumns
 \begin{center}
     \desmos{gjrtnqumns}{800}{600}
 \end{center}
+
+\item From the graph, we see as  $t \rightarrow 5^{-}$, $P(t) \rightarrow \infty$, so $\ds{\lim_{t \rightarrow 5^{-}} P(t) = \infty}$ . This means that the population of bacteria is increasing without bound as we near 5 days, which cannot actually happen.  For this reason, $t=5$ is called the `doomsday' for this population. There is no way any environment can support infinitely many bacteria, so shortly before $t = 5$ the environment would collapse. 
+
+
+
 
  \hfill \qed
 
@@ -1144,13 +1145,8 @@ Since  the domain of $s$ is  $0 \leq t \leq 20$, our final answer is $\overline{
 \item  We find $\overline{v}(14) = -5(14)+25 = -45$.  This means that between  $14$ and $15$ seconds after launch, the rocket was traveling, on average,  a speed $45$ feet per second \textbf{downwards}, or falling back to the Moon's surface.
 
 
-\item  To find $\ds{ \lim_{t \rightarrow 15} \overline{v}(t)}$, we need to analyze the outputs from $\overline{v}(t)$ as $t \rightarrow 15$. Using the table below on the left, it certainly \textbf{appears} to be the case that $\ds{ \lim_{t \rightarrow 15} \overline{v}(t) = -50}$.  Of course, we could be choosing the number $-50$ because of a bias towards nice, integer answers.\footnote{Or maybe the limit is actually $-49.999999865$ which, owing to calculation limitations of the graphing utility rounds to $-50$.}
+\item  To find $\ds{ \lim_{t \rightarrow 15} \overline{v}(t)}$, we need to analyze the outputs from $\overline{v}(t)$ as $t \rightarrow 15$. One way to proceed is to construct a table of values of  $\overline{v}(t)$ as $t \rightarrow 15$:
 
-However, we can argue a stronger case algebraically using the simplified formula  $\overline{v}(t) = -5t+25$.   As $t \rightarrow15$,  $-5t \rightarrow -5(15) = -75$ so $-5t+25 \rightarrow -50$.  It stands to reason, then, that $\ds{ \lim_{t \rightarrow 15} \overline{v}(t) = -50}$.
-
-This means our average velocity approaches $-50$ feet per second as we sample times closer and closer to $t = 15$ seconds after liftoff.  Since we're pushing the $t$-values to $t=15$, instead of viewing the limit $-50$ as an  \textbf{average} velocity calculated \textbf{between} two time values,  we view $-50$ feet per second as the  \index{velocity ! instantaneous}\index{instantaneous velocity}\textbf{instantaneous velocity} of the rocket \textbf{at} $t = 15$.   That is, \textbf{at} $t = 15$ seconds after liftoff, the rocket \textbf{is traveling} downwards at a rate of 50 feet per second.\footnote{It is worth noting that  Exercise \ref{IRCRocketExercise} from Section \ref{ConstantandLinearFunctions} has you arrive at this limit via a table.} 
-
-\item    From part \ref{findandsimplifyavgvelocity}, we know $\overline{v}(t) = -5t+25$,  for $t \in [0, 15) \cup (15, 20]$  Hence the graph of  $\overline{v}(t)$ is a portion of the line $y=  -5t+25$.  Since $\overline{v}(t)$ is not defined when $t = 15$, our graph is the line segment starting at $(0, 25)$ and ending at $(20, 75)$ which skips over the point $(15, -50)$, creating a hole in the graph.\footnote{We've seen and discussed such holes in the graph as far back as Example \ref{functiongraphex01} in Section \ref{FunctionsandtheirRepresentations}  \ldots}   
 \begin{center}
 
 $\begin{array}{|r||c|}  \hline
@@ -1165,6 +1161,17 @@ $\begin{array}{|r||c|}  \hline
   \end{array} $ 
   
 \end{center}
+
+
+
+Using this table, it certainly \textbf{appears} to be the case that $\ds{ \lim_{t \rightarrow 15} \overline{v}(t) = -50}$.  Of course, we could be choosing the number $-50$ because of a bias towards nice, integer answers.\footnote{Or maybe the limit is actually $-49.999999865$ which, owing to calculation limitations of the graphing utility rounds to $-50$.}
+
+However, we can argue a stronger case algebraically using the simplified formula  $\overline{v}(t) = -5t+25$.   As $t \rightarrow15$,  $-5t \rightarrow -5(15) = -75$ so $-5t+25 \rightarrow -50$.  It stands to reason, then, that $\ds{ \lim_{t \rightarrow 15} \overline{v}(t) = -50}$.
+
+This means our average velocity approaches $-50$ feet per second as we sample times closer and closer to $t = 15$ seconds after liftoff.  Since we're pushing the $t$-values to $t=15$, instead of viewing the limit $-50$ as an  \textbf{average} velocity calculated \textbf{between} two time values,  we view $-50$ feet per second as the  \index{velocity ! instantaneous}\index{instantaneous velocity}\textbf{instantaneous velocity} of the rocket \textbf{at} $t = 15$.   That is, \textbf{at} $t = 15$ seconds after liftoff, the rocket \textbf{is traveling} downwards at a rate of 50 feet per second.\footnote{It is worth noting that  Exercise \ref{IRCRocketExercise} from Section \ref{ConstantandLinearFunctions} has you arrive at this limit via a table.} 
+
+\item    From part \ref{findandsimplifyavgvelocity}, we know $\overline{v}(t) = -5t+25$,  for $t \in [0, 15) \cup (15, 20]$  Hence the graph of  $\overline{v}(t)$ is a portion of the line $y=  -5t+25$.  Since $\overline{v}(t)$ is not defined when $t = 15$, our graph is the line segment starting at $(0, 25)$ and ending at $(20, 75)$ which skips over the point $(15, -50)$, creating a hole in the graph.\footnote{We've seen and discussed such holes in the graph as far back as Example \ref{functiongraphex01} in Section \ref{FunctionsandtheirRepresentations}  \ldots}   
+
 
 % https://www.desmos.com/calculator/9v2iaznyny
 \begin{center}
@@ -1259,7 +1266,7 @@ We practice this methodology in the following example.
 
 \item  We begin by finding the values excluded from the domain by setting the denominator equal to $0$.  Solving $x^2 - 3 = 0$, we get $x = \pm \sqrt{3}$ which factors the denominator as $(x-\sqrt{3})(x+\sqrt{3})$.  Since  $f(x)$ is in lowest terms (can you see why?), no cancellation occurs,   hence,  the lines $x = -\sqrt{3}$ and $x=\sqrt{3}$ are vertical asymptotes to the graph of $y=f(x)$.  
 
-A graphing utility verifies this claim, and from the graph, we see that  $\ds{\lim_{x \rightarrow -\sqrt{3}^{\, -}} f(x) = -\infty}$, $\ds{\lim_{x \rightarrow -\sqrt{3}^{\, +}} f(x) = \infty}$, $\ds{\lim_{x \rightarrow \sqrt{3}^{\, -}} f(x) = -\infty}$, and $\ds{\lim_{x \rightarrow \sqrt{3}^{\, +}} f(x) = \infty}$.
+Using Desmos, we graph $f$ and, sure enough, we see that  $\ds{\lim_{x \rightarrow -\sqrt{3}^{\, -}} f(x) = -\infty}$, $\ds{\lim_{x \rightarrow -\sqrt{3}^{\, +}} f(x) = \infty}$, $\ds{\lim_{x \rightarrow \sqrt{3}^{\, -}} f(x) = -\infty}$, and $\ds{\lim_{x \rightarrow \sqrt{3}^{\, +}} f(x) = \infty}$.
 
 As a side note, the graph of $f$ appears to be symmetric about the origin.  Sure enough, we find: $f(-x) = \frac{2(-x)}{(-x)^2-3} = -\frac{2x}{x^2-3} = -f(x)$, proving $f$ is odd.
 
@@ -1272,7 +1279,7 @@ As a side note, the graph of $f$ appears to be symmetric about the origin.  Sure
 
 Since the factor $(t+3)$, which corresponds to the zero $t = -3$, did not cancel from the denominator of $g(t)$, we expect a vertical asymptote to the graph at $t = -3$.  On the other hand, as $t \rightarrow 3$, $t+2 \rightarrow 5$ and $t+3 \rightarrow 6$ so $\frac{t+2}{t+3} \rightarrow \frac{3+2}{3+3} = \frac{5}{6}$.  This gives $\ds{\lim_{t \rightarrow 3} g(t)} =$  $\frac{5}{6}$.   Hence we have a hole in the graph of $y = g(t)$ at  $\left(3, \frac{5}{6}\right)$.
 
- Graphing $g$ we can definitely see the vertical asymptote $t=-3$:  as  $\ds{\lim_{t \rightarrow -3^{-}} g(t) = \infty}$ and $\ds{\lim_{t \rightarrow -3^{+}} g(t) = -\infty}$.  Near $t=3$, the graph seems to have no interruptions, but we know $g$ is undefined at $t=3$.  Depending on the graphing utility, we may or may not convince the display to show us the hole at $\left(3, \frac{5}{6}\right)$.
+ Graphing $g$ we can definitely see the vertical asymptote $t=-3$:  as  $\ds{\lim_{t \rightarrow -3^{-}} g(t) = \infty}$ and $\ds{\lim_{t \rightarrow -3^{+}} g(t) = -\infty}$.  Near $t=3$, the graph seems to have no interruptions, but we know $g$ is undefined at $t=3$.  With a modicum of effort, we can convince Desmos to display the hole at $\left(3, \frac{5}{6}\right)$.
 
 
 
@@ -1288,7 +1295,7 @@ Since the factor $(t+3)$, which corresponds to the zero $t = -3$, did not cancel
 \desmos{azhqh1fq88}{800}{600} 
 \end{center} 
 
-\item  Setting the denominator of $r(t)$ to zero gives the equation $t^2+4t+4 = 0$.  We get  the (repeated!) solution $t=-2$.  Simplifying, we get  $\frac{t^2-t-6}{t^2+4t+4} = \frac{(t-3)(t+2)}{(t+2)(t+2)}  =  \frac{(t-3)\cancel{(t+2)}}{(t+2)\cancel{(t+2)}} =  \frac{t-3}{t+2}$.  Since  not all factors of $(t+2)$ cancelled from the denominator, $t=-2$ continues to produce a $0$ in the denominator.  Hence $t=-2$ is a vertical asymptote to the graph.  A graphing utility bears this out.  Specifically,     $\ds{\lim_{t \rightarrow -2^{-}} r(t) = \infty}$ and  $\ds{\lim_{t \rightarrow -2^{+}} r(t) = -\infty}$ .
+\item  Setting the denominator of $r(t)$ to zero gives the equation $t^2+4t+4 = 0$.  We get  the (repeated!) solution $t=-2$.  Simplifying, we get  $\frac{t^2-t-6}{t^2+4t+4} = \frac{(t-3)(t+2)}{(t+2)(t+2)}  =  \frac{(t-3)\cancel{(t+2)}}{(t+2)\cancel{(t+2)}} =  \frac{t-3}{t+2}$.  Since  not all factors of $(t+2)$ cancelled from the denominator, $t=-2$ continues to produce a $0$ in the denominator.  Hence $t=-2$ is a vertical asymptote to the graph.  The graph produced by Desmos bears this out.  Specifically,     $\ds{\lim_{t \rightarrow -2^{-}} r(t) = \infty}$ and  $\ds{\lim_{t \rightarrow -2^{+}} r(t) = -\infty}$ .
 
 
 % https://www.desmos.com/calculator/zfbk9xwhqp
@@ -1329,7 +1336,7 @@ Now that we've  discussed behavior near values excluded from the domains of rati
 
 \item To graph $y = N(t)$, we first use long division to rewrite $N(t) = \frac{-450}{3t+1} + 500$.  From there, we get  \[N(t) =  -\frac{450}{3t+1} + 500  = \frac{-450}{3\left(t + \frac{1}{3}\right)} + 500 = \frac{-150}{t+\frac{1}{3}} + 500\]
 
-Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t}$ below on the left and perform the following steps: shift the graph to the left by $\frac{1}{3}$ units, stretch the graph vertically by a factor of $150$, reflect the graph across the $t$-axis, and finally, shift the graph up $500$ units.   As the domain of $N$ is $t \geq 0$, we obtain the graph below on the right.
+Using Theorem \ref{linearlaurentlgraphs}, we start with the graph of $y = \frac{1}{t}$ and perform the following steps: shift the graph to the left by $\frac{1}{3}$ units, stretch the graph vertically by a factor of $150$, reflect the graph across the $t$-axis, and finally, shift the graph up $500$ units.   Finally, we restrict the domain to $t \geq 0$.  Using the Desmos interactive below, we can zoom in and out to see the graph of our starting function, $y = \frac{1}{t}$ along with its transformed counterpart, $y = N(t)$.
 
 % https://www.desmos.com/calculator/oceht0nz7b
 \begin{center}
@@ -1430,7 +1437,7 @@ We put Theorem \ref{hathm}  to good use in the following example.
 
 Alternatively, to use Theorem \ref{hathm} note the degree of the numerator of  $F(s)$,  $1$, is less than the degree of the denominator, $2$,  so  $y=0$ as the horizontal asymptote using this approach as well.
 
-Graphically, as $s \rightarrow  -\infty$ or $s \rightarrow  \infty$ , the graph $y = F(s)$ approaches the $s$-axis ($y = 0$).  More specifically, as $s \rightarrow -\infty$, $F(s)  \rightarrow 0^{-}$ and as $s \rightarrow \infty$, $F(s)  \rightarrow 0^{+}$.  
+Using the Desmos graph below, we can use the zoom feature to verify that as $s \rightarrow  -\infty$ or $s \rightarrow  \infty$ , the graph $y = F(s)$ approaches the $s$-axis ($y = 0$).  More specifically, as $s \rightarrow -\infty$, $F(s)  \rightarrow 0^{-}$ and as $s \rightarrow \infty$, $F(s)  \rightarrow 0^{+}$.  
 
 As a side note, the graph of $F$ appears to be symmetric about the origin.  Indeed, $F(-s) = \frac{5(-s)}{(-s)^2+1} = -\frac{5s}{s^2+1}$ proving $F$ is odd.
 
@@ -1446,7 +1453,7 @@ As a side note, the graph of $F$ appears to be symmetric about the origin.  Inde
 \desmos{rnoyel4hsv}{800}{600} 
 \end{center} 
 
-\item   As $t \rightarrow -\infty$ or $t \rightarrow \infty$,  $h(t) = \frac{6t^3-3t+1}{5-2t^3} \approx  \frac{6t^3}{-2t^3} = -3$.  Hence, $\ds{\lim_{t \rightarrow  -\infty} h(t) = -3}$ and $\ds{\lim_{t \rightarrow  \infty} h(t) = -3}$, indicating a horizontal asymptote $y = -3$.  Sure enough, since the degrees of the numerator and denominator of $h(t)$ are both three,  Theorem \ref{hathm} tells us $y = \frac{6}{-2} = -3$ is the horizontal asymptote.  We see from the graph of $y = h(t)$ that as $t \rightarrow -\infty$, $h(t) \rightarrow -3^{+}$, and as $t \rightarrow \infty$, $h(t) \rightarrow -3^{-}$.
+\item   As $t \rightarrow -\infty$ or $t \rightarrow \infty$,  $h(t) = \frac{6t^3-3t+1}{5-2t^3} \approx  \frac{6t^3}{-2t^3} = -3$.  Hence, $\ds{\lim_{t \rightarrow  -\infty} h(t) = -3}$ and $\ds{\lim_{t \rightarrow  \infty} h(t) = -3}$, indicating a horizontal asymptote $y = -3$.  Sure enough, since the degrees of the numerator and denominator of $h(t)$ are both three,  Theorem \ref{hathm} tells us $y = \frac{6}{-2} = -3$ is the horizontal asymptote.  We see from the Desmos graph of $y = h(t)$ that as $t \rightarrow -\infty$, $h(t) \rightarrow -3^{+}$, and as $t \rightarrow \infty$, $h(t) \rightarrow -3^{-}$.
 
 % https://www.desmos.com/calculator/l0cy41qgxa
 \begin{center}
@@ -1457,7 +1464,7 @@ As a side note, the graph of $F$ appears to be symmetric about the origin.  Inde
 
  In order to double check this calculation using  Theorem \ref{hathm}, however, we need to rewrite the expression $r(x)$ with a single denominator:  $r(x) = 2 - \frac{3x^2}{1-x^2} = \frac{2(1-x^2) - 3x^2}{1-x^2} = \frac{2-5x^2}{1-x^2}$.  Now we apply Theorem \ref{hathm}  and note since the numerator and denominator have the same degree, we are guaranteed the horizontal asymptote is $y = \frac{-5}{-1} = 5$.  
  
-Both  calculations are borne out graphically below where it appears as if as $x \rightarrow  -\infty$ or $x \rightarrow \infty$, $r(x) \rightarrow 5^{+}$. 
+Both  calculations are borne out graphically below on our Desmos graph where it appears as if as $x \rightarrow  -\infty$ or $x \rightarrow \infty$, $r(x) \rightarrow 5^{+}$. 
 
  As a final note, the graph of $r$ appears to be symmetric about the $y$ axis.  We find $r(-x) = 2 - \frac{3(-x)^2}{1-(-x)^2} = 2 - \frac{3x^2}{1-x^2} = r(x)$, proving $r$ is even.
 
@@ -1472,7 +1479,7 @@ Both  calculations are borne out graphically below where it appears as if as $x 
 \end{example}
 
 
-We close this section with a discussion of the \textbf{third} (and final!) kind of asymptote which can be associated with the graphs of rational functions. Let us return to the function $g(x) = \frac{x^2-4}{x+1}$ in Example \ref{haexample}. Performing long division,\footnote{See the remarks following Theorem \ref{hathm}.} we get $g(x) = \frac{x^2-4}{x+1} = x-1 - \frac{3}{x+1}$.  Since the term $\frac{3}{x+1} \rightarrow 0$ as $x \rightarrow - \infty$ and as $x \rightarrow  \infty$ , it stands to reason that as $x$ becomes unbounded, the function values   $g(x) = x-1 - \frac{3}{x+1} \approx x-1$.  Geometrically, this means that the graph of $y=g(x)$ should resemble the line $y = x-1$ as $x \rightarrow  -\infty$ and $x \rightarrow \infty$.  We see this play out both numerically and graphically below. (As usual, the asymptote $y = x-1$ is denoted by a dashed line.)
+We close this section with a discussion of the \textbf{third} (and final!) kind of asymptote which can be associated with the graphs of rational functions. Let us return to the function $g(x) = \frac{x^2-4}{x+1}$ in Example \ref{haexample}. Performing long division,\footnote{See the remarks following Theorem \ref{hathm}.} we get $g(x) = \frac{x^2-4}{x+1} = x-1 - \frac{3}{x+1}$.  Since the term $\frac{3}{x+1} \rightarrow 0$ as $x \rightarrow - \infty$ and as $x \rightarrow  \infty$ , it stands to reason that as $x$ becomes unbounded, the function values   $g(x) = x-1 - \frac{3}{x+1} \approx x-1$.  Geometrically, this means that the graph of $y=g(x)$ should resemble the line $y = x-1$ as $x \rightarrow  -\infty$ and $x \rightarrow \infty$.  We see this play out both numerically in the table below and graphically using the zoom feature of the Desmos graph. (As usual, the asymptote $y = x-1$ is denoted by a dashed line.)
 
 \begin{center}
 \begin{tabular}{cc}
@@ -1530,7 +1537,7 @@ Secondly, while we have motivated what me mean intuitively by the notation `$f(x
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{sareprise} The line $y = mx+b$ where $m \neq 0$  is called a \index{asymptote ! slant ! formal definition of}\index{slant asymptote ! formal definition of}\textbf{slant asymptote} of the graph of a function $y=f(x)$ if either $\ds{\lim_{x \rightarrow -\infty} [f(x) - (mx+b)] = 0}$ or $\ds{\lim_{x \rightarrow \infty} [f(x) - (mx+b)] = 0}$ (or both!).
+\begin{definition} \label{sareprise} The line $y = mx+b$ where $m \neq 0$  is called a \index{asymptote ! slant ! formal definition of}\index{slant asymptote ! formal definition of}\textbf{slant asymptote} of the graph of a function $y=f(x)$ if either $\ds{\lim_{x \rightarrow -\infty} [f(x) - (mx+b)] = 0}$ or $\ds{\lim_{x \rightarrow \infty} [f(x) - (mx+b)] = 0}$ (or both).
 
 \end{definition}
 %% \ebm}
@@ -1596,7 +1603,7 @@ In the same way that Theorem \ref{hathm} gives us an easy way to see if the grap
 
 \begin{enumerate}
 
-\item  The degree of the numerator is $2$ and the degree of the denominator is $1$, so Theorem \ref{sathm} guarantees us a slant asymptote.  To find it, we divide $1-x = -x+1$ into $x^2-4x+2$ and get a quotient of $-x+3$, so our slant asymptote is $y=-x+3$.  We confirm this graphically below.
+\item  The degree of the numerator is $2$ and the degree of the denominator is $1$, so Theorem \ref{sathm} guarantees us a slant asymptote.  To find it, we divide $1-x = -x+1$ into $x^2-4x+2$ and get a quotient of $-x+3$, so our slant asymptote is $y=-x+3$.  We confirm this with Desmos below.
 % https://www.desmos.com/calculator/5guwnabrtb
 \begin{center}
 \desmos{5guwnabrtb}{800}{600} 
@@ -1613,9 +1620,9 @@ so we have that the slant asymptote $y=t+2$ is identical to the graph of $y=g(t)
 \desmos{fan3rfclao}{800}{600} 
 \end{center} 
 
-\item   For $h(x) = \frac{x^3+1}{x^2-4}$, the degree of the numerator is $3$ and the degree of the denominator is $2$ so again, we are guaranteed the existence of a slant asymptote.  The long division $\left(x^3+1 \right) \div \left(x^2-4\right)$ gives a quotient of just $x$, so our slant asymptote is the line $y=x$.  The graphing utility confirms this.  
+\item   For $h(x) = \frac{x^3+1}{x^2-4}$, the degree of the numerator is $3$ and the degree of the denominator is $2$ so again, we are guaranteed the existence of a slant asymptote.  The long division $\left(x^3+1 \right) \div \left(x^2-4\right)$ gives a quotient of just $x$, so our slant asymptote is the line $y=x$.  Desmos confirms our calculations.  
 
-Note the graph of $h$ appears to be symmetric about the origin.  We check $h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}$.  However, $-h(x) = - \frac{x^3+1}{x^2-4}$, so it appears as if $h(-x) \neq -h(x)$ for all $x$.  Checking $x=1$, we find $h(1) = -\frac{2}{3}$ but $h(-1) = 0$ which shows the graph of $h$, is in fact,  \textbf{not} symmetric about the origin.
+Note the graph of $h$ appears to be symmetric about the origin - especially when we zoom out using Desmos to check the slant asymptote.  We check $h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}$.  However, $-h(x) = - \frac{x^3+1}{x^2-4}$, so it appears as if $h(-x) \neq -h(x)$ for all $x$.  Checking $x=1$, we find $h(1) = -\frac{2}{3}$ but $h(-1) = 0$ which shows the graph of $h$, is in fact,  \textbf{not} symmetric about the origin.
 
 % https://www.desmos.com/calculator/8d7qp8aqbz
 \begin{center}
@@ -1690,7 +1697,7 @@ You'll explore average cost (and its relation to variable cost) in Exercise \ref
 
 \item  We find $\overline{P}(50) = -1.5(50)+170 - \frac{150}{50} = 92$.  This means that when $50$ PortaBoy systems are sold, the average profit is $\$ 92$ per system.
 
-\item  Technically, the graph of $y = \overline{P}(x)$ has no slant asymptote since the domain of the function is restricted to $(0, 166]$.  That being said, if we were to let $x \rightarrow \infty$, the term $\frac{150}{x} \rightarrow 0$, so we'd  have $\overline{P}(x)  \rightarrow -1.5x + 170$.  This means the slant asymptote would be $y = -1.5x + 170$.  We graph $y = \overline{P}(x)$ and $y = -1.5x+170$.
+\item  Technically, the graph of $y = \overline{P}(x)$ has no slant asymptote since the domain of the function is restricted to $(0, 166]$.  That being said, if we were to let $x \rightarrow \infty$, the term $\frac{150}{x} \rightarrow 0$, so we'd  have $\overline{P}(x)  \rightarrow -1.5x + 170$.  This means the slant asymptote would be $y = -1.5x + 170$.  We graph $y = \overline{P}(x)$ and $y = -1.5x+170$ using Desmos below.
 
   
 % https://www.desmos.com/calculator/hnnzvyr0yf
