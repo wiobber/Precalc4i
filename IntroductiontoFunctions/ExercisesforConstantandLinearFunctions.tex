@@ -87,105 +87,69 @@ The \index{unit step function}\textbf{unit step function} is defined as $U(t) = 
 In Exercises \ref{findformulalinearfirstex} - \ref{findformulalinearlastex}, find a formula for the function.
 
 \begin{problem}\label{findformulalinearfirstex}
-\begin{image}
-\begin{tikzpicture}[font=\LARGE]
 
+\begin{tikzpicture}
 \begin{axis}[
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    width=5in,
-    height=5in,
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
     xtick={-4,-3,-2,-1,0,1,2,3,4},
     ytick={-4,-3,-2,-1,0,1,2,3,4},
-    xticklabels={$-4$,$-3$,$-2$,$-1$,$0$,$1$,$2$,$3$,$4$},
-    yticklabels={$-4$,$-3$,$-2$,$-1$,$0$,$1$,$2$,$3$,$4$},
-    tick style={line width=1.2pt},
-    major tick length=6pt,
-    axis x line=center,
-    axis y line=center,
-    x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    xlabel={$x$},
-    ylabel={$y$},
-    every axis x label/.style={
-        at={(current axis.right of origin)},
-        anchor=west
-    }
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
 ]
-
-% Horizontal line y = -3
-\addplot[
-    domain=-5:5,
-    samples=2,
-    line width=3pt, blue
-] {-3};
-
-% Point
-\addplot[
-    only marks,
-    mark=*,
-    mark size=4pt
-]
-coordinates {
-    (0,-3)
-};
-
-% Label
-\node[anchor=west, xshift=10pt] at (axis cs:0,-3)
-    {\Large $(0,-3)$};
-
-% Caption
-\node at (axis cs:4,-4.4) {\Large $y=f(x)$};
-
+\addplot[line width=2.5pt, blue, domain=-4:4] {-3};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(0,-3)};
+\node at (0,-3) [above right=4pt] {$(0,-3)$};
 \end{axis}
-
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
 \end{tikzpicture}
-\end{image}  
+
 \end{problem} 
 
 \begin{problem}
-\begin{image}
-\begin{tikzpicture}[font=\LARGE]
+\begin{tikzpicture}
 \begin{axis}[
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    width=6in,
-    height=6in,
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$t$}, ylabel={$s$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
     xtick={-4,-3,-2,-1,0,1,2,3,4},
     ytick={-4,-3,-2,-1,0,1,2,3,4},
-    tick style={line width=1.2pt},
-    major tick length=6pt,
-    axis x line=center,
-    axis y line=center,
-    x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    xlabel={$t$},
-    ylabel={$s$},
-    every axis x label/.style={
-        at={(current axis.right of origin)},
-        anchor=west
-    }
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
 ]
-
 % Left horizontal ray y=2, x<=1
 \addplot[
-    line width=3pt,
+    line width=2.5pt,
     domain=-5:1,
     samples=2,
-    ->,
+    <-,
     blue
 ] {2};
-
 % Middle segment y=-3 from x=1 to x=3
 \addplot[
-    line width=3pt,
+    line width=2.5pt,
     blue
-] coordinates {(1,-3) (3,-3)};
+] coordinates {(1.2,-3) (3,-3)};
 
 % Right horizontal ray y=4, x>=3
 \addplot[
-    line width=3pt,
-    domain=3:5,
+    line width=2.5pt,
+    domain=3.2:5,
     samples=2,
     ->,
     blue
@@ -213,168 +177,97 @@ coordinates {
 };
 
 % Labels
-\node at (axis cs:1,2) [above right=6pt] {\Large $(1,2)$};
-\node at (axis cs:1,-3) [below left=8pt] {\Large $(1,-3)$};
-\node at (axis cs:3,-3) [below right=6pt] {\Large $(3,-3)$};
-\node at (axis cs:3,4) [above right=6pt] {\Large $(3,4)$};
+\node at (axis cs:1,2) [above right=6pt] {$(1,2)$};
+\node at (axis cs:1,-3) [below=8pt] {$(1,-3)$};
+\node at (axis cs:3,-3) [below right=6pt] {$(3,-3)$};
+\node at (axis cs:3,4) [above right=6pt] {$(3,4)$};
 \end{axis}
-\node at (axis cs:-2,-4) {\Large $s=F(t)$};
+\node at (rel axis cs:0.5,0) [below] {The graph of $s=F(t)$.};
 \end{tikzpicture}
-\end{image}
+
 \end{problem}
 
+
+
+
 \begin{problem}
-\begin{image}
-\begin{tikzpicture}[font=\LARGE]
+\begin{tikzpicture}
 \begin{axis}[
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    width=6in,
-    height=6in,
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
     xtick={-4,-3,-2,-1,0,1,2,3,4},
     ytick={-4,-3,-2,-1,0,1,2,3,4},
-    tick style={line width=1.2pt},
-    major tick length=6pt,
-    axis x line=center,
-    axis y line=center,
-    x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    xlabel={$x$},
-    ylabel={$y$},
-    every axis x label/.style={
-        at={(current axis.right of origin)},
-        anchor=west
-    }
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
 ]
-
-% Graph of y = L(x)
-\addplot[
-    line width=3pt,
-    blue,
-    <->,
-    domain=-5:5,
-    samples=2
-]
-{-3/5*x + 1};
-
-% Points
-\addplot[
-    only marks,
-    mark=*,
-    mark size=4pt
-]
-coordinates {
-    (0,1)
-    (5/3,0)
-};
-
-% Labels positioned away from graph and axes
-\node at (axis cs:0,1) [above left=10pt] {\Large $(0,1)$};
-
-\node at (axis cs:5/3,0) [below=12pt] {\Large $\left(\frac{5}{3},0\right)$};
-
+\addplot[line width=2.5pt,blue,
+    <->,domain=-5:5,samples=2]
+    {-3/5*x + 1};
+\addplot[only marks,mark=*,
+    mark size=4pt]
+    coordinates {(0,1)(5/3,0)};
+\node at (axis cs:0,1) [above right=6pt] {$(0,1)$};
+\node at (axis cs:5/3,0) [above right=6pt] {$(5/3,0)$};
 \end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=L(x)$.};
 \end{tikzpicture}
 
-\vspace{0.2cm}
-\begin{center}
-{\Large $y=L(x)$}
-\end{center}
-\end{image} 
 \end{problem}
 
 \begin{problem}\label{findformulalinearlastex}
-\begin{image}
-\begin{tikzpicture}[font=\LARGE]
+
+\begin{tikzpicture}
 \begin{axis}[
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    width=6in,
-    height=6in,
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
     xtick={-4,-3,-2,-1,0,1,2,3,4},
     ytick={-4,-3,-2,-1,0,1,2,3,4},
-    tick style={line width=1.2pt},
-    major tick length=6pt,
-    axis x line=center,
-    axis y line=center,
-    x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-    xlabel={$v$},
-    ylabel={$w$},
-    every axis x label/.style={
-        at={(current axis.right of origin)},
-        anchor=west
-    }
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
 ]
-
-% Piecewise graph
-\addplot[
-    line width=3pt,
-    blue
-]
-coordinates {
-    (-3,-4)
-    (-1,2)
-    (3,2)
-};
-
-% Closed points
-\addplot[
-    only marks,
-    mark=*,
-    mark size=4pt
-]
-coordinates {
-    (-3,-4)
-    (3,2)
-};
-
-% Open point
-\addplot[
-    only marks,
-    mark=o,
-    mark size=4pt,
-    line width=1.5pt
-]
-coordinates {
-    (-1,2)
-};
-
-% Coordinate labels
-\node at (axis cs:-3,-4) [below left=8pt]
-    {\Large $(-3,-4)$};
-
-\node at (axis cs:-1,2) [above left=10pt]
-    {\Large $(-1,2)$};
-
-\node at (axis cs:3,2) [above right=8pt]
-    {\Large $(3,2)$};
-
+\addplot[line width=2.5pt,blue,
+    <-,domain=-3.3:-1,samples=2]
+    {3*x + 5};
+\addplot[line width=2.5pt,blue,
+    ->,domain=-1:5,samples=2]
+    {2};
+\addplot[only marks,mark=*,
+    mark size=4pt]
+    coordinates {(-3,-4)(-1,2)(3,2)};
+\node at (axis cs:-3,-4) [above left=6pt] {$(-3,-4)$};
+\node at (axis cs:-1,2) [above left=6pt] {$(-1,2)$};
+\node at (axis cs:3,2) [above right=6pt] {$(3,2)$};
 \end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $w=g(v)$.};
 \end{tikzpicture}
-
-\vspace{0.2cm}
-\begin{center}
-{\Large $w=g(v)$}
-\end{center}
-\end{image} 
 \end{problem}
 
 \end{question}
 
-
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
-
-
-
-\item \label{piecewiseordering} For $n$ copies of the book \textit{Me and my Sasquatch}, a print on-demand company charges $C(n)$ dollars, where $C(n)$ is determined by the formula \[{\displaystyle C(n) = \left\{ \begin{array}{rcl}  15n & \mbox{ if } & 1 \leq n \leq 25  \\
-                                                            13.50n  & \mbox{ if } & 25 < n \leq 50 \\
-                                                            12n & \mbox{ if } & n > 50 \\
-                                     \end{array} \right. }\]
-
+\begin{problem}\label{piecewiseordering}
+For $n$ copies of the book \textit{Me and my Sasquatch}, a print on-demand company charges $C(n)$ dollars, where $C(n)$ is determined by the formula 
+\[
+C(n) = \left\{ \begin{array}{rcl}  15n & \mbox{ if } & 1 \leq n \leq 25  \\
+13.50n  & \mbox{ if } & 25 < n \leq 50 \\
+12n & \mbox{ if } & n > 50 \\
+\end{array} \right.
+\]
 
 \begin{enumerate}
 
@@ -385,11 +278,15 @@ coordinates {
 \item  Your answer to \ref{50vs51} should get you thinking. Suppose a bookstore estimates it will sell 50 copies of the book.  How many books can, in fact, be ordered for the same price as those 50 copies? (Round your answer to a  whole number of books.)
 
 \end{enumerate}
+\end{problem}
 
-\item \label{piecewiseshipping} An on-line comic book retailer charges shipping costs according to the following formula \[{\displaystyle S(n) = \left\{ \begin{array}{rcl}  1.5 n + 2.5 & \mbox{ if } & 1 \leq n \leq 14  \\
-                                                            0  & \mbox{ if } & n \geq 15
-                                     \end{array} \right. }\]
-
+\begin{problem}\label{piecewiseshipping}
+An on-line comic book retailer charges shipping costs according to the following formula
+\[
+S(n) = \left\{ \begin{array}{rcl}  1.5 n + 2.5 & \mbox{ if } & 1 \leq n \leq 14  \\
+0  & \mbox{ if } & n \geq 15
+\end{array} \right.
+\]
 where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cost in dollars.
 
 \begin{enumerate}
@@ -399,12 +296,15 @@ where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cos
 \item  What is the significance of the formula $S(n) = 0$ for $n \geq 15$?
 
 \end{enumerate}
+\end{problem}
 
-\newpage
-
-\item  \label{piecewisemobile} The cost in dollars $C(m)$  to talk $m$ minutes a month on a mobile phone plan is modeled by   \[{\displaystyle C(m) = \left\{ \begin{array}{rcl} 25 & \mbox{ if } & 0 \leq m \leq 1000 \\
-                                                            25+0.1(m-1000) & \mbox{ if } & m > 1000
-                                     \end{array} \right. }\]
+\begin{problem}\label{piecewisemobile}
+The cost in dollars $C(m)$  to talk $m$ minutes a month on a mobile phone plan is modeled by  
+\[ 
+C(m) = \left\{ \begin{array}{rcl} 25 & \mbox{ if } & 0 \leq m \leq 1000 \\
+25+0.1(m-1000) & \mbox{ if } & m > 1000
+\end{array} \right. 
+\]
 
 \begin{enumerate}
 
@@ -414,34 +314,39 @@ where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cos
 
 \item  Explain the terms of the plan verbally.
 \end{enumerate}
+\end{problem}
 
+\begin{problem}
+Jeff can walk comfortably at $3$ miles per hour.  Find an expression for a linear function $d(t)$ that represents the total distance Jeff can walk in $t$ hours, assuming he doesn't take any breaks.   
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}
+Carl can stuff $6$ envelopes per \textit{minute}.  Find an expression for a linear function $E(t)$ that represents the total number of envelopes Carl can stuff after $t$ \textit{hours}, assuming he doesn't take any breaks.
+\end{problem}
 
+\begin{problem}
+A landscaping company charges $\$45$ per cubic yard of mulch plus a delivery charge of $\$20$.  Find an expression for a  linear function $C(x)$ which computes the total cost in dollars  to deliver $x$ cubic yards of mulch.
+\end{problem}
 
-\begin{enumerate}
+\begin{problem}
+A plumber charges $\$50$ for a service call plus $\$80$ per hour.  If she spends no longer than 8 hours a day at any one site, find an expression for a  linear function $C(t)$ that computes her total daily charges in dollars as a function of the amount of time spent in hours, $t$  at any one given location.
+\end{problem}
 
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+A salesperson is paid \$200 per week plus 5\% commission on her weekly sales of $x$ dollars.  Find an expression for a  linear function $W(x)$ which computes her total weekly pay in dollars as a function of $x$.  What must her weekly sales be in order for her to earn \$475.00 for the week?
+\end{problem}
 
+\begin{problem}
+An on-demand publisher charges $\$22.50$ to print a 600 page book and $\$15.50$ to print a 400 page book.  Find an expression for a linear function which models the cost of a book in dollars $C(p)$ as a function of the number of pages $p$.  Find and interpret both the slope of the linear function  and $C(0)$.
+\end{problem}
 
-\item  Jeff can walk comfortably at $3$ miles per hour.  Find an expression for a linear function $d(t)$ that represents the total distance Jeff can walk in $t$ hours, assuming he doesn't take any breaks.
+\begin{problem}
+The Topology Taxi Company charges $\$2.50$ for the first fifth of a mile and $\$0.45$ for each additional fifth of a mile.  Find an expression for a  linear function which models the taxi fare $F(m)$ as a function of the number of miles driven, $m$.  Find and interpret both the slope of the linear function  and $F(0)$.
+\end{problem}
 
-\item  Carl can stuff $6$ envelopes per \textit{minute}.  Find an expression for a linear function $E(t)$ that represents the total number of envelopes Carl can stuff after $t$ \textit{hours}, assuming he doesn't take any breaks.
+\begin{problem}\label{celsiustofahr}
+Water freezes at $0^{\circ}$ Celsius and $32^{\circ}$ Fahrenheit and it boils at $100^{\circ}$C and $212^{\circ}$F.
 
-\item  A landscaping company charges $\$45$ per cubic yard of mulch plus a delivery charge of $\$20$.  Find an expression for a  linear function $C(x)$ which computes the total cost in dollars  to deliver $x$ cubic yards of mulch.
-
-\item  A plumber charges $\$50$ for a service call plus $\$80$ per hour.  If she spends no longer than 8 hours a day at any one site, find an expression for a  linear function $C(t)$ that computes her total daily charges in dollars as a function of the amount of time spent in hours, $t$  at any one given location.
-
-\item A salesperson is paid \$200 per week plus 5\% commission on her weekly sales of $x$ dollars.  Find an expression for a  linear function $W(x)$ which computes her total weekly pay in dollars as a function of $x$.  What must her weekly sales be in order for her to earn \$475.00 for the week?
-
-
-\item  An on-demand publisher charges $\$22.50$ to print a 600 page book and $\$15.50$ to print a 400 page book.  Find an expression for a linear function which models the cost of a book in dollars $C(p)$ as a function of the number of pages $p$.  Find and interpret both the slope of the linear function  and $C(0)$.
-
-\item The Topology Taxi Company charges $\$2.50$ for the first fifth of a mile and $\$0.45$ for each additional fifth of a mile.  Find an expression for a  linear function which models the taxi fare $F(m)$ as a function of the number of miles driven, $m$.  Find and interpret both the slope of the linear function  and $F(0)$.
-
-\item Water freezes at $0^{\circ}$ Celsius and $32^{\circ}$ Fahrenheit and it boils at $100^{\circ}$C and $212^{\circ}$F.
-\label{celsiustofahr}
 
 \begin{enumerate}
 
@@ -453,21 +358,36 @@ where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cos
 
 \end{enumerate}
 
-\enlargethispage{0.5in}
+\end{problem}
 
-\item Legend has it that a bull Sasquatch in rut will howl approximately 9 times per hour when it is $40^{\circ}F$ outside and only 5 times per hour if it's $70^{\circ}F$.  Assuming that the number of howls per hour, $N$, can be represented by a linear function of temperature Fahrenheit, find the number of howls per hour he'll make when it's only $20^{\circ}F$ outside. What troubles do you encounter when trying to determine a reasonable applied domain?
+\begin{problem}
+Legend has it that a bull Sasquatch in rut will howl approximately 9 times per hour when it is $40^{\circ}F$ outside and only 5 times per hour if it's $70^{\circ}F$.  Assuming that the number of howls per hour, $N$, can be represented by a linear function of temperature Fahrenheit, find the number of howls per hour he'll make when it's only $20^{\circ}F$ outside. What troubles do you encounter when trying to determine a reasonable applied domain?
+\end{problem}
 
-\item \label{exerredoportaboy} Economic forces have changed the cost function for PortaBoys to $C(x) = 105x + 175$.  Rework Example \ref{PortaBoyCost} with this new cost function.
+\begin{problem}\label{exerredoportaboy}
+Economic forces have changed the cost function for PortaBoys to $C(x) = 105x + 175$.  Rework Example \ref{PortaBoyCost} with this new cost function.
+\end{problem}
 
-\item In response to the economic forces in Exercise \ref{exerredoportaboy} above, the local retailer sets the selling price of a PortaBoy at \$250.  Remarkably, 30 units were sold each week.  When the systems went on sale for \$220, 40 units per week were sold.  Rework Example \ref{PortaBoyDemand}  with this new data.
+\begin{problem}
+In response to the economic forces in Exercise \ref{exerredoportaboy} above, the local retailer sets the selling price of a PortaBoy at \$250.  Remarkably, 30 units were sold each week.  When the systems went on sale for \$220, 40 units per week were sold.  Rework Example \ref{PortaBoyDemand}  with this new data.
+\end{problem}
 
-\item A local pizza store offers medium two-topping pizzas delivered for $\$6.00$ per pizza plus a $\$1.50$ delivery charge per order.  On weekends, the store runs a `game day' special:  if six or more medium two-topping pizzas are ordered, they are $\$5.50$ each with no delivery charge.  Write a piecewise-defined linear function which calculates the cost in dollars $C(p)$ of  $p$ medium two-topping pizzas delivered during a weekend.
+\begin{problem}
+A local pizza store offers medium two-topping pizzas delivered for $\$6.00$ per pizza plus a $\$1.50$ delivery charge per order.  On weekends, the store runs a `game day' special:  if six or more medium two-topping pizzas are ordered, they are $\$5.50$ each with no delivery charge.  Write a piecewise-defined linear function which calculates the cost in dollars $C(p)$ of  $p$ medium two-topping pizzas delivered during a weekend.
+\end{problem}
 
-\item  A restaurant offers a buffet which costs $\$15$ per person.  For parties of $10$ or more people, a group discount applies, and the cost is $\$12.50$ per person.   Write a piecewise-defined linear function which calculates the total bill $T(n)$ of a party of $n$ people who all choose the buffet.
+\begin{problem}
+A restaurant offers a buffet which costs $\$15$ per person.  For parties of $10$ or more people, a group discount applies, and the cost is $\$12.50$ per person.   Write a piecewise-defined linear function which calculates the total bill $T(n)$ of a party of $n$ people who all choose the buffet.
+\end{problem}
 
-\item  A mobile plan charges a base monthly rate of $\$10$ for the first $500$ minutes of air time plus a charge of $15$\textcent \, for each additional minute.  Write a piecewise-defined linear function which calculates the monthly cost in dollars  $C(m)$  for using $m$ minutes of air time.
+\begin{problem}
+A mobile plan charges a base monthly rate of $\$10$ for the first $500$ minutes of air time plus a charge of $15$\textcent \, for each additional minute.  Write a piecewise-defined linear function which calculates the monthly cost in dollars  $C(m)$  for using $m$ minutes of air time.
 
-\textbf{HINT:}  You may wish to refer to number \ref{piecewisemobile} for inspiration.
+\begin{hint}
+You may wish to refer to number \ref{piecewisemobile} for inspiration.
+\end{hint}
+\end{problem}
+ 
 
 
 \item  The local pet shop charges $12$\textcent \, per cricket up to 100 crickets, and $10$\textcent \, per cricket thereafter.  Write a piecewise-defined linear function which calculates the price in dollars $P(c)$ of purchasing $c$ crickets.
