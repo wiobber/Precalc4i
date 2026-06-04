@@ -151,7 +151,7 @@ We define $r(t) = \frac{3t^2-4t}{(3t-2)^2}$ and set about constructing a sign di
 
 Since we are looking for where $r(t) \leq 0$, we are looking for where $r(t)$ is $(-)$ or $r(t) = 0$. Hence,  our final answer is $\left[0, \frac{2}{3} \right) \cup \left(\frac{2}{3}, \frac{4}{3} \right]$. 
 
-To check, we use Desmos to graph $f(t) = 2t(3t-1)^{-1}$, $g(t) = 3t^2(3t-2)^{-2}$, and their vertical asymptote $x = \frac{2}{3}$.  Sure enough, the graph of $f$ intersects the graph of $g$ when $t = 0$ and $t = \frac{4}{3}$.  Moreover, the graph of $f$ is below the graph of $g$ everywhere they are defined between these values, in accordance with our algebraic solution.
+To check, we use Desmos to graph $f(t) = 2t(3t-1)^{-1}$, $g(t) = 3t^2(3t-2)^{-2}$.  Sure enough, the graph of $f$ intersects the graph of $g$ when $t = 0$ and $t = \frac{4}{3}$.  Moreover, the graph of $f$ is below the graph of $g$ everywhere they are defined between these values, in accordance with our algebraic solution.
 
 
 
@@ -232,7 +232,7 @@ In the context of the problem, $x$ represents the number of PortaBoy games syste
 
 Note that number \ref{costlessthan} in Example \ref{averagecostapp} is another opportunity to short-cut the standard algorithm and obtain the solution more quickly if we take stock of the situation.  Since the applied domain is $x>0$, we can multiply through the inequality $\frac{80x+150}{x}  <  100$ by $x$ without worrying about changing the sense of the inequality.  This reduces the problem to  $80x+150 < 100x$, a basic linear inequality whose solution is readily seen to be $x > 7.5$.   It is absolutely critical here that $x>0$. Indeed, any time you decide to multiply an inequality by a variable expression, it is necessary to justify why the inequality is preserved.  Our next example is another classic `box with no top' problem.  The reader is encouraged to compare and contrast this problem with  Example \ref{boxnotopex} in Section \ref{GraphsofPolynomials}.
 
-\begin{example}  \label{boxnotopfixedvolume} A box with a square base and no top is to be constructed so that it has a volume of $1000$ cubic centimeters.  Let $x$ denote the width of the box, in centimeters as seen below.
+\begin{example}  \label{boxnotopfixedvolume} A box with a square base and no top is to be constructed so that it has a volume of $1000$ cubic centimeters.  Let $x$ denote the width of the box, in centimeters as seen in the interactive below.  Feel free to move the slider for the width, $x$, and observe the base of the box remains a square while the height changes to maintain a volume of $1000$ cubic centimeters.
 
 % https://www.geogebra.org/classic/zv4shrqn
 \begin{center}
@@ -255,18 +255,18 @@ Note that number \ref{costlessthan} in Example \ref{averagecostapp} is another o
 %\polyline{(2,3),(2,2)}
 %\polyline{(2,2),(5,2)}
 %\dotted \polyline{(5,2),(6,2)}
-\polyline{(2,2),(1,1)}
-\dotted \polyline{(1,1),(0,0)}
-\arrow \reverse \arrow \polyline{(0,-0.5),(4,-0.5)}
-\tlabel[cc](2,-1.5){\scriptsize width, $x$}
-\arrow \reverse \arrow \polyline{(-0.5,0), (-0.5,1)}
-\tlabel[cc](-1.5,0.5){\scriptsize height}
-\arrow \reverse \arrow \polyline{(4.5, -0.25), (6.5,1.75)}
-\tlabel[cc](6,0.25){\scriptsize depth}
-\end{mfpic}
+%\polyline{(2,2),(1,1)}
+%\dotted \polyline{(1,1),(0,0)}
+%\arrow \reverse \arrow \polyline{(0,-0.5),(4,-0.5)}
+%\tlabel[cc](2,-1.5){\scriptsize width, $x$}
+%\arrow \reverse \arrow %\polyline{(-0.5,0), (-0.5,1)}
+%\tlabel[cc](-1.5,0.5){\scriptsize height}
+%\arrow \reverse \arrow \polyline{(4.5, -0.25), (6.5,1.75)}
+%\tlabel[cc](6,0.25){\scriptsize depth}
+%\end{mfpic}
 
 
-\end{center}
+%\end{center}
 
 
 \begin{enumerate}
@@ -287,12 +287,13 @@ Note that number \ref{costlessthan} in Example \ref{averagecostapp} is another o
 
 \begin{enumerate}
 
-\item  We are told that the volume of the box is $1000$ cubic centimeters and that $x$ represents the width, in centimeters.  Since $x$ represents a physical dimension of a box, we have that $x>0$.  From geometry, we know $\text{volume} = \text{width} \times \text{height} \times \text{depth}$.  Since the base of the box is a square, the width and the depth are both $x$ centimeters.  Hence,  $1000 = x^2 (\text{height})$. Solving for the height, we get $\text{height} = \frac{1000}{x^2}$.   In other words, for each width $x>0$, we are able to compute \textit{the}\footnote{that is, the one and only one} corresponding height using the formula $\frac{1000}{x^2}$.  Hence, the height is a function of $x$.    Using function notation, we write $h(x) = \frac{1000}{x^2}$.  As mentioned before, our only restriction is $x>0$ so the domain of $h$ is $(0, \infty)$.
+\item  We are told that the volume of the box is $1000$ cubic centimeters and that $x$ represents the width, in centimeters.  Since $x$ represents a physical dimension of a box, we have that $x>0$.  From geometry, we know $\text{volume} = \text{width} \times \text{height} \times \text{depth}$.  Since the base of the box is a square, the width and the depth are both $x$ centimeters.  Hence,  $1000 = x^2 (\text{height})$. Solving for the height, we get $\text{height} = \frac{1000}{x^2}$.   In other words, for each width $x>0$, we are able to compute \textbf{the}\footnote{that is, the one and only one} corresponding height using the formula $\frac{1000}{x^2}$.  Hence, the height is a function of $x$.    Using function notation, we write $h(x) = \frac{1000}{x^2}$.  As mentioned before, our only restriction is $x>0$ so the domain of $h$ is $(0, \infty)$.
 
-% https://www.geogebra.org/classic/zv4shrqn
-\begin{center}
-\geogebra{zv4shrqn}{800}{600}
-\end{center}
+% moved the interactive to the problem description
+%https://www.geogebra.org/classic/zv4shrqn
+%\begin{center}
+%\geogebra{zv4shrqn}{800}{600}
+%\end{center}
 
 \item  To solve $h(x) \geq x$, we proceed as before and collect all nonzero terms on one side of the inequality in order to use a sign diagram.
 
@@ -336,6 +337,8 @@ We consider the left hand side of the inequality as our rational function $r(x)$
 
 We see $r(x) > 0$ on $(0,10)$, and since $r(x) = 0$ at $x=10$, our solution is $(0,10]$.  In the context of the problem, $h(x)$ represents the height of the box while $x$ represents the width (and depth) of the box.  Solving $h(x) \geq x$ is tantamount to finding the values of $x$ which result in a box where the height is at least as big as the width (and, in this case, depth.)  Our answer tells us the width of the box can be at most $10$ centimeters for this to happen.\footnote{As with the previous example, knowing $x>0$ means  $x^2>0$ so we can clear denominators right away and solve $x^3 \leq 1000$, or $x \leq 10$.  Coupled with our applied domain, $x>0$, we would arrive at the same solution, $(0, 10]$.}
 
+On the interactive below, as we adjust the slider for the width, $x$, we can see the box is taller than it is wide precisely when $0 < x \leq 10$.
+
 % https://www.geogebra.org/classic/qdacpjpp
 \begin{center}
 \geogebra{qdacpjpp}{800}{600}
@@ -345,7 +348,9 @@ We see $r(x) > 0$ on $(0,10)$, and since $r(x) = 0$ at $x=10$, our solution is $
 
 \item  Since the box has no top, the surface area can be found by adding the area of each of the sides to the area of the base.  The base is a square of dimensions $x$ by $x$, and each side has dimensions $x$ by $h(x)$.  We get the surface area, $S(x) = x^2+4xh(x)$.  Since $h(x) = \frac{1000}{x^2}$, we have  $S(x) = x^2+4x \left( \frac{1000}{x^2}\right)= x^2 + \frac{4000}{x}$.  The domain of $S$ is the same as $h$, namely $(0, \infty)$, for the same reasons as above.
 
-\item   To graph $y = S(x)$, we create a table of values to help us define a good viewing window.  Doing so, we find a local minim when $x \approx 12.60$.  As far as we can tell,\footnote{without Calculus, that is...} this is the only local extremum, so it is the (absolute) minimum as well. This means that the width and depth of the box should each measure approximately $12.60$ centimeters.  To determine the height, we find $h(12.60) \approx 6.30$, so the height of the box should be approximately $6.30$ centimeters.\footnote{The $y$-coordinate here, $476.22$ means the minimum surface area possible is $476.22$ square centimeters.  Minimizing the surface area minimizes the material required to make the box, therein helping to reduce the cost of the box.}
+\item   Graphing $y = S(x)$ using Desmos, we find a local minimum when $x \approx 12.60$.  As far as we can tell,\footnote{without Calculus, that is...} this is the only local extremum, so it is the (absolute) minimum as well. This means that the width and depth of the box should each measure approximately $12.60$ centimeters.  To determine the height, we find $h(12.60) \approx 6.30$, so the height of the box should be approximately $6.30$ centimeters.\footnote{The $y$-coordinate here, $476.22$ means the minimum surface area possible is $476.22$ square centimeters.  Minimizing the surface area minimizes the material required to make the box, therein helping to reduce the cost of the box.}
+
+On the GeoGebra interactive below, we have the graph of $y = S(x)$ along with two diagrams of the box.  The top diagram has the box `flattened' out as a square base with four attached rectangular tabs.  This is one way to visualize the surface area of the box being the sum of the area of the (square) base plus the area of the four (rectangular) sides.  The other diagram is the box as we first visualized it, with the four tabs being folded up to create the sides of the box.  We invite the reader to adjust the slider for the width of the base of the box, $x$, to explore the relationships between all three diagrams.
 
 % https://www.geogebra.org/classic/hwtdhxss
 \begin{center}
@@ -388,7 +393,7 @@ P & 61.31 & 64.06 & 67.06 & 70.69 & 74.13 & 77.88 & 82.75 & 87.88 & 93.06 & 100.
 
 \item Recall if $P$ and $V$ are inversely proportional, there is a real number $k$ so $PV = k$ for all values of $P$ and $V$.  Multiplying the corresponding $P$ and $V$ values from the data together result in numbers which are consistently approximately $1400$.  This gives us confidence in the claim $P$ and $V$ are inversely proportional and suggests $k \approx 1400$.
 
-\item  We plot the pairs $(V, P)$ and run a regression, the results of which are below.  To our amazement, the graphing utility reports $k \approx 1406.9$ with  $R^2 \approx 1$.  This means the data are a very good fit to the model $P = \frac{k}{V}$, or $PV = k$, hence verifying Boyle's Law for this set of data.
+\item  We plot the pairs $(V, P)$ and run a regression, the results of which are below.  To our amazement, the graphing utility, in this case Desmos, reports $k \approx 1406.9$ with  $R^2 \approx 1$.  This means the data are a very good fit to the model $P = \frac{k}{V}$, or $PV = k$, hence verifying Boyle's Law for this set of data.
 
 % https://www.desmos.com/calculator/ezeh4v35lo
 \begin{center} 

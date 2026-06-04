@@ -388,11 +388,69 @@ You may wish to refer to number \ref{piecewisemobile} for inspiration.
 \end{hint}
 \end{problem}
  
+\begin{problem}
+The local pet shop charges $12$\textcent \, per cricket up to 100 crickets, and $10$\textcent \, per cricket thereafter.  Write a piecewise-defined linear function which calculates the price in dollars $P(c)$ of purchasing $c$ crickets.
+\end{problem}
 
+\begin{problem}
+Here is a cross-section of a swimming pool.  
 
-\item  The local pet shop charges $12$\textcent \, per cricket up to 100 crickets, and $10$\textcent \, per cricket thereafter.  Write a piecewise-defined linear function which calculates the price in dollars $P(c)$ of purchasing $c$ crickets.
+\begin{center}
+\begin{tikzpicture}[x=0.4in,y=0.4in]
 
-\item  The cross-section of a swimming pool is below.  Write a piecewise-defined linear function which describes the depth of the pool, $D$ (in feet) as a function of:
+% Main shape
+\draw[line width=3pt]
+    (0,0) -- (5,0) -- (9,2) -- (12,2) --
+    (12,3) -- (0,3) -- cycle;
+
+% Top reference points
+\fill (0,4) circle (2pt);
+\fill (12,4) circle (2pt);
+
+% Distance arrows d and s
+\draw[-{Latex[length=10pt,width=8pt]}, line width=1.2pt]
+    (0,4) -- (4,4);
+
+\draw[-{Latex[length=10pt,width=8pt]}, line width=1.2pt]
+    (12,4) -- (8,4);
+
+\node[above] at (2,4) {$d$ ft.};
+\node[above] at (10,4) {$s$ ft.};
+
+% Left height dimension
+\draw[<->, line width=1.2pt]
+    (-0.25,0) -- (-0.25,3);
+
+\node[left] at (-0.6,1.5) {8 ft.};
+
+% Bottom dimension
+\draw[<->, line width=1.2pt]
+    (0,-0.35) -- (5,-0.35);
+
+\node[below] at (2.5,-0.35) {15 ft.};
+
+% Top dimension
+\draw[<->, line width=1.2pt]
+    (0,3.35) -- (12,3.35);
+
+\node[above] at (6,3.35) {37 ft.};
+
+% Right horizontal dimension
+\draw[<->, line width=1.2pt]
+    (9,1.65) -- (12,1.65);
+
+\node[below] at (10.5,1.65) {10 ft.};
+
+% Right vertical dimension
+\draw[<->, line width=1.2pt]
+    (12.25,2) -- (12.25,3);
+
+\node[right] at (12.45,2.5) {2 ft.};
+
+\end{tikzpicture}
+\end{center}
+
+Write a piecewise-defined linear function which describes the depth of the pool, $D$ (in feet) as a function of:
 
 \begin{enumerate}
 
@@ -403,62 +461,39 @@ You may wish to refer to number \ref{piecewisemobile} for inspiration.
 \item  Graph each of the functions in (a) and (b).  Discuss with your classmates how to transform one into the other and how they relate to the diagram of the pool.
 
 \end{enumerate}
+\end{problem}
 
-\begin{center}
+\begin{problem}\label{identityexercise}
+The function defined by $I(x) = x$ is called the \index{function ! identity} Identity Function.   Thinking from a procedural perspective, explain a possible origin of this name.
+\end{problem}
+  
+\begin{problem}\label{onlyoneyintexercise}
+Why must the graph of a function $y = f(x)$ have at most one $y$-intercept?
 
-\begin{mfpic}[25]{-1}{13}{-1}{4}
-\point[2pt]{(0,4), (12,4)}
-\arrow \polyline{(0,4), (4,4)}
-\arrow \polyline{(12,4), (8,4)}
-\arrow \reverse \arrow \polyline{(-0.25,0), (-0.25,3)}
-\arrow \reverse \arrow \polyline{(0,-0.35), (5,-0.35)}
-\arrow \reverse \arrow \polyline{(0,3.35), (12,3.35)}
-\arrow \reverse \arrow \polyline{(9,1.65), (12,1.65)}
-\arrow \reverse \arrow \polyline{(12.25,2), (12.25,3)}
-\gclear \tlabelrect(2, 4){\,$d$ ft.}
-\gclear \tlabelrect(10, 4){\, $s$ ft.}
-\gclear \tlabelrect(6, 3.35){37 ft.}
-\gclear \tlabelrect(2.5, -0.35){15 ft.}
-\gclear \tlabelrect(10.5, 1.65){10 ft.}
-\gclear \tlabelrect(-1, 1.5){8 ft.}
-\gclear \tlabelrect(13, 2.5){2 ft.}
-\penwd{1.5pt}
-\polyline{(0,0), (5,0), (9, 2), (12, 2), (12,3), (0,3), (0,0)}
-\end{mfpic}
+\begin{hint}
+Consider what would happen graphically if there were more than one \ldots
+\end{hint}
+\end{problem}
+ 
+\begin{problem}
+Why is a discussion of vertical lines omitted when discussing functions?
+\end{problem} 
 
-\end{center}
+\begin{problem}\label{xinterceptoflinear}
+Find a formula for the $x$-intercept of the graph of $f(x) = mx + b$.  Assume $m \neq 0$.
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
+\begin{problem}\label{xinterceptformoflinear}
+Suppose $(c,0)$ is the $x$-intercept of a linear function $f$.  Use the point-slope form of a linear function, Equation \ref{linearfunctionpointslope} to show $f(x) = m(x-c)$.  This is the `slope $x$-intercept' form of the linear function. 
+\end{problem} 
 
+\begin{problem}
+Prove that for all linear functions $L$ with with slope $3$, $L(120) = L(100) + 60$.
+\end{problem}
 
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+Find the slopes between the following points from the data set given in Example \ref{timetempregressionex} and compare them with the slope of the corresponding regression line:
 
-\item \label{identityexercise} The function defined by $I(x) = x$ is called the \index{function ! identity} Identity Function.   Thinking from a procedural perspective, explain a possible origin of this name.
-
-\item  \label{onlyoneyintexercise} Why must the graph of a function $y = f(x)$ have at most one $y$-intercept?
-
-\textbf{HINT:}  Consider what would happen graphically if there were more than one \ldots
-
-\item  Why is a discussion of vertical lines omitted when discussing functions?
-
-\item  \label{xinterceptoflinear} Find a formula for the $x$-intercept of the graph of $f(x) = mx + b$.  Assume $m \neq 0$.
-
-\item  \label{xinterceptformoflinear} Suppose $(c,0)$ is the $x$-intercept of a linear function $f$.  Use the point-slope form of a liner function, Equation \ref{linearfunctionpointslope} to show $f(x) = m(x-c)$.  This is the `slope $x$-intercept' form of the linear function.
-
-\item Prove that for all linear functions $L$ with with slope $3$, $L(120) = L(100) + 60$.
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
-
-\item  Find the slopes between the following points from the data set given in Example \ref{timetempregressionex} and compare them with the slope of the corresponding regression line:
-
-\begin{multicols}{4}
 
 \begin{enumerate}
 
@@ -471,12 +506,12 @@ You may wish to refer to number \ref{piecewisemobile} for inspiration.
 \item  $(10, 83)$, $(12, 82)$
 
 \end{enumerate}
+\end{problem}
 
-\end{multicols}
+\begin{problem}
+According to this \href{http://www.ohiobiz.com/census/Lake.pdf}{\underline{website}}\footnote{\href{http://www.ohiobiz.com/census/Lake.pdf}{\underline{http://www.ohiobiz.com/census/Lake.pdf}}}, the census data for Lake County, Ohio is:
 
-\item According to this \href{http://www.ohiobiz.com/census/Lake.pdf}{\underline{website}}\footnote{\href{http://www.ohiobiz.com/census/Lake.pdf}{\underline{http://www.ohiobiz.com/census/Lake.pdf}}}, the census data for Lake County, Ohio is:
-
-\noindent \begin{tabular}{|l|r|r|r|r|} \hline
+\begin{tabular}{|l|r|r|r|r|} \hline
 Year & 1970 & 1980 & 1990 & 2000 \\
 \hline
 Population & 197200 & 212801 & 215499 & 227511 \\ \hline
@@ -492,11 +527,12 @@ Population & 197200 & 212801 & 215499 & 227511 \\ \hline
 \item  Use the regression line to predict when the population of Lake County will reach $250,\!000$.
 
 \end{enumerate}
+\end{problem}
 
+\begin{problem}
+According to this \href{http://www.ohiobiz.com/census/Lorain.pdf}{\underline{website}}\footnote{\href{http://www.ohiobiz.com/census/Lorain.pdf}{\underline{http://www.ohiobiz.com/census/Lorain.pdf}}}, the census data for Lorain County, Ohio is:
 
-\item According to this \href{http://www.ohiobiz.com/census/Lorain.pdf}{\underline{website}}\footnote{\href{http://www.ohiobiz.com/census/Lorain.pdf}{\underline{http://www.ohiobiz.com/census/Lorain.pdf}}}, the census data for Lorain County, Ohio is:
-
-\noindent \begin{tabular}{|l|r|r|r|r|} \hline
+\begin{tabular}{|l|r|r|r|r|} \hline
 Year & 1970 & 1980 & 1990 & 2000 \\
 \hline
 Population & 256843 & 274909 & 271126 & 284664 \\ \hline
@@ -512,14 +548,12 @@ Population & 256843 & 274909 & 271126 & 284664 \\ \hline
 \item  Use the regression line to predict when the population of Lake County will reach $325,\!000$.
 
 \end{enumerate}
+\end{problem}
 
-\item The chart below contains a portion of the fuel consumption information for a 2002 Toyota Echo that Jeffrey used to own.  The first row is the cumulative number of gallons of gasoline that I had used and the second row is the odometer reading when I refilled the gas tank.  So, for example, the fourth entry is the point (28.25, 1051) which says that I had used a total of 28.25 gallons of gasoline when the odometer read 1051 miles.
+\begin{problem}
+The chart below contains a portion of the fuel consumption information for a 2002 Toyota Echo that Jeffrey used to own.  The first row is the cumulative number of gallons of gasoline that I had used and the second row is the odometer reading when I refilled the gas tank.  So, for example, the fourth entry is the point (28.25, 1051) which says that I had used a total of 28.25 gallons of gasoline when the odometer read 1051 miles.
 
-\medskip
-
-
-
-\noindent \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|} \hline
+\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|} \hline
 Gasoline Used & & & & & & & & & & & \\
 (Gallons)  & 0 & 9.26 & 19.03 & 28.25 & 36.45 & 44.64 & 53.57 & 62.62 & 71.93 & 81.69 & 90.43\\
 \hline
@@ -527,16 +561,13 @@ Odometer & & & & & & & & & & & \\
 (Miles) & 41 & 356 & 731 & 1051 & 1347 & 1631 & 1966 & 2310 & 2670 & 3030 & 3371\\ \hline
 \end{tabular}
 
-\normalsize
+Find the least squares line for this data.  Is it a good fit?  What does the slope of the line represent?  Do you and your classmates believe this model would have held for ten years had I not crashed the car on the Turnpike a few years ago?
+\end{problem}
 
-\medskip
+\begin{problem}
+Using the energy production data given below
 
-\noindent Find the least squares line for this data.  Is it a good fit?  What does the slope of the line represent?  Do you and your classmates believe this model would have held for ten years had I not crashed the car on the Turnpike a few years ago?
-
-
-\item Using the energy production data given below
-
-\noindent \begin{tabular}{|l|r|r|r|r|r|r|} \hline
+\begin{tabular}{|l|r|r|r|r|r|r|} \hline
 Year & 1950 & 1960 & 1970 & 1980 & 1990 & 2000 \\
 \hline
 Production & & & & & & \\
@@ -556,60 +587,47 @@ Production & & & & & & \\
 \item  Use the regression line to predict when the annual US energy production will reach $100$ Quads.
 
 \end{enumerate}
+\end{problem}
 
 
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-
-
+\begin{question}
 In Exercises \ref{averagerateexerfirst} - \ref{averagerateexerlast}, compute the average rate of change of the  function over the specified interval.
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}\label{averagerateexerfirst}
+$f(x) = x^{3}, \; [-1, 2]$
+\end{problem}
 
-\item $f(x) = x^{3}, \; [-1, 2]$ \vphantom{$\dfrac{1}{x}$} \label{averagerateexerfirst}
-\item $g(x) = \dfrac{1}{x}, \; [1, 5]$
+\begin{problem}
+$g(x) = \frac{1}{x}, \; [1, 5]$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}
+$f(t) = \sqrt{t}, \; [0, 16]$
+\end{problem}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+$g(t) = x^{2}, \; [-3, 3]$
+\end{problem}
 
-\item $f(t) = \sqrt{t}, \; [0, 16]$
-\item $g(t) = x^{2}, \; [-3, 3]$
+\begin{problem}
+$F(s) = \dfrac{s + 4}{s - 3}, \; [5, 7]$
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
+\begin{problem}\label{averagerateexerlast}
+$G(s) = 3s^{2} + 2s - 7, \; [-4, 2]$
+\end{problem}
+\end{question}
 
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
+\begin{problem}
+The height of an object dropped from the roof of a building is modeled by:  $h(t) = -16t^2 + 64$, for $0 \leq t \leq 2$. Here,  $h(t)$ is the height of the object off the ground in feet $t$ seconds after the object is dropped.  Find and interpret the average rate of change of $h$ over the interval $[0,2]$.
+\end{problem}
 
-\item $F(s) = \dfrac{s + 4}{s - 3}, \; [5, 7]$
-\item $G(s) = 3s^{2} + 2s - 7, \; [-4, 2]$ \vphantom{$\dfrac{4}{x}$} \label{averagerateexerlast}
+\begin{problem}
+Using data from \href{http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html}{\underline{Bureau of Transportation Statistics}}, the average fuel economy $F(t)$ in miles per gallon for passenger cars in the US can be modeled by  $F(t) = -0.0076t^2+0.45t + 16$, $0 \leq t \leq 28$, where $t$ is the number of years since $1980$. Find and interpret the average rate of change of $F$ over the interval $[0,28]$.
+\end{problem}
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-
-
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  The height of an object dropped from the roof of a building is modeled by:  $h(t) = -16t^2 + 64$, for $0 \leq t \leq 2$. Here,  $h(t)$ is the height of the object off the ground in feet $t$ seconds after the object is dropped.  Find and interpret the average rate of change of $h$ over the interval $[0,2]$.
-
-\item Using data from \href{http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html}{\underline{Bureau of Transportation Statistics}}, the average fuel economy $F(t)$ in miles per gallon for passenger cars in the US can be modeled by  $F(t) = -0.0076t^2+0.45t + 16$, $0 \leq t \leq 28$, where $t$ is the number of years since $1980$. Find and interpret the average rate of change of $F$ over the interval $[0,28]$.
-
-
-
-\item  The temperature $T(t)$ in degrees Fahrenheit $t$ hours after 6 AM is given by:
+\begin{problem}
+The temperature $T(t)$ in degrees Fahrenheit $t$ hours after 6 AM is given by:
 
 \[ T(t) = -\frac{1}{2} t^2 + 8t+32, \quad 0 \leq t \leq 12\]
 
@@ -624,17 +642,18 @@ In Exercises \ref{averagerateexerfirst} - \ref{averagerateexerlast}, compute the
 \item  Find and interpret the average rate of temperature change between 10 AM and 6 PM.
 
 \end{enumerate}
+\end{problem}
 
-\item  Suppose $C(x) = x^2-10x+27$ represents the costs, in \textit{hundreds}, to produce $x$ \textit{thousand} pens.  Find and interpret the average rate of change as production is increased from making 3000 to 5000 pens.
+\begin{problem}
+Suppose $C(x) = x^2-10x+27$ represents the costs, in \textit{hundreds}, to produce $x$ \textit{thousand} pens.  Find and interpret the average rate of change as production is increased from making 3000 to 5000 pens.
+\end{problem}
 
-
-\item \label{IRCRocketExercise} Recall from Example \ref{ARCRocketExample} The formula $s(t) = -5t^2+100t$ for $0 \leq t \leq 20$ gives the height, $s(t)$, measured in feet, of a model rocket above the Moon's surface as a function of the time after lift-off, $t$, in seconds.
+\begin{problem}\label{IRCRocketExercise}
+Recall from Example \ref{ARCRocketExample} The formula $s(t) = -5t^2+100t$ for $0 \leq t \leq 20$ gives the height, $s(t)$, measured in feet, of a model rocket above the Moon's surface as a function of the time after lift-off, $t$, in seconds.
 
 \begin{enumerate}
 
 \item  Find and interpret the average rate of change of $s$ over the following intervals:
-
-\begin{multicols}{4}
 
 \begin{enumerate}
 
@@ -648,22 +667,23 @@ In Exercises \ref{averagerateexerfirst} - \ref{averagerateexerlast}, compute the
 
 \end{enumerate}
 
-\end{multicols}
-
 \item  What value does the average rate of change appear to be approaching as the interval shrinks closer to the value $t=15$?
 
 \item  Find the equation of the line containing $(15, 375)$ with slope $m = -50$ and graph it along with $s$ on the same set of axes using a graphing utility.  What happens as you zoom in near $(15, 375)$?
 
 \end{enumerate}
+\end{problem}
 
+\begin{problem}\label{lineshaveconstantratesofchange}
+Show the average rate of change of a function of the form $f(x) = mx+b$ over \textit{any} interval is $m$.
+\end{problem}
 
-\item  \label{lineshaveconstantratesofchange} Show the average rate of change of a function of the form $f(x) = mx+b$ over \textit{any} interval is $m$.
+\begin{problem}\label{whynoverticallineshere}
+Why doesn't the graph of the vertical line $x = b$ in the $xy$-plane represent $y$ as a function of $x$?
+\end{problem}
 
-\item Why doesn't the graph of the vertical line $x = b$ in the $xy$-plane represent $y$ as a function of $x$?\label{whynoverticallineshere}
-
-\item With help from a graphing utility, graph the following pairs of functions on the same set of axes:\footnote{See Example \ref{greatestintegerdefn} for the definition of $\lfloor x \rfloor$.}
-
-\begin{multicols}{2}
+\begin{problem}
+With help from a graphing utility, graph the following pairs of functions on the same set of axes:\footnote{See Example \ref{greatestintegerdefn} for the definition of $\lfloor x \rfloor$.}
 
 \begin{itemize}
 
@@ -672,33 +692,24 @@ In Exercises \ref{averagerateexerfirst} - \ref{averagerateexerlast}, compute the
 
 \item  $f(x) = x^2-4$ and $g(x) = \lfloor x^2 -4\rfloor$
 
-\end{itemize}
-
-\end{multicols}
-
-
-\begin{multicols}{2}
-
-\begin{itemize}
-
 \item  $f(x) = x^3$ and $g(x) = \lfloor x^3 \rfloor$
 
 \item  $f(x) = \sqrt{x}-4$ and $g(x) = \lfloor \sqrt{x} -4  \rfloor$
 
 \end{itemize}
 
-\end{multicols}
 
 Choose more functions $f(x)$ and graph $y = f(x)$ alongside $y = \lfloor f(x) \rfloor$ until you can explain how, in general, one would obtain the graph of $y = \lfloor f(x) \rfloor$ given the graph of $y = f(x)$.
+\end{problem}
 
-
-\item \label{LagrangeLinearExercise} The \href{https://en.wikipedia.org/wiki/Lagrange_polynomial}{\underline{Lagrange Interpolate}} function $L$ for two points $(x_{0}, y_{0})$ and $(x_{1}, y_{1})$ where $x_{0} \neq x_{1}$  is given by: \[L(x) = y_{0}  \dfrac{x - x_{1}}{x_{0} - x_{1}}+ y_{1}\dfrac{x - x_{0}}{x_{1} - x_{0}}\]
+\begin{problem}\label{LagrangeLinearExercise}
+The \href{https://en.wikipedia.org/wiki/Lagrange_polynomial}{\underline{Lagrange Interpolate}} function $L$ for two points $(x_{0}, y_{0})$ and $(x_{1}, y_{1})$ where $x_{0} \neq x_{1}$  is given by: \[L(x) = y_{0}  \dfrac{x - x_{1}}{x_{0} - x_{1}}+ y_{1}\dfrac{x - x_{0}}{x_{1} - x_{0}}\]
 
 \begin{enumerate}
 
 \item For each of the following pairs of points,  find  $L(x)$ using the formula above and verify each of the points lies on the graph of $y = L(x)$.
 
-\begin{multicols}{4}
+
 
 \begin{enumerate}
 
@@ -712,19 +723,16 @@ Choose more functions $f(x)$ and graph $y = f(x)$ alongside $y = \lfloor f(x) \r
 
 \end{enumerate}
 
-\end{multicols}
-
 \item  Verify that, in general, $L(x_{0}) = y_{0}$ and $L(x_{1}) = y_{1}$.
 
 \item  Show the point-slope form of a linear function, Equation \ref{linearfunctionpointslope} is equivalent to the formula given for $L(x)$ after making the identifications:  $f(x_{0}) = y_{0}$ and $m = \dfrac{y_{1} - y_{0}}{x_{1} - x_{0}}$.
 
 \end{enumerate}
+\end{problem}
 
 
 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
 
 
 
