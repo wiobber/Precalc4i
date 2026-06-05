@@ -664,7 +664,7 @@ $p(x) = -3x+340$, $0 \leq x \leq 113$.
     mark size=4pt]
     coordinates {(0,340)(113,1)};
 \node at (axis cs:0,340) [right=6pt] {$(0,340)$};
-\node at (axis cs:113,1) [right=6pt] {$(113,1)$};
+\node at (axis cs:113,1) [above=10pt,right=2pt] {$(113,1)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {$y=p(x)$.};
 \end{tikzpicture}
@@ -680,10 +680,23 @@ $p(x) = -3x+340$, $0 \leq x \leq 113$.
 
 \begin{problem}
 A local pizza store offers medium two-topping pizzas delivered for $\$6.00$ per pizza plus a $\$1.50$ delivery charge per order.  On weekends, the store runs a `game day' special:  if six or more medium two-topping pizzas are ordered, they are $\$5.50$ each with no delivery charge.  Write a piecewise-defined linear function which calculates the cost in dollars $C(p)$ of  $p$ medium two-topping pizzas delivered during a weekend.
+
+\begin{solution}
+$C(p) = \left\{ \begin{array}{rcl} 6p + 1.5 & \mbox{ if } & 1 \leq p \leq 5 \\
+5.5p & \mbox{ if } & p\geq 6
+\end{array} \right.$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 A restaurant offers a buffet which costs $\$15$ per person.  For parties of $10$ or more people, a group discount applies, and the cost is $\$12.50$ per person.   Write a piecewise-defined linear function which calculates the total bill $T(n)$ of a party of $n$ people who all choose the buffet.
+
+\begin{solution}
+$T(n) = \left\{ \begin{array}{rcl} 15n & \mbox{ if } & 1 \leq n \leq 9 \\
+12.5n & \mbox{ if } & n \geq 10 \\
+\end{array} \right.$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -692,10 +705,22 @@ A mobile plan charges a base monthly rate of $\$10$ for the first $500$ minutes 
 \begin{hint}
 You may wish to refer to number \ref{piecewisemobile} for inspiration.
 \end{hint}
+
+\begin{solution}
+$C(m) = \left\{ \begin{array}{rcl} 10 & \mbox{ if } & 0 \leq m \leq 500 \\
+10+0.15(m-500) & \mbox{ if } & m > 500
+\end{array} \right.$
+\end{solution}
 \end{problem}
  
 \begin{problem}
 The local pet shop charges $12$\textcent \, per cricket up to 100 crickets, and $10$\textcent \, per cricket thereafter.  Write a piecewise-defined linear function which calculates the price in dollars $P(c)$ of purchasing $c$ crickets.
+
+\begin{solution}
+$P(c) = \left\{ \begin{array}{rcl} 0.12c & \mbox{ if } & 1 \leq c \leq 100 \\
+12 + 0.1(c-100) & \mbox{ if } & c > 100
+\end{array} \right.$
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -762,9 +787,149 @@ Write a piecewise-defined linear function which describes the depth of the pool,
 
 \item  the distance (in feet) from the edge of the shallow end of the pool, $d$.
 
+\begin{solution}
+\[
+D(d) = \left\{ \begin{array}{rcl} 8 & \mbox{ if } & 0 \leq d \leq 15 \\
+-\frac{1}{2} \, d + \frac{31}{2} & \mbox{ if } & 15 \leq d \leq 27 \\
+2 & \mbox{ if } & 27 \leq d \leq 37  \\
+\end{array} \right.\]
+\end{solution}
+
 \item  the distance (in feet) from the edge of the deep end of the pool, $s$.
 
+\begin{solution}
+\[
+D(s) = \left\{ \begin{array}{rcl} 2 & \mbox{ if } & 0 \leq s \leq 10 \\
+\frac{1}{2} \, s -3 & \mbox{ if } & 10 \leq s \leq 22 \\
+8 & \mbox{ if } & 22 \leq s \leq 37  \\
+\end{array} \right.\]
+\end{solution}
+
 \item  Graph each of the functions in (a) and (b).  Discuss with your classmates how to transform one into the other and how they relate to the diagram of the pool.
+
+
+\begin{center}
+
+\begin{tabular}{cc}
+
+%---------------- Left Graph ----------------%
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-1, xmax=13,
+    ymin=-1, ymax=4,
+    width=3in,
+    height=3in,
+    xtick={5,9,12},
+    xticklabels={$15$,$27$,$37$},
+    ytick={1,3},
+    yticklabels={$2$,$8$},
+    tick style={line width=1.2pt},
+    major tick length=6pt,
+    axis x line=center,
+    axis y line=center,
+    x axis line style={-{Latex[length=8pt,width=6pt]}, line width=1.2pt},
+    y axis line style={-{Latex[length=8pt,width=6pt]}, line width=1.2pt},
+    xlabel={$d$},
+    ylabel={$y$},
+    every axis x label/.style={
+        at={(current axis.right of origin)},
+        anchor=west
+    }
+]
+
+\addplot[
+    blue,
+    line width=3pt
+]
+coordinates {
+    (0,3)
+    (5,3)
+    (9,1)
+    (12,1)
+};
+
+\addplot[
+    only marks,
+    mark=*,
+    mark size=4pt
+]
+coordinates {
+    (0,3)
+    (5,3)
+    (9,1)
+    (12,1)
+};
+
+\end{axis}
+\end{tikzpicture}
+
+&
+
+\hspace{0.5in}
+
+%---------------- Right Graph ----------------%
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-1, xmax=13,
+    ymin=-1, ymax=4,
+    width=3in,
+    height=3in,
+    xtick={3,7,12},
+    xticklabels={$10$,$22$,$37$},
+    ytick={1,3},
+    yticklabels={$2$,$8$},
+    tick style={line width=1.2pt},
+    major tick length=6pt,
+    axis x line=center,
+    axis y line=center,
+    x axis line style={-{Latex[length=8pt,width=6pt]}, line width=1.2pt},
+    y axis line style={-{Latex[length=8pt,width=6pt]}, line width=1.2pt},
+    xlabel={$s$},
+    ylabel={$y$},
+    every axis x label/.style={
+        at={(current axis.right of origin)},
+        anchor=west
+    }
+]
+
+\addplot[
+    blue,
+    line width=3pt
+]
+coordinates {
+    (12,3)
+    (7,3)
+    (3,1)
+    (0,1)
+};
+
+\addplot[
+    only marks,
+    mark=*,
+    mark size=4pt
+]
+coordinates {
+    (12,3)
+    (7,3)
+    (3,1)
+    (0,1)
+};
+
+\end{axis}
+\end{tikzpicture}
+
+\\[1ex]
+
+\multicolumn{1}{c}{{\Large $y=D(d)$}}
+&
+\multicolumn{1}{c}{{\Large $y=D(s)$}}
+
+\end{tabular}
+
+\end{center}
+
 
 \end{enumerate}
 \end{problem}
