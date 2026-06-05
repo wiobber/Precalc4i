@@ -936,6 +936,10 @@ coordinates {
 
 \begin{problem}\label{identityexercise}
 The function defined by $I(x) = x$ is called the \index{function ! identity} Identity Function.   Thinking from a procedural perspective, explain a possible origin of this name.
+
+\begin{solution}
+Since $I(x) = x$ for all real numbers $x$, the function $I$ doesn't change the `identity' of the input at all.
+\end{solution}
 \end{problem}
   
 \begin{problem}\label{onlyoneyintexercise}
@@ -944,22 +948,42 @@ Why must the graph of a function $y = f(x)$ have at most one $y$-intercept?
 \begin{hint}
 Consider what would happen graphically if there were more than one \ldots
 \end{hint}
+
+\begin{solution}
+If a graph contains more than one $y$-intercept, it would violate the Vertical Line Test since $x=0$ would be matched with (at least) two different $y$-values.
+\end{solution}
 \end{problem}
  
 \begin{problem}
 Why is a discussion of vertical lines omitted when discussing functions?
+
+\begin{solution}
+Vertical Lines fail the Vertical Line Test.
+\end{solution}
 \end{problem} 
 
 \begin{problem}\label{xinterceptoflinear}
 Find a formula for the $x$-intercept of the graph of $f(x) = mx + b$.  Assume $m \neq 0$.
+
+\begin{solution}
+$\left(- \frac{b}{m}, 0 \right)$.  (Note the importance here of $m \neq 0$.)
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{xinterceptformoflinear}
 Suppose $(c,0)$ is the $x$-intercept of a linear function $f$.  Use the point-slope form of a linear function, Equation \ref{linearfunctionpointslope} to show $f(x) = m(x-c)$.  This is the `slope $x$-intercept' form of the linear function. 
+
+\begin{solution}
+Plugging in $(c,0)$ for $(x_{0}, f(x_{0}))$, we get $f(x) = f(x_{0}) + m (x - x_{0}) = 0 + m(x-c)$ or $f(x) = m(x-c)$.
+\end{solution}
 \end{problem} 
 
 \begin{problem}
 Prove that for all linear functions $L$ with with slope $3$, $L(120) = L(100) + 60$.
+
+\begin{solution}
+Since $L$ is linear with slope $3$, $L(x) = L(x_{0}) + m \Delta x = L(100) + (3)(120-100) = L(100)+60$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -970,13 +994,27 @@ Find the slopes between the following points from the data set given in Example 
 
 \item  $(0, 64)$, $(4, 75)$
 
+\begin{solution}
+$m = \frac{75-64}{4-0} = 2.75$
+\end{solution}
+
 \item  $(4, 75)$, $(8, 83)$
+
+$m=\answer{2}$
 
 \item  $(8, 83)$, $(10, 83)$
 
+$m=\answer{0}$
+
 \item  $(10, 83)$, $(12, 82)$
 
+$m=\answer{-\frac{1}{2}}$
+
 \end{enumerate}
+
+\begin{solution}
+The first two points contributed to a regression line slope of $m = 2.55$;  the last two points contributed to a regression line slope of $m=-0.25$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -993,7 +1031,13 @@ Population & 197200 & 212801 & 215499 & 227511 \\ \hline
 
 \item  Find the least squares regression line for these data and comment on the goodness of fit.\footnote{We'll develop more sophisticated models for the growth of populations in Chapter \ref{ExponentialandLogarithmicFunctions}.  For the moment, we use a theorem from Calculus to approximate those functions with lines.} Interpret the slope of the line of best fit.
 
+\begin{solution}
+$y = 936.31x - 1645322.6$ with $r=0.9696$ which indicates a good fit.  The slope $936.31$ indicates Lake County's population is increasing at a rate of (approximately) 936 people per year.
+\end{solution}
+
 \item  Use the regression line to predict the population of Lake County in 2010.  (The recorded figure from the 2010 census is $230,\!041$)
+
+
 
 \item  Use the regression line to predict when the population of Lake County will reach $250,\!000$.
 
