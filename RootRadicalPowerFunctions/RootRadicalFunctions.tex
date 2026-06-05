@@ -37,9 +37,11 @@ As with polynomial functions and rational functions, we begin our study of funct
 
 \smallskip
 
-The domain restriction for even indexed roots means that, once again, we are restricting our attention to \textit{real} numbers.\footnote{Although we discussed imaginary numbers in Section \ref{ComplexZeros}, we restrict our attention to real numbers in this section.  See the epilogue on page \pageref{complexepilogue} for more details.}  We graph a few members of the root function family below, and quickly notice that, as with the monomial, and, more generally, the Laurent monomial functions, the behavior of the root functions depends primarily on whether the root is even or odd.  
+The domain restriction for even indexed roots means that, once again, we are restricting our attention to \textit{real} numbers.\footnote{Although we discussed imaginary numbers in Section \ref{ComplexZeros}, we restrict our attention to real numbers in this section.  See the epilogue on page \pageref{complexepilogue} for more details.}  We graph a few members of the root function family below using Desmos.   As with the monomial, and, more generally, the Laurent monomial functions, the behavior of the root functions depends primarily on whether the root is even or odd.  
 
-In addition to having the common domain of $[0, \infty)$, the graphs of $f(x) = \sqrt[n]{x}$ for even indices $n$ all share the points $(0,0)$ and $(1,1)$. As $n$ increases, the functions become `steeper' near the $y$-axis and `flatter' as $x \rightarrow \infty$.  To show $f(x) \rightarrow \infty$ as $x \rightarrow \infty$, we show, more generally, the range of $f$ is $[0, \infty)$.  Indeed, if $c \geq 0$ is a real number, then $f(c^n) = \sqrt[n]{c^n} = c$ so $c$ is in the range of $f$.  Note that $f$ is increasing:  that is, if $a<b$, then $f(a) = \sqrt[n]{a} < \sqrt[n]{b} = f(b)$. This property is useful in solving certain types of polynomial inequalities.\footnote{See Exercise \ref{rootstosolvepolyineq}.}
+As we select the graphs for indices $n = 2$, $n=4$, and $n=6$, we observe that in addition to each function having the common domain $[0, \infty)$, the graphs  all share the points $(0,0)$ and $(1,1)$. As the index $n$ increases, the functions become `steeper' near the $y$-axis and `flatter' as $x \rightarrow \infty$.  These characteristics are common to all functions of the form $f(x) = \sqrt[n]{x}$.
+
+While the graphs appear to `flatten out' as $x \rightarrow \infty$, it turns out that $f(x) \rightarrow \infty$ as $x \rightarrow \infty$. First note that if $c \geq 0$ is a real number, then $f(c^n) = \sqrt[n]{c^n} = c$ so $c$ is in the range of $f$.  This shows the range of $f$ is $[0, \infty)$.  Next note that $f$ is increasing:  that is, if $a<b$, then $f(a) = \sqrt[n]{a} < \sqrt[n]{b} = f(b)$. (This property is useful in solving certain types of polynomial inequalities.\footnote{See Exercise \ref{rootstosolvepolyineq}.})  Hence, we get that $\ds{\lim_{x \rightarrow \infty} f(x) = \infty}$.
 
 % https://www.desmos.com/calculator/twightirsz
 
@@ -135,7 +137,9 @@ In addition to having the common domain of $[0, \infty)$, the graphs of $f(x) = 
 
 % \end{tabular}
 
-The functions $f(x) = \sqrt[n]{x}$ for odd natural numbers $n \geq 3$ also follow a predictable trend - steepening near $x = 0$ and flattening as $x \rightarrow -\infty$ and $x \rightarrow -\infty$.  The range for these functions is $(-\infty, \infty)$ since if $c$ is any real number, $f(c^n) = \sqrt[n]{c^n} = c$, so $c$ is in the range of $f$.  Like the even indexed roots, the odd indexed roots are also increasing.  Moreover, these graphs appear to be symmetric about the origin.  Sure enough, when $n$ is odd,  $f(-x) = \sqrt[n]{-x} = -\sqrt[n]{x} = -f(x)$ so $f$ is an odd function.
+The functions $f(x) = \sqrt[n]{x}$ for odd natural numbers $n \geq 3$ also follow a predictable trend - steepening near $x = 0$ and flattening as $x \rightarrow -\infty$ and $x \rightarrow -\infty$.  The range for these functions is $(-\infty, \infty)$ since if $c$ is any real number, $f(c^n) = \sqrt[n]{c^n} = c$, so $c$ is in the range of $f$.  Like the even indexed roots, the odd indexed roots are also increasing, hence $\ds{\lim_{x \rightarrow \infty} f(x) = \infty}$ and $\ds{\lim_{x \rightarrow -\infty} f(x) = -\infty}$.  
+
+Moreover, these graphs appear to be symmetric about the origin.  Sure enough, when $n$ is odd,  $f(-x) = \sqrt[n]{-x} = -\sqrt[n]{x} = -f(x)$ so $f$ is an odd function.
 
 
 % \begin{tabular}{ccc}
@@ -249,7 +253,7 @@ At this point, you're probably expecting a theorem like Theorems \ref{linearabsv
 
 \end{itemize}
 
-For a function like $F(x) = \sqrt{4x-12} + 1 = \sqrt{4(x-6)} + 1 = \sqrt{4}\sqrt{x-3} + 1 = 2 \sqrt{x-3} + 1$, this approach works fine.   However, if the coefficient of $x$ is \textit{negative},   for example, $F(x) = \sqrt{1-x} = \sqrt{(-1)(x-1)}$ we get stuck the product rule for radicals doesn't extend to negative quantities when the index is even.\footnote{Since, otherwise, $-1 = i^2 = i \cdot i = \sqrt{-1}\sqrt{-1} = \sqrt{(-1)(-1)} = \sqrt{1} = 1$, a contradition.}   Hence we add an extra parameter which means we have an extra step.  We state Theorem \ref{linearrootgraphs} below.
+For a function like $F(x) = \sqrt{4x-12} + 1 = \sqrt{4(x-6)} + 1 = \sqrt{4}\sqrt{x-3} + 1 = 2 \sqrt{x-3} + 1$, this approach works fine.   However, if the coefficient of $x$ is \textit{negative},   for example, $F(x) = \sqrt{1-x} = \sqrt{(-1)(x-1)}$ we get stuck the product rule for radicals doesn't extend to negative quantities when the index is even.\footnote{Since, otherwise, $-1 = i^2 = i \cdot i = \sqrt{-1}\sqrt{-1} = \sqrt{(-1)(-1)} = \sqrt{1} = 1$, a contradiction.}   Hence we add an extra parameter which means we have an extra step.  We state Theorem \ref{linearrootgraphs} below.
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -310,7 +314,7 @@ We  demonstrate Theorem \ref{linearrootgraphs} in the following example.
 
 \begin{enumerate}
 
-\item  We begin by rewriting the expression for $f(x)$ in the form prescribed Theorem \ref{linearrootgraphs}:  $f(x) = -2 \sqrt[3]{x+3} + 1$.  We identify $n=3$, $a = -2$, $b = 1$, $h = -3$ and $k = 1$.  
+\item  We begin by rewriting the expression for $f(x)$ in the form prescribed Theorem \ref{linearrootgraphs}:  $f(x) = -2 \sqrt[3]{x+3} + 1$.  We identify $n=3$, $a = -2$, $b = 1$, $h = -3$ and $k = 1$.  GeoGebra helps us visualize the steps prescribed in Theorem \ref{linearrootgraphs}  to transform the graph of $y = \sqrt[3]{x}$ to the graph of $f$.  We track the points $(-1,1)$, $(0,0)$ and $(1,1)$ through each step.
 
 Step 1:   add $-3$ to each of the $x$-coordinates of each of the points on the graph of $y=\sqrt[3]{x}$:
 
@@ -524,7 +528,7 @@ Step 1:   add $-3$ to each of the $x$-coordinates of each of the points on the g
  
  We get the domain and range of $f$ are $(-\infty, \infty)$.
  
- \item  For $g(t) = \dfrac{\sqrt{1-2t}}{4} = \frac{1}{4} \sqrt{-2t+1}$, we identify $n=2$, $a = \frac{1}{4}$, $b = -2$, $h = -1$ and $k =0$.  Since we are asked to label \textit{three} points on the graph, we track $(4,2)$ along with $(0,0)$ and $(1,1)$.\footnote{As $\sqrt{4} = 2$, we know $(4,2)$ is on the graph of $y = \sqrt{t}$.}
+ \item  For $g(t) = \dfrac{\sqrt{1-2t}}{4} = \frac{1}{4} \sqrt{-2t+1}$, we identify $n=2$, $a = \frac{1}{4}$, $b = -2$, $h = -1$ and $k =0$.  Once again, GeoGebra helps is visualize the the steps taken to transform the graph of $y = \sqrt{t}$ to the graph of $y = g(t)$. Since we are asked to label \textit{three} points on the graph, we track $(4,2)$ along with $(0,0)$ and $(1,1)$.\footnote{As $\sqrt{4} = 2$, we know $(4,2)$ is on the graph of $y = \sqrt{t}$.}
 
 
 Step 1:   add $-1$ to each of the $t$-coordinates of each of the points on the graph of $y=\sqrt{t}$:
@@ -801,11 +805,16 @@ To find the $x$-intercepts, we find the zeros of $f$ by solving $f(x) =  3x \sqr
 
 To determine the end behavior, we first consider $f(x)$ as $x \rightarrow  \infty$.  Using `number sense,' \footnote{remember this means we use the adjective `big' here to mean large in \textit{absolute value}} we have $f(x) = 3x \sqrt[3]{2-x} = 3x \sqrt[3]{-x+2} \approx (\text{big $(+)$}) \sqrt[3]{\text{big $(-)$}} = (\text{big $(+)$})(\text{big $(-)$}) = \text{big $(-)$}$, so $\ds{\lim_{x \rightarrow \infty} f(x) = -\infty}$.  As $x \rightarrow -\infty$ we get $f(x) = 3x \sqrt[3]{-x+2} \approx (\text{big $(-)$}) \sqrt[3]{\text{big $(+)$}} = (\text{big $(-)$})(\text{big $(+)$}) = \text{big $(-)$}$, so  $\ds{\lim_{x \rightarrow -\infty} f(x) = -\infty}$ as well.
 
-We graph $f$ below on the left.  From the graph, the range appears to be $(-\infty, 3.572]$ with a local maximum (which also happens to be \textit{the} maximum) at $(1.5, 3.572)$.  We also see $f$ appears to be increasing on $(-\infty, 1.5)$ and decreasing on $(1.5, \infty)$.  It is also worth noting that there appears to be `unusual steepness' near the $x$-intercept $(2,0)$.  We invite the reader to zoom in on the graph near $(2,0)$ to see that the function is `locally vertical.'\footnote{Of course, the Vertical Line Test prohibits the graph from actually \textit{being} a vertical line.  This behavior is more precisely defined and more closely studied in Calculus.}
+We graph $f$ below using Desmos.  From the graph, the range appears to be $(-\infty, 3.572]$ with a local maximum (which also happens to be \textit{the} maximum) at $(1.5, 3.572)$.  We also see $f$ appears to be increasing on $(-\infty, 1.5)$ and decreasing on $(1.5, \infty)$.  It is also worth noting that there appears to be `unusual steepness' near the $x$-intercept $(2,0)$.  We invite the reader to zoom in on the graph near $(2,0)$ to see that the function is `locally vertical.'\footnote{Of course, the Vertical Line Test prohibits the graph from actually \textit{being} a vertical line.  This behavior is more precisely defined and more closely studied in Calculus.}
 
-\smallskip
+% https://www.desmos.com/calculator/b8jy0qbed8
+\begin{center}
+    \desmos{b8jy0qbed8}{800}{600}
+\end{center}
 
-To create a sign diagram for $f(x)$, we note that the function has zeros $x = 0$ and $x=2$. For $x<0$, $f(x) < 0$ or $(-)$, for $0<x<2$, $f(x) > 0$ or $(+)$, and for $x>2$, $f(x) < 0$ or $(-)$. The sign diagram for $f(x)$ is below on the right. 
+%The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
+
+To create a sign diagram for $f(x)$, we note that the function has zeros $x = 0$ and $x=2$. For $x<0$, $f(x) < 0$ or $(-)$, for $0<x<2$, $f(x) > 0$ or $(+)$, and for $x>2$, $f(x) < 0$ or $(-)$.  The sign diagram for $f(x)$ is below.
 
 \begin{center}
 
@@ -829,12 +838,7 @@ To create a sign diagram for $f(x)$, we note that the function has zeros $x = 0$
 \end{tikzpicture}
 \end{center}
 
-% https://www.desmos.com/calculator/b8jy0qbed8
-\begin{center}
-    \desmos{b8jy0qbed8}{800}{600}
-\end{center}
 
-%The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
 \item  The index of the radical  in the expression for $g(t)$ is odd, so our only concern is the denominator.  Setting $t+1=0$ gives $t=-1$, which we exclude, so our domain is $\{ t \in \mathbb{R} \, | \, t \neq -1\}$ or using interval notation, $(-\infty, -1) \cup (-1, \infty)$.    
 
@@ -844,7 +848,12 @@ To find the $t$-intercepts of the graph of $g$, we find the zeros of $g$ by sett
 
 To determine the end behavior, we note that as $t \rightarrow  -\infty$ or $t \rightarrow  \infty$,  $\frac{8t}{t+1} \approx \frac{8t}{t} = 8$.  Since  $g(t) = \sqrt[3]{\frac{8t}{t+1}}$  it stands to reason that $\ds{\lim_{ t \rightarrow -\infty} g(t) =  \sqrt[3]{8} = 2}$ and, likewise, $\ds{\lim_{ t \rightarrow \infty} g(t) = 2}$  This suggests the graph of $y = g(t)$ has a horizontal asymptote at $y = 2$.
 
-We graph $y = g(t)$ below on the left. The graph confirms our suspicions about the asymptotes $t = -1$ and $y = 2$.  Moreover, the range appears to be $(-\infty, 2) \cup (2, \infty)$.  
+We graph $y = g(t)$ below using Desmos. The graph confirms our suspicions about the asymptotes $t = -1$ and $y = 2$.  Moreover, the range appears to be $(-\infty, 2) \cup (2, \infty)$.  
+
+% https://www.desmos.com/calculator/utcpj39vk8
+\begin{center}
+    \desmos{utcpj39vk8}{800}{600}
+\end{center}
 
 We could check if the graph ever crosses its horizontal asymptote by attempting to solve $g(t) =  \sqrt[3]{\frac{8t}{t+1}} = 2$.  Cubing both sides and clearing denominators gives $8t = 8(t+1)$ which gives $0 = 8$, a contradiction.  This proves $2$ is not in the range, as we had suspected. 
 
@@ -852,7 +861,7 @@ Scanning the graph,  there  appears to be no local extrema, and, moreover,  the 
 
 \smallskip
 
-To create a sign diagram for $g(t)$, we note that the function is undefined when $t = -1$ (so we place a `\textinterrobang' above it) and has a zero $t=0$.  When  $t<-1$, $g(t) > 0$ or $(+)$, for $-1<t<0$, $g(t)<0$ or $(-)$, and for $t>0$, $g(t) > 0$ or $(+)$.  Below on the right is a sign diagram for $g(t)$.
+To create a sign diagram for $g(t)$, we note that the function is undefined when $t = -1$ (so we place a `\textinterrobang' above it) and has a zero $t=0$.  When  $t<-1$, $g(t) > 0$ or $(+)$, for $-1<t<0$, $g(t)<0$ or $(-)$, and for $t>0$, $g(t) > 0$ or $(+)$.   The sign diagram for $g(t)$ is below.
 
 \begin{center}
 % \input{RootRadicalFunctions_pic20.tex}
@@ -875,10 +884,7 @@ To create a sign diagram for $g(t)$, we note that the function is undefined when
 \end{tikzpicture}
 \end{center} 
 
-% https://www.desmos.com/calculator/utcpj39vk8
-\begin{center}
-    \desmos{utcpj39vk8}{800}{600}
-\end{center}
+
 
  \item  The expression for $h(x) = \frac{3x}{\sqrt{x^2 + 1}}$ has both a denominator and an even-indexed radical, so we have to be extra cautious here.  Fortunately for us, the quantity $x^2+1 >0$ for all real numbers $x$. Not only does this mean $\sqrt{x^2+1}$ is always defined, it also tells us $\sqrt{x^2+1}>0$ for all $x$, too.  This means the domain of $h$ is all real numbers, $(-\infty, \infty)$.
  
@@ -886,13 +892,18 @@ Solving for the zeros of $h$ gives only $x = 0$, and we find, once again, $(0,0)
 
 Moving on to end behavior, as $x \rightarrow -\infty$ or  $x \rightarrow \infty$, the term $x^2$ is the dominant term in the radicand in the denominator. As such, $h(x) = \frac{3x}{\sqrt{x^2 + 1}} \approx \frac{3x}{\sqrt{x^2}} = \frac{3x}{|x|}$.  As $x \rightarrow -\infty$, $|x| = -x$ (since $x<0$) and hence, $h(x)\approx  \frac{3x}{-x} = -3$, so $\ds{\lim_{x \rightarrow -\infty} h(x) =  -3}$.   As $x \rightarrow \infty$, $|x| = x$ (since $x>0$), so $h(x) \approx \frac{3x}{x} = 3$, so $\ds{\lim_{x \rightarrow \infty} h(x) =  3}$. 
  
-  This analysis suggests the graph of $y=h(x)$ has not one, but \textit{two} horizontal asymptotes.\footnote{We warned you this was coming \ldots see the discussion following Theorem \ref{hathm} in Section \ref{IntroRational}.} The graph of $h$ below on the left bears this out.
+  This analysis suggests the graph of $y=h(x)$ has not one, but \textit{two} horizontal asymptotes.\footnote{We warned you this was coming \ldots see the discussion following Theorem \ref{hathm} in Section \ref{IntroRational}.} The graph of $h$ below bears this out.
+
+  % https://www.desmos.com/calculator/gkloclketw
+\begin{center}
+    \desmos{gkloclketw}{800}{600}
+\end{center}
 
 From the graph, we see the range of $h$ appears to be $(-3,3)$.  Attempting to solve $h(x) = \frac{3x}{\sqrt{x^2 + 1}} = -3$ or  $h(x) = \frac{3x}{\sqrt{x^2 + 1}} = 3$ gives, in either case, $9x^2 = 9(x^2+1)$ which reduces to $0 = 9$, a contradiction.  Hence, the graph of $y = h(x)$ never reaches its horizontal asymptotes. Moreover, $h$ appears to be always increasing, with no local extrema or `unusual' steepness.  One last remark:  it appears as if the graph of $h$ is symmetric about the origin.  We check $h(-x) = \frac{3(-x)}{\sqrt{(-x)^2+1}} = - \frac{3x}{\sqrt{x^2 + 1}} = -h(x)$ which verifies $h$ is odd.
 
 \smallskip
 
-Since the domain of $h$ is all real number and the only zero of $h$ is $x=0$, the sign diagram for $h(x)$ is fairly straight forward.  For $x<0$, $h(x)<0$ or $(-)$ and for $x>0$, $h(x) >0$ or $(+)$.  The sign diagram for $h(x)$ is below on the right.
+Since the domain of $h$ is all real number and the only zero of $h$ is $x=0$, the sign diagram for $h(x)$ is fairly straight forward.  For $x<0$, $h(x)<0$ or $(-)$ and for $x>0$, $h(x) >0$ or $(+)$.  The sign diagram for $h(x)$ is below.
 
 \begin{center}
 
@@ -913,10 +924,7 @@ Since the domain of $h$ is all real number and the only zero of $h$ is $x=0$, th
 
 \end{center} 
 
-% https://www.desmos.com/calculator/gkloclketw
-\begin{center}
-    \desmos{gkloclketw}{800}{600}
-\end{center}
+
 
 \item  The first thing to note about the expression  $r(t) = t^{-1} \sqrt{16t^4-1}$ is that $t^{-1} = \frac{1}{t}$.  Hence, we must exclude $t=0$ from the domain straight away. Next, we have an even-indexed radical expression: $\sqrt{16t^4-1}$.  In order for this to return a real number, we require  $16t^4-1 \geq 0$.  Instead of using a sign diagram to solve this,\footnote{See Section \ref{RealZeros}} we opt instead to  \textit{carefully} use properties of radicals.  Isolating $t^4$, we have $t^4 \geq \frac{1}{16}$.  Since the root functions are increasing, we can apply the fourth root to both sides and preserve the inequality:  $\sqrt[4]{t^4} \geq \sqrt[4]{\frac{1}{16}}$ which gives\footnote{Recall: $\sqrt[n]{x^n} = |x|$, not $x$,  if $n$ is even.} $|t| \geq \frac{1}{2}$. Note that since $t =0$ does \textit{not} satisfy this inequality, restricting $t$ in this manner takes care of  \textit{both} domain issues, so the domain is  $\left(-\infty, -\frac{1}{2} \right] \cup \left[\frac{1}{2}, \infty \right)$.   
 
@@ -924,11 +932,16 @@ Next, we look for zeros.  Setting $r(t) = t^{-1} \sqrt{16t^4-1} = \frac{\sqrt{16
 
 Concerning end behavior, we note the term $16t^4$ dominates the radicand $\sqrt{16t^4-1}$ as $t \rightarrow - \infty$ or $t \rightarrow \infty$ ,  hence, $r(t) = \frac{\sqrt{16t^4-1}}{t} \approx \frac{\sqrt{16t^4}}{t} = \frac{4t^2}{t} = 4t$.  This suggests the graph of $y = r(t)$ has a slant asymptote with slope $4$.\footnote{Note: this analysis suggests the slant asymptote is $y = 4t+b$, but from this analysis, we cannot determine the value of $b$.  As with slant asymptotes in Section \ref{IntroRational}, we'd need to perform a more detailed analysis which we omit in this case owing to the complexity of the function. (You'll have the tools in Calculus, however!)}  At this point, we can at least write $\ds{\lim_{t \rightarrow -\infty} r(t) = -\infty}$. and $\ds{\lim_{t \rightarrow \infty} r(t) = \infty}$.
 
-We graph $y=r(t)$ below on the left.  We see the range appears to be all real numbers, $(-\infty, \infty)$.  It appears as if $r$ is increasing on $\left(-\infty, -\frac{1}{2} \right]$ and again on $\left[\frac{1}{2}, \infty \right)$.  The graph does appear to be asymptotic to $y = 4t$, and it also appears to be symmetric about the origin.  Sure enough, we find  $r(-t) = \frac{\sqrt{16(-t)^4-1}}{-t}  = - \frac{\sqrt{16t^4-1}}{t} = -r(t)$, proving $r$ is an odd function.
+We graph $y=r(t)$ below.  We see the range appears to be all real numbers, $(-\infty, \infty)$.  It appears as if $r$ is increasing on $\left(-\infty, -\frac{1}{2} \right]$ and again on $\left[\frac{1}{2}, \infty \right)$.  The graph does appear to be asymptotic to $y = 4t$, and it also appears to be symmetric about the origin.  Sure enough, we find  $r(-t) = \frac{\sqrt{16(-t)^4-1}}{-t}  = - \frac{\sqrt{16t^4-1}}{t} = -r(t)$, proving $r$ is an odd function.
 
-\smallskip
+% https://www.desmos.com/calculator/usuiezrrvm
+\begin{center}
+    \desmos{usuiezrrvm}{800}{600}
+\end{center}
 
-To construct the sign diagram for $r(t)$ we note $r$ has two zeros, $t = \pm \frac{1}{2}$.  For $t < \frac{1}{2}$, $r(t) < 0$ or $(-)$ and when $t > \frac{1}{2}$, $r(t) > 0$ or $(+)$.  When $-\frac{1}{2} < t < \frac{1}{2}$, $r$ is undefined so we have removed that segment from the diagram, as seen below on the right.
+
+
+To construct the sign diagram for $r(t)$ we note $r$ has two zeros, $t = \pm \frac{1}{2}$.  For $t < \frac{1}{2}$, $r(t) < 0$ or $(-)$ and when $t > \frac{1}{2}$, $r(t) > 0$ or $(+)$.  When $-\frac{1}{2} < t < \frac{1}{2}$, $r$ is undefined so we have removed that segment from the diagram, as seen below.
 
 \begin{center}
 
@@ -952,11 +965,7 @@ To construct the sign diagram for $r(t)$ we note $r$ has two zeros, $t = \pm \fr
 \end{tikzpicture}
 
 \end{center} 
- % https://www.desmos.com/calculator/usuiezrrvm
-\begin{center}
-    \desmos{usuiezrrvm}{800}{600}
-\end{center}
-
+ 
 \qed
 \end{enumerate}
 
@@ -967,13 +976,6 @@ We end this section with a classic application of root functions.
 
 \begin{example} \label{SasquatchCable} Carl wishes to get high speed internet service installed in his remote Sasquatch observation post located $30$ miles from Route $117$. The nearest junction box is located $50$ miles down the road from the post, as indicated in the diagram below.  Suppose it costs $\$ 15$ per mile to run cable along the road and $\$ 20$ per mile to run cable off of the road.
 
-\begin{enumerate}
-
-\item   Find an expression $C(x)$ which computes the cost of connecting the Junction Box to the Outpost as a function of $x$, the number of miles the cable is run along Route $117$ before heading off road directly towards the Outpost.  Determine a reasonable applied domain for the problem.
-
-\item  Use your calculator to graph $y=C(x)$ on its domain.  What is the minimum cost?  How far along Route $117$ should the cable be run before turning off of the road?
-
-\end{enumerate}
 
 \begin{center}
 % \input{RootRadicalFunctions_pic23.tex}
@@ -1017,6 +1019,16 @@ We end this section with a classic application of root functions.
 \end{center}
 
 
+\begin{enumerate}
+
+\item   Find an expression $C(x)$ which computes the cost of connecting the Junction Box to the Outpost as a function of $x$, the number of miles the cable is run along Route $117$ before heading off road directly towards the Outpost.  Determine a reasonable applied domain for the problem.
+
+\item  Use your calculator to graph $y=C(x)$ on its domain.  What is the minimum cost?  How far along Route $117$ should the cable be run before turning off of the road?
+
+\end{enumerate}
+
+
+
 
 
 
@@ -1033,13 +1045,25 @@ Our next goal is to determine $z$ in terms of $x$.  The diagram suggests we can 
 
 Hence, the cost as a function of $x$  is given by $C(x) = 15x + 20\sqrt{(50-x)^2+900}$.  From the context of the problem, we have $0 \leq x \leq 50$.
 
+
+
+\item  Adjusting the slider for the variable $x$ on the GeoGebra 
+
+
 % https://www.geogebra.org/classic/usjkbqza
 
 \begin{center}
 \geogebra{usjkbqza}{800}{600}
 \end{center}
 
-\item  We graph $y=C(x)$ below and find our (local) minimum to be at the point $(15.98, 1146.86)$.  Here the $x$-coordinate tells us that in order to minimize cost, we should run $15.98$ miles of cable along Route 117 and then turn off of the road and head towards the outpost. The $y$-coordinate tells us that the minimum cost, in dollars, to do so is $\$1146.86$.  The ability to stream live SasquatchCasts?  Priceless.
+
+
+
+
+
+We graph $y=C(x)$ below and find our (local) minimum to be at the point $(15.98, 1146.86)$.  Here the $x$-coordinate tells us that in order to minimize cost, we should run $15.98$ miles of cable along Route 117 and then turn off of the road and head towards the outpost. The $y$-coordinate tells us that the minimum cost, in dollars, to do so is $\$1146.86$.  The ability to stream live SasquatchCasts?  Priceless.
+
+
 
  \qed
 

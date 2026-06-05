@@ -193,11 +193,28 @@ The \index{unit step function}\textbf{unit step function} is defined as $U(t) = 
 
 \item  Graph $y = U(t)$.
 
+\href{https://www.desmos.com/calculator/qfk1m5krp9}{Click here to see the graph on Desmos.}
+
 \item  State the domain and range of $U$.
+
+\begin{solution}
+domain: $(-\infty, \infty)$, range:  $\{ 0, 1\}$
+\end{solution}
 
 \item  List the interval(s) over which $U$ is increasing, decreasing, and/or constant.
 
+\begin{solution}
+$U$ is constant on $(-\infty, 0)$ and $[0, \infty)$.
+\end{solution}
+
 \item  Write $U(t-2)$ as a piecewise defined function and graph.
+
+ $U(t-2) = \begin{cases}
+    0 &  \text{if $t<2$, } \\
+    1  & \text{if $t \geq 2$.} \\
+   \end{cases}$
+
+\href{https://www.desmos.com/calculator/7frkwxnzzv}{Click here to see the graph on Desmos.}
 
 \end{enumerate}
     
@@ -231,6 +248,8 @@ In Exercises \ref{findformulalinearfirstex} - \ref{findformulalinearlastex}, fin
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
 \end{tikzpicture}
+
+$y=\answer{-3}$
 
 \end{problem} 
 
@@ -305,10 +324,15 @@ In Exercises \ref{findformulalinearfirstex} - \ref{findformulalinearlastex}, fin
 \node at (rel axis cs:0.5,0) [below] {The graph of $s=F(t)$.};
 \end{tikzpicture}
 
+\begin{solution}
+$F(t) = \begin{cases}
+  2 &  \text{if $t \leq 1$, } \\
+  -3  & \text{if $1 < t \leq 3$,} \\
+  4 & \text{if $t>3$.} \\
+ \end{cases}$
+\end{solution}
+
 \end{problem}
-
-
-
 
 \begin{problem}
 \begin{tikzpicture}
@@ -340,6 +364,7 @@ In Exercises \ref{findformulalinearfirstex} - \ref{findformulalinearlastex}, fin
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=L(x)$.};
 \end{tikzpicture}
 
+$L(x) = \answer{-\frac{3}{5} x + 1}$ 
 \end{problem}
 
 \begin{problem}\label{findformulalinearlastex}
@@ -376,6 +401,13 @@ In Exercises \ref{findformulalinearfirstex} - \ref{findformulalinearlastex}, fin
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $w=g(v)$.};
 \end{tikzpicture}
+
+\begin{solution}
+$g(v) = \begin{cases}
+   3v+5 &  \text{if $-3 \leq v < -1$, } \\
+  2  & \text{if $-1 <  v \leq 3$,} \\
+    \end{cases}$
+\end{solution}
 \end{problem}
 
 \end{question}
@@ -393,9 +425,21 @@ C(n) = \left\{ \begin{array}{rcl}  15n & \mbox{ if } & 1 \leq n \leq 25  \\
 
 \item  Find and interpret $C(20)$.
 
+\begin{solution}
+$C(20) = 300$.  It costs $\$300$ for 20 copies of the book.
+\end{solution}
+
 \item  \label{50vs51} How much does it cost to order 50 copies of the book?  What about 51 copies?
 
+\begin{solution}
+$C(50) = 675$, $\$ 675$.  $C(51) = 612$, $\$ 612$.
+\end{solution}
+
 \item  Your answer to \ref{50vs51} should get you thinking. Suppose a bookstore estimates it will sell 50 copies of the book.  How many books can, in fact, be ordered for the same price as those 50 copies? (Round your answer to a  whole number of books.)
+
+\begin{solution}
+56 books.
+\end{solution}
 
 \end{enumerate}
 \end{problem}
@@ -413,7 +457,13 @@ where $n$ is the number of  comic books purchased and $S(n)$ is the shipping cos
 
 \item  What is the cost to ship 10 comic books?
 
+$\$\answer{17.50}$
+
 \item  What is the significance of the formula $S(n) = 0$ for $n \geq 15$?
+
+\begin{solution}
+There is free shipping on orders of $15$ or more comic books.
+\end{solution}
 
 \end{enumerate}
 \end{problem}
@@ -430,38 +480,74 @@ C(m) = \left\{ \begin{array}{rcl} 25 & \mbox{ if } & 0 \leq m \leq 1000 \\
 
 \item  How much does it cost to talk $750$ minutes per month with this plan?
 
+$\$\answer{25}$
+
 \item  How much does it cost to talk $20$ hours a month with this plan?
 
+$\$\answer{45}$
+
 \item  Explain the terms of the plan verbally.
+
+\begin{solution}
+It costs $\$25$ for up to $1000$ minutes and $10$ cents per minute for each minute over $1000$ minutes.
+\end{solution}
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
 Jeff can walk comfortably at $3$ miles per hour.  Find an expression for a linear function $d(t)$ that represents the total distance Jeff can walk in $t$ hours, assuming he doesn't take any breaks.   
+
+\begin{solution}
+$d(t) = 3t$, $t \geq 0$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Carl can stuff $6$ envelopes per \textit{minute}.  Find an expression for a linear function $E(t)$ that represents the total number of envelopes Carl can stuff after $t$ \textit{hours}, assuming he doesn't take any breaks.
+
+\begin{solution}
+$E(t) = 360t$, $t \geq 0$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 A landscaping company charges $\$45$ per cubic yard of mulch plus a delivery charge of $\$20$.  Find an expression for a  linear function $C(x)$ which computes the total cost in dollars  to deliver $x$ cubic yards of mulch.
+
+\begin{solution}
+$C(x) = 45x+20$, $x \geq 0$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 A plumber charges $\$50$ for a service call plus $\$80$ per hour.  If she spends no longer than 8 hours a day at any one site, find an expression for a  linear function $C(t)$ that computes her total daily charges in dollars as a function of the amount of time spent in hours, $t$  at any one given location.
+
+\begin{solution}
+$C(t) = 80t + 50$,  $0 \leq t \leq 8$.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 A salesperson is paid \$200 per week plus 5\% commission on her weekly sales of $x$ dollars.  Find an expression for a  linear function $W(x)$ which computes her total weekly pay in dollars as a function of $x$.  What must her weekly sales be in order for her to earn \$475.00 for the week?
+
+\begin{solution}
+$W(x) = 200 + .05x,\, x \geq 0\;\;$ She must make \$5500 in weekly sales.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 An on-demand publisher charges $\$22.50$ to print a 600 page book and $\$15.50$ to print a 400 page book.  Find an expression for a linear function which models the cost of a book in dollars $C(p)$ as a function of the number of pages $p$.  Find and interpret both the slope of the linear function  and $C(0)$.
+
+\begin{solution}
+$C(p) = 0.035p + 1.5 \;$  The slope $0.035$ means it costs $3.5$\textcent \, per page.  $C(0) = 1.5$ means there is a fixed, or start-up, cost of $\$1.50$ to make each book.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The Topology Taxi Company charges $\$2.50$ for the first fifth of a mile and $\$0.45$ for each additional fifth of a mile.  Find an expression for a  linear function which models the taxi fare $F(m)$ as a function of the number of miles driven, $m$.  Find and interpret both the slope of the linear function  and $F(0)$.
+
+\begin{solution}
+$F(m) = 2.25m + 2.05 \;$  The slope $2.25$ means it costs an additional $\$2.25$ for each mile beyond the first 0.2 miles.  $F(0) = 2.05$, so according to the model, it would cost $\$2.05$ for a trip of $0$ miles.  Would this ever really happen?  Depends on the driver and the passenger, we suppose.
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{celsiustofahr}
@@ -472,9 +558,19 @@ Water freezes at $0^{\circ}$ Celsius and $32^{\circ}$ Fahrenheit and it boils at
 
 \item Find an expression for a  linear function $F(T)$ that computes temperature in the Fahrenheit scale as a function of  the temperature $T$ given in degrees Celsius.  Use this function to convert $20^{\circ}$C into Fahrenheit.
 
+\begin{solution}
+$F(T) = \frac{9}{5}T + 32$
+\end{solution}
+
 \item Find an expression for a  linear function $C(T)$ that computes temperature in the Celsius scale as a function of  the temperature $T$ given in degrees Fahrenheit.  Use this function to convert $110^{\circ}$F into Celsius.
 
+\begin{solution}
+$C(T) = \frac{5}{9}(T - 32) = \frac{5}{9}T - \frac{160}{9}$
+\end{solution}
+
 \item Is there a temperature $T$ such that $F(T) = C(T)$?
+
+$\answer{-40}$
 
 \end{enumerate}
 
@@ -482,14 +578,104 @@ Water freezes at $0^{\circ}$ Celsius and $32^{\circ}$ Fahrenheit and it boils at
 
 \begin{problem}
 Legend has it that a bull Sasquatch in rut will howl approximately 9 times per hour when it is $40^{\circ}F$ outside and only 5 times per hour if it's $70^{\circ}F$.  Assuming that the number of howls per hour, $N$, can be represented by a linear function of temperature Fahrenheit, find the number of howls per hour he'll make when it's only $20^{\circ}F$ outside. What troubles do you encounter when trying to determine a reasonable applied domain?
+
+\begin{solution}
+$N(T) = -\frac{2}{15}T + \frac{43}{3}$  and $N(20) = \frac{35}{3} \approx 12$ howls per hour.
+
+Having a negative number of howls makes no sense and since $N(107.5) = 0$ we can put an upper bound of $107.5^{\circ}F$ on the domain.  The lower bound is trickier because there's nothing other than common sense to go on.  As it gets colder, he howls more often.  At some point it will either be so cold that he freezes to death or he's howling non-stop.  So we're going to say that he can withstand temperatures no lower than $-42^{\circ}F$ so that the applied domain is $[-42, 107.5]$.
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{exerredoportaboy}
 Economic forces have changed the cost function for PortaBoys to $C(x) = 105x + 175$.  Rework Example \ref{PortaBoyCost} with this new cost function.
+
+\begin{solution}
+\begin{enumerate}
+\item 
+$C(0) = 175$, so our start-up costs are $\$ 175$.  $C(5) = 700$, so to produce $5$ systems, it costs $\$ 700$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=7,
+    ymin=-100, ymax=850,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1,2,3,4,5,6},
+    ytick={100,200,...,800},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[line width=2.5pt,blue,
+    ->,domain=0:6,samples=2]
+    {105*x + 175};
+\addplot[only marks,mark=*,
+    mark size=4pt]
+    coordinates {(0,175)(5,700)};
+\node at (axis cs:0,175) [right=6pt] {$(0,175)$};
+\node at (axis cs:5,700) [right=6pt] {$(5,700)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {$y=C(x)$.};
+\end{tikzpicture}
+
+\item   Since we can't make a negative number of game systems, $x \geq 0$.
+
+\item The slope is $m = 105$ so for each additional system produced, it costs an additional $\$105$.
+
+\item  Solving $C(x) = 15000$ gives $x \approx 141.19$ so  $141$ can be produced for $\$ 15, \! 000$.
+\end{enumerate}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 In response to the economic forces in Exercise \ref{exerredoportaboy} above, the local retailer sets the selling price of a PortaBoy at \$250.  Remarkably, 30 units were sold each week.  When the systems went on sale for \$220, 40 units per week were sold.  Rework Example \ref{PortaBoyDemand}  with this new data.
+
+\begin{solution}
+\begin{enumerate}
+\item 
+$p(x) = -3x+340$, $0 \leq x \leq 113$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-30, xmax=150,
+    ymin=-50, ymax=400,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={20,40,...,120},
+    ytick={50,100,...,300},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[line width=2.5pt,blue,
+    -,domain=0:113,samples=2]
+    {-3*x + 340};
+\addplot[only marks,mark=*,
+    mark size=4pt]
+    coordinates {(0,340)(113,1)};
+\node at (axis cs:0,340) [right=6pt] {$(0,340)$};
+\node at (axis cs:113,1) [right=6pt] {$(113,1)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {$y=p(x)$.};
+\end{tikzpicture}
+
+\item The slope is $m = -3$ so for each $\$3$ drop in price, we sell one additional game system.
+
+\item   Since $x = 150$ is not in the domain of $p$, $p(150)$ is not defined.  (In other words, under these conditions, it is impossible to sell 150 game systems.)
+
+\item Solving $p(x) = 150$ gives $x \approx 63.33$ so if the price  $\$150$ per system, we would sell $63$ systems.
+\end{enumerate}
+\end{solution}
 \end{problem}
 
 \begin{problem}
