@@ -4339,46 +4339,69 @@ We make good use of Theorem \ref{transformationsthm}  in the following example.
 
 \begin{example}  \label{transsequenceex} Below is the complete graph of $y = f(x)$.  Use Theorem \ref{transformationsthm} to graph $g(x) = \dfrac{4-3 f(1-2x)}{2}$.
 
-\begin{center}
-\begin{tikzpicture}
-  \begin{axis}[
-      axis lines=middle,
-      xmin=-5, xmax=5,
-      ymin=-4, ymax=4,
-      xtick={-4,-3,-2,-1,1,2,3,4},
-      ytick={-3,-2,-1,1,2,3},
-      xlabel={$x$},
-      ylabel={$y$},
-      width=8cm,
-      height=6.5cm,
-      grid=none,
-      ticklabel style={font=\scriptsize},
-      label style={font=\scriptsize},
-    ]
 
-    % Function curve
-    \addplot[thick, domain=-4:4, samples=200] {3*cos(deg(pi*x/4))};
 
-    % Points
-    \addplot[only marks, mark=*] coordinates {
-      (-2,0) (2,0) (4,-3) (-4,-3) (0,3)
-    };
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-1:6,
+          xmin=-5.5, xmax=5.5,
+          ymin=-4, ymax=4,
+          width=6in,
+          height=6in,
+          xtick={-4,-3,-2,-1,1, 2,3,4},
+            xticklabels={$-4$, $-3$,$-2$,$-1$, $1$,$2$,$3$, $4$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$, $-2$, $-1$, $1$, $2$,$\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% lines
+\addplot[thick, domain=-4:4, samples=200, line width=1.5pt, blue] {3*cos(deg(pi*x/4))};
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-5pt}
+]
+coordinates {
+  (-4,-3) [$(-4,-3)$]
+  (-2,0) [$(-2,0)$]
+  (0,3) [$(0,3)$]
+ 
+};
 
-    % Labels (nudged inward for clarity)
-    \node[font=\small, anchor=east] at (axis cs:-2.2,0.4) {$( -2, 0 )$};
-    \node[font=\small, anchor=west] at (axis cs:2.2,0.4) {$( 2, 0 )$};
-    \node[font=\small, anchor=north west] at (axis cs:3.7,-2.8) {$( 4, -3 )$};
-    \node[font=\small, anchor=north east] at (axis cs:-3.7,-2.8) {$( -4, -3 )$};
-    \node[font=\small, anchor=south east] at (axis cs:-0.3,3) {$( 0, 3 )$};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt}
+]
+coordinates {
+  (2,0) [$(2,0)$]
+  (4,-3) [$(4,-3)$]
+  };
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-    % Function label
-    \node[font=\scriptsize, anchor=west, fill=white, inner sep=1pt]
-      at (axis cs:1.4,2.4) {$y = f(x)$};
-
-  \end{axis}
-\end{tikzpicture}
-
-\end{center}
 
 {\bf Solution.}  We use Theorem \ref{transformationsthm} to track the five `key points' $(-4,-3)$, $(-2,0)$, $(0,3)$, $(2,0)$ and $(4,-3)$ indicated on the graph of $f$ to their new locations.  
 
