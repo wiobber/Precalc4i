@@ -129,6 +129,10 @@ In Exercises \ref{findformulaforabsgraphfirst} - \ref{findformulaabsgraphlast}, 
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=F(x)$.};
 \end{tikzpicture}
+
+\begin{solution}
+$F(x) = 2|x+1|-3$
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -157,6 +161,10 @@ In Exercises \ref{findformulaforabsgraphfirst} - \ref{findformulaabsgraphlast}, 
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=F(x)$.};
 \end{tikzpicture}
+
+\begin{solution}
+$F(x) = |x-1.25|-2.75$
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -186,6 +194,10 @@ In Exercises \ref{findformulaforabsgraphfirst} - \ref{findformulaabsgraphlast}, 
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=F(x)$.};
 \end{tikzpicture}
 \end{problem}
+
+\begin{solution}
+$F(x) = -|x+1|+2$
+\end{solution}
 \end{question}
 
 \begin{problem}
@@ -214,6 +226,10 @@ In Exercises \ref{findformulaforabsgraphfirst} - \ref{findformulaabsgraphlast}, 
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=F(x)$.};
 \end{tikzpicture}
+
+\begin{solution}
+$F(x) = -\frac{1}{2} |x+1|+\frac{3}{2}$
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{makeaveewithabsval}
@@ -233,11 +249,12 @@ Use\href{https://www.desmos.com/calculator/tzb1yozj6m}{this Desmos link} to grap
 
 \end{itemize}
 
-\end{problem}
-
-
 Choose more functions $f(x)$ and graph $y = f(x)$ alongside $y = | f(x)|$ until you can explain how, in general, one would obtain the graph of $y = | f(x) |$ given the graph of $y = f(x)$.  How does your explanation tie in with  with Definition \ref{absolutevaluepiecewise}?
 
+\begin{solution}
+In each case, the graph of $g$ can be obtained from the graph of $f$ by reflecting the portion of the graph of $f$ which lies below the $x$-axis about the $x$-axis.  This meshes with Definition \ref{absolutevaluepiecewise} since what we are doing algebraically is making the negative $y$-values positive.
+\end{solution}
+\end{problem}
 
 \begin{problem}
 Explain why the function below cannot be written in the form $F(x) = a|x-h|+k$.  Write $F(x)$ as a piecewise-defined linear function.
@@ -327,6 +344,14 @@ In Exercises \ref{graphadvabsvalexerfirst} - \ref{graphadvabsvalexerlast}, graph
 
 \begin{problem}\label{graphadvabsvalexerfirst}
 $f(x) = x + |x| - 3$  
+
+\begin{solution}
+Re-write $f(x) = x+|x| - 3$ as \\ ${\displaystyle f(x) = \left\{ \begin{array}{rcl}
+-3 & \mbox{ if } & x < 0\\
+     2x -3 & \mbox{ if } & x \geq 0 \\ \end{array} \right. }$ \\  $x$-intercept $\left(\frac{3}{2}, 0\right)$ \\ $y$-intercept $(0,-3)$ \\ Domain $(-\infty, \infty)$ \\ Range $[-3, \infty)$ \\ Increasing on $[0,\infty)$ \\ Constant on $(-\infty, 0]$ \\  Minimum is $-3$ at $(x,-3)$ where $x \leq 0$ \\ No  maximum  \\
+
+\graph{x+abs(x)+3}
+\end{solution}
 \end{problem}
 
 \begin{problem}
