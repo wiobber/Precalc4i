@@ -25,7 +25,7 @@ Of all of the functions we study in this text, exponential  functions are possib
  
   
  
- We make a table of function values, plot enough points  until we are more or less confident with the shape of the curve,  and connect the dots in a pleasing fashion.
+ We make a table of function values and plot the corresponding points on a graph furnisged by Desmos below.
 
 \[ \begin{array}{|r||r|r|}  
 \hline
@@ -39,6 +39,8 @@ Of all of the functions we study in this text, exponential  functions are possib
 3  & 2^{3} = 8 & (3, 8) \\  \hline
 \end{array} \] 
 
+
+
 % https://www.desmos.com/calculator/w9kupo8qsr
 \begin{center}
     \desmos{w9kupo8qsr}{800}{600}
@@ -48,15 +50,15 @@ A few remarks about the graph of $f(x) = 2^{x}$ are in order.  As $x \rightarrow
 
  
 
-In other words, as $x \rightarrow -\infty$, $2^{x} \approx \frac{1}{\text{very big $(+)$}}  \approx \text{very small $(+)$}$   That is, as $x \rightarrow -\infty$, $2^{x} \rightarrow 0^{+}$, so $\lim\limits_{x \rightarrow -\infty} 2^{x} =0$ .  This produces the $x$-axis, $y = 0$ as a horizontal asymptote to the graph as $x \rightarrow -\infty$. 
+In other words, as $x \rightarrow -\infty$, $2^{x} \approx \frac{1}{\text{very big $(+)$}}  \approx \text{very small $(+)$}$   That is, as $x \rightarrow -\infty$, $2^{x} \rightarrow 0^{+}$, so $\lim\limits_{x \rightarrow -\infty} 2^{x} =0$ .  This produces the $x$-axis, $y = 0$ as a horizontal asymptote to the graph as $x \rightarrow -\infty$.  We invite the reader to see this behavior graphically by scrolling towards the left on the Desmos graph above.
 
  
 
-On the flip side, as $x \rightarrow \infty$, we find $f(100) = 2^{100}$, $f(1000) = 2^{1000}$, and so on, thus $\ds{\lim_{x \rightarrow \infty} 2^{x} = \infty}$.  
+On the flip side, as $x \rightarrow \infty$, we find $f(100) = 2^{100}$, $f(1000) = 2^{1000}$, and so on, thus $\ds{\lim_{x \rightarrow \infty} 2^{x} = \infty}$.  We can see this graphically by scrolling towards the right (and up!) on the Desmos graph above.  
 
  
 
-We note that by  `connecting the dots in a pleasing fashion,' we are implicitly using the fact that $f(x) = 2^{x}$ is not only defined for all real numbers,\footnote{See the discussion of real number exponents in  Section \ref{PowerFunctions}.}  but  is also \textit{continuous}.   Moreover, we are assuming $f(x) = 2^{x}$ is increasing:  that is, if $a<b$, then $2^{a} < 2^{b}$. While these facts are true, the proofs of these properties are best left to Calculus. For us, we assume these properties in order to state the domain of $f$ is $(-\infty, \infty)$, the range of $f$ is $(0, \infty)$ and,  since $f$ is increasing, $f$ is one-to-one, hence invertible.
+Note that the smooth connected appearance of the graph of $f(x) = 2^{x}$ suggests that not only is $f$ defined for all real numbers,\footnote{See the discussion of real number exponents in  Section \ref{PowerFunctions}.}  but  also that $f$ is \textit{continuous}.   Moreover, we are assuming $f(x) = 2^{x}$ is increasing:  that is, if $a<b$, then $2^{a} < 2^{b}$. While these facts may appear obvious, the proofs of these properties are best left to Calculus. For us, we assume these properties in order to state the domain of $f$ is $(-\infty, \infty)$ and the range of $f$ is $(0, \infty)$. Moreover,  since $f$ is increasing, $f$ is one-to-one, hence invertible.
  
     
  
@@ -94,7 +96,7 @@ We leave it to the reader to verify\footnote{Meaning, graph some more examples o
 
  
 
-What if $0 < b < 1$?  Consider $g(x) = \left(\frac{1}{2}\right)^{x}$.  We could certainly build a table of values and connect the points, or we could take a step back and note that $g(x) = \left(\frac{1}{2}\right)^{x} = \left(2^{-1}\right)^{x} = 2^{-x} = f(-x)$, where $f(x) = 2^{x}$.  Per Section \ref{Transformations}, the graph of $f(-x)$ is obtained from the graph of $f(x)$ by reflecting it across the $y$-axis. 
+What if $0 < b < 1$?  Consider $g(x) = \left(\frac{1}{2}\right)^{x}$.  We could certainly build a table of values and connect the points, or we could take a step back and note that $g(x) = \left(\frac{1}{2}\right)^{x} = \left(2^{-1}\right)^{x} = 2^{-x} = f(-x)$, where $f(x) = 2^{x}$.  Per Section \ref{Transformations}, the graph of $f(-x)$ is obtained from the graph of $f(x)$ by reflecting it across the $y$-axis as seen in the graph below. 
 
 % https://www.geogebra.org/graphing/u97db2hf
 
@@ -216,7 +218,6 @@ We summarize the basic properties of exponential functions in the following theo
 
 Exponential functions also inherit the basic properties of exponents from Theorem \ref{exponentprops}.  We formalize these below and use them as needed in the coming examples.
 
- 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -326,9 +327,7 @@ Per Theorem  \ref{transformationsthm}, we first add $1$ to the $x$-coordinates o
 Looking point by point, we have $(-1,3) \rightarrow (0, 3) \rightarrow (0,6)$, $(0,1) \rightarrow (1,1) \rightarrow (1,2)$, and $\left( 1, \frac{1}{3} \right) \rightarrow \left( 2,  \frac{1}{3} \right) \rightarrow  \left( 2,  \frac{2}{3} \right)$.  The horizontal asymptote, $y = 0$ remains unchanged under the horizontal shift and the vertical stretch since $2 \cdot 0 = 0$.   
 
 
-
-
-Below we graph $y = f(x) = \left(\frac{1}{3}\right)^{x}$ on the left  $y = F(x) = 2 \left( \frac{1}{3} \right)^{x-1}$ on the right.
+The GeoGebra interactive below helps us visualize each of these transformation steps starting with the graph of $f(x) = \left(\frac{1}{3}\right)^{x}$. When we select each step, GeoGebra not only tracks our three control points through the transformation, it also displays the resulting graph. 
 
 % https://www.geogebra.org/classic/x88t5ypf
 
@@ -367,7 +366,7 @@ Tracking points, we have $(-1, e^{-1}) \rightarrow (1, e^{-1}) \rightarrow (1, -
 
  
 
-We graph $g(t) = e^{t}$ below on the left and the transformed function $G(t) = -e^{-t} +2$ below on the left.   As usual, we can check our answer by verifying the indicated points do, in fact, lie on the graph of $y = G(t)$ along with checking end behavior.  We leave these details to the reader.
+Once again, we have a GeoGebra interactive to help us visualize the step-by-step transformation of the graph of $g(t) = e^{t}$  to the graph of  $G(t) = -e^{-t} +2$.   As usual, we can check our answer by verifying the indicated points do, in fact, lie on the graph of $y = G(t)$ along with checking end behavior.  We leave these details to the reader.
 
 
 % https://www.geogebra.org/classic/wfqfd3fs
@@ -380,11 +379,17 @@ We graph $g(t) = e^{t}$ below on the left and the transformed function $G(t) = -
 
 \item Since we are told to assume the base of the exponential function is $2$, we assume the function $F(x)$ is the result of the transforming the graph of $f(x) = 2^{x}$ using Theorem \ref{transformationsthm}.  This means we are tasked with finding values for $a$, $b$, $h$, and $k$ so that $F(x) = af(bx-h)+k = a \cdot 2^{bx-h} + k$.  
 
- 
+We invite the reader to explore some possibilities for these values using the GeoGebra interactive below.  Input values for each of $a$, $b$, $h$, and $k$ and see if you can get the transformed graph of $y=2^{x}$ to match the data given in the target graph.  As usual, we can see the impact of the individual parameters as we move step-by-step through the transformation. 
+
+ % https://www.geogebra.org/classic/w72snfyg
+
+\begin{center}
+    \geogebra{w72snfyg}{800}{600}
+\end{center}
+
+Now we turn our attention to solving this problem analytically.
 
 Since the horizontal asymptote to the graph of $y=f(x) = 2^{x}$ is $y=0$ and the horizontal asymptote to the graph $y = F(x)$ is $y=4$, we know the vertical shift is $4$ units up, so $k = 4$.  
-
- 
 
 Next, looking at how the graph of $F$ approaches the vertical asymptote, it stands to reason  the graph of $f(x) = 2^{x}$ undergoes a reflection across  $x$-axis,  meaning $a<0$.   For simplicity, we assume  $a = -1$ and set see if we can find values for  $b$ and $h$ that go along with this choice.
 
@@ -398,13 +403,9 @@ Next, using $F(0) = -4$, we get $-2^{-h} +4 = -4$ or $2^{-h} = 8 = 2^{3}$.  From
 
  
 
-Hence, one solution to the problem is $F(x) = -2^{x+3} + 4$.  To check our answer, we leave it to the reader verify $F(-1) = 0$, $F(0) = -4$, $\ds{\lim_{x \rightarrow -\infty} F(x) = 4}$, $\ds{\lim_{x \rightarrow \infty} F(x) = -\infty}$.
+Hence, one solution to the problem is $F(x) = -2^{x+3} + 4$.  To check our answer, we leave it to the reader verify $F(-1) = 0$, $F(0) = -4$, $\ds{\lim_{x \rightarrow -\infty} F(x) = 4}$, $\ds{\lim_{x \rightarrow \infty} F(x) = -\infty}$ analytically as well as checking these values graphically using the GeoGebra interactive above.
 
-% https://www.geogebra.org/classic/w72snfyg
 
-\begin{center}
-    \geogebra{w72snfyg}{800}{600}
-\end{center}
 
 Since we made a simplifying assumption ($a = -1$), we may well wonder if our solution is the  \textit{only} solution.  Indeed, we started with what amounts to three pieces of information and set out to determine the value of four constants.  We leave this for a thoughtful discussion in Exercise \ref{morethanoneforexpexercise}.
 
@@ -414,7 +415,7 @@ Since we made a simplifying assumption ($a = -1$), we may well wonder if our sol
 
 Our next example showcases an important application of exponential functions:  economic depreciation.
 
-\newpage
+
 
 \begin{example}  \label{cardepreciationex} The value of a car can be modeled by $V(t) = 25(0.8)^{t}$, where $t \geq 0$ is number of years the car is owned and $V(t)$ is the value in thousands of dollars. \index{depreciation}
 
@@ -577,17 +578,20 @@ so  after $k$ years' time, the value of the car $V(t)$ has decreased by $((0.8)^
 
  
 
-Since we have yet to develop any analytic means to solve equations like $25(0.8)^t = 12.5$ (since $t$ is in the exponent here), we are forced to approximate solutions to this equation numerically\footnote{Since exponential functions are continuous we could use the Bisection Method to solve $f(t) = 25(0.8)^t - 12.5=0$.  See the discussion on  page \pageref{bisectionmethod} in Section \ref{RealZeros} for more details.} or use a graphing utility.  Choosing the latter, we graph $y = V(t)$ along with the lines $y = 12.5$ and $y = 6.125$ and look for intersection points.  
+Since we have yet to develop any analytic means to solve equations like $25(0.8)^t = 12.5$ (since $t$ is in the exponent here), we are forced to approximate solutions to this equation numerically\footnote{Since exponential functions are continuous we could use the Bisection Method to solve $f(t) = 25(0.8)^t - 12.5=0$.  See the discussion on  page \pageref{bisectionmethod} in Section \ref{RealZeros} for more details.} or use a graphing utility.  The GeoGebra interactive below displays the graph of $y = V(t)$ as well as a prompt for us to enter the fraction of the original value of the car that we're interested in.  
 
- 
 
-We find $y = V(t)$ and $y = 12.5$ intersect at (approximately) $(3.106, 12.5)$ which means the car depreciates to half its initial value in (approximately) $3.11$ years.  Similarly, we find the car depreciates to one-quarter its initial value after (approximately) $6.23$ years.\footnote{It turns out that it takes exactly twice as long for the car to depreciate to one-quarter of its initial value as it takes to depreciate to half its initial value. Can you see why?}
 
- % https://www.geogebra.org/graphing/nwavgwu6
+% https://www.geogebra.org/graphing/nwavgwu6
 \begin{center}
 \geogebra{nwavgwu6}{800}{600}
 \end{center}
 
+For example, entering the fraction `$\frac{1}{2}$' into the prompt triggers the display of the horizontal line $y = \left( \frac{1}{2} \right) (25) = 12.5$ along with the intersection point $(3.106 \ldots, 12.5)$.   This means the car depreciates to `$\frac{1}{2}$' (half) its initial value in (approximately) $3.11$ years.  
+
+Similarly, entering the fraction `$\frac{1}{4}$' into the prompt results in the graph of the horizontal line $y = \left( \frac{1}{4} \right) (25) = 6.25$ along with the intersection point $(6.212 \ldots, 6.25)$.  This means it takes approximately $6.21$ years for the car to depreciate to `$\frac{1}{4}$' (one quarter) of its original value.\footnote{It turns out that it takes exactly twice as long for the car to depreciate to one-quarter of its initial value as it takes to depreciate to half its initial value.  Does this pattern extend to the fractions of one-eighth and one-sixteenth? Can you see why?}
+
+ 
 \qed
  
 \end{enumerate}
@@ -706,12 +710,16 @@ Next, we multiply the $y$-values of the points on this new graph by $90$ which e
  
 
 
-Tracking points, we have $(-1, e^{-1})  \rightarrow (10, e^{-1}) \rightarrow (10, 90e^{-1}) \rightarrow (10, 90e^{-1}+70) \approx (10, 103.112)$, $(0,1) \rightarrow (0,1) \rightarrow (0,90) \rightarrow (0, 160)$, and $(1,e) \rightarrow (-10, e) \rightarrow (-10, 90e) \rightarrow (-10, 90e+70) \approx (-10, 314.62)$.  The horizontal asymptote $y=0$ is unaffected by the horizontal expansion, reflection about the $y$-axis, and the vertical stretch.  The vertical shift moves the horizontal asymptote up $70$ units, $y = 0 \rightarrow y = 70$. After restricting the domain to $t \geq 0$, we get the graph below on the right.
+Tracking points, we have $(-1, e^{-1})  \rightarrow (10, e^{-1}) \rightarrow (10, 90e^{-1}) \rightarrow (10, 90e^{-1}+70) \approx (10, 103.112)$, $(0,1) \rightarrow (0,1) \rightarrow (0,90) \rightarrow (0, 160)$, and $(1,e) \rightarrow (-10, e) \rightarrow (-10, 90e) \rightarrow (-10, 90e+70) \approx (-10, 314.62)$.  The horizontal asymptote $y=0$ is unaffected by the horizontal expansion, reflection about the $y$-axis, and the vertical stretch.  The vertical shift moves the horizontal asymptote up $70$ units, $y = 0 \rightarrow y = 70$.
+
+As usual, GeoGebra helps us visualize transforming $y = e^{t}$ into $y = T(t)$ by tracking the key points through each step of the transformation and displaying the corresponding graph.
 
 % https://www.geogebra.org/classic/maxqgrzd
 \begin{center}
     \geogebra{maxqgrzd}{800}{600}
 \end{center}
+
+The final step would be to impose the applied domain to $t \geq 0$ so we are looking at the portion of the graph which is to the right of the $y$-axis.
 
 \item  We can determine $\lim\limits_{t \rightarrow \infty} T(t)$ two ways.  First, we can employ  the `number sense' developed in Chapter \ref{RationalFunctions}.    
 
