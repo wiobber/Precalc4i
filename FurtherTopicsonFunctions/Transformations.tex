@@ -610,29 +610,105 @@ To prove Theorem \ref{hshifts}, we first note the domains of $f$ and $F$ may be 
  
  \item $y = f(x+5)$
  
- \item  $f(x-7)+4$
+ \item  $y = f(x-7)+4$
  
  \end{enumerate}
  
  \end{multicols}
  
- \item  Find a formula for a function $g(t)$ whose graph is the same as $f(t) = |t|-2t$ but is shifted:
+ \item  Let $f(t) = |t|-2t$.
  
- \begin{multicols}{2}
+
  
  \begin{enumerate}
  
- \item to the right $4$ units.
+ \item Find a formula for a function $g(t)$ whose graph is the same as the graph of $f$ but shifted to the right $4$ units.
  
- \item down $2$ units.
+ \item Find a formula for a function $h(t)$ whose graph is the same as the graph of $f$ but shifted down $2$ units.
  
  \end{enumerate}
  
- \end{multicols}
- 
  \item Predict how the graph of $F(x) = \dfrac{(x-2)^{\frac{2}{3}}}{x}$ relates to the graph of $f(x) = \dfrac{x^{\frac{2}{3}}}{x+2}$. 
  
-\item  Below on the left is the graph of $y = f(x)$.  Use it to sketch the graph of
+\item  Below is the graph of $y = f(x)$.  
+
+
+\begin{image}
+
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-3:6,
+          xmin=-2, xmax=6,
+          ymin=-1, ymax=5,
+          width=2in,
+          height=2in,
+          xtick={-1,0,1,2,3,4,5},
+            xticklabels={$-1$,$0$, $1$, $2$,$3$,$4$,$5$},
+           ytick={1,2, 4},
+            yticklabels={$1$,$2$, $4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-2:4, line width=1.5pt, blue] {-0.25*x^2+x+3};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt}
+]
+coordinates {
+   (4,3) [$(4,3)$]
+ };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (0,3) [$(0,3)$]
+   (-2,0) [$(-2,0)$]
+  };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt}
+]
+coordinates {
+  (2,4) [$(2,4)$]
+  };
+      \end{axis}
+        \end{tikzpicture}
+        \end{image}
+\begin{center}
+    \captionof{figure}{Graph of $y=f(x)$.}
+\xmalt{The graph is a downward-opening parabola segment with a closed endpoint at $(-2,0)$, passing through $(0,3)$ and reaching a maximum at $(2,4)$. The graph ends with an open endpoint at $(4,3)$.} 
+\end{center}
+Use it to sketch the graph of
 
   \begin{multicols}{3}
  
@@ -648,7 +724,7 @@ To prove Theorem \ref{hshifts}, we first note the domains of $f$ and $F$ may be 
  
  \end{multicols}
  
- \item  Below on the right is the graph of $y = g(x)$.  Write $g(x)$ in terms of $f(x)$ and vice-versa.
+ \item  Below on the left is the graph of $y=f(x)$ and below on the right is the graph of $y = g(x)$.  Write $g(x)$ in terms of $f(x)$ and vice-versa.
 
 \begin{image}
 \begin{tikzpicture}[scale=1]
@@ -843,11 +919,13 @@ coordinates {
  
  \begin{enumerate}
  
- \item  Per Theorem \ref{hshifts}, the graph of $g(t) = f(t-4) = |t-4|-2(t-4) = |t-4|-2t+8$ should be the graph of $f(t) = |t|-2t$ shifted to the right $4$ units. Our check is below on the left.
+ \item  Per Theorem \ref{hshifts}, the graph of $g(t) = f(t-4) = |t-4|-2(t-4) = |t-4|-2t+8$ should be the graph of $f(t) = |t|-2t$ shifted to the right $4$ units.
   
- \item Per Theorem \ref{vshifts},  the graph of $g(t) = f(t)+(-2) = |t|-2t+(-2) = |t|-2t-2$ should be the graph of  $f(t) = |t|-2t$ shifted down $2$ units. Our check is below on the right.
+ \item Per Theorem \ref{vshifts},  the graph of $h(t) = f(t)+(-2) = |t|-2t+(-2) = |t|-2t-2$ should be the graph of  $f(t) = |t|-2t$ shifted down $2$ units. 
  
   \end{enumerate}
+
+  Using the Desmos interactive below, we can check our answers graphically by adjusting the sliders for two parameters `$a$' and `$b$.'  For the function $g(t) = f(t-a)$, adjusting the slider for $a$ from $a=0$ to $a=4$ shows the graph of $f$ gradually shifting horizontally to to end up $4$ units to the right of its starting position.  Likewise, adjusting the slider for the parameter $b$, we see the graph of the function $h(t) = f(t) - b$ gradually shifts the graph of $f$ vertically until it stops $2$ units below its starting position.
  
 %https://www.desmos.com/calculator/xrmcgegn3j
 
@@ -855,7 +933,7 @@ coordinates {
 \desmos{xrmcgegn3j}{800}{600}
 \end{center}
 
-\item  Comparing \textit{formulas}, it appears as if $F(x) = f(x-2)$.  We check: \[ f(x-2) = \dfrac{(x-2)^{\frac{2}{3}}}{(x-2)+2} = \dfrac{(x-2)^{\frac{2}{3}}}{x} = F(x),\]  so, per Theorem \ref{hshifts},  the graph of $y = F(x)$ should be the graph of $y=f(x)$ but shifted to the right $2$ units. We graph both functions below to confirm our answer.
+\item  Comparing \textit{formulas}, it appears as if $F(x) = f(x-2)$.  We check: \[ f(x-2) = \dfrac{(x-2)^{\frac{2}{3}}}{(x-2)+2} = \dfrac{(x-2)^{\frac{2}{3}}}{x} = F(x),\]  so, per Theorem \ref{hshifts},  the graph of $y = F(x)$ should be the graph of $y=f(x)$ but shifted to the right $2$ units. Once again, we can use a slider in the Desmos interactive below to visualize this horizontal shift by adjusting the parameter `$a$' from $0$ to $2$ to graph the transformed function $F(x) = f(x-a)$.
 
 % https://www.desmos.com/calculator/yc4sxelkkp
 \begin{center}
@@ -2043,7 +2121,7 @@ Use Theorems  \ref{vshifts},  \ref{hshifts} and \ref{reflections}  to answer the
  
  \item $y = -f(x+2)$
  
- \item  \label{twotransxrefex} $f(8-x)$
+ \item  \label{twotransxrefex} $y = f(8-x)$
  
  \end{enumerate}
  
@@ -2303,7 +2381,9 @@ The graph on the right shows a decreasing function passing through the points $(
   
   \end{enumerate}
  
-  \item  In this example, the independent variable is $s$ and the dependent variable is $t$.   We are asked to reflect the graph of $h$ about the $t$-axis, which in this case is the \textit{vertical} axis.  Hence,  $H(s) = h(-s) = (-s)^3-(-s)^2 = -s^3-s^2$. Our confirmation is below.
+  \item  In this example, the independent variable is $s$ and the dependent variable is $t$.   We are asked to reflect the graph of $h$ about the $t$-axis, which in this case is the \textit{vertical} axis.  Hence,  $H(s) = h(-s) = (-s)^3-(-s)^2 = -s^3-s^2$. 
+  
+  Using the Desmos interactive below, we can use the slider for $s$ and observe that points on the graph of the function $t=H(s)$ are indeed reflections across the (vertical) $t$-axis of points on the graph of the function $t = h(s)$.
 
   % https://www.desmos.com/calculator/96sn2hkp5g
 
@@ -2315,7 +2395,9 @@ The graph on the right shows a decreasing function passing through the points $(
  
  \[G(t) =  \dfrac{t+4}{t-3} = \dfrac{t+4}{-(3-t)} = - \dfrac{t+4}{3-t} = -g(t). \]
  
- Hence, the graph of $y=G(t)$ should be the graph of $y=g(t)$ reflected across the $t$-axis. We check our answer below on the right.
+ Hence, the graph of $y=G(t)$ should be the graph of $y=g(t)$ reflected across the $t$-axis. 
+
+ Using the Desmos interactive below, adjusting the slider for $t$ traces corresponding points on both $y = g(t)$ and $y = G(t)$, confirming that these two graphs are reflections about the (horizontal) $t$-axis.
 
 % https://www.desmos.com/calculator/lwjz5zvtva
 \begin{center}
@@ -4072,7 +4154,7 @@ Use Theorems  \ref{vshifts},  \ref{hshifts}, \ref{reflections}, \ref{vscalings} 
  
  \item $y = f\left(-\frac{1}{2} x \right)$
  
- \item  $f(2x-3)+1$
+ \item  $y = f(2x-3)+1$
  
  \end{enumerate}
  
@@ -4208,7 +4290,10 @@ Hence, the algebra suggests we use Theorem \ref{hshifts} first and follow it up 
  \end{enumerate}
  
  
- \item  To vertically stretch the graph of $y=g(t)$ by $4$, we use Theorem \ref{vscalings} with $a=4$ to get \[G(t) = 4 g(t) = 4 \dfrac{2t+1}{t-1} = \dfrac{4(2t+1)}{t-1} = \dfrac{8t+4}{t-1}.\]  We check our answer below.
+ \item  To vertically stretch the graph of $y=g(t)$ by $4$, we use Theorem \ref{vscalings} with $a=4$ to get \[G(t) = 4 g(t) = 4 \dfrac{2t+1}{t-1} = \dfrac{4(2t+1)}{t-1} = \dfrac{8t+4}{t-1}.\] 
+
+Using the Desmos interactive below, adjusting the slider for $t$ traces corresponding points on both $y = g(t)$ and
+$y = G(t)$.  Dividing the $y$-coordinates on the graph of $y = G(t)$ by the $y$-coordinates of the corresponding points on the graph of $y=g(t)$ confirms a vertical scaling factor of $4$.
 
 % https://www.desmos.com/calculator/f9psccysng
 
@@ -4223,9 +4308,9 @@ Hence, the algebra suggests we use Theorem \ref{hshifts} first and follow it up 
  
  Hence, if anything, we are looking for a horizontal scaling.  In other words, we are looking for a real number $b>0$ so $h(bs) = H(s)$, that is, $(bs)^3 - 3 (bs)^2 = b^3 s^3 - 3b^2 s^2 = 8s^3-12s^2$.  
  
- Matching  up coefficients of $s^3$ gives $b^3=8$ so $b=2$ which checks with the coefficients of $s^2$ : $3b^2 = 3(2)^2 = 12$.  
+ Matching  up coefficients of $s^3$ gives $b^3=8$ so $b=2$ which checks with the coefficients of $s^2$ : $3b^2 = 3(2)^2 = 12$. Hence, we predict the graph of $y=H(s)$ to be the same as $y=h(s)$ except horizontally compressed by a factor of $2$.  
  
- Hence, we predict the graph of $y=H(s)$ to be the same as $y=h(s)$ except horizontally compressed by a factor of $2$.  Our check is below on the right.
+ Using Desmos below, we graph both $y=h(s)$ and $y=H(s)$ on the same set of axes.  The graph of $H$ certainly appears to be a horizontally compressed version of $h$ and when comparing the numerical values of the $s$-coordinates of the key points indicated, the ratio confirms a compression factor of $2$.
  
  % https://www.desmos.com/calculator/fcwljnbnpq  desmos
 
@@ -4260,6 +4345,8 @@ Next, we reflect the graph of $y = \frac{1}{2} f(x)$ across the $x$-axis to prod
 
 Finally, we shift the graph of $y = -\frac{1}{2} f(x)$ vertically up $\frac{1}{2}$ unit by adding $\frac{1}{2}$ to each of the $y$-coordinates of each of the points to obtain the graph of $y = -\frac{1}{2}f(x)+\frac{1}{2} = F(x)$.
 
+In the Desmos interactive below, the graph of $y=f(x)$ is given as well as the option to click on each intermediary step, in sequence, to build up to the graph of $y=F(x)$.  
+
  % https://www.desmos.com/calculator/hiumui8k8l
 
  \begin{center}
@@ -4271,7 +4358,9 @@ Note that as with horizontal scalings and reflections about the $y$-axis, the or
 
 Next, we vertically scale the graph of $y=-f(x)$  by multiplying each of the $y$-coordinates of each of the points on the graph of $y=-f(x)$ by $\frac{1}{2}$ to obtain the graph of $y = -\frac{1}{2} f(x)$:
 
-Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before, and, hence we arrive at the same final answer as before:
+Notice we've reached the same graph of $y=-\frac{1}{2} f(x)$ that we had before, and, hence we arrive at the same final answer as before once we apply the vertical shift: $y = =-\frac{1}{2} f(x) + \frac{1}{2} = F(x)$.
+
+The Desmos interactive below builds $y=F(x)$ from $y=f(x)$ using this new sequence of transformations.
 
 % https://www.desmos.com/calculator/ycijrcos2v
 
@@ -4303,6 +4392,8 @@ Next, we graph $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ starting with $y 
 
 
 Finally, we reflect the graph of $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ about the $y$-axis to graph $y = f\left(-\frac{1}{2}x + \frac{1}{2} \right)$. We accomplish this by multiplying each of the $x$-coordinates of each of the points on the graph of  $y = f\left(\frac{1}{2}x + \frac{1}{2} \right)$ by $-1$.  This includes the vertical asymptote which is moved to $x = (-1)(-1) = 1$.
+
+As above, we can track these transformations, in sequence, using a Desmos interactive.
 
 % https://www.desmos.com/calculator/5qhn69ljco
 
@@ -4546,7 +4637,9 @@ $\begin{array}{|r||r|r|}
 
 \end{center}
 
-To graph $g$, we plot each of the points in the table above and connect them in the same order and fashion as the points to which they correspond.  Plotting $f$ and $g$ side-by-side gives
+To graph $g$, we plot each of the points in the table above and connect them in the same order and fashion as the points to which they correspond.
+
+To check, we can use the GeoGebra interactive below.   Starting with graph of $y=f(x)$, we can click on each transformation, in sequence, and track not only the key points, but also see the graph at the end of each step.  The graph of $y=g(x)$ is what results after the final step, Step 4.
 
 % https://www.geogebra.org/classic/vbjxnkwt
 
@@ -4607,6 +4700,8 @@ g_{6}(x) & = & g_{5}(-x) \\
   & =  & -(2x+1)^2+|2x+1|+1 \\
   
   \end{array} \]
+
+  In the Desmos interactive below, the graph of $y=f(x)$ is given.  By clicking on each of the functions $g_{1}$ through $g_{6}$, we are able to see each transformation, in sequence, as the graph of $y=f(x)$ is transformed into the graph of $y = g(x)$.
 
 %https://www.desmos.com/calculator/7pyzjopxda
 \begin{center}
