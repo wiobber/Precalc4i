@@ -6,7 +6,7 @@
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforMoreTrigonometricIdentities} % mfpic settings added 
 
-\end{document}
+
 
 \begin{question}
     
@@ -332,8 +332,8 @@ In Exercises \ref{identfirstident} - \ref{identlastident}, verify the identity.\
 
 \setcounter{enumi}{\value{HW}}
 
-\item $\cos(\alpha + \beta) - \cos(\alpha - \beta) = -2\sin(\alpha) \sin(\beta)$ \vphantom{$\dfrac{\sin(\alpha+\beta)}{\sin(\alpha-\beta)}$}
-\item $\dfrac{\sin(\alpha+\beta)}{\sin(\alpha-\beta)} = \dfrac{1+\cot(\alpha) \tan(\beta)}{1 - \cot(\alpha) \tan(\beta)}$ 
+\item $\cos(\alpha + \beta) - \cos(\alpha - \beta) = -2\sin(\alpha) \sin(\beta)$ \vphantom{$\frac{\sin(\alpha+\beta)}{\sin(\alpha-\beta)}$}
+\item $\frac{\sin(\alpha+\beta)}{\sin(\alpha-\beta)} = \frac{1+\cot(\alpha) \tan(\beta)}{1 - \cot(\alpha) \tan(\beta)}$ 
 
 \setcounter{HW}{\value{enumi}}
 
@@ -347,8 +347,8 @@ In Exercises \ref{identfirstident} - \ref{identlastident}, verify the identity.\
 
 \setcounter{enumi}{\value{HW}}
 
-\item $\dfrac{\cos(\alpha + \beta)}{\cos(\alpha - \beta)} = \dfrac{1 - \tan(\alpha)\tan(\beta)}{1 + \tan(\alpha)\tan(\beta)}$
-\item $\dfrac{\tan(\alpha + \beta)}{\tan(\alpha - \beta)} = \dfrac{\sin(\alpha)\cos(\alpha) + \sin(\beta)\cos(\beta)}{\sin(\alpha)\cos(\alpha) - \sin(\beta)\cos(\beta)}$\label{identlastident}
+\item $\frac{\cos(\alpha + \beta)}{\cos(\alpha - \beta)} = \frac{1 - \tan(\alpha)\tan(\beta)}{1 + \tan(\alpha)\tan(\beta)}$
+\item $\frac{\tan(\alpha + \beta)}{\tan(\alpha - \beta)} = \frac{\sin(\alpha)\cos(\alpha) + \sin(\beta)\cos(\beta)}{\sin(\alpha)\cos(\alpha) - \sin(\beta)\cos(\beta)}$\label{identlastident}
 
 \setcounter{HW}{\value{enumi}}
 
@@ -359,25 +359,19 @@ In Exercises \ref{identfirstident} - \ref{identlastident}, verify the identity.\
 
 \begin{question}
     
-In Exercise \ref{derivativesine} - \ref{derivativecosine}, use the results from  Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}: $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\sin(\theta)}{\theta} = 1$ and Exercise \ref{oneminuscosinelimit} in Section \ref{FundamentalTrigonometricIdentities} :   $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{1 - \cos(\theta)}{\theta} = 0$ to help you find the derivatives of the sine and cosine functions.
-
-
+In Exercise \ref{derivativesine} - \ref{derivativecosine}, use the results from  Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}: $\lim_{\theta \rightarrow 0}$ $\frac{\sin(\theta)}{\theta} = 1$ and Exercise \ref{oneminuscosinelimit} in Section \ref{FundamentalTrigonometricIdentities} :   $\lim_{\theta \rightarrow 0}$ $\frac{1 - \cos(\theta)}{\theta} = 0$ to help you find the derivatives of the sine and cosine functions.
 
 \begin{problem}\label{derivativesine}
-    \begin{enumerate}  
+\begin{enumerate}  
     \item  Verify for $f(t) = \sin(t)$, $\frac{f(t+h) - f(t)}{h} = \frac{\sin(t + h) - \sin(t)}{h} = \cos(t) \left(\frac{\sin(h)}{h} \right) + \sin(t) \left( \frac{\cos(h) - 1}{h} \right)$
 
-\smallskip
+\item  Show $f'(t) = \lim_{h \rightarrow 0} \frac{f(t+h) - f(t)}{h} = \cos(t)$.
 
-\item  Show $\ds{f'(t) = \lim_{h \rightarrow 0} \dfrac{f(t+h) - f(t)}{h} = \cos(t)}$.
-
-\smallskip
-
-\textbf{HINT:}   $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\cos(\theta) - 1}{\theta} =$ $\ds{\lim_{\theta \rightarrow 0}}$ $\left(-\frac{1 - \cos(\theta)}{\theta}\right) = - (0) = 0$
+\begin{hint}
+$\lim_{\theta \rightarrow 0}$ $\frac{\cos(\theta) - 1}{\theta} =$ $\lim_{\theta \rightarrow 0}$ $\left(-\frac{1 - \cos(\theta)}{\theta}\right) = - (0) = 0$
+\end{hint}
 
 \item  Find the equation of the tangent line to the graph of $y = \sin(t)$ at $(0,0)$, $\left(\frac{\pi}{2}, 1\right)$ and $(\pi, 0)$.  
-
-\smallskip
 
 Check your answers graphically.
 
@@ -385,17 +379,17 @@ Check your answers graphically.
 \end{problem}
 
 \begin{problem}\label{derivativecosine}
-    \begin{enumerate} \item   Verify for $g(t) = \cos(t)$, $\dfrac{g(t+h) - g(t)}{h} = \dfrac{\cos(t + h) - \cos(t)}{h} = \cos(t) \left( \dfrac{\cos(h) - 1}{h} \right) - \sin(t) \left(\dfrac{\sin(h)}{h} \right)$
+    \begin{enumerate} \item   Verify for $g(t) = \cos(t)$, $\frac{g(t+h) - g(t)}{h} = \frac{\cos(t + h) - \cos(t)}{h} = \cos(t) \left( \frac{\cos(h) - 1}{h} \right) - \sin(t) \left(\frac{\sin(h)}{h} \right)$
 
-\smallskip
+ 
 
-\item  Show $\ds{g'(t) = \lim_{h \rightarrow 0} \dfrac{g(t+h) - g(t)}{h} =  - \sin(t)}$.
+\item  Show $g'(t) = \lim_{h \rightarrow 0} \frac{g(t+h) - g(t)}{h} =  - \sin(t)$.
 
-\smallskip
+ 
 
 \item  Find the equation of the tangent line to the graph of $y = \cos(t)$ at $(0,1)$, $\left(\frac{\pi}{2}, 0\right)$ and $\left(-\frac{\pi}{2}, 0\right)$.  
 
-\smallskip
+ 
 
 Check your answers graphically.
 
@@ -414,24 +408,24 @@ Check your answers graphically.
 \begin{enumerate}
 \setcounter{enumi}{\value{HW}}
 
-\begin{enumerate}  \item\label{tanthetaoverthetalimit}  Use the fact\footnote{See Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}.} that $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\sin(\theta)}{\theta} = 1$  to prove $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\tan(\theta)}{\theta} = 1$.
+\begin{enumerate}  \item\label{tanthetaoverthetalimit}  Use the fact\footnote{See Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}.} that $\lim_{\theta \rightarrow 0}$ $\frac{\sin(\theta)}{\theta} = 1$  to prove $\lim_{\theta \rightarrow 0}$ $\frac{\tan(\theta)}{\theta} = 1$.
 
-\smallskip
+ 
 
 \textbf{HINT:}  $\frac{\tan(\theta)}{\theta} = \frac{\sin(\theta)}{\theta} \, \frac{1}{\cos(\theta)}$ \ldots
 
-\smallskip
+ 
 
- \item For $f(t) = \tan(t)$, show $\dfrac{f(t+h) - f(t)}{h} = \dfrac{\tan(t + h) - \tan(t)}{h} = \left( \dfrac{\tan(h)}{h} \right) \left(\dfrac{\sec^{2}(t)}{1 - \tan(t)\tan(h)} \right)$.
+ \item For $f(t) = \tan(t)$, show $\frac{f(t+h) - f(t)}{h} = \frac{\tan(t + h) - \tan(t)}{h} = \left( \frac{\tan(h)}{h} \right) \left(\frac{\sec^{2}(t)}{1 - \tan(t)\tan(h)} \right)$.
 
-\smallskip
+ 
 
-\item Use part \ref{tanthetaoverthetalimit} to show $\ds{f'(t) = \lim_{h \rightarrow 0} \dfrac{f(t+h) - f(t)}{h} = \sec^{2}(t)}$
+\item Use part \ref{tanthetaoverthetalimit} to show $f'(t) = \lim_{h \rightarrow 0} \frac{f(t+h) - f(t)}{h} = \sec^{2}(t)$
 
 
 \item  Find the equation of the tangent line to the graph of $y = \tan(t)$ at $(0,0)$, $\left(\frac{\pi}{4}, 1 \right)$ and $\left(-\frac{\pi}{4}, -1\right)$.  
 
-\smallskip
+ 
 
 Check your answers graphically.
 
@@ -602,15 +596,15 @@ In Exercises \ref{moreidentfirst} - \ref{moreidentlast}, verify the identity.  A
 \end{problem}
 
 \begin{problem}
-    $\sec(2x) = \dfrac{\cos(x)}{\cos(x) + \sin(x)} + \dfrac{\sin(x)}{\cos(x)-\sin(x)}$ 
+    $\sec(2x) = \frac{\cos(x)}{\cos(x) + \sin(x)} + \frac{\sin(x)}{\cos(x)-\sin(x)}$ 
 \end{problem}
 
 \begin{problem}
-     $\dfrac{1}{\cos(\theta) - \sin(\theta)} + \dfrac{1}{\cos(\theta) + \sin(\theta)} = \dfrac{2\cos(\theta)}{\cos(2\theta)}$
+     $\frac{1}{\cos(\theta) - \sin(\theta)} + \frac{1}{\cos(\theta) + \sin(\theta)} = \frac{2\cos(\theta)}{\cos(2\theta)}$
 \end{problem}
 
 \begin{problem} \label{moreidentlast}
-    $\dfrac{1}{\cos(\theta) - \sin(\theta)} - \dfrac{1}{\cos(\theta) + \sin(\theta)} = \dfrac{2\sin(\theta)}{\cos(2\theta)}$
+    $\frac{1}{\cos(\theta) - \sin(\theta)} - \frac{1}{\cos(\theta) + \sin(\theta)} = \frac{2\sin(\theta)}{\cos(2\theta)}$
 \end{problem}
 
 
@@ -645,8 +639,8 @@ In Exercises \ref{moreidentfirst} - \ref{moreidentlast}, verify the identity.  A
 
 \begin{enumerate}
 
-\item $\cos(\theta) = \dfrac{1}{\sqrt{x^2+1}}$
-\item $\sin(\theta) = \dfrac{x}{\sqrt{x^2+1}}$
+\item $\cos(\theta) = \frac{1}{\sqrt{x^2+1}}$
+\item $\sin(\theta) = \frac{x}{\sqrt{x^2+1}}$
 
 \setcounter{HWindent}{\value{enumii}}
 
@@ -660,8 +654,8 @@ In Exercises \ref{moreidentfirst} - \ref{moreidentlast}, verify the identity.  A
 
 \setcounter{enumii}{\value{HWindent}}
 
-\item $\sin(2\theta) = \dfrac{2x}{x^2+1}$
-\item $\cos(2\theta) = \dfrac{1-x^2}{x^2+1}$
+\item $\sin(2\theta) = \frac{2x}{x^2+1}$
+\item $\cos(2\theta) = \frac{1-x^2}{x^2+1}$
 
 \end{enumerate}
 
