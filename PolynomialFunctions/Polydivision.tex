@@ -239,9 +239,9 @@ $
 \end{array}
 $
 
-\quad 
+\quad\quad\quad 
 &
-\quad
+\quad\quad\quad
 
 $
 \begin{array}{r}
@@ -266,9 +266,9 @@ $
 \end{array}
 $
 
-\quad 
+\quad\quad\quad 
 &
-\quad
+\quad\quad\quad
 
 $
 \begin{array}{r}
@@ -293,9 +293,9 @@ $
 \end{array}
 $
 
-\quad 
+\quad\quad\quad 
 &
-\quad
+\quad\quad\quad
 
 $
 \begin{array}{r}
@@ -321,9 +321,9 @@ $
 \end{array}
 $
 
-\quad 
+\quad\quad\quad 
 &
-\quad
+\quad\quad\quad
 
 $
 \begin{array}{r}
@@ -367,40 +367,44 @@ Also take note that when a polynomial (of degree at least $1$) is divided by $x-
 
 \item When setting up the synthetic division tableau, the coefficients of even `missing' terms need to be accounted for, so we enter $0$ for the coefficient of $x$ in the dividend.  
 
-\[ \begin{array}{rrrrr}
+\begin{center}
+$
+\begin{array}{r}
+ 3 \quad |\quad 5 \quad\quad -2 \quad\quad 0 \quad\quad \phantom{1.} 1 \\
+ \underline{\downarrow \phantom{1} \quad\quad 15 \quad\quad  39 \phantom{1} \quad 117}\\
+5\phantom{1.} \quad\quad 13 \quad\quad 39 \quad \fbox{118}
+\end{array}
+$    
+\end{center}
 
-
-  3 \, \, \vline& 5 & -2 & 0  & 1 \\
-
-   & \downarrow &  15  &  39  & 117 \\ \hhline{~----} 
-  & 5  &   13  & 39  &  \fbox{$118$}  \\  
-\end{array}\]
 
 Since the dividend was a third degree polynomial function, the quotient is a second degree (quadratic) polynomial function with coefficients $5$, $13$ and $39$:   $q(x) = 5x^2+13x+39$. The remainder is $r(x) = 118$.  According to Theorem \ref{polydivthm}, we have $5x^3 - 2x^2 + 1 = (x-3)\left(5x^2+13x+39 \right) + 118$, which we leave to the reader to check.
 
 \item  To use synthetic division here, we rewrite $t+2$ as $t-(-2)$ and proceed as before
 
-\[ \begin{array}{rrrrr}
-
-
-  -2 \, \, \vline& 1 & 0 & 0  & 8 \\
-
-   & \downarrow &  -2  &  4  & -8 \\ \hhline{~----} 
-  & 1  &   -2  & 4  &  \fbox{$0$}  \\  
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ -2 \quad |\quad 1 \quad\quad 0 \quad\quad 0 \quad\quad 8 \\
+ \underline{\downarrow \quad  -2 \quad\phantom{1.} 4 \quad -8}\\
+1 \quad -2 \phantom{1.}\quad 4 \phantom{1.}\quad \fbox{0}
+\end{array}
+$    
+\end{center}
 
 We get the quotient $q(t) = t^2-2t+4$ and the remainder $r(t) =0$. Relating the dividend, quotient and remainder gives: $t^3+8 = (t+2)\left( t^2-2t+4 \right)$, which is a specific instance of the `sum of cubes' formula some of you may recall from Intermediate Algebra.  
 
 \item To divide $4-8z-12z^2$ by $2z-3$, two things must be done.  First, we write the dividend in descending powers of $z$ as $-12z^2-8z+4$.  Second, since synthetic division works only for factors of the form $z-c$, we factor $2z-3$ as $2\left(z-\frac{3}{2}\right)$.  Hence, we are dividing  $-12z^2-8z+4$ by two factors:  $2$ and $\left(z-\frac{3}{2}\right)$.  Dividing first by $2$, we obtain $-6z^2-4z+2$.  Next, we divide  $-6z^2-4z+2$ by $\left(z-\frac{3}{2}\right)$:
 
-\[ \begin{array}{rrrr}
-
-
-  \frac{3}{2} \, \, \vline& -6 & -4 & 2   \\ [4pt]
-
-   & \downarrow &  -9  & -\frac{39}{2}  \\ [4pt] \hhline{~---} 
-  &  -6  &   -13  & \fbox{$-\frac{35}{2}$}  \\  
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ \frac{3}{2} \quad |\quad -6 \quad-4 \quad\quad\quad 2 \\
+ \underline{\downarrow \quad  -9\phantom{.} \quad -\frac{39}{2}}\\
+-6 \quad -13 \quad -\frac{35}{2}
+\end{array}
+$    
+\end{center}
 
 
 Hence,  $-6z^2-4z+2 = \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2}$.  However when it comes to writing  the dividend, quotient and remainder in the form given in Theorem \ref{polydivthm}, we need to find $q(z)$ and $r(z)$ so that  $-12z^2-8z+4 = (2z-3) q(z) + r(z)$. Hence, starting with $-6z^2-4z+2 = \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2}$, we multiply $2$ back on both sides:  
