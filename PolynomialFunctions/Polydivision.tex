@@ -215,15 +215,13 @@ We've streamlined things quite a bit so far, but we can still do more.  Let's ta
 
  Multiplying by $-2$ then by $-1$ is the same as multiplying by $2$, so we replace the $-2$ in the divisor by $2$.   Furthermore, the coefficients of the quotient polynomial match the coefficients of the first three terms in the last row, so we now take the plunge and write only the coefficients of the terms to get
 
-
-
-\[ \begin{array}{rrrrr}
-  2 \,\, | & 1 & 4 & -5  & -14 \\
-   &  & 2 &   12 &   14 \\ &  \cline{1-4}
-  & 1  &   6  &  7 &  0  \\  
-\end{array}\]
-
-
+\[
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\phantom{1} \quad\quad 2 \quad\quad 12 \quad\quad 14 }\\
+ 1 \quad\quad 6 \quad\quad 7 \quad\quad\quad 0
+\end{array}
+\]
 
 We have constructed a \index{polynomial division ! synthetic division}\index{synthetic division tableau}\textbf{synthetic division tableau} for this polynomial division problem.  Let's re-work our division problem using this tableau to see how it greatly streamlines the division process.  
 
@@ -231,140 +229,111 @@ We have constructed a \index{polynomial division ! synthetic division}\index{syn
 
 To divide $x^3+4x^2-5x-14$ by $x-2$, we write $2$ in the place of the divisor and the coefficients of $x^3+4x^2-5x-14$ in for the dividend.  Then `bring down' the first coefficient of the dividend.
 
-\bigskip
-
 \begin{center}
-
 \begin{tabular}{cc}
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\phantom{1 \quad\quad 2 \quad\quad 12 \quad\quad 14 }}\\
+ \phantom{1 \quad\quad 6 \quad\quad 7 \quad\quad\quad 0}
+\end{array}
+$
 
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   &  &    &    &  \\ \hhline{~----} 
-  &   &     &   &    \\  
-\end{array}$  \hspace{1in}
+\quad 
 &
+\quad
 
-
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &    &    &  \\ \hhline{~----} 
-  & 1  &     &   &    \\  
-\end{array}$ \\
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad \phantom{ \quad\quad 11 \quad\quad 1.1 }}\\
+ 1 \quad\quad \phantom{6 \quad\quad 7 \quad\quad\quad 0}
+\end{array}
+$
 
 \end{tabular}
-
 \end{center}
-
-\bigskip
 
 Next, take the $2$ from the divisor and multiply by the $1$ that was `brought down' to get $2$.  Write this underneath the $4$, then add to get $6$.
 
-\bigskip
-
 \begin{center}
-
 \begin{tabular}{cc}
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad \phantom{12 \quad\quad .4 }}\\
+1 \quad\quad \phantom{6 \quad\quad 7 \quad\quad\quad 0}
+\end{array}
+$
 
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow  &  2  &    &  \\ \hhline{~----} 
-  & 1  &     &   &    \\  
-\end{array}$ \hspace{1in}
+\quad 
 &
+\quad
 
-
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &  2  &    &  \\ \hhline{~----} 
-  & 1  &   6  &   &    \\  
-\end{array}$ \\
-
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad \phantom{12 \quad\quad .4 }}\\
+1 \quad\quad 6 \quad\quad \phantom{7 \quad\quad\quad 0}
+\end{array}
+$
 
 \end{tabular}
-
 \end{center}
-
-\bigskip
 
 Now take the $2$ from the divisor times the $6$ to get $12$, and add it to the $-5$ to get $7$.
 
-\bigskip
-
 \begin{center}
-
 \begin{tabular}{cc}
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad 12 \quad\quad \phantom{.4}}\\
+1 \quad\quad 6 \quad\quad \phantom{7 \quad\quad\quad 0}
+\end{array}
+$
 
-
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &  2  &  12  &  \\ \hhline{~----} 
-  & 1  &   6  &   &    \\  
-\end{array}$ \hspace{1in}
-
+\quad 
 &
+\quad
 
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &  2  &  12  &  \\ \hhline{~----} 
-  & 1  &   6  & 7  &    \\  
-\end{array}$ \\
-
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad 12 \quad\quad \phantom{.4 }}\\
+1 \quad\quad 6 \quad\quad 7 \quad\quad\quad \phantom{0}
+\end{array}
+$
 
 \end{tabular}
-
 \end{center}
 
 
 Finally, take the $2$ in the divisor times the $7$ to get $14$, and add it to the $-14$ to get $0$.
 
-\bigskip
-
 \begin{center}
-
 \begin{tabular}{cc}
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad 12 \quad\quad 14}\\
+1\phantom{.} \quad\quad 6 \quad\quad 7 \quad\quad\quad \phantom{0}
+\end{array}
+$
 
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &  2  &  12  & 14 \\ \hhline{~----} 
-  & 1  &   6  & 7  &    \\  
-\end{array}$ \hspace{1in} 
-
+\quad 
 &
+\quad
 
-$ \begin{array}{rrrrr}
-
-
-  2 \, \, \vline& 1 & 4 & -5  & -14 \\
-
-   & \downarrow &  2  &  12  & 14 \\ \hhline{~----} 
-  & 1  &   6  & 7  &  \fbox{$0$}  \\  
-\end{array}$ \\
-
-
+$
+\begin{array}{r}
+ 2 \quad |\quad 1 \quad\quad 4 \quad -5 \quad -14 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad 12 \quad\quad 14}\\
+1\phantom{.} \quad\quad 6 \quad\quad 7 \quad\quad \fbox{0}
+\end{array}
+$
 
 \end{tabular}
-
 \end{center}
 
 The first three numbers in the last row of our tableau are the coefficients of the quotient polynomial.  Remember, we started with a third degree polynomial and divided by a first degree polynomial, so the quotient is a second degree polynomial.  Hence the quotient is $x^2+6x+7$.  
