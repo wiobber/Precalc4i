@@ -698,23 +698,31 @@ $(-\infty, -\sqrt[3]{3}\,) \cup (\sqrt[3]{2}, \infty)$
 \begin{problem}\label{polyineqfromgraphfirst}
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[10]{-7}{7}{-6}{6}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](-4.5, 0.75){\scriptsize $(-6,0)$}
-\tlabel[cc](5, 0.75){\scriptsize $(6,0)$}
-\tlabel[cc](1, 0.75){\scriptsize $(0,0)$}
-\point[4pt]{(-6,0),(0,0),(6,0)}
-\xmarks{-6 step 1 until 6}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-7,7,0.1}{((x**3) - 36*x)/20}
-\tcaption{$y = f(x)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-100, ymax=100,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6,-5,...,5,6},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-7:7] {x*(x-6)*(x+6)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-6,0)(0,0)(6,0)};
+\node at (-6,0) [above=8pt,right=4pt] {$(-6,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
+\end{tikzpicture}
 
 Solve $f(x) < 0$. 
 \end{problem}
@@ -722,22 +730,31 @@ Solve $f(x) < 0$.
 \begin{problem}
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[20][20]{-3}{3}{-2}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabel[cc](-1.75, 0.3){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, 0.3){\scriptsize $(0,0)$}
-\point[4pt]{(-2,0), (0,0)}
-\xmarks{-2,-1, 1, 2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,0.3,0.1}{x*((x + 2)**3)}
-\tcaption{$y = g(t)$ }
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=3, ymin=-5, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-3:0.5] {x*(x+2)^3};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [above=8pt,right=2pt] {$(-2,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=g(t)$.};
+\end{tikzpicture}
 
 Solve $g(t) > 0$. 
 \end{problem}
@@ -745,22 +762,31 @@ Solve $g(t) > 0$.
 \begin{problem}
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[20][10]{-3}{3}{-4}{4}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $z$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tlabel[cc](-2, 0.75){\scriptsize $(-1,0)$}
-\tlabel[cc](2, 0.75){\scriptsize $(2,0)$}
-\point[4pt]{(2,0), (-1,0)}
-\xmarks{-2,-1,1,2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.70,3.45,0.1}{(-0.4)*((x-2)**2)*(x+1)}
-\tcaption{$y = p(z)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3.6, ymin=-5, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-1.7:3.45] {(-0.4)*((x-2)^2*(x+1)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1,0)(2,0)};
+\node at (-1,0) [above=8pt,left=8pt] {$(-1,0)$};
+\node at (2,0) [above=8pt] {$(2,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=p(z)$.};
+\end{tikzpicture}
 
 Solve $p(z) \geq 0$ . 
 \end{problem}  
@@ -768,22 +794,31 @@ Solve $p(z) \geq 0$ .
 \begin{problem}
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[20][10]{-2}{4}{-4}{4}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tlabel[cc](-0.75, 0.75){\scriptsize $\left(-\frac{1}{2},0 \right)$}
-\tlabel[cc](2.5, 0.75){\scriptsize $(3,0)$}
-\point[4pt]{(-0.5,0), (3,0)}
-\xmarks{-1,1,2,3}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.5,3.3,0.1}{(0.5)*((x+0.5)**2)*(x-3)}
-\tcaption{$y = f(x)$ }
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=4, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1,2,3},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-1.5:3.3] {(0.5)*((x+0.5)^2)*(x-3)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1/2,0)(3,0)};
+\node at (-1/2,0) [above=14pt,left=2pt] {$(-\frac{1}{2},0)$};
+\node at (3,0) [above=8pt,left=2pt] {$(3,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
+\end{tikzpicture}
 
 Solve $f(x) < 0$. 
 \end{problem}  
@@ -791,22 +826,31 @@ Solve $f(x) < 0$.
 \begin{problem}
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[20][10]{-3}{3}{-5}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $s$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabel[cc](-2, -0.75){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, 0.75){\scriptsize $(0,0)$}
-\point[4pt]{(-2,0), (0,0)}
-\xmarks{-2,-1,1,2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,0.65,0.1}{0-x*((x + 2)**2)}
-\tcaption{$y = F(s)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=3, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-3:0.65] {0-x*((x + 2)^2)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [below=8pt] {$(-2,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=F(s)$.};
+\end{tikzpicture}
 
 Solve $F(s) \leq 0$. 
 \end{problem}
@@ -814,22 +858,31 @@ Solve $F(s) \leq 0$.
 \begin{problem}\label{polyineqfromgraphlast} 
 Use the the graph of the given polynomial function to  solve the stated inequality.
 
-\begin{mfpic}[20][10]{-3}{3}{-5}{5}
-\axes
-\tlabel[cc](-2, 0.75){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, -0.75){\scriptsize $(0,0)$}
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\point[4pt]{(-2,0), (0,0)}
-\xmarks{-2,-1,1,2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{  {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.45,0.85,0.1}{(x**3)*((x + 2)**2)}
-\tcaption{$y = G(t)$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-2.45:0.85] {x^3*((x + 2)^2)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [above=8pt] {$(-2,0)$};
+\node at (0,0) [below=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=G(t)$.};
+\end{tikzpicture}
 
 Solve $G(t) \geq 0$. 
 \end{problem}
