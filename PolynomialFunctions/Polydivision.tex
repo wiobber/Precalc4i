@@ -442,23 +442,29 @@ The next example pulls together all of the concepts discussed in this section.
 
 \item  The Remainder Theorem states $p(-2)$ is the remainder when $p(x)$ is divided by $x-(-2)$.  We set up our synthetic division tableau below.  We are careful to record the coefficient of $x^2$ as $0$:
 
-\[\begin{array}{rrrrr}
- -2 \, \, \vline& 2 & 0 & -5  & 3 \\
-
-   & \downarrow &  -4  &  8  & -6 \\ \hhline{~----} 
-  & 2  &   -4  & 3 &  \fbox{$-3$}  \\  
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ -2 \quad |\quad 2 \quad\quad 0 \quad\quad -5 \phantom{1.}\quad\quad 3 \\
+ \underline{\downarrow \quad\phantom{.}  -4 \quad\quad 8 \quad\quad -6}\\
+2 \quad -4 \quad\phantom{111} 3 \phantom{11}\quad \fbox{-3}
+\end{array}
+$    
+\end{center}
 
 According to the Remainder Theorem, $p(-2) = -3$.  We can check this by direct substitution into the formula for $p(x)$:  $p(-2) = 2(-2)^3-5(-2)+3 = -16+10+3=-3$.
 
 \item We verify $x=1$ is a zero of $p$ by evaluating $p(1) = 2(1)^3-5(1)+3 = 0$.  To see if there are any more real zeros, we need to solve $p(x) = 2x^3-5x+3 = 0$.  From the Factor Theorem, we know since $p(1) = 0$,  we can factor $p(x)$ as $(x-1)q(x)$.  To find $q(x)$, we use synthetic division:
 
-\[\begin{array}{rrrrr}
- 1 \, \, \vline& 2 & 0 & -5  & 3 \\
-
-   & \downarrow &  2  &  2  & -3 \\ \hhline{~----} 
-  & 2  &   2  & -3 &  \fbox{$0$}  \\  
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ -2 \quad |\quad 2 \quad\quad 0 \phantom{11}\quad -5 \quad\quad 3 \\
+ \underline{\downarrow \quad\quad  2 \quad\quad\phantom{.} 2 \quad\phantom{1} -3}\\
+2 \phantom{1}\quad\quad 2 \phantom{1}\quad -3 \phantom{1}\quad \fbox{0}
+\end{array}
+$    
+\end{center}
 
 As promised, our remainder is $0$, and we get  $p(x) = (x-1)\left( 2x^2 + 2x - 3\right)$.  Setting this form of $p(x)$ equal to  $0$ we get $(x-1)\left( 2x^2 + 2x - 3\right) = 0$.  We recover  $x = 1$ from setting $x-1=0$  but we also obtain $x = \frac{-1 \pm \sqrt{7}}{2}$ from  $2x^2 + 2x - 3=0$, courtesy of the Quadratic Formula.   \qed
 \end{enumerate}
@@ -471,20 +477,17 @@ Our next example demonstrates how we can extend the synthetic division tableau t
 
 {\bf Solution.}  While computing $p\left(\frac{1}{2} \right) = 0$ shows $x=\frac{1}{2}$  is a zero of $p$, to prove it has multiplicity $2$, we need to factor $p(x) = \left(x - \frac{1}{2}\right)^2 q(x)$ with $q\left( \frac{1}{2} \right) \neq 0$,.   We set up for synthetic division, but instead of stopping after the first division, we continue the tableau downwards and divide $\left(x - \frac{1}{2}\right)$ directly into the quotient we obtained from the first division as follows:
 
-\[\begin{array}{rrrrrr}
- \frac{1}{2} \, \, \vline& 4 & -4 & -11  & 12 & -3 \\
-
-   & \downarrow &  2  &  -1  & -6 & 3\\ \hhline{~-----} 
-   
-  \frac{1}{2} \, \, \vline&  4  &   -2  & -12 & 6 &  \fbox{$0$}  \\
-    
-      & \downarrow &  2  &  0  & -6 &\\ \hhline{~----} 
-      
-       & 4  &   0  & -12 & \fbox{0} &   \\  
-
-
-
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ \frac{1}{2} \quad |\quad 4 \quad\quad -4 \quad\quad -11 \quad\quad 12 \quad\quad 3\\
+ \underline{\downarrow \phantom{11}\quad\quad  2 \quad\phantom{1.} -1\quad\phantom{1.} -6 \quad\quad 3}\\
+ \frac{1}{2} \quad |\quad 4 \quad\quad -2 \quad\quad -12 \quad\quad 6 \quad\quad \fbox{0}\\
+ \underline{\downarrow \phantom{11}\quad\quad  2 \quad\phantom{111} 0\quad\phantom{1.} -6 \phantom{\quad\quad \fbox{0}}}\\
+4 \phantom{1.}\quad\quad 0 \phantom{1.}\quad -12 \phantom{1.}\quad \fbox{0} \phantom{\quad\quad \fbox{0}}
+\end{array}
+$    
+\end{center}
 
 We get:\footnote{For those wanting more detail:  the first division gives:  $4x^4-4x^3-11x^2+12x-3=\left(x-\frac{1}{2}\right) \left(4x^3-2x^2-12x+6\right)$.  The second division gives: $4x^3-2x^2-12x+6=\left(x-\frac{1}{2}\right)\left(4x^2-12\right)$.}   $4x^4-4x^3-11x^2+12x-3 = \left(x-\frac{1}{2}\right)^2\left(4x^2-12\right)$.  Note if we let $q(x) = 4x^2-12$, then $q\left(\frac{1}{2} \right) = 4\left(\frac{1}{2} \right)^2 - 12 = -11 \neq 0$  which proves $x = \frac{1}{2}$ is a zero of $p$ of multiplicity $2$.   To find the remaining zeros of $p$, we set the quotient $4x^2-12=0$, so $x^2 = 3$ and extract square roots to get $x = \pm \sqrt{3}$.  \qed
 
@@ -496,27 +499,21 @@ A couple of things about the last example are worth mentioning. First, the exten
 
 Secondly, we found $x = \pm \sqrt{3}$ are zeros of $p$.  The Factor Theorem guarantees $\left(x-\sqrt{3}\right)$ and $\left(x - \left(-\sqrt{3}\right)\right)$ are both factors of $p$.  We can certainly put the Factor Theorem to the test and continue the synthetic division tableau from above to see what happens.
 
-\[\begin{array}{rrrrrr}
- \frac{1}{2} \, \, \vline& 4 & -4 & -11  & 12 & -3 \\
-
-  & \downarrow &  2  &  -1  & -6 & 3\\ \hhline{~-----} 
-  
-  \frac{1}{2} \, \, \vline&  4  &   -2  & -12 & 6 &  \fbox{$0$}  \\
-    
-  & \downarrow &  2  &  0  & -6 &\\ \hhline{~----} 
- 
-  
- \sqrt{3} \, \, \vline  & 4  &   0  & -12 & \fbox{0} &   \\
-  
-                        & \downarrow &  4\sqrt{3}  & 12  & &\\ \hhline{~---} 
- 
-   -\sqrt{3} \, \, \vline  & 4  &  4\sqrt{3}  & \fbox{0} &  &   \\  
-       
-                          & \downarrow &  -4\sqrt{3}  &   & &\\ \hhline{~--} 
-       
-													& 4  &  \fbox{0}  &  &  &   \\
-
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ \frac{1}{2} \quad |\quad 4 \quad\quad -4 \quad\quad -11 \quad\quad 12 \quad\quad 3\\
+ \underline{\downarrow \phantom{11}\quad\quad  2 \quad\phantom{1.} -1\quad\phantom{1.} -6 \quad\quad 3}\\
+ \frac{1}{2} \quad |\quad 4 \quad\quad -2 \quad\quad -12 \quad\quad 6 \quad\quad \fbox{0}\\
+ \underline{\downarrow \phantom{11}\quad\quad  2 \quad\phantom{111} 0\quad\phantom{1.} -6 \phantom{\quad\quad \fbox{0}}}\\
+\sqrt{3} \quad |\quad 4 \phantom{1.}\quad\quad 0 \phantom{1.}\quad -12 \phantom{1.}\quad \fbox{0} \phantom{\quad\quad \fbox{0}}\\
+ \underline{\downarrow \phantom{11}\quad  4\sqrt{3} \quad\phantom{111} 12\quad \phantom{-6 \quad\quad \fbox{0}}}\\
+-\sqrt{3} \quad |\quad\quad 4 \quad\quad\phantom{1.} 4\sqrt{3} \phantom{1.}\quad \fbox{0}  \phantom{1.} \phantom{-12 \phantom{1.}  \quad \fbox{0}}\\
+ \underline{\downarrow \quad\phantom{.}  -4\sqrt{3} \phantom{111} \phantom{12\quad -6 \quad\quad \fbox{0}}}\\
+ 4 \phantom{11.}\quad\quad \fbox{0}  \phantom{1.}\quad \phantom{-12 \phantom{1.}\quad  \quad\quad \fbox{0}}
+\end{array}
+$    
+\end{center}
 
 This gives us
 
