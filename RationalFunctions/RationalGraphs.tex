@@ -164,7 +164,7 @@ We interpret these findings graphically below on the right.
 \end{image}
 \begin{center}
     \captionof{figure}{Behavior near $x=\pm 2$}
-\xmalt{Diagram illustrating behavior near vertical asymptotes at $x=-2$ and $x=2$. As the graph approaches either asymptote from the outside, $y$ increases without bound. As the graph approaches either asymptote from the inside, $y$ decreases without bound.} 
+\xmalt{Diagram illustrating behavior near vertical asymptotes at $x=-2$ and $x=2$. As the graph approaches either asymptote from the right, $y$ increases without bound. As the graph approaches either asymptote from the left, $y$ decreases without bound.} 
 \end{center}
 
 
@@ -199,14 +199,14 @@ We interpret these findings graphically below on the right.
 \end{image}
 \begin{center}
     \captionof{figure}{End behavior}
-\xmalt{Diagram illustrating end behavior. As $x \to -\infty$, the graph approaches the $x$-axis from below. As $x \to \infty$, the graph approaches the $x$-axis from above. Arrows indicate the direction of the graph at each end.} 
+\xmalt{Diagram illustrating end behavior. As $x \to -\infty$, the graph approaches the $x$-axis from below. As $x \to \infty$, the graph approaches the $x$-axis from above.} 
 \end{center}
 
 \item  Lastly, we construct a sign diagram for $f(x)$.  The $x$-values excluded from the domain of $f$ are $x = \pm 2$, and the only zero of $f$ is $x=0$.  Displaying these appropriately on the number line gives us four test intervals, and we choose the test values\footnote{In this particular case, we don't need test values since our analysis of the behavior of $f$ near the vertical asymptotes and our end behavior analysis have given us the signs on each of the test intervals.  In general, however, this won't always be the case, so for demonstration purposes, we continue with our usual construction.} $x=-3$, $x=-1$, $x=1$ and $x=3$.  We find $f(-3)$ is $(-)$, $f(-1)$ is $(+)$, $f(1)$ is $(-)$ and $f(3)$ is $(+)$.  As we begin our sketch, it certainly appears as if the graph could be symmetric about the origin.  Taking a moment to check for symmetry, we find $f(-x) = \frac{3(-x)}{(-x)^2-4} = -\frac{3x}{x^2-4} = -f(x)$.  Hence, $f$ is odd and the graph of $y = f(x)$ is symmetric about the origin. Putting all of our work together, we get the graph below.
 
 \begin{center}
     \captionof{figure}{Sign diagram}
-\xmalt{Sign diagram showing the intervals on which a function is positive or negative. Dashed vertical lines at $x=-2$ and $x=2$ indicate vertical asymptotes. The function is negative on $(-\infty,-2)$, positive on $(-2,0)$, negative on $(0,2)$, and positive on $(2,\infty)$. The function has a zero at $x=0$.} 
+\xmalt{Sign diagram showing the intervals on which the function is positive or negative. Dashed vertical lines at $x=-2$ and $x=2$ indicate vertical asymptotes. The function is negative on $(-\infty,-2)$, positive on $(-2,0)$, negative on $(0,2)$, and positive on $(2,\infty)$. The function has a zero at $x=0$.} 
 \end{center}
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\Large
@@ -418,7 +418,7 @@ We sketch the end behavior below on the right.
 \end{image}
 \begin{center}
     \captionof{figure}{End behavior}
-\xmalt{Diagram illustrating end behavior. A dashed horizontal line represents a horizontal asymptote. On the far left, the graph approaches the asymptote from above as $t \to -\infty$. On the far right, the graph approaches the same asymptote from below as $t \to \infty$. Arrows indicate the direction of the graph at each end.} 
+\xmalt{Diagram illustrating end behavior. A dashed horizontal line represents a horizontal asymptote $y=2$. On the far left, the graph approaches the asymptote from above as $t \to -\infty$. On the far right, the graph approaches the same asymptote from below as $t \to \infty$.} 
 \end{center}
 
 
@@ -618,7 +618,7 @@ coordinates {
 \end{image}
 \begin{center}
     \captionof{figure}{Behavior near $x=-2$ and $x=-1$}
-\xmalt{Diagram illustrating behavior near a vertical asymptote. A dashed vertical line at $t=-2$ represents the asymptote. One branch approaches the asymptote from the left and decreases without bound. A second branch approaches the asymptote from the right and increases without bound. A separate line segment to the right of the asymptote, showing the behavior in the middle, contains an open circle on the $t$-axis, indicating a hole in the graph.} 
+\xmalt{Diagram illustrating behavior near a vertical asymptote. A dashed vertical line at $t=-2$ represents the asymptote. One branch approaches the asymptote from the left and decreases without bound. A second branch approaches the asymptote from the right and increases without bound. A separate line segment to the right of the asymptote, showing the behavior in the middle, contains an open circle on the $t$-axis, indicating a hole in the graph at $t=-1$.} 
 \end{center}
 
 
@@ -669,7 +669,7 @@ coordinates {
 
 \begin{center}
     \captionof{figure}{Sign diagram}
-\xmalt{Sign diagram for a function with vertical asymptotes at $t=-2$ and $t=3$, indicated by dashed vertical lines. The function is positive on the intervals $(-\infty,-2)$, $(-1,\frac{5}{2})$, and $(3,\infty)$, and negative on the intervals $(-2,-1)$ and $(\frac{5}{2},3)$. The function has zeros at $t=-1$ and $t=\frac{5}{2}$.} 
+\xmalt{Sign diagram for a function with a vertical asymptote at $x=-2$, indicated by a dashed vertical line. The function is negative on the intervals $(-\infty,-2)$, $(-1,-\frac{1}{2})$, and positive on the intervals $(-2,-1)$ and $(-\frac{1}{2},\infty)$. The function has a zero $x=-\frac{1}{2}$, and a hole at $x=-1$.} 
 \end{center}
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\Large
@@ -690,6 +690,8 @@ coordinates {
 \node[anchor=north, red] at (-1.5,1) {$(+)$};
 \node[anchor=north, blue] at (-0.5,1) {$(-)$};
 \node[anchor=north, red] at (0.5,1) {$(+)$};
+
+\draw[dashed, gray] (-2,-1.5)--(-2,1.5);
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -760,7 +762,7 @@ coordinates {
     \end{image}
 \begin{center}
     \captionof{figure}{Graph of $y=h(x)$}
-\xmalt{Sign diagram showing the intervals on which a function is positive or negative. The function is negative on the interval $(-\infty,-2)$, positive on $(-2,-1)$, negative on $(-1,-\frac{1}{2})$, and positive on $(-\frac{1}{2},\infty)$. The function has zeros at $x=-2$, $x=-\frac{1}{2}$, and $x=\frac{1}{2}$.} 
+\xmalt{Graph of a curve with a vertical asymptote at $x=-2$, shown by a dashed vertical line, and a slant asymptote, shown by a dashed diagonal line. The graph has three pieces. The left branch lies below the slant asymptote and decreases without bound as it approaches the vertical asymptote from the left. A second branch lies between $x=-2$ and $x=-1$, descending from positive values to an open circle at $(-1,0)$. A third branch begins at the open dot at $(-1,0)$, increases from left to right, and approaches the slant asymptote as $x$ increases.} 
 \end{center}
 
 
