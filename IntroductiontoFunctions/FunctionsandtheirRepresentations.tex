@@ -31,7 +31,7 @@ For example, let's take a look at some of the pets in the Stitz household.  Tayl
 To help identify which process $f$ or $g$ is a function and  why the other is not, we create  \index{diagram ! mapping} \textbf{mapping diagrams} for $f$ and $g$ below.  In each case, we organize the inputs in a column on the left and the outputs in a column on the right.  We draw an arrow connecting each input to its corresponding output(s).  Note that the arrows communicate the grammatical bias: the arrow originates at the input and points to the output.
 
 
-
+\begin{image}
 \begin{tikzpicture}
 
 % ---------- Left diagram: f ----------
@@ -85,7 +85,11 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 \draw[->] (tur2) -- (ke2);
 
 \end{tikzpicture}
-
+\end{image}
+\begin{center}
+    \captionof{figure}{Mapping diagrams for $f$ and $g$}
+\xmalt{Mapping diagrams illustrating a function and its reverse. In the top diagram, the function $f$ maps the inputs White Paw, Cooper, Bingo, and Kennie to the outputs cat, cat, lizard, and turtle, respectively. In the bottom diagram, the function $g$ maps cat to White Paw and Cooper, lizard to Bingo, and turtle to Kennie.} 
+\end{center}
 
 
 The process $f$ is a function since $f$ matches each of its inputs (each pet name) to just one output (the pet's type).   The fact that different inputs (White Paw and Cooper) are matched to the same output (cat) is fine.   On the other hand, $g$ matches the input `cat' to the two different outputs  `White Paw' and `Cooper', so $g$ is not a function.    Functions are favored in mathematical circles because they are processes which produce only one answer (output) for any given query (input).  In this scenario, for instance, there is only one answer to the question: `What type of pet is White Paw?' but there is more than one answer to the question `Which of Taylor's pets are cats?'  
@@ -120,7 +124,7 @@ Said differently, the range of a function is the set of outputs from the functio
 
 Some remarks about Definition \ref{domainrangedefns} are in order.  First, and most importantly, the notation `$f(a)$' in Definition \ref{domainrangedefns}  introduces yet another mathematical use for parentheses.  Parentheses are used in some cases as grouping symbols, to represent ordered pairs, and to delineate intervals of real numbers.  More often than not, the use of parentheses in expressions like `$f(a)$' is confused with multiplication.   As always, paying attention to the context is key.  If $f$ is a function and `$a\,$' is in the domain of $f$, then `$f(a)$'  is the output from $f$ when you input $a$.  The diagram below provides a nice generic picture to keep in mind when thinking of a function as a mapping process with input `$a\,$' and output `$f(a)$'.
 
-
+\begin{image}
 \begin{tikzpicture}[scale=0.5]
 
 % Labels
@@ -151,6 +155,11 @@ Some remarks about Definition \ref{domainrangedefns} are in order.  First, and m
   plot[smooth] coordinates {(-8.75,0.25) (0,5) (6.75,0.25)};
 
 \end{tikzpicture}
+\end{image}
+\begin{center}
+    \captionof{figure}{Diagrammatic representation of a function}
+\xmalt{Diagram illustrating the concept of a function. An element labeled $a$ in set $A$ is mapped by the function $f$ to the element labeled $f(a)$ in set $B$. The element $a$ is identified as the input, and $f(a)$ is identified as the output.} 
+\end{center}
 
 In the preceding pet example, the symbol $f(\text{Bingo})$, read `$f$ of Bingo', is asking what type of pet Bingo is, so $f(\text{Bingo}) = \text{lizard}$.  The fact that $f$ is a function means $f(\text{Bingo})$ is unambiguous because $f$ matches the name `Bingo' to only one pet type, namely `lizard'. In contrast, if we tried to use the notation `$g(\text{cat})$' to indicate what pet name $g$ matched to `cat', we have \textbf{two} possibilities, White Paw and Cooper, with no way to determine which one (or both) is indicated.  
 
@@ -538,9 +547,7 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 
  
 
-\begin{center}
-
-
+\begin{image}
 %---------------- LEFT GRAPH ----------------%
 \begin{tikzpicture}[scale=0.9]
 
@@ -573,13 +580,15 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
   0/6.4, 2/6.7, 4/7.5, 6/8.0, 8/8.3, 10/8.3, 12/8.2}
   \fill (\x,\y) circle (2pt);
 
-% Caption
-\node at (6,-1.2) {\scriptsize The graph of $T=f(t)$.};
-
 \end{tikzpicture}
-
+\end{image}
+\begin{center}
+    \captionof{figure}{The graph of $T=f(t)$}
+\xmalt{Scatter plot of temperature $T$ versus time $t$. The plotted points are approximately $(0,64)$, $(2,67)$, $(4,75)$, $(6,80)$, $(8,83)$, $(10,83)$, and $(12,82)$. The temperature generally increases over time, reaches a high value near $83$, and then levels off.} 
+\end{center}
 
 %---------------- RIGHT GRAPH ----------------%
+\begin{image}
 \begin{tikzpicture}[scale=0.9]
 
 % Axes
@@ -618,10 +627,11 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 \node at (6,-1.2) {\scriptsize The graph of $T=f(t)$.};
 
 \end{tikzpicture}
-
-
+\end{image}
+\begin{center}
+    \captionof{figure}{The graph of $T=f(t)$}
+\xmalt{Scatter plot of temperature $T$ versus time $t$. The plotted points are $(0,64)$, $(2,67)$, $(4,75)$, $(6,80)$, $(8,83)$, $(10,83)$, and $(12,82)$. The temperature increases from $64$ to a maximum of $83$, remains near $83$, and then decreases slightly to $82$.} 
 \end{center}
-
 
 If you found yourself wanting to connect the dots in the graphs above, you're not alone.  As it stands, however, the function $f$ matches only seven inputs to seven outputs, so those seven points - and just those seven points - comprise the graph of $f$.  That being said, common everyday experience tells us that while the data Skippy collected in his table gives some good information about the relationship between time and temperature on a given day, it is by no means a complete description of the relationship.  
 
