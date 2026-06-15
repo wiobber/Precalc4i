@@ -400,8 +400,9 @@ Use Theorem \ref{complexfactorization} to create a polynomial function with real
 
 \end{itemize}
 
+\begin{solution}
 $p(z) = -3(z-2)^2(z+2)(z-7i)(z+7i)$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -415,8 +416,9 @@ Use Theorem \ref{complexfactorization} to create a polynomial function with real
 
 \end{itemize}
 
+\begin{solution}
 $g(t) = a(t-6)(t-i)(t+i)(t-(1-3i))(t-(1+3i))$ where $a$ is any real number,  $a < 0$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -430,62 +432,77 @@ Use Theorem \ref{complexfactorization} to create a polynomial function with real
 
 \end{itemize}
 
+\begin{solution}
 $f(x) = -2(x-2i)(x+2i)(x+2)$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{polyfromgraphfirst}
 Find a possible formula for the polynomial function given its graph.  You may leave the polynomial in factored form. 
 
-$y=f(x)$.  %$f(x) = x(x+6)(x-6)
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-100, ymax=100,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6,-5,...,5,6},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-7:7] {x*(x-6)*(x+6)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-6,0)(0,0)(6,0)};
+\node at (-6,0) [above=8pt,right=4pt] {$(-6,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
+\end{tikzpicture}
 
-\begin{mfpic}[10]{-7}{7}{-6}{6}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](-4.5, 0.75){\scriptsize $(-6,0)$}
-\tlabel[cc](5, 0.75){\scriptsize $(6,0)$}
-\tlabel[cc](1, 0.75){\scriptsize $(0,0)$}
-\tlabel[cc](-3, 5){\scriptsize $(-3,81)$}
-\point[4pt]{(-6,0),(0,0),(6,0), (-3,4.05) }
-\xmarks{-6 step 1 until 6}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-6 \hspace{6pt}$} -6, {$-5 \hspace{6pt}$} -5, {$-4 \hspace{6pt}$} -4, {$-3 \hspace{6pt}$} -3, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-7,7,0.1}{((x**3) - 36*x)/20}
-\end{mfpic}
-
-$f(x) = x(x+6)(x-6)$
-
+\begin{solution}
+$f(x) = x(x+6)(x-6)$    
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Find a possible formula for the polynomial function given its graph.  You may leave the polynomial in factored form. 
 
-$y=g(t)$  %$g(t) = t(t+2)^3$
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=3, ymin=-5, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-3:0.5] {x*(x+2)^3};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [above=8pt,right=2pt] {$(-2,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=g(t)$.};
+\end{tikzpicture}
 
-\begin{mfpic}[20]{-3}{3}{-2}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabel[cc](-1.75, 0.3){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, 0.3){\scriptsize $(0,0)$}
-\tlabel[cc](-2, -1){\scriptsize $(-1,-1)$}
-\point[4pt]{(-2,0), (0,0), (-1,-1)}
-\xmarks{-2,-1, 1, 2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,0.3,0.1}{x*((x + 2)**3)}
-
-\end{mfpic}
-
+\begin{solution}
 $g(t) = t(t+2)^3$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -494,149 +511,168 @@ Find a possible formula for the polynomial function given its graph.  You may le
 $y = p(z)$  %$p(z) = -2(z+1)(z-2)^2$
 
 \begin{tikzpicture}
-  \begin{axis}[
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3.6, ymin=-5, ymax=10,
     axis lines=middle,
-    xmin=-3, xmax=3,
-    ymin=-4, ymax=4,
-    xtick={-2,-1,1,2},
-    xticklabels={$-2$,$-1$,$1$,$2$},
-    ytick=\empty,
-    axis line style={->},
-    enlargelimits,
-    width=10cm, height=6cm,
-    clip=false
-  ]
-    % Labels for axes
-    \node at (axis cs:3,-0.5) {\scriptsize $z$};
-    \node at (axis cs:0.25,4) {\scriptsize $y$};
-
-    % Labels for points
-    \node at (axis cs:-1,0.75) {\scriptsize $(-1,0)$};
-    \node at (axis cs:2,0.75) {\scriptsize $(2,0)$};
-    \node at (axis cs:0.75,-2.25) {\scriptsize $(0,-8)$};
-
-    % Points
-    \addplot[only marks, mark=*] coordinates {(2,0) (-1,0) (0,-1.6)};
-
-    % Function plot
-    \addplot[domain=-1.7:3.45, samples=200, thick, ->]
-      {(-0.4)*(x-2)^2*(x+1)};
-  \end{axis}
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-1.7:3.45] {(-0.4)*((x-2)^2*(x+1)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1,0)(2,0)};
+\node at (-1,0) [above=8pt,left=8pt] {$(-1,0)$};
+\node at (2,0) [above=8pt] {$(2,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=p(z)$.};
 \end{tikzpicture}
 
-%\begin{mfpic}[30][15]{-3}{3}{-4}{4}
-%\axes
-%\tlabel[cc](3,-0.5){\scriptsize $z$}
-%\tlabel[cc](0.25,4){\scriptsize $y$}
-%\tlabel[cc](-2, 0.75){\scriptsize $(-1,0)$}
-%\tlabel[cc](2, 0.75){\scriptsize $(2,0)$}
-%\tlabel[cc](0.75, -2.25){\scriptsize $(0, -8)$}
-%\point[4pt]{(2,0), (-1,0), (0, -1.6)}
-%\xmarks{-2,-1,1,2}
-%\tiny
-%\tlpointsep{4pt}
-%\axislabels {x}{{$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1, {$1$} 1, {$2$} 2}
-%\normalsize
-%\penwd{1.25pt}
-%\arrow \reverse \arrow \function{-1.70,3.45,0.1}{(-0.4)*((x-2)**2)*(x+1)}
-%\end{mfpic}
-
-$p(z) = \answer{-2(z+1)(z-2)^2}$
-
+\begin{solution}
+$p(z) = -2(z+1)(z-2)^2$    
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Find a possible formula for the polynomial function given its graph.  You may leave the polynomial in factored form. 
 
-$y = f(x)$  %$f(x) = 4\left(x+ \frac{1}{2}\right)^2 (x-3)$
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=4, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1,2,3},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-1.5:3.3] {(0.5)*((x+0.5)^2)*(x-3)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1/2,0)(3,0)};
+\node at (-1/2,0) [above=14pt,left=2pt] {$(-\frac{1}{2},0)$};
+\node at (3,0) [above=8pt,left=2pt] {$(3,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
+\end{tikzpicture}
 
-\begin{mfpic}[30][15]{-2}{4}{-4}{4}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tlabel[cc](-0.75, 0.75){\scriptsize $\left(-\frac{1}{2},0 \right)$}
-\tlabel[cc](2.5, 0.75){\scriptsize $(3,0)$}
-\tlabel[cc](3.25, -3.125){\scriptsize $(2,-25)$}
-\point[4pt]{(-0.5,0), (3,0), (2, -3.125)}
-\xmarks{-1,1,2,3}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.5,3.3,0.1}{(0.5)*((x+0.5)**2)*(x-3)}
-\end{mfpic}
-
+\begin{solution}
 $f(x) = 4\left(x+ \frac{1}{2}\right)^2 (x-3)$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Find a possible formula for the polynomial function given its graph.  You may leave the polynomial in factored form. 
 
-$y = F(s)$  %$F(s)  =-s(s+2)^2$
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=3, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-3:0.65] {0-x*((x + 2)^2)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [below=8pt] {$(-2,0)$};
+\node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=F(s)$.};
+\end{tikzpicture}
 
-\begin{mfpic}[30][15]{-3}{3}{-5}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $s$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabel[cc](-2, -0.75){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, 0.75){\scriptsize $(0,0)$}
-\tlabel[cc](-1.25, 1.75){\scriptsize $(-1,1)$}
-\point[4pt]{(-2,0), (0,0), (-1,1)}
-\xmarks{-2,-1,1,2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3,0.65,0.1}{0-x*((x + 2)**2)}
-\end{mfpic}
-
+\begin{solution}
 $F(s)  =-s(s+2)^2$
-
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Find a possible formula for the polynomial function given its graph.  You may leave the polynomial in factored form. 
 
-$y = G(t)$  %$G(t) = t^3(t+2)^2$
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,0,1,2},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2.5pt, blue, domain=-2.45:0.85] {x^3*((x + 2)^2)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\node at (-2,0) [above=8pt] {$(-2,0)$};
+\node at (0,0) [below=8pt,right=4pt] {$(0,0)$};
+%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=G(t)$.};
+\end{tikzpicture}
 
-\begin{mfpic}[30][15]{-3}{3}{-5}{5}
-\axes
-\tlabel[cc](-2, 0.75){\scriptsize $(-2,0)$}
-\tlabel[cc](0.5, -0.75){\scriptsize $(0,0)$}
-\tlabel[cc](-1, -2){\scriptsize $(-1,-1)$}
-\tlabel[cc](3,-0.5){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\point[4pt]{(-2,0), (0,0), (-1,-1)}
-\xmarks{-2,-1,1,2}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{  {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.45,0.85,0.1}{(x**3)*((x + 2)**2)}
-\end{mfpic}
-
-$G(t) = t^3(t+2)^2$
-
+\begin{solution}
+ $G(t) = t^3(t+2)^2$   
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{cmpgeoalgexfirst}
 With help from your classmates, choose several nonzero complex numbers $z$, find their complex conjugates $\overline{z}$.  Plot each pair $z$ and $\overline{z}$ in the Complex Plane.  What appears to be the relationship between these numbers geometrically?  State and prove a general result. 
+
+\begin{solution}
+If $z = a+bi$, then $z$ corresponds to the point $(a,b)$ in the $xy$-plane.  Hence, $\overline{z} = \overline{a+bi} = a-bi$ corresponds to the point $(a,-b)$.  Hence, the points corresponding to $z$ and $\overline{z}$ are reflections about the $x$-axis.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 With help from your classmates, choose several nonzero complex numbers $z$ and  find $-z$.  Plot each pair $z$ and $-z$ in the Complex Plane.  What appears to be the relationship between these numbers geometrically?  State and prove a general result.
+
+\begin{solution}
+If $z = a+bi$, then $z$ corresponds to the point $(a,b)$ in the $xy$-plane.  Hence, $-z =-(a+bi) = -a-bi$ corresponds to the point $(-a,-b)$.  Hence, the points corresponding to $z$ and $-z$ are reflections through the origin.
+\end{solution}
 \end{problem}
 
 \begin{problem}
 With help from your classmates, choose several different complex numbers $z$ and find the product of $i$ and $z$,  $iz$.  Plot each pair of $z$ and $iz$ in the Complex Plane.  In each case, show the line containing the origin and the point corresponding to $z$ is perpendicular\footnote{See Theorem \ref{parallelperpendicularslopetheorem} in Section \ref{AppLines} of you need a refresher on how to do this.} to the line containing the origin and the point corresponding to $iz$.  Show this result holds in general for every nonzero complex number.
+
+\begin{solution}
+If $z = a+bi$, then $z$ corresponds to the point $(a,b)$ in the $xy$-plane.  Writing out the product $iz$, we get: $iz =i(a+bi) = ia+bi^2 = ia - b = -b+ia$.  Hence, $iz$ corresponds to the point $(-b,a)$.  If $z \neq 0$, then neither $a$ nor $b$ is $0$ (do you see why?) Hence, the slope of the line containing $(0,0)$ and $(a,b)$ is $\frac{b}{a}$ and the slope of the line containing $(0,0)$ and $(-b,a)$ is $-\frac{a}{b}$.  Per Theorem \ref{parallelperpendicularslopetheorem}, since the slopes of these lines are negative reciprocals, the lines themselves are perpendicular.\footnote{We'll be able to show in Section \ref{PolarComplex}  that, more precisely, multiplication by $i$ rotates the complex number counter-clockwise by $90^{\circ}$.}
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{cmpgeoalgexlast}
 Given a complex number $z = a+bi$, we define the \index{modulus ! of a complex number}\textbf{modulus} of $z$, $|z|$, by $|z| = \sqrt{a^2+b^2}$.  With help from your classmates, calculate $|z|$ for several different complex numbers, $z$.  What does $z$ measure geometrically?  Show that if $x$ is a real number, then the modulus of $x$ is the same as the absolute value of $x$, and comment how all this relates to Definition \ref{absvaldistdefn} in Section \ref{AppAbsValEqIneq}.
+
+\begin{solution}
+$|z| = \sqrt{a^2+b^2}$ measures the distance from the origin to the point $(a,b)$.  Hence, $|z|$ measures the distance from $z$ to $0$ in the Complex Plane.  This is exactly how $|x|$ is defined in Definition \ref{absvaldistdefn} in Section \ref{AppAbsValEqIneq}.  In that section, however,  the only part of the Complex Plane under discussion is the real number line.
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{zbarexercise}
