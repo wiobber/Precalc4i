@@ -773,125 +773,13 @@ To solve $F(v) = 0$, we are looking for the $v$-values where the output, or asso
 
 \item  The domain of $F$ is the set of inputs to $F$.  With $v$ as the input here,  we need to describe the set of $v$-values on the graph.  We can accomplish this by  \index{projection ! to an axis}\textbf{projecting} the graph to the $v$-axis and seeing what part of the $v$-axis is covered. The leftmost point on the graph is $(-2,0)$, so we know that the domain starts at $v=-2$.  The graph continues to the right until we encounter the `hole' labeled at $(1,-3)$.  This indicates one and only one point, namely $(1,-3)$ is missing from the curve which for us means $v = 1$ is not in the domain of $F$.  The graph continues to the right and the arrow on the graph indicates that the graph goes upwards to the right indefinitely.  Hence, our domain is $\{ v \, | \, v \geq -2, \, v \neq 1 \}$ which, in interval notation, is $[-2, 1) \cup (1, \infty)$. Pictures demonstrating the process of projecting the graph to the $v$-axis are shown below.
 
- 
+% https://www.geogebra.org/classic/xrjvhdwu
 
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
-
-%================ LEFT GRAPH =================
-
-
-% Axes
-\draw[->] (-5,0) -- (5.5,0);
-\draw[->] (0,-5) -- (0,5.5);
-
-% Axis labels
-\node[below] at (5,0) {\scriptsize $v$};
-\node[left]  at (0,5) {\scriptsize $w$};
-
-% Ticks
-\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-  \draw (\x,0.1)--(\x,-0.1);
-\foreach \y in {-4,-3,-2,-1,1,2,3,4}
-  \draw (0.1,\y)--(-0.1,\y);
-
-% Axis numbers
-\node[below] at (-1,-0.35) {\scriptsize $-1$};
-\node[below] at (1,-0.35)  {\scriptsize $1$};
-\node[below] at (4,-0.35)  {\scriptsize $4$};
-
-\node[left] at (-0.35,-3) {\scriptsize $-3$};
-\node[left] at (-0.35,-2) {\scriptsize $-2$};
-\node[left] at (-0.35,-1) {\scriptsize $-1$};
-\node[left] at (-0.35,1)  {\scriptsize $1$};
-\node[left] at (-0.35,2)  {\scriptsize $2$};
-\node[left] at (-0.35,3)  {\scriptsize $3$};
-\node[left] at (-0.35,4)  {\scriptsize $4$};
-
-% Projection arrows
-\draw[->] (2,4) -- (2,1);
-\draw[->] (-3,-4) -- (-3,-1);
-
-% Function
-\draw[thick, domain=-2:3, samples=200, ->]
-  plot (\x,{\x*\x-4});
-
-% Filled points
-\fill (-2,0) circle (2pt);
-\fill (0,-4) circle (2pt);
-\fill (2,0) circle (2pt);
-
-% Open point
-\draw (1,-3) circle (2pt);
-
-% Labels
-\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
-\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
-\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
-\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
-
-% Text boxes
-\node[draw, fill=white, inner sep=2pt] at (-3,-3) {\scriptsize project up};
-\node[draw, fill=white, inner sep=2pt] at (2,2) {\scriptsize project down};
-
-\end{tikzpicture}
-
-%================ RIGHT GRAPH =================
-\begin{tikzpicture}
-
-% Axes
-\draw[->] (-5,0) -- (5.5,0);
-\draw[->] (0,-5) -- (0,5.5);
-
-% Axis labels
-\node[below] at (5,0) {\scriptsize $v$};
-\node[left]  at (0,5) {\scriptsize $w$};
-
-% Ticks
-\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-  \draw (\x,0.1)--(\x,-0.1);
-\foreach \y in {-4,-3,-2,-1,1,2,3,4}
-  \draw (0.1,\y)--(-0.1,\y);
-
-% Axis numbers
-\node[below] at (-1,-0.35) {\scriptsize $-1$};
-\node[below] at (1,-0.35)  {\scriptsize $1$};
-\node[below] at (4,-0.35)  {\scriptsize $4$};
-
-\node[left] at (-0.35,-3) {\scriptsize $-3$};
-\node[left] at (-0.35,-2) {\scriptsize $-2$};
-\node[left] at (-0.35,-1) {\scriptsize $-1$};
-\node[left] at (-0.35,1)  {\scriptsize $1$};
-\node[left] at (-0.35,2)  {\scriptsize $2$};
-\node[left] at (-0.35,3)  {\scriptsize $3$};
-\node[left] at (-0.35,4)  {\scriptsize $4$};
-
-% Function
-\draw[thick, domain=-2:3, samples=200]
-  plot (\x,{\x*\x-4});
-
-% Horizontal arrow on x-axis
-\draw[->, thick] (-2,0) -- (4.9,0);
-
-% Filled points
-\fill (0,-4) circle (2pt);
-\fill (2,0) circle (2pt);
-\fill (-2,0) circle (2pt);
-
-% Open points
-\draw (1,-3) circle (2pt);
-\draw (1,0) circle (2pt);
-
-% Labels
-\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
-\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
-\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
-\node[right] at (1.1,-3) {\scriptsize $(1,-3)$};
-
-
-
-\end{tikzpicture}
+    \geogebra{xrjvhdwu}{800}{600}
 \end{center}
+
+
 
 
 
