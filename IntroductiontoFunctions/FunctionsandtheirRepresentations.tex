@@ -832,55 +832,106 @@ Logically, these statements are saying two different things. The first says that
 Applying the Vertical Line Test to the graph given in Example \ref{functiongraphex01}, we see below that all of the vertical lines meet the graph at most once (several are shown for illustration) showing $w$ is a function of $v$.  Notice that some of the lines ($x = -3$ and $x = 1$, for example) don't hit the graph at all.  This is fine because the Vertical Line Test is looking for lines that hit the graph more than once.  It does not say \textbf{exactly} once so missing the graph altogether is permitted.
 
 
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=--5:5,
+          xmin=-5, xmax=5,
+          ymin=-5, ymax=5,
+          width=5in,
+          height=5in,
+          xtick={-4,-3, -2,-1,1,2,3, 4},
+            xticklabels={$-4$,$-3$, $\,$,$-1$, $1$, $\,$,$3$,$4$},
+           ytick={-3,-2,-1,1,2,3,4},
+            yticklabels={$-3$,$-2$,$-1$, $1$,$2$,$3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$v$},
+            ylabel={$w$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Extra thick graph
+\addplot[smooth, line width=3.5pt,domain=-2:4, penColor1] {x^2-4};
+
+\draw[gray, line width=1.5pt] (-4.5,-5)--(-4.5,5);
+\draw[gray, line width=1.5pt] (-4,-5)--(-4,5);
+\draw[gray, line width=1.5pt] (-3.5,-5)--(-3.5,5);
+\draw[gray, line width=1.5pt] (-3,-5)--(-3,5);
+\draw[gray, line width=1.5pt] (-2.5,-5)--(-2.5,5);
+\draw[gray, line width=1.5pt] (-2,-5)--(-2,5);
+\draw[gray, line width=1.5pt] (-1.5,-5)--(-1.5,5);
+\draw[gray, line width=1.5pt] (-1,-5)--(-1,5);
+
+\draw[gray, line width=1.5pt] (-0.5,-5)--(-0.5,5);
+\draw[gray, line width=1.5pt] (0.5,-5)--(0.5,5);
+\draw[gray, line width=1.5pt] (1,-5)--(1,5);
+\draw[gray, line width=1.5pt] (1.5,-5)--(1.5,5);
+\draw[gray, line width=1.5pt] (2,-5)--(2,5);
+\draw[gray, line width=1.5pt] (2.5,-5)--(2.5,5);
+\draw[gray, line width=1.5pt] (3,-5)--(3,5);
+\draw[gray, line width=1.5pt] (3.5,-5)--(3.5,5);
+\draw[gray, line width=1.5pt] (4,-5)--(4,5);
+\draw[gray, line width=1.5pt] (4.5,-5)--(4.5,5);
+
+%% Open, unlabeled points
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (1,-3)
+ 
+};
+
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=5pt}
+]
+coordinates {
+  (2,0) 
+  (0,-4)
+ 
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-5pt}
+]
+coordinates {
+  (-2,0) 
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
-
-% Axes
-\draw[->] (-5,0) -- (5.5,0);
-\draw[->] (0,-5) -- (0,5.5);
-
-% Axis labels
-\node[below] at (5,0) {\scriptsize $v$};
-\node[left]  at (0,5) {\scriptsize $w$};
-
-% Ticks
-\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-  \draw (\x,0.1)--(\x,-0.1);
-\foreach \y in {-4,-3,-2,-1,1,2,3,4}
-  \draw (0.1,\y)--(-0.1,\y);
-
-% Axis numbers
-\node[below] at (-1,-0.35) {\scriptsize $-1$};
-\node[below] at (-3,-0.35) {\scriptsize $-3$};
-\node[below] at (1,-0.35)  {\scriptsize $1$};
-\node[below] at (3,-0.35)  {\scriptsize $3$};
-\node[below] at (4,-0.35)  {\scriptsize $4$};
-
-\node[left] at (-0.35,-3) {\scriptsize $-3$};
-\node[left] at (-0.35,-2) {\scriptsize $-2$};
-\node[left] at (-0.35,-1) {\scriptsize $-1$};
-\node[left] at (-0.35,1)  {\scriptsize $1$};
-\node[left] at (-0.35,2)  {\scriptsize $2$};
-\node[left] at (-0.35,3)  {\scriptsize $3$};
-\node[left] at (-0.35,4)  {\scriptsize $4$};
-
-% Vertical test lines (double arrows)
-\foreach \x in {-3,-2.5,-1.5,-1,0.5,1,1.5,2,2.5}
-  \draw[<->, thin] (\x,-4.25) -- (\x,4.25);
-
-% Function y = x^2 - 4
-\draw[thick, domain=-2:3, samples=200, ->]
-  plot (\x,{\x*\x-4});
-
-% Filled points
-\fill (-2,0) circle (2pt);
-\fill (0,-4) circle (2pt);
-\fill (2,0) circle (2pt);
-
-% Open point
-\draw (1,-3) circle (2pt);
-
-\end{tikzpicture}
+   \captionof{figure}{Vertical line test}
+\xmalt{Graph of the function $F$. The graph forms a U-shaped curve with $v$-intercepts at $(-2,0)$ and $(2,0)$ and a minimum at $(0,-4)$. An open circle at $(1,-3)$ indicates that this point is excluded from the graph.  Several vertical lines are drawn across the graph to illustrate the Vertical Line Test. Each vertical line intersects the graph at most once. } 
 \end{center}
 
 
