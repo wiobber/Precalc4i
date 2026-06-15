@@ -256,31 +256,31 @@ We now present an example which pulls together all of the major ideas of this se
 
 \item  Remembering to insert the $0$'s in the synthetic division tableau we have
 
-\[ \begin{array}{cccccc}
- 2+2i \, \, \vline& 1 & 0 & 0  & 0 & 64 \\
-
-  & \downarrow     &  2+2i  &  8i & -16+16i & -64\\ \hhline{~-----} 
-  
-               & 1 &  2+2i  & 8i & -16+16i &  \fbox{$0$}  \\ \end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ 2+2i \quad |\quad 1 \phantom{1.}\quad\quad\quad 0 \quad\quad\quad\quad 0 \quad\quad\quad\quad 0 \quad\quad\quad\quad 64\\
+ \underline{\downarrow \phantom{1.}\quad\quad  2+2i \quad\phantom{11.} 8i\quad\phantom{1} -16+16i \quad -64}\\
+ \quad 1 \phantom{11}\quad\quad 2+2i \quad\phantom{11.} 8i \quad\quad -16+16i \quad \phantom{11}\fbox{0}\\
+\end{array}
+$    
+\end{center}
 
 
 
 \item  Since $f$ is a fourth degree polynomial, we need to make two successful divisions to get a quadratic quotient.  Since $2+2i$ is a zero, we know from Theorem \ref{conjugatepairsthm} that $2-2i$ is also a zero.  We continue our synthetic division tableau.
 
-\[ \begin{array}{cccccc}
-  2+2i \, \, \vline& 1 & 0 & 0  & 0 & 64 \\
-
-  & \downarrow     &  2+2i  &  8i & -16+16i & -64\\ \hhline{~-----} 
-  
-  2-2i \, \, \vline  & 1 &  2+2i  & 8i & -16+16i &  \fbox{$0$}  \\
-    
-               & \downarrow &  2-2i  &  8-8i  & 16-16i &\\ \hhline{~----} 
- 
-                & 1  &  4  & 8& \fbox{0} &   \\
-  
-
-
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ 2+2i \quad |\quad 1 \phantom{1.}\quad\quad\quad 0 \quad\quad\quad\quad 0 \quad\quad\quad\quad 0 \quad\quad\quad\quad 64\\
+ \underline{\downarrow \phantom{1.}\quad\quad  2+2i \quad\phantom{11.} 8i\quad\phantom{1} -16+16i \quad -64}\\
+ 2-2i \quad |\quad 1 \phantom{11}\quad\quad 2+2i \quad\phantom{11.} 8i \quad\quad -16+16i \quad   \fbox{0}\\
+ \underline{\downarrow \phantom{1}\quad  2-2i \quad\phantom{11.} 8-8i \quad\quad 16-16i \phantom{\quad \fbox{0}}}\\
+1 \phantom{11}\quad\quad 4 \phantom{11}\quad\quad\quad 8 \phantom{11}\quad\quad \quad \fbox{0}  \phantom{\phantom{1}\quad\quad \fbox{0}}
+\end{array}
+$    
+\end{center}
 
 Our quotient polynomial is $x^2+4x+8$.  Using the quadratic formula, we solve $x^2+4x+8 = 0$ and find the remaining zeros are $-2+2i$ and $-2-2i$.  
 
