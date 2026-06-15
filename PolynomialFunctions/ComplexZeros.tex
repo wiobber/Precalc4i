@@ -97,14 +97,15 @@ Returning to zeros of polynomials, suppose we wish to find the zeros of $f(x) = 
 
 We could ask if all of the theory from Section\ref{Polydivision} holds for non-real zeros, in particular the division algorithm and the Remainder and Factor Theorems.  The answer is `yes.'  
 
-\[\begin{array}{rrrr}
-1+2i \, \, \vline & 1 & -2 & 5 \\
-
-  & \downarrow   &  1+2i  &  -5 \\ \hhline{~---} 
-  
-  & 1 & -1+2i &  \fbox{$0$}   \\
-
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ 1+2i \quad |\quad1 \quad\quad\quad 2 \quad\quad\quad 5 \\
+ \underline{\downarrow \phantom{1}\quad  1+2i \quad -5}\\
+1 \phantom{1}\quad 1-2i \phantom{111} \fbox{0}
+\end{array}
+$    
+\end{center}
 
 
 Indeed, the above shows $x^2-2x+5  = (x-[1+2i])(x-1+2i)= (x-[1+2i])(x-[1-2i])$ which demonstrates both  $(x-[1+2i])$ and  $(x-[1-2i])$ are factors of $x^2-2x+5$.\footnote{It is a good review of the algebra of complex numbers to start with  $(x-[1+2i])(x-[1-2i])$, perform the indicated operations, and simplify the result to $x^2-2x+5$.  See part 6 of  Example \ref{complexzeroex1}  in Section  \ref{AppCmpNums}.}
@@ -126,16 +127,16 @@ The Fundamental Theorem of Algebra is an example of an `existence' theorem in Ma
 
 
 
-Suppose  $f$ is a polynomial function of degree $n \geq 1$.  The Fundamental Theorem of Algebra guarantees us at least one complex zero, $z_{\mbox{\tiny $1$}}$.  The Factor Theorem guarantees that $f(x)$ factors as $f(x) = \left(x - z_{\mbox{\tiny $1$}}\right) q_{\mbox{\tiny $1$}}(x)$ for a polynomial function $q_{\mbox{\tiny $1$}}$,  which has degree $n-1$.  If $n-1 \geq 1$, then the Fundamental Theorem of Algebra guarantees a complex zero of $q_{\mbox{\tiny $1$}}$ as well, say $z_{\mbox{\tiny $2$}}$, so then the Factor Theorem gives us $q_{\mbox{\tiny $1$}}(x) = \left(x - z_{\mbox{\tiny $2$}}\right) q_{\mbox{\tiny $2$}}(x)$, and hence $f(x) = \left(x - z_{\mbox{\tiny $1$}}\right) \left(x - z_{\mbox{\tiny $2$}}\right) q_{\mbox{\tiny $2$}}(x)$.  We can continue this process exactly $n$ times, at which point our quotient polynomial $q_{\mbox{\tiny $n$}}$ has degree $0$ so it's a constant.  This constant is none-other than the leading coefficient of $f$ which is carried down line by line each time we divide by factors of the form $x-c$.
+Suppose  $f$ is a polynomial function of degree $n \geq 1$.  The Fundamental Theorem of Algebra guarantees us at least one complex zero, $z_1$.  The Factor Theorem guarantees that $f(x)$ factors as $f(x) = \left(x - z_1\right) q_1(x)$ for a polynomial function $q_1$,  which has degree $n-1$.  If $n-1 \geq 1$, then the Fundamental Theorem of Algebra guarantees a complex zero of $q_1$ as well, say $z_2$, so then the Factor Theorem gives us $q_1(x) = \left(x - z_2\right) q_2(x)$, and hence $f(x) = \left(x - z_1\right) \left(x - z_2\right) q_2(x)$.  We can continue this process exactly $n$ times, at which point our quotient polynomial $q_n$ has degree $0$ so it's a constant.  This constant is none-other than the leading coefficient of $f$ which is carried down line by line each time we divide by factors of the form $x-c$.
 
 
 %% \colorbox{ResultColor}{\bbm
-\begin{theorem} \label{complexfactorization} \textbf{Complex Factorization Theorem:} Suppose $f$ is a polynomial function with complex number coefficients.  If the degree of $f$ is $n$ and $n \geq 1$, then  $f$ has exactly $n$ complex zeros, counting multiplicity.  If $z_{\mbox{\tiny $1$}}$, $z_{\mbox{\tiny $2$}}$, \ldots, $z_{\mbox{\tiny $k$}}$ are the distinct zeros of $f$, with multiplicities $m_{\mbox{\tiny $1$}}$, $m_{\mbox{\tiny $2$}}$, \ldots, $m_{\mbox{\tiny $k$}}$, respectively, then $f(x) = a\left(x - z_{\mbox{\tiny $1$}}  \right)^{m_{\mbox{\tiny $1$}}}\left(x - z_{\mbox{\tiny $2$}}  \right)^{m_{\mbox{\tiny $2$}}} \cdots \left(x - z_{\mbox{\tiny $k$}}  \right)^{m_{\mbox{\tiny $k$}}}$. \index{Complex Factorization Theorem}
+\begin{theorem} \label{complexfactorization} \textbf{Complex Factorization Theorem:} Suppose $f$ is a polynomial function with complex number coefficients.  If the degree of $f$ is $n$ and $n \geq 1$, then  $f$ has exactly $n$ complex zeros, counting multiplicity.  If $z_1$, $z_2$, \ldots, $z_k$ are the distinct zeros of $f$, with multiplicities $m_1$, $m_2$, \ldots, $m_k$, respectively, then $f(x) = a\left(x - z_1  \right)^{m_1}\left(x - z_2  \right)^{m_2} \cdots \left(x - z_k  \right)^{m_k}$. \index{Complex Factorization Theorem}
 
 \end{theorem}
 %% \ebm}
 
-\smallskip
+ 
 
 Theorem \ref{complexfactorization} says two important things:  first, every polynomial is a product of linear factors;  second, every polynomial function is completely determined by its zeros, their multiplicities, and its leading coefficient.  We put this theorem to good use in the next example.
 
@@ -155,24 +156,19 @@ Theorem \ref{complexfactorization} says two important things:  first, every poly
 
 \item  Since $f$ is a fifth degree polynomial, we know that we need to perform at least three successful divisions to get the quotient down to a quadratic function.  At that point, we can find the remaining zeros using the Quadratic Formula, if necessary.  Using the techniques developed in Section \ref{RealZeros}:
 
-\[\begin{array}{rrrrrrr}
-\frac{1}{2} \, \, \vline& 12 & -20& 19  & -6 & -2 &1 \\
-
-  & \downarrow     &  6  &  -7  & 6 & 0 & -1\\ \hhline{~------} 
-
- \frac{1}{2} \, \, \vline& 12 & -14 & 12  & 0 & -2 & \fbox{$0$} \\
-
-  & \downarrow     &  6 &  -4  & 4 & 2 &\\ \hhline{~-----} 
-  
-  -\frac{1}{3} \, \, \vline&  12 &  -8  & 8 & 4 &  \fbox{$0$} & \\
-    
-               & \downarrow &  -4  &  4  & -4  & & \\ \hhline{~----} 
- 
-   & 12  &   -12 & 12& \fbox{0} &&   \\
-  
-
-
-\end{array}\]
+\begin{center}
+$
+\begin{array}{r}
+ \frac{1}{2} \quad |\quad 12 \quad -20 \phantom{11}\quad 19 \quad -6 \quad -2 \phantom{11}\quad 1\\
+ \underline{\downarrow \phantom{11}\quad 6 \phantom{1}\quad -7 \phantom{111}\quad 6 \quad\phantom{11} 0 \quad -1}\\
+ \frac{1}{2} \quad |\quad 12 \quad -14 \phantom{11}\quad 12 \phantom{11}\quad 0 \quad -2 \phantom{1}\quad \fbox{0}\\
+ \underline{\downarrow \phantom{11}\quad 6 \phantom{1}\quad -4 \phantom{11}\quad 4 \quad\phantom{11} 2 \phantom{\fbox{.} \quad \fbox{0}}}\\
+ -\frac{1}{3} \quad |\quad 12 \quad\quad -8 \quad\quad 8 \quad\quad 4 \quad\quad \fbox{0} \phantom{1 \quad \fbox{0}}\\
+ \underline{\downarrow \phantom{1}\quad -4 \quad\phantom{11} 4\quad -4 \phantom{\fbox{0} \quad \fbox{0} \quad \fbox{0}}}\\
+12 \phantom{1} -12 \phantom{1.}\quad 12 \phantom{1}\quad \fbox{0} \phantom{\fbox{0} \quad \fbox{0} \quad \fbox{0}}
+\end{array}
+$    
+\end{center}
 
 Our quotient is $12x^2 - 12x + 12$, whose zeros we find to be $\frac{1 \pm i \sqrt{3}}{2}$.  From Theorem \ref{complexfactorization}, we know $f$ has exactly $5$ zeros, counting multiplicities, and as such we have the zero $\frac{1}{2}$ with multiplicity $2$, and the zeros $-\frac{1}{3}$, $\frac{1 + i \sqrt{3}}{2}$ and $\frac{1 - i \sqrt{3}}{2}$, each of multiplicity $1$.
 
@@ -188,11 +184,11 @@ Our quotient is $12x^2 - 12x + 12$, whose zeros we find to be $\frac{1 \pm i \sq
 
 A true test of Theorem \ref{complexfactorization} would be to take the factored form of $f(x)$ in the previous example and multiply it out\footnote{This is a good chance to test your algebraic mettle and see that all of this does actually work.} to see that it really does reduce to  $f(x) = 12x^5 - 20x^4+19x^3-6x^2-2x+1$.  When factoring a polynomial using Theorem \ref{complexfactorization}, we say that it is \index{polynomial function ! completely factored ! over the complex numbers} \textbf{factored completely over the complex numbers}, meaning that it is impossible to factor the polynomial any further using complex numbers.  If we wanted to  \index{polynomial function ! completely factored ! over the real numbers} completely factor $f(x)$ over the \textbf{real numbers} then we would have stopped short of finding the nonreal zeros of $f$ and factored $f$ using our work from the synthetic division to write $f(x) = \left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(12x^2 - 12x + 12\right)$, or $f(x) = 12\left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(x^2 - x + 1\right)$.  Since the zeros of $x^2-x+1$ are nonreal, we call $x^2-x+1$ an \index{quadratic function ! irreducible quadratic}\index{irreducible quadratic}\textbf{irreducible quadratic} meaning it is impossible to break it down any further using \textbf{real} numbers.  
 
-\smallskip
+ 
 
 The last two results of the section show us that, theoretically, the non-real zeros of polynomial functions with real number coefficients come exclusively from irreducible quadratics.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -202,22 +198,22 @@ The last two results of the section show us that, theoretically, the non-real ze
 
 %% \ebm}
 
-\smallskip
+
 
 To prove the theorem, let 
-$ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} x^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} x + a_{\mbox{\tiny $0$}}$ be a polynomial function with real number coefficients.  If $z$ is a zero of $f$, then $f(z) = 0$, which means $a_{n} z^{n} + a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} z + a_{\mbox{\tiny $0$}} = 0$.  Next, we consider $f\left(\overline{z}\right)$ and apply Theorem \ref{conjugateprops} below.
+$ f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_2 x^2 + a_1 x + a_0$ be a polynomial function with real number coefficients.  If $z$ is a zero of $f$, then $f(z) = 0$, which means $a_{n} z^{n} + a_{n-1} z^{n-1} + \ldots + a_2 z^2 + a_1 z + a_0 = 0$.  Next, we consider $f\left(\overline{z}\right)$ and apply Theorem \ref{conjugateprops} below.
 
 \[ \begin{array}{rclr}
 
- f\left(\overline{z}\right) & = &  a_{n} \left(\overline{z}\right)^{n} + a_{n-\mbox{\tiny$1$}} \left(\overline{z}\right)^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}}\left( \overline{z}\right)^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} \overline{z} + a_{\mbox{\tiny $0$}} & \\ [3pt]
+ f\left(\overline{z}\right) & = &  a_{n} \left(\overline{z}\right)^{n} + a_{n-1} \left(\overline{z}\right)^{n-1} + \ldots + a_2\left( \overline{z}\right)^2 + a_1 \overline{z} + a_0 & \\ [3pt]
  
- &  = & a_{n}\overline{z^{n}} + a_{n-\mbox{\tiny$1$}}\overline{z^{n-\mbox{\tiny$1$}}} + \ldots + a_{\mbox{\tiny $2$}}\overline{z^{\mbox{\tiny $2$}}} + a_{\mbox{\tiny $1$}} \overline{z} + a_{\mbox{\tiny $0$}} & \mbox{ since $\left(\overline{z}\right)^n = \overline{z^{n}}$}\\ [3pt]
+ &  = & a_{n}\overline{z^{n}} + a_{n-1}\overline{z^{n-1}} + \ldots + a_2\overline{z^2} + a_1 \overline{z} + a_0 & \mbox{ since $\left(\overline{z}\right)^n = \overline{z^{n}}$}\\ [3pt]
  
- & = & \overline{a_{n}}\overline{z^{n}} + \overline{a_{n-\mbox{\tiny$1$}}}\overline{z^{n-\mbox{\tiny$1$}}} + \ldots +  \overline{a_{\mbox{\tiny $2$}}}\overline{z^{\mbox{\tiny $2$}}} + \overline{a_{\mbox{\tiny $1$}}}\, \overline{z} + \overline{a_{\mbox{\tiny $0$}}} & \mbox{since the coefficients are real} \\ [3pt]
+ & = & \overline{a_{n}}\overline{z^{n}} + \overline{a_{n-1}}\overline{z^{n-1}} + \ldots +  \overline{a_2}\overline{z^2} + \overline{a_1}\, \overline{z} + \overline{a_0} & \mbox{since the coefficients are real} \\ [3pt]
  
- & = & \overline{a_{n} z^{n}} + \overline{a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}}} + \ldots +  \overline{a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}}} + \overline{a_{\mbox{\tiny $1$}} z} + \overline{a_{\mbox{\tiny $0$}}} &  \mbox{ since $\overline{z} \, \overline{w}=\overline{zw} $}\\ [3pt]
+ & = & \overline{a_{n} z^{n}} + \overline{a_{n-1} z^{n-1}} + \ldots +  \overline{a_2 z^2} + \overline{a_1 z} + \overline{a_0} &  \mbox{ since $\overline{z} \, \overline{w}=\overline{zw} $}\\ [3pt]
  
- & = & \overline{a_{n} z^{n} + a_{n-\mbox{\tiny$1$}} z^{n-\mbox{\tiny$1$}} + \ldots + a_{\mbox{\tiny $2$}} z^{\mbox{\tiny $2$}} + a_{\mbox{\tiny $1$}} z + a_{\mbox{\tiny $0$}}} & \mbox{ since $ \overline{z} + \overline{w} = \overline{z+w} $}\\ [3pt]
+ & = & \overline{a_{n} z^{n} + a_{n-1} z^{n-1} + \ldots + a_2 z^2 + a_1 z + a_0} & \mbox{ since $ \overline{z} + \overline{w} = \overline{z+w} $}\\ [3pt]
  
  & = & \overline{f(z)} & \\ [3pt]
  
@@ -229,14 +225,14 @@ $ f(x) = a_{n} x^{n} + a_{n-\mbox{\tiny$1$}} x^{n-\mbox{\tiny$1$}} + \ldots + a_
 
 This shows that $\overline{z}$ is a zero of $f$.  So, if $f$ is a polynomial function with real number coefficients, Theorem \ref{conjugatepairsthm} tells us that if $a+bi$ is a nonreal zero of $f$, then so is $a-bi$.  In other words, nonreal zeros of $f$ come in conjugate pairs.  The Factor Theorem kicks in to give us both $(x-[a+bi])$ and $(x-[a-bi])$ as factors of $f(x)$ which means $(x-[a+bi])(x-[a-bi]) = x^2 + 2a x + \left(a^2+b^2\right)$ is an irreducible quadratic factor of $f$.  As a result, we have our last theorem of the section.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 \begin{theorem}\label{realfactorization}\textbf{Real Factorization Theorem:} Suppose $f$ is a polynomial function with real number coefficients.  Then $f(x)$ can be factored into a product of linear factors corresponding to the real zeros of $f$ and irreducible quadratic factors which give the nonreal zeros of $f$. \index{Real Factorization Theorem}
 \end{theorem}
 %% \ebm}
 
-\smallskip
+ 
 
 We now present an example which pulls together all of the major ideas of this section.
 
@@ -372,22 +368,17 @@ We close this section with an example where we are asked to manufacture a polyno
 
 This example concludes our study of polynomial functions.\footnote{With the exception of the Exercises on the next page, of course.}  The last few sections have contained what is considered by many to be `heavy' Mathematics.  Like a heavy meal, heavy Mathematics takes time to digest.  Don't be overly concerned if it doesn't seem to sink in all at once, and pace yourself in the Exercises or you're liable to get mental cramps.  But before we get to the Exercises, we'd like to offer a bit of an epilogue.  
 
-\medskip
+  
 
 \phantomsection
 \label{complexepilogue}
 
 Our main goal in presenting the material on the complex zeros of a polynomial was to give the chapter a sense of completeness.  Given that it can be shown that some polynomials have real zeros which cannot be expressed using the usual algebraic operations, and still others have no real zeros at all, it was nice to discover that every polynomial of degree $n \geq 1$ has $n$ complex zeros.  So like we said, it gives us a sense of closure.\footnote{This is a very deep math pun.}  As mentioned at the top of the section, complex numbers are very useful in many applied fields such as electrical engineering,  but most of the applications require science and mathematics well beyond precalculus material to fully understand them.  That does not mean you'll never be be able to understand them; in fact, it is the authors' sincere hope that all of you will reach a point in your studies when the glory, awe and splendor of complex numbers are revealed to you.  For now, however, the really good stuff is beyond the scope of this text. We invite you and your classmates to find a few examples of complex number applications and see what you can make of them. 
 
-\medskip
+  
 
 For the remainder of the text, with the exception of Section \ref{PolarComplex} and a few exploratory exercises scattered about, we will restrict our attention to real numbers.  We do this primarily because the first Calculus sequence you will take, ostensibly the one that this text is preparing you for, studies only functions of real variables.  Also, lots of really cool scientific things don't require any deep understanding of complex numbers to study them, but they do need more Mathematics like exponential, logarithmic and trigonometric functions.  We believe it makes more sense pedagogically for you to learn about those functions now then take a course in Complex Function Theory in your junior or senior year once you've completed the Calculus sequence.  It is in that course that the true power of the complex numbers is released.  But for now, in order to fully prepare you for life immediately after Precalculus, we will say that functions like $f(x) = \frac{1}{x^{2} + 1}$, which we'll study in the very next chapter,  have a domain of all real numbers, even though we know $x^{2} + 1 = 0$ has two complex solutions, namely $x = \pm i$ which produce a `$0$' in the denominator.  Since $x^{2} + 1 > 0$ for all \textbf{real} numbers $x$, the fraction $\frac{1}{x^{2} + 1}$ is never undefined in the real variable setting.
 
-\newpage
-
-\subsection{Exercises}
-
-%% SKIPPED %% \input{ExercisesforComplexZeros}
 
 \closegraphsfile
 

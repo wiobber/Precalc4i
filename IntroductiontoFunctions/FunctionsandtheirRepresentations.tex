@@ -553,7 +553,7 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 
 \begin{image}
 %---------------- LEFT GRAPH ----------------%
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}[scale=0.9]\Large
 
 % Axes
 \draw[->] (-1,0) -- (13.5,0);
@@ -593,7 +593,7 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 
 %---------------- RIGHT GRAPH ----------------%
 \begin{image}
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}[scale=0.9]\Large
 
 % Axes
 \draw[->] (-1,0) -- (13.5,0);
@@ -604,7 +604,7 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 \node[left]  at (0,10) {\scriptsize $T$};
 
 % Axis-break symbol
-\node at (-0.2,0.6) {$\asymp$};
+\node at (0,0.6) {$\asymp$};
 
 % Tick marks (x)
 \foreach \x in {1,...,12}
@@ -626,9 +626,6 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 \foreach \x/\y in {
   0/1, 2/2.5, 4/5.5, 6/8, 8/9.5, 10/9.5, 12/9}
   \fill (\x,\y) circle (2pt);
-
-% Caption
-\node at (6,-1.2) {\scriptsize The graph of $T=f(t)$.};
 
 \end{tikzpicture}
 \end{image}
@@ -655,58 +652,87 @@ In the meantime, our next example involves a function whose domain is (almost) a
 
 \begin{example}  \label{functiongraphex01} Consider the graph below.  
 
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=--5:5,
+          xmin=-5, xmax=5,
+          ymin=-5, ymax=5,
+          width=5in,
+          height=5in,
+          xtick={-4,-3, -2,-1,1,2,3, 4},
+            xticklabels={$\,$,$\,$, $\,$,$-1$, $1$, $\,$,$\,$,$4$},
+           ytick={-3,-2,-1,1,2,3,4},
+            yticklabels={$-3$,$-2$,$-1$, $1$,$2$,$3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$v$},
+            ylabel={$w$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Extra thick graph
+\addplot[smooth, line width=3.5pt,domain=-2:4, penColor1] {x^2-4};
+
+%% Open, unlabeled points
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (1,-3)[$(1,-3)$]
+ 
+};
+
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=5pt}
+]
+coordinates {
+  (2,0) [$(2,0)$]
+  (0,-4)[$(0,-4)$]
+ 
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-5pt}
+]
+coordinates {
+  (-2,0) [$(-2,0)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
-
-% Axes
-\draw[->] (-5,0) -- (5.5,0);
-\draw[->] (0,-5) -- (0,5.5);
-
-% Axis labels
-\node[below] at (5,0) {\scriptsize $v$};
-\node[left]  at (0,5) {\scriptsize $w$};
-
-% Tick marks
-\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-  \draw (\x,0.1) -- (\x,-0.1);
-
-\foreach \y in {-4,-3,-2,-1,1,2,3,4}
-  \draw (0.1,\y) -- (-0.1,\y);
-
-% Selected axis numbers
-\node[below] at (-1,-0.35) {\scriptsize $-1$};
-\node[below] at (1,-0.35)  {\scriptsize $1$};
-\node[below] at (4,-0.35)  {\scriptsize $4$};
-
-\node[left] at (-0.35,-3) {\scriptsize $-3$};
-\node[left] at (-0.35,-2) {\scriptsize $-2$};
-\node[left] at (-0.35,-1) {\scriptsize $-1$};
-\node[left] at (-0.35,1)  {\scriptsize $1$};
-\node[left] at (-0.35,2)  {\scriptsize $2$};
-\node[left] at (-0.35,3)  {\scriptsize $3$};
-\node[left] at (-0.35,4)  {\scriptsize $4$};
-
-% Function y = x^2 - 4
-\draw[thick, domain=-2:3, samples=200, ->]
-  plot (\x, {\x*\x - 4});
-
-% Filled points
-\fill (-2,0) circle (2pt);
-\fill (0,-4) circle (2pt);
-\fill (2,0) circle (2pt);
-
-% Open point
-\draw (1,-3) circle (2pt);
-
-% Point labels
-\node[below] at (2,-0.5) {\scriptsize $(2,0)$};
-\node[below] at (-2,-0.5) {\scriptsize $(-2,0)$};
-\node[below] at (0,-4.25) {\scriptsize $(0,-4)$};
-\node[right] at (1.1,-3.25) {\scriptsize $(1,-3)$};
-
-\end{tikzpicture}
+%    \captionof{figure}{The graph of $T=f(t)$}
+\xmalt{Graph of a smooth U-shaped curve passing through the points $(-2,0)$, $(0,-4)$, and $(2,0)$. The curve reaches its lowest point at $(0,-4)$. An open circle at $(1,-3)$ indicates that this point is excluded from the graph.} 
 \end{center}
-
 
 
 \begin{enumerate}
