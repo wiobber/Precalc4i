@@ -87,35 +87,42 @@ Range: $(-\infty, 1) \cup (1, \infty)$ \\
 Vertical asymptote:  $x = 2$\\
 Horizontal asymptote:  $y = 1$ \\
 
-\begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    xtick={-4,-3,-2,-1,1,2,3,4},
-    xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
-    ytick={-4,-3,-2,-1,1,2,3,4},
-    yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
-    axis line style={->},
-    width=10cm, height=10cm,
-    clip=false
-  ]
+Use the Desmos graph below with the settings $f(x)=\frac{1}{x},\,h=2,\,k=1,\,a=1$
+
+\begin{center} 
+\desmos{efqikakypj}{800}{600} 
+\end{center}
+
+%\begin{tikzpicture}
+ % \begin{axis}[
+  %  axis lines=middle,
+   %%ymin=-5, ymax=5,
+%    xtick={-4,-3,-2,-1,1,2,3,4},
+ %   xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+  %  ytick={-4,-3,-2,-1,1,2,3,4},
+   % yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+%    axis line style={->},
+ %   width=10cm, height=10cm,
+  %  clip=false
+  %]
     % Axis labels
-    \node at (axis cs:5,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,5) {\scriptsize $y$};
+   % \node at (axis cs:5,-0.5) {\scriptsize $x$};
+%    \node at (axis cs:0.5,5) {\scriptsize $y$};
 
     % Dashed asymptotes
-    \addplot[dashed, domain=-4.75:4.75] {1};
-    \addplot[dashed] coordinates {(2,-4.75) (2,4.75)};
+%    \addplot[dashed, domain=-4.75:4.75] {1};
+ %   \addplot[dashed] coordinates {(2,-4.75) (2,4.75)};
 
     % Function pieces (avoiding asymptote at x=2)
-    \addplot[domain=-5:1.8, samples=200, thick, ->] {1 + 1/(x-2)};
-    \addplot[domain=2.3:5, samples=200, thick, ->] {1 + 1/(x-2)};
+  %  \addplot[domain=-5:1.8, samples=200, thick, ->] {1 + 1/(x-2)};
+  %  \addplot[domain=2.3:5, samples=200, thick, ->] {1 + 1/(x-2)};
 
     % Important points
-    \addplot[only marks, mark=*] coordinates {(1,0) (3,2)};
-  \end{axis}
-\end{tikzpicture}
+  %  \addplot[only marks, mark=*] coordinates {(1,0) (3,2)};
+ % \end{axis}
+%\end{tikzpicture}
+
+
 \end{solution}
 \end{problem}
 
@@ -131,7 +138,11 @@ Range: $(-\infty, 2) \cup (2, \infty)$ \\
 Vertical asymptote:  $x = -1$\\
 Horizontal asymptote:  $y = 2$ \\
 
-% still need graph, just inputting solution details above
+Use the Desmos graph below with the settings $f(x)=\frac{1}{x},\,h=-1,\,k=2,\,a=-2$
+
+\begin{center} 
+\desmos{efqikakypj}{800}{600} 
+\end{center}
     
 \end{solution}
 
@@ -149,35 +160,41 @@ Range: $(-\infty, 2) \cup (2, \infty)$ \\
 Vertical asymptote:  $x  = -\frac{1}{2}$ \\
 Horizontal asymptote: $y= 2$\\
 
-\begin{tikzpicture}
-  \begin{axis}[
-    axis lines=middle,
-    xmin=-5, xmax=5,
-    ymin=-5, ymax=5,
-    xtick={-4,-3,-2,-1,1,2,3,4},
-    xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
-    ytick={1,2,3,4},
-    yticklabels={$1$,$2$,$3$,$4$},
-    axis line style={->},
-    width=10cm, height=10cm,
-    clip=false
-  ]
+Use the Desmos graph below with the settings $f(x)=\frac{1}{x},\,h=-\frac{1}{2},\,k=2,\,a=-1$
+
+\begin{center} 
+\desmos{efqikakypj}{800}{600} 
+\end{center}
+
+%\begin{tikzpicture}
+ % \begin{axis}[
+%    axis lines=middle,
+ %   xmin=-5, xmax=5,
+  %  ymin=-5, ymax=5,
+   % xtick={-4,-3,-2,-1,1,2,3,4},
+    %xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+%    ytick={1,2,3,4},
+ %   yticklabels={$1$,$2$,$3$,$4$},
+  %  axis line style={->},
+   % width=10cm, height=10cm,
+    %clip=false
+  %]
     % Axis labels
-    \node at (axis cs:5,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,5) {\scriptsize $y$};
+   % \node at (axis cs:5,-0.5) {\scriptsize $x$};
+    %\node at (axis cs:0.5,5) {\scriptsize $y$};
 
     % Dashed asymptotes
-    \addplot[dashed, domain=-4.75:4.75] {2};
-    \addplot[dashed] coordinates {(-0.5,-4.75) (-0.5,4.75)};
+    %\addplot[dashed, domain=-4.75:4.75] {2};
+    %\addplot[dashed] coordinates {(-0.5,-4.75) (-0.5,4.75)};
 
     % Function pieces (avoiding vertical asymptote at x=-0.5)
-    \addplot[domain=-5:-0.84, samples=200, thick, ->] {4*x/(2*x+1)};
-    \addplot[domain=-0.35:5, samples=200, thick, ->] {4*x/(2*x+1)};
+    %\addplot[domain=-5:-0.84, samples=200, thick, ->] {4*x/(2*x+1)};
+    %\addplot[domain=-0.35:5, samples=200, thick, ->] {4*x/(2*x+1)};
 
     % Points
-    \addplot[only marks, mark=*] coordinates {(-1.5,3) (0.5,1)};
-  \end{axis}
-\end{tikzpicture}
+    %\addplot[only marks, mark=*] coordinates {(-1.5,3) (0.5,1)};
+  %\end{axis}
+%\end{tikzpicture}
 \end{solution}
 \end{problem} 
 
@@ -187,12 +204,17 @@ Given the pair of functions $f$ and $F$, sketch the graph of $y=F(x)$ by startin
 $f(x) = x^{-2}$, $F(x)=-(x-1)^{-2}+3$ 
 
 \begin{solution}
-$F(x)=-(x-1)^{-2}+3 = \dfrac{-1}{(x-1)^2} + 3$\\[10pt]
+$F(x)=-(x-1)^{-2}+3 = \dfrac{-1}{(x-1)^2} + 3$\\ 
 Domain: $(-\infty, 1) \cup (1, \infty)$ \\
 Range: $(-\infty, 3) \cup (3, \infty)$ \\
 Vertical asymptote:  $x = 1$\\
 Horizontal asymptote:  $y = 3$ \\
 
+Use the Desmos graph below with the settings $f(x)=\frac{1}{x^2},\,h=1,\,k=3,\,a=-1$
+
+\begin{center} 
+\desmos{3ysihdzq86}{800}{600} 
+\end{center}
 \end{solution}
 
 \end{problem}   
@@ -243,27 +265,39 @@ $F(x) =\answer{ \dfrac{1}{x+2}-1}$
 Find a formula in the form $F(x) = \dfrac{a}{x-h}+k$ for the function.
 %$F(x) = -\dfrac{2}{x-1}+1$
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-%\tlabel[cc](-1.5, 0.5){\scriptsize $(-1,0)$}
-%\tlabel[cc](-0.5,-1){\scriptsize $\left(0, \frac{1}{2} \right)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2, -1, 1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$-2$} -2, {$-3$} -3, {$-4$} -4}
-\dashed \polyline{(-4.75,1), (4.75,1)}
-\dashed \polyline{(1,-4.75), (1,4.75)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5,0.45,0.1}{1-2/(x-1)}
-\arrow \reverse \arrow \function{1.35,5,0.1}{1-2/(x-1)}
-\point[4pt]{(3,0), (0,3)}
-\tcaption{ \scriptsize $x$-intercept $(3,0)$, $y$-intercept $\left(0, 3 \right)$}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xtick={-4,-3,-2,-1,1,2,3,4},
+    xticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+    ytick={-4,-3,-2,-1,1,2,3,4},
+    yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+    axis line style={->},
+    width=10cm, height=10cm,
+    clip=false
+  ]
+    % Axis labels
+    \node at (axis cs:5,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,5) {\scriptsize $y$};
+
+    % Dashed asymptotes
+    \addplot[dashed, domain=-4.75:4.75] {1};
+    \addplot[dashed] coordinates {(1,-4.75) (1,4.75)};
+
+    % Function pieces (avoiding asymptote at x=1)
+    \addplot[domain=-4.5:.55, samples=200, thick, <->] {-2/(x-1) +1};
+    \addplot[domain=1.45:5, samples=200, thick, <->] {-2/(x-1) +1};
+
+    % Important points
+    \addplot[only marks, mark=*] coordinates {(3,0) (0,3)};
+
+    % Caption as a node below
+    \node[below] at (rel axis cs:0.5,0) 
+      {\scriptsize $x$-intercept $(3,0)$, $y$-intercept $(0,3)$};
+  \end{axis}
+\end{tikzpicture}
 
 $F(x) = \answer{\dfrac{-2}{x-1}+1}$
 
@@ -315,28 +349,39 @@ $F(x) = \answer{\dfrac{-4}{(x+2)^2}+4}$
 Find a formula in the form $F(x) = \dfrac{a}{(x-h)^2}+k$ for the function.
 %$F(x) = \dfrac{4}{(2x-1)^2}-4$
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-%\tlabel[cc](-1.5, 0.5){\scriptsize $(-1,0)$}
-%\tlabel[cc](-0.5,-1){\scriptsize $\left(0, \frac{1}{2} \right)$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2, -1, 1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$-2$} -2, {$-4$} -4}
-\dashed \polyline{(-4.75,-4), (4.75,-4)}
-\dashed \polyline{(0.5,-4.75), (0.5,4.75)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5, 0.16, 0.1}{4/((2*x-1)**2) - 4}
-\arrow \reverse \arrow \function{0.84, 5, 0.1}{4/((2*x-1)**2) - 4}
-\point[4pt]{(0,0), (1,0)}
-\tcaption{\scriptsize $x$-intercepts $(0,0)$,  $(1,0)$, Vertical Asymptote:  $x = \frac{1}{2}$}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    xtick={-4,-2,1,2,3,4},
+    xticklabels={$-4$,$-2$,$1$,$2$,$3$,$4$},
+    ytick={-4,-3,-2,-1,1,2,3,4},
+    yticklabels={$-4$,$-3$,$-2$,$-1$,$1$,$2$,$3$,$4$},
+    axis line style={->},
+    width=10cm, height=10cm,
+    clip=false
+  ]
+    % Axis labels
+    \node at (axis cs:5,-0.5) {\scriptsize $x$};
+    \node at (axis cs:0.5,5) {\scriptsize $y$};
 
+    % Dashed asymptotes
+    \addplot[dashed, domain=-4.75:4.75] {-4};
+    \addplot[dashed] coordinates {(.5,-4.75) (.5,4.75)};
+
+    % Function pieces (avoiding vertical asymptote at x=1/2)
+    \addplot[domain=-5:.15, samples=200, thick, <->] {1/(x-1/2)^2-4)};
+    \addplot[domain=.85:5, samples=200, thick, <->] {1/(x-1/2)^2-4)};
+
+    % Important points
+    \addplot[only marks, mark=*] coordinates {(0,0) (1,0) };
+
+    % Caption below graph
+    \node[below] at (rel axis cs:0.5,0) 
+      {\scriptsize $x$-intercepts $(0,0)$, $(1,0)$, Vertical Asymptote $x=\frac{1}{2}$};
+  \end{axis}
+\end{tikzpicture}
 
 $F(x) = \answer{\dfrac{1}{\left(x-\frac{1}{2}\right)^2}-4}$
 

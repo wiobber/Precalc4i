@@ -125,7 +125,7 @@ Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vert
    \captionof{figure}{Graphs of constant functions}
 \xmalt{Horizontal lines through $y=3,-2,0$.} 
 \end{center}
-\end{document}
+
 In the graph on the left, $y$ always equals $3$ so we have $f(x) = 3$.  Procedurally, `$f(x) = 3$' says that the rule $f$ takes the input $x$, and, regardless of that input, gives the output $3$.  This is an example of what is called a \textbf{constant} function - a function which returns the \textbf{same} value regardless of the input.  Likewise, the function represented by the graph in the middle is $f(x) = -2$, and the graph on the right (the $x$-axis) is the graph of $f(x) = 0$.  In general, we have the following definition:
 
 \begin{definition} \label{constantfunction} A \index{function ! constant}\index{constant function ! as a horizontal line}\textbf{constant function} is a function of the form \[ f(x) =  b\] where $b$ is real number.  The domain of a constant function is $(-\infty, \infty)$.
@@ -954,57 +954,11 @@ $\begin{array}{|c||c|}  \hline
  10 &  83 \\  \hline
  12 & 82  \\  \hline
 \end{array}$
+\end{center}
+% https://www.desmos.com/calculator/aqedfuqmuw
 
-% \begin{mfpic}[15]{-1}{13}{-1}{10}
-% \axes
-% \tlabel[cc](13,-0.5){  $t$}
-% \tlabel[cc](0.5,10){  $T$}
-% \gclear \tlabelrect(-0.05,0.5){$\asymp$}
-% \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
-% \ymarks{1,2,3,4,5,6,7,8,9}
-% \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
-% \tlpointsep{4pt}
-%  
-% \dashed \polyline{(0, 0.75), (8, 10)}
-% \dashed \polyline{(8, 9.5), (12, 9)}
-% \axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
-% \axislabels {y}{{$64$} 1, {$66$} 2, {$68$} 3, {$72$} 4, {$74$} 5, {$76$} 6, {$78$} 7, {$80$} 8, {$82$} 9}
-% \normalsize
-% \tcaption{The graph of $T = f(t)$.}
-% \end{mfpic} 
-
-\begin{tikzpicture}[scale=0.7]
-  % Axes
-  \draw[->] (-1,0) -- (13.5,0) node[below] {  $t$};
-  \draw[->] (0,-0.5) -- (0,10.5) node[left] {  $T$};
-
-  % Asymp symbol near y-axis
-  \node at (-0.4,0.5) {$\asymp$};
-
-  % X ticks and labels
-  \foreach \x in {1,...,12} {
-    \draw (\x,0.1) -- (\x,-0.1);
-    \node[below] at (\x,-0.1) {  $\x$};
-  }
-
-  % Y ticks and labels
-  \foreach \y/\label in {1/64,2/66,3/68,4/72,5/74,6/76,7/78,8/80,9/82} {
-    \draw (0.1,\y) -- (-0.1,\y);
-    \node[left] at (-0.1,\y) {  $\label$};
-  }
-
-  % Points
-  \foreach \pt in {(0,1),(2,2.5),(4,5.5),(6,8),(8,9.5),(10,9.5),(12,9)} {
-    \fill \pt circle (2.2pt);
-  }
-
-  % Dashed lines
-  \draw[dashed] (0,0.75) -- (8,10);
-  \draw[dashed] (8,9.5) -- (12,9);
-
-  % Caption
-  \node at (6,-1.2) {The graph of $T = f(t)$.};
-\end{tikzpicture}
+\begin{center}
+    \desmos{aqedfuqmuw}{800}{600}
 \end{center}
 
 
@@ -1072,7 +1026,9 @@ Using advanced mathematical machinery,\footnote{like Calculus or Linear Algebra 
 \end{axis}
 \end{tikzpicture}
 
-\includegraphics[width=4in]{ConstantandLinearFunctionsGraphics/ThreePointRegression.jpg}
+% https://www.desmos.com/calculator/ofrcaiemar
+
+\desmos{ofrcaiemar}{800}{600}
 \end{center}
 
 Our graphing utility produces the model\footnote{We chose to use three decimal places for the approximations in this demonstration.  How many you get to use in reality varies from one application to another.} $y=mx+b$ where the slope is $m \approx 0.821$ and the $y$-coordinate of the $y$-intercept is $b \approx -0.357$.  The value $r$ is the \index{regression ! correlation coefficient}\index{correlation coefficient}\textbf{correlation coefficient} and is a measure of how close the data is to being on the same line.  The closer $|r|$ is to $1$, the better the linear fit.\footnote{The value $r^2$ is called the \index{regression ! coefficient of determination}\index{coefficient of determination}\textbf{coefficient of determination} and is also a measure of the goodness of fit. We refer the interested reader to a course in Statistics to explore the significance of $r$ and $r^2$.} Having $r \approx 0.997$ tells us that the points have a strong, positive correlation - that is, they are very close to being on a line with a positive slope, namely $y = 0.821x - 0.357$.   Indeed, the total squared error between our data set and this line is $E \approx 0.018$. The mathematics tells us that this is the smallest we can get $E$ by modifying the parameters $m$ and $b$, even though none of the data points actually lie on the line.  
@@ -1129,8 +1085,9 @@ $\begin{array}{|c||c|}  \hline
 
 To interpret the slope, we recognize $t$ as the independent variable (input) and $T$ as the dependent variable (output), so the slope $m = \frac{\Delta T}{\Delta t}$ is the rate of change of temperature with respect to time.   In this case,  $m = 2.55$ means that the temperature is increasing (getting warmer) at a rate of $2.55^{\circ}$F per hour.  A screenshot from Desmos is given below.
 
+% https://www.desmos.com/calculator/jhkc4szlj7
 \begin{center}
-\includegraphics[width=6in]{./ConstantandLinearFunctionsGraphics/TimeTempRegression01.jpg}
+\desmos{jhkc4szlj7}{800}{600}
 \end{center}
   
 For the second set of data, we get $T = G(t) = -0.25t + 85.167$ and we have $r = -0.866$.  Here, the negative sign on $r$ indicates a negative correlation which means our line has a negative slope.\footnote{We use $G$ as the function name here to distinguish it from the given function $f$ and the regression for the first data set, $F$.} While the fit looks OK, it certainly isn't as strong as with the first data set, so using this model to predict the temperature between $2$ p.m. and $6$ p.m. (let alone beyond) is a bit risky.  
@@ -1138,9 +1095,10 @@ For the second set of data, we get $T = G(t) = -0.25t + 85.167$ and we have $r =
 
 
 The slope in this case is $m = -0.25$ which corresponds to the temperature decreasing (getting cooler) at a rate of  $0.25^{\circ}$F per hour.  That's what a negative correlation means - an increase in input (more time passes) yields a decrease in output (cooler temperatures).  As screenshot from Desmos is given at the top of the next page.
-  
+
+% https://www.desmos.com/calculator/rqhhlc0enf  
 \begin{center}
-\includegraphics[width=6in]{./ConstantandLinearFunctionsGraphics/TimeTempRegression02.jpg}
+\desmos{rqhhlc0enf}{800}{600}
 \end{center}
 
 \item  The time $7$ a.m. corresponds to $t = 1$. This falls between $t = 0$ and $t = 8$ so we use our first model.  Substituting $t = 1$ gives $T = F(1) = 2.55(1) + 63.6 \approx 66.2$.  Therefore, the model predicts the temperature to be $66.2^{\circ}$F at 7 a.m..  Likewise, $3$ p.m. corresponds to $t = 9$.  This is greater than $8$, so we use the second model: $T = G(9) =  -0.25(9) + 85.167 \approx  82.9$.  The model predicts the temperature at $3$ p.m. to be $82.9^{\circ}$F.   Based on the goodness of fit of each model, we have more confidence in the former prediction than in the latter.   
@@ -1213,9 +1171,10 @@ If $f$ is increasing over $[a,b]$, then the average rate of change will be posit
 
 \item  To find $s(0)$, we substitute $t=0$ into the formula for $s(t)$:  $s(0) = -5(0)^2+100(0) = 0$.  Similarly,  $s(5) = -5(5)^2+100(5) = -5(25)+500 = -125+500 = 375$.  Continuing, we obtain: $s(10) = 500$, $s(15) = 375$ and $s(20) = 0$.  We construct a table of values and with a graphing utility we obtain:
 
-\begin{center}
-\includegraphics[width=6in]{./ConstantandLinearFunctionsGraphics/ARCRocketExample01.jpg}
+% https://www.desmos.com/calculator/gh2t8utkoz
 
+\begin{center}
+\desmos{gh2t8utkoz}{800}{600}
 \end{center}
 
 \item  Projecting the graph to the $y$-axis, we see that the range of $s$ is $[0, 500]$ so the minimum of $s$ is $0$ and the maximum is $500$.  This means that the rocket at some point is on the surface of the Moon and reaches its highest altitude of $500$ feet above the lunar surface.
