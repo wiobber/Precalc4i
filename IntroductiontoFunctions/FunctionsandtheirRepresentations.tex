@@ -547,9 +547,8 @@ Our path to the Cartesian Plane requires ordered pairs.  In general, we can repr
 
 The plot of these points is called `the \textbf{graph} of $f\,$'.  More specifically, we could describe this plot as `the graph of $f(t)$', because we have decided to name the independent variable $t$.  Most specifically, we could describe the plot as `the graph of $T = f(t)$', given that we have named the independent variable $t$ and the dependent variable $T$.  
 
-Below we present two plots, both of which are graphs of the function $f$.  In both cases, the vertical axis has been scaled in order to save space.  In the graph on the left, the same increment on the horizontal axis to measure $1$ unit measures $10$ units on the vertical axis whereas in the graph on the right, this ratio is $1 : 2$.  The `$\asymp$' symbol on the vertical axis in the graph on the right is used to indicate a jump in the vertical labeling.  Both are perfectly accurate data plots, but they have different visual impacts.    Note here that the extrema of $f$, $64$ and $83$, correspond to the lowest and highest points on the graph, respectively:  $(0, 64)$, $(8, 83)$ and $(10,83)$.  More often than not, we will use the graph of a function to help us optimize that function.\footnote{One major use of Calculus is to optimize functions analytically - that is, without a graph.}
+Below we present two plots, both of which are graphs of the function $f$.  In both cases, the vertical axis has been scaled in order to save space.  In our first graph, the same increment on the horizontal axis to measure $1$ unit measures $10$ units on the vertical axis. 
 
- 
 
 \begin{image}
 %---------------- LEFT GRAPH ----------------%
@@ -591,6 +590,9 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
 \xmalt{Scatter plot of temperature $T$ versus time $t$. The plotted points are approximately $(0,64)$, $(2,67)$, $(4,75)$, $(6,80)$, $(8,83)$, $(10,83)$, and $(12,82)$. The temperature generally increases over time, reaches a high value near $83$, and then levels off.} 
 \end{center}
 
+In our second graph, the same increment which measures $1$ unit on the horizontal axis measures $2$ on the vertical axis.  The `$\asymp$' symbol on the vertical axis in the graph below is used to indicate a jump in the vertical labeling.  
+
+ 
 %---------------- RIGHT GRAPH ----------------%
 \begin{image}
 \begin{tikzpicture}[scale=0.9]\Large
@@ -633,6 +635,9 @@ Below we present two plots, both of which are graphs of the function $f$.  In bo
     \captionof{figure}{The graph of $T=f(t)$}
 \xmalt{Scatter plot of temperature $T$ versus time $t$. The plotted points are $(0,64)$, $(2,67)$, $(4,75)$, $(6,80)$, $(8,83)$, $(10,83)$, and $(12,82)$. The temperature increases from $64$ to a maximum of $83$, remains near $83$, and then decreases slightly to $82$.} 
 \end{center}
+
+
+Both are perfectly accurate data plots, but they have different visual impacts.    Note here that the extrema of $f$, $64$ and $83$, correspond to the lowest and highest points on the graph, respectively:  $(0, 64)$, $(8, 83)$ and $(10,83)$.  More often than not, we will use the graph of a function to help us optimize that function.\footnote{One major use of Calculus is to optimize functions analytically - that is, without a graph.}
 
 If you found yourself wanting to connect the dots in the graphs above, you're not alone.  As it stands, however, the function $f$ matches only seven inputs to seven outputs, so those seven points - and just those seven points - comprise the graph of $f$.  That being said, common everyday experience tells us that while the data Skippy collected in his table gives some good information about the relationship between time and temperature on a given day, it is by no means a complete description of the relationship.  
 
@@ -771,7 +776,8 @@ To solve $F(v) = 0$, we are looking for the $v$-values where the output, or asso
 
  
 
-\item  The domain of $F$ is the set of inputs to $F$.  With $v$ as the input here,  we need to describe the set of $v$-values on the graph.  We can accomplish this by  \index{projection ! to an axis}\textbf{projecting} the graph to the $v$-axis and seeing what part of the $v$-axis is covered. The leftmost point on the graph is $(-2,0)$, so we know that the domain starts at $v=-2$.  The graph continues to the right until we encounter the `hole' labeled at $(1,-3)$.  This indicates one and only one point, namely $(1,-3)$ is missing from the curve which for us means $v = 1$ is not in the domain of $F$.  The graph continues to the right and the arrow on the graph indicates that the graph goes upwards to the right indefinitely.  Hence, our domain is $\{ v \, | \, v \geq -2, \, v \neq 1 \}$ which, in interval notation, is $[-2, 1) \cup (1, \infty)$. Pictures demonstrating the process of projecting the graph to the $v$-axis are shown below.
+\item  The domain of $F$ is the set of inputs to $F$.  With $v$ as the input here,  we need to describe the set of $v$-values on the graph.  We can accomplish this by  \index{projection ! to an axis}\textbf{projecting} the graph to the $v$-axis and seeing what part of the $v$-axis is covered.   Using the GeoGebra interactive below, adjust the slider to visualize the graph of $F$ being projected to the $v$-axis.  Each point on the graph of $F$ is `pushed' to the $v$-axis, and the portion which is covered by this process is the domain of $F$.
+
 
 % https://www.geogebra.org/classic/xrjvhdwu
 
@@ -780,20 +786,23 @@ To solve $F(v) = 0$, we are looking for the $v$-values where the output, or asso
 \end{center}
 
 
+The leftmost point on the graph is $(-2,0)$, so we know that the domain starts at $v=-2$.  The graph continues to the right until we encounter the `hole' labeled at $(1,-3)$.  This indicates one and only one point, namely $(1,-3)$ is missing from the curve which for us means $v = 1$ is not in the domain of $F$.  The graph continues to the right and the arrow on the graph indicates that the graph goes upwards to the right indefinitely.  Hence, our domain is $\{ v \, | \, v \geq -2, \, v \neq 1 \}$ which, in interval notation, is $[-2, 1) \cup (1, \infty)$. 
 
 
+To find the range of $F$, we need to describe the set of outputs - in this case, the $w$-values on the graph.  Here, we project the graph to the $w$-axis.  Once again, we are fortunate to have a GeoGebra interactive to help us visualize this process.
 
-To find the range of $F$, we need to describe the set of outputs - in this case, the $w$-values on the graph.  Here, we project the graph to the $w$-axis.  Vertically, the graph starts at $(0,-4)$ so our range starts at $w=-4$.  Note that even  though there is a hole at $(1,-3)$, the $w$-value $-3$ is covered by what \textbf{appears} to be the point $(-1,-3)$ on the graph.\footnote{For all we know, it could be $(-0.992, -3)$.} The arrow indicates that the graph extends upwards indefinitely so the range of $F$ is   $\{ w \, |  \, w \geq -4 \}$  or, in interval notation, $[-4, \infty)$.   Regarding extrema, $F$ has a minimum of $-4$ when $v = 0$, but given that the graph extends upwards indefinitely, $F$ has  no maximum. 
-
- 
-
-Pictures showing the projection of the graph onto the $w$-axis are given below.
-
- 
 % https://www.geogebra.org/classic/z2pvgbmr
 \begin{center}
 \geogebra{z2pvgbmr}{800}{600}
 \end{center}
+
+
+
+Vertically, the graph starts at $(0,-4)$ so our range starts at $w=-4$.  Note that even  though there is a hole at $(1,-3)$, the $w$-value $-3$ is covered by what \textbf{appears} to be the point $(-1,-3)$ on the graph.\footnote{For all we know, it could be $(-0.992, -3)$.} The arrow indicates that the graph extends upwards indefinitely so the range of $F$ is   $\{ w \, |  \, w \geq -4 \}$  or, in interval notation, $[-4, \infty)$.   Regarding extrema, $F$ has a minimum of $-4$ when $v = 0$, but given that the graph extends upwards indefinitely, $F$ has  no maximum. 
+
+
+ 
+
 
 
 \end{enumerate}
@@ -860,26 +869,6 @@ Applying the Vertical Line Test to the graph given in Example \ref{functiongraph
 %% Extra thick graph
 \addplot[smooth, line width=3.5pt,domain=-2:4, penColor1] {x^2-4};
 
-\draw[gray, line width=1.5pt] (-4.5,-5)--(-4.5,5);
-\draw[gray, line width=1.5pt] (-4,-5)--(-4,5);
-\draw[gray, line width=1.5pt] (-3.5,-5)--(-3.5,5);
-\draw[gray, line width=1.5pt] (-3,-5)--(-3,5);
-\draw[gray, line width=1.5pt] (-2.5,-5)--(-2.5,5);
-\draw[gray, line width=1.5pt] (-2,-5)--(-2,5);
-\draw[gray, line width=1.5pt] (-1.5,-5)--(-1.5,5);
-\draw[gray, line width=1.5pt] (-1,-5)--(-1,5);
-
-\draw[gray, line width=1.5pt] (-0.5,-5)--(-0.5,5);
-\draw[gray, line width=1.5pt] (0.5,-5)--(0.5,5);
-\draw[gray, line width=1.5pt] (1,-5)--(1,5);
-\draw[gray, line width=1.5pt] (1.5,-5)--(1.5,5);
-\draw[gray, line width=1.5pt] (2,-5)--(2,5);
-\draw[gray, line width=1.5pt] (2.5,-5)--(2.5,5);
-\draw[gray, line width=1.5pt] (3,-5)--(3,5);
-\draw[gray, line width=1.5pt] (3.5,-5)--(3.5,5);
-\draw[gray, line width=1.5pt] (4,-5)--(4,5);
-\draw[gray, line width=1.5pt] (4.5,-5)--(4.5,5);
-
 %% Open, unlabeled points
 \addplot[
   only marks,
@@ -926,6 +915,26 @@ coordinates {
   (-2,0) 
   };
 
+  \draw[gray, line width=1.5pt] (-4.5,-5)--(-4.5,5);
+\draw[gray, line width=1.5pt] (-4,-5)--(-4,5);
+\draw[gray, line width=1.5pt] (-3.5,-5)--(-3.5,5);
+\draw[gray, line width=1.5pt] (-3,-5)--(-3,5);
+\draw[gray, line width=1.5pt] (-2.5,-5)--(-2.5,5);
+\draw[gray, line width=1.5pt] (-2,-5)--(-2,5);
+\draw[gray, line width=1.5pt] (-1.5,-5)--(-1.5,5);
+\draw[gray, line width=1.5pt] (-1,-5)--(-1,5);
+
+\draw[gray, line width=1.5pt] (-0.5,-5)--(-0.5,5);
+\draw[gray, line width=1.5pt] (0.5,-5)--(0.5,5);
+\draw[gray, line width=1.5pt] (1,-5)--(1,5);
+\draw[gray, line width=1.5pt] (1.5,-5)--(1.5,5);
+\draw[gray, line width=1.5pt] (2,-5)--(2,5);
+\draw[gray, line width=1.5pt] (2.5,-5)--(2.5,5);
+\draw[gray, line width=1.5pt] (3,-5)--(3,5);
+\draw[gray, line width=1.5pt] (3.5,-5)--(3.5,5);
+\draw[gray, line width=1.5pt] (4,-5)--(4,5);
+\draw[gray, line width=1.5pt] (4.5,-5)--(4.5,5);
+
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -943,16 +952,15 @@ Our next example revisits the function $h$ from Example \ref{funcnotatex1} from 
 
 \begin{example} \label{graphalgebraicex}  With the help of a graphing utility graph $h(t) = -t\,^{2} + 3t + 4$.  From your graph, state the domain, range and extrema, if any exist.
 
-{\bf Solution.} The dependent variable wasn't specified so we use the default `$y$' label for the vertical axis and set about graphing $y = h(t)$.   From our work in Example \ref{funcnotatex1},  we already know  $h(-1) = 0$, $h(0) = 4$, $h(2) = 6$ and $h(4) = 0$.  These give us the points $(-1,0)$, $(0,4)$, $(2,6)$ and $(4,0)$, respectively.  Using these as a guide, we can use  \href{https://www.desmos.com/}{{desmos}} to produce a graph at the top of the next page on the left.\footnote{The curve in this example is called a 	`parabola'.  In Section \ref{QuadraticFunctions}, we'll learn how to graph these accurately \textbf{by hand}.} 
-
- 
-
-As nice as the graph is, it is still technically incomplete.  There is no restriction stated on the independent variable $t$ so the domain of $h$ is all real numbers. However, the graph as presented shows only the behavior of $h$ between roughly $t = -2.5$ and $t = 4.25$.  By zooming out, we see that the graph extends downwards indefinitely which we indicate by adding the arrows you see in the graph on the right.  We find that the domain is $(-\infty, \infty)$ and the range is $(-\infty, 6.25]$.  There is no minimum, but the  maximum of $h$ is $6.25$ and it occurs at $t = 1.5$.  The point $(1.5, 6.25)$ is shown on both graphs.
+{\bf Solution.} The dependent variable wasn't specified so we use the default `$y$' label for the vertical axis and set about graphing $y = h(t)$.   From our work in Example \ref{funcnotatex1},  we already know  $h(-1) = 0$, $h(0) = 4$, $h(2) = 6$ and $h(4) = 0$.  These give us the points $(-1,0)$, $(0,4)$, $(2,6)$ and $(4,0)$, respectively.  Using these as a guide, we can use  Desmos to produce the graph below.\footnote{The curve in this example is called a 	`parabola'.  In Section \ref{QuadraticFunctions}, we'll learn how to graph these accurately \textbf{by hand}.}
 
 % https://www.desmos.com/calculator/lamgypzhv3
 \begin{center}
     \desmos{lamgypzhv3}{800}{600}
 \end{center}
+
+
+ As nice as the graph is, it is still technically incomplete.  There is no restriction stated on the independent variable $t$ so the domain of $h$ is all real numbers. However, the graph as presented shows only the behavior of $h$ between roughly $t = -2.5$ and $t = 4.25$.  By zooming out, we see that the graph extends downwards indefinitely which we could indicate by adding the arrows to the graph.  Hence, we record the domain as $(-\infty, \infty)$ and the range as $(-\infty, 6.25]$.  There is no minimum, but the  maximum of $h$ is $6.25$ and it occurs at $t = 1.5$. 
 
 
 
@@ -1012,9 +1020,8 @@ It seems natural to start with what's happening near $x = 0$.  Even though the e
 
 \end{array} \] There is no such thing as a  `smallest' positive number,\footnote{If $p$ is any positive real number, $0 < 0.5 p < p$, so we can always find a smaller positive real number.}  so we will have points on the graph of $V$ to the right of $x = 0$ leading to the point $(0,0)$.  We indicate this behavior by putting a hole at $(0,0)$.\footnote{What's really needed here is the precise definition of `closeness' discussed in Calculus.  This hand-waving will do for now.}
 
-Moving forward, we start with $x = 5$ and sample $V$ at steps of $5$ in its domain.  Our goal is to graph $y = V(x)$, so we plot our points $(x, V(x))$  using  the domain as a guide to help us set the horizontal bounds (i.e., the bounds on $x$) and the sample values from the range to help us set the vertical bounds (i.e., the bounds on $y$).   The right endpoint, $x = 26$, is included in the domain $0 < x \leq 26$ so we finish the graph by plotting the point $(26, V(26)) = (26,17576)$.  Below is the table of data and on the right is a graph produced with some help from \href{https://www.desmos.com/}{{desmos}}.
-  
-
+Moving forward, we start with $x = 5$ and sample $V$ at steps of $5$ in its domain.  Our goal is to graph $y = V(x)$, so we list the ordered pairs $(x, V(x))$.   The right endpoint, $x = 26$, is included in the domain $0 < x \leq 26$, so we end our table with $(26, V(26)) = (26,17, \! 576)$.
+\begin{center}
 $
 \begin{array}{|r||c|c|}  \hline
   x & V(x) & (x,V(x)) \\ \hline
@@ -1027,6 +1034,13 @@ $
   26 & 17, \! 576 &  (26,17, \! 576) \\ \hline
 \end{array}$
 
+\end{center}
+
+To graph the points, $(x, V(x))$, we use the domain as a guide to help us set the horizontal bounds (i.e., the bounds on $x$) and the sample values from the range to help us set the vertical bounds (i.e., the bounds on $y$).  With some help from Desmos, we create the graph below.
+  
+
+
+
 % https://www.desmos.com/calculator/vq29svps5g
 
 \begin{center}
@@ -1035,12 +1049,16 @@ $
 
 
 
-\item  The largest volume in this case refers to the maximum of $V$.  The biggest $y$-value in our table of data is $20, \! 000$ cubic inches which occurs at $x = 20$ inches, but the graph produced by the graphing utility indicates that there are points on the graph of $V$ with $y$-values (hence $V(x)$ values) greater than $20, \! 000$.  Indeed, the graph continues to rise to the right of $x = 20$ and the graphing utility reports the maximum $y$-value to be $y \approx 20, \! 342.593$ when $x \approx 21.667$.  Rounding to two decimal places, we find the maximum volume obtainable under these conditions is about $20, \! 342.59$ cubic inches which occurs when the length and width of the square side of the box are approximately $21.67$ inches.\footnote{We could also find the length of the box in this case as well.  The sum of length and girth is 130 inches so the length is 130 minus the girth, or $130 - 4x \approx 130 - 4(21.67) = 43.32$ inches.}  
+\item  The largest volume in this case refers to the maximum of $V$.  The biggest $y$-value in our table of data is $20, \! 000$ cubic inches which occurs at $x = 20$ inches, but the graph produced by Desmos indicates that there are points on the graph of $V$ with $y$-values (hence $V(x)$ values) greater than $20, \! 000$.  Indeed, the graph continues to rise to the right of $x = 20$ and the graphing utility reports the maximum $y$-value to be $y \approx 20, \! 342.593$ when $x \approx 21.667$. 
 
 % https://www.desmos.com/calculator/eaijwrnfa5
 \begin{center}
 \desmos{eaijwrnfa5}{800}{600}
 \end{center}
+
+Rounding to two decimal places, we find the maximum volume obtainable under these conditions is about $20, \! 342.59$ cubic inches which occurs when the length and width of the square side of the box are approximately $21.67$ inches.\footnote{We could also find the length of the box in this case as well.  The sum of length and girth is 130 inches so the length is 130 minus the girth, or $130 - 4x \approx 130 - 4(21.67) = 43.32$ inches.}  
+
+
 
  
 
