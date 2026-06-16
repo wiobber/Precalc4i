@@ -17,11 +17,11 @@ Now that we have defined the concept of a function, we'll spend the rest of Chap
 
 Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vertical Line Test, Theorem \ref{VLT}, tells us that each describes $y$ as a function of $x$ so the question becomes how to represent these functions algebraically. The key here is to remember that the equation relating the independent variable $x$,  the dependent variable  $y$, and the function $f$ is given by $y = f(x)$.
 
-\begin{center}
+\begin{image}
 \begin{tikzpicture}[scale=0.5]
   % Axes
-  \draw[->] (-4,0) -- (4.5,0) node[below right] {\scriptsize $x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above right] {\scriptsize $y$};
+  \draw[->] (-4,0) -- (4.5,0) node[below right] {  $x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above right] {  $y$};
 
   % Axis ticks
   \foreach \x in {-3,-2,-1,1,2,3}
@@ -30,33 +30,33 @@ Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vert
     \draw (0.1,\y) -- (-0.1,\y);
 
   % Axis labels
-  \node[below] at (-3,0) {\scriptsize $-3$};
-  \node[below] at (-2,0) {\scriptsize $-2$};
-  \node[below] at (-1,0) {\scriptsize $-1$};
-  \node[below] at ( 1,0) {\scriptsize $1$};
-  \node[below] at ( 2,0) {\scriptsize $2$};
-  \node[below] at ( 3,0) {\scriptsize $3$};
+  \node[below] at (-3,0) {  $-3$};
+  \node[below] at (-2,0) {  $-2$};
+  \node[below] at (-1,0) {  $-1$};
+  \node[below] at ( 1,0) {  $1$};
+  \node[below] at ( 2,0) {  $2$};
+  \node[below] at ( 3,0) {  $3$};
 
-  \node[left] at (0,-2) {\scriptsize $-2$};
-  \node[left] at (0,-1) {\scriptsize $-1$};
-  \node[left] at (0, 1) {\scriptsize $1$};
-  \node[left] at (0, 2) {\scriptsize $2$};
-  \node[left] at (0, 3) {\scriptsize $3$};
-  \node[left] at (0, 4) {\scriptsize $4$};
+  \node[left] at (0,-2) {  $-2$};
+  \node[left] at (0,-1) {  $-1$};
+  \node[left] at (0, 1) {  $1$};
+  \node[left] at (0, 2) {  $2$};
+  \node[left] at (0, 3) {  $3$};
+  \node[left] at (0, 4) {  $4$};
 
   % Horizontal line y=3 (double arrow)
-  \draw[<->,thick] (-4,3) -- (4,3);
+  \draw[<->,thick, blue] (-4,3) -- (4,3);
 
   % Marked point
   \filldraw (0,3) circle (2pt);
 
   % Caption
-  \node[below] at (0,-3.5) {\scriptsize $y=3$};
+  \node[below] at (0,-3.5) {  $y=3$};
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.5]
   % Axes
-  \draw[->] (-4,0) -- (4.5,0) node[below right] {\scriptsize $x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above right] {\scriptsize $y$};
+  \draw[->] (-4,0) -- (4.5,0) node[below right] {  $x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above right] {  $y$};
 
   % Axis ticks
   \foreach \x in {-3,-2,-1,1,2,3}
@@ -65,33 +65,33 @@ Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vert
     \draw (0.1,\y) -- (-0.1,\y);
 
   % Axis labels
-  \node[below] at (-3,0) {\scriptsize $-3$};
-  \node[below] at (-2,0) {\scriptsize $-2$};
-  \node[below] at (-1,0) {\scriptsize $-1$};
-  \node[below] at ( 1,0) {\scriptsize $1$};
-  \node[below] at ( 2,0) {\scriptsize $2$};
-  \node[below] at ( 3,0) {\scriptsize $3$};
+  \node[below] at (-3,0) {  $-3$};
+  \node[below] at (-2,0) {  $-2$};
+  \node[below] at (-1,0) {  $-1$};
+  \node[below] at ( 1,0) {  $1$};
+  \node[below] at ( 2,0) {  $2$};
+  \node[below] at ( 3,0) {  $3$};
 
-  \node[left] at (0,-2) {\scriptsize $-2$};
-  \node[left] at (0,-1) {\scriptsize $-1$};
-  \node[left] at (0, 1) {\scriptsize $1$};
-  \node[left] at (0, 2) {\scriptsize $2$};
-  \node[left] at (0, 3) {\scriptsize $3$};
-  \node[left] at (0, 4) {\scriptsize $4$};
+  \node[left] at (0,-2) {  $-2$};
+  \node[left] at (0,-1) {  $-1$};
+  \node[left] at (0, 1) {  $1$};
+  \node[left] at (0, 2) {  $2$};
+  \node[left] at (0, 3) {  $3$};
+  \node[left] at (0, 4) {  $4$};
 
   % Horizontal line y=-2 (double arrow)
-  \draw[<->,thick] (-4,-2) -- (4,-2);
+  \draw[<->,thick,blue] (-4,-2) -- (4,-2);
 
   % Marked point
   \filldraw (0,-2) circle (2pt);
 
   % Caption
-  \node[below] at (0,-3.5) {\scriptsize $y=-2$};
+  \node[below] at (0,-3.5) {$y=-2$};
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.5]
   % Axes
-  \draw[->] (-4,0) -- (4.5,0) node[below right] {\scriptsize $x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above right] {\scriptsize $y$};
+  \draw[->] (-4,0) -- (4.5,0) node[below right] {  $x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above right] {  $y$};
 
   % Axis ticks
   \foreach \x in {-3,-2,-1,1,2,3}
@@ -100,26 +100,30 @@ Consider the horizontal lines graphed in the $xy$-plane as shown below. The Vert
     \draw (0.1,\y) -- (-0.1,\y);
 
   % Axis labels
-  \node[below] at (-3,0) {\scriptsize $-3$};
-  \node[below] at (-2,0) {\scriptsize $-2$};
-  \node[below] at (-1,0) {\scriptsize $-1$};
-  \node[below] at ( 1,0) {\scriptsize $1$};
-  \node[below] at ( 2,0) {\scriptsize $2$};
-  \node[below] at ( 3,0) {\scriptsize $3$};
+  \node[below] at (-3,0) {  $-3$};
+  \node[below] at (-2,0) {  $-2$};
+  \node[below] at (-1,0) {  $-1$};
+  \node[below] at ( 1,0) {  $1$};
+  \node[below] at ( 2,0) {  $2$};
+  \node[below] at ( 3,0) {  $3$};
 
-  \node[left] at (0,-2) {\scriptsize $-2$};
-  \node[left] at (0,-1) {\scriptsize $-1$};
-  \node[left] at (0, 1) {\scriptsize $1$};
-  \node[left] at (0, 2) {\scriptsize $2$};
-  \node[left] at (0, 3) {\scriptsize $3$};
-  \node[left] at (0, 4) {\scriptsize $4$};
+  \node[left] at (0,-2) {  $-2$};
+  \node[left] at (0,-1) {  $-1$};
+  \node[left] at (0, 1) {  $1$};
+  \node[left] at (0, 2) {  $2$};
+  \node[left] at (0, 3) {  $3$};
+  \node[left] at (0, 4) {  $4$};
 
   % Horizontal line y=0 (double arrow)
-  \draw[<->,thick] (-4,0) -- (4,0);
+  \draw[<->,thick, blue] (-4,0) -- (4,0);
 
   % Caption
-  \node[below] at (0,-3.5) {\scriptsize $y=0$};
+  \node[below] at (0,-3.5) {  $y=0$};
 \end{tikzpicture}
+\end{image}
+\begin{center}
+   \captionof{figure}{Graphs of constant functions}
+\xmalt{Horizontal lines through $y=3,-2,0$. } 
 \end{center}
 
 In the graph on the left, $y$ always equals $3$ so we have $f(x) = 3$.  Procedurally, `$f(x) = 3$' says that the rule $f$ takes the input $x$, and, regardless of that input, gives the output $3$.  This is an example of what is called a \textbf{constant} function - a function which returns the \textbf{same} value regardless of the input.  Likewise, the function represented by the graph in the middle is $f(x) = -2$, and the graph on the right (the $x$-axis) is the graph of $f(x) = 0$.  In general, we have the following definition:
@@ -164,23 +168,23 @@ p(A) = \begin{cases}
 
 For the first piece, note that $A = 0$ is included in the inequality $0 \leq A < 6$ but $A = 6$ is not.  For this reason, we have a point indicated at $(0, 5.75)$ but leave a hole\footnote{See our discussion about holes in graphs in Example \ref{volumeex1} in Section \ref{FunctionsandtheirRepresentations}.} at $(6, 5.75)$.  Similarly, to graph the second piece, we begin with a point at $(6, 7.25)$ and continue the horizontal line to a hole at $(50, 7.25)$.  Lastly,  we finish the graph with a point at $(50, 5.75)$ and continue to the right indefinitely.\footnote{The domain of $p$ is $[0, \infty)$ by definition, even though few 327 year olds are out and about these days.} Note the scaling on the horizontal axis compared to the vertical axis.
 
-\begin{center}
+\begin{image}
 
 \begin{tikzpicture}[scale=0.9]
   % Axes
-  \draw[->] (-1,0) -- (6.5,0) node[below right] {\scriptsize $A$};
-  \draw[->] (0,-1) -- (0,5.5) node[above right] {\scriptsize $y$};
+  \draw[->] (-1,0) -- (6.5,0) node[below right] {  $A$};
+  \draw[->] (0,-1) -- (0,5.5) node[above right] {  $y$};
 
   % Ticks
   \foreach \x/\xlabel in {1/10,2/20,3/30,4/40,5/50}
-    \draw (\x,0.1) -- (\x,-0.1) node[below=3pt] {\scriptsize $\xlabel$};
+    \draw (\x,0.1) -- (\x,-0.1) node[below=3pt] {  $\xlabel$};
   \foreach \y/\ylabel in {1/2,2/4,4/8}
-    \draw (0.1,\y) -- (-0.1,\y) node[left=3pt] {\scriptsize $\ylabel$};
+    \draw (0.1,\y) -- (-0.1,\y) node[left=3pt] {  $\ylabel$};
 
   % Labels near points
-  \node[left] at (0,2.875) {\scriptsize $(0, 5.75)$};
-  \node[above right] at (0.6,3.625) {\scriptsize $(6, 7.25)$};
-  \node[above left] at (5,2.4) {\scriptsize $(50, 5.75)$};
+  \node[left] at (0,2.875) {  $(0, 5.75)$};
+  \node[above right] at (0.6,3.625) {  $(6, 7.25)$};
+  \node[above left] at (5,2.4) {  $(50, 5.75)$};
 
   % Piecewise function
   \draw[thick] (0,2.875) -- (0.6,2.875);              % left horizontal
@@ -198,12 +202,16 @@ For the first piece, note that $A = 0$ is included in the inequality $0 \leq A <
 
   % Caption
   \node[below,align=left] at (2.5,-1) 
-    {\scriptsize $y = p(A) = 
+    {  $y = p(A) = 
       \begin{cases} 
         5.75 & \text{if $0 \leq A < 6$ or $A \geq 50$}, \\ 
         7.25 & \text{if $6 \leq A < 50$} 
       \end{cases}$};
 \end{tikzpicture}
+\end{image}
+\begin{center}
+%   \captionof{figure}{Graphs of constant functions}
+\xmalt{A horizontal segment at $y=5.75$ begins with a closed circle at $(0,5.75)$ and ends with an open circle at $(6,5.75)$. A second horizontal segment at $y=7.25$ begins with a closed circle at $(6,7.25)$ and ends with an open circle at $(50,7.25)$. A third horizontal ray at $y=5.75$ begins with a closed circle at $(50,5.75)$ and extends to the right. The graph jumps upward at $A=6$ and downward at $A=50$.} 
 \end{center}
 
 \end{enumerate}
@@ -256,14 +264,14 @@ $ \lfloor x \rfloor = \begin{cases}
 
 % \begin{mfpic}[15]{-7}{7}{-7}{7}
 % \axes
-% \tlabel[cc](7,-0.5){\scriptsize $x$}
-% \tlabel[cc](0.5,7){\scriptsize $y$}
+% \tlabel[cc](7,-0.5){  $x$}
+% \tlabel[cc](0.5,7){  $y$}
 % \tlabel[cc](7,7){$\vdots$}
 % \tlabel[cc](-6,-6.5){$\vdots$}
 % \xmarks{-6,-5,-4,-3,-2,-1,2,3,4,5,6}
 % \ymarks{-6,-5,-4,-3,-2,1,2,3,4,5,6}
 % \tlpointsep{5pt}
-% \scriptsize
+%  
 % \axislabels {x}{{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
 % \axislabels {y}{{$-6$} -6, {$-5$} -5,{$-4$} -4, {$-3$} -3,{$-2$} -2,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
 % \normalsize
@@ -290,8 +298,8 @@ $ \lfloor x \rfloor = \begin{cases}
 
 \begin{tikzpicture}[scale=0.6]
   % Axes
-  \draw[->] (-7,0) -- (7.5,0) node[below right] {\scriptsize $x$};
-  \draw[->] (0,-7) -- (0,7.5) node[above right] {\scriptsize $y$};
+  \draw[->] (-7,0) -- (7.5,0) node[below right] {  $x$};
+  \draw[->] (0,-7) -- (0,7.5) node[above right] {  $y$};
 
   % Decorative vertical dots
   \node at (7,7) {$\vdots$};
@@ -305,9 +313,9 @@ $ \lfloor x \rfloor = \begin{cases}
 
   % Axis labels
   \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-    \node[below] at (\x,0) {\scriptsize $\x$};
+    \node[below] at (\x,0) {  $\x$};
   \foreach \y in {-6,-5,-4,-3,-2,1,2,3,4,5,6}
-    \node[left] at (0,\y) {\scriptsize $\y$};
+    \node[left] at (0,\y) {  $\y$};
 
   % Filled points on diagonal (integer, integer)
   \foreach \k in {-6,-5,...,6}
@@ -417,32 +425,32 @@ Again, as with Definition \ref{interceptdefns}, Definition  \ref{incdeccnstdefn}
 
 % \begin{mfpic}[15]{-4}{4}{-3}{5}
 % \axes
-% \tlabel[cc](4,-0.5){\scriptsize $x$}
-% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \tlabel[cc](4,-0.5){  $x$}
+% \tlabel[cc](0.5,5){  $y$}
 % \xmarks{-3,-2,-1,1,2,3}
 % \ymarks{-2, -1, 1,2,3,4}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
 % \axislabels {y}{{$-2$} -2, {$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
 % \penwd{1.25pt}
 % \arrow \reverse \arrow \polyline{( -3,-2.5), (2,4)}
-% \tcaption{ \scriptsize `increasing',  $m > 0$}
+% \tcaption{   `increasing',  $m > 0$}
 % \normalsize
 % \end{mfpic} 
 
 \begin{tikzpicture}[scale=0.8]
   % Axes
-  \draw[->] (-4,0) -- (4.2,0) node[right, font=\scriptsize] {$x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above, font=\scriptsize] {$y$};
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
 
   % X marks
   \foreach \x in {-3,-2,-1,1,2,3}
-    \draw (\x,0.1) -- (\x,-0.1) node[below, font=\scriptsize] {\x};
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\x};
 
   % Y marks
   \foreach \y in {-2,-1,1,2,3,4}
-    \draw (0.1,\y) -- (-0.1,\y) node[left, font=\scriptsize] {\y};
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\y};
 
   % Line with arrows
   \draw[thick, ->, >=stealth] (-3,-2.5) -- (2,4);
@@ -456,33 +464,33 @@ Again, as with Definition \ref{interceptdefns}, Definition  \ref{incdeccnstdefn}
 
 % \begin{mfpic}[15]{-4}{4}{-3}{5}
 % \axes
-% \tlabel[cc](4,-0.5){\scriptsize $x$}
-% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \tlabel[cc](4,-0.5){  $x$}
+% \tlabel[cc](0.5,5){  $y$}
 % \xmarks{-3,-2,-1,1,2,3}
 % \ymarks{-2, -1, 1,2,3,4}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{ {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
 % \axislabels {y}{{$-2$} -2, {$-1$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
 % \penwd{1.25pt}
 % \arrow \reverse \arrow \polyline{( -3.5,3), (2,-3)}
-% \tcaption{ \scriptsize `decreasing', $m < 0$}
+% \tcaption{   `decreasing', $m < 0$}
 % \normalsize
 % \end{mfpic} 
 
 \begin{tikzpicture}[scale=0.8]
 
   % Axes
-  \draw[->] (-4,0) -- (4.2,0) node[right, font=\scriptsize] {$x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above, font=\scriptsize] {$y$};
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
 
   % X ticks + labels
   \foreach \x/\xlabel in {-3/{$-3 \hspace{7pt}$}, -2/{$-2 \hspace{7pt}$}, -1/{$-1 \hspace{7pt}$}, 1/{$1$}, 2/{$2$}, 3/{$3$}}
-    \draw (\x,0.1) -- (\x,-0.1) node[below, font=\scriptsize] {\xlabel};
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\xlabel};
 
   % Y ticks + labels
   \foreach \y/\ylabel in {-2/{$-2$}, -1/{$-1$}, 1/{$1$}, 2/{$2$}, 3/{$3$}, 4/{$4$}}
-    \draw (0.1,\y) -- (-0.1,\y) node[left, font=\scriptsize] {\ylabel};
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
 
   % Decreasing line with arrows on both ends
   \draw[thick, <->, >=stealth] (-3.5,3) -- (2,-3);
@@ -499,17 +507,17 @@ Again, as with Definition \ref{interceptdefns}, Definition  \ref{incdeccnstdefn}
 \begin{tikzpicture}[scale=0.8]
 
   % Axes
-  \draw[->] (-4,0) -- (4.2,0) node[right, font=\scriptsize] {$x$};
-  \draw[->] (0,-3) -- (0,5.2) node[above, font=\scriptsize] {$y$};
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
 
   % X ticks + labels
   \foreach \x/\xlabel in {-3/{$-3 \hspace{7pt}$}, -2/{$-2 \hspace{7pt}$}, -1/{$-1 \hspace{7pt}$}, 
                           1/{$1$}, 2/{$2$}, 3/{$3$}}
-    \draw (\x,0.1) -- (\x,-0.1) node[below, font=\scriptsize] {\xlabel};
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\xlabel};
 
   % Y ticks + labels
   \foreach \y/\ylabel in {-2/{$-2$}, -1/{$-1$}, 1/{$1$}, 2/{$2$}, 3/{$3$}, 4/{$4$}}
-    \draw (0.1,\y) -- (-0.1,\y) node[left, font=\scriptsize] {\ylabel};
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
 
   % Constant line with arrows on both ends
   \draw[thick, <->, >=stealth] (-4,3) -- (4,3);
@@ -554,16 +562,16 @@ From the graphs above, we see that regardless if $m>0$ or $m<0$, the range of li
 \begin{tikzpicture}[scale=0.9]
 
   % Axes
-  \draw[->] (-1,0) -- (7.2,0) node[right, font=\scriptsize] {$x$};
-  \draw[->] (0,-1) -- (0,7.2) node[above, font=\scriptsize] {$y$};
+  \draw[->] (-1,0) -- (7.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-1) -- (0,7.2) node[above, font= ] {$y$};
 
   % X ticks + labels
   \foreach \x in {1,2,3,4,5,6}
-    \draw (\x,0.1) -- (\x,-0.1) node[below, font=\scriptsize] {\x};
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\x};
 
   % Y ticks + labels (scaled to 100s)
   \foreach \y/\ylabel in {1/{$100$}, 2/{$200$}, 3/{$300$}, 4/{$400$}, 5/{$500$}, 6/{$600$}}
-    \draw (0.1,\y) -- (-0.1,\y) node[left, font=\scriptsize] {\ylabel};
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
 
   % Line with arrow
   \draw[thick, ->, >=stealth] (0,1.5) -- (6,6.3);
@@ -573,11 +581,11 @@ From the graphs above, we see that regardless if $m>0$ or $m<0$, the range of li
   \filldraw (5,5.5) circle (2pt);
 
   % Labels for points
-  \node[font=\scriptsize, right] at (0.2,1.5) {$(0,150)$};
-  \node[font=\scriptsize, right] at (5.2,5.5) {$(5,550)$};
+  \node[font= , right] at (0.2,1.5) {$(0,150)$};
+  \node[font= , right] at (5.2,5.5) {$(5,550)$};
 
   % Caption
-  \node[font=\scriptsize, below] at (3,-1) {$y = C(x)$};
+  \node[font= , below] at (3,-1) {$y = C(x)$};
 
 \end{tikzpicture}
 
@@ -650,18 +658,18 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
 
 \begin{tikzpicture}[scale=0.8]
   % Axes
-  \draw[->] (-1,0)--(9.5,0) node[right] {\scriptsize $x$};
-  \draw[->] (0,-1)--(0,7.5) node[above] {\scriptsize $y$};
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
 
   % Axis labels
   \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
-    \draw (\x,0.1)--(\x,-0.1) node[below] {\scriptsize $\xl$};
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
   \foreach \y/\yl in {1/50,2/100,3/150,4/200,6/300}
-    \draw (0.1,\y)--(-0.1,\y) node[left] {\scriptsize $\yl$};
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
 
   % Labels for points
-  \node at (1,5.5) {\scriptsize $(0,250)$};
-  \node at (8.5,0.75) {\scriptsize $(166.\overline{6}, 0)$};
+  \node at (1,5.5) {  $(0,250)$};
+  \node at (8.5,0.75) {  $(166.\overline{6}, 0)$};
 
   % Line
   \draw[thick,->,>=stealth] (-1,5.6)--(9,-0.4);
@@ -671,66 +679,66 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
   \fill (8.33,0) circle (2pt);
 
   % Caption
-  \node at (4,-1.5) {\scriptsize $y = -1.5x + 250$};
+  \node at (4,-1.5) {  $y = -1.5x + 250$};
 \end{tikzpicture}
 
 % \begin{mfpic}[15]{-1}{9}{-1}{7}
 % \axes
-% \tlabel[cc](9.5,0){\scriptsize $x$}
-% \tlabel[cc](0.5,7){\scriptsize $y$}
-% \tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
-% \tlabel[cc](8.5,0.75){\scriptsize $(166.\overline{6}, 0)$}
+% \tlabel[cc](9.5,0){  $x$}
+% \tlabel[cc](0.5,7){  $y$}
+% \tlabel[cc](1,5.5){  $(0, 250)$}
+% \tlabel[cc](8.5,0.75){  $(166.\overline{6}, 0)$}
 % \xmarks{1,2,3,4,5,6,7,8}
 % \ymarks{1,2,3,4,5,6}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
 % \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
 % \penwd{1.25pt}
 % \arrow \reverse \arrow  \polyline{(-1,5.6), (9,-0.4)}
 % \point[4pt]{(0,5), (8.33,0)}
-% \tcaption{ \scriptsize $y = -1.5x + 250$}
+% \tcaption{   $y = -1.5x + 250$}
 % \normalsize
 % \end{mfpic} 
 
 
 % \begin{mfpic}[15]{-1}{9}{-1}{7}
 % \axes
-% \tlabel[cc](9.5,0){\scriptsize $x$}
-% \tlabel[cc](0.5,7){\scriptsize $y$}
-% \tlabel[cc](1,5.5){\scriptsize $(0, 250)$}
-% \tlabel[cc](8.5,0.75){\scriptsize $(166, 1)$}
+% \tlabel[cc](9.5,0){  $x$}
+% \tlabel[cc](0.5,7){  $y$}
+% \tlabel[cc](1,5.5){  $(0, 250)$}
+% \tlabel[cc](8.5,0.75){  $(166, 1)$}
 % \xmarks{1,2,3,4,5,6,7,8}
 % \ymarks{1,2,3,4,5,6}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
 % \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,  {$250$} 5, {$300$} 6}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{  {$20$} 1, {$40$} 2, {$60$} 3, {$80$} 4, {$100$} 5, {$120$} 6, {$140$} 7, {$160$} 8}
 % \axislabels {y}{{$50$} 1, {$100$} 2, {$150$} 3, {$200$} 4,   {$300$} 6}
 % \penwd{1.25pt}
 % \polyline{(0,5), (8,0.02)}
 % \point[4pt]{(0,5), (8,0.02)}
-% \tcaption{ \scriptsize $y = p(x)$}
+% \tcaption{   $y = p(x)$}
 % \normalsize
 % \end{mfpic} 
 
 \begin{tikzpicture}[scale=0.8]
   % Axes
-  \draw[->] (-1,0)--(9.5,0) node[right] {\scriptsize $x$};
-  \draw[->] (0,-1)--(0,7.5) node[above] {\scriptsize $y$};
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
 
   % Axis ticks and labels
   \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
-    \draw (\x,0.1)--(\x,-0.1) node[below] {\scriptsize $\xl$};
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
   \foreach \y/\yl in {1/50,2/100,3/150,4/200,5/250,6/300}
-    \draw (0.1,\y)--(-0.1,\y) node[left] {\scriptsize $\yl$};
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
 
   % Labels for points
-  \node at (1,5.5) {\scriptsize $(0, 250)$};
-  \node at (8.5,0.75) {\scriptsize $(166, 1)$};
+  \node at (1,5.5) {  $(0, 250)$};
+  \node at (8.5,0.75) {  $(166, 1)$};
 
   % Line
   \draw[thick] (0,5)--(8,0.02);
@@ -740,7 +748,7 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
   \fill (8,0.02) circle (2pt);
 
   % Caption
-  \node at (4,-1.5) {\scriptsize $y = p(x)$};
+  \node at (4,-1.5) {  $y = p(x)$};
 \end{tikzpicture}
 
 \end{center}
@@ -776,12 +784,12 @@ Our next two examples focus on writing formulas for piecewise-defined functions,
 % \begin{mfpic}[15]{-5}{5}{-3}{6}
 
 % \axes
-% \tlabel[cc](5,-0.5){\scriptsize $t$}
-% \tlabel[cc](0.5,6){\scriptsize $W$}
+% \tlabel[cc](5,-0.5){  $t$}
+% \tlabel[cc](0.5,6){  $W$}
 % \xmarks{-4, -3,-2,-1,1,2,3,4}
 % \ymarks{-2,-1,1,2,3,4,5}
 % \tlpointsep{5pt}
-% \scriptsize
+%  
 % \tlabel[cc](1,4.5){$(1,4)$}
 % \tlabel[cc](1,2.5){$(1,2)$}
 % \axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
@@ -820,11 +828,11 @@ Our next two examples focus on writing formulas for piecewise-defined functions,
 
 % --- filled point at (1,4) ---
 \addplot[only marks,mark=*,mark size=2pt] coordinates {(1,4)};
-\node[anchor=west,font=\scriptsize] at (axis cs:1,4.5) {$(1,4)$};
+\node[anchor=west,font= ] at (axis cs:1,4.5) {$(1,4)$};
 
 % --- open point at (1,2) ---
 \addplot[only marks,mark=o,mark size=2pt] coordinates {(1,2)};
-\node[anchor=west,font=\scriptsize] at (axis cs:1,2.5) {$(1,2)$};
+\node[anchor=west,font= ] at (axis cs:1,2.5) {$(1,2)$};
 
 \end{axis}
 \end{tikzpicture}
@@ -864,11 +872,11 @@ We are graphing a line so we need to plot just one more point to determine the g
 % \begin{mfpic}[20]{-1}{7}{-1}{5}
 % \axes
 % \gclear \tlabelrect(-0.05,0.5){$\asymp$}
-% \tlabel[cc](7,-0.5){\scriptsize $g$}
-% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \tlabel[cc](7,-0.5){  $g$}
+% \tlabel[cc](0.5,5){  $y$}
 % \xmarks{1,2,3,4,5,6}
 % \ymarks{1,2,3,4}
-% \scriptsize
+%  
 % \tlabel[cc](-0.75, 1){$(0, 60)$}
 % \tlabel[cc](4, 0.5){$(4, 60)$}
 % \tlabel[cc](6.5, 2.5){$(6, 70)$}
@@ -878,25 +886,25 @@ We are graphing a line so we need to plot just one more point to determine the g
 % \penwd{1.25pt}
 % \arrow \polyline{(0, 1), (4, 1), (7, 4)}
 % \point[3pt]{(0,1), (4, 1), (6,3) }
-% \tcaption{ \scriptsize$y =C(g)$}
+% \tcaption{  $y =C(g)$}
 % \normalsize
 % \end{mfpic} 
 
 \begin{tikzpicture}[scale=1]
   % Axes
-  \draw[->] (-1,0) -- (7.5,0) node[below] {\scriptsize $g$};
-  \draw[->] (0,-0.5) -- (0,5) node[left] {\scriptsize $y$};
+  \draw[->] (-1,0) -- (7.5,0) node[below] {  $g$};
+  \draw[->] (0,-0.5) -- (0,5) node[left] {  $y$};
 
   % Tick marks on x-axis
   \foreach \x in {1,2,3,4,5,6} {
     \draw (\x,0.1) -- (\x,-0.1);
-    \node[below] at (\x,-0.1) {\scriptsize $\x$};
+    \node[below] at (\x,-0.1) {  $\x$};
   }
 
   % Tick marks on y-axis
   \foreach \y/\label in {1/60,2/65,3/70,4/75} {
     \draw (0.1,\y) -- (-0.1,\y);
-    \node[left] at (-0.1,\y) {\scriptsize $\label$};
+    \node[left] at (-0.1,\y) {  $\label$};
   }
 
   % Polyline with arrow
@@ -908,12 +916,12 @@ We are graphing a line so we need to plot just one more point to determine the g
   }
 
   % Labels for points
-  \node[below right] at (0,1) {\scriptsize $(0,60)$};
-  \node[below] at (4,1) {\scriptsize $(4,60)$};
-  \node[right] at (6,3) {\scriptsize $(6,70)$};
+  \node[below right] at (0,1) {  $(0,60)$};
+  \node[below] at (4,1) {  $(4,60)$};
+  \node[right] at (6,3) {  $(6,70)$};
 
   % Caption
-  \node at (3,-0.8) {\scriptsize $y = C(g)$};
+  \node at (3,-0.8) {  $y = C(g)$};
 \end{tikzpicture}
 
 
@@ -946,14 +954,14 @@ $\begin{array}{|c||c|}  \hline
 
 % \begin{mfpic}[15]{-1}{13}{-1}{10}
 % \axes
-% \tlabel[cc](13,-0.5){\scriptsize $t$}
-% \tlabel[cc](0.5,10){\scriptsize $T$}
+% \tlabel[cc](13,-0.5){  $t$}
+% \tlabel[cc](0.5,10){  $T$}
 % \gclear \tlabelrect(-0.05,0.5){$\asymp$}
 % \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
 % \ymarks{1,2,3,4,5,6,7,8,9}
 % \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \dashed \polyline{(0, 0.75), (8, 10)}
 % \dashed \polyline{(8, 9.5), (12, 9)}
 % \axislabels {x} {{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
@@ -964,8 +972,8 @@ $\begin{array}{|c||c|}  \hline
 
 \begin{tikzpicture}[scale=0.7]
   % Axes
-  \draw[->] (-1,0) -- (13.5,0) node[below] {\scriptsize $t$};
-  \draw[->] (0,-0.5) -- (0,10.5) node[left] {\scriptsize $T$};
+  \draw[->] (-1,0) -- (13.5,0) node[below] {  $t$};
+  \draw[->] (0,-0.5) -- (0,10.5) node[left] {  $T$};
 
   % Asymp symbol near y-axis
   \node at (-0.4,0.5) {$\asymp$};
@@ -973,13 +981,13 @@ $\begin{array}{|c||c|}  \hline
   % X ticks and labels
   \foreach \x in {1,...,12} {
     \draw (\x,0.1) -- (\x,-0.1);
-    \node[below] at (\x,-0.1) {\scriptsize $\x$};
+    \node[below] at (\x,-0.1) {  $\x$};
   }
 
   % Y ticks and labels
   \foreach \y/\label in {1/64,2/66,3/68,4/72,5/74,6/76,7/78,8/80,9/82} {
     \draw (0.1,\y) -- (-0.1,\y);
-    \node[left] at (-0.1,\y) {\scriptsize $\label$};
+    \node[left] at (-0.1,\y) {  $\label$};
   }
 
   % Points
@@ -1015,12 +1023,12 @@ Using advanced mathematical machinery,\footnote{like Calculus or Linear Algebra 
 % \dotted \polyline{(1,0.5),(1,1)}
 % \dotted  \polyline{(4,3),(4,2.5)}
 % \axes
-% \tlabel[cc](5,-0.5){\scriptsize $x$}
-% \tlabel[cc](0.5,5){\scriptsize $y$}
+% \tlabel[cc](5,-0.5){  $x$}
+% \tlabel[cc](0.5,5){  $y$}
 % \xmarks{1 step 1 until 4}
 % \ymarks{1 step 1 until 4}
 % \tlpointsep{4pt}
-% \scriptsize
+%  
 % \axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
 % \axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
 % \normalsize
