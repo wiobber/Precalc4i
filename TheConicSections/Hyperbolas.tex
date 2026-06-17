@@ -25,19 +25,24 @@ In the definition of an ellipse, Definition \ref{ellipsedefn}, we fixed two poin
 
 %% \ebm}
 
+
+In the GeoGebra interactive below, adjusting the sliders for the points $A$ and $B$ trace points along the hyperbola where 
+
+\[ \left| \text{the distance from $F_{1}$ to $A$} - \text{the distance from $F_{2}$ to $A$} \right| = 1 \]
+
+and
+
+\[ \left| \text{the distance from $F_{1}$ to $B$} - \text{the distance from $F_{2}$ to $B$} \right| = 1 \]
+
+
+
 % https://www.geogebra.org/classic/d7m5ra6d
 
 \begin{center}
 \geogebra{d7m5ra6d}{800}{600}
 \end{center}
 
-In the figure above:
 
-\[ \begin{array}{rclr} \mbox{the distance from $F_{\mbox{\tiny$1$}}$ to $(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$} - \mbox{the distance from $F_{\mbox{\tiny$2$}}$ to $(x_{\mbox{\tiny$1$}}, y_{\mbox{\tiny$1$}})$} & = & d & \\ \end{array}\]
-
-and
-
-\[ \begin{array}{rclr} \mbox{the distance from $F_{\mbox{\tiny$2$}}$ to $(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$} - \mbox{the distance from $F_{\mbox{\tiny$1$}}$ to $(x_{\mbox{\tiny$2$}}, y_{\mbox{\tiny$2$}})$} & = & d & \\ \end{array}\]
 
 Note that the hyperbola has two parts, called \index{hyperbola ! branch} \textbf{branches}.  The \index{hyperbola ! center}\index{center ! of a hyperbola}\textbf{center} of the hyperbola is the midpoint of the line segment connecting the two foci.  The \index{hyperbola ! transverse axis}\index{transverse axis of a hyperbola}\textbf{transverse axis} of the hyperbola is the line segment connecting two opposite ends of the hyperbola which also contains the center and foci.  The \index{hyperbola ! vertices}\index{vertex ! of a hyperbola}\textbf{vertices} of a hyperbola are the points of the hyperbola which lie on the transverse axis. 
 
@@ -107,7 +112,9 @@ Note that in the diagram, we can construct a rectangle using line segments with 
 
 \medskip
 
-Suppose we wish to derive the equation of a hyperbola.  For simplicity, we shall assume that the center is $(0,0)$,  the vertices are $(a,0)$ and $(-a,0)$ and the foci are $(c,0)$ and $(-c,0)$.  We label the endpoints of the conjugate axis $(0,b)$ and $(0,-b)$.  (Although $b$ does not enter into our derivation, we will have to justify this choice as you shall see later.)  As before, we assume $a$, $b$, and $c$ are all positive numbers.  Schematically:
+Suppose we wish to derive the equation of a hyperbola.  For simplicity, we shall assume that the center is $(0,0)$,  the vertices are $(a,0)$ and $(-a,0)$ and the foci are $(c,0)$ and $(-c,0)$.  We'll label the endpoints of the conjugate axis $(0,b)$ and $(0,-b)$.  (Although $b$ does not enter into our derivation, we will justify this choice later.)  As before, we assume $a$, $b$, and $c$ are all positive numbers.  
+
+The GeoGebra interactive below not only provides us with a detailed diagram of our generic hyperbola, but also a slider for the distance parameter, $d$.  Adjusting $d$ shows us how the shape of the hyperbola changes (as determined by the values of $a$ and $b$) with fixed foci at $(c,0)$ and $(-c,0)$.  
 
 % https://www.geogebra.org/classic/fyff2hg2
 \begin{center}
@@ -257,24 +264,10 @@ The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respe
 
 \[ 25(x-2)^2 - 4y^2 = 100 \rightarrow \dfrac{(x-2)^2}{4} - \dfrac{(y-0)^2}{25} = 1 \leftrightarrow \dfrac{(x-2)^2}{(2)^2} - \dfrac{(y-0)^2}{(5)^2} = 1. \]
 
-We identify $h = 2$ and $k = 0$, so the hyperbola is centered at $(2,0)$.  We also see  $a = 2$, and  $b=5$, which means we move $2$ units to the  left and to the right of the center and $5$ units up and down from the center to arrive at points on the guide rectangle:   $(2-2, 0) = (0,0)$, $(2+2, 0) = (4,0)$, $(2, 0+5) = (2,5)$, and $(2, 0-5) = (2,-5)$.  Since slant asymptotes pass through the center of the hyperbola as well as the corners of the rectangle, we get the set-up as drawn below on the left.
+We identify $h = 2$ and $k = 0$, so the hyperbola is centered at $(2,0)$.  We also see  $a = 2$, and  $b=5$, which means we move $2$ units to the  left and to the right of the center and $5$ units up and down from the center to arrive at points on the guide rectangle:   $(2-2, 0) = (0,0)$, $(2+2, 0) = (4,0)$, $(2, 0+5) = (2,5)$, and $(2, 0-5) = (2,-5)$.  Since slant asymptotes pass through the center of the hyperbola as well as the corners of the rectangle, we get the set-up as drawn below.
 
 
-\smallskip
-
-Since the $y^2$ term is being subtracted from the $x^2$ term, we are in the situation of Equation \ref{standardhhyperbola}. Hence,  the branches of the hyperbola open to the left and right so  the transverse axis lies along the $x$-axis and  the conjugate axis lies along the vertical line $x = 2$.  
-
-
-\smallskip
-
-Since the vertices of the hyperbola are where the hyperbola intersects the transverse axis, we get that the vertices are $(0,0)$ and $(4,0)$.  To find the foci, we need $c = \sqrt{a^2 + b^2} = \sqrt{4+25} = \sqrt{29}$.  Since the foci lie on the transverse axis, we move $\sqrt{29}$ units to the left and right of $(2,0)$ to arrive at $(2 - \sqrt{29},0)$ (approximately $(-3.39, 0)$) and $(2 + \sqrt{29}, 0)$ (approximately $(7.39, 0)$).  
-
-
-\smallskip
-
-Lastly, to determine the equations of the asymptotes, recall that the asymptotes pass through the center of the hyperbola, $(2,0)$, as well as the corners of guide rectangle.  As such,  they have slopes of $\pm \frac{b}{a} = \pm \frac{5}{2}$.  Feeding this information into  the point-slope equation of a line, Equation \ref{pointslope}, we get $y -0 = \pm \frac{5}{2} (x - 2)$, so the asymptotes are  $y = \frac{5}{2}x - 5$ and $y = -\frac{5}{2}x + 5$.  Putting it all together, we get our final graph below on the right.
-
-\begin{multicols}{2}
+\begin{center}
 
 \begin{mfpic}[15]{-4}{8}{-8}{8}
 \axes
@@ -293,6 +286,25 @@ Lastly, to determine the equations of the asymptotes, recall that the asymptotes
 \axislabels {y}{{$-7$} -7,  {$-5$} -5,  {$-3$} -3,  {$-1$}{-1}, {$1$} 1,  {$3$} 3,  {$5$} 5, {$7$} 7}
 \normalsize
 \end{mfpic}
+
+\end{center}
+
+Since the $y^2$ term is being subtracted from the $x^2$ term, we are in the situation of Equation \ref{standardhhyperbola}. Hence,  the branches of the hyperbola open to the left and right so  the transverse axis lies along the $x$-axis and  the conjugate axis lies along the vertical line $x = 2$.  
+
+
+\smallskip
+
+Since the vertices of the hyperbola are where the hyperbola intersects the transverse axis, we get that the vertices are $(0,0)$ and $(4,0)$.  To find the foci, we need $c = \sqrt{a^2 + b^2} = \sqrt{4+25} = \sqrt{29}$.  Since the foci lie on the transverse axis, we move $\sqrt{29}$ units to the left and right of $(2,0)$ to arrive at $(2 - \sqrt{29},0)$ (approximately $(-3.39, 0)$) and $(2 + \sqrt{29}, 0)$ (approximately $(7.39, 0)$).  
+
+
+\smallskip
+
+Lastly, to determine the equations of the asymptotes, recall that the asymptotes pass through the center of the hyperbola, $(2,0)$, as well as the corners of guide rectangle.  As such,  they have slopes of $\pm \frac{b}{a} = \pm \frac{5}{2}$.  Feeding this information into  the point-slope equation of a line, Equation \ref{pointslope}, we get $y -0 = \pm \frac{5}{2} (x - 2)$, so the asymptotes are  $y = \frac{5}{2}x - 5$ and $y = -\frac{5}{2}x + 5$.  Putting it all together, we get our final graph below.
+
+
+
+
+\begin{center}
 
 \begin{mfpic}[15]{-4}{8}{-8}{8}
 \axes
@@ -322,7 +334,7 @@ Lastly, to determine the equations of the asymptotes, recall that the asymptotes
 \point[4pt]{(0,0),(4,0)}
 \end{mfpic}
 
-\end{multicols}
+\end{center}
 
 \item  Since we have a difference of squares in $9y^2-x^2-6x=10$, we aim to transform our given equation into  Equation \ref{standardhhyperbola} or Equation \ref{standardvhyperbola}.  As we've seen with the other conic sections, we begin with completing the square.
 
@@ -442,16 +454,6 @@ We know  since $f$ is a function, the graph of $f$ cannot be the \textit{entire}
 \item  Plotting the data given to us below, we know the branches of the hyperbola open to the left and to the right.  This means the our answer will take the form of  Equation \ref{standardhhyperbola}.  
 
 
-\smallskip
-
-Since the center is the midpoint of the vertices, we see the center is $(0,0)$, so $h = k = 0$.   Moreover, since the vertices are exactly $5$ units from the center, we know  $a=5$ so $a^2 = 25$. All that remains to find is the value of $b^2$.
-
-
-\smallskip
-
-Recall that the slopes of the asymptotes are $\pm \frac{b}{a}$.  Since $a = 5$ and the slope of the line $y=2x$ is $2$, we have that $\frac{b}{5} = 2$, so $b=10$.  Hence, $b^2 = 100$.   Our final answer is $\frac{x^2}{25} - \frac{y^2}{100} = 1$. 
-
-
 \begin{center}
 
 \begin{mfpic}[10]{-6}{6}{-6}{6}
@@ -470,6 +472,14 @@ Recall that the slopes of the asymptotes are $\pm \frac{b}{a}$.  Since $a = 5$ a
 \end{mfpic}
 
 \end{center}
+
+Since the center is the midpoint of the vertices, we see the center is $(0,0)$, so $h = k = 0$.   Moreover, since the vertices are exactly $5$ units from the center, we know  $a=5$ so $a^2 = 25$. All that remains to find is the value of $b^2$.
+
+
+\smallskip
+
+Recall that the slopes of the asymptotes are $\pm \frac{b}{a}$.  Since $a = 5$ and the slope of the line $y=2x$ is $2$, we have that $\frac{b}{5} = 2$, so $b=10$.  Hence, $b^2 = 100$.   Our final answer is $\frac{x^2}{25} - \frac{y^2}{100} = 1$. 
+
 
 
 \item From what we are given on the graph, the equation of the hyperbola takes the form of Equation \ref{standardvhyperbola}.  The vertices appear to be $(3,1)$ and $(3,-3)$ whose midpoint gives us the center as $(3,-1)$.  Hence, $h=3$ and $k =-1$.  Moreover, since the vertices are $2$ units above and below the center, we know $b = 2$ so $b^2 = 4$.  All that remains is for us to find the value of $a^2$.  
@@ -530,7 +540,9 @@ Hyperbolas can be used in so-called `\href{http://en.wikipedia.org/wiki/Trilater
 
 \begin{enumerate}
 
-\item Since Jeff hears Sasquatch sooner, it is closer to Jeff than it is to Carl.  Since the speed of sound is $760$ miles per hour, we can determine how much closer Sasquatch is to Jeff by multiplying \[760 \, \frac{\mbox{miles}}{\mbox{hour}} \times \frac{ 1 \, \mbox{hour}}{ 3600 \, \mbox{seconds}} \times 9 \, \mbox{seconds}  = 1.9 \, \mbox{miles}\]  This means that Sasquatch is $1.9$ miles closer to Jeff than it is to Carl.  In other words, Sasquatch must lie on a path where \[\text{(the distance to Carl)} - \text{(the distance to Jeff)} = 1.9\]  This is exactly the situation in the definition of a hyperbola, Definition \ref{hyperboladefn}.  In this case, Jeff and Carl are located at the foci,\footnote{We usually like to be the \textit{center} of attention, but being the \textit{focus} of attention works equally well.} and our fixed distance $d$ is 1.9.  For simplicity, we assume the hyperbola is centered at $(0,0)$ with its foci at $(-5, 0)$ and $(5, 0)$.  Schematically:
+\item Since Jeff hears Sasquatch sooner, it is closer to Jeff than it is to Carl.  Since the speed of sound is $760$ miles per hour, we can determine how much closer Sasquatch is to Jeff by multiplying \[760 \, \frac{\mbox{miles}}{\mbox{hour}} \times \frac{ 1 \, \mbox{hour}}{ 3600 \, \mbox{seconds}} \times 9 \, \mbox{seconds}  = 1.9 \, \mbox{miles}\]  This means that Sasquatch is $1.9$ miles closer to Jeff than it is to Carl.  In other words, Sasquatch must lie on a path where \[\text{(the distance to Carl)} - \text{(the distance to Jeff)} = 1.9\]  This is exactly the situation in the definition of a hyperbola, Definition \ref{hyperboladefn}.  In this case, Jeff and Carl are located at the foci,\footnote{We usually like to be the \textit{center} of attention, but being the \textit{focus} of attention works equally well.} and our fixed distance $d$ is 1.9.  For simplicity, we assume the hyperbola is centered at $(0,0)$ with its foci at $(-5, 0)$ and $(5, 0)$. 
+
+The GeoGebra interactive below displays all of the available data.  Adjusting the slider allows us to trace the possible location of the Sasquatch along the western (left) branch of the hyperbola.
 
 % https://www.geogebra.org/classic/nnwjq4mb
 \begin{center}
@@ -552,14 +564,16 @@ The second hyperbola is vertical, so it must be of the form $\frac{(y-3)^2}{b^2}
 
 \smallskip
 
-Kai heard the Sasquatch call after Jeff, so Kai is farther from Sasquatch than Jeff.  Thus Sasquatch must lie on the southern branch of the hyperbola \[ \dfrac{(y-3)^2}{3.61} - \dfrac{(x+5)^2}{5.39} = 1.\] Looking at the western branch of the hyperbola determined by Jeff and Carl along with the southern branch of the hyperbola determined by Kai and Jeff, we see that there is exactly one point in common, and this is where Sasquatch must have been when it called.
+Kai heard the Sasquatch call after Jeff, so Kai is farther from Sasquatch than Jeff.  Thus Sasquatch must lie on the southern branch of the hyperbola \[ \dfrac{(y-3)^2}{3.61} - \dfrac{(x+5)^2}{5.39} = 1.\] 
+
+Using GeoGebra, we find exactly one point which lies both on the western branch of the hyperbola determined by Jeff and Carl along with the southern branch of the hyperbola determined by Kai and Jeff.  We find\footnote{To determine the coordinates of this point of intersection exactly, we would need techniques for solving systems of non-linear equations (which we won't see until Section \ref{NonLinearEquations}), so we use a graphing utility, in this case, GeoGebra.} Sasquatch was at approximately at $(-0.9629, -0.8113)$ when it called.
 
 % https://www.geogebra.org/classic/sjsdyuqz
 \begin{center}
 \geogebra{sjsdyuqz}{800}{600}
 \end{center}
 
-To determine the coordinates of this point of intersection exactly, we would need techniques for solving systems of non-linear equations (which we won't see until Section \ref{NonLinearEquations}), so we use a graphing utility.  Doing so, we get Sasquatch is approximately at $(-0.9629, -0.8113)$. \qed   
+Note that at this point, the Sasquatch is approximately $6.02$ miles from Carl, $4.12$ miles from Jeff, and $7.92$ miles from Kai.  We check that $|6.02 - 4.12| = 1.9$ and $|4.12 - 7.92| = 3.8$, proving the point $(-0.9629, -0.8113)$ is indeed on both hyperbolas. \qed   
 
 \end{enumerate}
 
