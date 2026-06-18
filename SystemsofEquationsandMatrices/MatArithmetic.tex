@@ -508,41 +508,9 @@ RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [
 
 \end{array}\]
 
-We have that $R$ takes $(2,-2)$ to $(2 \sqrt{2}, 0)$.  Similarly, we find $(4,0)$ is moved to $(2\sqrt{2}, 2\sqrt{2})$, $(0,3)$ is moved to $\left(-\frac{3 \sqrt{2}}{2},  \frac{3 \sqrt{2}}{2} \right)$, and $(-3,-3)$ is moved to $(0,-3\sqrt{2})$.  We plot these points below on the left along with the lines $y=x$ and $y=-x$. We see that the matrix $R$ is rotating these points counterclockwise by $45^{\circ}$.
-
-\item  For a generic point $P(x,y)$ on the hyperbola $x^2-y^2=4$, we have  
-
-\[\begin{array}{rcl}
-
-RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [3pt] \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} x \\ [3pt] y \\ \end{array} \right] \\ [13pt]
-
-& = & \left[ \begin{array}{r} \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \\ [3pt] \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \\ \end{array} \right] \\
-
-\end{array}\]
-
-which means $R$ takes $(x,y)$ to $\left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y, \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y\right)$.  To show that this point is on the curve $y = \frac{2}{x}$, we replace $x$ with $\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y$ and $y$ with $\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y$ and simplify.
-
-\[ \begin{array}{rcl}
-
-y & = & \frac{2}{x} \\
-
-\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y & \stackrel{?}{=} & \frac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y} \\[10pt]
-
-\left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \right) \left(\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \right)& \stackrel{?}{=} & \left(\dfrac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y}\right) \left(  \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y  \right)\\
-
-\left(\frac{\sqrt{2}}{2} x \right)^2 - \left( \frac{\sqrt{2}}{2} y\right)^2 & \stackrel{?}{=} & 2 \\
-
-\frac{x^2}{2} - \frac{y^2}{2} & \stackrel{?}{=} & 2 \\
-
-x^2 - y^2 & \stackrel{\checkmark }{=}& 4  \\
-
-\end{array} \]
-
-Since $(x,y)$ is on the hyperbola $x^2 - y^2 = 4$, we know that this last equation is true.  Since all of our steps are reversible, this last equation is equivalent to our original equation, showing the graph of $y=\frac{2}{x}$ is none other than the hyperbola $x^2-y^2=4$ when rotated counterclockwise by $45^{\circ}$.  Below on the right are the graphs of $x^2-y^2=4$ (thicker line) and $y = \frac{2}{x}$  for comparison.
+We have that $R$ takes $(2,-2)$ to $(2 \sqrt{2}, 0)$.  Similarly, we find $(4,0)$ is moved to $(2\sqrt{2}, 2\sqrt{2})$, $(0,3)$ is moved to $\left(-\frac{3 \sqrt{2}}{2},  \frac{3 \sqrt{2}}{2} \right)$, and $(-3,-3)$ is moved to $(0,-3\sqrt{2})$.  We plot these points below along with the lines $y=x$ and $y=-x$. We see that the matrix $R$ is rotating these points counterclockwise by $45^{\circ}$.
 
 \begin{center}
-
-\begin{multicols}{2}
 
 \begin{mfpic}[15]{-5}{5}{-5}{5}
 \point[4pt]{(2,-2), (2.828,0), (4,0), (2.828, 2.828), (0,3), (-2.121, 2.121), (-3,-3), (0, -4.243)}
@@ -573,6 +541,39 @@ Since $(x,y)$ is on the hyperbola $x^2 - y^2 = 4$, we know that this last equati
 \normalsize
 \end{mfpic}
 
+\end{center}
+
+\item  For a generic point $P(x,y)$ on the hyperbola $x^2-y^2=4$, we have  
+
+\[\begin{array}{rcl}
+
+RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [3pt] \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} x \\ [3pt] y \\ \end{array} \right] \\ [13pt]
+
+& = & \left[ \begin{array}{r} \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \\ [3pt] \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \\ \end{array} \right] \\
+
+\end{array}\]
+
+which means $R$ takes $(x,y)$ to $\left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y, \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y\right)$.  To show that this point is on the curve $y = \frac{2}{x}$, we replace $x$ with $\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y$ and $y$ with $\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y$ and simplify.
+
+\[ \begin{array}{rcl}
+
+y & = & \frac{2}{x} \\
+
+\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y & \stackrel{?}{=} & \frac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y} \\[10pt]
+
+\left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \right) \left(\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \right)& \stackrel{?}{=} & \left(\dfrac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y}\right) \left(  \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y  \right)\\
+
+\left(\frac{\sqrt{2}}{2} x \right)^2 - \left( \frac{\sqrt{2}}{2} y\right)^2 & \stackrel{?}{=} & 2 \\
+
+\frac{x^2}{2} - \frac{y^2}{2} & \stackrel{?}{=} & 2 \\
+
+x^2 - y^2 & \stackrel{\checkmark }{=}& 4  \\
+
+\end{array} \]
+
+Since $(x,y)$ is on the hyperbola $x^2 - y^2 = 4$, we know that this last equation is true.  Since all of our steps are reversible, this last equation is equivalent to our original equation, showing the graph of $y=\frac{2}{x}$ is none other than the hyperbola $x^2-y^2=4$ when rotated counterclockwise by $45^{\circ}$.  Below are the graphs of $x^2-y^2=4$  and $y = \frac{2}{x}$  for comparison.
+
+\begin{center}
 
 \begin{mfpic}[15]{-5}{5}{-5}{5}
 \axes
@@ -593,9 +594,8 @@ Since $(x,y)$ is on the hyperbola $x^2 - y^2 = 4$, we know that this last equati
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(2*cosh(t),2*sinh(t))}
 \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-2*cosh(t),2*sinh(t))}
-\end{mfpic} \\
+\end{mfpic}
 
-\end{multicols}
 
 \end{center}
 
