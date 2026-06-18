@@ -74,7 +74,37 @@ Choosing $x^2 + y^2 = 4$, we find that for both $y=-2$ and $y=2$, we get $x=0$. 
 
 To check our answer graphically, we sketch both equations and look for their points of intersection. 
 
+
+
+
  The graph of $x^2 + y^2 = 4$ is a circle centered at $(0,0)$ with a radius of $2$.  To graph $4x^2+9y^2 = 36$, we convert to standard form  $\frac{x^2}{9} + \frac{y^2}{4} = 1$ and recognize it as an ellipse centered at $(0,0)$ with a major axis along the $x$-axis of length $6$ and a minor axis along the $y$-axis of length $4$.  
+
+ \begin{center}
+
+\begin{mfpic}[15]{-4}{4}{-3}{3}
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\tlabel[cc](1, 2.5){\scriptsize $(0,2)$}
+\tlabel[cc](1, -2.5){\scriptsize $(0,-2)$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-2,-1,1,2}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-3 \hspace{13pt}$} -3, {\scriptsize $-2 \hspace{13pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $\hspace{7pt} 2$} 2, {\scriptsize $ \hspace{9pt} 3$} 3}
+\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
+\penwd{1.25pt}
+\point[4pt]{(0,2), (0,-2)}
+\circle{(0,0),2}
+\ellipse{(0,0),3,2}
+\end{mfpic}
+
+
+Graphs for  $\left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ 4x^2+9y^2 & = & 36 \\ \end{array} \right.$
+
+
+\end{center}
+
+ 
  
  We see from the graph that the two curves intersect at their $y$-intercepts only, $(0, \pm 2)$.
 
@@ -101,28 +131,9 @@ Since the equation $-13y^2=20$ admits no real solution, the system is inconsiste
 
 We see that the circle and the hyperbola have no points in common, hence, there are no solutions.
 
-\[ \begin{array}{cc}
 
-\begin{mfpic}[15]{-4}{4}{-3}{3}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tlabel[cc](1, 2.5){\scriptsize $(0,2)$}
-\tlabel[cc](1, -2.5){\scriptsize $(0,-2)$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-2,-1,1,2}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{13pt}$} -3, {\scriptsize $-2 \hspace{13pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $\hspace{7pt} 2$} 2, {\scriptsize $ \hspace{9pt} 3$} 3}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\point[4pt]{(0,2), (0,-2)}
-\circle{(0,0),2}
-\ellipse{(0,0),3,2}
-\end{mfpic}
 
-&
-
-\hspace{1in}
+\begin{center}
 
 \begin{mfpic}[15]{-4}{4}{-3}{3}
 \axes
@@ -137,17 +148,16 @@ We see that the circle and the hyperbola have no points in common, hence, there 
 \circle{(0,0),2}
 \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),2*sinh(t))}
 \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),2*sinh(t))}
-\end{mfpic}  \\
+\end{mfpic} 
 
-\text{Graphs for} \quad \left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ 4x^2+9y^2 & = & 36 \\ \end{array} \right.
+Graphs for $\left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ 4x^2-9y^2 & = & 36 \\ \end{array} \right.$
 
-&
+\end{center}
 
-\hspace{.75in}
 
-\text{Graphs for} \quad \left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ 4x^2-9y^2 & = & 36 \\ \end{array} \right. \\
 
-\end{array} \]
+
+
 
 \item  Since there are no like terms among the two equations, elimination won't work here. Instead, we proceed using substitution.
 
@@ -156,6 +166,29 @@ From the equation $y - 2x =0$, we get $y=2x$. Substituting this into $x^2+y^2=4$
 Returning to the equation we used for the substitution, $y = 2x$, we find $y = \frac{4 \sqrt{5}}{5}$ when $x = \frac{2 \sqrt{5}}{5}$, so one solution is $\left( \frac{2 \sqrt{5}}{5} , \frac{4 \sqrt{5}}{5} \right)$ and the other is   $\left( -\frac{2 \sqrt{5}}{5} , -\frac{4 \sqrt{5}}{5} \right)$.  Hence, our final answer is  $\left\{\left( \frac{2 \sqrt{5}}{5} , \frac{4 \sqrt{5}}{5} \right),  \left( -\frac{2 \sqrt{5}}{5} , -\frac{4 \sqrt{5}}{5} \right) \right\}$.  As before, we leave the algebraic check to the reader. 
 
 The graph of  $x^2+y^2=4$ is our circle from before and the graph of $y - 2x =0$, or $y = 2x$ is a line through the origin with slope $2$.  Even though we cannot easily verify the numerical values of the points of intersection from our sketch, we can be sure there are just two solutions: one in Quadrant I and one in Quadrant III. This observation, combined with our (your) algebraic check gives us confidence our solution is correct.\footnote{Of course, we could check our answers more accurately using a graphing utility.}
+
+\begin{center}
+
+\begin{mfpic}[15]{-4}{4}{-3}{3}
+
+\axes
+\tlabel[cc](4,-0.5){\scriptsize $x$}
+\tlabel[cc](0.5,3){\scriptsize $y$}
+\xmarks{-3,-2,-1,1,2,3}
+\ymarks{-2,-1,1,2}
+\tlpointsep{4pt}
+\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{13pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $\hspace{7pt} 2$} 2,  {\scriptsize $3$} 3}
+\axislabels {y}{ {\scriptsize $1$} 1}
+\penwd{1.25pt}
+\point[4pt]{(0.8944, 1.7889),(-0.8944, -1.7889) }
+\circle{(0,0),2}
+\arrow \reverse \arrow \function{-1.5,1.5,0.1}{2*x}
+\end{mfpic}
+
+Graphs for $\left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ y-2x & = & 0 \\ \end{array} \right.$
+
+
+\end{center}
 
 \item  While it may be tempting to solve $y-x^2=0$ as $y=x^2$ and substitute, we note that this system is set up for elimination.\footnote{We encourage the reader to solve the system using substitution to see that you get the same solution.}  
 
@@ -175,33 +208,8 @@ The graph of  $x^2+y^2=4$ is our circle from before and the graph of $y - 2x =0$
 
 From $y^2 + y = 4$ we get $y^2+y-4 = 0$ which gives $y = \frac{-1 \pm \sqrt{17}}{2}$.  Due to the complicated nature of these answers, it is worth our time to make a quick sketch of both equations first to head off any extraneous solutions we may encounter.  
 
-We see that the circle $x^2+y^2=4$ intersects the parabola $y=x^2$ exactly \textit{twice}, and both of these points have a positive $y$ value.  
 
-Of the two solutions for $y$, only $y = \frac{-1 + \sqrt{17}}{2}$ is positive, so to get our solution, we substitute this into $y - x^2 = 0$ and solve for $x$.  We get $x = \pm \sqrt{\frac{-1 + \sqrt{17}}{2}} = \pm \frac{\sqrt{-2 + 2\sqrt{17}}}{2}$. 
-
-Our final answer is $\left\{ \left(\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right),\left(-\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right) \right\}$.  Checking these answers algebraically amounts to a true test of anyone's algebraic mettle and as such is left to the reader.
-
-\[ \begin{array}{cc}
-
-\begin{mfpic}[15]{-4}{4}{-3}{3}
-
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-2,-1,1,2}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{13pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $\hspace{7pt} 2$} 2,  {\scriptsize $3$} 3}
-\axislabels {y}{ {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\point[4pt]{(0.8944, 1.7889),(-0.8944, -1.7889) }
-\circle{(0,0),2}
-\arrow \reverse \arrow \function{-1.5,1.5,0.1}{2*x}
-\end{mfpic}
-
-&
-
-\hspace{1in}
+\begin{center}
 
 \begin{mfpic}[15]{-4}{4}{-3}{3}
 \axes
@@ -216,17 +224,30 @@ Our final answer is $\left\{ \left(\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \
 \point[4pt]{(1.2496, 1.5616),(-1.2496, 1.5616) }
 \circle{(0,0),2}
 \arrow \reverse \arrow \function{-1.6,1.6,0.1}{x**2}
-\end{mfpic} \\
+\end{mfpic} 
 
-\text{Graphs for} \quad \left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ y-2x & = & 0 \\ \end{array} \right.
+Graphs for $\left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ y-x^2 & = & 36 \\ \end{array} \right.$
 
-&
 
-\hspace{1in}
+\end{center}
 
-\text{Graphs for} \quad \left\{\begin{array}{rcr}  x^2 +y^2 & = & 4 \\ y-x^2 & = & 36 \\ \end{array} \right. \\
 
-\end{array} \]
+We see that the circle $x^2+y^2=4$ intersects the parabola $y=x^2$ exactly \textit{twice}, and both of these points have a positive $y$ value.  
+
+Of the two solutions for $y$, only $y = \frac{-1 + \sqrt{17}}{2}$ is positive, so to get our solution, we substitute this into $y - x^2 = 0$ and solve for $x$.  We get $x = \pm \sqrt{\frac{-1 + \sqrt{17}}{2}} = \pm \frac{\sqrt{-2 + 2\sqrt{17}}}{2}$. 
+
+Our final answer is $\left\{ \left(\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right),\left(-\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right) \right\}$.  Checking these answers algebraically amounts to a true test of anyone's algebraic mettle and as such is left to the reader.
+
+
+
+
+
+
+
+
+
+
+
 
 \end{enumerate}
 
@@ -356,7 +377,7 @@ y & = & 1 - 4e^{2x} \\
 
 We get two solutions, $\left\{ (-\ln(2),0), \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right) \right\}$.  It is a good review of the properties of logarithms to verify both solutions algebrically, so we leave that to the reader.  
 
-While we are able to sketch  $y = 1 - 4e^{2x}$ using the techniques in Section \ref{ExponentialFunctions},  the second equation is more difficult and  we resort to using a graphing utility.  We see the two graphs intersect at $(-0.6931,0) \approx (-\ln(2), 0)$ and $(-1.1744, 0.618) \approx  \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right)$.
+While we are able to sketch  $y = 1 - 4e^{2x}$ using the techniques in Section \ref{ExponentialFunctions},  the second equation is more difficult and so we opt to use Desmos.  We see the two graphs intersect at $(-0.6931,0) \approx (-\ln(2), 0)$ and $(-1.1744, 0.618) \approx  \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right)$.
 
 % https://www.desmos.com/calculator/fxfqmpryud
 \begin{center}
@@ -387,7 +408,7 @@ Equation $E1$ gives us $x-2 = x$ or $-2 = 0$, which is a contradiction.  This me
 
 Hence, our final answer is $\left\{ (1,0,-1), (3,0,3) \right\}$.  These points are easy enough to check algebraically in our three original equations, so that is left to the reader.  
 
-As for verifying these solutions graphically, they require plotting surfaces in three dimensions and looking for intersection points.  While this is beyond the scope of this book, we provide a snapshot of the graphs of our three equations near one of the solution points,  $(1,0,-1)$ and $(3,0,3)$. \qed
+As for verifying these solutions graphically, they require plotting surfaces in three dimensions and looking for intersection points.  While this is beyond the scope of this book, we provide a snapshot of the graphs of our three equations near one of the solution points,  $(1,0,-1)$ and $(3,0,3)$ courtesy of GeoGebra. \qed
 
 % https://www.geogebra.org/3d/w8af728v
 \begin{center}
