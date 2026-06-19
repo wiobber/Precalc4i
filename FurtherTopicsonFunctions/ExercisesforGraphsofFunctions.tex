@@ -9,36 +9,39 @@
 \begin{question}
 In Exercises \ref{usefuncgraphfirst} - \ref{usefuncgraphlast}, use the graph of $y = f(x)$ given below to answer the question.
 
-
 \begin{center}
-
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-6, xmax=6, ymin=-6, ymax=6]
-  \addplot[fgraph] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)};
+\begin{axis}[
+    width=4.5in, height=3.5in,
+    xmin=-7, xmax=7, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5,-4,...,4,5},
+    ytick={-5,-4,...,4,5},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[fgraph] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0)};
   \addplot[fgraph, domain=-1:1] {x^2 - 1};
   \addplot[fgraph] coordinates {(1,0) (2,3) (3,1)};
   \addplot[only marks, mark=*] coordinates {(-5,-5) (-4,0) (-3,4) (-2,2) (-1,0) (0,-1) (1,0) (2,3) (3,1)};
-  \node[flabel, label=below left :{$(-5,-5)$}] at (axis cs:-5,-5) {};
-  \node[flabel, label=above left :{$(-4,0)$}]  at (axis cs:-4, 0) {};
-  \node[flabel, label=above left :{$(-3,4)$}]  at (axis cs:-3, 4) {};
-  \node[flabel, label=above left :{$(-2,2)$}]  at (axis cs:-2, 2) {};
-  \node[flabel, label=below left :{$(-1,0)$}]  at (axis cs:-1, 0) {};
-  \node[flabel, label=below right:{$(0,-1)$}]  at (axis cs: 0,-1) {};
-  \node[flabel, label=below right:{$(1,0)$}]   at (axis cs: 1, 0) {};
-  \node[flabel, label=above right:{$(2,3)$}]   at (axis cs: 2, 3) {};
-  \node[flabel, label=above right:{$(3,1)$}]   at (axis cs: 3, 1) {};
-  \node at (rel axis cs:0.5,0) [below] {$y=f(x)$};
+\node at (-5,-5) [right=4pt] {$(-5,-5)$};
+\node at (-4,0) [above=8pt,left=4pt] {$(-4,0)$};
+\node at (-3,4) [above=8pt] {$(-3,4)$};
+\node at (-2,2) [above=8pt,right=2pt] {$(-2,2)$};
+\node at (2,3) [above=8pt] {$(2,3)$};
+\node at (3,1) [right=4pt] {$(3,1)$};
 \end{axis}
+\node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
 \end{tikzpicture}
 
-
-
 \end{center}
-
-
-
-
-% Transformed Exercises with Solutions
 
 \begin{problem}
 Find the domain of $f$.
@@ -206,16 +209,16 @@ In Exercises \ref{usesecondfuncgraphfirst} - \ref{usesecondfuncgraphlast}, use t
     clip=false
   ]
     % Axis labels
-    \node at (axis cs:5,-0.5) {\scriptsize $t$};
-    \node at (axis cs:0.5,6) {\scriptsize $y$};
+    \node at (axis cs:5,-0.5) {  $t$};
+    \node at (axis cs:0.5,6) {  $y$};
 
     % Labels near points
-    \node at (axis cs:-4,0.5)  {\scriptsize $(-4,0)$};
-    \node at (axis cs:-2,-5.5) {\scriptsize $(-2,-5)$};
-    \node at (axis cs:1,-0.5)  {\scriptsize $(0,0)$};
-    \node at (axis cs:2,2.5)   {\scriptsize $(2,3)$};
-    \node at (axis cs:2,5.5)   {\scriptsize $(2,5)$};
-    \node at (axis cs:4,-0.5)  {\scriptsize $(4,0)$};
+    \node at (axis cs:-4,0.5)  {  $(-4,0)$};
+    \node at (axis cs:-2,-5.5) {  $(-2,-5)$};
+    \node at (axis cs:1,-0.5)  {  $(0,0)$};
+    \node at (axis cs:2,2.5)   {  $(2,3)$};
+    \node at (axis cs:2,5.5)   {  $(2,5)$};
+    \node at (4,0)[above=8pt,right=2pt] {  $(4,0)$};
 
     % Function y = 5 sin(pi/4 * x)
     \addplot[thick, domain=-4:4, samples=200] {5*sin(deg(x*pi/4))};
