@@ -550,18 +550,10 @@ One of the (two) major geometric problems studied in Calculus is finding the are
 
 \medskip
 
-Suppose we wish to determine the area between the graph of a continuous function $y = f(x)$  over the interval  $[a,b]$ and the $x$-axis as shown below on the left.  Since we don't know any area formulas for arbitrary regions, we stick to what we know - rectangles.  
-
-\medskip
-
-To keep things simple, we  divide $[a,b]$ into $n$ equal pieces (subintervals), and use the right-endpoints of each piece to determine the height of the rectangles.\footnote{In Calculus, you'll also use left endpoints and midpoints \ldots.}  We let $x_{k}$ represent the right endpoint of the $k$th subinterval, so the height of the $k$th rectangle is $f(x_{k})$.  
-
-\medskip
-
-The width of the $k$th rectangle is the length of the $k$th subinterval.  Since the interval itself is $b-a$ units long and we are dividing the interval into $n$ \textit{equal} pieces, each piece is $\frac{b-a}{n}$  units long.  For brevity, we'll call this length  `$\Delta x$.'   Below on the right is a depiction of $RS_{\, 7}$, a `right endpoint sum' using $7$ (equally spaced) subintervals.\footnote{On intervals over which the function is \textit{increasing}, we find the area of rectangles \textit{overestimates} the area we want;  on intervals over which the function is \textit{decreasing}, we find the area of the rectangles \textit{underestimates} the area we want.}
+Suppose we wish to determine the area between the graph of a continuous function $y = f(x)$  over the interval  $[a,b]$ and the $x$-axis as shown below.  
 
 \begin{center}
-\begin{multicols}{2}
+
 \begin{mfpic}[20]{-1}{9}{-1}{4}
  \fillcolor[gray]{0.7}
  \gfill \btwnfcn{1,8,0.1}{0}{cos(3.14159*x/4-3.14159/4)+ 2.5}
@@ -580,7 +572,15 @@ The width of the $k$th rectangle is the length of the $k$th subinterval.  Since 
 \tcaption{Area under the graph of $y = f(x)$}
  
 \end{mfpic}
+\end{center}
 
+Since we don't know any area formulas for arbitrary regions, we stick to what we know - rectangles.  To keep things simple, we  divide $[a,b]$ into $n$ equal pieces (subintervals), and use the right-endpoints of each piece to determine the height of the rectangles.\footnote{In Calculus, you'll also use left endpoints and midpoints \ldots.}  We let $x_{k}$ represent the right endpoint of the $k$th subinterval, so the height of the $k$th rectangle is $f(x_{k})$.  
+
+\medskip
+
+The width of the $k$th rectangle is the length of the $k$th subinterval.  Since the interval itself is $b-a$ units long and we are dividing the interval into $n$ \textit{equal} pieces, each piece is $\frac{b-a}{n}$  units long.  For brevity, we'll call this length  `$\Delta x$.'   Below on the right is a depiction of $RS_{\, 7}$, a `right endpoint sum' using $7$ (equally spaced) subintervals.\footnote{On intervals over which the function is \textit{increasing}, we find the area of rectangles \textit{overestimates} the area we want;  on intervals over which the function is \textit{decreasing}, we find the area of the rectangles \textit{underestimates} the area we want.}
+
+\begin{center}
 
 \begin{mfpic}[20]{-1}{9}{-1}{4}
  \fillcolor[gray]{0.7}
@@ -617,8 +617,6 @@ The width of the $k$th rectangle is the length of the $k$th subinterval.  Since 
  
    \tcaption{Visualizing $RS_{\, 7}$, a `right endpoint sum.'}
 \end{mfpic}
-
-\end{multicols}
 
 \end{center}
 
@@ -713,7 +711,7 @@ It is high time for an example.
 
 \begin{enumerate}
 
-\item The graph of $f(x) = 4x-x^2$ is a parabola with intercepts $(0,0)$ and $(4,0)$ with a vertex at $(2,4)$.
+\item The graph of $f(x) = 4x-x^2$ is a parabola with intercepts $(0,0)$ and $(4,0)$ with a vertex at $(2,4)$.  Using the GeoGebra interactive below, we can input $f(x) = 4x-x^2$ and set the bounds of the interval $[a,b] = [0,4]$.  GeoGebra numerically\footnote{Curious as to how does GeoGebra does this? Research \href{https://en.wikipedia.org/wiki/Gaussian_quadrature}{\underline{Quadrature Rules}}. } determines the area to be (what appears to be) $10.\overline{6}$ square units.
 
 % https://www.geogebra.org/graphing/t5pspeyd
 \begin{center}
@@ -724,7 +722,7 @@ It is high time for an example.
 
 \[ RS_{4} = \sum_{k=1}^{4} f(x_{k}) \Delta x = f(x_{1}) \Delta x + f(x_{2}) \Delta x + f(x_{3}) \Delta x + f(x_{4}) \Delta x = (3)(1) + (4)(1) + 3(1) + (0)(1) = 10.\]
 
-Geometrically we have approximated the area under the graph of $f$ to be $10$ square units by the adding the areas of the shaded rectangles shaded below on the left.  (Note that since $f(x_{4}) = f(4) = 0$, the fourth `rectangle' has $0$ height.)
+The GeoGebra interactive below shows us what this sum represents geometrically.  After inputting our function $f(x) = 4x- x^2$ and the bounds $[a,b]=[0,4]$ we can adjust a slider to select the number of rectangles, $n$, used to calculate the right endpoint sum, $RS_{n}$.  A different slider allows us to select each rectangle, in sequence, and computes the area of the selected rectangle. The value of $RS{n}$ is the sum of the areas of these rectangles.   
 
 % https://www.geogebra.org/classic/cmxnab2q
 \begin{center}
@@ -743,7 +741,7 @@ RS_{8} & = & \displaystyle{\sum_{k=1}^{8} f(x_{k}) \Delta x} \\ [5pt]
              &    & +  (3.75)(0.5) + (3)(0.5) + (1.75)(0.5) + (0)(0.5) \\[5pt]
              & = & 10.5  \\ \end{array} \]
 
-Hence, the area under the graph $f$ is approximately $10.5$ square units as approximated by the sum of the rectangles above on the right.  (Again, since $f(x_{8}) = f(4) = 0$, the eighth `rectangle' has $0$ height.)
+Hence, the area under the graph $f$ is approximately $10.5$ square units as approximated by the sum of the rectangles above on the right.  (Again, since $f(x_{8}) = f(4) = 0$, the eighth `rectangle' has $0$ height.)  Once again, the GeoGebra interactive above is very useful in visulizing this sum by adjusting the slider to $n=8$.
 
 \item To find a formula for $RS_{n}$, we imagine dividing the interval $[0,4]$ into $n$ equal pieces each of length $\Delta x = \frac{4}{n}$.  We have $n$ right endpoints, $x_{1}$, $x_{2}$, \ldots $x_{n}$ where $x_{k} = 0 + k \Delta x = \frac{4k}{n}$.  Since $f(x) = 4x-x^2$, 
 \[ f(x_{k}) = 4x_{k} - x_{k}^2 = 4\left(\dfrac{4k}{n}\right) - \left(\dfrac{4k}{n}\right)^2 = \dfrac{16k}{n} - \dfrac{16k^2}{n^2}. \]
@@ -763,11 +761,15 @@ RS_{n} & = & \displaystyle{ \sum_{k=1}^{n} f(x_{k}) \Delta x} & \\ [15pt]
  
  Note we can partially check our answer at thus point by substituting $n=4$ and $n=8$ to our formula to $RS_{n}$ to see if we recover our answers from above.  We get $RS_{4} = \frac{32(4)^2 - 32}{3(4^2)}= \frac{480}{48} = 10$ and $RS_{8} = \frac{32(8)^2 - 32}{3(8)^2} = \frac{2016}{192} = 10.5$, as required.
  
-To find  $\ds{\lim_{n \rightarrow \infty} RS_{n}=\lim_{n \rightarrow \infty}}$  $\frac{32n^2-32}{3n^2}$, we compare the leading term of the numerator and denominator.  As $n \rightarrow \infty$, $\frac{32n^2-32}{3n^2} \approx \frac{32n^2}{3n^2} = \frac{32}{3}$.  Hence, $\ds{\lim_{n \rightarrow \infty} RS_{n}}=$  $\frac{32}{3}$.  Hence, as we use more and more rectangles,\footnote{even though they become skinnier and skinner and hence, \textit{individually} have smaller and smaller areas \ldots} the sum total of the area of those rectangles approaches $\frac{32}{3}$ square units.  In  Calculus, we more or less  \textbf{define} the area under $f$ to be $\frac{32}{3}$ square units. \qed
+To find  $\ds{\lim_{n \rightarrow \infty} RS_{n}=\lim_{n \rightarrow \infty}}$  $\frac{32n^2-32}{3n^2}$, we compare the leading term of the numerator and denominator.  As $n \rightarrow \infty$, $\frac{32n^2-32}{3n^2} \approx \frac{32n^2}{3n^2} = \frac{32}{3}$.  Hence, $\ds{\lim_{n \rightarrow \infty} RS_{n}}=$  $\frac{32}{3}$.  Hence, as we use more and more rectangles,\footnote{even though they become skinnier and skinner and hence, \textit{individually} have smaller and smaller areas \ldots} the sum total of the area of those rectangles approaches $\frac{32}{3} = 10.\overline{6}$ square units, which matches with what GeoGebra had predicted in part 1.  In  Calculus, we more or less  \textbf{define} the area under $f$ to be $\frac{32}{3}$ square units. \qed
 
 \end{enumerate}
 
 \end{example}
+
+The reader is encouraged to revisit the GeoGebra interactives showcased in Example \ref{rightsumex} and input different functions, different bounds, and different numbers of rectangles for $RS_{n}$.  For example, what happens when you have a function which dips below the $x$-axis? What does $RS_{n}$ and $\ds{\lim_{n \rightarrow \infty} RS_{n}}$ calculate then?
+
+
 
 It is worth noting that, as with other examples in the text,  Example \ref{rightsumex} is more or less lifted straight out of  a Calculus lecture.  That being said, the vast majority of the mechanics here involve precalculus notions.\footnote{The only Calculus bit is the limit concept which I guess is precalculus now \ldots}   In general, the machinations in Calculus amount to applying the limit concept to the mechanics of precalculus.  
 
