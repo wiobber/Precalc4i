@@ -893,6 +893,22 @@ For each function $f(x)$ listed below, compute the average rate of change over t
 
 \end{array} \]
 
+\begin{solution}
+Each of these average rates of change indicate slope of the curve over the given interval.  Smaller slopes correspond to `flatter' curves and higher slopes correspond to `steeper' curves.
+
+\[ \begin{array}{|r||c|c|c|c|c|c|}  \hline
+
+ f(x) &  [-0.1, 0] & [0, 0.1] &[0.9, 1] & [1, 1.1] & [1.9, 2] & [2, 2.1]  \\ \hline
+ 1 &  0 &   0  & 0   & 0   & 0  & 0 \\  \hline
+ x &  1 &   1  & 1   & 1   & 1  & 1 \\  \hline
+ x^2 & -0.1 & 0.1 & 1.9 & 2.1 & 3.9 & 4.1  \\  \hline
+ x^3 & 0.01  & 0.01 & 2.71 & 3.31 & 11.41 & 12.61 \\  \hline
+ x^4&  -0.001 & 0.001 & 3.439 & 4.641 & 29.679 & 34.481 \\ \hline
+ x^5 & 0.0001 & 0.0001 & 4.0951 & 6.1051 & 72.3901 & 88.4101 \\ \hline
+
+\end{array} \]
+\end{solution}
+
 \end{problem}
 
 
@@ -910,6 +926,22 @@ For each function $f(x)$ listed below, compute the average rate of change over t
  x^5 &&&&  \\ \hline
 
 \end{array} \]
+
+\begin{solution}
+As we sample points closer to $x=1$, the slope of the curve approaches the exponent on $x$.
+
+\[ \begin{array}{|r||c|c|c|c|}  \hline
+
+ f(x) &  [0.9, 1.1] & [0.99, 1.01] &[0.999, 1.001] & [0.9999, 1.0001]  \\ \hline
+ 1 &  0 &   0  & 0   & 0   \\  \hline
+ x &  1 &   1  & 1   & 1   \\  \hline
+ x^2 & 2 & 2 & 2 & 2  \\  \hline
+ x^3 & 3.01  & 3.0001 & \approx 3 & \approx 3  \\  \hline
+ x^4&  4.04 & 4.0004 & \approx 4 & \approx 4 \\ \hline
+ x^5 & 5.1001 & \approx 5.001 & \approx 5 & \approx 5  \\ \hline
+
+\end{array} \]
+\end{solution}
 
 \end{problem}
  
@@ -1047,9 +1079,34 @@ Daylight & 5.8 & 9.3 & 12.4 & 15.9 & 19.4 & 21.8 & 19.4 & 15.6 & 12.4 & 9.1 & 5.
 
 \item Find cubic (third degree) and quartic (fourth degree) polynomials which model this data and comment on the goodness of fit for each.  What can we say about using either model to make predictions about the year 2020?  (Hint: Think about the end behavior of polynomials.)  
 
+\begin{solution}
+    The cubic regression model is $p_{\mbox{\tiny $3$}}(x) = 0.0226x^{3} - 0.9508x^{2} + 8.615x - 3.446$.  It has $R^{2} = 0.9377$ which isn't bad.  The graph of $y = p_{\mbox{\tiny $3$}}(x)$ along with the data is shown below on the left.  Note $p_{\mbox{\tiny $3$}}$ hits the $x$-axis at about $x = 12.45$ making this a bad model for future predictions. 
+\end{solution}
+
+\begin{solution}
+    The quartic regression model is $p_{\mbox{\tiny $4$}}(x) = 0.0144x^{4} - 0.3507x^{3} + 2.259x^{2} - 1.571x + 5.513$.  It has $R^{2} = 0.9859$ which is good.  The graph of $y = p_{\mbox{\tiny $4$}}(x)$  along with data is shown below on the right.  Note  $p_{\mbox{\tiny $4$}}(15)$ is above $24$ making this a bad model as well for future predictions.  
+\end{solution}
+
 \item Use the models to see how many hours of daylight they got on your birthday and then check the website to see how accurate the models are.  
 
+\begin{solution}
+    To use the model to approximate the number of hours of sunlight on your birthday, you'll have to figure out what decimal value of $x$ is close enough to your birthday and then plug it into the model.  Jeff's birthday is July 31 which is 10 days after July 21 ($x = 7$).  Assuming 30 days in a month, I think $x = 7.33$ should work for my birthday and $p_{\mbox{\tiny $3$}}(7.33) \approx 17.5$.  The website says there will be about $18.25$ hours of daylight that day.
+\end{solution}
+
+\begin{solution}
+    Here, $p_{\mbox{\tiny $4$}}(7.33) \approx 18.71$ so this model more accurately predicts the number of hours of daylight on Jeff's birthday.
+\end{solution}
+
 \item Sasquatch are largely nocturnal, so what days of the year according to your models  allow for at least 14 hours of darkness for field research on the elusive creatures? 
+
+\begin{solution}
+    To have 14 hours of darkness we need 10 hours of daylight.  We see that $p_{\mbox{\tiny $3$}}(1.96) \approx 10$ and $p_{\mbox{\tiny $3$}}(10.05) \approx 10$ so it seems reasonable to say that we'll have at least 14 hours of darkness from December 21, 2008 ($x = 0$) to February 21, 2009 ($x = 2$) and then again from October 21,2009 ($x = 10$) to December 21, 2009 ($x = 12$).
+\end{solution}
+
+\begin{solution}
+    This model says we'll have at least 14 hours of darkness from December 21, 2008 ($x = 0$) to about March 1, 2009 ($x = 2.30$) and then again from October 10, 2009 ($x = 9.667$) to December 21, 2009 ($x = 12$).
+\end{solution}
+
 
 \end{enumerate}
 \end{problem}
@@ -1068,9 +1125,20 @@ Power: ($mW$) & 1.063 & 1.496 & 1.610 & 1.613 & 1.505 & 1.314 \\ \hline
 
 \item Use your calculator to find quadratic (2nd degree), cubic (3rd degree) and quartic (4th degree) regression models for the data and judge the reasonableness of each.
 
+\begin{solution}
+    The quadratic model is $P_{\mbox{\tiny $2$}}(x) = -0.021x^{2} + 0.241x + 0.956$, $R^{2} = 0.7771$. \\
+The cubic model is $P_{\mbox{\tiny $3$}}(x) = 0.005x^{3} - 0.103x^{2} + 0.602x + 0.573$,  $R^{2} = 0.9815$. \\
+The quartic model is $P_{\mbox{\tiny $4$}}(x) = -0.000969x^{4} + 0.0253x^{3} - 0.240x^{2} + 0.944x + 0.330$,  $R^{2} = 0.9993$.
+\end{solution}
+
 \item For each of the models found above, find the predicted maximum power that can be delivered to the load.  What is the corresponding resistance value?
 
+\begin{solution}
+    The models give maximums: $P_{\mbox{\tiny $2$}}(5.737) \approx 1.648$, $P_{\mbox{\tiny $3$}}(4.232) \approx 1.657$ and $P_{\mbox{\tiny $4$}}(3.784) \approx 1.630$.
+\end{solution}
+
 \item Discuss with your classmates the limitations of these models - in particular, discuss the end behavior of each.
+
 
 \end{enumerate}
 \end{problem}
@@ -1084,13 +1152,36 @@ Below is a graph of  a polynomial function $y = p(x)$ as generated by a graphing
 
 \item  Describe the end behavior of $y = p(x)$.
 
+\begin{solution}
+     $\ds{\lim_{x \rightarrow - \infty} p(x)  = -\infty}$  and $\ds{\lim_{x \rightarrow  \infty} p(x)  = -\infty}$
+
+\end{solution}
+
 \item  List the real zeros of $p$ along with their respective multiplicities.  
+
+\begin{solution}
+    The zeros appear to be: $x=-1.5$, even multiplicity - probably $2$ since it doesn't `look like' the graph is very flat near $x = 2$;  $x=0$, odd multiplicity - probably $1$ since the graph seems fairly linear as it passes through the origin;  $x=1$ odd multiplicity - probably $3$ or higher since the graph seems fairly `flat' near $x = 1$.
+\end{solution}
 
 \item  List the local minimums and local maximums of the graph of $y = p(x)$.
 
+\begin{solution}
+     local minimum:  approximately $(-0.773, -2.888)$;  local maximums:  approximately $(-1.5,0)$, and $(0.32, 0.532)$
+\end{solution}
+
 \item  What can be said about the degree of and leading coefficient $p(x)$?
 
+\begin{solution}
+     Based on the graph, even degree (at least $6$ based on multiplicities) with a negative leading coefficient based on the end behavior.
+\end{solution}
+
 \item  It turns out that $p(x)$ is a seventh degree polynomial.\footnote{to be exact, $p(x) = -0.1\left(x+1.5\right)^2\left(3x\right)\left(x-1\right)^3\left(x+5\right)$.}  How can this be?
+
+\begin{solution}
+     We only have a \textit{portion} of the graph represented here.
+\end{solution}
+
+
 
 \end{enumerate}
 \end{problem}
@@ -1099,6 +1190,10 @@ Below is a graph of  a polynomial function $y = p(x)$ as generated by a graphing
 \end{problem}
 
 \begin{problem}  Use the graph of $y= p(x) = (2x-1)(x+1)(1-x^4)$ on page \pageref{localmaxminexample} to estimate the largest open interval containing $x = -0.235$ which satisfies the the criteria for `local minimum'  in Definition \ref{localmaxmindefn}.
+
+\begin{solution}
+    We are looking for the largest open interval containing $x = -0.235$ for which the graph of $y = p(x)$ is at or above $y=-1.121$.  Since each of the gridlines on the $x$-axis correspond to $0.2$ units, we approximate this interval as  $(-1.25 \, \text{ish}, 1.1 \, \text{ish})$.
+\end{solution}
 \end{problem}
 
 \begin{problem}  In light of Definition \ref{localmaxmindefn}, explain why \textit{every} point on the graph of a constant function is both a local maximum and a local minimum.
@@ -1145,9 +1240,18 @@ Here are a few other questions for you to discuss with your classmates.
 
 \item  Find $L(x)$ for the points $(-1,1)$, $(0,0)$,  $(1,1)$ and $(2,4)$.  What happens?
 
+\begin{solution}
+     $L(x) = x^2$
+\end{solution}
+
 \item  Find $L(x)$ for the points $(-1,0)$, $(0,1)$,  $(1,2)$ and $(2,3)$.  What happens?
 
+\begin{solution}
+    $L(x) = x+1$
+\end{solution}
+
 \item  Generalize the formula for $L(x)$ to five points.  What's the pattern?
+
 
 \end{enumerate}
     
