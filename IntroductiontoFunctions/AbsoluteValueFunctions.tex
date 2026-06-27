@@ -191,77 +191,61 @@ coordinates {
         \end{tikzpicture}
 \end{image}
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-1.1, ymax=4,
+          width=3in,
+          height=2.5in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={1,2,3},
+            yticklabels={$1$,$2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=3.5pt, penColor1, domain=0:4, samples=2] {x};
+\addplot[smooth, line width=3.5pt, penColor1, domain=-4:0, samples=2] {-x};
+%% Arrow at the end of the ray (open end, going up-left)
+\addplot[
+  line width=3.5pt,
+  penColor1,
+  domain=-4:-3.6,
+  samples=2
+] {x};
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (2,2) [$(-2,2)$]
+  (1,1) [$(-1,1)$]
+  };
+%% Origin point, labeled
 
-\begin{multicols}{3}
+      \end{axis}
+        \end{tikzpicture}
+\end{image}        
 
-\begin{mfpic}[15]{-4}{4}{0}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-3.25,2){\scriptsize $(-2,2)$}
-\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize $f(x) = |x|$, $x < 0$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \polyline{( -4,4), (0,0)}
-\point[4pt]{(0,0), (-1,1), (-2,2)}
-\pointfillfalse
-\point[4pt]{(0,0)}
-\end{mfpic} 
-
-
-\begin{mfpic}[15]{-4}{4}{0}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](3,2){\scriptsize $(2,2)$}
-\tlabel[cc](2,1){\scriptsize $(1,1)$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize $f(x) = |x|$, $x \geq 0$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (4,4)}
-\point[4pt]{(0,0), (1,1), (2,2)}
-\point[4pt]{(0,0)}
-\end{mfpic} 
-
-
-
-
-\begin{mfpic}[15]{-4}{4}{0}{5}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-3.25,2){\scriptsize $(-2,2)$}
-\tlabel[cc](-2.25,1){\scriptsize $(-1,1)$}
-\tlabel[cc](3,2){\scriptsize $(2,2)$}
-\tlabel[cc](2,1){\scriptsize $(1,1)$}
-\point[3pt]{(0,0)}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize $f(x) = |x|$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\gclear \tlabelrect(0,-0.5){\scriptsize $(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4,4),(0,0),(4,4)}
-\point[4pt]{(0,0), (1,1), (-1,1), (2,2), (-2,2)}
-\end{mfpic}
-
-\end{multicols}
-
-\end{center}
 
 The graph of $f(x) = |x|$ is a very distinctive `$\vee$' shape and is worth remembering.  The point $(0, 0)$ on the graph is called the\index{vertex}\index{vertex ! absolute value function} \textbf{vertex}.  This terminology makes sense from a geometric viewpoint because $(0, 0)$ is the point where two lines meet to form an angle.  We will also see this term used in Section \ref{QuadraticFunctions} where, more generally, it corresponds to the graphical location of the sole maximum or minimum of a quadratic function.
 
