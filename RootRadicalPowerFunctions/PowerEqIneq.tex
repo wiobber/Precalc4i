@@ -245,33 +245,48 @@ Hence, $K = f(L) =  (228.\overline{7128})^{4} L^{-3}$ where $L>0$.  We find $f(1
 
 \item The function $f(L)$ is a Laurent Monomial (see Section \ref{IntroRational}) with $n = 3$ and $a = (228.\overline{7128})^{4}$.  As such, as $L \rightarrow 0^{+}$, $f(L) \rightarrow \infty$.  This means that in order to maintain the given production level, as the available labor diminishes, the capital requirement become unbounded.  As $L \rightarrow \infty$, we have $f(L) \rightarrow 0$ meaning that as the available labor increases, the need for capital diminishes.  The graph of $f$ is called an `isoquant' - meaning `same quantity.'  In this context, the graph displays all combinations of labor and capital, $(L,K)$  which result in the \textit{same} production level, in this case, $231 \%$ of what was produced in 1889.
 
-\begin{center}
-
-% \input{PowerEqIneq_pic1.tex}
 
 
-\begin{tikzpicture}
-\begin{axis}[fplot, xlabel={}, ylabel={}, xmin=-1, xmax=3, ymin=-1, ymax=3, width=100pt, height=100pt, scale only axis]
-% Axis-tip labels
-\node[font=\scriptsize] at (axis cs:3,-0.5) {$L$};
-\node[font=\scriptsize] at (axis cs:-0.5,3) {$K$};
-
-% Point label
-\node[font=\scriptsize] at (axis cs:2.5,1) {$(1, (228.\overline{7128})^{4})$};
-
-% Curve
-\addplot+[fplot, domain=0.7:2, <->] {1/(x^3)};
-
-% Marked point
-\addplot+[only marks, mark=*, mark size=2pt] coordinates {(1,1)};
-
-% Caption-like annotation
-\node[font=\scriptsize, anchor=north] at (rel axis cs:0.5,-0.05) {$K = f(L) =  (228.\overline{7128})^{4} L^{-3}$};
-\end{axis}
-\end{tikzpicture}
 
 
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-1:2.5,
+          xmin=-1, xmax=2.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$L$},
+            ylabel={$K$},
+          ]
+\addplot[smooth,domain=0.2:2.2, line width=1.5pt, blue] {1/(x^3)};
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=0pt}
+]
+coordinates {
+  (1,1) [$(1,(228.\overline{7128})^{4})$]
+  };
+  
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
