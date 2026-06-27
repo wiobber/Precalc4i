@@ -170,8 +170,8 @@ coordinates {
     xshift=5pt}
 ]
 coordinates {
-  (2,2) [$(-2,2)$]
-  (1,1) [$(-1,1)$]
+  (2,2) [$(2,2)$]
+  (1,1) [$(1,1)$]
   };
 %% Origin point, labeled
 \addplot[
@@ -233,12 +233,25 @@ coordinates {
   mark size=4pt,
   nodes near coords,
   point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (-2,2) [$(-2,2)$]
+  (-1,1) [$(-1,1)$]
+  };
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
     xshift=5pt}
 ]
 coordinates {
-  (2,2) [$(-2,2)$]
-  (1,1) [$(-1,1)$]
+  (2,2) [$(2,2)$]
+  (1,1) [$(1,1)$]
   };
 %% Origin point, labeled
 
