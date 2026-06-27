@@ -59,7 +59,137 @@ Another way to view Definition \ref{absolutevaluepiecewise} is to think of $-x =
 
 At the top of the next page we graph each piece and then put them together. Note that when graphing $f(x) = |x|$ for $x < 0$, we have a hole at $(0, 0)$ because the inequality $x < 0$ is strict. However, the point $(0, 0)$ is included in the graph of $f(x) = |x|$ for $x \geq 0$, so there is no hole in our final graph.
 
-\newpage
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-1.1, ymax=4,
+          width=4in,
+          height=3in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={1,2,3},
+            yticklabels={$1$,$2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=3.5pt, penColor1, domain=-4:0, samples=2] {-x};
+%% Arrow at the end of the ray (open end, going up-left)
+\addplot[
+  line width=3.5pt,
+  penColor1,
+  domain=-4:-3.6,
+  samples=2
+] {-x};
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt}
+]
+coordinates {
+  (-2,2) [$(-2,2)$]
+  (-1,1) [$(-1,1)$]
+  };
+%% Origin point, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+   mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt, yshift=5pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-1.1, ymax=4,
+          width=4in,
+          height=3in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={1,2,3},
+            yticklabels={$1$,$2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=3.5pt, penColor1, domain=0:4, samples=2] {x};
+%% Arrow at the end of the ray (open end, going up-left)
+\addplot[
+  line width=3.5pt,
+  penColor1,
+  domain=-4:-3.6,
+  samples=2
+] {x};
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (2,2) [$(-2,2)$]
+  (1,1) [$(-1,1)$]
+  };
+%% Origin point, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-5pt, yshift=5pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \begin{center}
 
