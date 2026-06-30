@@ -430,11 +430,18 @@ In Exercises \ref{graphlogfirst} - \ref{graphloglast}, sketch the graph of $g$ b
 $f(x) = \log_{2}(x)$, $g(x) = \log_{2}(x+1)$ 
 
 \begin{solution}
-Domain of $g$: $(-1, \infty)$\\
- Range of $g$:  $(-\infty, \infty)$ \\
- Points:  $\left( -\frac{1}{2}, -1 \right)$, $(0,0)$, $(1,1)$\\
+Use the Desmos graph below with the settings $f(x)=\log_2 x,\,a=1,\,b=1,\,h=-1,\,k=0$
+
+\begin{center} 
+\desmos{rslziwxr6g}{800}{600} 
+\end{center}
+
+domain: $(-\infty, \infty)$
+
+range: $(-1, \infty)$
+
+ $g(x)$ passes through the points:  $\left( -\frac{1}{2}, -1 \right)$, $(0,0)$, $(1,1)$\\
  Asymptote: $x = -1$ \\
- % need graphs, just adding function details
 \end{solution}
 \end{problem}
 
@@ -442,70 +449,33 @@ Domain of $g$: $(-1, \infty)$\\
 $f(x) = \log_{\frac{1}{3}}(x)$, $g(x) = \log_{\frac{1}{3}}(x)+1$
 
 \begin{solution}
+Use the Desmos graph below with the settings $f(x)=\log_\frac{1}{3} x,\,a=1,\,b=1,\,h=0,\,k=1$
+
+\begin{center} 
+\desmos{z2in5wjjxl}{800}{600} 
+\end{center}
+
 Domain of $g$:  $(0, \infty)$\\
  Range of $g$:  $(-\infty, \infty)$ \\
- Points:   $\left(\frac{1}{3}, 2 \right)$, $(1,1)$, $(3,0)$ \\
- Asymptote:  $x = 0$ \\
+ $g(x)$ passes through the points:  $\left(\frac{1}{3}, 2 \right)$, $(1,1)$, $(3,0)$ \\
+ Asymptote: $x = 0$ \\
 \end{solution}
-
 \end{problem}
 
 \begin{problem}
 $f(x) = \log_{3}(x)$, $g(x) = -\log_{3}(x-2)$
 
 \begin{solution}
+Use the Desmos graph below with the settings $f(x)=\log_{3}x,\,a=-1,\,b=1,\,h=2,\,k=0$
+
+\begin{center} 
+\desmos{dnrxqb6yri}{800}{600} 
+\end{center}
+
 Domain of $g$: $(2, \infty)$\\
  Range of $g$:  $(-\infty, \infty)$ \\
- Points:  $\left( \frac{7}{3},1 \right)$, $(3,0)$, $(5,-1)$ \\
+ $g(x)$ passes through the points:  $\left( \frac{7}{3},1 \right)$, $(3,0)$, $(5,-1)$ \\
  Asymptote: $x = 2$ \\
- 
-\begin{tikzpicture}
-  \begin{axis}[
-      axis lines=middle,
-      xmin=-1, xmax=12,
-      ymin=-4, ymax=4,
-      xtick={1,2,3,4,5,6,7,8,9,10,11},
-      ytick={-3,-2,-1,1,2,3},
-      xlabel={$x$},
-      ylabel={$y$},
-      width=11cm,
-      height=6cm,
-      ticklabel style={font=\scriptsize},
-      label style={font=\scriptsize},
-      domain=-2.05:2.5,
-    ]
-
-    % Dashed vertical asymptote at x = 2
-    \addplot[dashed, domain=-3:4] coordinates {(2,-3) (2,4)};
-
-    % Function: y = -log_3(x - 2)
-    \addplot[
-      thick,
-      ->,
-      >=stealth,
-      samples=200,
-      domain=-2.05:2.5
-    ]
-      ({2 + 3^(0 - x)}, {x});
-
-    % Points
-    \addplot[only marks, mark=*] coordinates {
-      (2.3333,1)
-      (3,0)
-      (5,-1)
-    };
-
-    % Optional point labels
-    \node[font=\small, anchor=west] at (axis cs:2.3333,1) {$(2.33,1)$};
-    \node[font=\small, anchor=west] at (axis cs:3,0) {$(3,0)$};
-    \node[font=\small, anchor=west] at (axis cs:5,-1) {$(5,-1)$};
-
-    % Function label
-    \node[font=\small, anchor=south east] at (axis cs:9,3) {$y = g(x) = -\log_{3}(x-2)$};
-
-  \end{axis}
-\end{tikzpicture}
-
 \end{solution}
 \end{problem}
 
@@ -513,9 +483,15 @@ Domain of $g$: $(2, \infty)$\\
 $f(x) = \log(x)$, $g(x) = 2\log(x+20) -1$ 
 
 \begin{solution}
-    Domain of $g$: $(-20, \infty)$\\
+Use the Desmos graph below with the settings $f(x)=\log x,\,a=2,\,b=1,\,h=-20,\,k=-1$
+
+\begin{center} 
+\desmos{fz3hzp3juz}{800}{600} 
+\end{center}
+
+Domain of $g$: $(-20, \infty)$\\
  Range of $g$:  $(-\infty, \infty)$\\
- Points:  $(-19, -1)$, $(-10,1)$, $(80,3)$\\
+ $g(x)$ passes through the points:  $(-19, -1)$, $(-10,1)$, $(80,3)$\\
  Asymptote:  $x = -20$ \\
 \end{solution}
 \end{problem}
@@ -524,9 +500,15 @@ $f(x) = \log(x)$, $g(x) = 2\log(x+20) -1$
 $f(t) = \log_{0.5}(t)$, $g(t) = 10 \log_{0.5}\left(\frac{t}{100}\right)$
 
 \begin{solution}
-     Domain of $g$: $(0, \infty)$ \\
+Use the Desmos graph below with the settings $f(t) = \log_{0.5}(t),\,a=10,\,b=\frac{1}{100},\,h=0,\,k=0$
+
+\begin{center} 
+\desmos{khwhvvjb0c}{800}{600} 
+\end{center}
+
+Domain of $g$: $(0, \infty)$ \\
   Range of $g$:  $(-\infty, \infty)$ \\
-  Points:  $(50,10)$,   $(100,0)$, $(200,-10)$  \\
+ $g(t)$ passes through the points:  $(50,10)$,   $(100,0)$, $(200,-10)$  \\
   Asymptote: $t= 0$\\
 \end{solution}
 \end{problem}
@@ -535,59 +517,16 @@ $f(t) = \log_{0.5}(t)$, $g(t) = 10 \log_{0.5}\left(\frac{t}{100}\right)$
 $f(t) = \log_{1.25}(t)$, $g(t) = \log_{1.25}(-t+1) + 2$
 
 \begin{solution}
+Use the Desmos graph below with the settings $f(t) = \log_{1.25}(t),\,a=1,\,b=-1,\,h=-1,\,k=2$
+
+\begin{center} 
+\desmos{im6ndw0yi7}{800}{600} 
+\end{center}
+
  Domain of $g$: $(-\infty, 1)$ \\
   Range of $g$: $(-\infty, \infty)$  \\
-  Points:  $(-0.25,3)$,  $(0,2)$, $(0.2,1)$ \\
+ $g(t)$ passes through the points:  $(-0.25,3)$,  $(0,2)$, $(0.2,1)$ \\
   Asymptote: $t = 1$\\
-
-\begin{tikzpicture}
-  \begin{axis}[
-      axis lines=middle,
-      xmin=-11, xmax=11,
-      ymin=-8, ymax=5,
-      width=12cm,
-      height=7cm,
-      xlabel={$t$},
-      ylabel={$y$},
-      xtick={-10,-8,-6,-4,-2,0,2,4,6,8,10},
-      ytick={-8,-6,-4,-2,2,4},
-      ticklabel style={font=\tiny},
-      label style={font=\scriptsize},
-    ]
-
-    % Dashed vertical asymptote at t = 10
-    \addplot[dashed, domain=-8:5] coordinates {(10,-8) (10,5)};
-
-    % Function: y = log_{1.25}(-t + 1) + 2
-    % parametric form: x = (1 - 1.25^(t - 2)) * 10, y = t
-    \addplot[
-      thick,
-      ->,
-      >=stealth,
-      samples=200,
-      domain=-8:5
-    ]
-      ({(1 - 1.25^(x - 2)) * 10}, {x});
-
-    % Points
-    \addplot[only marks, mark=*] coordinates {
-      (2,1)
-      (0,2)
-      (-2.5,3)
-    };
-
-    % Optional labels for points
-    \node[font=\small, anchor=west] at (axis cs:2,1) {$(2,1)$};
-    \node[font=\small, anchor=west] at (axis cs:0,2) {$(0,2)$};
-    \node[font=\small, anchor=east] at (axis cs:-2.5,3) {$(-2.5,3)$};
-
-    % Function label (caption)
-    \node[font=\small, anchor=south east] at (axis cs:8,4)
-      {$y = g(t) = \log_{1.25}(-t+1) + 2$};
-
-  \end{axis}
-\end{tikzpicture}
-
 \end{solution}
 \end{problem}
 
@@ -595,16 +534,36 @@ $f(t) = \log_{1.25}(t)$, $g(t) = \log_{1.25}(-t+1) + 2$
 $f(t) = \ln(t)$, $g(t) = -\ln(8-t)$
 
 \begin{solution}
-    Domain of $g$:  $(-\infty, 8)$\\
+Use the Desmos graph below with the settings $f(t) = \ln(t),\,a=-1,\,b=-1,\,h=-8,\,k=0$
+
+\begin{center} 
+\desmos{moovtjzsft}{800}{600} 
+\end{center}
+
+Domain of $g$:  $(-\infty, 8)$\\
  Range of $g$:$(-\infty, \infty)$\\
- Points:  $(8-e, -1) \approx (5.28, -1)$,\\
+ $g(t)$ passes through the points:  $(8-e, -1) \approx (5.28, -1)$,\\
  $(7,0)$, $(8 - e^{-1}, 1) \approx (7.63,1)$ \\
  Asymptote:  $t = 8$ \\
 \end{solution}
 \end{problem}
 
 \begin{problem}\label{graphloglast}
-$f(t) = \ln(t)$, $g(t) = -10\ln\left(\frac{t}{10}\right)$ 
+$f(t) = \ln(t)$, $g(t) = -10\ln\left(\frac{t}{10}\right)$
+
+\begin{solution}
+Use the Desmos graph below with the settings $f(t) = \ln(t),\,a=-10,\,b=\frac{1}{10},\,h=0,\,k=0$
+
+\begin{center} 
+\desmos{3qut55xcvg}{800}{600} 
+\end{center}
+
+Domain of $g$:  $(0, \infty)$\\
+ Range of $g$:  $(-\infty, \infty)$\\
+ $g(t)$ passes through the points:  $(10e^{-1}, 10) \approx (3.68. 10)$ \\
+ $(10,0)$, $(10e, -10) \approx (27.18, -10)$ \\
+ Asymptote: $t = 0$ \\
+\end{solution}
 
 \begin{solution}
      Domain of $g$:  $(0, \infty)$\\
@@ -989,10 +948,21 @@ Earthquakes are complicated events and it is not our intent to provide a complet
 \begin{enumerate}
 
 \item Show that $M(0.001) = 0$.
-\item Compute $M(80,000)$.
-\item Show that an earthquake which registered 6.7 on the Richter scale had a seismograph reading ten times larger than one which measured 5.7.
-\item Find two news stories about recent earthquakes which give their magnitudes on the Richter scale.  How many times larger was the seismograph reading of the earthquake with larger magnitude?
 
+\begin{solution}
+$M(0.001) = \log \left(\frac{0.001}{0.001} \right) = \log(1) = 0$.
+\end{solution}
+
+\item Compute $M(80,000)$.
+
+\begin{solution}
+$M(80,000) = \log \left(\frac{80,000}{0.001} \right) = \log(80,000,000) \approx 7.9$.
+\end{solution}
+
+\item Show that an earthquake which registered 6.7 on the Richter scale had a seismograph reading ten times larger than one which measured 5.7.
+
+
+\item Find two news stories about recent earthquakes which give their magnitudes on the Richter scale.  How many times larger was the seismograph reading of the earthquake with larger magnitude?
 \end{enumerate}
 
 \end{problem}
@@ -1003,8 +973,22 @@ While the decibel scale can be used in many disciplines,\footnote{See this  \hre
 \begin{enumerate}
 
 \item Compute $L(10^{-6})$.
+
+\begin{solution}
+$L(10^{-6}) = 60$ decibels.
+\end{solution}
+
 \item Damage to your hearing can start with short term exposure to sound levels around 115 decibels.  What intensity $I$ is needed to produce this level? 
+
+\begin{solution}
+$I = 10^{-.5} \approx 0.316$ watts per square meter.
+\end{solution}
+
 \item Compute $L(1)$.  How does this compare with the threshold of pain which is around 140 decibels?
+
+\begin{solution}
+Since $L(1) = 120$ decibels and $L(100) = 140$ decibels, a sound with intensity level 140 decibels has an intensity 100 times greater than a sound with intensity level 120 decibels.
+\end{solution}
 
 \end{enumerate}
 \end{problem}
@@ -1015,9 +999,22 @@ The pH of a solution is a measure of its acidity or alkalinity.  Specifically, $
 \begin{enumerate}
 
 \item The hydrogen ion concentration of pure water is $[\mbox{H}^{+}] = 10^{-7}$.  Find its pH.
+
+\begin{solution}
+The pH of pure water is 7.
+\end{solution}
+
 \item Find the pH of a solution with $[\mbox{H}^{+}] = 6.3 \times 10^{-13}$.
+
+\begin{solution}
+If $[\mbox{H}^{+}] = 6.3 \times 10^{-13}$ then the solution has a pH of 12.2.
+\end{solution}
+
 \item The pH of gastric acid (the acid in your stomach) is about $0.7$.  What is the corresponding hydrogen ion concentration?
 
+\begin{solution}
+$[\mbox{H}^{+}] = 10^{-0.7} \approx .1995$ moles per liter.
+\end{solution}
 \end{enumerate}
 
 \end{problem}
