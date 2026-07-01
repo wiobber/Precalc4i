@@ -15,14 +15,120 @@ In Exercises \ref{orientedanglefirst} - \ref{orientedanglelast}, graph the orien
 
 \begin{problem}\label{{orientedanglefirst}}
 $\frac{\pi}{3}$
+
+\begin{solution}
+$\dfrac{\pi}{3}$  is a Quadrant I angle\\
+coterminal with $\dfrac{7\pi}{3}$ and $-\dfrac{5\pi}{3}$
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=55,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (2.5,4.3301) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $\frac{5\pi}{6}$
+
+$\dfrac{5\pi}{6}$ is a Quadrant II angle\\
+coterminal with $\dfrac{17\pi}{6}$ and $-\dfrac{7\pi}{6}$
+
+\begin{solution}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=145,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (-4.3301,2.5) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $-\frac{11\pi}{3}$
+
+\begin{solution}
+$-\dfrac{11\pi}{3}$ \vphantom{$\dfrac{17\pi}{6}$} is a Quadrant I angle\\
+coterminal with $\dfrac{\pi}{3}$ and $-\dfrac{5\pi}{3}$ \vphantom{$\dfrac{17\pi}{4}$}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\addplot[domain=0:655, samples=400, line width=1pt,->]
+({((x+100)/400)*cos(-x)},
+ {((x+100)/400)*sin(-x)});
+
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (2.5,4.3301) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
@@ -87,14 +193,24 @@ In Exercises \ref{degreetoradianfirst} - \ref{degreetoradianlast}, convert the a
 
 \begin{problem}\label{degreetoradianfirst}
     $0^{\circ}$ 
+
+\begin{solution}
+$0$
+\end{solution}
 \end{problem}
 
 \begin{problem}
-    $240^{\circ}$
+$240^{\circ}$
+
+$\answer{\frac{4\pi}{3}}$
 \end{problem}
 
 \begin{problem}
     $135^{\circ}$
+
+\begin{solution}
+$\frac{3\pi}{4}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
