@@ -275,6 +275,76 @@ f(x) = |x - 3| = \begin{cases}
      x - 3  & \text{if $x \geq 3$} \\
    \end{cases} \\ \end{array} \] As both pieces of the graph of $f$ are lines, we need just two points for each piece.    We already have two points for the graph: $(0, 3)$ and $(3, 0)$.    These two points both lie on the line $y = -x + 3$ but the strictness of the inequality means $f(x) = -x + 3$ only for $x < 3$, \underline{not} $x = 3$, so we would have a hole at $(3, 0)$ instead of a point there.  For $x \geq 3$, $f(x) = x - 3$, so the hole we thought we had  at $(3, 0)$ gets plugged because $f(3) = 3 - 3 = 0$.  We need just one more point for $f(x)$ where $x \geq 3$ and choose somewhat arbitrarily $x = 6$.  We find $f(6) = |6 - 3| = 3$ so our final point on the graph is $(6, 3)$.  Now that we have a complete graph,\footnote{We know it's complete because we did the Math - no trusting technology on this example!}  we see that the vertex is $(3, 0)$ and the range  is $[0, \infty)$.  The minimum of $f$ is $0$ when $x = 3$ and $f$ has no maximum.  Also, $f$  is decreasing over $(-\infty, 3]$ and increasing on $[3, \infty)$.  The graph is given below on the left.
 
+   \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-1:7,
+          xmin=-1, xmax=7,
+          ymin=-1, ymax=5,
+          width=4in,
+          height=3in,
+          xtick={1, 2, 4, 5, 6},
+            xticklabels={$1$,$2$, $4$, $5$, $6$},
+           ytick={1, 2, 4},
+            yticklabels={$1$, $2$, $4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1] {abs(x-3)};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-10pt}
+]
+coordinates {
+  (3,0) [$(3, 0)$]
+  };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+    (0, 3) [$(0,3)$]
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
+]
+coordinates {
+  (6,3) [$(6,3)$]
+ 
+};
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \item To find the zeros of $g$, we solve $g(t) = |t| - 3 = 0$ and get $|t| = 3$ or $t = \pm 3$.  Hence, the $t$-intercepts of the graph of $g$ are $(-3, 0)$ and $(3, 0)$.  To find the $y$-intercept, we compute $g(0) = |0| - 3 = -3$ and get $(0, -3)$.   To rewrite $g(t)$ has a piecewise defined function, we first substitute $t$ in for $x$ in Definition \ref{absolutevaluepiecewise} to get a piecewise definition of $|t|$.  This breaks the domain into two pieces: $t < 0$ and $t \geq 0$.  For $t<0$, $|t| = -t$, so $g(t) = |t| - 3 = (-t) - 3 = -t - 3$.  Likewise, for $t \geq 0$, $|t| = t$ so $g(t) = |t| - 3 = t - 3$. \[ \begin{array}{ccc}
 
  |t|  = \begin{cases} 
@@ -295,54 +365,75 @@ f(x) = |x - 3| = \begin{cases}
    
    \end{array}  \] Once again, we have two lines to graph, but in this case we have three points:  $(-3, 0)$, $(0, -3)$ and $(3, 0)$.  Both $(-3, 0)$ and $(0, -3)$ lie on $y = -t - 3$, but $g(t) = -t - 3$ only for $t < 0$.  This would yield a hole at $(0, -3)$, but, just like in the previous example,  the hole is plugged  thanks to the second piece of the function because $g(0) = 0 - 3 = -3$.  We also pick up the second $t$-intercept, $(3, 0)$ and this helps us complete our graph.   We see that the vertex is $(0, -3)$ and the range is  $[-3, \infty)$.  The minimum of $g$ is $-3$ at $t = 0$ and there is no maximum. Also, $g$ is decreasing on $(-\infty, 0]$ and increasing on $[0, \infty)$.  The graph of $g$ is shown below on the right.
 
-\begin{center}
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=2,
+          width=4in,
+          height=3in,
+          xtick={-2, -1, 1, 2},
+            xticklabels={$-2$,$-1$, $1$, $2$},
+           ytick={-2,-1, 1},
+            yticklabels={$-2$, $-1$, $1$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1] {abs(x)-3};
 
-\begin{multicols}{2}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    yshift=-10pt}
+]
+coordinates {
+  (3,0) [$(3, 0)$]
+  };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-10pt}
+]
+coordinates {
+    (-3,0) [$(-3,0)$]
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+  (0,-3) [$(0,-3)$]
  
-\begin{mfpic}[15]{-1}{7}{-1}{5}
-
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4,5,6}
-\ymarks{-1, 1,2,3,4}
-\tcaption{\scriptsize $f(x) = |x-3|$ \vphantom{$g(t) = |t|-3$}}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$1$} 1, {$2$} 2,  {$4$} 4, {$5$} 5, {$6$} 6}
-\axislabels {y}{{ $-1$} -1, {$1$} 1, {$2$} 2,  {$4$} 4}
-\tlabel[cc](-1,3){$(0,3)$}
-\tlabel[cc](3,-0.5){$(3,0)$}
-\tlabel[cc](7,3){$(6,3)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-0.5,3.5),(3,0),(6.5,3.5)}
-\point[4pt]{(0,3), (3,0), (6,3)}
-\end{mfpic} 
-
-\begin{mfpic}[15]{-4}{4}{-4}{2}
-\axes
-\tlabel[cc](4.5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
-\tcaption{\scriptsize $g(t) = |t|-3$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-4,-3,-2,-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-4$} -4,  {$-2$} -2,{ $-1$} -1, {$1$} 1}
-\tlabel[cc](-3.5,-0.65){$(-3,0)$}
-\tlabel[cc](3.5,-0.65){$(3,0)$}
-\tlabel[cc](-1.25,-3){$(0,-3)$}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4,1), (0,-3), (4,1)}
-\point[4pt]{(0,-3),(3,0),(-3,0)}
-\end{mfpic} \\
-
-\end{multicols}
-
-\end{center}
+};
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \item  Solving $h(u) = |2u - 1| - 3 = 0$ gives $|2u - 1| = 3$ or $2u - 1 = \pm 3$.  We get two zeros:  $u = -1$ and $u  = 2$ which correspond to two $u$-intercepts: $(-1, 0)$ and $(2, 0)$. We find $h(0) = |2(0) - 1| - 3 = -2$ so our $y$-intercept is $(0, -2)$.   To rewrite $h(u)$ as a piecewise defined function, we first rewrite $|2u - 1|$ as a piecewise function.  Substituting the expression $2u - 1$ in for $x$ in  Definition \ref{absolutevaluepiecewise} gives: \[ \begin{array}{ccc}
 
@@ -382,6 +473,66 @@ h(u)  =   \begin{cases}
    
    \end{array}  \] We have three points to help us graph $y = h(u)$:  $(-1, 0)$, $(0, -2)$ and $(2, 0)$. Unlike in the last two examples, these points do not give us information at the  value $u = \frac{1}{2}$ where the rule for $h(u)$ changes.  Substituting $u = \frac{1}{2}$ into the expression $-2u - 2$ gives $-3$, so from $h(u) = -2u - 2$, $u <  \frac{1}{2}$, we get a hole at $\left(\frac{1}{2}, -3 \right)$.  However, this hole is filled because  $h\left(\frac{1}{2}\right) = 2\left(\frac{1}{2}\right) - 4  = -3$ and this produces the vertex at $\left(\frac{1}{2}, -3 \right)$.   The range of $h$ is $[-3, \infty)$, with the minimum of $h$ being $-3$ at $t = \frac{1}{2}$. Moreover, $h$ is decreasing on $\left(-\infty, \frac{1}{2} \right]$  and increasing on $\left[ \frac{1}{2}, \infty \right)$.  The graph of $h$ is given below on the left.
 
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-2:3,
+          xmin=-2.5, xmax=3,
+          ymin=-4, ymax=3,
+          width=4in,
+          height=5in,
+          xtick={1},
+            xticklabels={$1$},
+           ytick={-3,-1, 1,2},
+            yticklabels={$\,$, $\,$, $1$,$2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$u$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1] {abs(2*x-1)-3};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    yshift=-5pt}
+]
+coordinates {
+  (2,0) [$(2, 0)$]
+  (0.5,-3) [$\left(\frac{1}{2},-3\right)$]
+  };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-10pt}
+]
+coordinates {
+    (-1,0) [$(-1,0)$]
+    (0,-2) [$(0,-2)$]
+};
+
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
+   
+
 \item  Solving $i(w) = 4 - 2|3w - 1| = 0$ yields $|3w - 1| = 2$ or $3w - 1 = \pm 2$.  This gives two zeros, $w = -\frac{1}{3}$ and $w = 1$, which correspond to two $w$-intercepts, $\left(-\frac{1}{3}, 0 \right)$ and  $(1, 0)$.  Also, $i(0) = 4 - 2|3(0) - 1| = 2$, so the $y$-intercept of the graph is $(0, 2)$.  As in the previous example, the first step in rewriting $i(w)$ as a piecewise defined function is to rewrite  $|3w - 1|$ as a piecewise function.  Once again, we substitute the expression $3w - 1$ in for every occurrence of $x$ in Definition \ref{absolutevaluepiecewise}: \[ \begin{array}{ccc}
 
  |3w - 1|  = \begin{cases} 
@@ -420,59 +571,67 @@ i(w)  =   \begin{cases}
    
    \end{array}  \] As with the previous example, we have three points on the graph of $i$: $\left(-\frac{1}{3}, 0 \right)$, $(0, 2)$ and  $(1, 0)$, but no information about happens at $w = \frac{1}{3}$.  Substituting this value of $w$ into the formula $6w + 2$ would produce a hole at $\left(\frac{1}{3}, 4\right)$.  As we've seen several times already, however, $i\left(\frac{1}{3}\right) = 4$ so we don't have a hole at $\left(\frac{1}{3}, 4\right)$ but, rather, the vertex.  From the graph we see that the range of $i$ is $(-\infty, 4]$ with the maximum of $i$ being $4$ when $w = \frac{1}{3}$. Also,  $i$ is increasing over $\left( -\infty, \frac{1}{3} \right]$ and decreasing on $\left[ \frac{1}{3}, \infty \right)$. Its graph is given below on the right.
 
-\medskip
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-2:3,
+          xmin=-2, xmax=3,
+          ymin=-4, ymax=5,
+          width=4in,
+          height=6in,
+          xtick={-1,2},
+            xticklabels={$\,$,$\,$},
+           ytick={-3,-2,-1, 1,3,4},
+            yticklabels={$-3$, $-2$, $-1$,$\,$,$3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$u$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1,domain=1/3:2] {4-2*(3*x-1)};
+\addplot[smooth, line width=3pt, penColor1,domain=-1:1/3] {4+2*(3*x-1)};
 
-\begin{center}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    yshift=5pt}
+]
+coordinates {
+  (1,0) [$(1, 0)$]
+  (1/3,4) [$\left(\frac{1}{3},4\right)$]
+  };
 
-\begin{multicols}{2} 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-10pt}
+]
+coordinates {
+    (0,2) [$(0,2)$]
+    (-1/3,0) [$\left(-\frac{1}{3},0\right)$]
+};
 
-\begin{mfpic}[15]{-2}{3}{-3}{3}
-\axes
-\tlabel[cc](3.5,-0.5){\scriptsize $u$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\vphantom{$\frac{S}{S}$} \scriptsize $h(u) = |2u - 1| - 3$}
-\xmarks{-1,1,2}
-\ymarks{-3,-2,-1,1,2}
-\scriptsize
-\tlabel[cc](-2,-0.5){$(-1,0)$}
-\tlabel[cc](-1,-2){$(0,-2)$}
-\tlabel[cc](2.5,-0.5){$(2,0)$}
-\tlabel[cc](0.5,-3.5){$\left(\frac{1}{2},-3 \right)$}
-\tlpointsep{4pt}
-\axislabels {x}{ {$1$} 1}
-\axislabels {y}{ {$1$} 1,  {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-2,2), (0.5,-3), (3, 2)}
-\point[4pt]{ (-1,0), (0,-2), (0.5,-3), (2,0)}
-\end{mfpic} 
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
-
-\begin{mfpic}[15][11.666666] {-2}{3}{-4}{5}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $w$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tcaption{\scriptsize $i(w) = 4 - 2|3w - 1|$}
-\xmarks{-1,1,2}
-\ymarks{-3,-2,-1,1,2,3,4}
-\scriptsize
-\tlabel[cc](1.33,4){$\left( \frac{1}{3}, 4\right)$}
-\tlabel[cc](1.5,0.5){$(1,0)$}
-\tlabel[cc](-.75,2){$(0,2)$}
-\tlabel[cc](-1.33,0.5){$\left( -\frac{1}{3}, 0\right)$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {y}{ {$-3$} -3, {$-2$} -2,{$-1$} -1,  {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-1,-4), (0.3333,4), (1.6667, -4)}
-\point[4pt]{ (-0.3333,0), (1,0), (0,2), (0.3333, 4)}
-\end{mfpic}  
-
-\end{multicols}
-
-\end{center}
 
 \end{enumerate}
 
@@ -689,28 +848,63 @@ Of course, not every function involving absolute values can be written in the fo
 
 \item \label{absfunctionfromgraph} Use Theorem  \ref{linearabsvaluegraphs} to write a possible formula for $H(x)$ whose graph is given below:
 
-\begin{center}
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-2:3,
+          xmin=-3, xmax=4,
+          ymin=-3, ymax=4,
+          width=4in,
+          height=4in,
+          xtick={-2, -1,1, 2,3},
+            xticklabels={$-2$,$-1$,$1$,$2$,$3$},
+           ytick={-2,-1, 2,3},
+            yticklabels={$-2$, $-1$,$2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1,domain=-2:1] {2*x+1};
+\addplot[smooth, line width=3pt, penColor1,domain=1:4] {-2*x+5};
 
-\begin{mfpic}[20]{-3}{3}{-3}{4}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{2,-1, 1, 2}
-\ymarks{-2,-1,1,2,3,4}
-\tcaption{\scriptsize $y=H(x)$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](-1.25, 1){$(0,1)$}
-\tlabel[cc](1, 3.5){$(1,3)$}
-\axislabels {x}{{$-2 \hspace{7pt}$} -2,   {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-2$} -2, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-2,-3), (1, 3), (4, -3)}
-\point[4pt]{(0,1), (1,3)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (1,3) [$(1, 3)$]
+   };
 
-\end{center}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+    (0,1) [$(0,1)$]
+    };
+
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -724,6 +918,76 @@ Of course, not every function involving absolute values can be written in the fo
 
 \item Rewriting $F(x) = |x + 3| + 2 = (1)|x - (-3)| + 2$, we have $F(x)$ in the form stated in Theorem \ref{linearabsvaluegraphs} with $a = 1$, $h = -3$ and $k = 2$.  The vertex is $(-3, 2)$ and the graph will be a `$\vee$' shape.  Seeing as the vertex is already above the $x$-axis and the graph opens upwards, there are no $x$-intercepts on the graph of $F$, hence there are no zeros.\footnote{Alternatively, setting $|x + 3| + 2 = 0$ gives $|x + 3| = -2$. Absolute values are never negative thus we have no solution.}  With $F(0) = 5$, the $y$-intercept is $(0,5)$.  To get a third point, we can pick an arbitrary $x$-value to the left of the vertex or we could use symmetry: three units to the \textbf{right} of the vertex the $y$-value is $5$, so the same must be true three units to the \textbf{left} of the vertex, at $x = -6$.  Sure enough, $F(-6) = |-6 + 3| + 2 = |-3| + 2 = 5$.  The range of $F$ is $[2, \infty)$ with its minimum of $2$ when $x = -3$ and $F$ decreasing on $(-\infty, -3]$ then increasing on $[-3, \infty)$.  The graph is in the middle of the next page on the left.
 
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-7:1,
+          xmin=-7, xmax=1,
+          ymin=-1, ymax=6,
+          width=5in,
+          height=5in,
+          xtick={-6,-5,-4,-3,-2, -1},
+            xticklabels={$-6$,$-5$,$-4$,$-3$,$-2$,$-1$},
+           ytick={1,2,3,4},
+            yticklabels={$1$, $2$,$3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1,domain=-7:1] {abs(x+3)+2};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    yshift=-5pt}
+]
+coordinates {
+  (-3,2) [$(-3, 2)$]
+   };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
+]
+coordinates {
+    (0,5) [$(0,5)$]
+    };
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+    (-6,5) [$(-6,5)$]
+    };    
+
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \item We see in the formula for $f(t)$ that $t$ appears only once to the first power inside the absolute values, so we proceed to rewrite it in the form $a|t-h|+k$: \[ \begin{array}{rcl}
 
 f(x) & =&  \dfrac{4 - |5-3t|}{2} \\ 
@@ -734,58 +998,89 @@ f(x) & =&  \dfrac{4 - |5-3t|}{2} \\
      
      \end{array} \] Matching up the constants in the formula $f(t)$ to the parameters of $F(x)$ in  Theorem \ref{linearabsvaluegraphs}, we identify $a = -\frac{3}{2}$, $h = \frac{5}{3}$ and $k = 2$.  Hence the vertex is $\left(\frac{5}{3}, 2 \right)$, and the graph is shaped like `$\wedge$' comprised of pieces of lines with slopes $\pm \frac{3}{2}$.  To find the zeros of $f$, we set $f(t) = 0$.  (We can use either expression here.)  Solving $-\frac{3}{2}   \left| t - \frac{5}{3}  \right|  + 2=0$, we get $ \left| t - \frac{5}{3}  \right| = \frac{4}{3}$, so $t - \frac{5}{3} = \pm \frac{4}{3}$.  Hence our zeros are $t = \frac{1}{3}$ and $t = 3$, producing the $t$-intercepts $\left(\frac{1}{3}, 0 \right)$ and $(3, 0)$.  Using either formula gives  $f(0) = -\frac{1}{2}$,  so our $y$-intercept is $\left(0, -\frac{1}{2}\right)$.  Plotting the vertex, along with the intercepts, gives us enough information to produce the graph below on the right.  The range is $(-\infty, 2]$  with a maximum of $2$ at $t = \frac{5}{3}$ and $f$ is increasing on $\left(-\infty, \frac{5}{3} \right]$ then decreasing on $\left[ \frac{5}{3}, \infty \right)$.
 
-\smallskip
+ \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-2:4,
+          xmin=-3, xmax=5,
+          ymin=-2, ymax=3,
+          width=4in,
+          height=4in,
+          xtick={-1,1, 2,4},
+            xticklabels={$\,$,$\,$,$\,$,$4$},
+           ytick={-1, 1, 2},
+            yticklabels={$\,$, $1$,$2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+     }
+          ]
+\addplot[smooth, line width=3pt, penColor1,domain=5/3:4] {-1.5*(x-3)};
+\addplot[smooth, line width=3pt, penColor1,domain=-1:5/3] {1.5*x-0.5};
 
-\begin{center}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=5pt}
+]
+coordinates {
+  (5/3,2) [$\left(\frac{5}{3}, 2\right)$]
+   };
 
-\begin{multicols}{2}
-\begin{mfpic}[15]{-7}{1}{-1}{6}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-6, -5,-4,-3,-2,-1}
-\ymarks{1,2,3,4,5}
-\tcaption{\scriptsize $F(x) = |x+3|+2$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](-7.25, 5){$(-6,5)$}
-\tlabel[cc](-3, 1.5){$(-3,2)$}
-\tlabel[cc](1, 5){$(0,5)$}
-\axislabels {x}{{$-6 \hspace{7pt}$} -6,{$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,   {$-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-7,6), (-3, 2), (1, 6)}
-\point[4pt]{(-6, 5), (-3, 2), (0, 5)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+    (0,-0.5) [$\left(0,-\frac{1}{2}\right)$]
+    };
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=5pt}
+]
+coordinates {
+    (1/3,0) [$\left(\frac{1}{3},0\right)$]
+    };    
 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    yshift=5pt,xshift=5pt}
+]
+coordinates {
+    (3, 0) [$(3,0)$]
+    };    
 
-
-\begin{mfpic}[21]{-2}{5}{-2}{3}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\xmarks{-1, 2,3,4}
-\ymarks{-1,1,2}
-\tcaption{\scriptsize $f(t) = \dfrac{4 - |5-3t|}{2}$}
-\tlpointsep{4pt}
-\scriptsize
-\tlabel[cc](3.35, 0.25){$(3,0)$}
-\tlabel[cc](1.6667, 2.5){$\left( \frac{5}{3}, 2 \right)$}
-\tlabel[cc](0.75, -0.35){$\left( \frac{1}{3}, 0 \right)$}
-\tlabel[cc](-1, -0.5){$\left(0, - \frac{1}{2} \right)$}
-\axislabels {x}{ {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-1,-2), (1.6667, 2), (4.3333, -2)}
-\point[4pt]{(1.6667, 2), (0, -0.5), (0.3333,0), (3,0)}
-\end{mfpic}
-
-\end{multicols}
-
-\end{center}
+ \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \item  We are unable to apply Theorem \ref{linearabsvaluegraphs} to $G(x) = |x-2| - x$ because there is an $x$ both inside and outside of the absolute value. We can, however, rewrite the function as a piecewise function using Definition \ref{absolutevaluepiecewise}. Our first step is to rewrite $|x-2|$ as a piecewise function: \[ \begin{array}{ccc}
 
