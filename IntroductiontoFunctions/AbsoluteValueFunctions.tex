@@ -60,7 +60,7 @@ Another way to view Definition \ref{absolutevaluepiecewise} is to think of $-x =
 At the top of the next page we graph each piece and then put them together. Note that when graphing $f(x) = |x|$ for $x < 0$, we have a hole at $(0, 0)$ because the inequality $x < 0$ is strict. However, the point $(0, 0)$ is included in the graph of $f(x) = |x|$ for $x \geq 0$, so there is no hole in our final graph.
 
 \begin{image}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
         \begin{axis}[
           domain=-4:4,
           xmin=-4, xmax=4,
@@ -69,8 +69,8 @@ At the top of the next page we graph each piece and then put them together. Note
           height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
-           ytick={1,2,3},
-            yticklabels={$1$,$2$,$3$},  
+           ytick={2,3},
+            yticklabels={$2$,$3$},  
             tick style={line width=1.2pt},
             major tick length=6pt,
             axis x line=center,
@@ -110,8 +110,7 @@ coordinates {
     fill=white},
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=south west,
-    xshift=5pt, yshift=5pt}
+  every node near coord/.style={anchor=south west}
 ]
 coordinates {
   (0,0) [$(0,0)$]
@@ -120,7 +119,7 @@ coordinates {
       \end{axis}
         \end{tikzpicture}
         \quad\quad\quad\quad
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
         \begin{axis}[
           domain=-4:4,
           xmin=-4, xmax=4,
@@ -129,8 +128,8 @@ coordinates {
           height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
-           ytick={1,2,3},
-            yticklabels={$1$,$2$,$3$},  
+           ytick={2,3},
+            yticklabels={$2$,$3$},  
             tick style={line width=1.2pt},
             major tick length=6pt,
             axis x line=center,
@@ -167,8 +166,7 @@ coordinates {
   mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=south east,
-    xshift=-5pt, yshift=5pt}
+  every node near coord/.style={anchor=south east}
 ]
 coordinates {
   (0,0) [$(0,0)$]
@@ -176,7 +174,7 @@ coordinates {
 
       \end{axis}
         \end{tikzpicture}\quad\quad\quad\quad
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=1]font=\small
         \begin{axis}[
           domain=-4:4,
           xmin=-4, xmax=4,
@@ -185,8 +183,8 @@ coordinates {
           height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
-           ytick={1,2,3},
-            yticklabels={$1$,$2$,$3$},  
+           ytick={2,3},
+            yticklabels={$2$,$3$},  
             tick style={line width=1.2pt},
             major tick length=6pt,
             axis x line=center,
