@@ -65,8 +65,8 @@ At the top of the next page we graph each piece and then put them together. Note
           domain=-4:4,
           xmin=-4, xmax=4,
           ymin=-1.1, ymax=4,
-          width=3in,
-          height=2.5in,
+          width=2in,
+          height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
            ytick={1,2,3},
@@ -75,8 +75,8 @@ At the top of the next page we graph each piece and then put them together. Note
             major tick length=6pt,
             axis x line=center,
             axis y line=center,
-            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
             xlabel={$x$},
             ylabel={$y$},
            every axis x label/.style={
@@ -85,19 +85,13 @@ At the top of the next page we graph each piece and then put them together. Note
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=3.5pt, penColor1, domain=-4:0, samples=2] {-x};
-%% Arrow at the end of the ray (open end, going up-left)
-\addplot[
-  line width=3.5pt,
-  penColor1,
-  domain=-4:-3.6,
-  samples=2
-] {-x};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:0, samples=2] {-x};
+
 %% Regular points, labeled
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=east,
@@ -111,7 +105,7 @@ coordinates {
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
    mark options={
     fill=white},
   nodes near coords,
@@ -131,8 +125,8 @@ coordinates {
           domain=-4:4,
           xmin=-4, xmax=4,
           ymin=-1.1, ymax=4,
-          width=3in,
-          height=2.5in,
+          width=2in,
+          height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
            ytick={1,2,3},
@@ -141,8 +135,8 @@ coordinates {
             major tick length=6pt,
             axis x line=center,
             axis y line=center,
-            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
             xlabel={$x$},
             ylabel={$y$},
            every axis x label/.style={
@@ -151,19 +145,12 @@ coordinates {
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=3.5pt, penColor1, domain=0:4, samples=2] {x};
-%% Arrow at the end of the ray (open end, going up-left)
-\addplot[
-  line width=3.5pt,
-  penColor1,
-  domain=-4:-3.6,
-  samples=2
-] {x};
+\addplot[smooth, line width=1.5pt, penColor1, domain=0:4, samples=2] {x};
 %% Regular points, labeled
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
@@ -177,7 +164,7 @@ coordinates {
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -188,17 +175,14 @@ coordinates {
   };
 
       \end{axis}
-        \end{tikzpicture}
-\end{image}
-
-\begin{image}
+        \end{tikzpicture}\quad\quad\quad\quad
 \begin{tikzpicture}[scale=1]
         \begin{axis}[
           domain=-4:4,
           xmin=-4, xmax=4,
           ymin=-1.1, ymax=4,
-          width=3in,
-          height=2.5in,
+          width=2in,
+          height=1.5in,
           xtick={-3, -2,-1,1,2,3},
             xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
            ytick={1,2,3},
@@ -207,8 +191,8 @@ coordinates {
             major tick length=6pt,
             axis x line=center,
             axis y line=center,
-            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
-            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
             xlabel={$x$},
             ylabel={$y$},
            every axis x label/.style={
@@ -217,20 +201,13 @@ coordinates {
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=3.5pt, penColor1, domain=0:4, samples=2] {x};
-\addplot[smooth, line width=3.5pt, penColor1, domain=-4:0, samples=2] {-x};
-%% Arrow at the end of the ray (open end, going up-left)
-\addplot[
-  line width=3.5pt,
-  penColor1,
-  domain=-4:-3.6,
-  samples=2
-] {x};
+\addplot[smooth, line width=1.5pt, penColor1, domain=0:4, samples=2] {x};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:0, samples=2] {-x};
 %% Regular points, labeled
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=east,
@@ -243,7 +220,7 @@ coordinates {
 \addplot[
   only marks,
   mark=*,
-  mark size=4pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
