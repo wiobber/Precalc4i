@@ -1297,79 +1297,10 @@ Consider the basic equation and related inequalities: $|x| = 3$, $|x| < 3$ and $
 
 To that end, let's call $f(x)  = |x|$ and $g(x) = 3$. If we graph $y = f(x)$ and $y = g(x)$ on the same set of axes then, by looking for $x$ values where $f(x) = g(x),$ we are looking for $x$-values which have the same $y$-value on both graphs. That is, the solutions to $f(x) = g(x)$ are the $x$-coordinates of the \textbf{intersection points} of the two graphs.  We graph $y = f(x) = |x|$ (the characteristic `$\vee$') along with $y = g(x) = 3$ (the horizontal line) below on the far left.  Indeed, the two graphs intersect at $(-3, 3)$ and $(3, 3)$ so our solutions to $f(x) = g(x)$ are the $x$-values of these points, $x = \pm 3$.    
 
-\begin{multicols}{3}
-
-
-\begin{mfpic}[15]{-5}{5}{0}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
-\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
-\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize Graphically solving $|x| = 3$.}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
-\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
-\penwd{1.25pt}
-\point[4pt]{(-3,3), (3,3)}
-\point[4pt]{(-3,0), (3,0)}
-\end{mfpic}
-
-
-\begin{mfpic}[15]{-5}{5}{0}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
-\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
-\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize Graphically solving $|x| < 3$.}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
-\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
-\penwd{1.25pt}
- \polyline{(-3,3),(0,0),(3,3)}
- \polyline{(-3,3), (3,3)}
- \polyline{(-3,0), (3,0)}
- \pointfillfalse
-\point[4pt]{(-3,3), (3,3)}
-\point[4pt]{(-3,0), (3,0)}
-\end{mfpic}
-
-
-\begin{mfpic}[15]{-5}{5}{0}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1.5, 3.5){\scriptsize $y = 3$}
-\tlabel[cc](2.5, 1.5){\scriptsize $y = |x|$}
-\xmarks{-4, -3,-2,-1,0, 1,2,3,4}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize Graphically solving $|x| > 3$.}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $0$} 0, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)}
-\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
-\penwd{1.25pt}
-\arrow \polyline{(-3,3),(-5,5)}
-\arrow \polyline{(3,3), (5,5)}
-\arrow \polyline{(-3,3),(-5,3)}
-\arrow \polyline{(3,3), (5,3)}
-\arrow \polyline{(-3,0),(-5,0)}
-\arrow \polyline{(3,0), (5,0)}
- \pointfillfalse
-\point[4pt]{(-3,3), (3,3)}
-\point[4pt]{(-3,0), (3,0)}
-\end{mfpic}
-\end{multicols}
+% https://www.geogebra.org/calculator/scjmphnq
+\begin{center}
+    \geogebra{scjmphnq}{800}{600}
+\end{center}
 
 Likewise, if we wish to solve $|x| < 3$, we can view this as a functional inequality $f(x) < g(x)$ which means we are looking for the $x$-values where the $f(x)$ values are less than the corresponding $g(x)$ values.  On the graphs, this means we'd be looking for the $x$-values where the $y$-values of $y = f(x)$ are less than, hence \textbf{below}, those on the graph of $y = g(x)$.  
 
