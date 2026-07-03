@@ -744,7 +744,7 @@ Asymptote:  $x = 0$. \\
 \end{tikzpicture}
 
 \begin{solution}
-Use the Desmos graph below with the settings $f(x)=log_2 x,\,a=-1,\,b=-1,\,h=-3,\,k=0$
+Use the Desmos graph below with the settings $f(x)=log_2 x,\,a=\frac{1}{2},\,b=1,\,h=0,\,k=3$
 
 \begin{center} 
 \desmos{i2zecdcahu}{800}{600} 
@@ -791,14 +791,20 @@ Asymptote:  $x = 0$.   \\
     };
 
     % Optional point labels
-    \node[font=\small, anchor=west] at (axis cs:6,-0.5) {$(6,-0.5)$};
-    \node[font=\small, anchor=west] at (axis cs:3,0) {$(3,0)$};
-    \node[font=\small, anchor=west] at (axis cs:1.5,0.5) {$(1.5,0.5)$};
+    \node[font=\small, anchor=south] at (axis cs:6,-1.5) {$(6,-0.5)$};
+    \node[font=\small, anchor=north] at (axis cs:3,1) {$(3,0)$};
+    \node[font=\small, anchor=north] at (axis cs:1.5,1.5) {$(1.5,0.5)$};
 
   \end{axis}
 \end{tikzpicture}
 
 \begin{solution}
+Use the Desmos graph below with the settings $f(x)=log_2 x,\,a=--\frac{1}{2},\,b=\frac{1}{3},\,h=0,\,k=0$
+
+\begin{center} 
+\desmos{ctvgy8qojo}{800}{600} 
+\end{center}
+
     $F(x) = -\frac{1}{2} \log_{2} \left( \frac{x}{3} \right)$
 \end{solution}
 \end{problem}
@@ -806,6 +812,10 @@ Asymptote:  $x = 0$.   \\
 
 \begin{problem}\label{logformbase4exercise} 
 Find a formula for each graph in Exercises \ref{logformfirsta} - \ref{logformlasta} of the form $G(x) =  a \cdot \log_{4}(bx-h)+k$.
+
+\begin{solution}
+You can use the same Desmos links in the solutions for Exercises \ref{logformfirsta} - \ref{logformlasta} to check your formulas for G(x).
+\end{solution}
 \end{problem}
 
 \begin{question}
@@ -815,64 +825,12 @@ In Exercises \ref{inverselogexpfirst} - \ref{inverselogexplast},  find the inver
 $f(x) = 3^{x + 2} - 4$
 
 \begin{solution}
-$y = f(x) = 3^{x + 2} - 4$\\
-{\boldmath $y = f^{-1}(x) = \log_{3}(x + 4) - 2$}\\
+$f(x) = 3^{x + 2} - 4$\\
+$f^{-1}(x) = \log_{3}(x + 4) - 2$\\
 
-\begin{tikzpicture}
-  \begin{axis}[
-      axis lines=middle,
-      xmin=-5, xmax=7,
-      ymin=-5, ymax=7,
-      width=12cm,
-      height=8cm,
-      xlabel={$x$},
-      ylabel={$y$},
-      xtick={-4,-3,-2,-1,1,2,3,4,5,6},
-      ytick={-4,-3,-2,-1,1,2,3,4,5,6},
-      ticklabel style={font=\tiny},
-      label style={font=\scriptsize},
-      domain=-5:7,
-      samples=200,
-    ]
-
-    % --- Asymptotes ---
-    % Vertical asymptote x = -4
-    \addplot[dashed, domain=-5:7] coordinates {(-4,-5) (-4,7)};
-    % Horizontal asymptote y = -4
-    \addplot[dashed, domain=-5:7] coordinates {(-5,-4) (7,-4)};
-    % Slant line y = x
-    \addplot[dashed, domain=-5:5] {x};
-
-    % --- Exponential function: y = 3^(x+2) - 4 ---
-    \addplot[
-      thick,
-      ->,
-      >=stealth,
-      domain=-5:0.15
-    ] {(3^(x+2)) - 4};
-
-    % --- Logarithmic function: y = log_3(x+4) - 2 ---
-    \addplot[
-      thick,
-      ->,
-      >=stealth,
-      domain=-3.95:7
-    ] {ln(x+4)/ln(3) - 2};
-
-    % --- Labels ---
-    \node[font=\small, anchor=south west] at (axis cs:3,4)
-      {$y = 3^{x+2} - 4$};
-    \node[font=\small, anchor=south east] at (axis cs:4,0)
-      {$y = \log_{3}(x+4) - 2$};
-    \node[font=\small, anchor=north east] at (axis cs:-4,6.5)
-      {$x=-4$};
-    \node[font=\small, anchor=south east] at (axis cs:6,-4)
-      {$y=-4$};
-    \node[font=\small, anchor=south west] at (axis cs:4,4)
-      {$y=x$};
-
-  \end{axis}
-\end{tikzpicture}
+\begin{center} 
+\desmos{1rzapduljm}{800}{600} 
+\end{center}
 
 \end{solution}
 \end{problem}
@@ -881,8 +839,13 @@ $y = f(x) = 3^{x + 2} - 4$\\
 $f(x) = \log_{4}(x - 1)$
 
 \begin{solution}
-    $y = f(x) = \log_{4}(x - 1)$\\
-{\boldmath $y = f^{-1}(x) = 4^{x} + 1$}\\
+    $f(x) = \log_{4}(x - 1)$\\
+$f^{-1}(x) = 4^{x} + 1$\\
+
+\begin{center} 
+\desmos{eomwqkzzma}{800}{600} 
+\end{center}
+
 \end{solution}
 \end{problem}
 
@@ -890,8 +853,13 @@ $f(x) = \log_{4}(x - 1)$
 $g(t)= -2^{-t} + 1$
 
 \begin{solution}
-    $y = g(t) = -2^{-t} + 1$\\
-{ \boldmath $y = g^{-1}(t) = -\log_{2}(-t+1)$} \\
+    $g(t) = -2^{-t} + 1$\\
+$g^{-1}(t) = -\log_{2}(-t+1)$ \\
+
+\begin{center} 
+\desmos{eomwqkzzma}{800}{600} 
+\end{center}
+
 \end{solution}
 \end{problem}
 
@@ -899,8 +867,8 @@ $g(t)= -2^{-t} + 1$
 $g(t) = 5\log(t) - 2$ 
 
 \begin{solution}
-    $y = g(t) = 5\log(t) - 2$\\
-{\boldmath $y = g^{-1}(t) = 10^{\frac{t + 2}{5}}$}\\
+    $g(t) = 5\log(t) - 2$\\
+$g^{-1}(t) = 10^{\frac{t + 2}{5}}$\\
 \end{solution}
 \end{problem}
 
