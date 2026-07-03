@@ -1299,7 +1299,7 @@ To that end, let's call $f(x)  = |x|$ and $g(x) = 3$. If we graph $y = f(x)$ and
 
 % https://www.geogebra.org/calculator/scjmphnq
 \begin{center}
-    \geogebra{scjmphnq}{800}{600}
+    \geogebra{scjmphnq}{800}{450}
 \end{center}
 
 Likewise, if we wish to solve $|x| < 3$, we can view this as a functional inequality $f(x) < g(x)$ which means we are looking for the $x$-values where the $f(x)$ values are less than the corresponding $g(x)$ values.  On the graphs, this means we'd be looking for the $x$-values where the $y$-values of $y = f(x)$ are less than, hence \textbf{below}, those on the graph of $y = g(x)$.  
@@ -1346,59 +1346,17 @@ Let's see what this looks like graphically.  Note that solving $|x-2|-x=0$ is eq
 
 Indeed, we can \textbf{show} that there is just one point of intersection.  The graph of  $y = |x-2|$ is comprised of parts of two lines, $y =-(x-2)$ and $y = x-2$. The first line has a slope of $-1$ and the second has slope $1$.  The line $y = x$ also has a slope $1$ meaning it and the `right half' of $y =|x-2|$  are parallel, so they never intersect.  If our graphs are accurate enough, we may even be able to guess that the solution is $x = 1$, which we can verify by  substituting $x = 1$ into $|x-2| = x$ and seeing that it checks.  
 
-\medskip
+% https://www.geogebra.org/calculator/sqwyzgzj
+\begin{center}
+    \geogebra{sqwyzgzj}{800}{450}
+\end{center}
 
 Likewise, solving $|t-2| - |t| = 0$ is equivalent to solving $|t-2| = |t|$.  We graphed $y = |t-2|$ and $y=|t|$ on the right at the top of the next page and used the same arguments to get the solution $t = 1$ here as well.
 
-%\newpage
-
+% https://www.geogebra.org/calculator/db9r7h2t
 \begin{center}
-
-\begin{multicols}{2}
-
-\begin{mfpic}[15]{-3}{7}{-1}{5}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](2.75, 4){\scriptsize $y = x$}
-\tlabel[cc](5.25, 1.5){\scriptsize $y = |x-2|$}
-\xmarks{-2,-1,0, 1,2,3,4,5,6}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize Graphically solving $|x-2| = x$.}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1,  {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)}
-\arrow \reverse \arrow \polyline{(-1, -1), (5,5)}
-\penwd{1.25pt}
-\point[4pt]{(1,1)}
-\point[4pt]{(1,0)}
-\end{mfpic}
-
-\begin{mfpic}[15]{-3}{7}{-1}{5}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](2.75, 4){\scriptsize $y = |t|$}
-\tlabel[cc](5.25, 1.5){\scriptsize $y = |t-2|$}
-\xmarks{-2,-1,0, 1,2,3,4,5,6}
-\ymarks{1,2,3,4}
-\tcaption{\scriptsize Graphically solving $|t-2| = |t|$.}
-\tlpointsep{4pt}
-\axislabels {x}{ {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)}
-\arrow \reverse \arrow \polyline{(-5, 5), (0,0), (5,5)}
-\penwd{1.25pt}
-\point[4pt]{(1,1)}
-\point[4pt]{(1,0)}
-\end{mfpic}
-
-\end{multicols}
-
+    \geogebra{db9r7h2t}{800}{450}
 \end{center}
-
-\medskip
 
 There is more to see here.  Consider solving $|x-2|-x=0$ algebraically using the techniques from a previous Algebra course (or Section \ref{AppAbsValEqIneq}).  Our first step would be to isolate the absolute value quantity:  $|x-2| = x$.  We  then `drop' the absolute value by paying the price of a `$\pm$':  $x-2 = \pm x$.  This gives us two equations:  $x - 2 = x$ and $x - 2 = -x$.  The first equation, $x-2 = x$ reduces to $-2 = 0$ which has no solution.  The second equation, $x-2 = -x$, does have a solution, namely $x = 1$.  
 
