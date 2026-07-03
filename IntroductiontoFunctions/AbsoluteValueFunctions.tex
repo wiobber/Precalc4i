@@ -1442,6 +1442,12 @@ To our surprise and delight, the graphs (below on the right) appear to overlap f
 
 Graphically, the inequality  $|x+1|\geq \frac{x+4}{2}$ is looking for where the graph of $y = |x+1|$,  the `$\vee$,' intersects ($=$) or is above ($>$) the line  $y = \frac{x+4}{2}$.  The graph shows this happening whenever $x \leq -2$ or $x \geq 2$.  Using interval notation, our solution is $(-\infty, -2] \cup [2, \infty)$.  While we cannot check every single $x$ value individually, choosing test values $x < -2$, $x = 2$, $-2 < x < 2$, $x = 2$, and $x > 2$ to see if the original inequality  $|x+1|\geq \frac{x+4}{2}$ holds would help us verify our solution.
 
+% https://www.geogebra.org/calculator/hgpajzzf
+
+\begin{center}
+    \geogebra{hgpajzzf}{800}{500}
+\end{center}
+
 
 \item  Recall that the inequality $2 < |t-1| \leq 5$ is an example of a `compound' inequality in that is two inequalities in one.\footnote{See Example \ref{linearineqreview} for examples of linear compound inequalities.}  The values of $t$ in the solution set need to satisfy $2 < |t-1|$ \textbf{and} $|t-1| \leq 5$.  To help us sort through the cases, we graph the horizontal lines $y =2$ and $y = 5$ along with the `$\vee$' shaped $y= |t-1|$ with vertex $(1,0)$ and $y$-intercept $(0,1)$.  
 
@@ -1453,72 +1459,13 @@ Geometrically, we are looking for where $y = |t-1|$ is strictly \textbf{above} t
 
 In interval notation, our solution is $[-4, -1) \cup (3, 6]$.  As with the previous example, it is impossible to check each and every one of these solutions, but choosing $t$ values both in and around the solution intervals would give us some numerical confidence we have the correct and complete solution.
 
-\setlength\columnsep{-20pt}
-\begin{multicols}{2}
+% https://www.geogebra.org/calculator/xpkc3jbj
 
-\begin{mfpic}[15]{-5}{5}{-1}{5}
-\arrow \reverse \arrow \polyline{(-5,4), (-1,0),(4,5)}
-\arrow \reverse \arrow \polyline{(-5,-0.5),(5,4.5)}
-
-\xmarks{-4 step 1 until 4}
-\ymarks{1 step 1 until 4}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-3,3.5){\scriptsize $y=|x+1|$}
-\tlabel[cc](5,3.5){\scriptsize $y=\dfrac{x+4}{2}$}
-\tcaption{\scriptsize Solving $|x+1|\geq \dfrac{x+4}{2}$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize 
-\penwd{1.5pt} 
-\arrow \polyline{(-2,1), (-5,4)}
-\arrow \polyline{(-2,1), (-5,-0.5)}
-\arrow \polyline{(2,3), (4,5)}
-\arrow \polyline{(2,3), (5,4.5)}
-\arrow \polyline{(-2,0), (-5,0)}
-\arrow \polyline{(-2,0), (-5,0)}
-\arrow \polyline{(2,0), (5,0)}
-\point[4pt]{(-2,1),(2,3), (-2,0), (2,0)}
-\end{mfpic}
-
-
-\begin{mfpic}[12][10]{-9}{10}{-1}{9}
-\arrow \reverse \arrow \polyline{(-7,8),(1,0),(9,8)}
-\arrow \reverse \arrow \polyline{(-8,2),(9,2)}
-\arrow \reverse \arrow \polyline{(-8,5),(9,5)}
-\point[4pt]{(-4,5), (-4,0),   (6,5), (6,0)}
-\tcaption{\scriptsize Solving $2 < |t-1| \leq 5$}
-\xmarks{-8 step 1 until 9}
-\ymarks{1 step 1 until 8}
-\axes
-\tlabel[cc](10,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,9){\scriptsize $y$}
-\tlabel[cc](-6,1.25){\scriptsize $y=2$}
-\tlabel[cc](-6,4.25){\scriptsize $y=5$}
-\tlabel[cc](-4,7){\scriptsize $y=|t-1|$}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-8 \hspace{7pt}$} -8, {$-7 \hspace{7pt}$} -7, {$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5,{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
-\normalsize 
-\penwd{1.5pt} 
-\polyline{(-4, 5), (-1,2)}
-\polyline{(3, 2), (6,5)}
-\polyline{(-4,0), (-1,0)}
-\polyline{(3,0), (6,0)}
-\pointfillfalse
-\point[4pt]{(-1,2), (-1,0), (3,0),(3,2), }
-\end{mfpic}
-
-\end{multicols}
-\setlength\columnsep{10pt}
+\begin{center}
+    \geogebra{xpkc3jbj}{800}{500}
+\end{center}
 
 \end{enumerate}
-
-\vspace{-.25in} \qed
 
 \end{example}
 
