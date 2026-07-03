@@ -728,61 +728,76 @@ To show that the graph is symmetric about the line $x = h$, we need to show that
 
 The line $x = a$ in Theorem \ref{linearabsvaluegraphs} is called the \index{axis of symmetry ! of an absolute value function} \textbf{axis of symmetry} of the graph of $y = F(x)$.  This language is consistent with the basics of symmetry discussed in Section \ref{AppCartesianPlane} and we will build upon our work here in several upcoming sections.  For now, we simply present two graphs illustrating the concept of the axis of symmetry below.
 
-\begin{center}
+\begin{image}
 
-\begin{multicols}{2}
+\begin{tikzpicture}[scale=1]
+% x-axis (no vertical axis, no numbers)
+\draw[-Latex, line width=1pt] (-3,0) -- (3.3,0) node[right] {$x$};
 
-\begin{mfpic}[15]{-5}{5}{-2}{5}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\dashed \polyline{(0,0), (0,5)}
-\dashed \polyline{(-2,3), (2,3)}
-\arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)}
-\arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)}
-\arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)}
-\arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](1,-1.5){\scriptsize $\Delta x$}
-\tlabel[cc](-1,-1.5){\scriptsize $\Delta x$}
-\tlabel[cc](0,-0.5){\scriptsize $h$}
-\tlabel[cc](2,-0.5){\scriptsize $h + \Delta x$}
-\tlabel[cc](-2,-0.5){\scriptsize $h - \Delta x$}
-\tlabel[cc](-3.5,3){\scriptsize $F(h - \Delta x)$}
-\tlabel[cc](3.5,3){\scriptsize $F(h + \Delta x)$}
-\xmarks{-2,0,2}
-\tlpointsep{4pt}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4,5), (0,1), (4,5)}
-\point[4pt]{(-2,3), (2,3)}
-\end{mfpic}
+% Main V-shaped curve (minimum at h)
+\draw[line width=1.5pt, penColor1] (-2.3,2.6) -- (0,0.3) -- (2.3,2.6);
 
+% Horizontal dashed line connecting F(h-\Delta x) and F(h+\Delta x)
+\draw[dashed] (-1,1.3) -- (1,1.3);
+% Vertical dashed line through h
+\draw[dashed] (0,1.3) -- (0,0);
 
+% Vertical projection arrows from axis up to the curve
+\draw[<->, line width=0.6pt] (-1,0) -- (-1,1.3);
+\draw[<->, line width=0.6pt] (1,0) -- (1,1.3);
 
-\begin{mfpic}[15]{-5}{5}{-2}{5}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\dashed \polyline{(0,0), (0,5)}
-\dashed \polyline{(-2,3), (2,3)}
-\arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)}
-\arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)}
-\arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)}
-\arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](1,-1.5){\scriptsize $\Delta x$}
-\tlabel[cc](-1,-1.5){\scriptsize $\Delta x$}
-\tlabel[cc](0,-0.5){\scriptsize $h$}
-\tlabel[cc](2,-0.5){\scriptsize $h + \Delta x$}
-\tlabel[cc](-2,-0.5){\scriptsize $h - \Delta x$}
-\tlabel[cc](-3.5,3){\scriptsize $F(h - \Delta x)$}
-\tlabel[cc](3.5,3){\scriptsize $F(h + \Delta x)$}
-\xmarks{-2,0,2}
-\tlpointsep{4pt}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4,1), (0,5), (4,1)}
-\point[4pt]{(-2,3), (2,3)}
-\end{mfpic}
+% Marked points
+\filldraw (-1,1.3) circle (1.5pt);
+\filldraw (1,1.3) circle (1.5pt);
 
-\end{multicols}
+% Point labels
+\node[left] at (-1,1.3) {$F(h-\Delta x)$};
+\node[right] at (1,1.3) {$F(h+\Delta x)$};
 
-\end{center}
+% Axis-position labels
+\node at (-1,-0.35) {$h-\Delta x$};
+\node at (0,-0.35) {$h$};
+\node at (1,-0.35) {$h+\Delta x$};
+
+% Delta x brackets
+\draw[<->] (-1,-0.8) -- (0,-0.8) node[midway,below] {$\Delta x$};
+\draw[<->] (0,-0.8) -- (1,-0.8) node[midway,below] {$\Delta x$};
+\end{tikzpicture}\quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]
+% x-axis (no vertical axis, no numbers)
+\draw[-Latex, line width=1pt] (-3,0) -- (3.3,0) node[right] {$x$};
+
+% Main peak-shaped curve (maximum at h)
+\draw[line width=1.5pt, penColor1] (-2.3,0) -- (0,2.3) -- (2.3,0);
+
+% Horizontal dashed line connecting F(h-\Delta x) and F(h+\Delta x)
+\draw[dashed] (-1,1.3) -- (1,1.3);
+% Vertical dashed line through h
+\draw[dashed] (0,0) -- (0,2.3);
+
+% Vertical projection arrows from axis up to the curve
+\draw[<->, line width=0.6pt] (-1,0) -- (-1,1.3);
+\draw[<->, line width=0.6pt] (1,0) -- (1,1.3);
+
+% Marked points
+\filldraw (-1,1.3) circle (1.5pt);
+\filldraw (1,1.3) circle (1.5pt);
+
+% Point labels
+\node[left] at (-1,1.3) {$F(h-\Delta x)$};
+\node[right] at (1,1.3) {$F(h+\Delta x)$};
+
+% Axis-position labels
+\node at (-1,-0.35) {$h-\Delta x$};
+\node at (0,-0.35) {$h$};
+\node at (1,-0.35) {$h+\Delta x$};
+
+% Delta x brackets
+\draw[<->] (-1,-0.8) -- (0,-0.8) node[midway,below] {$\Delta x$};
+\draw[<->] (0,-0.8) -- (1,-0.8) node[midway,below] {$\Delta x$};
+\end{tikzpicture}
+
+\end{image}
 
 \medskip
 
