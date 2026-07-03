@@ -55,92 +55,98 @@ Likewise, we have to be careful about the properties of exponents when it comes 
 
 Similarly,  the power rule for integer exponents:  $(x^n)^m = x^{nm}$ does not hold  in general for rational exponents. To see this,  consider the three functions: $f(x) = (x^{\frac{1}{2}} )^2$,  $g(x) = x^{\frac{2}{2}}$,  and $h(x) = (x^2)^{\frac{1}{2}}$. In the first case,  $f(x) = (x^{\frac{1}{2}})^2 = (\sqrt{x})^2 = x$ for $x \geq 0$ only (this is the same function $f$ above.)  In the second case,  the rational number $r = \frac{2}{2} = 1$, so $g(x) = x^{\frac{2}{2}} = x^{\frac{1}{1}} = x^{1} = x$ for \textit{all} real numbers, $x$ (this is the same function $g$ from above.)  In the last case,  $h(x) = (x^2)^{\frac{1}{2}} = \sqrt{x^2} = |x|$ for all real numbers, $x$. Once again, despite $f(x) = g(x) = h(x)$ for all $x \geq 0$,  $f$, $g$ and $h$ and are \textit{three different functions}.  We graph $f$, $g$, and $h$ below.  
 
-\begin{multicols}{3}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=0:4, samples=2] {x};
 
-% \input{PowerFunctions_pic1.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    width=120pt,
-    height=135pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=5,
-    axis lines=middle,
-    x axis line style={->},
-    y axis line style={->},
-    xtick={-3,-2,-1,1,2,3},
-    ytick={-1,-2,-3,1,2,3,4},
-    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
-    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
-    tick style={black},
-    tick align=outside,
-    clip=false
-  ]
-    \addplot[->, line width=1.25pt] coordinates {(0,0) (4,4)};
-    \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0)};
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0)};
-    \node at (axis cs:4,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,5) {\scriptsize $y$};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} = (x^{\frac{1}{2}})^2 = x$, $x \geq 0$};
-\end{tikzpicture}
-
-
-% \input{PowerFunctions_pic2.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    width=120pt,
-    height=135pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=5,
-    axis lines=middle,
-    x axis line style={->},
-    y axis line style={->},
-    xtick={-3,-2,-1,1,2,3},
-    ytick={-1,-2,-3,1,2,3,4},
-    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
-    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
-    tick style={black},
-    tick align=outside,
-    clip=false
-  ]
-    \addplot[line width=1.25pt] coordinates {(-4,-4) (4,4)};
-    \node at (axis cs:4,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,5) {\scriptsize $y$};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $g(x) =  x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x$ };
-\end{tikzpicture}
- 
-
-
-
-% \input{PowerFunctions_pic3.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    width=120pt,
-    height=135pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=5,
-    axis lines=middle,
-    x axis line style={->},
-    y axis line style={->},
-    xtick={-3,-2,-1,1,2,3},
-    ytick={-1,-2,-3,1,2,3,4},
-    xticklabels={{\scriptsize $-3 \hspace{7pt}$},{\scriptsize $-2 \hspace{7pt}$},{\scriptsize $-1 \hspace{7pt}$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$}},
-    yticklabels={{\scriptsize $-1$},{\scriptsize $-2$},{\scriptsize $-3$},{\scriptsize $1$},{\scriptsize $2$},{\scriptsize $3$},{\scriptsize $4$}},
-    tick style={black},
-    tick align=outside,
-    clip=false
-  ]
-    \addplot[line width=1.25pt] coordinates {(-4,4) (0,0)};
-    \addplot[line width=1.25pt] coordinates {(0,0) (4,4)};
-    \node at (axis cs:4,-0.5) {\scriptsize $x$};
-    \node at (axis cs:0.5,5) {\scriptsize $y$};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $h(x) = (x^2)^{\frac{1}{2}} = |x|$ };
-\end{tikzpicture}
- 
-
-\end{multicols}
+      \end{axis}
+      \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} = (x^{\frac{1}{2}})^2 = x$, $x \geq 0$};
+        \end{tikzpicture}
+        \quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=2] {x};
+      \end{axis}
+      \path (current axis.south) ++(0,-6pt) node {\scriptsize $g(x) =  x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x$ };
+        \end{tikzpicture}\quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=2in,
+          height=2in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=0:4, samples=2] {x};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:0, samples=2] {-x};
+      \end{axis}
+\path (current axis.south) ++(0,-6pt) node {\scriptsize $h(x) = (x^2)^{\frac{1}{2}} = |x|$ };
+        \end{tikzpicture}
+\end{image}    
 
 In general, the properties of integer exponents \textit{do not extend} to rational exponents \textit{unless} the bases involved represent \text{non-negative} real numbers \textit{or} the roots involved are \textit{odd}.  We have the following:
 
