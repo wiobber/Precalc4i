@@ -171,272 +171,23 @@ In general, the properties of integer exponents \textit{do not extend} to ration
 
 Next, we turn our attention to the graphs of $f(x) =x^r =  x^{\frac{m}{n}}$ for varying values of $m$ and $n$.  When $n$ is even, the domain is restricted owing to the presence of the even indexed root to $[0, \infty)$. The range is likewise $[0, \infty)$, a fact leave to the reader.  All of the functions below are increasing on their domains, and it turns out this is always the case provided $r>0$.  There is, however, is a difference in \textit{how} the functions are increasing - and this is the concept of \index{concavity}\textit{concavity}.  As with many concepts we've encountered so far in the text,  concavity is most precisely defined using Calculus terminology,  but we can nevertheless get a sense of concavity geometrically.   For us,  a curve is  \index{concave up}\index{concavity ! concave up}\textbf{concave up} over an interval if it resembles a  portion of a `$\smile$' shape.  Similarly, a curve is called  \index{concave down}\index{concavity ! concave down}\textbf{concave down} over an interval if  resembles part of a `$\frown$' shape. When $0 < r < 1$, the graphs of $f(x) = x^r$ resemble the left half of $\frown$ and so are concave down;  when $r>1$, the graphs resemble the right half of a `$\smile$' and are hence described as `concave up.'
 
+% https://www.desmos.com/calculator/fni0liyn5n
 \begin{center}
-
-\begin{tabular}{cccc}
-
-% \input{PowerFunctions_pic4.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=100pt,
-    height=100pt,
-    xmin=0, xmax=5,
-    ymin=0, ymax=5,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,5){\scriptsize $y$};
-    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
-    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:2, line width=1.25pt, ->] ({t^2},{t});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{1}{2}}$};
-\end{tikzpicture}
-
-
-&
-
-% \input{PowerFunctions_pic5.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=100pt,
-    height=100pt,
-    xmin=0, xmax=5,
-    ymin=0, ymax=5,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,5){\scriptsize $y$};
-    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
-    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:1.5, line width=1.25pt, ->] ({t^4},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{4}}$};
-\end{tikzpicture}
-
-
-&
-
-
-% \input{PowerFunctions_pic6.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=100pt,
-    height=100pt,
-    xmin=0, xmax=5,
-    ymin=0, ymax=5,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,5){\scriptsize $y$};
-    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
-    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:1.35, line width=1.25pt, ->] ({t^4},{t^5});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{5}{4}}$};
-\end{tikzpicture}
-
-
-
-
-&
-
-
-% \input{PowerFunctions_pic7.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=100pt,
-    height=100pt,
-    xmin=0, xmax=5,
-    ymin=0, ymax=5,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,5){\scriptsize $y$};
-    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
-    \node at (axis cs:0,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:1.7, line width=1.25pt, ->] ({t^2},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{2}}$};
-\end{tikzpicture}
- \\
-
-\end{tabular}
-
+\desmos{fni0liyn5n}{800}{600}
 \end{center}
 
 Below we graph several examples of $f(x) =x^r =  x^{\frac{m}{n}}$ where $n$ is odd.   Here, the domain is $(-\infty, \infty)$ since the index on the root here is odd. Note that when $m$ is even, the graphs appear to be symmetric about the $y$-axis  and the range looks to be $[0, \infty)$.  When $m$ is odd, the graphs  appear to be symmetric about the origin with range $(-\infty, \infty)$.  We leave verification of these facts to the reader.   Note here also that for $x \geq 0$, the graphs are down for $0<r<1$ and concave up for $r > 1$. 
 
+% https://www.desmos.com/calculator/gyv8qfxhjs
 \begin{center}
-
-
-\begin{tabular}{cccc}
-
-% \input{PowerFunctions_pic8.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=120pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:2,0.75){\scriptsize $(1,1)$};
-    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
-    \node at (axis cs:-2.25,-0.75){\scriptsize $(-1,-1)$};
-    \addplot[fpplot, domain=-1.3:1.3, line width=1.25pt, ->] ({t^5},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{3}{5}}$};
-\end{tikzpicture}
-
-
-&
-% \input{PowerFunctions_pic9.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=120pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1,1.75){\scriptsize $(1,1)$};
-    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
-    \node at (axis cs:-1,1.75){\scriptsize $(-1,1)$};
-    \addplot[fpplot, domain=-1.587:1.587, line width=1.25pt, ->] ({t^3},{t^2});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{2}{3}}$};
-\end{tikzpicture}
-
-
-
-&
-
-% \input{PowerFunctions_pic10.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=120pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
-    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
-    \node at (axis cs:-2.25,1){\scriptsize $(-1,1)$};
-    \addplot[fpplot, domain=-1.16:1.16, line width=1.25pt, ->] ({t^5},{t^8});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{8}{5}}$};
-\end{tikzpicture}
-
-
-
-&
-
-% \input{PowerFunctions_pic11.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=120pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
-    \node at (axis cs:0.75,-0.5){\scriptsize $(0,0)$};
-    \node at (axis cs:-2.25,-1){\scriptsize $(-1,-1)$};
-    \addplot[fpplot, domain=-1.3:1.3, line width=1.25pt, ->] ({t^3},{t^5});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1) (-1,-1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{\frac{5}{3}}$};
-\end{tikzpicture}
-
-
-\end{tabular}
-
+\desmos{gyv8qfxhjs}{800}{600}
 \end{center}
 
 When $r<0$, we have variables appear in the denominator which open the opportunities for vertical and horizontal asymptotes. Below are graphed two examples
 
+% https://www.desmos.com/calculator/t2bfjpr8ar
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-% \input{PowerFunctions_pic12.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=100pt,
-    height=60pt,
-    xmin=0, xmax=5,
-    ymin=0, ymax=3,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,3){\scriptsize $y$};
-    \node at (axis cs:-1.25,2.5){\scriptsize VA $x =0$};
-    \node at (axis cs:2.5,-0.5){\scriptsize HA $y =0$};
-    \node at (axis cs:1.5,1.5){\scriptsize $(1,1)$};
-    \addplot[fpplot, domain=0.45:2.5, line width=1.25pt, ->] ({1/(t^2)},{t});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{-\frac{1}{2}}$};
-\end{tikzpicture}
-
-
-&
-
-% \input{PowerFunctions_pic13.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=120pt,
-    xmin=-4, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:-1.25,2.5){\scriptsize VA $x =0$};
-    \node at (axis cs:2.5,-0.5){\scriptsize HA $y =0$};
-    \node at (axis cs:1.75,1){\scriptsize $(1,1)$};
-    \node at (axis cs:-2.25,-1){\scriptsize $(-1,-1)$};
-    \addplot[fpplot, domain=-2:-0.65, line width=1.25pt, ->] ({t},{1/(t^3)});
-    \addplot[fpplot, domain=0.65:2, line width=1.25pt, ->] ({t},{1/(t^3)});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(1,1) (-1,-1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{-\frac{1}{3}}$};
-\end{tikzpicture}
-
-
-\\
-
-\end{tabular}
-
+\desmos{t2bfjpr8ar}{800}{600}
 \end{center}
 
 
@@ -919,12 +670,7 @@ Graphing $y=f(x)$ below on the right bears out our analysis regarding zeros and 
 
 For the  sign diagram, we note that $f$ has only one zero, $x=0$ and is undefined at $x = 2$.  For all $x$ values between these two numbers, $f(x) > 0$ or $(+)$.  Our  sign diagram for $f(x)$ is below on the right.
 
-\begin{center}
-
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./PowerFunctionsGraphics/RationalExpEx01.jpg} &
-
+\begin{image}
 % \input{PowerFunctions_pic26.tex}
 \begin{tikzpicture}[x=20pt,y=20pt]
   \draw[<->, line width=1.25pt] (-4,0) -- (2,0);
@@ -938,13 +684,16 @@ For the  sign diagram, we note that $f$ has only one zero, $x=0$ and is undefine
   \node at (0,0.5) {\textinterrobang};
   \node at (1,0.5) {$(+)$};
 \end{tikzpicture}
-  \\
 
-The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
-\end{tabular}
+%The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
-\end{center} 
+\end{image} 
+
+% https://www.desmos.com/calculator/nto7sdaomz
+\begin{center}
+    \desmos{nto7sdaomz}{800}{600}
+\end{center}
 
 
 \item To find the domain of $g(t) = \frac{ (t^2-4)^{\frac{3}{2}} }{t^2-36}$, we have two issues to address:  the denominator and an even (square) root.  Solving $t^2 - 36 = 0$ gives  two excluded values, $t = \pm 6$.  For the numerator, we may rewrite $(t^2-4)^{\frac{3}{2}} = (\sqrt{t^2-4})^3$, so we require $t^2-4 \geq 0$, or  $t^2 \geq 4$.  Extracting square roots, we have $\sqrt{t^2} \geq \sqrt{4}$ or $|t| \geq 2$ which means $t \leq -2$ or $t \geq 2$.  Taking into account our excluded values $t = \pm 6$, we get  the domain of $g$ is $(-\infty, -6) \cup (-6, -2] \cup [2, 6) \cup (6, \infty)$.
@@ -964,12 +713,7 @@ Graphing $y=g(t)$ below on the left verifies our analysis.  From the graph, the 
 
 For the sign diagram for $g(t)$, we note that $g$ has zeros $t = \pm 2$ and is undefined at $t = \pm 6$.  Moreover, there is a gap in the domain for all values in the interval $(-2,2)$, so we excise that portion of the real number line for our discussion.  We find $g(t) > 0$ or $(+)$ on the intervals $(-\infty -6)$ and $(6, \infty)$ while $g(t) < 0$ or $(-)$ on $(-6,-2)$ and $(2, 6)$.  Our sign diagram for $g(t)$ is below on the right.  
 
-\begin{center}
-
-\begin{tabular}{cc}
-
- \includegraphics[width=3in]{./PowerFunctionsGraphics/RationalExpEx02.jpg} & 
- 
+\begin{image}
 % \input{PowerFunctions_pic27.tex}
 \begin{tikzpicture}[x=20pt,y=10pt]
   \draw[->, line width=0.8pt] (2,0) -- (-2,0);
@@ -991,12 +735,15 @@ For the sign diagram for $g(t)$, we note that $g$ has zeros $t = \pm 2$ and is u
   \node at (5,1){\textinterrobang};
   \node at (6,1){$(+)$};
 \end{tikzpicture}
- \\
 
-The graph of $y=g(t)$  \hspace{0.75in} &Sign Diagram for $g(t)$ \\
 
-\end{tabular}
+%The graph of $y=g(t)$  \hspace{0.75in} &Sign Diagram for $g(t)$ \\
 
+\end{image}
+
+% https://www.desmos.com/calculator/m2hzmagth8
+\begin{center}
+\desmos{m2hzmagth8}{800}{600}
 \end{center} 
 
 \qed
@@ -1116,10 +863,9 @@ $ \begin{array}{cc}
 
 \item Using \href{https://www.desmos.com/}{\underline{desmos}}, we get $L(x) = 0.00027901x^{2.7738}$ with $R^2 = 0.993$, indicating a pretty good fit.  
 
+% https://www.desmos.com/calculator/nqjvl92ytp
 \begin{center}
-
-\includegraphics[width=3.5in]{./PowerFunctionsGraphics/LorenzEx.jpg}
-
+\desmos{nqjvl92ytp}{800}{600}
 \end{center}
 
 
