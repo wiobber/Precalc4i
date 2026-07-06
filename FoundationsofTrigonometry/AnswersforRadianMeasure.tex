@@ -15,8 +15,8 @@
 \begin{enumerate}
 
 
-\item $\dfrac{\pi}{3}$  is a Quadrant I angle\\
-coterminal with $\dfrac{7\pi}{3}$ and $-\dfrac{5\pi}{3}$ 
+\item $\frac{\pi}{3}$  is a Quadrant I angle\\
+coterminal with $\frac{7\pi}{3}$ and $-\frac{5\pi}{3}$ 
 
 
 \begin{tikzpicture}\begin{axis}[
@@ -50,8 +50,8 @@ coterminal with $\dfrac{7\pi}{3}$ and $-\dfrac{5\pi}{3}$
 \end{tikzpicture}
 
 
-\item $\dfrac{5\pi}{6}$ is a Quadrant II angle\\
-coterminal with $\dfrac{17\pi}{6}$ and $-\dfrac{7\pi}{6}$
+\item $\frac{5\pi}{6}$ is a Quadrant II angle\\
+coterminal with $\frac{17\pi}{6}$ and $-\frac{7\pi}{6}$
 
 \begin{tikzpicture}\begin{axis}[
     width=3in, height=3in,
@@ -95,8 +95,8 @@ coterminal with $\dfrac{17\pi}{6}$ and $-\dfrac{7\pi}{6}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $-\dfrac{11\pi}{3}$ \vphantom{$\dfrac{17\pi}{6}$} is a Quadrant I angle\\
-coterminal with $\dfrac{\pi}{3}$ and $-\dfrac{5\pi}{3}$ \vphantom{$\dfrac{17\pi}{4}$}
+\item $-\frac{11\pi}{3}$ \vphantom{$\frac{17\pi}{6}$} is a Quadrant I angle\\
+coterminal with $\frac{\pi}{3}$ and $-\frac{5\pi}{3}$ \vphantom{$\frac{17\pi}{4}$}
 
 \begin{tikzpicture}\begin{axis}[
     width=3in, height=3in,
@@ -131,8 +131,8 @@ coterminal with $\dfrac{\pi}{3}$ and $-\dfrac{5\pi}{3}$ \vphantom{$\dfrac{17\pi}
 
 
 
-\item $\dfrac{5\pi}{4}$ is a Quadrant III angle\\
-coterminal with $\dfrac{13\pi}{4}$ and $-\dfrac{3\pi}{4}$
+\item $\frac{5\pi}{4}$ is a Quadrant III angle\\
+coterminal with $\frac{13\pi}{4}$ and $-\frac{3\pi}{4}$
 
 \begin{tikzpicture}\begin{axis}[
     width=3in, height=3in,
@@ -157,7 +157,7 @@ coterminal with $\dfrac{13\pi}{4}$ and $-\dfrac{3\pi}{4}$
 
 % Rays
 \draw[line width=1.25pt,<->]
-    (-3.5355,---3.5355) -- (0,0) -- (5,0);
+    (-3.5355,-3.5355) -- (0,0) -- (5,0);
     
 % Filled point
 \fill (0,0) circle (2pt);
@@ -176,105 +176,73 @@ coterminal with $\dfrac{13\pi}{4}$ and $-\dfrac{3\pi}{4}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $\dfrac{3\pi}{4}$ is a Quadrant II angle\\
-coterminal with $\dfrac{11\pi}{4}$ and $-\dfrac{5\pi}{4}$
+\item $\frac{3\pi}{4}$ is a Quadrant II angle\\
+coterminal with $\frac{11\pi}{4}$ and $-\frac{5\pi}{4}$
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,0.1), 130}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-3.5355, 3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=130,radius=2.5];
 
-\item $-\dfrac{\pi}{3}$ \vphantom{$\dfrac{17\pi}{4}$} is a Quadrant IV angle\\
-coterminal with $\dfrac{5\pi}{3}$ and $-\dfrac{7\pi}{3}$ \vphantom{$\dfrac{17\pi}{4}$}
+% Rays
+\draw[line width=1.25pt,<->]
+    (-3.5355,3.5355) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,-0.1), -55}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(2.5, -4.3301), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
 
-\setcounter{HW}{\value{enumi}}
+\item $-\frac{\pi}{3}$ \vphantom{$\frac{17\pi}{4}$} is a Quadrant IV angle\\
+coterminal with $\frac{5\pi}{3}$ and $-\frac{7\pi}{3}$ \vphantom{$\frac{17\pi}{4}$}
 
-\end{enumerate}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=-55,radius=2.5];
 
-\end{multicols}
+% Rays
+\draw[line width=1.25pt,<->]
+    (2.5,-4.330) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-\begin{multicols}{2} \raggedcolumns
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
-
-\item $\dfrac{7\pi}{2}$ lies on the negative $y$-axis \vphantom{$\dfrac{17\pi}{4}$}\\
-coterminal with $\dfrac{3\pi}{2}$ and $-\dfrac{\pi}{2}$ \vphantom{$\dfrac{17\pi}{4}$}
-
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \parafcn{0,625,5}{(t+100)*dir(t)/400}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(0, -5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
-
-\item $\dfrac{\pi}{4}$ is a Quadrant I angle \vphantom{$\dfrac{17\pi}{2}$}\\
-coterminal with $\dfrac{9 \pi}{4}$ and $-\dfrac{7\pi}{4}$
-
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5, 0.1), 40}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(3.5355, 3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
 
 \setcounter{HW}{\value{enumi}}
 
@@ -288,105 +256,72 @@ coterminal with $\dfrac{9 \pi}{4}$ and $-\dfrac{7\pi}{4}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $-\dfrac{\pi}{2}$ lies on the negative $y$-axis \vphantom{$\dfrac{17\pi}{4}$}\\
-coterminal with $\dfrac{3\pi}{2}$ and $-\dfrac{5\pi}{2}$
+\item $\frac{7\pi}{2}$ lies on the negative $y$-axis \vphantom{$\frac{17\pi}{4}$}\\
+coterminal with $\frac{3\pi}{2}$ and $-\frac{\pi}{2}$ \vphantom{$\frac{17\pi}{4}$}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5, -0.1), -85}
-\penwd{1.25pt}
- \arrow \reverse \arrow \polyline{(0, -5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\addplot[domain=0:625, samples=400, line width=1pt,->]
+({((x+100)/400)*cos(x)},
+ {((x+100)/400)*sin(x)});
 
-\item $\dfrac{7\pi}{6}$ is a Quadrant III angle\\
-coterminal with $\dfrac{19 \pi}{6}$ and $-\dfrac{5\pi}{6}$
+% Rays
+\draw[line width=1.25pt,<->]
+    (0,-5) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5, 0.1), 205}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-4.3301,-2.5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
 
-\setcounter{HW}{\value{enumi}}
+\item $\frac{\pi}{4}$ is a Quadrant I angle \vphantom{$\frac{17\pi}{2}$}\\
+coterminal with $\frac{9 \pi}{4}$ and $-\frac{7\pi}{4}$
 
-\end{enumerate}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=40,radius=2.5];
 
-\end{multicols}
-
-\begin{multicols}{2} \raggedcolumns
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
-
-\item $-\dfrac{5\pi}{3}$ is a Quadrant I angle \vphantom{$\dfrac{17\pi}{4}$} \\
-coterminal with $\dfrac{\pi}{3}$ and $-\dfrac{11\pi}{3}$ \vphantom{$\dfrac{17\pi}{4}$}
-
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5, -0.1), -295}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
-
-\item $3\pi$ lies on the negative $x$-axis \vphantom{$\dfrac{17\pi}{4}$} \\
-coterminal with $\pi$ and $-\pi$ \vphantom{$\dfrac{17\pi}{4}$}
-
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \parafcn{0,535,5}{(t+100)*dir(t)/400}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-5,0), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
+% Rays
+\draw[line width=1.25pt,<->]
+    (3.5355,3.5355) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 \setcounter{HW}{\value{enumi}}
 
@@ -400,49 +335,71 @@ coterminal with $\pi$ and $-\pi$ \vphantom{$\dfrac{17\pi}{4}$}
 
 \setcounter{enumi}{\value{HW}}
 
-\item $-2\pi$ lies on the positive $x$-axis \vphantom{$\dfrac{17\pi}{4}$} \\
-coterminal with $2\pi$ and $-4\pi$ \vphantom{$\dfrac{17\pi}{4}$}
+\item $-\frac{\pi}{2}$ lies on the negative $y$-axis \vphantom{$\frac{17\pi}{4}$}\\
+coterminal with $\frac{3\pi}{2}$ and $-\frac{5\pi}{2}$
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \parafcn{0,355,5}{(t+100)*dir(0-t)/300}
-\penwd{1.25pt}
-\point[4pt]{(0,0)}
-\arrow \polyline{(0,0), (5,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=-85,radius=2.5];
 
-\item $-\dfrac{\pi}{4}$ is a Quadrant IV angle \vphantom{$\dfrac{17\pi}{4}$} \\
-coterminal with $\dfrac{7 \pi}{4}$ and $-\dfrac{9\pi}{4}$
+% Rays
+\draw[line width=1.25pt,<->]
+    (0,-5) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5, -0.1), -40}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(3.5355,-3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\item $\frac{7\pi}{6}$ is a Quadrant III angle\\
+coterminal with $\frac{19 \pi}{6}$ and $-\frac{5\pi}{6}$
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=205,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (-4.330, -2.5) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 \setcounter{HW}{\value{enumi}}
 
@@ -456,49 +413,241 @@ coterminal with $\dfrac{7 \pi}{4}$ and $-\dfrac{9\pi}{4}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $\dfrac{15\pi}{4}$ is a Quadrant IV angle\\
-coterminal with $\dfrac{7\pi}{4}$ and $-\dfrac{\pi}{4}$
+\item $-\frac{5\pi}{3}$ is a Quadrant I angle \vphantom{$\frac{17\pi}{4}$} \\
+coterminal with $\frac{\pi}{3}$ and $-\frac{11\pi}{3}$ \vphantom{$\frac{17\pi}{4}$}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \parafcn{0,670,5}{(t+100)*dir(t)/400}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(3.5355,-3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=-295,radius=2.5];
 
-\item $-\dfrac{13\pi}{6}$ is a Quadrant IV angle\\
-coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
+% Rays
+\draw[line width=1.25pt,<->]
+    (2.5, 4.330) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\item $3\pi$ lies on the negative $x$-axis \vphantom{$\frac{17\pi}{4}$} \\
+coterminal with $\pi$ and $-\pi$ \vphantom{$\frac{17\pi}{4}$}
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \parafcn{0,385,5}{(t+100)*dir(0-t)/300}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(4.3301,-2.5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\addplot[domain=0:535, samples=400, line width=1pt,->]
+({((x+100)/400)*cos(x)},
+ {((x+100)/400)*sin(x)});
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (-5,0) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $-2\pi$ lies on the positive $x$-axis \vphantom{$\frac{17\pi}{4}$} \\
+coterminal with $2\pi$ and $-4\pi$ \vphantom{$\frac{17\pi}{4}$}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=-355,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (5,0) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+\item $-\frac{\pi}{4}$ is a Quadrant IV angle \vphantom{$\frac{17\pi}{4}$} \\
+coterminal with $\frac{7 \pi}{4}$ and $-\frac{9\pi}{4}$
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=-40,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (3.5355, -3.5355) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{2} \raggedcolumns
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $\frac{15\pi}{4}$ is a Quadrant IV angle\\
+coterminal with $\frac{7\pi}{4}$ and $-\frac{\pi}{4}$
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\addplot[domain=0:670, samples=400, line width=1pt,->]
+({((x+100)/400)*cos(x)},
+ {((x+100)/400)*sin(x)});
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (3.5355,-3.5355) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+\item $-\frac{13\pi}{6}$ is a Quadrant IV angle\\
+coterminal with $\frac{11\pi}{6}$ and $-\frac{\pi}{6}$
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\addplot[domain=0:385, samples=400, line width=1pt,->]
+({((x+100)/400)*cos(-x)},
+ {((x+100)/400)*sin(-x)});
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (4.330, -2.5) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\setcounter{HW}{\value{enumi}}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{multicols}{4}
+
+\begin{enumerate}
+
+\setcounter{enumi}{\value{HW}}
+
+\item $0$ 
+\item $\frac{4\pi}{3}$
+\item $\frac{3\pi}{4}$
+\item $-\frac{3\pi}{2}$
 
 \setcounter{HW}{\value{enumi}}
 
@@ -512,27 +661,10 @@ coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $0$ \vphantom{$\dfrac{17\pi}{4}$}
-\item $\dfrac{4\pi}{3}$
-\item $\dfrac{3\pi}{4}$
-\item $-\dfrac{3\pi}{2}$
-
-\setcounter{HW}{\value{enumi}}
-
-\end{enumerate}
-
-\end{multicols}
-
-\begin{multicols}{4}
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
-
-\item $-\dfrac{7\pi}{4}$
-\item $\dfrac{5\pi}{6}$
-\item $\dfrac{\pi}{4}$ \vphantom{$\dfrac{17\pi}{4}$}
-\item $-\dfrac{5\pi}{4}$
+\item $-\frac{7\pi}{4}$
+\item $\frac{5\pi}{6}$
+\item $\frac{\pi}{4}$ 
+\item $-\frac{5\pi}{4}$
 
 \setcounter{HW}{\value{enumi}}
 
@@ -582,7 +714,7 @@ coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item  $t = \dfrac{5\pi}{6}$
+\item  $t = \frac{5\pi}{6}$
 
 \begin{mfpic}[10]{-5}{5}{-5}{5}
 \axes
@@ -600,7 +732,7 @@ coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
 \arrow \parafcn{0, 150, 5}{3*dir(t)}
 \end{mfpic} 
 
-\item  $t = -\pi$ \vphantom{$\dfrac{5\pi}{6}$}
+\item  $t = -\pi$ \vphantom{$\frac{5\pi}{6}$}
 
 \begin{mfpic}[10]{-5}{5}{-5}{5}
 \axes
@@ -769,8 +901,8 @@ coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $79.2825\pi \approx 249.07$ square units \vphantom{$\dfrac{\pi}{2}$}
-\item $\dfrac{\pi}{2}$ square units
+\item $79.2825\pi \approx 249.07$ square units \vphantom{$\frac{\pi}{2}$}
+\item $\frac{\pi}{2}$ square units
 
 \setcounter{HW}{\value{enumi}}
 
@@ -788,8 +920,8 @@ coterminal with $\dfrac{11\pi}{6}$ and $-\dfrac{\pi}{6}$
 
 \setcounter{enumi}{\value{HW}}
 
-\item $\dfrac{50\pi}{3}$ square units
-\item $38.025 \pi \approx 119.46$ square units \vphantom{$\dfrac{50\pi}{3}$}
+\item $\frac{50\pi}{3}$ square units
+\item $38.025 \pi \approx 119.46$ square units \vphantom{$\frac{50\pi}{3}$}
 
 \end{enumerate}
 
