@@ -134,24 +134,35 @@ coterminal with $\dfrac{\pi}{3}$ and $-\dfrac{5\pi}{3}$ \vphantom{$\dfrac{17\pi}
 \item $\dfrac{5\pi}{4}$ is a Quadrant III angle\\
 coterminal with $\dfrac{13\pi}{4}$ and $-\dfrac{3\pi}{4}$
 
-\begin{mfpic}[12]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,0.1), 220}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-3.5355, -3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Circular arrow
+\draw[->]
+    (2.5,-0.1)
+    arc[start angle=-2.3,end angle=220,radius=2.5];
+
+% Rays
+\draw[line width=1.25pt,<->]
+    (-3.5355,---3.5355) -- (0,0) -- (5,0);
+    
+% Filled point
+\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 \setcounter{HW}{\value{enumi}}
 
