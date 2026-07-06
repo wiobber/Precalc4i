@@ -767,34 +767,9 @@ It is with this understanding that we present the notion of a `power function,' 
 
 In general, real number exponents inherit their properties from rational number exponents.  For instance, Theorem \ref{exponentprops} also holds for all real number exponents and the graphs of power functions inherit their behavior from graphs of rational exponent functions.  More specifically, the graphs of functions of the form $f(x)= x^p$ where $p>0$ all contain the points $(0,0)$ and $(1,1)$.  Moreover, these functions are increasing and their graphs are  concave down if $0<p<1$ and concave up if $p>1$. 
 
-
+% https://www.desmos.com/calculator/sjuhbguk78
 \begin{center}
-
-% \input{PowerFunctions_pic28.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=170pt,
-    height=170pt,
-    xmin=-1, xmax=9,
-    ymin=-1, xmax=9,
-    ymax=9,
-    clip=false
-  ]
-    \node at (axis cs:9,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,9){\scriptsize $y$};
-    \node at (axis cs:5,8){\scriptsize $p>1$, concave up};
-    \node at (axis cs:6,1.5){\scriptsize $0<p<1$, concave down};
-    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
-    \node at (axis cs:1.75,0.75){\scriptsize $(1,1)$};
-    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t^2},{t});
-    \addplot[fpplot, domain=0:3, line width=1.25pt, ->] ({t},{t^2});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x) = x^p$ for varying values of $p$.};
-\end{tikzpicture}
-
-
+\desmos{sjuhbguk78}{800}{600}
 \end{center}
 
 Theorem \ref{linearrationalpowergraphs}  generalizes to real number power functions, so, for instance to graph $F(x) = (x-2)^{\pi}$, one need only start with $y = x^{\pi}$ and shift horizontally two units to the right.  (See the Exercises.)  
