@@ -302,115 +302,14 @@ The proof of Theorem \ref{linearrationalpowergraphs} is identical to that of The
 
 \item  The expression  $F(x) = (2x-1)^{2.6}$ is given to us in the form prescribed by Theorem \ref{linearrationalpowergraphs}, and we identify $r = 2.6$, $a = 1$, $b=2$, $h=1$, and $k=0$.  Even though the graph of $f(x) = x^{2.6}$ is given to us, it's worth taking a moment to reinforce some concepts.  Since, in lowest terms, $2.6 = \frac{26}{10} = \frac{13}{5}$, it makes sense the domain and range of $f(x) = x^{2.6}$ are both all real numbers and the graph is symmetric about the origin.\footnote{The domain is all real numbers since the denominator (root) $5$ is odd;  the range is all real numbers since the numerator (power) $13$ is odd.  Since both power and root are odd, the function itself is an odd function, hence the symmetry about the origin.} Moreover, since $2.6>1$, the concavity matches what we would expect, too.  We proceed as we have several times in the past, beginning with the horizontal shift.
 
-Step 1:   add $1$ to each of the $x$-coordinates of each of the points on the graph of $y=x^{2.6}$:
+%Step 1:   add $1$ to each of the $x$-coordinates of each of the points on the graph of $y=x^{2.6}$:
 
-\[ \begin{array}[v]{rlc}
+%Step 2:   divide each of the $x$-coordinates of each of the points on the graph of $y=(x-1)^{2.6}$ by $2$:
 
-
-% \input{PowerFunctions_pic16.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=160pt,
-    xmin=-3, xmax=3,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:3,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
-    \node at (axis cs:-2,-1){\scriptsize $(-1,-1)$};
-    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5},{t^13});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-1,-1) (0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=x^{2.6}$};
-\end{tikzpicture}
-
-&
-\stackrel{\text{ \scriptsize add $1$ to each $x$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
-&
-
-% \input{PowerFunctions_pic17.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=160pt,
-    xmin=-2, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:2.5,1){\scriptsize $(2,1)$};
-    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
-    \node at (axis cs:1.5,-0.5){\scriptsize $(1,0)$};
-    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5+1},{t^13});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (1,0) (2,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(x-1)^{2.6}$};
-\end{tikzpicture}
-\\
-
- \text{\scriptsize  $(-1,1)$, $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(0,-1)$, $(1,0)$, $(2,1)$} \\
- 
- \end{array} \]
-
-Step 2:   divide each of the $x$-coordinates of each of the points on the graph of $y=(x-1)^{2.6}$ by $2$:
-
-\[ \begin{array}[v]{rlc}
-
-% \input{PowerFunctions_pic18.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=160pt,
-    xmin=-2, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:2.5,1){\scriptsize $(2,1)$};
-    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
-    \node at (axis cs:1.5,-0.5){\scriptsize $(1,0)$};
-    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5+1},{t^13});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (1,0) (2,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(x-1)^{2.6}$};
-\end{tikzpicture}
-
-&
-\stackrel{\text{ \scriptsize divide to each $x$-coordinate by 2}}{\xrightarrow{\hspace{1.5in}}}
-&
-% \input{PowerFunctions_pic19.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=160pt,
-    xmin=-2, xmax=4,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:4,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
-    \node at (axis cs:-1,-1){\scriptsize $(0,-1)$};
-    \node at (axis cs:1,-0.5){\scriptsize $\left(\frac{1}{2},0 \right)$};
-    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({(t^5+1)/2},{t^13});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,-1) (0.5,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $F(x)=(2x-1)^{2.6}$};
-\end{tikzpicture}
-  \\
-
- \text{\scriptsize   $(0,-1)$, $(1,0)$, $(2,1)$} & & \text{\scriptsize  $(0,-1)$, $\left(\frac{1}{2},0 \right)$, $(1,1)$} \\
- 
- \end{array} \]
+% https://www.geogebra.org/classic/eazjuzbg
+\begin{center}
+    \geogebra{eazjuzbg}{800}{600}
+\end{center}
  
  We get the domain and range here are both $(-\infty, \infty)$.
  
