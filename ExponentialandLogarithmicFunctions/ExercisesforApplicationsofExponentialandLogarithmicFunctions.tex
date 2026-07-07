@@ -682,8 +682,8 @@ Graph this path for $x > 0$ using a graphing utility.  Investigate  $\ds{\lim_{x
 \begin{problem}
      If the voltage in the circuit in Exercise \ref{explogsappcircuitone} above is switched off after 30 seconds, the current is given by the piecewise-defined function 
 
-\[i(t) = \left\{ \begin{array}{rcl} 2 - 2e^{-10t} & \mbox{if} & 0 \leq t < 30 \\ [6pt]
-\left(2 - 2e^{-300}\right) e^{-10t+300} & \mbox{if} & t \geq 30 \end{array} \right.\]  
+\[i(t) = \left\{ \begin{array}{rcl} 2 - 2e^{-10t} & \mbox{if} & 0 \leq t < 30 \\ 
+\left(2 - 2e^{-300}\right) e^{-10t+300} & \mbox{if} & t \geq 30 \end{array} \right.\] 
 
 With the help of a graphing utility, graph $y = i(t)$ and discuss with your classmates the physical significance of the two parts of the graph $0 \leq t < 30$ and $t \geq 30$.
 \end{problem}
@@ -697,6 +697,10 @@ With the help of a graphing utility, graph $y = i(t)$ and discuss with your clas
 
  \item 
     When flipped upside down, the catenary makes an arch.  The Gateway Arch in St. Louis, Missouri has the shape \[y = 757.7 - \frac{127.7}{2}\left(e^{\frac{x}{127.7}} + e^{-\frac{x}{127.7}}\right)\] where $x$ and $y$ are measured in feet and $-315 \leq x \leq 315$.  Find the highest point on the arch.
+
+\begin{solution}
+630 feet
+\end{solution}
 \end{itemize}
 
 \end{problem}
@@ -721,6 +725,24 @@ Cats $N(x)$ & 12 & 66 & 382 & 2201 & 12680 & 73041 & 420715 & 2423316 & 13968290
 
 \end{itemize}
 
+\begin{solution}
+The linear regression on the data below is $y = 1.74899x + 0.70739$ with $r^{2} \approx 0.999995$.  
+
+This is an excellent fit.
+
+\scriptsize
+
+\noindent \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|} \hline
+$x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ 
+\hline 
+$\ln(N(x))$ & 2.4849 & 4.1897 & 5.9454 & 7.6967 & 9.4478 & 11.1988 & 12.9497 & 14.7006 & 16.4523 & 18.2025 \\ \hline
+\end{tabular}
+
+\normalsize
+
+$N(x) = 2.02869(5.74879)^{x} = 2.02869e^{1.74899x}$ with $r^{2} \approx 0.999995$.  This is also an excellent fit and corresponds to our linearized model because $\ln(2.02869) \approx 0.70739$.
+\end{solution}
+
 \end{problem}
 
 \begin{problem}\label{LorenzExFollowUp}
@@ -735,11 +757,25 @@ Cats $N(x)$ & 12 & 66 & 382 & 2201 & 12680 & 73041 & 420715 & 2423316 & 13968290
 
 NOTE:  In this situation, we are plotting $\ln(x)$ versus $\ln(L(x))$ instead of $x$ versus $\ln(L(x))$.  
 
+\begin{solution}
+The linearized model is: $\ln(L(x)) \approx 2.106 \ln(x) - 5.268$ with an $r^2 \approx  0.9914$.
+\end{solution}
+
 \item\label{newlorenzepart}
      Find the slope $p$ of the regression line and the intercept $\ln(a)$.  Use these to construct a model of the form $L(x) = a x^{p}$.   Find and interpret $L(90)$.
 
+\begin{solution}
+$L(x) = 0.005154 x^{2.106}$.  $L(90) \approx 67.3$ meaning the bottom $90 \%$ of wage earners take home $67.3 \%$ of the total national income.  Said differently, according to this model, the top $10 \%$ of wage earners take home $32.7 \%$ of the total national income.
+\end{solution}
+
 \item
     Graph both the model obtained in Example \ref{LorenzEx} and the model obtained in part \ref{newlorenzepart} along with the original data.  What do you notice?
+
+\begin{solution}
+\begin{center} 
+\desmos{9vupqszxtq}{800}{600} 
+\end{center}
+\end{solution}
 \end{itemize}
     
 \end{problem}
@@ -762,8 +798,16 @@ Population& 16116 & 16536 & 16351 & 15699 & 17503 \\ \hline
     \item 
     Use a graphing utility to perform an exponential regression on the data from 1860 through 1920 only, letting $t = 0$ represent the year 1860 as before.  How does this model compare with the model you found in Exercise \ref{PainesvillePopulationTwoPoint}?   Use the graphing utility's exponential model to predict the population in 2010.   (The 2010 census gave the population as 19,563)
 
+\begin{solution}
+ We get:  $y = 2895.06 (1.0147)^{x}$.  Graphing this along with our answer from Exercise \ref{PainesvillePopulationTwoPoint} over the interval $[0,60]$ shows that they are pretty close. From this model, $y(150) \approx 25840$ which once again overshoots the actual data value.
+\end{solution}
+
 \item 
      The logistic model fit to \emph{all} of the given data points for the population of Painesville $t$ years after 1860 (again, using $t = 0$ as 1860) is \[ P(t) = \dfrac{18691}{1+9.8505e^{-0.03617t}} \] According to this model, what should the population of Painesville have been in 2010?  (The 2010 census gave the population as 19,563.) What is the population limit of Painesville?
+
+\begin{solution}
+$P(150) \approx 17914$, so this model predicts 17,914 people in Painesville in 2010, a more conservative number than was recorded in the 2010 census.  We have $\ds{\lim_{t \rightarrow \infty} P(t) =  18691}$,  so the limiting population of Painesville based on this model is 18,691 people.
+\end{solution}
 \end{itemize}
 
 \end{problem}
@@ -787,14 +831,32 @@ Population& 148700 & 197200 & 212801 & 215499 & 227511 \\ \hline
     \item 
     Use a graphing utility to fit a logistic model to these data with $x = 0$ representing the year 1860.
 
+\begin{solution}
+$y = \frac{242526}{1+874.63e^{-0.07113x}}$, where $x$ is the number of years since 1860.
+\end{solution}
+
 \item 
      Graph the data and your model using a graphing utility to judge the reasonableness of the fit.
+
+\begin{solution}
+\begin{center} 
+\desmos{jae0ylpdxw}{800}{600} 
+\end{center}
+\end{solution}
 
 \item 
     Use this model to estimate the population of Lake County in 2010.  (The 2010 census gave the population to be 230,041.)
 
+\begin{solution}
+$y(140) \approx 232884$, so this model predicts 232,884 people in Lake County in 2010.
+\end{solution}
+
 \item 
     According to your model, what is the population limit of Lake County, Ohio?
+
+\begin{solution}
+We get $\ds{\lim_{x \rightarrow \infty} y = 242526}$, so the limiting population of Lake County based on this model is 242,526 people.
+\end{solution}
 \end{itemize}
 
 \end{problem}
