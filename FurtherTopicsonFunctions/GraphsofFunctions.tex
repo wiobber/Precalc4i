@@ -151,7 +151,7 @@ The next example reviews all of the aforementioned concepts as well as many more
 \begin{image}
 % \input{GraphsofFunctions_pic1.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-4, ymax=5, width=6in, height=6in,domain=-4:4]
+\begin{axis}[fplot, xmin=-5, xmax=4.9, ymin=-4, ymax=3.9, width=6in, height=6in,domain=-4:4]
   \addplot[fgraph,line width=3pt, domain=-4:4] {3*cos(deg(pi*x/4))};
   \addplot[fgraph, only marks, mark=*, black,mark size=3pt] coordinates {(-2,0) (2,0) (4,-3) (-4,-3) (0,3)};
   \node[flabel, label=above left:{$\left( -2, 0 \right)$}]  at (axis cs:-2, 0) {};
@@ -231,14 +231,15 @@ Our next example involves a more complicated function and asks more complicated 
 
 % \input{GraphsofFunctions_pic3.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=8, ymin=-10, ymax=8,width=6in, height=4in,]
+\begin{axis}[fplot, xmin=-5, xmax=7.9, ymin=-10, ymax=7.9,width=6in, height=4in]
   \addplot[fgraph,line width=3pt, domain=-4:-2] {0.75*(x^2) + 8.25*x + 18};
   \addplot[fgraph,line width=3pt, domain=-2:3]  {-0.08333*(x^2) - 2.41667*x};
   \addplot[fgraph,line width=3pt, domain=3:4]   {-2*(x^2) + 16*x - 38};
   \addplot[fgraph,line width=3pt, domain=4:5]   {-6};
   \addplot[fgraph,line width=3pt, domain=5:7.01]{-0.25*(x^2) + 8.75*x - 43.5};
-  \addplot[fgraph, only marks, black, mark=*, mark size=3pt] coordinates {(-4,-3) (-3,0) (-2,4.5) (0,0) (3,-8) (4,-6) (5,-6) (6,0) (7,5.5)};
-  \addplot[fgraph, only marks, mark=o, mark size=2pt, mark options={line width=1pt}] coordinates {(7,5.5) (0,0)};
+  \addplot[fgraph, only marks, black, mark=*, mark size=3pt] coordinates {(-4,-3) (-3,0) (-2,4.5) (3,-8) (4,-6) (5,-6) (6,0) (7,5.5)};
+  \addplot[fgraph, only marks, white, mark=*, mark size=3pt] coordinates {(0,0)};
+  \addplot[fgraph, only marks,black, mark=o, mark size=2pt, mark options={line width=1pt}] coordinates {(0,0)};
   \node[flabel, label=below left :{$(-4,-3)$}]   at (axis cs:-4,-3) {};
   \node[flabel, label=above left :{$(-3,0)$}]    at (axis cs:-3, 0) {};
   \node[flabel, label=above left:{$(-2,4.5)$}]  at (axis cs:-2,4.5) {};
