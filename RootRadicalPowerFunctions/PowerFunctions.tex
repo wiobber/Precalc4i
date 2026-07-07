@@ -314,174 +314,22 @@ The proof of Theorem \ref{linearrationalpowergraphs} is identical to that of The
  We get the domain and range here are both $(-\infty, \infty)$.
  
  \item We first need to rewrite $G(t) = 1 - 2(t+3)^{\frac{3}{8}}$ in the form required by Theorem \ref{linearrationalpowergraphs}:  $G(t) =- 2(t+3)^{\frac{3}{8}} + 1$.  We identify $r = \frac{3}{8}$, $a = -2$, $b = 1$, $h = -3$, and $k = 1$.  Since $\frac{3}{8}$ is in lowest terms and has an even denominator,  it makes sense the domain and range of $g(t) = t^{\frac{3}{8}}$ is $[0, \infty)$, since the root here, $8$ is even.  Also, since $0< \frac{3}{8} < 1$, the graph of  $y = t^{\frac{3}{8}}$ is concave down, as we would expect. As usual, we start with the horizontal shift.
+
+ % https://www.geogebra.org/classic/hr42fgrf
+
+ \begin{center}
+     \geogebra{hr42fgrf}{800}{600}
+ \end{center}
  
-Step 1:   add $-3$ to each of the $t$-coordinates of each of the points on the graph of $y=t^{\frac{3}{8}}$:
+%Step 1:   add $-3$ to each of the $t$-coordinates of each of the points on the graph of $y=t^{\frac{3}{8}}$:
 
-\[ \begin{array}[v]{rlc}
-
-% \input{PowerFunctions_pic20.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-1, xmax=5,
-    ymin=-1, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1,1.5){\scriptsize $(1,1)$};
-    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=t^{\frac{3}{8}}$};
-\end{tikzpicture}
+% Step 2:  Since $b=1$, we proceed directly to Step 3.
  
+ %Step 3:   multiply each of the $y$-coordinates of each of the points on the graph of $y=(t+3)^{\frac{3}{8}}$ by $-2$:
+
+  %Step 4:   add $1$ to each of the $y$-coordinates of each of the points on the graph of $y=-2(t+3)^{\frac{3}{8}}$:
 
 
-&
-\stackrel{\text{ \scriptsize add $-3$ to each $t$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
-&
-
-% \input{PowerFunctions_pic21.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-4, xmax=2,
-    ymin=-1, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:2,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:-2,1.5){\scriptsize $(-2,1)$};
-    \node at (axis cs:-3,-0.5){\scriptsize $(-3,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(t+3)^{\frac{3}{8}}$};
-\end{tikzpicture}
-   \\
-
- \text{\scriptsize  $(0,0)$, $(1,1)$} & & \text{\scriptsize  $(-3,0)$, $(-2,1)$} \\
- 
- \end{array} \]
-
- Step 2:  Since $b=1$, we proceed directly to Step 3.
- 
- Step 3:   multiply each of the $y$-coordinates of each of the points on the graph of $y=(t+3)^{\frac{3}{8}}$ by $-2$:
-
-\[ \begin{array}[v]{rlc}
-
-% \input{PowerFunctions_pic22.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-4, xmax=2,
-    ymin=-1, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:2,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:-2,1.5){\scriptsize $(-2,1)$};
-    \node at (axis cs:-3,-0.5){\scriptsize $(-3,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=(t+3)^{\frac{3}{8}}$};
-\end{tikzpicture}
-
-
-
-&
-\stackrel{\text{ \scriptsize multiply each $y$-coordinate by $-2$}}{\xrightarrow{\hspace{1.5in}}}
-&
-
-% \input{PowerFunctions_pic23.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-4, xmax=2,
-    ymin=-4, ymax=1,
-    clip=false
-  ]
-    \node at (axis cs:2,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,1){\scriptsize $y$};
-    \node at (axis cs:-2,-3){\scriptsize $(-2,-2)$};
-    \node at (axis cs:-3,0.5){\scriptsize $(-3,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,-2)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}$};
-\end{tikzpicture}
- \\
-
- \text{\scriptsize  $(-3,0)$, $(-2,1)$} & & \text{\scriptsize  $(-3,0)$, $(-2,-2)$} \\
- 
- \end{array} \]
- 
- 
-  Step 4:   add $1$ to each of the $y$-coordinates of each of the points on the graph of $y=-2(t+3)^{\frac{3}{8}}$:
-
-\[ \begin{array}[v]{rlc}
-
-% \input{PowerFunctions_pic24.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-4, xmax=2,
-    ymin=-4, ymax=1,
-    clip=false
-  ]
-    \node at (axis cs:2,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,1){\scriptsize $y$};
-    \node at (axis cs:-2,-3){\scriptsize $(-2,-2)$};
-    \node at (axis cs:-3,0.5){\scriptsize $(-3,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,0) (-2,-2)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}$};
-\end{tikzpicture}
-
-
-
-&
-\stackrel{\text{ \scriptsize add $1$ to each  $y$-coordinate}}{\xrightarrow{\hspace{1.5in}}}
-&
-
-% \input{PowerFunctions_pic25.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-4, xmax=2,
-    ymin=-3, ymax=2,
-    clip=false
-  ]
-    \node at (axis cs:2,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,2){\scriptsize $y$};
-    \node at (axis cs:-2,-2){\scriptsize $(-2,-1)$};
-    \node at (axis cs:-3,1.5){\scriptsize $(-3,1)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8-3},{-2*(t^3)+1});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-3,1) (-2,-1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=-2(t+3)^{\frac{3}{8}}+1$};
-\end{tikzpicture}
- \\
-
- \text{\scriptsize  $(-3,0)$, $(-2,-2)$} & & \text{\scriptsize  $(-3,1)$, $(-2,-1)$} \\
- 
- \end{array} \]
 
 From the graph, we get the domain is $[-3, \infty)$ and the range is $(-\infty, 1]$.
 
