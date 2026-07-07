@@ -236,64 +236,142 @@ The proof of Theorem \ref{linearrationalpowergraphs} is identical to that of The
 
 \item Graph $F(x) = (2x-1)^{2.6}$.
 
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2:2,
+          xmin=-3, xmax=3,
+          ymin=-3, ymax=3,
+          width=3in,
+          height=3in,
+          xtick={-2,-1,1,2},
+            xticklabels={$-2$, $-1$,$1$, $2$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$, $1$,$2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=-2:2, line width=1.5pt, blue] {(x^13)^(1/5)};
+
+\addplot[smooth,domain=-2:0, line width=1.5pt, blue] {-(-x)^(13/5)};
+
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (1,1) [$(1,1)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (-1,-1) [$(-1,-1)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+ % \node[anchor=east, color=blue] at (-0.8,1) {$y=f(x)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+
 \item  Graph $G(t) = 1 - 2(t+3)^{\frac{3}{8}}$.
 
 % \end{multicols}
 
 \end{enumerate}
 
-\begin{center}
+ \begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=0:5,
+          xmin=-1, xmax=5,
+          ymin=-1, ymax=3,
+          width=3in,
+          height=2.5in,
+          xtick={1,2, 3, 4},
+            xticklabels={$1$, $2$,$3$, $4$},
+           ytick={1,2},
+            yticklabels={$1$,$2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth,domain=0:5, line width=1.5pt, blue] {x^(3/8)};
 
-\begin{tabular}{m{2.5in}m{2.5in}}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt, yshift=5pt}
+]
+coordinates {
+  (1,1) [$(1,1)$]
+  };
 
-% \input{PowerFunctions_pic14.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=160pt,
-    xmin=-3, xmax=3,
-    ymin=-4, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:3,-0.5){\scriptsize $x$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1.5,1){\scriptsize $(1,1)$};
-    \node at (axis cs:-2,-1){\scriptsize $(-1,-1)$};
-    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=-1.11:1.11, line width=1.25pt, ->] ({t^5},{t^13});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(-1,-1) (0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $f(x)=x^{2.6}$};
-\end{tikzpicture}
-
-
-&
-
-% \input{PowerFunctions_pic15.tex}
-\begin{tikzpicture}
-  \begin{axis}[
-    fplot,
-    width=120pt,
-    height=100pt,
-    xmin=-1, xmax=5,
-    ymin=-1, ymax=4,
-    clip=false
-  ]
-    \node at (axis cs:5,-0.5){\scriptsize $t$};
-    \node at (axis cs:0.5,4){\scriptsize $y$};
-    \node at (axis cs:1,1.5){\scriptsize $(1,1)$};
-    \node at (axis cs:0.5,-0.5){\scriptsize $(0,0)$};
-    \addplot[fpplot, domain=0:1.22, line width=1.25pt, ->] ({t^8},{t^3});
-    \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (1,1)};
-  \end{axis}
-  \path (current axis.south) ++(0,-6pt) node {\scriptsize $g(t)=t^{\frac{3}{8}}$};
-\end{tikzpicture}
- \\
-
-\end{tabular}
-
-\end{center}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+ % \node[anchor=east, color=blue] at (-0.8,1) {$y=f(x)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 {\bf Solution.}
