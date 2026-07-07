@@ -716,39 +716,72 @@ coterminal with $\frac{11\pi}{6}$ and $-\frac{\pi}{6}$
 
 \item  $t = \frac{5\pi}{6}$
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (-4.3301,2.5)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 150, 5}{3*dir(t)}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+%Unit Circle
+\draw (0,0) circle (1);
+
+% Circular arrow
+\draw[line width=1.25pt, ->]
+    (1,0)
+    arc[start angle=0,end angle=150,radius=1];
+
+% Rays
+\draw[dashed] (-1.299,0.75) -- (0,0);
+    
+% Filled point
+%\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
 
 \item  $t = -\pi$ \vphantom{$\frac{5\pi}{6}$}
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 180, 5}{3*dir(-t)}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+%Unit Circle
+\draw (0,0) circle (1);
 
+% Circular arrow
+\draw[line width=1.25pt, ->]
+    (1,0)
+    arc[start angle=0,end angle=150,radius=1];
+
+% Rays
+\draw[dashed] (-1.299,0.75) -- (0,0);
+    
+% Filled point
+%\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 \setcounter{HW}{\value{enumi}}
 
 \end{enumerate}
@@ -763,39 +796,73 @@ coterminal with $\frac{11\pi}{6}$ and $-\frac{\pi}{6}$
 
 \item  $t = 6$
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (4.801,-1.397)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 343, 5}{3*dir(t)}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+%Unit Circle
+\draw (0,0) circle (1);
+
+% Circular arrow
+\draw[line width=1.25pt, ->]
+    (1,0)
+    arc[start angle=0,end angle=343.77,radius=1];
+
+% Rays
+\draw[dashed] (1.440,-0.4191) -- (0,0);
+    
+% Filled point
+%\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+
 
 \item  $t = -2$
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.5,-0.5){\scriptsize $x$}
-\tlabel(0.5,4.5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (-2.081,-4.546)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 114, 5}{3*dir(-t)}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+%Unit Circle
+\draw (0,0) circle (1);
+
+% Circular arrow
+\draw[line width=1.25pt, ->]
+    (1,0)
+    arc[start angle=0,end angle=-114.59,radius=1];
+
+% Rays
+\draw[dashed] (-0.6242,-1.3639) -- (0,0);
+    
+% Filled point
+%\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 \setcounter{HW}{\value{enumi}}
 
@@ -811,21 +878,37 @@ coterminal with $\frac{11\pi}{6}$ and $-\frac{\pi}{6}$
 
 \item  $t = 12$  (between 1 and 2 revolutions)
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (4.219,-2.683)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 687, 5}{3*dir(t)}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+%Unit Circle
+\draw (0,0) circle (1);
+
+% Circular arrow
+\draw[line width=1.25pt, ->]
+    (1,0)
+    arc[start angle=0,end angle=687.55,radius=1];
+
+% Rays
+\draw[dashed] (1.266,-0.8048) -- (0,0);
+    
+% Filled point
+%\fill (0,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 \setcounter{HW}{\value{enumi}}
 
