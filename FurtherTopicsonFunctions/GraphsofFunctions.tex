@@ -404,29 +404,30 @@ Our last example focuses on symmetry.  The reader is encouraged to review the no
 
 \end{enumerate}
 
-\begin{multicols}{2}
-
+\begin{image}
 % \input{GraphsofFunctions_pic5.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=0:4]
-  \addplot[fgraph, domain=0:4] {-5*sin(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = f(x)$};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5.9, ymax=5.9, width=6in, height=6in,domain=0:4]
+  \addplot[fgraph,line width=3pt, domain=0:4] {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph, black,only marks, mark=*, mark size=3pt] coordinates {(0,0) (4,0)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = f(x)$};
 \end{axis}
 \end{tikzpicture}
+\end{image}
 
- 
+ \begin{image}
 % \input{GraphsofFunctions_pic6.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=0:4]
-  \addplot[fgraph, domain=0:4] {-5*cos(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (4,5)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = g(x)$};
+\begin{axis}[fplot, xmin=-5, xmax=4.9, ymin=-6, ymax=5.9, width=6in, height=6in,domain=0:4]
+  \addplot[fgraph,line width=3pt, domain=0:4] {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, black,only marks, mark=*, mark size=3pt] coordinates {(0,-5) (4,5)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {Partial graph of $y = g(x)$};
 \end{axis}
 \end{tikzpicture}
+\end{image}
 
 
-\end{multicols}
+
 
 
 
