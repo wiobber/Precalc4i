@@ -437,31 +437,29 @@ Our last example focuses on symmetry.  The reader is encouraged to review the no
 
 \item  If $f$ and $g$ are even then their graphs are symmetric about the $y$-axis.  Hence, to complete each graph, we reflect each point on the graphs of $f$ and $g$ about the $y$-axis.
 
-\begin{multicols}{2}
-
+\begin{image}
 % \input{GraphsofFunctions_pic7.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
-  \addplot[fgraph, domain=0:4]  {-5*sin(deg(pi*x/4))};
-  \addplot[fgraph, domain=-4:0] { 5*sin(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0) (-4,0)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is even.};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6,width=5in, height=6in]
+  \addplot[fgraph,line width=3pt,  domain=0:4]  {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph,line width=3pt,  domain=-4:0] { 5*sin(deg(pi*x/4))};
+  \addplot[fgraph, only marks, mark=*, mark size=3pt] coordinates {(0,0) (4,0) (-4,0)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is even.};
 \end{axis}
 \end{tikzpicture}
+\end{image}
 
- 
+ \begin{image}
 % \input{GraphsofFunctions_pic8.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
-  \addplot[fgraph, domain=0:4]  {-5*cos(deg(pi*x/4))};
-  \addplot[fgraph, domain=-4:0] {-5*cos(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (4,5) (-4,5)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $g$ assuming $g$ is even.};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6,width=5in, height=6in]
+  \addplot[fgraph,line width=3pt,  domain=0:4]  {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph,line width=3pt,  domain=-4:0] {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph, black, only marks, mark=*, mark size=3pt] coordinates {(0,-5) (4,5) (-4,5)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $g$ assuming $g$ is even.};
 \end{axis}
 \end{tikzpicture}
-
-
-\end{multicols}
+\end{image}
 
 
 \item  If $f$ and $g$ are odd then their graphs are symmetric about the origin.  Hence, to complete each graph, we imagine reflecting each of the points on their graphs through the origin.  We complete the process on the graph of $f$ with no issues.   
@@ -470,30 +468,30 @@ Our last example focuses on symmetry.  The reader is encouraged to review the no
 
 However, when attempting to do the same with the graph of the function $g$, we find the point $(0,-5)$ is reflected to the point $(0,5)$.  Hence, this new graph doesn't pass the vertical line test and hence is not a function.  Therefore, $g$ cannot be odd.\footnote{We leave it as an exercise to show that if a function $f$ is odd and $0$ is in the domain of $f$, then, necessarily, $f(0) = 0$.}
 
-\begin{multicols}{2}
-
+\begin{image}
 % \input{GraphsofFunctions_pic9.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6, domain=-4:4]
-  \addplot[fgraph, domain=-4:4] {-5*sin(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,0) (4,0) (-4,0)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is odd.};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=5.9, domain=-4:4]
+  \addplot[fgraph,line width=3pt,  domain=-4:4] {-5*sin(deg(pi*x/4))};
+  \addplot[fgraph, black, only marks, mark=*, mark size=3pt] coordinates {(0,0) (4,0) (-4,0)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {The graph of $f$ assuming $f$ is odd.};
 \end{axis}
 \end{tikzpicture}
+\end{image}
 
- 
+ \begin{image}
 % \input{GraphsofFunctions_pic10.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=6]
-  \addplot[fgraph, domain=0:4]  {-5*cos(deg(pi*x/4))};
-  \addplot[fgraph, domain=-4:0] { 5*cos(deg(pi*x/4))};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(0,-5) (0,5) (4,5) (-4,-5)};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {This graph fails the vertical line test.};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-6, ymax=5.9]
+  \addplot[fgraph,line width=3pt,  domain=0:4]  {-5*cos(deg(pi*x/4))};
+  \addplot[fgraph,line width=3pt,  domain=-4:0] { 5*cos(deg(pi*x/4))};
+  \addplot[fgraph, black,only marks, mark=*, mark size=3pt] coordinates {(0,-5) (0,5) (4,5) (-4,-5)};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {This graph fails the vertical line test.};
 \end{axis}
 \end{tikzpicture}
+\end{image}
 
 
-\end{multicols}
 
 \end{enumerate}
 
