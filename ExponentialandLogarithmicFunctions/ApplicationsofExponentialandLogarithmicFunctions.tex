@@ -55,11 +55,11 @@ In this case, the money is in the account for three months, or $\frac{1}{4}$ of 
 
 \smallskip
 
-In order to develop a formula for this phenomenon, we need to do some abstract calculations.  Suppose we wish to invest our principal $P$ at an annual rate $r$ and compound the interest $n$ times per year.  This means the money sits in the account $\frac{1}{n}^{\mbox{\tiny th}}$ of a year between compoundings.  Let $A_{k}$ denote the amount in the account after the $k^{\mbox{\tiny th}}$ compounding. 
+In order to develop a formula for this phenomenon, we need to do some abstract calculations.  Suppose we wish to invest our principal $P$ at an annual rate $r$ and compound the interest $n$ times per year.  This means the money sits in the account $\frac{1}{n}^{\mbox{th}}$ of a year between compoundings.  Let $A_{k}$ denote the amount in the account after the $k^{\mbox{th}}$ compounding. 
 
 \smallskip
 
-Then $A_{\mbox{\tiny$1$}} = P\left(1 + r\left(\frac{1}{n}\right)\right)$ which simplifies to $A_{\mbox{\tiny$1$}} = P \left(1 + \frac{r}{n}\right)$.  After the second compounding, we use $A_{\mbox{\tiny$1$}}$ as our new principal and get $A_{\mbox{\tiny$2$}} = A_{\mbox{\tiny$1$}} \left(1 + \frac{r}{n}\right) = \left[P \left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right) = P \left(1 + \frac{r}{n}\right)^2$.  Continuing in this fashion, we get $A_{\mbox{\tiny$3$}} =P \left(1 + \frac{r}{n}\right)^3$, $A_{\mbox{\tiny$4$}} =P \left(1 + \frac{r}{n}\right)^4$, and so on, so that $A_{k} = P \left(1 + \frac{r}{n}\right)^k$.  
+Then $A_1 = P\left(1 + r\left(\frac{1}{n}\right)\right)$ which simplifies to $A_1 = P \left(1 + \frac{r}{n}\right)$.  After the second compounding, we use $A_1$ as our new principal and get $A_2 = A_1 \left(1 + \frac{r}{n}\right) = \left[P \left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right) = P \left(1 + \frac{r}{n}\right)^2$.  Continuing in this fashion, we get $A_3 =P \left(1 + \frac{r}{n}\right)^3$, $A_4 =P \left(1 + \frac{r}{n}\right)^4$, and so on, so that $A_{k} = P \left(1 + \frac{r}{n}\right)^k$.  
 
 \smallskip
 
@@ -282,11 +282,11 @@ In Biology, \textbf{The Law of Uninhibited Growth} states as its premise that th
 
 \begin{eqn} \index{growth model ! uninhibited} \index{uninhibited growth} \label{lawofuninhibitedgrowth} \textbf{Uninhibited Growth:} 
 
-If a population increases according to The Law of Uninhibited Growth, the number of organisms at time $t$, $N(t)$  is given by the formula  \[N(t) = N_{\mbox{\tiny$0$}}e^{kt},\] where $N(0) = N_{\mbox{\tiny$0$}}$ (read `$N$ nought') is the initial number of organisms and $k>0$ is the constant of proportionality which satisfies the equation:
+If a population increases according to The Law of Uninhibited Growth, the number of organisms at time $t$, $N(t)$  is given by the formula  \[N(t) = N_0e^{kt},\] where $N(0) = N_0$ (read `$N$ nought') is the initial number of organisms and $k>0$ is the constant of proportionality which satisfies the equation:
 
-\[  \dfrac{dN}{dt} = k \, N(t),\]
+\[  \frac{dN}{dt} = k \, N(t),\]
 
-where $\dfrac{dN}{dt}$ is the Leibniz notation\footnote{See the remark following Definition \ref{derivativefcndefn} on Section \ref{IntroductiontoDerivatives}.} notation for the derivative of $N$ with respect to $t$.
+where $\frac{dN}{dt}$ is the Leibniz notation\footnote{See the remark following Definition \ref{derivativefcndefn} on Section \ref{IntroductiontoDerivatives}.} notation for the derivative of $N$ with respect to $t$.
 
 \smallskip
 
@@ -296,7 +296,7 @@ where $\dfrac{dN}{dt}$ is the Leibniz notation\footnote{See the remark following
 
 \smallskip 
 
- It is worth taking some time to compare Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth}.  In  Equation \ref{continuouscompoundinterest}, we use $P$ to denote the initial investment;  in Equation \ref{lawofuninhibitedgrowth}, we use $N_{\mbox{\tiny$0$}}$ to denote the initial population.  In  Equation \ref{continuouscompoundinterest}, $r$ denotes the annual interest rate,  and so it shouldn't be too surprising that the $k$ in Equation \ref{lawofuninhibitedgrowth} corresponds to a growth rate as well.   While Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth} look entirely different, they both represent the same mathematical concept.
+ It is worth taking some time to compare Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth}.  In  Equation \ref{continuouscompoundinterest}, we use $P$ to denote the initial investment;  in Equation \ref{lawofuninhibitedgrowth}, we use $N_0$ to denote the initial population.  In  Equation \ref{continuouscompoundinterest}, $r$ denotes the annual interest rate,  and so it shouldn't be too surprising that the $k$ in Equation \ref{lawofuninhibitedgrowth} corresponds to a growth rate as well.   While Equations \ref{continuouscompoundinterest} and \ref{lawofuninhibitedgrowth} look entirely different, they both represent the same mathematical concept.
 
 \smallskip
 
@@ -304,7 +304,7 @@ where $\dfrac{dN}{dt}$ is the Leibniz notation\footnote{See the remark following
 
 \smallskip
 
-{\bf Solution.}  We begin with $N(t) = N_{\mbox{\tiny$0$}}e^{kt}$.  Since $N(t)$ is to give the number of cells \textit{in thousands}, we have $N_{\mbox{\tiny$0$}} = 12$, so $N(t) = 12e^{kt}$. 
+{\bf Solution.}  We begin with $N(t) = N_0e^{kt}$.  Since $N(t)$ is to give the number of cells \textit{in thousands}, we have $N_0 = 12$, so $N(t) = 12e^{kt}$. 
 
 Next, we need to determine the growth rate $k$.  We know that after one week, the number of cells has grown to five million.  Since $t$ measures days and the units of $N(t)$ are in thousands, this translates mathematically to $N(7) = 5000$ or  $12e^{7k} = 5000$.   Solving, we get $k = \frac{1}{7} \ln\left(\frac{1250}{3}\right)$, so  $N(t) = 12e^{ \frac{t}{7} \ln\left(\frac{1250}{3}\right)}$.  
 
@@ -338,9 +338,9 @@ This is precisely the same kind of hypothesis which drives The Law of Uninhibite
 
 \begin{eqn} \index{radioactive decay} \label{radioactivedecay} \textbf{Radioactive Decay:}
 
- The amount of a radioactive element  at time $t$, $A(t)$ is given by the formula  \[A(t) = A_{\mbox{\tiny$0$}}e^{kt},\] where $A(0) = A_{\mbox{\tiny$0$}}$ is the initial amount of the element and  $k<0$ is the constant of proportionality which satisfies the equation
+ The amount of a radioactive element  at time $t$, $A(t)$ is given by the formula  \[A(t) = A_0e^{kt},\] where $A(0) = A_0$ is the initial amount of the element and  $k<0$ is the constant of proportionality which satisfies the equation
 
-\[ \dfrac{dA}{dt} = k \, A(t)\]
+\[ \frac{dA}{dt} = k \, A(t)\]
 
 
 \end{eqn}
@@ -386,9 +386,9 @@ Whereas the radioactive decay model had a rate of decay at time $t$ directly pro
 
 \begin{eqn} \index{Newton's Law of Cooling} \label{newtonslawofcooling} \textbf{Newton's Law of Cooling (Warming):}  
 
-The temperature of an object  at time $t$, $T(t)$ is given by the formula \[T(t) = T_{a} + \left(T_{\mbox{\tiny$0$}} - T_{a}\right) e^{-kt},\] where $T(0) = T_{\mbox{\tiny$0$}}$ is the initial temperature of the object, $T_{a}$ is the ambient temperature\footnote{That is, the temperature of the surroundings.} and $k>0$ is the constant of proportionality which satisfies the equation
+The temperature of an object  at time $t$, $T(t)$ is given by the formula \[T(t) = T_{a} + \left(T_0 - T_{a}\right) e^{-kt},\] where $T(0) = T_0$ is the initial temperature of the object, $T_{a}$ is the ambient temperature\footnote{That is, the temperature of the surroundings.} and $k>0$ is the constant of proportionality which satisfies the equation
 
-\[ \dfrac{dT}{dt} = k \, \left(T(t) - T_{a}\right)\]
+\[ \frac{dT}{dt} = k \, \left(T(t) - T_{a}\right)\]
 
 
 
@@ -398,11 +398,11 @@ The temperature of an object  at time $t$, $T(t)$ is given by the formula \[T(t)
 
 \smallskip 
 
-If we re-examine the situation in Example \ref{exptempex} with $T_{\mbox{\tiny$0$}} = 160$, $T_{a} = 70$, and $k = 0.1$, we get, according to Equation \ref{newtonslawofcooling}, $T(t) = 70 + (160 - 70)e^{-0.1t}$ which reduces to the original formula given in that example.  The rate constant $k = 0.1$ in this case indicates the coffee is cooling at a rate equal to $10 \%$ of the difference between the temperature of the coffee and its surroundings.  
+If we re-examine the situation in Example \ref{exptempex} with $T_0 = 160$, $T_{a} = 70$, and $k = 0.1$, we get, according to Equation \ref{newtonslawofcooling}, $T(t) = 70 + (160 - 70)e^{-0.1t}$ which reduces to the original formula given in that example.  The rate constant $k = 0.1$ in this case indicates the coffee is cooling at a rate equal to $10 \%$ of the difference between the temperature of the coffee and its surroundings.  
 
 \smallskip
 
-Note in Equation \ref{newtonslawofcooling} that the constant $k$ is positive for both the cooling and warming scenarios.  What determines if the function $T(t)$ is increasing or decreasing is if $T_{\mbox{\tiny$0$}}$ (the initial temperature of the object) is greater than $T_{a}$ (the ambient temperature) or vice-versa, as we see in our next example.
+Note in Equation \ref{newtonslawofcooling} that the constant $k$ is positive for both the cooling and warming scenarios.  What determines if the function $T(t)$ is increasing or decreasing is if $T_0$ (the initial temperature of the object) is greater than $T_{a}$ (the ambient temperature) or vice-versa, as we see in our next example.
 
 \smallskip
 
@@ -422,7 +422,7 @@ Note in Equation \ref{newtonslawofcooling} that the constant $k$ is positive for
 
 \begin{enumerate}
 
-\item  The initial temperature of the roast is $40^{\circ}\mbox{F}$, so $T_{\mbox{\tiny$0$}} = 40$.  The environment in which we are placing the roast is the $350^{\circ}\mbox{F}$ oven, so $T_{a} = 350$. Newton's Law of Warming gives $T(t) = 350 + (40-350)e^{-kt}$, or after some simplification,  $T(t) = 350 - 310e^{-kt}$.  
+\item  The initial temperature of the roast is $40^{\circ}\mbox{F}$, so $T_0 = 40$.  The environment in which we are placing the roast is the $350^{\circ}\mbox{F}$ oven, so $T_{a} = 350$. Newton's Law of Warming gives $T(t) = 350 + (40-350)e^{-kt}$, or after some simplification,  $T(t) = 350 - 310e^{-kt}$.  
 
 \smallskip
 
@@ -456,9 +456,9 @@ Our final model, the \textbf{logistic} growth model combines The Law of Uninhibi
 
 \begin{eqn} \index{growth model ! logistic} \index{logistic growth} \label{logisticgrowth} \textbf{Logistic Growth:}  
 
-If a population behaves according to the assumptions of logistic growth, the number of organisms at time $t$, $N(t)$  is given by  \[N(t) =\dfrac{L}{1 + Ce^{-kLt}},\] where $N(0) = N_{\mbox{\tiny$0$}}$ is the initial population,  $L$ is the limiting population,\footnote{That is, $\ds{\lim_{t \rightarrow \infty} N(t) = L}$} and $C$ is a measure of how much room there is to grow given by \[C = \dfrac{L}{N_{\mbox{\tiny$0$}}} - 1.\] and $k > 0$ is the constant of proportionality which satisfies the equation
+If a population behaves according to the assumptions of logistic growth, the number of organisms at time $t$, $N(t)$  is given by  \[N(t) =\frac{L}{1 + Ce^{-kLt}},\] where $N(0) = N_0$ is the initial population,  $L$ is the limiting population,\footnote{That is, $\ds{\lim_{t \rightarrow \infty} N(t) = L}$} and $C$ is a measure of how much room there is to grow given by \[C = \frac{L}{N_0} - 1.\] and $k > 0$ is the constant of proportionality which satisfies the equation
 
-\[  \dfrac{dN}{dt} = k \, N(t) \left(L - N(t)\right)\]
+\[  \frac{dN}{dt} = k \, N(t) \left(L - N(t)\right)\]
 
 
 \end{eqn}
@@ -473,7 +473,7 @@ The logistic function is used not only to model the growth of organisms, but is 
 
 \begin{example} \label{rumorex} The number of people $N(t)$, in hundreds, at a local community college who have heard the rumor `Carl's afraid of Sasquatch' can be modeled using the logistic equation
 
-\[N(t) = \dfrac{84}{1+2799e^{-t}},\]
+\[N(t) = \frac{84}{1+2799e^{-t}},\]
 
 where $t\geq 0$ is the number of days after April 1, 2016.
 
@@ -680,7 +680,7 @@ If we think about this situation from a scientific perspective, it does seem to 
 
 \smallskip
 
-As  written,  Equation \ref{lawofuninhibitedgrowth} gives uninhibited growth as  $N(t) = N_{\mbox{\tiny$0$}}e^{kt}$. Here, for simplicity's sake, we relabel $N_{\mbox{\tiny$0$}} = a$ and $e^{k} = b$ so that we are looking for parameters $a$ and $b$ so that $N(t) = a \cdot b^{t}$.
+As  written,  Equation \ref{lawofuninhibitedgrowth} gives uninhibited growth as  $N(t) = N_0e^{kt}$. Here, for simplicity's sake, we relabel $N_0 = a$ and $e^{k} = b$ so that we are looking for parameters $a$ and $b$ so that $N(t) = a \cdot b^{t}$.
 
 \smallskip
 
@@ -722,14 +722,8 @@ Running the data, a logistic function appears to be an excellent fit, both judgi
  \includegraphics[width=5in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx08.jpg} 
  \end{center}
 
-
-
   While the quadratic model also fits extremely well, our logistic model takes into account that only a finite number of people will ever get the flu (according to our model, $L=10,\!739$), whereas the quadratic model predicts no limit to the number of cases. As we have stated several times before in the text, mathematical models, regardless of their sophistication, are just that:  models, and they all have their limitations.\footnote{Speaking of limitations, as of June 3, 2009, there were 19,273 confirmed cases of influenza A (H1N1).  This is well above our prediction of 10,739.  Each time a new report is issued, the data set increases and the model must be recalculated.  We leave this recalculation to the reader.}
 
-
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforApplicationsofExponentialandLogarithmicFunctions}
 
