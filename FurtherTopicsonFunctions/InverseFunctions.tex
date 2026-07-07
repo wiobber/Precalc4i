@@ -32,29 +32,38 @@ Let's check to see if the function $g$ does the job.  If $x=5$, then $f(5) = 3(5
 
 Not only does $g$ undo $f$, but $f$ also undoes $g$.  That is, if we take the output from $g$, $g(x) = \frac{x-4}{3}$, and substitute that into $f$, we get $f(g(x)) = f\left(\frac{x-4}{3}\right) = 3 \left(\frac{x-4}{3}\right) + 4 = (x-4) + 4 = x$.  Using the language of function composition developed in Section \ref{FunctionComposition}, the statements $g(f(x)) = x$ and $f(g(x)) = x$ can be written as $(g \circ f)(x) = x$ and $(f \circ g)(x) = x$, respectively.\footnote{At the level of functions, $g \circ f = f \circ g = I$, where $I$ is the identity function as defined as $I(x) = x$ for all real numbers, $x$.}  Abstractly, we can visualize the relationship between $f$ and $g$ in the diagram below.  
 
-\begin{center}
 
 
-% \input{InverseFunctions_pic1.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-15, xmax=15, ymin=-10, ymax=10]
-  \addplot[dashed, domain=-15:15] {0}; % baseline if needed
-  \draw (axis cs:-7.5,0) ellipse [x radius=6, y radius=5];
-  \draw (axis cs:7.5,0) ellipse [x radius=6, y radius=5];
-  \addplot[fgraph, domain=-7.25:7.25, samples=50] ({x}, {5 - (25/52)*(x)^2}); % simple smooth arc (approx)
-  \addplot[fgraph, domain=-7.25:7.25, samples=50, dashed] ({x}, {-5 + (25/52)*(x)^2}); % dashed opposite arc
-  \draw[->] (axis cs:-7.25,0.25) .. controls (axis cs:0,5) .. (axis cs:7.25,0.25);
-  \draw[->, dashed] (axis cs:7.25,-0.25) .. controls (axis cs:0,-5) .. (axis cs:-7.25,-0.25);
-  \addplot[only marks, mark=*] coordinates {(-7.5,0) (7.5,0)};
-  \node[flabel, label=above :{$f$}] at (axis cs:0,6) {};
-  \node[flabel, label=below :{$g$}] at (axis cs:0,-6) {};
-  \node[flabel, label=above :{$x = g(f(x))$}] at (axis cs:-7.5,-2) {};
-  \node[flabel, label=above :{$y = f(x)$}]     at (axis cs: 7.5,-2) {};
-\end{axis}
+\begin{image}
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
+
+% Translucent filled ellipses
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (-1.7,0) ellipse (2.4 and 1.9);
+\filldraw[fill=orange!40, fill opacity=0.35, draw=black]
+  (1.7,0) ellipse (2.4 and 1.9);
+
+% Points
+\coordinate (X) at (-1.4,0);
+\coordinate (Y) at (1.4,0);
+\fill[black] (X) circle (1.3pt);
+\fill[black] (Y) circle (1.3pt);
+
+% f arrow (solid, curving above)
+\draw[->, thick] (X) to[out=60, in=120] node[midway, above=3pt] {$f$} (Y);
+
+% g arrow (dashed, curving below)
+\draw[->, thick, dashed] (Y) to[out=240, in=300] node[midway, below=3pt] {$g$} (X);
+
+% Labels
+\node[left=4pt] at (X) {$x = g(f(x))$};
+\node[right=4pt] at (Y) {$y = f(x)$};
+
 \end{tikzpicture}
-
-
-\end{center}
+\end{image}
 
 The main idea to get from the diagram is that $g$ takes the outputs from $f$ and returns them to their respective inputs, and conversely, $f$ takes outputs from $g$ and returns them to their respective inputs.  We now have enough background to state the central definition of the section.
 
