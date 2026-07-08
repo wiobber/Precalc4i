@@ -1413,20 +1413,6 @@ $\begin{array}{rcl}
 
 &
 
-% \input{InverseFunctions_pic25.tex}
-% \begin{tikzpicture}
-% \begin{axis}[fplot, xmin=-1, xmax=8, ymin=-1, ymax=8]
-%   \addplot[dashed, domain=-1:8] {x};
-%   \addplot[fgraph, domain=0:2.75] {x^2};
-%   \addplot[fgraph, domain=0:7.56] {sqrt(x)};
-%   \addplot[only marks, mark=*] coordinates {(2,4) (0,0) (4,2)};
-%   \node[flabel, label=above right:{$(2,4)$}] at (axis cs:2,4) {};
-%   \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
-%   \node[flabel, label=below right:{$(4,2)$}] at (axis cs:4,2) {};
-%   \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x)=x^2,\ x\ge0 \quad \text{and} \quad y=g_{1}(x)=\sqrt{x}$};
-% \end{axis}
-% \end{tikzpicture}
-%    \\
 
 \end{tabular}
 
@@ -1521,24 +1507,85 @@ $\begin{array}{rcl}
 
 &
 
-% \input{InverseFunctions_pic26.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \addplot[dashed, domain=-5:5] {x};
-  \addplot[fgraph, domain=-2.23:0] {x^2};
-  \addplot[fgraph, domain=0:5] {-sqrt(x)};
-  \addplot[only marks, mark=*] coordinates {(-2,4) (0,0) (4,-2)};
-  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2, 4) {};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs: 0, 0) {};
-  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs: 4,-2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f_{2}(x)=x^2,\ x\le0 \quad \text{and} \quad y=g_{2}(x)=-\sqrt{x}$};
-\end{axis}
-\end{tikzpicture}
-    \\
+% % \input{InverseFunctions_pic26.tex}
+% \begin{tikzpicture}
+% \begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+%   \addplot[dashed, domain=-5:5] {x};
+%   \addplot[fgraph, domain=-2.23:0] {x^2};
+%   \addplot[fgraph, domain=0:5] {-sqrt(x)};
+%   \addplot[only marks, mark=*] coordinates {(-2,4) (0,0) (4,-2)};
+%   \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2, 4) {};
+%   \node[flabel, label=above right:{$(0,0)$}]  at (axis cs: 0, 0) {};
+%   \node[flabel, label=below right:{$(4,-2)$}] at (axis cs: 4,-2) {};
+%   \node at (axis description cs:0.5,-0.1) {$y=f_{2}(x)=x^2,\ x\le0 \quad \text{and} \quad y=g_{2}(x)=-\sqrt{x}$};
+% \end{axis}
+% \end{tikzpicture}
+%     \\
 
 \end{tabular}
 
 \end{center}
+
+\begin{image}
+    \begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=-5:5,
+          xmin=-5, xmax=5,
+          ymin=-5, ymax=5,
+          width=5in,
+          height=5in,
+          xtick={-4, -3, -2, -1, 1, 2,3, 4},
+            xticklabels={$-4$,$-3$,$-2$, $-1$, $1$,$2$, $3$,$4$},
+           ytick={-4, -3, -2, -1, 1, 2,3, 4},
+            yticklabels={$-4$,$-3$,$-2$, $-1$, $1$,$2$, $3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=2pt, penColor1, domain=-5:0, samples=200] {x^2};
+\addplot[smooth, line width=2pt, penColor1, domain=-5:0, samples=200] {x^(0.5)};
+\addplot[smooth, dashed, line width=2pt, domain=-1:8, samples=10] {x};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=3pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (2,4) [$(2,4)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=3pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (4,2) [$(4,2)$]
+  };
+
+ 
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 Hence, by restricting the domain of $f$ we are able to produce invertible functions.   Said differently, in much the same way the equation $x = y^2$ implicitly describes a pair of \textit{functions}, the equation $y = x^2$ implicitly describes a pair of \textit{invertible} functions.
 
