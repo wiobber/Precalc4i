@@ -431,65 +431,79 @@ Let's turn our attention to products. We have $\Delta[uv] = u_{2} \, v_{2} - u_{
 
 We imagine the product $u_{1} \, v_{1}$ as being the area of a rectangle with width $u_{1}$ and length $v_{1}$.  Likewise, the product $u_{2} \, v_{2}$ is the area of a (larger) rectangle with width $u_{2}$ and length $v_{2}$.
 
-\medskip
+\begin{image}
+   
+\begin{tikzpicture}[
+  every node/.style={font=\itshape}
+]
 
-\begin{center}
+% Dimensions for smaller rectangle (left)
+\def\vone{3.6}
+\def\uone{2.2}
 
-\begin{tabular}{cc}
+% Dimensions for larger rectangle (right)
+\def\vtwo{5.4}
+\def\utwo{3.3}
 
-% \input{FunctionArithmetic_pic2.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:4]
-  \addplot[fgraph] coordinates {(0,0) (0,2) (4,2) (4,0) (0,0)};
-  \node[flabel, label=right:{$u_{1}$}]       at (axis cs:-0.25,1) {};
-  \node[flabel, label=above:{$v_{1}$}]       at (axis cs:2,-0.25) {};
-  \node[flabel, label=above:{$u_{1} \, v_{1}$}] at (axis cs:2,1) {};
-\end{axis}
+% Horizontal gap between the two rectangles
+\def\gap{2.0}
+
+% Left rectangle
+\draw[thick] (0,0) rectangle (\vone,\uone);
+\node at (\vone/2,\uone/2) {$u_1 v_1$};
+\node[left=8pt] at (0,\uone/2) {$u_1$};
+\node[below=6pt] at (\vone/2,0) {$v_1$};
+
+% Right rectangle (shifted over by width of left rectangle + gap)
+\begin{scope}[xshift=\vone cm + \gap cm]
+  \draw[thick] (0,0) rectangle (\vtwo,\utwo);
+  \node at (\vtwo/2,\utwo/2) {$u_2 v_2$};
+  \node[left=8pt] at (0,\utwo/2) {$u_2$};
+  \node[below=6pt] at (\vtwo/2,0) {$v_2$};
+\end{scope}
+
 \end{tikzpicture}
- 
 
-& 
-
-% \input{FunctionArithmetic_pic3.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:6]
-  \addplot[fgraph] coordinates {(0,0) (0,3) (6,3) (6,0) (0,0)};
-  \node[flabel, label=right:{$u_{2}$}]          at (axis cs:-0.25,1.5) {};
-  \node[flabel, label=above:{$v_{2}$}]          at (axis cs:3,-0.25)   {};
-  \node[flabel, label=above:{$u_{2} \, v_{2}$}] at (axis cs:3,1.5)     {};
-\end{axis}
-\end{tikzpicture}
-  \\
-
-\end{tabular}
-
-\end{center}
+\end{image}
 
 From $\Delta u = u_{2} - u_{1}$, we get $u_{2} = u_{1} + \Delta u$ and, likewise,  $v_{2} = v_{1} + \Delta v$.  Doing so allows us to decompose the larger rectangle into four smaller rectangles. 
 
-\begin{center}
+\begin{image}
 
+\begin{tikzpicture}[
+  every node/.style={font=\itshape}
+]
 
-% \input{FunctionArithmetic_pic4.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=4, domain=0:6]
-  \addplot[fgraph] coordinates {(0,0) (0,3) (6,3) (6,0) (0,0)};
-  \addplot[fgraph, dashed, domain=0:6] {2};
-  \addplot[fgraph, dashed] coordinates {(4,0) (4,3)};
-  \node[flabel, label=right:{$\Delta u$}]                 at (axis cs:-0.3,2.5) {};
-  \node[flabel, label=right:{$u_{1}$}]                    at (axis cs:-0.3,1)   {};
-  \node[flabel, label=above:{$v_{1}$}]                    at (axis cs:2,-0.25)  {};
-  \node[flabel, label=above:{$\Delta v$}]                 at (axis cs:5,-0.25)  {};
-  \node[flabel, label=above:{$u_{1} \, v_{1}$}]           at (axis cs:2,1)      {};
-  \node[flabel, label=above:{$v_{1} \, \Delta u$}]        at (axis cs:2,2.5)    {};
-  \node[flabel, label=above:{$u_{1} \, \Delta v$}]        at (axis cs:5,1)      {};
-  \node[flabel, label=above:{$\Delta u \, \Delta v$}]     at (axis cs:5,2.5)    {};
-\end{axis}
+% Dimensions
+\def\vone{3.5}   % width of left column (v1)
+\def\dv{1.8}      % width of right column (Delta v)
+\def\uone{2.6}    % height of bottom row (u1)
+\def\du{1.4}      % height of top row (Delta u)
+
+% Outer rectangle (solid)
+\draw[thick] (0,0) rectangle (\vone+\dv, \uone+\du);
+
+% Dashed internal dividers
+\draw[thick, dashed] (0,\uone) -- (\vone+\dv,\uone);
+\draw[thick, dashed] (\vone,0) -- (\vone,\uone+\du);
+
+% Region labels
+\node at (\vone/2, \uone+\du/2) {$v_1\,\Delta u$};
+\node at (\vone+\dv/2, \uone+\du/2) {$\Delta u\, \Delta v$};
+\node at (\vone/2, \uone/2) {$u_1 v_1$};
+\node at (\vone+\dv/2, \uone/2) {$u_1\, \Delta v$};
+
+% Left side labels (rotated brace-style, but simple text here to match original)
+\node[left=8pt] at (0,\uone+\du/2) {$\Delta u$};
+\node[left=8pt] at (0,\uone/2) {$u_1$};
+
+% Bottom labels
+\node[below=6pt] at (\vone/2,0) {$v_1$};
+\node[below=6pt] at (\vone+\dv/2,0) {$\Delta v$};
+
 \end{tikzpicture}
-  
 
-
-\end{center}
+\end{image}
 
 Using this schematic, we see the area   $u_{2} \, v_{2}$ is the sum of the areas of four smaller rectangles:
 
