@@ -453,14 +453,14 @@ coordinates {
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=3pt, penColor1, domain=-4:4, samples=200] {(x-2)^3+1};
-\addplot[smooth, line width=3pt, penColor1, domain=-4:4, samples=200] {sign(x-1)*abs(x-1)^(1/3)+2};
+\addplot[smooth, line width=2pt, penColor1, domain=-4:4, samples=200] {(x-2)^3+1};
+\addplot[smooth, line width=2pt, penColor1, domain=-4:4, samples=200] {sign(x-1)*abs(x-1)^(1/3)+2};
 \addplot[smooth, dashed, line width=2pt, domain=-4:4, samples=10] {x};
 
 \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -473,7 +473,7 @@ coordinates {
   \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south west,
@@ -486,7 +486,7 @@ coordinates {
     \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -499,7 +499,7 @@ coordinates {
   \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=north west,
@@ -512,7 +512,7 @@ coordinates {
   \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=north west,
@@ -525,7 +525,7 @@ coordinates {
     \addplot[
   only marks,
   mark=*,
-  mark size=2pt,
+  mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
@@ -1203,48 +1203,185 @@ Using the language of Section \ref{Relations},  the equation $x = y^2$ implicitl
 
 Hence, in some sense, we have two  \textit{partial} inverses for $f(x) = x^2$:  $g_{1}(x) = \sqrt{x}$ returns the \textit{positive} inputs from $f$ and $g_{2}(x) = -\sqrt{x}$ returns the \textit{negative} inputs to $f$.  In order to view each of these functions as strict inverses, however, we need to split $f$ into two parts:  $f_{1}(x) = x^2$ for $x \geq 0$ and $f_{2}(x) = x^2$ for $x \leq 0$.
 
-\begin{multicols}{3}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-1, ymax=8,
+          width=2in,
+          height=3in,
+          xtick={-2,-1,2},
+            xticklabels={$-2$,$-1$, $2$},
+           ytick={1,2,3, 4, 5, 6, 7},
+            yticklabels={$1$,$2$,$3$, $4$, $5$,$6$, $7$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=200] {x^2};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,4) [$(2,4)$]
+  };
 
-% \input{InverseFunctions_pic22.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
-  \addplot[fgraph, domain=-2.75:2.75] {x^2};
-  \addplot[only marks, mark=*] coordinates {(-2,4) (2,4) (0,0)};
-  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
-  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4) {};
-  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs: 0,0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f(x) = x^2$};
-\end{axis}
-\end{tikzpicture}
-  
+    \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (-2,4) [$(-2,4)$]
+  };
+  \node[anchor=north, color=penColor1] at (1.4,6.5) {$y=f(x)$};
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-1, ymax=8,
+          width=2in,
+          height=3in,
+          xtick={-2,-1,2},
+            xticklabels={$-2$,$-1$, $2$},
+           ytick={1,2,3, 4, 5, 6, 7},
+            yticklabels={$1$,$2$,$3$, $4$, $5$,$6$, $7$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=0:4, samples=200] {x^2};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
 
-% \input{InverseFunctions_pic23.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
-  \addplot[fgraph, domain=0:2.75] {x^2};
-  \addplot[only marks, mark=*] coordinates {(2,4) (0,0)};
-  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs:2,4) {};
-  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs:0,0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x) = x^2,\ x \ge 0$};
-\end{axis}
-\end{tikzpicture}
-  
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,4) [$(2,4)$]
+  };
+\node[anchor=north, color=penColor1] at (1.4,6.5) {$y=f_1(x)$};
+      \end{axis}
+        \end{tikzpicture}
+        \quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-3, xmax=3,
+          ymin=-1, ymax=8,
+          width=2in,
+          height=3in,
+          xtick={-2,-1,2},
+            xticklabels={$-2$,$-1$, $2$},
+           ytick={1,2,3, 4, 5, 6, 7},
+            yticklabels={$1$,$2$,$3$, $4$, $5$,$6$, $7$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:0, samples=200] {x^2};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
 
-% \input{InverseFunctions_pic24.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
-  \addplot[fgraph, domain=-2.75:0] {x^2};
-  \addplot[only marks, mark=*] coordinates {(-2,4) (0,0)};
-  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
-  \node[flabel, label=below right:{$(0,0)$}]  at (axis cs: 0,0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f_{2}(x) = x^2,\ x \le 0$};
-\end{axis}
-\end{tikzpicture}
-  
-
-
-\end{multicols}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (-2,4) [$(-2,4)$]
+  };
+   \node[anchor=north, color=penColor1] at (1.5,1.5) {$y=f_2(x)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 We claim that $f_{1}$ and $g_{1}$ are an inverse function pair as are $f_{2}$ and $g_{2}$.  Indeed, we find:
