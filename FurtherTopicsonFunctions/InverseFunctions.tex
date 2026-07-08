@@ -316,7 +316,7 @@ We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {sign(x-1)*abs(x-1)^(1/3)+2};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=200] {sign(x-1)*abs(x-1)^(1/3)+2};
 \addplot[
   only marks,
   mark=*,
@@ -383,7 +383,7 @@ coordinates {
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {(x-2)^3+1};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=200] {(x-2)^3+1};
 
 \addplot[
   only marks,
@@ -428,7 +428,7 @@ coordinates {
 \end{image} 
 
 \begin{image}
-    \begin{tikzpicture}[scale=1]font=\small
+    \begin{tikzpicture}[scale=1]font=\Large
         \begin{axis}[
           domain=-4:4,
           xmin=-4, xmax=4,
@@ -453,9 +453,87 @@ coordinates {
   }
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
-\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {(x-2)^3+1};
-\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {sign(x-1)*abs(x-1)^(1/3)+2};
-\addplot[smooth, dashed, line width=1pt, domain=-4:4, samples=10] {x};
+\addplot[smooth, line width=3pt, penColor1, domain=-4:4, samples=200] {(x-2)^3+1};
+\addplot[smooth, line width=3pt, penColor1, domain=-4:4, samples=200] {sign(x-1)*abs(x-1)^(1/3)+2};
+\addplot[smooth, dashed, line width=2pt, domain=-4:4, samples=10] {x};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (1,2) [$(1,2)$]
+  };
+
+    \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,1) [$(2,1)$]
+  };
+
+    \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (3,2) [$(3,2)$]
+  };
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -463,7 +541,7 @@ coordinates {
 
 \item Since $f$ and $g$ are inverses,  the solution to $f(x) = 5$ is $x = f^{-1}(5) = g(5) = (5-2)^3+1 = 28$.  To check, we find  $f(28) = \sqrt[3]{28-1}+2 = \sqrt[3]{27} + 2 = 3+2 = 5$, as required. 
 
-\smallskip
+
 
  Likewise, the solution to $g(x) = -3$ is $x = g^{-1}(-3) = f(-3) = \sqrt[3]{(-3)-1} + 2 = 2 - \sqrt[3]{4}$.  Once again, to check, we find $g(2 - \sqrt[3]{4}) = (2 - \sqrt[3]{4}-2)^3 + 1 = (-\sqrt[3]{4})^3 +1 = -4+1 = -3$.
 \end{enumerate}
