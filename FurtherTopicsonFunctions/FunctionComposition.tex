@@ -28,30 +28,49 @@ In Section \ref{FunctionArithmetic}, we saw how the arithmetic of real numbers c
 
 To compute $(g \circ f)(x) $, we use the formula given in  Defintion \ref{functioncompositiondefn}:   $(g \circ f) (x) = g(f(x))$.  However, from a procedural viewpoint, Defintion \ref{functioncompositiondefn} tells us  the output from $g \circ f$ is found by taking the output from $f$, $f(x)$,  and then making that the input to $g$.   From this perspective, we see $g \circ f$ as a two step process taking an input $x$ and first applying the procedure $f$ then applying the procedure $g$.  Abstractly, we have
 
-\begin{center}
 
-\footnotesize
+\begin{image}
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
 
-% \input{FunctionComposition_pic1.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-10, xmax=20, ymin=-10, ymax=10]
-  \addplot[fgraph, only marks, mark=*, mark size=1.5pt] coordinates {(-9,0) (4,0) (18,0)};
-  \node[flabel, label=above:{$f$}]           at (axis cs:-2, 6)  {};
-  \node[flabel, label=above:{$g$}]           at (axis cs:11, 6)  {};
-  \node[flabel, label=below:{$g \circ f$}]   at (axis cs:4.5,-6) {};
-  \node[flabel, label=below:{$x$}]           at (axis cs:-9,-1)  {};
-  \node[flabel, label=below:{$f(x)$}]        at (axis cs:4,-1)   {};
-  \node[flabel, label=below:{$g(f(x))$}]     at (axis cs:18,-2)  {};
-  \addplot[fgraph, ->] coordinates {(-8.9,0.25) (-2,5) (3.9,0.25)};
-  \addplot[fgraph, ->] coordinates {(4.1,0.25) (11,5) (17.9,0.25)};
-  \addplot[fgraph, ->] coordinates {(-8.9,-0.25) (4.5,-5) (17.9,-0.25)};
-\end{axis}
+% Translucent filled ellipses (different sizes/positions, slightly rotated to overlap like the original)
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (-4,0) ellipse (1.5 and 2);
+\filldraw[fill=orange, fill opacity=0.35, draw=black, rotate around={20:(0,-0.2)}]
+  (0,-0.2) ellipse (1.1 and 1.5);
+\filldraw[fill=red, fill opacity=0.35, draw=black]
+  (3.5,-0.5) ellipse (1.3 and 1.3);
+
+% Points
+\coordinate (X) at (-3.4,0.1);
+\coordinate (U) at (0,-0.3);
+\coordinate (FU) at (3.3,-0.6);
+\fill[black] (X) circle (1.3pt);
+\fill[black] (U) circle (1.3pt);
+\fill[black] (FU) circle (1.3pt);
+
+% Upper-left arc: x -> u(x)
+\draw[->, thick] (X) to[out=70, in=160] node[midway, above=10pt] {$f$} (U);
+
+% Upper-right arc: u(x) -> f(u(x))
+\draw[->, thick] (U) to[out=60, in=140] node[midway, above=10pt] {$g$} (FU);
+
+% Bottom long arc: x -> f(u(x))
+\draw[->, thick] (X) to[out=290, in=250] node[midway, below=6pt] {$g\circ f$} (FU);
+
+% Labels
+\node[left=4pt] at (X) {$x$};
+\node[below=4pt] at (U) {$f(x)$};
+\node[right=4pt] at (FU) {$g(f(x))$};
+
 \end{tikzpicture}
+\end{image}
 
 
-\end{center}
 
-\normalsize
+
 
 In the expression $g(f(x))$, the function $f$ is often called the `inside' function while $g$ is often called the `outside' function.  When evaluating  composite function values we present two methods in the example below:  the `inside out' and `outside in'  methods.  
 
@@ -710,30 +729,45 @@ Let $f$ and $u$ be functions where $u$ is defined over an interval containing $x
 
 If we think of $u$ as being an `intermediary' variable, Theorem \ref{relatedratesaroc} allows us to determine the rate of change of $f$ with respect to $x$ by multiplying the rate of change of $f$ with respect to this `intermediary' $u$ by the rate of change of the `intermediary' $u$ with respect to $x$.   That is, we are looking for rate  information on how $f$ depends on $x$ by decomposing the rate into two rates as visualized below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
 
-\footnotesize
+% Translucent filled ellipses (different sizes/positions, slightly rotated to overlap like the original)
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (-4,0) ellipse (1.5 and 2);
+\filldraw[fill=orange, fill opacity=0.35, draw=black, rotate around={20:(0,-0.2)}]
+  (0,-0.2) ellipse (1.1 and 1.5);
+\filldraw[fill=red, fill opacity=0.35, draw=black]
+  (3.5,-0.5) ellipse (1.3 and 1.3);
 
-% \input{FunctionComposition_pic7.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-10, xmax=20, ymin=-10, ymax=10]
-  \addplot[fgraph, only marks, mark=*, mark size=1.5pt] coordinates {(-9,0) (4,0) (18,0)};
-  \node[flabel, label=above:{$\dfrac{\Delta[u(x)]}{\Delta x}$}] at (axis cs:-2, 6)  {};
-  \node[flabel, label=above:{$\dfrac{\Delta[f(u)]}{\Delta u}$}]  at (axis cs:11, 6)  {};
-  \node[flabel, label=below:{$\dfrac{\Delta[f(x)]}{\Delta x}$}]  at (axis cs:4.5,-6) {};
-  \node[flabel, label=below:{$x$}]                               at (axis cs:-9,-1)  {};
-  \node[flabel, label=below:{$u(x)$}]                            at (axis cs:4,-1)   {};
-  \node[flabel, label=below:{$f(u(x))$}]                         at (axis cs:18,-2)  {};
-  \addplot[fgraph, ->] coordinates {(-8.9,0.25) (-2,5) (3.9,0.25)};
-  \addplot[fgraph, ->] coordinates {(4.1,0.25) (11,5) (17.9,0.25)};
-  \addplot[fgraph, ->] coordinates {(-8.9,-0.25) (4.5,-5) (17.9,-0.25)};
-\end{axis}
+% Points
+\coordinate (X) at (-3.4,0.1);
+\coordinate (U) at (0,-0.3);
+\coordinate (FU) at (3.3,-0.6);
+\fill[black] (X) circle (1.3pt);
+\fill[black] (U) circle (1.3pt);
+\fill[black] (FU) circle (1.3pt);
+
+% Upper-left arc: x -> u(x)
+\draw[->, thick] (X) to[out=70, in=160] node[midway, above=10pt] {$\dfrac{\Delta[u(x)]}{\Delta x}$} (U);
+
+% Upper-right arc: u(x) -> f(u(x))
+\draw[->, thick] (U) to[out=60, in=140] node[midway, above=10pt] {$\dfrac{\Delta[f(u)]}{\Delta u}$} (FU);
+
+% Bottom long arc: x -> f(u(x))
+\draw[->, thick] (X) to[out=290, in=250] node[midway, below=6pt] {$\dfrac{\Delta[f(x)]}{\Delta x}$} (FU);
+
+% Labels
+\node[left=4pt] at (X) {$x$};
+\node[below=4pt] at (U) {$u(x)$};
+\node[right=4pt] at (FU) {$f(u(x))$};
+
 \end{tikzpicture}
+\end{image}
 
-
-\end{center}
-
-\normalsize
 
 We close the section with one last example.
 
