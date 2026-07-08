@@ -290,54 +290,178 @@ The graph of  $y =  f(x) = \sqrt[3]{x-1} + 2$ appears below on the left courtesy
 
 We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$, $(1,2)$ and $(2,1)$, $(2,3)$ and $(3,2)$.  When graphed on the same pair of axes, the two graphs certainly appear to be symmetric about the line $y=x$, as required.
 
-\begin{multicols}{3}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=3in,
+          height=3in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {sign(x-1)*abs(x-1)^(1/3)+2};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+  };
 
-% \input{InverseFunctions_pic3.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
-  \addplot[fpplot, domain=0.42:3.58] ({(t - 2)^3 + 1},{t});
-  \addplot[only marks, mark=*] coordinates {(0,1) (1,2) (2,3)};
-  \node[flabel, label=above right:{$(0,1)$}] at (axis cs:0,1) {};
-  \node[flabel, label=above right:{$(1,2)$}] at (axis cs:1,2) {};
-  \node[flabel, label=above right:{$(2,3)$}] at (axis cs:2,3) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f(x)$};
-\end{axis}
-\end{tikzpicture}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (1,2) [$(1,2)$]
+  };
 
+    \addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,3) [$(2,3)$]
+  };
+      \end{axis}
+      \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=f(x)$};
+        \end{tikzpicture}
+        \quad\quad\quad\quad
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=3in,
+          height=3in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {(x-2)^3+1};
 
-% \input{InverseFunctions_pic4.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
-  \addplot[fgraph, domain=0.42:3.58] {(x - 2)^3 + 1};
-  \addplot[only marks, mark=*] coordinates {(1,0) (2,1) (3,2)};
-  \node[flabel, label=below right:{$(1,0)$}] at (axis cs:1,0) {};
-  \node[flabel, label=above right:{$(2,1)$}] at (axis cs:2,1) {};
-  \node[flabel, label=above right:{$(3,2)$}] at (axis cs:3,2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=g(x)$};
-\end{axis}
-\end{tikzpicture}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+  };
 
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (2,1) [$(2,1)$]
+  };
 
-% \input{InverseFunctions_pic5.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=4, ymin=-5, ymax=5]
-  \addplot[dashed, domain=-3.5:4.5] {x};
-  \addplot[fpplot, domain=0.42:3.58] ({(t - 2)^3 + 1},{t});
-  \addplot[fgraph,  domain=0.42:3.58] {(x - 2)^3 + 1};
-  \addplot[only marks, mark=*] coordinates {(0,1) (1,2) (2,3) (1,0) (2,1) (3,2)};
-  \node[flabel, label=above left :{$(0,1)$}] at (axis cs:0,1) {};
-  \node[flabel, label=above right:{$(1,2)$}] at (axis cs:1,2) {};
-  \node[flabel, label=above right:{$(2,3)$}] at (axis cs:2,3) {};
-  \node[flabel, label=below right:{$(1,0)$}] at (axis cs:1,0) {};
-  \node[flabel, label=above right:{$(2,1)$}] at (axis cs:2,1) {};
-  \node[flabel, label=above right:{$(3,2)$}] at (axis cs:3,2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f(x),\ y=g(x),\ y=x$};
-\end{axis}
-\end{tikzpicture}
+    \addplot[
+  only marks,
+  mark=*,
+  mark size=1pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (3,2) [$(3,2)$]
+  };
+      \end{axis}
+      \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=g(x)$ };
+        \end{tikzpicture}\quad\quad\quad\quad
+\end{image} 
 
-
-\end{multicols}
-
+\begin{image}
+    \begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-4, ymax=4,
+          width=6in,
+          height=6in,
+          xtick={-3, -2,-1,1,2,3},
+            xticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},
+           ytick={-3,-2,-1,1,2,3},
+            yticklabels={$-3$,$-2$,$-1$, $1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {(x-2)^3+1};
+\addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {sign(x-1)*abs(x-1)^(1/3)+2};
+\addplot[smooth, dashed, line width=1pt, domain=-4:4, samples=10] {x};
+      \end{axis}
+\path (current axis.south) ++(0,-6pt) node {\scriptsize $y=f(x)$, $y=g(x)$, $y=x$ };
+        \end{tikzpicture}
+\end{image}
 \end{enumerate}
 
 \item Since $f$ and $g$ are inverses,  the solution to $f(x) = 5$ is $x = f^{-1}(5) = g(5) = (5-2)^3+1 = 28$.  To check, we find  $f(28) = \sqrt[3]{28-1}+2 = \sqrt[3]{27} + 2 = 3+2 = 5$, as required. 
