@@ -442,29 +442,49 @@ We now investigate under what circumstances a function is invertible. As a way t
 
 For example, when $x=-2$,  $f(-2)= (-2)^2 = 4$, but $g(4) = \sqrt{4}=2$.  That is, $g$ failed to return the input $-2$ from its output $4$.  Instead, $g$ matches the output $4$ to a \textit{different} input, namely $2$, which satisfies $f(2) = 4$.  Schematically:
 
-\begin{center}
+\begin{image}
+   
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
 
+% Translucent filled ellipses
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (-2,0) ellipse (1.7 and 1.5);
+\filldraw[fill=orange!40, fill opacity=0.35, draw=black]
+  (2,0) ellipse (1.7 and 1.5);
 
-% \input{InverseFunctions_pic9.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-15, xmax=15, ymin=-10, ymax=10]
-  \draw (axis cs:-7.5,0) ellipse [x radius=6, y radius=5];
-  \draw (axis cs:7.5,0)  ellipse [x radius=6, y radius=5];
-  \addplot[only marks, mark=*] coordinates {(-7.5,2) (-7.5,-2) (7.5,0)};
-  \draw[->] (axis cs:-7.5, 2) -- (axis cs:7.25, 0.25);
-  \draw[->] (axis cs:-7.5,-2) -- (axis cs:7.25,-0.25);
-  \draw[->] (axis cs:-3,4) .. controls (axis cs:0,5) .. (axis cs:3,4);
-  \draw[->, dashed] (axis cs:7.25,-0.25) .. controls (axis cs:0,-5) .. (axis cs:-7.25,-2.25);
-  \node[flabel, label=above :{$f$}]            at (axis cs:0, 6) {};
-  \node[flabel, label=below :{$g$}]            at (axis cs:0,-6) {};
-  \node[flabel, label=above :{$x = -2$}]       at (axis cs:-7.5, 1) {};
-  \node[flabel, label=below :{$x = 2$}]        at (axis cs:-7.5,-4) {};
-  \node[flabel, label=above :{$4$}]            at (axis cs: 7.5,-1) {};
-\end{axis}
+% Points
+\coordinate (Xneg2) at (-1.4,0.7);
+\coordinate (Xpos2) at (-1.4,-0.5);
+\coordinate (Y) at (1.4,0.1);
+\fill[black] (Xneg2) circle (1.3pt);
+\fill[black] (Xpos2) circle (1.3pt);
+\fill[black] (Y) circle (1.3pt);
+
+% Generic top f arrow (curving above, not tied to specific points)
+\draw[->, thick] (-0.6,1.9) to[out=40, in=140] node[midway, above=4pt] {$f$} (0.6,1.9);
+
+% Straight mapping arrows into the same point
+\draw[->, thick] (Xneg2) -- (Y);
+\draw[->, thick] (Xpos2) -- (Y);
+
+% g arrow (dashed, curving below, from Y back to Xpos2)
+\draw[->, thick, dashed] (Y) to[out=270, in=300] node[midway, below=6pt] {$g$} (Xpos2);
+
+% Labels
+\node[left=4pt] at (Xneg2) {$x = -2$};
+\node[left=4pt] at (Xpos2) {$x = 2$};
+\node[right=4pt] at (Y) {$4$};
+
 \end{tikzpicture}
 
+\end{image}
 
-\end{center}
+
+
+
 
 We see from the diagram that since both $f(-2)$ and $f(2)$ are $4$, it is impossible to construct a \textit{function} which takes $4$ back to \textit{both} $x=2$ and $x=-2$ since, by definition, a function can match $4$ with only \textit{one} number.
 
