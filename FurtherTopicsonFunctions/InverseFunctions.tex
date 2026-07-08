@@ -1553,8 +1553,8 @@ $\begin{array}{rcl}
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
 \addplot[smooth, line width=2pt, penColor1, domain=-5:0, samples=200] {x^2};
-\addplot[smooth, line width=2pt, penColor1, domain=-5:0, samples=200] {x^(0.5)};
-\addplot[smooth, dashed, line width=2pt, domain=-1:8, samples=10] {x};
+\addplot[smooth, line width=2pt, penColor1, domain=0:5, samples=200] {-x^(0.5)};
+\addplot[smooth, dashed, line width=2pt, domain=-5:5, samples=10] {x};
 
 \addplot[
   only marks,
@@ -1566,7 +1566,7 @@ $\begin{array}{rcl}
     xshift=-5pt, yshift=0pt}
 ]
 coordinates {
-  (2,4) [$(2,4)$]
+  (-2,4) [$(-2,4)$]
   };
 
   \addplot[
@@ -1575,11 +1575,11 @@ coordinates {
   mark size=3pt,
   nodes near coords,
   point meta=explicit symbolic,
-  every node near coord/.style={anchor=north west,
+  every node near coord/.style={anchor=north east,
     xshift=0pt, yshift=0pt}
 ]
 coordinates {
-  (4,2) [$(4,2)$]
+  (4,-2) [$(4,-2)$]
   };
 
  
