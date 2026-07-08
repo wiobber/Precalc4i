@@ -1414,24 +1414,84 @@ $\begin{array}{rcl}
 &
 
 % \input{InverseFunctions_pic25.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-1, ymax=8]
-  \addplot[dashed, domain=-1:8] {x};
-  \addplot[fgraph, domain=0:2.75] {x^2};
-  \addplot[fgraph, domain=0:7.56] {sqrt(x)};
-  \addplot[only marks, mark=*] coordinates {(2,4) (0,0) (4,2)};
-  \node[flabel, label=above right:{$(2,4)$}] at (axis cs:2,4) {};
-  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
-  \node[flabel, label=below right:{$(4,2)$}] at (axis cs:4,2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x)=x^2,\ x\ge0 \quad \text{and} \quad y=g_{1}(x)=\sqrt{x}$};
-\end{axis}
-\end{tikzpicture}
-   \\
+% \begin{tikzpicture}
+% \begin{axis}[fplot, xmin=-1, xmax=8, ymin=-1, ymax=8]
+%   \addplot[dashed, domain=-1:8] {x};
+%   \addplot[fgraph, domain=0:2.75] {x^2};
+%   \addplot[fgraph, domain=0:7.56] {sqrt(x)};
+%   \addplot[only marks, mark=*] coordinates {(2,4) (0,0) (4,2)};
+%   \node[flabel, label=above right:{$(2,4)$}] at (axis cs:2,4) {};
+%   \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
+%   \node[flabel, label=below right:{$(4,2)$}] at (axis cs:4,2) {};
+%   \node at (axis description cs:0.5,-0.1) {$y=f_{1}(x)=x^2,\ x\ge0 \quad \text{and} \quad y=g_{1}(x)=\sqrt{x}$};
+% \end{axis}
+% \end{tikzpicture}
+%    \\
 
 \end{tabular}
 
 \end{center}
 
+\begin{image}
+    \begin{tikzpicture}[scale=1]font=\Large
+        \begin{axis}[
+          domain=0:4,
+          xmin=-1, xmax=8,
+          ymin=-1, ymax=8,
+          width=5in,
+          height=5in,
+          xtick={1,2,3, 4, 5, 6, 7},
+            xticklabels={$1$,$2$,$3$, $4$, $5$,$6$, $7$},
+           ytick={1,2,3, 4, 5, 6, 7},
+            yticklabels={$1$,$2$,$3$, $4$, $5$,$6$, $7$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
+\addplot[smooth, line width=2pt, penColor1, domain=0:4, samples=200] {x^2};
+\addplot[smooth, line width=2pt, penColor1, domain=0:8, samples=200] {x^(0.5)};
+\addplot[smooth, dashed, line width=2pt, domain=-1:8, samples=10] {x};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=3pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (2,4) [$(2,4)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=3pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (4,2) [$(4,2)$]
+  };
+
+ 
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 \begin{center}
