@@ -320,7 +320,7 @@ We can immediately see three pairs of  corresponding points: $(0,1)$ and $(1,0)$
 \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=north west,
@@ -333,7 +333,7 @@ coordinates {
   \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=west,
@@ -346,7 +346,7 @@ coordinates {
     \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -356,7 +356,6 @@ coordinates {
   (2,3) [$(2,3)$]
   };
       \end{axis}
-      \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=f(x)$};
         \end{tikzpicture}
         \quad\quad\quad\quad
 \begin{tikzpicture}[scale=1]font=\small
@@ -389,7 +388,7 @@ coordinates {
 \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -402,7 +401,7 @@ coordinates {
   \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=north west,
@@ -415,7 +414,7 @@ coordinates {
     \addplot[
   only marks,
   mark=*,
-  mark size=1pt,
+  mark size=2pt,
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south east,
@@ -425,7 +424,6 @@ coordinates {
   (3,2) [$(3,2)$]
   };
       \end{axis}
-      \path (current axis.south) ++(0,-6pt) node {\scriptsize $y=g(x)$ };
         \end{tikzpicture}\quad\quad\quad\quad
 \end{image} 
 
@@ -459,7 +457,6 @@ coordinates {
 \addplot[smooth, line width=1.5pt, penColor1, domain=-4:4, samples=100] {sign(x-1)*abs(x-1)^(1/3)+2};
 \addplot[smooth, dashed, line width=1pt, domain=-4:4, samples=10] {x};
       \end{axis}
-\path (current axis.south) ++(0,-6pt) node {\scriptsize $y=f(x)$, $y=g(x)$, $y=x$ };
         \end{tikzpicture}
 \end{image}
 \end{enumerate}
