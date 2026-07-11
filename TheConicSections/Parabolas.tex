@@ -49,28 +49,59 @@ We want to use only the distance definition of parabola to derive the equation o
 
 For simplicity, assume that the vertex is $(0,0)$ and that the parabola opens upwards.  Let $p$ denote the directed\footnote{We'll talk more about what `directed' means later.} distance from the vertex to the focus, which by definition is the same as the distance from the vertex to the directrix.   Hence, the focus is $(0,p)$ and the directrix is the line $y = -p$.  Our picture becomes 
 
-\begin{center}
+\begin{image}
+    \begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-7}{7}{0}{5}
-\axes
-\plotsymbol[3pt]{Asterisk}{(0, 2)}
-\tlabel[cc](0.75, 1.5){$(0,p)$}
-\tlabel(7,-0.25){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\arrow \reverse \arrow \function{-6.5, 6.5, 0.1}{-2}
-\tlabel[cc](0, -2.5){$y = -p$}
-\tlabel[cc](7, 3.75){$(x,y)$}
-\dashed \polyline{(0,2), (6, 4.5), (6, -2)}
-\tlabel[cc](6, -2.5){$(x, -p)$}
-\tlabel[cc](0.5,-0.5){$(0,0)$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6.25,6.25,0.1}{(x**2)/8}
-\point[4pt]{(6, -2)}
-\point[4pt]{(0,0)}
-\point[4pt]{(6,4.5)}
-\end{mfpic}
+% --- Parameters ---
+% p = distance from vertex to focus (and to directrix)
+% Parabola: y = x^2/(4p)
+\def\p{0.6}
+\def\xpt{2.1}
+\pgfmathsetmacro{\ypt}{\xpt*\xpt/(4*\p)}
 
-\end{center}
+% --- Axes ---
+\draw[->] (-3.2, 0) -- (3.4, 0) node[right] {$x$};
+\draw[->] (0, 0) -- (0, 3.6) node[above] {$y$};
+
+% --- Directrix (dashed horizontal line at y = -p) ---
+\draw[-] (-2.9, -\p) -- (2.9, -\p);
+\node at (0, -1.0) {$y = -p$};
+
+% --- Parabola ---
+\draw[thick, domain=-2.55:0, samples=60, smooth, variable=\t]
+    plot (\t, {\t*\t/(4*\p)});
+\draw[thick, domain=0:2.55, samples=60, smooth, variable=\t]
+    plot (\t, {\t*\t/(4*\p)});
+
+% --- Key points ---
+% Vertex
+\fill (0,0) circle (2pt);
+\node[below left] at (0,0) {$(0,0)$};
+
+% Focus
+\node at (0,\p) {\Large $\ast$};
+\node[left] at (0,\p) {$(0,p)$};
+
+% Point on parabola
+\fill (\xpt,\ypt) circle (2pt);
+\node[right] at (\xpt,\ypt) {$(x,y)$};
+
+% Point on directrix below (x,y)
+\fill (\xpt,-\p) circle (2pt);
+\node[below right] at (\xpt,-\p) {$(x,-p)$};
+
+% --- Dashed segments ---
+% Focus to (x,y)
+\draw[dashed] (0,\p) -- (\xpt,\ypt);
+% Vertical drop from (x,y) to (x,-p)
+\draw[dashed] (\xpt,\ypt) -- (\xpt,-\p);
+
+\end{tikzpicture}
+
+\end{image}
 
 From the definition of parabola, we know the distance from $(0,p)$ to $(x,y)$ is the same as the distance from $(x,-p)$ to $(x,y)$.  Using the Distance Formula, Equation \ref{distanceformula}, we get
 
@@ -142,27 +173,65 @@ Knowing the focus and focal diameter allows to plot two points on the parabola i
 
 \item  Find the standard form of the equation of the parabola sketched below:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-5:4,
+          xmin=-5, xmax=5,
+          ymin=-5, ymax=5,
+          width=6in,
+          height=6in,
+          xtick={-4, -3, -2,-1,2,3,4},
+            xticklabels={$-4$, $-3$,$-2$,$-1$, $2$,$3$,$4$},
+           ytick={-4, -3, -2, -1,1,2,3,4},
+            yticklabels={$-4$, $-3$, $-2$,$-1$, $\,$,$\,$,$3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Extra thick graph
+\addplot[smooth, line width=3.5pt, penColor1] {-0.5*(x+1)^2+2};
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4, -3, -2, -1, 0, 1, 2, 3, 4}
-\ymarks{-4,-3,-2,-1,0,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel[cc](-1.5, 2.5){\scriptsize $(-1,2)$}
-\tlabel[cc](1.5,0.5){\scriptsize $(1,0)$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4,  {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$2$} 2,   {$3$} 3, {$4$} 4}
-\axislabels {y}{ {$3$} 3,  {$4$} 4, {$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.5,2.5,0.1}{2-(0.5)*((x+1)**2)}
-\point[4pt]{(-1,2), (1,0)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=-2pt}
+]
+coordinates {
+  (-1,2) [$(-1,2)$]
+ 
+};
 
-\end{center}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=5pt, yshift=5pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -185,61 +254,48 @@ The focal length is $|p| = 2$, which means the focus is $2$ units below the vert
 
 The focal diameter is $|4p| = |-8| = 8$, which means the parabola is $8$ units wide at the focus.  Hence, the endpoints of the latus rectum are $4$ units to the left and right of the focus.  Starting at $(-1,1)$ and moving to the left $4$ units, we arrive at $(-1-4,1) = (-5,1)$.  Starting at $(-1,1)$ and moving to the right $4$ units we arrive at $(-1+4,1) = (3,1)$.  The final graph is below.
 
-
+% https://www.desmos.com/calculator/w1grtpwsfk
 \begin{center}
-
-\begin{mfpic}[15]{-7}{5}{-1}{6}
-\axes
-\xmarks{-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4}
-\ymarks{0, 1, 2, 3, 4, 5}
-\dashed \polyline{(-5,1), (3,1)}
-\plotsymbol[3pt]{Asterisk}{(-1,1)}
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,6){\scriptsize $y$}
-\tlabel[cc](-5.5,1.5){\scriptsize $(-5,1)$}
-\tlabel[cc](-1.5,3.5){\scriptsize $(-1,3)$}
-\tlabel[cc](3.5,1.5){\scriptsize $(3,1)$}
-\tlabel[cc](1.5, 4.5){\scriptsize $y=5$}
-\tcaption{\scriptsize The graph of $(x+1)^2 = -8(y-3)$}
-\arrow \reverse \arrow \function{-7,5,0.1}{5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2,  {$3$} 3}
-\axislabels {y}{{$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6.5,4.5,0.1}{((x+1)**2)/-8+3}
-\point[4pt]{(-1,3), (3,1), (-5,1)}
-\end{mfpic}
-
-
+\desmos{w1grtpwsfk}{800}{600}
 \end{center}
 
 
 \item We begin by sketching the data given to us below.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-5:4,
+          xmin=-2, xmax=4,
+          ymin=-5, ymax=2,
+          width=4in,
+          height=4in,
+          xtick={-1,1,2,3},
+            xticklabels={$-1$,$1$, $2$,$3$},
+           ytick={-3, -2, -1,1},
+            yticklabels={$-3$, $-2$,$-1$, $1$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\draw[-,dashed](2,-4)--(2,1);
+\draw[-](-2,-4)--(4,-4);
 
-\begin{mfpic}[15]{-2}{4}{-5}{2}
-\axes
-\xmarks{-1,0,1,2,3}
-\ymarks{-4,-3,-2,-1,0,1}
-\tlabel(4,0.25){\scriptsize $x$}
-\tlabel(0.25,2){\scriptsize $y$}
-\tcaption{\vphantom{\scriptsize The graph of $(x+1)^2 = -8(y-3)$}}
-\arrow \reverse \arrow \function{-1,4,0.1}{-4}
-\dashed \polyline{(2,1), (2, -4)}
-\plotsymbol[4pt]{Asterisk}{(2,1)}
-\point[4pt]{(2,-1.5)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1}
-\normalsize
-\end{mfpic}
+  \node at (2,1) {\Large $\ast$};
 
-\end{center}
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 Since the focus is $(2,1)$, we know the the vertex lies on the vertical line $x=2$.  Moreover, since the vertex is halfway between the focus and directrix, we know the vertex is exactly $\frac{5}{2}$ units \textit{below} the focus at $\left(2,1-\frac{5}{2} \right) = \left(2, -\frac{3}{2} \right)$.  This gives $h=2$ and $k = -\frac{3}{2}$.  Since the focus of the parabola is $\frac{5}{2}$ units \textit{above} the vertex we know  $p = + \frac{5}{2}$.  Using  Equation \ref{standardvparabola}, we get our final answer:  $(x-2)^2 = 4 \left(\frac{5}{2}\right) \left(y - \left(- \frac{3}{2}\right) \right)^2$ or  $(x-2)^2 = 10 \left(y + \frac{3}{2}\right)^2$.
