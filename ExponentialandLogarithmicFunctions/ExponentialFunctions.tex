@@ -322,8 +322,8 @@ It is time for an example.
           height=5in,
           xtick={-6,-5,-4,-3, -2,-1,1,2},
             xticklabels={$-6$,$-5$,$-4$, $-3$,$-2$,$-1$, $1$,$2$},
-           ytick={-4,-3,-2,-1,1,2,3},
-            yticklabels={$\,$,$\,$,$\,$,$\,$,$1$,$2$,$3$},  
+           ytick={-4,-3,-2,-1,1,2,3,4},
+            yticklabels={$\,$,$\,$,$\,$,$\,$,$1$,$2$,$3$,$4$},  
             tick style={line width=1.2pt},
             major tick length=6pt,
             axis x line=center,
@@ -604,51 +604,10 @@ so  after $k$ years' time, the value of the car $V(t)$ has decreased by $((0.8)^
 
  To obtain the graph of  $y = 25(0.8)^t = 25 f(t)$, we multiply all of the $y$ values in the graph by $25$ (including the $y$ value of the horizontal asymptote) in accordance with Theorem \ref{vscalings} to obtain the points $(-1, 31.25)$, $(0, 25)$ and $(1,20)$. The horizontal asymptote remains the same, since $25 \cdot 0 = 0$.   Finally, we restrict the domain to $[0,\infty)$ to fit with the applied domain given to us. 
 
-\[\begin{array}{ccc}
-
-\begin{mfpic}[15]{-4}{4}{-1}{3}
-
-\axes
-\tlabel[cc](1,1.25){\scriptsize $(0,1)$}
-\tlabel[cc](0,-1.5){\scriptsize H.A. $y=0$}
-\tlabel[cc](4,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tcaption{\scriptsize $y = f(t)=(0.8)^{t}$}
-\ymarks{1,2}
-\xmarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3}
-\axislabels {y}{{\scriptsize $2$} 2}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4, 4, 0.1}{(0.8)**x}
-\point[4pt]{(0,1),(1,0.8), (-1,1.25)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize vertical scale by a factor of $25$ }}{\xrightarrow{\hspace{1.75in}}}}{\mbox{ \scriptsize multiply each $y$-coordinate by $25$}} 
-
-&
-
-\begin{mfpic}[10]{-1}{7}{-1}{7}
-
-\axes
-\tlabel[cc](-1.5,5){\scriptsize $(0,25)$}
-\tlabel[cc](4,-1.5){\scriptsize H.A. $y=0$}
-\tlabel[cc](7,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tcaption{\scriptsize $y = V(t)=25 f(t)$, $t \geq 0$}
-\ymarks{1,2,3,4,5,6}
-\xmarks{1,2,3,4,5,6}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
-\axislabels {y}{{\scriptsize $5$} 1, {\scriptsize $10$} 2, {\scriptsize $15$} 3, {\scriptsize $20$} 4, {\scriptsize $30$} 6}
-\penwd{1.25pt}
-\point[4pt]{(0,5),(1,4)}
-\arrow \function{0, 7, 0.1}{5*((0.8)**x)}
-\end{mfpic} \\
-
-\end{array}\]
+% https://www.desmos.com/calculator/jejkmuwpx0
+\begin{center}
+    \desmos{jejkmuwpx0}{800}{600}
+\end{center}
 
 \item  We see from the graph of $V$ that its horizontal asymptote is $y=0$. This means as the car gets older, its value diminishes to $0$.  
 
