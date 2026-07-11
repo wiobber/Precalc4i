@@ -33,63 +33,104 @@ To help identify which process $f$ or $g$ is a function and  why the other is no
 
 
 \begin{image}
-\begin{tikzpicture}
+   \begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
 
-% ---------- Left diagram: f ----------
+% Translucent filled ellipses
+\filldraw[fill=orange, fill opacity=0.35, draw=black]
+  (-0.5,0) ellipse (3 and 2.6);
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (6,0) ellipse (2.5 and 2.6);
 
-% Column titles
-\node at (-3.5,6) {$N$ (inputs)};
-\node at (0,6) {$f$};
-\node at (3.5,6) {$T$ (outputs)};
+% Left-side points (inputs)
+\coordinate (WhitePaw) at (0,1.9);
+\coordinate (Cooper)   at (0,0.65);
+\coordinate (Bingo)    at (0,-0.65);
+\coordinate (Kennie)   at (0,-1.9);
 
-% Left nodes
-\node (wp) at (-3.5,5) {White Paw};
-\node (co) at (-3.5,4) {Cooper};
-\node (bi) at (-3.5,3) {Bingo};
-\node (ke) at (-3.5,2) {Kennie};
+% Right-side points (outputs)
+\coordinate (Cat)    at (5.2,1.5);
+\coordinate (Lizard) at (5.2,0);
+\coordinate (Turtle) at (5.2,-1.5);
 
-% Right nodes
-\node (cat) at (3.5,5) {cat};
-\node (liz) at (3.5,4) {lizard};
-\node (tur) at (3.5,3) {turtle};
+% Mapping arrows
+\draw[->, thick] (WhitePaw) -- (Cat);
+\draw[->, thick] (Cooper)   -- (Cat);
+\draw[->, thick] (Bingo)    -- (Lizard);
+\draw[->, thick] (Kennie)   -- (Turtle);
 
-% Arrows
-\draw[->] (wp) -- (cat);
-\draw[->] (co) -- (cat);
-\draw[->] (bi) -- (liz);
-\draw[->] (ke) -- (tur);
+% Point labels (left, inside orange blob, text to the right of dot omitted since points are text themselves here)
+\node[left=5pt] at (WhitePaw) {White Paw};
+\node[left=3pt] at (Cooper) {Cooper};
+\node[left=2pt] at (Bingo) {Bingo};
+\node[left=3pt] at (Kennie) {Kennie};
+
+% Point labels (right)
+\node[right=2pt] at (Cat) {cat};
+\node[right=2pt] at (Lizard) {lizard};
+\node[right=2pt] at (Turtle) {turtle};
+
+% Set labels above
+\node[above] at (0,2.8) {$N$ (inputs)};
+\node[above] at (6,2.8) {$T$ (outputs)};
+\node[above] at (2.6,2.8) {$f$};
+
 \end{tikzpicture}
+
 \end{image}
 
 
-% ---------- Right diagram: g ----------
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{image}
-\begin{tikzpicture}
+   \begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
 
-% Column titles
-\node at (-3.5,6) {$T$ (inputs)};
-\node at (0,6) {$g$};
-\node at (3.75,6) {$N$ (outputs)};
+% Translucent filled ellipses
+\filldraw[fill=orange, fill opacity=0.35, draw=black]
+  (6,0) ellipse (3 and 2.6);
+\filldraw[fill=blue, fill opacity=0.35, draw=black]
+  (-0.5,0) ellipse (2.5 and 2.6);
 
-% Left nodes
-\node (cat2) at (-3.5,5) {cat};
-\node (liz2) at (-3.5,4) {lizard};
-\node (tur2) at (-3.5,3) {turtle};
+% Left-side points (inputs)
+\coordinate (Cat) at (0,1.5);
+%\coordinate (cat)   at (0,0.65);
+\coordinate (Lizard)    at (0,0);
+\coordinate (Turtle)   at (0,-1.5);
 
-% Right nodes
-\node (wp2) at (3.75,5) {White Paw};
-\node (co2) at (3.75,4) {Cooper};
-\node (bi2) at (3.75,3) {Bingo};
-\node (ke2) at (3.75,2) {Kennie};
+% Right-side points (outputs)
+\coordinate (WhitePaw)    at (5.2,1.9);
+\coordinate (Cooper) at (5.2,0.65);
+\coordinate (Bingo) at (5.2,-0.65);
+\coordinate (Kennie) at (5.2,-1.9);
 
-% Arrows
-\draw[->] (cat2) -- (wp2);
-\draw[->] (cat2) -- (co2);
-\draw[->] (liz2) -- (bi2);
-\draw[->] (tur2) -- (ke2);
+% Mapping arrows
+\draw[->, thick] (WhitePaw) -- (Cat);
+\draw[->, thick] (Cooper)   -- (Cat);
+\draw[->, thick] (Bingo)    -- (Lizard);
+\draw[->, thick] (Kennie)   -- (Turtle);
+
+% Point labels (left, inside orange blob, text to the right of dot omitted since points are text themselves here)
+\node[right=5pt] at (WhitePaw) {White Paw};
+\node[right=3pt] at (Cooper) {Cooper};
+\node[right=2pt] at (Bingo) {Bingo};
+\node[right=3pt] at (Kennie) {Kennie};
+
+% Point labels (right)
+\node[left=2pt] at (Cat) {cat};
+\node[left=2pt] at (Lizard) {lizard};
+\node[left=2pt] at (Turtle) {turtle};
+
+% Set labels above
+\node[above] at (0,2.8) {$T$ (inputs)};
+\node[above] at (6,2.8) {$N$ (outputs)};
+\node[above] at (2.6,2.8) {$g$};
 
 \end{tikzpicture}
+
 \end{image}
 \begin{center}
     \captionof{figure}{Mapping diagrams for $f$ and $g$}
