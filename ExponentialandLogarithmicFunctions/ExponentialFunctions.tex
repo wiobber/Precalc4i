@@ -144,24 +144,44 @@ We summarize the basic properties of exponential functions in the following theo
 
 \item  The graph of $f$ resembles:
 
-\begin{center}
-
-\begin{mfpic}[10]{-4}{4}{-1}{5}
-
-\axes
-
-\ymarks{1}
-
-\penwd{1.25pt}
-
-\arrow \reverse \arrow \function{-2.3,2.3,0.1}{2**x}
-\point[4pt]{(0,1)}
-\tlabel[cc](1.5,1){\scriptsize $(0,1)$}
-\tcaption{\scriptsize $y = b^{x}$, $b > 1$}
-
-\end{mfpic}
-
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:2.5,
+          xmin=-2.5, xmax=2.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2.5:2, line width=1.5pt, blue] {exp(x)};
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-8pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+  };
+ 
+\node[anchor=south, blue] at (-1,5.2) {$y=b^x,\,b>1$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{itemize}
 
@@ -182,26 +202,44 @@ We summarize the basic properties of exponential functions in the following theo
 
 \item  The graph of $f$ resembles:
 
-\begin{center}
-
-\begin{mfpic}[10]{-4}{4}{-1}{5}
-
-\axes
-
-\ymarks{1}
-
-\penwd{1.25pt}
-
-\arrow \reverse \arrow \function{-2.3,2.3,0.1}{(0.5)**x}
-\point[4pt]{(0,1)}
-
-\tlabel[cc](-1.5,1){\scriptsize $(0,1)$}
-\tcaption{\scriptsize $y = b^{x}$, $0 < b < 1$}
-
-\end{mfpic}
-
-
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:2.5,
+          xmin=-2.5, xmax=2.5,
+         ymin=-1, ymax=8,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2.5:2, line width=1.5pt, blue] {exp(-x)};
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=8pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+  };
+ 
+\node[anchor=south, blue] at (1,5.2) {$y=b^x,\,b<1$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{itemize}
 
