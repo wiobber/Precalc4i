@@ -380,28 +380,67 @@ In the GeoGebra interactive below adjust the slider for the focal length, $p$ an
 
 \item  The parabola whose graph is sketched below:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-5:5,
+          xmin=-5, xmax=5,
+          ymin=-2, ymax=8,
+          width=6in,
+          height=6in,
+          xtick={-4, -3, -2,-1,1,2,3,4},
+            xticklabels={$-4$, $-3$,$-2$,$\,$,$1$, $2$,$3$,$4$},
+           ytick={-1,1,2,3,4, 5, 6, 7},
+            yticklabels={$\,$, $1$, $2$,$3$, $4$,$5$,$\,$,$7$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Extra thick graph
+\addplot[smooth, line width=3.5pt, penColor1, samples=200] {(3/1.41)*(x+2)^0.5+3};
+\addplot[smooth, line width=3.5pt, penColor1, samples=200] {-(3/1.41)*(x+2)^0.5+3};
 
-\begin{mfpic}[15]{-5}{5}{-2}{8}
-\axes
-\xmarks{-4, -3, -2, -1, 0, 1, 2, 3, 4}
-\ymarks{-1,0,1,2,3,4,5,6,7}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,8){\scriptsize $y$}
-\tlabel[cc](-3.5, 3){\scriptsize $(-2,3)$}
-\tlabel[cc](-0.75,-0.75){\scriptsize $(0,0)$}
-\tlabel[cc](-1, 6){\scriptsize $(0,6)$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$2$} 2,   {$3$} 3, {$4$} 4}
-\axislabels {y}{ {$1$} 1,  {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5,  {$7$} 7}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2,8,0.1}{(   (((t-3)**2)/4.5) - 2, t)}
-\point[4pt]{(0,0),  (-2,3), (0,6)}
-\end{mfpic}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-10pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  (0,6) [$(0,6)$]
+ 
+};
 
-\end{center}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north east,
+    xshift=-5pt, yshift=-5pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
