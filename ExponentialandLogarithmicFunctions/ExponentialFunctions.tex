@@ -163,7 +163,7 @@ We summarize the basic properties of exponential functions in the following theo
             xlabel={$x$},
             ylabel={$y$},
           ]
-\addplot[smooth,domain=-2.5:2, line width=1.5pt, blue] {exp(x)};
+\addplot[smooth,domain=-2:2, line width=1.5pt, blue] {exp(x)};
  
 \addplot[
   only marks,
@@ -221,7 +221,7 @@ coordinates {
             xlabel={$x$},
             ylabel={$y$},
           ]
-\addplot[smooth,domain=-2.5:2, line width=1.5pt, blue] {exp(-x)};
+\addplot[smooth,domain=-2:2, line width=1.5pt, blue] {exp(-x)};
  
 \addplot[
   only marks,
@@ -236,7 +236,7 @@ coordinates {
   (0,1) [$(0,1)$]
   };
  
-\node[anchor=south, blue] at (1,5.2) {$y=b^x,\,b<1$};
+\node[anchor=south, blue] at (1.2,5.2) {$y=b^x,\,0< b<1$};
       \end{axis}
         \end{tikzpicture}
 \end{image}
@@ -312,29 +312,69 @@ It is time for an example.
 
 \item  \label{findformulaforexpexample}Find a formula for the graph of the function below.  Assume the base of the exponential is $2$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-4:4,
+          xmin=-7, xmax=3,
+          ymin=-5, ymax=5,
+          width=5in,
+          height=5in,
+          xtick={-6,-5,-4,-3, -2,-1,1,2},
+            xticklabels={$-6$,$-5$,$-4$, $-3$,$-2$,$-1$, $1$,$2$},
+           ytick={-4,-3,-2,-1,1,2,3},
+            yticklabels={$\,$,$\,$,$\,$,$\,$,$1$,$2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Extra thick graph
+\addplot[smooth, line width=3.5pt, penColor1,domain=-6.5:1] {-2^(x+3)+4};
 
-\begin{mfpic}[15][10]{-7}{3}{-5}{5}
-\axes
-\dashed \polyline{(-7, 4), (3,4)}
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](-2.5,0.75){\scriptsize $(-1,0)$}
-\tlabel[cc](1,-4){\scriptsize $(0,-4)$}
-\tlabel[cc](2,3.5){\scriptsize $y=4$}
-\tcaption{\scriptsize $y = F(x)$}
-\xmarks{-6, -5, -4, -3,-2,-1,1,2}
-\ymarks{-4, -3, -2, -1, 1, 2, 3, 4}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-6 \hspace{7pt}$} -6,{\scriptsize $-5 \hspace{7pt}$} -5, {\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $-1$} -1, {\scriptsize $-4$} -4}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6, 0.17, 0.1}{4-2**(x+3)}
-\point[4pt]{(0, -4), (-1,0)}
-\end{mfpic}
+%% Asymptotes
+\draw[dashed, gray, line width=1.5pt] (-7,4)--(3,4);
 
+%% Open, unlabeled points
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=-10pt}
+]
+coordinates {
+  (-1,0) [(-1,0)]
+ 
+};
 
-\end{center}
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
+]
+coordinates {
+  (0,-4) [$(0,-4)$]
+ 
+};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
