@@ -470,27 +470,9 @@ The focal length is $|p| = 3$, which means the focus is $3$ units to the right o
 
 The focal diameter is $|4p| = |12| = 12$, which means the parabola is $12$ units wide at the focus.  Hence, the endpoints of the latus rectum are $6$ units above and below  the focus.  Starting at $(2,2)$ and moving down $6$ units, we arrive at $(2,2-6) = (2,-4)$.  Starting at $(2,2)$ and moving up  $6$ units we arrive at $(2,2+6) = (2,8)$.  The final graph is below.
 
+% https://www.desmos.com/calculator/0wspllmyi9
 \begin{center}
-
-\begin{mfpic}[15][10]{-6}{4}{-5}{9}
-\axes
-\arrow\polyline{(-4,-5),(-4,9)}
-\arrow\polyline{(-4,9),(-4,-5)}
-\xmarks{-5,-4,-3, -2,-1,0,1,2,3}
-\ymarks{-4,-3,-2,-1,0,1,2,3,4,5,6,7,8}
-\tlabel(4,-0.25){\scriptsize $x$}
-\tlabel(0.25,9){\scriptsize $y$}
-\tcaption{\scriptsize The graph of $(y-2)^2 = 12(x+1)$}
-\plotsymbol[3pt]{Asterisk}{(2,2)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-4.5,8.5,.1}{(((t-2)**2)/12-1,t)}
-\point[4pt]{(2,8), (2,-4), (-1,2)}
-\end{mfpic}
+\desmos{0wspllmyi9}{800}{600}
 \end{center}
 
 \item  Unlike the previous example, the equation  $y^2 + 4y + 8x = 4$ is not in the form described  in Equation \ref{standardhparabola}.  In order to get an equivalent equation in the form prescribed by  Equation \ref{standardhparabola}, we need to complete the square in $y$  on the left-hand side of the equation.  Once that is done, we  factor out the coefficient of $x$ on the other side of the equation below.
@@ -515,30 +497,9 @@ Since the focal length is  $|p| = 2$, the focus is $2$ units to the left of the 
 Since the focal diameter is $|4p|$ is $8$, the parabola is $8$ units wide at the focus.  Starting at the focus $(-1,-2)$ we move down $4$ units and get $(-1,-2-4) = (-1,-6)$.  Moving up $4$ units from the focus we get $(-1,-2+4) = (-1,2)$.  Hence, $(-1,-6)$ and $(-1,2)$ are the endpoints of the latus rectum. The final graph is below.
 
 
-
+% https://www.desmos.com/calculator/2fh7y50igq
 \begin{center}
-
-\begin{mfpic}[15]{-3}{4}{-7}{3}
-\axes
-\arrow\polyline{(3,3),(3,-7)}
-\arrow\polyline{(3,-7),(3,3)}
-\xmarks{-2,-1,0,1,2,3}
-\ymarks{-6,-5,-4,-3,-2,-1,0,1,2}
-\tlabel(4,-0.25){\scriptsize  $x$}
-\tlabel(0.25,3){ \scriptsize $y$}
-\tcaption{\scriptsize The graph of $y^2 + 4y + 8x = 4$}
-\plotsymbol[3pt]{Asterisk}{(-1,-2)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2}
-\axislabels {y}{{$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \parafcn{-6.5,2.5,.1}{((4-t**2-4*t)/8,t)}
-\arrow \parafcn{2.5,-6.5,.1}{((4-t**2-4*t)/8,t)}
-\point[4pt]{(1,-2), (-1,2), (-1,-6)}
-\end{mfpic}
-
+\desmos{2fh7y50igq}{800}{600}
 \end{center}
 
 \end{enumerate}
@@ -575,25 +536,38 @@ We identify $f(x) =  -2 + 2 \sqrt{2-2x}$ and $g(x) =  -2 - 2 \sqrt{2-2x}$. Since
 \item  We sketch the data below.  
 
 
-\begin{center}
-\begin{mfpic}[15]{-5}{2}{-1}{4}
-\axes
-\xmarks{-4, -3, -2, -1, 0}
-\ymarks{1,2,3}
-\dashed \polyline{(-4,2), (0,2)}
-\plotsymbol[3pt]{Asterisk}{(-4,2)}
-\tlabel(2,-0.5){\scriptsize $x$}
-\tlabel(0.5,4){\scriptsize $y$}
-\tlabel[cc](-4, 1.5){\scriptsize $(-4,2)$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1}
-\axislabels {y}{ {$1$} 1,  {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(0,-1), (0,4)}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-5:4,
+          xmin=-5, xmax=2,
+          ymin=-1, ymax=4,
+          width=5in,
+          height=4in,
+          xtick={-4,-3,-2,-1},
+            xticklabels={$-4$,$-3$, $-2$,$-1$},
+           ytick={1, 2,3},
+            yticklabels={$1$,$2$, $3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\draw[-,dashed](-4,2)--(0,2);
+
+  \node at (-4,2) {\Large $\ast$};
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 Since the focus is $(-4,2)$ and the directrix is a vertical line, we know the vertex must lie on the horizontal line $y = 2$.  Moreover, we know the vertex must lie midway between the focus and directrix which in this case is  $(-2,2)$.  This gives $h = -2$ and $k = 2$.  Since the focus is $2$ units to the \textit{left} of the vertex, we know $p = -2$.  Using  Equation \ref{standardhparabola}, we get our answer as $(y-2)^2 = 4(-2)(x-(-2))$ or $(y-2)^2 = -8(x+2)$.
 
