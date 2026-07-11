@@ -642,34 +642,64 @@ In the GeoGebra interactive below, click and drag the point on the parabola $A$ 
 
 {\bf Solution.}  One way to approach this problem is to determine the equation of the parabola suggested to us by this data.  For simplicity, we'll assume the vertex is $(0,0)$ and the parabola opens upwards.  Our standard form for such a parabola is $x^2 = 4py$.  Since the focus is $2$ units above the vertex, we know  $p=2$, so we have $x^2 = 8y$.  Visually,
 
-\begin{center}
+\begin{image}
+   \begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-7}{7}{0}{5}
-\axes
-\xmarks{-6, -5, -4, -3, -2, -1, 0,1,2,3,4,5,6}
-\ymarks{0,1,2,3,4}
-\arrow \polyline{(-5.5, 4.5),(5.5,4.5)}
-\arrow \polyline{(5.5,4.5), (-5.5, 4.5)}
-\arrow \polyline{(6, 0.5),(6,4)}
-\arrow \polyline{(6,4), (6,0.5)}
-\plotsymbol[3pt]{Asterisk}{(0, 2)}
-\tlabel[cc](6.25,2.25){?}
-\tlabel(6.25, 4.25){$(6,y)$}
-\tlabel(0.25,5){$y$}
-\tlabel(7, -0.25){$x$}
-\gclear \tlabelrect[cc](0,4){$12$ units wide}
-\tlpointsep{4pt}
-\small
-\axislabels {x}{{$-6 \hspace{7pt}$} -6, {$6$} 6}
-\axislabels {y}{{$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\arrow \function{-6.25,6.25,0.1}{(x**2)/8}
-\arrow \function{6.25,-6.25,0.1}{(x**2)/8}
-\point[4pt]{(0,0), (6,36/8), (-6,36/8)}
-\end{mfpic}
+% --- Parameters ---
+% Parabola: y = x^2/(4p), focus at (0,p)
+\def\p{2}
+\def\xmax{6}
+\pgfmathsetmacro{\ymax}{\xmax*\xmax/(4*\p)} % y-value at x = 6
 
-\end{center}
+% --- Axes ---
+\draw[->] (-7.2, 0) -- (7.2, 0) node[right] {$x$};
+\draw[->] (0, -0.6) -- (0, 6.2) node[above] {$y$};
+
+% --- Tick marks on x-axis ---
+\foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+    \draw (\x, -0.1) -- (\x, 0.1);
+\node[below] at (-6,-0.15) {$-6$};
+\node[below] at (6,-0.15) {$6$};
+
+% --- Tick marks on y-axis ---
+\foreach \y in {1,2,3,4,5}
+    \draw (-0.1, \y) -- (0.1, \y);
+
+% --- Parabola, extending past the marked points with arrows ---
+\draw[thick, domain=-6.6:0, samples=60, smooth, variable=\t,
+      {Latex[length=3mm]}-]
+    plot (\t, {\t*\t/(4*\p)});
+\draw[thick, domain=0:6.6, samples=60, smooth, variable=\t,
+      -{Latex[length=3mm]}]
+    plot (\t, {\t*\t/(4*\p)});
+
+% --- Key points ---
+% Vertex
+\fill (0,0) circle (2pt);
+
+% Focus, marked with asterisk, label "2" to its left
+\node at (0,\p) {\Large $\ast$};
+\node[left] at (-0.15,\p) {$2$};
+
+% Points at x = -6 and x = 6
+\fill (-\xmax,\ymax) circle (2pt);
+\fill (\xmax,\ymax) circle (2pt);
+\node[left] at (\xmax-0.5,\ymax) {$(6,y)$};
+
+% --- "12 units wide" double arrow, above the curve ---
+\draw[<->] (-\xmax, \ymax+0.8) -- (\xmax, \ymax+0.8);
+\node at (1, \ymax+1.15) {12 units wide};
+
+% --- "?" double arrow on the right, from x-axis to (6,y) ---
+\draw[<->] (\xmax, 0+0.3) -- (\xmax, \ymax-0.3);
+\node[right] at (\xmax+0.1, \ymax/2) {$?$};
+
+\end{tikzpicture}
+
+\end{image}
 
 Since the parabola is $12$ feet wide, we know the edge is $6$ feet from the vertex.  To find the depth, we are looking for the $y$ value when $x=6$.  Substituting $x=6$ into the equation of the parabola yields $6^2 = 8y$ or $y = \frac{36}{8} = \frac{9}{2} = 4.5$.  Hence, the dish will be  $4.5$ feet deep. 
 
