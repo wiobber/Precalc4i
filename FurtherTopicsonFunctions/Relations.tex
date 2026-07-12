@@ -159,49 +159,78 @@ Note here  the grammar `$g$ is a relation \textit{from} $T$ \textit{to} $N$' is 
 
 As with functions, our focus in this course will rest with relations of real numbers.  Consider the relation $R$ described as follows:  $R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}$.  Below on the left is a mapping diagram of $R$.  However, since $R$ relates real numbers, we can also create the graph of $R$ in the same way we graphed functions - by interpreting the ordered pairs which comprise $R$ as points in the plane.  Since we have no context, we use the default labels `$x$' for the horizontal axis and `$y$' for the vertical axis.
 
+\begin{image}
+\begin{tikzpicture}[
+  >=Latex,
+  every node/.style={font=\itshape}
+]
+
+% Left-side points
+\coordinate (Ln1) at (0,3.2);
+\coordinate (L0)  at (0,2.1);
+\coordinate (L4)  at (0,0.5);
+
+% Right-side points
+\coordinate (Rn3) at (4,3.2);
+\coordinate (Rn2) at (4,2.1);
+\coordinate (R1)  at (4,1.0);
+\coordinate (R3)  at (4,-0.3);
+
+% Dots
+\fill[black] (Ln1) circle (1.5pt);
+\fill[black] (L0)  circle (1.5pt);
+\fill[black] (L4)  circle (1.5pt);
+\fill[black] (Rn3) circle (1.5pt);
+\fill[black] (Rn2) circle (1.5pt);
+\fill[black] (R1)  circle (1.5pt);
+\fill[black] (R3)  circle (1.5pt);
+
+% Arrows
+\draw[->, thick] (Ln1) -- (R3);
+\draw[->, thick] (L0)  -- (Rn3);
+\draw[->, thick] (L4)  -- (Rn2);
+\draw[->, thick] (L4)  -- (R1);
+
+% Left labels
+\node[left=4pt] at (Ln1) {$-1$};
+\node[left=4pt] at (L0)  {$0$};
+\node[left=4pt] at (L4)  {$4$};
+
+% Right labels
+\node[right=4pt] at (Rn3) {$-3$};
+\node[right=4pt] at (Rn2) {$-2$};
+\node[right=4pt] at (R1)  {$1$};
+\node[right=4pt] at (R3)  {$3$};
+
+\end{tikzpicture}
+
+\end{image}
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-% \input{Relations_pic3.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \node at (axis cs:-3.25,5){$-1$};
-  \node at (axis cs:-3.25,3){$0$};
-  \node at (axis cs:-3.25,1){$4$};
-  \node at (axis cs:3,5){$-3$};
-  \node at (axis cs:3,3){$-2$};
-  \node at (axis cs:3,1){$1$};
-  \node at (axis cs:3,-1){$3$};
-  \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(-2.5,5) (2.5,-1) (-2.5,3) (2.5,5) (-2.5,1) (2.5,3) (2.5,1)};
-  \draw[->, line width=1pt] (axis cs:-2.5,5) -- (axis cs:2.5,-1);
-  \draw[->, line width=1pt] (axis cs:-2.5,3) -- (axis cs:2.5,5);
-  \draw[->, line width=1pt] (axis cs:-2.5,1) -- (axis cs:2.5,3);
-  \draw[->, line width=1pt] (axis cs:-2.5,1) -- (axis cs:2.5,1);
-  \node at (rel axis cs:0.5,-0.08){A Mapping Diagram of $R$};
-\end{axis}
-\end{tikzpicture}
-
-
-&
-
-
-% \input{Relations_pic4.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(-1,3) (0,-3) (4,-2) (4,1)};
-  \node[flabel, label=above left :{$(-1,3)$}] at (axis cs:-1,3){};
-  \node[flabel, label=below right:{$(4,-2)$}]  at (axis cs: 4,-2){};
-  \node[flabel, label=above right:{$(4,1)$}]   at (axis cs: 4, 1){};
-  \node[flabel, label=below right:{$(0,-3)$}]  at (axis cs: 0,-3){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $R$};
-\end{axis}
-\end{tikzpicture}
- \\
-
-\end{tabular}
-
+    \captionof{figure}{Mapping diagram for $R$}
 \end{center}
+
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
+  \addplot[only marks, mark=*,black, mark size=1.75pt] coordinates {(-1,3) (0,-3) (4,-2) (4,1)};
+  \node[flabel, draw=none,
+  fill=none,label=above left :{$(-1,3)$}] at (axis cs:-1,3){};
+  \node[flabel,draw=none,
+  fill=none, label=below right:{$(4,-2)$}]  at (axis cs: 4,-2){};
+  \node[flabel,draw=none,
+  fill=none, label=above right:{$(4,1)$}]   at (axis cs: 4, 1){};
+  \node[flabel,draw=none,
+  fill=none, label=below right:{$(0,-3)$}]  at (axis cs: 0,-3){};
+%  \node at (rel axis cs:0.5,-0.08){The graph of $R$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+\begin{center}
+    \captionof{figure}{The graph of $R$}
+\end{center}
+
+
 
 Our next example focuses on using relations to describe sets of points in the plane and vice-versa.
 
@@ -236,84 +265,113 @@ Our next example focuses on using relations to describe sets of points in the pl
 
 \item  Find a roster or set-builder description for each of the relations below.
 
-\begin{multicols}{2}
+
 \begin{enumerate}
 
 \item $~$
 
+\begin{image}
 % \input{Relations_pic5.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
-  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(0,0) (-3,1) (4,2) (-3,2)};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs:0,0){};
-  \node[flabel, label=above right:{$(-3,1)$}] at (axis cs:-3,1){};
-  \node[flabel, label=above right:{$(4,2)$}]  at (axis cs:4,2){};
-  \node[flabel, label=above right:{$(-3,2)$}] at (axis cs:-3,2){};
+  \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (-3,1) (4,2) (-3,2)};
+  % \node[flabel,draw=none,
+  % fill=none, label=above right:{$(0,0)$}]  at (axis cs:0,0){};
+  % \node[flabel,draw=none,
+  % fill=none, label=above right:{$(-3,1)$}] at (axis cs:-3,1){};
+  % \node[flabel,draw=none,
+  % fill=none, label=above right:{$(4,2)$}]  at (axis cs:4,2){};
+  % \node[flabel,draw=none,
+  % fill=none, label=above right:{$(-3,2)$}] at (axis cs:-3,2){};
   \node at (rel axis cs:0.5,-0.08){The graph of $A$};
 \end{axis}
 \end{tikzpicture}
- 
+ \end{image}
 
 \item $~$
 
-
+\begin{image}
 % \input{Relations_pic6.tex}
 \begin{tikzpicture}
 \begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
   \addplot[fgraph, domain=-2:4] {3};
-  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(-2,3)};
-  \addplot[only marks, mark=o, mark size=1.75pt] coordinates {(4,3)};
-  \node[flabel, label=above left :{$(-2,3)$}] at (axis cs:-2,3){};
-  \node[flabel, label=above right:{$(4,3)$}]  at (axis cs: 4,3){};
+  \addplot[only marks, mark=*, mark size=2pt] coordinates {(-2,3)};
+  \addplot[only marks, mark=o, mark size=2pt] coordinates {(4,3)};
+  \node[flabel,draw=none,
+  fill=none, label=above left :{$(-2,3)$}] at (axis cs:-2,3){};
+  \node[flabel,draw=none,
+  fill=none, label=above right:{$(4,3)$}]  at (axis cs: 4,3){};
   \node at (rel axis cs:0.5,-0.08){The graph of $H$};
 \end{axis}
 \end{tikzpicture}
- 
-
-
-
-\setcounter{HW}{\value{enumii}}
-\end{enumerate}
-\end{multicols}
-
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumii}{\value{HW}}
+ \end{image}
 
 \item $~$
 
+\begin{image}
 % \input{Relations_pic7.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
+\begin{axis}[
+    fplot,
+    xmin=-5, xmax=5,
+    ymin=-1, ymax=5,
+    xlabel={$t$},
+    ylabel={$s$}
+]
   \addplot[fgraph, domain=-2.1:2.1] {x^2};
   \node at (rel axis cs:0.5,-0.08){The graph of $Q$};
 \end{axis}
 \end{tikzpicture}
- 
+ \end{image}
 
 
 \item $~$
 
-
+\begin{image}
 % \input{Relations_pic8.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
-  \addplot[fgraph, domain=-3:4] {1};
-  \addplot[fgraph] coordinates {(-3,1) (4,1) (4,5)};
-  \addplot[dashed] coordinates {(-3,1) (-3,5)};
-  \addplot[only marks, mark=o, mark size=1.75pt] coordinates {(-3,1)};
-  \node at (rel axis cs:0.5,-0.08){The graph of $T$};
-\end{axis}
+\begin{tikzpicture}[
+    >=Latex
+]
+
+% --- Shaded region: -3 < v <= 4, w >= 1 (clipped to visible frame) ---
+\fill[gray!60] (-3,1) rectangle (4,4.7);
+
+% --- Axes ---
+\draw[->] (-4.6, 0) -- (4.6, 0) node[right] {$v$};
+\draw[->] (0, -0.5) -- (0, 4.9) node[above] {$w$};
+
+% --- Tick marks and labels on v-axis ---
+\foreach \x/\lab in {-4/-4,-3/-3,-2/-2,-1/-1,1/1,2/2,3/3,4/4}
+    \node[below] at (\x,-0.05) {$\lab$};
+
+% --- Tick marks and labels on w-axis ---
+\foreach \y in {1,2,3,4}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Boundary of region ---
+% Bottom edge (closed): solid
+\draw[very thick] (-3,1) -- (4,1);
+
+% Right edge (closed): solid, extends upward with arrow
+\draw[very thick, ->] (4,1) -- (4,4.85);
+
+% Left edge (open): dashed, extends upward with arrow
+\draw[very thick, dashed, ->] (-3,1) -- (-3,4.85);
+
+% Open circle at (-3,1)
+\draw[very thick, fill=white] (-3,1) circle (2.2pt);
+
+% --- Caption ---
+\node at (0,-1.1) {The graph of $T$};
+
 \end{tikzpicture}
+\end{image}
  
-
-
-
-
-\setcounter{HW}{\value{enumii}}
 \end{enumerate}
-\end{multicols}
+
+
 
 \end{enumerate}
 
