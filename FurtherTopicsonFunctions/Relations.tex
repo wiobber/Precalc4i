@@ -16,7 +16,7 @@
 
 Up until now in this text,  we have been exclusively special kinds of mappings called  \textit{functions}.  In this section, we broaden our horizons to study more general mappings called \textit{relations}.  The reader is encouraged to revisit Definition \ref{functiondefn} in Section \ref{FunctionsandtheirRepresentations} before proceeding with the definition of \textit{relation} below.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -30,7 +30,7 @@ Given two sets $A$ and $B$, a  \index{relation! definition} \textbf{relation} fr
 
 %% \ebm}
 
-\smallskip
+
 
 Unlike Definition \ref{functiondefn}, Definition \ref{relationdefn} puts no conditions on the process which maps elements of $A$ to elements of $B$. This means that while all functions are relations, not all relations need be functions.  For example, consider the mappings $f$ and $g$  below from Section \ref{FunctionsandtheirRepresentations}.  
 
@@ -151,11 +151,11 @@ we may represent $g$ as
 
 Note here  the grammar `$g$ is a relation \textit{from} $T$ \textit{to} $N$' is evidenced by the elements of $T$ being listed first in the ordered pairs (i.e., the abscissae) and the elements of $N$ being listed second (i.e., the ordinates.)
 
-\smallskip
+
 
 \textit{Unlike} functions, we do not use function notation when describing the input/output relationship for general relations.  For example, we may write `$f(\text{White Paw}) = \text{cat}$'  since $f$ maps the input `White Paw' to only one output, `cat.'  However, $g(\text{cat})$ is ambiguous since it could mean `White Paw' or `Cooper.'\footnote{In more advanced texts, we would write `$\text{cat} \, g \, \text{White Paw}$' and `$\text{cat} \,  g \, \text{Cooper}$' to indicate $g$ maps `cat' to both `White Paw' and `Cooper.'  Our study of relations, however, isn't deep enough to necessitate introducing and using this notation.  Similarly, we won't introduce the notions of `domain,' `codomain,' and `range' for relations, either.}
 
-\smallskip
+
 
 As with functions, our focus in this course will rest with relations of real numbers.  Consider the relation $R$ described as follows:  $R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}$.  Below on the left is a mapping diagram of $R$.  However, since $R$ relates real numbers, we can also create the graph of $R$ in the same way we graphed functions - by interpreting the ordered pairs which comprise $R$ as points in the plane.  Since we have no context, we use the default labels `$x$' for the horizontal axis and `$y$' for the vertical axis.
 
@@ -212,8 +212,9 @@ As with functions, our focus in this course will rest with relations of real num
 
 \begin{image}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \addplot[only marks, mark=*,black, mark size=1.75pt] coordinates {(-1,3) (0,-3) (4,-2) (4,1)};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5,x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt}]
+  \addplot[only marks, mark=*,black, mark size=2pt] coordinates {(-1,3) (0,-3) (4,-2) (4,1)};
   \node[flabel, draw=none,
   fill=none,label=above left :{$(-1,3)$}] at (axis cs:-1,3){};
   \node[flabel,draw=none,
@@ -273,7 +274,8 @@ Our next example focuses on using relations to describe sets of points in the pl
 \begin{image}
 % \input{Relations_pic5.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5,x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt}]
   \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (-3,1) (4,2) (-3,2)};
   % \node[flabel,draw=none,
   % fill=none, label=above right:{$(0,0)$}]  at (axis cs:0,0){};
@@ -293,14 +295,15 @@ Our next example focuses on using relations to describe sets of points in the pl
 \begin{image}
 % \input{Relations_pic6.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5,x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt}]
   \addplot[fgraph, domain=-2:4] {3};
   \addplot[only marks, mark=*, mark size=2pt] coordinates {(-2,3)};
   \addplot[only marks, mark=o, mark size=2pt] coordinates {(4,3)};
   \node[flabel,draw=none,
   fill=none, label=above left :{$(-2,3)$}] at (axis cs:-2,3){};
   \node[flabel,draw=none,
-  fill=none, label=above right:{$(4,3)$}]  at (axis cs: 4,3){};
+  fill=white, label=above right:{$(4,3)$}]  at (axis cs: 4,3){};
   \node at (rel axis cs:0.5,-0.08){The graph of $H$};
 \end{axis}
 \end{tikzpicture}
@@ -315,6 +318,8 @@ Our next example focuses on using relations to describe sets of points in the pl
     fplot,
     xmin=-5, xmax=5,
     ymin=-1, ymax=5,
+    x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1.2pt},
     xlabel={$t$},
     ylabel={$s$}
 ]
@@ -334,7 +339,7 @@ Our next example focuses on using relations to describe sets of points in the pl
 ]
 
 % --- Shaded region: -3 < v <= 4, w >= 1 (clipped to visible frame) ---
-\fill[gray!60] (-3,1) rectangle (4,4.7);
+\fill[blue!35] (-3,1) rectangle (4,4.7);
 
 % --- Axes ---
 \draw[->] (-4.6, 0) -- (4.6, 0) node[right] {$v$};
@@ -352,13 +357,13 @@ Our next example focuses on using relations to describe sets of points in the pl
 
 % --- Boundary of region ---
 % Bottom edge (closed): solid
-\draw[very thick] (-3,1) -- (4,1);
+\draw[very thick, blue] (-3,1) -- (4,1);
 
 % Right edge (closed): solid, extends upward with arrow
-\draw[very thick, ->] (4,1) -- (4,4.85);
+\draw[very thick,blue, ->] (4,1) -- (4,4.85);
 
 % Left edge (open): dashed, extends upward with arrow
-\draw[very thick, dashed, ->] (-3,1) -- (-3,4.85);
+\draw[very thick, dashed,blue, ->] (-3,1) -- (-3,4.85);
 
 % Open circle at (-3,1)
 \draw[very thick, fill=white] (-3,1) circle (2.2pt);
@@ -383,110 +388,186 @@ Our next example focuses on using relations to describe sets of points in the pl
 
 \item The relation $S$ is described using  \textit{set-builder notation}.\footnote{See Section \ref{AppSetTheory} to review this, if needed.}  To generate the ordered pairs  which belong to $S$, we substitute the given values of $k$, $k = 0, \pm 1, \pm 2$, into the formula $\left(k, 2^{k}\right)$. 
 
-\smallskip
+
 
  Starting with $k=0$, we get $\left(0, 2^{0} \right) = (0,1)$.  For $k = 1$, we get $\left(1, 2^{1} \right) = (1,2)$, and for $k = -1$, we get $\left(-1, 2^{-1} \right) = \left(-1,\frac{1}{2} \right)$.  Continuing, we get  $\left(2, 2^{2} \right) = (2,4)$ for $k = 2$  and, finally $\left(-2, 2^{-2} \right) = \left(-2,\frac{1}{4} \right)$ for $k = -2$.  Hence, a \text{roster description} of $S$ is  $S = \{  \left(-2,\frac{1}{4} \right),  \left(-1,\frac{1}{2} \right),  \left(0,1 \right),  \left(1,2 \right),  \left(2,4 \right)\}$. 
  
- \smallskip
+ 
  
   When we graph $S$, we label the horizontal axis as the $k$-axis, since `$k$' was the variable chosen used to generate the ordered pairs and keep the default label `$y$' for the vertical axis. The graph of $S$ is below on the left.
 
+  \begin{image}
+% \input{Relations_pic9.tex}
+\begin{tikzpicture}
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$, $-3$, $-2$,$-1$, $1$, $2$,$3$,$4$},
+           ytick={1,2, 3,4},
+            yticklabels={$1$,$2$, $3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$k$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west}
+    ]
+  \addplot[only marks, mark=*, mark size=3pt] coordinates {(-2,0.25) (-1,0.5) (0,1) (1,2) (2,4)};
+    \node at (rel axis cs:0.5,-0.08){The graph of $S$};
+\end{axis}
+\end{tikzpicture}
+ \end{image}
+
 \item  To graph the relation $P = \{ \left(j, j^2\right) \, | \, \text{$j$ is an integer} \}$, we proceed as above when we graphed the relation $S$.  Here, $j$ is restricted to being an integer, which means $j = 0$, $\pm 1$, $\pm 2$, etc.  
 
-\smallskip
+
 
 Plugging in these sample values for $j$, we obtain the ordered pairs $(0,0)$, $(1, 1)$, $(-1,1)$, $(2,4)$, $(-2,4)$, etc.  Since the variable $j$ takes on only integer values,  we could write $P$ using the roster notation: $P = \{ (0,0), (\pm 1, 1), (\pm 2, 4), \dots \}$.   
 
-\smallskip
+
 
 We plot a few of these points and use some periods of ellipsis to indicate the complete graph contains additional points not in the current field of view.  The graph of $P$ is below on the right. 
 
 
 
-\begin{multicols}{2}
 
+
+
+
+\begin{image}
 % \input{Relations_pic9.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
-  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(-2,0.25) (-1,0.5) (0,1) (1,2) (2,4)};
-  \node[flabel, label=above right:{$(-2,\tfrac{1}{4})$}] at (axis cs:-2,0.25){};
-  \node[flabel, label=above right:{$(-1,\tfrac{1}{2})$}] at (axis cs:-1,0.5){};
-  \node[flabel, label=above right:{$(0,1)$}]           at (axis cs:0,1){};
-  \node[flabel, label=above right:{$(1,2)$}]           at (axis cs:1,2){};
-  \node[flabel, label=above right:{$(2,4)$}]           at (axis cs:2,4){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $S$};
+\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$, $-3$, $-2$,$-1$, $1$, $2$,$3$,$4$},
+           ytick={1,2, 3,4},
+            yticklabels={$1$,$2$, $3$,$4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$k$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west}
+    ]
+  \addplot[only marks, mark=*, mark size=3pt] coordinates {(0,0) (-1,1) (1,1) (-2,4) (2,4)};
+    \node at (rel axis cs:0.5,-0.08){The graph of $S$};
 \end{axis}
 \end{tikzpicture}
+ \end{image}
+
  
 
 
-% \input{Relations_pic10.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
-  \addplot[only marks, mark=*, mark size=1.75pt] coordinates {(0,0) (-1,1) (1,1) (-2,4) (2,4)};
-  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4){};
-  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4){};
-  \node[flabel, label=above left :{$(-1,1)$}] at (axis cs:-1,1){};
-  \node[flabel, label=below right:{$(1,1)$}]  at (axis cs: 1,1){};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs: 0,0){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $P$};
-\end{axis}
-\end{tikzpicture}
- 
-
-
-\end{multicols}
 
 
 \item  Next, we come to the relation $V$,  described, once again, using set-builder notation.  In this case, $V$ consists of all ordered pairs of the form $(3,y)$ where $y$  is free to be whatever real number we like, without any restriction.\footnote{We'll revisit the concept of a `free variable' in Section \ref{LinSystems}.}  For example, $(3,0)$, $(3,-1)$, and $(3,117)$ all belong to $V$ as do $\left(3, \frac{1}{2}\right)$, $(3,-1.0342)$, $(3, \sqrt{2})$, etc. 
 
-\smallskip
+
 
 After plotting some sample points, becomes apparent that the ordered pairs which belong to  $V$ correspond to points which lie on the vertical line $x = 3$, and vice-versa. That is, every point on the line $x=3$ has coordinates which correspond to an ordered pair belonging to $V$. The graph of $V$ is below on the left.
 
+   \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-2, xmax=4,
+          ymin=-3, ymax=3,
+          width=6in,
+          height=6in,
+          xtick={-2,-1,1,2,3},
+            xticklabels={$-2$, $-1$, $1$,$2$, $3$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+%\addplot[smooth, line width=3pt, blue] {(-2)*((x-1)^2)+3};
+\draw[-,line width=3pt,blue](3,-2.5)--(3,2.5);
+
+
+ \node[anchor=north, color=blue] at (2,3) {Graph of $V$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \item  In the relation $R = \{ (x,y) \, | \, 1 < y \leq 3 \}$, we see $y$ is restricted by the inequality $1 < y \leq 3$, but  $x$ is free to be whatever it likes.   
 
-\smallskip
+
 
 Since $x$ is unrestricted, this means whatever the graph of $R$ is, it will extend indefinitely off to the right and left.  The restriction $y > 1$ means all points on the graph of $R$ have a $y$-coordinate larger than one, so they are \textit{above} the horizontal line $y =1$.  The restriction $y \leq 3$, on the other hand,  means all the points on the graph of $R$ have a $y$-coordinate less than or equal to $3$, meaning they are either \textit{on} or \textit{below} the horizontal line $y = 3$.   
 
-\smallskip
+
 
 In other words, the graph of $R$ is the region in the plane between $y=1$ and $y=3$, including $y=3$ but not $y = 1$.  We signify this by \textit{shading} the region between these two horizontal lines.  
 
-\smallskip
+
 
 How do we communicate $y=1$ is not part of the graph?  One way is to visualize putting `holes' all along the line $y=1$ to indicate this is not part of the graph.  In practice, however, this looks cluttered and could be confusing.  Instead, we  `dash' the line $y = 1$ as seen below on the right. 
 
 
-\begin{multicols}{2}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex
+]
 
+% --- Shaded region: 1 < y <= 3, all x (clipped to visible frame) ---
+\fill[blue!35] (-5,1) rectangle (5,3);
 
-% \input{Relations_pic11.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-3, ymax=3]
-  \addplot[fgraph, domain=-3:3] ({3},{x});
-  \node[flabel, label=above left :{$x=3$}] at (axis cs:3,2.5){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $V$};
-\end{axis}
+% --- Axes ---
+\draw[->] (-5.3, 0) -- (5.3, 0) node[right] {$x$};
+\draw[->] (0, -0.6) -- (0, 4.9) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {1,2,3,4}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Boundary of region ---
+% Top edge (closed): solid, extends both directions
+\draw[very thick,blue, <->] (-5.15,3) -- (5.15,3);
+
+% Bottom edge (open): dashed, extends both directions
+\draw[very thick, dashed,blue, <->] (-5.15,1) -- (5.15,1);
+
+% --- Caption ---
+\node at (0,-1.2) {The graph of $R$};
+
 \end{tikzpicture}
 
-
-
-% \input{Relations_pic12.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5]
-  \addplot[fgraph, domain=-5:5] {3};
-  \addplot[dashed, domain=-5:5] {1};
-  \node[flabel, label=above left :{$y=3$}]   at (axis cs:-4.5,3){};
-  \node[flabel, label=above left :{$y=1$}]   at (axis cs:-4.5,1){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $R$};
-\end{axis}
-\end{tikzpicture}
+\end{image}
 
 
 
-\end{multicols}
 
 \end{enumerate}
 
@@ -499,7 +580,7 @@ How do we communicate $y=1$ is not part of the graph?  One way is to visualize p
 
 \item  The graph of $Q$ appears to be the graph of the function $s = f(t) = t^2$.  Again, as the graph consists of infinitely many points, we will use set-builder notation to describe $Q$ out of necessity.  
 
-\smallskip
+
 
 There are a couple of different ways to do this.  Taking a cue from the relation $P$ above, we could write $Q = \{ (t, t^2) \, | \, \text{$t$ is a real number} \}$.  Alternatively, we could introduce the dependent variable, $s$ into the description by  writing  $Q = \{ (t, s) \, | \, s = t^2 \}$ where here the assumption is $x$ takes in all real number values.
 
@@ -514,11 +595,11 @@ There are a couple of different ways to do this.  Taking a cue from the relation
 
 As with functions, we can describe relations algebraically using equations.  For example, the equation $v^2+w^3 = 1$ relates two variables $v$ and $w$ each of which represent real numbers.  More formally, we can express this sentiment by defining the relation $R = \{ (v,w) \, | \, v^2+w^3 = 1\}$. An ordered pair $(v,w) \in R$ means $v$ and $w$ are  \textit{related} by the equation  $v^2+w^3 = 1$; that is, the pair $(v,w)$ \textit{satisfy} the equation.
 
-\smallskip
+
 
 For example, to show $(3,-2) \in R$, we check that when we substitute $v=3$ and $w=-2$, the equation $v^2+w^3 = 1$ is true. Sure enough, $(3)^2+(-2)^3 = 9  - 8 = 1$.  Hence, $R$ maps $3$ to $-2$.  Note, however, that $(-2,3) \notin R$ since $(-2)^2+(3)^3 = -8+27 \neq 1$ which means $R$ does not map $-2$ to $3$. 
 
-\smallskip
+
 
 When asked to `graph the equation'  $v^2+w^3 = 1$,  we really have two options.  We could graph the relation $R$ above.  In this case, we would be graphing $v^2+w^3 = 1$ on the $vw$-plane.\footnote{Recall this means the horizontal axis is labeled `$v$' and the vertical axis is labeled `$w$.'}   Alternatively, we  could define $S = \{ (w,v) \, | \, v^2+w^3 = 1 \}$ and graph $S$. This is equivalent to graphing $v^2+w^3 = 1$ on the $wv$-plane.  We do both in our next example.
 
@@ -531,15 +612,15 @@ When asked to `graph the equation'  $v^2+w^3 = 1$,  we really have two options. 
 
 \item \textit{graphing in the $vw$-plane:}  We begin by finding the axis intercepts of the graph.  To obtain a point on the $v$-axis, we require $w = 0$.  To see if we have any $v$-intercepts on the graph of the equation $v^2+w^3 = 1$, we substitute $w=0$ into the equation and solve for $v$:  $v^2 + (0)^3 = 1$.  We get $v^2 = 1$ or $v = \pm 1$ so our two $v$-intercepts, as described in the $vw$-plane, are $(1,0)$ and $(-1,0)$. 
 
-\smallskip
+
 
 Likewise, to find $w$-intercepts of the graph, we substitute $v = 0$ into the equation $v^2+w^3 = 1$ and get $w^3 = 1$ or $w = 1$. Hence, he have only one $w$-intercept, $(0,1)$.  
 
-\smallskip
+
 
 One way to efficiently produce additional points is to solve the equation $v^2+w^3 = 1$ for one of the variables, say $w$, in terms of the other, $v$.  In this way, we are treating $w$ as the dependent variable and $v$ as the independent variable.  From  $v^2 + w^3 = 1$, we get $w^3 = 1 - v^2$ or $w = \sqrt[3]{1-v^2}$. 
 
-\smallskip
+
 
 We now substitute a value in for $v$, determine the corresponding value $w$, and plot the resulting point $(v,w)$.   We summarize our results below on the left.  By plotting additional points (or getting help from a graphing utility), we produce the graph below on the right.
  
@@ -622,11 +703,11 @@ $\begin{array}{|r||c|c|}  \hline
 
 Note that regardless of which geometric depiction we choose for $v^2+w^3 = 1$, the graph appears to be symmetric about the $w$-axis.  To prove this is the case, consider a generic point $(v,w)$ on the graph of   $v^2+w^3 = 1$ in the $vw$-plane. 
 
-\smallskip
+
 
  To show the point symmetric about the $w$-axis, $(-v,w)$ is also on the graph of $v^2+w^3 = 1$, we need to show that the coordinates of the point $(-v,w)$ satisfy the equation $v^2+w^3 = 1$.  That is, we need to show $(-v)^2+w^3 = 1$.  Since $(-v)^2+w^3 = v^2 + w^3$, and we know by assumption $v^2 + w^3 = 1$, we get $(-v)^2+w^3 = v^2+w^3 = 1$,  proving $(-v,w)$ is also on the graph of the equation.  
 
-\smallskip
+
 
 The key reason our proof above is successful is that algebraically, the equation $v^2+w^3 = 1$ is unchanged if $v$ is replaced with $-v$.  Geometrically, this means the graph is the same if it undergoes a reflection across the $w$-axis. We generalize this reasoning in the following result.  Note that, as usual, we default to the more common $x$ and $y$-axis labels.
   
@@ -653,19 +734,19 @@ To test the graph of an equation in the $xy$-plane for symmetry:
 
 %% \ebm}
 
-\smallskip
+
 
 Parts of Theorem  \ref{symmetrytestequations} should look familiar from our work with even and odd functions.  Indeed if a function $f$ is even,   $f(-x) = f(x)$.  Hence, the equation $y=f(-x)$ reduces to the equation $y=f(x)$, so the graph of $f$ is symmetric about the $y$-axis. 
 
-\smallskip
+
 
  Likewise if $f$ is odd, then  $f(-x) = -f(x)$.  In this case, the equation  $-y = f(-x)$ reduces to  $-y = -f(x)$, or $y = f(x)$, proving the graph is symmetric about the origin.
 
-\smallskip
+
 
 When it comes to symmetry about the $x$-axis, most of the time this indicates a violation of the Vertical Line Test, which is why we haven't discussed that particular kind of symmetry until now.  
 
-\smallskip
+
 
 We put Theorem \ref{symmetrytestequations} to good use in the following example.
 
@@ -690,19 +771,19 @@ We put Theorem \ref{symmetrytestequations} to good use in the following example.
 
 \item We begin graphing $x^2-y^2 = 4$ by checking for axis intercepts.  To check for $x$-intercepts, we set $y=0$ and solve $x^2 - (0)^2 = 4$.  We get $x = \pm 2$ and obtain two $x$-intercepts $(-2,0)$ and $(2,0)$.  
 
-\smallskip
+
 
 When looking for $y$-intercepts, we set $x=0$ and get $(0)^2 - y^2 = 4$ or $y^2 = -4$.  Since this equation has no real number solutions, we have no $y$-intercepts.  
 
-\smallskip
+
 
 In order to produce more points on the graph, we solve $x^2-y^2 = 4$ for $y$ and obtain $y = \pm \sqrt{x^2-4}$.  Since we know $x^2-4 \geq 0$ in order to produce real number results for $y$, we restrict our attention to $x \leq -2$ and $x \geq 2$.  Doing so produces the table below on the left.  Using these, we construct the graph below the right.
 
-\smallskip
+
 
 The graph certainly appears to be symmetric about both axes and the origin.  To prove this, we note that the equation $x^2-(-y)^2 = 4$ quickly reduces to $x^2-y^2 = 4$, proving the graph is symmetric about the $x$-axis. 
 
-\smallskip
+
 
  Likewise, the equations $(-x)^2-y^2 = 4$ and $(-x)^2-(-y)^2 = 4$ also reduce to $x^2-y^2 = 4$, proving the graph is, indeed, symmetric about the $y$-axis and origin, respectively.
 
@@ -745,15 +826,15 @@ $\begin{array}{|r||c|c|}  \hline
 
 \item  To determine if there are any $x$-intercepts on the graph of   $(x-1)^2+4y^2 = 16$, we set $y=0$ and solve $(x-1)^2+4(0)^2 = 16$.  This reduces to $(x-1)^2 = 16$ which gives $x = -3$ and $x=5$.  Hence, we have two $x$-intercepts, $(-3,0)$ and $(5,0)$.  
 
-\smallskip
+
 
 Looking for $y$-intercepts, we set $x=0$ and solve $(0-1)^2+4y^2 = 16$ or $1 + 4y^2 = 16$.  This gives $y^2 = \frac{15}{4}$ so $y= \pm \frac{\sqrt{15}}{2}$.  Hence, we have two $y$-intercepts:  $\left(0, \pm \frac{\sqrt{15}}{2} \right)$. 
 
-\smallskip
+
 
 In this case, it is slightly easier\footnote{Read this as we're avoiding fractions.} to solve for $x$ in terms of $y$.  From $(x-1)^2+4y^2 = 16$ we get $(x-1)^2 = 16-4y^2$ which gives $x = 1 \pm \sqrt{16-4y^2}$.  
 
-\smallskip
+
 
 Since we know $16-4y^2 \geq 0$ to produce real number results for $x$, we require $-2 \leq y \leq 2$.  Selecting values in that range produces the table below on the left.  Plotting these points, along with the $y$-intercepts produces the graph  on the right.
 
@@ -790,7 +871,7 @@ $\begin{array}{|r||c|c|}  \hline
 
 The graph certainly appears to be symmetric about the $x$-axis. To check, we substitute $(-y)$ in for $y$ and get $(x-1)^2+4(-y)^2 = 16$ which reduces to $(x-1)^2+4y^2 = 16$.  
 
-\smallskip
+
 
 Owing to the placement of the $x$-intercepts, $(-3,0)$ and $(5,0)$, the graph is most certainly not symmetric about the $y$-axis nor about the origin.  \qed
 
@@ -800,15 +881,15 @@ Owing to the placement of the $x$-intercepts, $(-3,0)$ and $(5,0)$, the graph is
 
 Looking at the graphs of the equations $x^2-y^2 = 4$ and  $(x-1)^2+4y^2 = 16$ in Example \ref{graphssymmex}, it is evident neither of these equations represents $y$ as a function of $x$ nor $x$ as a function of $y$. (Do you see why?)  
 
-\smallskip
+
 
 With the concept of `function' being touted in the opening remarks of Section \ref{FunctionsandtheirRepresentations} as being one of the `universal tools' with which scientists and engineers solve a wide variety of problems, you may well wonder if we can't somehow apply what we know about functions to these sorts of relations.  It turns out that while, taken all at once, these equations do not describe functions, taken in parts, they do. 
 
-\smallskip
+
 
 For example, consider the equation $x^2 - y^2 = 4$.  Solving for $y$, we obtained $y = \pm \sqrt{x^2-4}$.  Defining $f_{1}(x) = \sqrt{x^2-4}$ and $f_{2}(x) = -\sqrt{x^2-4}$, we get a functional description for the upper and lower halves, or \textit{branches} of the curve, respectively.\footnote{There are many more ways to break this relation into functional parts.  We could, for instance, go piecewise and take portions of the graph which lie in Quadrants I and III as one function and leave the parts in Quadrants II and IV as the other;  we could look at this as being comprised of \textit{four} functions, and so on.} 
 
-\smallskip
+
 
  If, for instance, we wanted to analyze this curve near $(3, -\sqrt{5})$, we could use the \textit{function} $f_{2}$ and all the associated function tools\footnote{including, when the time comes, Calculus} to do just that. 
 
@@ -855,7 +936,7 @@ For example, consider the equation $x^2 - y^2 = 4$.  Solving for $y$, we obtaine
 
 In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y$ as a function of $x$ meaning that given any point $(x_{0},y_{0})$ on  $x^2 - y^2 = 4$, we can find a function $f$ defined (on an interval) containing $x_{0}$ so that $f(x_{0}) = y_{0}$ and whose graph lies on the curve $x^2 - y^2 = 4$. 
 
-\smallskip
+
 
  Note that in this case, we are fortunate to have two \textit{explicit} formulas for functions that cover the entire curve,  namely $f_{1}(x) = \sqrt{x^2-4}$ and $f_{2}(x) = -\sqrt{x^2-4}$.   We explore this concept further in the next example.
 
@@ -899,7 +980,7 @@ In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y
 
 \item  Since the maximum number of times a vertical line intersects the graph of $R$ is three, it stands to reason we need to resolve the graph of $R$ into at least three pieces. 
 
-\smallskip
+
 
  One strategy is to begin at the far left and begin tracing the graph until it begins to `double back' and repeat $y$-coordinates.  Doing so we get three functions (represented by the bold solid lines) below. 
 
@@ -957,7 +1038,7 @@ In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y
 
 \item  To verify that $R$ represents $x$ as a function of $y$, we check to see if any $y$-value has more than one $x$ associated with it.  One way to do this is to employ the the Horizontal Line Test (Exercise \ref{HLTExercise} in Section \ref{FunctionsandtheirRepresentations}.)  Since every horizontal line intersects the graph at most once, $x$ is a function of $y$.  
 
-\smallskip
+
 
 Using Theorem \ref{complexfactorization} from Chapter \ref{PolynomialFunctions}, we get $x = (1)y(y-\sqrt{3})(y+\sqrt{3}) = y^3 - 3y$, a fact we can readily check using a graphing utility.  \qed
 
@@ -969,7 +1050,7 @@ Using Theorem \ref{complexfactorization} from Chapter \ref{PolynomialFunctions},
 
 Not all equations implicitly define $y$ as a function of $x$.  For a quick example,  take $x = 117$ or any other vertical line.  Even if an equation implicitly describes $y$ as a function of $x$ near one point, there's no guarantee we can find an explicit algebraic representation for that function.\footnote{An example of this is $y^5-y-x = 1$ near $(-1,0)$.}   
 
-\smallskip
+
 
 While the theory of implicit functions is well beyond the scope of this text, we will nevertheless see this concept come into play in Section \ref{InverseFunctions}.  For our purposes, it suffices to know that just because a relation is not a function doesn't mean we cannot find a way to apply what we know about functions to analyze the relation locally through a functional lens.  
 
