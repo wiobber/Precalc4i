@@ -434,7 +434,7 @@ Our next example focuses on using relations to describe sets of points in the pl
 
   \begin{image}
 % \input{Relations_pic9.tex}
-\begin{tikzpicture}font=LARGE
+\begin{tikzpicture}font=\LARGE
 \begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=5,
           width=6in,
           height=4in,
@@ -455,7 +455,8 @@ Our next example focuses on using relations to describe sets of points in the pl
     anchor=west}
     ]
   \addplot[only marks, mark=*, mark size=4pt] coordinates {(-2,0.25) (-1,0.5) (0,1) (1,2) (2,4)};
-    \node at (rel axis cs:0.5,-0.08){The graph of $S$};
+%    \node at (rel axis cs:0.5,-0.08){The graph of $S$};
+\node[anchor=north] at (2,3) {Graph of $S$};
 \end{axis}
 \end{tikzpicture}
  \end{image}
@@ -499,7 +500,8 @@ We plot a few of these points and use some periods of ellipsis to indicate the c
     anchor=west}
     ]
   \addplot[only marks, mark=*, mark size=4pt] coordinates {(0,0) (-1,1) (1,1) (-2,4) (2,4)};
-    \node at (rel axis cs:0.5,-0.08){The graph of $S$};
+    %\node at (rel axis cs:0.5,-0.08){The graph of $S$};
+    \node[anchor=north] at (2,3) {Graph of $S$};
 \end{axis}
 \end{tikzpicture}
  \end{image}
@@ -685,7 +687,7 @@ $\begin{array}{|r||c|c|}  \hline
           height=5in,
           xtick={-4,-3,-2,-1,1,2,3,4},
             xticklabels={$-4$,$-3$, $-2$, $-1$, $1$,$2$, $3$, $4$},
-           ytick={-3-2,-1,1,2,3},
+           ytick={-3,-2,-1,1,2,3},
             yticklabels={$-3$, $-2$,$-1$,$1$, $2$,$3$},  
             tick style={line width=1.2pt},
             major tick length=6pt,
@@ -1138,23 +1140,42 @@ In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y
 
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-5, xmax=5,
+          ymin=-3, ymax=3,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$,$-3$, $-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$\,$,$-1$,$1$, $\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+           ]
 
-% \input{Relations_pic20.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-3, ymax=3]
-  \addplot[fpplot, domain=-2.25:2.25] ({t^3-3*t},{t});
-  \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (0,-1.732) (0,1.732) (2,-1) (-2,1)};
+ \addplot[fpplot,smooth, line width=3pt, blue, domain=-2.25:2.25] ({t^3-3*t},{t});
+  \addplot[only marks, mark=*, mark size=4pt] coordinates {(0,0) (0,-1.732) (0,1.732) (2,-1) (-2,1)};
   \node[flabel, label=above left :{$(-2,1)$}]   at (axis cs:-2, 1){};
   \node[flabel, label=below right:{$(2,-1)$}]  at (axis cs: 2,-1){};
   \node[flabel, label=above right:{$(0,0)$}]   at (axis cs: 0, 0){};
   \node[flabel, label=below right:{$(0,-\sqrt{3})$}] at (axis cs:0,-1.732){};
   \node[flabel, label=above left :{$(0,\sqrt{3})$}]  at (axis cs:0, 1.732){};
-  \node at (rel axis cs:0.5,-0.08){The graph of $R$};
-\end{axis}
-\end{tikzpicture}
-
-\end{center}
+        \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 
 {\bf Solution.}
@@ -1169,57 +1190,130 @@ In this way we say the equation $x^2 - y^2 = 4$ \textit{implicitly} describes $y
 
  One strategy is to begin at the far left and begin tracing the graph until it begins to `double back' and repeat $y$-coordinates.  Doing so we get three functions (represented by the bold solid lines) below. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-5, xmax=5,
+          ymin=-3, ymax=3,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$,$-3$, $-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$\,$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+           ]
 
-\begin{multicols}{3}
-
-% \input{Relations_pic21.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-3, ymax=3]
-  \addplot[fpplot, domain=-2.25:-1] ({t^3-3*t},{t});
-  \addplot[fpplot, densely dotted, domain=-1:2.25] ({t^3-3*t},{t});
-  \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,-1.732) (2,-1)};
-  \node[flabel, label=below right:{$(0,-\sqrt{3})$}] at (axis cs:0,-1.732){};
-  \node[flabel, label=below right:{$(2,-1)$}]       at (axis cs:2,-1){};
-  \node at (rel axis cs:0.5,-0.08){$y = f_{1}(x)$};
-\end{axis}
-\end{tikzpicture}
-
-
-
-
-% \input{Relations_pic22.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-3, ymax=3]
-  \addplot[fpplot, domain=-1:1] ({t^3-3*t},{t});
-  \addplot[fpplot, densely dotted, domain=1:2.25] ({t^3-3*t},{t});
-  \addplot[fpplot, densely dotted, domain=-2.25:-1] ({t^3-3*t},{t});
-  \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,0) (2,-1) (-2,1)};
-  \node[flabel, label=above left :{$(-2,1)$}] at (axis cs:-2,1){};
-  \node[flabel, label=below right:{$(2,-1)$}] at (axis cs: 2,-1){};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs: 0,0){};
-  \node at (rel axis cs:0.5,-0.08){$y = f_{2}(x)$};
-\end{axis}
-\end{tikzpicture}
-
-
-
-
-% \input{Relations_pic23.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-3, ymax=3]
-  \addplot[fpplot, domain=1:2.25] ({t^3-3*t},{t});
-  \addplot[fpplot, densely dotted, domain=-2.25:1] ({t^3-3*t},{t});
-  \addplot[only marks, mark=*, mark size=1.5pt] coordinates {(0,1.732) (-2,1)};
-  \node[flabel, label=above left :{$(-2,1)$}]  at (axis cs:-2,1){};
-  \node[flabel, label=above right:{$(0,\sqrt{3})$}] at (axis cs:0,1.732){};
-  \node at (rel axis cs:0.5,-0.08){$y = f_{3}(x)$};
-\end{axis}
-\end{tikzpicture}
+ \addplot[fpplot,smooth, line width=3pt, blue, domain=-2.25:-1] ({t^3-3*t},{t});
+ \addplot[fpplot, densely dotted, domain=-1:2.25] ({t^3-3*t},{t});
  
+  \addplot[only marks, mark=*, mark size=4pt] coordinates {(0,-1.732) (2,-1)};
+%  \node[flabel, label=above left :{$(-2,1)$}]   at (axis cs:-2, 1){};
+  \node[flabel, label=below right:{$(2,-1)$}]  at (axis cs: 2,-1){};
+ % \node[flabel, label=above right:{$(0,0)$}]   at (axis cs: 0, 0){};
+  \node[flabel, label=below right:{$(0,-\sqrt{3})$}] at (axis cs:0,-1.732){};
+  %\node[flabel, label=above left :{$(0,\sqrt{3})$}]  at (axis cs:0, 1.732){};
+        \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-\end{multicols}
-\end{center}
+
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-5, xmax=5,
+          ymin=-3, ymax=3,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$,$-3$, $-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+           ]
+
+  \addplot[fpplot, densely dotted, domain=-2.25:2.25] ({t^3-3*t},{t});
+ 
+ \addplot[fpplot,smooth, line width=3pt, blue, domain=-1:1] ({t^3-3*t},{t});
+
+ 
+  \addplot[only marks, mark=*, mark size=4pt] coordinates {(0,0) (2,-1) (-2,1)};
+ \node[flabel, label=above left :{$(-2,1)$}]   at (axis cs:-2, 1){};
+  \node[flabel, label=below right:{$(2,-1)$}]  at (axis cs: 2,-1){};
+ \node[flabel, label=above right:{$(0,0)$}]   at (axis cs: 0, 0){};
+%  \node[flabel, label=below right:{$(0,-\sqrt{3})$}] at (axis cs:0,-1.732){};
+  %\node[flabel, label=above left :{$(0,\sqrt{3})$}]  at (axis cs:0, 1.732){};
+        \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-5, xmax=5,
+          ymin=-3, ymax=3,
+          width=6in,
+          height=4in,
+          xtick={-4,-3,-2,-1,1,2,3,4},
+            xticklabels={$-4$,$-3$, $-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$,$1$, $\,$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+           ]
+
+  \addplot[fpplot, densely dotted, domain=-2.25:2.25] ({t^3-3*t},{t});
+ 
+ \addplot[fpplot,smooth, line width=3pt, blue, domain=1:2.25] ({t^3-3*t},{t});
+
+ 
+  \addplot[only marks, mark=*, mark size=4pt] coordinates {(0,1.732) (-2,1)};
+ \node[flabel, label=above left :{$(-2,1)$}]   at (axis cs:-2, 1){};
+ % \node[flabel, label=below right:{$(2,-1)$}]  at (axis cs: 2,-1){};
+ %\node[flabel, label=above right:{$(0,0)$}]   at (axis cs: 0, 0){};
+%  \node[flabel, label=below right:{$(0,-\sqrt{3})$}] at (axis cs:0,-1.732){};
+  \node[flabel, label=above left :{$(0,\sqrt{3})$}]  at (axis cs:0, 1.732){};
+        \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+
 
 \item  To verify that $R$ represents $x$ as a function of $y$, we check to see if any $y$-value has more than one $x$ associated with it.  One way to do this is to employ the the Horizontal Line Test (Exercise \ref{HLTExercise} in Section \ref{FunctionsandtheirRepresentations}.)  Since every horizontal line intersects the graph at most once, $x$ is a function of $y$.  
 
