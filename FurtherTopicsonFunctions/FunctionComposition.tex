@@ -148,26 +148,20 @@ In numbers \ref{fcexformfirst} - \ref{fcexformlast}, find and simplify the indic
 
 To find the domain of $g \circ f$, we need to find the elements in the domain of $f$ whose outputs $f(x)$ are in the domain of $g$.  Since the domain of $f$ is all real numbers, we focus on finding the range elements compatible with $g$. Owing to the presence of the square root in the formula  $g(t) = 2 - \sqrt{t+3}$ we require $t \geq -3$.  Hence, we need $f(x) \geq -3$ or $x^2-4x \geq -3$.  To solve this inequality we rewrite as $x^2-4x + 3 \geq 0$ and use a sign diagram.  Letting  $r(x) = x^2-4x+3$, we find the zeros of $r$ to be $x = 1$ and $x = 3$ and obtain
 
-\begin{center}
-
-% \input{FunctionComposition_pic2.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=2]
-  \addplot[fgraph] coordinates {(-5,0) (5,0)};
-  \draw (axis cs:-2,0) -- (axis cs:-2,0.2);
-  \draw (axis cs: 2,0) -- (axis cs: 2,0.2);
-  \node[flabel, label=below:{$1$}]  at (axis cs:-2,0) {};
-  \node[flabel, label=below:{$3$}]  at (axis cs: 2,0) {};
-  \node[flabel, label=above:{$(+)$}] at (axis cs:-3.5,1) {};
-  \node[flabel, label=above:{$0$}]   at (axis cs:-2,  1) {};
-  \node[flabel, label=above:{$(-)$}] at (axis cs: 0,  1) {};
-  \node[flabel, label=above:{$0$}]   at (axis cs: 2,  1) {};
-  \node[flabel, label=above:{$(+)$}] at (axis cs: 3.5,1) {};
-\end{axis}
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1.25pt] (-1,0) -- (5,0);
+  \draw (1,-0.12) -- (1,0.12);
+  \draw (3,-0.12) -- (3,0.12);
+  \node at (0, 0.5) {$(+)$};
+  \node at (1,-0.5) {$1$};
+  %\node at (-2,0.5) {$0$};
+  \node at (4,0.5) {$(+)$};
+  \node at (3,-0.5) {$3$};
+  \node at (2,0.5) {$(-)$};
 \end{tikzpicture}
-
-
-\end{center}
+\end{image} 
 
 Our solution to $x^2-4x+3 \geq 0$, and hence the domain of $g \circ f$, is $(-\infty, 1] \cup [3,\infty)$.
 
@@ -224,26 +218,20 @@ To find the domain of $g \circ h$, we need the elements in the domain of $h$ so 
 
  Defining $r(s) = \frac{5s+3}{s+1}$, we see $r$ is undefined at $s=-1$ (a carry over from the domain restriction of $h$) and $r(s) = 0$ at $s = -\frac{3}{5}$. Our sign diagram is
 
-\begin{center}
-
-% \input{FunctionComposition_pic3.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-1, ymax=2]
-  \addplot[fgraph] coordinates {(-5,0) (5,0)};
-  \draw (axis cs:-2,0) -- (axis cs:-2,0.2);
-  \draw (axis cs: 2,0) -- (axis cs: 2,0.2);
-  \node[flabel, label=below:{$-1$}]              at (axis cs:-2,0) {};
-  \node[flabel, label=below:{$-\dfrac{3}{5}$}]   at (axis cs: 2,0) {};
-  \node[flabel, label=above:{$(+)$}]             at (axis cs:-3.5,1) {};
-  \node[flabel, label=above:{\textinterrobang}]  at (axis cs:-2,  1) {};
-  \node[flabel, label=above:{$(-)$}]             at (axis cs: 0,  1) {};
-  \node[flabel, label=above:{$0$}]               at (axis cs: 2,  1) {};
-  \node[flabel, label=above:{$(+)$}]             at (axis cs: 3.5,1) {};
-\end{axis}
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1.25pt] (-1,0) -- (5,0);
+  \draw (1,-0.12) -- (1,0.12);
+  \draw (3,-0.12) -- (3,0.12);
+  \node at (0, 0.5) {$(+)$};
+  \node at (1,-0.5) {$-1$};
+  %\node at (-2,0.5) {$0$};
+  \node at (4,0.5) {$(+)$};
+  \node at (3,-0.5) {$-3/5$};
+  \node at (2,0.5) {$(-)$};
 \end{tikzpicture}
-
-
-\end{center}
+\end{image} 
 
 hence our  domain is $(-\infty, -1) \cup \left[-\frac{3}{5}, \infty\right)$.
 
@@ -363,7 +351,6 @@ As we know, not all functions are described by formulas, and, moreover, not all 
 
 \begin{example} \label{functioncompotherreprensex}  Consider the following functions:
 
-\begin{multicols}{2}
 \begin{itemize}
 
 \item $f(x) = 6x - x^2$ \vphantom{$g(t)  = \begin{cases} 
@@ -376,37 +363,90 @@ As we know, not all functions are described by formulas, and, moreover, not all 
       t^2  & \text{if $t \geq 3$.} \\
    \end{cases} $ 
    
-\end{itemize}
- \end{multicols}
- 
-\begin{multicols}{2}
-\begin{itemize}
-   
 \item   $h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1)  \}$
   
 \item  $s$ whose graph is given below:
-   
+
+   \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-3, xmax=6,
+          ymin=-3, ymax=4,
+          width=6in,
+          height=5in,
+          xtick={-2,-1,1,2,3,4},
+            xticklabels={$-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+%\addplot[smooth, line width=3pt, blue] {(-2)*((x-1)^2)+3};
+\draw[-,line width=3pt,blue](-2,3)--(1,3);
+\draw[-,line width=3pt,blue](1,3)--(2,-2);
+\draw[-,line width=3pt,blue](2,-2)--(5,0);
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=0pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  (1,3) [$(1,3)$]
+ };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+   mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=0pt}
+]
+coordinates {
+  (5,0) [$(5,0)$]
+ };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt}
+]
+coordinates {
+  (2,-2) [$(2,-2)$]
+ };
+
+ \node[anchor=north, color=blue] at (2,3) {$y=s(t)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 \end{itemize}
-\end{multicols}
 
-\begin{center}
 
-% \input{FunctionComposition_pic4.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=6, ymin=-3, ymax=4]
-  \addplot[fgraph] coordinates {(-2,3) (1,3) (2,-2) (5,0)};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-2,3) (1,3) (2,-2)};
-  \addplot[fgraph, only marks, mark=o, mark size=2pt, mark options={line width=1pt}] coordinates {(5,0)};
-  \node[flabel, label=above left :{$(-2,3)$}] at (axis cs:-2, 3) {};
-  \node[flabel, label=above right:{$(1,3)$}]  at (axis cs: 1, 3) {};
-  \node[flabel, label=below right:{$(2,-2)$}] at (axis cs: 2,-2) {};
-  \node[flabel, label=above right:{$(5,0)$}]  at (axis cs: 5, 0) {};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = s(t)$};
-\end{axis}
-\end{tikzpicture}
 
- 
-\end{center}
 
 \begin{enumerate}
 
@@ -459,17 +499,17 @@ Simplifying each expression, we get  $ 2(6x-x^2) -1 = -2x^2+12x-1$  for the firs
 
 % \input{FunctionComposition_pic5.tex}
 \begin{tikzpicture}
-\begin{axis}[fplot, xmin=-2, xmax=8, ymin=-2, ymax=10, domain=-0.3:6.3]
+\begin{axis}[fplot, xmin=-2, xmax=7.9, ymin=-2, ymax=9.9, domain=-0.3:6.3]
   \addplot[fgraph, domain=-0.3:6.3] {6*x - x^2};
   \addplot[fgraph, domain=-2:8] {-1};
   \addplot[fgraph, domain=-2:8] {3};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(3,9) (0,0) (6,0)};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(3 - sqrt(10), -1) (3 + sqrt(10), -1) (3 - sqrt(6), 3) (3 + sqrt(6), 3)};
+  \addplot[fgraph, only marks, mark=*,black, mark size=2pt] coordinates {(3,9) (0,0) (6,0)};
+  \addplot[fgraph, only marks, mark=*,black, mark size=2pt] coordinates {(3 - sqrt(10), -1) (3 + sqrt(10), -1) (3 - sqrt(6), 3) (3 + sqrt(6), 3)};
   \node[flabel, label=below left :{$(3-\sqrt{10},-1)$}] at (axis cs:{3 - sqrt(10)}, -1) {};
   \node[flabel, label=below right:{$(3+\sqrt{10},-1)$}] at (axis cs:{3 + sqrt(10)}, -1) {};
   \node[flabel, label=above left :{$(3-\sqrt{6},3)$}]   at (axis cs:{3 - sqrt(6)}, 3) {};
   \node[flabel, label=above right:{$(3+\sqrt{6},3)$}]   at (axis cs:{3 + sqrt(6)}, 3) {};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = 6x - x^2,\; y=-1,\; y=3$};
+%  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = 6x - x^2,\; y=-1,\; y=3$};
 \end{axis}
 \end{tikzpicture}
 
@@ -481,27 +521,85 @@ Simplifying each expression, we get  $ 2(6x-x^2) -1 = -2x^2+12x-1$  for the firs
 \[ (g \circ f)(x) =  \begin{cases}   -2x^2+12x-1 &  \text{if $x \in [3- \sqrt{10}, 3 - \sqrt{6}) \cup (3+\sqrt{6}, 3+\sqrt{10}]$, } \\  x^4 - 12x^3 + +36x^2  & \text{if $x \in [3-\sqrt{6}, 3+\sqrt{6}]$.} \\ \end{cases}\]
 
 \item  Last but not least, we are tasked with representing $s \circ h$ as a set of ordered pairs.  Since $h$ is described by the discrete set of points $h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1)  \}$, we find $s \circ h$ point by point.  We keep the graph of $s$ handy and construct the table below to help us organize our work. 
+
+     \begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-3, xmax=6,
+          ymin=-3, ymax=4,
+          width=6in,
+          height=5in,
+          xtick={-2,-1,1,2,3,4},
+            xticklabels={$-2$, $-1$, $1$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+%\addplot[smooth, line width=3pt, blue] {(-2)*((x-1)^2)+3};
+\draw[-,line width=3pt,blue](-2,3)--(1,3);
+\draw[-,line width=3pt,blue](1,3)--(2,-2);
+\draw[-,line width=3pt,blue](2,-2)--(5,0);
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=0pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  (1,3) [$(1,3)$]
+ };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+   mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=0pt}
+]
+coordinates {
+  (5,0) [$(5,0)$]
+ };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt}
+]
+coordinates {
+  (2,-2) [$(2,-2)$]
+ };
+
+ \node[anchor=north, color=blue] at (2,3) {$y=s(t)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-% \input{FunctionComposition_pic6.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=6, ymin=-3, ymax=4]
-  \addplot[fgraph] coordinates {(-2,3) (1,3) (2,-2) (5,0)};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-2,3) (1,3) (2,-2)};
-  \addplot[fgraph, only marks, mark=o, mark size=2pt, mark options={line width=1pt}] coordinates {(5,0)};
-  \node[flabel, label=above left :{$(-2,3)$}] at (axis cs:-2, 3) {};
-  \node[flabel, label=above right:{$(1,3)$}]  at (axis cs: 1, 3) {};
-  \node[flabel, label=below right:{$(2,-2)$}] at (axis cs: 2,-2) {};
-  \node[flabel, label=above right:{$(5,0)$}]  at (axis cs: 5, 0) {};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = s(t)$};
-\end{axis}
-\end{tikzpicture}
-
-
-& 
-
 $ \begin{array}{|r||r|c|}  \hline
 
 x & h(x) & s(h(x)) \\ \hline
@@ -515,15 +613,10 @@ x & h(x) & s(h(x)) \\ \hline
 1 & 5 & \text{undefined} \\ \hline
 
 3 & -1 & 3 \\  \hline
-
-
   \end{array} $
-  
-\\ 
-
-\end{tabular}  
-  
   \end{center}
+
+
   
 Since neither $6$ nor $5$ are in the domain of $s$, $-2$ and $1$ are not in the domain of $s \circ h$.  Hence, we get $s \circ h = \{ (-3,3), (0,3), (3,3) \}$. \qed
 
