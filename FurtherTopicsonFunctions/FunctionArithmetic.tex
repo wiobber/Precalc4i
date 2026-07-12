@@ -59,7 +59,7 @@ We put these definitions to work for us in the next example.
 
 \begin{example}  \label{funcarithex} Consider the following functions:
 
-\begin{multicols}{2}
+
 
 \begin{itemize}
 
@@ -67,41 +67,104 @@ We put these definitions to work for us in the next example.
 
 \item $g(t) = 3-\dfrac{1}{t}$, $t > 0$
 
-\end{itemize}
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{itemize}
-
-\item  $h = \{ (-3,2), (-2,0.4), (0,\sqrt{2}), (3, -6) \}$  
+\item  $h = \{ (-3,2), (-2,0.4), (0,\sqrt{2}), (3, -6) \}$ 
 
 \item  $s$ whose graph is given below:
 
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          %domain=-3:3,
+          xmin=-2, xmax=5,
+          ymin=-3, ymax=4,
+          width=6in,
+          height=6in,
+          xtick={-1,1,2,3,4},
+            xticklabels={$-1$, $\,$,$2$, $3$, $4$},
+           ytick={-2,-1,1,2,3},
+            yticklabels={$\,$,$-1$,$1$, $2$,$3$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  },
+           ]
+%\addplot[smooth, line width=3pt, blue] {(-2)*((x-1)^2)+3};
+\draw[-,line width=3pt,blue](-2,-2)--(0,-2);
+\draw[-,line width=3pt,blue](2,2)--(0,-2);
+\draw[-,line width=3pt,blue](2,2)--(5,2);
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    yshift=0pt}
+]
+coordinates {
+  (2,2) [$(2,2)$]
+ };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt}
+]
+coordinates {
+  (-2,-2) [$(-2,-2)$]
+ };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west,
+    xshift=0pt}
+]
+coordinates {
+  (0,-2) [$(0,-2)$]
+ };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west,
+    xshift=10pt,yshift=5pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+ };
+ \node[anchor=north, color=blue] at (4,3) {$y=s(t)$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 \end{itemize}
 
-\end{multicols}
 
 
-\begin{center}
-
-% \input{FunctionArithmetic_pic1.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-2, xmax=5, ymin=-3, ymax=4, domain=-2:5]
-  \addplot[fgraph] coordinates {(-2,-2) (0,-2) (2,2) (5,2)};
-  \addplot[fgraph, only marks, mark=*, mark size=2pt] coordinates {(-2,-2) (0,-2) (1,0) (2,2)};
-  \node[flabel, label=below left :{$(-2,-2)$}] at (axis cs:-2,-2) {};
-  \node[flabel, label=below right:{$(0,-2)$}]  at (axis cs: 0,-2) {};
-  \node[flabel, label=above left :{$(1,0)$}]   at (axis cs: 1, 0) {};
-  \node[flabel, label=above right:{$(2,2)$}]   at (axis cs: 2, 2) {};
-  \node[flabel, anchor=north] at (rel axis cs:0.5,-0.08) {$\scriptsize y = s(t)$};
-\end{axis}
-\end{tikzpicture}
 
 
- 
-\end{center}
+
+
 
 \begin{enumerate}
 
