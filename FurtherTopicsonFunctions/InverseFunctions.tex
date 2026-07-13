@@ -596,64 +596,10 @@ $\begin{array}{rcl}
 
 \item We graph $y=f(t)$ and $y=g(t)$ using the techniques discussed in Sections \ref{IntroRational} and \ref{RationalGraphs}.  
 
-\begin{multicols}{3}
-
-% \input{InverseFunctions_pic6.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
-  \addplot[dashed] coordinates {(-1,-5) (-1,5)};
-  \addplot[dashed, domain=-4:5] {2};
-  \addplot[fgraph, domain=-4:-1.67] {2*x/(x + 1)};
-  \addplot[fgraph, domain=-0.71:5]  {2*x/(x + 1)};
-  \addplot[only marks, mark=*] coordinates {(0,0)};
-  \node[flabel, label=below       :{$t=-1$}] at (axis cs:-1,-4.5) {};
-  \node[flabel, label=above right:{$y=2$}]   at (axis cs:4, 2) {};
-  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0, 0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f(t)$};
-\end{axis}
-\end{tikzpicture}
-
-
-% \input{InverseFunctions_pic7.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
-  \addplot[dashed] coordinates {(2,-5) (2,5)};
-  \addplot[dashed, domain=-4:5] {-1};
-  \addplot[fgraph, domain=-4:1.66] {x/(2 - x)};
-  \addplot[fgraph, domain=2.5:5]   {x/(2 - x)};
-  \addplot[only marks, mark=*] coordinates {(0,0)};
-  \node[flabel, label=below       :{$t=2$}]   at (axis cs:2,-4.5) {};
-  \node[flabel, label=below left :{$y=-1$}]  at (axis cs:-3,-1) {};
-  \node[flabel, label=below right:{$(0,0)$}] at (axis cs: 0, 0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=g(t)$};
-\end{axis}
-\end{tikzpicture}
-
-
-% \input{InverseFunctions_pic8.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-4, xmax=5, ymin=-5, ymax=5]
-  \addplot[dashed] coordinates {(2,-5) (2,5)};
-  \addplot[dashed, domain=-4:5] {-1};
-  \addplot[dashed] coordinates {(-1,-5) (-1,5)};
-  \addplot[dashed, domain=-4:5] {2};
-  \addplot[dashed, domain=-3.5:4.5] {x};
-  \addplot[fgraph, domain=-4:1.66] {x/(2 - x)};
-  \addplot[fgraph, domain=2.5:5]   {x/(2 - x)};
-  \addplot[fgraph, domain=-4:-1.67] {2*x/(x + 1)};
-  \addplot[fgraph, domain=-0.71:5]  {2*x/(x + 1)};
-  \addplot[only marks, mark=*] coordinates {(0,0)};
-  \node[flabel, label=below       :{$t=2$}]   at (axis cs: 2,-4.5) {};
-  \node[flabel, label=below left :{$y=-1$}]  at (axis cs:-3,-1) {};
-  \node[flabel, label=below       :{$t=-1$}]  at (axis cs:-1,-4.5) {};
-  \node[flabel, label=above right:{$y=2$}]   at (axis cs: 4, 2) {};
-  \node[flabel, label=above right:{$(0,0)$}] at (axis cs: 0, 0) {};
-  \node at (axis description cs:0.5,-0.1) {$y=f(t),\ y=g(t),\ y=x$};
-\end{axis}
-\end{tikzpicture}
-
-
-\end{multicols}
+% https://www.desmos.com/calculator/piqlrm613s
+\begin{center}
+    \desmos{piqlrm613s}{800}{600}
+\end{center}
 
 We find the graph of $f$ has a vertical asymptote $t=-1$ and a horizontal asymptote $y = 2$ .  Corresponding to the \textit{vertical} asymptote $t=-1$ on the graph of $f$,  we find the graph of $g$ has a \textit{horizontal} asymptote $y=-1$.  
 
@@ -754,40 +700,447 @@ Before we solidify the connection between invertible functions and one-to-one fu
 
 Per Theorem \ref{inversefunctionprops}, the graph of $y = f^{-1}(x)$, if it exists, is obtained from the graph of $y=x^2$  by reflecting $y=x^2$ about the line $y=x$.  Procedurally, this is accomplished by interchanging the $x$ and $y$ coordinates of each point on the graph of $y = x^2$.  Algebraically, we are swapping the variables `$x$' and `$y$' which results in the equation $x = y^2$ whose graph is below on the right. 
 
-\[ \begin{array}{ccc}
+%%%%%%%%%%%%%%%%%%% javascript  %%%%%%%%%%%%%%%%%%%%%%
 
+\begin{javascript}
+ 
+(function () {
+  "use strict";
 
-% \input{InverseFunctions_pic10.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-1, ymax=8]
-  \addplot[dashed, domain=-3:3] {4};
-  \addplot[fgraph, domain=-2.75:2.75] {x^2};
-  \addplot[only marks, mark=*] coordinates {(-2,4) (2,4)};
-  \node[flabel, label=above left :{$(-2,4)$}] at (axis cs:-2,4) {};
-  \node[flabel, label=above right:{$(2,4)$}]  at (axis cs: 2,4) {};
-  \node at (axis description cs:0.5,-0.1) {$y=x^2$};
-\end{axis}
-\end{tikzpicture}
-  
+  /*
+    Ximera-ready parabola fold animation.
 
-&
+    Usage:
+      1. Put this in a JavaScript block or external .js file.
+      2. Add a container to the activity:
+           <div id="parabola-fold-widget"></div>
 
-\stackrel{\stackrel{\text{\scriptsize reflect across $y=x$}}{\xrightarrow{\hspace{1.25in}}}}{\text{ \scriptsize switch $x$ and $y$ coordinates}} 
+    The script injects all HTML, SVG, CSS, and controls into that container.
+  */
 
-&
+  const CONTAINER_ID = "parabola-fold-widget";
 
-% \input{InverseFunctions_pic11.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
-  \addplot[dashed] coordinates {(4,-3) (4,3)};
-  \addplot[fpplot, domain=-2.75:2.75] ({t^2},{t});
-  \addplot[only marks, mark=*] coordinates {(4,-2) (4,2)};
-  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
-  \node[flabel, label=above right:{$(4,2)$}]  at (axis cs:4, 2) {};
-  \node at (axis description cs:0.5,-0.1) {$x=y^2$};
-\end{axis}
-\end{tikzpicture}
- \end{array}\]
+  function startWidget() {
+    let host = document.getElementById(CONTAINER_ID);
+
+    // For standalone testing, create the host automatically.
+    if (!host) {
+      host = document.createElement("div");
+      host.id = CONTAINER_ID;
+      document.body.appendChild(host);
+    }
+
+    if (host.dataset.initialized === "true") return;
+    host.dataset.initialized = "true";
+
+    const styleId = "parabola-fold-widget-style";
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.textContent = `
+        #${CONTAINER_ID} {
+          max-width: 720px;
+          margin: 1.25rem auto;
+          font-family: Georgia, "Times New Roman", serif;
+          color: #222;
+        }
+
+        #${CONTAINER_ID} .pf-title {
+          margin: 0 0 0.3rem;
+          text-align: center;
+          font-size: 1.35rem;
+          font-weight: 600;
+        }
+
+        #${CONTAINER_ID} .pf-subtitle {
+          margin: 0 0 1rem;
+          text-align: center;
+          color: #666;
+          font-size: 0.97rem;
+        }
+
+        #${CONTAINER_ID} .pf-stage {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+        }
+
+        #${CONTAINER_ID} svg {
+          width: 100%;
+          height: 100%;
+          display: block;
+          overflow: visible;
+          background: #f7f5ef;
+          border: 1px solid #d7d2c7;
+          border-radius: 8px;
+        }
+
+        #${CONTAINER_ID} .pf-controls {
+          display: flex;
+          justify-content: center;
+          gap: 0.65rem;
+          margin-top: 1rem;
+          flex-wrap: wrap;
+        }
+
+        #${CONTAINER_ID} button {
+          font: inherit;
+          padding: 0.55rem 1rem;
+          border: 1px solid #888;
+          border-radius: 6px;
+          background: white;
+          cursor: pointer;
+        }
+
+        #${CONTAINER_ID} button:hover:not(:disabled) {
+          background: #eee;
+        }
+
+        #${CONTAINER_ID} button:disabled {
+          opacity: 0.45;
+          cursor: default;
+        }
+
+        #${CONTAINER_ID} .pf-status {
+          min-height: 1.5em;
+          margin-top: 0.8rem;
+          text-align: center;
+          font-size: 1rem;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    host.innerHTML = `
+      <h3 class="pf-title">Folding the Coordinate Plane Across y = x</h3>
+      <p class="pf-subtitle">
+        The grid, axes, parabola, and marked points remain attached to the paper as it folds.
+      </p>
+
+      <div class="pf-stage">
+        <svg viewBox="0 0 700 700"
+             role="img"
+             aria-label="Animation of a coordinate plane folding across y equals x">
+          <defs>
+            <marker id="pf-arrow" markerWidth="9" markerHeight="9"
+                    refX="7" refY="4.5" orient="auto-start-reverse">
+              <path d="M0,0 L9,4.5 L0,9 z" fill="#333"></path>
+            </marker>
+
+            <clipPath id="pf-sheet-clip">
+              <rect x="45" y="45" width="610" height="610" rx="5"></rect>
+            </clipPath>
+          </defs>
+
+          <!-- fixed background -->
+          <rect x="45" y="45" width="610" height="610" rx="5"
+                fill="#efede6" stroke="#c8c3b8"></rect>
+
+          <!-- crease remains fixed -->
+          <line id="pf-crease"
+                x1="55" y1="645" x2="645" y2="55"
+                stroke="#777" stroke-width="2.5"
+                stroke-dasharray="9 8" opacity="0"></line>
+          <text id="pf-crease-label"
+                x="590" y="88"
+                fill="#666" font-size="17"
+                font-style="italic" opacity="0">y = x</text>
+
+          <!-- the whole paper lives in this group -->
+          <g id="pf-paper"
+             clip-path="url(#pf-sheet-clip)">
+            <rect x="45" y="45" width="610" height="610" rx="5"
+                  fill="#fffefa" stroke="#aaa"></rect>
+
+            <g id="pf-grid"></g>
+
+            <line id="pf-x-axis"
+                  stroke="#333" stroke-width="1.8"
+                  marker-start="url(#pf-arrow)"
+                  marker-end="url(#pf-arrow)"></line>
+
+            <line id="pf-y-axis"
+                  stroke="#333" stroke-width="1.8"
+                  marker-start="url(#pf-arrow)"
+                  marker-end="url(#pf-arrow)"></line>
+
+            <g id="pf-ticks" fill="#555" font-size="13"></g>
+
+            <text id="pf-x-label" fill="#333"
+                  font-size="18" font-style="italic">x</text>
+            <text id="pf-y-label" fill="#333"
+                  font-size="18" font-style="italic">y</text>
+
+            <path id="pf-curve"
+                  fill="none" stroke="#222" stroke-width="3.2"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+
+            <circle id="pf-red-point" r="7" fill="#d3222a"></circle>
+            <circle id="pf-blue-point" r="7" fill="#2255cc"></circle>
+
+            <text id="pf-red-label"
+                  fill="#d3222a" font-size="15">(2, 4)</text>
+            <text id="pf-blue-label"
+                  fill="#2255cc" font-size="15">(-2, 4)</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="pf-controls">
+        <button type="button" class="pf-next">Next ></button>
+        <button type="button" class="pf-reset">Reset</button>
+      </div>
+
+      <div class="pf-status" aria-live="polite">
+        Frame 1: y = x^2, with (2, 4) in red and (-2, 4) in blue.
+      </div>
+    `;
+
+    const svg = host.querySelector("svg");
+    const paper = host.querySelector("#pf-paper");
+    const grid = host.querySelector("#pf-grid");
+    const ticks = host.querySelector("#pf-ticks");
+    const xAxis = host.querySelector("#pf-x-axis");
+    const yAxis = host.querySelector("#pf-y-axis");
+    const xLabel = host.querySelector("#pf-x-label");
+    const yLabel = host.querySelector("#pf-y-label");
+    const curve = host.querySelector("#pf-curve");
+    const redPoint = host.querySelector("#pf-red-point");
+    const bluePoint = host.querySelector("#pf-blue-point");
+    const redLabel = host.querySelector("#pf-red-label");
+    const blueLabel = host.querySelector("#pf-blue-label");
+    const crease = host.querySelector("#pf-crease");
+    const creaseLabel = host.querySelector("#pf-crease-label");
+    const nextButton = host.querySelector(".pf-next");
+    const resetButton = host.querySelector(".pf-reset");
+    const status = host.querySelector(".pf-status");
+
+    const NS = "http://www.w3.org/2000/svg";
+    const ORIGIN_X = 350;
+    const ORIGIN_Y = 350;
+    const SCALE = 43;
+
+    let phase = 0;
+    let frameId = null;
+
+    function mapPoint(x, y) {
+      return [ORIGIN_X + SCALE * x, ORIGIN_Y - SCALE * y];
+    }
+
+    function createSvgElement(name, attributes, text) {
+      const element = document.createElementNS(NS, name);
+      Object.keys(attributes).forEach(function (key) {
+        element.setAttribute(key, attributes[key]);
+      });
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function setLine(element, x1, y1, x2, y2) {
+      element.setAttribute("x1", x1);
+      element.setAttribute("y1", y1);
+      element.setAttribute("x2", x2);
+      element.setAttribute("y2", y2);
+    }
+
+    function buildGraph() {
+      for (let i = -6; i <= 6; i += 1) {
+        if (i !== 0) {
+          const verticalA = mapPoint(i, -6.8);
+          const verticalB = mapPoint(i, 6.8);
+          grid.appendChild(createSvgElement("line", {
+            x1: verticalA[0],
+            y1: verticalA[1],
+            x2: verticalB[0],
+            y2: verticalB[1],
+            stroke: "#000",
+            "stroke-opacity": "0.075",
+            "stroke-width": "1"
+          }));
+
+          const horizontalA = mapPoint(-6.8, i);
+          const horizontalB = mapPoint(6.8, i);
+          grid.appendChild(createSvgElement("line", {
+            x1: horizontalA[0],
+            y1: horizontalA[1],
+            x2: horizontalB[0],
+            y2: horizontalB[1],
+            stroke: "#000",
+            "stroke-opacity": "0.075",
+            "stroke-width": "1"
+          }));
+        }
+
+        if (i !== 0 && i % 2 === 0) {
+          const xTick = mapPoint(i, -0.35);
+          ticks.appendChild(createSvgElement("text", {
+            x: xTick[0],
+            y: xTick[1],
+            "text-anchor": "middle"
+          }, String(i)));
+
+          const yTick = mapPoint(0.3, i);
+          ticks.appendChild(createSvgElement("text", {
+            x: yTick[0],
+            y: yTick[1] + 4
+          }, String(i)));
+        }
+      }
+
+      const xA = mapPoint(-6.8, 0);
+      const xB = mapPoint(6.8, 0);
+      setLine(xAxis, xA[0], xA[1], xB[0], xB[1]);
+
+      const yA = mapPoint(0, -6.8);
+      const yB = mapPoint(0, 6.8);
+      setLine(yAxis, yA[0], yA[1], yB[0], yB[1]);
+
+      const xLabelPoint = mapPoint(7.0, -0.28);
+      xLabel.setAttribute("x", xLabelPoint[0]);
+      xLabel.setAttribute("y", xLabelPoint[1]);
+
+      const yLabelPoint = mapPoint(0.25, 7.0);
+      yLabel.setAttribute("x", yLabelPoint[0]);
+      yLabel.setAttribute("y", yLabelPoint[1]);
+
+      const path = [];
+      for (let i = 0; i <= 120; i += 1) {
+        const x = -2.65 + i * (5.3 / 120);
+        const y = x * x;
+        const point = mapPoint(x, y);
+        path.push((i === 0 ? "M" : "L") +
+                  point[0].toFixed(2) + "," +
+                  point[1].toFixed(2));
+      }
+      curve.setAttribute("d", path.join(" "));
+
+      const red = mapPoint(2, 4);
+      redPoint.setAttribute("cx", red[0]);
+      redPoint.setAttribute("cy", red[1]);
+      redLabel.setAttribute("x", red[0] + 10);
+      redLabel.setAttribute("y", red[1] - 10);
+
+      const blue = mapPoint(-2, 4);
+      bluePoint.setAttribute("cx", blue[0]);
+      bluePoint.setAttribute("cy", blue[1]);
+      blueLabel.setAttribute("x", blue[0] - 68);
+      blueLabel.setAttribute("y", blue[1] - 10);
+    }
+
+    /*
+      In screen coordinates centered at the origin, reflection across y = x is
+
+          (u, v) -> (-v, -u)
+
+      because SVG's vertical coordinate increases downward.
+
+      The interpolated matrix
+
+          [ 1-t   -t ]
+          [ -t   1-t ]
+
+      begins at the identity, collapses the sheet onto the crease at t = 1/2,
+      and finishes at the reflected coordinate plane when t = 1.
+    */
+    function setFoldAmount(t) {
+      const a = 1 - t;
+      const b = -t;
+      const c = -t;
+      const d = 1 - t;
+
+      const e = ORIGIN_X - a * ORIGIN_X - c * ORIGIN_Y;
+      const f = ORIGIN_Y - b * ORIGIN_X - d * ORIGIN_Y;
+
+      paper.setAttribute(
+        "transform",
+        "matrix(" + a + " " + b + " " + c + " " + d + " " + e + " " + f + ")"
+      );
+
+      // Make the sheet dimmer as it becomes edge-on.
+      const edgeVisibility = Math.abs(1 - 2 * t);
+      paper.setAttribute("opacity", String(0.28 + 0.72 * edgeVisibility));
+    }
+
+    function easeInOutCubic(t) {
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function animateFold() {
+      const duration = 2200;
+      const startTime = performance.now();
+
+      function step(now) {
+        const raw = Math.min((now - startTime) / duration, 1);
+        const eased = easeInOutCubic(raw);
+        setFoldAmount(eased);
+
+        if (raw < 1) {
+          frameId = window.requestAnimationFrame(step);
+        } else {
+          frameId = null;
+          phase = 2;
+          nextButton.disabled = true;
+          redLabel.textContent = "(4, 2)";
+          blueLabel.textContent = "(4, -2)";
+          status.textContent =
+            "Frame 3: the entire coordinate plane has folded across y = x. " +
+            "The parabola is now x = y^2.";
+        }
+      }
+
+      frameId = window.requestAnimationFrame(step);
+    }
+
+    nextButton.addEventListener("click", function () {
+      if (phase === 0) {
+        crease.setAttribute("opacity", "1");
+        creaseLabel.setAttribute("opacity", "1");
+        status.textContent =
+          "Frame 2: the crease y = x appears. The entire coordinate plane will fold along it.";
+        phase = 1;
+        return;
+      }
+
+      if (phase === 1) {
+        nextButton.disabled = true;
+        status.textContent = "Folding the coordinate plane across y = x...";
+        animateFold();
+      }
+    });
+
+    resetButton.addEventListener("click", function () {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+        frameId = null;
+      }
+
+      phase = 0;
+      nextButton.disabled = false;
+      crease.setAttribute("opacity", "0");
+      creaseLabel.setAttribute("opacity", "0");
+      paper.removeAttribute("transform");
+      paper.setAttribute("opacity", "1");
+      redLabel.textContent = "(2, 4)";
+      blueLabel.textContent = "(-2, 4)";
+      status.textContent =
+        "Frame 1: y = x^2, with (2, 4) in red and (-2, 4) in blue.";
+    });
+
+    buildGraph();
+    setFoldAmount(0);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startWidget, { once: true });
+  } else {
+    startWidget();
+  }
+})();
+ 
+\end{javascript}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% end javascript %%%%%%%%%%
 
 We see immediately the graph of $x = y^2$ fails the Vertical Line Test, Theorem \ref{VLT}.  In particular,  the vertical line $x=4$ intersects the graph at two points, $(4,-2)$ and $(4,2)$ meaning the relation described by $x = y^2$ matches the $x$-value $4$ with two different $y$-values, $-2$ and $2$.  
 
