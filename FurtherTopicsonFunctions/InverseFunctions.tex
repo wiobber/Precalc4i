@@ -1372,7 +1372,7 @@ Corresponding to the \textit{vertical} asymptote $t=1$ on the graph of $g$, the 
     anchor=west}
     ]
   \addplot[only marks, mark=*, mark size=4pt] coordinates {(1,-3) (2,1) (0,2) (-1,1) };
-\draw[-,dashed, red](-4,1)--(4,1);
+\draw[-,dashed, red, line width=1.5pt](-4,1)--(4,1);
 
 \end{axis}
 \end{tikzpicture}
@@ -1399,44 +1399,10 @@ We are given  $G = \{ (t^3+1, 2t) \, | \, \text{$t$ is a real number.} \}$. and 
 
 \end{enumerate}
 
-\[ \begin{array}{ccc}
-
-
-% \input{InverseFunctions_pic17.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \addplot[fpplot, domain=-1.81:1.58] ({t^3 + 1},{2*t});
-  \addplot[only marks, mark=*] coordinates {(0,-2) (1,0) (2,2)};
-  \node[flabel, label=below right:{$(0,-2)$}] at (axis cs:0,-2) {};
-  \node[flabel, label=above right:{$(1,0)$}]  at (axis cs:1, 0) {};
-  \node[flabel, label=above right:{$(2,2)$}]  at (axis cs:2, 2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=G(x)$};
-\end{axis}
-\end{tikzpicture}
-
-
-
-&
-
-\stackrel{\stackrel{\text{\scriptsize reflect across $y=x$}}{\xrightarrow{\hspace{1.25in}}}}{\text{ \scriptsize switch $x$ and $y$ coordinates}} 
-
-&
-
-% \input{InverseFunctions_pic18.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-5, xmax=5, ymin=-5, ymax=5]
-  \addplot[fpplot, domain=-1.81:1.58] ({2*t},{t^3 + 1});
-  \addplot[only marks, mark=*] coordinates {(-2,0) (0,1) (2,2)};
-  \node[flabel, label=above right:{$(-2,0)$}] at (axis cs:-2,0) {};
-  \node[flabel, label=above right:{$(0,1)$}]  at (axis cs: 0,1) {};
-  \node[flabel, label=above right:{$(2,2)$}]  at (axis cs: 2,2) {};
-  \node at (axis description cs:0.5,-0.1) {$y=G^{-1}(x)$};
-\end{axis}
-\end{tikzpicture}
-
-\end{array}\]
-
-\qed
+% https://www.desmos.com/calculator/6vbq01swd1
+\begin{center}
+    \desmos{6vbq01swd1}{800}{600}
+\end{center}
 
 \end{example}
 
