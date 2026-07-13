@@ -2069,48 +2069,12 @@ Our next example continues the theme of restricting the domain of a function to 
 
 \item  The function $j$ is a restriction of the function $f$ from Example \ref{inversefunctiononetooneex}.  Since the domain of $j$ is restricted to $x \leq 1$, we are selecting only the `left half' of the parabola.  Hence, the graph of $j$, seen below on the left,  passes the Horizontal Line Test and thus $j$ is invertible. Below on the right, we find an explicit formula for $j^{-1}(x)$ using our standard algorithm.\footnote{Here, we use the Quadratic Formula to solve for $y$.  For `completeness,' we note you can (and should!) also consider solving for $y$ by `completing' the square.} 
 
-\begin{center}
-
-\begin{tabular}{m{1.75in}m{4.25in}}
-
-% \input{InverseFunctions_pic27.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=3, ymin=-1, ymax=7]
-  \addplot[fgraph, domain=-1:1] {x^2 - 2*x + 4};
-  \addplot[only marks, mark=*] coordinates {(1,3)};
-  \node[flabel, label=above right:{$(1,3)$}] at (axis cs:1,3) {};
-  \node at (axis description cs:0.5,-0.1) {$y=j(x)$};
-\end{axis}
-\end{tikzpicture}
-
-&
-
-$ \begin{array}{rclr}
-y & = & j(x) & \\
-y & = & x^2-2x+4, \, \, \, x \leq 1 \\
-x & = & y^2 - 2y+4, \, \, \, y \leq 1 & \text{switch $x$ and $y$} \\
-0 & = & y^2 - 2y + 4-x & \\
-y & = & \frac{2 \pm \sqrt{(-2)^2-4(1)(4-x)}}{2(1)} & \text{quadratic formula, $c=4-x$} \\  
-y & = & \frac{2 \pm \sqrt{4x-12}}{2} & \\  
-y & = & \frac{2 \pm \sqrt{4(x-3)}}{2} & \\  
-y & = & \frac{2 \pm 2\sqrt{x-3}}{2} & \\  
-y & = & \frac{2\left(1 \pm \sqrt{x-3}\right)}{2} & \\  
-y & = & 1 \pm \sqrt{x-3} & \\
-y & = & 1 - \sqrt{x-3} & \text{since $y \leq 1$.} \\
-\end{array}$ \\
-
-\end{tabular}
-
-\end{center}
-
 Hence, $j^{-1}(x) = 1 - \sqrt{x-3}$.
 
-\smallskip
+
 
 To check our answer algebraically, we simplify $(j^{-1} \circ j)(x)$ and $(j \circ j^{-1})(x)$ Note the importance of the domain restriction  $x \leq 1$ when simplifying $(j^{-1} \circ j)(x)$.
 \begin{center}
-
-\begin{multicols}{2}
 
 $\begin{array}{rcl}
 \left(j^{-1} \circ j \right)(x) & = & j^{-1}(j(x)) \\ 
@@ -2135,53 +2099,19 @@ $\begin{array}{rcl}
 & = &  x \, \, \checkmark \\
 \end{array}$  
 
-\end{multicols}
 \end{center}
 
 We graph both $j$ and $j^{-1}$ on the axes below.  They appear to be symmetric about the line $y=x$.
 
+% https://www.desmos.com/calculator/deaxzrjsrn
 \begin{center}
-
-% \input{InverseFunctions_pic28.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=7, ymin=-1, ymax=7]
-  \addplot[dashed, domain=-1:7] {x};
-  \addplot[fgraph, domain=-1:1] {x^2 - 2*x + 4};
-  \addplot[fgraph, domain=3:7] {1 - sqrt(x - 3)};
-  \addplot[only marks, mark=*] coordinates {(1,3) (3,1)};
-  \node[flabel, label=above right:{$(1,3)$}] at (axis cs:1,3) {};
-  \node[flabel, label=below right:{$(3,1)$}] at (axis cs:3,1) {};
-  \node[flabel, label=above left :{$y=j(x)$}]       at (axis cs:-0.5,4) {};
-  \node[flabel, label=below right:{$y=j^{-1}(x)$}]  at (axis cs:4,-0.5) {};
-  \node[flabel, label=above right:{$y=x$}]          at (axis cs:5.5,5.5) {};
-  \node at (axis description cs:0.5,-0.1) {$j$ and $j^{-1}$};
-\end{axis}
-\end{tikzpicture}
-
-
-
+\desmos{deaxzrjsrn}{800}{600}
 \end{center}
 
 
 \item  Graphing $y=k(t) =\sqrt{t+2} - 1$, we see  $k$ is one-to-one, so we proceed to find an formula for $k^{-1}$.
 
 \begin{center}
-
-\begin{tabular}{m{1.75in}m{4.25in}}
-
-% \input{InverseFunctions_pic29.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-3, ymax=3]
-  \addplot[fgraph, domain=-2:3] {sqrt(x + 2) - 1};
-  \addplot[only marks, mark=*] coordinates {(-2,-1)};
-  \node[flabel, label=below right:{$(-2,-1)$}] at (axis cs:-2,-1) {};
-  \node at (axis description cs:0.5,-0.1) {$y=k(t)$};
-\end{axis}
-\end{tikzpicture}
- 
-
-&
-
 
 $\begin{array}{rclr}
 
@@ -2200,8 +2130,6 @@ t^2 + 2t + 1 & = & y + 2 & \\
 y & = & t^2 + 2t - 1 & \\
 
 \end{array}$
-
-\end{tabular}
 
 \end{center}
 
@@ -2247,25 +2175,9 @@ $\begin{array}{rcl}
 
 Graphically, everything checks out, provided that we remember the domain restriction on $k^{-1}$ means we take the right half of the parabola.
 
+% https://www.desmos.com/calculator/jdkwane8iw
 \begin{center}
-
-% \input{InverseFunctions_pic30.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-3, xmax=3, ymin=-3, ymax=3]
-  \addplot[dashed, domain=-3:3] {x};
-  \addplot[fgraph, domain=-2:3] {sqrt(x + 2) - 1};
-  \addplot[fgraph, domain=-1:1.2] {x^2 + 2*x - 1};
-  \addplot[only marks, mark=*] coordinates {(-2,-1) (-1,-2)};
-  \node[flabel, label=above left :{$(-2,-1)$}] at (axis cs:-2,-1) {};
-  \node[flabel, label=below right:{$(-1,-2)$}] at (axis cs:-1,-2) {};
-  \node[flabel, label=above left :{$y=k(t)$}]        at (axis cs:-1, 1) {};
-  \node[flabel, label=below right:{$y=k^{-1}(t)$}]   at (axis cs: 1,-1) {};
-  \node[flabel, label=above right:{$y=x$}]           at (axis cs: 2, 2) {};
-  \node at (axis description cs:0.5,-0.1) {$k$ and $k^{-1}$};
-\end{axis}
-\end{tikzpicture}
-
-
+\desmos{jdkwane8iw}{800}{600}
 \end{center}
 
 \qed
