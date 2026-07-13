@@ -1468,46 +1468,192 @@ If we attempt to follow the algorithm above to find a formula for $f^{-1}(x)$, w
 
 Using the language of Section \ref{Relations},  the equation $x = y^2$ implicitly defines \textit{two} functions, $g_{1}(x) = \sqrt{x}$ and $g_{2}(x) = -\sqrt{x}$, each of which represents the top and bottom halves, respectively, of the graph of $x = y^2$.
 
-\begin{multicols}{3}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=0:9,
+          xmin=-1, xmax=9,
+          ymin=-3, ymax=3,
+          width=3in,
+          height=2in,
+          xtick={1,2, 3, 4, 5, 6, 7, 8},
+            xticklabels={$1$,$2$, $3$,$4$,$5$,$6$,$7$,$8$},
+           ytick={-2, -1, 1, 2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {x^0.5};
+\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {-x^0.5};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
 
-% \input{InverseFunctions_pic19.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
-  \addplot[fpplot, domain=-2.75:2.75] ({t^2},{t});
-  \addplot[only marks, mark=*] coordinates {(4,-2) (4,2) (0,0)};
-  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
-  \node[flabel, label=above right:{$(4,2)$}]  at (axis cs:4, 2) {};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs:0, 0) {};
-  \node at (axis description cs:0.5,-0.1) {$x=y^2$};
-\end{axis}
-\end{tikzpicture}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt, yshift=5pt}
+]
+coordinates {
+  (4,2) [$(4,2)$]
+  };
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt, yshift=-5pt}
+]
+coordinates {
+  (4,-2) [$(4,-2)$]
+  };
+  
+   \node[anchor=south, color=penColor2] at (1.5,2) {$x=y^2$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=0:9,
+          xmin=-1, xmax=9,
+          ymin=-3, ymax=3,
+          width=3in,
+          height=2in,
+          xtick={1,2, 3, 4, 5, 6, 7, 8},
+            xticklabels={$1$,$2$, $3$,$4$,$5$,$6$,$7$,$8$},
+           ytick={-2, -1, 1, 2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {x^0.5};
+%\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {-x^0.5};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt, yshift=5pt}
+]
+coordinates {
+  (4,2) [$(4,2)$]
+  };
+
+   \node[anchor=south, color=penColor2] at (3,-2) {$y=g_1(x)=\sqrt{x}$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\small
+        \begin{axis}[
+          domain=0:9,
+          xmin=-1, xmax=9,
+          ymin=-3, ymax=3,
+          width=3in,
+          height=2in,
+          xtick={1,2, 3, 4, 5, 6, 7, 8},
+            xticklabels={$1$,$2$, $3$,$4$,$5$,$6$,$7$,$8$},
+           ytick={-2, -1, 1, 2},
+            yticklabels={$-2$,$-1$,$1$, $2$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            y axis line style={{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {x^0.5};
+\addplot[smooth, line width=1.5pt, penColor2, domain=0:9, samples=200] {-x^0.5};
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south east,
+    xshift=0pt, yshift=0pt}
+]
+coordinates {
+  (0,0) [$(0,0)$]
+  };
 
 
-% \input{InverseFunctions_pic20.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
-  \addplot[fgraph, domain=0:7.56] {sqrt(x)};
-  \addplot[only marks, mark=*] coordinates {(4,2) (0,0)};
-  \node[flabel, label=above right:{$(4,2)$}] at (axis cs:4,2) {};
-  \node[flabel, label=below right:{$(0,0)$}] at (axis cs:0,0) {};
-  \node at (axis description cs:0.5,-0.1) {$y = g_{1}(x) = \sqrt{x}$};
-\end{axis}
-\end{tikzpicture}
-
-
-% \input{InverseFunctions_pic21.tex}
-\begin{tikzpicture}
-\begin{axis}[fplot, xmin=-1, xmax=8, ymin=-3, ymax=3]
-  \addplot[fgraph, domain=0:7.56] {-sqrt(x)};
-  \addplot[only marks, mark=*] coordinates {(4,-2) (0,0)};
-  \node[flabel, label=below right:{$(4,-2)$}] at (axis cs:4,-2) {};
-  \node[flabel, label=above right:{$(0,0)$}]  at (axis cs:0, 0) {};
-  \node at (axis description cs:0.5,-0.1) {$y = g_{2}(x) = -\sqrt{x}$};
-\end{axis}
-\end{tikzpicture}
-
-
-\end{multicols}
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt, yshift=-5pt}
+]
+coordinates {
+  (4,-2) [$(4,-2)$]
+  };
+  
+   \node[anchor=north, color=penColor2] at (3,2) {$y=g_2(x)=-\sqrt{x}$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 Hence, in some sense, we have two  \textit{partial} inverses for $f(x) = x^2$:  $g_{1}(x) = \sqrt{x}$ returns the \textit{positive} inputs from $f$ and $g_{2}(x) = -\sqrt{x}$ returns the \textit{negative} inputs to $f$.  In order to view each of these functions as strict inverses, however, we need to split $f$ into two parts:  $f_{1}(x) = x^2$ for $x \geq 0$ and $f_{2}(x) = x^2$ for $x \leq 0$.
 
@@ -1753,7 +1899,7 @@ $\begin{array}{rcl}
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
 \addplot[smooth, line width=2pt, penColor1, domain=0:4, samples=200] {x^2};
-\addplot[smooth, line width=2pt, penColor1, domain=0:8, samples=200] {x^(0.5)};
+\addplot[smooth, line width=2pt, penColor2, domain=0:8, samples=200] {x^(0.5)};
 \addplot[smooth, dashed, line width=2pt, domain=-1:8, samples=10] {x};
 
 \addplot[
@@ -1861,7 +2007,7 @@ $\begin{array}{rcl}
           ]
 %% Main ray: f(x) = |x|, x < 0  (i.e. y = -x for x < 0)
 \addplot[smooth, line width=2pt, penColor1, domain=-5:0, samples=200] {x^2};
-\addplot[smooth, line width=2pt, penColor1, domain=0:5, samples=200] {-x^(0.5)};
+\addplot[smooth, line width=2pt, penColor2, domain=0:5, samples=200] {-x^(0.5)};
 \addplot[smooth, dashed, line width=2pt, domain=-5:5, samples=10] {x};
 
 \addplot[
