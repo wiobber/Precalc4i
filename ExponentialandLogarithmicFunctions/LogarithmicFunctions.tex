@@ -61,6 +61,12 @@ Moreover, since we know the basic shapes of $y = f(x) = b^{x}$ for the different
     \desmos{qatyujujep}{800}{600}
 \end{center}
 
+% https://www.desmos.com/calculator/cwoz62jn3g
+
+\begin{center}
+    \desmos{cwoz62jn3g}{800}{600}
+\end{center}
+
 Procedurally,  logarithmic functions  `undo' the exponential functions.  Consider the function $f(x) = 2^{x}$.  When we evaluate $f(3) = 2^{3} = 8$, the input $3$ becomes the exponent on the base $2$ to produce the real number $8$.  The function $f^{-1}(x) = \log_{2}(x)$ then takes the number $8$ as its input and returns the exponent $3$ as its output.  In symbols, $\log_{2}(8) = 3$. 
 
  
@@ -102,19 +108,46 @@ More generally, $\log_{2}(x)$ is the exponent you put on $2$ to get $x$.  Thus, 
 
 \item  The graph of $f$ resembles:
 
-\begin{center}
 
-\begin{mfpic}[10]{-1}{5}{-3}{3}
-\axes
-\xmarks{1}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2.3,2.3,0.1}{(2^t,t)}
-\tlabel[cc](1.75,-0.75){\scriptsize $(1,0)$}
-\point[4pt]{(1,0)}
-\tlabel[cc](3,-4){\scriptsize $y = \log_{b}(x)$, $b > 1$}
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:2.5,
+          xmin=-1, xmax=6,
+         ymin=-2.5, ymax=2.5,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2:6, line width=1.5pt, blue, samples=200] {ln(x)};
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north west, xshift=5pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+  };  
+ 
+\node[anchor=south, blue] at (2,1.5) {$y=\log_b x,\,b>1$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-\end{center}
+
 
 \end{itemize}
 
@@ -135,19 +168,44 @@ More generally, $\log_{2}(x)$ is the exponent you put on $2$ to get $x$.  Thus, 
 
 \item  The graph of $f$ resembles:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]
+        \begin{axis}[
+          domain=-2.5:2.5,
+          xmin=-1, xmax=6,
+         ymin=-2.5, ymax=2.5,
+          width=3in,
+          height=3in,
+          xtick=\empty,
+          xticklabels=\empty,
+            axis x line=center,
+            axis y line=center,
+            ytick=\empty,
+          yticklabels=\empty,
+            x axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+             y axis line style={-{Latex[length=8pt,width=5pt]}, line width=1pt},
+            xlabel={$x$},
+            ylabel={$y$},
+          ]
+\addplot[smooth,domain=-2:6, line width=1.5pt, blue, samples=200] {-ln(x)};
+ 
+\addplot[
+  only marks,
+  mark=*,
+  mark size=2pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south west, xshift=5pt}
+]
+coordinates {
+  (1,0) [$(1,0)$]
+  };  
+ 
+\node[anchor=south, blue] at (2.5,1.5) {$y=\log_b x,\,0<b<1$};
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
-\begin{mfpic}[10]{-1}{5}{-3}{3}
-\axes
-\xmarks{1}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2.3,2.3,0.1}{(2^t,-t)}
-\point[4pt]{(1,0)}
-\tlabel[cc](2,0.5){\scriptsize $(1,0)$}
-\tlabel[cc](3,-4){\scriptsize $y = \log_{b}(x)$, $0 < b < 1$}
-\end{mfpic}
-
-\end{center}
 \end{itemize}
 
 \end{itemize} \\
