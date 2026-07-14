@@ -220,27 +220,43 @@ Vertical Shift: $0$\\
 \begin{question}
 In Exercises \ref{fitsinecosinefirst} - \ref{fitsinecosinelast},  a sinusoid is graphed. Find a formula for the sinusoid in the form $S(t) = A \sin(\omega t + \phi) + B$ and $C(t) = A \cos(\omega t + \phi) + B$.  Select $\omega$ so  $\omega > 0$. Check your answer by graphing.
 
-\begin{problem}   \label{fitsinecosinefirst}  
-%$S(t) = 4 \sin \left(t + \frac{\pi}{4} \right)$, $C(t) = 4 \cos \left(t - \frac{\pi}{4} \right)$
+\begin{problem}   \label{fitsinecosinefirst} 
 
-\begin{mfpic}[16]{-5}{5}{-5}{5}
-\tlabel[cc](5,-0.30){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\axes
-\xmarks{-4 step 1 until 4}
-\ymarks{-4 step 1 until 4}
-\point[4pt]{(-3.927, 0), (-2.356, -4), (-0.7854, 0), (0.7854, 4), (2.356, 0)}
-\tlabel[cc](-3, 0.5){ \scriptsize $\left( -\frac{5\pi}{4}, 0 \right)$}
-\tlabel[cc](-2.356, -4.5){ \scriptsize $\left( -\frac{3\pi}{4}, -4 \right)$}
-\gclear \tlabelrect(0.25, -0.6){ \scriptsize $\left( -\frac{\pi}{4}, 0 \right)$ \vphantom{$\frac{5}{2}$}}
-\tlabel[cc](0.9, 4.5){\scriptsize $\left( \frac{\pi}{4}, 4 \right)$}
-\tlabel[cc](3.25, 0.5){ \scriptsize $\left( \frac{3\pi}{4}, 4 \right)$}
-\tlpointsep{4pt}
-%\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124, {$2\pi$} 6.2832}
-%\axislabels {y}{{$-3$} -3, {$3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-5, 5,  0.1}{4*sin(x+(pi/4))}
-\end{mfpic}   
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-7, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={{Latex[length=8pt,width=6pt]}-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1,0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2pt, blue, domain=-4.75:4.75] {4*sin(180*x/3.14+45)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-0.785,0)(-3.927,0)(2.356,0)(0.785,4)(-2.356,-4)};
+\node at (0.785,4) [right=8pt] {$(\frac{\pi}{4},4)$};
+\node at (2.356,0) [above=12pt,right=4pt] {$(\frac{3\pi}{4},0)$};
+\node at (-0.785,0) [above=12pt,left=2pt] {$(-\frac{\pi}{4},0)$};
+\node at (-3.927,0) [below=12pt,left=2pt] {$(-\frac{7\pi}{4},0)$};
+\node at (-2.356,-4) [left=8pt] {$(-\frac{3\pi}{4},-4)$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+$S(t) = 4 \sin \left(t + \frac{\pi}{4} \right)$, $C(t) = 4 \cos \left(t - \frac{\pi}{4} \right)$
+
+Use the Desmos graph below to check these answers.
+
+\begin{center} 
+\desmos{6etbg1ifrh}{800}{600} 
+\end{center}
+\end{solution}
 \end{problem}
 
 
