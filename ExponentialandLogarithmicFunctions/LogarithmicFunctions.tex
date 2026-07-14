@@ -289,29 +289,6 @@ To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\inf
 
 \item \label{findformulaforlogexample} Find a formula for the graph of the function below.  Assume the base of the logarithm is $2$.
 
-\begin{center}
-
-\begin{mfpic}[15]{-5}{5}{-7}{3}
-\axes
-\dashed \polyline{(4,-7), (4,3)}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\tlabel[cc](-1, -1.5){\scriptsize $(0,-1)$}
-\tlabel[cc](-4,0.5){\scriptsize $(-4,0)$}
-\tlabel[cc](3.25,2){\scriptsize $x=4$}
-\tcaption{\scriptsize $y = F(x)$}
-\xmarks{-4, -3, -2, -1, 1, 2, 3, 4}
-\ymarks{-6, -5, -4, -3,-2,-1,1,2}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-4 \hspace{7pt}$} -4, {\scriptsize $-3 \hspace{7pt}$} -3,{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $-5$} -5, {\scriptsize $-6$} -6}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-6, 0.17, 0.1}{(4-2**(t+3), t)}
-\point[4pt]{(-4,0), (0,-1)}
-\end{mfpic}
-
-\end{center}
-
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\LARGE
         \begin{axis}[
@@ -338,7 +315,7 @@ To really \textit{understand} why the domain of $g(x) = \log_{2}(x)$ is $(0,\inf
   }
           ]
 %% Extra thick graph
-\addplot[smooth, line width=3.5pt, penColor1,domain=-5:3.9] {(1/(ln(2)))*ln(4-x)-3};
+\addplot[smooth, line width=3.5pt, samples=200, penColor1,domain=-5:3.9] {(1/(ln(2)))*ln(4-x)-3};
 
 %% Asymptotes
 \draw[dashed, gray, line width=1.5pt] (4,-7)--(4,3);
@@ -366,7 +343,7 @@ coordinates {
   nodes near coords,
   point meta=explicit symbolic,
   every node near coord/.style={anchor=south west,
-    xshift=5pt}
+    xshift=0pt,yshift=5pt}
 ]
 coordinates {
   (-4,0) [$(-4,0)$]
@@ -580,27 +557,28 @@ If we define $r(x) = \frac{x}{x-1}$, we find $r$ is undefined at $x=1$ and $r(x)
 We find $ \frac{x}{x-1} > 0$ on $(-\infty, 0) \cup (1, \infty)$ which is the domain of  $g$. The graph below confirms this.
 
 
-\begin{center}
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[{Latex[length=5pt,width=3pt]}-{Latex[length=5pt,width=3pt]}, line width=1.25pt] (-4,0) -- (2,0);
+  \draw (-2,-0.12) -- (-2,0.12);
+  \draw (0,-0.12) -- (0,0.12);
+  \node at (-3, 0.5) {$(+)$};
+  \node at (-2,-0.5) {$0$};
+ % \node at (-2,0.5) {$0$};
+  \node at (-1,0.5) {$(-)$};
+  \node at (0,-0.5) {$1$};
+  \node at (1,0.5) {$(+)$};
+\end{tikzpicture}
 
 
+%The graph of $y=f(x)$  \hspace{0.75in} & Sign Diagram for $f(x)$ \\
 
-\begin{mfpic}[10]{-5}{5}{-1}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{-2,2}
-\tlabel[cc](-3.5,1){$(+)$}
-\tlabel[cc](-2,-1){$0$}
-\tlabel[cc](-2,1){$0$}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,-1){$1$}
-\tlabel[cc](2,1){\textinterrobang}
-\tlabel[cc](3.5,1){$(+)$}
-\end{mfpic}
+\end{image} 
 
 % https://www.desmos.com/calculator/qzvdurrrzh
 \begin{center}
     \desmos{qzvdurrrzh}{800}{600}
-\end{center}
-
 \end{center}
 
   We can tell from the graph of $g$ that it is not the result of Section \ref{Transformations} transformations being applied to the graph $y = \ln(x)$, (do you see why?)  so barring a more detailed analysis using Calculus, producing a graph using a graphing utility is the best we can do.  
@@ -614,8 +592,6 @@ One thing worthy of note, however, is the end behavior of $g$.  The graph sugges
 \end{example}
 
 While logarithms have some interesting applications of their own which you'll explore in the exercises, their primary use to us will be to undo exponential functions. (This is, after all, how they were defined.)  Our last example  reviews not only the major topics of this section, but reviews the salient points from Section \ref{InverseFunctions}.
-
-\newpage
 
 \begin{example}  Let $f(x) = 2^{x-1} - 3$. \label{proceduralinverse}
 
@@ -665,47 +641,11 @@ Looking point-by-point, we have  $\left(-1, \frac{1}{2}\right) \rightarrow \left
 
 From the graph of $f$, we get the domain is $(-\infty, \infty)$ and the range is $(-3, \infty)$.
 
+% https://www.desmos.com/calculator/rbhejvkamm
+\begin{center}
+    \desmos{rbhejvkamm}{800}{600}
+\end{center}
 
-\[\begin{array}{ccc}
-
-\begin{mfpic}[15]{-4}{5}{-3.25}{8.25}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8.25){\scriptsize $y$}
-\tcaption{\scriptsize $y = h(x) = 2^{x}$}
-\xmarks{-3,-2,-1,1,2,3,4}
-\ymarks{-3,-2,-1,1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $-3$} -3, {\scriptsize $-2$} -2, {\scriptsize $-1$} -1,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-3.5, 3, 0.1}{2**x}
-\point[4pt]{(-1,0.5), (0,1), (1,2)}
-\end{mfpic}
-
-&
-
-\xrightarrow{\hspace{1in}}
-
-&
-
-\begin{mfpic}[15]{-4}{5}{-3.25}{8.25}
-\axes
-\dashed \polyline{(-4,-3),(5,-3)}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8.25){\scriptsize $y$}
-\tcaption{\scriptsize $y = f(x) = 2^{x-1}-3$}
-\xmarks{-3,-2,-1,1,2,3,4}
-\ymarks{-3,-2,-1,1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {y}{{\scriptsize $-2$} -2, {\scriptsize $-1$} -1,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.5, 4, 0.1}{(2**(x-1))-3}
-\point[4pt]{(0,-2.5), (1,-2), (2,-1)}
-\end{mfpic} \\
-
-\end{array}\]
 
 \item  The graph of $f$ passes the Horizontal Line Test so $f$ is one-to-one, hence invertible.  
 
@@ -744,47 +684,11 @@ The vertical asymptote is only affected by the horizontal shift, so we have $x =
 
 From the graph below, we  get the  domain of $f^{-1}$ is $(-3, \infty)$, which matches the range of $f$, and the range of $f^{-1}$ is $(-\infty, \infty)$, which matches the domain of $f$, in accordance with Theorem \ref{inversefunctionprops}.
 
-\[\begin{array}{ccc}
+% https://www.desmos.com/calculator/zwbbtbbeke
 
-\begin{mfpic}[15]{-4}{9}{-4}{5}
-
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tcaption{\scriptsize $y = j(x) = \log_{2}(x)$}
-\ymarks{-3,-2,-1,1,2,3,4}
-\xmarks{-3,-2,-1,1,2,3,4,5,6,7,8}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $-3$} -3,{\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-3.5, 3.1, 0.1}{(2**t,t)}
-\point[4pt]{(0.5,-1), (1,0), (2,1)}
-\end{mfpic}
-
-&
-
-\xrightarrow{\hspace{1in}}
-
-&
-
-\begin{mfpic}[15]{-4}{9}{-4}{5}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tcaption{\scriptsize $y = f^{-1}(x) = \log_{2}(x+3)+1$}
-\ymarks{-3,-2,-1,1,2,3,4}
-\xmarks{-3,-2,-1,1,2,3,4,5,6,7,8}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $-3$} -3,{\scriptsize $-2$} -2, {\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4}
-\axislabels {x}{{\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6, {\scriptsize $7$} 7, {\scriptsize $8$} 8}
-\dashed \polyline{(-3,-4),(-3,5)}
-\penwd{1.25pt}
-\point[4pt]{(-2.5,0), (-2,1), (-1,2)}
-\arrow \reverse \arrow \parafcn{-2.5, 4.1, 0.1}{((2**(t-1))-3,t)}
-\end{mfpic} \\
-
-\end{array}\]
+\begin{center}
+    \desmos{zwbbtbbeke}{800}{600}
+\end{center}
 
 \item  We now verify that $f(x) = 2^{x-1}-3$ and $f^{-1}(x) = \log_{2}(x+3)+1$ satisfy the composition requirement for inverses.  When simplifying $(f^{-1} \circ f)(x)$ we assume $x$ can be any real number while when simplifying $(f \circ f^{-1})(x)$, we restrict our attention to $x > -3$. (Do you see why?)  
 
@@ -834,27 +738,11 @@ $\begin{array}{rcl}
 
 \item  Last, but certainly not least, we graph $y=f(x)$ and $y=f^{-1}(x)$ on the same set of axes and observe the symmetry about the line $y=x$.
 
+% https://www.desmos.com/calculator/ac7xyiqiqh
 \begin{center}
-\begin{mfpic}[15]{-4}{7}{-4}{7}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\tlabel(-4,-5){\scriptsize $y = f(x) = 2^{x-1}-3$}
-\tlabel(-4,-6){\text{\scriptsize  \boldmath $y = f^{-1}(x) = \log_{2}(x+3)+1$}}
-\xmarks{-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3,4,5,6}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-3 \hspace{7pt}$} -3, {\scriptsize $-2 \hspace{7pt}$} -2, {\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
-\axislabels {y}{{\scriptsize $-2$} -2, {\scriptsize $-1$} -1,{\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $4$} 4, {\scriptsize $5$} 5, {\scriptsize $6$} 6}
-\arrow \reverse \arrow \function{-4.1, 4.1, 0.1}{(2**(x-1))-3}
-\dashed \polyline{(-4,-3),(5,-3)}
-\dashed \polyline{(-3,-3),(6,6)}
-\dashed \polyline{(-3,-4),(-3,5)}
-\penwd{1.5pt}
-\arrow \reverse \arrow \parafcn{-4.1, 4.1, 0.1}{((2**(t-1))-3,t)}
-\end{mfpic}
-
+\desmos{ac7xyiqiqh}{800}{600}
 \end{center}
+
 \end{enumerate}
 
 %%TODO: verify !!! \item  \begin{enumerate}
