@@ -617,20 +617,14 @@ By taking the natural logs of both sides and using the Product and Power Rules, 
 
 \ln(N) & 8.566 & 8.653 & 8.779 & 8.925 & 9.042 & 9.045 & 9.086    \\ \hline \end{array} \]
 
+% https://www.desmos.com/calculator/7ea8xb0jbu
 \begin{center}
+    \desmos{7ea8xb0jbu}{800}{600}
+\end{center}
 
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx10.jpg} &
-
-\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx06a.jpg} \\
-
-linear regression: $\ln(N(t)) = p \ln(t) + \ln(a)$ &
-
-power function regression: $N(t) = at^{p}$ \\
-
-\end{tabular}
-
+% https://www.desmos.com/calculator/u6duuel44f
+\begin{center}
+\desmos{u6duuel44f}{800}{600}
 \end{center}
 
 
@@ -659,20 +653,15 @@ As  written,  Equation \ref{lawofuninhibitedgrowth} gives uninhibited growth as 
 \label{swineflulinearized}
 If we assume $N(t) = a \cdot b^{t}$ then, taking logs as before, we get $\ln(N(t)) = t \ln(b) + \ln(a)$. If we let $y= \ln(N(t))$, then, once again, we get a linear model this time with slope $\ln(b)$ and $y$-intercept $\ln(a)$.  We present the results of the regression below.  While there is a strong correlation, $r = 0.962$, the plot doesn't instill the greatest of confidence in this model.
 
+
+% https://www.desmos.com/calculator/dhzzdqvflh
 \begin{center}
+\desmos{dhzzdqvflh}{800}{600}
+\end{center}
 
-\begin{tabular}{cc}
-
-\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx09.jpg} &
-
-\includegraphics[width=3in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx07a.jpg} \\
-
-linear regression: $\ln(N(t)) = t \ln(b) + \ln(a)$ &
-
-exponential regression: $N(t) = a \cdot b^{t}$ \\
-
-\end{tabular}
-
+% https://www.desmos.com/calculator/dpbyawjdyk
+\begin{center}
+    \desmos{dpbyawjdyk}{800}{600}
 \end{center}
 
 From the slope of the model, we have   $m = \ln(b) \approx 0.202$  so $b \approx 1.223$.  From the $y$-intercept of the model, we get $B = \ln(a) \approx  5.596$ so $a \approx 269.35$, so that our model is $N(t) = 269.35(1.223)^{t}$. Using the built-in exponential regression (again, with `log mode' checked) returns the model  $N(t) = 269.41 (1.223)^{t}$, the discrepancy between   $269.35$ and $269.41$ stemming ostensibly from round-off error.    
@@ -687,10 +676,10 @@ Running the data, a logistic function appears to be an excellent fit, both judgi
 
 
 
-
+% https://www.desmos.com/calculator/ucern1m1hc
  
  \begin{center}
- \includegraphics[width=5in]{./ApplicationsofExponentialandLogarithmicFunctionsGraphics/ExpLogAppEx08.jpg} 
+\desmos{ucern1m1hc}{800}{600}
  \end{center}
 
   While the quadratic model also fits extremely well, our logistic model takes into account that only a finite number of people will ever get the flu (according to our model, $L=10,\!739$), whereas the quadratic model predicts no limit to the number of cases. As we have stated several times before in the text, mathematical models, regardless of their sophistication, are just that:  models, and they all have their limitations.\footnote{Speaking of limitations, as of June 3, 2009, there were 19,273 confirmed cases of influenza A (H1N1).  This is well above our prediction of 10,739.  Each time a new report is issued, the data set increases and the model must be recalculated.  We leave this recalculation to the reader.}
