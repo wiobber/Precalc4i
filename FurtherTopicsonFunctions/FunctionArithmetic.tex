@@ -180,9 +180,7 @@ coordinates {
 
 \end{enumerate}
 
-
 \item  Find the domain of each of the following functions:
-
 
 \begin{enumerate}
 
@@ -293,11 +291,7 @@ Hence, $\left(\frac{g}{f} \right)(t) = \frac{1}{2t^2} = \frac{1}{2} t^{-2}$.  To
 
 The key step  to the argument is that  $(f(x)+g(x))+h(x)   =  f(x) + (g(x)+h(x))$ which is true courtesy of the associative property of real number addition.  And just like with real number addition, because function addition is associative, we may write $f+g+h$ instead of $(f+g)+h$ or $f+(g+h)$ even though, when it comes down to computations, we can only add two things together at a time.\footnote{Addition is a `binary' operation - meaning it is defined only on two objects at once.  Even though we write $1+2+3 = 6$,  mentally, we add just two of  numbers together at any given time to get our answer: for example, $1+2+3 = (1+2)+3 = 3+3 = 6$.}
 
-
-
 For completeness, we summarize the properties of function arithmetic in the theorem below.  The proofs of the properties all follow along the same lines as the proof of the associative property and are left to the reader.  We investigate some additional properties in the exercises.
-
-
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -323,13 +317,11 @@ For completeness, we summarize the properties of function arithmetic in the theo
 
 \item  \textbf{Distributive Law of Multiplication over Addition:}  $f(g+h) = fg+fh$
 
-
 \end{itemize}
 
 \end{theorem}
 
 %% \ebm}
-
 
 In the next example, we decompose given functions into sums, differences, products and/or quotients of other functions.  Note that there are infinitely many different ways to do this, including some trivial ones.  For example, suppose we were instructed to decompose $f(x) = x+2$ into a sum or difference of functions.  We could write $f = g+h$ where $g(x) = x$ and $h(x) = 2$ or we could choose $g(x) = 2x+3$ and $h(x) = -x-1$.  More simply, we could write $f = g+h$ where $g(x) = x+2$ and $h(x) = 0$.  We'll call this last decomposition a `trivial' decomposition.  Likewise, if we ask for a decomposition of $f(x) = 2x$ as a product, a nontrivial solution would be $f = gh$ where $g(x) = 2$ and $h(x) = x$ whereas a trivial solution would be $g(x) = 2x$ and $h(x) = 1$.  In general, non-trivial solutions to decomposition problems avoid using the additive identity, $0$,  for sums and differences and the multiplicative identity, $1$, for products and quotients.
 
@@ -338,8 +330,6 @@ In the next example, we decompose given functions into sums, differences, produc
 \begin{enumerate}
 
 \item  For  $f(x) = x^2 - 2x$, find functions $g$, $h$ and $k$ to decompose $f$ nontrivially as:
-
-
 
 \begin{enumerate}
 
@@ -353,12 +343,7 @@ In the next example, we decompose given functions into sums, differences, produc
 
 \end{enumerate}
 
-
-
 \item  For $F(t) = \frac{2t+1}{\sqrt{t^2-1}}$, find functions $G$, $H$ and $K$ to decompost $F$ nontrivially as:
-
-
-
 
 \begin{enumerate}
 
@@ -390,7 +375,6 @@ In the next example, we decompose given functions into sums, differences, produc
 
 \item  We need to be careful here interpreting the equation $f = g(h-k)$.  What we have is an equality of \textit{functions} so the parentheses here \textit{do not} represent function notation here, but, rather function \textit{multiplication}.  The way to parse $g(h-k)$, then, is the function $g$ \textit{times} the function $h-k$. Hence, we seek functions $g$, $h$, and $k$ so that $f(x) = [g(h-k)](x) = g(x) [(h-k)(x)] = g(x) (h(x) - k(x))$.    From the previous example, we know we can rewrite $f(x) = x(x-2)$, so one option is to set $g(x) = h(x) = x$ and $k(x) = 2$ so that $[g(h-k)](x)  =  g(x) [(h-k)(x)]  =  g(x) (h(x) - k(x)) = x(x-2) = x^2-2x = f(x)$, as required.  As above, the domain of all constituent functions is $(-\infty, \infty)$ which matches the domain of $f$.
 
-
 \end{enumerate}
 
 \item  \begin{enumerate}
@@ -416,8 +400,6 @@ In the next example, we decompose given functions into sums, differences, produc
 
 Recall the \index{average rate of change}\index{change ! average rate of}\textbf{average rate of change} of a function over the interval $[a,b]$  is the slope of the line connecting the two points $(a, f(a))$ and $(b, f(b))$ and is given by \[ \frac{\Delta[f(x)]}{\Delta x} = \frac{f(b)-f(a)}{b-a}.\]
 
-\medskip  
-
 %Geometrically, the average rate of change is the slope of the so-called \index{secant line}\textbf{secant line} which `cuts' through the graph of $y = f(x)$ at the points $(a,f(a))$ and $(b, f(b))$:
 
 %\begin{center}
@@ -428,19 +410,11 @@ For the purposes of this section, consider a function $f$ defined over an interv
 
 \[ \frac{\Delta[f(x)]}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x}, \quad \Delta x \neq 0.\]
 
-\medskip
-
 Our aim in this section is to develop formulas which relate the rate of change of arithmetic combinations of functions to the rates of change of the component functions.   Our first step is to study the \index{difference operator}\index{operator ! difference}\textbf{difference operator}  `$\Delta$'  and how it works with the standard arithmetic operations.  
-
-\medskip
 
 In general, if $u$ is some quantity which assumes two values in a particular order, say $u_{1}$ (the `first' or `initial' value) and $u_{2}$ (the `second' or `final' value), then $\Delta u = u_{2} - u_{1}$.  For example, if $u$ represents the temperature of an object before ($u_{1}$) heat is applied and after ($u_{2}$) heat is applied,  $\Delta u = u_{2} - u_{1}$ represents the increase in temperature of the object.
 
-\medskip
-
  In the context of functions and rates of change, $u$ is the function $f$ defined on the interval $[x, x + \Delta x]$ with $u_{1} = f(x)$ and $u_{2} = f(x+\Delta x)$.  Here, $\Delta u = u_{2} - u_{1} = f(x+\Delta x) - f(x) = \Delta[f(x)]$.  
- 
-\medskip
 
 Suppose we have two quantities, $u$ and $v$ with $\Delta u = u_{2} - u_{1}$ and $\Delta v = v_{2} - v_{1}$.   What do we mean by   $\Delta[u+v]$?  The initial value of the sum $u+v$ would be the sum of the initial values $u_{1} + v_{1}$. Likewise, the final value of the sum would be the sum of the final values $u_{2} + v_{2}$.  Hence:
  
@@ -453,10 +427,7 @@ Suppose we have two quantities, $u$ and $v$ with $\Delta u = u_{2} - u_{1}$ and 
 
 A similar calculation gives $\Delta[u - v] = \Delta u - \Delta v$.
 
-\medskip
-
 Let's turn our attention to products. We have $\Delta[uv] = u_{2} \, v_{2} - u_{1} \, v_{1}$.  We'd like to express $\Delta[uv]$ in terms of $\Delta u$ and $\Delta v$ and there seems to be no way obvious way to do that.  We take to some geometric reasoning for inspiration.  Let's assume the all the quantities we're working with are positive.
-\medskip
 
 We imagine the product $u_{1} \, v_{1}$ as being the area of a rectangle with width $u_{1}$ and length $v_{1}$.  Likewise, the product $u_{2} \, v_{2}$ is the area of a (larger) rectangle with width $u_{2}$ and length $v_{2}$.
 
@@ -540,15 +511,9 @@ Using this schematic, we see the area   $u_{2} \, v_{2}$ is the sum of the areas
 
 Hence, $\Delta[uv]  = u_{2} \, v_{2} - u_{1} \, v_{1}  =  v_{1} \, \Delta u + u_{1} \, \Delta v +  \Delta u \, \Delta v$.
 
-\medskip
-
 To prove this formula holds in general, we can substitute $u_{2}  = u_{1} + \Delta u$ and $v_{2} = v_{1} + \Delta v$ into  $\Delta[uv] = u_{2} \, v_{2} - u_{1} \, v_{1}$ and simplify.  We leave the details to the reader.\footnote{Why not do this from the start, then?  Carl trained as a geometric topologist.}
 
-\medskip
-
 Next, we turn our attention to quotients.  We begin with: $\Delta \left[ \frac{u}{v} \right] = \frac{u_{2}}{v_{2}}  - \frac{u_{1}}{v_{1}}$.
-
-\medskip
 
 Instead of appealing to geometric reasoning here,\footnote{If you come up with or know of  a nice geometric argument and don't mind sharing, feel free to contact \href{mailto:carl@stitz-zeager.com}{\underline{Carl}}.} we take a cue from the previous discussion and substitute   $u_{2} = u_{1} + \Delta u$ and $v_{2} = v_{1} + \Delta v$ and set about getting a common denominator:
 
@@ -562,8 +527,6 @@ Instead of appealing to geometric reasoning here,\footnote{If you come up with o
                        \end{array} \]
                        
 We summarize these results in the following theorem.
-
-\medskip
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -591,19 +554,11 @@ We summarize these results in the following theorem.
 
 %% \ebm}
 
-\medskip
-
 You'll note we've called out a special case for the Product Rule, the Constant Multiple Rule.  If one of the factors is a constant, $c$, then $\Delta c = 0$ (since constants don't change.)
-
-\medskip
 
 In the following example, we use the Quotient Rule for Change to help approximate the \index{propagated error}\index{error ! propagated}\textbf{propagated error} when using measured quantities (with associated uncertainties) in calculations.\footnote{The adjective `propagated' here means than when we use measured quantities in calculations, the uncertainties in the measured quantities will produce, or `propagate' uncertainty in the calculated quantity.}
 
-\medskip
-
 \begin{example}\label{densityexample} The density of a substance, $\rho$, is calculated by dividing its mass, $m$, by its volume, $V$:  $\rho = \frac{m}{V}$.  A scientist collects $5$ milliliters (mL) of a substance and determines its mass to be $68.2$ grams (g).  She computes the density as:  $\rho = \frac{68.2 \, \text{g}}{5 \, \text{mL}} = 13.64 \, \frac{\text{g}}{\text{mL}}$.
-
-\medskip
 
 Since every measurement in the lab has an associated uncertainty, she notes the pipet she used to measure the volume has an uncertainty of  $\pm 0.125$ mL and the balance she used to mass the substance has an uncertainty of  $\pm 0.01$ g.  This means the actual volume measurement can be anywhere from as low as  $5 - 0.125 = 4.875$ mL and as high as $5 + 0.125 = 5.125$ mL.  Likewise, the actual mass of the substance can be anywhere from $68.2 - 0.01 = 68.19$ g to $68.2+ 0.01 = 68.21$g.  Our goal is to help estimate the associated uncertainty  for the density, $\rho$.
 
@@ -611,14 +566,11 @@ Since every measurement in the lab has an associated uncertainty, she notes the 
 
 \item Use Theorem \ref{functionarithmeticchange} to find an expression for the uncertainty in the volume $\Delta \rho$ produced as a result in the uncertainties in the measurements of mass, $\Delta m$, and volume, $\Delta V$.
 
-\medskip
-
 \item  Calculate $\frac{\Delta \rho}{\rho}$ and interpret your answer.
 
 \end{enumerate}
 
-
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -635,11 +587,11 @@ Since we have no idea the exact value of each uncertainty, we need to make a jud
  
  \medskip
  
- We may interpret this as the uncertainties in the measurements for mass and volume in this situation could produce up to a $2.58 \%$ error in the calculated density,  \qed
+ We may interpret this as the uncertainties in the measurements for mass and volume in this situation could produce up to a $2.58 \%$ error in the calculated density.
 \end{enumerate}
+\end{explanation}
 
 \end{example}
-
 
 In order to establish formulas for the average rate of change for  functions, we substitute $f(x)$ for $u_{1}$ and $g(x)$ for $v_{1}$ and divide each of the expressions in Theorem \ref{functionarithmeticchange} by $\Delta x$.  For example,  if we  to find an expression for the average rate of change of $fg$ in terms of $f$, $g$, and their respective average rates of change:
 
@@ -650,12 +602,8 @@ Note that with the last term, we may associate the `$\Delta x$' with either of t
 \[ \frac{\Delta[f(x)]\Delta[g(x)]}{\Delta x} = \frac{\Delta[f(x)]}{\Delta x} \, \Delta[g(x)] = \Delta[f(x)] \, \frac{\Delta[g(x)]}{\Delta x}.\]
 
 Either way, we've managed to express the average rate of change of the function $fg$ in terms of the changes and rates of change of $f$ and $g$.  
-
-  \medskip
   
 In the result below, we abbreviate the average rate of change as `ARoC' for convenience.
-
-\medskip
 
 %% \colorbox{ResultColor}{\bbm
 

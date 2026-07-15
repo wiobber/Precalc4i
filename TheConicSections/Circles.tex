@@ -121,27 +121,61 @@ Note in the standard equation of a circle, \textit{both} of the variables square
 
 \item  The circle whose graph is below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-5, xmax=1,
+          ymin=-1, ymax=5,
+          width=6in,
+          height=6in,
+          xtick={-4,-3,-2,-1},
+            xticklabels={$-4$,$\,$,$\,$, $\,$},
+           ytick={1,2,3, 4},
+            yticklabels={$\,$,$\,$,$\,$, $4$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\draw[very thick,blue] (-2,2) circle (2);
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (0,2) [$(0,2)$]
+};
 
-\begin{mfpic}[15]{-5}{1}{-1}{5}
-\axes
-\xmarks{-4, -3, -2, -1, 0}
-\ymarks{1,2,3,4}
-\tlabel(1,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel[cc](-2, -0.5){\scriptsize $(-2,0)$}
-\tlabel[cc](1,2){\scriptsize $(0,2)$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-4 \hspace{7pt}$} -4}
-\axislabels {y}{ {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\circle{(-2,2),2}
-\point[4pt]{(-2,0), (0,2)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt, yshift=-5pt}
+]
+coordinates {
+  (-2,0) [$(-2,0)$]
+  };
 
-\end{center}
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -164,32 +198,100 @@ Note in the standard equation of a circle, \textit{both} of the variables square
 
 To help us create a detailed graph, we start from the center $(-2,1)$ and move  two units to the left and two units up and down to the right to identify four points on the graph.\footnote{Note the center of the circle is \textit{not} on the graph of the circle!} We get $(-2-2, 1) = (-4,1)$, $(-2+2, 1) = (0,1)$,  $(-2, 1+2) = (-2,3)$ and $(-2,1-2) = (-2,-1)$.  Our graph is below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-5, xmax=2,
+          ymin=-2, ymax=5,
+          width=6in,
+          height=6in,
+          xtick={-4,-3,-2,-1},
+            xticklabels={$-4$,$-3$,$-2$, $-1$},
+           ytick={-1,1,2,3, 4},
+            yticklabels={$-1$,$1$,$\,$, $3$,$5$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\draw[very thick,blue] (-2,1) circle (2);
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (0,1) [$(0,1)$]
+};
 
-\begin{mfpic}[20]{-5}{2}{-2}{4}
-\axes
-\plotsymbol[3pt]{Cross}{(-2,1)}
-\tlabel[cc](-2, 1.5){\scriptsize $(-2,1)$}
-\tlabel[cc](1, 1){\scriptsize $(0,1)$}
-\tlabel[cc](-5, 1){\scriptsize $(-4,1)$}
-\tlabel[cc](-2, 3.5){\scriptsize $(-2,3)$}
-\tlabel[cc](-2, -1.5){\scriptsize $(-2,-1)$}
-\tcaption{\scriptsize The graph of $(x+2)^2+(y-1)^2 = 4$}
-\xmarks{-4, -3, -2,-1,0, 1}
-\ymarks{-1,0,1, 2,3}
-\tlabel(2,-0.25){\scriptsize $x$}
-\tlabel(0.25,4){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
-\axislabels {y}{{$-1$} -1, {$1$} 1,  {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\circle{(-2,1),2}
-\point[4pt]{(0,1), (-4,1), (-2,3), (-2,-1)}
-\end{mfpic}
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt, yshift=-5pt}
+]
+coordinates {
+  (-2,-1) [$(-2,-1)$]
+  };
 
-\end{center}
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (-4,1) [$(-4,1)$]
+  };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt, yshift=5pt}
+]
+coordinates {
+  (-2,3) [$(-2,3)$]
+  };  
+
+  \addplot[
+  only marks,
+  mark=x,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=5pt, yshift=5pt}
+]
+coordinates {
+  (-2,1) [$(-2,1)$]
+  };  
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \item In order to make use of Equation \ref{standardcircle}, we need to put $3x^2 - 6x + 3y^2 + 4y -4 = 0$ into standard form.  To that end, we complete the square on both the $x$ and $y$ terms and collect the constants to the other side of the equation as demonstrated below.
 
@@ -210,30 +312,100 @@ From Equation \ref{standardcircle}, we identify $h = 1$,  $k =  - \frac{2}{3}$, 
 
 As above, we find four points on the circle by starting at the center  $\left(1, -\frac{2}{3}\right)$ and moving up, down, to the left, and to the right $ \frac{5}{3}$ units.  Doing so produces the following points: $\left(-\frac{2}{3}, -\frac{2}{3}\right)$ , $\left(\frac{8}{3}, -\frac{2}{3}\right)$ ,   $\left(1, 1\right)$, and $\left(1, -\frac{7}{3}\right)$.  Our graph is below.
 
-\begin{center}
-\begin{mfpic}[20]{-2}{5}{-4}{2}
-\axes
-\plotsymbol[3pt]{Cross}{(1, -0.6666)}
-\tlabel[cc](-1.75, -0.6666){\scriptsize $\left(-\frac{2}{3}, -\frac{2}{3}\right)$}
-\tlabel[cc](3.5, -0.6666){\scriptsize $\left(\frac{8}{3}, -\frac{2}{3}\right)$}
-\tlabel[cc](1, 1.5){\scriptsize $\left(1, 1\right)$}
-\tlabel[cc](1, -2.8){\scriptsize $\left(1, -\frac{7}{3}\right)$}
-\tlabel[cc](1, -1.25){\scriptsize  $\left(1, -\frac{2}{3}\right)$}
-\tcaption{\scriptsize The graph of $3x^2 - 6x + 3y^2 + 4y -4 = 0$}
-\xmarks{-1, 1, 2, 3, 4}
-\ymarks{-3,-2,-1,1}
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,2){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$2$} 2}
-\axislabels {y}{{$-3$} -3,  {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\circle{(1,-0.6666),1.6666}
-\point[4pt]{(-0.6666,-0.6666), (2.6666,-0.6666), (1,1), (1,-2.3333)}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-3:3,
+          xmin=-2, xmax=4,
+          ymin=-4, ymax=2,
+          width=6in,
+          height=6in,
+          xtick={-1,1,2,3},
+            xticklabels={$\,$,$1$,$2$, $\,$},
+           ytick={-3,-2,-1,1},
+            yticklabels={$-3$,$\,$,$\,$, $1$},  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$x$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+\draw[very thick,blue] (1,-2/3) circle (5/3);
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (8/3,-2/3) [$\left(\frac{8}{3},-\frac{2}{3}\right)$]
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=0pt, yshift=-5pt}
+]
+coordinates {
+  (1,-7/3) [$\left(1,-\frac{7}{3}\right)$]
+  };
+
+  \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (-2/3,-2/3) [$\left(-\frac{2}{3},-\frac{2}{3}\right)$]
+  };
+
+ \addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=south,
+    xshift=0pt, yshift=5pt}
+]
+coordinates {
+  (1,1) [$(1,1)$]
+  };  
+
+  \addplot[
+  only marks,
+  mark=x,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=north,
+    xshift=-5pt, yshift=-5pt}
+]
+coordinates {
+  (1,-2/3) [$\left(1,-\frac{2}{3}\right)$]
+  };  
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -248,33 +420,11 @@ Squaring both sides, we get  $y^2 = (-\sqrt{4x-x^2})^2$ or   $y^2 = 4x - x^2$.  
 
 With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a circle of radius $2$ centered at $(2,0)$.  However,  the graph we want isn't the \textit{entire} circle.\footnote{For one thing, the graph of a circle fails the Vertical Line Test so it does not represent $y$ as a function of $x$ in this case.}  Indeed, we want the graph of $y = -\sqrt{4x-x^2}$. Because of the `$-$ ',  we want the \textit{lower} semicircle, graphed below.
 
+% https://www.desmos.com/calculator/ikbj0iqqmm
 \begin{center}
-
-\begin{mfpic}[20]{-2}{5}{-3}{3}
-\axes
-\plotsymbol[3pt]{Cross}{(2,0) }
-\tlabel[cc](2, -2.5){\scriptsize $(2,-2)$}
-\tlabel[cc](0.5, 0.25){\scriptsize $(0,0)$}
-\tlabel[cc](3.5, 0.25){\scriptsize $(4,0)$}
-\tlabel[cc](2, 0.25){\scriptsize $(2,0)$}
-\dotted \circle{(2,0),2}
-\tcaption{\scriptsize The graph of $f(x) = - \sqrt{4x-x^2}$.}
-\xmarks{-1, 1,  3, 4}
-\ymarks{-2,-1,1,2}
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,3){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$1$} 1,  {$2$} 2, {$3$} 3}
-\axislabels {y}{{$-2$} -2,  {$-1$} -1,  {$1$} 1,  {$2$} 2}
-\normalsize
-\penwd{1.25pt}
-\plrfcn{90,180,5}{4*cosd(t)}
-\point[4pt]{(0,0), (2,-2), (4,0)}
-\end{mfpic}
-
+     \desmos{ikbj0iqqmm}{800}{600}
 \end{center}
-
+   
 
 \item 
 
@@ -282,28 +432,10 @@ With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a 
 
 \item  We recall that a diameter of a circle is a line segment containing the center and two points on the circle.  We plot the data given to us below.
 
+% https://www.desmos.com/calculator/z6nlhojphg
+
 \begin{center}
-
-\begin{mfpic}[20]{-2}{4}{-0.5}{5.5}
-\axes
-\dashed \circle{(0.5,3.5),3.162277660/2}
-\point[4pt]{(-1,3), (2,4)}
-\plotsymbol[3pt]{Cross}{(0.5,3.5)}
-\xmarks{-2,-1,0,1,2,3}
-\ymarks{0,1,2,3,4,5}
-\tlabel(4,-0.25){ \scriptsize $x$}
-\tlabel(0.25,5.5){ \scriptsize $y$}
-\arrow \reverse \arrow \polyline{(0.75,3.583),(1.75,3.916)}
-\tlabel[cc](0.85,3){\scriptsize $(h,k)$}
-\tlabel[cc](1.15,4){\scriptsize $r$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$}, 5}
-\normalsize
-
-\end{mfpic}
-
+    \desmos{z6nlhojphg}{800}{600}
 \end{center}
 
 Since the given points are endpoints of a diameter, we know their midpoint $(h, k)$ is the center of the circle.  Likewise, the diameter of the circle is the distance between the given points, so we can find the radius of the circle by taking half of this distance.  Using Equations \ref{midpointformula} and \ref{distanceformula}, respectively, we get:
