@@ -503,10 +503,9 @@ Use a table of values  to approximate $\ds{ \lim_{x \rightarrow 0^{+}} x^2 \ln(x
 
 \item   To analyze $\ds{ \lim_{x \rightarrow 0^{+}} x^2 \ln(x)}$, we note that as $x \rightarrow 0^{+}$, $x^2 \rightarrow 0$ but $\ln(x) \rightarrow -\infty$.  Hence we obtain the indeterminate form\footnote{See the remarks following Example \ref{exponentialcurvesketchingex}.} `$0 \cdot (- \infty)$.'   Making a table of values of $f(x)$ as $x \rightarrow 0^{+}$ suggests  $\ds{ \lim_{x \rightarrow 0^{+}} x^2 \ln(x) = 0}$.  Since $x = 0$ is not in the domain of $f$, there is a hole in the graph at $(0,0)$.
 
+% https://www.desmos.com/calculator/nctktbdghr
 \begin{center}
-
-\includegraphics[width=4.5in]{./LogarithmicEquationsandInequalitiesGraphics/x^2ln(x)near0.png}
-
+\desmos{nctktbdghr}{800}{600}
 \end{center}
 
 \item  To determine the intervals over which $f$ is increasing and decreasing, we make a sign diagram for $f'(x) = 2x \ln(x) + x$.  Solving $f'(x) = 2x \ln(x) + x = 0$ we factor: $x(2\ln(x) + 1) = 0$.  Since the domain of $f$ is $(0,
@@ -521,51 +520,67 @@ When choosing test values, we could opt to find a decimal approximation for $e^{
 We find $f'\left(e^{-1}\right) = 2 \ln\left(e^{-1}\right) + 1 = 2(-1) + 1 = -1 <0$ and $f'(1) = 2 \ln(1) + 1 = 1 > 0$.  We fill out our sign diagram and interpret accordingly.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
 
-\begin{multicols}{2}
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow \polyline{(-6,0),(5,0)}
-\xmarks{-6,0}
-\arrow \polyline{(-3,-1.5),(-3,-0.5)}
-\arrow \polyline{(3,-1.5),(3,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$0$} -6, {$e^{-\frac{1}{2}}$} 0}
-\tlabel[cc](-3,1){$(-)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](3,1){$(+)$}
-\tlabel[cc](-3,-2.25){$e^{-1}$}
-\tlabel[cc](3,-2.25){$1$}
-\tlabel[cc](6,1){$f'(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\draw[->] (\xmin,0) -- (\xmax,0);
+\draw (-1,0.08) -- (-1,-0.08);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$e^{-1/2}$};
+\node[below] at (-1,-0.12) {$0$};
+\node[above] at (\crit,0.15) {$0$};
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow  \polyline{(-6,0),(5,0)}
-\xmarks{-6, 0}
-%\arrow \polyline{(-2,-1.5),(-2,-0.5)}
-%\arrow \polyline{(2,-1.5),(2,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$0$} -6, {$e^{-\frac{1}{2}}$} 0}
-\tlabel[cc](-3,1){$\searrow$}
-\tlabel[cc](0,1){$\rightarrow$}
-\tlabel[cc](3,1){$\nearrow$}
-%\tlabel[cc](-2,-2.25){$0$}
-%\tlabel[cc](2,-2.25){$2$}
-\tlabel[cc](6,1){$f(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\node[above] at ({(\xmin+\crit)/2},0.15) {$(-)$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$(+)$};
+\node[right] at (\xmax+0.15,0.55) {$f'(x)$};
 
+\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+\node[below] at (\testL,-0.9) {$e^{-1}$};
+\node[below] at (\testR,-0.9) {$1$};
 
-\end{multicols}
-\end{center}
+\end{tikzpicture}
+
+\end{image}
 
 We find $f$ is decreasing on $\left(0, e^{-\frac{1}{2}} \right)$ and increasing on $\left( e^{-\frac{1}{2}}, \infty\right)$.
+
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
+
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
+
+\draw[->] (\xmin,0) -- (\xmax,0);
+\draw (-1,0.08) -- (-1,-0.08);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$e^{-1/2}$};
+\node[below] at (-1,-0.12) {$0$};
+\node[above] at (\crit,0.15) {$\rightarrow$};
+
+\node[above] at ({(\xmin+\crit)/2},0.15) {$\searrow$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$\nearrow$};
+\node[right] at (\xmax+0.15,0.55) {$f(x)$};
+
+% \draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+% \draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+% \node[below] at (\testL,-0.9) {$e^{-1}$};
+% \node[below] at (\testR,-0.9) {$1$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \item  We see $f$ has a local (and in this case, global) minimum when $x = e^{-\frac{1}{2}}$.  The minimum value is $f\left(e^{-\frac{1}{2}}\right) = \left(e^{-\frac{1}{2}}\right)^2 \ln\left(e^{-\frac{1}{2}}\right) = e^{-1} \left(-\frac{1}{2}\right) = -\frac{e^{-1}}{2}$. The local minimum is $\left( e^{-\frac{1}{2}}, -\frac{e^{-1}}{2} \right)$.
 
@@ -577,70 +592,78 @@ We find $f$ is decreasing on $\left(0, e^{-\frac{1}{2}} \right)$ and increasing 
 
 We find $f''\left(e^{-2}\right) = 2 \ln \left(e^{-2}\right) + 3 = 2(-2) + 3 = -1 < 0$ and $f''(1) = 2 \ln(1) + 3 = 3 > 0$.
   
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
 
-\begin{multicols}{2}
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
- \arrow \polyline{(-6,0),(5,0)}
-\xmarks{-6,0}
-\arrow \polyline{(-3,-1.5),(-3,-0.5)}
-\arrow \polyline{(3,-1.5),(3,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$0$} -6, {$e^{-\frac{3}{2}}$} 0}
-\tlabel[cc](-3,1){$(-)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](3,1){$(+)$}
-\tlabel[cc](-3,-2.25){$e^{-2}$}
-\tlabel[cc](3,-2.25){$1$}
-\tlabel[cc](6,1){$f''(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\draw[->] (\xmin,0) -- (\xmax,0);
+\draw (-1,0.08) -- (-1,-0.08);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$e^{-3/2}$};
+\node[below] at (-1,-0.12) {$0$};
+\node[above] at (\crit,0.15) {$0$};
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
- \arrow \polyline{(-6,0),(5,0)}
-\xmarks{-6, 0}
-%\arrow \polyline{(-2,-1.5),(-2,-0.5)}
-%\arrow \polyline{(2,-1.5),(2,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$0$} -6, {$e^{-\frac{3}{2}}$} 0}
-\tlabel[cc](-3,1){\Huge $\frown$}
-%\tlabel[cc](0,1){$\rightarrow$}
-\tlabel[cc](3,1){\Huge $\smile$}
-%\tlabel[cc](-2,-2.25){$0$}
-%\tlabel[cc](2,-2.25){$2$}
-\tlabel[cc](6,1){$f(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\node[above] at ({(\xmin+\crit)/2},0.15) {$(-)$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$(+)$};
+\node[right] at (\xmax+0.15,0.55) {$f''(x)$};
 
+\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+\node[below] at (\testL,-0.9) {$e^{-2}$};
+\node[below] at (\testR,-0.9) {$1$};
 
-\end{multicols}
-\end{center}
+\end{tikzpicture}
+
+\end{image}
 
 We see the graph of $f$ is concave down on $\left(0, e^{-\frac{3}{2}} \right)$ and concave up on $\left(e^{-\frac{3}{2}} , \infty \right)$.
 
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
+
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
+
+\draw[->] (\xmin,0) -- (\xmax,0);
+\draw (-1,0.08) -- (-1,-0.08);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$e^{-3/2}$};
+\node[below] at (-1,-0.12) {$0$};
+%\node[above] at (\crit,0.15) {$\rightarrow$};
+
+\node[above] at ({(\xmin+\crit)/2},0.15) {Down};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.12) {Up};
+\node[right] at (\xmax+0.15,0.55) {$f(x)$};
+
+% \draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+% \draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+% \node[below] at (\testL,-0.9) {$e^{-1}$};
+% \node[below] at (\testR,-0.9) {$1$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \item  Since the concavity changes at $x = e^{-\frac{3}{2}}$, we have an inflection point at $\left( e^{-\frac{3}{2}}, f \left(e^{-\frac{3}{2}}\right) \right)$.  We find $f \left(e^{-\frac{3}{2}}\right)  = \left(f \left(e^{-\frac{3}{2}}\right) \right)^2 \ln \left(f \left(e^{-\frac{3}{2}}\right) \right) = e^{-3} \left(-\frac{3}{2} \right) = -\frac{3e^{-3}}{2}$.  Our inflection point is $\left( e^{-\frac{3}{2}},  -\frac{3e^{-3}}{2} \right)$.
 
 \item  Using  \href{https://www.desmos.com/calculator}{\underline{desmos}}, we confirm our calculations.\footnote{It may require some window adjustment to capture the inflection point.}
 
+% https://www.desmos.com/calculator/yjak0nqwkb
 \begin{center}
-
-\begin{multicols}{2}
-
-\includegraphics[width=2.5in]{./LogarithmicEquationsandInequalitiesGraphics/x^2ln(x)min.png}
-
-\includegraphics[width=2.5in]{./LogarithmicEquationsandInequalitiesGraphics/x^2ln(x)IP.png} \\
-
-\end{multicols}
-
+\desmos{yjak0nqwkb}{800}{600}
 \end{center}
 
-\hfill \qed
+
 
 \end{enumerate}
 
