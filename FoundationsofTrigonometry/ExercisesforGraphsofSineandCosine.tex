@@ -261,85 +261,131 @@ Use the Desmos graph below to check that both of your formulas agree.
 
 
 \begin{problem} 
-% $S(t) = -3 \sin(t) + 3$, $C(t) = -3 \cos\left(t - \frac{\pi}{2}\right) + 3$
 
-\begin{mfpic}[16]{-6}{6}{-1}{9}
-\tlabel[cc](6,-0.30){\scriptsize $t$}
-\tlabel[cc](0.25,9){\scriptsize $y$}
-\axes
-\xmarks{-5 step 1 until 5}
-\ymarks{1 step 1 until 8}
-\point[4pt]{(-4.712, 0), (-1.571, 6), (0,3), (1.571, 0), (4.712, 6)}
-\tlabel[cc](-4.712, -0.75){\scriptsize $\left( -\frac{3\pi}{2}, 0 \right)$}
-\tlabel[cc](-1.571, 6.5){\scriptsize $\left( -\frac{\pi}{2}, 6 \right)$}
-\tlabel[cc](0.75, 3){ \scriptsize $\left(0, 3 \right)$}
-\tlabel[cc](4.712, 6.5){\scriptsize $\left( \frac{3 \pi}{2}, 6 \right)$}
-\tlabel[cc](1.571, -0.75){\scriptsize $\left( \frac{\pi}{2}, 0 \right)$}
-\tlpointsep{4pt}
-%\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124, {$2\pi$} 6.2832}
-%\axislabels {y}{{$-3$} -3, {$3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6, 6,  0.1}{3- 3*sin(x)}
-\end{mfpic}  
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-2, ymax=8,
+    axis lines=middle,
+    axis line style={{Latex[length=8pt,width=6pt]}-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    %xtick={-4,-3,-2,-1,0,1,2,3,4},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\addplot[<->,line width=2pt, blue, domain=-5.75:5.75] {-3*sin(180*x/3.14)+3};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(0,3)(-4.712,0)(1.571,0)(-1.571,6)(4.712,6)};
+\node at (0,3) [right=8pt] {$(0,3)$};
+\node at (-4.712,0) [below=8pt] {$(-\frac{3\pi}{2},0)$};
+\node at (1.571,0) [below=8pt] {$(\frac{\pi}{2},0)$};
+\node at (-1.571,6) [above=8pt] {$(-\frac{\pi}{2},6)$};
+\node at (4.712,6) [above=8pt] {$(\frac{3\pi}{2},6)$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+$S(t) = -3 \sin(t) + 3$, $C(t) = -3 \cos\left(t - \frac{\pi}{2}\right) + 3$
+
+Use the Desmos graph below to check that both of your formulas agree.
+
+\begin{center} 
+\desmos{6etbg1ifrh}{800}{600} 
+\end{center}
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
-%$S(t) = 3 \sin \left( 2t - \frac{\pi}{3} \right)$, $C(t) = 3 \cos \left( 2t - \frac{5\pi}{6} \right)$
 
-\begin{mfpic}[15]{-6}{6}{-5}{5}
-\tlabel[cc](6,-0.30){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\axes
-\xmarks{-5 step 1 until 5}
-\ymarks{-4 step 1 until 4}
-\point[4pt]{(-4.974, 3), (-4.189, 0), (-3.403, -3), (-2.618, 0), (-1.832, 3), (-1.047, 0), (-0.2618, -3), (0.5236, 0), (1.309, 3), (2.094, 0), (2.8880, -3), (3.665, 0), (4.45, 3), (5.236, 0)}
-\tlabel[cc](-4.974, 3.75){ \scriptsize $\left( -\frac{19 \pi}{12}, 3 \right)$}
-\tlabel[cc](-3.403, -3.75){ \scriptsize $\left( -\frac{13 \pi}{12}, -3 \right)$}
-\tlabel[cc] (-1.832, 3.75){ \scriptsize $\left( -\frac{7 \pi}{12}, 3 \right)$}
-\gclear \tlabelrect(0, -3.75){ \scriptsize $\left( -\frac{\pi}{12}, -3 \right)$}
-\tlabel[cc] (1.309, 3.75){ \scriptsize $\left( \frac{5 \pi}{12}, 3 \right)$}
-\tlabel[cc](2.880, -3.75){ \scriptsize $\left( \frac{11 \pi}{12}, -3 \right)$}
-\tlabel[cc] (4.45, 3.75){ \scriptsize $\left( \frac{17 \pi}{12}, 3 \right)$}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-7.5, xmax=7.5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={{Latex[length=8pt,width=6pt]}-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5,-4,...,4,5},
+    ytick={-4,-3,...,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+    xticklabels=\empty
+]
+\addplot[<->,line width=2pt, blue, domain=-5.85:5.85] {3*sin(180*2*x/3.14-60)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-4.97,3)(-1.83,3)(1.31,3)(4.451,3)(-3.41,-3)(-.2618,-3)(2.88,-3)(-4.19,0)(-2.618,0)(-1.047,0)(.5236,0)(2.049,0)(3.665,0)(5.236,0)};
+\node at (-4.97,3) [above=8pt] {$(-\frac{19\pi}{12},3)$};
+\node at (-1.83,3) [above=8pt] {$(-\frac{7\pi}{12},3)$};
+\node at (1.31,3) [above=8pt] {$(\frac{5\pi}{12},3)$};
+\node at (4.451,3) [above=8pt] {$(\frac{17\pi}{12},3)$};
+\node at (-3.41,-3) [below=10pt,left=1pt] {$(-\frac{13\pi}{12},-3)$};
+\node at (-.2618,-3) [below=8pt] {$(-\frac{\pi}{12},-3)$};
+\node at (2.88,-3) [below=8pt,right=1pt] {$(\frac{11\pi}{12},-3)$};
 
-\tlpointsep{4pt}
-%\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124, {$2\pi$} 6.2832}
-%\axislabels {y}{{$-3$} -3, {$3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6, 5.5,  0.1}{3*sin((2*x)-(pi/3))}
-\end{mfpic}  
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+$S(t) = 3 \sin \left( 2t - \frac{\pi}{3} \right)$, $C(t) = 3 \cos \left( 2t - \frac{5\pi}{6} \right)$   
+
+Use the Desmos graph below to check that both of your formulas agree.
+
+\begin{center} 
+\desmos{6etbg1ifrh}{800}{600} 
+\end{center}
+
+\end{solution}
 \end{problem}
-
 
 \begin{problem} \label{fitsinecosinelast} 
-% $S(t) =  \frac{7}{2} \sin(\pi t) + \frac{1}{2}$, $C(t) = \frac{7}{2} \cos\left(\pi t \frac{\pi}{2} \right) + \frac{1}{2}$
 
-\begin{mfpic}[22][15]{-5}{5}{-5}{5}
-\tlabel[cc](5,-0.30){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\axes
-\xmarks{-4 step 1 until 4}
-\ymarks{-4 step 1 until 4}
-\point[4pt]{ (-4, 0.5), (-3.5, 4), (-3, 0.5), (-2.5, -3), (-2, 0.5), (-1.5, 4), (-1, 0.5), (-0.5, -3), (0, 0.5), (0.5, 4), (1, 0.5), (1.5,-3), (2, 0.5), (2.5,4), (3, 0.5), (3.5,-3), (4, 0.5) }
-%\tlabel[cc](-4.5, -3.5){\scriptsize $(-4.5, -3)$}
-\tlabel[cc](-3.5, 4.5){\scriptsize $(-3.5, 4)$}
-\tlabel[cc](-2.5, -3.5){\scriptsize $(-2.5, -3)$}
-\tlabel[cc](-1.5, 4.5){\scriptsize $(-1.5, 4)$}
-%\tlabel[cc](-0.5, -3.5){\scriptsize $(-0.5, -3)$}
-\gclear \tlabelrect(0.75, 4.5){\scriptsize $(0.5, 4)$}
-\tlabel[cc](1.5, -3.5){\scriptsize $(1.5, -3)$}
-\tlabel[cc](2.5, 4.5){\scriptsize $(2.5, 4)$}
-%\tlabel[cc](2.5, -3.5){\scriptsize $(2.5, -3)$}
-%\tlabel[cc](4.5, 4.5){\scriptsize $(4.5, 4)$}
+\begin{tikzpicture}\begin{axis}[
+    width=5in, height=3in,
+    xmin=-5, xmax=5, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={{Latex[length=8pt,width=6pt]}-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5,-4,...,4,5},
+    ytick={-4,-3,...,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+    xticklabels=\empty
+]
+\addplot[<->,line width=2pt, blue, domain=-5.85:5.85] {7/2*sin(180*x)+0.5};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-3.5,4)(-1.5,4)(0.5,4)(2.5,4)(-2.5,-3)(-0.5,-3)(1.5,-3)(3.5,-3)(-4,0.5)(-3,0.5)(-2,0.5)(-1,0.5)(0,0.5)(1,0.5)(2,0.5)(3,0.5)(4,0.5)};
+\node at (-3.5,4) [above=8pt] {$(-3.5,4)$};
+\node at (-1.5,4) [above=8pt] {$(-1.5,4)$};
+\node at (0.5,4) [above=8pt] {$(0.5,4)$};
+\node at (2.5,4) [above=8pt] {$(2.5,4)$};
+\node at (-2.5,-3) [below=10pt] {$(-2.5,-3)$};
+\node at (1.5,-3) [below=8pt] {$(1.5,-3)$};
 
-\tlpointsep{4pt}
-%\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124, {$2\pi$} 6.2832}
-%\axislabels {y}{{$-3$} -3, {$3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.25, 4.25,  0.1}{(3.5*sin(pi*x))+0.5}
-\end{mfpic}   
+\end{axis}
+\end{tikzpicture}
 
+\begin{solution}
+$S(t) =  \frac{7}{2} \sin(\pi t) + \frac{1}{2}$, $C(t) = \frac{7}{2} \cos\left(\pi t \frac{\pi}{2} \right) + \frac{1}{2}$ 
+
+Use the Desmos graph below to check that both of your formulas agree.
+
+\begin{center} 
+\desmos{6etbg1ifrh}{800}{600} 
+\end{center}
+
+\end{solution}
 \end{problem}
-
 \end{question}
 
 \begin{problem} Use the graph of  $S(t) = 4 \sin(t)$ to graph each of the following functions. State the period of each.
@@ -348,7 +394,21 @@ Use the Desmos graph below to check that both of your formulas agree.
 
 \item $f(t) = | 4 \sin(t)|$
 
+\begin{solution}
+Period: $\pi$
+\begin{center} 
+\graph{f(t) = | 4 \sin(t)|}
+\end{center}
+\end{solution}
+
 \item $g(t) = \sqrt{4 \sin(t)}$
+
+\begin{solution}
+Period: $2\pi$.
+\begin{center} 
+\graph{g(t) = \sqrt{4 \sin(t)}}
+\end{center}
+\end{solution}
 
 \end{enumerate}
 
