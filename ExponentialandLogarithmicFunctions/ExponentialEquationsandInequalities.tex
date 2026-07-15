@@ -615,51 +615,63 @@ Our last example uses the tools of this section along with those developed in Se
 
 Solving $f'(x) =  3e^{-x} - 3x e^{-x} = 0$ gives $3e^{-x} (1-x) = 0$ so $3e^{-x} = 0$, which has no solution,  or $1-x =0$ so $x=1$.  We make a sign diagram for $f'(x)$ below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
 
-\begin{multicols}{2}
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-\arrow \polyline{(-3,-1.5),(-3,-0.5)}
-\arrow \polyline{(3,-1.5),(3,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$1$} 0}
-\tlabel[cc](-3,1){$(+)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](3,1){$(-)$}
-\tlabel[cc](-3,-3.25){$0$}
-\tlabel[cc](3,-3.25){$2$}
-\tlabel[cc](6,1){$f'(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\draw[<->] (\xmin,0) -- (\xmax,0);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$1$};
+\node[above] at (\crit,0.15) {$0$};
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-%\arrow \polyline{(-2,-1.5),(-2,-0.5)}
-%\arrow \polyline{(2,-1.5),(2,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$1$} 0}
-\tlabel[cc](-3,1){$\nearrow$}
-\tlabel[cc](0,1){$\rightarrow$}
-\tlabel[cc](3,1){$\searrow$}
-%\tlabel[cc](-2,-2.25){$0$}
-%\tlabel[cc](2,-2.25){$2$}
-\tlabel[cc](6,1){$f(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\node[above] at ({(\xmin+\crit)/2},0.15) {$(+)$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$(-)$};
+\node[right] at (\xmax+0.15,0.55) {$f'(x)$};
 
+\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+\node[below] at (\testL,-0.9) {$0$};
+\node[below] at (\testR,-0.9) {$2$};
 
-\end{multicols}
-\end{center}
+\end{tikzpicture}
+
+\end{image}
 
 We get $f$ is increasing on $(-\infty, 1)$ and decreasing on $(1, \infty)$.
+
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
+
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
+
+\draw[<->] (\xmin,0) -- (\xmax,0);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$1$};
+\node[above] at (\crit,0.15) {$\rightarrow$};
+
+\node[above] at ({(\xmin+\crit)/2},0.15) {$\nearrow$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$\searrow$};
+\node[right] at (\xmax+0.15,0.55) {$f(x)$};
+
+%\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+%\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+%\node[below] at (\testL,-0.9) {$0$};
+%\node[below] at (\testR,-0.9) {$2$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \medskip
 
@@ -674,51 +686,63 @@ We get $f$ is increasing on $(-\infty, 1)$ and decreasing on $(1, \infty)$.
 Solving $f''(x) = 3xe^{-x} - 6e^{-x} = 0$ gives $3e^{-x}(x-2) = 0$ so either $3e^{-x} = 0$, which has no solution, or $x-2 = 0$, so $x = 2$. We make the sign diagram for $f''(x)$ below.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
 
-\begin{multicols}{2}
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-\arrow \polyline{(-3,-1.5),(-3,-0.5)}
-\arrow \polyline{(3,-1.5),(3,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$2$} 0}
-\tlabel[cc](-3,1){$(-)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](3,1){$(+)$}
-\tlabel[cc](-3,-2.25){$0$}
-\tlabel[cc](3,-2.25){$3$}
-\tlabel[cc](6,1){$f''(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\draw[<->] (\xmin,0) -- (\xmax,0);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$2$};
+\node[above] at (\crit,0.15) {$0$};
 
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-%\arrow \polyline{(-2,-1.5),(-2,-0.5)}
-%\arrow \polyline{(2,-1.5),(2,-0.5)}
-\tlpointsep{4pt}
-\axislabels {x}{{$2$} 0}
-\tlabel[cc](-3,1){\Huge $\frown$}
-%\tlabel[cc](0,1){$\rightarrow$}
-\tlabel[cc](3,1){\Huge $\smile$}
-%\tlabel[cc](-2,-2.25){$0$}
-%\tlabel[cc](2,-2.25){$2$}
-\tlabel[cc](6,1){$f(x)$}
-\tlabel[cc](6,-1){$x$}
-%\tlabel[cc](6,0){$\infty$}
-%\tlabel[cc](-6,0){$-\infty$}
-\end{mfpic}
+\node[above] at ({(\xmin+\crit)/2},0.15) {$(-)$};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.15) {$(+)$};
+\node[right] at (\xmax+0.15,0.55) {$f''(x)$};
 
+\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+\node[below] at (\testL,-0.9) {$0$};
+\node[below] at (\testR,-0.9) {$3$};
 
-\end{multicols}
-\end{center}
+\end{tikzpicture}
+
+\end{image}
 
 We see the graph of $f$ is concave up on $(-\infty, 2)$ and concave down on $(2, \infty)$.
+
+\begin{image}
+\begin{tikzpicture}[>=Latex, every node/.style={font=\normalsize}]
+
+\def\crit{1}
+\def\testL{0}
+\def\testR{2}
+\def\xmin{-1}
+\def\xmax{3.2}
+
+\draw[<->] (\xmin,0) -- (\xmax,0);
+\draw (\crit,0.08) -- (\crit,-0.08);
+\node[below] at (\crit,-0.12) {$2$};
+%\node[above] at (\crit,0.15) {$0$};
+
+\node[above] at ({(\xmin+\crit)/2},0.15) {Down};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.10) {Up};
+\node[right] at (\xmax+0.15,0.55) {$f(x)$};
+
+%\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
+%\draw[->, gray] (\testR,-0.9) -- (\testR,-0.15);
+\node[right] at (\xmax+0.15,-0.15) {$x$};
+%\node[below] at (\testL,-0.9) {$0$};
+%\node[below] at (\testR,-0.9) {$3$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \medskip
 
@@ -728,12 +752,10 @@ We see the graph of $f$ is concave up on $(-\infty, 2)$ and concave down on $(2,
 
 \item We check using \href{https://www.desmos.com/calculator}{\underline{desmos}}:
 
-\bigskip
-
-\centerline{ \includegraphics[width=3in]{./ExponentialEquationsandInequalitiesGraphics/ExpCurveSketchingExample.png}}
-
-\hfill \qed
-
+% https://www.desmos.com/calculator/ekrm7o7ecc
+\begin{center}
+    \desmos{ekrm7o7ecc}{800}{600}
+\end{center}
 \end{enumerate}
 
 
