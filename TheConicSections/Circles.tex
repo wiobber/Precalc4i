@@ -25,24 +25,39 @@ Our next entry in the conic sections menagerie is the circle.  Recall from Geome
 
 \end{definition} 
 
-%% \ebm}
+\begin{image}
+  \begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2.2}
+\def\angle{55}
+
+% --- Circle ---
+\draw[very thick] (0,0) circle (\R);
+
+% --- Center point, marked with a small cross ---
+\node at (0,0) {$\times$};
+\node[below, blue!70!black] at (0,-0.25) {$(h,k)$};
+
+% --- Point on circle ---
+\pgfmathsetmacro{\px}{\R*cos(\angle)}
+\pgfmathsetmacro{\py}{\R*sin(\angle)}
+\fill (\px,\py) circle (2.2pt);
+\node[above right] at (\px,\py) {$(x,y)$};
+
+% --- Radius segment with arrowheads on both ends ---
+\draw[<->] (0,0) -- (\px,\py);
+\node[above left] at (0.55*\px,0.55*\py) {$r$};
+
+\end{tikzpicture}
+
+\end{image}
 
  
 
-\begin{center}
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow\reverse\arrow \polyline{(0.25,0.25), (2.55,2.55)}
-\tlabel(-0.5,-0.8){$(h,k)$}
-\tlabel(1,1.55){$r$}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\point[3pt]{(2.8284,2.8284)}
-\tlabel(3,3){$(x,y)$}
-\penwd{1.25pt}
-\circle{(0,0),4}
-\end{mfpic}
-
-\end{center}
 
 From the diagram, we see that a point $(x,y)$ is on the circle if and only if its distance to $(h,k)$ is $r$.  We  express this relationship algebraically using the Distance Formula, Equation \ref{distanceformula}, as 
 
