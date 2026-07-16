@@ -149,9 +149,7 @@ In order to derive the standard equation of an ellipse, we assume that the ellip
 
 \end{image} 
 
-\begin{center}
 
-\end{center}
 
  
 
@@ -479,35 +477,64 @@ Now that this equation is in the standard form of Equation \ref{standardellipse}
  
  To find the foci, we find $c = \sqrt{4-1} = \sqrt{3}$, which means the foci lie $\sqrt{3}$ units from the center. Since the major axis is horizontal, the foci lie $\sqrt{3}$ units to the left and right of the center, at $(1-\sqrt{3},-3)$ and $(1+\sqrt{3},-3)$.  Plotting all of this information gives the graph below.
 
- \begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-2}{5}{-5}{1}
-\axes
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25, 1){\scriptsize $y$}
-\xmarks{-1,0,1,2,3,4}
-\ymarks{-4,-3,-2,-1,0}
-\tlabel[cc](4,-3){\scriptsize $(3,-3)$}
-\tlabel[cc](-2,-3){\scriptsize $(-1,-3)$}
-\tlabel[cc](1,-1.5){\scriptsize $(1,-2)$}
-\tlabel[cc](1,-4.5){\scriptsize $(1,-4)$}
-\tcaption{\scriptsize The graph of $x^2+4y^2-2x+24y+33 = 0$.}
-\dotted[1pt, 3pt] \polyline{(-1,-3),(3,-3)}
-\dotted[1pt, 3pt] \polyline{(1,-2),(1,-4)}
-\plotsymbol[3pt]{Asterisk}{(2.732050808,-3)}
-\plotsymbol[3pt]{Asterisk}{(-0.732050808,-3)}
-\plotsymbol[3pt]{Cross}{(1,-3)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-1 \hspace{6pt}$} -1,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,  {$-2$} -2, {$-1$} -1,}
-\normalsize
-\penwd{1.25pt}
-\ellipse{(1,-3),2,1}
-\point[4pt]{(3,-3), (-1,-3), (1,-2), (1,-4)}
-\end{mfpic}
+% --- Parameters ---
+\def\cx{1}   % center x
+\def\cy{-3}  % center y
+\def\rx{2}   % x radius (major semi-axis)
+\def\ry{1}   % y radius (minor semi-axis)
+\pgfmathsetmacro{\c}{sqrt(\rx*\rx-\ry*\ry)} % distance from center to focus
 
-\end{center}
+% --- Axes ---
+\draw[->] (-1.6,0) -- (4.9,0) node[right] {$x$};
+\draw[->] (0,-4.9) -- (0,0.9) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-1,1,2,3,4}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-1,-2,-4}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Dotted major/minor axis lines through the center ---
+\draw[dotted, thick] (\cx-\rx,\cy) -- (\cx+\rx,\cy);
+\draw[dotted, thick] (\cx,\cy-\ry) -- (\cx,\cy+\ry);
+
+% --- Ellipse ---
+\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Center, marked with a small cross ---
+\node at (\cx,\cy) {$\times$};
+
+% --- Foci, on the major (horizontal) axis ---
+\node at (\cx-\c,\cy) {$\ast$};
+\node at (\cx+\c,\cy) {$\ast$};
+
+% --- Vertices ---
+\fill (\cx,\cy+\ry) circle (2.5pt);
+\node[above] at (\cx,\cy+\ry+0.05) {$(1,-2)$};
+
+\fill (\cx,\cy-\ry) circle (2.5pt);
+\node[below] at (\cx,\cy-\ry-0.05) {$(1,-4)$};
+
+\fill (\cx-\rx,\cy) circle (2.5pt);
+\node[left] at (\cx-\rx-0.1,\cy) {$(-1,-3)$};
+
+\fill (\cx+\rx,\cy) circle (2.5pt);
+\node[right] at (\cx+\rx+0.1,\cy) {$(3,-3)$};
+
+\end{tikzpicture}
+\end{image}
  
  \end{enumerate}
  
@@ -542,58 +569,115 @@ Recall to graph the function $f(x) = 1 + 2\sqrt{-x^2-4x-3}$, we graph the equati
  
 However, the graph of $f(x) = 1 + 2\sqrt{-x^2-4x-3}$  cannot be the \textit{entire} ellipse, else it would violate the vertical line test.  This means the graph of $f$ must be a \textit{portion} of the ellipse.  Since, by definition $\sqrt{-x^2-4x-3} \geq 0$, we know $f(x) =  1 + 2\sqrt{-x^2-4x-3} \geq 1$.  Hence, the graph of  $f$ must be the \textit{upper} half of the ellipse, as denoted below.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
+% --- Parameters ---
+\def\cx{-2}  % center x
+\def\cy{1}   % center y
+\def\rx{1}   % x radius
+\def\ry{2}   % y radius
 
-\begin{center}
+% --- Axes ---
+\draw[->] (-3.6,0) -- (1.9,0) node[right] {$x$};
+\draw[->] (0,-1.9) -- (0,3.9) node[above] {$y$};
 
-\begin{mfpic}[25]{-4}{2}{-2}{4}
-\axes
-\tlabel[cc](2,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5, 4){\scriptsize $y$}
-\xmarks{-3,-2,-1,1}
-\ymarks{-1,2,3}
-\tlabel[cc](-3.75,1){\scriptsize $(-3,1)$}
-\gclear \tlabelrect(-0.25,1){\scriptsize $(-1,1)$ \vphantom{$\left( \frac{1}{2} \right)$}}
-\tlabel[cc](-2,3.25){\scriptsize $(-2,3)$}
-\tcaption{\scriptsize The graph of $f(x) = 1 + 2\sqrt{-x^2-4x-3}$.}
-\dotted \ellipse{(-2,1),1,2}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$1$} 1}
-\axislabels {y}{ {$-1$} -1,{$2$} 2,{$3$} 3 }
-\normalsize
-\penwd{1.25pt}
-\parafcn{0, 3.14 , 0.1}{(cos(t)-2, (2*sin(t))+1)}
-\point[4pt]{(-3,1), (-1,1), (-2,3)}
-\end{mfpic} 
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-3,-2,-1,1}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
 
-\end{center}
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-1,1,2,3}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
 
+% --- Ellipse: solid upper half, dotted lower half ---
+\draw[very thick, blue] (\cx+\rx,\cy) arc [start angle=0, end angle=180, x radius=\rx, y radius=\ry];
+\draw[dotted, thick] (\cx-\rx,\cy) arc [start angle=180, end angle=360, x radius=\rx, y radius=\ry];
+
+% --- Key points ---
+\fill (\cx,\cy+\ry) circle (2.5pt);
+\node[above] at (\cx,\cy+\ry+0.05) {$(-2,3)$};
+
+\fill (\cx-\rx,\cy) circle (2.5pt);
+\node[left] at (\cx-\rx-0.1,\cy) {$(-3,1)$};
+
+\fill (\cx+\rx,\cy) circle (2.5pt);
+\node[left] at (\cx+\rx-0.1,\cy) {$(-1,1)$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \item  \begin{enumerate}
 
 \item  We plot the information given to us below and notice immediately that the major axis is horizontal, which means $a > b$.   Since the center is the midpoint of the foci, we know the center of the ellipse is  $(3, 1)$ which means  $h = 3$ and $k = 1$. Since one vertex is at $(0,1)$, which is $3$ units from the center,  we have that $a = 3$, so $a^2 =  9$.   At this point, all that remains is to find $b^2$. 
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-1}{6}{0}{2}
-\axes
-\xmarks{ 0,1,2,3,4,5}
-\ymarks{0,1}
-\point[3pt]{(0,1)}
-\plotsymbol[3pt]{Asterisk}{(2,1)}
-\plotsymbol[3pt]{Asterisk}{(4,1)}
-\tlabel(6, -0.25){\scriptsize $x$}
-\tlabel(0.25,2){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\axislabels {y}{{$1$} 1}
-\normalsize
-\end{mfpic}
+% --- Parameters ---
+\def\cx{3}   % center x
+\def\cy{1}  % center y
+\def\rx{4}   % x radius (major semi-axis)
+\def\ry{1}   % y radius (minor semi-axis)
+\pgfmathsetmacro{\c}{sqrt(\rx*\rx-\ry*\ry)} % distance from center to focus
 
-\end{center}
+% --- Axes ---
+\draw[->] (-1.6,0) -- (6,0) node[right] {$x$};
+\draw[->] (0,-1) -- (0,2) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {1,2,3,4,5}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {1}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Dotted major/minor axis lines through the center ---
+% \draw[dotted, thick] (\cx-\rx,\cy) -- (\cx+\rx,\cy);
+% \draw[dotted, thick] (\cx,\cy-\ry) -- (\cx,\cy+\ry);
+
+% --- Ellipse ---
+%\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Center, marked with a small cross ---
+%\node at (\cx,\cy) {$\times$};
+
+% --- Foci, on the major (horizontal) axis ---
+\node at (2,1) {$\ast$};
+\node at (4,1) {$\ast$};
+
+% --- Vertices ---
+\fill (0,1) circle (2.5pt);
+%\node[above] at (0,1) {$(1,-2)$};
+
+% \fill (\cx,\cy-\ry) circle (2.5pt);
+% \node[below] at (\cx,\cy-\ry-0.05) {$(1,-4)$};
+
+% \fill (\cx-\rx,\cy) circle (2.5pt);
+% \node[left] at (\cx-\rx-0.1,\cy) {$(-1,-3)$};
+
+% \fill (\cx+\rx,\cy) circle (2.5pt);
+% \node[right] at (\cx+\rx+0.1,\cy) {$(3,-3)$};
+
+\end{tikzpicture}
+\end{image}
 
 Since the foci, $(2,1)$ and $(4,1)$,  are $1$ unit away from the center, we have $c=1$.  Putting this together with the fact that  $a > b$, we get $c = \sqrt{a^2-b^2}$, or $1 = \sqrt{9-b^2}$.  Squaring both sides gives $1 = 9-b^2$ or   $b^2 = 8$.  Feeding all of this data into Equation \ref{standardellipse}, we get our final answer:  \[\frac{(x-3)^2}{9}+\frac{(y-1)^2}{8}=1.\]
 
@@ -677,24 +761,67 @@ According to \href{https://en.wikipedia.org/wiki/Kepler's_laws_of_planetary_moti
 
 With the information given, we know one vertex is 28.6 units away from the focus and the other is 43.4 units.  Again, we are free to chose which direction is which, so we decide to put one vertex at $(-28.6, 0)$ and the other is $(43.4, 0)$.  Schematically, we have:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-6}{6}{-2}{2}
-\axes
-\tlabel(6,-0.5){\scriptsize $x$}
-\tlabel(0.5,1){\scriptsize $y$}
-\xmarks{-5,-4,-3,-2,-1,0,1,2,3,4,5}
-\ymarks{-1,1}
-\tlabel[cc](-2.86, 0.5){\scriptsize $(-28.6, 0)$}
-\tlabel[cc](4.34, 0.5){\scriptsize $(43.4, 0)$}
-\plotsymbol[4pt]{Asterisk}{(0,0)}
-\point[4pt]{(-2.86,0),(4.34,0)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-50 \hspace{7pt}$} -5,{$-30 \hspace{7pt}$} -3,{$-10 \hspace{7pt}$} -1,{$10$} 1,{$30$} 3,{$50$} 5}
-\end{mfpic}
+% --- Parameters ---
+\def\cx{3}   % center x
+\def\cy{1}  % center y
+\def\rx{4}   % x radius (major semi-axis)
+\def\ry{1}   % y radius (minor semi-axis)
+\pgfmathsetmacro{\c}{sqrt(\rx*\rx-\ry*\ry)} % distance from center to focus
 
-\end{center}
+% --- Axes ---
+\draw[->] (-6,0) -- (6,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,2) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \pgfmathsetmacro{\tx}{\x*10};
+    \node[below] at (\x,-0.1) {$\tx$};
+}
+
+% --- Tick marks and labels on y-axis ---
+%\foreach \y in {1}{
+ %   \draw (-0.08,\y) -- (0.08,\y);
+    %\node[left] at (-0.1,\y) {$\y$};
+%}
+
+% --- Dotted major/minor axis lines through the center ---
+% \draw[dotted, thick] (\cx-\rx,\cy) -- (\cx+\rx,\cy);
+% \draw[dotted, thick] (\cx,\cy-\ry) -- (\cx,\cy+\ry);
+
+% --- Ellipse ---
+%\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Center, marked with a small cross ---
+%\node at (\cx,\cy) {$\times$};
+
+% --- Foci, on the major (horizontal) axis ---
+\node at (0,0) {$\ast$};
+%\node at (4,1) {$\ast$};
+
+% --- Vertices ---
+\fill (4.34,0) circle (2.5pt);
+\fill (-2.86,0) circle (2.5pt);
+\node[above] at (4.34,0.1) {$(43.4,0)$};
+\node[above] at (-2.86,0.1) {$(-28.6,0)$};
+
+% \fill (\cx,\cy-\ry) circle (2.5pt);
+% \node[below] at (\cx,\cy-\ry-0.05) {$(1,-4)$};
+
+% \fill (\cx-\rx,\cy) circle (2.5pt);
+% \node[left] at (\cx-\rx-0.1,\cy) {$(-1,-3)$};
+
+% \fill (\cx+\rx,\cy) circle (2.5pt);
+% \node[right] at (\cx+\rx+0.1,\cy) {$(3,-3)$};
+
+\end{tikzpicture}
+\end{image}
 
 Since the center is the midpoint of the vertices, we find the center to be $(7.4, 0)$.  This means the focus $(0,0)$ is $7.4$ units from the center and each vertex is $36$ units from the center. This is precisely what we need to determine the eccentricity of Mercury's orbit:
 
@@ -706,23 +833,42 @@ To our delight, we find answer agrees with  \href{http://nssdc.gsfc.nasa.gov/pla
 
 As with parabolas, ellipses have a  \index{ellipse ! reflective property} reflective property. If we imagine the dashed lines below representing sound waves, then it can be shown that the waves emanating from one focus reflect off the top of the ellipse and head towards the other focus.  
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\a{4.0} % semi-major axis
+\def\b{3.0} % semi-minor axis
+\pgfmathsetmacro{\c}{sqrt(\a*\a-\b*\b)} % distance from center to focus
+\def\angle{50} % angle for point (x,y) on the ellipse
+
+
+% --- Ellipse ---
+\draw[very thick](\a,0)arc [start angle=0, end angle=180, x radius=\a, y radius=\b];
+
+% --- Foci ---
+\node at (-\c,0) {$\ast$};
+\node at (\c,0) {$\ast$};
+\node[below] at (-\c,-0.25) {$F_1$};
+\node[below] at (\c,-0.25) {$F_2$};
+
+% --- Point on ellipse ---
+\pgfmathsetmacro{\px}{\a*cos(\angle)}
+\pgfmathsetmacro{\py}{\b*sin(\angle)}
+\fill (\px,\py) circle (2.5pt);
+%\node[right] at (\px+0.1,\py) {$(x,y)$};
+
+% --- Dashed segments from each focus to (x,y) ---
+\draw[dashed] (-\c,0) -- (\px,\py);
+\draw[dashed] (\c,0) -- (\px,\py);
+
+\end{tikzpicture}
+
+\end{image} 
  
-
-\begin{center}
-
-\begin{mfpic}[20]{-6}{6}{-5}{5}
-\dashed \polyline{(-3,0), (4,2.4)}
-\dashed \polyline{(3,0), (4,2.4)}
-\tlabel[cc](-3,-0.5){$F_1$}
-\tlabel[cc](3,-0.5){$F_2$}
-\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
-\penwd{1.25pt}
-\parafcn{0,3.14,.1}{(5*cos(t),4*sin(t))}
-\point[4pt]{(4,2.4)}
-\end{mfpic}
-
-\end{center}
-
 Such geometry is exploited in the construction of so-called `Whispering Galleries'. If a person whispers at one focus, a person standing at the other focus will hear the first person as if they were standing right next to them.  We explore the Whispering Galleries in our last example. 
 
 \begin{example} \label{whisgalleryex} Jamie and Jason want to exchange secrets (terrible secrets) from across a crowded whispering gallery.  Recall that a whispering gallery is a room which, in cross section, is half of an ellipse.  If the room is 40 feet high at the center and 100 feet wide at the floor, how far from the outer wall should each of them stand so that they will be positioned at the foci of the ellipse? 
@@ -731,21 +877,28 @@ Such geometry is exploited in the construction of so-called `Whispering Gallerie
 
 {\bf Solution.} Ultimately, we are looking for information about the relative position of foci and the vertices, so we assume the whispering gallery can be represented by the upper half of an ellipse centered at the origin with its major axis along the $x$-axis. Graphing the data yields the schematic below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-6}{6}{-1}{5}
-\axes
-\tlabel(6,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
+% --- Parameters ---
+\def\a{4.0} % semi-major axis
+\def\b{3.0} % semi-minor axis
 
-\arrow \reverse \arrow \polyline{(-5,-0.5),(5,-0.5)}
-\gclear \tlabelrect[cc](0,-1.5){$100$ units wide}
-\arrow \reverse \arrow \polyline{(0,0.25),(0,3.75)}
-\gclear \tlabelrect[cc](0, 2){$40$ units tall}
-\penwd{1.25pt}
-\parafcn{0,pi,0.1}{(5*cos t, 4*sin t)}
-\end{mfpic}
-\end{center}
+% --- Ellipse ---
+\draw[very thick](\a,0)arc [start angle=0, end angle=180, x radius=\a, y radius=\b]; 
+
+\draw[<->](-4,-0.2)--(4,-0.2);
+\draw[<->](0,0)--(0,2.8);
+
+\node[below] at (0,-0.2) {$100$ units wide};
+\node[below] at (1,1.6) {$40$ units tall};
+
+\end{tikzpicture}
+
+\end{image} 
 
 Since the ellipse is $100$ units wide and $40$ units tall, we get $a=50$ and $b=40$, respectively.  From this, we get $c = \sqrt{50^2-40^2} = \sqrt{900} = 30$, which means the foci are $30$ units from the center.  Hence, the foci are $50-30=20$ units from the vertices so Jason and Jamie should stand $20$ feet from opposite ends of the gallery to exchange their secrets in what amounts to very public privacy.
 
