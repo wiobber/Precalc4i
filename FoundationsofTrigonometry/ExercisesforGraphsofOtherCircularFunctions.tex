@@ -218,7 +218,9 @@ In Exercises \ref{fitsecantcosecantfirst} - \ref{fitsecantcosecantlast},  the gr
     xticklabels=\empty
     yticklabels=\empty
 ]
-\addplot[<->,line width=2pt,blue, domain=-4.75:4.75] {2*sec(180*x/3.14-180)};
+\addplot[<->,line width=2pt,blue, domain=-4.5:-1.7] {2*sec(180*x/3.14-180)};
+\addplot[<->,line width=2pt,blue, domain=-1.4:1.4] {2*sec(180*x/3.14-180)};
+\addplot[<->,line width=2pt,blue, domain=1.7:4.5] {2*sec(180*x/3.14-180)};
 \draw [dashed,line width=0.5pt,blue] (-4.712,-5) -- (-4.712,5);
 \draw [dashed,line width=0.5pt,blue] (-1.571,-5) -- (-1.571,5);
 \draw [dashed,line width=0.5pt,blue] (4.712,-5) -- (4.712,5);
@@ -263,7 +265,11 @@ Asymptotes:  $t = \pm 1$, $t = \pm 3$, $t = \pm 5$, \ldots
     xticklabels=\empty
     yticklabels=\empty
 ]
-\addplot[<->,line width=2pt,blue, domain=-5:5] {sec(90*x)+1};
+\addplot[<->,line width=2pt,blue, domain=-4.9:-3.1] {sec(90*x)+1};
+\addplot[<->,line width=2pt,blue, domain=-2.9:-1.1] {sec(90*x)+1};
+\addplot[<->,line width=2pt,blue, domain=-0.9:0.9] {sec(90*x)+1};
+\addplot[<->,line width=2pt,blue, domain=1.1:2.9] {sec(90*x)+1};
+\addplot[<->,line width=2pt,blue, domain=3.1:4.9] {sec(90*x)+1};
 \draw [dashed,line width=0.5pt,blue] (-5,-5) -- (-5,5);
 \draw [dashed,line width=0.5pt,blue] (-3,-5) -- (-3,5);
 \draw [dashed,line width=0.5pt,blue] (-1,-5) -- (-1,5);
@@ -318,14 +324,15 @@ Asymptotes:  $t=-\frac{3 \pi}{4}$, $t=\frac{\pi}{4}$, $t = \frac{5\pi}{4}$, \dot
     xticklabels=\empty
     yticklabels=\empty
 ]
-\addplot[<->,line width=2pt,blue, domain=-4.75:4.75] {-tan(180*x/3.14+45)};
+\addplot[<->,line width=2pt,blue, domain=-2.3:0.9] {-tan(180*x/3.14+45)};
+\addplot[<->,line width=2pt,blue, domain=0.6:3.8] {-tan(180*x/3.14+45)};
 \draw [dashed,line width=0.5pt,blue] (-2.356,-5) -- (-2.356,5);
 \draw [dashed,line width=0.5pt,blue] (0.785,-5) -- (0.785,5);
 \draw [dashed,line width=0.5pt,blue] (3.927,-5) -- (3.927,5);
 \addplot[only marks,mark=*,mark size=4pt] coordinates {(-0.785,0)(0,-1)(2.356,0)(1.571,1)};
 \node at (-0.785,0) [above=8pt] {$(-\frac{\pi}{4},0)$};
-\node at (0,-1) [above=8pt] {$(0,-1)$};
-\node at (1.571,1) [above=8pt] {$(\frac{\pi}{2},1)$};
+\node at (0,-1) [left=8pt] {$(0,-1)$};
+\node at (1.571,1) [above=8pt,right=8pt] {$(\frac{\pi}{2},1)$};
 \node at (2.356,0) [below=8pt] {$(\frac{3\pi}{4},0)$};
 \end{axis}
 \end{tikzpicture}
@@ -363,7 +370,9 @@ Asymptotes:  $t = \pm 2$, $t = \pm 6$, $t = \pm 10$, \ldots
     xticklabels=\empty
     yticklabels=\empty
 ]
-\addplot[<->,line width=2pt,blue, domain=-6.25:6.25] {tan(45*x)+1};
+\addplot[<->,line width=2pt,blue, domain=-5.75:-2.35] {tan(45*x)+1};
+\addplot[<->,line width=2pt,blue, domain=-1.75:1.65] {tan(45*x)+1};
+\addplot[<->,line width=2pt,blue, domain=2.25:5.65] {tan(45*x)+1};
 \draw [dashed,line width=0.5pt,blue] (-2,-5) -- (-2,5);
 \draw [dashed,line width=0.5pt,blue] (2,-5) -- (2,5);
 \addplot[only marks,mark=*,mark size=4pt] coordinates {(-5,0)(0,1)(5,2)};
