@@ -196,36 +196,49 @@ Period: $\frac{\pi}{2}$\\
     
 In Exercises \ref{fitsecantcosecantfirst} - \ref{fitsecantcosecantlast},  the graph of a (co)secant function is given. Find a formula for the function in the form $F(t) = A \sec(\omega t + \phi) + B$ and $G(t) = A \csc(\omega t + \phi) + B$.  Select $\omega$ so  $\omega > 0$. Check your answer by graphing.
 
-\begin{problem}
-    
+\begin{problem}\label{fitsecantcosecantfirst}
 
- Asymptotes:  $t = \pm \frac{\pi}{2}$, $t=\pm \frac{3\pi}{2}$, \dots \label{fitsecantcosecantfirst}  %$F(t) = 2 \sec(t-\pi)$, $G(t) = 2 \csc \left(t - \frac{\pi}{2} \right)$
+ Asymptotes:  $t = \pm \frac{\pi}{2}$, $t=\pm \frac{3\pi}{2}$, \dots   
 
-\begin{mfpic}[13]{-6}{6}{-5}{5}
-\tlabel[cc](6,-0.30){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\axes
-\xmarks{-5 step 1 until 5}
-\ymarks{-4, -3, 1, 2, 3, 4}
-\point[4pt]{(-3.14159, 2), (0,-2), (3.14159,2)}
-\tlabel[cc](-3.14159, 1.25){ \scriptsize $(-\pi, 2)$}
-\gclear \tlabelrect(0, -1.25){ \scriptsize $(0,-2)$}
-\tlabel[cc](3.14159,1.25){ \scriptsize $(\pi,2)$}
-\tlpointsep{4pt}
-%\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124, {$2\pi$} 6.2832}
-%\axislabels {y}{{$-3$} -3, {$3$} 3}
-\dashed \polyline{(-4.712, -5), (-4.712, 5)}
-\dashed \polyline{(4.712, -5), (4.712, 5)}
-\dashed \polyline{(-1.57, -5), (-1.57, 5)}
-\dashed \polyline{(1.57, -5), (1.57, 5)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.28, -2, 0.1}{2/(cos(x-pi))}
-\arrow \reverse \arrow \function{-1.15, 1.15, 0.1}{2/(cos(x-pi))}
-\arrow \reverse \arrow \function{2, 4.28, 0.1}{2/(cos(x-pi))}
-\end{mfpic} 
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={{Latex[length=8pt,width=6pt]}-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    %xtick={-4,-3,-2,-1,0,1,2,3,4},
+    %ytick={-4,-3,-2,-1,0,1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+    xticklabels=\empty
+    yticklabels=\empty
+]
+\addplot[<->,line width=2pt, blue, domain=-4.75:4.75] {2*sec(180*x/3.14-180)};
+\draw [dashed] (-4.712,-5) -- (-4.712,5)
+\draw [dashed] (x1,y1) -- (x2,y2)
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-0.785,0)(-3.927,0)(2.356,0)(0.785,4)(-2.356,-4)};
+\node at (0.785,4) [right=8pt] {$(\frac{\pi}{4},4)$};
+\node at (2.356,0) [above=12pt,right=4pt] {$(\frac{3\pi}{4},0)$};
+\node at (-0.785,0) [above=12pt,left=2pt] {$(-\frac{\pi}{4},0)$};
+\node at (-3.927,0) [below=12pt,left=2pt] {$(-\frac{7\pi}{4},0)$};
+\node at (-2.356,-4) [left=8pt] {$(-\frac{3\pi}{4},-4)$};
+\end{axis}
+\end{tikzpicture}
 
+\begin{solution}
+$F(t) = 2 \sec(t-\pi)$, $G(t) = 2 \csc \left(t - \frac{\pi}{2} \right)$
 
+Use the Desmos graph below to check that both of your formulas agree.
 
+\begin{center} 
+\desmos{6etbg1ifrh}{800}{600} 
+\end{center}
+\end{solution}
 \end{problem}
 
 \begin{problem}

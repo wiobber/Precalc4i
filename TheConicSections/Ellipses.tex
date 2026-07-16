@@ -39,28 +39,49 @@ We can replicate this interactive physically by taking a length of string and an
 
 Each ellipse has an assortment of parameters associated with it which we sketch below.
 
- 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\a{3.6} % semi-major axis
+\def\b{2.6} % semi-minor axis
+\pgfmathsetmacro{\c}{sqrt(\a*\a-\b*\b)} % distance from center to focus
+
+% --- Ellipse ---
+\draw[very thick] (0,0) ellipse [x radius=\a, y radius=\b];
+
+% --- Dotted axis lines ---
+\draw[dotted, thick] (-\a-0.4,0) -- (\a+0.4,0);
+\draw[dotted, thick] (0,-\b-0.4) -- (0,\b+0.4);
+
+% --- Center ---
+\node at (0,0) {$\ast$};
+\node[below] at (0,-0.25) {$C$};
+
+% --- Vertices ---
+\fill (-\a,0) circle (2.5pt);
+\fill (\a,0) circle (2.5pt);
+\node[left] at (-\a-0.1,0) {$V_1$};
+\node[right] at (\a+0.1,0) {$V_2$};
+
+% --- Foci ---
+\node at (-\c,0) {$\ast$};
+\node at (\c,0) {$\ast$};
+\node[below] at (-\c,-0.25) {$F_1$};
+\node[below] at (\c,-0.25) {$F_2$};
+
+% --- Axis labels ---
+\node[rotate=90] at (-0.25,1.7) {Minor Axis};
+\node at (1.6,0.3) {Major Axis};
+
+\end{tikzpicture}
+\end{image}
+
 \begin{center}
-
-\begin{mfpic}[20]{-6}{6}{-5}{5}
-\dotted[1pt, 3pt] \polyline{(-5,0), (5,0)}
-\dotted[1pt, 3pt] \polyline{(0,-4), (0,4)}
-\tlabel[cc](-3,-0.5){$F_1$}
-\tlabel[cc](3,-0.5){$F_2$}
-\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\tlabel[cc](5.5,0){$V_2$}
-\tlabel[cc](-5.5,0){$V_1$}
-\gclear \tlabelrect[cc](0,-0.5){$C$}
-\tlabel[cc](2.5,0.5){\tiny Major Axis}
-\tlabel[cc](-0.5,2){\tiny \rotatebox{90}{Minor Axis}}
-\penwd{1.25pt}
-\ellipse{(0,0),5,4}
-\point[4pt]{(5,0),(-5,0)}
-\end{mfpic}
-
-An ellipse with center $C$; foci $F_1$, $F_2$; and vertices $V_1$, $V_2$
-
+ \captionof{figure}{An ellipse with center $C$; foci $F_1$, $F_2$; and vertices $V_1$, $V_2$}
 \end{center} 
 
 As depicted above,  the \index{ellipse ! center}\index{center ! of an ellipse}\textbf{center} of the ellipse is the midpoint of the line segment connecting the two foci.  The \index{ellipse ! major axis}\index{major axis of an ellipse}\textbf{major axis} of the ellipse is the line segment connecting two opposite ends of the ellipse which also contains the center and foci.  The \index{ellipse ! minor axis}\index{minor axis of an ellipse}\textbf{minor axis} of the ellipse is the line segment connecting two opposite ends of the ellipse which contains the center but is perpendicular to the major axis.  The \index{ellipse ! vertices}\index{vertex ! of an ellipse}\textbf{vertices} of an ellipse are the points of the ellipse which lie on the major axis. 
@@ -74,29 +95,61 @@ As depicted above,  the \index{ellipse ! center}\index{center ! of an ellipse}\t
 
 In order to derive the standard equation of an ellipse, we assume that the ellipse has its center at $(0,0)$, its major axis along the $x$-axis, and has foci $(c,0)$ and $(-c,0)$ and vertices $(-a,0)$ and $(a,0)$.  We will label the $y$-intercepts of the ellipse as $(0,b)$ and $(0,-b)$  (We assume $a$, $b$, and $c$ are all positive numbers.) 
 
- 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\a{4.0} % semi-major axis
+\def\b{3.0} % semi-minor axis
+\pgfmathsetmacro{\c}{sqrt(\a*\a-\b*\b)} % distance from center to focus
+\def\angle{50} % angle for point (x,y) on the ellipse
+
+% --- Axes ---
+\draw[->] (-\a-0.8,0) -- (\a+0.9,0) node[right] {$x$};
+\draw[->] (0,-\b-0.8) -- (0,\b+0.9) node[above] {$y$};
+
+% --- Ellipse ---
+\draw[very thick] (0,0) ellipse [x radius=\a, y radius=\b];
+
+% --- Origin, marked with a small cross ---
+\node at (0,0) {$\times$};
+
+% --- Vertices on x-axis ---
+\fill (-\a,0) circle (2.5pt);
+\fill (\a,0) circle (2.5pt);
+\node[below left] at (-\a,-0.05) {$(-a,0)$};
+\node[below right] at (\a,-0.05) {$(a,0)$};
+
+% --- Vertices on y-axis ---
+\fill (0,\b) circle (2.5pt);
+\fill (0,-\b) circle (2.5pt);
+\node[above right] at (0,\b) {$(0,b)$};
+\node[below right] at (0,-\b) {$(0,-b)$};
+
+% --- Foci ---
+\node at (-\c,0) {$\ast$};
+\node at (\c,0) {$\ast$};
+\node[below] at (-\c,-0.25) {$(-c,0)$};
+\node[below] at (\c,-0.25) {$(c,0)$};
+
+% --- Point on ellipse ---
+\pgfmathsetmacro{\px}{\a*cos(\angle)}
+\pgfmathsetmacro{\py}{\b*sin(\angle)}
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px+0.1,\py) {$(x,y)$};
+
+% --- Dashed segments from each focus to (x,y) ---
+\draw[dashed] (-\c,0) -- (\px,\py);
+\draw[dashed] (\c,0) -- (\px,\py);
+
+\end{tikzpicture}
+
+\end{image} 
 
 \begin{center}
-
-\begin{mfpic}[20]{-6}{6}{-5}{5}
-\axes
-\dashed \polyline{(-3,0), (4,2.4)}
-\dashed \polyline{(3,0), (4,2.4)}
-\tlabel[cc](-3,-0.5){$(-c,0)$}
-\tlabel[cc](3,-0.5){$(c,0)$}
-\plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\tlabel[cc](-6,-0.5){$(-a,0)$}
-\tlabel[cc](6,-0.5){$(a,0)$}
-\tlabel[cc](1,4.5){$(0,b)$}
-\tlabel[cc](1, -4.5){$(0,-b)$}
-\tlabel[cc](5, 2.4){$(x,y)$}
-\tlabel(6,0.25){\scriptsize $x$}
-\tlabel(-0.5,5){\scriptsize $y$}
-\penwd{1.25pt}
-\ellipse{(0,0),5,4}
-\point[4pt]{(4,2.4),(-5,0),(5,0),(0,4),(0,-4)}
-\end{mfpic}
 
 \end{center}
 
@@ -198,32 +251,52 @@ If we take a transformational approach, we can consider both Equations \ref{stan
 
 \item  the foci are at $(2,1)$ and $(4,1)$ and vertex $(0,1)$.
 
-\newpage
-
 \item  the ellipse graphed below:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[20]{-1}{7}{-5}{5}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](0.5,0.3){\scriptsize $(0,0)$}
-\tlabel[cc](1.5,2.75){\scriptsize $(1,3)$}
-\tlabel[cc](5.3,0.3){\scriptsize $(6,0)$}
-\xmarks{1,2,3,4,5,6}
-\ymarks{-4, -3, -2, -1, 0, 1, 2, 3, 4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{   {$1$} 1,  {$2$} 2,  {$3$} 3,  {$4$} 4,  {$5$} 5}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,  {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\penwd{1.25pt}
-\ellipse{(3,0),3,4.025}
-\point[4pt]{(0,0), (6,0), (1,3)}
-\end{mfpic}
+% --- Parameters ---
+\def\cx{3}   % center x
+\def\cy{0}   % center y
+\def\rx{3}   % x radius
+\def\ry{4}   % y radius
 
-\end{center}
+% --- Axes ---
+\draw[->] (-0.8,0) -- (6.9,0) node[right] {$x$};
+\draw[->] (0,-4.9) -- (0,4.9) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {1,2,3,4,5}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Ellipse ---
+\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Key points ---
+\fill (0,0) circle (2.5pt);
+\node[above left] at (-0.1,0.15) {$(0,0)$};
+
+\fill (6,0) circle (2.5pt);
+\node[above right] at (6.1,0.15) {$(6,0)$};
+
+\fill (1,3) circle (2.5pt);
+\node[right] at (1.15,3) {$(1,3)$};
+
+\end{tikzpicture}
+
+\end{image}
 
 
 \end{enumerate}
@@ -251,34 +324,60 @@ We identify $h = -1$ and  $k = 2$, so the center of the ellipse is $(-1,2)$.  We
 
 As an aid to sketching, we draw a rectangle matching this description, called a \index{ellipse ! guide rectangle}\index{guide rectangle ! for an ellipse}\textbf{guide rectangle}, and sketch the ellipse inside this rectangle as seen below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[20]{-5}{3}{-4}{8}
-\axes
-\tlabel(3,-0.5){\scriptsize $x$}
-\tlabel(0.5,8){\scriptsize $y$}
-\tlabel[cc](-4.75,2){\scriptsize $(-4,2)$}
-\tlabel[cc](2.5,2){\scriptsize $(2,2)$}
-\tlabel[cc](-1,7.5){\scriptsize $(-1,7)$}
-\tlabel[cc](-1,-3.5){\scriptsize $(-1,-3)$}
-\tcaption{\scriptsize The graph of $25(x+1)^2 + 9 (y-2)^2 = 225$.}
-\xmarks{-4, -3, -2, -1, 0, 1, 2}
-\ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
+% --- Parameters ---
+\def\cx{-1}  % center x
+\def\cy{2}   % center y
+\def\rx{3}   % x radius
+\def\ry{5}   % y radius
 
-\dotted[1pt, 3pt] \polyline{(-4,-3), (2,-3), (2,7), (-4,7), (-4,-3) }
-\plotsymbol[3pt]{Cross}{(-1,2)}
+% --- Axes ---
+\draw[->] (-5.1,0) -- (2.6,0) node[right] {$x$};
+\draw[->] (0,-2.9) -- (0,7.7) node[above] {$y$};
 
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
-\axislabels {y}{  {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\ellipse{(-1,2),3,5}
-\point[4pt]{(-4,2), (2,2), (-1,7), (-1,-3)}
-\end{mfpic}  
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-3,-2,-1,1}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
+\draw (2,-0.08) -- (2,0.08); % unlabeled tick at vertex x = 2
 
-\end{center}
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-2,-1,1,2,3,4,5,6}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Dotted bounding box ---
+\draw[dotted, thick] (\cx-\rx,\cy-\ry) rectangle (\cx+\rx,\cy+\ry);
+
+% --- Ellipse ---
+\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Center, marked with a small cross ---
+\node at (\cx,\cy) {$\times$};
+
+% --- Vertices ---
+\fill (\cx,\cy+\ry) circle (2.5pt);
+\node[above,black] at (\cx,\cy+\ry+0.05) {$(-1,7)$};
+
+\fill (\cx,\cy-\ry) circle (2.5pt);
+\node[below, black] at (\cx,\cy-\ry-0.05) {$(-1,-3)$};
+
+\fill (\cx-\rx,\cy) circle (2.5pt);
+\node[left, black] at (\cx-\rx-0.1,\cy) {$(-4,2)$};
+
+\fill (\cx+\rx,\cy) circle (2.5pt);
+\node[right, black] at (\cx+\rx+0.1,\cy) {$(2,2)$};
+
+\end{tikzpicture}
+
+\end{image}
 
 Since we moved farther from the center in the $y$ direction than in the $x$ direction, the major axis will lie along the vertical line $x=-1$, while the minor axis lies along the horizontal line $y = 2$.  The vertices are the points on the ellipse which lie along the major axis so in this case, they are the points $(-1,7)$ and $(-1,-3)$, and the endpoints of the minor axis are $(-4,2)$ and $(2,2)$.  (Notice these points are the four points we used to draw the guide rectangle.)  
 
@@ -286,40 +385,65 @@ Since we moved farther from the center in the $y$ direction than in the $x$ dire
 
 To find the foci, we find $c = \sqrt{25-9} = \sqrt{16} = 4$, which means the foci lie $4$ units from the center. Since the major axis is vertical, the foci lie $4$ units above and below the center, at $(-1, 2-4) = (-1,-2)$ and $(-1, 2+4) = (-1,6)$.  Our final graph appears below.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
+% --- Parameters ---
+\def\cx{-1}  % center x
+\def\cy{2}   % center y
+\def\rx{3}   % x radius (minor semi-axis)
+\def\ry{5}   % y radius (major semi-axis)
+\pgfmathsetmacro{\c}{sqrt(\ry*\ry-\rx*\rx)} % distance from center to focus
 
-\begin{center}
+% --- Axes ---
+\draw[->] (-5.1,0) -- (2.6,0) node[right] {$x$};
+\draw[->] (0,-2.9) -- (0,7.7) node[above] {$y$};
 
-\begin{mfpic}[20]{-5}{3}{-4}{8}
-\axes
-\tlabel(3,-0.5){\scriptsize $x$}
-\tlabel(0.5,8){\scriptsize $y$}
-\tlabel[cc](-4.75,2){\scriptsize $(-4,2)$}
-\tlabel[cc](2.5,2){\scriptsize $(2,2)$}
-\tlabel[cc](-1,7.5){\scriptsize $(-1,7)$}
-\tlabel[cc](-1,-3.5){\scriptsize $(-1,-3)$}
-\tcaption{\scriptsize The graph of $25(x+1)^2 + 9 (y-2)^2 = 225$.}
-\xmarks{-4, -3, -2, -1, 0, 1, 2}
-\ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
-\ellipse{(-1,2),3,5}
-\plotsymbol[3pt]{Asterisk}{(-1,-2)}
-\plotsymbol[3pt]{Asterisk}{(-1,6)}
-\plotsymbol[3pt]{Cross}{(-1,2)}
-\point[3pt]{(-1,7)}
-\point[3pt]{(-1,-3)}
-\dotted[1pt, 3pt] \polyline{(-1,7), (-1,-3)}
-\dotted[1pt, 3pt] \polyline{(-4,2), (2,2)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2,  {$1$} 1,  {$2$} 2}
-\axislabels {y}{ {$-2$} -2, {$-1$} -1, {$1$} 1,  {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\normalsize
-\penwd{1.25pt}
-\ellipse{(-1,2),3,5}
-\point[4pt]{(-4,2), (2,2), (-1,7), (-1,-3)}
-\end{mfpic} 
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-4,-3,-2,-1,1,2}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.1) {$\x$};
+}
 
-\end{center}
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-2,-1,1,2,3,4,5,6}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Dotted major/minor axis lines through the center ---
+\draw[dotted, thick] (\cx-\rx,\cy) -- (\cx+\rx,\cy);
+\draw[dotted, thick] (\cx,\cy-\ry) -- (\cx,\cy+\ry);
+
+% --- Ellipse ---
+\draw[very thick, blue] (\cx,\cy) ellipse [x radius=\rx, y radius=\ry];
+
+% --- Center, marked with a small cross ---
+\node at (\cx,\cy) {$\times$};
+
+% --- Foci, on the major (vertical) axis ---
+\node at (\cx,\cy+\c) {$\ast$};
+\node at (\cx,\cy-\c) {$\ast$};
+
+% --- Vertices ---
+\fill (\cx,\cy+\ry) circle (2.5pt);
+\node[above] at (\cx,\cy+\ry+0.05) {$(-1,7)$};
+
+\fill (\cx,\cy-\ry) circle (2.5pt);
+\node[below] at (\cx,\cy-\ry-0.05) {$(-1,-3)$};
+
+\fill (\cx-\rx,\cy) circle (2.5pt);
+\node[left] at (\cx-\rx-0.1,\cy) {$(-4,2)$};
+
+\fill (\cx+\rx,\cy) circle (2.5pt);
+\node[right] at (\cx+\rx+0.1,\cy) {$(2,2)$};
+
+\end{tikzpicture}
+
+\end{image}
 
 
 
