@@ -324,19 +324,12 @@ Hence, the slope of the tangent line is $m_{\text{tan}} = f'(-2) = 7$.  The equa
 
 Graphing $y = 7x+3$ and $y = f(x)$ near $(-2,-11)$ reveals the local linearity we would expect:
 
+% https://www.desmos.com/calculator/jhyxrweogw
 \begin{center}
-
-\begin{tabular}{cc}
-
- \includegraphics[width=2.5in]{./IntroductiontoDerivativesGraphics/TLEx.png} &  \includegraphics[width=2.5in]{./IntroductiontoDerivativesGraphics/TLExZoom.png}  \\
- 
- The tangent line at $(-2,-11)$. & Zooming in near $(-2, -11)$.  \\
- 
- \end{tabular}
- 
+\desmos{jhyxrweogw}{800}{600}
  \end{center}
  
- \item Since $x$ represents the number of hours \textbf{after} Noon, $x = -2$ corresponds to $2$ hours \textbf{before} Noon, or 10 AM.  Since the units of $f(x)$ are degrees Celsius and the units of $x$ are hours, the units of $f'(-2)$ are degrees Celsius per hour.  Since $f'(-2)$ is positive, we know the slope is positive, so the temperature is increasing.  Putting all this together,   $f'(-2) = 7$ means that at 10 AM, the temperature is rising at a rate of $7$ degrees Celsius  per hour. \hfill \qed
+ \item Since $x$ represents the number of hours \textbf{after} Noon, $x = -2$ corresponds to $2$ hours \textbf{before} Noon, or 10 AM.  Since the units of $f(x)$ are degrees Celsius and the units of $x$ are hours, the units of $f'(-2)$ are degrees Celsius per hour.  Since $f'(-2)$ is positive, we know the slope is positive, so the temperature is increasing.  Putting all this together,   $f'(-2) = 7$ means that at 10 AM, the temperature is rising at a rate of $7$ degrees Celsius  per hour.
  
  \end{enumerate}
 
@@ -358,11 +351,9 @@ What if we wanted to find the equation of the tangent line to the graph of the f
 
 %% \ebm}
 
-\medskip
 
 It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(x)$, we get:  \[ f'(x) = \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h} = \lim_{\Delta x \rightarrow 0} \dfrac{f(x+\Delta x) - f(x)}{\Delta x}  = \lim_{\Delta x \rightarrow 0} \dfrac{\Delta [f(x)] }{\Delta x} =  \lim_{\Delta x \rightarrow 0} \dfrac{\Delta y }{\Delta x} ,\] which is why sometimes the derivative is denoted\footnote{This is the so-called  \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{\underline{Leibniz}} notation \ldots}  $\frac{dy}{dx}$.
 
-\pagebreak
 
 
 \begin{example}  \label{derivativeex}  Let $f(x) = -x^2 + 3x-1$.  
@@ -410,38 +401,20 @@ Our last step is to take the limit:   $f'(x) = \ds{ \lim_{h \rightarrow 0} \dfra
 
 \item The equation of the tangent line to the graph of $y = f(x)$ at $x = 0$ is $y = f'(0) (x - 0) + f(0)$.  We have $f'(0)=2(0) + 3 = 3$ and $f(0) = -(0)^2+3(0)-1 = -1$.  We get $y = 3(x-0)+(-1)$ so $y = 3x-1$. Our graph bears this out.
 
+% https://www.desmos.com/calculator/euggn9v5hr
 \begin{center}
-
-\begin{tabular}{cc}
-
- \includegraphics[width=2.5 in]{./IntroductiontoDerivativesGraphics/TL02.png} &  \includegraphics[width=2.5in]{./IntroductiontoDerivativesGraphics/TL02Zoom.png}  \\
- 
- The tangent line at $(0,-1)$. & Zooming in near $(0, -1)$.  \\
- 
- \end{tabular}
- 
+\desmos{euggn9v5hr}{800}{600}
  \end{center}
  
  \item  Solving $f'(x) = 0$ gives $-2x+3 = 0$ so $x = \frac{3}{2}$.  This means the slope of the tangent line at the point $\left(\frac{3}{2}, f\left(\frac{3}{2}\right) \right)$ is $0$, so the tangent line there is horizontal.  We find 
  $f\left(\frac{3}{2}\right) = -\left( \frac{3}{2}\right)^2 + 3\left(\frac{3}{2}\right) - 1 = \ldots = \frac{5}{4}$.  Hence, the tangent line at  $\left(\frac{3}{2}, \frac{5}{4} \right)$ is $y = \frac{5}{4}$.  Graphically, this checks out.
  
  
- 
+% https://www.desmos.com/calculator/cqjid2sy7u 
 \begin{center}
-
-\begin{tabular}{cc}
-
- \includegraphics[width=3in]{./IntroductiontoDerivativesGraphics/HTL.png} &  \includegraphics[width=3in]{./IntroductiontoDerivativesGraphics/HTLZoom.png}  \\
- 
- The tangent line at  $\left(\frac{3}{2}, \frac{5}{4} \right)$. & Zooming in near $\left(\frac{3}{2}, \frac{5}{4} \right)$.  \\
- 
- \end{tabular}
- 
+\desmos{cqjid2sy7u}{800}{600}
  \end{center}
  
- \hfill \qed
-
-
 \end{enumerate}
 
 \end{example}
@@ -595,12 +568,9 @@ We are now ready to take the limit:  \[g'(0) = \lim_{h \rightarrow 0} \frac{-6}{
 
 \item The equation of the tangent line when $x = 0$ is: $y = g'(0)(x-0) + g(0) = (-6)(x-0)+ 3$ or $y = -6x+3$, which checks graphically below.
 
+% https://www.desmos.com/calculator/otiohnzjqy
  \begin{center}
-
- \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/TLEx202.png} 
- 
- $y = g(x)$ and  $y =-6x+3$  near $(0,3)$  
-
+\desmos{otiohnzjqy}{800}{600}
  \end{center}
 
 
@@ -663,12 +633,9 @@ Hence, \[ r'(9) = \lim_{h \rightarrow 0} \frac{1}{\sqrt{9+h} +3} = \frac{1}{\sqr
 
 \item  The equation of the tangent line to $y = r(t)$ at $(9,3)$ is therefore:  $y = r'(9)(t-9) + r(9) = \frac{1}{6} (t-9) + 3$ or $y = \frac{1}{6} \, t + \frac{3}{2}$. The graph below confirms this.
 
+% https://www.desmos.com/calculator/bvbce8baci
  \begin{center}
-
- \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/TLEx203.png} 
- 
- $y =r(t)$ and   $y = \frac{1}{6} \, t + \frac{3}{2}$  near $(9,3)$  
-
+\desmos{bvbce8baci}{800}{600}
  \end{center}
 
 \item As one might expect, we use this same strategy of rationalizing the numerator to simplify the difference quotient to find $r'(t)$:
@@ -692,7 +659,7 @@ Hence, \[ r'(9) = \lim_{h \rightarrow 0} \frac{1}{\sqrt{9+h} +3} = \frac{1}{\sqr
 												\end{array}\]	
 
 
-We get \[r'(t) =  \lim_{h \rightarrow 0} \frac{1}{\sqrt{t+h} + \sqrt{t}} = \frac{1}{\sqrt{t+0} + \sqrt{t}}  = \frac{1}{2 \sqrt{t}}.\]   We check $r'(9) = \frac{1}{2\sqrt{9}} = \frac{1}{2(3)} = \frac{1}{6}$ as above.  \hfill \qed
+We get \[r'(t) =  \lim_{h \rightarrow 0} \frac{1}{\sqrt{t+h} + \sqrt{t}} = \frac{1}{\sqrt{t+0} + \sqrt{t}}  = \frac{1}{2 \sqrt{t}}.\]   We check $r'(9) = \frac{1}{2\sqrt{9}} = \frac{1}{2(3)} = \frac{1}{6}$ as above.  
 
 \end{enumerate}
 
