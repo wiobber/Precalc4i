@@ -207,9 +207,63 @@ Recall  in Section \ref{AverageRateofChange} the concept of the average rate of 
 
 Geometrically, the average rate of change is the slope of the so-called \index{secant line}\textbf{secant line} which `cuts' through the graph of $y = f(x)$ at the points $(a,f(a))$ and $(b, f(b))$:
 
-\begin{center}
-\includegraphics[width=4in]{./IntroductiontoDerivativesGraphics/SecantLine.png}
-\end{center}
+\begin{image}
+    \begin{tikzpicture}font=\LARGE
+\begin{axis}[
+    width=6in,
+    height=4in,
+    xmin=-0.2, xmax=6.3,
+    ymin=-1.5, ymax=4.8,
+    axis lines=middle,
+    axis line style={line width=0.8pt},
+    ticks=none,
+    clip=false,
+]
+
+% Function
+\addplot[
+    domain=1:4.2,
+    samples=200,
+    very thick,
+    black
+]
+{(x-2)^3-2*(x-2)^2+0.5*(x-2)+2};
+
+% Points on the curve
+\addplot[
+    only marks,
+    mark=*,
+    mark size=4pt,
+    black
+]
+coordinates {
+    (1.29,0.29)
+    (4,3)
+};
+
+% Secant line through the two points
+\addplot[
+    domain=-0.2:6.2,
+    thick,
+    penColor1
+]
+{x-1};
+
+% Point labels
+\node[anchor=south east] at (axis cs:1.29,0.29)
+    {$\bigl(a,f(a)\bigr)$};
+
+\node[anchor=south east] at (axis cs:4,3)
+    {$\bigl(b,f(b)\bigr)$};
+
+% Secant slope label
+\node[align=center] at (axis cs:5.6,3.1)
+    {$m_{\mathrm{sec}}
+      =\dfrac{f(b)-f(a)}{b-a}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 Consider a function $f$ defined over an interval containing $x$ and $x+h$ where $h \neq 0$. The average rate of change of $f$ over the interval $[x,x+h]$ is thus given by the formula:\footnote{assuming $h>0$;  otherwise,  the interval is $[x+h, x]$.  We get the same formula for the difference quotient either way.}
 
@@ -510,13 +564,10 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
  
  
  \item  The equation of the tangent line at $x = 3$ is:  $y = f'(3)(x-3) + f(3) = 5(x-3) + 4$, or $y = 5x-11$. We check graphically below.
- 
+
+ % https://www.desmos.com/calculator/qrzvujthok
  \begin{center}
-
- \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/TLEx201.png} 
- 
- $y = f(x)$ and  $y = 5x-11$  near $(3,4)$  
-
+\desmos{qrzvujthok}{800}{600}
  \end{center}
 
  \item To find $f'(x) = \ds{\lim_{h \rightarrow 0}}$ $\frac{f(x+h)-f(x)}{h}$, we first find $f(x+h)$:
