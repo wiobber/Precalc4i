@@ -29,7 +29,7 @@ In this scenario,  the \index{function ! position}\index{position function}posit
 
 \begin{defnrecall} Let $s(t)$ be the position of an object at time $t$ and $t_{0}$  a fixed time in the domain of $s$.  The \index{average velocity}\index{velocity ! average}\textbf{average velocity} between time $t$ and time $t_{0}$  for $t \neq t_{0}$ is given by
 
-\[ \overline{v}(t) = \dfrac{\Delta [s(t)]}{\Delta t} = \dfrac{s(t) - s(t_{0})}{t - t_{0}}. \]
+\[ \overline{v}(t) =  \frac{\Delta [s(t)]}{\Delta t} =  \frac{s(t) - s(t_{0})}{t - t_{0}}. \]
 
 
 \end{defnrecall}
@@ -40,7 +40,7 @@ In this scenario,  the \index{function ! position}\index{position function}posit
 
 If we define the change in time, $\Delta t = t - t_{0}$, we get $t = t_{0} + \Delta t$  which gives:
 
-\[ \overline{v}(\Delta t) = \dfrac{\Delta [s(t)]}{\Delta t} = \dfrac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t}, \quad \Delta t \neq 0. \]
+\[ \overline{v}(\Delta t) =  \frac{\Delta [s(t)]}{\Delta t} =  \frac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t}, \quad \Delta t \neq 0. \]
 
 The above formula measures the average velocity between time $t_{0}$ and time $t_{0} + \Delta t$ as a function of $\Delta t$.
 
@@ -54,7 +54,7 @@ We now revisit Example \ref{averagevelocityrocketex} in Section \ref{IntroRation
 
 \begin{enumerate}
 
-\item  Find, and simplify:  $\overline{v}(\Delta t)  = \dfrac{s(15+ \Delta t) - s(15)}{\Delta t}$, for $\Delta t \neq 0$.
+\item  Find, and simplify:  $\overline{v}(\Delta t)  =  \frac{s(15+ \Delta t) - s(15)}{\Delta t}$, for $\Delta t \neq 0$.
 
 \item  Find and interpret $\overline{v}(-1)$.
 
@@ -83,10 +83,10 @@ Since $s(15) = -5(15)^2 + 100(15) = 375$, we get:
 
 \[ \begin{array}{rclr}
 
-\overline{v}(\Delta t)& = & \dfrac{s(15+ \Delta t) - s(15)}{\Delta t} & \\ [7pt]
-	                        & = & \dfrac{(-5(\Delta t)^2-50 \Delta t + 375) - 375}{\Delta t} & \\ [7pt]
-	                        & = & \dfrac{\Delta t (-5 \Delta t - 50)}{\Delta t} & \\ [7pt]
-	                         & = & \dfrac{\cancel{\Delta} t (-5 \Delta t - 50)}{\cancel{\Delta t}} & \\ [7pt]
+\overline{v}(\Delta t)& = &  \frac{s(15+ \Delta t) - s(15)}{\Delta t} & \\  
+	                        & = &  \frac{(-5(\Delta t)^2-50 \Delta t + 375) - 375}{\Delta t} & \\  
+	                        & = &  \frac{\Delta t (-5 \Delta t - 50)}{\Delta t} & \\  
+	                         & = &  \frac{\cancel{\Delta} t (-5 \Delta t - 50)}{\cancel{\Delta t}} & \\  
 	                         & = & -5 \Delta t - 50 & \text{$\Delta t \neq 0$} \\ \end{array} \]
 
 In addition to $\Delta t \neq 0$,  the domain of $s$ is restricted to $0 \leq t \leq 20$.  Hence, we require  $0 \leq 15 + \Delta t \leq 20$ or  $-15 \leq \Delta t \leq 5$.  Our final answer is $\overline{v}(\Delta t) = -5 \Delta t - 50$, for $\Delta t \in [-15, 0) \cup (0, 5]$.
@@ -204,7 +204,7 @@ The reader is invited to compare Example \ref{averagevelocityrocketex} in Sectio
 
 \begin{definition} Let $s(t)$ be the position of an object at time $t$ and $t_{0}$  a fixed time in the domain of $s$.  The \index{instantaneous velocity}\index{velocity ! instantaneous}\textbf{instantaneous velocity} at $t_{0}$ is given by:
 
-\[ v\left(t_{0}\right) = \lim_{\Delta t \rightarrow 0} \dfrac{\Delta [s(t)]}{\Delta t} = \lim_{\Delta t \rightarrow 0} \dfrac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t}, \quad \text{provided this limit exists.} \]
+\[ v\left(t_{0}\right) = \lim_{\Delta t \rightarrow 0}  \frac{\Delta [s(t)]}{\Delta t} = \lim_{\Delta t \rightarrow 0}  \frac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t}, \quad \text{provided this limit exists.} \]
 
 \end{definition}
 
@@ -260,7 +260,7 @@ Our next step is to generalize these notions to all functions.
 \label{diffquotderiv}
 
 
-Recall  in Section \ref{AverageRateofChange} the concept of the average rate of change of a function over the interval $[a,b]$  is the slope between the two points $(a, f(a))$ and $(b, f(b))$ and is given by \[ \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(b)-f(a)}{b-a}.\]
+Recall  in Section \ref{AverageRateofChange} the concept of the average rate of change of a function over the interval $[a,b]$  is the slope between the two points $(a, f(a))$ and $(b, f(b))$ and is given by \[  \frac{\Delta[f(x)]}{\Delta x} =  \frac{f(b)-f(a)}{b-a}.\]
 
 Geometrically, the average rate of change is the slope of the so-called \index{secant line}\textbf{secant line} which `cuts' through the graph of $y = f(x)$ at the points $(a,f(a))$ and $(b, f(b))$:
 
@@ -316,7 +316,7 @@ coordinates {
 % Secant slope label
 \node[align=center] at (axis cs:5.6,3.1)
     {$m_{\mathrm{sec}}
-      =\dfrac{f(b)-f(a)}{b-a}$};
+      = \frac{f(b)-f(a)}{b-a}$};
 
 \end{axis}
 \end{tikzpicture}
@@ -324,12 +324,12 @@ coordinates {
 
 Consider a function $f$ defined over an interval containing $x$ and $x+h$ where $h \neq 0$. The average rate of change of $f$ over the interval $[x,x+h]$ is thus given by the formula:\footnote{assuming $h>0$;  otherwise,  the interval is $[x+h, x]$.  We get the same formula for the difference quotient either way.}
 
-\[ \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(x+h)-f(x)}{h}, \quad h \neq 0.\]
+\[  \frac{\Delta[f(x)]}{\Delta x} =  \frac{f(x+h)-f(x)}{h}, \quad h \neq 0.\]
 
 The above is an example of what is traditionally called the  \index{difference quotient}\textbf{difference quotient}  or  \textbf{Newton quotient} of $f$, since it is the \textit{quotient} of two \textit{differences}, namely $\Delta[f(x)]$ and $\Delta x$. Another formula for the difference quotient (as seen in Section \ref{rocarithmetic}) keeps with the notation $\Delta x$ instead of $h$:
 
 
-\[ \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(x+\Delta x)-f(x)}{\Delta x}, \quad \Delta x \neq 0.\]
+\[  \frac{\Delta[f(x)]}{\Delta x} =  \frac{f(x+\Delta x)-f(x)}{\Delta x}, \quad \Delta x \neq 0.\]
 
 
 It is important to understand that in this formulation of the difference quotient, the variables `$x$' and `$\Delta x$' are distinct - that is they do not combine as like terms. 
@@ -350,7 +350,7 @@ In Section \ref{avginstantvelocity}, taking the limit of average velocity as $\D
 
 \begin{definition} \label{derivativedefn} Given a function $f$ defined on an open interval containing $x=a$, the \textbf{derivative} of $f$ at $a$, denoted $f'(a)$, is defined as
 
-\[ f'(a) = \lim_{h \rightarrow 0} \dfrac{f(a+h) - f(a)}{h}, \quad \text{provided this limit exists.} \]
+\[ f'(a) = \lim_{h \rightarrow 0}  \frac{f(a+h) - f(a)}{h}, \quad \text{provided this limit exists.} \]
 
  The number $f'(a)$ represents the \index{instantaneous rate of change}\index{rate of change ! instantaneous}\textbf{instantaneous rate of change} of $f$ with respect to $x$ at the input $x = a$.  If $f'(a)$ exists, we say $f$ is \index{differentiable}\textbf{differentiable} at $x = a$.
 
@@ -397,7 +397,7 @@ We put these definitions to good use in the following example.
 
 \bigskip
 
-{\bf Solution.}  \begin{enumerate} \item We first find $m_{\text{tan}} = f'(-2)$ using Definition \ref{derivativedefn} with $a = -2$:  $ f'(-2) = \ds{\lim_{h \rightarrow 0} \dfrac{f(-2+h) - f(-2)}{h}}$. 
+{\bf Solution.}  \begin{enumerate} \item We first find $m_{\text{tan}} = f'(-2)$ using Definition \ref{derivativedefn} with $a = -2$:  $ f'(-2) = \ds{\lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h}}$. 
 
 First we find $f(-2+h)$ and are  careful to apply the exponent in the expression $-(-2+h)^2$:
 
@@ -412,15 +412,15 @@ Next, we find $f(-2) = -(-2)^2 + 3(-2)-1 = -11$, so the difference quotient is:
 
 \[ \begin{array}{rclr}
 
-\dfrac{f(-2+h)-f(-2)}{h} & = & \dfrac{(-h^2+7h-11) -(-11)}{h} & \\[8pt]
-                                & = & \dfrac{-h^2+7h}{h} & \text{simplify}\\[8pt]
-                                & = &  \dfrac{h(-h+7)}{h} & \text{factor} \\[8pt]
-                                & = &  \dfrac{\cancel{h}(-h+7)}{\cancel{h}} &  \text{cancel} \\[8pt]
+ \frac{f(-2+h)-f(-2)}{h} & = &  \frac{(-h^2+7h-11) -(-11)}{h} & \\ 
+                                & = &  \frac{-h^2+7h}{h} & \text{simplify}\\ 
+                                & = &   \frac{h(-h+7)}{h} & \text{factor} \\ 
+                                & = &   \frac{\cancel{h}(-h+7)}{\cancel{h}} &  \text{cancel} \\ 
                                 & = & -h+7\\ \end{array} \]
 
 
 
-Finally, we get $ f'(-2) = \ds{\lim_{h \rightarrow 0} \dfrac{f(-2+h) - f(-2)}{h} = \lim_{h \rightarrow 0} (-h+7) = -(0) + 7 = 7}$.
+Finally, we get $ f'(-2) = \ds{\lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h} = \lim_{h \rightarrow 0} (-h+7) = -(0) + 7 = 7}$.
 
 \bigskip
 
@@ -456,14 +456,14 @@ What if we wanted to find the equation of the tangent line to the graph of the f
 
 \begin{definition} \label{derivativefcndefn} Given a function $f$ defined on an open interval, the \textbf{derivative} of $f$, denoted  $f'(x)$, is the function
 
-\[ f'(x) = \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h}, \quad \text{provided the limit exists.}\]
+\[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h}, \quad \text{provided the limit exists.}\]
 
 \end{definition}
 
 %% \ebm}
 
 
-It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(x)$, we get:  \[ f'(x) = \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h} = \lim_{\Delta x \rightarrow 0} \dfrac{f(x+\Delta x) - f(x)}{\Delta x}  = \lim_{\Delta x \rightarrow 0} \dfrac{\Delta [f(x)] }{\Delta x} =  \lim_{\Delta x \rightarrow 0} \dfrac{\Delta y }{\Delta x} ,\] which is why sometimes the derivative is denoted\footnote{This is the so-called  \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{\underline{Leibniz}} notation \ldots}  $\frac{dy}{dx}$.
+It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(x)$, we get:  \[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{\Delta x \rightarrow 0}  \frac{f(x+\Delta x) - f(x)}{\Delta x}  = \lim_{\Delta x \rightarrow 0}  \frac{\Delta [f(x)] }{\Delta x} =  \lim_{\Delta x \rightarrow 0}  \frac{\Delta y }{\Delta x} ,\] which is why sometimes the derivative is denoted\footnote{This is the so-called  \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{\underline{Leibniz}} notation \ldots}  $\frac{dy}{dx}$.
 
 
 
@@ -487,7 +487,7 @@ It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(
 
 \begin{enumerate}
 
-\item  To find  $f'(x) = \ds{ \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h}}$ we  first find $f(x+h)$:
+\item  To find  $f'(x) = \ds{ \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h}}$ we  first find $f(x+h)$:
 
 \[ \begin{array}{rclr}  
   f(x+h) & = & -(x+h)^2 +3(x+h) -1 & \\ 
@@ -499,14 +499,14 @@ The difference quotient simplifies as follows:
 
 \[ \begin{array}{rclr}
 
-\dfrac{f(x+h)-f(x)}{h} & = & \dfrac{( -x^2 - 2xh - h^2+3x+3h-1) -(-x^2+3x-1)}{h} & \\[8pt]
-                                & = & \dfrac{-x^2 - 2xh - h^2+3x+3h-1 + x^2-3x+1}{h} & \\[8pt]
-                                 & = & \dfrac{-2xh-h^2+3h}{h} & \text{simplify}\\[8pt]
-                                & = &  \dfrac{h(-2x - h + 3)}{h} & \text{factor} \\[8pt]
-                                & = &  \dfrac{\cancel{h}(-2x-h+3)}{\cancel{h}} &  \text{cancel} \\[8pt]
+ \frac{f(x+h)-f(x)}{h} & = &  \frac{( -x^2 - 2xh - h^2+3x+3h-1) -(-x^2+3x-1)}{h} & \\ 
+                                & = &  \frac{-x^2 - 2xh - h^2+3x+3h-1 + x^2-3x+1}{h} & \\ 
+                                 & = &  \frac{-2xh-h^2+3h}{h} & \text{simplify}\\ 
+                                & = &   \frac{h(-2x - h + 3)}{h} & \text{factor} \\ 
+                                & = &   \frac{\cancel{h}(-2x-h+3)}{\cancel{h}} &  \text{cancel} \\ 
                                 & = & -2x-h+3\\ \end{array} \]
 
-Our last step is to take the limit:   $f'(x) = \ds{ \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} (-2x-h+3)}$.  Notice here that we have two variables, $x$ and $h$, in the limit.  Of these two variables, we are taking the limit on the $h$:  $h \rightarrow 0$.  As far as $h$ is concerned, $x$ may as well be just another constant like the `$3$'.  Hence, $f'(x) = \ds{ \lim_{h \rightarrow 0} (-2x-h+3)}=  -2x - 0 + 3 = -2x+3$.
+Our last step is to take the limit:   $f'(x) = \ds{ \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} (-2x-h+3)}$.  Notice here that we have two variables, $x$ and $h$, in the limit.  Of these two variables, we are taking the limit on the $h$:  $h \rightarrow 0$.  As far as $h$ is concerned, $x$ may as well be just another constant like the `$3$'.  Hence, $f'(x) = \ds{ \lim_{h \rightarrow 0} (-2x-h+3)}=  -2x - 0 + 3 = -2x+3$.
 
 \item  Evaluating our formula for $f'(x)$ at $x = -2$ gives $f'(-2) = -2(-2) + 3 = 7$ which matches with what we obtained in Example \ref{tangentlineex}.
 
@@ -546,31 +546,31 @@ The astute reader will note that the graph of $f(x) = -x^2+3x-1$ in Example \ref
 
 \begin{enumerate}
 
-\item  $f'(3)$ %$\dfrac{f(3+h)-f(3)}{h}$ 
+\item  $f'(3)$ %$ \frac{f(3+h)-f(3)}{h}$ 
 
 \item  The equation of the tangent line to the graph $y = f(x)$ at $(3, f(3))$.  
 
 Check your answer graphically.
 
-\item  $f'(x)$ %$\dfrac{f(x+h)-f(x)}{h}$.
+\item  $f'(x)$ %$ \frac{f(x+h)-f(x)}{h}$.
 
 \end{enumerate}
 
 
 
-\item  For $g(x) = \dfrac{3}{2x+1}$, find and simplify:\footnote{A review of Section \ref{AppRatExpEqus} may be in order for this problem.}
+\item  For $g(x) =  \frac{3}{2x+1}$, find and simplify:\footnote{A review of Section \ref{AppRatExpEqus} may be in order for this problem.}
 
 
 
 \begin{enumerate}
 
-\item  $g'(0)$ %$\dfrac{g(\Delta x)-g(0)}{\Delta x}$
+\item  $g'(0)$ %$ \frac{g(\Delta x)-g(0)}{\Delta x}$
 
 \item  The equation of the tangent line to the graph $y = g(x)$ at $(0, g(0))$.  
 
 Check your answer graphically.
  
-\item  $g'(x)$ %$\dfrac{g(x+\Delta x)-g(x)}{\Delta x}$.
+\item  $g'(x)$ %$ \frac{g(x+\Delta x)-g(x)}{\Delta x}$.
 
 \end{enumerate}
 
@@ -581,14 +581,14 @@ Check your answer graphically.
 
 \begin{enumerate}
 
-\item $r'(9)$ %$\dfrac{r(9+\Delta t)-r(9)}{\Delta t}$ 
+\item $r'(9)$ %$ \frac{r(9+\Delta t)-r(9)}{\Delta t}$ 
 
 \item  The equation of the tangent line to the graph $y = r(t)$ at $(9, r(9))$.
 
  Check your answer graphically.
 
 
- \item $r'(t)$ %$\dfrac{r(t+\Delta t)- r(t)}{\Delta t}$.
+ \item $r'(t)$ %$ \frac{r(t+\Delta t)- r(t)}{\Delta t}$.
  
  \end{enumerate}
 
@@ -612,10 +612,10 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
 
 \[ \begin{array}{rclr}
 
-\dfrac{f(3+h)-f(3)}{h} & = & \dfrac{(4 + 5h + h^2) -4}{h} & \\[8pt]
-                                & = & \dfrac{5h+h^2}{h} & \\[8pt]
-                                & = &  \dfrac{h(5+h)}{h} & \text{factor} \\[8pt]
-                                & = &  \dfrac{\cancel{h}(5+h)}{\cancel{h}} & \text{cancel}\\[8pt]
+ \frac{f(3+h)-f(3)}{h} & = &  \frac{(4 + 5h + h^2) -4}{h} & \\ 
+                                & = &  \frac{5h+h^2}{h} & \\ 
+                                & = &   \frac{h(5+h)}{h} & \text{factor} \\ 
+                                & = &   \frac{\cancel{h}(5+h)}{\cancel{h}} & \text{cancel}\\ 
                                 & = & 5+h \\ \end{array} \]
  Hence, $f'(3) = \ds{\lim_{h \rightarrow 0} (5+h) = 5+0 = 5}$.
  
@@ -632,7 +632,7 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
 
 \[ \begin{array}{rclr}  
  
- f(x+h) & = & (x+h)^2 - (x+h) -2 & \\ [8pt]
+ f(x+h) & = & (x+h)^2 - (x+h) -2 & \\  
  & = & x^2 + 2xh + h^2 - x - h - 2.
  \end{array} \]
 
@@ -642,11 +642,11 @@ So the difference quotient is
 
 \begin{longtable}{rclr}  
 
-$\dfrac{f(x+h)-f(x)}{h}$ & = & $\dfrac{\left(x^2+2xh+h^2-x-h-2 \right)-\left(x^{2}-x-2 \right)}{h}$ & \\[8pt] 
-& = & $\dfrac{x^2+2xh+h^2-x-h-2-x^2+x+2}{h}$ & \\[8pt]
-& = & $\dfrac{2xh+h^2-h}{h}$ & \\[8pt]
-& = & $\dfrac{h \left(2x+h-1\right)}{h}$ & factor \\[8pt]
-& = & $\dfrac{\cancel{h} \left(2x+h-1\right)}{\cancel{h}}$ & cancel \\[8pt]
+$ \frac{f(x+h)-f(x)}{h}$ & = & $ \frac{\left(x^2+2xh+h^2-x-h-2 \right)-\left(x^{2}-x-2 \right)}{h}$ & \\  
+& = & $ \frac{x^2+2xh+h^2-x-h-2-x^2+x+2}{h}$ & \\ 
+& = & $ \frac{2xh+h^2-h}{h}$ & \\ 
+& = & $ \frac{h \left(2x+h-1\right)}{h}$ & factor \\ 
+& = & $ \frac{\cancel{h} \left(2x+h-1\right)}{\cancel{h}}$ & cancel \\ 
 & = & $2x+h-1$. \\
 
 \end{longtable} 
@@ -662,13 +662,13 @@ Since $g(h) = \frac{3}{2 h + 1}$ and $g(0) = \frac{3}{2(0)+1} = 3$, our differen
 
 \begin{longtable}{rclr}  
 
-$\dfrac{g(0+h)-g(0)}{h}$ & = & $\dfrac{\dfrac{3}{2h+1}-3}{h}$ & \\[10pt]
-& = &  $\dfrac{\dfrac{3}{2h+1}-3}{h} \cdot \dfrac{(2h+1)}{(2h+1)}$ & \\[10pt]
-& = &  $\dfrac{3-3(2h+1)}{h(2h+1)}$  & \\[10pt]
-& = &  $\dfrac{3 - 6 h - 3}{h(2h+1)}$  & \\[10pt]
-& = &  $\dfrac{-6h}{h(2h+1)}$  & \\[10pt]
-& = &  $\dfrac{-6\cancel{h}}{\cancel{h}(2h+1)}$  & \text{cancel} \\[10pt]
-& = &  $\dfrac{-6}{2h+1}$.  & \\ 
+$ \frac{g(0+h)-g(0)}{h}$ & = & $ \frac{ \frac{3}{2h+1}-3}{h}$ & \\
+& = &  $ \frac{ \frac{3}{2h+1}-3}{h} \cdot  \frac{(2h+1)}{(2h+1)}$ & \\
+& = &  $ \frac{3-3(2h+1)}{h(2h+1)}$  & \\
+& = &  $ \frac{3 - 6 h - 3}{h(2h+1)}$  & \\
+& = &  $ \frac{-6h}{h(2h+1)}$  & \\
+& = &  $ \frac{-6\cancel{h}}{\cancel{h}(2h+1)}$  & \text{cancel} \\
+& = &  $ \frac{-6}{2h+1}$.  & \\ 
 
 \end{longtable}
 
@@ -686,21 +686,21 @@ We are now ready to take the limit:  \[g'(0) = \lim_{h \rightarrow 0} \frac{-6}{
 \item To find $g'(x)$, we first find $g(x+h)$:
 
  \[ \begin{array}{rclr}  
- g(x+h) & = & \dfrac{3}{2(x+h)+1} & \\[10pt]
- & = & \dfrac{3}{2x+2h+1} \\
+ g(x+h) & = &  \frac{3}{2(x+h)+1} & \\
+ & = &  \frac{3}{2x+2h+1} \\
  \end{array} \]
 
 Simplifying the difference quotient involves simplifying the resulting complex fraction, as above, keeping an eye out for an opportunity to cancel the factor `$h$' from the denominator:
 
 \begin{longtable}{rclr}  
 
-$\dfrac{g(x+h)-g(x)}{h}$ & = & $\dfrac{\dfrac{3}{2x+2h+1}-\dfrac{3}{2x+1}}{h}$ & \\[10pt]
-& = &  $\dfrac{\dfrac{3}{2x+2h+1}-\dfrac{3}{2x+1}}{h} \cdot \dfrac{(2x+2h+1)(2x+1)}{(2x+2h+1)(2x+1)}$ & \\[10pt]
-& = &  $\dfrac{3(2x+1)-3(2x+2h+1)}{h(2x+2h+1)(2x+1)}$  & \\[10pt]
-& = &  $\dfrac{6x+3-6x-6h-3}{h(2x+2h+1)(2x+1)}$  & \\[10pt]
-& = &  $\dfrac{-6h}{h(2x+2h+1)(2x+1)}$  & \\[10pt]
-& = &  $\dfrac{-6\cancel{h}}{\cancel{h}(2x+2h+1)(2x+1)}$  & \text{cancel} \\[10pt]
-& = &  $\dfrac{-6}{(2x+2h+1)(2x+1)}$.  & \\ 
+$ \frac{g(x+h)-g(x)}{h}$ & = & $ \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h}$ & \\
+& = &  $ \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h} \cdot  \frac{(2x+2h+1)(2x+1)}{(2x+2h+1)(2x+1)}$ & \\
+& = &  $ \frac{3(2x+1)-3(2x+2h+1)}{h(2x+2h+1)(2x+1)}$  & \\
+& = &  $ \frac{6x+3-6x-6h-3}{h(2x+2h+1)(2x+1)}$  & \\
+& = &  $ \frac{-6h}{h(2x+2h+1)(2x+1)}$  & \\
+& = &  $ \frac{-6\cancel{h}}{\cancel{h}(2x+2h+1)(2x+1)}$  & \text{cancel} \\
+& = &  $ \frac{-6}{(2x+2h+1)(2x+1)}$.  & \\ 
 
 \end{longtable}
 
@@ -712,7 +712,7 @@ Hence, \[g'(x) = \lim_{h \rightarrow 0} \frac{-6}{(2x+2h+1)(2x+1)} = \frac{-6}{(
 
 \item \begin{enumerate} \item To find $r'(9) = \ds{\lim_{h \rightarrow 0}}$$\frac{r(9+h) - r(9)}{h}$, we start with $r(9+h) = \sqrt{9+h}$ and $r(9) = \sqrt{9} = 3$. Hence  our difference quotient is:
 
-\[ \dfrac{r(9+h)-r(9)}{h} = \dfrac{\sqrt{9+h} - 3}{h}.\]
+\[  \frac{r(9+h)-r(9)}{h} =  \frac{\sqrt{9+h} - 3}{h}.\]
 
 
 In order for us to determine the limit as $h \rightarrow 0$, we need to somehow cancel the factor of $h$ from the  \textbf{denominator}.  To do so,  we set about \textbf{rationalizing the numerator} by multiplying both numerator and denominator by the conjugate\footnote{Again, see Section  \ref{rationalizingdenomandnumer} for a review of these sorts of machinations.}of the numerator, $\sqrt{9+h} - 3$:
@@ -720,20 +720,20 @@ In order for us to determine the limit as $h \rightarrow 0$, we need to somehow 
 
 \[ \begin{array}{rcll}  
 
-\dfrac{r(9+h) - r(9)}{h} & = & \dfrac{\sqrt{9+h} - 3}{h} & \\[15pt]
+ \frac{r(9+h) - r(9)}{h} & = &  \frac{\sqrt{9+h} - 3}{h} & \\ 
 												
-												 & = & \dfrac{\left(\sqrt{9+h} - 3 \right)}{h} \cdot \dfrac{\left(\sqrt{9+h} + 3\right)}{\left(\sqrt{9+h} + 3\right)} & \text{Multiply by the conjugate.} \\[15pt]
+												 & = &  \frac{\left(\sqrt{9+h} - 3 \right)}{h} \cdot  \frac{\left(\sqrt{9+h} + 3\right)}{\left(\sqrt{9+h} + 3\right)} & \text{Multiply by the conjugate.} \\ 
 										
-												 & = &  \dfrac{\left(\sqrt{9+h}\right)^2 -(3)^2}{h\left(\sqrt{9+h} + 3\right)} & \text{Difference of Squares.}\\[15pt]
+												 & = &   \frac{\left(\sqrt{9+h}\right)^2 -(3)^2}{h\left(\sqrt{9+h} + 3\right)} & \text{Difference of Squares.}\\ 
 												
-												& = &  \dfrac{(9+h) - 9}{h\left(\sqrt{9+h} + 3\right)} & \\[15pt]
+												& = &   \frac{(9+h) - 9}{h\left(\sqrt{9+h} + 3\right)} & \\ 
 												
-												 & = &  \dfrac{h}{h\left(\sqrt{9+h} + 3\right)} & \\[15pt]
+												 & = &   \frac{h}{h\left(\sqrt{9+h} + 3\right)} & \\ 
 												 
-												 & = &  \dfrac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{9+h} + 3\right)} & \text{cancel} \\[15pt]
+												 & = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{9+h} + 3\right)} & \text{cancel} \\ 
 										
 										
-												 & = &  \dfrac{1}{\sqrt{9+h} +3} & \\ 
+												 & = &   \frac{1}{\sqrt{9+h} +3} & \\ 
 												\end{array}\]	
 
 
@@ -750,20 +750,20 @@ Hence, \[ r'(9) = \lim_{h \rightarrow 0} \frac{1}{\sqrt{9+h} +3} = \frac{1}{\sqr
 
 \[ \begin{array}{rcll}  
 
-\dfrac{r(t+h) - r(t)}{h} & = & \dfrac{\sqrt{t+h} - \sqrt{t}}{h} & \\ [15pt]
+ \frac{r(t+h) - r(t)}{h} & = &  \frac{\sqrt{t+h} - \sqrt{t}}{h} & \\  
 												
-												 & = & \dfrac{\left(\sqrt{t+h} - \sqrt{t}\right)}{h} \cdot \dfrac{\left(\sqrt{t+h} + \sqrt{t}\right)}{\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Multiply by the conjugate.} \\ [15pt]
+												 & = &  \frac{\left(\sqrt{t+h} - \sqrt{t}\right)}{h} \cdot  \frac{\left(\sqrt{t+h} + \sqrt{t}\right)}{\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Multiply by the conjugate.} \\  
 										
-												 & = &  \dfrac{\left(\sqrt{t+h}\right)^2 - \left(\sqrt{t}\right)^2}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Difference of Squares.}\\ [15pt]
+												 & = &   \frac{\left(\sqrt{t+h}\right)^2 - \left(\sqrt{t}\right)^2}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Difference of Squares.}\\  
 												
-												& = &  \dfrac{(t+h) - t}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\ [15pt]
+												& = &   \frac{(t+h) - t}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
 												
-												 & = &  \dfrac{h}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\ [15pt]
+												 & = &   \frac{h}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
 												 
-												 												 & = &  \dfrac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{t+h} + \sqrt{t}\right)} & \\ [15pt]
+												 												 & = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
 										
 										
-												 & = &  \dfrac{1}{\sqrt{t+h} + \sqrt{t}} & \\ 
+												 & = &   \frac{1}{\sqrt{t+h} + \sqrt{t}} & \\ 
 												\end{array}\]	
 
 
