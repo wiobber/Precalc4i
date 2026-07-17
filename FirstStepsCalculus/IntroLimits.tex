@@ -615,7 +615,7 @@ Combining the ideas of what it means for $x$ or $f(x)$ to approach (finite) real
 
 \draw[-,dashed, gray] (5,-1)--(5,7);
  
-\node[anchor=south, gray] at (6,0.5) {VA: $x=5$};
+\node[anchor=south, gray] at (5.5,0.5) {$x=5$};
 %\node[anchor=north] at (2.2,-0.1) {$\lim_{x\rightarrow 5^-}f(x)=\infty$};
       \end{axis}
         \end{tikzpicture}
@@ -669,7 +669,7 @@ Combining the ideas of what it means for $x$ or $f(x)$ to approach (finite) real
 
 \draw[-,dashed, gray] (-1,3)--(7,3);
  
-\node[anchor=south, gray] at (5,3.5) {HA: $y=3$};
+\node[anchor=south, gray] at (5,3) {$y=3$};
 %\node[anchor=north] at (2,-0.2) {$\lim_{x\rightarrow \infty}f(x)=3$};
       \end{axis}
         \end{tikzpicture}
@@ -738,8 +738,10 @@ The sign diagram for $f$ is:
   \draw (0,-0.12) -- (0,0.12);
   \node at (-3, 0.5) {$(+)$};
   \node at (-2,-0.5) {$-1$};
+   \node at (-2,0.5) {VA};
   \node at (-1,0.5) {$(-)$};
-  \node at (0,-0.5) {$4$};
+  \node at (0,-0.5) {$1$};
+   \node at (0,0.5) {$0$};
   \node at (1,0.5) {$(+)$};
 \end{tikzpicture}
 \end{image}
@@ -772,36 +774,98 @@ Finally,   $\ds{\lim_{x \rightarrow \infty } f(x) = \infty}$  means that as we m
 
 Connecting these pieces together (careful to not violate the Vertical Line Test, Theorem \ref{VLT}) we get:
 
-\begin{center}
+\begin{image}
+    \begin{tikzpicture}
+\begin{axis}[
+    width=6.2in,
+    height=5.6in,
+    xmin=-6, xmax=5,
+    ymin=-2.1, ymax=2.1,
+    axis lines=middle,
+    axis line style={->, line width=0.8pt},
+    xlabel={$x$},
+    ylabel={$y$},
+    xlabel style={
+        at={(axis description cs:1,0.51)},
+        anchor=south west
+    },
+    ylabel style={
+        at={(axis description cs:0.54,1)},
+        anchor=south west
+    },
+    xtick={-5,-4,-3,-2,-1,1,2,3,4},
+    ytick={-1,1},
+    minor y tick num=1,
+    tick style={line width=0.8pt},
+    samples=200,
+    clip=false
+]
+
+% Dashed vertical line x=-1
+\addplot[
+    dashed,
+    gray,
+    thick
+]
+coordinates {(-1,-2.05) (-1,2.05)};
+
+% Left branch: vertical asymptote at x=-1
+\addplot[
+    domain=-5.8:-1.5,
+    very thick,
+    black
+]
+{1/(-x-1)};
+
+% Lower middle branch
+% Passes through approximately (0,-1) and approaches (1,-1/2)
+\addplot[
+    domain=-0.48:0.98,
+    very thick,
+    black
+]
+{-1/(x+1)};
+
+% Right branch beginning at (1,0)
+\addplot[
+    domain=1:4.05,
+    very thick,
+    black
+]
+{0.2*(x-1)^2};
+
+% Filled point at (1,0)
+\addplot[
+    only marks,
+    mark=*,
+    mark size=4pt,
+    black
+]
+coordinates {(1,0)};
+
+% Open point at (1,-1/2)
+\addplot[
+    only marks,
+    mark=o,
+    mark size=3.2pt,
+    very thick,
+    black,
+    fill=white
+]
+coordinates {(1,-0.5)};
+
+% Label for open point
+\node[
+    anchor=west
+] at (axis cs:1.55,-0.5)
+{$\left(1,-\dfrac12\right)$};
 
 
-\begin{mfpic}[20][60]{-6}{5}{-2}{2}
-\dashed \polyline{(-1,-2), (-1,2)}
-%\point[4pt]{(0,-0.333)}
-\tlabel[cc](5,0.1){\scriptsize $x$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
-\tlabel[cc](2.25,-0.5){\scriptsize $\left(1, -\frac{1}{2} \right)$}
-\axes
-\xmarks{-5 step 1 until 4}
-\ymarks{-1.5 step 0.5 until 1.5}
-\tiny
-\tlpointsep{4pt}
-\axislabels {x}{{$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1\hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-6,-1.5,0.1}{-1/(x+1)}
-\arrow \reverse \function{-0.5,1,0.1}{-1/(x+1)}
-\arrow \function{1,4,0.1}{(x**2)/8 - 1/8}
-\point[4pt]{(1, 0)}
-\pointfillfalse
-\point[4pt]{(1, -0.5)}
-\end{mfpic}
+(axis cs:3.82,1.59) -- (axis cs:4.05,1.88);
 
-
-\end{center}
-
-\hfill \qed
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 \end{example}
 
