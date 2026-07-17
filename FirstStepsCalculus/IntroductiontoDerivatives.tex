@@ -107,28 +107,85 @@ Recall from Example \ref{averagevelocityrocketex} that the limit value here, $-5
 
 \item    Since the domain of $\overline{v}$ is $[-15, 0) \cup (0, 5]$, the graph of  $y =  \overline{v}(\Delta t) =  -5 \Delta t - 50$  is a line \textbf{segment} from $(-15, 25)$ to $(5, -75)$ with a hole at $(0, -50)$.
 
-\begin{center}
-\begin{mfpic}[14]{-4}{2}{-8}{3}
-\axes
-\axismarks{x}{-4, -3, -2, -1,1}
-\axismarks{y}{-7 step 1 until 2}
-\scriptsize
-\tlabel[cc](2, -0.5){$\Delta t$}
-\tlabel[cc](0.5, 3){$y$}
-\tlabel[cc](-4.5, 2.5){$(-15, 25)$}
-\tlabel[cc](2.25, -7.5){$(5,-75)$}
-\tlabel[cc](1.25, -5){$(0,-50)$}
-\normalsize
-\penwd{1.25pt}
-\polyline{(-3,  2.5), (1, -7.5)}
-\point[4pt]{(-3, 2.5), (1, -7.5)}
-\pointfillfalse
-\point[4pt]{(0, -5)}
-\tcaption{\scriptsize $y=\overline{v}(\Delta t)$}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}[scale=1]font=\LARGE
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=2,
+          ymin=-8, ymax=3,
+          width=5in,
+          height=8in,
+          xtick={-4,-3, -2,-1,1},
+            xticklabels=\empty,
+           ytick={-7, -6, -5, -4, -3, -2, -1, 1,2},
+            yticklabels=\empty,  
+            tick style={line width=1.2pt},
+            major tick length=6pt,
+            axis x line=center,
+            axis y line=center,
+            x axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            y axis line style={-{Latex[length=10pt,width=8pt]}, line width=1.2pt},
+            xlabel={$\triangle t$},
+            ylabel={$y$},
+           every axis x label/.style={
+    at={(current axis.right of origin)},
+    anchor=west
+  }
+          ]
+%% Normal thickness graph
+\draw[-, line width=3pt, blue](1, -7.5)--(-3,2.5);
 
-  \hfill \qed
+
+
+%% Open, unlabeled points
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  mark options={
+    fill=white},
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=10pt}
+]
+coordinates {
+  (0,-5)
+ 
+};
+
+%% Regular points, labeled
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=west,
+    xshift=5pt}
+]
+coordinates {
+  (1,-7.5) [$(5,-75)$]
+ 
+};
+
+\addplot[
+  only marks,
+  mark=*,
+  mark size=4pt,
+  nodes near coords,
+  point meta=explicit symbolic,
+  every node near coord/.style={anchor=east,
+    xshift=-5pt, yshift=0pt}
+]
+coordinates {
+  (-3,2.5) [$(-15,25)$]
+  };
+
+      \end{axis}
+        \end{tikzpicture}
+\end{image}
+
 
 
 \end{enumerate}
