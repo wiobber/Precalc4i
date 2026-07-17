@@ -218,38 +218,14 @@ For another example, consider the graphs of the functions $f$, $g$, and $h$ belo
 
 \end{image}
 
- Next let's head to Section \ref{ConstantandLinearFunctions} and revisit Example \ref{piecewiseconstantex} in a piecewise-defined function is used to model matinee admission prices at a local theater:
+ Next let's head to Section \ref{ConstantandLinearFunctions} and revisit Example \ref{piecewiseconstantex} in a piecewise-defined function $p$ is used to model matinee admission prices at a local theater.
     
-   \begin{center}
-
-\begin{mfpic}[25]{-1}{6}{-1}{5}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $A$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4}
-\scriptsize
-\tlabel[cc](-1, 2.875){$(0, 5.75)$}
-\tlabel[cc](0.8, 4){$(6, 7.25)$}
-\tlabel[cc](5, 2.5){$(50, 5.75)$}
-\tlpointsep{4pt}
-\axislabels {x}{ {$10$} 1, {$20$} 2, {$30$} 3, {$40$} 4, {$50$} 5}
-\axislabels {y}{{$2$} 1, {$4$} 2,   {$8$} 4}
-\penwd{1.25pt}
-\polyline{( 0,2.875), (0.6,2.875)}
-\polyline{( 0.6,3.625), (5,3.625)}
-\arrow \polyline{(5,2.875), (6, 2.875)}
-\point[3pt]{(0,2.875), (5, 2.875),( 0.6,3.625) }
-\pointfillfalse
-\point[3pt]{(0.6,2.875), (5,3.625)}
-\tcaption{ $y = p(A) = \begin{mycases} 
+$$y = p(A) = \begin{mycases} 
       5.75 &  \text{if $0 \leq A < 6$ or $A \geq 50$} \\
       7.25  & \text{if $6 \leq A < 50$} \\
-   \end{mycases}$}
-\normalsize
-\end{mfpic} 
+   \end{mycases}$$
 
-\end{center}
+   
 
 What can be said about $\ds{ \lim_{A \rightarrow 6} p(A)}$?   Remember, $\ds{ \lim_{A \rightarrow 6} p(A)}$ is what we would \textbf{expect} $p(6)$ to be by analyzing $p$ as $A \rightarrow  6$, ignoring what is happening at $A=6$.  If $A<6$,  $p(A)$ is always $5.75$, so, based on this information, we'd \textbf{expect} $p(6)$ to be $5.75$.   If $A>6$, then  $p(A)$ is always $7.25$, so we'd \text{expect} $p(6)$ to be $7.25$.  Since Definition  \ref{informallimitdefn} requires the $p(A)$ values to approach a \textbf{single} value $L$ as $A \rightarrow 6$, we'd say in this case that   $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist.  
 
