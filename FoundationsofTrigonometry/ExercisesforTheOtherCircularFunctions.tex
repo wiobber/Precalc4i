@@ -858,40 +858,38 @@ We wish to establish the inequality $\cos(\theta) < \frac{\sin(\theta)}{\theta} 
 
 \begin{image}
 
-\begin{tikzpicture}\begin{axis}[
-    ticks=none;
-    width=5in, height=5in,
-    xmin=-1, xmax=6, ymin=-1, ymax=6,
-    %axis lines=middle,
-    %axis line style={-{Latex[length=8pt,width=6pt]}},
-    %tick style={line width=1pt},
-    %major tick length=5pt,
-    %xlabel={$x$}, ylabel={$y$},
-    %xlabel style={anchor=west},
-    %ylabel style={anchor=south},
-    %xtick={},
-    %ytick={},
-    %tick label style={font=\tiny},
-    %label style={font=\scriptsize},
-    samples=100,
-]
+\begin{tikzpicture}
+
+%Axes without tickmarks
+\draw[->] (-0.5,0) -- (6,0) node[below] {$x$};
+\draw[->] (0,-0.5) -- (0,6) node[right] {$y$};
+
 %Unit Circle
-\draw (0,0) circle (3);
+\draw (3,0) arc[start angle=0,end angle=90,radius=3];
 
 % Circular arrow
-\draw[line width=1.25pt, ->]
-    (1,0)
-    arc[start angle=0,end angle=55,radius=1];
+\draw[->] (1,0) arc[start angle=0,end angle=58,radius=1];
 
 % Line Segments
-\draw (0,0) -- (3,5.196);
-\draw (3,0) -- (3,5.196);
+\draw[line width=1.2pt, color=blue] (0,0) -- (3,5.196);
+\draw[line width=1.2pt, color=blue] (3,0) -- (3,5.196);
 \draw (2.75,0)-- (2.75, 0.25) -- (3,0.25);
-\draw (3,0) -- (1.5, 2.5981);
+\draw[line width=1.2pt, color=blue] (3,0) -- (1.5, 2.5981);
     
-% Filled point
-%\fill (0,0) circle (2pt);
-\end{axis}
+%Labeled Points
+\node at (0.2, 3.25) {$1$};
+\node at (-0.2, -0.2) {$O$};
+\node at (3, -0.25) {$B(1,0)$};
+\node at (1.5,2.9) {$P$};
+\node at ((3.1,5.5) {$Q$};
+\node at ((1.15,0.6) {$\theta$};
+
+%Points
+ \fill (0,0) circle (2pt);
+ \fill (3,0) circle (2pt);
+ \fill (3,5.196) circle (2pt);
+\fill (1.5,2.6) circle (2pt);
+
 \end{tikzpicture}
 
 
