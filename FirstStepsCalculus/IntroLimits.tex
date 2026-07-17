@@ -54,7 +54,7 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
   \node[below right] at (1,-3) {\scriptsize $(1,-3)$};
 
   % Function plot: w = v^2 - 4
-  \draw[thick,domain=-2:3,samples=100] plot (\x,{\x*\x-4});
+  \draw[thick,domain=-2:3,blue, samples=100] plot (\x,{\x*\x-4});
 
   % Points
   \filldraw ( -2, 0) circle (2pt);
@@ -782,7 +782,7 @@ Connecting these pieces together (careful to not violate the Vertical Line Test,
     xmin=-6, xmax=5,
     ymin=-2.1, ymax=2.1,
     axis lines=middle,
-    axis line style={->, line width=0.8pt},
+    axis line style={-{Latex[length=8pt,width=5pt]}, line width=0.8pt},
     xlabel={$x$},
     ylabel={$y$},
     xlabel style={
@@ -813,7 +813,7 @@ coordinates {(-1,-2.05) (-1,2.05)};
 \addplot[
     domain=-5.8:-1.5,
     very thick,
-    black
+    blue
 ]
 {1/(-x-1)};
 
@@ -822,7 +822,7 @@ coordinates {(-1,-2.05) (-1,2.05)};
 \addplot[
     domain=-0.48:0.98,
     very thick,
-    black
+    blue
 ]
 {-1/(x+1)};
 
@@ -830,7 +830,7 @@ coordinates {(-1,-2.05) (-1,2.05)};
 \addplot[
     domain=1:4.05,
     very thick,
-    black
+    blue
 ]
 {0.2*(x-1)^2};
 
@@ -1060,6 +1060,11 @@ Now on to  $\ds{\lim_{x \rightarrow 2^{+}} f(x)}$.  Here, $x\rightarrow 2^{+}$, 
 \medskip
 
 Since $\ds{\lim_{x \rightarrow 2^{-}} f(x) = 3}$ and $\ds{\lim_{x \rightarrow 2^{+}} f(x) = 4}$, we have that $\ds{\lim_{x \rightarrow 2} f(x)}$ does not exist per Theorem \ref{onesidedlimit}.  Hence, $f$ is not continuous.  If we graph $f$ near $x=2$ using desmos, we can see the vertical gap or `jump' occurring at $x = 2$.  
+
+% https://www.desmos.com/calculator/xgc7fk7dcz
+\begin{center}
+    \desmos{xgc7fk7dcz}{800}{600}
+\end{center}
 
 \medskip
 
