@@ -225,7 +225,54 @@ $$y = p(A) = \begin{mycases}
       7.25  & \text{if $6 \leq A < 50$} \\
    \end{mycases}$$
 
-   
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Scale factors: compress the x-axis (values up to 50+) ---
+\def\xs{0.14}
+\def\ys{0.55}
+% Macro to convert data coordinates (A,y) to drawing coordinates
+\newcommand{\pt}[2]{({#1*\xs},{#2*\ys})}
+
+% --- Axes ---
+\draw[->] (-0.3,0) -- (7.9,0) node[right] {$A$};
+\draw[->] (0,-0.3) -- (0,5.2) node[above] {$y$};
+
+% --- Tick marks and labels on x-axis ---
+\foreach \v in {10,20,30,40,50}{
+    \draw (\v*\xs,-0.08) -- (\v*\xs,0.08);
+    \node[below] at (\v*\xs,-0.1) {$\v$};
+}
+
+% --- Tick marks and labels on y-axis ---
+\foreach \v in {2,4,8}{
+    \draw (-0.08,\v*\ys) -- (0.08,\v*\ys);
+    \node[left] at (-0.1,\v*\ys) {$\v$};
+}
+
+% --- Segment 1: (0,5.75) closed --- (6,5.75) open ---
+\draw[very thick, blue] \pt{0}{5.75} -- \pt{6}{5.75};
+\fill \pt{0}{5.75} circle (2.5pt);
+\draw[very thick, fill=white] \pt{6}{5.75} circle (2.5pt);
+\node[left] at ({-0.1+0*\xs},{5.75*\ys}) {$(0,5.75)$};
+
+% --- Segment 2: (6,7.25) closed --- (50,7.25) open ---
+\draw[very thick, blue] \pt{6}{7.25} -- \pt{50}{7.25};
+\fill \pt{6}{7.25} circle (2.5pt);
+\draw[very thick, fill=white] \pt{50}{7.25} circle (2.5pt);
+\node[above] at \pt{6}{7.25} {$(6,7.25)$};
+
+% --- Segment 3: (50,5.75) closed, extends right with an arrow ---
+\draw[very thick,blue, -] \pt{50}{5.75} -- \pt{56}{5.75};
+\fill \pt{50}{5.75} circle (2.5pt);
+\node[below right] at \pt{50}{5.4} {$(50,5.75)$};
+
+\end{tikzpicture}
+
+\end{image}   
 
 What can be said about $\ds{ \lim_{A \rightarrow 6} p(A)}$?   Remember, $\ds{ \lim_{A \rightarrow 6} p(A)}$ is what we would \textbf{expect} $p(6)$ to be by analyzing $p$ as $A \rightarrow  6$, ignoring what is happening at $A=6$.  If $A<6$,  $p(A)$ is always $5.75$, so, based on this information, we'd \textbf{expect} $p(6)$ to be $5.75$.   If $A>6$, then  $p(A)$ is always $7.25$, so we'd \text{expect} $p(6)$ to be $7.25$.  Since Definition  \ref{informallimitdefn} requires the $p(A)$ values to approach a \textbf{single} value $L$ as $A \rightarrow 6$, we'd say in this case that   $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist.  
 
@@ -273,19 +320,65 @@ It's time for an example.
 
 \begin{example} \label{limitfromgraphex} Use the \textbf{complete} graph\footnote{Recall this means this is the entire graph of $f$.  There's nothing hidden offscreen.} of $y = f(x)$ below to answer the following questions.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
+% --- Axes ---
+\draw[->] (-6.3,0) -- (6.3,0);
+\draw[->] (0,-0.6) -- (0,6.3);
 
+% --- Tick marks and labels on x-axis ---
+\foreach \x in {-4,-3,-2,2,4,5}{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
 
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {1, 2, 3, 4}{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
 
-\begin{center}
+% --- Segment 1: (-4,3) closed --- (-1,0) open ---
+\draw[very thick, blue] (-4,3) -- (-1,0);
+\fill (-4,3) circle (2.5pt);
+\draw[very thick, fill=white] (-1,0) circle (2.5pt);
+\node[left] at (-4.15,3) {$(-4,3)$};
+\node[below] at (-1,-0.15) {$(-1,0)$};
 
- \includegraphics[width=5.5in]{./IntroLimitsGraphics/LimitfromGraphEx.png}
- 
-  \end{center}
-  
-  
+% --- Isolated point (-1,2) ---
+\fill (-1,2) circle (2.5pt);
+\node[below] at (-1,1.75) {$(-1,2)$};
 
-  
+% --- Parabola arc: (-1,4) open -- (0,5) closed -- (1,4) open ---
+% y = 5 - x^2
+\draw[very thick, blue, domain=-1:1, samples=60, smooth]
+    plot (\x, {5 - \x*\x});
+\draw[very thick, fill=white] (-1,4) circle (2.5pt);
+\draw[very thick, fill=white] (1,4) circle (2.5pt);
+\fill (0,5) circle (2.5pt);
+\node[below] at (-1,3.75) {$(-1,4)$};
+\node[below] at (1,3.75) {$(1,4)$};
+\node[above right] at (0,5.15) {$(0,5)$};
+
+% --- Segment 2: (1,2) closed --- (3,0) open ---
+\draw[very thick, blue] (1,2) -- (3,0);
+\fill (1,2) circle (2.5pt);
+\node[above] at (1,2.15) {$(1,2)$};
+
+% --- Segment 3: (3,0) open --- (4,1) closed ---
+\draw[very thick, blue] (3,0) -- (4,1);
+\draw[very thick, fill=white] (3,0) circle (2.5pt);
+\fill (4,1) circle (2.5pt);
+\node[below] at (3,-0.15) {$(3,0)$};
+\node[right] at (4.15,1) {$(4,1)$};
+
+\end{tikzpicture}
+
+\end{image}  
   
 \begin{enumerate}
 
