@@ -24,8 +24,8 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
 
 \begin{tikzpicture}[scale=0.8]
   % Axes
-  \draw[->] (-5,0) -- (5.2,0) node[below right] {\scriptsize $v$};
-  \draw[->] (0,-5) -- (0,5.2) node[above right] {\scriptsize $w$};
+  \draw[-{Latex[length=8pt,width=5pt]}] (-5,0) -- (5.2,0) node[below right] {\scriptsize $v$};
+  \draw[-{Latex[length=8pt,width=5pt]}] (0,-5) -- (0,5.2) node[above right] {\scriptsize $w$};
 
   % Axis ticks
   \foreach \x in {-4,-3,-2,-1,1,2,3,4}
@@ -48,9 +48,9 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
   \node[left] at (0,4)  {\scriptsize $4$};
 
   % Labels for specific points
-  \node[below] at (2,0) {\scriptsize $(2,0)$};
-  \node[below] at (-2,0) {\scriptsize $(-2,0)$};
-  \node[below] at (0,-4) {\scriptsize $(0,-4)$};
+  \node[above right] at (2,0) {\scriptsize $(2,0)$};
+  \node[above] at (-2,0) {\scriptsize $(-2,0)$};
+  \node[below right] at (0,-4) {\scriptsize $(0,-4)$};
   \node[below right] at (1,-3) {\scriptsize $(1,-3)$};
 
   % Function plot: w = v^2 - 4
@@ -61,7 +61,8 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
   \filldraw (  0,-4) circle (2pt);
   \filldraw (  2, 0) circle (2pt);
 
-  \draw (1,-3) circle (2pt); % unfilled point
+  \filldraw[white] (1,-3) circle (2pt); % unfilled point
+  \draw (1,-3) circle (2pt);
 \end{tikzpicture}
 
 % \begin{mfpic}[15]{-5}{5}{-5}{5}
@@ -123,18 +124,99 @@ For example, using the graph from Example \ref{functiongraphex01}, we write $\ds
 For another example, consider the graphs of the functions $f$, $g$, and $h$ below near $x = 2$. Through a precalculus lens, each of these functions is different at $x = 2$:   $f(2) = 3$, $g(2) = 1$, and $h(2)$ is undefined.  Through a Calculus lens, however, all three of these functions are behaving identically as  $x$ approaches $2$:   $\ds{\lim_{x \rightarrow 2} f(x) = 3}$, $\ds{ \lim_{x \rightarrow 2} g(x)= 3}$, and $\ds{\lim_{x \rightarrow 2} h(x) = 3}$.
 
 
-\begin{center}
+\begin{image}
 
-\begin{tabular}{ccc}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
- \includegraphics[width=2in]{./IntroLimitsGraphics/limitgrapha.png} &  \includegraphics[width=2in]{./IntroLimitsGraphics/limitgraphc.png} &  \includegraphics[width=2in]{./IntroLimitsGraphics/limitgraphb.png} \\
- 
- $y = f(x)$ & $y = g(x)$ & $y = h(x)$ \\
- 
- \end{tabular}
- 
- \end{center}
- 
+% --- Parameters ---
+% Parabola: y = 3 - (3/4)(x-2)^2, vertex (2,3), roots at x=0 and x=4
+\def\panelwidth{5.6}
+
+% ===================== PANEL 1: y = f(x) =====================
+\begin{scope}
+    % Axes
+    \draw[gray!70] (0,0) -- (4.3,0);
+    \draw[gray!70] (0,0) -- (0,3.3);
+    \node[below left] at (0,0) {$0$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (4,0) {$4$};
+    \node[left] at (0,2) {$2$};
+    \draw (2,-0.08) -- (2,0.08);
+    \draw (4,-0.08) -- (4,0.08);
+    \draw (-0.08,2) -- (0.08,2);
+
+    % Curve
+    \draw[very thick, domain=0:4, samples=60, smooth]
+        plot (\x, {3 - (3/4)*(\x-2)*(\x-2)});
+
+    % Vertex point (closed)
+    \fill (2,3) circle (2.5pt);
+    \node[above] at (2,3.15) {$(2,3)$};
+
+    % Caption
+    \node at (2,-0.9) {$y = f(x)$};
+\end{scope}
+
+% ===================== PANEL 2: y = g(x) =====================
+\begin{scope}[xshift=\panelwidth cm]
+    % Axes
+    \draw[gray!70] (0,0) -- (4.3,0);
+    \draw[gray!70] (0,0) -- (0,3.3);
+    \node[below left] at (0,0) {$0$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (4,0) {$4$};
+    \node[left] at (0,2) {$2$};
+    \draw (2,-0.08) -- (2,0.08);
+    \draw (4,-0.08) -- (4,0.08);
+    \draw (-0.08,2) -- (0.08,2);
+
+    % Curve
+    \draw[very thick, domain=0:4, samples=60, smooth]
+        plot (\x, {3 - (3/4)*(\x-2)*(\x-2)});
+
+    % Vertex point (open) -- hole in the curve
+    \draw[very thick, fill=white] (2,3) circle (2.5pt);
+    \node[above] at (2,3.15) {$(2,3)$};
+
+    % Isolated point below the hole (closed)
+    \fill (2,1) circle (2.5pt);
+    \node[below] at (2,0.85) {$(2,1)$};
+
+    % Caption
+    \node at (2,-0.9) {$y = g(x)$};
+\end{scope}
+
+% ===================== PANEL 3: y = h(x) =====================
+\begin{scope}[xshift=2*\panelwidth cm]
+    % Axes
+    \draw[gray!70] (0,0) -- (4.3,0);
+    \draw[gray!70] (0,0) -- (0,3.3);
+    \node[below left] at (0,0) {$0$};
+    \node[below] at (2,0) {$2$};
+    \node[below] at (4,0) {$4$};
+    \node[left] at (0,2) {$2$};
+    \draw (2,-0.08) -- (2,0.08);
+    \draw (4,-0.08) -- (4,0.08);
+    \draw (-0.08,2) -- (0.08,2);
+
+    % Curve
+    \draw[very thick, domain=0:4, samples=60, smooth]
+        plot (\x, {3 - (3/4)*(\x-2)*(\x-2)});
+
+    % Vertex point (open) -- hole in the curve, no replacement point
+    \draw[very thick, fill=white] (2,3) circle (2.5pt);
+    \node[above] at (2,3.15) {$(2,3)$};
+
+    % Caption
+    \node at (2,-0.9) {$y = h(x)$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
  Next let's head to Section \ref{ConstantandLinearFunctions} and revisit Example \ref{piecewiseconstantex} in a piecewise-defined function is used to model matinee admission prices at a local theater:
     
