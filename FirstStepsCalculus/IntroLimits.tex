@@ -544,74 +544,49 @@ We can adjust the inequality signs in the sort of argument\footnote{If this sort
 
 We'll explore Definition \ref{infinitelimitsatinfinity} more in the Exercises. In the meantime, the reader is encouraged to take some time and think about the inequalities in Definition \ref{infinitelimitsatinfinity} and how they force the corresponding graphical behavior showcased below:
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cccc}
+\def\panelwidth{4}
 
-\begin{mfpic}[25][15]{-1}{3}{-1}{5.5}
+% ===================== PANEL 1: lim_{x->inf} f(x) = inf =====================
+\begin{scope}
+    \draw[->] (0,0) -- (0,3) node[above] {$y$};
+    \draw[->] (-0.3,0.3) -- (3.2,0.3) node[right] {$x$};
+    \draw[very thick, ->] (0.9,0.6) -- (1.7,1.9);
+    \node at (1.6,-0.85) {$\displaystyle\lim_{x\to\infty} f(x) = \infty$};
+\end{scope}
 
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.5){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \function{1,2.2,0.1}{2*x}
-\end{mfpic} 
+% ===================== PANEL 2: lim_{x->inf} f(x) = -inf =====================
+\begin{scope}[xshift=\panelwidth cm]
+    \draw[->] (0,-0.3) -- (0,3) node[above] {$y$};
+    \draw[->] (-0.3,2.4) -- (3.2,2.4) node[right] {$x$};
+    \draw[very thick, ->] (0.9,1.9) -- (1.7,0.4);
+    \node at (1.6,-0.85) {$\displaystyle\lim_{x\to\infty} f(x) = -\infty$};
+\end{scope}
 
-& 
+% ===================== PANEL 3: lim_{x->-inf} f(x) = inf =====================
+\begin{scope}[xshift=2*\panelwidth cm]
+    \draw[->] (0,0) -- (0,3) node[above] {$y$};
+    \draw[->] (-0.3,0.3) -- (3.2,0.3) node[right] {$x$};
+    \draw[very thick, ->] (1.7,0.6) -- (0.9,1.9);
+    \node at (1.6,-0.85) {$\displaystyle\lim_{x\to-\infty} f(x) = \infty$};
+\end{scope}
 
-\begin{mfpic}[25][15]{-1}{3}{-5.5}{1}
+% ===================== PANEL 4: lim_{x->-inf} f(x) = -inf =====================
+\begin{scope}[xshift=3*\panelwidth cm]
+    \draw[->] (0,-0.3) -- (0,3) node[above] {$y$};
+    \draw[->] (-0.3,2.4) -- (3.2,2.4) node[right] {$x$};
+    \draw[very thick, ->] (1.7,1.9) -- (0.9,0.4);
+    \node at (1.6,-0.85) {$\displaystyle\lim_{x\to-\infty} f(x) = -\infty$};
+\end{scope}
 
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,1){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \function{1,2.2,0.1}{0-2*x}
-\end{mfpic} 
+\end{tikzpicture}
 
-& 
-
-
-\begin{mfpic}[25][15]{-3}{1}{-1}{5.5}
-
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.5){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \function{-2.2,-1,0.1}{0-2*x}
-\end{mfpic}  
-
-&
-
-
-\begin{mfpic}[25][15]{-3}{1}{-5.5}{1}
-
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,1){\scriptsize $y$}
-\penwd{1.25pt}
-\arrow \reverse \function{-2.2,-1,0.1}{2*x}
-\end{mfpic}  \\
-
-
-$\ds{\lim_{x \rightarrow \infty} f(x)  = \infty}$
-
-&
-
-$\ds{\lim_{x \rightarrow \infty} f(x)  = -\infty}$
-
-&
-
-$\ds{\lim_{x \rightarrow -\infty} f(x)  = \infty}$
-
-&
-
-$\ds{\lim_{x \rightarrow -\infty} f(x)  = -\infty}$ \\
-
-
-
-\end{tabular}
-
-\end{center}
+\end{image}
 
 
 Combining the ideas of what it means for $x$ or $f(x)$ to approach (finite) real numbers along with our (more precise notion) of what it means for $x$ or $f(x)$ to approach $-\infty$ or $\infty$, we can mix and match to produce expressions and graphs containing vertical and horizontal asymptotes such as the ones depicted below:
