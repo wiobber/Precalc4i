@@ -404,38 +404,75 @@ In Exercises \ref{othertriglimitexfirst} - \ref{othertriglimitexlast}, determine
 
 \begin{problem}\label{othertriglimitexfirst} 
     $\ds{\lim_{t \rightarrow 0} \tan(t)}$.
+
+    \begin{solution}
+        $\ds{\lim_{t \rightarrow 0} \tan(t) = \tan(0) = 0}$.
+    \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{t \rightarrow \pi} \sec(t)}$
+
+    \begin{solution}
+        $\ds{\lim_{t \rightarrow \pi} \sec(t) = \sec(\pi) = -1}$
+    \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{t \rightarrow 3\pi}}$ $\cot\left(\frac{t}{2}\right)$
+    
+\begin{solution}
+    $\ds{\lim_{t \rightarrow 3\pi}}$ $\cot\left(\frac{t}{2}\right) = \cot\left(\frac{3\pi}{2}\right) = 0$
+\end{solution}
+    
 \end{problem}
 
 \begin{problem}
      $\ds{\lim_{\theta \rightarrow 0}}$ $\csc\left(2\theta + \frac{\pi}{4}\right)$.
+
+     \begin{solution}
+         $\ds{\lim_{\theta \rightarrow 0}}$ $\csc\left(2\theta + \frac{\pi}{4}\right) = \csc\left(\frac{\pi}{4}\right) = \sqrt{2}$.
+     \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{\theta \rightarrow \pi} (\cos(\theta)  -  \sec(\theta))}$
+
+    \begin{solution}
+         $\ds{\lim_{\theta \rightarrow \pi} (\cos(\theta)  -  \sec(\theta)) = \cos(\pi) - \sec(\pi) = -1 - (-1) = 0}$
+    \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{\theta \rightarrow \frac{\pi}{4}} \sec(\theta) \, \tan(\theta)}$
+
+    \begin{solution}
+         $\ds{\lim_{\theta \rightarrow \frac{\pi}{4}} (\sec(\theta) \, \tan(\theta)) = \sec\left( \frac{\pi}{4} \right) \tan\left( \frac{\pi}{4} \right) = \sqrt{2}}$
+    \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{x \rightarrow 0^{+}} \csc(3x)}$
+
+    \begin{solution}
+        $\ds{\lim_{x \rightarrow 0^{+}} \csc(3x) = \infty}$
+    \end{solution}
 \end{problem}
 
 \begin{problem}
     $\ds{\lim_{x \rightarrow \pi^{-}}  (\sin(2x)  - \tan(x))}$
+
+    \begin{solution}
+        $\ds{\lim_{x \rightarrow \pi^{-}}  (\sin(2x)  - \tan(x))}  = \sin(2\pi) - \tan(\pi) = 0$
+    \end{solution}
 \end{problem}
 
 \begin{problem}\label{othertriglimitexlast} 
     $\ds{\lim_{x \rightarrow \pi^{+}}}$ $(\cos(x) + \cot(x))$
+
+    \begin{solution}
+        $\ds{\lim_{x \rightarrow \pi^{+}}}$ $(\cos(2x) + \cot(x)) =  \infty$
+    \end{solution}
 \end{problem}
 
 \end{question}
@@ -450,20 +487,39 @@ In Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions},
 
 \item \label{thetaoversinetheta} Use Theorem \ref{LimitProp01} from Section \ref{IntroLimits} to show  $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\theta}{\sin(\theta)} = 1$.
 
+\begin{solution}
+    $\ds{\lim_{\theta \rightarrow 0}}$ $\frac{\theta}{\sin(\theta)}$ $ = \ds{\lim_{\theta \rightarrow 0}}$ $\left[\frac{\sin(\theta)}{\theta}\right]^{-1} = 1^{-1} = 1$
+\end{solution}
 \smallskip
 
 
 \item  Which indeterminate form is present in the limit $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \csc(\theta)}$?
 
+\begin{solution}
+    As $\theta \rightarrow 0^{+}$, $2 \theta \, \csc(\theta) \rightarrow 0 \cdot \infty$.
+\end{solution}
+
 \smallskip
 
 \item  Graph $f(\theta) = 2 \theta \, \csc(\theta)$ near $\theta = 0$.  What appears to be the limit?
+
+\begin{solution}
+    The graph of  $f(\theta) = 2 \theta \, \csc(\theta)$ approaches $(0,2)$ so  $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \csc(\theta)}$ appears to be $2$.
+\end{solution}
 
 \smallskip
 
 \item  Rewrite $2 \theta \, \csc(\theta)$ in terms of $\theta$ and $\sin(\theta)$ and use part \ref{thetaoversinetheta} to analytically find $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \csc(\theta)}$.
 
+\begin{solution}
+     $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \csc(\theta)}$ $= \ds{\lim_{\theta \rightarrow 0^{+}}}$ $2 \, \theta \frac{1}{\sin(\theta)}$ $= \ds{\lim_{\theta \rightarrow 0^{+}}}$ $2 \, \frac{\theta}{\sin(\theta)} = 2(1) = 2$.
+\end{solution}
+
 \item  Use the same methodology as above  to help you analytically determine $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \cot(\theta)}$
+
+\begin{solution}
+    $\ds{\lim_{\theta \rightarrow 0^{+}} 2 \theta \, \cot(\theta)}$ $= \ds{\lim_{\theta \rightarrow 0^{+}}}$ $2 \, \theta \, \frac{\cos(\theta)}{\sin(\theta)}$  $= \ds{\lim_{\theta \rightarrow 0^{+}}}$ $2 \, \cos(\theta) \, \frac{\theta}{\sin(\theta)} = 2\cos(0)(1) = 2(1)(1) = 2$
+\end{solution}
 
 
 \setcounter{HW}{\value{enumi}}
@@ -474,6 +530,14 @@ In Exercise \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions},
 
 \begin{problem}\label{secantcosecantshiftexercise}  
     Use the conversion formulas listed in Theorem \ref{cosinesinefunctionprops} to create conversion formulas between secant and cosecant functions.
+
+    \begin{solution}
+        $\csc\left(t + \frac{\pi}{2} \right) = \sec(t)$ and $\sec\left(t - \frac{\pi}{2} \right) = \csc(t)$.
+    \end{solution}
+
+    \begin{solution}
+         $f(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1 = \csc\left( \left[2 t - \frac{7\pi}{6}\right] + \frac{\pi}{2}  \right) -1 = \csc\left( 2 t - \frac{2\pi}{3} \right) -1 $, in terms of cosecants.
+    \end{solution}
 \end{problem}
 
 \begin{problem}
