@@ -7,70 +7,758 @@
 \mfpicnumber{1} \opengraphsfile{ExercisesforPolarCoordinates} % mfpic settings added 
 
 \begin{question}
-In Exercises \ref{polarpointgraphfirst} - \ref{polarpointgraphlast}, plot the point given in polar coordinates and then give three different expressions for the point such that \hfill (a) $r < 0$ and $0 \leq \theta \leq 2\pi$, \hfill (b) $r > 0$ and $\theta \leq 0$ \hfill (c) $r > 0$ and $\theta \geq 2\pi$
+In Exercises \ref{polarpointgraphfirst} - \ref{polarpointgraphlast}, plot the point given in polar coordinates in the $xy$-plane and then give three different expressions for the point such that  (a) $r < 0$ and $0 \leq \theta \leq 2\pi$,  (b) $r > 0$ and $\theta \leq 0$ (c) $r > 0$ and $\theta \geq 2\pi$
 
 \begin{problem}\label{polarpointgraphfirst}
-$\left( 2, \frac{\pi}{3} \right)$    
+$\left( 2, \frac{\pi}{3} \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=3, ymin=-1, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0,1,2},
+    ytick={0,1,2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (1,0) arc[start angle=0,end angle=55,radius=1];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (1, 1.73205);
+    
+% Filled point
+\fill (1, 1.73205) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -2, \frac{4\pi}{3} \right)$
+
+(b) $\left( 2, -\frac{5\pi}{3} \right)$
+
+(c) $\left( 2, \frac{7\pi}{3} \right)$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $\left( 5, \frac{7\pi}{4} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=5, ymin=-5, ymax=1,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0,1,2,3,4},
+    ytick={-4,-3,-2,-1,0},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (0.5,0) arc[start angle=0,end angle=310,radius=0.5];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (3.536, -3.536);
+    
+% Filled point
+\fill (3.536, -3.536) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -5, \frac{3\pi}{4} \right)$
+
+(b) $\left( 5, -\frac{\pi}{4} \right)$
+
+(c) $\left( 5, \frac{15\pi}{4} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( \frac{1}{3}, \frac{3\pi}{2} \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (0.25,0) arc[start angle=0,end angle=265,radius=0.25];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (0, -1/3);
+    
+% Filled point
+\fill (0, -1/3) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -\frac{1}{3}, \frac{\pi}{2} \right)$
+
+(b) $\left( \frac{1}{3}, -\frac{\pi}{2} \right)$
+
+(c) $\left( \frac{1}{3}, \frac{7\pi}{2} \right)$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
-$\left( \frac{5}{2}, \frac{5\pi}{6} \right)$   
+$\left( \frac{5}{2}, \frac{5\pi}{6} \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=1, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3,-2,-1,0},
+    ytick={0,1,2,3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (0.5,0) arc[start angle=0,end angle=145,radius=0.5];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-2.16, 1.25);
+    
+% Filled point
+\fill (-2.16, 1.25) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -\frac{5}{2}, \frac{11\pi}{6} \right)$
+
+(b) $\left( \frac{5}{2}, -\frac{7\pi}{6} \right)$
+
+(c) $\left( \frac{5}{2}, \frac{17\pi}{6} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( 12, -\frac{7\pi}{6} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-13, xmax=3, ymin=-3, ymax=13,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-12, -9, -6, -3, 0},
+    ytick={0,3,6,9,12},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (2,0) arc[start angle=0,end angle=-205,radius=2];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-10.392,6);
+    
+% Filled point
+\fill (-10.392,6) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -12, \frac{11\pi}{6} \right)$
+
+(b) $\left( 12, -\frac{19\pi}{6} \right)$
+
+(c) $\left(12, \frac{17\pi}{6} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( 3, -\frac{5\pi}{4} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=2, ymin=-2, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0},
+    ytick={0,1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (1,0) arc[start angle=0,end angle=-220,radius=1];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-2.12,2.12);
+    
+% Filled point
+\fill (-2.12,2.12) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -3, \frac{7\pi}{4} \right)$
+
+(b) $\left( 3, -\frac{13\pi}{4} \right)$
+
+(c) $\left(3, \frac{11\pi}{4} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( 2\sqrt{2}, -\pi \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=2, ymin=-2, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0},
+    ytick={0,1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (.5,0) arc[start angle=0,end angle=-175,radius=.5];
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-2.83,0);
+    
+% Filled point
+\fill (-2.83,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -2 \sqrt{2}, 0 \right)$
+
+(b) $\left( 2 \sqrt{2}, -3\pi \right)$
+
+(c) $\left(2\sqrt{2}, 3\pi \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( \frac{7}{2}, -\frac{13\pi}{6} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=4, ymin=-4, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2, 3},
+    ytick={-3,-2,-1,0,1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+%\draw[->] (.5,0) arc[start angle=0,end angle=-175,radius=.5];
+
+%Circular arrow if over one revolution
+\addplot[domain=0:385, samples=400,->]
+({((x+100)/400)*cos(-x)},
+ {((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (3.03,-1.75);
+    
+% Filled point
+\fill (3.03,-1.75) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -\frac{7}{2}, \frac{5\pi}{6} \right)$
+
+(b) $\left( \frac{7}{2}, - \frac{\pi}{6} \right)$
+
+(c) $\left(\frac{7}{2}, \frac{23\pi}{6} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -20, 3\pi \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-25, xmax=25, ymin=-25, ymax=25,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-20, -10, 0, 10, 20},
+    ytick={-20, -10, 0, 10, 20},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+%\draw[->] (.5,0) arc[start angle=0,end angle=-175,radius=.5];
+
+%Circular arrow if over one revolution
+\addplot[domain=180:715, samples=400,->]
+({((x+100)/160)*cos(x)},
+ {((x+100)/160)*sin(x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (20,0);
+    
+% Filled point
+\fill (20,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -20, \pi \right)$
+
+(b) $\left( 20, - 2\pi \right)$
+
+(c) $\left(20,4\pi \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -4, \frac{5\pi}{4} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=4, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 1, 2, 3},
+    ytick={0,1,2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+% Circular arrow
+\draw[->] (-0.75,0) arc[start angle=180,end angle=400,radius=0.75];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (2.828, 2.828);
+    
+% Filled point
+\fill (2.828, 2.828) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -4, \frac{5\pi}{4} \right)$
+
+(b) $\left( 4, - \frac{7\pi}{4} \right)$
+
+(c) $\left(4, \frac{9\pi}{4} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -1, \frac{2\pi}{3} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,0,1},
+    ytick={-1,0,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-0.5,0) arc[start angle=180,end angle=295,radius=0.5];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (0.5, -0.87);
+    
+% Filled point
+\fill (0.5, -0.87) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -1, \frac{2\pi}{3} \right)$
+
+(b) $\left( 1, - \frac{\pi}{3} \right)$
+
+(c) $\left(1, \frac{11\pi}{3} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -3, \frac{\pi}{2} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=1, ymin=-4, ymax=1,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1,0},
+    ytick={-3, -2, -1,0},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-1.5,0) arc[start angle=180,end angle=265,radius=1.5];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (0,-3);
+    
+% Filled point
+\fill (0, -3) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -3, \frac{\pi}{2} \right)$
+
+(b) $\left( 3, - \frac{\pi}{2} \right)$
+
+(c) $\left(3, \frac{7\pi}{2} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -3, -\frac{11\pi}{6} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=1.5, ymin=-4, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0},
+    ytick={-3,-2,-1,0},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-1,0) arc[start angle=-180,end angle=-505,radius=1];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-2.6, -1.5);
+    
+% Filled point
+\fill (-2.6, -1.5) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -3, \frac{\pi}{6} \right)$
+
+(b) $\left( 3, - \frac{5\pi}{6} \right)$
+
+(c) $\left(3, \frac{19\pi}{6} \right)$
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left( -2.5, -\frac{\pi}{4} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=1.5, ymin=-1.5, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0},
+    ytick={0, 1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-1,0) arc[start angle=-180,end angle=-220,radius=1];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (-1.77, 1.77);
+    
+% Filled point
+\fill (-1.77, 1.77) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -2.5, \frac{7\pi}{4} \right)$
+
+(b) $\left( 2.5, - \frac{5\pi}{4} \right)$
+
+(c) $\left(2.5, \frac{11\pi}{4} \right)$
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $\left( -\sqrt{5}, -\frac{4\pi}{3} \right)$
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=3, ymin=-3, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 0, 1, 2},
+    ytick={-2, -1, 0, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-1,0) arc[start angle=-180,end angle=-415,radius=1];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (1.12, -1.94);
+    
+% Filled point
+\fill (1.12, -1.94) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -\sqrt{5}, \frac{2\pi}{3} \right)$
+
+(b) $\left( \sqrt{5}, - \frac{\pi}{3} \right)$
+
+(c) $\left(\sqrt{5}, \frac{11\pi}{3} \right)$
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem} \label{polarpointgraphlast}
 $\left( -\pi, -\pi \right)$ 
+
+\begin{solution}
+
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=4, ymin=-1.5, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 0, 1, 2, 3},
+    ytick={-1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Circular arrow
+\draw[->] (-1,0) arc[start angle=-180,end angle=-355,radius=1];
+
+%Circular arrow if over one revolution
+%\addplot[domain=0:385, samples=400, line width=1pt,->]
+%({((x+100)/400)*cos(-x)},
+ %{((x+100)/400)*sin(-x)});
+
+% Radius
+\draw[dashed, line width = 1.25pt] (0,0) -- (3.14, 0);
+    
+% Filled point
+\fill (3.14, 0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+(a) $\left( -\pi,\pi \right)$
+
+(b) $\left( \pi, - 2\pi \right)$
+
+(c) $\left(\pi, 2\pi \right)$
+
+\end{solution}
+
 \end{problem} 
 
 \end{question}
@@ -81,10 +769,17 @@ In Exercises \ref{polartorectfirst} - \ref{polartorectlast}, convert the point f
 
 \begin{problem}\label{polartorectfirst} 
 $\left( 5, \frac{7\pi}{4} \right)$ 
+
+\begin{solution}
+$\left( \frac{5\sqrt{2}}{2}, -\frac{5\sqrt{2}}{2} \right)$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $\left( 2, \frac{\pi}{3} \right)$
+
+$\left( \answer{1}, \answer{\sqrt{3}} \right)$
+
 \end{problem}
 
 \begin{problem}
