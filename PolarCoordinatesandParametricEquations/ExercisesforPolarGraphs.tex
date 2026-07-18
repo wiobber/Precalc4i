@@ -6,6 +6,22 @@
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforPolarGraphs} % mfpic settings added 
 
+\begin{tikzpicture}[scale=1.5]
+    % Draw a simple background grid
+    \draw[gray!30, thin] (0,0) circle (1) circle (2) circle (3) circle (4);
+    \draw[gray!30, thin] (-4.5,0) -- (1.5,0) (0,-2.5) -- (0,2.5);
+
+    % Plot the cardioid
+    % TikZ math engine uses degrees by default
+    \draw[thick, red, smooth, samples=100, domain=0:360] 
+        plot (\x: {2 - 2*cos(\x)});
+        
+    % Label the origin
+    \node[below left] at (0,0) {O};
+\end{tikzpicture}
+
+
+
 \begin{question}
 In Exercises \ref{polarplotfirst} - \ref{polarplotlast}, plot the graph of the polar equation by hand.  Carefully label your graphs.
 
