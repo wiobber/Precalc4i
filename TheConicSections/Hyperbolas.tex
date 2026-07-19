@@ -294,7 +294,7 @@ The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respe
 
 % --- Axes ---
 \draw[->] (-1.1,0) -- (7.3,0) node[right] {$x$};
-\draw[->] (0,-5.9) -- (0,5.9) node[above] {$y$};
+\draw[->] (0,-5.9) -- (0,4.9) node[above] {$y$};
 
 % --- Tick marks and labels on x-axis ---
 \foreach \x in {1,2,3,4,5,6}{
@@ -303,7 +303,7 @@ The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respe
 }
 
 % --- Tick marks and labels on y-axis ---
-\foreach \y in {-5,-4,-3,-2,-1,1,2,3,4,5}{
+\foreach \y in {-5,-4,-3,-2,-1,1,2,3,4}{
     \draw (-0.08,\y) -- (0.08,\y);
     \node[left] at (-0.12,\y) {$\y$};
 }
@@ -312,11 +312,11 @@ The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respe
 \pgfmathsetmacro{\tmax}{ln(sqrt(3)+2)*1.08} % slightly past the frame edges
 
 % --- Upper branch: y = k + a*cosh(t), x = h + b*sinh(t) ---
-\draw[very thick, domain=-\tmax:\tmax, samples=80, smooth, variable=\t]
+\draw[very thick,blue, domain=-\tmax:\tmax, samples=80, smooth, variable=\t]
     plot ({\h + \bb*sinh(\t)}, {\k + \a*cosh(\t)});
 
 % --- Lower branch: y = k - a*cosh(t), x = h + b*sinh(t) ---
-\draw[very thick, domain=-\tmax:\tmax, samples=80, smooth, variable=\t]
+\draw[very thick,blue, domain=-\tmax:\tmax, samples=80, smooth, variable=\t]
     plot ({\h + \bb*sinh(\t)}, {\k - \a*cosh(\t)});
 
 % --- Key points ---
@@ -356,27 +356,9 @@ The values of $a$ and $b$ determine how far in the $x$ and $y$ directions, respe
 
 We identify $h = 2$ and $k = 0$, so the hyperbola is centered at $(2,0)$.  We also see  $a = 2$, and  $b=5$, which means we move $2$ units to the  left and to the right of the center and $5$ units up and down from the center to arrive at points on the guide rectangle:   $(2-2, 0) = (0,0)$, $(2+2, 0) = (4,0)$, $(2, 0+5) = (2,5)$, and $(2, 0-5) = (2,-5)$.  Since slant asymptotes pass through the center of the hyperbola as well as the corners of the rectangle, we get the set-up as drawn below.
 
-
+% https://www.desmos.com/calculator/drpno6desm
 \begin{center}
-
-\begin{mfpic}[15]{-4}{8}{-8}{8}
-\axes
-\tlabel(8,-0.5){\scriptsize $x$}
-\tlabel(0.5,8){\scriptsize $y$}
-\tcaption{\scriptsize \vphantom{The graph of $25(x-2)^2 - 4y^2 = 100$.}}
-\xmarks{-2, -1, 0, 1, 2, 3, 4, 5,6,7}
-\ymarks{-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
-\dotted[1pt, 3pt] \polyline{(0, -5), (0, 5), (4, 5), (4, -5), (0, -5)}
-\plotsymbol[3pt]{Cross}{(2,0)}
-\arrow \reverse \arrow \dashed \function{-0.75,4.75,.1}{(5/2)*(x-2)}
-\arrow \reverse \arrow \dashed \function{-0.75,4.75,.1}{(-5/2)*(x-2)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$-1 \hspace{7pt}$}{-1}, {$1$} 1,  {$3$} 3, {$5$} 5, {$7$} 7}
-\axislabels {y}{{$-7$} -7,  {$-5$} -5,  {$-3$} -3,  {$-1$}{-1}, {$1$} 1,  {$3$} 3,  {$5$} 5, {$7$} 7}
-\normalsize
-\end{mfpic}
-
+    \desmos{drpno6desm}{800}{600}
 \end{center}
 
 Since the $y^2$ term is being subtracted from the $x^2$ term, we are in the situation of Equation \ref{standardhhyperbola}. Hence,  the branches of the hyperbola open to the left and right so  the transverse axis lies along the $x$-axis and  the conjugate axis lies along the vertical line $x = 2$.  
@@ -391,39 +373,9 @@ Since the vertices of the hyperbola are where the hyperbola intersects the trans
 
 Lastly, to determine the equations of the asymptotes, recall that the asymptotes pass through the center of the hyperbola, $(2,0)$, as well as the corners of guide rectangle.  As such,  they have slopes of $\pm \frac{b}{a} = \pm \frac{5}{2}$.  Feeding this information into  the point-slope equation of a line, Equation \ref{pointslope}, we get $y -0 = \pm \frac{5}{2} (x - 2)$, so the asymptotes are  $y = \frac{5}{2}x - 5$ and $y = -\frac{5}{2}x + 5$.  Putting it all together, we get our final graph below.
 
-
-
-
+% https://www.desmos.com/calculator/r0duejrdpw
 \begin{center}
-
-\begin{mfpic}[15]{-4}{8}{-8}{8}
-\axes
-\tlabel(8,-0.5){\scriptsize $x$}
-\tlabel(0.5,8){\scriptsize $y$}
-\tlabel[cc](4.75, -0.5){\scriptsize $(4,0)$}
-\tlabel[cc](-0.75, -0.5){\scriptsize $(0,0)$}
-\tlabel[cc](3, 7){\scriptsize $y = \frac{5}{2}x - 5$}
-\tlabel[cc](3, -7){\scriptsize $y =  -\frac{5}{2}x + 5$}
-\tcaption{\scriptsize The graph of $25(x-2)^2 - 4y^2 = 100$.}
-\xmarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
-\ymarks{-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}
-\dotted[1pt, 3pt] \polyline{(0, -5), (0, 5), (4, 5), (4, -5), (0, -5)}
-\dotted[1pt, 3pt] \polyline{(2,-5), (2,5) }
-\arrow \reverse \arrow \dashed \function{-1.25,5.25,.1}{(5/2)*(x-2)}
-\arrow \reverse \arrow \dashed \function{-1.25,5.25,.1}{(-5/2)*(x-2)}
-\plotsymbol[3pt]{Cross}{(2,0)}
-\plotsymbol[3pt]{Asterisk}{(7.385164807, 0), (-3.385164807, 0)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$1$} 1,  {$3$} 3,  {$7$} 7}
-\axislabels {y}{{$-7$} -7,  {$-5$} -5,  {$1$} 1,    {$5$} 5, {$7$} 7}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(2+2*cosh(t),5*sinh(t))}
-\arrow \reverse \arrow \parafcn{-1.25,1.25,0.1}{(2-2*cosh(t),5*sinh(t))}
-\point[4pt]{(0,0),(4,0)}
-\end{mfpic}
-
+\desmos{r0duejrdpw}{800}{600}
 \end{center}
 
 \item  Since we have a difference of squares in $9y^2-x^2-6x=10$, we aim to transform our given equation into  Equation \ref{standardhhyperbola} or Equation \ref{standardvhyperbola}.  As we've seen with the other conic sections, we begin with completing the square.
