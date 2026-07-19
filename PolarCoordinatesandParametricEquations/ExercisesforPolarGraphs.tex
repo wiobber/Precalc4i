@@ -6,104 +6,744 @@
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforPolarGraphs} % mfpic settings added 
 
-\begin{tikzpicture}[scale=1.5]
-    % Draw a simple background grid
-    \draw[gray!30, thin] (0,0) circle (1) circle (2) circle (3) circle (4);
-    \draw[gray!30, thin] (-4.5,0) -- (1.5,0) (0,-2.5) -- (0,2.5);
-
-    % Plot the cardioid
-    % TikZ math engine uses degrees by default
-    \draw[thick, red, smooth, samples=100, domain=0:360] 
-        plot (\x: {2 - 2*cos(\x)});
-        
-    % Label the origin
-    \node[below left] at (0,0) {O};
-\end{tikzpicture}
-
-
-
 \begin{question}
 In Exercises \ref{polarplotfirst} - \ref{polarplotlast}, plot the graph of the polar equation by hand.  Carefully label your graphs.
 
 \begin{problem} \label{polarplotfirst}
 Circle: $r = 6\sin(\theta)$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.75, xmax=3.75, ymin=-1, ymax=6.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6, 6},
+    ytick={0, 6},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {6*sin( \x)});
+        
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Circle: $r = 2\cos(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=3, ymin=-2, ymax=2,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 2},
+    ytick={-1, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {2*cos( \x)});
+        
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Rose: $r = 2\sin(2\theta)$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, 2},
+    ytick={-2, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {2*sin( 2*\x)});
+        
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Rose: $r = 4\cos(2\theta)$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, 4},
+    ytick={-4, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {4*cos( 2*\x)});
+    %Tangents at the pole
+    \draw[dashed] (-3.25,-3.25) -- (3.25,3.25) (-3.25,3.25) -- (3.25, -3.25);
+    \node at (4,4) {$\theta = \frac{\pi}{4}$};
+    \node at (-4,4) {\small $\theta = \frac{3\pi}{4}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Rose: $r = 5\sin(3\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5, 5},
+    ytick={-5, 5},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {5*sin( 3*\x)});
+    %Tangents at the pole
+    \draw[dashed] (-2,3.464) -- (2,-3.464) (-2,-3.464) -- (2,3.464);
+    \node at (2.5,4.5) {\small $\theta = \frac{\pi}{3}$};
+    \node at (-2.5,4.5) {\small $\theta = \frac{2\pi}{3}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Rose: $r = \cos(5\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.25, xmax=1.25, ymin=-1.25, ymax=1.25,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 1},
+    ytick={-1, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {cos( 5*\x)});
+    %Tangents at the pole
+    \draw[dashed] (3.804/5,1.236/5) -- (-3.804/5,-1.236/5)  (2.351/5,3.236/5) -- (-2.351/5,-3.236/5)  (-2.351/5,3.236/5) -- (2.351/5,-3.236/5)  (-3.804/5,1.236/5) -- (3.804/5,-1.236/5);
+    \node at (5/5,2/5) {\small $\theta = \frac{\pi}{10}$};
+    \node at (4/5,4/5) {\small $\theta = \frac{3\pi}{10}$};
+    \node at (-4/5,4/5) {\small $\theta = \frac{7\pi}{10}$};
+    \node at (-5/5,1/5) {\small $\theta = \frac{9\pi}{10}$};
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Rose: $r = \sin(4\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, 4},
+    ytick={-4, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {4*sin( 4*\x)});
+    %Tangents at the pole
+    \draw[dashed] (-3.25,-3.25) -- (3.25,3.25) (-3.25,3.25) -- (3.25, -3.25);
+    \node at (4,4) {\small $\theta = \frac{\pi}{4}$};
+    \node at (-4,4) {\small $\theta = \frac{3\pi}{4}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem} \label{roseexercise8petal}
 Rose: $r = 3\cos(4\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, 4},
+    ytick={-4, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+    \draw[thick, blue, smooth, samples=100, domain=0:360] 
+        plot (\x: {3*cos( 4*\x)});
+    %Tangents at the pole
+    \draw[dashed] (3.696,1.531) -- (-3.696,-1.531) (1.531,3.696) --(-1.531,-3.696) (-1.531,3.696) -- (1.531,-3.696) (-3.696,1.531) -- (3.696,-1.531);
+
+    \node at (3.5,2) {\small $\theta = \frac{\pi}{8}$};
+    \node at (2,4.4) {\small $\theta = \frac{3\pi}{8}$};
+    \node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    \node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Cardioid: $r = 3 - 3\cos(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6.5, xmax=2.5, ymin=-4.5, ymax=4.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6, 1},
+    ytick={-3, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3 - 3*cos(\x)) * cos(\x) }, { (3 - 3*cos(\x)) * sin(\x) });
+    %Tangents at the pole
+    %\draw[dashed] (3.696,1.531) -- (-3.696,-1.531) (1.531,3.696) --(-1.531,-3.696) (-1.531,3.696) -- (1.531,-3.696) (-3.696,1.531) -- (3.696,-1.531);
+
+    %\node at (3.5,2) {\small $\theta = \frac{\pi}{8}$};
+    %\node at (2,4.4) {\small $\theta = \frac{3\pi}{8}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Cardioid: $r = 5 + 5\sin(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-7, xmax=7, ymin=-2, ymax=12,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5, 5},
+    ytick={5, 10},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (5 + 5*sin(\x)) * cos(\x) }, { (5 + 5*sin(\x)) * sin(\x) });
+    %Tangents at the pole
+    %\draw[dashed] (3.696,1.531) -- (-3.696,-1.531) (1.531,3.696) --(-1.531,-3.696) (-1.531,3.696) -- (1.531,-3.696) (-3.696,1.531) -- (3.696,-1.531);
+
+    %\node at (3.5,2) {\small $\theta = \frac{\pi}{8}$};
+    %\node at (2,4.4) {\small $\theta = \frac{3\pi}{8}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Cardioid: $r = 2 + 2\cos(\theta)$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=5, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={4},
+    ytick={-2, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (2 + 2*cos(\x)) * cos(\x) }, { (2 + 2*cos(\x)) * sin(\x) });
+    %Tangents at the pole
+    %\draw[dashed] (3.696,1.531) -- (-3.696,-1.531) (1.531,3.696) --(-1.531,-3.696) (-1.531,3.696) -- (1.531,-3.696) (-3.696,1.531) -- (3.696,-1.531);
+
+    %\node at (3.5,2) {\small $\theta = \frac{\pi}{8}$};
+    %\node at (2,4.4) {\small $\theta = \frac{3\pi}{8}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Cardioid: $r = 1 - \sin(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=2, ymin=-3, ymax=1,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,1},
+    ytick={-2, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (1 - sin(\x)) * cos(\x) }, { (1 - sin(\x)) * sin(\x) });
+    %Tangents at the pole
+    %\draw[dashed] (3.696,1.531) -- (-3.696,-1.531) (1.531,3.696) --(-1.531,-3.696) (-1.531,3.696) -- (1.531,-3.696) (-3.696,1.531) -- (3.696,-1.531);
+
+    %\node at (3.5,2) {\small $\theta = \frac{\pi}{8}$};
+    %\node at (2,4.4) {\small $\theta = \frac{3\pi}{8}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 1 - 2\cos(\theta)$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=2, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3,-1},
+    ytick={-1, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (1 - 2*cos(\x)) * cos(\x) }, { (1 - 2*cos(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (2/1.75,3.464/1.75) (0,0) -- (2/1.75,-3.464/1.75);
+    \node at (2/1.5,3.5/1.5) {\small $\theta = \frac{\pi}{3}$};
+    \node at (2/1.5,-3.5/1.5) {\small $\theta = \frac{5\pi}{3}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 1 - 2\sin(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-4, ymax=2,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,-1},
+    ytick={-3, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (1 - 2*sin(\x)) * cos(\x) }, { (1 - 2*sin(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (3.464/1.75, 2/1.75) (0,0) -- (-3.464/1.75, 2/1.75);
+    \node at (3.5/1.5, 2/1.5) {\small $\theta = \frac{\pi}{6}$};
+    \node at (-3.5/1.5, 2/1.5) {\small $\theta = \frac{5\pi}{6}$};
+    %\node at (-2,4.4) {\small $\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {\small $\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 2\sqrt{3} + 4\cos(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=10, ymin=-8, ymax=8,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, 2, 4, 6, 8},
+    ytick={-6, -4, -2, 2, 4, 6},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3.464 + 4*cos(\x)) * cos(\x) }, { (3.464 + 4*cos(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (-3.464,2) (0,0) -- (-3.464,-2);
+    \node at (-4, 3.5) {\small $\theta = \frac{5\pi}{6}$};
+    \node at (-4, -3.5) {\small $\theta = \frac{7\pi}{6}$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 3-5\cos(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-10, xmax=6, ymin=-8, ymax=8,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-8, -6, -4, -2, 2},
+    ytick={-6, -4, -2, 2, 4, 6},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3 - 5*cos(\x)) * cos(\x) }, { (3 - 5*cos(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (2.41,3.19) (0,0) -- (2.41,-3.19);
+    \node at (3, 4) {\tiny $\theta = \arccos\left(\frac{3}{5}\right)$};
+    \node at (3, -4) {\tiny $\theta = 2\pi - \arccos\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 3-5\sin(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-10, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6, -4, -2, 2, 4, 6},
+    ytick={-8, -6, -4, -2, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3 - 5*sin(\x)) * cos(\x) }, { (3 - 5*sin(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (3.19, 2.41) (0,0) -- (-3.19, 2.41);
+    \node at (4, 3) {\tiny $\theta = \arcsin\left(\frac{3}{5}\right)$};
+    \node at (-4, 3) {\tiny $\theta = \pi - \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 Lima\c{c}on: $r = 2 + 7\sin(\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-4, ymax=12,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, 2},
+    ytick={5, 9},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (2 + 7*sin(\x)) * cos(\x) }, { (2 + 7*sin(\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (0,0) -- (-3.842,-1.113) (0,0) -- (3.842,-1.113);
+    \node at (-4, -2) {\tiny $\theta = \pi+ \arcsin\left(\frac{2}{7}\right)$};
+    \node at (4, -2) {\tiny $\theta = 2\pi - \arcsin\left(\frac{2}{7}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 Lemniscate: $r^{2} = \sin(2\theta)$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,1},
+    ytick={-1, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:90] 
+    plot ({ (sqrt(sin(2*\x)) * cos(\x) }, { (sqrt(sin(2*\x)) * sin(\x) });
+\draw[thick, blue, smooth, samples=100, domain=180:270] 
+    plot ({ (sqrt(sin(2*\x)) * cos(\x) }, { (sqrt(sin(2*\x)) * sin(\x) });
+    %Tangents at the pole
+    %\draw[dashed] (0,0) -- (-3.842,-1.113) (0,0) -- (3.842,-1.113);
+    %\node at (-4, -2) {\tiny $\theta = \pi+ \arcsin\left(\frac{2}{7}\right)$};
+    %\node at (4, -2) {\tiny $\theta = 2\pi - \arcsin\left(\frac{2}{7}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem} \label{polarplotlast}
 Lemniscate: $r^{2} = 4\cos(2\theta)$ 
 \end{problem}
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=3.5, ymin=-3.5, ymax=3.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,2},
+    ytick={-2, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=-45:45] 
+    plot ({ (sqrt(4*cos(2*\x)) * cos(\x) }, { (sqrt(4*cos(2*\x)) * sin(\x) });
+\draw[thick, blue, smooth, samples=100, domain=135:225] 
+    plot ({ (sqrt(4*cos(2*\x)) * cos(\x) }, { (sqrt(4*cos(2*\x)) * sin(\x) });
+    %Tangents at the pole
+    \draw[dashed] (-3.25/2,-3.25/2) -- (3.25/2,3.25/2) (-3.25/2,3.25/2) -- (3.25/2, -3.25/2);
+    \node at (2,2.25) {\small $\theta = \frac{\pi}{4}$};
+    \node at (-2,2.25) {\small $\theta = \frac{3\pi}{4}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
 
 \end{question}
 
