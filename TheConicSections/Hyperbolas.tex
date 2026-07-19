@@ -50,59 +50,114 @@ Note that the hyperbola has two parts, called \index{hyperbola ! branch} \textbf
 
  In addition, we will show momentarily that the hyperbola has a pair of \index{hyperbola ! asymptotes}\index{asymptote ! of a hyperbola}\textbf{asymptotes} which the branches of the hyperbola approach for large $x$ and $y$ values.   They serve as guides to the graph. Schematically:
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\medskip
+% --- Parameters ---
+\def\a{1.4}    % distance center to vertex
+\def\b{2.6}    % controls asymptote slope (rise over run = b/a)
+\pgfmathsetmacro{\c}{sqrt(\a*\a+\b*\b)} % distance center to focus
+\def\xext{2} % how far the asymptotes extend horizontally
+
+% --- Asymptotes: y = (b/a)x and y = -(b/a)x, small arrowheads at both ends ---
+\draw[dashed]
+    (-\xext,{-\b/\a*\xext}) -- (\xext,{\b/\a*\xext});
+\draw[dashed]
+    (-\xext,{\b/\a*\xext}) -- (\xext,{-\b/\a*\xext});
+
+% --- Hyperbola branches: x = ±a*cosh(t), y = b*sinh(t) ---
+\def\tmax{1.05}
+\draw[very thick, domain=-\tmax:\tmax, samples=60, smooth, variable=\t]
+    plot ({\a*cosh(\t)}, {\b*sinh(\t)});
+\draw[very thick, domain=-\tmax:\tmax, samples=60, smooth, variable=\t]
+    plot ({-\a*cosh(\t)}, {\b*sinh(\t)});
+
+% --- Transverse axis (dotted, through the vertices) ---
+\draw[dotted, thick] (-\a-0.2,0) -- (\a+0.2,0);
+\node at (0,0.55) {Transverse Axis};
+
+% --- Center ---
+\node at (0,0) {$\times$};
+\node[below] at (0,-0.25) {$C$};
+
+% --- Vertices ---
+\fill (-\a,0) circle (2.5pt);
+\fill (\a,0) circle (2.5pt);
+\node[left] at (-\a,-0.25) {$V_1$};
+\node[right] at (\a,-0.25) {$V_2$};
+
+% --- Foci ---
+\node at (-\c,0) {$\ast$};
+\node at (\c,0) {$\ast$};
+\node[above] at (-\c,0.15) {$F_1$};
+\node[above] at (\c,0.15) {$F_2$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \begin{center}
-
-\begin{mfpic}[15]{-6}{6}{-6}{6}
-\dotted[1pt, 3pt] \polyline{(-3,0), (3,0)}
-\tlabel[cc](3.5,-0.55){$V_2$}
-\tlabel[cc](-3.5,-0.55){$V_1$}
-\tlabel[cc](-5,-0.55){$F_1$}
-\tlabel[cc](5,-0.55){$F_2$}
-\plotsymbol[3pt]{Asterisk}{(-5,0), (5,0)}
-\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{4*x/3}
-\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{-4*x/3}
-\gclear \tlabelrect[cc](0,0.5){\scriptsize Transverse Axis}
-\gclear \tlabelrect[cc](0,-0.55){$C$}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
-\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
-\point[4pt]{(3,0),(-3,0)}
-\end{mfpic}
-
-\centerline{A hyperbola with center $C$; foci $F_1$, $F_2$; and vertices $V_1$, $V_2$ and asymptotes (dashed)}
+\captionof{figure}{A hyperbola with center $C$; foci $F_1$, $F_2$; and vertices $V_1$, $V_2$ and asymptotes (dashed)}
 
 \end{center}
 
 \medskip
 
 Before we derive the standard equation of the hyperbola, we need to discuss one further parameter, the \index{hyperbola ! conjugate axis}\index{conjugate axis of a hyperbola}\textbf{conjugate axis} of the hyperbola.  The conjugate axis of a hyperbola is the line segment through the center which is perpendicular to the transverse axis and has the same length as the line segment through a vertex which connects the asymptotes.  Schematically:
-\medskip
+
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+% --- Parameters ---
+\def\a{1.4}    % distance center to vertex
+\def\b{2.6}    % controls asymptote slope (rise over run = b/a)
+\pgfmathsetmacro{\c}{sqrt(\a*\a+\b*\b)} % distance center to focus
+\def\xext{2} % how far the asymptotes extend horizontally
+
+% --- Dotted auxiliary rectangle, corners at (±a, ±b) ---
+\draw[dotted, thick] (-\a,-\b) rectangle (\a,\b);
+
+% --- Asymptotes: y = (b/a)x and y = -(b/a)x, small arrowheads at both ends ---
+\draw[dashed]
+    (-\xext,{-\b/\a*\xext}) -- (\xext,{\b/\a*\xext});
+\draw[dashed]
+    (-\xext,{\b/\a*\xext}) -- (\xext,{-\b/\a*\xext});
+
+% --- Hyperbola branches: x = ±a*cosh(t), y = b*sinh(t) ---
+\def\tmax{1.05}
+\draw[very thick, domain=-\tmax:\tmax, samples=60, smooth, variable=\t]
+    plot ({\a*cosh(\t)}, {\b*sinh(\t)});
+\draw[very thick, domain=-\tmax:\tmax, samples=60, smooth, variable=\t]
+    plot ({-\a*cosh(\t)}, {\b*sinh(\t)});
+
+% --- Transverse axis (dotted, through the vertices) ---
+\draw[dotted, thick] (-\a-0.2,0) -- (\a+0.2,0);
+
+% --- Conjugate axis (dotted, vertical through the center) ---
+\draw[dotted, thick] (0,-\b) -- (0,\b);
+\node[rotate=90] at (-0.3,0) {Conjugate Axis};
+
+% --- Center ---
+\node at (0,0) {$\times$};
+\node[right] at (0.15,-0.25) {$C$};
+
+% --- Vertices ---
+\fill (-\a,0) circle (2.5pt);
+\fill (\a,0) circle (2.5pt);
+\node[left] at (-\a-0.15,0) {$V_1$};
+\node[right] at (\a+0.15,0) {$V_2$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \begin{center}
 
-\begin{mfpic}[15]{-6}{6}{-6}{6}
-\tlabel[cc](3.75,0){$V_2$}
-\tlabel[cc](-3.75,0){$V_1$}
-\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{4*x/3}
-\dashed \arrow \reverse \arrow \function{-4.5,4.5,0.1}{-4*x/3}
-\dotted[1pt, 3pt] \polyline{(-3,-4),(-3,4)}
-\dotted[1pt, 3pt] \polyline{(0,-4),(0,4)}
-\dotted[1pt, 3pt] \polyline{(3,-4),(3,4)}
-\dotted[1pt, 3pt] \polyline{(-3,0), (3,0)}
-\dotted[1pt, 3pt] \polyline{(-3,4), (3,4)}
-\dotted[1pt, 3pt] \polyline{(-3,-4), (3,-4)}
-\gclear \tlabelrect[cc](0.5,0){$C$}
-\gclear \tlabelrect[cc](-0.5,0){\scriptsize \rotatebox{90}{Conjugate Axis}}
-\plotsymbol[3pt]{Cross}{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),4*sinh(t))}
-\arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),4*sinh(t))}
-\point[4pt]{(3,0),(-3,0)}
-\end{mfpic}
 
 \end{center}
 
