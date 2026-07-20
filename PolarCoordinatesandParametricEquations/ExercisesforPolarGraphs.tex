@@ -1513,7 +1513,7 @@ plot[domain=255:555, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-2, xmax=4, ymin=-3, ymax=3,
+    xmin=-2, xmax=4, ymin=-1.5, ymax=4.5,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -1522,36 +1522,80 @@ plot[domain=255:555, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
     xlabel style={anchor=west},
     ylabel style={anchor=south},
     xtick={-1,1,2,3},
-    ytick={-2,-1,1,2},
+    ytick={-1,1,2,3},
     tick label style={font=\tiny},
     label style={font=\scriptsize},
     samples=100,
 ]
 
-% Polar Graph Region  (outer curve) -- (inner curve BACKWARDS) -- cycle 
+% Polar Graph Region - region from each
 \filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
-plot[domain=-60:60, samples=120, smooth] ({(2*sqrt(3)*sin(\x))*cos(\x)}, {(2*sqrt(3)*sin(\x))*sin(\x)}) -- plot[domain=60:-60, samples=120, smooth] ({(1 + cos(\x))*cos(\x)}, {(1 + cos(\x)))*sin(\x)}) --cycle;
+plot[domain=0:30, samples=120, smooth] ({(2*sqrt(3)*sin(\x))*cos(\x)}, {(2*sqrt(3)*sin(\x))*sin(\x)}) -- cycle;
+
+\filldraw[fill=red!20, fill opacity=0.5, draw=red, thick]
+ plot[domain=30:90, samples=120, smooth] ({(2*cos(\x))*cos(\x)}, {(2*cos(\x)))*sin(\x)}) --cycle;
 
 % Polar Graph
 % TikZ math engine uses degrees by default
-%Outer curve unused portion
+%Curve 1 unused portion
 \draw[dashed, blue, thick]
-plot[domain=30:, samples=120, smooth] ({(2*sqrt(3)*sin(\x))*cos(\x)}, {(2*sqrt(3)*sin(\x))*sin(\x)});
+plot[domain=30:180, samples=120, smooth] ({(2*sqrt(3)*sin(\x))*cos(\x)}, {(2*sqrt(3)*sin(\x))*sin(\x)});
 
-%Inner curve unused portion
+%Curve 2 unused portion
 \draw[dashed, red, thick]
-plot[domain=60:300, samples=120, smooth] ({(1 + cos(\x))*cos(\x)}, {(1 + cos(\x))*sin(\x)});
+plot[domain=-90:30, samples=120, smooth] ({(2*cos(\x))*cos(\x)}, {(2*cos(\x))*sin(\x)});
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+ \end{problem}
+
+\begin{problem} \label{regionsketchlast}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 2 \sin(2\theta), \, 0 \leq \theta \leq \frac{\pi}{12} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 1, \, \frac{\pi}{12}  \leq \theta \leq \frac{\pi}{4} \right\}$ 
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=2, ymin=-1, ymax=2,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1},
+    ytick={1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Polar Graph Region - region from each
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+plot[domain=0:15, samples=120, smooth] ({(2*sin(2*\x))*cos(\x)}, {(2*sin(2*\x))*sin(\x)}) -- cycle;
+
+\filldraw[fill=red!20, fill opacity=0.5, draw=red, thick]
+ plot[domain=15:45, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)}) --  plot[domain=45:15, samples=120, smooth] ({(0)*cos(\x)}, {(0)*sin(\x)}) -- cycle;
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+%Curve 1 unused portion
+\draw[dashed, blue, thick]
+plot[domain=15:90, samples=120, smooth] ({(2*sin(2*\x))*cos(\x)}, {(2*sin(2*\x))*sin(\x)});
+
+%Curve 2 unused portion
+\draw[dashed, red, thick]
+plot[domain=45:90, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
 
 \end{axis}
 \end{tikzpicture}
 \end{solution}
 
 
- 
- \end{problem}
-
-\begin{problem} \label{regionsketchlast}
-$\left\{ (r,\theta) \, | \, 0 \leq r \leq 2 \sin(2\theta), \, 0 \leq \theta \leq \frac{\pi}{12} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 1, \, \frac{\pi}{12}  \leq \theta \leq \frac{\pi}{4} \right\}$ 
 \end{problem}
 
 \end{question}
@@ -1561,42 +1605,93 @@ In Exercises \ref{setbuildpolarfirst} - \ref{setbuildpolarlast}, use set-builder
 
 \begin{problem}\label{setbuildpolarfirst}
 The region inside the circle $r = 5$. 
+
+\begin{solution}
+
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 5, \, 0\leq \theta \leq 2\pi \right\}$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the circle $r=5$ which lies in Quadrant III.
+
+\begin{solution}
+
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 5, \, \pi \leq \theta \leq \frac{3\pi}{2} \right\}$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the left half of the circle $r = 6\sin(\theta)$.
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(\theta), \, \frac{\pi}{2} \leq \theta \leq \pi \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the circle $r = 4\cos(\theta)$ which lies in Quadrant IV.
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 4\cos(\theta) \leq r \leq 0, \, \frac{\pi}{2} \leq \theta \leq \pi \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the top half of the cardioid $r = 3 - 3\cos(\theta)$
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 3 - 3\cos(\theta), \, 0 \leq \theta \leq \pi \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the cardioid $r = 2-2\sin(\theta)$ which lies in Quadrants I and IV.
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 2-2\sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{2}  \right\} \cup$ 
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq  2-2\sin(\theta), \, \frac{3\pi}{2} \leq \theta \leq 2\pi  \right\}$
+
+or  $\left\{ (r,\theta) \, | \, 0 \leq r \leq 2-2\sin(\theta), \, \frac{3\pi}{2} \leq \theta \leq \frac{5\pi}{2}  \right\}$
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
-The inside of the petal of the rose $r = 3\cos(4\theta)$ which lies on the positive $x$-axis
+The inside of the petal of the rose $r = 3\cos(4\theta)$ which lies on the positive $x$-axis.
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \,0 \leq \theta \leq \frac{\pi}{8} \right\} \cup$ $\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \,\frac{15\pi}{8} \leq \theta \leq 2\pi \right\}$  
+
+or $\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \, -\frac{\pi}{8} \leq \theta \leq \frac{\pi}{8} \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region inside the circle $r=5$ but outside the circle $r=3$.
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 3 \leq r \leq 5, \, 0 \leq \theta \leq 2\pi \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 The region which lies inside of the circle $r = 3\cos(\theta)$ but outside of the circle $r = \sin(\theta)$
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(\theta), \, -\frac{\pi}{2} \leq \theta \leq 0 \right\} \cup$ 
+$\left\{ (r,\theta) \, | \, \sin(\theta) \leq r \leq 3\cos(\theta), \, 0 \leq \theta \leq \arctan(3) \right\}$
+\end{solution}
 \end{problem}
 
 \begin{problem} \label{setbuildpolarlast}
 The region in Quadrant I which lies inside both the circle $r=3$ as well as the rose $r = 6\sin(2\theta)$ 
+
+\begin{solution}
+$\left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(2\theta), \,0 \leq \theta \leq \frac{\pi}{12} \right\} \cup$ $\left\{ (r,\theta) \, | \, 0 \leq r \leq 3, \,\frac{\pi}{12} \leq \theta \leq \frac{5\pi}{12} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(2\theta), \, \frac{5\pi}{12} \leq \theta \leq \frac{\pi}{2} \right\}$
+\end{solution}
 \end{problem}
 
 \end{question}
