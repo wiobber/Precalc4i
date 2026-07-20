@@ -748,46 +748,423 @@ Lemniscate: $r^{2} = 4\cos(2\theta)$
 \end{question}
 
 \begin{question}
-In Exercises \ref{findpolarintfirst} - \ref{findpolarintlast}, find the exact polar coordinates of the points of intersection of graphs of the polar equations.  Remember to check for intersection at the pole (origin).
+In Exercises \ref{findpolarintfirst} - \ref{findpolarintlast}, sketch the graph of the polar curves to help you find the exact polar coordinates of the points of intersection of graphs of the polar equations.  Remember to check for intersection at the pole (origin).
 
 \begin{problem} \label{findpolarintfirst}
 $r = 3\cos(\theta)$ and $r = 1 + \cos(\theta)$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=4, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1,2,3},
+    ytick={-1, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3*cos(\x)) * cos(\x) }, { (3*cos(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+    plot ({ (1+cos(\x)) * cos(\x) }, { (1+cos(\x)) * sin(\x) });
+
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:   $\left( \frac{3}{2}, \frac{\pi}{3} \right)$, $\left( \frac{3}{2}, \frac{5\pi}{3} \right)$, pole
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $r = 1 + \sin(\theta)$ and $r = 1 - \cos(\theta)$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 1, 2},
+    ytick={-2, -1, 1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (1+sin(\x)) * cos(\x) }, { (1+sin(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (1-cos(\x)) * cos(\x) }, { (1-cos(\x)) * sin(\x) });
+
+    
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:   $\left( \frac{2 + \sqrt{2}}{2}, \frac{3\pi}{4} \right)$, $\left( \frac{2 - \sqrt{2}}{2}, \frac{7\pi}{4} \right)$, pole
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $r = 1-2\sin(\theta)$ and $r=2$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 1, 2, 3},
+    ytick={-3, -2, -1, 1, 2,3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (1-2*sin(\x)) * cos(\x) }, { (1-2*sin(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (2) * cos(\x) }, { (2) * sin(\x) });
+
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:   $\left( 2, \frac{7\pi}{6} \right)$, $\left( 2, \frac{11\pi}{6} \right)$
+
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $r = 1 - 2\cos(\theta)$ and $r = 1$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 1, 2, 3},
+    ytick={-3, -2, -1, 1, 2,3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (1-2*cos(\x)) * cos(\x) }, { (1-2*cos(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (1) * cos(\x) }, { (1) * sin(\x) });
+
+    
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:   $\left( 1, \frac{\pi}{2} \right)$, $\left( 1, \frac{3\pi}{2} \right)$, $(-1, 0)$
+
+
+
+\end{solution}
+
+
+
 \end{problem}
 
 \begin{problem}
 $r = 2\cos(\theta)$ and $r = 2\sqrt{3} \sin(\theta)$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.25, xmax=3.25, ymin=-1.5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1, 2},
+    ytick={1, 2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (2*cos(\x)) * cos(\x) }, { (2*cos(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (2*sqrt(3)*sin(\x)) * cos(\x) }, { (2*sqrt(3)*sin(\x)) * sin(\x) });
+
+    
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:   $\left(\sqrt{3}, \frac{\pi}{6} \right)$, pole
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $r = 3\cos(\theta)$ and $r = \sin(\theta)$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=3.5, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1, 2, 3},
+    ytick={-2, -1,1,2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (3*cos(\x)) * cos(\x) }, { (3*cos(\x)) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (sin(\x)) * cos(\x) }, { (sin(\x)) * sin(\x) });
+
+    
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:  $\left(\frac{3\sqrt{10}}{10}, \arctan(3)\right)$, pole
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $r^2 = 4\cos(2\theta)$ and $r = \sqrt{2}$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -2, 1, 2},
+    ytick={-2, -1,1,2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=-45:45] 
+   plot ({ (sqrt(4*cos(2*\x))) * cos(\x) }, { (sqrt(4*cos(2*\x))) * sin(\x) });
+\draw[thick, blue, smooth, samples=100, domain=135:225] 
+   plot ({ (sqrt(4*cos(2*\x))) * cos(\x) }, { (sqrt(4*cos(2*\x))) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (sqrt(2)) * cos(\x) }, { (sqrt(2)) * sin(\x) });
+
+\end{axis}
+\end{tikzpicture}
+
+Intersection points: $\left(\sqrt{2}, \frac{\pi}{6}\right)$, $\left(\sqrt{2}, \frac{5\pi}{6}\right)$, $\left(\sqrt{2}, \frac{7\pi}{6}\right)$, $\left(\sqrt{2}, \frac{11\pi}{6}\right)$
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $r^{2} = 2\sin(2\theta)$ and $r = 1$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1,1},
+    ytick={-1,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:90] 
+   plot ({ (sqrt(2*sin(2*\x))) * cos(\x) }, { (sqrt(2*sin(2*\x))) * sin(\x) });
+\draw[thick, blue, smooth, samples=100, domain=180:270] 
+   plot ({ (sqrt(2*sin(2*\x))) * cos(\x) }, { (sqrt(2*sin(2*\x))) * sin(\x) });
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (1) * cos(\x) }, { (1) * sin(\x) });
+   
+\end{axis}
+\end{tikzpicture}
+
+Intersection points: $\left(1, \frac{\pi}{12}\right)$, $\left(1, \frac{5\pi}{12}\right)$, $\left(1, \frac{13\pi}{12}\right)$, $\left(1, \frac{17\pi}{12}\right)$
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $r = 4\cos(2\theta)$ and $r=2$
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-2,2,4},
+    ytick={-4, -2,2, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (4*cos(2*\x)) * cos(\x) }, { (4*cos(2*\x)) * sin(\x) });
+
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (2) * cos(\x) }, { (2) * sin(\x) });
+
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:  $\left( 2, \frac{\pi}{6} \right)$, $\left( 2, \frac{5\pi}{6} \right)$, $\left( 2, \frac{7\pi}{6} \right)$,  $\left( 2, \frac{11\pi}{6} \right)$, $\left( -2, \frac{\pi}{3} \right)$, $\left( -2, \frac{2\pi}{3} \right)$, $\left( -2, \frac{4\pi}{3} \right)$, $\left( -2, \frac{5\pi}{3} \right)$
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem} \label{findpolarintlast}
 $r = 2\sin(2\theta)$ and $r = 1$ 
+
+\begin{solution}
+
+Graph:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,2},
+    ytick={-2,2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+   plot ({ (2*sin(2*\x)) * cos(\x) }, { (2*sin(2*\x)) * sin(\x) });
+
+\draw[thick, red, smooth, samples=100, domain=0:360] 
+   plot ({ (1) * cos(\x) }, { (1) * sin(\x) });
+   
+\end{axis}
+\end{tikzpicture}
+
+Intersection points:  $\left( 1, \frac{\pi}{12} \right)$, $\left( 1, \frac{5\pi}{12} \right)$, $\left( 1, \frac{13\pi}{12} \right)$, $\left( 1, \frac{17\pi}{12} \right)$, $\left( -1, \frac{7\pi}{12} \right)$, $\left( -1, \frac{11\pi}{12} \right)$, $\left( -1, \frac{19\pi}{12} \right)$, $\left( -1, \frac{23\pi}{12} \right)$
+
+\end{solution}
+
 \end{problem} 
 
 \end{question}
@@ -797,30 +1174,300 @@ In Exercises \ref{regionsketchfirst} - \ref{regionsketchlast}, sketch the region
 
 \begin{problem}  \label{regionsketchfirst}
 $\left\{ (r,\theta) \, | \, 0 \leq r \leq 3, \,0 \leq \theta \leq 2\pi \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-3,-2,-1, 1,2,3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+    ]
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+    plot[domain=0:360, samples=120, smooth] ({(3)*cos(\x)}, {(3)*sin(\x)}) -- cycle;
+
+    
+\end{axis}
+\end{tikzpicture}
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\sin(\theta), \,0 \leq \theta \leq \pi \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-1, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,1,2},
+    ytick={1,2,3,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Polar Region
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+    plot[domain=0:180, samples=120, smooth] ({(4*sin(\x))*cos(\x)}, {(4*sin(\x))*sin(\x)}) -- cycle;
+
+    
+\end{axis}
+\end{tikzpicture}
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(\theta), \, -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2} \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=4, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1,2,3},
+    ytick={-1,1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+    plot[domain=-90:90, samples=120, smooth] ({(3*cos(\x))*cos(\x)}, {(3*cos(\x))*sin(\x)}) -- cycle;
+
+    
+\end{axis}
+\end{tikzpicture}
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 0 \leq r \leq 2\sin(2\theta), \,0 \leq \theta \leq \frac{\pi}{2} \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2,-1,1,2},
+    ytick={-2,-1,1,2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+
+% Polar Region
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+    plot[domain=0:90, samples=120, smooth] ({(2*sin(2*\x))*cos(\x)}, {(2*sin(2*\x))*sin(\x)}) -- cycle;
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+\draw[dashed, blue, thick]
+    plot[domain=0:360, samples=120, smooth] ({(2*sin(2*\x))*cos(\x)}, {(2*sin(2*\x))*sin(\x)}) -- cycle;
+
+
+    
+\end{axis}
+\end{tikzpicture}
+
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\cos(2\theta), \, -\frac{\pi}{4} \leq \theta \leq \frac{\pi}{4} \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-2,2,4},
+    ytick={-4,-2,2,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+
+
+% Polar Region
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+    plot[domain=-45:45, samples=120, smooth] ({(4*cos(2*\x))*cos(\x)}, {(4*cos(2*\x))*sin(\x)}) -- cycle;
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+\draw[dashed, blue, thick]
+    plot[domain=0:360, samples=120, smooth] ({(4*cos(2*\x))*cos(\x)}, {(4*cos(2*\x))*sin(\x)}) -- cycle;
+
+    
+\end{axis}
+\end{tikzpicture}
+
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 1 \leq r \leq 1-2\cos(\theta), \, \frac{\pi}{2} \leq \theta \leq \frac{3\pi}{2} \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-2,2,4},
+    ytick={-4,-2,2,4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)})
+plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)})
+--cycle
+% Polar Graph Region
+% TikZ math engine uses degrees by default
+%\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+%    plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- cycle;
+%\filldraw[fill=white, fill opacity=1, draw=white, thick]
+%    plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)}) -- cycle;
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+%\draw[dashed, blue, thick]
+%    plot[domain=0:360, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- cycle;
+%\draw[blue, thick]
+%    plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
+%\draw[dashed, red, thick]
+%    plot[domain=-90:90, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
+
+
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 $\left\{ (r,\theta) \, | \, 1 + \cos(\theta) \leq r \leq 3\cos(\theta), \, -\frac{\pi}{3} \leq \theta \leq \frac{\pi}{3} \right\}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=5, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1, 2, 3, 4},
+    ytick={-2, -1, 1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+% Polar Graph Region
+% TikZ math engine uses degrees by default
+\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
+plot[domain=300:420, samples=120, smooth] ({(3*cos(\x))*cos(\x)}, {(3*cos(\x)))*sin(\x)}) -- cycle;
+    
+\filldraw[fill=white, fill opacity=1, draw=white, thick]
+plot[domain=300:420, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {(1+cos(\x))*sin(\x)}) -- cycle;
+
+% Polar Graph
+% TikZ math engine uses degrees by default
+\draw[dashed, blue, thick]
+ plot[domain=60:300, samples=120, smooth] ({(3*cos(\x))*cos(\x)}, {(3*cos(\x))*sin(\x)});
+    
+\draw[blue, thick]
+ plot[domain=300:420, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {(1+cos(\x))*sin(\x)});
+    
+\draw[dashed, red, thick]
+   plot[domain=60:300, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {((1+cos(\x))*sin(\x)});
+
+
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}

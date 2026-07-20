@@ -15,14 +15,14 @@
 
 In this chapter, we showcase how the the tools we've developed in Chapters \ref{FoundationsofTrigonometry} and \ref{AnalyticalTrigonometry} can be applied to Geometry.  Our first two sections focus specifically on solving oblique (non-right) Triangles.\footnote{Recall that the word `Trigonometry' literally means `measuring triangles' so we are returning to our roots here.} 
 
-\smallskip
+ 
 
 Our first example reviews the basics of right triangle trigonometry.  The reader is referred to Section \ref{AppRightTrig} for more details and practice with these concepts.
 
 
 \begin{example}  \label{righttrianglereviewex}  Given a right triangle with a hypotenuse of length $7$ units and one leg of length $4$ units, find the length of the remaining side and the measures of the remaining angles. Express the angles in decimal degrees, rounded to the nearest hundredth of a degree.
 
-\smallskip
+ 
 
 {\bf Solution.}  For definitiveness, we label the triangle below. 
 
@@ -47,23 +47,23 @@ Our first example reviews the basics of right triangle trigonometry.  The reader
 
 To find $a$, we use the Pythagorean Theorem, Theorem \ref{PythagoreanTheorem}: $a^2 + 4^2 = 7^2$, so $a = \sqrt{33}$ units. 
 
-\smallskip
+ 
 
 Now that all three sides of the triangle are known, there are several ways we can find $\alpha$ using the inverse trigonometric functions.  
 
-\smallskip
+ 
 
 To decrease the chances of propagating error, however, we stick to using the data given to us in the problem.  In this case, the lengths $4$ and $7$ were given, so we want to relate these to $\alpha$. 
 
-\smallskip
+ 
 
 According to  Definition  \ref{righttrianglesinecosinetangent},  $\cos(\alpha) = \frac{4}{7}$.  Since $\alpha$ is an acute angle, $\alpha = \arccos\left(\frac{4}{7}\right)$ radians  $\approx 55.15^{\circ}$.  
 
-\smallskip
+ 
 
 Now that we have the measure of angle $\alpha$, we could find the measure of angle $\beta$ using the fact that $\alpha$ and $\beta$ are complements so $\alpha + \beta = 90^{\circ}$. 
 
-\smallskip
+ 
 
 Once again, in the interests of minimizing propagated error, we opt to use the data given to us in the problem. According to Definition  \ref{righttrianglesinecosinetangent},  $\sin(\beta) = \frac{4}{7}$ so $\beta = \arcsin\left(\frac{4}{7}\right)$ radians $\approx 34.85^{\circ}$.  \qed
 
@@ -71,23 +71,23 @@ Once again, in the interests of minimizing propagated error, we opt to use the d
 
 A few remarks about Example \ref{righttrianglereviewex}  are in order.  First, we adhere to the convention that a lower case Greek letter denotes an angle (as well as the measure of said angle) and the corresponding lowercase English letter represents the side (as well as the length of said side) opposite that angle.  
 
-\smallskip
+ 
 
 More specifically, $a$ is the side opposite $\alpha$, $b$ is the side opposite $\beta$ and $c$ is the side opposite $\gamma$.  Taken together, the pairs $(\alpha, a)$, $(\beta, b)$ and $(\gamma, c)$ are called \index{angle side opposite pairs} \textit{angle-side opposite pairs}.  
 
-\smallskip
+ 
 
 Second, as mentioned earlier, we will strive to solve for quantities using the original data given in the problem whenever possible. While this is not always the easiest or fastest way to proceed, it minimizes the chances of propagated error.\footnote{Your Science teachers should thank us for this.}  
 
-\smallskip
+ 
 
 Third, since many of the  applications which require solving triangles `in the wild' rely on degree measure, we shall adopt this convention for the time being.
 
-\smallskip
+ 
 
  The Pythagorean Theorem along with  Definition  \ref{righttrianglesinecosinetangent} allow us to easily handle any given \textit{right} triangle problem, but what if the triangle isn't a right triangle?  In certain cases, we can use the \textbf{Law of Sines}.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -96,20 +96,20 @@ Third, since many of the  applications which require solving triangles `in the w
 
 \[ \frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c} \qquad \text{or, equivalently,} \qquad  \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}  = \frac{c}{\sin(\gamma)} \]
 
-\smallskip
+ 
 
 \end{theorem}
 %% \ebm}
 
-\smallskip
+ 
 
 The proof of the Law of Sines can be broken into three cases, and, as we'll see, ultimately relies on what we know about right triangles. 
 
-\smallskip
+ 
 
 For our first case, consider the triangle $\triangle ABC$ below, all of whose angles are acute, with angle-side opposite pairs $(\alpha, a)$, $(\beta, b)$ and $(\gamma, c)$. 
 
-\smallskip
+ 
 
 \begin{tabular}{ccc}
 
@@ -177,15 +177,15 @@ For our first case, consider the triangle $\triangle ABC$ below, all of whose an
 
  If we drop an altitude from vertex $B$, we divide the triangle into two right triangles:  $\triangle ABQ$ and $\triangle BCQ$. 
  
- \smallskip
+  
  
  If we call the length of the altitude $h$ (for height), we get from Definition  \ref{righttrianglesinecosinetangent} that $\sin(\alpha) = \frac{h}{c}$ and $\sin(\gamma) = \frac{h}{a}$ so that $h = c\sin(\alpha) = a \sin(\gamma)$.  Rearranging this last equation, we get $\frac{\sin(\alpha)}{a} = \frac{\sin(\gamma)}{c}$. 
  
- \smallskip
+  
  
 Dropping an altitude from vertex $A$, we can proceed as above using the triangles $\triangle ABQ$ and $\triangle ACQ$.  We find that $\frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}$, so we have shown  $\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}$ as required.
 
- \smallskip
+  
  
 For our next case consider the triangle $\triangle ABC$ below with \underline{obtuse} angle $\alpha$. 
 
@@ -237,15 +237,15 @@ For our next case consider the triangle $\triangle ABC$ below with \underline{ob
 
  Extending an altitude from vertex $A$ gives two right triangles, as in the previous case:  $\triangle ABQ$ and $\triangle ACQ$. 
  
- \smallskip
+  
  
  Proceeding as before, we get $h = b \sin(\gamma)$ and $h = c \sin(\beta)$ so that $\frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}$.
 
-\smallskip
+ 
 
 Dropping an altitude from vertex B also generates two right triangles, $\triangle ABQ$ and $\triangle BCQ$. 
 
-\smallskip
+ 
 
 \begin{center}
 
@@ -274,26 +274,26 @@ Dropping an altitude from vertex B also generates two right triangles, $\triangl
 
 \end{center} 
 
-\smallskip
+ 
 
  We see  $\sin(\alpha') = \frac{h'}{c}$ so that $h' = c \sin(\alpha')$.  Since $\alpha' = 180^{\circ} - \alpha$, $\sin(\alpha') = \sin(\alpha)$,  so   $h' = c\sin(\alpha)$. 
  
- \smallskip
+  
  
  Proceeding to $\triangle BCQ$, we get $\sin(\gamma) = \frac{h'}{a}$ so $h' = a \sin(\gamma)$.  
  
- \smallskip
+  
  
 As before, we get  $\frac{\sin(\gamma)}{c} = \frac{\sin(\alpha)}{a}$, so  $ \frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}$ in this case, too.
 
 
 The remaining case is when $\triangle ABC$ is a right triangle.  In this case, the Law of Sines reduces to the formulas given in Definition  \ref{righttrianglesinecosinetangent} and is left to the reader.  
 
-\smallskip
+ 
 
 In order to use the Law of Sines to solve a triangle, we need at least one angle-side opposite pair.  The next example showcases some of the power, and the pitfalls, of the Law of Sines.
 
-\smallskip
+ 
 
 \begin{example}  \label{losex} Solve the following triangles.  Give exact answers and decimal approximations (rounded to hundredths) and sketch the triangle.
 
@@ -344,42 +344,42 @@ In order to use the Law of Sines to solve a triangle, we need at least one angle
 
 \item Knowing an angle-side opposite pair, namely $\alpha$ and $a$, we may proceed in using the Law of Sines.  
 
-\smallskip
+ 
 
 Since $\beta = 45^{\circ}$, we use $\frac{b}{\sin\left(45^{\circ}\right)} = \frac{7}{\sin\left(120^{\circ}\right)}$ so $b = \frac{7\sin\left(45^{\circ}\right)}{\sin\left(120^{\circ}\right)} = \frac{7\sqrt{6}}{3} \approx 5.72$ units.  
 
-\smallskip
+ 
 
 To find $\gamma$, we use the fact that the sum of the measures of the angles in a triangle is $180^{\circ}$. Hence, $\gamma = 180^{\circ} - 120^{\circ} - 45^{\circ} = 15^{\circ}$.  
 
-\smallskip
+ 
 
 To find $c$, we have no choice but to used the derived value $\gamma = 15^{\circ}$, yet we can minimize the propagation of error here by using the given angle-side opposite pair $(\alpha, a)$. 
 
-\smallskip
+ 
 
 The Law of Sines gives us  $\frac{c}{\sin\left(15^{\circ}\right)} = \frac{7}{\sin\left(120^{\circ}\right)}$ so that $c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \approx 2.09$ units.\footnote{The exact value of $\sin(15^{\circ})$ could be found using the difference identity for sine or a half-angle formula, but that becomes unnecessarily messy for the discussion at hand.  Thus ``exact'' here means $\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}$.}
 
-\smallskip
+ 
 
 We sketch this triangle below on the left.
 
 
 \item In this example, we are not immediately given an angle-side opposite pair, but as we have the measures of $\alpha$ and $\beta$, we can solve for $\gamma$ since $\gamma = 180^{\circ} - 85^{\circ} - 30^{\circ} = 65^{\circ}$.  
 
-\smallskip
+ 
 
 As in the previous example, we are forced to use a derived value in our computations since the only angle-side pair available is $(\gamma, c)$. 
 
-\smallskip
+ 
 
 The Law of Sines gives $\frac{a}{\sin\left(85^{\circ}\right)} = \frac{5.25}{\sin\left(65^{\circ}\right)}$.  Solving, we get $a = \frac{5.25\sin\left(85^{\circ}\right)}{\sin\left(65^{\circ}\right)} \approx 5.77$ units.    
 
-\smallskip
+ 
 
 To find $b$  we use the angle-side pair $(\gamma,c)$: $\frac{b}{\sin\left(30^{\circ}\right)} = \frac{5.25}{\sin\left(65^{\circ}\right)}$. Hence $b = \frac{5.25\sin\left(30^{\circ}\right)}{\sin\left(65^{\circ}\right)} \approx 2.90$ units. 
 
-\smallskip
+ 
 
 We sketch this triangle below on the right.
 
@@ -423,11 +423,11 @@ Triangle for number \ref{losaas} & Triangle for number \ref{losasa} \\
 
 \item  Since we are given $(\alpha,a)$ and $c$, we use the Law of Sines to find the measure of $\gamma$.  
 
-\smallskip
+ 
 
 From  $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{1}$, we get $\sin(\gamma) = 4 \sin\left(30^{\circ}\right) = 2$, which is impossible. (Why?)   As seen below on the left,  side $a$ is just too short to make a triangle. 
 
-\smallskip
+ 
 
 \end{enumerate}
 
@@ -441,15 +441,15 @@ The next three examples keep the same values for the measure of $\alpha$ and the
 
 \item  In this case, we have the measure of $\alpha = 30^{\circ}$, $a = 2$ and $c=4$.  Using the Law of Sines, we get  $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{2}$ so $\sin(\gamma) = 2 \sin\left(30^{\circ}\right) = 1$.  
 
-\smallskip
+ 
 
 Since  $\gamma$ is an angle in a triangle which also contains $\alpha = 30^{\circ}$,  $\gamma$ must measure between $0^{\circ}$ and $150^{\circ}$ in order to fit inside the triangle with $\alpha$.   The only angle that satisfies this requirement and has $\sin(\gamma) = 1$ is  $\gamma = 90^{\circ}$, so we are working in a right triangle. 
 
-\smallskip
+ 
 
  We find the measure of $\beta$ to be  $\beta = 180^{\circ} - 30^{\circ} - 90^{\circ} = 60^{\circ}$. Using the Law of Sines, we get $b = \frac{2 \sin\left(60^{\circ}\right)}{\sin\left(30^{\circ}\right)} = 2 \sqrt{3} \approx 3.46$ units.  
  
- \smallskip
+  
  
  As seen below on the right, the side $a$ is just long enough to form a  right triangle in this case.
 
@@ -494,30 +494,30 @@ Diagram for number \ref{losnotriangleex} & \hspace{0.75in} Triangle for number \
 
 \item  Proceeding as we have in the previous two examples, we use the Law of Sines to find $\gamma$. 
 
-\smallskip
+ 
 
  In this case, we have $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{3}$ or $\sin(\gamma) = \frac{4\sin\left(30^{\circ}\right)}{3} = \frac{2}{3}$.  Since $\gamma$ lies in a triangle with $\alpha = 30^{\circ}$, we must have that $0^{\circ} < \gamma < 150^{\circ}$.   
  
- \smallskip
+  
  
  In this case, there are \textit{two} angles that fall in this range:  $\gamma = \arcsin\left(\frac{2}{3}\right)$ radians $\approx 41.81^{\circ}$ and $\gamma = \pi - \arcsin\left(\frac{2}{3}\right)$ radians $\approx 138.19^{\circ}$. 
  
- \smallskip
+  
  
  At this point, we pause to see if it makes sense that we have two cases to consider.    
- \smallskip
+  
  
 Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has greater measure than $\alpha$ which is opposite $a$.   In both cases, $\gamma > \alpha$, so both candidates for $\gamma$ make sense with the given value of $c$. 
  
- \smallskip
+  
  
  Thus have two triangles on our hands.  In the case $\gamma = \arcsin\left(\frac{2}{3}\right)$ radians $\approx 41.81^{\circ}$, we find\footnote{To find an exact expression for $\beta$, we convert everything back to radians:  $\alpha = 30^{\circ} = \frac{\pi}{6}$ radians, $\gamma = \arcsin\left(\frac{2}{3}\right)$ radians and $180^{\circ} = \pi$ radians.  Hence, $\beta = \pi - \frac{\pi}{6} - \arcsin\left(\frac{2}{3}\right) = \frac{5\pi}{6} - \arcsin\left(\frac{2}{3}\right)$ radians $\approx 108.19^{\circ}$.} $\beta \approx 180^{\circ} - 30^{\circ} - 41.81^{\circ}  = 108.19^{\circ}$.  
  
- \smallskip
+  
  
  The Law of Sines with the angle-side opposite pair $(\alpha, a)$ and $\beta$ gives $b \approx \frac{3 \sin\left(108.19^{\circ}\right)}{\sin\left(30^{\circ}\right)} \approx 5.70$ units.  We sketch this triangle below on the left.
  
- \smallskip
+  
  
  In the case $\gamma = \pi - \arcsin\left(\frac{2}{3}\right)$ radians $\approx 138.19^{\circ}$, we repeat the same steps and find $\beta \approx 11.81^{\circ}$ and $b \approx 1.23$ units.\footnote{An exact answer for $\beta$ in this case is $\beta = \arcsin\left(\frac{2}{3}\right) - \frac{\pi}{6}$ radians $\approx 11.81^{\circ}$.}  We sketch this triangle below on the right.
 
@@ -560,11 +560,11 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
 
 \item  For this last problem, we repeat the usual Law of Sines routine to find that $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{4}$ so that $\sin(\gamma) = \frac{1}{2}$.  Since $\gamma$ must inhabit a triangle with $\alpha = 30^{\circ}$, we must have $0^{\circ} < \gamma < 150^{\circ}$.  
 
-\smallskip
+ 
 
 Since the  measure of $\gamma$ must be \textit{strictly less} than $150^{\circ}$, there is just \textit{one} angle which satisfies both required conditions, namely $\gamma = 30^{\circ}$.  
 
-\smallskip
+ 
 
 Hence,  $\beta = 180^{\circ} - 30^{\circ} - 30^{\circ} = 120^{\circ}$.  The Law of Sines gives $b = \frac{4\sin\left(120^{\circ}\right)}{\sin\left(30^{\circ}\right)} = 4\sqrt{3} \approx 6.93$ units.  We sketch this triangle below.
 
@@ -594,23 +594,23 @@ Hence,  $\beta = 180^{\circ} - 30^{\circ} - 30^{\circ} = 120^{\circ}$.  The Law 
 
 Some remarks about Example \ref{losex} are in order. First note that if we are given the measures of two of the angles in a triangle, say $\alpha$ and $\beta$, the measure of the third angle $\gamma$ is uniquely determined using the equation  $\gamma = 180^{\circ} - \alpha - \beta$.  Knowing the measures of all three angles of a triangle completely determines the triangle's  \textit{shape}.
 
-\smallskip
+ 
 
  If in addition we are given the length of one of the sides of the triangle, we can then use the Law of Sines to find the lengths of the remaining two sides to determine the \textit{size} of the triangle. Such is the case in numbers \ref{losaas} and \ref{losasa} above. 
  
- \smallskip
+  
  
 In number \ref{losaas}, the given side is adjacent to just one of the angles -- this is called the `Angle-Angle-Side' (AAS) case.\footnote{If this sounds familiar, it should.  From Geometry, we know there are four congruence conditions for triangles:  Angle-Angle-Side (AAS), Angle-Side-Angle (ASA), Side-Angle-Side (SAS) and Side-Side-Side (SSS).  If we are given information about a triangle that meets one of these four criteria, then we are guaranteed that exactly one triangle exists which satisfies said criteria.}  In number \ref{losasa}, the given side is adjacent to both angles which means we are in the so-called `Angle-Side-Angle' (ASA) case.
 
-\smallskip
+ 
 
 If, on the other hand, we are given the measure of just one of the angles in the triangle along with the length of two sides, only one of which is adjacent to the given angle, we are in the `Angle-Side-Side' (ASS) case.\footnote{In more reputable books, this is called the `Side-Side-Angle' or SSA case.}  Such was the case in numbers  \ref{losnotriangleex}, \ref{losrighttriangleex}, \ref{lostwotriangleex}, and  \ref{losonetriangleex} above.
  
-\smallskip
+ 
 
 In number \ref{losnotriangleex}, the length of the one given side $a$ was too short to even form a triangle;  in number \ref{losrighttriangleex}, the length of $a$ was just long enough to form a right triangle;  in \ref{lostwotriangleex}, $a$ was long enough, but not too long, so that two triangles were possible; and in number \ref{losonetriangleex}, side $a$ was long enough to form a triangle but too long to swing back and form two. These four cases exemplify all of the possibilities in the Angle-Side-Side case which are summarized in the following theorem.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -628,29 +628,29 @@ In number \ref{losnotriangleex}, the length of the one given side $a$ was too sh
 
 \end{itemize}
 
-\smallskip
+ 
 
 \end{theorem}
 
 %% \ebm}
 
-\smallskip
+ 
 
 Theorem \ref{ASScase} is proved on a case-by-case basis.   If $a < h$, then $a < c\sin(\alpha)$.  If a triangle were to exist, the Law of Sines would have $\frac{\sin(\gamma)}{c} = \frac{\sin(\alpha)}{a}$ so that $\sin(\gamma) = \frac{c \sin(\alpha)}{a} > \frac{a}{a} =  1$, which is impossible.
 
-\smallskip
+ 
 
 In the figure below on the left, we see geometrically why this is the case.  Simply put, if $a < h$ the side $a$ is too short to connect to form a triangle. 
 
-\smallskip
+ 
 
 This means if $a \geq h$, we are always guaranteed to have at least one triangle, and the remaining parts of the theorem tell us what kind and how many triangles to expect in each case.
 
-\smallskip
+ 
 
  If $a = h$, then $a = c\sin(\alpha)$ and the Law of Sines gives $\frac{\sin(\alpha)}{a} = \frac{\sin(\gamma)}{c}$ so that $\sin(\gamma) = \frac{c \sin(\alpha)}{a} = \frac{a}{a} = 1$.  Here,  $\gamma = 90^{\circ}$ as required.   This situation is sketched below on the right.
  
- \smallskip
+  
 
 \begin{center}
 
@@ -689,23 +689,23 @@ This means if $a \geq h$, we are always guaranteed to have at least one triangle
 
 \end{center}
 
-\smallskip
+ 
  
 Moving along, now suppose $h < a < c$. As before, the Law of Sines\footnote{Remember, we have already argued that a triangle exists in this case!} gives $\sin(\gamma) = \frac{c \sin(\alpha)}{a}$.  
 
-\smallskip
+ 
 
-Since $h < a$, $c \sin(\alpha) < a$ or $\frac{c\sin(\alpha)}{a} < 1$  which means there are two solutions to $\sin(\gamma) = \frac{c \sin(\alpha)}{a}$:  an acute angle which we'll call $\gamma_{\mbox{\tiny $0$}}$, and its supplement, $180^{\circ} - \gamma_{\mbox{\tiny $0$}}$.   
+Since $h < a$, $c \sin(\alpha) < a$ or $\frac{c\sin(\alpha)}{a} < 1$  which means there are two solutions to $\sin(\gamma) = \frac{c \sin(\alpha)}{a}$:  an acute angle which we'll call $\gamma_0$, and its supplement, $180^{\circ} - \gamma_0$.   
 
-\smallskip
+ 
 
-Our job now is to  argue that each of these angles `fit' into a  triangle with $\alpha$.  Since $(\alpha, a)$ and $(\gamma_{\mbox{\tiny $0$}},c)$ are angle-side opposite pairs,  the assumption $c > a$ in this case gives us $\gamma_{\mbox{\tiny $0$}} > \alpha$. Since $\gamma_{\mbox{\tiny $0$}}$ is acute, we must have that $\alpha$ is acute as well.  This means one triangle  can contain both $\alpha$ and $\gamma_{\mbox{\tiny $0$}}$, giving us one of the triangles promised in the theorem.  
+Our job now is to  argue that each of these angles `fit' into a  triangle with $\alpha$.  Since $(\alpha, a)$ and $(\gamma_0,c)$ are angle-side opposite pairs,  the assumption $c > a$ in this case gives us $\gamma_0 > \alpha$. Since $\gamma_0$ is acute, we must have that $\alpha$ is acute as well.  This means one triangle  can contain both $\alpha$ and $\gamma_0$, giving us one of the triangles promised in the theorem.  
 
-\smallskip
+ 
 
-If we manipulate the inequality $\gamma_{\mbox{\tiny $0$}} > \alpha$ a bit, we have  $180^{\circ} - \gamma_{\mbox{\tiny $0$}} < 180^{\circ} - \alpha$.  Adding $\alpha$ to both sides gives $\left(180^{\circ} - \gamma_{\mbox{\tiny $0$}}\right) + \alpha < 180^{\circ}$. This proves a triangle can contain both of the angles $\alpha$ and $\left(180^{\circ} - \gamma_{\mbox{\tiny $0$}}\right)$, giving us the second triangle predicted in the theorem.  We sketch the two triangle case below on the left.
+If we manipulate the inequality $\gamma_0 > \alpha$ a bit, we have  $180^{\circ} - \gamma_0 < 180^{\circ} - \alpha$.  Adding $\alpha$ to both sides gives $\left(180^{\circ} - \gamma_0\right) + \alpha < 180^{\circ}$. This proves a triangle can contain both of the angles $\alpha$ and $\left(180^{\circ} - \gamma_0\right)$, giving us the second triangle predicted in the theorem.  We sketch the two triangle case below on the left.
 
-\smallskip
+ 
 
 To prove the last case in the theorem, we assume $a \geq c$.  Then $\alpha \geq \gamma$, which forces $\gamma$ to be an acute angle. Hence, we get only one triangle in this case, completing the proof.
  
@@ -721,8 +721,8 @@ To prove the last case in the theorem, we assume $a \geq c$.  Then $\alpha \geq 
 \tlabel[cc](1.75,1.25){\small  $c$}
 \tlabel[cc](3.6,1){\small  $h$}
 \tlabel[cc](0.75,0.15){\small $\alpha$}
-\tlabel[cc](5,0.15){\small $\gamma_{\mbox{\tiny $0$}}$}
-\tlabel[cc](1.9,0.15){\small $\gamma_{\mbox{\tiny $0$}}$}
+\tlabel[cc](5,0.15){\small $\gamma_0$}
+\tlabel[cc](1.9,0.15){\small $\gamma_0$}
 \arrow \reverse \arrow \parafcn{5, 25, 5}{0.6*dir(t)}
 \arrow \reverse \arrow  \shiftpath{(5.70,0)}  \parafcn{145, 175, 5}{0.5*dir(t)}
 \arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{45, 175, 5}{0.25*dir(t)}
@@ -756,11 +756,11 @@ $h < a < c$, two triangles & $a \geq c$, one triangle \\
 
 One last comment regarding the Angle-Side-Side case:  if you are given an obtuse angle to begin with then it is impossible to have the two triangle case.  Think about this before reading further.
 
-\smallskip
+ 
 
 In many of the derivations and arguments in this section, we used the height of a given triangle, $h$, as an intermediate variable to prove equivalences.  Since the height of a triangle can be used to determine the area enclosed by said triangle, we can use the methods in this section to reformulate area in terms of side lengths and sines of angles. We state the following theorem and leave its proof as an exercise.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -768,7 +768,7 @@ In many of the derivations and arguments in this section, we used the height of 
 
 \[A = \frac{1}{2}bc\sin(\alpha) =  \frac{1}{2}ac\sin(\beta) =  \frac{1}{2}ab\sin(\gamma)\]
 
-\smallskip
+ 
 
 That is, the area enclosed by the triangle $A = \frac{1}{2} \, (\text{the product of two sides}) \, \sin(\text{of the included angle})$.
 
@@ -776,15 +776,15 @@ That is, the area enclosed by the triangle $A = \frac{1}{2} \, (\text{the produc
 
 %% \ebm}
 
-\smallskip
+ 
 
 \begin{example} \label{areaformulasineex}  Find the area of the triangle in Example \ref{losex} number \ref{losaas}.
 
-\smallskip
+ 
 
 {\bf Solution.} From our work in  Example \ref{losex} number \ref{losaas}, we have all three angles and all three sides to work with.  However, to minimize propagated error, we choose $A = \frac{1}{2} ac \sin(\beta)$ from Theorem \ref{areaformulasine} because it uses the most pieces of given information.  
 
-\smallskip
+ 
 
 We are given  $a = 7$ and $\beta = 45^{\circ}$, and we calculated $c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}$.   Using these values, we find the area  $A =  \frac{1}{2}(7)\left(\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \right) \sin\left(45^{\circ}\right) =  \approx 5.18$ square units. The reader is encouraged to check this answer against the results obtained using the other formulas in Theorem \ref{areaformulasine}. \qed
 
@@ -795,23 +795,23 @@ We are given  $a = 7$ and $\beta = 45^{\circ}$, and we calculated $c = \frac{7\s
 
 Our last example of the section uses the navigation tool known as \index{bearings}\textbf{bearings}.  Simply put, a bearing is the direction you are heading according to a compass.  
 
-\smallskip
+ 
 
 The classic nomenclature for bearings, however, is not given as an angle in standard position, so we must first understand the notation.  A bearing is given as an acute angle of rotation (to the east or to the west) away from the north-south (up and down) line of a compass rose.  
 
-\smallskip
+ 
 
 For example, N$40^{\circ}$E (read ``$40^{\circ}$ east of north'') is a bearing which is rotated clockwise $40^{\circ}$ from due north.  If we imagine standing at the origin in the Cartesian Plane, this bearing would have us heading into Quadrant I along the terminal side of $\theta = 50^{\circ}$. 
 
-\smallskip
+ 
 
  Similarly, S$50^{\circ}$W would point into Quadrant III along the terminal side of $\theta = 220^{\circ}$ because we started out pointing due south (along $\theta = 270^{\circ}$) and rotated clockwise $50^{\circ}$ back to $220^{\circ}$.  
  
- \smallskip
+  
  
  Counter-clockwise rotations would be found in the bearings N$60^{\circ}$W (which is on the terminal side of $\theta = 150^{\circ}$) and S$27^{\circ}$E (which lies along the terminal side of $\theta = 297^{\circ}$). 
  
- \smallskip
+  
  
  These four bearings are sketched in the plane below.
 
@@ -849,15 +849,15 @@ For example, N$40^{\circ}$E (read ``$40^{\circ}$ east of north'') is a bearing w
 
 The cardinal directions north, south, east and west are usually not given as bearings in the fashion described above, but rather, one just refers to them as `due north', `due south', `due east' and `due west', respectively, and it is assumed that you know which quadrantal angle goes with each cardinal direction.  
 
-\smallskip
+ 
 
 We make good use of bearings and the Law of Sines in our next example.
 
-\smallskip 
+  
 
 \begin{example} \label{losapplication}  Sasquatch Island lies off the coast of Ippizuti Lake.  As illustrated below, from a point $P$ on the shore, the bearing to Sasquatch Island is observed to be  N$60^{\circ}$E.  From a point $Q$ that is  5 miles due East of $P$, the bearing to the island is observed to be N$45^{\circ}$E.  
 
-\smallskip
+ 
 
 \begin{center}
 
@@ -887,17 +887,17 @@ We make good use of bearings and the Law of Sines in our next example.
 
 \end{center}
 
-\smallskip
+ 
 
 Assuming the coastline continues to run due East, find the distance from the point $Q$ to the island.  What point on the shore is closest to the island? How far is the island from this point?  
 
 {\bf Solution.}  As illustrated above, the points $P$, $Q$, and the location of the island (represented as a point) form a triangle.  Using the bearings information given, we get that the angle between the shore and the island at point $P$ is $90^{\circ} - 60^{\circ}  = 30^{\circ}$ while  the angle between the shore and the island at point $Q$ is $90^{\circ} - 45^{\circ} = 45^{\circ}$.   
 
-\smallskip
+ 
 
 We pause for a moment to summarize our known (and label our unknown) information below.
 
-\smallskip
+ 
 
 \begin{center}
 
@@ -928,15 +928,15 @@ We pause for a moment to summarize our known (and label our unknown) information
 
 In order to use the Law of Sines to find the distance $d$ from $Q$ to the island, we first need to find the measure of $\beta$ which is the angle opposite the side of length $5$ miles.    
 
-\smallskip
+ 
 
 Since the angles $\gamma$ and $45^{\circ}$ are supplemental,  we get $\gamma = 180^{\circ} - 45^{\circ} = 135^{\circ}$. Knowing $\gamma$, we now find  $\beta = 180^{\circ} - 30^{\circ} - \gamma =  180^{\circ} - 30^{\circ} - 135^{\circ} = 15^{\circ}$. 
 
-\smallskip
+ 
 
 By the Law of Sines, we have $\frac{d}{\sin\left(30^{\circ}\right)} = \frac{5}{\sin\left(15^{\circ}\right)}$ which gives $d = \frac{5\sin\left(30^{\circ}\right)}{\sin\left(15^{\circ}\right)} \approx 9.66$ miles.  
 
-\smallskip
+ 
 
 To  find the point on the coast closest to the island, which we've labeled as $C$ in the diagram below, we need to find the perpendicular distance from the island to the coast.\footnote{Do you see why $C$ must lie to the right (East) of $Q$?} Let $x$ denote the distance from the second observation point $Q$ to the point $C$  and let $y$ denote the distance from $C$ to the island. 
 
@@ -965,16 +965,12 @@ To  find the point on the coast closest to the island, which we've labeled as $C
 
  Using Definition  \ref{righttrianglesinecosinetangent}, we get $\sin\left(45^{\circ}\right) = \frac{y}{d}$, so  $y = d \sin\left(45^{\circ}\right) \approx 9.66 \left(\frac{\sqrt{2}}{2}\right) \approx 6.83$ miles.  Hence, the island is approximately $6.83$ miles from the coast. 
  
- \smallskip
+  
  
  To find the distance from $Q$ to $C$, we note that $\beta = 180^{\circ} - 90^{\circ} - 45^{\circ} = 45^{\circ}$ so by symmetry,\footnote{Or by Definition  \ref{righttrianglesinecosinetangent} again \ldots} we get $x = y \approx 6.83$ miles.  Hence, the point on the shore closest to the island is approximately $6.83$ miles down the coast from the second observation point $Q$. \qed
 \end{example} 
 
 
-
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforTheLawofSines}
 
