@@ -1377,7 +1377,7 @@ $\left\{ (r,\theta) \, | \, 1 \leq r \leq 1-2\cos(\theta), \, \frac{\pi}{2} \leq
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -1385,35 +1385,25 @@ $\left\{ (r,\theta) \, | \, 1 \leq r \leq 1-2\cos(\theta), \, \frac{\pi}{2} \leq
     xlabel={$x$}, ylabel={$y$},
     xlabel style={anchor=west},
     ylabel style={anchor=south},
-    xtick={-4,-2,2,4},
-    ytick={-4,-2,2,4},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-3,-2,-1,1,2,3},
     tick label style={font=\tiny},
     label style={font=\scriptsize},
     samples=100,
 ]
 
+% Polar Graph Region  (outer curve) -- (inner curve BACKWARDS) -- cycle 
 \filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
-plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)})
-plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)})
---cycle
-% Polar Graph Region
-% TikZ math engine uses degrees by default
-%\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
-%    plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- cycle;
-%\filldraw[fill=white, fill opacity=1, draw=white, thick]
-%    plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)}) -- cycle;
+plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- plot[domain=270:90, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)}) --cycle;
 
 % Polar Graph
 % TikZ math engine uses degrees by default
-%\draw[dashed, blue, thick]
-%    plot[domain=0:360, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- cycle;
-%\draw[blue, thick]
-%    plot[domain=90:270, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
-%\draw[dashed, red, thick]
-%    plot[domain=-90:90, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
+\draw[dashed, blue, thick]
+plot[domain=-90:90, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)});
 
+\draw[dashed, red, thick]
+plot[domain=-90:90, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
 
-    
 \end{axis}
 \end{tikzpicture}
 \end{solution}
@@ -1428,7 +1418,7 @@ $\left\{ (r,\theta) \, | \, 1 + \cos(\theta) \leq r \leq 3\cos(\theta), \, -\fra
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-1, xmax=5, ymin=-3, ymax=3,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -1436,34 +1426,25 @@ $\left\{ (r,\theta) \, | \, 1 + \cos(\theta) \leq r \leq 3\cos(\theta), \, -\fra
     xlabel={$x$}, ylabel={$y$},
     xlabel style={anchor=west},
     ylabel style={anchor=south},
-    xtick={1, 2, 3, 4},
-    ytick={-2, -1, 1, 2},
+    xtick={-3,-2,-1,1,2,3},
+    ytick={-3,-2,-1,1,2,3},
     tick label style={font=\tiny},
     label style={font=\scriptsize},
     samples=100,
 ]
 
-% Polar Graph Region
-% TikZ math engine uses degrees by default
+% Polar Graph Region  (outer curve) -- (inner curve BACKWARDS) -- cycle 
 \filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick]
-plot[domain=300:420, samples=120, smooth] ({(3*cos(\x))*cos(\x)}, {(3*cos(\x)))*sin(\x)}) -- cycle;
-    
-\filldraw[fill=white, fill opacity=1, draw=white, thick]
-plot[domain=300:420, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {(1+cos(\x))*sin(\x)}) -- cycle;
+plot[domain=90:270, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)}) -- plot[domain=270:90, samples=120, smooth] ({(1)*cos(\x)}, {(1))*sin(\x)}) --cycle;
 
 % Polar Graph
 % TikZ math engine uses degrees by default
 \draw[dashed, blue, thick]
- plot[domain=60:300, samples=120, smooth] ({(3*cos(\x))*cos(\x)}, {(3*cos(\x))*sin(\x)});
-    
-\draw[blue, thick]
- plot[domain=300:420, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {(1+cos(\x))*sin(\x)});
-    
+plot[domain=-90:90, samples=120, smooth] ({(1-2*cos(\x))*cos(\x)}, {(1-2*cos(\x))*sin(\x)});
+
 \draw[dashed, red, thick]
-   plot[domain=60:300, samples=120, smooth] ({(1+cos(\x))*cos(\x)}, {((1+cos(\x))*sin(\x)});
+plot[domain=-90:90, samples=120, smooth] ({(1)*cos(\x)}, {(1)*sin(\x)});
 
-
-    
 \end{axis}
 \end{tikzpicture}
 \end{solution}
