@@ -486,18 +486,273 @@ Graph the following equations.
 
 \begin{problem}
 $r = \frac{2}{1-\cos(\theta)}$
+
+\begin{solution}
+
+$r = \frac{2}{1-\cos(\theta)}$ is a parabola
+
+directrix $x = -2$
+
+vertex $(-1,0)$ 
+
+focus $(0,0)$
+
+focal diameter $4$
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[<->, thick, blue, smooth, samples=100, domain=50:310] 
+    plot ({ (2/(1-cos(\x))) * cos(\x) }, { (2/(1-cos(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-2,-5) -- (-2,5);
+
+%Focus
+ \node at (-0.05,-0.05) {\textasteriskcentered};
+
+
+%Points
+\fill (0,2) circle (2pt);
+\fill (0, -2) circle (2pt);
+\fill (-1,0) circle (2pt);
+    
+    %Tangents at the pole
+    %\draw[dashed] (0,0) -- (3.19, 2.41) (0,0) -- (-3.19, 2.41);
+    %\node at (4, 3) {\tiny $\theta = \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-4, 3) {\tiny $\theta = \pi - \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
  $r = \frac{3}{2 + \sin(\theta)}$
+
+ \begin{solution}
+
+$r = \frac{3}{2 + \sin(\theta)} = \frac{\frac{3}{2}}{1 + \frac{1}{2} \sin(\theta)}$ is an ellipse
+
+directrix $y = 3$
+
+vertices $(0,1)$, $(0,-3)$
+
+center $(0,-2)$
+
+foci $(0,0)$, $(0,-2)$
+
+minor axis length $2\sqrt{3}$
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3/(2+sin(\x))) * cos(\x) }, { (3/(2+sin(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-5,3) -- (5,3);
+
+%Focus and center
+\node at (-0.05,0) {\textasteriskcentered};
+\node at (-0.05,-2) {\textasteriskcentered};
+\node at (0,-1) {$+$};
+
+%Points
+\fill (0,1) circle (2pt);
+\fill (0,-3) circle (2pt);
+\fill (1.73,-1) circle (2pt);
+\fill (-1.73,-1) circle (2pt);
+
+    
+    %Tangents at the pole
+    %\draw[dashed] (0,0) -- (3.19, 2.41) (0,0) -- (-3.19, 2.41);
+    %\node at (4, 3) {\tiny $\theta = \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-4, 3) {\tiny $\theta = \pi - \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $r = \frac{3}{2-\cos(\theta)}$
+
+\begin{solution}
+
+$r = \frac{3}{2 - \cos(\theta)} = \frac{\frac{3}{2}}{1 - \frac{1}{2} \cos(\theta)}$ is an ellipse
+
+directrix $x = -3$
+
+vertices $(-1,0)$, $(3,0)$
+
+center $(1,0)$
+
+foci $(0,0)$, $(2,0)$
+
+minor axis length $2\sqrt{3}$
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (3/(2-cos(\x))) * cos(\x) }, { (3/(2-cos(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-3,-5) -- (-3,5);
+
+%Focus and center
+\node at (-0.05,0) {\textasteriskcentered};
+\node at (2,-0.05) {\textasteriskcentered};
+\node at (1,0) {$+$};
+
+%Points
+\fill (-1,0) circle (2pt);
+\fill (3,0) circle (2pt);
+\fill (1,1.73) circle (2pt);
+\fill (1,-1.73) circle (2pt);
+
+    
+    %Tangents at the pole
+    %\draw[dashed] (0,0) -- (3.19, 2.41) (0,0) -- (-3.19, 2.41);
+    %\node at (4, 3) {\tiny $\theta = \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-4, 3) {\tiny $\theta = \pi - \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 $r = \frac{2}{1 + \sin(\theta)}$
+
+\begin{solution}
+
+ $r = \frac{2}{1+\sin(\theta)}$ is a parabola
+ 
+ directrix $y=2$
+ 
+ vertex $(0,1)$
+ 
+ focus $(0,0)$
+ 
+ focal diameter $4$
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[thick, blue, smooth, samples=100, domain=-30:210] 
+    plot ({ (1/(1+sin(\x))) * cos(\x) }, { (1/(1+sin(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-5,2) -- (5,2);
+
+%Focus and center
+\node at (-0.05,-0.05) {\textasteriskcentered};
+\node at (2,-0.05) {\textasteriskcentered};
+\node at (1,0) {$+$};
+
+%Points
+\fill (-2,0) circle (2pt);
+\fill (2,0) circle (2pt);
+\fill (0,1) circle (2pt);
+%\fill (1,-1.73) circle (2pt);
+
+    
+    %Tangents at the pole
+    %\draw[dashed] (0,0) -- (3.19, 2.41) (0,0) -- (-3.19, 2.41);
+    %\node at (4, 3) {\tiny $\theta = \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-4, 3) {\tiny $\theta = \pi - \arcsin\left(\frac{3}{5}\right)$};
+    %\node at (-2,4.4) {$\theta = \frac{5\pi}{8}$};
+    %\node at (-3.5,2) {$\theta = \frac{7\pi}{8}$};
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
