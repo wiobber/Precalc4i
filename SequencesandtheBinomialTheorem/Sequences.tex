@@ -23,19 +23,19 @@ As usual, the periods of \index{ellipsis (\ldots)} ellipsis, $\ldots$, indicate 
 
 \[ \begin{array}{|r||r|}  \hline
 
-n & a(n)  \\[2pt]  \hline
-1  & \frac{1}{2} \\[3pt]  \hline 
-2 & -\frac{3}{4}  \\[3pt] \hline 
-3 & \frac{9}{8}  \\[3pt] \hline 
-4 & -\frac{27}{16}  \\[3pt] \hline 
-\vdots & \vdots  \\[2pt] \hline
+n & a(n)  \\   \hline
+1  & \frac{1}{2} \\   \hline 
+2 & -\frac{3}{4}  \\  \hline 
+3 & \frac{9}{8}  \\  \hline 
+4 & -\frac{27}{16}  \\  \hline 
+\vdots & \vdots  \\  \hline
 \end{array} \] 
 
 \setlength{\extrarowheight}{0pt}
 
 In other words, $a(n)$ is the $n^{\text{th}}$ term in the sequence.  We formalize these ideas in our definition of a  sequence and introduce some accompanying notation.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -46,11 +46,11 @@ In other words, $a(n)$ is the $n^{\text{th}}$ term in the sequence.  We formaliz
 
 %% \ebm}
 
-\smallskip
+ 
 
-Applying the notation provided in Definition \ref{sequencedefn} to the sequence given (\ref{seq1}), we have $a_{\text{\tiny$1$}} =  \frac{1}{2}$, $a_{\text{\tiny$2$}} =  -\frac{3}{4}$, $a_{\text{\tiny$3$}} =  \frac{9}{8}$. 
+Applying the notation provided in Definition \ref{sequencedefn} to the sequence given (\ref{seq1}), we have $a_1 =  \frac{1}{2}$, $a_2 =  -\frac{3}{4}$, $a_3 =  \frac{9}{8}$. 
 
-Suppose we wanted to know $a_{\text{\tiny$117$}}$, that is, the $117^{\text{th}}$ term in the sequence. While the pattern of the sequence is apparent, it would benefit us greatly to have an explicit formula for $a_{n}$.  Unfortunately, there is no general algorithm that will produce a formula for every sequence, so any formulas we do  develop will come from that greatest of teachers, experience. In other words, it is time for an example.
+Suppose we wanted to know $a_117$, that is, the $117^{\text{th}}$ term in the sequence. While the pattern of the sequence is apparent, it would benefit us greatly to have an explicit formula for $a_{n}$.  Unfortunately, there is no general algorithm that will produce a formula for every sequence, so any formulas we do  develop will come from that greatest of teachers, experience. In other words, it is time for an example.
 
 \begin{example} \label{seqex1}  Write the first four terms of the following sequences.
 
@@ -83,9 +83,9 @@ Suppose we wanted to know $a_{\text{\tiny$117$}}$, that is, the $117^{\text{th}}
 \setcounter{enumi}{\value{HW}}
 
 
-\item\label{introrecursiveex01}  $a_{\text{\tiny$1$}} = 7$, $a_{n \text{\tiny$ + 1$}} = 2 - a_{n}$, $n \geq 1$
+\item\label{introrecursiveex01}  $a_1 = 7$, $a_{n+1} = 2 - a_{n}$, $n \geq 1$
 
-\item  \label{factorialintroex} $f_{\text{\tiny$0$}} = 1$, $f_{n} =n \cdot f_{n-\text{\tiny$1$}}$, $n \geq 1$
+\item  \label{factorialintroex} $f_0 = 1$, $f_{n} =n \cdot f_{n-1}$, $n \geq 1$
 
 \setcounter{HW}{\value{enumi}}
 \end{enumerate}
@@ -97,17 +97,17 @@ Suppose we wanted to know $a_{\text{\tiny$117$}}$, that is, the $117^{\text{th}}
 
 \begin{enumerate}
 
-\item Since we are given $n \geq 1$, the first four terms of the sequence are  $a_{\text{\tiny$1$}}$, $a_{\text{\tiny$2$}}$, $a_{\text{\tiny$3$}}$ and $a_{\text{\tiny$4$}}$.  Since the notation $a_{\text{\tiny$1$}}$ means the same thing as $a(1)$, we obtain our first term by replacing every occurrence of $n$ in the formula for $a_{n}$ with $n=1$ to get  $a_{\text{\tiny$1$}} = \frac{5^{1-1}}{3^{1}} = \frac{1}{3}$.  Proceeding similarly, we get $a_{\text{\tiny$2$}} = \frac{5^{2-1}}{3^{2}} =\frac{5}{9}$, $a_{\text{\tiny$3$}} = \frac{5^{3-1}}{3^{3}} =\frac{25}{27}$ and $a_{\text{\tiny$4$}} = \frac{5^{4-1}}{3^{4}} =\frac{125}{81}$.  
+\item Since we are given $n \geq 1$, the first four terms of the sequence are  $a_1$, $a_2$, $a_3$ and $a_4$.  Since the notation $a_1$ means the same thing as $a(1)$, we obtain our first term by replacing every occurrence of $n$ in the formula for $a_{n}$ with $n=1$ to get  $a_1 = \frac{5^{1-1}}{3^{1}} = \frac{1}{3}$.  Proceeding similarly, we get $a_2 = \frac{5^{2-1}}{3^{2}} =\frac{5}{9}$, $a_3 = \frac{5^{3-1}}{3^{3}} =\frac{25}{27}$ and $a_4 = \frac{5^{4-1}}{3^{4}} =\frac{125}{81}$.  
 
-\item For this sequence we have $k \geq 0$, so the first four terms are $b_{\text{\tiny$0$}}$, $b_{\text{\tiny$1$}}$, $b_{\text{\tiny$2$}}$ and $b_{\text{\tiny$3$}}$.  Proceeding as before, replacing in this case the variable $k$ with the appropriate whole number, beginning with $0$, we get $b_{\text{\tiny$0$}} = \frac{(-1)^{0}}{2(0)+1} = 1$, $b_{\text{\tiny$1$}} = \frac{(-1)^{1}}{2(1)+1} = - \frac{1}{3}$, $b_{\text{\tiny$2$}} = \frac{(-1)^{2}}{2(2)+1} = \frac{1}{5}$ and $b_{\text{\tiny$3$}} =  \frac{(-1)^{3}}{2(3)+1} = -\frac{1}{7}$.  As a side-note, this sequence is called an \index{sequence ! alternating} \textit{alternating} sequence since the signs alternate between `$+$' and `$-$.' The reader is encouraged to think what component of the formula is producing this effect.
+\item For this sequence we have $k \geq 0$, so the first four terms are $b_0$, $b_1$, $b_2$ and $b_3$.  Proceeding as before, replacing in this case the variable $k$ with the appropriate whole number, beginning with $0$, we get $b_0 = \frac{(-1)^{0}}{2(0)+1} = 1$, $b_1 = \frac{(-1)^{1}}{2(1)+1} = - \frac{1}{3}$, $b_2 = \frac{(-1)^{2}}{2(2)+1} = \frac{1}{5}$ and $b_3 =  \frac{(-1)^{3}}{2(3)+1} = -\frac{1}{7}$.  As a side-note, this sequence is called an \index{sequence ! alternating} \textit{alternating} sequence since the signs alternate between `$+$' and `$-$.' The reader is encouraged to think what component of the formula is producing this effect.
 
-\item  The notation $\left\{ 2n - 1 \right\}_{n=1}^{\infty}$ means  $a_{n} = 2n -1$, $n \geq 1$.  We get $a_{\text{\tiny$1$}} = 1$, $a_{\text{\tiny$2$}} = 3$, $a_{\text{\tiny$3$}} = 5$ and $a_{\text{\tiny$4$}} = 7$.  In other words, we get the first four odd natural numbers.  The reader is encouraged to examine whether or not this pattern continues indefinitely.
+\item  The notation $\left\{ 2n - 1 \right\}_{n=1}^{\infty}$ means  $a_{n} = 2n -1$, $n \geq 1$.  We get $a_1 = 1$, $a_2 = 3$, $a_3 = 5$ and $a_4 = 7$.  In other words, we get the first four odd natural numbers.  The reader is encouraged to examine whether or not this pattern continues indefinitely.
 
-\item  Here, we are using the letter $i$ as a counter, not as the imaginary unit we saw in Section \ref{ComplexZeros}.  Proceeding as before, we set $a_{i} = \frac{1 + (-1)^{i}}{i}$, $i \geq 2$.  We find $a_{\text{\tiny$2$}} = 1$, $a_{\text{\tiny$3$}} = 0$, $a_{\text{\tiny$4$}} = \frac{1}{2}$ and $a_{\text{\tiny$5$}} = 0$.  
+\item  Here, we are using the letter $i$ as a counter, not as the imaginary unit we saw in Section \ref{ComplexZeros}.  Proceeding as before, we set $a_{i} = \frac{1 + (-1)^{i}}{i}$, $i \geq 2$.  We find $a_2 = 1$, $a_3 = 0$, $a_4 = \frac{1}{2}$ and $a_5 = 0$.  
 
-\item  To obtain the terms of this sequence, we start with $a_{\text{\tiny$1$}} = 7$ and use the equation $a_{n \text{+\tiny$1$}} = 2 - a_{n}$ for $n \geq 1$ to generate successive terms.  When $n = 1$, this equation becomes $a_{\text{\tiny$1 + 1$}} = 2 - a_{\text{\tiny$1$}}$ which simplifies to $a_{\text{\tiny$2$}} = 2 - a_{\text{\tiny$1$}} = 2 - 7 = -5$.  When $n = 2$, the equation becomes $a_{\text{\tiny$2 + 1$}} = 2 - a_{\text{\tiny$2$}}$ so we get $a_{\text{\tiny$3$}} = 2 - a_{\text{\tiny$2$}} = 2 - (-5) = 7$.  Finally, when $n = 3$, we get $a_{\text{\tiny$3 + 1$}} = 2 - a_{\text{\tiny$3$}}$ so $a_{\text{\tiny$4$}} = 2 - a_{\text{\tiny$3$}} = 2-7 = -5$.  
+\item  To obtain the terms of this sequence, we start with $a_1 = 7$ and use the equation $a_{n+1} = 2 - a_{n}$ for $n \geq 1$ to generate successive terms.  When $n = 1$, this equation becomes $a_{\text{$1 + 1$}} = 2 - a_1$ which simplifies to $a_2 = 2 - a_1 = 2 - 7 = -5$.  When $n = 2$, the equation becomes $a_{\text{$2 + 1$}} = 2 - a_2$ so we get $a_3 = 2 - a_2 = 2 - (-5) = 7$.  Finally, when $n = 3$, we get $a_{\text{$3 + 1$}} = 2 - a_3$ so $a_4 = 2 - a_3 = 2-7 = -5$.  
 
-\item  As with the problem above, we are given a place to start with $f_{\text{\tiny$0$}} = 1$ and given a formula to build other terms of the sequence.  Substituting $n = 1$ into the equation $f_{n} = n \cdot f_{n-\text{\tiny$1$}}$, we get $f_{\text{\tiny$1$}} = 1 \cdot f_{\text{\tiny$0$}} = 1 \cdot 1 = 1$.  Advancing to $n = 2$, we get $f_{\text{\tiny$2$}} = 2 \cdot f_{\text{\tiny$1$}} = 2 \cdot 1 = 2$.  Finally, $f_{\text{\tiny$3$}} = 3 \cdot f_{\text{\tiny$2$}} = 3 \cdot 2 = 6$.  \qed
+\item  As with the problem above, we are given a place to start with $f_0 = 1$ and given a formula to build other terms of the sequence.  Substituting $n = 1$ into the equation $f_{n} = n \cdot f_{n-1}$, we get $f_1 = 1 \cdot f_0 = 1 \cdot 1 = 1$.  Advancing to $n = 2$, we get $f_2 = 2 \cdot f_1 = 2 \cdot 1 = 2$.  Finally, $f_3 = 3 \cdot f_2 = 3 \cdot 2 = 6$.  \qed
 
 \end{enumerate}
 
@@ -137,7 +137,7 @@ Speaking of $\left\{ b_{k} \right\}_{k=0}^{\infty}$, the astute and mathematical
 
 To see how we can do this, it helps to think of the problem graphically.  What we want is to shift the graph of $y=b(k)$ to the right one unit, and thinking back to Section \ref{Transformations}, we can accomplish this by replacing $k$ with $k-1$ in the definition of $\left\{ b_{k} \right\}_{k=0}^{\infty}$.  
 
-Specifically, let $c_{k} = b_{k-\text{\tiny$1$}}$ where $k - 1 \geq 0$.  We get $c_{k} = \frac{(-1)^{k-1}}{2(k-1)+1} = \frac{(-1)^{k-1}}{2k-1}$, where now $k \geq 1$. We leave to the reader to verify that $\left\{ c_{k} \right\}_{k=1}^{\infty}$ generates the same list of numbers as does $\left\{ b_{k} \right\}_{k=0}^{\infty}$, but the former satisfies Definition \ref{sequencedefn}, while the latter does not.   
+Specifically, let $c_{k} = b_{k-1}$ where $k - 1 \geq 0$.  We get $c_{k} = \frac{(-1)^{k-1}}{2(k-1)+1} = \frac{(-1)^{k-1}}{2k-1}$, where now $k \geq 1$. We leave to the reader to verify that $\left\{ c_{k} \right\}_{k=1}^{\infty}$ generates the same list of numbers as does $\left\{ b_{k} \right\}_{k=0}^{\infty}$, but the former satisfies Definition \ref{sequencedefn}, while the latter does not.   
 
 Like so many things in this text, we acknowledge that this point is pedantic and join the vast majority of authors who adopt a more relaxed view of Definition \ref{sequencedefn} to include any function which generates a list of numbers which can then be matched up with the natural numbers.\footnote{We're basically talking about the `countably infinite' subsets of the real number line when we do this.}   
 
@@ -150,16 +150,16 @@ Like so many things in this text, we acknowledge that this point is pedantic and
  
  While none of the sequences in Example \ref{seqex1} worked out to be the sequence in (\ref{seq1}), they do give us some insight into what kinds of patterns to look for.  Two patterns in particular are given in the next definition.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 \begin{definition}  \label{arithgeodefn}  \textbf{Arithmetic and Geometric Sequences:}  Suppose $\left\{ a_{n} \right\}_{n=k}^{\infty}$ is a sequence\footnote{Note that we have adjusted for the fact that not all `sequences' begin at $n=1$.}
 
 \begin{itemize}
 
-\item If  there is a number $d$ so that $a_{n \text{\tiny$ + 1$}}  = a_{n} + d$ for all $n \geq k$, then $\left\{ a_{n} \right\}_{n=k}^{\infty}$ is called an \index{sequence ! arithmetic ! definition of}\index{arithmetic sequence}\textbf{arithmetic sequence}.  The number $d$ is called the \index{sequence ! arithmetic ! common difference} \textbf{common difference}.
+\item If  there is a number $d$ so that $a_{n+1}  = a_{n} + d$ for all $n \geq k$, then $\left\{ a_{n} \right\}_{n=k}^{\infty}$ is called an \index{sequence ! arithmetic ! definition of}\index{arithmetic sequence}\textbf{arithmetic sequence}.  The number $d$ is called the \index{sequence ! arithmetic ! common difference} \textbf{common difference}.
 
-\item If  there is a number $r$ so that $a_{n \text{\tiny$ + 1$}} = r a_{n}$ for all $n \geq k$, then $\left\{ a_{n} \right\}_{n=k}^{\infty}$ is called a \index{sequence ! geometric ! definition of}\index{geometric sequence}\textbf{geometric sequence}.  The number $r$ is called the \index{sequence ! geometric ! common ratio}\textbf{common ratio}.
+\item If  there is a number $r$ so that $a_{n+1} = r a_{n}$ for all $n \geq k$, then $\left\{ a_{n} \right\}_{n=k}^{\infty}$ is called a \index{sequence ! geometric ! definition of}\index{geometric sequence}\textbf{geometric sequence}.  The number $r$ is called the \index{sequence ! geometric ! common ratio}\textbf{common ratio}.
 
 \end{itemize}
 
@@ -167,9 +167,9 @@ Like so many things in this text, we acknowledge that this point is pedantic and
 \end{definition}
 %% \ebm}
 
-\smallskip  
+   
 
-In English, an arithmetic sequence is one in which we proceed from one term to the next by always \textit{adding} the fixed number $d$.  If this sort of `constant change' idea sounds familiar, it should.  Indeed, arithmetic sequences are merely \textit{linear} functions, something we will explore in more detail shortly.  Note the name `common difference' comes from a slight rewrite of the recursion equation from $a_{n \text{\tiny$ + 1$}}  = a_{n} + d$ to $a_{n \text{\tiny$ + 1$}} - a_{n} = d$.  That is, every pair of successive terms has the \textit{same} or \textit{common} difference,  $d$.
+In English, an arithmetic sequence is one in which we proceed from one term to the next by always \textit{adding} the fixed number $d$.  If this sort of `constant change' idea sounds familiar, it should.  Indeed, arithmetic sequences are merely \textit{linear} functions, something we will explore in more detail shortly.  Note the name `common difference' comes from a slight rewrite of the recursion equation from $a_{n+1}  = a_{n} + d$ to $a_{n+1} - a_{n} = d$.  That is, every pair of successive terms has the \textit{same} or \textit{common} difference,  $d$.
 
 Analogously, a geometric sequence is one in which we proceed from one term to the next by always \textit{multiplying} by the same fixed number $r$. If this notion sounds familiar, it is because geometric sequences are, in fact, \textit{exponential} functions.  Again, we will explore this connection in more detail later.  We note that if $a_{n} \neq 0$, we can rearrange the recursion equation to get $\frac{a_{n+1}}{a_{n}} = r$.  Hence, every pair of successive terms has the \textit{same} or \textit{common} ratio, $r$.  
 
@@ -207,20 +207,20 @@ Some sequences are arithmetic, some are geometric and some are neither as the ne
 
 \begin{enumerate}
 
-\item  From Example \ref{seqex1}, we know that the first four terms of this sequence are $\frac{1}{3}, \, \frac{5}{9}, \, \frac{25}{27}$ and $\frac{125}{81}$.  To see if this is an arithmetic sequence, we look at the successive differences of terms.  We find that $a_{\text{\tiny$2$}} - a_{\text{\tiny$1$}} = \frac{5}{9} - \frac{1}{3} = \frac{2}{9}$ and $a_{\text{\tiny$3$}} - a_{\text{\tiny$2$}} = \frac{25}{27} - \frac{5}{9} = \frac{10}{27}$.  Since we get different numbers, there is no `common difference' and we have established that the sequence is \textit{not} arithmetic.  
+\item  From Example \ref{seqex1}, we know that the first four terms of this sequence are $\frac{1}{3}, \, \frac{5}{9}, \, \frac{25}{27}$ and $\frac{125}{81}$.  To see if this is an arithmetic sequence, we look at the successive differences of terms.  We find that $a_2 - a_1 = \frac{5}{9} - \frac{1}{3} = \frac{2}{9}$ and $a_3 - a_2 = \frac{25}{27} - \frac{5}{9} = \frac{10}{27}$.  Since we get different numbers, there is no `common difference' and we have established that the sequence is \textit{not} arithmetic.  
 
-To see if the sequence is geometric, we compute the ratios of successive terms.  The first three ratios  \textit{suggest} the sequence is geometric:   \[\frac{a_{\text{\tiny$2$}}}{a_{\text{\tiny$1$}}} = \frac{\frac{5}{9}}{\frac{1}{3}} = \frac{5}{3}, \;\;\; \frac{a_{\text{\tiny$3$}}}{a_{\text{\tiny$2$}}} = \frac{\frac{25}{27}}{\frac{5}{9}} = \frac{5}{3} \;\; \text{ and } \;\; \frac{a_{\text{\tiny$4$}}}{a_{\text{\tiny$3$}}} = \frac{\frac{125}{81}}{\frac{25}{27}} = \frac{5}{3}\] 
+To see if the sequence is geometric, we compute the ratios of successive terms.  The first three ratios  \textit{suggest} the sequence is geometric:   \[\frac{a_2}{a_1} = \frac{\frac{5}{9}}{\frac{1}{3}} = \frac{5}{3}, \;\;\; \frac{a_3}{a_2} = \frac{\frac{25}{27}}{\frac{5}{9}} = \frac{5}{3} \;\; \text{ and } \;\; \frac{a_4}{a_3} = \frac{\frac{125}{81}}{\frac{25}{27}} = \frac{5}{3}\] 
 To \textit{prove} the sequence is geometric, however, we must show that $\frac{a_{n+1}}{a_{n}} = r$ for all $n$:
 
-\[ \dfrac{a_{n\text{\tiny$ + 1$}}}{a_{n}} = \dfrac{\dfrac{5^{(n+1)-1}}{3^{n+1}}}{\dfrac{5^{n-1}}{3^{n}}} = \dfrac{5^{n}}{3^{n+1}} \cdot \dfrac{3^{n}}{5^{n-1}} = \dfrac{5}{3} \]
+\[ \dfrac{a_{n+1}}{a_{n}} = \dfrac{\dfrac{5^{(n+1)-1}}{3^{n+1}}}{\dfrac{5^{n-1}}{3^{n}}} = \dfrac{5^{n}}{3^{n+1}} \cdot \dfrac{3^{n}}{5^{n-1}} = \dfrac{5}{3} \]
 
 Hence, the sequence is geometric with common ratio $r = \frac{5}{3}$.
 
-\item Again, we have Example \ref{seqex1} to thank for providing the first four terms of this sequence: $1, \, -\frac{1}{3}, \, \frac{1}{5}$ and $-\frac{1}{7}$.  We find $b_{\text{\tiny$1$}} - b_{\text{\tiny$0$}} =  -\frac{4}{3}$ and $b_{\text{\tiny$2$}} - b_{\text{\tiny$1$}} = \frac{8}{15}$.  Hence, the sequence is not arithmetic.  To see if it is geometric, we compute $\frac{b_{\text{\tiny$1$}}}{b_{\text{\tiny$0$}}} = -\frac{1}{3}$ and $\frac{b_{\text{\tiny$2$}}}{b_{\text{\tiny$1$}}} = -\frac{3}{5}$.  Since there is no `common ratio,' we conclude the sequence is not geometric, either.
+\item Again, we have Example \ref{seqex1} to thank for providing the first four terms of this sequence: $1, \, -\frac{1}{3}, \, \frac{1}{5}$ and $-\frac{1}{7}$.  We find $b_1 - b_0 =  -\frac{4}{3}$ and $b_2 - b_1 = \frac{8}{15}$.  Hence, the sequence is not arithmetic.  To see if it is geometric, we compute $\frac{b_1}{b_0} = -\frac{1}{3}$ and $\frac{b_2}{b_1} = -\frac{3}{5}$.  Since there is no `common ratio,' we conclude the sequence is not geometric, either.
 
-\item  As we saw in Example \ref{seqex1}, the sequence $\left\{ 2n - 1 \right\}_{n=1}^{\infty}$ generates the odd numbers:  $1, 3, 5, 7, \ldots$.  Computing the first few differences, we find $a_{\text{\tiny$2$}} - a_{\text{\tiny$1$}} = 2$, $a_{\text{\tiny$3$}} - a_{\text{\tiny$2$}} = 2$, and $a_{\text{\tiny$4$}} - a_{\text{\tiny$3$}} = 2$.  This suggests that the sequence is arithmetic.  To prove this is the case, we find \[a_{n \text{\tiny$ + 1$}} - a_{n} = (2(n+1)-1) - (2n-1) = 2n+2-1-2n+1 = 2\]  This establishes that the sequence is arithmetic with common difference $d = 2$.  To see if it is geometric, we compute $\frac{a_{\text{\tiny$2$}}}{a_{\text{\tiny$1$}}} = 3$ and  $\frac{a_{\text{\tiny$3$}}}{a_{\text{\tiny$2$}}} = \frac{5}{3}$.  Since these ratios are different, we conclude the sequence is not geometric.
+\item  As we saw in Example \ref{seqex1}, the sequence $\left\{ 2n - 1 \right\}_{n=1}^{\infty}$ generates the odd numbers:  $1, 3, 5, 7, \ldots$.  Computing the first few differences, we find $a_2 - a_1 = 2$, $a_3 - a_2 = 2$, and $a_4 - a_3 = 2$.  This suggests that the sequence is arithmetic.  To prove this is the case, we find \[a_{n+1} - a_{n} = (2(n+1)-1) - (2n-1) = 2n+2-1-2n+1 = 2\]  This establishes that the sequence is arithmetic with common difference $d = 2$.  To see if it is geometric, we compute $\frac{a_2}{a_1} = 3$ and  $\frac{a_3}{a_2} = \frac{5}{3}$.  Since these ratios are different, we conclude the sequence is not geometric.
 
-\item  We met our last sequence at the beginning of the section.  Given that $a_{\text{\tiny$2$}} - a_{\text{\tiny$1$}} = -\frac{5}{4}$ and $a_{\text{\tiny$3$}} - a_{\text{\tiny$2$}} = \frac{15}{8}$, the sequence is not arithmetic.  Computing the first few ratios, however, gives us $\frac{a_{\text{\tiny$2$}}}{a_{\text{\tiny$1$}}} = -\frac{3}{2}$, $\frac{a_{\text{\tiny$3$}}}{a_{\text{\tiny$2$}}} = -\frac{3}{2}$ and $\frac{a_{\text{\tiny$4$}}}{a_{\text{\tiny$3$}}} = -\frac{3}{2}$.  Since these are the only terms given to us, we \textit{assume} that the pattern of ratios continue in this fashion and conclude that the sequence is geometric. \qed
+\item  We met our last sequence at the beginning of the section.  Given that $a_2 - a_1 = -\frac{5}{4}$ and $a_3 - a_2 = \frac{15}{8}$, the sequence is not arithmetic.  Computing the first few ratios, however, gives us $\frac{a_2}{a_1} = -\frac{3}{2}$, $\frac{a_3}{a_2} = -\frac{3}{2}$ and $\frac{a_4}{a_3} = -\frac{3}{2}$.  Since these are the only terms given to us, we \textit{assume} that the pattern of ratios continue in this fashion and conclude that the sequence is geometric. \qed
 
 \end{enumerate}
 
@@ -228,7 +228,7 @@ Hence, the sequence is geometric with common ratio $r = \frac{5}{3}$.
 
 We are now one step away from determining an explicit formula for the sequence given in (\ref{seq1}).  We know that it is a geometric sequence and our next result gives us the explicit formula we require.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -250,7 +250,7 @@ We are now one step away from determining an explicit formula for the sequence g
 
 %% \ebm}
 
-\smallskip
+ 
 
 
 An intuitive way to arrive at Equation \ref{arithgeoformula} appeals to Definition \ref{arithgeodefn} directly.  Given an arithmetic sequence with first term $a$ and common difference $d$, the way we get from one term to the next is by adding $d$.  Hence, the terms of the sequence are:  $a$, $a+d$, $a+2d$, $a+3d$, \ldots.  We see that to reach the $n$th term, we add $d$ to $a$ exactly $(n-1)$ times, which is exactly what the formula says.\footnote{We formalize this argument in Section \ref{Induction}.}
@@ -334,7 +334,7 @@ The pattern $1, 4, 9, 16, \ldots$ is rather recognizable as the squares, so the 
 Of course, since we are given only a small \textit{sample} of the sequence, we shouldn't be too disappointed to find out this isn't the \textit{only} formula which generates this sequence.  For example, consider the sequence defined by $b_{n} = -\frac{1}{4} n^4 + \frac{5}{2} n^3 - \frac{31}{4} n^2 + \frac{25}{2} n - 5$, $n \geq 1$.  The reader is encouraged to verify that it also produces the  terms  $2, 5, 10, 17$.  In fact, it can be shown that given any finite sample of a sequence, there are infinitely many explicit formulas all of which generate those same finite points.  This means that there will be infinitely many correct answers to some of the exercises in this section.\footnote{For more on this, see \href{http://www.math.kent.edu/~white/papers/pattern.pdf}{\underline{When Every Answer is Correct: Why
 Sequences and Number Patterns Fail the Test}}.}  Just because your answer doesn't match ours doesn't mean it's wrong.  As always, when in doubt, write your answer out.  As long as it produces the same terms in the same order as what the problem wants, your answer is correct.  
 
-\smallskip
+ 
 
 Sequences play a major role in the Mathematics of Finance, as we have already seen with Equation \ref{compoundinterest} in Section \ref{ExpLogApplications}.  Recall that if we invest $P$ dollars at an annual percentage rate $r$ and compound the interest $n$ times per year,  the formula for $A_{k}$, the amount in the account after $k$ compounding periods, is $A_{k} = P\left(1 + \frac{r}{n}\right)^{k} = \left[P\left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right)^{k-1}$, $ k \geq 1$.  We leave it to the reader to show this is a geometric sequence with first term $P\left(1 + \frac{r}{n}\right)$ and common ratio $\left(1 + \frac{r}{n}\right)$. 
 
@@ -476,13 +476,13 @@ Next, the reasoning we used to determine  $\ds{\lim_{n \rightarrow \infty}}$ $\f
 
 \item Suppose for some natural number $k$, $b_{n} \leq a_{n} \leq c_{n}$ for all $n \geq k$.  
 
-\smallskip
+ 
 
 If $\ds{\lim_{n \rightarrow \infty} b_{n} = \lim_{n \rightarrow \infty} c_{n} = L}$, then $\ds{\lim_{n \rightarrow \infty} a_{n} = L}$.
 
 \item Suppose for some real number $M$, $g(x) \leq f(x) \leq h(x)$ for all $x \geq M$.
 
-\smallskip
+ 
 
 If $\ds{\lim_{x \rightarrow \infty} g(x) = \lim_{x \rightarrow \infty} h(x) = L}$, then $\ds{\lim_{x \rightarrow \infty} f(x)= L}$.
 
@@ -539,10 +539,6 @@ Passing to a continuous variable in conjunction with the Squeeze Theorem can be 
 We encourage the reader to think through each of the cases stated in Theorem \ref{limitsofgeometricsequences} to make sure the conclusions seem reasonable.  We'll have occasion to cite Theorem \ref{limitsofgeometricsequences} in the next section.  For now, it's time for some Exercises. 
 
 
-\newpage
-
-
-\subsection{Exercises}
 %% SKIPPED %% \input{ExercisesforSequences}
 
 
