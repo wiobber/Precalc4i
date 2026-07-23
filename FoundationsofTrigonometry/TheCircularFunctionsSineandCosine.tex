@@ -462,18 +462,21 @@ A few remarks are in order.  First, after having re-used some of our work from S
 ]
 
 % --- Parameters ---
+\def\panelwidth{6.5}
 \def\R{2}
 \def\tdeg{45} % theta, in degrees
 \pgfmathsetmacro{\px}{\R*cos(\tdeg)}
 \pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-
+\fill[blue!35](\px,\py)--(\px,0)--(0,0)--cycle;
 % --- Radius segment (thick, solid) from center to P ---
 \draw[-] (0,0) -- (\px,\py);
 \draw[-] (0,0)--(\px,0);
 
-% --- Dashed vertical from P down to the x-axis ---
+% --- vertical from P down to the x-axis ---
 \draw[-] (\px,\py) -- (\px,0);
+
+
 
 % --- Right-angle mark at (px,0) ---
 \draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
@@ -488,25 +491,12 @@ A few remarks are in order.  First, after having re-used some of our work from S
 \node[right] at (\px+0.08,0.5*\py) {$y$};
 
 
-\end{tikzpicture}
-
-\end{image}
-
-\begin{image}
-\begin{tikzpicture}[
-    >=Latex,
-    every node/.style={font=\normalsize}
-]
-
-% --- Parameters ---
-\def\R{2}
-\def\tdeg{45} % theta, in degrees
-\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
-\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\begin{scope}[xshift=\panelwidth cm]
 
 % --- Full circle, light gray ---
 \draw[gray!50] (0,0) circle (\R);
 
+\fill[blue!35](\px,\py)--(\px,0)--(0,0)--cycle;
 % --- Axes ---
 \draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
 \draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
@@ -539,6 +529,7 @@ A few remarks are in order.  First, after having re-used some of our work from S
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
+\end{scope}
 
 \end{tikzpicture}
 
@@ -554,64 +545,83 @@ A second important take-away from Example \ref{cosinesineviaunitcircle} is use o
 
 In general, for a non-quadrantal angle $\theta$, the reference angle for $\theta$ (which we'll usually denote $\alpha$) is the \textit{acute} angle made between the terminal side of $\theta$ and the $x$-axis.  If $\theta$ is a Quadrant I or IV angle, $\alpha$ is the angle between the terminal side of $\theta$ and the \textit{positive} $x$-axis:
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\tlabel(2,2.5){$P = Q$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.25pt}
-\reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\point[4pt]{(0,0),(1.5, 2.598)}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{50} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\hspace{.5in} \begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(1.75,-3){$P$}
-\tlabel(1.75,2.5){$Q$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\point[4pt]{(0,0), (1.5, -2.598)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
-\arrow \reverse \arrow \parafcn{305, 355, 5}{1.5*dir(t)}
-\tlabel[cc](2, -1){$\alpha$}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\point[4pt]{(0,0), (1.5, -2.598), (1.5, 2.598)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, -4.3301)}
-\end{mfpic} \\
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px+0.05,\py+0.1) {$P=Q$};
 
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,0.28) {$\alpha$};
 
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
 
-Reference angle $\alpha$ for a Quadrant I angle
+%%%% Second panel %%%%%%%
 
-& 
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{.5in} Reference angle $\alpha$ for a Quadrant IV angle \\
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\end{tabular}
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,-\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{-1.5*\R*sin(\tdeg)});
+\draw[dashed] (\px,\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px+0.05,\py+0.1) {$Q$};
+\fill (\px,-\py) circle (2.5pt);
+\node[right] at (\px+0.05,-\py+0.1) {$P$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,0.28) {$\alpha$};
+\draw[<->] (0.55,0) arc [start angle=0, end angle=-\tdeg, radius=0.55];
+\node[right] at (0.6,-0.28) {$\alpha$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 If $\theta$ is a Quadrant II or III angle, $\alpha$ is the angle between the terminal side of $\theta$ and the \textit{negative} $x$-axis: 
  
