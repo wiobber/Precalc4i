@@ -133,55 +133,111 @@ You may have already seen definitions for the sine and cosine of an (acute) angl
 
 \item  To find $\cos\left(270^{\circ}\right)$ and $\sin\left(270^{\circ}\right)$, we plot the angle $\theta =270^{\circ}$ in standard position and find the point on the terminal side of $\theta$ which lies on the Unit Circle.  Since $270^{\circ}$ represents $\frac{3}{4}$ of a counter-clockwise revolution, the terminal side of $\theta$ lies along the negative $y$-axis.  Hence, the point we seek is $(0,-1)$ so that  $\cos\left(270^{\circ}\right) = 0$ and $\sin\left(270^{\circ}\right) = -1$.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{270} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
+
+% --- Dashed vertical from P down to the x-axis ---
+%\draw[dashed] (\px,\py) -- (\px,0);
+
+% --- Right-angle mark at (px,0) ---
+%\draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[below right] at (\px+0.05,\py-0.1) {$P(0,-1)$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (-1.3,0.4) {$270^\circ$};
+
+% --- Leg labels: "1" along the radius, "x" along the base, "y" along the vertical ---
+%\node[above left] at (0.5*\px,0.5*\py) {$1$};
+
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+\end{tikzpicture}
+
+\end{image}
+
 \item  The angle $\theta=-\pi$ represents one half of a clockwise revolution so its terminal side lies on the negative $x$-axis.  The point on the Unit Circle that lies on the negative $x$-axis is $(-1,0)$ which means  $\cos(-\pi) = -1$ and $\sin(-\pi) = 0$.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(270^{\circ}\right)$ and $\sin\left(270^{\circ}\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\tlabel(0.25,-3.75){$P(0, -1)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 265, 5}{1.5*dir(t)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0), (0,0), (0,-5)}
-\tlabel(-2, 1.75){\scriptsize $\theta = 270^{\circ}$}
-\point[4pt]{(0,0), (0, -3)}
-\end{mfpic} 
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{-180} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{0.25in}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(-\pi\right)$ and $\sin\left( -\pi \right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\tlabel(-5.5,0.5){$P(-1, 0)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{-5, -175, -5}{1.5*dir(t)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\tlabel[cc](1, -2){\scriptsize $\theta=-\pi$}
-\point[4pt]{(0,0), (-3, 0)}
-\end{mfpic} 
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\end{tabular}
+% --- Dashed vertical from P down to the x-axis ---
+%\draw[dashed] (\px,\py) -- (\px,0);
+
+% --- Right-angle mark at (px,0) ---
+%\draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[below left] at (\px-0.05,\py-0.1) {$P(0,-1)$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (0.5,-0.5) {$\theta=-\pi$};
+
+% --- Leg labels: "1" along the radius, "x" along the base, "y" along the vertical ---
+%\node[above left] at (0.5*\px,0.5*\py) {$1$};
+
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \item  In  Section \ref{AppRightTrig}, we derived values for $\cos\left(45^{\circ}\right)$ and $\sin\left(45^{\circ}\right)$ using  Definition \ref{righttrianglesinecosinetangent}.  In order to connect what we know from   Section \ref{AppRightTrig} with what we are asked to find per  Definition \ref{sinecosineunitcircledefn}, we sketch $\theta = 45^{\circ}$ in standard position and let $P(x,y)$ denote the point on the terminal side of $\theta$ which lies on the Unit Circle.  If we drop a perpendicular line segment from $P$ to the $x$-axis as shown below on the left,  we obtain a $45^{\circ} - 45^{\circ} - 90^{\circ}$ right triangle whose legs have lengths $x$ and $y$ units with hypotenuse $1$. From our work in Section \ref{AppRightTrig}, we obtain the (familiar) values $x = \cos\left(45^{\circ}\right) = \frac{\sqrt{2}}{2}$ and $y = \sin\left(45^{\circ}\right) = \frac{\sqrt{2}}{2}$.
 
@@ -296,65 +352,102 @@ You may have already seen definitions for the sine and cosine of an (acute) angl
 \item  We plot $\theta = \frac{5\pi}{6}$ in standard position below on the left  and, as usual, let $P(x,y)$ denote the point on the terminal side of $\theta$ which lies on the Unit Circle.  In plotting $\theta$, we find it lies $\frac{\pi}{6}$ radians short of one half revolution. Since we've just determined that $\cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}$ and $\sin\left( \frac{\pi}{6} \right) = \frac{1}{2}$, we know  the coordinates of the point $Q$ below on the right are $\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$.  Using symmetry, the coordinates of $P$ are $\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$, so $\cos\left(\frac{5\pi}{6}\right) = -\frac{\sqrt{3}}{2}$ and $\sin\left( \frac{5\pi}{6} \right) = \frac{1}{2}$.
 
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{30} % theta, in degrees
+\def\ttdeg{150} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+
+\pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\pxx,\pyy);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
 
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(4.1,-1){\scriptsize $1$}
-\tlabel(0.25,4.1){\scriptsize $1$}
-\xmarks{-4 step 4 until 4}
-\ymarks{-4 step 4 until 4}
-\tlabel(-5.25,1.70){\scriptsize $P(x,y)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4}
-\drawcolor{black}
-\arrow \parafcn{5, 145, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \parafcn{155, 175, 5}{1.5*dir(t)}
-\tlabel(1, 1.75){\scriptsize $\theta =  \frac{5\pi}{6}$}
-\tlabel(-2.5, .25){\scriptsize $\frac{\pi}{6}$}
-\point[4pt]{(0,0), (-3.4641, 2)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,2.5)}
-\end{mfpic} 
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\pxx,\pyy) circle (2.5pt);
+\node[left] at (\pxx-0.05,\pyy-0.1) {$P(x,y)$};
 
-&
+% --- Angle arc for theta, with label ---
+\draw[<->] (-0.87,0.5) arc [start angle=\ttdeg, end angle=180, radius=1];
+\node[right] at (-1.9,0.3) {$\pi/6$};
 
-\hspace{.5in}
+\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
+\node[right] at (0.3,0.7) {$\theta=5\pi/6$};
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(4.1,-1){\scriptsize $1$}
-\tlabel(0.25,4.1){\scriptsize $1$}
-\xmarks{-4 step 4 until 4}
-\ymarks{-4 step 4 until 4}
-\tlabel(3.75,1.70){\scriptsize $Q\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$}
-\tlabel(-6.25,1.70){\scriptsize $P\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4}
-\drawcolor{black}
-\dotted  \polyline{(0,0), (4.330,2.5)}
-\dotted \polyline{(-3.4641, 2), (3.4641, 2)}
-\arrow \parafcn{5, 25, 5}{2*dir(t)}
-\arrow \reverse \arrow \parafcn{155, 175, 5}{1.5*dir(t)}
-\tlabel(2.25, .25){\scriptsize $\frac{\pi}{6}$}
-\tlabel(-2.5, .25){\scriptsize $\frac{\pi}{6}$}
-\arrow \parafcn{5, 145, 5}{1.5*dir(t)}
-\tlabel(.75, 1.3){\scriptsize $\theta = \frac{5 \pi}{6}$}
-\point[4pt]{(0,0), (3.4641, 2), (-3.4641, 2) }
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
 
-\penwd{1.25pt}
- \arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,2.5)}
-\end{mfpic} 
+%%%%% Second panel %%%%%%
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+\draw[very thick] (0,0) -- (\pxx,\pyy);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
 
 
-  \qed
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\pxx,\pyy) circle (2.5pt);
+\node[left] at (\pxx-0.05,\pyy-0.1) {$P(-\sqrt{3}/2,1/2)$};
+
+% --- Angle arc for theta, with label ---
+\draw[<->] (-0.87,0.5) arc [start angle=\ttdeg, end angle=180, radius=1];
+\node[right] at (-1.9,0.3) {$\pi/6$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
+\node[right] at (-0.5,0.7) {$\theta=5\pi/6$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[dashed] (0,0) -- (\px,\py);
+\draw[dashed] (\pxx,\pyy) -- (\px,\py);
+
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px+0.05,\py-0.1) {$Q(\sqrt{3}/2,1/2)$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (1,0) arc [start angle=0, end angle=\tdeg, radius=1];
+\node[right] at (1,0.28) {$\pi/6$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 \end{enumerate}
 
