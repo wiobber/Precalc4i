@@ -176,7 +176,7 @@ ${\displaystyle \left\{ \begin{array}{l} x = t^2+2t+1 \\[3pt] y = t+1 \end{array
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-2, xmax=4, ymin=-1, ymax=5,
+    xmin=-1, xmax=5, ymin=-3, ymax=3,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -184,26 +184,29 @@ ${\displaystyle \left\{ \begin{array}{l} x = t^2+2t+1 \\[3pt] y = t+1 \end{array
     xlabel={$x$}, ylabel={$y$},
     xlabel style={anchor=west},
     ylabel style={anchor=south},
-    xtick={-1, 0, 1, 2, 3},
-    ytick={ 0, 1, 2, 3},
+    xtick={0, 1, 2, 3, 4},
+    ytick={-2, -1, 0, 1, 2},
     tick label style={font=\tiny},
     label style={font=\scriptsize},
     samples=100,
 ]
     % Parametric Graph
 
-\draw[->, thick, blue, smooth, samples=100, domain=0:0.5] 
-    plot ({(\x)^2+2*\x+1}, \x+1});
+\draw[-, thick, blue, smooth, samples=100, domain=0:1] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
 
-\draw[->, thick, blue, smooth, samples=100, domain=0:0.5] 
-    plot ({(\x)^2+2*\x+1}, \x+1});
+\draw[->, thick, blue, smooth, samples=100, domain=-2:0] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
 
-\draw[-, thick, blue, smooth, samples=100, domain=2:3] 
-     plot ({\x-1}, {3+2*\x-(\x)^2});
+\draw[->, thick, blue, smooth, samples=100, domain=-3.25:-2] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
 
-\fill (-1, 3) circle (2pt);
-\fill (0, 4) circle (2pt);
-\fill (2, 0) circle (2pt);
+\draw[->, thick, blue, smooth, samples=100, domain=-3.44:-3.25] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
+
+\fill (4, 2) circle (2pt);
+\fill (0, 0) circle (2pt);
+\fill (4, -2) circle (2pt);
     
 \end{axis}
 \end{tikzpicture}
@@ -213,6 +216,49 @@ ${\displaystyle \left\{ \begin{array}{l} x = t^2+2t+1 \\[3pt] y = t+1 \end{array
 
 \begin{problem}
 ${\displaystyle \left\{ \begin{array}{l} x = \frac{1}{9}\left(18-t^2\right) \\[3pt] y = \frac{1}{3} t \end{array} \right. \vspace{.25in} \mbox{for } t \geq -3}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=5, ymin=-3, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 1, 2, 3, 4},
+    ytick={-2, -1, 0, 1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[-, thick, blue, smooth, samples=100, domain=0:1] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-2:0] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-3.25:-2] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-3.44:-3.25] 
+    plot ({(\x)^2+2*\x+1}, {\x+1});
+
+\fill (4, 2) circle (2pt);
+\fill (0, 0) circle (2pt);
+\fill (4, -2) circle (2pt);
+    
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
+
 \end{problem}
 
 \begin{problem}
