@@ -455,48 +455,94 @@ You may have already seen definitions for the sine and cosine of an (acute) angl
 
 A few remarks are in order.  First, after having re-used some of our work from Section \ref{AppRightTrig} in a few specific instances, we can reconcile Definition \ref{sinecosineunitcircledefn} with Definition \ref{righttrianglesinecosinetangent} in the case $\theta$ is an acute angle.  We situate $\theta$ in a right triangle with hypotenuse length $1$, adjacent side length `$x$,' and the opposite side length `$y$' as seen below on the left. Placing the vertex of $\theta$ at the origin and the adjacent side of $\theta$ along the $x$-axis as seen below on the right effectively puts $\theta$ in standard position with $\theta$'s adjacent side as the initial side of $\theta$ and the hypotenuse  as the terminal side of $\theta$.  Since the hypotenuse of the triangle has length $1$, we know the point $P(x,y)$ is on the Unit Circle.\footnote{Do you see why?}
 
- \begin{tabular}{m{2.5in}m{0.5in}m{2.5in}}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)}
-\polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)}
-\penwd{1.25pt}
-\polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)}
-\tlabel(-1, 0.6){$\theta$}
-\tlabel(0,-0.75){$x$}
-\tlabel(4.75,2.25){$y$}
-\tlabel(0,3){$1$}
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{45} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-\end{mfpic}
-&
 
-&
+% --- Radius segment (thick, solid) from center to P ---
+\draw[-] (0,0) -- (\px,\py);
+\draw[-] (0,0)--(\px,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(1.7,-0.5){\scriptsize $x$}
-\tlabel(3.6,0.65){\scriptsize $y$}
-\tlabel(4.1,-1){\scriptsize $1$}
-\tlabel(0.25,4.1){\scriptsize $1$}
-\xmarks{-4 step 4 until 4}
-\ymarks{-4 step 4 until 4}
-\tlabel(3.75,1.60){\scriptsize $P(x,y)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4}
-\drawcolor{black}
-\arrow \parafcn{5, 25, 5}{1.5*dir(t)}
-\tlabel(1.75, .25){\scriptsize $\theta$}
-\point[4pt]{(0,0), (3.4641, 2)}
-\polyline{(3.4641,2), (3.4641, 0)}
-\polyline{(3.1641, 0), (3.1641, 0.3), (3.4641, 0.3)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,2.5)}
+% --- Dashed vertical from P down to the x-axis ---
+\draw[-] (\px,\py) -- (\px,0);
 
-\end{mfpic} 
+% --- Right-angle mark at (px,0) ---
+\draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
 
-\end{tabular}
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,0.28) {$\theta$};
+
+% --- Leg labels: "1" along the radius, "x" along the base, "y" along the vertical ---
+\node[above left] at (0.5*\px,0.5*\py) {$1$};
+\node[below] at (0.5*\px,-0.05) {$x$};
+\node[right] at (\px+0.08,0.5*\py) {$y$};
+
+
+\end{tikzpicture}
+
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{45} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
+
+% --- Dashed vertical from P down to the x-axis ---
+\draw[dashed] (\px,\py) -- (\px,0);
+
+% --- Right-angle mark at (px,0) ---
+\draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px+0.05,\py+0.1) {$P(x,y)$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,0.28) {$\theta$};
+
+% --- Leg labels: "1" along the radius, "x" along the base, "y" along the vertical ---
+\node[above left] at (0.5*\px,0.5*\py) {$1$};
+\node[below] at (0.5*\px,-0.05) {$x$};
+\node[right] at (\px+0.08,0.5*\py) {$y$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+\end{tikzpicture}
+
+\end{image}
 
 Definition \ref{righttrianglesinecosinetangent} gives $\cos(\theta) = \frac{x}{1} = x$ and $\sin(\theta) = \frac{y}{1} = y$ which exactly matches Definition \ref{sinecosineunitcircledefn}.  Hence, in the case of acute angles, the two definitions agree. In other words,  the values of the \textit{trigonometric ratios} of acute angles are the same as the corresponding \textit{circular function} values. 
 
