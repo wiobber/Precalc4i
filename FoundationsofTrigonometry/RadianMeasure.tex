@@ -143,95 +143,10 @@ In light of Example \ref{orientedcoterminalradian} and Equation \ref{degreenradi
 
 Viewing the vertical line $x=1$ as another real number line demarcated like the $y$-axis, given a real number $t>0$, we `wrap' the (vertical) interval $[0,t]$ around the Unit Circle in a counter-clockwise fashion.  The resulting arc has a length of $t$ units and therefore the corresponding angle has radian measure equal to $t$.  If $t<0$, we wrap the interval $[t,0]$ \textit{clockwise} around the Unit Circle.  Since we have defined clockwise rotation as having negative radian measure, the angle determined by this arc has radian measure equal to $t$.    If $t=0$, we are at the point $(1,0)$ on the $x$-axis which corresponds to an angle with radian measure $0$.  In this way, we identify each real number $t$ with the corresponding angle with radian measure $t$.
 
-\phantomsection
-\label{wrappingfunction}
-
-\smallskip
-
-\begin{tabular}{ccc}
-
-\begin{mfpic}[14]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\point[4pt]{(0,0)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \polyline{(5, 0), (0,0), (2.5, 4.3301)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){$\theta$}
-\penwd{1.5pt}
-\parafcn{0,60,5}{3*dir(t)}
-\tlabel[cc](3.0311,1.75){$s$}
-\end{mfpic} 
-
-&
-
-\begin{mfpic}[14]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\point[4pt]{(0,0)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \polyline{(0,0), (2.5, 4.3301)}
-\arrow \reverse \arrow \polyline{(3,-5), (3,5)}
-\polyline{(2.8,3.1416), (3.2,3.1416)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){$t$}
-\penwd{1.5pt}
-\arrow \polyline{(3,0), (3, 3.1416)}
-\arrow \parafcn{0,60,5}{3*dir(t)}
-\tlabel[cc](3.5,1.75){$t$}
-\end{mfpic} 
-
-&
-
-\begin{mfpic}[14]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\point[4pt]{(0,0)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \polyline{(0,0), (2.5, -4.3301)}
-\arrow \reverse \arrow \polyline{(3,-5), (3,5)}
-\polyline{(2.8,-3.1416), (3.2,-3.1416)}
-\arrow \parafcn{-5, -55, -5}{1.5*dir(t)}
-\tlabel[cc](1.732, -1){$t$}
-\penwd{1.5pt}
-\arrow \polyline{(3,0), (3, -3.1416)}
-\arrow \parafcn{0,-60,-5}{3*dir(t)}
-\tlabel[cc](3.5,-1.75){$t$}
-\end{mfpic}  \\
-
-On the Unit Circle, $\theta = s$.
-
-&
-
-Identifying $t > 0$ with an angle.
-
-&
-
-Identifying $t < 0$ with an angle. \\
-
-
-\end{tabular}
+% https://www.geogebra.org/classic/aapdqza4
+\begin{center}
+    \geogebra{aapdqza4}{800}{600}
+\end{center}
 
 \begin{example} \label{realwrap}  Sketch the oriented arc on the Unit Circle corresponding to each of the following real numbers.  
 
