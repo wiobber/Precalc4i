@@ -22,14 +22,14 @@ In Section \ref{AugMatrices}, we used a special class of matrices, the augmented
 
 %\[ \begin{array}{ccccc} 
 % &  &  \text{\begin{tabular}{c} \scriptsize {\color{red} $j$} counts columns \\ \scriptsize from left to right \end{tabular}} &  & \\ &  & \xrightarrow{\hspace{1.25in}} & & \\
-% A & = & \left. \left[ \begin{array}{rrrr} a_{\color{blue} \mbox{\tiny$1$} \color{red} \mbox{\tiny$1$}} & a_{\color{blue} \mbox{\tiny$1$} \color{red} \mbox{\tiny$2$}} & \cdots & a_{\color{blue} \mbox{\tiny$1$} \color{red} \mbox{\tiny$n$}} \\ a_{\color{blue} \mbox{\tiny$2$} \color{red} \mbox{\tiny$1$}} & a_{\color{blue} \mbox{\tiny$2$} \color{red} \mbox{\tiny$2$}} & \cdots & a_{\color{blue} \mbox{\tiny$2$} \color{red} n} \\ \vdots & \vdots  & & \vdots \\ a_{\color{blue} m \color{red} \mbox{\tiny$1$}} & a_{\color{blue} m \color{red} \mbox{\tiny$2$}} & \cdots & a_{\color{blue} m \color{red} n} \end{array}  \right] \right\downarrow & \text{\begin{tabular}{c} \scriptsize {\color{blue} $i$} counts rows \\ \scriptsize from top to bottom \end{tabular}} \end{array} \] 
+% A & = & \left. \left[ \begin{array}{rrrr} a_{\color{blue} 1 \color{red} 1} & a_{\color{blue} 1 \color{red} 2} & \cdots & a_{\color{blue} 1 \color{red} \mbox{n} \\ a_{\color{blue} 2 \color{red} 1} & a_{\color{blue} 2 \color{red} 2} & \cdots & a_{\color{blue} 2 \color{red} n} \\ \vdots & \vdots  & & \vdots \\ a_{\color{blue} m \color{red} 1} & a_{\color{blue} m \color{red} 2} & \cdots & a_{\color{blue} m \color{red} n} \end{array}  \right] \right\downarrow & \text{\begin{tabular}{c} \scriptsize {\color{blue} $i$} counts rows \\ \scriptsize from top to bottom \end{tabular}} \end{array} \] 
 
 
 % Code below is for Print version
 
 \[ \begin{array}{ccccc} 
-  &  &  \text{\begin{tabular}{c} \scriptsize {$j$} counts columns \\ \scriptsize from left to right \end{tabular}} &  & \\  &  & \xrightarrow{\hspace{1.25in}} & & \\
-A & = & \left. \left[ \begin{array}{rrrr} a_{\mbox{\tiny$1$} \mbox{\tiny$1$}} & a_{\mbox{\tiny$1$} \mbox{\tiny$2$}} & \cdots & a_{\mbox{\tiny$1$} \mbox{\tiny$n$}} \\ a_{\mbox{\tiny$2$} \mbox{\tiny$1$}} & a_{\mbox{\tiny$2$} \mbox{\tiny$2$}} & \cdots & a_{\mbox{\tiny$2$} n} \\ \vdots & \vdots  & & \vdots \\ a_{m \mbox{\tiny$1$}} & a_{m \mbox{\tiny$2$}} & \cdots & a_{m n} \end{array}  \right] \right\downarrow & \text{\begin{tabular}{c} \scriptsize {$i$} counts rows \\ \scriptsize from top to bottom \end{tabular}} \end{array} \] 
+  &  &  \text{\begin{tabular}{c} $j$ counts columns \\    from left to right \end{tabular}} &  & \\  &  & \xrightarrow{\hspace{1.25in}} & & \\
+A & = & \left. \left[ \begin{array}{rrrr} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots  & & \vdots \\ a_{m1m2} & \cdots & a_{mn} \end{array}  \right] \right\downarrow & \text{\begin{tabular}{c} $i$ counts rows \\ from top to bottom \end{tabular}} \end{array} \] 
 
 With this new notation we can define what it means for two matrices to be equal.
 
@@ -256,7 +256,7 @@ B = \left[\begin{array}{rrrr} 3 & \hphantom{-}1 & 2 & -8 \\ 4 & 8 & -5 & 9  \\ 5
 
 Let $R1$ denote the first row of $A$ and $C1$ denote the first column of $B$.  To find the `product' of $R1$ with $C1$, denoted $R1 \cdot C1$, we first find the product of the first entry in $R1$ and the first entry in $C1$.  Next, we add to that the product of the second entry in $R1$ and the second entry in $C1$, and so on until we reach the last entry in $R1$ and the last entry in $C1$.  
 
-Using entry notation, $R1 \cdot C1 = a_{\mbox{\tiny$11$}}b_{\mbox{\tiny$11$}} + a_{\mbox{\tiny$12$}}b_{\mbox{\tiny$21$}}+a_{\mbox{\tiny$13$}}b_{\mbox{\tiny$31$}} = (2)(3) + (0)(4) + (-1)(5) = 6 + 0 + (-5) = 1$.  We can visualize this schematically as follows
+Using entry notation, $R1 \cdot C1 = a_{11}b_{11} + a_{12}b_{21}+a_{13}b_{31} = (2)(3) + (0)(4) + (-1)(5) = 6 + 0 + (-5) = 1$.  We can visualize this schematically as follows
 
 \[ \left[\begin{array}{rrr} \rowcolor[gray]{0.9} 2 & \hphantom{-}0 & -1 \\ -10 & 3 & 5 \\ \end{array} \right] \left[\begin{array}{>{\columncolor[gray]{0.9}}rrrr}  3 & \hphantom{-}1 & 2 & -8 \\ 4 & 8 & -5 & 9  \\ 5 & 0 & -2 & -12 \\  \end{array} \right] \]
 
@@ -279,7 +279,7 @@ Using entry notation, $R1 \cdot C1 = a_{\mbox{\tiny$11$}}b_{\mbox{\tiny$11$}} + 
 
 \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{\hspace{.75in}}}{\begin{array}{ccc} 2 & \hphantom{-}0 & \fbox{$-1$} \end{array}} &  \left. \begin{array}{c} 3 \\ 4 \\ \fbox{5}   \\ \end{array} \right\downarrow \\ \end{array}}  \\
 
- a_{\mbox{\tiny$11$}}b_{\mbox{\tiny$11$}} & + & a_{\mbox{\tiny$12$}}b_{\mbox{\tiny$21$}} & + & a_{\mbox{\tiny$13$}}b_{\mbox{\tiny$31$}}  \\
+ a_{11}b_{11} & + & a_{12}b_{21} & + & a_{13}b_{31}  \\
 
   (2)(3) & + &(0)(4)& + & (-1)(5)  \\
 
@@ -287,7 +287,7 @@ Using entry notation, $R1 \cdot C1 = a_{\mbox{\tiny$11$}}b_{\mbox{\tiny$11$}} + 
 
 
 
-To find $R2 \cdot C3$ where $R2$ denotes the second row of $A$ and $C3$ denotes the third column of $B$, we proceed similarly. We start with finding the product of the first entry of $R2$ with the first entry in $C3$ then add to it the product of the second entry in $R2$ with the second entry in $C3$, and so forth.  Using entry notation, we have $R2 \cdot C3 = a_{\mbox{\tiny$21$}}b_{\mbox{\tiny$13$}} + a_{\mbox{\tiny$22$}}b_{\mbox{\tiny$23$}} + a_{\mbox{\tiny$23$}}b_{\mbox{\tiny$33$}} = (-10)(2) + (3)(-5) + (5)(-2) = -45$.  Schematically, 
+To find $R2 \cdot C3$ where $R2$ denotes the second row of $A$ and $C3$ denotes the third column of $B$, we proceed similarly. We start with finding the product of the first entry of $R2$ with the first entry in $C3$ then add to it the product of the second entry in $R2$ with the second entry in $C3$, and so forth.  Using entry notation, we have $R2 \cdot C3 = a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} = (-10)(2) + (3)(-5) + (5)(-2) = -45$.  Schematically, 
 
 \[ \left[\begin{array}{rrr} 2 & 0 & -1 \\ \rowcolor[gray]{0.9} -10 & \hphantom{-}3 & 5 \\ \end{array} \right] \left[\begin{array}{rr>{\columncolor[gray]{0.9}}rr}  3 & \hphantom{-}1 & 2 & -8 \\ 4 & 8 & -5 & 9  \\ 5 & 0 & -2 & -12 \\  \end{array} \right] \]
 
@@ -310,7 +310,7 @@ To find $R2 \cdot C3$ where $R2$ denotes the second row of $A$ and $C3$ denotes 
 
 \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{\hspace{.75in}}}{\begin{array}{ccc} -10 & 3 & \fbox{$5$} \end{array}} &  \left. \begin{array}{c} \hphantom{-}2 \\ -5 \\ \fbox{$-2$}   \\ \end{array} \right\downarrow \\ \end{array}}   \\
 
-a_{\mbox{\tiny$21$}}b_{\mbox{\tiny$13$}}= (-10)(2) = -20 & + & a_{\mbox{\tiny$22$}}b_{\mbox{\tiny$23$}} = (3)(-5)  = -15 & + & a_{\mbox{\tiny$23$}}b_{\mbox{\tiny$33$}} = (5)(-2)  = -10 \\
+a_{21}b_{13}= (-10)(2) = -20 & + & a_{22}b_{23} = (3)(-5)  = -15 & + & a_{23}b_{33} = (5)(-2)  = -10 \\
 
 \end{array}\]
 
@@ -321,7 +321,7 @@ Generalizing this process, we have the following definition.
 %% \colorbox{ResultColor}{\bbm
 
 \begin{definition} \label{rowcolumnproduct} \textbf{Product of a Row and a Column:}  Suppose $A = [a_{ij}]_{m \times n}$ and $B = [b_{ij}]_{n \times r}$.  Let $Ri$ denote the $i$th row of $A$ and let $Cj$ denote the $j$th column of $B$.  The \index{matrix ! product of row and column} \textbf{product of \boldmath $R_{i}$ and \boldmath $C_{j}$, denoted $R_{i} \cdot C_{j}$} is the real number defined by
-\[ Ri \cdot Cj = a_{i\mbox{\tiny$1$}}b_{\mbox{\tiny$1$}j} + a_{i\mbox{\tiny$2$}}b_{\mbox{\tiny$2$}j} + \ldots a_{in}b_{nj}\]
+\[ Ri \cdot Cj = a_{i1}b_{1j} + a_{i2}b_{2j} + \ldots a_{in}b_{nj}\]
 
 \end{definition}
 
@@ -407,14 +407,14 @@ The one property in Theorem \ref{matrixmultprops} which begs further investigati
 \[ \begin{array}{ccccc}
 
 [1] & \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] & \left[ \begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ \end{array} \right] & \left[ \begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\  0 & 0 & 0 & 1 \\  \end{array} \right] \\
-I_{\mbox{\tiny$1$}} & I_{\mbox{\tiny$2$}} & I_{\mbox{\tiny$3$}} & I_{\mbox{\tiny$4$}} \\
+I_{1} & I_{2} & I_{3} & I_4 \\
 
 \end{array} \]
 
 The identity matrix is an example of what is called a \index{matrix ! square matrix}\index{square matrix}\textit{square matrix} as it has the same number of rows as columns.  Note that to in order to verify that the identity matrix acts as a multiplicative identity, some care must be taken depending on the order of the multiplication.  For example, take the matrix $2 \times 3$ matrix $A$:
 \[A = \left[\begin{array}{rrr} 2 & \hphantom{-}0 & -1 \\ -10 & 3 & 5 \\ \end{array} \right]\]
 
-In order for the product $I_{k}A$ to be defined, $k = 2$;  similarly, for $AI_{k}$ to be defined, $k = 3$.  We leave it to the reader to show $I_{\mbox{\tiny$2$}}A = A$ and $AI_{\mbox{\tiny$3$}} = A$.  In other words,
+In order for the product $I_{k}A$ to be defined, $k = 2$;  similarly, for $AI_{k}$ to be defined, $k = 3$.  We leave it to the reader to show $I_{2}A = A$ and $AI_{3} = A$.  In other words,
 
 
 \[\begin{array}{rcl}
@@ -434,9 +434,9 @@ While the proofs of the properties in Theorem \ref{matrixmultprops} are computat
 \item  Find $AB$ for $A = \left[ \begin{array}{rrr} -23 & -1 & 17 \\ 46 & 2 & -34 \\ \end{array} \right]$ and $B = \left[ \begin{array}{rr} -3 & 2 \\ 1 & 5 \\ -4 & 3 \\ \end{array} \right]$.
 
 
-\item  Find $C^2 -5C + 10I_{\mbox{\tiny$2$}}$ for $C = \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]$.
+\item  Find $C^2 -5C + 10I_{2}$ for $C = \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]$.
 
-\item  Suppose $M$ is a $4 \times 4$ matrix.  Use Theorem \ref{matrixmultprops} to expand $\left(M - 2I_{\mbox{\tiny$4$}}\right)\left(M + 3I_{\mbox{\tiny$4$}}\right)$.
+\item  Suppose $M$ is a $4 \times 4$ matrix.  Use Theorem \ref{matrixmultprops} to expand $\left(M - 2I_4\right)\left(M + 3I_4\right)$.
 
 
 \end{enumerate}
@@ -452,7 +452,7 @@ While the proofs of the properties in Theorem \ref{matrixmultprops} are computat
 
 \[ \begin{array}{rcl}
 
-C^2 -5C + 10I_{\mbox{\tiny$2$}} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]^2 - 5 \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + 10 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\ [13pt]
+C^2 -5C + 10I_{2} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]^2 - 5 \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + 10 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\ [13pt]
 
 & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]\left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + \left[ \begin{array}{rr} -5 & 10 \\ -15 & -20 \\ \end{array} \right] + \left[ \begin{array}{rr} 10 & 0 \\ 0 & 10 \\ \end{array} \right] \\ [13pt]
 
@@ -463,14 +463,14 @@ C^2 -5C + 10I_{\mbox{\tiny$2$}} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \
 
 \end{array} \]
 
-\item  We expand $\left(M - 2I_{\mbox{\tiny$4$}}\right)\left(M + 3I_{\mbox{\tiny$4$}}\right)$ with the same pedantic zeal we showed in Example \ref{matrixaddscalarex}. The reader is encouraged to determine which property of matrix arithmetic justifies each step.
+\item  We expand $\left(M - 2I_4\right)\left(M + 3I_4\right)$ with the same pedantic zeal we showed in Example \ref{matrixaddscalarex}. The reader is encouraged to determine which property of matrix arithmetic justifies each step.
 \[\begin{array}{rcl}
 
-\left(M - 2I_{\mbox{\tiny$4$}}\right)\left(M + 3I_{\mbox{\tiny$4$}}\right) & = & \left(M - 2I_{\mbox{\tiny$4$}}\right) M + \left(M - 2I_{\mbox{\tiny$4$}}\right)\left( 3I_{\mbox{\tiny$4$}}\right) \\
-& = & MM - \left(2I_{\mbox{\tiny$4$}}\right)M + M\left( 3I_{\mbox{\tiny$4$}}\right) - \left( 2I_{\mbox{\tiny$4$}}\right)\left( 3I_{\mbox{\tiny$4$}}\right) \\
-& = & M^2 -2 \left(I_{\mbox{\tiny$4$}}M\right) +3\left( M I_{\mbox{\tiny$4$}}\right) - 2\left( I_{\mbox{\tiny$4$}}\left( 3I_{\mbox{\tiny$4$}}\right)\right) \\
-& = & M^2 - 2M  + 3M - 2\left(3\left( I_{\mbox{\tiny$4$}}I_{\mbox{\tiny$4$}}\right)\right) \\
-& = & M^2 +M  - 6I_{\mbox{\tiny$4$}}  \\
+\left(M - 2I_4\right)\left(M + 3I_4\right) & = & \left(M - 2I_4\right) M + \left(M - 2I_4\right)\left( 3I_4\right) \\
+& = & MM - \left(2I_4\right)M + M\left( 3I_4\right) - \left( 2I_4\right)\left( 3I_4\right) \\
+& = & M^2 -2 \left(I_4M\right) +3\left( M I_4\right) - 2\left( I_4\left( 3I_4\right)\right) \\
+& = & M^2 - 2M  + 3M - 2\left(3\left( I_4I_4\right)\right) \\
+& = & M^2 +M  - 6I_4  \\
 
 \end{array}\]
 
@@ -481,7 +481,7 @@ C^2 -5C + 10I_{\mbox{\tiny$2$}} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \
 
 Example \ref{matrixmultex} illustrates some interesting features of matrix multiplication.  First note that in the first problem, neither $A$ nor $B$ is the zero matrix, yet the product $AB$ is the zero matrix.  Hence, the the zero product property enjoyed by real numbers and scalar multiplication does not hold for matrix multiplication. 
 
-The second and third problems  introduce us to polynomials involving matrices.  The reader is encouraged to step back and compare our expansion of the matrix product $\left(M - 2I_{\mbox{\tiny$4$}}\right)\left(M + 3I_{\mbox{\tiny$4$}}\right)$ in third probem with the product $(x-2)(x+3)$ from real number algebra.  The exercises explore this kind of parallel further.  
+The second and third problems  introduce us to polynomials involving matrices.  The reader is encouraged to step back and compare our expansion of the matrix product $\left(M - 2I_4\right)\left(M + 3I_4\right)$ in third probem with the product $(x-2)(x+3)$ from real number algebra.  The exercises explore this kind of parallel further.  
 
 \smallskip
 
@@ -521,21 +521,21 @@ We have that $R$ takes $(2,-2)$ to $(2 \sqrt{2}, 0)$.  Similarly, we find $(4,0)
 \arrow \dotted \arc[s]{(0,3), (-2.121, 2.121),45}
 \arrow \dotted \arc[s]{ (-3,-3), (0, -4.243),45}
 \axes
-\tlabel[cc](1.8, -2.5){\scriptsize $P$}
-\tlabel[cc](2.828, 0.5){\scriptsize $RP$}
-\tlabel[cc](4, -0.5){\scriptsize $Q$}
-\tlabel[cc](2.6, 3.3){\scriptsize $RQ$}
-\tlabel[cc](0.5, 3){\scriptsize $S$}
-\tlabel[cc](-2.5, 1.5){\scriptsize $RS$}
-\tlabel[cc](-3, -2.5){\scriptsize $T$}
-\tlabel[cc](0.7, -4.243){\scriptsize $RT$}
+\tlabel[cc](1.8, -2.5) { $P$}
+\tlabel[cc](2.828, 0.5) { $RP$}
+\tlabel[cc](4, -0.5) { $Q$}
+\tlabel[cc](2.6, 3.3) { $RQ$}
+\tlabel[cc](0.5, 3) { $S$}
+\tlabel[cc](-2.5, 1.5) { $RS$}
+\tlabel[cc](-3, -2.5) { $T$}
+\tlabel[cc](0.7, -4.243) { $RT$}
 \tlabel[cc](5,-0.5){$x$}
 \tlabel[cc](0.5,5){$y$}
 \xmarks{-4,-3,-2,-1,1,2,3,4}
 \ymarks{-4,-3,-2,-1,1,2,3,4}
-\tcaption{\scriptsize Plotting $P$ and $RP$.}
+\tcaption { Plotting $P$ and $RP$.}
 \tlpointsep{5pt}
-\scriptsize
+  
 \axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
 \axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$4$} 4}
 \normalsize
@@ -581,15 +581,15 @@ Since $(x,y)$ is on the hyperbola $x^2 - y^2 = 4$, we know that this last equati
 \dashed \polyline{(-4.5, -4.5), (4.5, 4.5)}
  \arrow \reverse \arrow \rotatepath{(0,0), 45} \parafcn{-1.15,1.15,0.1}{(2*cosh(t),2*sinh(t))}
  \arrow \reverse \arrow \rotatepath{(0,0), 45}  \parafcn{-1.15,1.15,0.1}{(-2*cosh(t),2*sinh(t))}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
+\tlabel[cc](5,-0.5) { $x$}
+\tlabel[cc](0.5,5) { $y$}
 \xmarks{-4,-3,-2,-1,1,2,3,4}
 \ymarks{-4,-3,-2,-1,1,2,3,4}
 \tlpointsep{5pt}
-\scriptsize
+  
 \axislabels {x}{{$-3 \hspace{7pt}$} -3,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$3$} 3, {$4$} 4}
 \axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3,{$4$} 4}
-\tcaption{\scriptsize Graphing $x^2-y^2=4$ and \boldmath $y = \frac{2}{x}$.}
+\tcaption { Graphing $x^2-y^2=4$ and \boldmath $y = \frac{2}{x}$.}
 \normalsize
 \penwd{1.25pt}
 \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(2*cosh(t),2*sinh(t))}
@@ -647,9 +647,6 @@ AX & = & B \\ [13pt]
 
 We see that finding a solution $(x,y,z)$ to the original system corresponds to finding a solution $X$ for the matrix equation $AX = B$.   If we think about solving the real number equation $ax = b$, we would simply `divide' both sides by $a$. Is it possible to `divide' both sides of the matrix equation $AX = B$ by the matrix $A$?    This is the central topic of Section \ref{MatMethods}. 
 
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforMatArithmetic}
 
