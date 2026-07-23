@@ -333,26 +333,53 @@ Viewing the vertical line $x=1$ as another real number line demarcated like the 
 
 Now that we have paired angles with real numbers via radian measure, a whole world of applications awaits us.  Our first excursion into this realm comes by way of circular motion.  Suppose an object is moving as pictured below along a circular path of radius $r$ from the point $P$ to the point $Q$ in an amount of time $t$.  
  
-\begin{center}
- 
-\begin{mfpic}[14]{-5}{5}{-5}{5}
-\tlabel[cc](3.25,-0.5){\small $P$}
-\tlabel[cc](1.25,3.25){\small $Q$}
-\tlabel[cc](1.5,-0.5){\small $r$}
-\point[4pt]{(0,0), (3,0)}
-%\point[4pt]{(1.5, 2.5981)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \arrow \polyline{(5, 0), (0,0), (2.5, 4.3301)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){$\theta$}
-\penwd{1.5pt}
-\arrow \parafcn{0,60,5}{3*dir(t)}
-\tlabel[cc](3.0311,1.75){$s$}
-\end{mfpic} 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\end{center}
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{60} % angle theta, in degrees
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Ray through P (angle 0), extending past the circle ---
+\draw[->] (0,0) -- (\R+0.8,0);
+
+% --- Ray through Q (angle theta), extending past the circle ---
+\draw[->] (0,0) -- ({(\R+0.8)*cos(\tdeg)},{(\R+0.8)*sin(\tdeg)});
+
+% --- Bold arc from P to Q ---
+\draw[very thick, domain=0:\tdeg, samples=60, smooth, variable=\a]
+    plot ({\R*cos(\a)}, {\R*sin(\a)});
+
+% --- Center point ---
+\fill (0,0) circle (2.5pt);
+
+% --- Point P (on the circle, angle 0) ---
+\fill (\R,0) circle (2.5pt);
+\node[below right] at (\R+0.05,-0.05) {$P$};
+
+% --- Point Q (on the circle, angle theta) ---
+\fill ({\R*cos(\tdeg)},{\R*sin(\tdeg)}) circle (2.5pt);
+\node[above left] at ({\R*cos(\tdeg)+0.05},{\R*sin(\tdeg)+0.05}) {$Q$};
+
+% --- Angle arc for theta, near the center ---
+\draw (0.55,0) arc [start angle=0, end angle=\tdeg, radius=0.55];
+\node at ({0.85*cos(\tdeg/2)},{0.85*sin(\tdeg/2)}) {$\theta$};
+
+% --- Radius label r, along the horizontal ray ---
+\node[below] at (\R/2,-0.05) {$r$};
+
+% --- Arc length label s, near the arc ---
+\node at ({1.18*\R*cos(\tdeg/2.6)},{1.18*\R*sin(\tdeg/2.6)}) {$s$};
+
+\end{tikzpicture}
+
+\end{image}
 
 Here $s$ represents a \textit{displacement} so that  $s > 0$ means the object is traveling in a counter-clockwise direction and $s<0$ indicates movement in a clockwise direction. Note that with this convention the formula we used to define radian measure, namely $\theta = \frac{s}{r}$, still holds since a negative value of $s$ incurred from a clockwise displacement matches the negative we assign to $\theta$ for a clockwise rotation.   In Physics, the \textbf{average velocity} \index{average velocity} of the object, denoted $\overline{v}$ and read as `$v$-bar', is defined as the average rate of change of the position of the object with respect to time.\footnote{See Definition \ref{averagevelocitydefn} in Section \ref{IntroRational} for a review of this concept.} As a result, we have $\overline{v} = \frac{\text{displacement}}{\text{time}} = \frac{s}{t}$.  The quantity $\overline{v}$ has units of $\frac{\text{length}}{\text{time}}$ and conveys two ideas:  the direction in which the object is moving and how fast the position of the object is changing.  The contribution of direction in the quantity $\overline{v}$ is either to make it positive (in the case of counter-clockwise motion) or negative (in the case of clockwise motion), so that the quantity $\left| \overline{v} \right|$ quantifies how fast the object is moving - it is the \textbf{speed} of the object. Measuring $\theta$ in radians we have $\theta = \frac{s}{r}$ thus $s = r \theta$ and  \[ \overline{v} = \frac{s}{t} = \frac{r \theta}{t} = r \cdot \frac{\theta}{t} \] The quantity $\frac{\theta}{t}$ is called the \index{velocity ! average angular}\index{average angular velocity}\textbf{average angular velocity} of the object.  It is denoted by $\overline{\omega}$ and is read `omega-bar'.  The quantity $\overline{\omega}$ is the average rate of change of the angle $\theta$ with respect to time and thus has units $\frac{\text{radians}}{\text{time}}$. If $\overline{\omega}$ is constant throughout the duration of the motion, then it can be shown\footnote{You guessed it, using Calculus \ldots} that the average  velocities involved, namely $\overline{v}$ and $\overline{\omega}$, are the same as their instantaneous counterparts, $v$ and $\omega$, respectively.  In this case, $v$ is simply called the \index{velocity ! instantaneous}`velocity' of the object  and  $\omega$ is called the \index{velocity ! instantaneous angular}`angular velocity.'\footnote{See Example \ref{averagevelocityrocketex} in Section \ref{IntroRational} for more of a discussion on instantaneous velocity.}  
 \smallskip
