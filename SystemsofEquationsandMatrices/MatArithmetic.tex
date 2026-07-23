@@ -28,8 +28,8 @@ In Section \ref{AugMatrices}, we used a special class of matrices, the augmented
 % Code below is for Print version
 
 \[ \begin{array}{ccccc} 
-  &  &  \text{\begin{tabular}{c} $j$ counts columns \\    from left to right \end{tabular}} &  & \\  &  & \xrightarrow{\hspace{1.25in}} & & \\
-A & = & \left. \left[ \begin{array}{rrrr} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots  & & \vdots \\ a_{m1m2} & \cdots & a_{mn} \end{array}  \right] \right\downarrow & \text{\begin{tabular}{c} $i$ counts rows \\ from top to bottom \end{tabular}} \end{array} \] 
+  &  &  \text{$j$ counts columns from left to right } &  & \\  &  & \xrightarrow{\hspace{1.25in}} & & \\
+A & = & \left. \left[ \begin{array}{rrrr} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots  & & \vdots \\ a_{m1m2} & \cdots & a_{mn} \end{array}  \right] \right\downarrow & \text{$i$ counts rows from top to bottom} \end{array} \] 
 
 With this new notation we can define what it means for two matrices to be equal.
 
@@ -186,51 +186,51 @@ The properties in Theorems \ref{matrixadditionprops} and \ref{matrixscalarmultpr
 
 {\bf Solution.} \[ \begin{array}{rcl}
 
-3A - \left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A\right) & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] + \dfrac{1}{3} \left[ \begin{array}{rr} 9 & 12 \\ -3 & 39 \\ \end{array}\right]  \\ [13pt]
+3A - \left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A\right) & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] + \dfrac{1}{3} \left[ \begin{array}{rr} 9 & 12 \\ -3 & 39 \\ \end{array}\right]  \\  
 
 
 
-3A + \left\{-\left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A \right)\right\} & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] +  \left[ \begin{array}{rr} \left(\frac{1}{3}\right)(9) & \left(\frac{1}{3}\right)(12) \\[2pt] \left(\frac{1}{3}\right)(-3) & \left(\frac{1}{3}\right)(39) \\ \end{array}\right]  \\ [13pt]
+3A + \left\{-\left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A \right)\right\} & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] +  \left[ \begin{array}{rr} \left(\frac{1}{3}\right)(9) & \left(\frac{1}{3}\right)(12) \\[2pt] \left(\frac{1}{3}\right)(-3) & \left(\frac{1}{3}\right)(39) \\ \end{array}\right]  \\  
 
 
 
-3A + (-1)\left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A \right) & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] + \left[ \begin{array}{rr} 3 & 4 \\ -1 & 13 \\ \end{array}\right] \\ [13pt]
+3A + (-1)\left(\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + 5A \right) & = & \left[ \begin{array}{rr} -4 & 2 \\ 6 & -2 \\ \end{array}\right] + \left[ \begin{array}{rr} 3 & 4 \\ -1 & 13 \\ \end{array}\right] \\  
 
 
 
-3A + \left\{ (-1)\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + (-1)(5A)\right \}  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\ [13pt]
+3A + \left\{ (-1)\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + (-1)(5A)\right \}  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\  
 
-3A +  (-1)\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + (-1)(5A)  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\ [13pt]
+3A +  (-1)\left[ \begin{array}{rr} 2 & -1 \\ 3 & 5 \\ \end{array}\right] + (-1)(5A)  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\  
 
-3A + \left[ \begin{array}{rr} (-1)(2) & (-1)(-1) \\ (-1)(3) & (-1)(5) \\ \end{array}\right] + ((-1)(5))A  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\ [13pt]
-
-
-3A + \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] + (-5)A & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\ [13pt]
+3A + \left[ \begin{array}{rr} (-1)(2) & (-1)(-1) \\ (-1)(3) & (-1)(5) \\ \end{array}\right] + ((-1)(5))A  & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\  
 
 
-3A + (-5)A+ \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right]& = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] \\ [13pt]
+3A + \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] + (-5)A & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right]  \\  
 
 
-
-(3+ (-5))A+ \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] + \left(-\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \right)& = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] + \left(-\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \right) \\ [13pt]
+3A + (-5)A+ \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right]& = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] \\  
 
 
 
-(-2)A+ 0_{2 \times 2} & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] -\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \\ [13pt]
+(3+ (-5))A+ \left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] + \left(-\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \right)& = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] + \left(-\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \right) \\  
 
 
 
-(-2)A & = & \left[ \begin{array}{rr} -1 - (-2) & 6 - 1 \\ 5 - (-3) & 11 - (-5) \\ \end{array}\right] \\ [13pt]
+(-2)A+ 0_{2 \times 2} & = & \left[ \begin{array}{rr} -1 & 6 \\ 5 & 11 \\ \end{array}\right] -\left[ \begin{array}{rr} -2 & 1 \\ -3 & -5 \\ \end{array}\right] \\  
 
-(-2)A & = & \left[ \begin{array}{rr} 1 & 5 \\ 8 & 16 \\ \end{array}\right] \\ [13pt]
 
-\left(-\frac{1}{2}\right)\left((-2)A\right) & = & -\frac{1}{2} \left[ \begin{array}{rr} 1 & 5 \\ 8 & 16 \\ \end{array}\right] \\ [13pt]
 
-\left(\left(-\frac{1}{2}\right)(-2)\right)A & =  &  \left[ \begin{array}{rr} \left(-\frac{1}{2}\right)(1) & \left(-\frac{1}{2}\right)(5) \\[2pt] \left(-\frac{1}{2}\right)(8) & \left(-\frac{1}{2}\right)(16) \\ \end{array}\right] \\ [13pt]
+(-2)A & = & \left[ \begin{array}{rr} -1 - (-2) & 6 - 1 \\ 5 - (-3) & 11 - (-5) \\ \end{array}\right] \\  
 
-1 A & =  &  \left[ \begin{array}{rr} -\frac{1}{2} & -\frac{5}{2} \\[2pt] -4 & -\frac{16}{2} \\ \end{array}\right] \\ [13pt]
+(-2)A & = & \left[ \begin{array}{rr} 1 & 5 \\ 8 & 16 \\ \end{array}\right] \\  
 
-A & =  &  \left[ \begin{array}{rr} -\frac{1}{2} & -\frac{5}{2} \\[2pt] -4 & -8 \\ \end{array}\right] \\ [13pt]
+\left(-\frac{1}{2}\right)\left((-2)A\right) & = & -\frac{1}{2} \left[ \begin{array}{rr} 1 & 5 \\ 8 & 16 \\ \end{array}\right] \\  
+
+\left(\left(-\frac{1}{2}\right)(-2)\right)A & =  &  \left[ \begin{array}{rr} \left(-\frac{1}{2}\right)(1) & \left(-\frac{1}{2}\right)(5) \\[2pt] \left(-\frac{1}{2}\right)(8) & \left(-\frac{1}{2}\right)(16) \\ \end{array}\right] \\  
+
+1 A & =  &  \left[ \begin{array}{rr} -\frac{1}{2} & -\frac{5}{2} \\[2pt] -4 & -\frac{16}{2} \\ \end{array}\right] \\  
+
+A & =  &  \left[ \begin{array}{rr} -\frac{1}{2} & -\frac{5}{2} \\[2pt] -4 & -8 \\ \end{array}\right] \\  
 
 \end{array} \]
 The reader is encouraged to check our answer in the original equation.  \qed
@@ -452,11 +452,11 @@ While the proofs of the properties in Theorem \ref{matrixmultprops} are computat
 
 \[ \begin{array}{rcl}
 
-C^2 -5C + 10I_{2} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]^2 - 5 \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + 10 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\ [13pt]
+C^2 -5C + 10I_{2} & = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]^2 - 5 \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + 10 \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\  
 
-& = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]\left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + \left[ \begin{array}{rr} -5 & 10 \\ -15 & -20 \\ \end{array} \right] + \left[ \begin{array}{rr} 10 & 0 \\ 0 & 10 \\ \end{array} \right] \\ [13pt]
+& = & \left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right]\left[ \begin{array}{rr} 1 & -2 \\ 3 & 4 \\ \end{array} \right] + \left[ \begin{array}{rr} -5 & 10 \\ -15 & -20 \\ \end{array} \right] + \left[ \begin{array}{rr} 10 & 0 \\ 0 & 10 \\ \end{array} \right] \\  
 
-& = & \left[ \begin{array}{rr} -5 & -10 \\ 15 & 10 \\ \end{array} \right] + \left[ \begin{array}{rr} 5 & 10 \\ -15 & -10 \\ \end{array} \right]  \\ [13pt]
+& = & \left[ \begin{array}{rr} -5 & -10 \\ 15 & 10 \\ \end{array} \right] + \left[ \begin{array}{rr} 5 & 10 \\ -15 & -10 \\ \end{array} \right]  \\  
 
 & = &  \left[ \begin{array}{rr} 0 & 0 \\ 0 & 0 \\ \end{array} \right]. \\
 
@@ -487,7 +487,7 @@ The second and third problems  introduce us to polynomials involving matrices.  
 
 As we mentioned earlier, a point $P(x,y)$ in the $xy$-plane can be represented as a $2 \times 1$ position matrix.  We now show that matrix multiplication can be used to rotate these points, and hence graphs of equations.
 
-\begin{example}  \label{rotationmatrixex} Let $R = \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [3pt] \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{array} \right]$.
+\begin{example}  \label{rotationmatrixex} Let $R = \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\   \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \end{array} \right]$.
 
 \begin{enumerate}
 
@@ -502,7 +502,7 @@ As we mentioned earlier, a point $P(x,y)$ in the $xy$-plane can be represented a
 
 \[\begin{array}{rcl}
 
-RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [3pt] \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} 2 \\ [3pt] -2 \\ \end{array} \right] \\ [13pt]
+RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\   \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} 2 \\   -2 \\ \end{array} \right] \\  
 
 & = & \left[ \begin{array}{r} 2\sqrt{2} \\ 0 \\ \end{array} \right] \\
 
@@ -547,9 +547,9 @@ We have that $R$ takes $(2,-2)$ to $(2 \sqrt{2}, 0)$.  Similarly, we find $(4,0)
 
 \[\begin{array}{rcl}
 
-RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\ [3pt] \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} x \\ [3pt] y \\ \end{array} \right] \\ [13pt]
+RP & = &  \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\   \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \end{array} \right]\left[ \begin{array}{r} x \\   y \\ \end{array} \right] \\  
 
-& = & \left[ \begin{array}{r} \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \\ [3pt] \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \\ \end{array} \right] \\
+& = & \left[ \begin{array}{r} \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \\   \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \\ \end{array} \right] \\
 
 \end{array}\]
 
@@ -638,10 +638,10 @@ We now consider the matrix equation $AX = B$.
 
 \[ \begin{array}{rcl}
 
-AX & = & B \\ [13pt]
-\left[ \begin{array}{rrr} 3 & -1 & 1  \\ 1 & 2 & -1  \\ 2 & 3 & -4  \\ \end{array} \right] \left[ \begin{array}{r}  x \\  y \\  z \\ \end{array} \right] & = & \left[ \begin{array}{r}  8 \\  4 \\  10 \\ \end{array} \right] \\ [13pt]
+AX & = & B \\  
+\left[ \begin{array}{rrr} 3 & -1 & 1  \\ 1 & 2 & -1  \\ 2 & 3 & -4  \\ \end{array} \right] \left[ \begin{array}{r}  x \\  y \\  z \\ \end{array} \right] & = & \left[ \begin{array}{r}  8 \\  4 \\  10 \\ \end{array} \right] \\  
 
-\left[ \begin{array}{rrr} 3x -y +z  \\ x + 2y  -z  \\ 2x + 3y  -4 z \\ \end{array} \right] & = & \left[ \begin{array}{r}  8 \\  4 \\  10 \\ \end{array} \right] \\ [13pt]
+\left[ \begin{array}{rrr} 3x -y +z  \\ x + 2y  -z  \\ 2x + 3y  -4 z \\ \end{array} \right] & = & \left[ \begin{array}{r}  8 \\  4 \\  10 \\ \end{array} \right] \\  
 
 \end{array}\]
 
