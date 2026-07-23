@@ -172,99 +172,155 @@ Viewing the vertical line $x=1$ as another real number line demarcated like the 
 
 \item  The arc associated with $t = \frac{3 \pi}{4}$ is the arc on the Unit Circle which subtends the angle $\frac{3 \pi}{4}$ in radian measure.  Since $\frac{3 \pi}{4}$ is $\frac{3}{8}$ of a revolution, we have an arc which begins at the point $(1,0)$ proceeds counter-clockwise up to midway through Quadrant II.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{135} % t = 3*pi/4 in degrees
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.6,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.6) node[above] {$y$};
+
+% --- Bold arc from angle 0 to t, arrowhead at the terminal end ---
+\draw[very thick, blue, domain=0:\tdeg, samples=60, smooth, variable=\a,
+      -{Latex[length=3mm]}]
+    plot ({\R*cos(\a)}, {\R*sin(\a)});
+
+% --- Radius line to the terminal point, dotted, no arrowhead ---
+\draw[dotted, thick] (0,0) -- ({\R*cos(\tdeg)},{\R*sin(\tdeg)});
+
+% --- Unit labels ---
+\node[above left] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% --- Caption ---
+\node at (0,-\R-1.1) {$t = \frac{3\pi}{4}$};
+
+\end{tikzpicture}
+
+\end{image}
+
 \item Since one revolution is $2\pi$ radians, and $t=-2\pi$ is negative, we graph  the arc which begins at $(1,0)$ and proceeds \textit{clockwise} for one full revolution.
 
-\hspace{.5in} \begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[12.5]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (-3.5355,3.5355)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 135, 5}{3*dir(t)}
-\tcaption{$t = \frac{3\pi}{4}$}
-\end{mfpic} 
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{-360} % t = 3*pi/4 in degrees
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{1in}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.6,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.6) node[above] {$y$};
 
-\begin{mfpic}[12.5]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, -358, -5}{3*dir(t)}
-\tcaption{$t = -2\pi$} 
-\end{mfpic}  
+% --- Bold arc from angle 0 to t, arrowhead at the terminal end ---
+\draw[very thick,blue, domain=0:\tdeg, samples=60, smooth, variable=\a,
+      -{Latex[length=3mm]}]
+    plot ({\R*cos(\a)}, {\R*sin(\a)});
 
-\\
+% --- Radius line to the terminal point, dotted, no arrowhead ---
+\draw[dotted, thick] (0,0) -- ({\R*cos(\tdeg)},{\R*sin(\tdeg)});
 
-\end{tabular}
+% --- Unit labels ---
+\node[above left] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% --- Caption ---
+\node at (0,-\R-1.1) {$t = -2\pi$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \item Like $t=-2\pi$, $t=-2$ is negative, so we begin our arc at $(1,0)$ and proceed clockwise around the unit circle.  Since $\pi \approx 3.14$ and  $\frac{\pi}{2} \approx 1.57$, we find that rotating $2$ radians clockwise from the point $(1,0)$ lands us in Quadrant III.  To more accurately place the endpoint, we proceed as we did in Example \ref{degreeex}, successively halving the angle measure until we find $\frac{5 \pi}{8} \approx 1.96$ which tells us our arc extends just a bit beyond the quarter mark into Quadrant III.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{-114.7} % t = 3*pi/4 in degrees
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.6,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.6) node[above] {$y$};
+
+% --- Bold arc from angle 0 to t, arrowhead at the terminal end ---
+\draw[very thick,blue, domain=0:\tdeg, samples=60, smooth, variable=\a,
+      -{Latex[length=3mm]}]
+    plot ({\R*cos(\a)}, {\R*sin(\a)});
+
+% --- Radius line to the terminal point, dotted, no arrowhead ---
+\draw[dotted, thick] (0,0) -- ({\R*cos(\tdeg)},{\R*sin(\tdeg)});
+
+% --- Unit labels ---
+\node[above left] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% --- Caption ---
+\node at (0,-\R-1.1) {$t = -2$};
+
+\end{tikzpicture}
+
+\end{image}
+
 \item  Since $117$ is positive, the arc corresponding to $t=117$ begins at $(1,0)$ and proceeds counter-clockwise.  As $117$ is much greater than $2\pi$, we wrap around the Unit Circle several times before finally reaching our endpoint.  We approximate $\frac{117}{2\pi}$ as $18.62$ which tells us we complete $18$ revolutions counter-clockwise with $0.62$, or  just shy of $\frac{5}{8}$ of a revolution to spare.  In other words, the terminal side of the angle which measures $117$ radians in standard position is just short of being midway through Quadrant III.
 
-\smallskip
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\hspace{.5in} \begin{tabular}{cc}
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{223.2} % t = 3*pi/4 in degrees
 
-\begin{mfpic}[12.5]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (-3.5355,-3.5355)}
-\dotted \polyline{(0,0), (-1.9135,-4.6194)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, -114, -5}{3*dir(t)}
-\tcaption{$t = -2$} 
-\end{mfpic}  
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-&
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.6,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.6) node[above] {$y$};
 
-\hspace{1in}
+% --- Bold arc from angle 0 to t, arrowhead at the terminal end ---
+\draw[very thick,blue, domain=0:\tdeg, samples=60, smooth, variable=\a,
+      -{Latex[length=3mm]}]
+    plot ({\R*cos(\a)}, {\R*sin(\a)});
 
-\begin{mfpic}[12.5]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\dotted \polyline{(0,0), (-3.5355,-3.5355)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\penwd{1.5pt}
-\arrow \parafcn{0, 583, 5}{3*dir(t)}
-\tcaption{$t = 117$} 
-\end{mfpic}  \\
+% --- Radius line to the terminal point, dotted, no arrowhead ---
+\draw[dotted, thick] (0,0) -- ({\R*cos(\tdeg)},{\R*sin(\tdeg)});
 
-\end{tabular}
+% --- Unit labels ---
+\node[above left] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% --- Caption ---
+\node at (0,-\R-1.1) {$t = 117$};
+
+\end{tikzpicture}
+
+\end{image}
 
 \end{enumerate}
 

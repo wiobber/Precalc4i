@@ -27,7 +27,7 @@ is  $2 \times 3$  because it has $2$ rows and $3$ columns.  The individual numbe
 \[ A = \left[ \begin{array}{rrr} 3 & 0 & -1 \\ 
 2 & -5 & 10 \end{array} \right]\] 
 
-then $a_{\mbox{\tiny$11$}} = 3$, $a_{\mbox{\tiny$12$}} = 0$, $a_{\mbox{\tiny$13$}} = -1$, $a_{\mbox{\tiny$21$}} = 2$, $a_{\mbox{\tiny$22$}} = -5$, and $a_{\mbox{\tiny$23$}} = 10$.  We shall explore matrices as mathematical objects with their own algebra in Section \ref{MatArithmetic} and introduce them here solely as a bookkeeping device.  Consider the system of linear equations  from number 2 in Example \ref{GaussEqnEx}
+then $a_{11} = 3$, $a_{12} = 0$, $a_{13} = -1$, $a_{21} = 2$, $a_{22} = -5$, and $a_{23}} = 10$.  We shall explore matrices as mathematical objects with their own algebra in Section \ref{MatArithmetic} and introduce them here solely as a bookkeeping device.  Consider the system of linear equations  from number 2 in Example \ref{GaussEqnEx}
 
 \[\left\{ \begin{array}{lrcr} (E1) & 2x+3y-z & = & 1 \\ 
 (E2) & 10x-z & = & 2 \\ 
@@ -118,9 +118,9 @@ Next, we have a demonstration of replacing a row with a nonzero multiple of itse
 
 \begin{array}{lrcr}
 
-(E1) & 3x_{\mbox{\tiny$1$}} +x_{\mbox{\tiny$2$}} + x_{\mbox{\tiny$4$}} & = & 6 \\   
-(E2) & 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\
-(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+(E1) & 3x_1 +x_2 + x_4 & = & 6 \\   
+(E2) & 2x_1 + x_2 -x_3  & = & 4  \\
+(E3) &  x_2 -3x_3 -2x_4 & = & 0 \\
 
 \end{array} 
 
@@ -135,9 +135,9 @@ Next, we have a demonstration of replacing a row with a nonzero multiple of itse
 
 \begin{array}{lrcr}
 
-(E1) & x_{\mbox{\tiny$1$}} + \frac{1}{3}x_{\mbox{\tiny$2$}} + \frac{1}{3}x_{\mbox{\tiny$4$}} & = & 2 \\  
-(E2) & 2x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} -x_{\mbox{\tiny$3$}}  & = & 4  \\
-(E3) &  x_{\mbox{\tiny$2$}} -3x_{\mbox{\tiny$3$}} -2x_{\mbox{\tiny$4$}} & = & 0 \\
+(E1) & x_1 + \frac{1}{3}x_2 + \frac{1}{3}x_4 & = & 2 \\  
+(E2) & 2x_1 + x_2 -x_3  & = & 4  \\
+(E3) &  x_2 -3x_3 -2x_4 & = & 0 \\
 
 \end{array} 
 
@@ -352,8 +352,8 @@ To ensure the leading $1$ in $R3$ is to the right of the leading $1$ in $R2$, we
 \xrightarrow{\text{Replace $R3$ with $R2+R3$}} 
 &  
 \left[ \begin{array}{rrr|r} 
-1 & \hphantom{-}2 & -1 & 4 \\ [2pt]
-0 & 1 & -\frac{4}{7} & \frac{4}{7} \\ [2pt]
+1 & \hphantom{-}2 & -1 & 4 \\  
+0 & 1 & -\frac{4}{7} & \frac{4}{7} \\  
 0 & 0 & -\frac{18}{7} & \frac{18}{7} \\ 
 \end{array} \right]
 
@@ -365,8 +365,8 @@ Finally, we get the leading entry in $R3$ to be $1$.
 \[\begin{array}{ccc}
 
 \left[ \begin{array}{rrr|r} 
-1 & \hphantom{-}2 & -1 & 4 \\ [2pt]
-0 & 1 & -\frac{4}{7} & \frac{4}{7} \\ [2pt]
+1 & \hphantom{-}2 & -1 & 4 \\  
+0 & 1 & -\frac{4}{7} & \frac{4}{7} \\  
 0 & 0 & -\frac{18}{7} & \frac{18}{7} \\ 
 \end{array} \right]   
 & 
@@ -490,18 +490,18 @@ Note that in the previous discussion, we could have started with $R2$ and used i
 \begin{example}  Solve the following system using an augmented matrix.  Use Gauss-Jordan Elimination to put the augmented matrix into reduced row echelon form.  
 
 \[\left \{ \begin{array}{rcr} 
-x_{\mbox{\tiny$2$}} - 3x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$4$}} & = & 2 \\ 
-2x_{\mbox{\tiny$1$}} + 4x_{\mbox{\tiny$3$}} & = & 5 \\ 
-4x_{\mbox{\tiny$2$}}-x_{\mbox{\tiny$4$}} & = & 3  \end{array} \right.\]
+x_2 - 3x_1 + x_4 & = & 2 \\ 
+2x_1 + 4x_3 & = & 5 \\ 
+4x_2-x_4 & = & 3  \end{array} \right.\]
 
 {\bf Solution.} We first encode the system into a matrix.  (Pay attention to the subscripts!)
 
 \[ \begin{array}{ccc}
 
 \left\{ \begin{array}{rcr} 
-x_{\mbox{\tiny$2$}} - 3x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$4$}} & = & 2 \\ 
-2x_{\mbox{\tiny$1$}} + 4x_{\mbox{\tiny$3$}} & = & 5 \\ 
-4x_{\mbox{\tiny$2$}}-x_{\mbox{\tiny$4$}} & = & 3  \end{array} \right.
+x_2 - 3x_1 + x_4 & = & 2 \\ 
+2x_1 + 4x_3 & = & 5 \\ 
+4x_2-x_4 & = & 3  \end{array} \right.
 
 &
 
@@ -552,8 +552,8 @@ Now we eliminate the nonzero entry below our leading $1$.
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & \frac{2}{3} & 4 & \frac{2}{3} & \frac{19}{3} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & \frac{2}{3} & 4 & \frac{2}{3} & \frac{19}{3} \\  
  0 & 4 & 0 & -1 & 3 \\  \end{array} \right]
 
  \end{array}\]
@@ -564,8 +564,8 @@ We proceed to get a leading $1$ in $R2$.
 
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & \frac{2}{3} & 4 & \frac{2}{3} & \frac{19}{3} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & \frac{2}{3} & 4 & \frac{2}{3} & \frac{19}{3} \\  
  0 & 4 & 0 & -1 & 3 \\  \end{array} \right]
 
 &
@@ -575,8 +575,8 @@ We proceed to get a leading $1$ in $R2$.
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 4 & 0 & -1 & 3 \\  \end{array} \right]
 
  \end{array}\]
@@ -588,8 +588,8 @@ We now zero out the entry below the leading $1$ in $R2$.
 
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 4 & 0 & -1 & 3 \\  \end{array} \right]
 
 &
@@ -599,8 +599,8 @@ We now zero out the entry below the leading $1$ in $R2$.
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & 0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & 0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 0& -24 & -5 & -35 \\  \end{array} \right]
 
  \end{array}\]
@@ -610,8 +610,8 @@ Next, it's time for a leading $1$ in $R3$.
 
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & 0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & 0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 0& -24 & -5 & -35 \\  \end{array} \right]
 &
 
@@ -620,8 +620,8 @@ Next, it's time for a leading $1$ in $R3$.
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right]
 
  \end{array}\]
@@ -630,8 +630,8 @@ The matrix is now in row echelon form.  To get the reduced row echelon form, we 
 \[ \begin{array}{ccc}
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 6 & 1 & \frac{19}{2} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 6 & 1 & \frac{19}{2} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right]&
 
 \xrightarrow{\text{Replace $R2$ with $-6R3+R2$}}
@@ -639,8 +639,8 @@ The matrix is now in row echelon form.  To get the reduced row echelon form, we 
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right]
 
  \end{array}\]
@@ -650,8 +650,8 @@ Lastly, we get a $0$ above the leading $1$ of $R2$.
 \[ \begin{array}{ccc}
 
  \left[ \begin{array}{rrrr|r}
- 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\ [2pt]
- 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\ [2pt]
+ 1 & -\frac{1}{3} & \hphantom{-}0 & -\frac{1}{3} & -\frac{2}{3} \\  
+ 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right]
  
  &
@@ -661,8 +661,8 @@ Lastly, we get a $0$ above the leading $1$ of $R2$.
 &
 
  \left[ \begin{array}{rrrr|r}
- 1 & \hphantom{-}0 & \hphantom{-}0 & -\frac{5}{12} & -\frac{5}{12} \\ [2pt]
- 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\ [2pt]
+ 1 & \hphantom{-}0 & \hphantom{-}0 & -\frac{5}{12} & -\frac{5}{12} \\  
+ 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right]
 
  \end{array}\]
@@ -672,21 +672,21 @@ Lastly, we get a $0$ above the leading $1$ of $R2$.
  \[ \begin{array}{ccc}
 
  \left[ \begin{array}{rrrr|r}
- 1 & \hphantom{-}0 & \hphantom{-}0 & -\frac{5}{12} & -\frac{5}{12} \\ [2pt]
- 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\ [2pt]
+ 1 & \hphantom{-}0 & \hphantom{-}0 & -\frac{5}{12} & -\frac{5}{12} \\  
+ 0 & 1 & 0 & -\frac{1}{4} & \frac{3}{4} \\  
  0 & 0& 1 & \frac{5}{24} & \frac{35}{24} \\  \end{array} \right] 
  
 & 
 \xrightarrow{\text{Decode from the matrix}} 
 & 
 \left\{ \begin{array}{rcr} 
-x_{\mbox{\tiny$1$}} - \frac{5}{12} x_{\mbox{\tiny$4$}} & = & -\frac{5}{12} \\ [2pt]
-x_{\mbox{\tiny$2$}} - \frac{1}{4}x_{\mbox{\tiny$4$}} & = & \frac{3}{4} \\ [2pt]
-x_{\mbox{\tiny$3$}} + \frac{5}{24} x_{\mbox{\tiny$4$}} & = & \frac{35}{24} \end{array} \right.
+x_1 - \frac{5}{12} x_4 & = & -\frac{5}{12} \\  
+x_2 - \frac{1}{4}x_4 & = & \frac{3}{4} \\  
+x_3 + \frac{5}{24} x_4 & = & \frac{35}{24} \end{array} \right.
 
 \end{array}\]
 
-We see  $x_{\mbox{\tiny$4$}}$ is free and assign it the parameter $t$.  We obtain $x_{\mbox{\tiny$3$}} = -\frac{5}{24} t + \frac{35}{24}$, $x_{\mbox{\tiny$2$}} = \frac{1}{4} t + \frac{3}{4}$, and $x_{\mbox{\tiny$1$}} = \frac{5}{12}t - \frac{5}{12}$.  Our solution is $\left\{ \left( \frac{5}{12}t - \frac{5}{12}, \frac{1}{4} t + \frac{3}{4}, -\frac{5}{24} t + \frac{35}{24}, t \right) : -\infty < t < \infty \right\}$ which we leave to the reader to check. \qed
+We see  $x_4$ is free and assign it the parameter $t$.  We obtain $x_3 = -\frac{5}{24} t + \frac{35}{24}$, $x_2 = \frac{1}{4} t + \frac{3}{4}$, and $x_1 = \frac{5}{12}t - \frac{5}{12}$.  Our solution is $\left\{ \left( \frac{5}{12}t - \frac{5}{12}, \frac{1}{4} t + \frac{3}{4}, -\frac{5}{24} t + \frac{35}{24}, t \right) : -\infty < t < \infty \right\}$ which we leave to the reader to check. \qed
 
 \end{example}
 
@@ -730,9 +730,6 @@ Using a calculator or graphing utility,\footnote{We've tortured you enough alrea
 
 \end{example}
 
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforAugMatrices}
 
