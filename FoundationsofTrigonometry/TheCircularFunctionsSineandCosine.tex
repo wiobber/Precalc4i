@@ -1216,54 +1216,71 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
 \item Since  $\alpha$ is an acute angle, we know  $0 < \alpha < \frac{\pi}{2}$ so the terminal side of $\alpha$ lies in Quadrant I.  Moreover, since  $\cos(\alpha) = \frac{5}{13}$, we know  the $x$-coordinate of the intersection point of the terminal side of $\alpha$ and the Unit Circle is $\frac{5}{13}$.  To find $\sin(\alpha)$, we need the $y$-coordinate.  Taking a cue from Example \ref{cosinesineviaunitcircle}, we drop a perpendicular from the terminal side of $\alpha$ to the $x$-axis as seen below on the right to form a right triangle with one leg measuring $\frac{5}{13}$ units and hypotenuse with a length of $1$ unit.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(2.25, 2.75){$\left(\frac{5}{13}, y \right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 60, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\point[4pt]{(0,0), (1.1538, 2.7692)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (1.9231, 4.6154)}
-\end{mfpic}
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{55} % theta, in degrees
 
-&
+% ===================== PANEL 1: angle theta only =====================
+\begin{scope}
+    % Full circle, light gray
+    \draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel[cc](0.6,-0.5){\scriptsize $\frac{5}{13}$}
-\tlabel[cc](0.75, 0.5){\scriptsize $\alpha$}
-\tlabel[cc](1.9, 1.35){\scriptsize $y = \frac{12}{13}$}
-\tlabel[cc](0.3, 1.5){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 60, 5}{0.5*dir(t)}
-\dashed \polyline{ (1.1538, 2.7692),  (1.1538, 0)}
-\polyline{(0.9538, 0), (0.9538,0.2), (1.1538, 0.2)}
-\point[4pt]{(0,0), (1.1538, 2.7692)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (1.9231, 4.6154)}
-\end{mfpic} 
+    % Axes
+    \draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+    \draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
+    % Terminal ray at angle theta
+    \draw[very thick, -] (0,0) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\end{tabular}
+    % Center point
+    \fill (0,0) circle (2.5pt);
+
+    % Unit labels
+    \node[above left] at (-0.12,\R) {$1$};
+    \node[below right] at (\R,-0.12) {$1$};
+
+    % Angle arc for theta
+    \draw[->] (0.7,0) arc [start angle=0, end angle=\tdeg, radius=0.7];
+    \node at ({1.15*cos(\tdeg/2)},{1.15*sin(\tdeg/2)}) {$\theta$};
+\end{scope}
+
+% ===================== PANEL 2: with point P(cos theta, sin theta) =====================
+\begin{scope}[xshift=\panelwidth cm]
+    % Full circle, light gray
+    \draw[gray!50] (0,0) circle (\R);
+
+    % Axes
+    \draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+    \draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+    % Terminal ray at angle theta
+    \draw[very thick, -] (0,0) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
+
+    % Center point
+    \fill (0,0) circle (2.5pt);
+
+    % Point P on the circle
+    \fill ({\R*cos(\tdeg)},{\R*sin(\tdeg)}) circle (2.5pt);
+    \node[right] at ({\R*cos(\tdeg)+0.1},{\R*sin(\tdeg)+0.05}) {$P(\cos(\theta),\sin(\theta))$};
+
+    % Unit labels
+    \node[above left] at (-0.12,\R) {$1$};
+    \node[below right] at (\R,-0.12) {$1$};
+
+    % Angle arc for theta
+    \draw[->] (0.7,0) arc [start angle=0, end angle=\tdeg, radius=0.7];
+    \node at ({1.15*cos(\tdeg/2)},{1.15*sin(\tdeg/2)}) {$\theta$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = \frac{12}{13}$.  Hence, $\sin(\alpha) = \frac{12}{13}$.
 
