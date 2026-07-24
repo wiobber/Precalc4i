@@ -1488,7 +1488,7 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 % --- Parameters ---
 \def\panelwidth{6.5}
 \def\R{2}
-\def\tdeg{300} % theta, in degrees
+\def\tdeg{120} % theta, in degrees
 \pgfmathsetmacro{\px}{\R*cos(\tdeg)}
 \pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 \def\rstart{0.35} % starting radius (near the center)
@@ -1516,11 +1516,10 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 
 % --- Angle arc for theta, with label ---
 
-\draw[->] (1,0) arc [start angle=180, end angle=\tdeg, radius=1];
-\node[right] at (1,-0.5) {$-\alpha$};
+\draw[->] (-1,0) arc [start angle=180, end angle=\tdeg, radius=1];
+\node[right] at (-1.7,0.5) {$-\alpha$};
 
-\draw[->] (0.55,0) arc [start angle=0, end angle=360, radius=0.55];
-\node[right] at (-0.7,-0.6) {$\pi$};
+\node[right] at (0.6,0.6) {$3\pi$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
@@ -1545,29 +1544,46 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 % --- Radius segment (thick, solid) from center to P ---
 \draw[very thick] (0,0) -- (\px,\py);
 \draw[very thick] (0,0) -- (2,0);
-% --- Ray continuing past P (thin, with arrowhead) ---
 
-\draw[dashed] (\px,-\py) -- (0,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+%\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
 % --- Center and P points ---
 \fill (0,0) circle (2.5pt);
-\fill (\px,-\py) circle (2.5pt);
-\node[above right] at (\px+0.05,-\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
-
 \fill (\px,\py) circle (2.5pt);
-\node[below right] at (\px-0.05,\py-0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+
 
 % --- Angle arc for theta, with label ---
-\draw[<->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
-\node[right] at (0.6,0.4) {$\alpha$};
-\draw[<->] (0.55,0) arc [start angle=360, end angle=\tdeg, radius=0.55];
-\node[right] at (0.6,-0.4) {$\alpha$};
-\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
-\node[right] at (-1.8,1.8) {$\theta$};
+
+\draw[<->] (-1,0) arc [start angle=180, end angle=\tdeg, radius=1];
+\node[right] at (-1.5,0.6) {$\alpha$};
+
+\draw[<->] (1,0) arc [start angle=0, end angle=60, radius=1];
+\node[right] at (1,0.6) {$\alpha$};
+
+\node[right] at (0.6,-0.6) {$\theta$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[->,
+      domain=0:\tdeg+360, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
+
+\draw[dashed] (-\px,\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[above left] at (\px+0.05,\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
+
+\fill (-\px,\py) circle (2.5pt);
+\node[above right] at (-\px+0.05,\py+0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+
+
 \end{scope}
 
 \end{tikzpicture}
