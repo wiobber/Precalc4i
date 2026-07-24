@@ -562,7 +562,7 @@ ${ \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 2\sin(t)+1 \end{array} \right.  
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = 2\tan(t) \\ y = \cot(t) \end{array} \right.  \text{for } 0 < t < \frac{\pi}{2}}$
 
- \begin{solution}
+\begin{solution}
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
@@ -598,32 +598,275 @@ ${ \left\{ \begin{array}{l} x = 2\tan(t) \\ y = \cot(t) \end{array} \right.  \te
 \end{tikzpicture}
 \end{solution}
 
-
-
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right.  \text{for } -\frac{\pi}{2} < t < \frac{\pi}{2}}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=6, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 0, 1, 2, 3, 4, 5},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=-75:-45] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-45:45] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=45:75] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\fill (1,0) circle (2pt);
+
+%Asymptotes
+\draw[dashed, smooth, samples=100, domain=-45:45] (-1,-1) -- (4,4);
+\draw[dashed, smooth, samples=100, domain=-45:45] (-1,1) -- (4,-4);
+
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right.  \text{for } \frac{\pi}{2} < t < \frac{3\pi}{2}}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=2, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1, 0, -1, -2, -3, -4, -5},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=105:135] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=135:225] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=225:255] 
+    plot ({sec(\x)}, {tan(\x)});
+
+\fill (-1,0) circle (2pt);
+
+%Asymptotes
+\draw[dashed, smooth, samples=100, domain=-45:45] (1,-1) -- (-4,4);
+\draw[dashed, smooth, samples=100, domain=-45:45] (1,1) -- (-4,-4);
+
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right.  \text{for } -\frac{\pi}{2} < t < \frac{\pi}{2}}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=-75:-45] 
+      plot ({tan(\x)}, {2*sec(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-45:45] 
+    plot ({tan(\x)}, {2*sec(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=45:75] 
+    plot ({tan(\x)}, {2*sec(\x)});
+
+\fill (0,2) circle (2pt);
+
+%Asymptotes
+\draw[dashed, smooth, samples=100, domain=-45:45] (-0.5,-1) -- (2,4);
+\draw[dashed, smooth, samples=100, domain=-45:45] (0.5,-1) -- (-2,4);
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right.  \text{for } \frac{\pi}{2} < t < \frac{3\pi}{2}}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-4, ymax=1,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={0, -1, -2, -3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=105:135] 
+      plot ({tan(\x)}, {2*sec(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=135:225] 
+    plot ({tan(\x)}, {2*sec(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=225:255] 
+    plot ({tan(\x)}, {2*sec(\x)});
+
+\fill (0,-2) circle (2pt);
+
+%Asymptotes
+\draw[dashed, smooth, samples=100, domain=-45:45] (-0.5,1) -- (2,-4);
+\draw[dashed, smooth, samples=100, domain=-45:45] (0.5,1) -- (-2,-4);
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = \cos(t) \\ y = t \end{array} \right.  \text{for } 0 \leq t \leq \pi}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=0:45] 
+      plot ({cos(\x)}, {\x * pi/180});
+
+\draw[->, thick, blue, smooth, samples=100, domain=45:135] 
+    plot ({cos(\x)}, {\x*pi/180});
+
+\draw[-, thick, blue, smooth, samples=100, domain=135:180] 
+    plot ({cos(\x)}, {\x*pi/180});
+
+\fill (1,0) circle (2pt);
+\fill (-1,pi) circle (2pt);
+\fill (0,pi/2) circle (2pt);
+\node at (-1.70, pi) {$(-1, \pi)$};
+\node at (.7, pi/2) {$\left(0, \frac{\pi}{2}\right)$};
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem} \label{paraplotlast}
 ${ \left\{ \begin{array}{l} x = \sin(t) \\ y = t \end{array} \right.  \text{for } -\frac{\pi}{2} \leq t \leq \frac{\pi}{2}}$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=-2.5, ymax=2.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={-2, -1, 0, 1, 2},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=-90:-45] 
+      plot ({sin(\x)}, {\x * pi/180});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-45:45] 
+    plot ({sin(\x)}, {\x*pi/180});
+
+\draw[-, thick, blue, smooth, samples=100, domain=45:90] 
+    plot ({sin(\x)}, {\x*pi/180});
+
+\fill (-1,-pi/2) circle (2pt);
+\fill (1,pi/2) circle (2pt);
+\fill (0,0) circle (2pt);
+\node at (-1.70, pi) {$(-1, \pi)$};
+\node at (1.65, pi/2) {$\left(1, \frac{\pi}{2}\right)$};
+\node at (-1.8, -pi/2) {$\left(-1, -\frac{\pi}{2}\right)$};
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \end{question}
@@ -657,7 +900,6 @@ Our next step is to find appropriate bounds on the parameter, $t$, as well as fo
 
 \end{tabular} 
 
-
 \end{center}
 
 Below we graph the cycloid with these settings, and then extend $t$ to range from $0$ to $6\pi$ which forces $x$ to range from $0$ to $18\pi$ yielding three arches of the cycloid.\footnote{It is instructive to note that keeping the $y$ settings between 0 and 6 skews the aspect ratio of the cycloid.  Using the `Zoom Square' feature on the graphing calculator gives a true geometric perspective of the three arches.}
@@ -678,18 +920,208 @@ In Exercises \ref{paracalcfirst} - \ref{paracalclast}, plot the set of parametri
 
 \begin{problem} \label{paracalcfirst}
 ${ \left\{ \begin{array}{l} x = t^{3} - 3t \\ y = t^{2} - 4 \end{array} \right.  \text{for } -2 \leq t \leq 2}$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-5, ymax=1,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={-4, -3, -2, -1, 0},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=-2:-1] 
+      plot ({(\x)^3 - 3*(\x)}, {(\x)^2-4});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=-1:1] 
+      plot ({(\x)^3 - 3*(\x)}, {(\x)^2-4});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=1:2] 
+      plot ({(\x)^3 - 3*(\x)}, {(\x)^2-4});
+
+\fill (-2,0) circle (2pt);
+\fill (0,-1) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (2,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = 4\cos^{3}(t) \\ y = 4\sin^{3}(t) \end{array} \right.  \text{for } 0 \leq t \leq 2\pi}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 0, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=0:45] 
+      plot ({4*(cos(\x))^3}, {4*(sin(\x))^3});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=45:135] 
+      plot ({4*(cos(\x))^3}, {4*(sin(\x))^3});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=135:225] 
+      plot ({4*(cos(\x))^3}, {4*(sin(\x))^3});
+
+\draw[->, thick, blue, smooth, samples=225, domain=225:315] 
+      plot ({4*(cos(\x))^3}, {4*(sin(\x))^3});
+
+\draw[-, thick, blue, smooth, samples=225, domain=315:360] 
+      plot ({4*(cos(\x))^3}, {4*(sin(\x))^3});
+
+\fill (-4,0) circle (2pt);
+\fill (0,-4) circle (2pt);
+\fill (0,4) circle (2pt);
+\fill (4,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem}
 ${ \left\{ \begin{array}{l} x = e^{t} + e^{-t} \\ y = e^{t} - e^{-t} \end{array} \right.  \text{for }  -2 \leq t \leq 2}$
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-8, ymax=8,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6,-4,-2 -1, 0, 2, 4, 6},
+    ytick={-6,-4,-2 -1, 0, 2, 4, 6},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=-2:-1.5] 
+      plot ({exp(\x) + exp(-\x)}, {exp(\x) - exp(-\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=-1.5:1.5] 
+        plot ({exp(\x) + exp(-\x)}, {exp(\x) - exp(-\x)});
+
+\draw[-, thick, blue, smooth, samples=100, domain=1.5:2] 
+          plot ({exp(\x) + exp(-\x)}, {exp(\x) - exp(-\x)});
+
+\fill (2,0) circle (2pt);
+
+%Asymptotes
+\draw[dashed, smooth, samples=100, domain=-45:45] (-1,-1) -- (8,8);
+\draw[dashed, smooth, samples=100, domain=-45:45] (-1,1) -- (8,-8);
+
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \begin{problem} \label{paracalclast}
 ${ \left\{ \begin{array}{l} x = \cos(3t) \\ y = \sin(4t) \end{array} \right.  \text{for } 0 \leq t \leq 2\pi}$ 
+
+\begin{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 0, 1},
+    ytick={-1, 0, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[->, thick, blue, smooth, samples=100, domain=0:22.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=22.5:67.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+
+\draw[->, thick, blue, smooth, samples=100, domain=67.5:112.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=112.5:157.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=157.5:202.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=202.5:247.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=247.5:292.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[->, thick, blue, smooth, samples=100, domain=292.5:337.5] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\draw[-, thick, blue, smooth, samples=100, domain=337.5:360] 
+      plot ({cos(3*\x)}, {sin(4*(\x)});
+
+\fill (0,0) circle (2pt);
+\fill (-1,0) circle (2pt);
+\fill (1,0) circle (2pt);
+\fill (0,0.866) circle (2pt);
+\fill (0,-0.866) circle (2pt);
+\fill (0.707,0) circle (2pt);
+\fill (-0.707,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
 \end{problem}
 
 \end{question}
@@ -699,78 +1131,169 @@ In Exercises \ref{findparamfirst} - \ref{findparamlast}, find a parametric descr
 
 \begin{problem} \label{findparamfirst}
 the directed line segment from $(3,-5)$ to $(-2,2)$ 
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = 3-5t \\ y =-5+7t \end{array} \right. \text{for } 0 \leq t \leq 1}$
+\end{solution}
+
 \end{problem}
 
 \begin{problem}
 the directed line segment from $(-2,-1)$ to $(3, -4)$
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = 5t-2 \\ y =-1-3t \end{array} \right. \text{for } 0 \leq t \leq 1}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 the curve $y = 4-x^2$ from $(-2,0)$ to $(2,0)$
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = t \\ y = 4-t^2  \end{array} \right. \text{for } -2 \leq t \leq 2}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
  the curve $y = 4-x^2$ from $(-2,0)$ to $(2,0)$
 (Shift the parameter so  $t=0$ corresponds to $(-2,0)$.)
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = t-2 \\ y = 4t-t^2  \end{array} \right. \text{for } 0 \leq t \leq 4}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
  the curve $x = y^2 - 9$ from $(-5,-2)$ to $(0,3)$
+
+ \begin{solution}
+${ \left\{ \begin{array}{l} x = t^2-9 \\ y = t  \end{array} \right. \text{for } -2 \leq t \leq 3}$
+ \end{solution}
 \end{problem}
 
 \begin{problem}
  the curve $x = y^2 - 9$ from $(0,3)$ to $(-5,-2)$.
 (Shift the parameter so  $t=0$ corresponds to $(0,3)$.)
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = t^2-6t \\ y = 3-t  \end{array} \right. \text{for } 0 \leq t \leq 5}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
  the circle $x^2 + y^2 = 25$, oriented counter-clockwise
+
+ \begin{solution}
+ ${ \left\{ \begin{array}{l} x = 5\cos(t) \\ y = 5\sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi}$
+ \end{solution}
 \end{problem}
 
 \begin{problem}
 the circle $(x-1)^2 + y^2 = 4$, oriented counter-clockwise
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = 1+2\cos(t) \\ y = 2\sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 the circle $x^2 + y^2 - 6y = 0$, oriented counter-clockwise
+
+\begin{solution}
+${ \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3 + 3\sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi}$
+\end{solution}
 \end{problem}
 
 \begin{problem} 
 the circle $x^2 + y^2 - 6y = 0$, oriented \emph{clockwise} (Shift the parameter so  $t$ begins at $0$.)
+
+\begin{solution}
+${ \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3 - 3\sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi }$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 the circle $(x-3)^2 + (y+1)^2 = 117$, oriented counter-clockwise
+
+\begin{solution}
+${ \left\{ \begin{array}{l} x = 3+\sqrt{117} \, \cos(t) \\ y = -1 + \sqrt{117} \, \sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 the ellipse $(x-1)^2 + 9y^2 = 9$, oriented counter-clockwise
+
+\begin{solution}
+ ${ \left\{ \begin{array}{l} x = 1+3\cos(t) \\ y = \sin(t)  \end{array} \right. \text{for } 0 \leq t < 2\pi}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
  the ellipse $9x^2 + 4y^2 + 24y =0$, oriented counter-clockwise
+
+ \begin{solution}
+ ${ \left\{ \begin{array}{l} x = 2\cos(t) \\ y = 3\sin(t)-3  \end{array} \right. \text{for } 0 \leq t < 2\pi }$
+ \end{solution}
  \end{problem}
 
 \begin{problem}
   the ellipse $9x^2 + 4y^2 + 24y =0$, oriented clockwise  (Shift the parameter so $t=0$ corresponds to  $(0,0)$.)
+
+\begin{solution}
+${ \left\{ \begin{array}{l} x = 2\cos\left(t-\frac{\pi}{2}\right) = 2\sin(t) \\ y = -3 - 3\sin\left(t-\frac{\pi}{2}\right) =  -3+3\cos(t) \end{array} \right. \text{for } 0 \leq t <  2\pi}$
+
+\end{solution}
 \end{problem}
 
 \begin{problem} \label{findparamlast}
 the triangle with vertices $(0,0)$, $(3,0)$, $(0,4)$, oriented counter-clockwise  (Shift the parameter so $t=0$ corresponds to $(0,0)$.) 
+
+\begin{solution}
+ $\left\{ x(t), \, y(t) \right.$ where:
+
+\[ \begin{array}{cc}
+
+x(t) = \left\{ \begin{array}{rr}  3t,& 0 \leq t \leq 1 \\
+																	6-3t, & 1 \leq t \leq 2 \\
+																	0, & 2 \leq t \leq 3 \\ \end{array} \right.
+&
+
+y(t) = \left\{ \begin{array}{rr}  0,& 0 \leq t \leq 1 \\
+																	4t-4, & 1 \leq t \leq 2 \\
+																	12-4t, & 2 \leq t \leq 3 \\ \end{array} \right.
+
+
+
+\end{array}\]
+
+
+\end{solution}
 \end{problem}
 
 \end{question}
 
 \begin{problem}
  Use parametric equations and a graphing utility to graph the inverse of $f(x) = x^{3} + 3x - 4$.
+
+ \begin{solution}
+The parametric equations for the inverse are ${ \left\{ \begin{array}{l} x = t^3+3t-4 \\ y = t  \end{array} \right. \text{for } -\infty < t < \infty}$
+ \end{solution}
  \end{problem}
 
 \begin{problem}
 Every polar curve $r = f(\theta)$ can be translated to a system of parametric equations with parameter $\theta$ by $\left\{ x = r\cos(\theta) = f(\theta) \cos(\theta), \, y = r \sin(\theta) = f(\theta) \sin(\theta) \right.$.  Convert $r = 6\cos(2\theta)$ to a system of parametric equations. Check your answer by graphing $r = 6\cos(2\theta)$ by hand using the techniques presented in Section \ref{PolarGraphs} and then graphing the parametric equations you found using a graphing utility.
+
+\begin{solution}
+$r = 6\cos(2\theta)$ translates to  \[{ \left\{ \begin{array}{l} x = 6\cos(2\theta)\cos(\theta) \\ y = 6\cos(2\theta)\sin(\theta)  \end{array} \right. \text{for } 0 \leq \theta <  2\pi}.\]
+\end{solution}
 \end{problem}
 
 \begin{problem} 
 Use your results from Exercises \ref{heightlondoneye} and \ref{leftrightlondoneye} in Section \ref{Sinusoid} to find the parametric equations which model a passenger's position as they ride the \href{http://en.wikipedia.org/wiki/London_Eye}{\underline{London Eye}}. 
+
+\begin{solution}
+The parametric equations which describe the locations of passengers on the London Eye are \[ \left\{ \begin{array}{l} x = 67.5 \cos\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) = 67.5 \sin\left(\frac{\pi}{15} t \right) \\ y = 67.5 \sin\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) + 67.5 = 67.5 - 67.5 \cos\left(\frac{\pi}{15} t \right)   \end{array} \right. \text{for } -\infty < t < \infty \]
+\end{solution}
 \end{problem}
 
 \phantomsection
@@ -779,43 +1302,78 @@ Use your results from Exercises \ref{heightlondoneye} and \ref{leftrightlondoney
 \begin{question}
 Suppose an object, called a projectile, is launched into the air.  Ignoring everything except the force gravity, the path of the projectile is given by\footnote{A nice mix of vectors and Calculus are needed to derive this.}
 
-\[ \left\{ \begin{array}{l} x =   v_{\text{\tiny $0$}} \cos(\theta) \, t \\ [3pt]
-															y = -\frac{1}{2} g t^2 +  v_{\text{\tiny $0$}} \sin(\theta) \, t + s_{\text{\tiny $0$}} \\ \end{array} \right. \; \text{for} \; 0 \leq t \leq T \]
+\[ \left\{ \begin{array}{l} x =   v_{0} \cos(\theta) \, t \\
+															y = -\frac{1}{2} g t^2 +  v_{0} \sin(\theta) \, t + s_{0} \\ \end{array} \right. \; \text{for } \; 0 \leq t \leq T \]
 
-where  $v_{\text{\tiny $0$}}$ is the initial speed of the object, $\theta$ is the angle from the horizontal at which the projectile is launched,\footnote{We've seen this before.  It's the angle of elevation which was defined on page \pageref{angleofelevation}.} $g$ is the acceleration due to gravity,  $s_{\text{\tiny $0$}}$ is the initial height of the projectile above the ground and $T$ is the time when the object returns to the ground.  (See the figure below.)
+where  $v_{0}$ is the initial speed of the object, $\theta$ is the angle from the horizontal at which the projectile is launched,\footnote{We've seen this before.  It's the angle of elevation which was defined on page \pageref{angleofelevation}.} $g$ is the acceleration due to gravity,  $s_{0}$ is the initial height of the projectile above the ground and $T$ is the time when the object returns to the ground.  (See the figure below.)
 
 \begin{center}
 
-\begin{mfpic}[20]{-1}{9}{-1}{7}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\dashed \polyline{(0,4), (1.5,4)}
-\tlabelsep{5pt}
-\axislabels{y}{{\scriptsize $s_{\text{\tiny $0$}}$} 4}
-\point[4pt]{(0,4), (5.98,0)}
-\arrow \shiftpath{(0,4)}  \parafcn{5, 55, 5}{0.75*dir(t)}
-\tlabel[cc](1,4.5){\scriptsize $\theta$}
-\tlabel[cc](5.98,-0.5){\scriptsize $(x(T), 0)$}
-\penwd{1.25pt}
-\arrow \parafcn{0,0.75,0.1}{(3.5*t, 6.062*t+4-(4.9*(t**2)))}
-\parafcn{0.75,1.71,0.1}{(3.5*t, 6.062*t+4-(4.9*(t**2)))}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=8, ymin=-1, ymax=9,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick=\empty,
+    ytick=\empty,
+    tick label style=empty,
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
-\end{mfpic}
+\draw[->, thick, blue, smooth, samples=100, domain=0:0.75] 
+      plot ({(3.5*(\x)}, {6.062*(\x)+4-(4.9*(\x)^2});
 
+\draw[-, thick, blue, smooth, samples=100, domain=0.75:1.71] 
+      plot ({(3.5*(\x)},  {6.062*(\x)+4-4.9*((\x)^2)});
+
+\fill (0,4) circle (2pt);
+\fill (5.98,0) circle (2pt);
+\draw[->] (0.75,4)
+    arc[start angle=0,end angle=55,radius=0.75];
+\draw[dashed] (0,4) -- (1.5,4);
+\node at (1, 4.5) {\scriptsize $\theta$};
+\node at (5.98,-0.5) {\scriptsize $(x(T), 0)$};
+\node at (-0.75,4) {\scriptsize $(0, s_{0})$};
+
+\end{axis}
+\end{tikzpicture}
 
 \end{center}
 
 \begin{problem}
 Carl's friend Jason competes in Highland Games Competitions across the country.  In one event, the `hammer throw',  he throws a 56 pound weight for distance. If the weight is released $6$ feet above the ground at an angle of $42^{\circ}$ with respect to the horizontal with an initial speed of $33$ feet per second, find the parametric equations for the flight of the hammer.  (Here, use $g = 32 \frac{\text{ft.}}{s^2}$.) When will the hammer hit the ground?  How far away will it hit the ground? Check your answer using a graphing utility.
+
+\begin{solution}
+The parametric equations for the hammer throw are ${ \left\{ \begin{array}{l} x = 33 \cos(42^{\circ}) t \\ [4pt] y =-16t^2 +  33 \sin(42^{\circ}) t + 6 \end{array} \right.}$ for $t \geq 0$.
+
+To find when the hammer hits the ground, we solve $y(t) = 0$ and get $t \approx -0.23$ or $1.61$.  Since $t \geq 0$, the hammer hits the ground after approximately $t = 1.61$ seconds after it was launched into the air. 
+
+To find how far away the hammer hits the ground, we find $x(1.61) \approx 39.48$ feet from where it was thrown into the air.
+
+\end{solution}
 \end{problem}
 
 \begin{problem} \label{projectileeliminate} 
-Eliminate the parameter in the equations for projectile motion to show that the path of the projectile follows the curve \[y = -\frac{g \sec^{2}(\theta)}{2 v_{\text{\tiny$0$}}^2} x^2 + \tan(\theta) x + s_{\text{\tiny $0$}}\] Use the vertex formula (Equation \ref{vertexofquadraticfunctions}) to show the maximum height of the projectile is \[y = \frac{v_{\text{\tiny$0$}}^2 \sin^{2}(\theta)}{2g} + s_{\text{\tiny $0$}} \quad \text{when} \quad x = \frac{v_{\text{\tiny$0$}}^2 \sin(2\theta) }{2g}\] 
+Eliminate the parameter in the equations for projectile motion to show that the path of the projectile follows the curve \[y = -\frac{g \sec^{2}(\theta)}{2 v_{0}^2} x^2 + \tan(\theta) x + s_{0}\] Use the vertex formula (Equation \ref{vertexofquadraticfunctions}) to show the maximum height of the projectile is \[y = \frac{v_{0}^2 \sin^{2}(\theta)}{2g} + s_{0} \quad \text{when} \quad x = \frac{v_{0}^2 \sin(2\theta) }{2g}\] 
 \end{problem}
 
 \begin{problem}
  In another event, the `sheaf toss', Jason throws a  20 pound weight for height.  If the weight is released  5 feet above the ground at an angle of $85^{\circ}$ with respect to the horizontal and the sheaf reaches a maximum height of 31.5 feet, use your results from part  \ref{projectileeliminate} to determine how fast the sheaf was launched into the air.  (Once again, use $g = 32 \frac{\text{ft.}}{s^2}$.)
+
+ \begin{solution}
+We solve $y = \frac{v_{0}^2 \sin^{2}(\theta)}{2g} + s_{0}  = \frac{v_{0}^2 \sin^{2}(85^{\circ})}{2(32)} + 5 = 31.5$ to get $v_{0} = \pm 41.34$.  
+
+
+The initial speed of the sheaf was approximately $41.34$ feet per second.
+ \end{solution}
  \end{problem}
 
 \begin{problem}

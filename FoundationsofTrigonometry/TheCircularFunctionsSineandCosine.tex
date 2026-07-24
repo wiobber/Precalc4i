@@ -823,57 +823,93 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 
 \item  We begin by plotting $\theta = 225^{\circ}$ in standard position and find its terminal side overshoots the negative $x$-axis to land in Quadrant III.  Hence, we obtain $\theta$'s reference angle $\alpha$ by subtracting: $\alpha = \theta - 180^{\circ} = 225^{\circ} - 180^{\circ} = 45^{\circ}$.  Since $\theta$ is a Quadrant III angle, both $\cos(\theta) < 0$ and $\sin(\theta) < 0$.  The Reference Angle Theorem yields: $\cos\left(225^{\circ}\right) = -\cos\left(45^{\circ}\right) = -\frac{\sqrt{2}}{2}$ and $\sin\left(225^{\circ}\right) = - \sin\left(45^{\circ}\right) = -\frac{\sqrt{2}}{2}$.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{225} % theta, in degrees
+\def\ttdeg{225} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+
+\pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\pxx,\pyy);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
+
+% --- Angle arc for theta, with label ---
+\draw[<->] (-1,0) arc [start angle=180, end angle=\ttdeg, radius=1];
+\node[right] at (-1.7,-0.5) {$45^o$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
+\node[right] at (0.3,0.7) {$\theta=225^o$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{tikzpicture}
+\end{image}
+
 \item The terminal side of  $\theta = \frac{11\pi}{6}$, when plotted in standard position, lies in Quadrant IV, just shy of the positive $x$-axis.  To find $\theta$'s reference angle $\alpha$, we subtract:  $\alpha = 2\pi - \theta = 2\pi - \frac{11 \pi}{6} = \frac{\pi}{6}$.  Since $\theta$ is a Quadrant IV angle, $\cos(\theta) > 0$ and $\sin(\theta) < 0$, so the Reference Angle Theorem gives: $\cos\left(\frac{11 \pi}{6} \right) = \cos\left(\frac{\pi}{6} \right) = \frac{\sqrt{3}}{2}$ and $\sin\left(\frac{11\pi}{6}\right) = -\sin\left(\frac{\pi}{6}\right) =  -\frac{1}{2}$.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-4.25}{4.25}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(225^{\circ}\right)$ and $\sin\left(225^{\circ}\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{185, 220, 5}{2*dir(t)}
-\arrow \parafcn{5, 220, 5}{1.5*dir(t)}
-\tlabel[cc](-1.5, 1.5){\scriptsize $\theta = 225^{\circ}$}
-\tlabel[cc](-2.25, -1){\scriptsize $45^{\circ}$}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-3.5355, -3.5355)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{330} % theta, in degrees
+\def\ttdeg{330} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+\pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
 
-\hspace{.3in}
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[18]{-5}{5}{-4.25}{4.25}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(\frac{11 \pi}{6}\right)$ and  $\sin\left(\frac{11 \pi}{6}\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{335, 355, 5}{2*dir(t)}
-\arrow \parafcn{5, 325, 5}{1.5*dir(t)}
-\tlabel[cc](-1.5, -1.75){\scriptsize $\theta = \frac{11 \pi}{6}$}
-\tlabel[cc](2.25, -.5){\scriptsize $\frac{\pi}{6}$}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,-2.5)}
-\end{mfpic}  \\
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\end{tabular}
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\pxx,\pyy);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
+
+% --- Angle arc for theta, with label ---
+\draw[<->] (0.84,-0.5) arc [start angle=\ttdeg, end angle=360, radius=1];
+\node[right] at (1.2,-0.4) {$\frac{\pi}{6}$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
+\node[right] at (-1.6,0.7) {$\theta=\frac{11\pi}{6}$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{tikzpicture}
+\end{image}
 
 \item  To plot $\theta = -\frac{5\pi}{4}$, we rotate \textit{clockwise} an angle of $\frac{5 \pi}{4}$ from the positive $x$-axis.  The terminal side of $\theta$, therefore, lies in Quadrant II making an angle of $\alpha = \frac{5 \pi}{4} - \pi = \frac{\pi}{4}$ radians with respect to the negative $x$-axis.   Since $\theta$ is a Quadrant II angle, $\cos(\theta) < 0$ and $\sin(\theta) > 0$ so the Reference Angle Theorem gives:   $\cos\left(-\frac{5 \pi}{4}\right) = -\cos\left(\frac{\pi}{4}\right) = -\frac{\sqrt{2}}{2}$ and $\sin\left(-\frac{5 \pi}{4}\right) = \sin\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}$. 
 
