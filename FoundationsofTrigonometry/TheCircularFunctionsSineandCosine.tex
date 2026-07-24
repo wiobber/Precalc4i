@@ -958,61 +958,52 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 
 \item  Since the angle $\theta = \frac{7 \pi}{3}$ measures more than $2 \pi = \frac{6 \pi}{3}$, we find the terminal side of $\theta$ by rotating one full revolution followed by an additional $\alpha = \frac{7 \pi}{3} - 2\pi = \frac{\pi}{3}$ radians.  Hence, $\theta$ and $\alpha$ have the same terminal side,\footnote{Recall we say they are `coterminal.'} and so   $\cos\left(\frac{7\pi}{3}\right) = \cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$ and $\sin\left(\frac{7\pi}{3}\right) = \sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}$.
 
-\vspace{-.05in}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{-225} % theta, in degrees
+\def\ttdeg{-225} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-\begin{mfpic}[18]{-5}{5}{-4.25}{4.25}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(-\frac{5 \pi}{4}\right)$ and  $\sin\left(-\frac{5 \pi}{4}\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{175, 140, 5}{2*dir(t)}
-\arrow \parafcn{-5, -220, -5}{1.5*dir(t)}
-\tlabel[cc](1.25, -1.75){\scriptsize $\theta = -\frac{5 \pi}{4}$}
-\tlabel[cc](-2.25, 1){\scriptsize $\frac{\pi}{4}$}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-3.5355, 3.5355)}
-\end{mfpic} 
+\pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{.3in}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\begin{mfpic}[18]{-5}{5}{-4.25}{4.25}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Finding $\cos\left(\frac{7 \pi}{3}\right)$ and  $\sin\left(\frac{7 \pi}{3}\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{0,415,5}{(t+400)*dir(t)/800} 
-\arrow \reverse \arrow \parafcn{5, 55, 5}{2*dir(t)}
-\tlabel[cc](-1.25, 1.25){\scriptsize $\theta = \frac{7 \pi}{3}$}
-\tlabel[cc](2.15, 1.35){\scriptsize $\frac{\pi}{3}$}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.330)}
-\end{mfpic}  \\
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\pxx,\pyy);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
 
-\end{tabular}
+% --- Angle arc for theta, with label ---
+\draw[<->] (-1,0) arc [start angle=180, end angle=135, radius=1];
+\node[right] at (-1.5,0.5) {$\frac{\pi}{4}$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
+\node[right] at (-1.6,-1) {$\theta=-\frac{5\pi}{4}$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
-\vspace{-0.32in} \qed
+
 
 \end{example}
 
