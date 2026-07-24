@@ -67,7 +67,7 @@ A^{-1}(AX) & = & A^{-1}B \\
 
 \left(A^{-1}A\right) X & = & A^{-1}B \\
 
-I_{\mbox{\tiny$2$}}X & = & A^{-1}B \\
+I_2X & = & A^{-1}B \\
 
 X & = & A^{-1}B \\
 
@@ -83,7 +83,7 @@ A \left(A^{-1}B\right) & \stackrel{?}{=} & B \\
 
 \left(AA^{-1}\right) B & \stackrel{?}{=}& B \\
 
-I_{\mbox{\tiny$2$}}B & \stackrel{?}{=} & B \\
+I_2B & \stackrel{?}{=} & B \\
 
 B & \stackrel{\checkmark}{=}& B \\
 
@@ -95,19 +95,19 @@ B & \stackrel{\checkmark}{=}& B \\
 
 The matrix $A^{-1}$ is read `$A$-inverse' and we will define it formally later in the section. At this stage, we have no idea if such a matrix $A^{-1}$ exists, but that won't deter us from trying to find it.\footnote{Much like Carl's quest to find Sasquatch.} 
 
-We want $A^{-1}$ to satisfy two equations, $A^{-1}A = I_{\mbox{\tiny$2$}}$ and $AA^{-1} = I_{\mbox{\tiny$2$}}$, making $A^{-1}$ necessarily a $2 \times 2$ matrix.\footnote{Since matrix multiplication isn't necessarily commutative, at this stage, these are two different equations.}  Hence,  $A^{-1}$ has the form 
+We want $A^{-1}$ to satisfy two equations, $A^{-1}A = I_2$ and $AA^{-1} = I_2$, making $A^{-1}$ necessarily a $2 \times 2$ matrix.\footnote{Since matrix multiplication isn't necessarily commutative, at this stage, these are two different equations.}  Hence,  $A^{-1}$ has the form 
 
-\[  A^{-1} = \left[ \begin{array}{rr} x_{\mbox{\tiny$1$}} & x_{\mbox{\tiny$2$}} \\ x_{\mbox{\tiny$3$}} & x_{\mbox{\tiny$4$}} \\ \end{array} \right]\]
+\[  A^{-1} = \left[ \begin{array}{rr} x_1 & x_2 \\ x_3 & x_4 \\ \end{array} \right]\]
 
-for real numbers $x_{\mbox{\tiny$1$}}$, $x_{\mbox{\tiny$2$}}$, $x_{\mbox{\tiny$3$}}$ and $x_{\mbox{\tiny$4$}}$.  For reasons which will become clear later, we focus our attention on the equation $AA^{-1} = I_{\mbox{\tiny$2$}}$.  We have
+for real numbers $x_1$, $x_2$, $x_3$ and $x_4$.  For reasons which will become clear later, we focus our attention on the equation $AA^{-1} = I_2$.  We have
 
 \[\begin{array}{rcl}
 
-AA^{-1} & = & I_{2} \\ [13pt]
+AA^{-1} & = & I_{2} \\  
 
-\left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right] \left[ \begin{array}{rr} x_{\mbox{\tiny$1$}} & x_{\mbox{\tiny$2$}} \\ x_{\mbox{\tiny$3$}} & x_{\mbox{\tiny$4$}} \\ \end{array} \right]  & = & \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\ [13pt]
+\left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right] \left[ \begin{array}{rr} x_1 & x_2 \\ x_3 & x_4 \\ \end{array} \right]  & = & \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\  
 
-\left[ \begin{array}{rr} 2x_{\mbox{\tiny$1$}} - 3x_{\mbox{\tiny$3$}} &  2x_{\mbox{\tiny$2$}} - 3x_{\mbox{\tiny$4$}} \\ 3x_{\mbox{\tiny$1$}} +4x_{\mbox{\tiny$3$}} &  3x_{\mbox{\tiny$2$}} +4x_{\mbox{\tiny$4$}} \\ \end{array} \right]  & = & \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\
+\left[ \begin{array}{rr} 2x_1 - 3x_3 &  2x_2 - 3x_4 \\ 3x_1 +4x_3 &  3x_2 +4x_4 \\ \end{array} \right]  & = & \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] \\
 
 \end{array} \] 
 
@@ -115,11 +115,11 @@ This gives rise to \textit{two} more systems of equations
 
 \[\begin{array}{cc}
 
-\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$1$}}-3x_{\mbox{\tiny$3$}} & = & 1 \\ 3x_{\mbox{\tiny$1$}}+4x_{\mbox{\tiny$3$}} & = & 0 \\ \end{array} \right.
+\left\{ \begin{array}{rcr} 2x_1-3x_3 & = & 1 \\ 3x_1+4x_3 & = & 0 \\ \end{array} \right.
 
 &
 
-\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$2$}}-3x_{\mbox{\tiny$4$}} & = & 0 \\ 3x_{\mbox{\tiny$2$}}+4x_{\mbox{\tiny$4$}} & = & 1 \\ \end{array} \right.
+\left\{ \begin{array}{rcr} 2x_2-3x_4 & = & 0 \\ 3x_2+4x_4 & = & 1 \\ \end{array} \right.
 
 \end{array}\]
 
@@ -129,16 +129,16 @@ At this point, it may seem absurd to continue with this venture.  After all, the
 
 \[ \begin{array}{ccc}
 
-\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$1$}}-3x_{\mbox{\tiny$3$}} & = & 1 \\ 3x_{\mbox{\tiny$1$}}+4x_{\mbox{\tiny$3$}} & = & 0 \\ \end{array} \right.
+\left\{ \begin{array}{rcr} 2x_1-3x_3 & = & 1 \\ 3x_1+4x_3 & = & 0 \\ \end{array} \right.
 
 &
 \xrightarrow{\text{Encode into a matrix}}
 
 &
-\left[ \begin{array}{rr|r} 2 & -3 & 1 \\ 3 & 4 & 0 \\ \end{array} \right] \\ [13pt]
+\left[ \begin{array}{rr|r} 2 & -3 & 1 \\ 3 & 4 & 0 \\ \end{array} \right] \\  
 
 
-\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$2$}}-3x_{\mbox{\tiny$4$}} & = & 0 \\ 3x_{\mbox{\tiny$2$}}+4x_{\mbox{\tiny$4$}} & = & 1 \\ \end{array} \right. 
+\left\{ \begin{array}{rcr} 2x_2-3x_4 & = & 0 \\ 3x_2+4x_4 & = & 1 \\ \end{array} \right. 
 
 &
 \xrightarrow{\text{Encode into a matrix}}
@@ -158,11 +158,11 @@ To solve these two systems, we use Gauss-Jordan Elimination to put the augmented
 \xrightarrow{\text{Gauss Jordan Elimination}}
 
 &
-\left[ \begin{array}{rr|r} 1 & 0 & \frac{4}{17} \\[3pt] 0 & 1 & -\frac{3}{17} \\ \end{array} \right] \\
+\left[ \begin{array}{rr|r} 1 & 0 & \frac{4}{17} \\  0 & 1 & -\frac{3}{17} \\ \end{array} \right] \\
 
 \end{array}\]
 
-which gives $x_{\mbox{\tiny$1$}} =  \frac{4}{17}$ and $x_{\mbox{\tiny$3$}} = -\frac{3}{17}$.  To solve the second system, we use the exact same row operations, in the same order, and we obtain
+which gives $x_1 =  \frac{4}{17}$ and $x_3 = -\frac{3}{17}$.  To solve the second system, we use the exact same row operations, in the same order, and we obtain
 
 \[ \begin{array}{ccc}
 
@@ -171,25 +171,25 @@ which gives $x_{\mbox{\tiny$1$}} =  \frac{4}{17}$ and $x_{\mbox{\tiny$3$}} = -\f
 \xrightarrow{\text{Gauss Jordan Elimination}}
 
 &
-\left[ \begin{array}{rr|r} 1 & 0 & \frac{3}{17} \\[3pt] 0 & 1 & \frac{2}{17} \\ \end{array} \right] \\
+\left[ \begin{array}{rr|r} 1 & 0 & \frac{3}{17} \\  0 & 1 & \frac{2}{17} \\ \end{array} \right] \\
 
 \end{array}\]
 
-which means $x_{\mbox{\tiny$2$}} = \frac{3}{17}$ and $x_{\mbox{\tiny$4$}} = \frac{2}{17}$.  Hence, 
+which means $x_2 = \frac{3}{17}$ and $x_4 = \frac{2}{17}$.  Hence, 
 
-\[  A^{-1} = \left[ \begin{array}{rr} x_{\mbox{\tiny$1$}} & x_{\mbox{\tiny$2$}} \\ x_{\mbox{\tiny$3$}} & x_{\mbox{\tiny$4$}} \\ \end{array} \right] = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\[3pt]  -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]   \]
+\[  A^{-1} = \left[ \begin{array}{rr} x_1 & x_2 \\ x_3 & x_4 \\ \end{array} \right] = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\   -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]   \]
 
 We can check to see that $A^{-1}$ behaves as it should by computing $AA^{-1}$
 
-\[ AA^{-1} = \left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right] \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\[3pt]  -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right] = \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] = I_{\mbox{\tiny$2$}} \, \, \checkmark\]
+\[ AA^{-1} = \left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right] \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\   -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right] = \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] = I_2 \, \, \checkmark\]
 
 As an added bonus, 
 
-\[ A^{-1}A = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\[3pt]  -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]\left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right]  = \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] = I_{\mbox{\tiny$2$}} \, \, \checkmark\]
+\[ A^{-1}A = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\   -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]\left[ \begin{array}{rr} 2 & -3 \\ 3 & 4 \\ \end{array} \right]  = \left[ \begin{array}{rr} 1 & 0 \\ 0 & 1 \\ \end{array} \right] = I_2 \, \, \checkmark\]
 
 We can now return to the problem at hand.  From our discussion  on page \pageref{solvingmatrixeqn}, we know
 
-\[ X = A^{-1}B = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\[3pt]  -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]\left[ \begin{array}{r} 16 \\ 7 \\ \end{array} \right] = \left[ \begin{array}{r} 5 \\ -2 \\ \end{array} \right] \]
+\[ X = A^{-1}B = \left[ \begin{array}{rr} \frac{4}{17} & \frac{3}{17} \\   -\frac{3}{17} & \frac{2}{17} \\ \end{array} \right]\left[ \begin{array}{r} 16 \\ 7 \\ \end{array} \right] = \left[ \begin{array}{r} 5 \\ -2 \\ \end{array} \right] \]
 
 so that our final solution to the system is $(x,y) = (5,-2)$.   
 
@@ -199,38 +199,100 @@ As mentioned, the point of this exercise was not just to solve the system of lin
 
 \[ \begin{array}{rcl}
 
-\left[ \begin{array}{rr|r} 2 & -3 & 1 \\ 3 & 4 & 0 \\ \end{array} \right] & = & \left[ \begin{tabular}{c|r}
-\multirow{2}{10pt}{\large \textit{A}} & 1 \\ & 0 \end{tabular} \right] \\ [13pt]
+\left[
+\begin{array}{rr|r}
+2 & -3 & 1 \\
+3 & 4 & 0
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 1 \\ & 0
+\end{array}
+\right]
+\\
 
-\left[ \begin{array}{rr|r} 2 & -3 & 0 \\ 3 & 4 & 1 \\ \end{array} \right] & = & \left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large \textit{A}} & 0 \\ & 1 \end{tabular} \right] \\ [13pt]
-
+\left[
+\begin{array}{rr|r}
+2 & -3 & 0 \\
+3 & 4 & 1
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 0 \\ & 1
+\end{array}
+\right]
 \end{array} \]
+
 
 We also note that the reduced row echelon forms of these augmented matrices can be written as
 
 \[ \begin{array}{rcl}
 
-\left[ \begin{array}{rr|r} 1 & 0 & \frac{4}{17} \\[3pt] 0 & 1 & -\frac{3}{17} \\ \end{array} \right] & = & \left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large $I_{\mbox{\tiny$2$}}$} & $x_{\mbox{\tiny$1$}}$ \\[3pt] &  $x_{\mbox{\tiny$3$}}$ \end{tabular} \right]\\ [13pt]
+\left[
+\begin{array}{rr|r}
+1 & 0 & \frac{4}{17} \\
+0 & 1 & -\frac{3}{17}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 1 \\ & 0
+\end{array}
+\right]
+\\
 
-\left[ \begin{array}{rr|r} 1 & 0 & \hphantom{-}\frac{3}{17} \\[3pt] 0 & 1 & \frac{2}{17} \\ \end{array} \right] & = & \left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large $I_{\mbox{\tiny$2$}}$} & $x_{\mbox{\tiny$2$}}$ \\[3pt] & $x_{\mbox{\tiny$4$}}$ \end{tabular} \right]
-
+\left[
+\begin{array}{rr|r}
+1 & 0 & \frac{3}{17} \\
+0 & 1 & \frac{2}{17}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 0 \\ & 1
+\end{array}
+\right]
 \end{array} \]
 
-where we have identified the entries to the left of the vertical bar as the identity $I_{\mbox{\tiny$2$}}$ and the entries to the right of the vertical bar as the solutions to our systems.  The long and short of the solution process can be summarized as
+where we have identified the entries to the left of the vertical bar as the identity $I_2$ and the entries to the right of the vertical bar as the solutions to our systems.  The long and short of the solution process can be summarized as
 
 \[ \begin{array}{ccc}
 
-\left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large \textit{A}} & 1 \\ & 0 \end{tabular} \right]
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 1 \\ & 0
+\end{array}
+\right]
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 &
-\left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large $I_{\mbox{\tiny$2$}}$} & $x_{\mbox{\tiny$1$}}$ \\ &  $x_{\mbox{\tiny$3$}}$ \end{tabular} \right]  \\ [13pt]
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large $I_2$} & x_1 \\ & x_3
+\end{array}
+\right]
 
-\left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large \textit{A}} & 0 \\ & 1 \end{tabular} \right]
+\\
+
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large\textit{A}} & 0 \\ & 1
+\end{array}
+\right]
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 &
-\left[ \begin{tabular}{c|r} \multirow{2}{10pt}{\large $I_{\mbox{\tiny$2$}}$} & $x_{\mbox{\tiny$2$}}$ \\ & $x_{\mbox{\tiny$4$}}$ \end{tabular} \right]
+\left[
+\begin{array}{c|r}
+\multirow{2}{*}{\large $I_2$} & x_2 \\ & x_4
+\end{array}
+\right]
 
 \end{array}\]
 
@@ -238,26 +300,34 @@ Since the row operations for both processes are the same, all of the arithmetic 
 
 \[ \begin{array}{ccc}
 
-\left[ \begin{tabular}{c|rr} \multirow{2}{10pt}{\large \textit{A}} & 1 & 0 \\ & 0 & 1 \end{tabular} \right]
+\left[
+\begin{array}{c|rr}
+\multirow{2}{*}{\large\textit{A}} & 1 & 0 \\ & 0 & 1
+\end{array}
+\right]
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 &
-\left[ \begin{tabular}{c|rr} \multirow{2}{10pt}{\large $I_{\mbox{\tiny$2$}}$} & $x_{\mbox{\tiny$1$}}$ & $x_{\mbox{\tiny$2$}}$ \\ &  $x_{\mbox{\tiny$3$}}$ & $x_{\mbox{\tiny$4$}}$ \end{tabular} \right]
+\left[
+\begin{array}{c|rr}
+\multirow{2}{*}{\large $I_2$} & x_1 & x_2 \\ & x_3 & x_4
+\end{array}
+\right]
 
 \end{array}\]
 
-We have the identity matrix $I_{\mbox{\tiny$2$}}$ appearing as the right hand side of the first super-sized augmented matrix and the left hand side of the second super-sized augmented matrix.  To our surprise and delight, the elements on the right hand side of the second super-sized augmented matrix are none other than those which comprise $A^{-1}$.  Hence, we have
+We have the identity matrix $I_2$ appearing as the right hand side of the first super-sized augmented matrix and the left hand side of the second super-sized augmented matrix.  To our surprise and delight, the elements on the right hand side of the second super-sized augmented matrix are none other than those which comprise $A^{-1}$.  Hence, we have
 
 \[ \begin{array}{ccc}
 
-\left[ \begin{array}{c|c} A & I_{\mbox{\tiny$2$}} \end{array} \right]
+\left[ \begin{array}{c|c} A & I_2 \end{array} \right]
 
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 
 &
 
-\left[ \begin{array}{c|c} I_{\mbox{\tiny$2$}} & A^{-1} \end{array} \right] 
+\left[ \begin{array}{c|c} I_2 & A^{-1} \end{array} \right] 
 
 \end{array}\]
 
@@ -438,41 +508,41 @@ $\begin{array}{ccc}
 
 & 
 
-\left[ \begin{array}{rrr|rrr} 1 & \frac{1}{3} & 0 & \frac{17}{39} & -\frac{2}{39} & -\frac{2}{13} \\[3pt] 0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] 0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
+\left[ \begin{array}{rrr|rrr} 1 & \frac{1}{3} & 0 & \frac{17}{39} & -\frac{2}{39} & -\frac{2}{13} \\  0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
 
 \end{array}$
 
 $\begin{array}{ccc}
 
-\left[ \begin{array}{rrr|rrr} 1 & \frac{1}{3} & 0 & \frac{17}{39} & -\frac{2}{39} & -\frac{2}{13} \\[3pt] 0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] 0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
+\left[ \begin{array}{rrr|rrr} 1 & \frac{1}{3} & 0 & \frac{17}{39} & -\frac{2}{39} & -\frac{2}{13} \\  0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
 &
 \xrightarrow[\text{$-\frac{1}{3}R2+R1$}]{\text{Replace $R1$ with}} 
 &
 
-\left[ \begin{array}{rrr|rrr} 1 & 0 & 0 & \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] 0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] 0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
+\left[ \begin{array}{rrr|rrr} 1 & 0 & 0 & \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  0 & 1 & 0 &-\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  0 & 0 & 1 & -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]
 
 
 \end{array}$
 
 \end{flushleft}
 
-We find $A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]$.  To check our answer, we compute
+We find $A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]$.  To check our answer, we compute
 
-\[ A^{-1}A =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right]\left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\[3pt] 0 & -1 & 5 \\[3pt] 2 & 1 & 4 \end{array} \right] = \left[ \begin{array}{rrr} 1 & 0 & 0 \\[3pt] 0 & 1 & 0 \\[3pt] 0 & 0 & 1 \end{array} \right] = I_{3} \, \, \checkmark \]
+\[ A^{-1}A =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right]\left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\  0 & -1 & 5 \\  2 & 1 & 4 \end{array} \right] = \left[ \begin{array}{rrr} 1 & 0 & 0 \\  0 & 1 & 0 \\  0 & 0 & 1 \end{array} \right] = I_{3} \, \, \checkmark \]
 
 and 
 
-\[ AA^{-1} = \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\[3pt] 0 & -1 & 5 \\[3pt] 2 & 1 & 4  \end{array} \right] \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \end{array} \right] = \left[ \begin{array}{rrr} 1 & 0 & 0 \\[3pt] 0 & 1 & 0 \\[3pt] 0 & 0 & 1  \end{array} \right] = I_{3} \, \, \checkmark \]
+\[ AA^{-1} = \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\  0 & -1 & 5 \\  2 & 1 & 4  \end{array} \right] \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \end{array} \right] = \left[ \begin{array}{rrr} 1 & 0 & 0 \\  0 & 1 & 0 \\  0 & 0 & 1  \end{array} \right] = I_{3} \, \, \checkmark \]
 
 \item Each of the systems in this part has $A$ as its coefficient matrix.  The only difference between the systems is the constants which is the matrix $B$ in the associated matrix equation $AX=B$.  We solve each of them using the formula $X = A^{-1}B$.
 
 \begin{enumerate}
 
-\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \end{array} \right] \left[ \begin{array}{r} 26 \\[3pt] 39 \\[3pt] 117 \end{array}\right] =  \left[ \begin{array}{r} -39 \\[3pt] 91 \\[3pt] 26 \end{array}\right]$.  Our solution is $(-39,91,26)$.
+\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \end{array} \right] \left[ \begin{array}{r} 26 \\  39 \\  117 \end{array}\right] =  \left[ \begin{array}{r} -39 \\  91 \\  26 \end{array}\right]$.  Our solution is $(-39,91,26)$.
 
-\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right] \left[ \begin{array}{r} 4 \\[3pt] 2 \\[3pt] 5 \end{array}\right] =  \left[ \begin{array}{r} \frac{5}{13} \\[3pt] \frac{19}{13} \\[3pt] \frac{9}{13} \end{array}\right]$.  We get $\left( \frac{5}{13},  \frac{19}{13},  \frac{9}{13}   \right)$.
+\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right] \left[ \begin{array}{r} 4 \\  2 \\  5 \end{array}\right] =  \left[ \begin{array}{r} \frac{5}{13} \\  \frac{19}{13} \\  \frac{9}{13} \end{array}\right]$.  We get $\left( \frac{5}{13},  \frac{19}{13},  \frac{9}{13}   \right)$.
 
-\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right] \left[ \begin{array}{r} 1 \\[3pt] 0 \\[3pt] 0 \end{array}\right] =  \left[ \begin{array}{r} \frac{9}{13} \\[3pt] -\frac{10}{13} \\[3pt] -\frac{2}{13} \end{array}\right]$. We find $\left( \frac{9}{13},  -\frac{10}{13},    -\frac{2}{13}   \right)$.\footnote{Note that the solution is the first column of the $A^{-1}$.  The reader is encouraged to meditate on this `coincidence'.}
+\item $X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13}  \end{array} \right] \left[ \begin{array}{r} 1 \\  0 \\  0 \end{array}\right] =  \left[ \begin{array}{r} \frac{9}{13} \\  -\frac{10}{13} \\  -\frac{2}{13} \end{array}\right]$. We find $\left( \frac{9}{13},  -\frac{10}{13},    -\frac{2}{13}   \right)$.\footnote{Note that the solution is the first column of the $A^{-1}$.  The reader is encouraged to meditate on this `coincidence'.}
 
 \qed
 
@@ -484,17 +554,17 @@ and
 
 In Example \ref{matrixinverseex}, we see that finding one inverse matrix can enable us to solve an entire family of systems of linear equations.  There are many examples of where this comes in handy `in the wild', and we chose our example for this section from the field of electronics.  We also take this opportunity to introduce the student to how we can compute inverse matrices using the calculator.
 
-\begin{example} \label{circuitex} Consider the circuit diagram below.\footnote{The authors wish to thank Don Anthan of Lakeland Community College for the design of this example.}   We have two batteries with source voltages $V\!B_{\mbox{\tiny$1$}}$ and $V\!B_{\mbox{\tiny$2$}}$, measured in volts $V$, along with six resistors with resistances $R_{\mbox{\tiny$1$}}$ through $R_{\mbox{\tiny$6$}}$, measured in kiloohms, $k\Omega$.  Using \href{http://en.wikipedia.org/wiki/Ohm's_law}{\underline{Ohm's Law}} \index{Ohm's Law} \index{Kirchhoff's Voltage Law} and \href{http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws}{\underline{Kirchhoff's Voltage Law}}, we can relate the voltage supplied to the circuit by the two batteries to the voltage drops across the six resistors in order to find the four `mesh' currents: $i_{\mbox{\tiny$1$}}$, $i_{\mbox{\tiny$2$}}$, $i_{\mbox{\tiny$3$}}$ and $i_{\mbox{\tiny$4$}}$, measured in milliamps, $mA$.  If we think of electrons flowing through the circuit, we can think of the voltage sources as providing the `push' which makes the electrons move, the resistors as obstacles for the electrons to overcome, and the mesh current as a net rate of flow of electrons around the indicated loops.
+\begin{example} \label{circuitex} Consider the circuit diagram below.\footnote{The authors wish to thank Don Anthan of Lakeland Community College for the design of this example.}   We have two batteries with source voltages $V\!B_1$ and $V\!B_2$, measured in volts $V$, along with six resistors with resistances $R_1$ through $R_6$, measured in kiloohms, $k\Omega$.  Using \href{http://en.wikipedia.org/wiki/Ohm's_law}{\underline{Ohm's Law}} \index{Ohm's Law} \index{Kirchhoff's Voltage Law} and \href{http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws}{\underline{Kirchhoff's Voltage Law}}, we can relate the voltage supplied to the circuit by the two batteries to the voltage drops across the six resistors in order to find the four `mesh' currents: $i_1$, $i_2$, $i_3$ and $i_4$, measured in milliamps, $mA$.  If we think of electrons flowing through the circuit, we can think of the voltage sources as providing the `push' which makes the electrons move, the resistors as obstacles for the electrons to overcome, and the mesh current as a net rate of flow of electrons around the indicated loops.
 
 [We will replace this circuit diagram this summer]
 %\centerline{\includegraphics{./MatMethodsGraphics/CircuitDiagram01.pdf}}
 
 The system of linear equations associated with this circuit is
 
-\[ \left\{ \begin{array}{rcl} \left(R_{\mbox{\tiny$1$}} + R_{\mbox{\tiny$3$}}\right)i_{\mbox{\tiny$1$}} - R_{\mbox{\tiny$3$}}i_{\mbox{\tiny$2$}} - R_{\mbox{\tiny$1$}}i_{\mbox{\tiny$4$}} & = & V\!B_{\mbox{\tiny$1$}} \\
--R_{\mbox{\tiny$3$}}i_{\mbox{\tiny$1$}} + \left(R_{\mbox{\tiny$2$}} + R_{\mbox{\tiny$3$}} + R_{\mbox{\tiny$4$}}\right)i_{\mbox{\tiny$2$}} - R_{\mbox{\tiny$4$}}i_{\mbox{\tiny$3$}} - R_{\mbox{\tiny$2$}}i_{\mbox{\tiny$4$}} & = & 0 \\
--R_{\mbox{\tiny$4$}}i_{\mbox{\tiny$2$}} + \left(R_{\mbox{\tiny$4$}} + R_{\mbox{\tiny$6$}}\right)i_{\mbox{\tiny$3$}} - R_{\mbox{\tiny$6$}}i_{\mbox{\tiny$4$}} & = & -V\!B_{\mbox{\tiny$2$}} \\
--R_{\mbox{\tiny$1$}}i_{\mbox{\tiny$1$}} - R_{\mbox{\tiny$2$}}i_{\mbox{\tiny$2$}} - R_{\mbox{\tiny$6$}}i_{\mbox{\tiny$3$}} + \left(R_{\mbox{\tiny$1$}} + R_{\mbox{\tiny$2$}} + R_{\mbox{\tiny$5$}} + R_{\mbox{\tiny$6$}}\right)i_{\mbox{\tiny$4$}} & = & 0 \\  \end{array} \right.\]
+\[ \left\{ \begin{array}{rcl} \left(R_1 + R_3\right)i_1 - R_3i_2 - R_1i_4 & = & V\!B_1 \\
+-R_3i_1 + \left(R_2 + R_3 + R_4\right)i_2 - R_4i_3 - R_2i_4 & = & 0 \\
+-R_4i_2 + \left(R_4 + R_6\right)i_3 - R_6i_4 & = & -V\!B_2 \\
+-R_1i_1 - R_2i_2 - R_6i_3 + \left(R_1 + R_2 + R_5 + R_6\right)i_4 & = & 0 \\  \end{array} \right.\]
 
 Assuming the resistances are all $1 k\Omega$, find the mesh currents if the battery voltages are
 
@@ -502,9 +572,9 @@ Assuming the resistances are all $1 k\Omega$, find the mesh currents if the batt
 
 \begin{itemize}
 
-\item  $V\!B_{\mbox{\tiny$1$}} = 10 V$ and $V\!B_{\mbox{\tiny$2$}} = 5 V$
+\item  $V\!B_1 = 10 V$ and $V\!B_2 = 5 V$
 
-\item  $V\!B_{\mbox{\tiny$1$}} = 10 V$ and $V\!B_{\mbox{\tiny$2$}} = 0 V$
+\item  $V\!B_1 = 10 V$ and $V\!B_2 = 0 V$
 
 \end{itemize}
 
@@ -514,9 +584,9 @@ Assuming the resistances are all $1 k\Omega$, find the mesh currents if the batt
 
 \begin{itemize}
 
-\item  $V\!B_{\mbox{\tiny$1$}} = 0 V$ and $V\!B_{\mbox{\tiny$2$}} = 10 V$
+\item  $V\!B_1 = 0 V$ and $V\!B_2 = 10 V$
 
-\item  $V\!B_{\mbox{\tiny$1$}} = 10 V$ and $V\!B_{\mbox{\tiny$2$}} = 10 V$
+\item  $V\!B_1 = 10 V$ and $V\!B_2 = 10 V$
 
 \end{itemize} 
 
@@ -527,10 +597,10 @@ Assuming the resistances are all $1 k\Omega$, find the mesh currents if the batt
 
  Substituting the resistance values into our system of equations, we get
 
-\[ \left\{ \begin{array}{rcl} 2i_{\mbox{\tiny$1$}} - i_{\mbox{\tiny$2$}}-i_{\mbox{\tiny$4$}} & = & V\!B_{\mbox{\tiny$1$}} \\
--i_{\mbox{\tiny$1$}} + 3i_{\mbox{\tiny$2$}} - i_{\mbox{\tiny$3$}} - i_{\mbox{\tiny$4$}} & = & 0 \\
--i_{\mbox{\tiny$2$}} + 2i_{\mbox{\tiny$3$}} - i_{\mbox{\tiny$4$}} & = & -V\!B_{\mbox{\tiny$2$}} \\
--i_{\mbox{\tiny$1$}} - i_{\mbox{\tiny$2$}}-i_{\mbox{\tiny$3$}} + 4i_{\mbox{\tiny$4$}} & = & 0 \\  \end{array} \right.\]
+\[ \left\{ \begin{array}{rcl} 2i_1 - i_2-i_4 & = & V\!B_1 \\
+-i_1 + 3i_2 - i_3 - i_4 & = & 0 \\
+-i_2 + 2i_3 - i_4 & = & -V\!B_2 \\
+-i_1 - i_2-i_3 + 4i_4 & = & 0 \\  \end{array} \right.\]
                               
 This corresponds to the matrix equation $AX = B$ where 
 
@@ -540,11 +610,11 @@ A = \left[ \begin{array}{rrrr} 2 & -1 & 0 & -1  \\ -1 & 3 & -1 & -1 \\ 0 & -1 & 
 
 &
 
- X = \left[ \begin{array}{r} i_{\mbox{\tiny$1$}} \\ i_{\mbox{\tiny$2$}} \\ i_{\mbox{\tiny$3$}} \\ i_{\mbox{\tiny$4$}} \\ \end{array} \right]
+ X = \left[ \begin{array}{r} i_1 \\ i_2 \\ i_3 \\ i_4 \\ \end{array} \right]
  
 &
 
- B = \left[ \begin{array}{r} V\!B_{\mbox{\tiny$1$}} \\ 0 \\ -V\!B_{\mbox{\tiny$2$}} \\ 0 \end{array} \right] 
+ B = \left[ \begin{array}{r} V\!B_1 \\ 0 \\ -V\!B_2 \\ 0 \end{array} \right] 
  \end{array}\]   
 
 When we input the matrix $A$ into a calculator or graphing utility, we find the matrix inverse $A^{-1}$ as follows:
@@ -559,7 +629,7 @@ When we input the matrix $A$ into a calculator or graphing utility, we find the 
 
 from which we have  $A^{-1} = \left[ \begin{array}{rrrr} 1.625 & \hphantom{2}1.25 & 1.125 & \hphantom{2.2}1  \\ 1.25 & 1.5 & 1.25 & 1 \\ 1.125 & 1.25 & 1.625 & 1 \\ 1 & 1 & 1 & 1 \end{array} \right]$. 
 
-To solve the four systems given to us, we find $X=A^{-1}B$ where the value of $B$ is determined by the given values of $V\!B_{\mbox{\tiny$1$}}$ and $V\!B_{\mbox{\tiny$2$}}$
+To solve the four systems given to us, we find $X=A^{-1}B$ where the value of $B$ is determined by the given values of $V\!B_1$ and $V\!B_2$
 
 \[\begin{array}{cccc}
 
@@ -575,7 +645,7 @@ B = \left[ \begin{array}{r} 0 \\ 0 \\ -10 \\ 0 \end{array} \right], &
 
 \begin{itemize}
 
-\item  For $V\!B_{\mbox{\tiny$1$}} = 10 V$ and $V\!B_{\mbox{\tiny$2$}} = 5 V$, the calculator gives $i_{\mbox{\tiny$1$}} = 10.625 \, \, mA$, $i_{\mbox{\tiny$2$}} = 6.25 \, \, mA$, $i_{\mbox{\tiny$3$}} = 3.125 \, \, mA$, and $i_{\mbox{\tiny$4$}} = 5 \, \, mA$. 
+\item  For $V\!B_1 = 10 V$ and $V\!B_2 = 5 V$, the calculator gives $i_1 = 10.625 \, \, mA$, $i_2 = 6.25 \, \, mA$, $i_3 = 3.125 \, \, mA$, and $i_4 = 5 \, \, mA$. 
 
 We include screenshot below for this part (and this part only!) for reference, as the other solutions are given similarly.
 
@@ -583,18 +653,18 @@ We include screenshot below for this part (and this part only!) for reference, a
 \centerline{\includegraphics[width=2in]{./MatMethodsGraphics/MATRIXINVERSE03.jpg}}
 
 
-\item  By keeping  $V\!B_{\mbox{\tiny$1$}} = 10 V$ and setting $V\!B_{\mbox{\tiny$2$}} = 0 V$, we are removing the effect of the second battery. We get $i_{\mbox{\tiny$1$}} = 16.25 \, \, mA$, $i_{\mbox{\tiny$2$}} = 12.5 \, \, mA$, $i_{\mbox{\tiny$3$}} = 11.25 \, \, mA$, and $i_{\mbox{\tiny$4$}} = 10 \, \, mA$.  
+\item  By keeping  $V\!B_1 = 10 V$ and setting $V\!B_2 = 0 V$, we are removing the effect of the second battery. We get $i_1 = 16.25 \, \, mA$, $i_2 = 12.5 \, \, mA$, $i_3 = 11.25 \, \, mA$, and $i_4 = 10 \, \, mA$.  
 
 
-\item  Here, we  are zeroing out $V\!B_{\mbox{\tiny$1$}}$ and making $V\!B_{\mbox{\tiny$2$}} = 10$, essentially removing the effect of the first battery.  We find $i_{\mbox{\tiny$1$}} = -11.25 \, \, mA$, $i_{\mbox{\tiny$2$}} = -12.5 \, \, mA$, $i_{\mbox{\tiny$3$}} = -16.25 \, \, mA$, and $i_{\mbox{\tiny$4$}} = -10 \, \, mA$, where the negatives indicate that the current is flowing in the opposite direction as is indicated on the diagram. The reader is encouraged to study the symmetry here, and if need be, hold up a mirror to the diagram to literally `see' what is happening.
+\item  Here, we  are zeroing out $V\!B_1$ and making $V\!B_2 = 10$, essentially removing the effect of the first battery.  We find $i_1 = -11.25 \, \, mA$, $i_2 = -12.5 \, \, mA$, $i_3 = -16.25 \, \, mA$, and $i_4 = -10 \, \, mA$, where the negatives indicate that the current is flowing in the opposite direction as is indicated on the diagram. The reader is encouraged to study the symmetry here, and if need be, hold up a mirror to the diagram to literally `see' what is happening.
 
-\item  For $V\!B_{\mbox{\tiny$1$}} = 10 V$ and $V\!B_{\mbox{\tiny$2$}} = 10 V$, we get $i_{\mbox{\tiny$1$}} = 5 \, \, mA$, $i_{\mbox{\tiny$2$}} = 0 \, \, mA$, $i_{\mbox{\tiny$3$}} = -5 \, \, mA$, and $i_{\mbox{\tiny$4$}} = 0 \, \, mA$.  The mesh currents $i_{\mbox{\tiny$2$}}$ and $i_{\mbox{\tiny$4$}}$ being zero is a consequence of both batteries `pushing' in equal but opposite directions, causing the net flow of electrons in these two regions to cancel out. \qed
+\item  For $V\!B_1 = 10 V$ and $V\!B_2 = 10 V$, we get $i_1 = 5 \, \, mA$, $i_2 = 0 \, \, mA$, $i_3 = -5 \, \, mA$, and $i_4 = 0 \, \, mA$.  The mesh currents $i_2$ and $i_4$ being zero is a consequence of both batteries `pushing' in equal but opposite directions, causing the net flow of electrons in these two regions to cancel out. \qed
 
 \end{itemize}
 
 \end{example}
 
-\subsection{Exercises}
+
 
 %% SKIPPED %% \input{ExercisesforMatMethods}
 

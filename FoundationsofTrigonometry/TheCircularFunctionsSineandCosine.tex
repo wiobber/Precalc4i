@@ -995,6 +995,9 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 \draw[<->] (1.5,0) arc [start angle=0, end angle=60, radius=1.5];
 \node[right] at (1.3,1) {$\frac{\pi}{3}$};
 
+\draw[<->] (1.5,0) arc [start angle=0, end angle=60, radius=1.5];
+\node[right] at (-1.3,-1) {$\theta=\frac{7\pi}{3}$};
+
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
@@ -1049,65 +1052,135 @@ To prove this second claim, note that when an angle is drawn in standard positio
 
 The Reference Angle Theorem in conjunction with the table of sine and cosine values on Page \pageref{CosineSineFacts} can be used to generate the figure on the next page.  We recommend committing it to memory.
 
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.25,
+    >=Latex,
+    axis/.style={->,thin},
+    radius/.style={densely dotted,thin},
+    point/.style={circle,fill=black,inner sep=1.35pt},
+    anglelabel/.style={font=\small},
+    coordlabel/.style={font=\small}
+]
 
-\begin{center}
+% Radius of the unit circle in the drawing
+\def\R{3.35}
 
-\phantomsection \index{Unit Circle ! important points}
-\label{commonanglesunitcircle}
+% Axes
+\draw[axis] (-4.15,0) -- (4.25,0)
+    node[right] {$x$};
 
-\begin{mfpic}[180]{-1.25}{1.25}{-1.2}{1.2}
-\point[4pt]{(1,0),(0,1),(-1,0),(0,-1)}
-\point[4pt]{(0.707107, 0.7071707), (-0.707107, 0.7071707), (0.707107, -0.7071707), (-0.707107, -0.7071707)}
-\point[4pt]{(0.866025, 0.5), (-0.866025, 0.5), (0.866025, -0.5), (-0.866025, -0.5)}
-\point[4pt]{(0.5, 0.866025), (0.5, -0.866025), (-0.5, 0.866025), (-0.5, -0.866025)}
-\axes
-\dotted[1pt, 3pt] \polyline{(-0.707107, -0.7071707), (0.707107, 0.7071707)}
-\dotted[1pt, 3pt] \polyline{(-0.707107, 0.7071707), (0.707107, -0.7071707)}
-\dotted[1pt, 3pt] \polyline{(0.866025, 0.5), (-0.866025, -0.5)}
-\dotted[1pt, 3pt] \polyline{(-0.866025, 0.5), (0.866025, -0.5)}
-\dotted[1pt, 3pt] \polyline{(0.5, 0.866025), (-0.5, -0.866025)}
-\dotted[1pt, 3pt] \polyline{(0.5, -0.866025), (-0.5, 0.866025)}
-\tlabel[cc](1.25,-0.05){$x$}
-\tlabel[cc](0.05,1.2){$y$}
-\circle{(0,0),1}
-\tlabel[cc](0.1,1.05){$(0,1)$}
-\tlabel[cc](1.09,-0.06){$(1,0)$}
-\tlabel[cc](0.12,-1.055){$(0,-1)$}
-\tlabel[cc](-1.13,-0.06){$(-1,0)$}
-\tlabel[cc](0.85, 0.75){$\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$}
-\tlabel[cc](1, 0.5){$\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$}
-\tlabel[cc](0.62, 0.93){$\left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)$}
-\tlabel[cc](-0.88, 0.75){$\left(-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$}
-\tlabel[cc](-1.03, 0.5){$\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$}
-\tlabel[cc](-0.65, 0.93){$\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)$}
-\tlabel[cc](0.88, -0.75){$\left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right)$}
-\tlabel[cc](1.03, -0.5){$\left(\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)$}
-\tlabel[cc](0.65, -0.93){$\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)$}
-\tlabel[cc](-0.91, -0.75){$\left(-\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right)$}
-\tlabel[cc](-1.06, -0.5){$\left(-\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)$}
-\tlabel[cc](-0.68, -0.93){$\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)$}
-\gclear \tlabelrect[cc](0.8,0){$0,\; 2\pi$}
-\gclear \tlabelrect[cc](0,0.85){$\dfrac{\pi}{2}$}
-\gclear \tlabelrect[cc](-0.85,0){$\pi$}
-\gclear \tlabelrect[cc](0,-0.85){$\dfrac{3\pi}{2}$}
-\gclear \tlabelrect[cc](0.61,0.61){$\dfrac{\pi}{4}$}
-\gclear \tlabelrect[cc](0.78,0.43){$\dfrac{\pi}{6}$}
-\gclear \tlabelrect[cc](0.43,0.75){$\dfrac{\pi}{3}$}
-\gclear \tlabelrect[cc](-0.61,0.61){$\dfrac{3\pi}{4}$}
-\gclear \tlabelrect[cc](-0.76,0.43){$\dfrac{5\pi}{6}$}
-\gclear \tlabelrect[cc](-0.43,0.75){$\dfrac{2\pi}{3}$}
-\gclear \tlabelrect[cc](-0.61,-0.61){$\dfrac{5\pi}{4}$}
-\gclear \tlabelrect[cc](-0.76,-0.43){$\dfrac{7\pi}{6}$}
-\gclear \tlabelrect[cc](-0.43,-0.75){$\dfrac{4\pi}{3}$}
-\gclear \tlabelrect[cc](0.61,-0.61){$\dfrac{7\pi}{4}$}
-\gclear \tlabelrect[cc](0.76,-0.43){$\dfrac{11\pi}{6}$}
-\gclear \tlabelrect[cc](0.43,-0.75){$\dfrac{5\pi}{3}$}
-\tcaption{Important Points on the Unit Circle}
-\end{mfpic}
+\draw[axis] (0,-3.75) -- (0,4.05)
+    node[above] {$y$};
 
-\end{center}
+% Unit circle
+\draw[thin] (0,0) circle (\R);
 
-\newpage
+% Dotted radii
+\foreach \a in {30,45,60,120,135,150,210,225,240,300,315,330}
+{
+    \draw[radius] (0,0) -- (\a:\R);
+}
+
+% Points at the standard angles
+\foreach \a in {0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330}
+{
+    \node[point] at (\a:\R) {};
+}
+
+% --------------------------------------------------------------------
+% Angle labels
+% --------------------------------------------------------------------
+
+\node[anglelabel,above left] at (-2,0) {$\pi$};
+\node[anglelabel,above right] at (2,0) {$0,\ 2\pi$};
+
+\node[anglelabel] at (30:2) {$\dfrac{\pi}{6}$};
+\node[anglelabel] at (45:2) {$\dfrac{\pi}{4}$};
+\node[anglelabel] at (60:2) {$\dfrac{\pi}{3}$};
+
+\node[anglelabel,right] at (90:2) {$\dfrac{\pi}{2}$};
+
+\node[anglelabel] at (120:2) {$\dfrac{2\pi}{3}$};
+\node[anglelabel] at (135:2) {$\dfrac{3\pi}{4}$};
+\node[anglelabel] at (150:2) {$\dfrac{5\pi}{6}$};
+
+\node[anglelabel] at (210:2) {$\dfrac{7\pi}{6}$};
+\node[anglelabel] at (225:2) {$\dfrac{5\pi}{4}$};
+\node[anglelabel] at (240:2) {$\dfrac{4\pi}{3}$};
+
+\node[anglelabel,right] at (270:2) {$\dfrac{3\pi}{2}$};
+
+\node[anglelabel] at (300:2) {$\dfrac{5\pi}{3}$};
+\node[anglelabel] at (315:2) {$\dfrac{7\pi}{4}$};
+\node[anglelabel] at (330:2) {$\dfrac{11\pi}{6}$};
+
+% --------------------------------------------------------------------
+% Coordinate labels on the axes
+% --------------------------------------------------------------------
+
+\node[coordlabel,right] at (\R+0.08,-0.18) {$(1,0)$};
+\node[coordlabel,left]  at (-\R-0.08,-0.18) {$(-1,0)$};
+
+\node[coordlabel,above right] at (0.05,\R+0.02) {$(0,1)$};
+\node[coordlabel,below right] at (0.05,-\R-0.02) {$(0,-1)$};
+
+% --------------------------------------------------------------------
+% First quadrant coordinate labels
+% --------------------------------------------------------------------
+
+\node[coordlabel,above right] at (30:\R+0.1)
+    {$\left(\frac{\sqrt3}{2},\frac{1}{2}\right)$};
+
+\node[coordlabel,above right] at (45:\R+0.1)
+    {$\left(\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right)$};
+
+\node[coordlabel,above right] at (60:\R+0.1)
+    {$\left(\frac{1}{2},\frac{\sqrt3}{2}\right)$};
+
+% --------------------------------------------------------------------
+% Second quadrant coordinate labels
+% --------------------------------------------------------------------
+
+\node[coordlabel,right] at (120:\R+0.42)
+    {$\left(-\dfrac12,\dfrac{\sqrt3}{2}\right)$};
+
+\node[coordlabel,right] at (135:\R+0.42)
+    {$\left(-\dfrac{\sqrt2}{2},\dfrac{\sqrt2}{2}\right)$};
+
+\node[coordlabel,right] at (150:\R+0.42)
+    {$\left(-\dfrac{\sqrt3}{2},\dfrac12\right)$};
+
+% --------------------------------------------------------------------
+% Third quadrant coordinate labels
+% --------------------------------------------------------------------
+
+\node[coordlabel,right] at (210:\R+0.42)
+    {$\left(-\dfrac{\sqrt3}{2},-\dfrac12\right)$};
+
+\node[coordlabel,right] at (225:\R+0.42)
+    {$\left(-\dfrac{\sqrt2}{2},-\dfrac{\sqrt2}{2}\right)$};
+
+\node[coordlabel,right] at (240:\R+0.42)
+    {$\left(-\dfrac12,-\dfrac{\sqrt3}{2}\right)$};
+
+% --------------------------------------------------------------------
+% Fourth quadrant coordinate labels
+% --------------------------------------------------------------------
+
+\node[coordlabel,left] at (300:\R+0.42)
+    {$\left(\dfrac12,-\dfrac{\sqrt3}{2}\right)$};
+
+\node[coordlabel,left] at (315:\R+0.42)
+    {$\left(\dfrac{\sqrt2}{2},-\dfrac{\sqrt2}{2}\right)$};
+
+\node[coordlabel,left] at (330:\R+0.42)
+    {$\left(\dfrac{\sqrt3}{2},-\dfrac12\right)$};
+
+\end{tikzpicture}
+
+
+\end{image}
 
 Our next example uses The Reference Angle Theorem in a slightly more sophisticated context.
 
