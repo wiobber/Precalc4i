@@ -281,32 +281,48 @@ where we have identified the entries to the left of the vertical bar as the iden
 \[ \begin{array}{ccc}
 
 \left[
-\begin{array}{c|r}
-\multirow{2}{*}{\large\textit{A}} & 1 \\ & 0
+\begin{array}{c|c}
+{\large\textit{A}} &
+\begin{array}{r}
+1\\
+0
+\end{array}
 \end{array}
 \right]
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 &
 \left[
-\begin{array}{c|r}
-\multirow{2}{*}{\large $I_2$} & x_1 \\ & x_3
+\begin{array}{c|c}
+\textit{I}_2 &
+\begin{array}{r}
+x_1\\
+x_3
+\end{array}
 \end{array}
 \right]
 
 \\
 
 \left[
-\begin{array}{c|r}
-\multirow{2}{*}{\large\textit{A}} & 0 \\ & 1
+\begin{array}{c|c}
+\textit{I}_2 &
+\begin{array}{r}
+0\\
+1
+\end{array}
 \end{array}
 \right]
 &
 \xrightarrow{\text{Gauss Jordan Elimination}}
 &
 \left[
-\begin{array}{c|r}
-\multirow{2}{*}{\large $I_2$} & x_2 \\ & x_4
+\begin{array}{c|c}
+\textit{I}_2  &
+\begin{array}{r}
+x_2\\
+x_4
+\end{array}
 \end{array}
 \right]
 
@@ -318,7 +334,7 @@ Since the row operations for both processes are the same, all of the arithmetic 
 
 \left[
 \begin{array}{c|rr}
-\multirow{2}{*}{\large\textit{A}} & 1 & 0 \\ & 0 & 1
+{\large\textit{A}} & 1 & 0 \\ & 0 & 1
 \end{array}
 \right]
 &
@@ -326,7 +342,7 @@ Since the row operations for both processes are the same, all of the arithmetic 
 &
 \left[
 \begin{array}{c|rr}
-\multirow{2}{*}{\large $I_2$} & x_1 & x_2 \\ & x_3 & x_4
+\textit{I}_2  & x_1 & x_2 \\ & x_3 & x_4
 \end{array}
 \right]
 
@@ -520,7 +536,7 @@ $\begin{array}{ccc}
 
 &
 
-\xrightarrow[\text{\begin{tabular}{c} Replace $R2$ with \\ $5R3+R2$ \end{tabular}}]{\text{\begin{tabular}{c} Replace $R1$ with \\ $-\frac{2}{3}R3+R1$ \end{tabular}}} 
+\xrightarrow[\text{Replace $R2$ with $5R3+R2$}]{\text{Replace $R1$ with $-\frac{2}{3}R3+R1$}} 
 
 & 
 

@@ -1003,7 +1003,7 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 \node[below right] at (\R,-0.12) {$1$};
 
 % --- Spiral: radius grows linearly with angle from 0 to amax ---
-\draw[very thick, -{Latex[length=2.5mm]},
+\draw[-{Latex[length=2.5mm]},
       domain=0:\amax, samples=120, smooth, variable=\a]
     plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
           {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
@@ -1224,7 +1224,9 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
 \def\panelwidth{6.5}
 \def\R{2}
-\def\tdeg{55} % theta, in degrees
+\def\tdeg{70} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
 % ===================== PANEL 1: angle theta only =====================
 \begin{scope}
@@ -1238,8 +1240,14 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
     % Terminal ray at angle theta
     \draw[very thick, -] (0,0) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
+     \draw[very thick, -] (0,0) -- (2,0);
+
     % Center point
     \fill (0,0) circle (2.5pt);
+
+    % Point P on the circle
+    \fill ({\R*cos(\tdeg)},{\R*sin(\tdeg)}) circle (2.5pt);
+    \node[right] at ({\R*cos(\tdeg)+0.1},{\R*sin(\tdeg)+0.05}) {$\left(\frac{5}{13},y\right)$};
 
     % Unit labels
     \node[above left] at (-0.12,\R) {$1$};
@@ -1247,7 +1255,7 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
     % Angle arc for theta
     \draw[->] (0.7,0) arc [start angle=0, end angle=\tdeg, radius=0.7];
-    \node at ({1.15*cos(\tdeg/2)},{1.15*sin(\tdeg/2)}) {$\theta$};
+    \node at ({1.15*cos(\tdeg/2)},{1.15*sin(\tdeg/2)}) {$\alpha$};
 \end{scope}
 
 % ===================== PANEL 2: with point P(cos theta, sin theta) =====================
@@ -1267,15 +1275,23 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
     % Point P on the circle
     \fill ({\R*cos(\tdeg)},{\R*sin(\tdeg)}) circle (2.5pt);
-    \node[right] at ({\R*cos(\tdeg)+0.1},{\R*sin(\tdeg)+0.05}) {$P(\cos(\theta),\sin(\theta))$};
+    
 
     % Unit labels
     \node[above left] at (-0.12,\R) {$1$};
     \node[below right] at (\R,-0.12) {$1$};
 
-    % Angle arc for theta
-    \draw[->] (0.7,0) arc [start angle=0, end angle=\tdeg, radius=0.7];
-    \node at ({1.15*cos(\tdeg/2)},{1.15*sin(\tdeg/2)}) {$\theta$};
+    
+    % --- Dashed vertical from P down to the x-axis ---
+\draw[dashed] (\px,\py) -- (\px,0);
+
+% --- Right-angle mark at (px,0) ---
+\draw (\px-0.18,0) -- (\px-0.18,0.18) -- (\px,0.18);
+
+% --- Leg labels: "1" along the radius, "x" along the base, "y" along the vertical ---
+\node[above left] at (0.5*\px,0.5*\py) {$1$};
+\node[below] at (0.5*\px,-0.05) {$\frac{5}{13}$};
+\node[right] at (\px+0.08,0.5*\py) {$\frac{12}{13}$};
 \end{scope}
 
 \end{tikzpicture}
@@ -1286,65 +1302,88 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 
 \item \begin{enumerate} \item To find the cosine and sine of $\theta = \pi + \alpha$, we first plot $\theta$ in standard position. We can imagine the sum of the angles $\pi + \alpha$ as a sequence of two rotations: a rotation of $\pi$ radians followed by a rotation of  $\alpha$ radians.\footnote{Since $\pi + \alpha = \alpha + \pi$, $\theta$ may be plotted by reversing the order of rotations given here. You should do this.}  We see that $\alpha$ is the reference angle for $\theta$.  By The Reference Angle Theorem,  $\cos(\theta) = \pm \cos(\alpha) = \pm \frac{5}{13}$ and $\sin(\theta) = \pm \sin(\alpha) = \pm \frac{12}{13}$. Since the terminal side of $\theta$ falls in Quadrant III, both $\cos(\theta)$ and $\sin(\theta)$ are negative, so $\cos(\theta) = - \frac{5}{13}$ and $\sin(\theta) = - \frac{12}{13}$.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Visualizing \boldmath $\theta = \pi + \alpha$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 175, 5}{1.5*dir(t)}
-\arrow \parafcn{185, 240, 5}{1.5*dir(t)}
-\tlabel[cc](-2.75, 2.5){\mbox{\boldmath $\theta$}}
-\tlabel[cc](-1.25, 1.5){$\pi$}
-\tlabel[cc](-1.7, -1){$\alpha$}
-\point[4pt]{(0,0),(-1.1538, -2.7692)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (-1.9231, -4.6154)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 240, 5}{2.75*dir(t)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{240} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{.3in}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{\mbox{\boldmath $\theta$} has reference angle $\alpha$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\dashed \polyline{(0,0), (1.9231, 4.6154)}
-\tlabel[cc](2.25, 2.9){\scriptsize $\left( \frac{5}{13}, \frac{12}{13}\right)$}
-\point[4pt]{(1.1538, 2.7692)}
-\arrow \reverse \arrow \parafcn{5, 60, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\tlabel[cc](-2.7, -2.9){\scriptsize $\left( -\frac{5}{13}, -\frac{12}{13}\right)$}
-\arrow \reverse \arrow \parafcn{185, 240, 5}{1.5*dir(t)}
-\tlabel[cc](-2.75, 2.5){\mbox{\boldmath $\theta$}}
-\tlabel[cc](-1.7, -1){$\alpha$}
-\point[4pt]{(0,0),(-1.1538, -2.7692)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (-1.9231, -4.6154)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 240, 5}{2.75*dir(t)}
-\end{mfpic} 
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+\draw[dashed] (0,0) -- (-\px,\py);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\end{tabular}
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+
+% --- Angle arc for theta, with label ---
+\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
+\node[right] at (-1.8,1.8) {$\theta$};
+\draw[->] (-0.55,0) arc [start angle=180, end angle=\tdeg, radius=0.55];
+\node[right] at (-1,-0.28) {$\alpha$};
+\draw[->] (-0.55,0) arc [start angle=180, end angle=\tdeg, radius=0.55];
+\node[right] at (-1,-0.28) {$\alpha$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+%%%% Second panel %%%%%%%
+
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,-\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{-1.5*\R*sin(\tdeg)});
+\draw[dashed] (-\px,\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (-\px,\py) circle (2.5pt);
+\node[right] at (-\px+0.05,\py+0.1) {$Q$};
+\fill (\px,-\py) circle (2.5pt);
+\node[right] at (\px+0.05,-\py+0.1) {$P$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
+\node[right] at (0.6,0.28) {$\alpha$};
+\draw[<->] (-0.55,0) arc [start angle=180, end angle=240, radius=0.55];
+\node[right] at (-1,-0.4) {$\alpha$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 \item  Rewriting $\theta = 2\pi - \alpha$ as $\theta = 2\pi + (-\alpha)$, we can  plot $\theta$ by visualizing one complete revolution counter-clockwise followed by a \textit{clockwise} revolution, or `backing up,'  of $\alpha$ radians.  Once again, we see that $\alpha$ is $\theta$'s reference angle.  Since $\theta$ is a Quadrant IV angle, we choose the appropriate signs and get: $\cos(\theta) = \frac{5}{13}$ and  $\sin(\theta) = -\frac{12}{13}$.
 
