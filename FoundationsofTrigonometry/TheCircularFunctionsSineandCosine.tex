@@ -967,10 +967,13 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 % --- Parameters ---
 \def\panelwidth{6.5}
 \def\R{2}
-\def\tdeg{-225} % theta, in degrees
-\def\ttdeg{-225} % theta, in degrees
+\def\tdeg{60} % theta, in degrees
+\def\ttdeg{60} % theta, in degrees
 \pgfmathsetmacro{\px}{\R*cos(\tdeg)}
 \pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{0.75}   % ending radius (grows slightly over the sweep)
+\def\amax{420}    % total sweep in degrees: 360 + 60 = 7*180/3
 
 \pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
 \pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
@@ -989,15 +992,20 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 \draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
 
 % --- Angle arc for theta, with label ---
-\draw[<->] (-1,0) arc [start angle=180, end angle=135, radius=1];
-\node[right] at (-1.5,0.5) {$\frac{\pi}{4}$};
-
-\draw[->] (0.55,0) arc [start angle=0, end angle=\ttdeg, radius=0.55];
-\node[right] at (-1.6,-1) {$\theta=-\frac{5\pi}{4}$};
+\draw[<->] (1.5,0) arc [start angle=0, end angle=60, radius=1.5];
+\node[right] at (1.3,1) {$\frac{\pi}{3}$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[very thick, -{Latex[length=2.5mm]},
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
+
+
 \end{tikzpicture}
 \end{image}
 
