@@ -21,7 +21,45 @@ If a limit fails to exist, state that is the case  or use the symbols `$\infty$'
 
 \begin{center}
 
-\includegraphics[width=5.5in]{./IntroLimitsGraphics/M2500TH01.png}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5in, height=5in,
+    xmin=-10, xmax=10, ymin=-10, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-8,-6,-4,-2, 0, 2, 4, 6, 8},
+    ytick={-8, -6,-4,-2, 0, 2, 4, 6, 8},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+% Parametric Graph
+
+\draw[<-, thick, blue, smooth, samples=100, domain=-10:-3] 
+      plot ({\x}, {\x + 6});
+
+\draw[-, thick, blue, smooth, samples=100, domain=-3:3] 
+        plot ({\x}, {9 - (\x)^2});
+
+\draw[<->, thick, blue, smooth, samples=100, domain=3.25:10] 
+          plot ({\x}, {-2/(\x-3)});
+\draw[dashed] (3, -9) -- (3, 0);
+\draw[dashed] (3, 0) -- (3, 9);
+\fill[blue] (-3,0) circle (2pt);
+\fill[blue] (0,1) circle (2pt);
+\draw[blue, thick] (-3,3) circle (2pt);
+\fill[white, opacity = 1.0] (-3,3)  circle (1.7pt);
+\draw[blue, thick] (0,9) circle (2pt);
+\fill[white, opacity = 1.0] (0,9)  circle (1.7pt);
+\draw[blue, thick] (3,0) circle (2pt);
+\fill[white, opacity = 1.0] (3,0)  circle (1.7pt);
+\end{axis}
+\end{tikzpicture}
 
 \end{center}
 

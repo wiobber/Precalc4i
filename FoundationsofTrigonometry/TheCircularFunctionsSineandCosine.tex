@@ -1224,7 +1224,7 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
 \def\panelwidth{6.5}
 \def\R{2}
-\def\tdeg{70} % theta, in degrees
+\def\tdeg{60} % theta, in degrees
 \pgfmathsetmacro{\px}{\R*cos(\tdeg)}
 \pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
@@ -1581,7 +1581,7 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 \node[above left] at (\px+0.05,\py+0.1) {$\left(-\frac{5}{13},\frac{12}{13}\right)$};
 
 \fill (-\px,\py) circle (2.5pt);
-\node[above right] at (-\px+0.05,\py+0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+\node[above right] at (-\px+0.05,\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
 
 
 \end{scope}
@@ -1592,74 +1592,97 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 
 \item  To plot $\theta = \frac{\pi}{2} + \alpha$, we first rotate $\frac{\pi}{2}$ radians and follow up with $\alpha$ radians.  The reference angle here is \textit{not} $\alpha$, so The Reference Angle Theorem is not immediately applicable.  (It's important that you see why this is the case.  Take a moment to think about this before reading on.)  Let $Q(x,y)$ be the point on the terminal side of $\theta$ which lies on the Unit Circle so that $x = \cos(\theta)$ and $y = \sin(\theta)$.   Once we graph $\alpha$ in standard position, we use the fact from Geometry that equal angles subtend equal chords to show that the dotted lines in the figure below are equal.  Hence,  $x = \cos(\theta) = -\frac{12}{13}$.  Similarly, we find  $y = \sin(\theta) = \frac{5}{13}$. 
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tcaption{Visualizing \boldmath $\theta = \frac{\pi}{2} + \alpha$}
-\tlabel(-5, .75){$Q\left(x,y\right)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 85, 5}{1.5*dir(t)}
-\arrow \parafcn{95, 150, 5}{1.5*dir(t)}
-\tlabel[cc](-2.5, 2.75){\mbox{\boldmath $\theta$}}
-\tlabel[cc](1.25, 1.5){$\frac{\pi}{2}$}
-\tlabel[cc](-1, 1.7){$\alpha$}
-\point[4pt]{(0,0),(-2.7692, 1.1538)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 150, 5}{2.75*dir(t)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{150} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{.3in}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(1.5, 2.75){\scriptsize $\left(\frac{5}{13}, \frac{12}{13}\right)$}
-\tlabel(-5, .75){\scriptsize $\left(-\frac{12}{13}, \frac{5}{13}\right)$}
-\tcaption{}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\dotted \polyline{(1.1538, 0), (1.1538, 2.7692)}
-\dotted \polyline{(-2.7692, 1.1538), (0, 1.1538)}
-\arrow \polyline{(0,0), (-4.6154, 1.9231)}
-\arrow \polyline{(0,0), (1.9231, 4.6154)}
-\arrow \reverse \arrow \parafcn{5, 60, 5}{dir(t)}
-\arrow \reverse \arrow \parafcn{95, 150, 5}{dir(t)}
-\tcaption{Using symmetry to determine $Q(x,y)$}
-\tlabel[cc](1.5, 0.75){$\alpha$}
-\tlabel[cc](-1, 1.5){$\alpha$}
-\point[4pt]{(0,0),(-2.7692, 1.1538), (1.1538, 2.7692)}
-\penwd{1.25pt}
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
 
-\arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
-\end{mfpic} 
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\end{tabular}
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+
+% --- Angle arc for theta, with label ---
+\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
+\node[right] at (1.4,1.6) {$\theta$};
+
+\draw[->] (0,1) arc [start angle=90, end angle=\tdeg, radius=1];
+\node[right] at (1,-0.5) {$\alpha$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=90, radius=0.55];
+\node[right] at (0.6,0.6) {$\frac{\pi}{2}$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+%%%% Second panel %%%%%%%
+
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+
+\draw[dashed] (\px,-\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,-\py) circle (2.5pt);
+\node[above right] at (\px+0.05,-\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
+
+\fill (\px,\py) circle (2.5pt);
+\node[below right] at (\px-0.05,\py-0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+
+% --- Angle arc for theta, with label ---
+\draw[<->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
+\node[right] at (0.6,0.4) {$\alpha$};
+\draw[<->] (0.55,0) arc [start angle=360, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,-0.4) {$\alpha$};
+\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
+\node[right] at (-1.8,1.8) {$\theta$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 \end{enumerate}
 
 \end{enumerate}
-
-\qed
-
 \end{example}
 
  A couple of remarks about Example \ref{advancedrefangleex} are in order.  First, we note the right triangle we used to find $\sin(\alpha)$ is a scaled 5-12-13 triangle.  Recognizing this Pythagorean Triple\footnote{See Section \ref{AppRightTrig} for more examples of Pythagorean Triples.}  may have simplified our workflow.  Along the same lines, since, the Unit Circle, by definition, is described by the equation $x^2+y^2 = 1$,  we could substitute $x = \frac{5}{13}$ in order to find $y$.   We leave it to the reader to show we get the exact same answer regardless of the approach used.
