@@ -625,65 +625,88 @@ In general, for a non-quadrantal angle $\theta$, the reference angle for $\theta
 
 If $\theta$ is a Quadrant II or III angle, $\alpha$ is the angle between the terminal side of $\theta$ and the \textit{negative} $x$-axis: 
  
- \begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\tlabel(-2.5,2.5){$P$}
-\tlabel(1.75,2.5){$Q$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
-\arrow \reverse \arrow \parafcn{125, 175, 5}{1.5*dir(t)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\tlabel[cc](-2, 1){$\alpha$}
-\point[4pt]{(0,0), (-1.5, 2.598), (1.5, 2.598)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-2.5, 4.3301)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{120} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 
-&
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\hspace{.5in} \begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(-2.5,-3){$P$}
-\tlabel(1.75,2.5){$Q$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
-\arrow \reverse \arrow \parafcn{185, 235, 5}{1.5*dir(t)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](2, 1){$\alpha$}
-\tlabel[cc](-2, -1){$\alpha$}
-\point[4pt]{(0,0), (-1.5, -2.598),(1.5, 2.598)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-2.5, -4.3301)}
-\end{mfpic} \\
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-Reference angle $\alpha$ for a Quadrant II angle
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+\draw[dashed] (0,0) -- (-\px,\py);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-&
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\node[right] at (\px,\py+0.3) {$P$};
+\fill (-\px,\py) circle (2.5pt);
+\node[right] at (-\px+0.03,\py+0.3) {$Q$};
 
-\hspace{.5in} Reference angle $\alpha$ for a Quadrant III angle \\
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
+\node[right] at (0.6,0.28) {$\alpha$};
+\draw[<->] (-0.25,0.43) arc [start angle=120, end angle=180, radius=0.55];
+\node[right] at (-1,0.28) {$\alpha$};
 
-\end{tabular}
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
 
-\smallskip
+%%%% Second panel %%%%%%%
+
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,-\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{-1.5*\R*sin(\tdeg)});
+\draw[dashed] (-\px,\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (-\px,\py) circle (2.5pt);
+\node[right] at (-\px+0.05,\py+0.1) {$Q$};
+\fill (\px,-\py) circle (2.5pt);
+\node[right] at (\px+0.05,-\py+0.1) {$P$};
+
+% --- Angle arc for theta, with label ---
+\draw[->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
+\node[right] at (0.6,0.28) {$\alpha$};
+\draw[<->] (-0.55,0) arc [start angle=180, end angle=240, radius=0.55];
+\node[right] at (-1,-0.4) {$\alpha$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 If we let $P$ denote the point $(\cos(\theta), \sin(\theta))$, then $P$ lies on the Unit Circle.  Since the Unit Circle possesses symmetry with respect to the $x$-axis, $y$-axis and origin, regardless of where the terminal side of $\theta$ lies, there is a point $Q$ symmetric with $P$ which determines $\theta$'s reference angle, $\alpha$.  The only difference between the points $P$ and $Q$ are the signs of their coordinates, $\pm$. Hence, we have the following:
 
@@ -708,13 +731,7 @@ where the choice of the ($\pm$) depends on the quadrant in which the terminal si
 
 In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine values for certain common Quadrant I angles as well as to keep in mind the signs of the coordinates of points in the given quadrants. 
 
-\phantomsection
-\label{CosineSineFacts}
-
-\begin{multicols}{2}
-
-\setlength{\extrarowheight}{4pt}
-
+\begin{center}
 \[ \begin{array}{|c|c||c|c|} \hline
  \theta (\mbox{degrees}) &  \theta (\mbox{radians}) & \cos(\theta) & \sin(\theta) \\ \hline
 0^{\circ} & 0 & 1 & 0 \\ \hline
@@ -723,36 +740,61 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 60^{\circ} & \frac{\pi}{3} & \frac{1}{2} & \frac{\sqrt{3}}{2} \\ [2pt] \hline
 90^{\circ} & \frac{\pi}{2} & 0 & 1 \\ [2pt] \hline
 \end{array} \]
+\end{center}
 
-\setlength{\extrarowheight}{2pt}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{45} % theta, in degrees
+\pgfmathsetmacro{\pxI}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\pyI}{\R*sin(\tdeg)}
+\pgfmathsetmacro{\pxII}{\R*cos(3*\tdeg)}
+\pgfmathsetmacro{\pyII}{\R*sin(3*\tdeg)}
+\pgfmathsetmacro{\pxIII}{\R*cos(5*\tdeg)}
+\pgfmathsetmacro{\pyIII}{\R*sin(5*\tdeg)}
+\pgfmathsetmacro{\pxIV}{\R*cos(7*\tdeg)}
+\pgfmathsetmacro{\pyIV}{\R*sin(7*\tdeg)}
+
+% --- Full circle, light gray ---
+\draw[] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Center and P points ---
+\fill (\pxI,\pyI) circle (2.5pt);
+\node[right] at (\pxI+0.05,\pyI) {$(+,+)$};
+\fill (\pxII,\pyII) circle (2.5pt);
+\node[left] at (\pxII-0.05,\pyII) {$(-,+)$};
+\fill (\pxIII,\pyIII) circle (2.5pt);
+\node[left] at (\pxIII-0.05,\pyIII) {$(-,-)$};
+\fill (\pxIV,\pyIV) circle (2.5pt);
+\node[right] at (\pxIV+0.05,\pyIV) {$(+,-)$};
+
+\fill (2,0) circle (2.5pt);
+\node[above right] at (2,0) {$(1,0)$};
+\fill (0,2) circle (2.5pt);
+\node[above right] at (0,2) {$(0,1)$};
+\fill (-2,0) circle (2.5pt);
+\node[above left] at (-2,0) {$(-1,0)$};
+\fill (0,-2) circle (2.5pt);
+\node[below right] at (0,-2) {$(0,-1)$};
 
 
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $(1,0)$}
-\tlabel(-4.5,-0.75){\scriptsize $(-1,0)$}
-\tlabel(0.25,3.1){ \scriptsize $(0,1)$}
-\tlabel(0.25,-3.4){\scriptsize $(0,-1)$}
-\tlabel[cc](-2.83,-2.83){$(-,-)$}
-\tlabel[cc](2.83,2.83){$(+, +)$}
-\tlabel[cc](-2.83,2.83){$(-,+)$}
-\tlabel[cc](2.83,-2.83){$(+,-)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\point[4pt]{(-2.1213, -2.1213),(2.1213, 2.1213), (2.1213, -2.1213),(-2.1213, 2.1213), (0,3), (3,0), (0,-3), (-3,0) }
+\end{tikzpicture}
 
-\end{mfpic} 
+\end{image}
 
 
 
-\end{multicols}
 
-\newpage
 
 
 \begin{example} \label{refangleex}  Find the sine and cosine of the following angles.
