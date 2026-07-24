@@ -1720,157 +1720,341 @@ Our next example turns the tables and makes good use of the Unit Circle values g
 
 \item If $\cos(\theta) = \frac{1}{2}$, then we know the terminal side of $\theta$, when plotted in standard position, intersects the Unit Circle at $x = \frac{1}{2}$.  This means $\theta$ is a Quadrant I or IV angle.  Since $\cos(\theta) = \frac{1}{2}$, we know from the values on page \pageref{commonanglesunitcircle}  that the reference angle is $\frac{\pi}{3}$.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.5,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(2,-1){\small $\frac{1}{2}$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 2.25, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel(1.5, 1){$\frac{\pi}{3}$}
-\point[4pt]{(0,0), (2.25, 3.8971)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.330)}
+% --- Parameters ---
+\def\panelwidth{7}
+\def\R{2}
+\def\ang{60}
 
-\end{mfpic} 
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-&
+% ============================================================
+% First panel: pi/3
+% ============================================================
 
-\hspace{.75in}
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.5,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(2,0.5){\small$\frac{1}{2}$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 2.25, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{-55, -5, 5}{1.5*dir(t)}
-\tlabel(1.5, -1.5){$\frac{\pi}{3}$}
-\point[4pt]{(0,0), (2.25, -3.8971)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, -4.330)}
-\end{mfpic} 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Radius segments ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% --- Angle measure ---
+\draw[<->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.65
+    ];
+
+\node at (0.82,0.58) {$\frac{\pi}{3}$};
+
+% --- Tick at x = 1/2 ---
+\draw (1,-0.06) -- (1,0.06);
+\node[below] at (1,-0.10) {$\frac{1}{2}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+
+% ============================================================
+% Second panel: -pi/3
+% ============================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Radius segments ---
+\draw[very thick] (0,0) -- (\px,-\py);
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,-\py) circle (2.5pt);
+
+% --- Angle measure, clockwise ---
+\draw[<->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=-\ang,
+        radius=0.65
+    ];
+
+\node at (0.82,-0.58) {$\frac{\pi}{3}$};
+
+% --- Tick at x = 1/2 ---
+\draw (1,-0.06) -- (1,0.06);
+\node[above] at (1,0.10) {$\frac{1}{2}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 One solution in  Quadrant I is  $\theta = \frac{\pi}{3}$.  Per Theorem \ref{coterminalsamcosinesinethm},  all other Quadrant I solutions must be coterminal with $\frac{\pi}{3}$.  Recall from Section \ref{RadianMeasure}, two angles in radian measure are coterminal if and only if they differ by an integer multiple of $2\pi$.  Hence to describe all angles coterminal with a given angle, we add $2\pi k$ for integers $k = 0$, $\pm 1$, $\pm 2$, \dots.   Hence, we record our final answer as  $\theta = \frac{\pi}{3} + 2\pi k$ for integers $k$. Proceeding similarly for the Quadrant IV case, we find the solution to $\cos(\theta) = \frac{1}{2}$ here is $\frac{5 \pi}{3}$, so our answer in this Quadrant  is $\theta = \frac{5\pi}{3} + 2\pi k$ for integers $k$. 
 
 \item  If $\sin(\alpha) = -\frac{1}{2}$, then when $\alpha$ is plotted in standard position, its terminal side intersects the Unit Circle at  $y=-\frac{1}{2}$.  From this, we determine $\alpha$ is a Quadrant III or Quadrant IV angle with reference angle $\frac{\pi}{6}$.   In Quadrant III, one solution is $\frac{7\pi}{6}$, so we capture all Quadrant III solutions by adding integer multiples of $2\pi$:  $\alpha = \frac{7\pi}{6} + 2\pi k$. In Quadrant IV, one solution is $\frac{11\pi}{6}$ so all the solutions here are of the form $\alpha = \frac{11\pi}{6} + 2\pi k$ for integers $k$.
 
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,-2.5){\small $-\frac{1}{2}$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5, -2.25,  4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{185, 205, 5}{2.5*dir(t)}
-\tlabel(-3.25, -1){$\frac{\pi}{6}$}
-\point[4pt]{(0,0), (-3.8971, -2.25)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,-2.5)}
+% --- Parameters ---
+\def\panelwidth{7}
+\def\R{2}
+\def\refang{30}
 
-\end{mfpic} 
+\pgfmathsetmacro{\px}{-\R*cos(\refang)}
+\pgfmathsetmacro{\py}{-\R*sin(\refang)}
+\pgfmathsetmacro{\qx}{ \R*cos(\refang)}
+\pgfmathsetmacro{\qy}{-\R*sin(\refang)}
 
-&
+% ============================================================
+% Left panel
+% ============================================================
 
-\hspace{.75in}
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(-1,-2.5){\small $-\frac{1}{2}$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5, -2.25,  4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{335, 355, 5}{2.5*dir(t)}
-\tlabel(2.75, -1){$\frac{\pi}{6}$}
-\point[4pt]{(0,0), (3.8971, -2.25)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,-2.5)}
-\end{mfpic} 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis emphasized ---
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Terminal radius ---
+\draw[very thick] (0,0) -- (\px,\py);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% --- Reference angle, double headed ---
+\draw[<->]
+    (210:0.85)
+    arc[
+        start angle=210,
+        end angle=180,
+        radius=0.85
+    ];
+
+\node at (-1.3,-0.38) {$\frac{\pi}{6}$};
+
+% --- Tick and label at y=-1/2 ---
+\draw (-0.06,-1) -- (0.06,-1);
+\node[right] at (0.10,-1) {$-\frac{1}{2}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
 
 
+% ============================================================
+% Right panel
+% ============================================================
 
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis emphasized ---
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Terminal radius ---
+\draw[very thick] (0,0) -- (\qx,\qy);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (\qx,\qy) circle (2.5pt);
+
+% --- Reference angle, double headed ---
+\draw[<->]
+    (0:0.85)
+    arc[
+        start angle=0,
+        end angle=-30,
+        radius=0.85
+    ];
+
+\node at (1.3,-0.38) {$\frac{\pi}{6}$};
+
+% --- Tick and label at y=-1/2 ---
+\draw (-0.06,-1) -- (0.06,-1);
+\node[left] at (-0.10,-1) {$-\frac{1}{2}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 
 \item  If  $\cos(\beta) = 0$, then the terminal side of $\beta$ must lie on the line $x=0$, also known as the $y$-axis.   
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5,  4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{5, 85, 5}{1.5*dir(t)}
-\tlabel[cc](2, 2){$\frac{\pi}{2}$}
-\point[4pt]{(0,0), (0, 4.5)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0),(0,5)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{7}
+\def\R{2}
 
-&
+% ============================================================
+% Left panel
+% ============================================================
 
-\hspace{.75in}
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.5){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5,  4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-%\arrow\reverse\arrow \reverse \arrow \polyline{(5,0),(-5,0), (5,0)}
-\arrow \reverse \arrow \parafcn{275, 355, 5}{1.5*dir(t)}
-\tlabel[cc](2, -2){$\frac{\pi}{2}$}
-\point[4pt]{(0,0), (0, -4.5)}
-\arrow \reverse \arrow \parafcn{5, 85, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \parafcn{95, 265, 5}{1.5*dir(t)}
-%\arrow \dashed \polyline{(5,0),(0,0.15),(0,4.35)}
-\tlabel[cc](2, 2){$\frac{\pi}{2}$}
-\tlabel[cc](-2, 0.5){$\pi$}
-%\point[4pt]{(0,0), (0, 4.5)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0),(0,-5)}\end{mfpic} 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis and positive y-axis emphasized ---
+\draw[very thick] (0,0) -- (\R,0);
+\draw[very thick] (0,0) -- (0,\R);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (0,\R) circle (2.5pt);
+
+% --- Angle measure ---
+\draw[<->]
+    (0.70,0)
+    arc[
+        start angle=0,
+        end angle=90,
+        radius=0.70
+    ];
+
+\node at (0.92,0.92) {$\frac{\pi}{2}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+
+% ============================================================
+% Right panel
+% ============================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis and negative y-axis emphasized ---
+\draw[very thick] (0,0) -- (\R,0);
+\draw[very thick] (0,0) -- (0,-\R);
+
+% --- Center and terminal point ---
+\fill (0,0) circle (2.5pt);
+\fill (0,-\R) circle (2.5pt);
+
+% --- Upper-right quarter angle ---
+\draw[<->]
+    (0.70,0)
+    arc[
+        start angle=0,
+        end angle=90,
+        radius=0.70
+    ];
+
+\node at (0.92,0.92) {$\frac{\pi}{2}$};
+
+% --- Lower-right quarter angle ---
+\draw[<->]
+    (0.70,0)
+    arc[
+        start angle=0,
+        end angle=-90,
+        radius=0.70
+    ];
+
+\node at (0.92,-0.92) {$\frac{\pi}{2}$};
+
+% --- Left semicircle angle ---
+\draw[<->]
+    (90:1)
+    arc[
+        start angle=90,
+        end angle=270,
+        radius=1
+    ];
+
+\node[left] at (-1,0.18) {$\pi$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 While, technically speaking, $\frac{\pi}{2}$ isn't a reference angle (it's not acute), we can nonetheless use it to find our answers.  If we follow the procedure set forth in the previous examples, we find $\beta = \frac{\pi}{2} + 2\pi k$ and $\beta = \frac{3\pi}{2} + 2\pi k$ for integers, $k$. While this solution is correct, it can be shortened to $\beta = \frac{\pi}{2} + \pi k$ for integers $k$.  The reader is encouraged to see the geometry using the diagram above on the left.
 
@@ -1893,56 +2077,121 @@ One of the key items to take from Example \ref{solveforangle} is that, in genera
 
 It is also worth noting that when asked to solve equations in algebra, we are usually looking for  \textit{real number} solutions.  Thanks to the identifications made on page \pageref{wrappingfunction}, we are able to regard the inputs to the sine and cosine functions as real numbers by identifying any real number $t$ with an oriented angle $\theta$ measuring $\theta = t$ radians.  That is, for  each real number $t$, we associate an oriented arc $t$ units in length with initial point $(1,0)$ and endpoint $P(\cos(t), \sin(t))$.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-4}{4.5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.25){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\point[4pt]{(0,0)}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
- \arrow \polyline{(0,0), (2.5, 4.3301)}
-\arrow \polyline{(3,-4), (3,4.5)}
-\polyline{(2.8,3.1416), (3.2,3.1416)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.9, 1){$\theta = t$}
-\penwd{1.5pt}
- \arrow \polyline{(3,0), (3, 3.1416)}
-\arrow \parafcn{0,60,5}{3*dir(t)}
-\tlabel[cc](3.5,1.75){$t$}
-\end{mfpic} 
+%---------------- Parameters ----------------
+\def\panelwidth{7}
+\def\R{2}
+\def\ang{55}
 
-&
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-\hspace{.3in}
+%=========================================================
+% Left panel
+%=========================================================
 
-\begin{mfpic}[18]{-5}{5}{-4}{4.5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.25){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\arrow \reverse \arrow \polyline{(0,0), (2.5, 4.3301)}
-\tlabel(2,2.6){$P(\cos(t), \sin(t))$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.9, 1){$\theta = t$}
-\point[4pt]{(0,0), (1.5, 2.5981)}
-\penwd{1.5pt}
-\arrow \parafcn{0,60,5}{3*dir(t)}
-\end{mfpic} 
+% Unit circle
+\draw[gray!50] (0,0) circle (\R);
 
-\end{tabular}
+% Axes
+\draw[->] (-\R-0.35,0) -- (\R+0.70,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.55) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% Tangent line x=1
+\draw (2,-2.6) -- (2,2.6);
+
+% Radius
+\draw[very thick] (0,0)--(\px,\py);
+
+% Tangent vector
+\draw[very thick,blue,->]
+    (2,0)--(2,1.92);
+
+% Extension of radius
+\draw[-]
+    (\px,\py)--({1.35*\R*cos(\ang)},{1.35*\R*sin(\ang)});
+
+% Point
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% Arc on circle
+\draw[very thick, blue]
+    (2,0)
+    arc[start angle=0,end angle=\ang,radius=\R];
+
+% Angle
+\draw[<->]
+    (0.75,0)
+    arc[start angle=0,end angle=\ang,radius=.75];
+
+\node at (1.1,0.45) {$\theta=t$};
+
+
+% Labels
+\node[right] at (2,\py/2) {$t$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+%=========================================================
+% Right panel
+%=========================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Unit circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Axes
+\draw[->] (-\R-0.35,0) -- (\R+0.70,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.55) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% Radius
+\draw[very thick] (0,0)--(\px,\py);
+
+% Extension
+\draw[-{Latex[length=3mm]}]
+    (\px,\py)--({1.35*\R*cos(\ang)},{1.35*\R*sin(\ang)});
+
+% Circular arc
+\draw[very thick]
+    (2,0)
+    arc[start angle=0,end angle=\ang,radius=\R];
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% Angle
+\draw[<->]
+    (0.75,0)
+    arc[start angle=0,end angle=\ang,radius=.75];
+
+\node at (1.1,0.45) {$\theta=t$};
+
+% Labels
+\node[right] at (\px+0.12,\py+0.12)
+    {$P(\cos(t),\sin(t))$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 In practice this means in expressions like `$\cos(\pi)$' and `$\sin(2)$,'  the inputs can be thought of as either angles in radian measure or real numbers, whichever is more convenient.  
 
