@@ -114,24 +114,66 @@ Suppose we wanted to know $a_117$, that is, the $117^{\text{th}}$ term in the se
 \end{example}
 
 Some remarks about Example \ref{seqex1} are in order. We first note that since sequences are functions, we can graph them in the same way we graph functions.  For example, if we wish to graph the sequence $\left\{ b_{k} \right\}_{k=0}^{\infty}$ from Example \ref{seqex1}, we graph the equation $y=b(k)$ for the values $k \geq 0$. That is, we plot the points $(k, b(k))$ for the values of $k$ in the domain, $k = 0, 1, 2, \ldots$.  The resulting collection of points is the graph of the sequence.  Note that we do not connect the dots in a pleasing fashion as we are used to doing, because the domain is just the whole numbers in this case, not a collection of intervals of real numbers.\footnote{If you feel a sense of nostalgia, you should see Section \ref{FunctionsandtheirRepresentations}.}
-\begin{center}
 
-\begin{mfpic}[20]{-1}{4}{-2}{2}
-\point[4pt]{(0,1), (1,-0.3333), (2,0.2), (3, -0.1428) }
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $k$}
-\tlabel[cc](0.5,2){\scriptsize $y$}
-\xmarks{1,2,3}
-\ymarks{-1.5, -1, -0.5, 0.5, 1, 1.5}
-\tlpointsep{10pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\tlpointsep{4pt}
-\axislabels {y}{{\tiny $-\frac{3}{2}$} -1.5, {\tiny $-1$} -1, {\tiny $-\frac{1}{2}$} -0.5, {\tiny $\frac{1}{2}$} 0.5, {\tiny $1$} 1, {\tiny $\frac{3}{2}$} 1.5}
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-Graphing  $y = b_{k} = \dfrac{(-1)^{k}}{2k+1}$, $k \geq 0$
+%------------------------------------------------
+% Axes
+%------------------------------------------------
 
-\end{center}
+\draw[->] (-1.1,0) -- (4.1,0)
+    node[right] {$k$};
+
+\draw[->] (0,-2.0) -- (0,2.0)
+    node[above] {$y$};
+
+%------------------------------------------------
+% x-axis tick marks
+%------------------------------------------------
+
+\foreach \x in {1,2,3}
+    \draw (\x,-0.08)--(\x,0.08);
+
+%------------------------------------------------
+% y-axis tick marks
+%------------------------------------------------
+
+\foreach \y/\lab in {
+    -1.5/{-3/2},
+    -1/{-1},
+    -0.5/{-1/2},
+     0.5/{1/2},
+     1/{1},
+     1.5/{3/2}
+}
+{
+    \draw (-0.08,\y)--(0.08,\y);
+    \node[left] at (-0.18,\y) {$\lab$};
+}
+
+%------------------------------------------------
+% x-axis labels
+%------------------------------------------------
+
+\node[below] at (1,-0.18) {$1$};
+\node[below] at (2,-0.18) {$2$};
+\node[below] at (3,-0.18) {$3$};
+
+%------------------------------------------------
+% Sequence points
+%------------------------------------------------
+
+\fill (0,1) circle (2.5pt);
+\fill (1,-0.35) circle (2.5pt);
+\fill (2,0.20) circle (2.5pt);
+\fill (3,-0.15) circle (2.5pt);
+
+\end{tikzpicture}
+\end{image}
 
 Speaking of $\left\{ b_{k} \right\}_{k=0}^{\infty}$, the astute and mathematically minded reader will correctly note that this technically isn't a sequence, since according to Definition \ref{sequencedefn}, sequences are functions whose domains are the \textit{natural} numbers, not the \textit{whole} numbers, as is the case with $\left\{ b_{k} \right\}_{k=0}^{\infty}$.  In other words, to satisfy Definition \ref{sequencedefn}, we need to shift the variable $k$ so it starts at $k=1$ instead of $k=0$.  
 
@@ -496,15 +538,26 @@ If $\ds{\lim_{x \rightarrow \infty} g(x) = \lim_{x \rightarrow \infty} h(x) = L}
 
 The Squeeze Theorem is so-named because the two sequences (functions) which bound the middle sequence (function) `squeeze' the middle function to the common limit, $L$.
 
-\medskip
+\begin{image}
+\begin{tikzpicture}[
+    xscale=1.15,
+    yscale=2.2
+]
 
-\begin{center}
+% Upper bounding function
+\draw[very thick,domain=0:8,samples=150,smooth]
+    plot (\x,{exp(-0.35*\x)});
 
-\includegraphics[width=4in]{./SequenceGraphics/squeezethm.png}
+% Lower bounding function
+\draw[very thick,domain=0:8,samples=150,smooth]
+    plot (\x,{-exp(-0.35*\x)});
 
-The graph of $y = f(x)$ being `squeezed' to a common limit by the graphs of $y = g(x)$  and $y = h(x)$.
+% Oscillating function trapped between the bounds
+\draw[red!75!black,thick,domain=0:8,samples=300,smooth]
+    plot (\x,{exp(-0.35*\x)*cos(230*\x)});
 
-\end{center}
+\end{tikzpicture}
+\end{image}
 
 Passing to a continuous variable in conjunction with the Squeeze Theorem can be used to prove certain classes of Geometric Sequences converge.  We have the following:
 
