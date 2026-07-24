@@ -1629,10 +1629,12 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 \node[right] at (1.4,1.6) {$\theta$};
 
 \draw[->] (0,1) arc [start angle=90, end angle=\tdeg, radius=1];
-\node[right] at (1,-0.5) {$\alpha$};
+\node[right] at (-0.8,1.1) {$\alpha$};
 
 \draw[->] (0.55,0) arc [start angle=0, end angle=90, radius=0.55];
 \node[right] at (0.6,0.6) {$\frac{\pi}{2}$};
+
+\node[below left] at (\px-0.05,\py) {$Q(x,y)$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
@@ -1653,23 +1655,25 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 \draw[very thick] (0,0) -- (2,0);
 % --- Ray continuing past P (thin, with arrowhead) ---
 
-\draw[dashed] (\px,-\py) -- (0,0);
+\draw[dashed] (\py,-\px) -- (0,0);
+\draw[dotted] (\py,-\px) -- (\py,0);
+\draw[dotted] (\px,\py) -- (0,\py);
 
 % --- Center and P points ---
 \fill (0,0) circle (2.5pt);
-\fill (\px,-\py) circle (2.5pt);
-\node[above right] at (\px+0.05,-\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
-
 \fill (\px,\py) circle (2.5pt);
-\node[below right] at (\px-0.05,\py-0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+\node[above left] at (\px+0.05,\py+0.1) {$\left(-\frac{12}{13},\frac{5}{13}\right)$};
+
+\fill (\py,-\px) circle (2.5pt);
+\node[right] at (\py+0.05,-\px+0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
 
 % --- Angle arc for theta, with label ---
 \draw[<->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
-\node[right] at (0.6,0.4) {$\alpha$};
-\draw[<->] (0.55,0) arc [start angle=360, end angle=\tdeg, radius=0.55];
-\node[right] at (0.6,-0.4) {$\alpha$};
-\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
-\node[right] at (-1.8,1.8) {$\theta$};
+\node[right] at (0.5,0.4) {$\alpha$};
+
+\draw[<->] (0,0.55) arc [start angle=90, end angle=\tdeg, radius=0.55];
+\node[right] at (-0.6,0.7) {$\alpha$};
+
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
