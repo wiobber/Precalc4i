@@ -2124,7 +2124,7 @@ It is also worth noting that when asked to solve equations in algebra, we are us
 \fill (\px,\py) circle (2.5pt);
 
 % Arc on circle
-\draw[very thick, blue]
+\draw[very thick, blue, ->]
     (2,0)
     arc[start angle=0,end angle=\ang,radius=\R];
 
@@ -2162,7 +2162,7 @@ It is also worth noting that when asked to solve equations in algebra, we are us
 \draw[very thick] (0,0)--(\px,\py);
 
 % Extension
-\draw[-{Latex[length=3mm]}]
+\draw[-]
     (\px,\py)--({1.35*\R*cos(\ang)},{1.35*\R*sin(\ang)});
 
 % Circular arc
@@ -2215,62 +2215,160 @@ In Definition \ref{sinecosineunitcircledefn}, we define the sine and cosine func
 
 Consider for the moment the \textit{acute} angle $\theta$ drawn below in standard position.  Let $Q(x,y)$ be the point on the terminal side of $\theta$ which lies on the circle $x^2+y^2 = r^2$, and let $P(x',y')$ be the point on the terminal side of $\theta$ which lies on the Unit Circle.   Now consider dropping perpendiculars from $P$ and $Q$ to create two right triangles, $\Delta OPA$ and $\Delta OQB$. These triangles are similar,\footnote{Do you remember why?} thus it follows that $\frac{x}{x'} = \frac{r}{1} = r$, so $x = r x'$ and, similarly, we find $y = r y'$.  Since, by definition, $x' = \cos(\theta)$ and $y' = \sin(\theta)$,  we get the coordinates of $Q$ to be $x = r \cos(\theta)$ and $y = r \sin(\theta)$.  By reflecting these points through the $x$-axis, $y$-axis and origin, we obtain the result for all non-quadrantal angles $\theta$, and we leave it to the reader to verify these formulas hold for the quadrantal angles as well.
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(2.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,2.1){\scriptsize $1$}
-\tlabel(4.1,-0.75){\scriptsize $r$}
-\tlabel(0.25,4.1){\scriptsize $r$}
-\tlabel(2.25, 3.5){\small $Q\left(x,y\right)$}
-\tlabel(1.3, 1.5){\small $P\left(x',y'\right)$}
-\xmarks{-4 step 2 until 4}
-\ymarks{-4 step 2 until 4}
-\drawcolor[gray]{0.7}
-\circle{(0,0),2}
-\circle{(0,0),4}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{dir(t)}
-\tlabel[cc](1.25, .75){\small $\theta$}
-\point[4pt]{(0,0), (1, 1.7321), (2, 3.4641)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
-\end{mfpic}
-&
-\hspace{.25in}
+% --- Parameters ---
+\def\panelwidth{7.2}
+\def\R{2.15}
+\def\ang{58}
+\def\smallR{1.08}
 
-\begin{mfpic}[25]{-1}{7}{-1}{7}
-\axes
-\drawcolor[gray]{0.7}
-\parafcn{0,90,5}{3*dir(t)}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{0.75*dir(t)}
-\tlabel[cc](0.75,0.5){\scriptsize $\theta$}
-\point[4pt]{(0,0), (1.5, 2.5981), (3,5.196), (3,0), (1.5,0)}
-\tlabel(6.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,6.75){\scriptsize $y$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(-0.5,-0.5){\scriptsize $O$}
-\tlabel(2.5,-0.5){\scriptsize $B(x,0)$}
-\tlabel(1, -0.5){\scriptsize $A(x', 0)$}
-\xmarks{0 step 3 until 3}
-\ymarks{0 step 3 until 3}
-\polyline{(5,0),(3,0), (3,5.196)}
-\polyline{(5,0),(2.75,0), (2.75, 0.25), (3,0.25)}
-\polyline{(5,0),(1.5,0), (1.5, 2.5981)}
-\polyline{(5,0),(1.25,0), (1.25,0.25), (1.5,0.25)}
-\tlabel(1.7,2.6){\scriptsize $P(x',y')$}
-\tlabel(3.25,5.25){\scriptsize $Q(x,y) = (r\cos(\theta), r\sin(\theta))$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (4,6.9282)}
-\end{mfpic}
+\pgfmathsetmacro{\px}{\smallR*cos(\ang)}
+\pgfmathsetmacro{\py}{\smallR*sin(\ang)}
+\pgfmathsetmacro{\qx}{\R*cos(\ang)}
+\pgfmathsetmacro{\qy}{\R*sin(\ang)}
 
-\end{tabular}
+% ============================================================
+% Left panel
+% ============================================================
 
-\smallskip
+% --- Concentric circles ---
+\draw[gray!50] (0,0) circle (\smallR);
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.55,0) -- (\R+0.65,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.55) -- (0,\R+0.65)
+    node[above] {$y$};
+
+% --- Positive x-axis emphasized ---
+\draw[very thick] (0,0) -- (\R+0.45,0);
+
+% --- Radial line through P and Q ---
+\draw[very thick] (0,0) -- (\qx,\qy);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\fill (\qx,\qy) circle (2.5pt);
+
+% --- Angle theta ---
+\draw[->]
+    (0.55,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.55
+    ];
+
+\node at (0.70,0.45) {$\theta$};
+
+% --- Labels for points ---
+\node[right] at (\px+0.10,\py-0.02)
+    {$P(x',y')$};
+
+\node[right] at (\qx+0.10,\qy+0.04)
+    {$Q(x,y)$};
+
+% --- Radius labels ---
+\node[right] at (0,\smallR+0.2) {$1$};
+\node[right] at (0,\R+0.2) {$r$};
+
+\node[below right] at (\smallR,0) {$1$};
+\node[below right] at (\R,0) {$r$};
+
+
+% ============================================================
+% Right panel
+% ============================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Coordinates for this panel ---
+\def\xp{1.15}
+\def\yp{1.75}
+\def\xq{2.15}
+\def\yq{3.25}
+
+% --- Axes ---
+\draw[->] (-0.65,0) -- (3.15,0)
+    node[right] {$x$};
+
+\draw[->] (0,-0.55) -- (0,3.55)
+    node[above] {$y$};
+
+% --- Slanted line through O, P, and Q ---
+\draw[very thick] (0,0) -- (\xq,\yq);
+
+% --- Vertical projections ---
+\draw (\xp,0) -- (\xp,\yp);
+\draw (\xq,0) -- (\xq,\yq);
+
+% --- Circular arc of radius 1 ---
+\draw[gray!50]
+    (1.15,0)
+    arc[
+        start angle=0,
+        end angle=180,
+        radius=1.15
+    ];
+
+% --- Right-angle markers ---
+\draw
+    (\xp-0.16,0) --
+    (\xp-0.16,0.16) --
+    (\xp,0.16);
+
+\draw
+    (\xq-0.16,0) --
+    (\xq-0.16,0.16) --
+    (\xq,0.16);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\xp,0) circle (2.5pt);
+\fill (\xq,0) circle (2.5pt);
+\fill (\xp,\yp) circle (2.5pt);
+\fill (\xq,\yq) circle (2.5pt);
+
+% --- Angle theta ---
+\draw[->]
+    (0.48,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.48
+    ];
+
+\node at (0.62,0.45) {$\theta$};
+
+% --- Labels ---
+\node[below left] at (0,0) {$O$};
+
+\node[below left] at (\xp+0.3,0)
+    {$A(x',0)$};
+
+\node[below right] at (\xq-0.3,0)
+    {$B(x,0)$};
+
+\node[above left] at (\xp+0.14,\yp+0.05)
+    {$P(x',y')$};
+
+\node[right] at (\xq+0.08,\yq+0.08)
+    {$Q(x,y)=(r\cos(\theta),r\sin(\theta))$};
+
+\node[above left] at (0,1.15) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Not only can we describe the coordinates of $Q$ in terms of $\cos(\theta)$ and $\sin(\theta)$ but since the radius of the circle is $r = \sqrt{x^2 + y^2}$, we can also express $\cos(\theta)$ and $\sin(\theta)$ in terms of the coordinates of $Q$.  These results are summarized in the following theorem.
 
