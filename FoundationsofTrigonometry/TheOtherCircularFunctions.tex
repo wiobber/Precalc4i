@@ -56,39 +56,102 @@ While we left the history of the name `sine' as an interesting research project 
 
 Consider the acute angle $\theta$  in standard position sketched in the diagram below. 
 
-\smallskip
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{center}
+% --- Parameters ---
+\def\panelwidth{7.2}
+\def\R{2.15}
+\def\ang{58}
+\def\smallR{1.08}
 
-\begin{mfpic}[25]{-1}{7}{-1}{7}
-\axes
-\drawcolor[gray]{0.7}
-\parafcn{0,90,5}{3*dir(t)}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{0.75*dir(t)}
-\tlabel[cc](0.75,0.5){\scriptsize $\theta$}
-\point[4pt]{(0,0), (1.5, 2.5981), (3,5.196), (3,0), (1.5,0)}
-\tlabel(6.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,6.75){\scriptsize $y$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(-0.5,-0.5){\scriptsize $O$}
-\tlabel(2.75,-0.5){\scriptsize $B(1,0)$}
-\tlabel(1.25, -0.5){\scriptsize $A(x, 0)$}
-\xmarks{0 step 3 until 3}
-\ymarks{0 step 3 until 3}
-\polyline{(3,0), (3,5.196)}
-\polyline{(2.75,0), (2.75, 0.25), (3,0.25)}
-\polyline{(1.5,0), (1.5, 2.5981)}
-\polyline{(1.25,0), (1.25,0.25), (1.5,0.25)}
-\tlabel(1.75,2.6){\scriptsize $P(x,y)$}
-\tlabel(3.25,5.25){\scriptsize $Q(1,y') = (1, \tan(\theta))$}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(7,0), (0,0), (4,6.9282)}
-\end{mfpic} 
+\pgfmathsetmacro{\px}{\smallR*cos(\ang)}
+\pgfmathsetmacro{\py}{\smallR*sin(\ang)}
+\pgfmathsetmacro{\qx}{\R*cos(\ang)}
+\pgfmathsetmacro{\qy}{\R*sin(\ang)}
 
-\end{center}
 
-\smallskip
+% --- Coordinates for this panel ---
+\def\xp{1.15}
+\def\yp{1.75}
+\def\xq{2.15}
+\def\yq{3.25}
+
+% --- Axes ---
+\draw[->] (-0.65,0) -- (3.15,0)
+    node[right] {$x$};
+
+\draw[->] (0,-0.55) -- (0,3.55)
+    node[above] {$y$};
+
+% --- Slanted line through O, P, and Q ---
+\draw[very thick] (0,0) -- (\xq,\yq);
+
+% --- Vertical projections ---
+\draw (\xp,0) -- (\xp,\yp);
+\draw (\xq,0) -- (\xq,\yq);
+
+% --- Circular arc of radius 1 ---
+\draw[gray!50]
+    (1.15,0)
+    arc[
+        start angle=0,
+        end angle=180,
+        radius=1.15
+    ];
+
+% --- Right-angle markers ---
+\draw
+    (\xp-0.16,0) --
+    (\xp-0.16,0.16) --
+    (\xp,0.16);
+
+\draw
+    (\xq-0.16,0) --
+    (\xq-0.16,0.16) --
+    (\xq,0.16);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\xp,0) circle (2.5pt);
+\fill (\xq,0) circle (2.5pt);
+\fill (\xp,\yp) circle (2.5pt);
+\fill (\xq,\yq) circle (2.5pt);
+
+% --- Angle theta ---
+\draw[->]
+    (0.48,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.48
+    ];
+
+\node at (0.62,0.45) {$\theta$};
+
+% --- Labels ---
+\node[below left] at (0,0) {$O$};
+
+\node[below left] at (\xp+0.3,0)
+    {$A(x,0)$};
+
+\node[below right] at (\xq-0.3,0)
+    {$B(1,0)$};
+
+\node[above left] at (\xp+0.14,\yp+0.05)
+    {$P(x,y)$};
+
+\node[right] at (\xq+0.08,\yq+0.08)
+    {$Q(1,y')=(1, \tan\theta)$};
+
+\node[above left] at (0,1.15) {$1$};
+
+
+\end{tikzpicture}
+\end{image}
 
 As usual, $P(x,y)$ denotes the point on the terminal side of $\theta$ which lies on the Unit Circle, but we also consider  the point $Q(1,y')$,  the point on the terminal side of $\theta$ which lies on the vertical line $x=1$. 
 
@@ -298,55 +361,131 @@ To find the quadrants in which our solutions lie, we note that tangent is define
  In Quadrant I, we get the solutions: $\theta = \frac{\pi}{3} + 2\pi k$ for integers $k$, and for Quadrant III, we get $\theta = \frac{4\pi}{3} + 2\pi k$ for integers $k$.  While these descriptions of the solutions are correct, they can be combined into one list as $\theta = \frac{\pi}{3} + \pi k$ for integers $k$. The latter form of the solution is best understood looking at the geometry of the situation in the diagram below.\footnote{See Example \ref{solveforangle} number \ref{cosineiszero} in Section \ref{TheCircularFunctionsSineandCosine} for another example of this kind of simplification of the solution.}
  
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.25){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel(1.5, 1){$\frac{\pi}{3}$}
-\point[4pt]{(0,0), (2.25, 3.8971)}
-\penwd{1.25pt}
-\arrow \polyline{(5.25, 0), (0,0), (2.5, 4.330)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.8}
+\def\R{2}
+\def\ang{60}
 
-&
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
+\pgfmathsetmacro{\qx}{\R*cos(240)}
+\pgfmathsetmacro{\qy}{\R*sin(240)}
 
-\hspace{.75in}
+% ============================================================
+% Left panel
+% ============================================================
 
-\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.25){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
+% --- Unit circle ---
+\draw[gray!50] (0,0) circle (\R);
 
-\arrow \reverse \arrow \parafcn{185, 235, 5}{2*dir(t)}
-\tlabel(-2.6, -1.5){$\frac{\pi}{3}$}
-\point[4pt]{(0,0), (-2.25, -3.8971)}
-\arrow \dashed \polyline{(0,0), (2.5, 4.330)}
-\arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel(1.5, 1){$\frac{\pi}{3}$}
-\tlabel(-1.5, 2){$\pi$}
-\point[4pt]{(2.25, 3.8971)}
-\arrow \reverse \arrow \parafcn{65, 235, 5}{1.5*dir(t)}
-\penwd{1.25pt}
-\arrow \polyline{(5.25, 0), (0,0), (-2.5, -4.330)}
-\end{mfpic} 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis and radius ---
+\draw[very thick] (0,0) -- (\R,0);
+\draw[very thick] (0,0) -- (\px,\py);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% --- Reference angle ---
+\draw[<->]
+    (0.60,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.60
+    ];
+
+\node at (0.82,0.52) {$\frac{\pi}{3}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+
+% ============================================================
+% Right panel
+% ============================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Unit circle ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis ---
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Terminal radius in quadrant III ---
+\draw[very thick] (0,0) -- (\qx,\qy);
+
+% --- Dashed comparison radius in quadrant I ---
+\draw[dashed] (0,0) -- (\px,\py);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\fill (\qx,\qy) circle (2.5pt);
+
+% --- Reference angle in quadrant I ---
+\draw[<->]
+    (1.2,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=1.2
+    ];
+
+\node at (1.3,0.7) {$\frac{\pi}{3}$};
+
+% --- Reference angle in quadrant III ---
+\draw[<->]
+    (180:1.2)
+    arc[
+        start angle=180,
+        end angle=240,
+        radius=1.2
+    ];
+
+\node at (-1.4,-0.7) {$\frac{\pi}{3}$};
+
+% --- Half-turn angle ---
+\draw[<->]
+    (60:0.7)
+    arc[
+        start angle=60,
+        end angle=240,
+        radius=0.7
+    ];
+
+\node at (-0.55,0.8) {$\pi$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
   
 
 \item  From the table of common values, we see that $\frac{\pi}{4}$ has a cotangent of $1$, which means the solutions to $\cot(\theta) = -1$ have a reference angle of $\frac{\pi}{4}$. 
@@ -360,58 +499,136 @@ To find the quadrants in which our solutions lie, we note that $\cot(\theta) = \
 Our Quadrant II solution is $\theta = \frac{3\pi}{4} + 2\pi k$, and for Quadrant IV, we get $\theta = \frac{7\pi}{4} + 2\pi k$ for integers $k$.  As in the previous problem, we can combine these solutions as:  $\theta = \frac{3\pi}{4} + \pi k$ for integers $k$.
 
 
-\begin{tabular}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.25){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{140, 175, 5}{1.5*dir(t)}
-\tlabel[cc](-2, 1){$\frac{\pi}{4}$}
-\point[4pt]{(0,0), (-3.1820, 3.1820)}
-\penwd{1.25pt}
-\arrow \polyline{(5.25,0), (0,0), (-3.5355, 3.5355)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{6.8}
+\def\R{2}
+\def\ang{135}
 
-&
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
+\pgfmathsetmacro{\qx}{\R*cos(315)}
+\pgfmathsetmacro{\qy}{\R*sin(315)}
 
-\hspace{.75in}
+% ============================================================
+% Left panel
+% ============================================================
 
-\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5}
-\axes
-\tlabel(5.25,-0.5){\scriptsize $x$}
-\tlabel(0.25,5.25){\scriptsize $y$}
-\tlabel(4.6,-1){\scriptsize $1$}
-\tlabel(0.25,4.6){\scriptsize $1$}
-\xmarks{-4.5, 4.5}
-\ymarks{-4.5 step 4.5 until 4.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),4.5}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{320, 355, 5}{1.5*dir(t)}
-\tlabel[cc](2, -1){$\frac{\pi}{4}$}
-\tlabel[cc](-1.77, -1.77){$\pi$}
-\point[4pt]{(0,0), (3.1820, -3.1820), (-3.1820, 3.1820)}
-\arrow \dashed \polyline{(0,0), (-3.5355, 3.5355)}
-\arrow \reverse \arrow \parafcn{140, 175, 5}{2*dir(t)}
-\arrow \reverse \arrow \parafcn{140, 310, 5}{1.5*dir(t)}
-\tlabel[cc](-2.31, 0.96){$\frac{\pi}{4}$}
-\penwd{1.25pt}
-\arrow \polyline{(5.25,0), (0,0), (3.5355, -3.5355)}
-\end{mfpic}
-\end{tabular}
+% --- Unit circle ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis and terminal radius ---
+\draw[very thick] (0,0) -- (\R,0);
+\draw[very thick] (0,0) -- (\px,\py);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% --- Reference angle ---
+\draw[<->]
+    (180:1.2)
+    arc[
+        start angle=180,
+        end angle=135,
+        radius=1.2
+    ];
+
+\node at (-1.4,0.50) {$\frac{\pi}{4}$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+
+% ============================================================
+% Right panel
+% ============================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% --- Unit circle ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.35,0) -- (\R+0.55,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.55)
+    node[above] {$y$};
+
+% --- Positive x-axis ---
+\draw[very thick] (0,0) -- (\R,0);
+
+% --- Terminal radius in quadrant IV ---
+\draw[very thick] (0,0) -- (\qx,\qy);
+
+% --- Dashed comparison radius in quadrant II ---
+\draw[dashed] (0,0) -- (\px,\py);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+\fill (\qx,\qy) circle (2.5pt);
+
+% --- Reference angle in quadrant II ---
+\draw[<->]
+    (180:1.2)
+    arc[
+        start angle=180,
+        end angle=135,
+        radius=1.2
+    ];
+
+\node at (-1.4,0.50) {$\frac{\pi}{4}$};
+
+% --- Reference angle in quadrant IV ---
+\draw[<->]
+    (0:1.2)
+    arc[
+        start angle=0,
+        end angle=-45,
+        radius=1.2
+    ];
+
+\node at (1.4,-0.50) {$\frac{\pi}{4}$};
+
+% --- Half-turn angle ---
+\draw[<->]
+    (135:0.7)
+    arc[
+        start angle=135,
+        end angle=315,
+        radius=0.7
+    ];
+
+\node at (-0.72,-0.72) {$\pi$};
+
+% --- Unit labels ---
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 \end{enumerate}
 
-\vspace{-.3in} \qed
+
 
 \end{example}
 
@@ -423,69 +640,188 @@ On the other hand, since tangent and cotangent are defined in terms of the \text
 
 \smallskip
  
- The diagram below on the left summarizes which circular functions are positive in which quadrants.
+ The diagram below  summarizes which circular functions are positive in which quadrants.
  
- \smallskip
- 
- \begin{multicols}{2}
- 
-\begin{mfpic}[18]{-4}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $(1,0)$}
-\tlabel(-4.5,-0.75){\scriptsize $(-1,0)$}
-\tlabel(0.25,3.1){ \scriptsize $(0,1)$}
-\tlabel(0.25,-3.4){\scriptsize $(0,-1)$}
-\tlabel[cc](1,0.75){\scriptsize All}
-\tlabel[cc](-1.5,0.75){\scriptsize $\sin(\theta)$, $\csc(\theta)$}
-\tlabel[cc](-1.5,-0.75){\scriptsize $\tan(\theta)$, $\cot(\theta)$}
-\tlabel[cc](1.5,-0.75){\scriptsize $\cos(\theta)$, $\sec(\theta)$}
-\tcaption{Postive Circular Functions}
-\tlabel[cc](-2.83,-2.83){$(-,-)$}
-\tlabel[cc](2.83,2.83){$(+, +)$}
-\tlabel[cc](-2.83,2.83){$(-,+)$}
-\tlabel[cc](2.83,-2.83){$(+,-)$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\point[4pt]{(-2.1213, -2.1213),(2.1213, 2.1213), (2.1213, -2.1213),(-2.1213, 2.1213), (0,3), (3,0), (0,-3), (-3,0) }
-\end{mfpic} 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-4}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $(1,0)$}
-\tlabel(-4.5,-0.75){\scriptsize $(-1,0)$}
-\tlabel(0.25,3.1){ \scriptsize $(0,1)$}
-\tlabel(0.25,-3.4){\scriptsize $(0,-1)$}
-\tcaption{The period of $\tan(\theta)$ and $\cot(\theta)$ is $\pi$}
-\dashed \polyline{(-2.25, -3.9), (2.25, 3.9)}
-\arrow \reverse \arrow \parafcn{65, 235, 5}{2.25*dir(t)}
-\arrow \reverse \arrow \parafcn{245, 415, 5}{2.25*dir(t)}
-\arrow \reverse \arrow \parafcn{5, 55, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \parafcn{185, 235, 5}{1.25*dir(t)}
-\tlabel[cc](-1.8, 1.8){$\pi$}
-\tlabel[cc](1.8, -1.8){$\pi$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\point[4pt]{(-1.5, -2.6),(1.5, 2.6) }
-\end{mfpic} 
+% --- Parameters ---
+\def\R{2}
+\def\tdeg{45} % theta, in degrees
+\pgfmathsetmacro{\pxI}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\pyI}{\R*sin(\tdeg)}
+\pgfmathsetmacro{\pxII}{\R*cos(3*\tdeg)}
+\pgfmathsetmacro{\pyII}{\R*sin(3*\tdeg)}
+\pgfmathsetmacro{\pxIII}{\R*cos(5*\tdeg)}
+\pgfmathsetmacro{\pyIII}{\R*sin(5*\tdeg)}
+\pgfmathsetmacro{\pxIV}{\R*cos(7*\tdeg)}
+\pgfmathsetmacro{\pyIV}{\R*sin(7*\tdeg)}
 
+% --- Full circle, light gray ---
+\draw[] (0,0) circle (\R);
 
-\end{multicols}
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Center and P points ---
+\fill (\pxI,\pyI) circle (2.5pt);
+\node[right] at (\pxI+0.05,\pyI) {$(+,+)$};
+\fill (\pxII,\pyII) circle (2.5pt);
+\node[left] at (\pxII-0.05,\pyII) {$(-,+)$};
+\fill (\pxIII,\pyIII) circle (2.5pt);
+\node[left] at (\pxIII-0.05,\pyIII) {$(-,-)$};
+\fill (\pxIV,\pyIV) circle (2.5pt);
+\node[right] at (\pxIV+0.05,\pyIV) {$(+,-)$};
+
+\fill (2,0) circle (2.5pt);
+\node[above right] at (2,0) {$(1,0)$};
+\fill (0,2) circle (2.5pt);
+\node[above right] at (0,2) {$(0,1)$};
+\fill (-2,0) circle (2.5pt);
+\node[above left] at (-2,0) {$(-1,0)$};
+\fill (0,-2) circle (2.5pt);
+\node[below right] at (0,-2) {$(0,-1)$};
+
+\node[] at (0.8,0.8) {All};
+\node[] at (-0.8,0.8) {$\sin\theta,\,\csc\theta$};
+\node[] at (-0.9,-0.7) {$\tan\theta,\,\cot\theta$};
+\node[] at (0.9,-0.7) {$\cos\theta,\,\sec\theta$};
+\end{tikzpicture}
+
+\end{image}
 
 Also note it is no coincidence that both of our solutions to the equations involving tangent and cotangent in  Example \ref{circularfunctionsex} could be simplified to just one list of angles differing by multiples of $\pi$.  
 
 \smallskip
 
-Indeed, any two angles that are $\pi$ units apart will not only have the same reference angle, but points on their terminal sides on the Unit Circle will be reflections through the origin, as illustrated above on the right.
+Indeed, any two angles that are $\pi$ units apart will not only have the same reference angle, but points on their terminal sides on the Unit Circle will be reflections through the origin, as illustrated below.
 
-\smallskip
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\R{2}
+\def\innerR{1.35}
+\def\ang{60}
+
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
+
+%------------------------------------------------
+% Unit circle
+%------------------------------------------------
+
+\draw[gray!50] (0,0) circle (\R);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-\R-0.8,0) -- (\R+1.2,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-1.0) -- (0,\R+0.8)
+    node[above] {$y$};
+
+%------------------------------------------------
+% Dashed terminal line
+%------------------------------------------------
+
+\draw[dashed]
+    ({-1.45*\R*cos(\ang)},{-1.45*\R*sin(\ang)})
+    --
+    ({1.45*\R*cos(\ang)},{1.45*\R*sin(\ang)});
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (\px,\py) circle (2.5pt);
+\fill (-\px,-\py) circle (2.5pt);
+
+
+
+%------------------------------------------------
+% Small reference angle
+%------------------------------------------------
+
+\draw[<->]
+    (0.55,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.55
+    ];
+
+%------------------------------------------------
+% Upper semicircle
+%------------------------------------------------
+
+\draw[<->]
+    (180+\ang:\innerR)
+    arc[
+        start angle=180+\ang,
+        end angle=360+\ang,
+        radius=\innerR
+    ];
+
+\node at (-1,1.15) {$\pi$};
+
+%------------------------------------------------
+% Lower semicircle
+%------------------------------------------------
+
+\draw[<->]
+    (\ang:\innerR)
+    arc[
+        start angle=\ang,
+        end angle=180+\ang,
+        radius=\innerR
+    ];
+
+\node at (1,-1.15) {$\pi$};
+
+%------------------------------------------------
+% Small angle in quadrant III
+%------------------------------------------------
+
+\draw[<->]
+    (180:0.55)
+    arc[
+        start angle=180,
+        end angle=240,
+        radius=0.55
+    ];
+
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[above right] at (0,\R)
+    {$(0,1)$};
+
+\node[below right] at (0,-\R)
+    {$(0,-1)$};
+
+\node[above left] at (-\R,0)
+    {$(-1,0)$};
+
+\node[above right] at (\R,0)
+    {$(1,0)$};
+
+\end{tikzpicture}
+\end{image}
 
 It follows that the tangent and cotangent of such angles (if defined) will be the same, which means the period of these function is (at most) $\pi$.  
 
@@ -555,6 +891,84 @@ We make good use of Theorem \ref{circularfunctionscircle}  in the following exam
 
 \item    Since $x = 3$ and $y=4$, from $x^2+y^2 = r^2$, $(3)^2+(4)^2 = r^2$ so $r^2 = 25$, or $r = 5$. Theorem \ref{circularfunctionscircle} tells us $\sin(\theta) = \frac{4}{5}$, $\cos(\theta) = \frac{3}{5}$,  $\tan(\theta) = \frac{4}{3}$, $\sec(\theta) = \frac{5}{3}$, $\csc(\theta) = \frac{5}{4}$,  and $\cot(\theta) = \frac{3}{4}$.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\R{5}
+
+%------------------------------------------------
+% Unit circle
+%------------------------------------------------
+
+\draw[gray!50] (0,0) circle (\R);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-\R-1.3,0) -- (\R+2.3,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-1.3) -- (0,\R+1.3)
+    node[above] {$y$};
+
+%------------------------------------------------
+% Tick marks and labels on x-axis
+%------------------------------------------------
+
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.12) -- (\x,0.12);
+    \node[below] at (\x,-0.16) {$\x$};
+}
+
+%------------------------------------------------
+% Tick marks and labels on y-axis
+%------------------------------------------------
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.12,\y) -- (0.12,\y);
+    \node[left] at (-0.16,\y) {$\y$};
+}
+
+%------------------------------------------------
+% Radius
+%------------------------------------------------
+
+\draw[very thick] (0,0) -- (3,4);
+\draw[very thick] (0,0) -- (5,0);
+
+% Extension beyond Q
+\draw[very thick] (3,4) -- (4.4,5.87);
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (0,0) circle (2.5pt);
+\fill (3,4) circle (2.5pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[] at (4,4)
+    {$Q(3,4)$};
+
+\node at (2.5,2)
+    {$r=5$};
+
+\end{tikzpicture}
+\end{image}
+
 \item In order to use Theorem \ref{circularfunctionscircle}, we need to find a point $Q(x,y)$ which lies on the terminal side of $\theta$, when $\theta$ is plotted in standard position.  
 
 
@@ -566,56 +980,94 @@ We have that $\cot(\theta) = -4 =  \frac{x}{y}$.  Since  $\theta$ is a Quadrant 
 
 Applying Theorem \ref{circularfunctionscircle}, we find  $\sin(\theta) =- \frac{1}{\sqrt{17}} = -\frac{\sqrt{17}}{17}$, $\cos(\theta) = \frac{4}{\sqrt{17}} = \frac{4 \sqrt{17}}{17}$,  $\tan(\theta) = -\frac{1}{4}$, $\sec(\theta) = \frac{\sqrt{17}}{4}$, and $\csc(\theta) = - \sqrt{17}$.
 
-\begin{tabular}{cc}
 
-\begin{mfpic}[18]{-5}{5}{-4}{4.75}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.5){\scriptsize $y$}
-\tlabel(2.75,3){\scriptsize $Q(3,4)$}
-\tlabel[cc](2,1.5){\scriptsize $r=5$}
-\tcaption{$Q(3,4)$ lies on a circle of radius $5$ units,}
-\xmarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\ymarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3.354}
-\drawcolor{black}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (3, 4)}
-\point[4pt]{(0,0), (2.012, 2.683)}
-\tlpointsep{4pt}
-\scriptsize 
-\axislabels {x}{ {$-3 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -0.67,  {$1$} 0.67,  {$3$} 2, {$-2 \hspace{7pt}$} -1.34, {$-4 \hspace{7pt}$} -2.68, {$2$} 1.34, {$4$} 2.68}
-\axislabels {y}{ {$-2$} -1.34, {$-4$} -2.68, {$2$} 1.34, {$4$} 2.68,  {$1$} 0.67,  {$3$} 2,  {$-1$} -0.67,  {$-3$} -2 }
-\normalsize
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-&
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[18]{-5}{5}{-4}{4.75}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.5){\scriptsize $y$}
-\tlabel[cc](1.4, -1.25){\scriptsize $r = \sqrt{17}$}
-\tlabel[cc](4, -1.5){\scriptsize $(4, -1)$}
-\tcaption{$\theta$ is Quadrant IV with $\cot(\theta) = -4$.}
-\xmarks{-3.24, -1.62, 1.62, 3.24, 0.81, -0.81, 2.43, -2.43}
-\ymarks{-3.24, -1.62, 1.62, 3.24, 0.81, -0.81, 2.43, -2.43}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3.354}
-\drawcolor{black}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (4.92, -1.23)}
-\point[4pt]{(0,0), (3.24, -0.81)}
-\tlpointsep{4pt}
-\scriptsize 
-\axislabels {x}{ {$4$} 3.24, {$3$} 2.43, {$-4 \hspace{7pt}$} -3.24, {$-2$ \hspace{7pt}} -1.62, {$-1 \hspace{7pt}$} -0.81, {$-3 \hspace{7pt}$} -2.43}
-\axislabels {y}{ {$4$} 3.24, {$2$} 1.62, {$1$} 0.81, {$3$} 2.43, {$-4$} -3.24, {$-2$} -1.62, {$-1$} -0.81, {$-3$} -2.43}
-\normalsize
-\end{mfpic}
+\def\R{4.1231}   % sqrt(17)
+
+%------------------------------------------------
+% Circle
+%------------------------------------------------
+
+\draw[gray!50] (0,0) circle (\R);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-\R-1.0,0) -- (\R+2.4,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-1.0) -- (0,\R+1.0)
+    node[above] {$y$};
+
+%------------------------------------------------
+% x-axis tick marks and labels
+%------------------------------------------------
+
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.10) -- (\x,0.10);
+    \node[below] at (\x,-0.15) {$\x$};
+}
+
+%------------------------------------------------
+% y-axis tick marks and labels
+%------------------------------------------------
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.10,\y) -- (0.10,\y);
+    \node[left] at (-0.15,\y) {$\y$};
+}
+
+%------------------------------------------------
+% Positive x-axis emphasized
+%------------------------------------------------
+
+\draw[very thick] (0,0) -- (\R,0);
+
+%------------------------------------------------
+% Radius
+%------------------------------------------------
+
+\draw[very thick] (0,0) -- (4,-1);
+
+%------------------------------------------------
+% Continuation of the ray
+%------------------------------------------------
+
+\draw[very thick] (4,-1) -- (5.6,-1.4);
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (0,0) circle (2.5pt);
+\fill (4,-1) circle (2.5pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[right] at (4.20,-1.55)
+    {$(4,-1)$};
+
+\node at (2.0,-1.55)
+    {$r=\sqrt{17}$};
+
+\end{tikzpicture}
+\end{image}
 
 
-\end{tabular}
 
 
 \item To find $\sin(\theta)$ using Theorem \ref{circularfunctionscircle}, we need to determine the $y$-coordinate of a point $Q(x,y)$ on the terminal side of $\theta$, when $\theta$ is plotted in standard position,  and the corresponding radius $r$. 
