@@ -45,7 +45,7 @@ When it comes to range, recall that the sine and cosine of angles are coordinate
 Our aim in this section is to become familiar with the graphs of $f(t) = \sin(t)$ and $g(t) = \cos(t)$.  To that end, we begin by making a table and plotting points.  We'll start by graphing $f(t) = \sin(t)$ by making a table of values and plotting the corresponding points.  We'll keep the independent variable `$t$' for now and use the default `$y$' as our dependent variable.\footnote{Keep in mind that we're using `$y$' here to denote the \textit{output} from the sine function.  It is a coincidence that the $y$-values on the graph of $y=\sin(t)$ correspond to the $y$-values on the Unit Circle.}  Note in the graph below, on the right,  the scale of the horizontal and vertical axis is far from 1:1.  (We will present a more accurately scaled graph shortly.)
 
 
-\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
+ \begin{tabular}{m{2.7in}m{3in}}
 \setlength{\extrarowheight}{2pt}
 \[ \begin{array}{|r||r|r|}  
 
@@ -63,60 +63,28 @@ Our aim in this section is to become familiar with the graphs of $f(t) = \sin(t)
 2\pi  & 0 & (2\pi, 0) \\  [2pt] \hline
 \end{array} \] \setlength{\extrarowheight}{0pt} &
 
-\begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
-\point[4pt]{(0,0), (0.7854,0.7071), (1.5708,1), (2.3562,0.7071), (3.1416, 0), (3.9270,-0.7071), (4.7124,-1), (5.4978,-0.7071), (6.2832,0)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,1.5){\scriptsize $y$}
-\tcaption{Graphing $y = \sin(t)$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.1pt}
-\function{0, 6.2832, 0.1}{sin(x)}
-\end{mfpic} \\
-
 \end{tabular}
+
+% https://www.desmos.com/calculator/m6sshcvnod
+\begin{center}
+    \desmos{m6sshcvnod}{800}{600}
+\end{center}
 
 If we plot additional points, we soon find that the graph repeats itself.   This shouldn't come as too much of a surprise considering Theorem \ref{coterminalsamcosinesinethm}.  In fact, in light of that theorem, we expect the function to repeat itself every $2\pi$ units.  Below is a more accurately scaled graph highlighting the portion we had already graphed above.  The graph is often described as having a `wavelike' nature and is sometimes called a \index{wave ! sine}\index{sine wave} \textbf{sine wave} or, more technically, a \index{sinusoid}\textbf{sinusoid}.
 
-\smallskip
+% https://www.desmos.com/calculator/i8zvkblwhp
 
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-1.5}{1.5}
-\axes
-\point[4pt]{(0,0), (6.2832,0)}
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-%\tlabel[cc](0.5,1.5){\scriptsize $y$}
-\tlabel[cc](0.5,1.25){\scriptsize $1$}
-\tlabel[cc](0.5,-1){\scriptsize $-1$}
-\tcaption{A more accurately scaled graph of $f(t) = \sin(t)$.}
-\ymarks{-1,1}
-\arrow \reverse \arrow \function{-12, 12, 0.1}{sin(x)}
-\penwd{1.5pt}
-\function{0, 6.2832, 0.1}{sin(x)}
-\end{mfpic}
-
+\desmos{i8zvkblwhp}{800}{600}
 \end{center}
 
 Note that by copying  the highlighted portion of the graph and pasting it end-to-end, we obtain the entire graph of $f(t) = \sin(t)$.  We give this `repeating' property a name.
-
-\smallskip
-
-%% \colorbox{ResultColor}{\bbm
 
 \begin{definition} \label{periodic} \textbf{Periodic Functions:} A function $f$ is said to be \textbf{periodic}\index{function ! periodic}\index{periodic function}  if there is a real number $c$ so that $f(t+c) = f(t)$ for all real numbers $t$ in the domain of $f$.  The smallest positive number $p$ for which $f(t+p) = f(t)$ for all real numbers $t$ in the domain of $f$, if it exists, is called the \textbf{period} of $f$. \index{period ! of a function}
 
 \end{definition}
 
-%% \ebm}
 
-\medskip
 
 We have already seen a family of periodic functions in Section \ref{ConstantandLinearFunctions}:  the constant functions.  However, despite being periodic a constant function has no period.  (We'll leave that odd gem as an exercise for you.)  
 
@@ -154,49 +122,19 @@ Not surprisingly, the graph of $g(t) = \cos(t)$ exhibits similar behavior as $f(
 \frac{7\pi}{4}  & \frac{\sqrt{2}}{2} & \left(\frac{7\pi}{4}, \frac{\sqrt{2}}{2}\right) \\ [2pt] \hline 
 2\pi  & 1 & (2\pi, 1) \\  [2pt] \hline
 \end{array} \] \setlength{\extrarowheight}{0pt} &
-
-\begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
-\point[4pt]{(0,1), (0.7854,0.7071), (1.5708,0), (2.3562,-0.7071), (3.1416, -1), (3.9270,-0.7071), (4.7124,0), (5.4978,0.7071), (6.2832,1)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,1.5){\scriptsize $y$}
-\tcaption{Graphing $y = \cos(t)$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\function{0, 6.2832, 0.1}{cos(x)}
-\end{mfpic} \\
-
 \end{tabular}
 
-\smallskip
+% https://www.desmos.com/calculator/0xabgsnluo
+\begin{center}
+    \desmos{0xabgsnluo}{800}{600}
+\end{center}
+
 
 Like $f(t)=\sin(t)$, $g(t) = \cos(t)$ is a wavelike curve with period $2\pi$.   Moreover, the graphs of the sine and cosine functions have the same shape -  differing only in what appears to be a horizontal shift.  As we'll prove in Section \ref{MoreTrigonometricIdentities}, $\sin\left(t + \frac{\pi}{2}\right) = \cos(t)$, which means we can obtain the graph of $y=\cos(t)$ by shifting the graph of $y=\sin(t)$ to the left $\frac{\pi}{2}$ units.\footnote{Hence, we can obtain the graph of $y = \sin(t)$ by shifting the graph of $y = \cos(t)$ to the \textit{right} $\frac{\pi}{2}$ units: $\cos\left(t - \frac{\pi}{2} \right) = \sin(t)$.}
 
-
-\smallskip
-
+% https://www.desmos.com/calculator/4xh96xwznz
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-1.5}{1.5}
-\axes
-\point[4pt]{(0,1), (6.2832,1)}
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-%\tlabel[cc](0.5,1.5){\scriptsize $y$}
-\tcaption{The graph of $g(t) = \cos(t)$.}
-\ymarks{-1,1}
-\tlabel[cc](0.5,1.25){\scriptsize $1$}
-\tlabel[cc](0.5,-1){\scriptsize $-1$}
-\arrow \reverse \arrow \function{-12.5664, 12.5664, 0.1}{cos(x)}
-\penwd{1.5pt}
-\function{0, 6.2832, 0.1}{cos(x)}
-\end{mfpic}
-
+\desmos{4xh96xwznz}{800}{600}
 \end{center}
 
 \smallskip
@@ -250,55 +188,137 @@ Lastly, the graphs of  $f(t) = \sin(t)$ and $g(t) = \cos(t)$ suggest each enjoy 
 
 Now that we know the basic shapes of the graphs of $y = \sin(t)$ and $y = \cos(t)$, we can use the results of Section \ref{Transformations} to graph more complicated functions using transformations.  The fact that both of these functions are periodic means we only have to know what happens over the course of one period of the function in order to determine what happens to all points on the graph.  To that end, we graph the \index{fundamental cycle ! of $\sin(t)$ and $\cos(t)$}`\textbf{fundamental cycle}'  - the portion of each graph generated over the interval $[0, 2\pi]$ - for each  sine and cosine:
 
-\begin{multicols}{2}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
-\point[4pt]{(0,0), (1.5708,1), (3.1416, 0), (4.7124,-1), (6.2832,0)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,1.5){\scriptsize $y$}
-\tlabel[cc](-0.5, -0.15){\scriptsize $(0,0)$}
-\tlabel[cc](1.5708, 1.25){\scriptsize $\left(\frac{\pi}{2},1 \right)$}
-\tlabel[cc](3.5, 0.15){\scriptsize $(\pi,0)$}
-\tlabel[cc](4.7124, -1.25){\scriptsize $\left(\frac{3\pi}{2}, -1 \right)$}
-\tlabel[cc](6.2832, 0.15){\scriptsize $(2 \pi,0)$}
-\tcaption{The `fundamental cycle' of  $y = \sin(t)$.}
-\xmarks{1.5708, 3.1416, 4.7124, 6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124,  {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.1pt}
-\function{0, 6.2832, 0.1}{sin(x)}
-\end{mfpic} 
+% --- Parameters ---
+\def\panelwidth{9}
+\def\xmax{6.6}
+\def\ymax{1.5}
+
+% ============================================================
+% Left panel: y = sin(t)
+% ============================================================
+
+% --- Axes ---
+\draw[->] (-0.9,0) -- (\xmax,0)
+    node[right] {$t$};
+
+\draw[->] (0,-\ymax) -- (0,\ymax)
+    node[above] {$y$};
+
+% --- Sine curve ---
+\draw[very thick,domain=0:6.283,samples=200,smooth]
+    plot (\x,{sin(\x r)});
+
+% --- Key points ---
+\fill (0,0) circle (2.5pt);
+\fill ({pi/2},1) circle (2.5pt);
+\fill ({pi},0) circle (2.5pt);
+\fill ({3*pi/2},-1) circle (2.5pt);
+\fill ({2*pi},0) circle (2.5pt);
+
+% --- x-axis ticks ---
+\foreach \x in {pi/2,pi,3*pi/2,2*pi}
+{
+    \draw (\x,-0.06) -- (\x,0.06);
+}
+
+% --- y-axis ticks ---
+\draw (-0.06,1) -- (0.06,1);
+\draw (-0.06,-1) -- (0.06,-1);
+
+% --- Tick labels ---
+\node[below] at ({pi/2},-0.08) {$\pi/2$};
+\node[below] at ({pi},-0.08) {$\pi$};
+\node[below] at ({3*pi/2},-0.08) {$3\pi/2$};
+\node[below] at ({2*pi},-0.08) {$2\pi$};
+
+\node[left] at (-0.08,1) {$1$};
+\node[left] at (-0.08,-1) {$-1$};
+
+% --- Point labels ---
+\node[below left] at (0,0) {$(0,0)$};
+
+\node[above] at ({pi/2},1)
+    {$\left(\frac{\pi}{2},1\right)$};
+
+\node[above right] at ({pi},0)
+    {$\left(\pi,0\right)$};
+
+\node[below] at ({3*pi/2},-1)
+    {$\left(\frac{3\pi}{2},-1\right)$};
+
+\node[above] at ({2*pi},0)
+    {$\left(2\pi,0\right)$};
 
 
+% ============================================================
+% Right panel: y = cos(t)
+% ============================================================
 
-\begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
-\point[4pt]{(0,1), (1.5708,0), (3.1416, -1), (4.7124,0), (6.2832,1)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,1.5){\scriptsize $y$}
-\tlabel[cc](-0.5, 1){\scriptsize $(0,1)$}
-\tlabel[cc](2, 0.15){\scriptsize $\left(\frac{\pi}{2},0 \right)$}
-\tlabel[cc](3.1416, -1.25){\scriptsize $(\pi,-1)$}
-\tlabel[cc](5.5, 0.15){\scriptsize $\left(\frac{3\pi}{2}, 0 \right)$}
-\tlabel[cc](6.2832, 1.25){\scriptsize $(2 \pi,1)$}
-\tcaption{The `fundamental cycle' of  $y = \cos(t)$.}
-\xmarks{1.5708, 3.1416, 4.7124, 6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$\frac{\pi}{2}$} 1.5708, {$\pi$} 3.1416, {$\frac{3\pi}{2}$} 4.7124,  {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1}
-\penwd{1.1pt}
-\function{0, 6.2832, 0.1}{cos(x)}
-\end{mfpic}
+\begin{scope}[xshift=\panelwidth cm]
 
-\end{multicols}
+% --- Axes ---
+\draw[->] (-0.9,0) -- (\xmax,0)
+    node[right] {$t$};
+
+\draw[->] (0,-\ymax) -- (0,\ymax)
+    node[above] {$y$};
+
+% --- Cosine curve ---
+\draw[very thick,domain=0:6.283,samples=200,smooth]
+    plot (\x,{cos(\x r)});
+
+% --- Key points ---
+\fill (0,1) circle (2.5pt);
+\fill ({pi/2},0) circle (2.5pt);
+\fill ({pi},-1) circle (2.5pt);
+\fill ({3*pi/2},0) circle (2.5pt);
+\fill ({2*pi},1) circle (2.5pt);
+
+% --- x-axis ticks ---
+\foreach \x in {pi/2,pi,3*pi/2,2*pi}
+{
+    \draw (\x,-0.06) -- (\x,0.06);
+}
+
+% --- y-axis ticks ---
+\draw (-0.06,1) -- (0.06,1);
+\draw (-0.06,-1) -- (0.06,-1);
+
+% --- Tick labels ---
+\node[below] at ({pi/2},-0.08) {$\pi/2$};
+\node[below] at ({pi},-0.08) {$\pi$};
+\node[below] at ({3*pi/2},-0.08) {$3\pi/2$};
+\node[below] at ({2*pi},-0.08) {$2\pi$};
+
+\node[left] at (-0.08,1) {$1$};
+\node[left] at (-0.08,-1) {$-1$};
+
+% --- Point labels ---
+\node[left] at (0,1)
+    {$(0,1)$};
+
+\node[above right] at ({pi/2},0)
+    {$\left(\frac{\pi}{2},0\right)$};
+
+\node[below] at ({pi},-1)
+    {$\left(\pi,-1\right)$};
+
+\node[above left] at ({3*pi/2},0)
+    {$\left(\frac{3\pi}{2},0\right)$};
+
+\node[above] at ({2*pi},1)
+    {$\left(2\pi,1\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 
 In working through Section \ref{Transformations} , it was very helpful to track `key points' through  the transformations.  The `key points' we've indicated on the graphs above correspond to the quadrantal angles and generate the zeros and the extrema of functions. Since the quadrantal angles divide the interval $[0,2\pi]$ into four equal pieces, we shall refer to these angles henceforth  as the  `quarter marks.'    
@@ -328,54 +348,11 @@ It is worth noting that because the transformations discussed in Section \ref{Tr
 
 \item One way to proceed is to use Theorem \ref{transformationsthm} and follow the procedure outlined there.   Starting with the fundamental cycle of $y= \sin(t)$, we divide each $t$-coordinate by $2$ and multiply each $y$-coordinate by 3 to obtain one cycle of $y = 3 \sin(2t)$.  
 
-\begin{multicols}{2}
+% https://www.desmos.com/calculator/0y2nwkw9yo
 
-\begin{mfpic}[20]{-1}{7}{-3.5}{3.5}
-\point[4pt]{(0,0), (1.5708,1), (3.1416, 0), (4.7124,-1), (6.2832,0)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,3.5){\scriptsize $y$}
-\tlabel[cc](-0.5, -0.4){\scriptsize $(0,0)$}
-\tlabel[cc](1.5708, 1.5){\scriptsize $\left(\frac{\pi}{2},1 \right)$}
-\tlabel[cc](3.5, 0.4){\scriptsize $(\pi,0)$}
-\tlabel[cc](4.7124, -1.5){\scriptsize $\left(\frac{3\pi}{2}, -1 \right)$}
-\tlabel[cc](6.2832, 0.4){\scriptsize $(2 \pi,0)$}
-\tcaption{The `fundamental cycle' of  $y = \sin(t)$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-2$} -2, , {\scriptsize $-3$} -3}
-\penwd{1.1pt}
-\function{0, 6.2832, 0.1}{sin(x)}
-\end{mfpic} 
-
-
-\begin{mfpic}[20]{-1}{7}{-3.5}{3.5}
-\point[4pt]{(0,0), (0.7854,3), (1.5708, 0), (2.3562,-3), (3.1416,0)}
-\axes
-\tlabel[cc](7,-0.15){\scriptsize $t$}
-\tlabel[cc](0.25,3.5){\scriptsize $y$}
-\tlabel[cc](-0.5, 0.4){\scriptsize $(0,0)$}
-\tlabel[cc](1.5, 3){\scriptsize $\left(\frac{\pi}{4},3 \right)$}
-\tlabel[cc](0.9, -0.4){\scriptsize $\left( \frac{\pi}{2}, 0 \right)$}
-\tlabel[cc](2.3562, -3.5){\scriptsize $\left(\frac{3\pi}{4}, -3 \right)$}
-\tlabel[cc](3.1416, 0.4){\scriptsize $(\pi,0)$}
-\tcaption{One cycle of $y = 3 \sin(2t)$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1, -2, 2, -3, 3}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{ {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\normalsize
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2, {\scriptsize $3$} 3, {\scriptsize $-2$} -2, , {\scriptsize $-3$} -3}
-\penwd{1.1pt}
-\function{0, 3.1416, 0.1}{3*sin(2*x)}
-\end{mfpic} 
-
-\end{multicols}
+\begin{center}
+    \desmos{0y2nwkw9yo}{800}{600}
+\end{center}
 
 Since one cycle of $y=f(t)$ is completed over the interval $[0, \pi]$, the period of $f$ is $\pi$.
 
