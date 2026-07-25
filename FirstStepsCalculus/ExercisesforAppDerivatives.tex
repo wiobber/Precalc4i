@@ -2,7 +2,7 @@
 
 \begin{document}
 	\author{Stitz-Zeager}
-	\xmtitle{Exercises for App Derivatives}{}
+	\xmtitle{Exercises for The Shape of Graphs}{}
 
 \mfpicnumber{1} \opengraphsfile{ExercisesforAppDerivatives} % mfpic settings added 
 
@@ -23,14 +23,41 @@ In Exercises \ref{incdecderivativeexercisefirst} - \ref{incdecderivativeexercise
 Check your answers using a graphing utility.
 
 \begin{problem} \label{incdecderivativeexercisefirst} $f(x) = 2x^{3}-3x^{2}-12x + 1$, $f'(x) = 6x^2-6x-12$ % $f''(x) = 12x - 6$
+
+\begin{solution}
+increasing:  $(-\infty, -1)$, $(2, \infty)$
+
+decreasing:  $(-1,2)$
+
+local max:  $(-1,8)$
+
+local min:  $(2, -19)$
+\end{solution}
 \end{problem}
 
 \begin{problem} 
 $f(x) = \frac{10x}{x^2+1}$, $f'(x) = \frac{10-10x^2}{\left(x^2+1\right)^2}$ % $f''(x) = \frac{20x^3-60x}{\left(x^2+1\right)^3}$
+
+increasing:  $(\answer{-1},\answer{1})$
+
+decreasing:  $(-\infty, \answer{-1})$, $(\answer{1}, \infty)$
+
+local max:  $(\answer{1},\answer{5})$
+
+local min:  $(\answer{-1}, \answer{-5})$
+
 \end{problem}
 
 \begin{problem} \label{incdecderivativeexerciselast} 
 $f(x) = x \sqrt[3]{x-2}$, $f'(x)=\frac{4x-6}{3(x-2)^{\frac{2}{3}}}$ % $f''(x)=\frac{4(x-3)}{9(x-2)^{\frac{5}{3}}}$
+
+\begin{solution}
+increasing:  $\left( \frac{3}{2}, \infty\right)$
+
+decreasing:  $\left( -\infty, \frac{3}{2}\right)$
+
+local (absolute) min:  $\left(\frac{3}{2}, -\frac{3}{2 \sqrt[3]{2}}\right)$
+\end{solution}
 \end{problem}
 
 \end{question}
@@ -50,14 +77,34 @@ Check your answers using a graphing utility.
 
 \begin{problem} \label{concavederivativeexercisefirst} 
 $f(x) = 2x^{3}-3x^{2}-12x + 1$,  $f''(x) = 12x - 6$
+
+concave up: $\left(\answer{\frac{1}{2}}, \answer{\infty}\right)$
+
+concave down: $\left( \answer{-\infty}, \answer{\frac{1}{2}} \right)$
+
+inflection point:  $\left(\answer{\frac{1}{2}}, \answer{\frac{11}{2}}\right)$
 \end{problem}
 
 \begin{problem}
 $f(x) = \frac{10x}{x^2+1}$,  $f''(x) = \frac{20x^3-60x}{\left(x^2+1\right)^3}$
+
+\begin{solution}
+concave up:  $\left( -\sqrt{3}, 0 \right)$, $\left( \sqrt{3}, \infty \right)$
+
+concave down:    $\left(- \infty,  -\sqrt{3} \right)$, $\left(0,  \sqrt{3} \right)$
+
+inflection points:  $\left( -\sqrt{3}, -\frac{5 \sqrt{3}}{2} \right)$, $(0,0)$, $\left( \sqrt{3}, \frac{5 \sqrt{3}}{2} \right)$
+\end{solution}
 \end{problem}
 
 \begin{problem}\label{concavederivativeexerciselast} 
 $f(x) = x \sqrt[3]{x-2}$, $f''(x)=\frac{4(x-3)}{9(x-2)^{\frac{5}{3}}}$ 
+
+concave up:  $(-\infty, \answer{2})$, $(\answer{3}, \infty)$
+
+concave down:  $(\answer{2},\answer{3})$
+
+inflection points: $(\answer{2},\answer{0})$, $(\answer{3}, \answer{3})$. 
 \end{problem}
 
 \end{question}
@@ -67,39 +114,67 @@ If $a \neq 0$, we showed in Exercise \ref{quadraticderivativeformulaexercise} in
 
 \begin{enumerate}  \item  If $a \neq 0$, show the $x$-coordinate of the $x$-intercept of the graph of $y = ax + b$ is $x = -\frac{b}{a} = -\frac{b}{1 \, a}$.
 
+\begin{solution}
+To find the $x$-intercept, we set $ax+b = 0$  and get $x = -\frac{b}{a}$ provided $a \neq 0$.
+\end{solution}
+
 \item  If $a \neq 0$, for $f(x) = ax^3 + bx^2 + cx + d$ it turns out that $f''(x) = 6ax + 2b$.  Show $x = -\frac{b}{3a}$ is the $x$-coordinate of the inflection point of the graph of $y = f(x)$.
 
+\begin{solution}
+Solving  $f''(x) = 6ax + 2b = 0$, we get $x = -\frac{2b}{6a} = - \frac{b}{3a}$, provided $a \neq 0$.  
+
+The graph of $f''(x) =  6ax + 2b$ is a line so we know on one side of $x= - \frac{b}{3a}$, $f''(x) > 0$ and on the other side, $f''(x) < 0$.  
+
+Hence, the graph of the original function $y = f(x)$ changes concavity at $x = -\frac{b}{3a}$.
+
+\end{solution}
 \end{enumerate}
 \end{problem}
 
 \begin{problem} \label{MinimizeAverageCostProofExercise} 
 In Exercise \ref{AverageCostMarginalCostExercise} in Section \ref{FunctionArithmetic}, we observed that average cost appeared to be minimized when average cost was approximately equal to marginal cost.  In this Exercise, we use Calculus and the tools from this section to show this. 
 
-
-
  Recall if $C(x)$ is the cost to produce $x$ items, the \index{average cost}\index{cost ! average}\textbf{average cost} is defined as $\overline{C}(x) = \frac{C(x)}{x}$, $x > 0$,  is the cost per item. 
 \begin{enumerate}
 
 \item\label{avgcostcostderivequal}  It turns out that $\overline{C}'(x) = \frac{x \, C'(x) - C(x)}{x^2}$.  Show  $\overline{C}'(x) = 0$ when $C'(x) = \overline{C}(x)$.
 
+\begin{solution}
+To solve $\overline{C}'(x) = \frac{x \, C'(x) - C(x)}{x^2} = 0$, we set the numerator,  $x \, C'(x) - C(x) = 0$. We get  $x \, C'(x)  = C(x)$ so $C'(x) = \frac{C(x)}{x} = \overline{C}(x)$.
+\end{solution}
+
 
 
 \item  It turns out that $\overline{C}''(x) = \frac{x^2 \, C''(x) - 2x\, C'(x) + 2C(x)}{x^3}$. 
 
-
-
 Show we can rewrite this as: $\overline{C}''(x) = \frac{x \, C''(x) - 2\, C'(x) + 2 \overline{C}(x)}{x^2}$.
+
+\begin{solution}
+
+Divide both numerator and denominator of  $\overline{C}''(x) = \frac{x^2 \, C''(x) - 2x\, C'(x) + 2C(x)}{x^3}$ by $x$: 
+
+$\overline{C}''(x) = \frac{x \, C''(x) - 2 \, C'(x) + 2\frac{C(x)}{x}}{x^2}$ and substitute  $\frac{C(x)}{x} = \overline{C}(x)$.
+
+\end{solution}
 
 
 \item\label{reduceavgcostseconderiv}  Show that when $C'(x) = \overline{C}(x)$, then $\overline{C}''(x)  = \frac{C''(x)}{x}$.
 
+\begin{solution}
+If  $C'(x) = \overline{C}(x)$, then:
+
+ \[\overline{C}''(x)  = \frac{x\, C''(x) - 2\, C'(x) + 2\overline{C}(x)}{x^2} =  \frac{x\, C''(x) - 2\overline{C} (x) + 2\overline{C}(x)}{x^2}= \frac{x\, C''(x)}{x^2} =  \frac{C''(x)}{x}.\]
+
+\end{solution}
 
 
-\item  It is usually assumed in most economic settings that for cost functions,\footnote{Can you think of reasons why?} $C''(x) > 0$.   Use this and your results from parts \ref{avgcostcostderivequal} and \ref{reduceavgcostseconderiv} to prove that a minimum is produced  when $C'(x) = \overline{C}(x)$.  
-
-
+\item  It is usually assumed in most economic settings that for cost functions, $C''(x) > 0$. (Can you think of reasons why?)  Use this and your results from parts \ref{avgcostcostderivequal} and \ref{reduceavgcostseconderiv} to prove that a minimum is produced  when $C'(x) = \overline{C}(x)$.  
 
 \textbf{NOTE:} In Exercise \ref{MarginalCostDerivativeExercise} in Section \ref{IntroductiontoDerivatives}, we saw how $C'(x)$ can be used to approximate the marginal cost, $MC(x)$, so we have established that in order to minimize average cost, we should look where the average cost matches the marginal cost.
+
+\begin{solution}
+When $C'(x) = \overline{C}(x)$, we have that $\overline{C}'(x) = 0$ and $\overline{C}''(x) > 0$. By the Second Derivative Test for Local Extrema,  Theorem \ref{secondderivatvetest}, the average cost $\overline{C}(x)$ has a minimum when $C'(x) = \overline{C}(x)$ 
+\end{solution}
 
 
 \end{enumerate}
@@ -110,43 +185,96 @@ Show we can rewrite this as: $\overline{C}''(x) = \frac{x \, C''(x) - 2\, C'(x) 
 
 \textbf{NOTE:} Assume $(2.029, 1.82)$ is a local maximum and that $(1.077, 0.948)$ is an inflection point.
 
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5in, height=5in,
+    xmin=-0.5, xmax=3.5, ymin=-0.5, ymax=3.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 1, 2, 3},
+    ytick={0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
-\centerline{\includegraphics[width = 5in]{./AppDerivativesGraphics/T04Graph.png}}
+\draw[-, thick, blue, smooth, samples=100, domain=0:180] 
+        plot ({\x*pi/180}, {\x*pi*sin(\x)/180});
 
+\fill[blue] (0,0) circle (2pt);
+\fill[blue] (1.077,0.948) circle (2pt);
+\fill[blue] (2.029,1.82) circle (2pt);
+\fill[blue] (3.14159,0) circle (2pt);
 
+\node at (0.2, -0.2) {\small $(0,0)$};
+\node at (0.65, 1) {\small $(1.077,0.948)$};
+\node at (2, 2) {\small $(2.029,1.82)$};
+\node at (3.14159,-0.2) {\small $(\pi,0)$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \begin{enumerate}
 
 \item  Determine the $x$-values where:
 
 
+\begin{enumerate}
 
- $f(x) = 0$:
- 
-  $f'(x) = 0$:
+\item $f(x) = 0$.
 
+$x =\answer{0}, \answer{\pi}$
+
+\item $f'(x) = 0$.
+
+\begin{solution}
+$x = 2.029$.
+
+\textbf{NOTE:}  $f_{+}'(0) = 0$,  too.\footnote{See problem \ref{derivativefromrightexercise} in Section \ref{ExercisesforIntroductiontoDerivatives}.}
+\end{solution}
+\end{enumerate}
 
 \item List the open intervals over which:
 
+\begin{enumerate}
 
+\item $f(x) > 0$.
 
- $f(x) > 0$:
+$(\answer{0}, \answer{\pi})$
+
+\item $f(x) < 0$.
+
+\begin{solution}
+None.
+\end{solution}
+
+\item $f'(x) > 0$.
+
+\begin{solution}
+$(0, 2.029)$
+\end{solution}
  
-  $f(x) < 0$:
+\item $f'(x) < 0$.
 
+$(\answer{2.029}, \answer{\pi})$
 
+\item $f''(x) > 0$.
 
- $f'(x) > 0$:
+\begin{solution}
+ $(0, 1.077)$
+ \end{solution}
  
-  $f'(x) < 0$:
-
-
-
- $f''(x) > 0$:
- 
-  $f''(x) < 0$:
-
-
+ \item $f''(x) < 0$.
+$(\answer{1.077}, \answer{\pi})$
+\end{enumerate}
 
 \end{enumerate}
 \end{problem}
@@ -158,25 +286,111 @@ Below is the graph of $y = f'(x)$ for a \textbf{continuous} function $f$.
 Using Example \ref{graphfromderivativegraphex} as a guide,  sketch a probable graph of $y = f(x)$.  
 
 \begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=5in, height=5in,
+    xmin=-0.5, xmax=7.5, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 1, 2, 3, 4, 5, 6, 7},
+    ytick={-4, -3, -2, -1, 0, 1, 2,3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
-\centerline{\includegraphics[width = 5in]{./AppDerivativesGraphics/graphfromderivativeexercise.png}}
+%\draw[<->, thick, blue, smooth, samples=100, domain=0:7] 
+        %plot ({\x}, {\x*(4-\x)^(1/3));
+       
+\draw[<->, thick, blue, smooth, samples=100, domain=-0.5:3.85] 
+        plot ({\x}, {  (12-4*\x)/(3*(4-\x)^(2/3))});
+
+\draw[<->, thick, blue, smooth, samples=100, domain=4.28:7] 
+        plot ({\x}, { (12-4*\x)/(3*(abs(4-\x))^(2/3))});
+
+
+\fill[blue] (3,0) circle (2pt);
+\fill[blue] (6,-2.51984) circle (2pt);
+
+\node at (3.2, 0.2) {\small $(3,0)$};
+\node at (6, -2) {\small $(6,-2.51984)$ - local maximum};
+
+\draw[dashed] (4, -4) -- (4,4);
+\node at (3.5,2) {\small $x=4$};
+
+\end{axis}
+\end{tikzpicture}
 \end{center}
 
 \end{problem}
+
+\begin{solution}
+
+Answers vary.  Key features:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=4in, height=4in,
+    xmin=-0.5, xmax=7.5, ymin=-10, ymax=4,
+    %axis lines=middle,
+    %axis line style={-{Latex[length=8pt,width=6pt]}},
+    hide x axis,
+    hide y axis,
+    ticks=none,
+    xticklabels=\empty,
+    yticklabels=\empty,
+    %tick style={line width=1pt},
+    %major tick length=5pt,
+    %xlabel={$x$}, ylabel={$y$},
+    %xlabel style={anchor=west},
+    %ylabel style={anchor=south},
+    %xtick={0, 1, 2, 3, 4, 5, 6, 7},
+    %ytick={-4, -3, -2, -1, 0, 1, 2,3},
+    %tick label style={font=\tiny},
+    %label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[<-, thick, blue, smooth, samples=400, domain=-0.5:4] 
+        plot ({\x}, {\x*(4-\x)^(1/3)});
+
+\draw[thick, blue] (4,0) -- (4,0.39);
+
+\draw[->, thick, blue, smooth, samples=400, domain=4:6.5] 
+        plot ({\x}, {-\x*(abs(4-\x))^(1/3)});
+
+\fill[blue] (3,3) circle (2pt);
+\fill[blue] (4,0) circle (2pt);
+\fill[blue] (6,-7.56) circle (2pt);
+
+\node at (3,3.75) {\small $(3,f(3))$ - local maximum};
+\node at (2.25,0) {\small $x=4$ - vertical tangent};
+\node at (4.25, -7.56) {\small $(6,f(6))$ - inflection point};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\end{solution}
 
 \begin{problem}
 The graph below was taken from https://ohiohospitals.org/covid19data on January 28th, 2021:
 
 
-
-\centerline{\includegraphics[width = 5in]{./AppDerivativesGraphics/COVIDPatients.png}}
-
-
-
+\begin{image}
+\includegraphics[width = 6in]{./AppDerivativesGraphics/COVIDPatients.png}
+\end{image}
 
 With help from your classmate, highlight and label one segment on the graph which (roughly) represents the following scenarios.
-
-
 
 For brevity, we'll use `patients' to mean `inpatient COVID positive patients' and `the rate of change' to mean `the rate of change of inpatient COVID positive patients with respect to time.'
 
@@ -205,7 +419,9 @@ For brevity, we'll use `patients' to mean `inpatient COVID positive patients' an
 \item  Discuss with your classmates what the phrase  `flatten the curve' could mean in terms of first and second derivatives.  (See below for an illustration.)
 
 
-\centerline{\includegraphics[width = 4.5in]{./AppDerivativesGraphics/flattenthecurve.jpeg}}
+\begin{image}
+\includegraphics[width = 6in]{./AppDerivativesGraphics/flattenthecurve.jpeg}
+\end{image}
 
 
 \end{enumerate}
