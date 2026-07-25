@@ -469,11 +469,11 @@ The following theorem shows how these four fundamental quantities relate to the 
 
 \begin{itemize}
 
-\item  have period\index{sinusoid ! period}\index{period ! of a sinusoid}  $T = \dfrac{2\pi}{\omega}$
+\item  have period\index{sinusoid ! period}\index{period ! of a sinusoid}  $T = \frac{2\pi}{\omega}$
 
 \item  have amplitude \index{sinusoid ! amplitude}\index{amplitude}$|A|$
 
-\item  have phase shift\index{sinusoid ! phase shift}\index{phase shift} $-\dfrac{\phi}{\omega}$
+\item  have phase shift\index{sinusoid ! phase shift}\index{phase shift} $-\frac{\phi}{\omega}$
 
 \item  have vertical shift or `baseline'\index{sinusoid ! vertical shift}\index{sinusoid ! baseline}  $B$
 
@@ -651,22 +651,22 @@ Again, we can quickly check the vertical shift by averaging the maximum and mini
 
 % --- Parameters ---
 % x-axis: 1 unit = pi/4 (so pi/2 -> x=1, pi -> x=2, 3pi/2 -> x=3, etc.)
-\def\piunit{2}
+\def\piunit{4}
 % Curve: y = 1.5 - 0.5*sin(2(t - pi/2)), sampled over t in [pi/2, 3pi/2]
 % In terms of u = t/pi (so x = u*\piunit): y = 1.5 - 0.5*sin(360*(u-0.5))
 
 % --- Axes ---
-\draw[->] (0,0) -- (3.6,0) node[right] {$t$};
+\draw[->] (0,0) -- (7,0) node[right] {$t$};
 \draw[->] (0,-0.3) -- (0,2.6) node[above] {$y$};
 
 % --- Tick marks and labels on t-axis, in units of pi/4 ---
-\node[below] at (0.5,-0.12) {$\dfrac{\pi}{4}$};
-\node[below] at (1.0,-0.12) {$\dfrac{\pi}{2}$};
-\node[below] at (1.5,-0.12) {$\dfrac{3\pi}{4}$};
-\node[below] at (2.0,-0.12) {$\pi$};
-\node[below] at (2.5,-0.12) {$\dfrac{5\pi}{4}$};
-\node[below] at (3.0,-0.12) {$\dfrac{3\pi}{2}$};
-\foreach \x in {0.5,1.0,1.5,2.0,2.5,3.0}
+\node[below] at (1,-0.12) {$\frac{\pi}{4}$};
+\node[below] at (2,-0.12) {$\frac{\pi}{2}$};
+\node[below] at (3,-0.12) {$\frac{3\pi}{4}$};
+\node[below] at (4,-0.12) {$\pi$};
+\node[below] at (5,-0.12) {$\frac{5\pi}{4}$};
+\node[below] at (6,-0.12) {$\frac{3\pi}{2}$};
+\foreach \x in {1,2,3,4,5,6}
     \draw (\x,-0.06) -- (\x,0.06);
 
 % --- Tick marks and labels on y-axis ---
@@ -676,15 +676,15 @@ Again, we can quickly check the vertical shift by averaging the maximum and mini
 }
 
 % --- Curve over t in [pi/2, 3pi/2], i.e. u in [0.5, 1.5] ---
-\draw[very thick,blue, domain=0.5:1.5, samples=80, smooth, variable=\u]
+\draw[very thick,penColor1, domain=0.5:1.5, samples=80, smooth, variable=\u]
     plot ({\u*\piunit}, {1.5 - 0.5*sin(360*(\u-0.5))});
 
 % --- Data points ---
-\fill (1.0,1.5) circle (1.5pt);
-\fill (1.5,1.0) circle (1.5pt);
-\fill (2.0,1.5) circle (1.5pt);
-\fill (2.5,2.0) circle (1.5pt);
-\fill (3.0,1.5) circle (1.5pt);
+\fill (2,1.5) circle (1.5pt);
+\fill (3,1.0) circle (1.5pt);
+\fill (4,1.5) circle (1.5pt);
+\fill (5,2.0) circle (1.5pt);
+\fill (6,1.5) circle (1.5pt);
 
 \end{tikzpicture}
 
@@ -705,9 +705,6 @@ Note that in this section, we have discussed \textit{two} ways to graph sinusoid
 
 For example, if  we graphed the function  $g(t) = \frac{1}{2} \sin(\pi - 2t) + \frac{3}{2}$ from Example \ref{cosinesinegraphex2} using Theorem \ref{transformationsthm}, we  obtain the following:
 
- \begin{tabular}{m{2in}m{1.5in}m{1.5in}}
-\setlength{\extrarowheight}{2pt}
-\setlength{\extrarowheight}{2pt}
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -723,43 +720,64 @@ For example, if  we graphed the function  $g(t) = \frac{1}{2} \sin(\pi - 2t) + \
 
 -\frac{\pi}{2} & \frac{3}{2} & \left(-\frac{\pi}{2}, \frac{3}{2} \right) \\  [2pt] \hline
 \end{array} \]
-\setlength{\extrarowheight}{0pt} &
 
-\begin{mfpic}[25]{-2}{2}{0}{3}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\point[3pt]{(1.5708,1.5), (0.7854,2), (0,1.5), (-0.7854,1), (-1.5708,1.5)}
-\axes
-\tlabel[cc](2,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\tcaption{\scriptsize One cycle via Theorem \ref{transformationsthm}.}
-\xmarks{-1.5708,-0.7854,0.7854,1.5708}
-\ymarks{1,2}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-\dfrac{\pi}{2} \hspace{7pt}$} -1.5708, {\tiny $-\dfrac{\pi}{4}\hspace{7pt}$} -0.7854, {\tiny $\dfrac{\pi}{4}$} 0.7854,  {\tiny $\dfrac{\pi}{2}$} 1.5708}
-\axislabels {y}{ {\tiny $1$} 1, {\tiny $2$} 2}
-\penwd{1.25pt}
-\function{-1.5708, 1.5708, 0.1}{0.5*sin(3.14159-2*x)+1.5}
-\end{mfpic} &
+% --- Parameters ---
+% x-axis: 1 unit = pi/4 (so pi/2 -> x=1, pi -> x=2, 3pi/2 -> x=3, etc.)
+\def\piunit{4}
+% Curve: y = 1.5 - 0.5*sin(2(t - pi/2)), sampled over t in [pi/2, 3pi/2]
+% In terms of u = t/pi (so x = u*\piunit): y = 1.5 - 0.5*sin(360*(u-0.5))
 
-\begin{mfpic}[25]{-1}{5.5}{0}{3}
+% --- Axes ---
+\draw[->] (-3,0) -- (7,0) node[right] {$t$};
+\draw[->] (0,-0.3) -- (0,2.6) node[above] {$y$};
 
-\point[4pt]{(1.5708,1.5), (2.356, 1), (3.1416, 1.5),  (3.927, 2), (4.712, 1.5)}
-\axes
-\tlabel[cc](5.5,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\tcaption{\scriptsize One cycle  via Theorem \ref{sinusoidform}.}
-\xmarks{0.7854,1.5708, 2.356, 3.1416, 4.712}
-\ymarks{1,2}
-\tlpointsep{4pt}
-\axislabels {x}{ {\tiny $\dfrac{\pi}{4}$} 0.7854,  {\tiny $\dfrac{\pi}{2}$} 1.5708,  {\tiny $\dfrac{3\pi}{4}$} 2.356,  {\tiny $\pi$} 3.1416,  {\tiny $\dfrac{5\pi}{4}$} 3.927,   {\tiny $\dfrac{3\pi}{2}$} 4.712}
-\axislabels {y}{ {\tiny $1$} 1, {\tiny $2$} 2}
-\penwd{1.25pt}
-\function{1.5708, 4.712, 0.1}{0.5*sin(3.14159-2*x)+1.5}
-\end{mfpic}  \\
+% --- Tick marks and labels on t-axis, in units of pi/4 ---
+\node[below] at (1,-0.12) {$\frac{\pi}{4}$};
+\node[below] at (2,-0.12) {$\frac{\pi}{2}$};
+\node[below] at (3,-0.12) {$\frac{3\pi}{4}$};
+\node[below] at (4,-0.12) {$\pi$};
+\node[below] at (5,-0.12) {$\frac{5\pi}{4}$};
+\node[below] at (6,-0.12) {$\frac{3\pi}{2}$};
+\node[below] at (-1,-0.12) {$-\frac{\pi}{4}$};
+\node[below] at (-2,-0.12) {$-\frac{\pi}{2}$};
+\foreach \x in {-2,-1,1,2,3,4,5,6}
+    \draw (\x,-0.06) -- (\x,0.06);
 
-\end{tabular}
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {1,2}{
+    \draw (-0.06,\y) -- (0.06,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
 
-\smallskip
+% --- Curve over t in [pi/2, 3pi/2], i.e. u in [0.5, 1.5] ---
+\draw[very thick,penColor1, domain=0.5:1.5, samples=80, smooth, variable=\u]
+    plot ({\u*\piunit}, {1.5 - 0.5*sin(360*(\u-0.5))});
+    \draw[very thick,penColor2, domain=-0.5:0.5, samples=80, smooth, variable=\u]
+    plot ({\u*\piunit}, {1.5 - 0.5*sin(360*(\u-0.5))});
+
+% --- Data points ---
+\fill (2,1.5) circle (1.5pt);
+\fill (3,1.0) circle (1.5pt);
+\fill (4,1.5) circle (1.5pt);
+\fill (5,2.0) circle (1.5pt);
+\fill (6,1.5) circle (1.5pt);
+
+\fill (-2,1.5) circle (1.5pt);
+\fill (-1,1.0) circle (1.5pt);
+\fill (0,1.5) circle (1.5pt);
+\fill (1,2.0) circle (1.5pt);
+
+
+\end{tikzpicture}
+
+\end{image}
+
 
 Comparing this result with the one obtained in Example \ref{cosinesinegraphex2} side by side, we see that one cycle ends right where the other starts.  The cause of this discrepancy goes back to using the odd property of sine. 
 
@@ -777,30 +795,85 @@ In the next example,  we use Theorem \ref{sinusoidform} to determine the formula
 
 \begin{example} \label{fitsinusoidtodata1} Below is the graph of one complete cycle of a sinusoid $y=f(t)$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-2}{6}{-3}{4}
-\point[4pt]{(-1,2.5), (0.5,0.5), (2,-1.5), (3.5,0.5), (5,2.5)}
-\tlabel(-2.25,2.35){\tiny $\left(-1,\frac{5}{2}\right)$}
-\tlabel(0.75,0.35){\tiny $\left(\frac{1}{2},\frac{1}{2}\right)$}
-\tlabel[cc](2,-2){\tiny $\left(2,-\frac{3}{2}\right)$}
-\tlabel(3.75,0.35){\tiny $\left(\frac{7}{2},\frac{1}{2}\right)$}
-\tlabel(5.25,2.35){\tiny $\left(5,\frac{5}{2}\right)$}
-\axes
-\tlabel[cc](6,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{One cycle  of $y = f(t)$.}
-\xmarks{-1,1,2,3,4,5}
-\ymarks{-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1,  {\tiny $2$} 2,  {\tiny $3$} 3,  {\tiny $4$} 4,  {\tiny $5$} 5}
-\axislabels {y}{ {\tiny $-2$} -2,{\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
 
-\penwd{1.25pt}
-\function{-1, 5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5}
-\end{mfpic}
+\draw[->] (-2.1,0) -- (6.1,0)
+    node[right] {$t$};
 
-\end{center}
+\draw[->] (0,-2.2) -- (0,3.7)
+    node[above] {$y$};
+
+%------------------------------------------------
+% x-axis ticks
+%------------------------------------------------
+
+\foreach \x in {-1,1,2,3,4,5}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
+
+%------------------------------------------------
+% y-axis ticks
+%------------------------------------------------
+
+\foreach \y in {-2,-1,1,2,3}
+{
+    \draw (-0.08,\y)--(0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
+
+%------------------------------------------------
+% Curve
+%------------------------------------------------
+
+\draw[
+    very thick, blue,
+    domain=-1:5,
+    samples=200,
+    smooth
+]
+plot (\x,{2*cos(60*(\x+1))+0.5});
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (-1,2.5) circle (2.5pt);
+\fill (0.5,0.5) circle (2.5pt);
+\fill (2,-1.5) circle (2.5pt);
+\fill (3.5,0.5) circle (2.5pt);
+\fill (5,2.5) circle (2.5pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[left] at (-1,2.5)
+    {$\left(-1,\frac52\right)$};
+
+\node[right] at (0.5,0.5)
+    {$\left(\frac12,\frac12\right)$};
+
+\node[below] at (2,-1.5)
+    {$\left(2,-\frac32\right)$};
+
+\node[right] at (3.5,0.5)
+    {$\left(\frac72,\frac12\right)$};
+
+\node[right] at (5,2.5)
+    {$\left(5,\frac52\right)$};
+
+\end{tikzpicture}
+\end{image}
 
 \begin{enumerate}
 
@@ -844,33 +917,94 @@ To that end, we imagine extending the graph of the given sinusoid as in the figu
 
 
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{center}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
 
-\begin{mfpic}[25]{-2}{11}{-3}{4}
-\point[4pt]{(3.5,0.5), (5,2.5), (6.5, 0.5), (8, -1.5), (9.5,0.5)}
-\tlabel(3.75,0.35){\tiny $\left(\frac{7}{2},\frac{1}{2}\right)$}
-\tlabel[cc](5,2.75){\tiny $\left(5,\frac{5}{2}\right)$}
-\tlabel(6.75,0.35){\tiny $\left(\frac{13}{2},\frac{1}{2}\right)$}
-\tlabel[cc](8,-2){\tiny $\left(8,-\frac{3}{2}\right)$}
-\tlabel(9.75,0.35){\tiny $\left(\frac{19}{2},\frac{5}{2}\right)$}
-\axes
-\tlabel[cc](11,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{Extending the graph of $y = f(t)$.}
-\xmarks{-1,1,2,3,4,5,6,7,8,9,10}
-\ymarks{-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1,  {\tiny $2$} 2,  {\tiny $3$} 3,  {\tiny $4$} 4,  {\tiny $5$} 5,  {\tiny $6$} 6,  {\tiny $7$} 7,  {\tiny $8$} 8,  {\tiny $9$} 9,  {\tiny $10$} 10}
-\axislabels {y}{ {\tiny $-2$} -2,{\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\dotted \function{-1, 3.5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5}
-\penwd{1.25pt}
-\function{3.5, 9.5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5}
-\end{mfpic}
+\draw[->] (-2,0) -- (11,0)
+    node[right] {$x$};
 
-\end{center} 
+\draw[->] (0,-2.3) -- (0,3.8)
+    node[above] {$y$};
 
-\qed
+%------------------------------------------------
+% x-axis ticks
+%------------------------------------------------
+
+\foreach \x in {-1,1,2,3,4,5,6,7,8,9,10}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
+
+%------------------------------------------------
+% y-axis ticks
+%------------------------------------------------
+
+\foreach \y in {-2,-1,1,2,3}
+{
+    \draw (-0.08,\y)--(0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
+
+%------------------------------------------------
+% Dotted continuation
+%------------------------------------------------
+
+\draw[densely dotted,
+    very thick,
+    domain=-1:3.5,
+    samples=150,
+    smooth]
+plot (\x,{2*cos(60*(\x-5))+0.5});
+
+%------------------------------------------------
+% Solid portion
+%------------------------------------------------
+
+\draw[very thick,blue,
+    domain=3.5:9.5,
+    samples=200,
+    smooth]
+plot (\x,{2*cos(60*(\x-5))+0.5});
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (3.5,0.5) circle (2.5pt);
+\fill (5,2.5) circle (2.5pt);
+\fill (6.5,0.5) circle (2.5pt);
+\fill (8,-1.5) circle (2.5pt);
+\fill (9.5,0.5) circle (2.5pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[above left] at (3.6,0.45)
+    {$\left(\frac72,\frac12\right)$};
+
+\node[above] at (5,2.5)
+    {$\left(5,\frac52\right)$};
+
+\node[above right] at (6.75,0.45)
+    {$\left(\frac{13}2,\frac12\right)$};
+
+\node[below] at (8,-1.5)
+    {$\left(8,-\frac32\right)$};
+
+\node[above right] at (9.75,0.45)
+    {$\left(\frac{19}2,\frac12\right)$};
+
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -888,51 +1022,149 @@ In the same way exponential functions can be used to model a wide variety of phe
 
 {\bf Solution.}  We sketch the problem situation below and assume a counter-clockwise rotation.\footnote{Otherwise, we could just observe the motion of the wheel from the other side.} 
 
-\begin{center}
-\begin{mfpic}[20]{-5}{5}{-1}{9}
-\polyline{(-5,0), (5,0)}
-\polyline{(0,0), (0,1)}
-\point[3pt]{(0,0), (0,1), (-3.46,3), (4,5)}
-\plotsymbol[3pt]{Asterisk}{(0,5)}
-\tlabel[cc](0,-0.5){\scriptsize $O$}
-\tlabel[cc](0.5,0.5){\scriptsize $P$}
-\tlabel[cc](4.5,5){\scriptsize $Q$}
-\tlabel[cc](5,7){\scriptsize $\theta$}
-\dashed \polyline{(5,5), (6,5)}
-\arrow \reverse \arrow \polyline{(-3.46, 0.25),(-3.46, 2.75)}
-\gclear \tlabelrect[cc](-3.46,1.5){\scriptsize $h$}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,0)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,15)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,30)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,45)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,60)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,75)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,90)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,105)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,120)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,135)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,150)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,165)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,180)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,195)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,210)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,225)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,240)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,255)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,270)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,285)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,300)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,315)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,330)}}
-\shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,345)}}
-\arrow \shiftpath{(0,5)} \parafcn{-90, -80,5}{(4*cosd(t), 4*sind(t))}
-\arrow \shiftpath{(0,5)} \parafcn{-80, 10,5}{(4*cosd(t), 4*sind(t))}
-\arrow \shiftpath{(0,5)} \parafcn{10, 100,5}{(4*cosd(t), 4*sind(t))}
-\arrow \shiftpath{(0,5)} \parafcn{100, 190,5}{(4*cosd(t), 4*sind(t))}
-\shiftpath{(0,5)} \parafcn{190, 270,5}{(4*cosd(t), 4*sind(t))}
-\arrow \shiftpath{(0,5)} \parafcn{5,50,5}{(5*cosd(t), 5*sind(t))}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\R{3}
+\def\nspokes{24}
+\def\groundy{-3.75}
+
+% Coordinates
+\coordinate (C) at (0,0);
+\coordinate (Q) at (\R,0);
+\coordinate (P) at (0,-\R);
+\coordinate (O) at (0,\groundy);
+
+% Point used for the height measurement
+\coordinate (H) at (210:\R);
+
+% ============================================================
+% Ground
+% ============================================================
+
+\draw (-3.75,\groundy) -- (3.75,\groundy);
+
+% ============================================================
+% Wheel and spokes
+% ============================================================
+
+\draw (C) circle (\R);
+
+\foreach \k in {0,...,23}
+{
+    \pgfmathsetmacro{\ang}{360*\k/\nspokes}
+    \draw (C) -- (\ang:\R);
+}
+
+% ============================================================
+% Rotation arrows along the wheel
+% ============================================================
+
+% Top
+\draw[->]
+    (75:\R)
+    arc[
+        start angle=75,
+        end angle=100,
+        radius=\R
+    ];
+
+% Right
+\draw[->]
+    (-15:\R)
+    arc[
+        start angle=-15,
+        end angle=10,
+        radius=\R
+    ];
+
+% Bottom
+\draw[->]
+    (255:\R)
+    arc[
+        start angle=255,
+        end angle=280,
+        radius=\R
+    ];
+
+% Left
+\draw[->]
+    (165:\R)
+    arc[
+        start angle=165,
+        end angle=190,
+        radius=\R
+    ];
+
+% ============================================================
+% Important points
+% ============================================================
+
+\fill (C) circle (2.5pt);
+\fill (Q) circle (2.5pt);
+\fill (P) circle (2.5pt);
+\fill (O) circle (2.5pt);
+\fill (H) circle (2.5pt);
+
+% ============================================================
+% Vertical radius from P to O
+% ============================================================
+
+\draw (P) -- (O);
+
+% ============================================================
+% Dashed horizontal continuation through Q
+% ============================================================
+
+\draw[dashed]
+    (Q) -- ++(1.55,0);
+
+% ============================================================
+% Height h
+% ============================================================
+
+\draw[dashed]
+    (H) -- ($(H |- O)$);
+
+\draw[<->]
+    ($(H |- O)+(0,-0.02)$)
+    --
+    ($(H)+(0,0.02)$);
+
+\node[fill=white,inner sep=2pt]
+    at ($(H)!0.52!(H |- O)$)
+    {$h$};
+
+% ============================================================
+% Angle theta
+% ============================================================
+
+\draw[->]
+    ({\R+0.75},0.30)
+    arc[
+        start angle=5,
+        end angle=55,
+        radius={\R+0.75}
+    ];
+
+\node at (3.75,1.55) {$\theta$};
+
+% ============================================================
+% Labels
+% ============================================================
+
+\node[below right] at (Q) {$Q$};
+
+\node[below right] at (P) {$P$};
+
+\node[below] at (O) {$O$};
+
+\end{tikzpicture}
+\end{image}
 
 We know from the equations given on page \pageref{equationsforcircularmotion} in Section \ref{cosinesinebeyond} that the $y$-coordinate for counter-clockwise motion on a circle of radius $r$ centered at the origin with constant angular velocity (frequency) $\omega$ is given by $y = r\sin(\omega t)$.  Here,  $t=0$ corresponds to the point $(r,0)$ so that $\theta$, the angle measuring the amount of rotation, is in standard position. 
 
@@ -960,27 +1192,46 @@ Putting these two pieces of information together, we have that  $y = 64 \sin\lef
  
 We can check the reasonableness of our answer by graphing $y = h(t)$ over the interval $\left[0, \frac{127}{2}\right]$ and visualizing the path of a person on the Big Wheel ride over the course of one rotation.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[20][10]{-1}{7}{-1}{15}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5, 15){\scriptsize $y$}
-\xmarks{6.35}
-\ymarks{0.8, 7.2, 13.6}
-\point[4pt]{(0,0.8), (1.59, 7.2), (3.18, 13.6), (4.76, 7.2), (6.35,0.8)}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels{x}{{$\frac{127}{2}$} 6.35}
-\axislabels{y}{{$8$} 0.8, {$72$} 7.2, {$136$} 13.6}
-\normalsize
-\penwd{1.25pt}
-\function{0,6.35,0.1}{6.4*(sin(.989*x - 1.57))+7.2}
-\end{mfpic}
+% --- Scale factors: t goes up to ~63.5, y goes up to 136 ---
+\def\xs{0.095}
+\def\ys{0.037}
+% Macro to convert data coordinates (t,y) to drawing coordinates
+\newcommand{\pt}[2]{({#1*\xs},{#2*\ys})}
 
-\end{center}
+% --- Axes ---
+\draw[->] (-0.3,0) -- \pt{69}{0} node[right] {$t$};
+\draw[->] (0,-0.3) -- (0,{136*\ys+0.6}) node[above] {$y$};
 
-\vspace{-.5in} \qed
+% --- Tick marks and labels on y-axis ---
+\foreach \v in {8,72,136}{
+    \draw ({-0.06},{\v*\ys}) -- ({0.06},{\v*\ys});
+    \node[left] at ({-0.1},{\v*\ys}) {$\v$};
+}
+
+% --- Tick mark and label on t-axis at 127/2 ---
+\draw \pt{63.5}{-0.5} -- \pt{63.5}{0.5};
+\node[below] at \pt{63.5}{-0.6} {$\dfrac{127}{2}$};
+
+% --- Curve: y = 72 - 64*cos(4*pi*t/127), t in [0, 127/2] ---
+\draw[very thick,blue, domain=0:63.5, samples=100, smooth, variable=\t]
+    plot ({\t*\xs}, {(72 - 64*cos((720/127)*\t))*\ys});
+
+% --- Data points ---
+\fill \pt{0}{8} circle (2.5pt);
+\fill \pt{15.875}{72} circle (2.5pt);
+\fill \pt{31.75}{136} circle (2.5pt);
+\fill \pt{47.625}{72} circle (2.5pt);
+\fill \pt{63.5}{8} circle (2.5pt);
+
+\end{tikzpicture}
+
+\end{image}
 
 \end{example}
 
@@ -1045,40 +1296,10 @@ We proceed to find the angular frequency, $\omega$.  Since the data collected is
  \smallskip
  
  Here, we choose $t = 3$, since its corresponding $H$ value of $12.4$ is closer to  $12.55$ than the next value, $15.9$, which corresponds to $t=4$.  Hence, $-\frac{\phi}{\omega} = 3$, so $\phi = -3 \omega = -3 \left(\frac{\pi}{6}\right) = -\frac{\pi}{2}$.  We have $H(t) = 9.25 \sin\left(\frac{\pi}{6} t - \frac{\pi}{2}\right) + 12.55$. Below on the right is a graph of our data with the curve $y = H(t)$.
- 
+
+ % https://www.desmos.com/calculator/ofjrvq5g0w
  \begin{center}
- 
- \begin{multicols}{2}
-
-
-\begin{mfpic}[15][7.5]{-1}{13}{-1}{23}
-\axes
-\xmarks{1,2,3,4,5,6,7,8,9,10,11,12}
-\ymarks{2,4,6,8,10,12,14,16,18,20,22}
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,23){\scriptsize $H$}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels{x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9, {$10$} 10, {$11$} 11, {$12$} 12}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6, {$8$} 8, {$10$} 10, {$12$} 12, {$14$} 14, {$16$} 16, {$18$} 18, {$20$} 20, {$22$} 22}
-\normalsize
-\point[4pt]{(1,5.8), (2,9.3), (3,12.4), (4, 15.9), (5, 19.4), (6,21.8), (7,19.4), (8,15.6), (9,12.4), (10,9.1), (11,5.6), (12, 3.3)}
-\end{mfpic}
-
-\includegraphics[height=2.5in]{./GraphsofSineandCosineGraphics/RoughFitDaylight.jpg}
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-Plotting the data.
-
-
-Plotting the data long with $y=H(t)$
-
-
-\end{multicols}
-
+ \desmos{ofjrvq5g0w}{800}{600}
 \end{center}
 
  
@@ -1092,33 +1313,11 @@ Indeed, in Exercise \ref{graphdesmosregression}, we invite the reader to graph $
 
 Since we know the period of the sinusoid is 12 months, we set $\omega = \frac{\pi}{6}$ and ask desmos to run a regression for the remaining three parameters.   Desmos returns the values $A \approx -8.13$, $B \approx 12.5$, and $\phi \approx -4.70$, with an $R^{2}$ value of $0.987$,  so its regression curve is a much more reasonable $H(t) = -8.13 \sin\left(\frac{\pi}{6} t - 4.70\right)+ 12.5$.  Even though, at first glance, this curve appears much different from our solution to number \ref{roughsinusoidfit}, the we graph both functions below on the right and see they are very similar.\footnote{In Section \ref{MoreTrigonometricIdentities}, we can show how similar these two functions are analytically.  See Exercise \ref{twodaylightfunctions}.}  (Our solution to number \ref{roughsinusoidfit} is the darker of the two curves.)
 
+% https://www.desmos.com/calculator/zje3uhkmbc
 \begin{center}
-
-\begin{multicols}{2}
- 
-
-\includegraphics[width=2.75 in]{./GraphsofSineandCosineGraphics/desmos_regression.jpg}
-\includegraphics[width=2.75 in]{./GraphsofSineandCosineGraphics/both_daylight.jpg}
- 
-
- 
- \end{multicols}
- 
- \begin{multicols}{2}
-
-Plotting the desmos's regression curve.
-
-
-Plotting both solutions.
-
-
-\end{multicols}
- 
- 
+\desmos{zje3uhkmbc}{800}{600}
  \end{center}
  
- \qed
-
 \end{enumerate}
 
 \end{example}
@@ -1154,28 +1353,19 @@ We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = 
 
 \item   To analyze $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ numerically, we construct a table of values `near' $t = 0$ for $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Choosing values such as $t = \pm 0.001$,  $t = \pm 0.01$, etc., we get  a list of `$0$'s. This result shouldn't be too surprising since in each of these cases, $\frac{\pi}{t}$ results in an integer multiple of $\pi$. However, the graph near $t=0$ (literally) paints a different picture.  The graph appears to wildly oscillate near $t=0$, suggesting that  $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ does not exist.
 
+% https://www.desmos.com/calculator/ag6olhwkkb
 \begin{center}
-
- \includegraphics[width=6in]{./GraphsofSineandCosineGraphics/sinpiovert.png}
- 
- \end{center}
+\desmos{ag6olhwkkb}{800}{600}
+\end{center}
  
  Indeed, as $t \rightarrow 0^{-}$, $\frac{\pi}{t} \rightarrow -\infty$ and as $t \rightarrow 0^{+}$, $\frac{\pi}{t} \rightarrow \infty$.  In other words, all of the infinite oscillations experienced by the standard sine function, $f(t) = \sin(t)$ as $t \rightarrow -\infty$ and as $t \rightarrow \infty$ are being brought  back to near  $t = 0$ in $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Hence, $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ does not exist.
 
 
 \item  We proceed as above to investigate $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( 10^{23} \, t \right)$.    A table and  a graph of  $F(t) = \sin \left( 10^{23} \, t\right)$  `near' $t = 0$ produces numerical and graphical noise.  Neither the table nor the graph suggest $\ds{\lim_{t \rightarrow 0} F(t)}$ exists.  However, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is a sinusoid with frequency $\omega = 10^{23}$.  Zooming in by a factor of $10^{23}$, we get one cycle of $F$ which suggests the limit is, in fact, $0$.
 
+% https://www.desmos.com/calculator/jue9qbhzmb
 \begin{center}
-
-\begin{tabular}{cc}
-
-
- \includegraphics[width=3in]{./GraphsofSineandCosineGraphics/sine10^23tfar.png}  &    \includegraphics[width=3in]{./GraphsofSineandCosineGraphics/sine10^23tzoom.png}  \\
- 
- $F(t) = \sin \left( 10^{23} \, t\right)$ `near' $t=0$ &  $F(t) = \sin \left( 10^{23} \, t\right)$ `nearer to ' $t=0$ \\
- 
- \end{tabular}
- 
+\desmos{jue9qbhzmb}{800}{600}
 \end{center}
 
 
@@ -1185,11 +1375,9 @@ Indeed, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is continuous, so $\ds
 \item  Next we investigate  $F(t) =  \frac{\sin(t)}{t}$ near $t=0$.   The table and graph both suggest   $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t} = 1$. 
 
 
-
+% https://www.desmos.com/calculator/ohffbwnwsf
 \begin{center}
-
- \includegraphics[width=6in]{./GraphsofSineandCosineGraphics/sintovert.png}
- 
+\desmos{ohffbwnwsf}{800}{600}
  \end{center}
  
  Attempting to analyze this limit analytically, we see that  $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t}$ produces the indeterminate form `$\frac{0}{0}$'.  At this stage, we do not have the tools to either prove or disprove our conjecture that  $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t} = 1$,  but we will soon, \footnote{See Exercises \ref{sintovertexercise1} through \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}.} so stay tuned!  \qed
