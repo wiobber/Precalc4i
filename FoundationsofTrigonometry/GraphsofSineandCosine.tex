@@ -374,28 +374,51 @@ We find one cycle of $y=g(t)$ is completed over the interval $\left[ -\frac{\pi}
 
 As previously mentioned, the curves graphed in Example \ref{cosinesinegraphex1} are examples of sinusoids. A sinusoid is the result of taking the graph of $y = \sin(t)$ or $y  = \cos(t)$ and performing any of the transformations mentioned in Section \ref{Transformations}.  We graph one cycle of a generic sinusoid below.  Sinusoids can be characterized by four properties:  period, phase shift, vertical shift (or `baseline'), and amplitude.
 
-\phantomsection
-\label{genericsinsuoidfigure}
-\smallskip
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-  \begin{center}
+% --- Parameters ---
+\def\A{1.8}
+\def\period{6}
 
-\begin{mfpic}[15]{-6.5}{6.5}{-6.5}{6.5}
-\dashed \polyline{(-6.2832,0), (6.2832,0)}
+% --- Sinusoidal curve ---
+\draw[very thick,domain=0:\period,samples=200,smooth]
+    plot (\x,{\A*sin(360*\x/\period)});
 
-\arrow \reverse \arrow \polyline{(-3.1416, 0.25), (-3.1416, 5.75)}
-\gclear \tlabelrect[cc](-3.1416, 3){amplitude}
-\gclear \tlabelrect[cc](3.1416, 0){baseline}
-\arrow \reverse \arrow \polyline{(-6.2832,-6.5), (6.2832,-6.5)}
-\gclear \tlabelrect[cc](0, -6.5){period}
-\penwd{1.25pt}
-\function{-6.2832, 6.2832, 0.1}{0-6*sin(x/2)}
-\end{mfpic} \index{sinusoid ! graph of} 
+% --- Baseline ---
+\draw[gray!70,dashed]
+    (0,0) -- (\period,0);
 
-\end{center}
+% --- Amplitude measure ---
+\draw[<-]
+    ({\period/4},0.08) --
+    ({\period/4},{0.8});
 
- 
- \smallskip
+\draw[->]
+    ({\period/4},1.1) --
+    ({\period/4},{\A-0.08});    
+
+\node[] at ({\period/4},{\A/2})
+    {amplitude};
+
+% --- Baseline label ---
+\node[right,fill=white,inner sep=2pt]
+    at ({0.63*\period},0)
+    {baseline};
+
+% --- Period measure ---
+\draw[<->]
+    (0,-2.15) -- (\period,-2.15);
+
+\node[fill=white,inner sep=2pt]
+    at ({\period/2},-2.15)
+    {period};
+
+\end{tikzpicture}
+\end{image}
 
 We have already discussed the period of a sinusoid.  If we think of $t$ as measuring time, the period is how long it takes for the sinusoid to complete one cycle and is usually represented by the letter $T$.   The standard period of both  $\sin(t)$ and $\cos(t)$  is $2\pi$, but horizontal scalings will change  this.
 
@@ -528,9 +551,6 @@ We now substitute these new quarter marks into $f(t)$ to obtain the correspondin
 Note that we can (partially) spot-check our answer by noting the average of the maximum and minimum is $\frac{4+(-2)}{2} = 1$ (our vertical shift) and the amplitude,  $4 - 1 = 1 - (-2) = 3$ is indeed $3$.
 
 
-\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
-\setlength{\extrarowheight}{2pt}
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -546,24 +566,48 @@ Note that we can (partially) spot-check our answer by noting the average of the 
 
 5 & 4 & (5,4) \\  [2pt] \hline
 \end{array} \]
-\setlength{\extrarowheight}{0pt} &
 
-\begin{mfpic}[15]{-1}{6}{-3}{5}
-\point[4pt]{(1,4), (2,1), (3,-2), (4,1), (5, 4)}
-\axes
-\tlabel[cc](6,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tcaption{\scriptsize One cycle  of $y = f(t)$.}
-\xmarks{1,2,3,4,5}
-\ymarks{-2,-1,1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
-\axislabels {y}{{\tiny $-2$} -2,{\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\penwd{1.25pt}
-\function{1, 5, 0.1}{3*cos((3.14159*x - 3.14159)/2)+1}
-\end{mfpic} \\
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\end{tabular}
+% --- Axes ---
+\draw[->] (-1,0) -- (6,0)
+    node[right] {$t$};
+
+\draw[->] (0,-2.8) -- (0,5)
+    node[above] {$y$};
+
+% --- x-axis tick marks and labels ---
+\foreach \x in {1,2,3,4,5}
+{
+    \draw (\x,-0.12) -- (\x,0.12);
+    \node[below] at (\x,-0.14) {$\x$};
+}
+
+% --- y-axis tick marks and labels ---
+\foreach \y in {-2,-1,1,2,3,4}
+{
+    \draw (-0.12,\y) -- (0.12,\y);
+    \node[left] at (-0.14,\y) {$\y$};
+}
+
+% --- Curve ---
+\draw[very thick, blue,domain=1:5,samples=200,smooth]
+    plot (\x,{3*cos(90*(\x-1))+1});
+
+% --- Marked points ---
+\fill (1,4) circle (3pt);
+\fill (2,1) circle (3pt);
+\fill (3,-2) circle (3pt);
+\fill (4,1) circle (3pt);
+\fill (5,4) circle (3pt);
+
+\end{tikzpicture}
+\end{image}
+
 
 Thought not asked for, this example provides a nice opportunity to interpret the ordinary frequency:   $f = \frac{1}{T} = \frac{1}{4}$.   Hence,  $\frac{1}{4}$ of the sinusoid is traced out over an interval that is $1$ unit long. 
 
@@ -582,9 +626,7 @@ Proceeding as before, we know one cycle of $g$ starts at $t = \frac{\pi}{2}$ and
 
 Again, we can quickly check the vertical shift by averaging the maximum and minimum values:  $\frac{2+1}{2} = \frac{3}{2}$ and verify the amplitude:  $2 - \frac{3}{2} = \frac{3}{2} - 1 = \frac{1}{2}$. 
 
-\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
-\setlength{\extrarowheight}{2pt}
+
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -600,30 +642,56 @@ Again, we can quickly check the vertical shift by averaging the maximum and mini
 
 \frac{3\pi}{2} & \frac{3}{2} & \left(\frac{3\pi}{2}, \frac{3}{2} \right) \\  [2pt] \hline
 \end{array} \]
-\setlength{\extrarowheight}{0pt} &
 
-\begin{mfpic}[25]{-1}{5.5}{0}{3}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\point[4pt]{(1.5708,1.5), (2.356, 1), (3.1416, 1.5),  (3.927, 2), (4.712, 1.5)}
-\axes
-\tlabel[cc](5.5,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\tcaption{\scriptsize One cycle  of $y = g(t)$.}
-\xmarks{0.7854,1.5708, 2.356, 3.1416, 4.712}
-\ymarks{1,2}
-\tlpointsep{4pt}
-\axislabels {x}{ {\tiny $\dfrac{\pi}{4}$} 0.7854,  {\tiny $\dfrac{\pi}{2}$} 1.5708,  {\tiny $\dfrac{3\pi}{4}$} 2.356,  {\tiny $\pi$} 3.1416,  {\tiny $\dfrac{5\pi}{4}$} 3.927,   {\tiny $\dfrac{3\pi}{2}$} 4.712}
-\axislabels {y}{ {\tiny $1$} 1, {\tiny $2$} 2}
-\penwd{1.25pt}
-\function{1.5708, 4.712, 0.1}{0.5*sin(3.14159-2*x)+1.5}
-\end{mfpic} \\
+% --- Parameters ---
+% x-axis: 1 unit = pi/4 (so pi/2 -> x=1, pi -> x=2, 3pi/2 -> x=3, etc.)
+\def\piunit{2}
+% Curve: y = 1.5 - 0.5*sin(2(t - pi/2)), sampled over t in [pi/2, 3pi/2]
+% In terms of u = t/pi (so x = u*\piunit): y = 1.5 - 0.5*sin(360*(u-0.5))
 
-\end{tabular}
+% --- Axes ---
+\draw[->] (0,0) -- (3.6,0) node[right] {$t$};
+\draw[->] (0,-0.3) -- (0,2.6) node[above] {$y$};
 
+% --- Tick marks and labels on t-axis, in units of pi/4 ---
+\node[below] at (0.5,-0.12) {$\dfrac{\pi}{4}$};
+\node[below] at (1.0,-0.12) {$\dfrac{\pi}{2}$};
+\node[below] at (1.5,-0.12) {$\dfrac{3\pi}{4}$};
+\node[below] at (2.0,-0.12) {$\pi$};
+\node[below] at (2.5,-0.12) {$\dfrac{5\pi}{4}$};
+\node[below] at (3.0,-0.12) {$\dfrac{3\pi}{2}$};
+\foreach \x in {0.5,1.0,1.5,2.0,2.5,3.0}
+    \draw (\x,-0.06) -- (\x,0.06);
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {1,2}{
+    \draw (-0.06,\y) -- (0.06,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Curve over t in [pi/2, 3pi/2], i.e. u in [0.5, 1.5] ---
+\draw[very thick,blue, domain=0.5:1.5, samples=80, smooth, variable=\u]
+    plot ({\u*\piunit}, {1.5 - 0.5*sin(360*(\u-0.5))});
+
+% --- Data points ---
+\fill (1.0,1.5) circle (1.5pt);
+\fill (1.5,1.0) circle (1.5pt);
+\fill (2.0,1.5) circle (1.5pt);
+\fill (2.5,2.0) circle (1.5pt);
+\fill (3.0,1.5) circle (1.5pt);
+
+\end{tikzpicture}
+
+\end{image}
 
 \end{enumerate}
 
-\qed
 
 
 \end{example}
