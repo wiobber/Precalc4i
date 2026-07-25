@@ -512,37 +512,6 @@ $\left\{ \left(x,-3 \right) \, | \, -4 < x \leq 4 \right\}$
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-3.5, xmax=4, ymin=-3.5, ymax=4,
-    axis lines=middle,
-    axis line style={-{Latex[length=8pt,width=6pt]}},
-    tick style={line width=1pt},
-    major tick length=5pt,
-    xlabel={$x$}, ylabel={$y$},
-    xlabel style={anchor=west},
-    ylabel style={anchor=south},
-    xtick={-3, -2, -1, 0, 1, 2, 3},
-    ytick={-3, -2, -1, 0, 1, 2, 3},
-    tick label style={font=\tiny},
-    label style={font=\scriptsize},
-    samples=100,
-]
-
-\filldraw[fill=blue!20, fill opacity=0.5, draw=blue, thick] (-2, -3) -- (3, -3) -- (3, 3) -- (-2, 3) -- cycle;
-
-\end{axis}
-\end{tikzpicture}
-
-\end{solution}
-
-\end{problem}
-
-\begin{problem}
-$\{ (x, y) \, | \, x > -2 \}$
-\begin{solution}
-
-\begin{tikzpicture}
-\begin{axis}[
-    width=3in, height=3in,
     xmin=-5, xmax=5, ymin=-7.5, ymax=3.5,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
@@ -571,26 +540,40 @@ $\{ (x, y) \, | \, x > -2 \}$
 \end{tikzpicture}
 
 
-% \input{ExercisesforRelations_pic25.tex}
-\begin{mfpic}[15]{-3}{2}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \rect{(-1.97,-3.75), (0.75,3.75)}
-\dashed \arrow \reverse \arrow \polyline{(-2,4), (-2,-4)}
-\axes
-\tlabel[cc](2,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-2,-1,1}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$-2 \hspace{6pt}$} -2, {$-1 \hspace{6pt}$} -1}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\end{mfpic}
- 
 
+\end{solution}
 
-\vfill
+\end{problem}
+
+\begin{problem}
+$\{ (x, y) \, | \, x > -2 \}$
+
+\begin{solution}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3.5, xmax=4, ymin=-3.5, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+\fill[fill=blue!20, fill opacity=0.5] (-2, -3) -- (3.7, -3) -- (3.7, 3) -- (-2, 3) -- cycle;
+\draw[blue, thick, dashed, <->] (-2, -3.2) -- (-2, 3.2);
+
+\end{axis}
+\end{tikzpicture}
+
 \end{solution}
 
 \end{problem}
@@ -599,26 +582,30 @@ $\{ (x, y) \, | \, x > -2 \}$
 $\left\{ \left(x,y \right) \, | \, x \leq 3 \right\}$
 
 \begin{solution}
-$~$
 
-% \input{ExercisesforRelations_pic26.tex}
-\begin{mfpic}[15]{-1}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \rect{(-1,-3.75), (3,3.75)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(3,4), (3,-4)}
-\end{mfpic}
- 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+\fill[fill=blue!20, fill opacity=0.5] (3, -3) -- (3, 3) -- (-4, 3) -- (-4, -3) -- cycle;
+\draw[blue, thick, <->] (3, -3.2) -- (3, 3.2);
+
+\end{axis}
+\end{tikzpicture}
 
 \end{solution}
 
@@ -626,29 +613,33 @@ $~$
 
 \begin{problem}
 $\left\{ \left(x,y \right) \, | \, y < 4 \right\}$
+
 \begin{solution}
-$~$
 
-% \input{ExercisesforRelations_pic27.tex}
-\begin{mfpic}[15]{-4}{4}{-1}{5}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-3, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-2, -1, 0, 1, 2, 3, 4, 5},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
 
-\fillcolor[gray]{.7}
-\gfill \rect{(-3.75,-1), (3.75,3.97)}
-\arrow \reverse \arrow \dashed \polyline{(-4,4), (4,4)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
- 
+\fill[fill=blue!20, fill opacity=0.5] (-3.5, 4) -- (3.5, 4) -- (3.5, -3) -- (-3.5, -3) -- cycle;
+\draw[blue, thick, dashed, <->] (-3.75, 4) -- (3.75, 4);
 
-\vfill
+\end{axis}
+\end{tikzpicture}
+
 \end{solution}
 
 \end{problem}
@@ -657,29 +648,37 @@ $~$
 $\left\{ \left(x,y \right) \, | \, x \leq 3, \, y < 2 \right\}$
 
 \begin{solution}
-$~$
 
-% \input{ExercisesforRelations_pic28.tex}
-\begin{mfpic}[15]{-1}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \rect{(-0.75,-3.75), (3,1.97)}
-\arrow \reverse \dashed \polyline{(-1,2), (3,2)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \polyline{(3,2), (3,-4)}
-\pointfillfalse
-\point[4pt]{(3,2)}
-\end{mfpic}
- 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=5, ymin=-5, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2, 3,4},
+    ytick={-4, -3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+\fill[fill=blue!20, fill opacity=0.5] (-2.5, 2) -- (3, 2) -- (3, -4.5) -- (-2.5, -4.5) -- cycle;
+
+\draw[blue, thick, dashed, <-] (-2.75, 2) -- (3, 2);
+
+\draw[blue, thick, ->] (3, 2) -- (3, -4.75);
+
+\fill[blue] (3,2) circle (2pt);
+
+\fill[white] (3,2) circle (1.25pt);
+
+\end{axis}
+\end{tikzpicture}
 
 \end{solution}
 
@@ -687,32 +686,39 @@ $~$
 
 \begin{problem}
 $\left\{ \left(x,y \right) \, | \, x > 0, \, y < 4 \right\}$
+
 \begin{solution}
-$~$
 
-% \input{ExercisesforRelations_pic29.tex}
-\begin{mfpic}[15]{-2}{4}{-1}{5}
-\fillcolor[gray]{.7}
-\gfill \rect{(0.03,-0.75), (3.75,3.97)}
-\arrow  \dashed \polyline{(0,4), (4,4)}
-\arrow \dashed \polyline{(0,4), (0,-1)}
-\arrow \polyline{(0,4), (0,5)}
-\arrow \reverse \arrow \polyline{(-2,0), (4,0)}
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-1,1,2,3}
-\ymarks{1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\pointfillfalse
-\point[4pt]{(0,4)}
-\end{mfpic}
- 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=5, ymin=-1, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={0, 1, 2, 3, 4},
+    ytick={0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
 
-\vfill
+\fill[fill=blue!20, fill opacity=0.5] (0, -0.5) -- (0,4) -- (4.5, 4) -- (4.5, -0.5) -- cycle;
+
+\draw[blue, thick, dashed, ->] (0, 4) -- (0, -0.7);
+\draw[blue, thick, dashed, ->] (0, 4) -- (4.7, 4);
+
+\fill[blue] (0,4) circle (2pt);
+
+\fill[white] (0,4) circle (1.25pt);
+
+\end{axis}
+\end{tikzpicture}
+
 \end{solution}
 
 \end{problem}
@@ -721,7 +727,41 @@ $~$
 $\{ (x, y) \, | \, -\sqrt{2} \leq x \leq \frac{2}{3}, \; \pi < y \leq \frac{9}{2} \}$ 
 
 \begin{solution}
-$~$
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2.5, xmax=2.5, ymin=1.5, ymax=6.5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 1, 2},
+    ytick={2, 3, 4, 5, 6},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+
+\fill[fill=blue!20, fill opacity=0.5] (-1.414, 3.14) -- (-1.414,9/2) -- (2/3, 9/2) -- (2/3, 3.14) -- cycle;
+
+\draw[blue, thick,-] (-1.414, 3.14) -- (-1.414,9/2) -- (2/3, 9/2) -- (2/3, 3.14);
+
+\draw[blue, thick, dashed, -] (-1.414, 3.14) -- (2/3, 3.14);
+
+\fill[blue] (-1.414, 3.14) circle (2pt);
+
+\fill[white] (-1.414, 3.14) circle (1.25pt);
+
+\fill[blue] (2/3, 3.14) circle (2pt);
+
+\fill[white] (2/3, 3.14) circle (1.25pt);
+
+\end{axis}
+\end{tikzpicture}
 
 % \input{ExercisesforRelations_pic30.tex}
 \begin{mfpic}[15]{-3}{2}{-1}{6}
