@@ -26,24 +26,47 @@ Our first example reviews the basics of right triangle trigonometry.  The reader
 
 {\bf Solution.}  For definitiveness, we label the triangle below. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=1.15, line cap=round, line join=round]
 
-\begin{mfpic}[18]{0}{4}{0}{6}
-\tlabel[cc](2,-1){$b=4$}
-\tlabel(4.25,2){$a$}
-\tlabel[cc](1.75,0.75){$\alpha$}
-\tlabel[cc](3.25,3.5){$\beta$}
-\arrow \reverse \arrow \parafcn{5, 50, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(4,5.75)}  \parafcn{240, 265, 5}{1.5*dir(t)}
-\tlpointsep{-10pt}
-\tlabel(0,0){\rotatebox{55}{\hspace{.75in}$c = 7$}}
-\polyline{(3.5,0), (3.5,0.5), (4,0.5)}
-\penwd{1.25pt}
-\polyline{(0,0), (4,0), (4,5.75), (0,0)}
+% Triangle vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (4,6);
 
-\end{mfpic}
+% Triangle
+\draw[line width=1.4pt] (A) -- (B) -- (C) -- cycle;
 
-\end{center}
+% Right-angle marker
+\draw[line width=1pt]
+    ($(B)+(-0.5,0)$) --
+    ($(B)+(-0.5,0.5)$) --
+    ($(B)+(0,0.5)$);
+
+% Side labels
+\node[below=7pt] at ($(A)!0.5!(B)$) {$b=4$};
+
+\node[right=8pt] at ($(B)!0.5!(C)$) {$a$};
+
+\node[left=8pt]
+     at ($(A)!0.55!(C)$) {$c=7$};
+
+% Angle alpha
+\draw[->, line width=0.8pt]
+    ($(A)+(1.3,0)$)
+    arc[start angle=0,end angle=56.3,radius=1.3];
+
+\node at ($(A)+(1.65,0.75)$) {$\alpha$};
+
+% Angle beta
+\draw[->, line width=0.8pt]
+    ($(C)+(0,-1.15)$)
+    arc[start angle=-90,end angle=-123.7,radius=1.15];
+
+\node at ($(C)+(-0.75,-1.65)$) {$\beta$};
+
+\end{tikzpicture}
+\end{image}
 
 To find $a$, we use the Pythagorean Theorem, Theorem \ref{PythagoreanTheorem}: $a^2 + 4^2 = 7^2$, so $a = \sqrt{33}$ units. 
 
@@ -111,66 +134,147 @@ For our first case, consider the triangle $\triangle ABC$ below, all of whose an
 
  
 
-\begin{tabular}{ccc}
+\begin{image}
+\begin{tikzpicture}[scale=1.0,line cap=round,line join=round]
 
-\begin{mfpic}[15]{0}{8}{0}{6}
-\tlabel[cc](7,2.5){$a$}
-\tlabel[cc](4,-1){$b$}
-\tlabel[cc](2,2.75){$c$}
-\tlabel[cc](1.75,0.75){$\alpha$}
-\tlabel[cc](4.75,2.75){$\beta$}
-\tlabel[cc](6.25,1){$\gamma$}
-\tlabel[cc](-0.5,-0.5){$A$}
-\tlabel[cc](8.5,-0.5){$C$}
-\tlabel[cc](5,5.5){$B$}
-\arrow \reverse \arrow \parafcn{5, 40, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(5,5)}  \parafcn{230, 295, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (8,0), (5,5), (0,0)}
-\end{mfpic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Triangle 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-&
+\begin{scope}
 
-\begin{mfpic}[15]{0}{8}{0}{6}
-\tlabel[cc](7,2.5){$a$}
-\tlabel[cc](2,2.75){$c$}
-\tlabel[cc](1.75,0.75){$\alpha$}
-\tlabel[cc](6.25,1){$\gamma$}
-\tlabel[cc](-0.5,-0.5){$A$}
-\tlabel[cc](8.5,-0.5){$C$}
-\tlabel[cc](5,5.5){$B$}
-\tlabel[cc](5,-1){$Q$}
-\tlabel[cc](5.5,2.5){$h$}
-\polyline{(4.5,0), (4.5, 0.5), (5.5,0.5), (5.5,0)}
-\arrow \reverse \arrow \parafcn{5, 40, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (8,0), (5,5), (0,0)}
-\polyline{(5,5), (5,0)}
-\end{mfpic}
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.4,3);
+\coordinate (C) at (4.8,0);
 
-&
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
 
-\begin{mfpic}[15]{0}{8}{0}{6}
-\tlabel[cc](4,-1){$b$}
-\tlabel[cc](2,2.75){$c$}
-\tlabel[cc](4.25,3.5){$\beta$}
-\tlabel[cc](6.25,1){$\gamma$}
-\tlabel[cc](-0.5,-0.5){$A$}
-\tlabel[cc](8.5,-0.5){$C$}
-\tlabel[cc](5,5.5){$B$}
-\tlabel[cc](6.25,3.5){$Q$}
-\tlabel[cc](4,1.75){$h'$}
-\polyline{(5.62, 3.96), (5.19, 3.70), (5.71, 2.84), (6.14,3.10) }
-\arrow \reverse \arrow \shiftpath{(5,5)}  \parafcn{230, 295, 5}{.75*dir(t)}
-\arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (8,0), (5,5), (0,0)}
-\polyline{(0,0), (5.88,3.53)}
-\end{mfpic}
+% Labels
+\node[below left]  at (A) {$A$};
+\node[above]       at (B) {$B$};
+\node[below right] at (C) {$C$};
 
-\end{tabular}
+\node[left=7pt]  at ($(A)!0.55!(B)$) {$c$};
+\node[right=7pt] at ($(B)!0.55!(C)$) {$a$};
+\node[below=8pt] at ($(A)!0.5!(C)$) {$b$};
+
+% alpha
+\draw[<->]
+($(A)+(0.8,0)$)
+arc[start angle=0,end angle=51,radius=.8];
+\node at ($(A)+(1,0.55)$) {$\alpha$};
+
+% beta
+\draw[<->]
+($(B)+(-0.45,-0.65)$)
+arc[start angle=-125,end angle=-48,radius=.72];
+\node at ($(B)+(0,-1.2)$) {$\beta$};
+
+% gamma
+\draw[<->]
+($(C)+(-0.8,0)$)
+arc[start angle=180,end angle=129,radius=.8];
+\node at ($(C)+(-1,0.6)$) {$\gamma$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Triangle 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=6.2cm]
+
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.4,3);
+\coordinate (C) at (4.8,0);
+\coordinate (Q) at (2.4,0);
+
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+\draw[line width=1.3pt] (B)--(Q);
+
+% right angle
+\draw
+($(Q)+(-0.25,0)$)--
+($(Q)+(-0.25,0.25)$)--
+($(Q)+(0,0.25)$);
+
+% Labels
+\node[below left]  at (A) {$A$};
+\node[above]       at (B) {$B$};
+\node[below right] at (C) {$C$};
+\node[below]       at (Q) {$Q$};
+
+\node[left=7pt]  at ($(A)!0.55!(B)$) {$c$};
+\node[right=7pt] at ($(B)!0.55!(C)$) {$a$};
+\node[right=7pt] at ($(B)!0.5!(Q)$) {$h$};
+
+% alpha
+\draw[<->]
+($(A)+(0.8,0)$)
+arc[start angle=0,end angle=51,radius=.8];
+\node at ($(A)+(1,0.55)$) {$\alpha$};
+
+% gamma
+\draw[<->]
+($(C)+(-0.8,0)$)
+arc[start angle=180,end angle=129,radius=.8];
+\node at ($(C)+(-1,0.6)$) {$\gamma$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Triangle 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=12.4cm]
+
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.4,3);
+\coordinate (C) at (4.8,0);
+
+% Foot on BC
+\coordinate (Q) at ($(B)!0.35!(C)$);
+
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+\draw[line width=1.3pt] (A)--(Q);
+
+% right angle
+% Right-angle marker at Q
+\coordinate (R1) at ($(Q)!0.28cm!(A)$);
+\coordinate (R2) at ($(Q)!0.28cm!(B)$);
+\coordinate (R3) at ($(R1)+(R2)-(Q)$);
+
+\draw[line width=0.8pt] (R1)--(R3)--(R2);
+
+% Labels
+\node[below left]  at (A) {$A$};
+\node[above]       at (B) {$B$};
+\node[below right] at (C) {$C$};
+\node[right=4pt]   at (Q) {$Q$};
+
+\node[left=7pt]  at ($(A)!0.55!(B)$) {$c$};
+\node[right=7pt] at ($(B)!0.55!(C)$) {$a$};
+\node[below=8pt] at ($(A)!0.5!(C)$) {$b$};
+\node[below=3pt] at ($(A)!0.58!(Q)$) {$h'$};
+
+% alpha not shown
+
+% beta
+\draw[<->]
+($(B)+(-0.45,-0.65)$)
+arc[start angle=-125,end angle=-48,radius=.72];
+\node at ($(B)+(0,-1.2)$) {$\beta$};
+
+% gamma
+\draw[<->]
+($(C)+(-0.8,0)$)
+arc[start angle=180,end angle=129,radius=.8];
+\node at ($(C)+(-1,0.6)$) {$\gamma$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 
 
