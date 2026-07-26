@@ -456,69 +456,12 @@ To find the baseline, $B$, we take a cue from our work in Example \ref{fitsinuso
 
 We find our final answer to be $f(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$.  As usual, we check our answer by graphing. 
 
-\smallskip
 
+
+% https://www.desmos.com/calculator/wpxkqo7afu
 \begin{center}
-
-\begin{multicols}{2}
-
-\begin{mfpic}[15]{-1.25}{12.5}{-5}{3}
-\point[4pt]{(3.6652,0), (9.948,0), (6.807, -2)}
-\axes
-\tlabel[cc](12.5,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236, 6.807, 8.377, 9.948, 11.519}
-\ymarks{1,2,-1,-2,-3,-4}
-\tlpointsep{4pt}
-\axislabels {x}{{$-\frac{\pi}{6}$} -1.0472, {$\frac{\pi}{12}$} 0.5236, {$\frac{\pi}{3}$} 2.0944, {$\frac{7\pi}{12}$} 3.6652, {$\frac{5\pi}{6}$} 5.236, {$\frac{13\pi}{12}$} 6.807, {$\frac{4\pi}{3}$} 8.377, {$\frac{19\pi}{12}$} 9.948,  {$\frac{11\pi}{6}$} 11.519}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $2$} 2}
-\dashed \polyline{(-1.0472,3),(-1.0472,-5)}
-\dashed \polyline{(2.0944,3),(2.0944,-5)}
-\dashed \polyline{(5.236,3),(5.236,-5)}
-\dashed \polyline{(8.377,3),(8.377,-5)}
-\dashed \polyline{(11.519,3),(11.519,-5)}
-%\dotted[1pt, 3pt] \function{-1.0472, 5.236, 0.1}{-sin(x + 1.0472)-1}
-\dotted[1pt, 3pt] \function{3.6652, 9.948, 0.1}{-sin(x + 1.0472)-1}
-\arrow \reverse \arrow \function{-0.794, 1.841, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\arrow \reverse \arrow \function{2.347, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
-\arrow \reverse \arrow \function{8.62, 11.27, 0.1}{-1/(sin(x + 1.0472))-1}
-\penwd{1.25pt}
-\arrow \function{3.6652, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
-\arrow \reverse \arrow \function{5.4892, 8.1242, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\arrow \reverse \function{8.62, 9.948, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\end{mfpic}
-
-\begin{mfpic}[15]{-1.25}{12.5}{-5}{3}
-\point[4pt]{(3.6652,0), (9.948,0), (6.807, -2)}
-\axes
-\tlabel[cc](12.5,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236, 6.807, 8.377, 9.948, 11.519}
-\ymarks{1,2,-1,-2,-3,-4}
-\tlpointsep{4pt}
-\axislabels {x}{{$-\frac{\pi}{6}$} -1.0472, {$\frac{\pi}{12}$} 0.5236, {$\frac{\pi}{3}$} 2.0944, {$\frac{7\pi}{12}$} 3.6652, {$\frac{5\pi}{6}$} 5.236, {$\frac{13\pi}{12}$} 6.807, {$\frac{4\pi}{3}$} 8.377, {$\frac{19\pi}{12}$} 9.948,  {$\frac{11\pi}{6}$} 11.519}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $-4$} -4, {\scriptsize $2$} 2}
-\dashed \polyline{(-1.0472,3),(-1.0472,-5)}
-\dashed \polyline{(2.0944,3),(2.0944,-5)}
-\dashed \polyline{(5.236,3),(5.236,-5)}
-\dashed \polyline{(8.377,3),(8.377,-5)}
-\dashed \polyline{(11.519,3),(11.519,-5)}
-\dotted[1pt, 3pt] \function{2.0944, 8.377, 0.1}{-sin(x + 1.0472)-1}
-\arrow \reverse \arrow \function{-0.794, 1.841, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\arrow \reverse \arrow \function{8.62, 11.27, 0.1}{-1/(sin(x + 1.0472))-1}
-\arrow \reverse \function{8.62, 9.948, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{2.347, 4.98, 0.1}{-1/(sin(x + 1.0472))-1}
-\arrow \reverse \arrow \function{5.4892, 8.1242, 0.1}{-1/(sin(x + 1.0472)) - 1}
-\end{mfpic}
-
-\end{multicols}
-
-Extending the graph one more cycle.
-
+    \desmos{wpxkqo7afu}{800}{600}
 \end{center}
-
-
 
 \item  Since the secant and cosecant curves are phase shifts of each other, we could find a formula for $f(t)$ in terms of cosecants by shifting our formula $F(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$ .  We leave this to the reader.\footnote{See Exercise \ref{secantcosecantshiftexercise}.}  
 
