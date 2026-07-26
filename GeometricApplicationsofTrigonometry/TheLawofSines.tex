@@ -694,6 +694,56 @@ We sketch this triangle below.
 
 From  $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{1}$, we get $\sin(\gamma) = 4 \sin\left(30^{\circ}\right) = 2$, which is impossible. (Why?)   As seen below on the left,  side $a$ is just too short to make a triangle. 
 
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
+
+% Key points
+\coordinate (A) at (0,0);
+\coordinate (B) at (5.85,0);
+\coordinate (C) at (5.05,2.92);
+\coordinate (D) at (5.05,1.45);
+
+% Given segments
+\draw[line width=1.3pt] (A)--(B);
+\draw[line width=1.3pt] (A)--(C);
+\draw[line width=1.3pt] (C)--(D);
+
+% Side labels
+\node[above left=5pt]
+    at ($(A)!0.58!(C)$) {$c=4$};
+
+\node[right=8pt]
+    at ($(C)!0.50!(D)$) {$a=1$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.75,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=1.75
+    ];
+
+\node at ($(A)+(2.55,0.55)$)
+    {$\alpha=30^\circ$};
+
+% Dotted continuation indicating possible endpoints
+\draw[-,dotted,line width=0.8pt]
+    ($(D)+(-0.6,0)$)
+    arc[
+        start angle=-110,
+        end angle=-70,
+        radius=1.7
+    ];
+
+
+\end{tikzpicture}
+\end{image}
+
  
 
 \end{enumerate}
@@ -721,43 +771,66 @@ Since  $\gamma$ is an angle in a triangle which also contains $\alpha = 30^{\cir
  As seen below on the right, the side $a$ is just long enough to form a  right triangle in this case.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1,
+    line cap=round,
+    line join=round
+]
 
-\begin{tabular}{cc}
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at ({4*cos(30)},{4*sin(30)});
+\coordinate (C) at ($(B)+(0,-2)$);
 
-\begin{mfpic}[40]{0}{4}{0}{2}
-\tlabel[cc](4.25,1.5){\small $a = 1$}
-\tlabel[cc](1.75,1.5){\small  $c = 4$}
-\tlabel[cc](1.85,0.35){\small $\alpha = 30^{\circ}$}
-\tlabel[cc](1.75,-0.25){\small \phantom{$b \approx 3.46$}}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\dotted \shiftpath{(3.46,2)}  \parafcn{240, 300, 5}{dir(t)}
-\penwd{1.25pt}
-\polyline{(4,0), (0,0), (3.46,2), (3.46,1)}
-\end{mfpic}
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
 
-&
+% Right-angle marker
+\draw[line width=0.8pt]
+    ($(C)+(-0.30,0)$) --
+    ($(C)+(-0.30,0.30)$) --
+    ($(C)+(0,0.30)$);
 
-\hspace{0.75in}
+% Side labels
+\node[above left=1pt]
+    at ($(A)!0.56!(B)$)
+    {$c=4$};
 
-\begin{mfpic}[40]{0}{4}{0}{4}
-\polyline{(3.21,0), (3.21,0.25), (3.46,.25)}
-\tlabel[cc](4,1){\small $a = 2$}
-\tlabel[cc](1,1){\small  $c = 4$}
-\tlabel[cc](1.75,-0.25){\small  $b \approx 3.46$}
-\tlabel[cc](1.85,0.35){\small  $\alpha = 30^{\circ}$}
-\tlabel[cc](2.9,1){\small  $\beta = 60^{\circ}$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \shiftpath{(3.46,2)}  \parafcn{215, 265, 5}{0.75*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (3.46,0), (0,0)}
-\end{mfpic} \\
+\node[right=4pt]
+    at ($(B)!0.50!(C)$)
+    {$a=2$};
 
-Diagram for number \ref{losnotriangleex} & \hspace{0.75in} Triangle for number \ref{losrighttriangleex}
+\node[below=6pt]
+    at ($(A)!0.50!(C)$)
+    {$b\approx3.46$};
 
-\end{tabular}
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.40,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=1.40
+    ];
 
-\end{center}
+\node at ($(A)+(2.05,0.45)$)
+    {$\alpha=30^\circ$};
+
+% Angle beta
+\draw[-,line width=0.8pt]
+    ($(B)+(0,-0.95)$)
+    arc[
+        start angle=-90,
+        end angle=-150,
+        radius=0.95
+    ];
+
+\node at ($(B)+(-0.72,-1.15)$)
+    {$\beta=60^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \item  Proceeding as we have in the previous two examples, we use the Law of Sines to find $\gamma$. 
 
@@ -784,46 +857,133 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
  
  The Law of Sines with the angle-side opposite pair $(\alpha, a)$ and $\beta$ gives $b \approx \frac{3 \sin\left(108.19^{\circ}\right)}{\sin\left(30^{\circ}\right)} \approx 5.70$ units.  We sketch this triangle below on the left.
  
-  
+  \begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
+
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at ({4*cos(30)},{4*sin(30)});
+\coordinate (C) at ({5.70},0);
+
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+
+% Side labels
+\node[above left=2pt]
+    at ($(A)!0.55!(B)$)
+    {$c=4$};
+
+\node[above right=2pt]
+    at ($(B)!0.55!(C)$)
+    {$a=3$};
+
+\node[below=8pt]
+    at ($(A)!0.50!(C)$)
+    {$b\approx5.70$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.40,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=1.40
+    ];
+
+\node at ($(A)+(2.00,0.45)$)
+    {$\alpha=30^\circ$};
+
+% Angle beta
+\draw[-,line width=0.8pt]
+    ($(B)+(-0.7,-0.4)$)
+    arc[
+        start angle=-142,
+        end angle=-34,
+        radius=0.7
+    ];
+
+\node at ($(B)+(0,-1)$)
+    {$\beta\approx108.19^\circ$};
+
+% Angle gamma
+\draw[-,line width=0.8pt]
+    ($(C)+(-0.90,0)$)
+    arc[
+        start angle=180,
+        end angle=138.19,
+        radius=0.90
+    ];
+
+\node at ($(C)+(-1.80,0.4)$)
+    {$\gamma\approx41.81^\circ$};
+
+\end{tikzpicture}
+\end{image}
  
  In the case $\gamma = \pi - \arcsin\left(\frac{2}{3}\right)$ radians $\approx 138.19^{\circ}$, we repeat the same steps and find $\beta \approx 11.81^{\circ}$ and $b \approx 1.23$ units.\footnote{An exact answer for $\beta$ in this case is $\beta = \arcsin\left(\frac{2}{3}\right) - \frac{\pi}{6}$ radians $\approx 11.81^{\circ}$.}  We sketch this triangle below on the right.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
-\begin{tabular}{cc}
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at (1.23,0);
+\coordinate (C) at ({4*cos(30)},{4*sin(30)});
 
-\begin{mfpic}[40]{0}{6}{0}{2}
-\tlabel[cc](5,1.15){\small $a = 3$}
-\tlabel[cc](1.5,1.25){\small  $c = 4$}
-\tlabel[cc](1.75,0.35){\small $\alpha = 30^{\circ}$}
-\tlabel[cc](3.25,1.15){\small $\beta \approx 108.19^{\circ}$}
-\tlabel[cc](4.15,0.35){\small $\gamma \approx 41.81^{\circ}$}
-\tlabel[cc](2.85,-0.25){\small $b \approx 5.70$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(3.46,2)}  \parafcn{215, 313, 5}{0.5*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(5.70,0)}  \parafcn{145, 175, 5}{0.75*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (5.70,0),(0,0)}
-\end{mfpic}
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
 
-&
+% Side labels
+\node[above left]
+    at ($(A)!0.52!(C)$)
+    {$c=4$};
 
-\begin{mfpic}[50]{0}{2}{0}{2}
-\tlabel[cc](2.15,0.5){\small $a = 3$}
-\tlabel[cc](1.25,1){\small  $c = 4$}
-\tlabel[cc](0,0.35){\small $\alpha = 30^{\circ}$}
-\tlabel[cc](2.5,1.75){\small $\beta \approx 11.81^{\circ}$}
-\tlabel[cc](1.9,0.05){\small $\gamma \approx 138.19^{\circ}$}
-\tlabel[cc](0.6,-0.25){\small $b \approx 1.23$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{0.5*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{45, 175, 5}{0.25*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (1.23,0),(0,0)}
-\end{mfpic} \\
+\node[right=3pt]
+    at ($(B)!0.50!(C)$)
+    {$a=3$};
 
-\end{tabular}
+\node[below=3pt]
+    at ($(A)!0.50!(B)$)
+    {$b\approx1.23$};
 
-\end{center}
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(0.5,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=0.5
+    ];
+
+\node[left=2pt] at ($(A)+(0.2,0.2)$)
+    {$\alpha=30^\circ$};
+
+% Angle beta
+\node at ($(C)+(-1.2,-0.1)$)
+    {$\beta\approx11.81^\circ$};
+
+% Angle gamma
+\draw[-,line width=0.8pt]
+    ($(B)+(-0.3,0)$)
+    arc[
+        start angle=180,
+        end angle=41.81,
+        radius=0.3
+    ];
+
+\node at ($(B)+(1.2,0.2)$)
+    {$\gamma\approx138.19^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \item  For this last problem, we repeat the usual Law of Sines routine to find that $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{4}$ so that $\sin(\gamma) = \frac{1}{2}$.  Since $\gamma$ must inhabit a triangle with $\alpha = 30^{\circ}$, we must have $0^{\circ} < \gamma < 150^{\circ}$.  
 
@@ -835,23 +995,72 @@ Since the  measure of $\gamma$ must be \textit{strictly less} than $150^{\circ}$
 
 Hence,  $\beta = 180^{\circ} - 30^{\circ} - 30^{\circ} = 120^{\circ}$.  The Law of Sines gives $b = \frac{4\sin\left(120^{\circ}\right)}{\sin\left(30^{\circ}\right)} = 4\sqrt{3} \approx 6.93$ units.  We sketch this triangle below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
-\begin{mfpic}[40]{0}{7}{0}{2}
-\tlabel[cc](5.5,1.15){\small $a = 4$}
-\tlabel[cc](1.5,1.25){\small  $c = 4$}
-\tlabel[cc](1.75,0.35){\small $\alpha = 30^{\circ}$}
-\tlabel[cc](3.5,1.15){\small $\beta = 120^{\circ}$}
-\tlabel[cc](5.25,0.35){\small $\gamma = 30^{\circ}$}
-\tlabel[cc](3.5,-0.25){\small $b \approx 6.93$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(3.46,2)}  \parafcn{215, 325, 5}{0.5*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(6.93,0)}  \parafcn{155, 175, 5}{1.25*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (6.93,0),(0,0)}
-\end{mfpic}
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at ({4*cos(30)},{4*sin(30)});
+\coordinate (C) at ({4*sqrt(3)},0);
 
-\end{center}
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+
+% Side labels
+\node[above left]
+    at ($(A)!0.55!(B)$)
+    {$c=4$};
+
+\node[above right]
+    at ($(B)!0.55!(C)$)
+    {$a=4$};
+
+\node[below]
+    at ($(A)!0.50!(C)$)
+    {$b\approx6.93$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.30,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=1.30
+    ];
+
+\node at ($(A)+(2.05,0.4)$)
+    {$\alpha=30^\circ$};
+
+% Angle beta
+\draw[-,line width=0.8pt]
+    ($(B)+(-0.70,-0.4)$)
+    arc[
+        start angle=-150,
+        end angle=-30,
+        radius=0.80
+    ];
+
+\node at ($(B)+(0,-1)$)
+    {$\beta=120^\circ$};
+
+% Angle gamma
+\draw[-,line width=0.8pt]
+    ($(C)+(-1.30,0)$)
+    arc[
+        start angle=180,
+        end angle=150,
+        radius=1.30
+    ];
+
+\node at ($(C)+(-1.95,0.4)$)
+    {$\gamma=30^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
@@ -919,42 +1128,125 @@ This means if $a \geq h$, we are always guaranteed to have at least one triangle
  
   
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
-\begin{tabular}{cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Case 1: a<h, no triangle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{mfpic}[40]{0}{4}{0}{2}
-\tlabel[cc](1.75,1.5){\small  $c$}
-\tlabel[cc](1.5,0.35){\small $\alpha$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \polyline{(4.25,0), (4.25,2)}
-\arrow \reverse \arrow \polyline{(3.75,2), (3.75,1.25)}
-\gclear \tlabelrect[cc](3.75,1.625){\small $a$}
-\gclear \tlabelrect[cc](4.5,1){\small $h=c \sin(\alpha)$}
-\penwd{1.25pt}
-\polyline{(3.46,0), (0,0), (3.46,2), (3.46,1.25)}
-\end{mfpic}
+\begin{scope}
 
-&
+% Key points
+\coordinate (A) at (0,0);
+\coordinate (B) at (5.0,0);
+\coordinate (C) at (5.0,2.95);
+\coordinate (D) at (5.0,1.85);
 
-\hspace{0.25in}
+% Given ray and segment of length a
+\draw[line width=1.3pt] (A)--(C);
+\draw[line width=1.3pt] (A)--(B);
+\draw[line width=1.3pt] (C)--(D);
 
-\begin{mfpic}[40]{0}{4}{0}{4}
-\polyline{(3.21,0), (3.21,0.25), (3.46,.25)}
-\tlabel[cc](1.75,1.5){\small  $c$}
-\tlabel[cc](1.5,0.35){\small  $\alpha$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \polyline{(4,0), (4,2)}
-\gclear \tlabelrect[cc](4.5,1){\small $a = h = c\sin(\alpha)$}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (3.46,0), (0,0)}
-\end{mfpic} \\
+% Labels
+\node[above left]
+    at ($(A)!0.55!(C)$)
+    {$c$};
 
-\hspace{-0.5in} $a < h$, no triangle & \hspace{-0.5in} $a = h$, $\gamma = 90^{\circ}$
+\node[right=12pt]
+    at ($(C)!0.50!(D)$)
+    {$a$};
 
-\end{tabular}
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.65,0)$)
+    arc[
+        start angle=0,
+        end angle=30.5,
+        radius=1.65
+    ];
 
-\end{center}
+\node at ($(A)+(1.9,0.53)$)
+    {$\alpha$};
+
+% Vertical dimension h
+\draw[<->,line width=0.8pt]
+    ($(B)+(1.15,0)$) -- ($(C)+(1.15,0)$);
+
+\node[right=6pt]
+    at ($(B)!0.50!(C)+(1.15,0)$)
+    {$h=c\sin(\alpha)$};
+
+% Small vertical dimension a
+\draw[<->,line width=0.8pt]
+    ($(D)+(0.42,0)$) -- ($(C)+(0.42,0)$);
+
+% Caption
+\node[below]
+    at ($(A)!0.52!(B)$)
+    {$a<h$, no triangle};
+
+\end{scope}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Case 2: a=h
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=8.8cm]
+
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at (5.0,0);
+\coordinate (C) at (5.0,2.95);
+
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+
+% Right-angle marker
+\draw[line width=0.8pt]
+    ($(B)+(-0.38,0)$) --
+    ($(B)+(-0.38,0.38)$) --
+    ($(B)+(0,0.38)$);
+
+% Labels
+\node[above left]
+    at ($(A)!0.55!(C)$)
+    {$c$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.65,0)$)
+    arc[
+        start angle=0,
+        end angle=30.5,
+        radius=1.65
+    ];
+
+\node at ($(A)+(1.9,0.53)$)
+    {$\alpha$};
+
+% Vertical dimension a=h
+\draw[<->,line width=0.8pt]
+    ($(B)+(0.78,0)$) -- ($(C)+(0.78,0)$);
+
+\node[right=2pt]
+    at ($(B)!0.50!(C)+(0.78,0)$)
+    {$a=h=c\sin(\alpha)$};
+
+% Caption
+\node[below]
+    at ($(A)!0.50!(B)$)
+    {$a=h,\ \gamma=90^\circ$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
  
  
