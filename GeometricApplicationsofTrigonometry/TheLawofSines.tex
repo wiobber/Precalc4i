@@ -44,9 +44,9 @@ Our first example reviews the basics of right triangle trigonometry.  The reader
     ($(B)+(0,0.5)$);
 
 % Side labels
-\node[below=7pt] at ($(A)!0.5!(B)$) {$b=4$};
+\node[below] at ($(A)!0.5!(B)$) {$b=4$};
 
-\node[right=8pt] at ($(B)!0.5!(C)$) {$a$};
+\node[right] at ($(B)!0.5!(C)$) {$a$};
 
 \node[left=8pt]
      at ($(A)!0.55!(C)$) {$c=7$};
@@ -56,14 +56,14 @@ Our first example reviews the basics of right triangle trigonometry.  The reader
     ($(A)+(1.3,0)$)
     arc[start angle=0,end angle=56.3,radius=1.3];
 
-\node at ($(A)+(1.65,0.75)$) {$\alpha$};
+\node at ($(A)+(1.5,0.7)$) {$\alpha$};
 
 % Angle beta
 \draw[-, line width=0.8pt]
     ($(C)+(0,-1.15)$)
     arc[start angle=-90,end angle=-123.7,radius=1.15];
 
-\node at ($(C)+(-0.75,-1.65)$) {$\beta$};
+\node at ($(C)+(-0.5,-1.4)$) {$\beta$};
 
 \end{tikzpicture}
 \end{image}
@@ -583,7 +583,7 @@ To find $c$, we have no choice but to used the derived value $\gamma = 15^{\circ
 % Side labels
 \node[left=8pt] at ($(A)!0.52!(B)$) {$c\approx 2.09$};
 \node[above=7pt] at ($(B)!0.48!(C)$) {$a=7$};
-\node[below=7pt] at ($(A)!0.50!(C)$) {$b\approx 5.72$};
+\node[below] at ($(A)!0.50!(C)$) {$b\approx 5.72$};
 
 % Angle alpha
 \draw[-,line width=0.8pt]
@@ -652,7 +652,7 @@ We sketch this triangle below.
 % Side labels
 \node[left=8pt]  at ($(A)!0.52!(B)$) {$c=5.25$};
 \node[right=8pt] at ($(B)!0.50!(C)$) {$a\approx 5.77$};
-\node[below=8pt] at ($(A)!0.52!(C)$) {$b\approx 2.90$};
+\node[below] at ($(A)!0.52!(C)$) {$b\approx 2.90$};
 
 % Angle alpha
 \draw[-,line width=0.8pt]
@@ -713,10 +713,10 @@ From  $\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{1}$, we get $
 \draw[line width=1.3pt] (C)--(D);
 
 % Side labels
-\node[above left=5pt]
+\node[above left]
     at ($(A)!0.58!(C)$) {$c=4$};
 
-\node[right=8pt]
+\node[right]
     at ($(C)!0.50!(D)$) {$a=1$};
 
 % Angle alpha
@@ -773,7 +773,7 @@ Since  $\gamma$ is an angle in a triangle which also contains $\alpha = 30^{\cir
 
 \begin{image}
 \begin{tikzpicture}[
-    scale=1,
+    scale=2,
     line cap=round,
     line join=round
 ]
@@ -801,32 +801,32 @@ Since  $\gamma$ is an angle in a triangle which also contains $\alpha = 30^{\cir
     at ($(B)!0.50!(C)$)
     {$a=2$};
 
-\node[below=6pt]
+\node[below=2pt]
     at ($(A)!0.50!(C)$)
     {$b\approx3.46$};
 
 % Angle alpha
 \draw[-,line width=0.8pt]
-    ($(A)+(1.40,0)$)
+    ($(A)+(0.5,0)$)
     arc[
         start angle=0,
         end angle=30,
-        radius=1.40
+        radius=0.5
     ];
 
-\node at ($(A)+(2.05,0.45)$)
+\node at ($(A)+(0.8,0.2)$)
     {$\alpha=30^\circ$};
 
 % Angle beta
 \draw[-,line width=0.8pt]
-    ($(B)+(0,-0.95)$)
+    ($(B)+(0,-0.5)$)
     arc[
         start angle=-90,
         end angle=-150,
-        radius=0.95
+        radius=0.5
     ];
 
-\node at ($(B)+(-0.72,-1.15)$)
+\node at ($(B)+(-0.5,-0.6)$)
     {$\beta=60^\circ$};
 
 \end{tikzpicture}
@@ -859,7 +859,7 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
  
   \begin{image}
 \begin{tikzpicture}[
-    scale=1.05,
+    scale=2,
     line cap=round,
     line join=round
 ]
@@ -873,52 +873,52 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
 \draw[line width=1.3pt] (A)--(B)--(C)--cycle;
 
 % Side labels
-\node[above left=2pt]
+\node[above left]
     at ($(A)!0.55!(B)$)
     {$c=4$};
 
-\node[above right=2pt]
-    at ($(B)!0.55!(C)$)
+\node[above right]
+    at ($(B)!0.5!(C)$)
     {$a=3$};
 
-\node[below=8pt]
+\node[below=2pt]
     at ($(A)!0.50!(C)$)
     {$b\approx5.70$};
 
 % Angle alpha
 \draw[-,line width=0.8pt]
-    ($(A)+(1.40,0)$)
+    ($(A)+(0.6,0)$)
     arc[
         start angle=0,
         end angle=30,
-        radius=1.40
+        radius=0.6
     ];
 
-\node at ($(A)+(2.00,0.45)$)
+\node at ($(A)+(1,0.2)$)
     {$\alpha=30^\circ$};
 
 % Angle beta
 \draw[-,line width=0.8pt]
-    ($(B)+(-0.7,-0.4)$)
+    ($(B)+(-0.43,-0.25)$)
     arc[
-        start angle=-142,
-        end angle=-34,
-        radius=0.7
+        start angle=210,
+        end angle=318.2,
+        radius=0.5
     ];
 
-\node at ($(B)+(0,-1)$)
+\node at ($(B)+(0,-0.7)$)
     {$\beta\approx108.19^\circ$};
 
 % Angle gamma
 \draw[-,line width=0.8pt]
-    ($(C)+(-0.90,0)$)
+    ($(C)+(-0.5,0)$)
     arc[
         start angle=180,
         end angle=138.19,
-        radius=0.90
+        radius=0.5
     ];
 
-\node at ($(C)+(-1.80,0.4)$)
+\node at ($(C)+(-0.9,0.2)$)
     {$\gamma\approx41.81^\circ$};
 
 \end{tikzpicture}
@@ -928,7 +928,7 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
 
 \begin{image}
 \begin{tikzpicture}[
-    scale=1.05,
+    scale=2,
     line cap=round,
     line join=round
 ]
@@ -967,7 +967,7 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
     {$\alpha=30^\circ$};
 
 % Angle beta
-\node at ($(C)+(-1.2,-0.1)$)
+\node at ($(C)+(-0.7,-0.1)$)
     {$\beta\approx11.81^\circ$};
 
 % Angle gamma
@@ -979,7 +979,7 @@ Since $c > a$, it must also be true that $\gamma$, which is opposite $c$, has gr
         radius=0.3
     ];
 
-\node at ($(B)+(1.2,0.2)$)
+\node at ($(B)+(0.8,0.2)$)
     {$\gamma\approx138.19^\circ$};
 
 \end{tikzpicture}
@@ -1269,49 +1269,104 @@ If we manipulate the inequality $\gamma_0 > \alpha$ a bit, we have  $180^{\circ}
 To prove the last case in the theorem, we assume $a \geq c$.  Then $\alpha \geq \gamma$, which forces $\gamma$ to be an acute angle. Hence, we get only one triangle in this case, completing the proof.
  
  
- \begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.0,
+    line cap=round,
+    line join=round
+]
 
-\begin{tabular}{cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Left: h < a < c (two triangles)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{mfpic}[50]{0}{6}{0}{2}
-\arrow \reverse \arrow \polyline{(3.46,1.9), (3.46,0.1)}
-\tlabel[cc](4.5,1.25){\small $a$}
-\tlabel[cc](2.8,1.25){\small $a$}
-\tlabel[cc](1.75,1.25){\small  $c$}
-\tlabel[cc](3.6,1){\small  $h$}
-\tlabel[cc](0.75,0.15){\small $\alpha$}
-\tlabel[cc](5,0.15){\small $\gamma_0$}
-\tlabel[cc](1.9,0.15){\small $\gamma_0$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{0.6*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(5.70,0)}  \parafcn{145, 175, 5}{0.5*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{45, 175, 5}{0.25*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{5, 35, 5}{0.5*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (1.23,0), (3.46,2), (0,0)}
-\polyline{(0,0), (3.46,2), (5.70,0),(0,0)}
-\end{mfpic}
+\begin{scope}
 
-&
+% Coordinates
+\coordinate (L) at (0,0);
+\coordinate (R) at (7.2,0);
+\coordinate (T) at (4.45,3.15);
+\coordinate (Q) at (4.45,0);
+\coordinate (A) at (2.10,0);
 
-\begin{mfpic}[25]{0}{7}{0}{2}
-\arrow \reverse \arrow \polyline{(3.46,1.9), (3.46,0.1)}
-\tlabel[cc](3.6,1){\small  $h$}
-\tlabel[cc](5.5,1.15){\small $a$}
-\tlabel[cc](1.5,1.25){\small  $c$}
-\tlabel[cc](1.75,0.35){\small $\alpha$}
-\tlabel[cc](5.25,0.35){\small $\gamma$}
-\arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(6.93,0)}  \parafcn{155, 175, 5}{1.25*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (3.46,2), (6.93,0),(0,0)}
-\end{mfpic} \\
+% Triangle outlines
+\draw[line width=1.3pt] (L)--(T)--(R)--cycle;
+\draw[line width=1.3pt] (A)--(T);
 
-$h < a < c$, two triangles & $a \geq c$, one triangle \\
+% Altitude
+\draw[<->,line width=0.8pt] (Q)--($(T)+(0,-0.2)$);
 
-\end{tabular}
+% Side labels
+\node[left=7pt] at ($(L)!0.55!(T)$) {$c$};
+\node[right] at ($(A)!0.45!(T)$) {$a$};
+\node[right=2pt] at ($(T)!0.55!(R)$) {$a$};
+\node[right] at ($(Q)!0.45!(T)$) {$h$};
 
+% Alpha
+\draw[-,line width=0.8pt]
+    ($(L)+(1,0)$)
+    arc[start angle=0,end angle=35,radius=1];
+\node at ($(L)+(1.1,0.35)$) {$\alpha$};
 
-\end{center}
+% Left gamma_0
+\draw[-,line width=0.8pt]
+    ($(A)+(-0.5,0)$)
+    arc[start angle=180,end angle=58,radius=0.5];
+\node at ($(A)+(-0.42,0.6)$) {$\gamma_0$};
+
+% Right gamma_0
+\draw[-,line width=0.8pt]
+    ($(R)+(-0.75,0)$)
+    arc[start angle=180,end angle=131,radius=0.75];
+\node at ($(R)+(-0.9,0.5)$) {$\gamma_0$};
+
+% Caption
+\node[below] at ($(L)!0.5!(R)$)
+{$h<a<c$, two triangles};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Right: a >= c (one triangle)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=9.3cm]
+
+% Coordinates
+\coordinate (L) at (0,0);
+\coordinate (R) at (4.7,0);
+\coordinate (T) at (2.45,1.95);
+\coordinate (Q) at (2.45,0);
+
+% Triangle
+\draw[line width=1.3pt] (L)--(T)--(R)--cycle;
+\draw[<->,line width=0.8pt] (Q)--($(T)+(0,-0.2)$);
+
+% Labels
+\node[left=6pt] at ($(L)!0.55!(T)$) {$c$};
+\node[right=6pt] at ($(T)!0.45!(R)$) {$a$};
+\node[right] at ($(Q)!0.50!(T)$) {$h$};
+
+% Alpha
+\draw[-,line width=0.8pt]
+    ($(L)+(0.90,0)$)
+    arc[start angle=0,end angle=39,radius=0.90];
+\node at ($(L)+(1.1,0.36)$) {$\alpha$};
+
+% Gamma
+\draw[-,line width=0.8pt]
+    ($(R)+(-0.72,0)$)
+    arc[start angle=180,end angle=139,radius=0.72];
+\node at ($(R)+(-0.9,0.3)$) {$\gamma$};
+
+% Caption
+\node[below] at ($(L)!0.5!(R)$)
+{$a\ge c$, one triangle};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 One last comment regarding the Angle-Side-Side case:  if you are given an obtuse angle to begin with then it is impossible to have the two triangle case.  Think about this before reading further.
 
@@ -1374,37 +1429,68 @@ For example, N$40^{\circ}$E (read ``$40^{\circ}$ east of north'') is a bearing w
  
  These four bearings are sketched in the plane below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.15,
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](0,5.5){N}
-\tlabel[cc](5.5,0){E}
-\tlabel[cc](0,-5.5){S}
-\tlabel[cc](-5.5,0){W}
-\arrow[l5pt] \polyline{(0,0), (-5,0)}
-\arrow[l5pt] \polyline{(0,0), (0,-5)}
-\tlabel[cc](3.53, 4.21){N$40^{\circ}$E}
-\arrow \arc[c]{(0,0), (0.1,2), -35}
-\tlabel[cc](0.86,2.3){\scriptsize $40^{\circ}$}
-\tlabel[cc](-4.76,2.8){N$60^{\circ}$W}
-\arrow \arc[c]{(0,0), (-0.1,2), 55}
-\tlabel[cc](-1.25,2.17){\scriptsize $60^{\circ}$}
-\tlabel[cc](-4.4,-3.7){S$50^{\circ}$W}
-\arrow \arc[c]{(0,0), (-0.1,-2), -45}
-\tlabel[cc](-1.04,-2.22){\scriptsize $50^{\circ}$}
-\tlabel[cc](2.50,-5){S$27^{\circ}$E}
-\arrow \arc[c]{(0,0), (0.1,-2), 23}
-\tlabel[cc](0.57, -2.38){\scriptsize $27^{\circ}$}
-\point[4pt]{(0,0)}
-\penwd{1.25pt}
-\arrow \reverse \polyline{(3.2139, 3.8302), (0,0)}
-\arrow \reverse \polyline{(-4.3301,2.5), (0,0)}
-\arrow \reverse \polyline{(-3.83,-3.21), (0,0)}
-\arrow \reverse \polyline{(2.2700,-4.4550), (0,0)}
-\end{mfpic}
+% Origin
+\coordinate (O) at (0,0);
 
-\end{center}
+% Compass axes
+\draw[<->,line width=0.8pt] (0,-3.3)--(0,3.3);
+\draw[<->,line width=0.8pt] (-3.8,0)--(3.8,0);
+
+% Axis labels
+\node[above] at (0,3.45) {$N$};
+\node[below] at (0,-3.45) {$S$};
+\node[left]  at (-3.95,0) {$W$};
+\node[right] at (3.95,0) {$E$};
+
+% Bearings
+\draw[->,line width=1.3pt] (O)--(150:3.2);
+\draw[->,line width=1.3pt] (O)--(50:3.2);
+\draw[->,line width=1.3pt] (O)--(220:3.2);
+\draw[->,line width=1.3pt] (O)--(-63:3.2);
+
+% Filled origin
+\fill (O) circle (2pt);
+
+% Bearing labels
+\node[left]  at (150:3.35) {N60$^\circ$W};
+\node[right] at (50:3.35)  {N40$^\circ$E};
+\node[left]  at (220:3.35) {S50$^\circ$W};
+\node[right] at (-63:3.35) {S27$^\circ$E};
+
+% 60 degree arc
+\draw[<->,line width=0.8pt]
+    (90:1.25)
+    arc[start angle=90,end angle=150,radius=1.25];
+\node at (120:1.55) {$60^\circ$};
+
+% 40 degree arc
+\draw[<->,line width=0.8pt]
+    (90:1.25)
+    arc[start angle=90,end angle=50,radius=1.25];
+\node at (70:1.55) {$40^\circ$};
+
+% 50 degree arc
+\draw[<->,line width=0.8pt]
+    (270:1.25)
+    arc[start angle=270,end angle=220,radius=1.25];
+\node at (245:1.55) {$50^\circ$};
+
+% 27 degree arc
+\draw[<->,line width=0.8pt]
+    (270:1.25)
+    arc[start angle=270,end angle=297,radius=1.25];
+\node at (284:1.55) {$27^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 The cardinal directions north, south, east and west are usually not given as bearings in the fashion described above, but rather, one just refers to them as `due north', `due south', `due east' and `due west', respectively, and it is assumed that you know which quadrantal angle goes with each cardinal direction.  
 
@@ -1418,33 +1504,81 @@ We make good use of bearings and the Law of Sines in our next example.
 
  
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.1,
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[20]{-7}{5}{-5}{6}
-\polyline{(-6,0), (-2.5,0), (2.5,5),(-6,0)}
-\polyline{(-2.5,0), (0.25,0)}
-\arrow \polyline{(-6,0), (-6, 5)}
-\tlabel[cc](-5.75,5){$N$}
-\tlabel[cc](-2.15,5){$N$}
-\arrow \polyline{(-2.5,0), (-2.5, 5)}
-\tlabel(-2.25, 1.5){$45^{\circ}$}
-\tlabel(-5.25, 1.5){$60^{\circ}$}
-\tlabel[cc](-6.25,-0.5){$P$}
-\tlabel[cc](-2.75,-0.5){$Q$}
-\arrow \reverse \arrow \shiftpath{(-6,0)} \parafcn{35, 85, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{50, 85, 5}{dir(t)}
-\arrow \reverse \arrow \polyline{(-6,-0.8), (-2.5,-0.8)}
-\tlabel[cc](-4.25,-1.25){$5$ miles}
-\tlabel(0.5,-0.15){Shoreline}
-\point[4pt]{(-2.5,0), (-6,0)}
-\plotsymbol[5pt]{Asterisk}{(2.5,5)}
-\tlabel[cc](2.75,5.75){Sasquatch Island}
-\penwd{1.25pt}
-\polyline{(-6,0), (0.25,0)}
-\end{mfpic} 
+% Key points
+\coordinate (P) at (0,0);
+\coordinate (Q) at (2.75,0);
+\coordinate (S) at (6.65,3.95);
 
+% Shoreline
+\draw[line width=1.3pt] (P)--(4.95,0);
 
-\end{center}
+% North lines
+\draw[->,line width=0.8pt] (P)--(0,3.95);
+\draw[->,line width=0.8pt] (Q)--($(Q)+(0,3.95)$);
+
+% Sight lines
+\draw[line width=0.9pt] (P)--(S);
+\draw[line width=0.9pt] (Q)--(S);
+
+% Points
+\fill (P) circle (2.2pt);
+\fill (Q) circle (2.2pt);
+\node at (S) {\Large $*$};
+
+% Point labels
+\node[below left=2pt] at (P) {$P$};
+\node[below=4pt] at (Q) {$Q$};
+
+% North labels
+\node[above right=1pt] at (0,3.95) {$N$};
+\node[above right=1pt] at ($(Q)+(0,3.95)$) {$N$};
+
+% Island and shoreline labels
+\node[above=8pt] at (S) {Sasquatch Island};
+\node[right=7pt] at (4.95,0) {Shoreline};
+
+% 60-degree bearing at P
+\draw[->,line width=0.8pt]
+    ($(P)+(0,1.05)$)
+    arc[
+        start angle=90,
+        end angle=30,
+        radius=1.05
+    ];
+
+\node at ($(P)+(0.88,1.35)$)
+    {$60^\circ$};
+
+% 45-degree bearing at Q
+\draw[->,line width=0.8pt]
+    ($(Q)+(0,0.90)$)
+    arc[
+        start angle=90,
+        end angle=45,
+        radius=0.90
+    ];
+
+\node at ($(Q)+(0.56,1.35)$)
+    {$45^\circ$};
+
+% Five-mile dimension
+\draw[<->,line width=0.8pt]
+    ($(P)+(0,-0.62)$)--($(Q)+(0,-0.62)$);
+
+\node[below=4pt]
+    at ($(P)!0.5!(Q)+(0,-0.62)$)
+    {$5\text{ miles}$};
+
+\end{tikzpicture}
+\end{image}
 
  
 
@@ -1458,32 +1592,99 @@ We pause for a moment to summarize our known (and label our unknown) information
 
  
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.1,
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[25]{-7}{5}{-5}{6}
-\arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{dir(t)}
-\tlabel(-1.25, 0.25){$45^{\circ}$}
-\tlabel(-4.5, 0.25){$30^{\circ}$}
-\tlabel[cc](-2.75, 0.75){$\gamma$}
-\tlabel[cc](0.25, 3.25){$\beta$}
-\tlabel[cc](-6.25,-0.5){$P$}
-\tlabel[cc](-2.75,-0.5){$Q$}
-\arrow \reverse \arrow \shiftpath{(-6,0)} \parafcn{5, 25, 5}{1.25*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{50, 175, 5}{0.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(2.5,5)} \parafcn{212, 223, 5}{2*dir(t)}
-\arrow \reverse \arrow \polyline{(-6,-0.8), (-2.5,-0.8)}
-\tlabel[cc](-4.25,-1.25){$5$ miles}
-\tlabel(-0.75,1.25){$d$ miles}
-\tlabel(0.5,-0.15){Shoreline}
-\point[4pt]{(-2.5,0), (-6,0)}
-\plotsymbol[6pt]{Asterisk}{(2.5,5)}
-\tlabel[cc](2.75,5.75){Sasquatch Island}
-\polyline{(-2.5,0), (0.25,0)}
-\penwd{1.25pt}
-\polyline{(-6,0), (-2.5,0), (2.5,5),(-6,0)}
-\end{mfpic} 
+% Points
+\coordinate (P) at (0,0);
+\coordinate (Q) at (2.8,0);
+\coordinate (S) at (7.3,4.4);
 
-\end{center}
+% Shoreline
+\draw[line width=1.3pt] (P)--(5.2,0);
+
+% Sight lines
+\draw[line width=1.3pt] (P)--(S);
+\draw[line width=1.3pt] (Q)--(S);
+
+% Points
+\fill (P) circle (2.2pt);
+\fill (Q) circle (2.2pt);
+\node at (S) {\Large $*$};
+
+% Labels
+\node[below left=2pt] at (P) {$P$};
+\node[below=4pt] at (Q) {$Q$};
+
+\node[above=10pt] at (S) {Sasquatch Island};
+\node[right=8pt] at (5.2,0) {Shoreline};
+
+% Distance label
+\node[right=8pt] at ($(Q)!0.52!(S)$) {$d\text{ miles}$};
+
+% 30-degree angle at P
+\draw[->,line width=0.8pt]
+    ($(P)+(1.00,0)$)
+    arc[
+        start angle=0,
+        end angle=30,
+        radius=1.00
+    ];
+
+\node at ($(P)+(1.45,0.42)$)
+    {$30^\circ$};
+
+% 45-degree angle at Q
+\draw[->,line width=0.8pt]
+    ($(Q)+(0.90,0)$)
+    arc[
+        start angle=0,
+        end angle=45,
+        radius=0.90
+    ];
+
+\node at ($(Q)+(1.15,0.52)$)
+    {$45^\circ$};
+
+% Gamma angle at Q
+\draw[->,line width=0.8pt]
+    ($(Q)+(-0.70,0)$)
+    arc[
+        start angle=180,
+        end angle=45,
+        radius=0.70
+    ];
+
+\node at ($(Q)+(-0.18,0.9)$)
+    {$\gamma$};
+
+% Beta angle at island
+\draw[->,line width=0.8pt]
+    ($(S)+(-0.82,-0.55)$)
+    arc[
+        start angle=214,
+        end angle=231,
+        radius=0.82
+    ];
+
+\node at ($(S)+(-1.25,-1.00)$)
+    {$\beta$};
+
+% Five-mile dimension
+\draw[<->,line width=0.8pt]
+    ($(P)+(0,-0.70)$)--($(Q)+(0,-0.70)$);
+
+\node[below=4pt]
+    at ($(P)!0.5!(Q)+(0,-0.70)$)
+    {$5\text{ miles}$};
+
+\end{tikzpicture}
+\end{image}
 
 In order to use the Law of Sines to find the distance $d$ from $Q$ to the island, we first need to find the measure of $\beta$ which is the angle opposite the side of length $5$ miles.    
 
@@ -1499,28 +1700,77 @@ By the Law of Sines, we have $\frac{d}{\sin\left(30^{\circ}\right)} = \frac{5}{\
 
 To  find the point on the coast closest to the island, which we've labeled as $C$ in the diagram below, we need to find the perpendicular distance from the island to the coast.\footnote{Do you see why $C$ must lie to the right (East) of $Q$?} Let $x$ denote the distance from the second observation point $Q$ to the point $C$  and let $y$ denote the distance from $C$ to the island. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.1,
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[25]{-7}{5}{-5}{6}
-\polyline{(2.25, 0), (2.25, 0.25), (2.5, 0.25)}
-\tlabel(-1.25, 0.25){$45^{\circ}$}
-\tlabel(1.75,3.5){$\beta$}
-\tlabel(-3,2.5){$d \approx 9.66$ miles}
-\arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{dir(t)}
-\arrow \reverse \arrow \shiftpath{(2.5,5)} \parafcn{230, 265, 5}{dir(t)}
-\arrow \reverse \arrow \polyline{(-2.5,-0.8), (2.5,-0.8)}
-\tlabel[cc](0,-1.25){$x$ miles}
-\tlabel(2.75,2.25){$y$ miles}
-\tlabel[cc](-2.75,-0.5){$Q$}
-\tlabel[cc](2.75,-0.5){$C$}
-\point[4pt]{(-2.5,0), (2.5,0)}
-\plotsymbol[6pt]{Asterisk}{(2.5,5)}
-\tlabel[cc](2.75,5.75){Sasquatch Island}
-\penwd{1.25pt}
-\polyline{(-2.5,0), (2.5,5), (2.5,0), (-2.5,0)}
-\end{mfpic} 
+% Vertices
+\coordinate (Q) at (0,0);
+\coordinate (C) at (4.7,0);
+\coordinate (S) at (4.7,4.7);
 
-\end{center}
+% Triangle
+\draw[line width=1.3pt] (Q)--(C)--(S)--cycle;
+
+% Right-angle marker
+\draw[line width=0.8pt]
+    ($(C)+(-0.28,0)$) --
+    ($(C)+(-0.28,0.28)$) --
+    ($(C)+(0,0.28)$);
+
+% Points
+\fill (Q) circle (2.2pt);
+\fill (C) circle (2.2pt);
+\node at (S) {\Large $*$};
+
+% Labels
+\node[below left=2pt] at (Q) {$Q$};
+\node[below=4pt] at (C) {$C$};
+\node[above=10pt] at (S) {Sasquatch Island};
+
+% Side labels
+\node[left=8pt]
+    at ($(Q)!0.55!(S)$)
+    {$d\approx9.66\text{ miles}$};
+
+\node[right=8pt]
+    at ($(C)!0.50!(S)$)
+    {$y\text{ miles}$};
+
+\node[below=8pt]
+    at ($(Q)!0.50!(C)$)
+    {$x\text{ miles}$};
+
+% 45-degree angle at Q
+\draw[->,line width=0.8pt]
+    ($(Q)+(1.00,0)$)
+    arc[
+        start angle=0,
+        end angle=45,
+        radius=1.00
+    ];
+
+\node at ($(Q)+(1.45,0.45)$)
+    {$45^\circ$};
+
+% Beta angle at S
+\draw[->,line width=0.8pt]
+    ($(S)+(0,-0.85)$)
+    arc[
+        start angle=-90,
+        end angle=-135,
+        radius=0.85
+    ];
+
+\node at ($(S)+(-0.75,-1.05)$)
+    {$\beta$};
+
+\end{tikzpicture}
+\end{image}
 
  Using Definition  \ref{righttrianglesinecosinetangent}, we get $\sin\left(45^{\circ}\right) = \frac{y}{d}$, so  $y = d \sin\left(45^{\circ}\right) \approx 9.66 \left(\frac{\sqrt{2}}{2}\right) \approx 6.83$ miles.  Hence, the island is approximately $6.83$ miles from the coast. 
  
