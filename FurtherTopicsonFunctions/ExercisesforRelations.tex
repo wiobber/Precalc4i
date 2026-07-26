@@ -11,7 +11,7 @@
 
 In Exercises \ref{relationfirst} - \ref{relationlast}, graph the given relation in the $xy$-plane.
 
-\smallskip
+
 
 % Transformed Exercises with Solutions
 
@@ -539,8 +539,6 @@ $\left\{ \left(x,-3 \right) \, | \, -4 < x \leq 4 \right\}$
 \end{axis}
 \end{tikzpicture}
 
-
-
 \end{solution}
 
 \end{problem}
@@ -762,57 +760,43 @@ $\{ (x, y) \, | \, -\sqrt{2} \leq x \leq \frac{2}{3}, \; \pi < y \leq \frac{9}{2
 
 \end{axis}
 \end{tikzpicture}
-
-% \input{ExercisesforRelations_pic30.tex}
-\begin{mfpic}[15]{-3}{2}{-1}{6}
-\fillcolor[gray]{.7}
-\gfill \rect{(-1.38, 3.17), (0.63, 4.47)}
-\dashed \polyline{(0.6667, 3.1415), (-1.414, 3.1415)}
-\axes
-\tlabel[cc](2,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-2,-1,1}
-\ymarks{1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\polyline{(-1.414, 3.1415), (-1.414, 4.5)}
-\polyline{(-1.414, 4.5), (0.6667, 4.5)}
-\polyline{(0.6667, 4.5), (0.6667, 3.1415)}
-\pointfillfalse
-\point[4pt]{(-1.414, 3.1415), (0.6667, 3.1415)}
-\end{mfpic}
-
-
 \end{solution}
 
 \end{problem}
 
+In Exercises \ref{relationsetfirst} - \ref{relationsetlast}, describe the given relation using either the roster or set-builder method.
+
 \begin{problem}
-$~$ 
 
-% \input{ExercisesforRelations_pic1.tex}
-\begin{mfpic}[15]{-5}{2}{-2}{5}
-\point[4pt]{(-4, -1),  (-2, 1),  (0, 3), (1, 4)}
-\axes
-\tlabel[cc](2,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1}
-\ymarks{-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\tcaption{Relation $A$}
-\end{mfpic}
+Relation A:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=3, ymin=-3, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3, -2 ,-1, 0, 1, 2},
+    ytick={-2 ,-1, 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\fill[blue] 
+
+(-4, -1) circle (2pt)
+(-2, 1) circle (2pt)
+(0, 3) circle (2pt)
+(1, 4) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 
-
-\vfill
 \begin{solution}
 $A = \{(-4, -1),  (-2, 1),  (0, 3), (1, 4)\}$
 \end{solution}
@@ -820,26 +804,30 @@ $A = \{(-4, -1),  (-2, 1),  (0, 3), (1, 4)\}$
 \end{problem}
 
 \begin{problem}
-$~$
 
-% \input{ExercisesforRelations_pic2.tex}
-\begin{mfpic}[15]{-5}{5}{-1}{4}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-1 \hspace{7pt}$} -1, {$-2 \hspace{7pt}$} -2, {$-3 \hspace{7pt}$} -3, {$-4 \hspace{7pt}$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \polyline{(-3,3), (5,3)}
-\point[4pt]{(-3,3)}
-\tcaption{Relation $B$}
-\end{mfpic}
- 
+Relation B:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=2, ymin=-1, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2 ,-1, 0, 1},
+    ytick={ 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\draw[blue, thick, ->]  (-3,3) -- (2,3);
+\fill[blue] (-3,3) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 
 \begin{solution}
@@ -852,29 +840,31 @@ $B = \left\{ \left(x,3 \right) \, | \, x \geq -3 \right\}$
 \end{problem}
 
 \begin{problem}
-$~$
+Relation C:
 
-% \input{ExercisesforRelations_pic3.tex}
-\begin{mfpic}[15]{-1}{4}{-4}{6}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{1,2,3}
-\ymarks{-3,-2,-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \polyline{(2,-3), (2,5)}
-\pointfillfalse
-\point[4pt]{(2,-3)}
-\tcaption{Relation $C$}
-\end{mfpic}
- 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-2, xmax=4, ymin=-4, ymax=2,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\draw[blue, thick, ->]  (2,-3) -- (2,2);
+\fill[blue] (2,-3) circle (2pt);
+\fill[white] (2,-3) circle (1.25pt);
+\end{axis}
+\end{tikzpicture}
 
-\vfill
 \begin{solution}
 $C = \{ \left(2,y) \, | \, y > -3 \right\}$
 \end{solution}
@@ -882,120 +872,127 @@ $C = \{ \left(2,y) \, | \, y > -3 \right\}$
 \end{problem}
 
 \begin{problem}
-$~$ 
+Relation D:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=2, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1},
+    ytick={-4, -3, -2, -1, 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\draw[blue, thick, -]  (-2,-4) -- (-2,3);
+\fill[blue] (-2,-4) circle (2pt);
+\fill[blue] (-2,3) circle (2pt);
+\fill[white] (-2,3) circle (1.25pt);
+\end{axis}
+\end{tikzpicture}
 
 
-% \input{ExercisesforRelations_pic4.tex}
-\begin{mfpic}[15]{-4}{1}{-5}{4}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-3,-2,-1}
-\ymarks{-4,-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$-4$} -4,{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\polyline{(-2,-4), (-2,3)}
-\point[4pt]{(-2,-4)}
-\pointfillfalse
-\point[4pt]{(-2,3)}
-\tcaption{Relation $D$}
-\end{mfpic}
+$D = \{ \left(-2,y) \, | \, \answer{-4} \leq y < \answer{3} \right\}$
+
+
+\end{problem}
+
+\begin{problem}
+Relation E:
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=4, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$t$}, ylabel={$s$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 0, 1, 2, 3},
+    ytick={0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\draw[blue, thick, -]  (-4,2) -- (3,2);
+\fill[blue] (-4,2) circle (2pt);
+\fill[blue] (3,2) circle (2pt);
+\fill[white] (3,2) circle (1.25pt);
+\end{axis}
+\end{tikzpicture}
 
 
 \begin{solution}
-$D = \{ \left(-2,y) \, | \, -4 \leq y < 3 \right\}$
-
+$E = \left\{ \left(t,2 \right) \, | \, -4 \leq t < 3 \right\}$
 \end{solution}
 
 \end{problem}
 
 \begin{problem}
-$~$
+Relation F:
 
-% \input{ExercisesforRelations_pic5.tex}
-\begin{mfpic}[15]{-5}{5}{-1}{4}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,4){\scriptsize $s$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\polyline{(-4,2), (3,2)}
-\point[4pt]{(-4,2)}
-\pointfillfalse
-\point[4pt]{(3,2)}
-\tcaption{Relation $E$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-1, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$t$}, ylabel={$s$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\fill[fill=blue!20, fill opacity=0.5] (-3.8, 0) -- (3.5, 0) -- (3.5, 4.7) -- (-3.8, 4.7) -- cycle;
+\draw[blue, thick, <->] (-4, 0) -- (3.6, 0);
+\end{axis}
+\end{tikzpicture}
 
+$F = \{ \left(t,s) \, | \, s \geq \answer{0} \right\}$
 
-\vfill
-\begin{solution}
-$E = \left\{ \left(t,2 \right) \, | \, -4 < t \leq 3 \right\}$
-\end{solution}
 
 \end{problem}
 
 \begin{problem}
-$~$
+Relation G:
 
-% \input{ExercisesforRelations_pic6.tex}
-\begin{mfpic}[15]{-4}{4}{-1}{5}
-\fillcolor[gray]{.7}
-\gfill \rect{(-4,0), (3.75,4.75)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $s$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{ {$1$} 1, {$2$} 2, {$3$} 3, , {$4$} 4}
-\normalsize
-\tcaption{Relation $F$}
-\end{mfpic}
- 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\fill[fill=blue!20, fill opacity=0.5] (-2, 3.6) -- (3.6, 3.6) -- (3.6, -3.8) -- (-2, -3.8) -- cycle;
+\draw[blue, thick, dashed,  <->] (-2,-4) -- (-2,3.75);
+\end{axis}
+\end{tikzpicture}
 
-\begin{solution}
-$F = \{ \left(t,s) \, | \, s \geq 0 \right\}$
-
-\end{solution}
-
-\end{problem}
-
-\begin{problem}
-$~$
-
-% \input{ExercisesforRelations_pic7.tex}
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \rect{(-1.97,-3.75), (3.75,3.75)}
-\arrow \reverse \arrow \dashed \polyline{(-2,-4), (-2,4)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,4){\scriptsize $w$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$1$} 1,{$2$} 2,{$3$} 3}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\tcaption{Relation $G$}
-\end{mfpic}
- 
-
-
-\vfill
 \begin{solution}
 $G = \left\{ \left(v,w \right) \, | \, v > -2 \right\}$
 \end{solution}
@@ -1003,91 +1000,96 @@ $G = \left\{ \left(v,w \right) \, | \, v > -2 \right\}$
 \end{problem}
 
 \begin{problem}
-$~$
 
-% \input{ExercisesforRelations_pic8.tex}
-\begin{mfpic}[15]{-4.5}{4}{-4}{4}
+Relation H:
 
-\fillcolor[gray]{.7}
-\gfill \rect{(-2.97,-3.75), (1.97,3.75)}
-\arrow \reverse \arrow \dashed \polyline{(-3,-4), (-3,4)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,4){\scriptsize $w$}
-\xmarks{-4,-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4,{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$1$} 1,{$2$} 2,{$3$} 3}
-\axislabels {y}{ {$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(2,-4), (2,4)}
-\tcaption{Relation $H$}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\fill[fill=blue!20, fill opacity=0.5] (-3, -3.8) -- (-3, 3.65) -- (2, 3.65) -- (2, -3.8) -- cycle;
+\draw[blue, thick, dashed,  <->] (-3,-3.9) --  (-3,3.75);
+\draw[blue, thick, <->] (2,-3.9) -- (2,3.75);
+\end{axis}
+\end{tikzpicture}
 
 
+$H = \left\{ \left(v,w\right) \, | \, \answer{-3} < v \leq \answer{2} \right\}$
 
-\begin{solution}
-$H = \left\{ \left(v,w\right) \, | \, -3 < v \leq 2 \right\}$
-
-\end{solution}
 
 \end{problem}
 
 \begin{problem}
-$~$
 
-% \input{ExercisesforRelations_pic9.tex}
-\begin{mfpic}[15]{-1.5}{6}{-1.5}{6}
-\fillcolor[gray]{.7}
-\gfill \rect{(0,0), (5.75,5.75)}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $u$}
-\tlabel[cc](0.5,6){\scriptsize $v$}
-\xmarks{-1,1,2,3,4,5}
-\ymarks{-1,1,2,3,4,5}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{ {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\axislabels {y}{ {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\tcaption{Relation $I$}
-\end{mfpic}
- 
+Relation I:
 
-\vfill
-\begin{solution}
-$I = \{ \left(u,v) \, | \, u \geq 0, \! v \geq 0\right\}$
-\end{solution}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-1, xmax=4, ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$u$}, ylabel={$v$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={1, 2, 3},
+    ytick={1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+\fill[fill=blue!20, fill opacity=0.5] (0, 0) -- (0, 3.65) -- (3.65, 3.65) -- (3.65, 0) -- cycle;
+\draw[blue, thick,  ->] (0,0) --  (0,3.75);
+\draw[blue, thick, ->] (0,0) -- (3.75,0);
+\end{axis}
+\end{tikzpicture}
+
+
+$I = \{ \left(u,v) \, | \, u \geq \answer{0}, \! v \geq \answer{0}\right\}$
+
 
 \end{problem}
 
 \begin{problem}
-$~$ 
 
-% \input{ExercisesforRelations_pic10.tex}
-\begin{mfpic}[15]{-4.5}{5.5}{-4}{3}
-\fillcolor[gray]{.7}
-\gfill \rect{(-3.97, -2.97), (4.97, 1.97)}
-\dashed \polyline{(-4, -3), (-4, 2)}
-\dashed \polyline{(-4, 2), (5, 2)}
-\dashed \polyline{(5, 2), (5, -3)}
-\dashed \polyline{(5, -3), (-4, -3)}
-\axes
-\tlabel[cc](5.5,-0.5){\scriptsize $u$}
-\tlabel[cc](0.5,3){\scriptsize $v$}
-\xmarks{-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-3,-2,-1,1,2}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2}
-\normalsize
-\tcaption{Relation $J$}
-\end{mfpic}
+Relation J:
 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$u$}, ylabel={$v$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
+    ytick={-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
 
+\filldraw[fill=blue!20, fill opacity=0.5, dashed] (-4, -3) -- (-4, 2) -- (5, 2) -- (5, -3) -- cycle;
+\end{axis}
+\end{tikzpicture}
 
 \begin{solution}
 $J = \{(u, v) \, | \, -4 < u < 5, \; -3 < v < 2\}$
@@ -1096,79 +1098,120 @@ $J = \{(u, v) \, | \, -4 < u < 5, \; -3 < v < 2\}$
 
 \end{problem}
 
+Some relations are fairly easy to describe in words or with the roster method but are rather difficult, if not impossible, to graph. Discuss with your classmates how you might graph the relations given in Exercises \ref{cannotgraphfirst} - \ref{cannotgraphlast}.  Note that in the notation below we are using the ellipsis, `\ldots,' to denote that the list does not end, but rather, continues to follow the established pattern indefinitely.  
+
+For the relations in Exercises \ref{cannotgraphfirst} and \ref{cannotgraphsecond}, give two examples of points which belong to the relation and two points which do not belong to the relation.
+
+\begin{problem} \label{cannotgraphfirst}
+$\{(x, y) \, | \, x \mbox{ is an odd integer, and } y \mbox{ is an even integer.}\}$ 
+\end{problem}
+
+\begin{problem} \label{cannotgraphsecond}
+$\{(x, 1) \, | \, x \mbox{ is an irrational number }\}$ 
+\end{problem}
+
 \begin{problem}
-$\{(x, y) \, | \, x \mbox{ is an odd integer, and } y \mbox{ is an even integer.}\}$
+$\{(1, 0), (2, 1), (4, 2), (8, 3), (16, 4), (32, 5), \ldots \}$
+\end{problem}
+
+\begin{problem} \label{cannotgraphlast}
+$\{\ldots, (-3, 9), (-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4), (3, 9), \ldots \}$ 
+\end{problem}
+
+For each equation given in Exercises \ref{oldonethreefirst} - \ref{oldonethreelast}:
+
+\begin{itemize}
+
+\item   Graph the equation in the $xy$-plane by creating a table of points. 
+
+\item  Find the axis intercepts, if they exist.
+
+\item  Test the equation for symmetry.  If the equation fails a symmetry test, find a point on the graph of the equation whose symmetric point is not on the graph of the equation.
+
+\item  Determine if the equation describes $y$ as a function of $x$.  If not, describe the graph of the equation using two or more explicit functions of $x$.  Check your answers using a graphing utility.
+
+\end{itemize}
+
+\begin{problem} \label{oldonethreefirst}
+$(x+2)^2+y^2=16$
+
 \begin{solution}
-$(x+2)^2+y^2=16$ \\ Re-write as $y = \pm \sqrt{16-(x+2)^2}$.
+Re-write as $y = \pm \sqrt{16-(x+2)^2}$.
 
-\begin{flushleft}
 
-$x$-intercepts: $(-6, 0)$, $(2,0)$  \smallskip
+$x$-intercepts: $(-6, 0)$, $(2,0)$
 
-$y$-intercepts: $\left(0, \pm 2\sqrt{3}\right)$  \smallskip
+$y$-intercepts: $\left(0, \pm 2\sqrt{3}\right)$
 
-$\begin{array}{|r||c|c|}  
-
-\hline
+$\begin{array}{|r||c|c|}  \hline
  x &   y & (x,y) \\ \hline
 -6 & 0 & (-6,0) \\  \hline
 -4 & \pm 2 \sqrt{3} & \left(-4,\pm 2 \sqrt{3}\right) \\ \hline
  -2 &  \pm 4 & (-2, \pm 4) \\ \hline
 0 &  \pm 2 \sqrt{3} & \left(0,\pm 2 \sqrt{3}\right) \\ \hline
  2 &  0 & (2, 0) \\ \hline
- 
- 
-\end{array} $ \smallskip
+ \end{array} $ 
 
-% \input{ExercisesforRelations_pic31.tex}
-\begin{mfpic}[10]{-8}{4}{-6}{6}
-\point[4pt]{(-6,0), (-4, 3.4641), (-4, -3.4641), (-2,4), (-2,-4), (0, 3.4641), (0, -3.4641), (2,0) }
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\xmarks{-7,-6,-5,-4,-3,-2,-1,1,2,3}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-7 \hspace{6pt}$} -7,{\tiny $-6 \hspace{6pt}$} -6, {\tiny $-5 \hspace{6pt}$} -5,{\tiny $-4 \hspace{6pt}$} -4, {\tiny $-3 \hspace{6pt}$} -3,{\tiny $-2 \hspace{6pt}$} -2, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $-5$} -5, {\tiny $-4$} -4, {\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
-\penwd{1.25pt}
-\circle{(-2,0),4}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=4, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-6,-5,-4,-3,-2,-1, 0, 1, 2},
+    ytick={-4, -3, -2, -1, 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[-,thick, blue, smooth, samples=100, domain=0:360] plot ({4*cos(\x)-2}, {4*sin(\x)});
+
+\fill[blue] 
+(-6,0) circle (2pt)
+(-4, 3.464) circle (2pt)
+(-4, -3.464) circle (2pt)
+(-2, 4) circle (2pt)
+(-2, -4) circle (2pt)
+(0, 3.464) circle (2pt)
+(0, -3.464) circle (2pt)
+(2,0) circle (2pt);
+
+\end{axis}
+\end{tikzpicture}
 
 
-\smallskip
+The graph is symmetric about the $x$-axis 
 
-The graph is symmetric about the $x$-axis \smallskip
+The graph is not symmetric about the $y$-axis:  $(-6, 0)$ is on the graph but $(6, 0)$ is not. 
 
-The graph is not symmetric about the $y$-axis:  $(-6, 0)$ is on the graph but $(6, 0)$ is not. \smallskip
+The graph is not symmetric about the origin:  $(-6, 0)$ is on the graph but $(6, 0)$ is not. 
 
-The graph is not symmetric about the origin:  $(-6, 0)$ is on the graph but $(6, 0)$ is not. \smallskip
-
-The equation does not describe $y$ as a function of $x$.  \smallskip
+The equation does not describe $y$ as a function of $x$. 
 
 The graph of the equation is the graphs of $f_{1}(x) = \sqrt{16-(x+2)^2}$ together with $f_{2}(x) = -\sqrt{16-(x+2)^2}$.
 
-\end{flushleft}
-
-\vfill
 \end{solution}
 
 \end{problem}
 
 \begin{problem}
-$\{(x, 1) \, | \, x \mbox{ is an irrational number }\}$
+$x^{2} - y^{2} = 1$ 
+
 \begin{solution}
-$x^{2} - y^{2} = 1$ \\ Re-write as: $y = \pm \sqrt{x^{2} - 1}$.
+Re-write as: $y = \pm \sqrt{x^{2} - 1}$.
 
-\begin{flushleft}
+$x$-intercepts: $(-1, 0), (1, 0)$
 
-$x$-intercepts: $(-1, 0), (1, 0)$  \smallskip
+The graph has no $y$-intercepts
 
-The graph has no $y$-intercepts \smallskip
-
-$\begin{array}{|r||c|c|}  
-
-\hline
+$\begin{array}{|r||c|c|} \hline
  x &            y & (x,y) \\ \hline
 -3 & \pm \sqrt{8} & (-3, \pm \sqrt{8}) \\ \hline
 -2 & \pm \sqrt{3} & (-2, \pm \sqrt{3}) \\  \hline
@@ -1177,60 +1220,70 @@ $\begin{array}{|r||c|c|}
  2 & \pm \sqrt{3} & (2, \pm \sqrt{3}) \\ \hline
  3 & \pm \sqrt{8} & (3, \pm \sqrt{8}) \\ \hline
  
-\end{array} $ \smallskip
+\end{array} $ 
 
-% \input{ExercisesforRelations_pic32.tex}
-\begin{mfpic}[10]{-4}{4}{-4}{4}
-\point[4pt]{(-3,2.828), (-3,-2.828),(-2,1.732),(-2,-1.732),(-1,0),(1, 0),(3,2.828),(3,-2.828),(2,1.732),(2, -1.732)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-3 \hspace{6pt}$} -3, {\tiny $-2 \hspace{6pt}$} -2, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-2,2,0.1}{(cosh(t),sinh(t))}
-\arrow \reverse \arrow \parafcn{-2,2,0.1}{(-cosh(t),sinh(t))}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4,-3,-2,-1, 0, 1, 2, 3, 4},
+    ytick={-4, -3, -2, -1, 0, 1, 2, 3, 4},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
+\draw[<->,thick, blue, smooth, samples=100, domain=-2.2:2.2] plot ({cosh(\x)}, {sinh(\x)});
 
-\smallskip
+\draw[<->,thick, blue, smooth, samples=100, domain=-2.2:2.2] plot ({-cosh(\x)}, {sinh(\x)});
 
-The graph is symmetric about the $x$-axis. \smallskip
+\fill[blue] 
+(-3, -2.828) circle (2pt)
+(-3, 2.828) circle (2pt)
+(3, -2.828) circle (2pt)
+(3, 2.828) circle (2pt)
+(-1, 0) circle (2pt)
+(1, 0) circle (2pt)
+(2, 1.732) circle (2pt)
+(2,-1.732) circle (2pt);
 
-The graph is symmetric about the $y$-axis. \smallskip
+\end{axis}
+\end{tikzpicture}
 
-The graph is symmetric about the origin.  \smallskip
+The graph is symmetric about the $x$-axis. 
 
-The equation does not describe $y$ as a function of $x$.  \smallskip
+The graph is symmetric about the $y$-axis. 
+
+The graph is symmetric about the origin.  
+
+The equation does not describe $y$ as a function of $x$.
 
 The graph of the equation is the graphs of $f_{1}(x) = \sqrt{x^2-1}$ together with $f_{2}(x) = -\sqrt{x^2-1}$.
-
-
-\end{flushleft}
 
 \end{solution}
 
 \end{problem}
 
 \begin{problem}
-$\{(1, 0), (2, 1), (4, 2), (8, 3), (16, 4), (32, 5), \ldots \}$
+$4y^2-9x^2 = 36$
+
 \begin{solution}
-$4y^2-9x^2 = 36$ \\
 
 Re-write as: $y = \pm \dfrac{\sqrt{9x^2+36}}{2}$.
 
-\begin{flushleft}
+The graph has no $x$-intercepts 
 
-The graph has no $x$-intercepts \smallskip
+$y$-intercepts:  $(0, \pm 3)$
 
-$y$-intercepts:  $(0, \pm 3)$ \smallskip
-
-$\begin{array}{|r||c|c|} 
-
-\hline
+$\begin{array}{|r||c|c|} \hline
  x &   y & (x,y) \\ \hline
 -4 & \pm 3 \sqrt{5} &  \left(-4,\pm 3 \sqrt{5}\right) \\  \hline
 -2 & \pm 3 \sqrt{2} & \left(-2,\pm 3 \sqrt{2}\right) \\ \hline
@@ -1239,61 +1292,71 @@ $\begin{array}{|r||c|c|}
 4 & \pm 3 \sqrt{5} &  \left(4,\pm 3 \sqrt{5}\right) \\  \hline
  
  
-\end{array}$ \smallskip
+\end{array}$ 
 
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-8, xmax=8, ymin=-8, ymax=8,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-7, -6, -5, -4,-3,-2,-1, 0, 1, 2, 3, 4. 5, 6, 7},
+    ytick={-7, -6, -5, -4,-3,-2,-1, 0, 1, 2, 3, 4. 5, 6, 7},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
-% \input{ExercisesforRelations_pic33.tex}
-\begin{mfpic}[10]{-5}{5}{-8}{8}
-\point[4pt]{(-4, 6.708), (4, 6.708), (-2, 4.243), (2, 4.243), (0,3), (0,-3),(-4, -6.708), (4, -6.708), (-2, -4.243), (2, -4.243) }
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,8){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1, 1, 2, 3, 4}
-\ymarks{-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-4 \hspace{6pt}$} -4,{\tiny $-3 \hspace{6pt}$} -3,{\tiny $-2 \hspace{6pt}$} -2, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\axislabels {y}{{\tiny $-7$} -7, {\tiny $-6$} -6,{\tiny $-5$} -5,{\tiny $-4$} -4,{\tiny $-3$} -3,{\tiny $-2$} -2,{\tiny $-1$} -1,{\tiny $1$} 1,{\tiny $2$} 2,{\tiny $3$} 3,{\tiny $4$} 4,{\tiny $5$} 5,{\tiny $6$} 6,{\tiny $7$} 7 }
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.6,1.6,0.1}{(2*sinh(t), 3*cosh(t))}
-\arrow \reverse \arrow \parafcn{-1.6,1.6,0.1}{(2*sinh(t), 0-3*cosh(t))}
-\end{mfpic}
+\draw[<->,thick, blue, smooth, samples=100, domain=-1.6:1.6] plot ({2*sinh(\x)}, {3*cosh(\x)});
 
+\draw[<->,thick, blue, smooth, samples=100, domain=-1.6:1.6] plot ({2*sinh(\x)}, {-3*cosh(\x)});
 
-\smallskip
+\fill[blue] 
+(-4, 6.708) circle (2pt)
+(4, 6.708) circle (2pt)
+(-2, 4.243) circle (2pt)
+(2, 4.243) circle (2pt)
+(0,3) circle (2pt)
+(0,-3) circle (2pt)
+(-4, -6.708) circle (2pt)
+(4, -6.708) circle (2pt)
+(-2, -4.243) circle (2pt)
+(2, -4.243) circle (2pt); 
 
-The graph is symmetric about the $x$-axis. \smallskip
+\end{axis}
+\end{tikzpicture}
 
-The graph is symmetric about the $y$-axis. \smallskip
+The graph is symmetric about the $x$-axis. 
 
-The graph is symmetric about the origin.  \smallskip
+The graph is symmetric about the $y$-axis. 
 
-The equation does not describe $y$ as a function of $x$.  \smallskip
+The graph is symmetric about the origin.  
+
+The equation does not describe $y$ as a function of $x$. 
 
 The graph of the equation is the graphs of $f_{1}(x) =  \dfrac{\sqrt{9x^2+36}}{2}$ together with $f_{2}(x) = - \dfrac{\sqrt{9x^2+36}}{2}$.
 
-
-\end{flushleft}
-
-\vfill
 \end{solution}
 
 \end{problem}
 
-\begin{problem}
-$\{\ldots, (-3, 9), (-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4), (3, 9), \ldots \}$ 
+\begin{problem} \label{oldonethreelast}
+$x^{3}y = -4$
 
 \begin{solution}
-$x^{3}y = -4$ \\ Re-write as: $y = -\dfrac{4}{x^{3}} = -4x^{-3}$.
+Re-write as: $y = -\dfrac{4}{x^{3}} = -4x^{-3}$.
 
-\begin{flushleft}
+The graph has no $x$-intercepts 
 
-The graph has no $x$-intercepts \smallskip
+The graph has no $y$-intercepts
 
-The graph has no $y$-intercepts \smallskip
-
-$\begin{array}{|r||c|c|}  
-
-\hline
+$\begin{array}{|r||c|c|}  \hline
            x &            y & (x,y) \\ \hline
           -2 &  \frac{1}{2} & (-2, \frac{1}{2}) \\  \hline
           -1 &            4 & (-1, 4) \\ \hline
@@ -1302,115 +1365,150 @@ $\begin{array}{|r||c|c|}
            1 &           -4 & (1, -4) \\ \hline
            2 & -\frac{1}{2} & (2, -\frac{1}{2}) \\ \hline
  
-\end{array} $ \smallskip
+\end{array} $
 
-% \input{ExercisesforRelations_pic34.tex}
-\begin{mfpic}[10]{-5}{5}{-9}{9}
-\point[4pt]{(-4,0.125), (-2,1), (-1, 8), (1, -8), (2, -1), (4, -0.125)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,9){\scriptsize $y$}
-\xmarks{-4,-2,2,4}
-\ymarks{-8,-1,1,8}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-2 \hspace{6pt}$} -4, {\tiny $-1 \hspace{6pt}$} -2, {\tiny $1$} 2, {\tiny $2$} 4}
-\axislabels {y}{{\tiny $-32$} -8, {\tiny $-4$} -1, {\tiny $4$} 1, {\tiny $32$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-4.5, -0.95, 0.1}{-8/(x**3)}
-\arrow \reverse \arrow \function{0.95, 4.5, 0.1}{-8/(x**3)}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-3, xmax=3, ymin=-45, ymax=45,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-2, -1, 0, 1, 2},
+    ytick={-32, -1, 1, 32},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[<->,thick, blue, smooth, samples=100, domain=-3:-0.45] plot ({\x}, {-4/(\x)^3});
+
+\draw[<->,thick, blue, smooth, samples=100, domain=0.45:3] plot ({\x}, {-4/(\x)^3});
+
+\fill[blue] 
+(-2,0.5) circle (2pt)
+(-1,4) circle (2pt)
+(-0.5, 32) circle (2pt)
+(0.5, -32) circle (2pt)
+(1, -4) circle (2pt)
+(2, -0.5) circle (2pt);
+
+\end{axis}
+\end{tikzpicture}
 
 
-\smallskip
+The graph is not symmetric about the $x$-axis: $(1, -4)$ is on the graph but $(1, 4)$ is not. 
 
-The graph is not symmetric about the $x$-axis: $(1, -4)$ is on the graph but $(1, 4)$ is not. \smallskip
+The graph is not symmetric about the $y$-axis:  $(1, -4)$ is on the graph but $(-1, -4)$ is not. 
 
-The graph is not symmetric about the $y$-axis:  $(1, -4)$ is on the graph but $(-1, -4)$ is not. \smallskip
-
-The graph is symmetric about the origin. \smallskip
+The graph is symmetric about the origin. 
 
 The equation does  describe $y$ as a function of $x$, namely $y=f(x) = - 4x^{-3}$.
-
-\end{flushleft}
 
 \end{solution}
 
 \end{problem}
 
-\begin{problem}
-$(x+2)^2+y^2 = 16$
+
+For each equation given in Exercises \ref{vwfirstrelation} - \ref{vwlastrelation}:
+
+\begin{itemize}
+
+\item   Graph the equation in the $vw$-plane by creating a table of points. 
+
+\item  Find the axis intercepts, if they exist.
+
+\item  Test the equation for symmetry.  If the equation fails a symmetry test, find a point on the graph of the equation whose symmetric point is not on the graph of the equation.
+
+\item  Determine if the equation describes $w$ as a function of $v$.  If not, describe the graph of the equation using two or more explicit functions of $v$.  Check your answers using a graphing utility.
+
+
+\end{itemize}
+
+\begin{problem} \label{vwfirstrelation}
+$v+w^2 = 4$
+
 \begin{solution}
-$v+w^2 = 4$ \\ Re-write as $w = \pm \sqrt{4-v}$.
+Re-write as $w = \pm \sqrt{4-v}$.
 
-\begin{flushleft}
+$v$-intercept: $(4,0)$
 
-$v$-intercept: $(4,0)$  \smallskip
+$w$-intercepts: $\left(0, \pm 2 \right)$ 
 
-$w$-intercepts: $\left(0, \pm 2 \right)$  \smallskip
-
-$\begin{array}{|r||c|c|}  
-
-\hline
- v &   w & (x,y) \\ \hline
+$\begin{array}{|r||c|c|} \hline
+ v &   w & (v,w) \\ \hline
 -5 & \pm 3 & (-5,\pm 3) \\  \hline
 -2 & \pm  \sqrt{6} & \left(-2,\pm  \sqrt{6}\right) \\ \hline
  0 &  \pm 2 & (0, \pm 2) \\ \hline
 2 &  \pm \sqrt{2} & \left(1,\pm  \sqrt{3}\right) \\ \hline
  4 &  0 & (4, 0) \\ \hline
  
- 
-\end{array} $ \smallskip
+ \end{array} $
 
-% \input{ExercisesforRelations_pic35.tex}
-\begin{mfpic}[15]{-6}{6}{-4}{4}
-\point[4pt]{(-5,3), (-5,-3), (-2, 2.45), (-2, -2.45), (0,2), (0,-2), (2, 1.414), (2, -1.414), (4,0) }
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,4){\scriptsize $w$}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{ {\tiny $-5 \hspace{6pt}$} -5,{\tiny $-4 \hspace{6pt}$} -4, {\tiny $-3 \hspace{6pt}$} -3,{\tiny $-2 \hspace{6pt}$} -2, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $5$} 5}
-\axislabels {y}{{\tiny $-3$} -3,  {\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-3.2, 3.2, 0.1}{(4-t**2, t)}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
+    ytick={-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
+\draw[<->,thick, blue, smooth, samples=100, domain=-3.1:3.1] plot ({4-(\x)^2}, {\x});
 
-\smallskip
+\fill[blue] 
+(-5,3) circle (2pt)
+(-5,-3) circle (2pt)
+(-2, 2.45) circle (2pt)
+(-2, -2.45) circle (2pt)
+(0,2) circle (2pt)
+(0,-2) circle (2pt)
+(2, 1.414) circle (2pt)
+(2, -1.414) circle (2pt)
+(4,0) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-The graph is symmetric about the $v$-axis \smallskip
+The graph is symmetric about the $v$-axis 
 
-The graph is not symmetric about the $w$-axis: $(4, 0)$ is on the graph but $(-4, 0)$ is not. \smallskip
+The graph is not symmetric about the $w$-axis: $(4, 0)$ is on the graph but $(-4, 0)$ is not. 
 
-The graph is not symmetric about the origin: $(4, 0)$ is on the graph but $(-4, 0)$ is not. \smallskip
+The graph is not symmetric about the origin: $(4, 0)$ is on the graph but $(-4, 0)$ is not. 
 
-The equation does not describe $w$ as a function of $v$.  \smallskip
+The equation does not describe $w$ as a function of $v$. 
 
 The graph of the equation is the graphs of $f_{1}(v) = \sqrt{4-v}$ together with $f_{2}(v) = -\sqrt{4-v}$.
 
-\end{flushleft}
-
-\vfill
 \end{solution}
 
 \end{problem}
 
 \begin{problem}
-$x^{2} - y^{2} = 1$
+$v^{3}+w^3 =8$
 
 \begin{solution}
-$v^{3}+w^3 =8$ \\ Re-write as: $w = \sqrt[3]{8-v^3}$.
+Re-write as: $w = \sqrt[3]{8-v^3}$.
 
-\begin{flushleft}
+$v$-intercept: $(2,0)$ 
 
-$v$-intercept: $(2,0)$  \smallskip
+$w$-intercept: $(0,2)$ 
 
-$w$-intercept: $(0,2)$ \smallskip
-
-$\begin{array}{|r||c|c|}  
-
-\hline
+$\begin{array}{|r||c|c|}  \hline
  v &            w & (v,w) \\ \hline
 -3 &  \sqrt[3]{35} & (-3, \sqrt[3]{35}) \\  \hline
 -1 &    \sqrt[3]{9}  & (-1, \sqrt[3]{9}) \\ \hline
@@ -1419,113 +1517,138 @@ $\begin{array}{|r||c|c|}
  2 & 0 & (2, 0) \\ \hline
  3 & -\sqrt[3]{19} & (3, -\sqrt[3]{19}) \\ \hline
  
-\end{array} $ \smallskip
+\end{array} $
 
-% \input{ExercisesforRelations_pic36.tex}
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\point[4pt]{ (-3, 3.271), (-1, 2.08), (0,2), (1, 1.91), (2,0), (3, -2.67)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,4){\scriptsize $w$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-3 \hspace{6pt}$} -3, {\tiny $-2 \hspace{6pt}$} -2, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $3$} 3}
-\penwd{1.25pt}
-\arrow  \reverse \function{-4,2,0.1}{( 8-(x**3) )**(0.3333)}
-\arrow  \function{2,4,0.1}{(-1)*(((x**3)-8)**(0.3333))}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-4, ymax=4,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={-3, -2, -1, 0, 1, 2, 3},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
 
-\smallskip
+\draw[<-,thick, blue, smooth, samples=100, domain=-3.8:2] plot ({\x}, {(8-(\x)^3)^(1/3)});
+\draw[->,thick, blue, smooth, samples=100, domain=2:4] plot ({\x}, {-((\x)^3-8)^(1/3)});
+\draw[thick, blue] (2,-0.25) -- (2, 0.25);
 
-The graph is not symmetric about the $v$-axis:  $(0,2)$ is on the graph but $(0,-2)$ is not. \smallskip
+\fill[blue] 
+(-3, 3.271) circle (2pt)
+(-1, 2.08) circle (2pt)
+(0,2) circle (2pt)
+(1, 1.91) circle (2pt)
+(2,0) circle (2pt)
+(3, -2.67) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
-The graph is not symmetric about the $w$-axis: $(2, 0)$ is on the graph but $(-2, 0)$ is not. \smallskip
 
-The graph is not symmetric about the origin: $(0, 2)$ is on the graph but $(0, -2)$ is not.  \smallskip
+The graph is not symmetric about the $v$-axis:  $(0,2)$ is on the graph but $(0,-2)$ is not. 
 
-The equation does  describe $w$ as a function of $v$, namely $w=f(v) = \sqrt[3]{8-v^3}$.  \smallskip
+The graph is not symmetric about the $w$-axis: $(2, 0)$ is on the graph but $(-2, 0)$ is not. 
 
-\end{flushleft}
+The graph is not symmetric about the origin: $(0, 2)$ is on the graph but $(0, -2)$ is not.  
+
+The equation does  describe $w$ as a function of $v$, namely $w=f(v) = \sqrt[3]{8-v^3}$.  
 
 \end{solution}
 
 \end{problem}
 
 \begin{problem}
-$4y^2 - 9x^2 = 36$
+$v^2w^3 = 8$ 
+
 \begin{solution}
-$v^2w^3 = 8$ \\ Re-write as $w =\dfrac{2}{\sqrt[3]{v^2}} = 2 v^{-\frac{2}{3}}$.
+Re-write as $w =\dfrac{2}{\sqrt[3]{v^2}} = 2 v^{-\frac{2}{3}}$.
 
-\begin{flushleft}
+The graph has no $v$-intercepts.
 
-The graph has no $v$-intercepts.  \smallskip
+The graph has no $w$-intercepts.
 
-The graph has no $w$-intercepts.  \smallskip
-
-$\begin{array}{|r||c|c|}  
-
-\hline
- v &   w & (x,y) \\ \hline
+$\begin{array}{|r||c|c|} \hline
+ v &   w & (v,w) \\ \hline
 -8 & \frac{1}{2} & \left(-8, \frac{1}{2} \right) \\  \hline 
 -1 & 2 & \left(-1, 2 \right) \\    \hline 
  -\frac{1}{8} &  8 &  \left(-\frac{1}{8}, 8 \right) \\ \hline  
  \frac{1}{8} &  8 &  \left(\frac{1}{8}, 8 \right) \\ \hline  
 1 & 2 & \left(1, 2 \right) \\  \hline  
 8 & \frac{1}{2} & \left(8, \frac{1}{2} \right) \\  \hline
-\end{array} $ \smallskip
+\end{array} $
 
-% \input{ExercisesforRelations_pic37.tex}
-\begin{mfpic}[10][15]{-9}{9}{-1}{10}
-\point[4pt]{(-8,0.5), (-1,2), (-0.125, 8), (0.125, 8), (1,2), (8,0.5)}
-\axes
-\tlabel[cc](9,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,10){\scriptsize $w$}
-\xmarks{-8 step 1 until 8}
-\ymarks{1 step 1 until 9}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-8 \hspace{6pt}$} -8, {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1,  {\tiny $8$} 8}
-\axislabels {y}{ {\tiny $1$} 1,  {\tiny $2$} 2,  {\tiny $5$} 5,  {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-9, -.1, 0.1}{2* ( (x**2)**(-0.3333) )}
-\arrow \reverse \arrow \function{0.1, 9, 0.1}{2*( (x**2)**(-0.3333)  )}
-\end{mfpic}
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-10, xmax=10, ymin=-1, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-8, -6, -4, -2, 0,2, 4, 6,8},
+    ytick={0, 2,4, 6, 8},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
+
+\draw[<->,thick, blue, smooth, samples=100, domain=-9:-0.1] plot ({\x}, {2*(abs(\x))^(-.6667)});
+
+\draw[<->,thick, blue, smooth, samples=100, domain=0.1:9] plot ({\x}, {2*(abs(\x))^(-.6667)});
+
+\fill[blue] 
+(-8,0.5) circle (2pt)
+(-1,2) circle (2pt)
+(-0.125, 8) circle (2pt)
+(0.125, 8) circle (2pt)
+(1,2) circle (2pt)
+(8,0.5) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 
-\smallskip
+The graph is not symmetric about the $v$-axis:  $(-1,2)$ is on the graph but $(-1,-2)$ is not.  
 
-The graph is not symmetric about the $v$-axis:  $(-1,2)$ is on the graph but $(-1,-2)$ is not.  \smallskip
+The graph is  symmetric about the $w$-axis.  
 
-The graph is  symmetric about the $w$-axis.  \smallskip
+The graph is not symmetric about the origin: $(-1,2)$ is on the graph but $(-1,-2)$ is not. 
 
-The graph is not symmetric about the origin: $(-1,2)$ is on the graph but $(-1,-2)$ is not. \smallskip
+The equation does describe $w$ as a function of $v$, namely $w=f(v) = 2 v^{-\frac{2}{3}}$.  
 
-The equation does describe $w$ as a function of $v$, namely $w=f(v) = 2 v^{-\frac{2}{3}}$.  \smallskip
-
-\end{flushleft}
-
-\vfill
 \end{solution}
 
 \end{problem}
 
-\begin{problem}
-$x^{3}y = -4$  
+\begin{problem}  \label{vwlastrelation}
+$v^4 - 2v^2w + w^2 = 16$
+
+\textbf{HINT:} $v^4 - 2v^2 w + w^2 = \left(v^2 - w \right)^2$ \ldots
 
 \begin{solution}
-$v^4 - 2v^2w + w^2 = 16$ \\ Re-write as:  $\left(v^2-w\right)^2 = 16$ \\  Extracting square roots gives: \\ $w = v^2 + 4$ and $w = v^2-4$
+Re-write as:  $\left(v^2-w\right)^2 = 16$ 
 
-\begin{flushleft}
+Extracting square roots gives: $w = v^2 + 4$ and $w = v^2-4$
 
-$v$-intercepts: $(-2,0), (2,0)$.  \smallskip
 
-$w$-intercepts: $(0,-4), (0,4)$ \smallskip
 
-$\begin{array}{|r||c|c|}  
+$v$-intercepts: $(-2,0), (2,0)$ 
 
-\hline
+$w$-intercepts: $(0,-4), (0,4)$ 
+
+$\begin{array}{|r||c|c|}  \hline
  v &            w & (v,w) \\ \hline
  -2 &  8 & (-2,8) \\  \hline
 -2 &  0 & (-2,0) \\  \hline
@@ -1537,64 +1660,68 @@ $\begin{array}{|r||c|c|}
   2 &  8 & (2,8) \\  \hline
   2 &  0 & (2,0) \\  \hline
 
-\end{array} $ 
+\end{array}$ 
 
-\smallskip
+\begin{tikzpicture}
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-4, xmax=4, ymin=-5, ymax=10,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$v$}, ylabel={$w$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-3, -2, -1, 0, 1, 2, 3},
+    ytick={4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+    tick label style={font=\tiny},
+    label style={font=\scriptsize},
+    samples=100,
+]
+    % Parametric Graph
 
-% \input{ExercisesforRelations_pic38.tex}
-\begin{mfpic}[10]{-4}{4}{-4.5}{9}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $v$}
-\tlabel[cc](0.5,9){\scriptsize $w$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3,4,5,6,7,8}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-3 \hspace{6pt}$} -3,  {\tiny $-1 \hspace{6pt}$} -1, {\tiny $1$} 1, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1, {\tiny $1$} 1,{\tiny $2$} 2, {\tiny $3$} 3, {\tiny $6$} 6, {\tiny $7$} 7, {\tiny $8$} 8}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.2, 2.2, 0.1}{(x**2)+4}
-\arrow \reverse \arrow \function{-3, 3, 0.1}{(x**2) - 4}
-\point[4pt]{(-2,8), (-2,0), (-1,5), (-1,-3), (0,4), (0,-4), (1,5), (1,-3), (2,0), (2,8)}
-\end{mfpic}
+
+\draw[<->,thick, blue, smooth, samples=100, domain=-2.25:2.25] plot ({\x}, {(\x)^2+4});
+
+\draw[<->,thick, blue, smooth, samples=100, domain=-2.5:2.5] plot ({\x}, {(\x)^2-4});
+
+\fill[blue] 
+(-2,8) circle (2pt)
+(-2,0) circle (2pt)
+(-1,5) circle (2pt)
+(-1,-3) circle (2pt)
+(0,4) circle (2pt)
+(0,-4) circle (2pt)
+(1,5) circle (2pt)
+(1,-3) circle (2pt)
+(2,0) circle (2pt)
+(2,8) circle (2pt);
+\end{axis}
+\end{tikzpicture}
 
 
-\smallskip
 
-The graph is not symmetric about the $v$-axis:  $(1,5)$ is on the graph but $(1,-5)$ is not. \smallskip
 
-The graph is  symmetric about the $w$-axis. \smallskip
+The graph is not symmetric about the $v$-axis:  $(1,5)$ is on the graph but $(1,-5)$ is not. 
 
-The graph is not symmetric about the origin: $(1,5)$ is on the graph but $(-1, -5)$ is not.  \smallskip
+The graph is  symmetric about the $w$-axis. 
 
-The equation does not describe $w$ as a function of $v$.  \smallskip
+The graph is not symmetric about the origin: $(1,5)$ is on the graph but $(-1, -5)$ is not.  
+
+The equation does not describe $w$ as a function of $v$. 
 
 The graph of the equation is the graphs of $f_{1}(v) = v^2+4$ together with $f_{2}(v) = v^2-4$.
-
-\end{flushleft}
 
 \end{solution}
 
 \end{problem}
 
-\begin{problem}
-$v+w^2 = 4$
-\end{problem}
 
-\begin{problem}
-$v^{3}+w^3 =8$ 
+The procedures which we have outlined in the Examples of this section and used in Exercises \ref{oldonethreefirst} -  \ref{vwlastrelation} all rely on the fact that the equations were ``well-behaved''.  Not everything in Mathematics is quite so tame, as the following equations will show you.  Discuss with your classmates how you might approach graphing the equations given in Exercises \ref{listofcurvesfirst} - \ref{listofcurveslast}.  What difficulties arise when trying to apply the various tests and procedures given in this section?  For more information, including pictures of the curves, each curve name is a link to its page at www.wikipedia.org.  For a much longer list of fascinating curves, click \href{http://en.wikipedia.org/wiki/List_of_curves}{\underline{here}}.
 
-\end{problem}
 
-\begin{problem}
-$v^2w^3 = 8$
-\end{problem}
-
-\begin{problem}
-\hspace{-.1in}\footnote{HINT: $v^4 - 2v^2 w + w^2 = \left(v^2 - w \right)^2$ \ldots} $v^4 - 2v^2 w + w^2 = 16$  
-
-\end{problem}
-
-\begin{problem}
+\begin{problem} \label{listofcurvesfirst}
 $x^{3} + y^{3} - 3xy = 0\;$ \href{http://en.wikipedia.org/wiki/Folium_of_descartes}{\underline{Folium of Descartes}}
 \end{problem}
 
@@ -1606,7 +1733,7 @@ $x^{4} = x^{2} + y^{2}\;$ \href{http://en.wikipedia.org/wiki/Kampyle_of_Eudoxus}
 $y^{2} = x^{3} + 3x^{2}\;$ \href{http://en.wikipedia.org/wiki/Tschirnhausen_cubic}{\underline{Tschirnhausen cubic}}
 \end{problem}
 
-\begin{problem}
+\begin{problem} \label{listofcurveslast}
 $(x^{2} + y^{2})^{2} = x^{3} + y^{3}\;$ \href{https://en.wikipedia.org/wiki/File:Crooked_egg_curve.svg}{\underline{Crooked egg}} 
 
 \end{problem}
