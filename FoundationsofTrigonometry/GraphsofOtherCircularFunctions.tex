@@ -32,40 +32,40 @@ This gives us one way to describe the domain of $F$:  $\{ t \, | \, t \neq  \fra
 Running through a few values of $k$, we find some of the values excluded from the domain:   $t \neq  \pm \frac{\pi}{2}, \, \pm \frac{3\pi}{2}, \, \pm \frac{5\pi}{2}$.  Using these we can graph the domain on the number line below.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=0.75,>=Latex]
 
-\begin{mfpic}[15]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\xmarks{-5,-3,-1,1,3,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\small $-\frac{5\pi}{2} \hspace{7pt}$} -5,{\small $-\frac{3\pi}{2} \hspace{7pt}$} -3, {\small $-\frac{\pi}{2} \hspace{7pt}$} -1,{\small $0$} 0,{\small $\frac{\pi}{2}$} 1,  {\small $\frac{3\pi}{2}$} 3,  {\small $\frac{5\pi}{2}$} 5}
+% Number line
+\draw[line width=1.4pt,<->] (-7.6,1.1) -- (7.6,1.1);
 
-\penwd{1.5}
-\arrow \reverse \arrow \polyline{(-6,1), (6,1)}
+% Open circles
+\foreach \x in {-5,-3,-1,1,3,5}
+{
+    \draw[line width=1pt,fill=white] (\x,1.1) circle (0.2);
+}
 
-\penwd{0.75}
+% Tick marks
+\foreach \x in {-5,-3,-1,1,3,5}
+{
+    \draw[line width=0.8pt] (\x,-0.05)--(\x,0.15);
+}
 
-\gclear \circle{(-5,1),0.15}
-\circle{(-5,1),0.15}
+% Lower axis
+\draw[<->,line width=0.8pt] (-7.6,0.05)--(7.6,0.05);
 
-\gclear \circle{(-3,1),0.15}
-\circle{(-3,1),0.15}
+% Labels
+\node[below=2pt] at (-5,0.05) {$-\dfrac{5\pi}{2}$};
+\node[below=2pt] at (-3,0.05) {$-\dfrac{3\pi}{2}$};
+\node[below=2pt] at (-1,0.05) {$-\dfrac{\pi}{2}$};
 
-\gclear \circle{(-1,1),0.15}
-\circle{(-1,1),0.15}
+\node[below=2pt] at (0,0.05) {$0$};
 
-\gclear \circle{(5,1),0.15}
-\circle{(5,1),0.15}
+\node[below=2pt] at (1,0.05) {$\dfrac{\pi}{2}$};
+\node[below=2pt] at (3,0.05) {$\dfrac{3\pi}{2}$};
+\node[below=2pt] at (5,0.05) {$\dfrac{5\pi}{2}$};
 
-\gclear \circle{(3,1),0.15}
-\circle{(3,1),0.15}
-
-\gclear \circle{(1,1),0.15}
-\circle{(1,1),0.15}
-
-\end{mfpic}
-
-\end{center}
+\end{tikzpicture}
+\end{image}
 
 Expressing this set using interval notation is a bit of a challenge, owing to the infinitely many intervals present.  As a first attempt, we have:  $\ldots \cup \left( -\frac{5\pi}{2}, -\frac{3\pi}{2}\right) \cup \left( -\frac{3\pi}{2}, -\frac{\pi}{2}\right) \cup  \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3\pi}{2}\right) \cup  \left(\frac{3\pi}{2}, \frac{5\pi}{2}\right) \cup \ldots$, where, as usual, the periods of ellipsis indicate the pattern continues indefinitely.\footnote{We introduce an extended form of interval notation in Section \ref{extendedinterval} which gives us a more compact way to express this set. } Hence, for now, it suffices to know that the domain of $F(t) = \sec(t)$ excludes the odd multiples of $\frac{\pi}{2}$.
 
