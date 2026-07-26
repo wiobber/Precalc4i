@@ -677,7 +677,7 @@ Again, we can quickly check the vertical shift by averaging the maximum and mini
 
 % --- Curve over t in [pi/2, 3pi/2], i.e. u in [0.5, 1.5] ---
 \draw[very thick,penColor1, domain=0.5:1.5, samples=80, smooth, variable=\u]
-    plot ({\u*\piunit}, {1.5 - 0.5*sin(360*(\u-0.5))});
+    plot ({\u*\piunit}, {1.5 +0.5*sin(360*(-\u+0.5))});
 
 % --- Data points ---
 \fill (2,1.5) circle (1.5pt);
