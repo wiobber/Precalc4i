@@ -15,73 +15,191 @@ In Exercises \ref{trianglecircfirst} - \ref{trianglecirclast},  find the request
 \begin{problem}\label{trianglecircfirst}
 Find $\theta$, $a$, and $c$.  
 
- \begin{mfpic}[15]{-5}{5}{-5}{5}
+\begin{tikzpicture}\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis x line=none,
+    axis y line=none,
+    ticks=none,
+]
 
-\arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)}
-\arrow \reverse \arrow \shiftpath{(4.330,5)}  \parafcn{215, 265, 5}{1.5*dir(t)}
-\tlabel(-1.25, 0.6){$\theta$}
-\tlabel(0,-0.75){$9$}
-\tlabel(4.75,2.25){$a$}
-\tlabel(-0.5,3){$c$}
-\tlabel(2.75,2.85){$60^{\circ}$}
-\polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)}
-\penwd{1.25pt}
-\polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)}
-\end{mfpic}
+%Triangle
+\draw[blue, thick] (-4.330,0) -- (4.330,0) -- (4.330,5) -- (-4.330,0);
+
+%Right angle
+
+\draw[blue] (3.93, 0) -- (3.93, 0.4) -- (4.33, 0.4);
+
+% Angles
+\draw[<->]
+    (-1.5,0.1)
+    arc[start angle=0,end angle=30,radius=2.5];
+\node at (-1.2, .8) {$\theta$};
+
+\draw[<->]
+    (2.9,4)
+    arc[start angle=210,end angle=270,radius=1.5];
+\node at (3,3) {$60^{\circ}$};
+
+%Sides
+
+\node at (0,-0.5) {$9$};
+\node at (4.75,2.5) {$a$};
+\node at (0,3) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+$\theta = \answer{30}$ degrees ($^{\circ}$)
+
+$a = \answer{3\sqrt{3}}$ units
+
+$c = \answer{ 6\sqrt{3}}$ units
 
 \end{problem}
  
 \begin{problem}
 Find $\alpha$, $b$, and $c$.
 
-\begin{mfpic}[15]{-1}{5}{-1}{7}
-\arrow \reverse \arrow \parafcn{60, 87, 5}{1.75*dir(t)}
-\arrow \reverse \arrow \shiftpath{(4.357,6.709)}  \parafcn{185, 232, 5}{1.5*dir(t)}
-\tlabel(0.25, 2){$34^{\circ}$}
-\tlabel(2.5,3){$c$}
-\tlabel(2,7){$b$}
-\tlabel(-0.85,4){$12$}
-\tlabel(2.25,5.75){$\alpha$}
-\polyline{(0,6.304), (0.4, 6.304),  (0.4, 6.704)}
-\penwd{1.25pt}
-\polyline{(0,0), (0,6.709), (4.357, 6.709), (0,0)}
-\end{mfpic}
+\begin{tikzpicture}[rotate=90]
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    axis x line=none,
+    axis y line=none,
+    ticks=none,
+]
 
+%Triangle
+\draw[blue, thick] (-4.330,0) -- (4.330,0) -- (4.330,5) -- (-4.330,0);
+
+%Right angle
+
+\draw[blue] (3.93, 0) -- (3.93, 0.4) -- (4.33, 0.4);
+
+% Angles
+\draw[<->]
+    (-1.5,0.1)
+    arc[start angle=0,end angle=30,radius=2.5];
+\node[rotate=-90] at (-1, .8) {$34^{\circ}$};
+
+\draw[<->]
+    (2.9,4)
+    arc[start angle=210,end angle=270,radius=1.5];
+\node[rotate=-90] at (3.25,3) {$\alpha$};
+
+%Sides
+
+\node[rotate=-90] at (1.25,-0.75) {$12$};
+\node[rotate=-90] at (4.75,2.5) {$b$};
+\node[rotate=-90] at (0,3.25) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+$\alpha = 56^{\circ}$
+
+$b = 12 \tan(34^{\circ}) \approx  8.094$ units
+
+$c = 12\sec(34^{\circ}) = \frac{12}{\cos(34^{\circ})} \approx 14.475$ units
+
+
+\end{solution}
 \end{problem}
 
 \begin{problem}
 Find $\theta$, $a$, and $c$.
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\arrow \reverse \arrow \shiftpath{(2.5,0)} \parafcn{140, 175, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-2.5,5)}  \parafcn{275, 310, 5}{1.5*dir(t)}
-\tlabel(-2, 2.75){$47^{\circ}$}
-\tlabel(-0.5,-0.75){$6$}
-\tlabel(-3.25,2.25){$a$}
-\tlabel(0,3){$c$}
-\tlabel(0.5,0.5){$\theta$}
-\polyline{(-2.5, 0.4), (-2.1, 0.4), (-2.1, 0)}
-\penwd{1.25pt}
-\polyline{(-2.5, 0), (2.5,0), (-2.5,5), (-2.5,0)}
-\end{mfpic}
+\begin{tikzpicture}[rotate=180]
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis x line=none,
+    axis y line=none,
+    ticks=none,
+]
+
+%Triangle
+\draw[blue, thick] (-5, 0) -- (5,0) -- (5,5) --(-5,0);
+
+%Right angle
+
+\draw [blue](4.6,0) -- (4.6, 0.4) -- (5, 0.4);
+
+% Angles
+\draw[<->]
+    (-1.5,0.1)
+    arc[start angle=0,end angle=30,radius=2.5];
+\node[rotate=-180] at (-1.2, .8) {$\theta$};
+
+\draw[<->]
+    (3.75,4)
+    arc[start angle=225,end angle=270,radius=1.5];
+\node[rotate=-180] at (3.6,3.1) {$47^{\circ}$};
+
+%Sides
+
+\node[rotate=-180] at (0,-0.5) {$6$};
+\node[rotate=-180] at (5.5,2.5) {$a$};
+\node[rotate=-180] at (0,3) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+ $\theta = 43^{\circ}$
+ 
+ $a = 6\cot(47^{\circ}) = \frac{6}{\tan(47^{\circ})} \approx 5.595$ units
+ 
+ $c = 6\csc(47^{\circ}) = \frac{6}{\sin(47^{\circ})} \approx 8.204$ units
+\end{solution}
+
 \end{problem}
 
 \begin{problem} \label{trianglecirclast}
 
 Find $\beta$, $b$, and $c$.  
 
-\begin{mfpic}[18]{-6}{1}{-1}{9}
-\arrow \reverse \arrow \parafcn{95, 127, 5}{1.75*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-5.402,6)}  \parafcn{317, 355, 5}{1.5*dir(t)}
-\tlabel(-3.75, 5){$\beta$}
-\tlabel(0.5,3){$2.5$}
-\tlabel(-2.6,6.25){$b$}
-\tlabel(-3.25,2.5){$c$}
-\tlabel(-1.2,2){$50^{\circ}$}
-\polyline{(0,5.6), (-0.4, 5.6),  (-0.4, 6)}
-\penwd{1.25pt}
-\polyline{(0,0), (0,6), (-5.402, 6), (0,0)}
-\end{mfpic} 
+\begin{tikzpicture}[rotate=270]
+\begin{axis}[
+    width=3in, height=3in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis x line=none,
+    axis y line=none,
+    ticks=none,
+]
+
+%Triangle
+\draw[blue, thick] (-5, 0) -- (5,0) -- (5,5) --(-5,0);
+
+%Right angle
+
+\draw[blue] (4.6,0) -- (4.6, 0.4) -- (5, 0.4);
+
+% Angles
+\draw[<->]
+    (-1.5,0.1)
+    arc[start angle=0,end angle=30,radius=2.5];
+\node[rotate=-270] at (-1.1, .8) {$\beta$};
+
+\draw[<->]
+    (3.75,4)
+    arc[start angle=225,end angle=270,radius=1.5];
+\node[rotate=-270] at (3.9,3.) {$50^{\circ}$};
+
+%Sides
+
+\node[rotate=-270] at (0,-0.5) {$b$};
+\node[rotate=-270] at (5.5,2.5) {$2.5$};
+\node[rotate=-270] at (0,3) {$c$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{solution}
+ $\beta = 40^{\circ}$
+ 
+ $b = 2.5 \tan(50^{\circ}) \approx 2.979$ units
+ 
+ $c = 2.5\sec(50^{\circ}) = \frac{2.5}{\cos(50^{\circ})} \approx 3.889$ units
+\end{solution}
 \end{problem}
 
 \end{question}
@@ -91,26 +209,50 @@ In Exercises \ref{moretrianglecircfirst} - \ref{moretrianglecirclast}, answer th
 
 \begin{problem}  \label{moretrianglecircfirst}
 If $\theta = 30^{\circ}$ and the side opposite $\theta$ has length $4$, how long is the side adjacent to $\theta$? 
+
+\begin{solution}
+The side adjacent to $\theta$ has length $4\sqrt{3} \approx 6.928$ units
+\end{solution}
 \end{problem}
 
 \begin{problem}
 If $\theta = 15^{\circ}$ and the hypotenuse has length $10$, how long is the side opposite $\theta$?
+
+
+The side opposite $\theta$ has length $10 \sin(15^{\circ}) \approx 2.588$ units
+
 \end{problem}
 
 \begin{problem}
 If $\theta = 87^{\circ}$ and the side adjacent to $\theta$ has length $2$, how long is the side opposite $\theta$?
+
+\begin{solution}
+The side opposite $\theta$ is $2\tan(87^{\circ}) \approx 38.162$ units
+\end{solution}
 \end{problem}
 
 \begin{problem}
-If $\theta = 38.2^{\circ}$ and the side opposite $\theta$ has lengh $14$, how long is the hypoteneuse?
+If $\theta = 38.2^{\circ}$ and the side opposite $\theta$ has length $14$, how long is the hypotenuse?
+
+\begin{solution}
+The hypotenuse has length $14 \csc(38.2^{\circ}) = \frac{14}{\sin(38.2^{\circ})} \approx 22.639$ units
+\end{solution}
 \end{problem}
 
 \begin{problem}
 If $\theta = 2.05^{\circ}$ and the hypotenuse has length $3.98$, how long is the side adjacent to $\theta$?
+
+\begin{solution}
+The side adjacent to $\theta$ has length $3.98 \cos(2.05^{\circ}) \approx 3.977$ units
+\end{solution}
 \end{problem}
 
 \begin{problem} \label{moretrianglecirclast}
 If $\theta = 42^{\circ}$ and the side adjacent to $\theta$ has length $31$, how long is the side opposite $\theta$? 
+
+\begin{solution}
+ The side opposite $\theta$ has length $31\tan(42^{\circ}) \approx 27.912$ units
+\end{solution}
 \end{problem}
 
 \end{question}
@@ -121,14 +263,23 @@ In Exercises \ref{trianglesidesfirst} - \ref{trianglesideslast}, find the two ac
 
 \begin{problem} \label{trianglesidesfirst}
 3, 4 and 5 
+
+\begin{solution}
+$36.87^{\circ}$ and $53.13^{\circ}$
+\end{solution}
 \end{problem}
 
 \begin{problem}
 5, 12 and 13
+
+\begin{solution}
+$22.62^{\circ}$ and $67.38^{\circ}$
+\end{solution}
 \end{problem}
 
 \begin{problem} \label{trianglesideslast}
 336, 527 and 625 
+
 \end{problem}
 
 \end{question}
