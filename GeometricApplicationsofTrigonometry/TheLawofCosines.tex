@@ -43,27 +43,75 @@ or, solving for the cosine in each equation, we have
 
 To prove the theorem, we consider a generic triangle with the vertex of angle $\alpha$ at the origin with side $b$ positioned along the positive $x$-axis as sketched in the diagram below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.15,
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[15]{-10}{10}{-9}{9}
-\axes
-\drawcolor[gray]{0.7}
-\circle{(0,0),7.07}
-\drawcolor{black}
-\tlabel[cc](7,2.5){$a$}
-\tlabel[cc](4,-1){$b$}
-\tlabel[cc](2,2.75){$c$}
-\tlabel[cc](1.75,0.75){$\alpha$}
-\tlabel[cc](0,-0.75){$A=(0,0)$}
-\tlabel[cc](8.5,-0.75){$C=(b,0)$}
-\arrow \reverse \arrow \parafcn{5, 40, 5}{1.5*dir(t)}
-\point[4pt]{(0,0), (8,0), (5,5)}
-\gclear \tlabelrect[cc](5,5.75){$B=(c \cos(\alpha), c \sin(\alpha))$}
-\penwd{1.25pt}
-\polyline{(0,0), (8,0), (5,5), (0,0)}
-\end{mfpic}
+% Parameters
+\def\R{3.6}
+\def\ang{55}
+\def\b{5.2}
 
-\end{center}
+% Coordinates
+\coordinate (A) at (0,0);
+\coordinate (B) at (\ang:\R);
+\coordinate (C) at (\b,0);
+
+% Light reference circle
+\draw[gray!45,line width=0.5pt] (A) circle (\R);
+
+% Coordinate axes
+\draw[->,line width=0.8pt] (-5.2,0)--(6.3,0);
+\draw[->,line width=0.8pt] (0,-4.3)--(0,4.6);
+
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+
+% Points
+\fill (A) circle (2.2pt);
+\fill (B) circle (2.2pt);
+\fill (C) circle (2.2pt);
+
+% Point labels
+\node[below left] at (A) {$A=(0,0)$};
+
+\node[above right=2pt] at (C)
+    {$C=(b,0)$};
+
+\node[above=5pt] at (B)
+    {$B=(c\cos(\alpha),\,c\sin(\alpha))$};
+
+% Side labels
+\node[left=6pt]
+    at ($(A)!0.55!(B)$)
+    {$c$};
+
+\node[right=6pt]
+    at ($(B)!0.50!(C)$)
+    {$a$};
+
+\node[below]
+    at ($(A)!0.55!(C)$)
+    {$b$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(0.80,0)$)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.80
+    ];
+
+\node at ($(A)+(1,0.50)$)
+    {$\alpha$};
+
+\end{tikzpicture}
+\end{image}
 
 From this set-up, we immediately find that the coordinates of $A$ and $C$ are $A(0,0)$ and $C(b,0)$.  From Theorem \ref{cosinesinecircle}, we know that since the point $B(x,y)$ lies on a circle of radius $c$, the coordinates of $B$ are $B(x,y) = B(c \cos(\alpha), c \sin(\alpha))$.  (This would be true even if $\alpha$ were an obtuse or right angle so although we have drawn the case when $\alpha$ is acute, the following computations hold for any angle $\alpha$ drawn in standard position where $0 < \alpha < 180^{\circ}$.) 
 
@@ -138,24 +186,72 @@ Since $\alpha$ is an angle in a triangle, we know the radian measure of $\alpha$
 
 To minimize propagation of error (and obtain an \textit{exact} answer for $\gamma$), however, we could use the Law of Cosines again.\footnote{Your instructor will let you know which procedure to use. It all boils down to how much you trust your calculator.} From $\cos(\gamma) = \frac{a^2+b^2-c^2}{2ab}$ with $a = 7$, $b = \sqrt{53-28\cos\left(50^{\circ} \right)}$ and $c=2$, we get  $\gamma = \arccos\left(\frac{7-2 \cos\left(50^{\circ}\right)}{\sqrt{53-28\cos\left(50^{\circ} \right)}} \right)$ radians $\approx 15.01^{\circ}$.  We sketch the triangle below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
+% Vertices
+\coordinate (A) at (0,0);
+\coordinate (B) at (-1.15,2.05);
+\coordinate (C) at (6.05,0);
 
-\begin{mfpic}[30]{-2}{6}{0}{2}
-\tlabel[cc](2,1.25){\scriptsize $a = 7$}
-\tlabel[cc](2,-0.25){\scriptsize  $b \approx 5.92$}
-\tlabel[cc](-1,0.5){\scriptsize  $c =2$}
-\tlabel[cc](1,0.5){\scriptsize  $\alpha \approx 114.99^{\circ}$}
-\tlabel[cc](3,0.25){\scriptsize $\gamma \approx 15.01^{\circ}$}
-\tlabel[cc](0.1,1.1){\scriptsize  $\beta = 50^{\circ}$}
-\arrow \reverse \arrow \parafcn{5, 115, 5}{0.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(5.72,0)}  \parafcn{168, 178, 5}{2*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-1.04,1.81)}  \parafcn{305, 335, 5}{0.75*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (5.72,0), (-1.04,1.81), (0,0)}
-\end{mfpic}
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
 
-\end{center}
+% Side labels
+\node[left=8pt]
+    at ($(A)!0.50!(B)$)
+    {$c=2$};
+
+\node[above=7pt]
+    at ($(B)!0.52!(C)$)
+    {$a=7$};
+
+\node[below]
+    at ($(A)!0.50!(C)$)
+    {$b\approx5.92$};
+
+% Angle alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(0.78,0)$)
+    arc[
+        start angle=0,
+        end angle=119.3,
+        radius=0.78
+    ];
+
+\node at ($(A)+(1.2,0.55)$)
+    {$\alpha\approx114.99^\circ$};
+
+% Angle beta
+\draw[-,line width=0.8pt]
+    ($(B)+(0.38,-0.72)$)
+    arc[
+        start angle=-62,
+        end angle=-12,
+        radius=0.82
+    ];
+
+\node at ($(B)+(1.2,-0.78)$)
+    {$\beta=50^\circ$};
+
+% Angle gamma
+\draw[-,line width=0.8pt]
+    ($(C)+(-0.90,0)$)
+    arc[
+        start angle=180,
+        end angle=164.99,
+        radius=0.90
+    ];
+
+\node at ($(C)+(-2.1,0.2)$)
+    {$\gamma\approx15.01^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 As we mentioned earlier, once we've determined $b$ it is possible to use the Law of Sines to find the remaining angles.  Here, however, we must proceed with caution as we are in the ambiguous (ASS) case.  Here it  is advisable to first find the \textit{smallest} of the unknown angles, since we are guaranteed it will be acute.\footnote{There can only be one \textit{obtuse} angle in the triangle, and if there is one, it must be the largest.} 
 
@@ -174,23 +270,73 @@ Now that we have obtained an angle-side opposite pair $(\beta, b)$, we could pro
 
  Using the Law of Cosines, we get  $\gamma = \arccos\left(\frac{5}{7}\right)$ radians $\approx 44.42^{\circ}$ and  $\alpha = \arccos\left(\frac{29}{35}\right)$ radians $\approx 34.05^{\circ}$.  We sketch this triangle below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
-\begin{mfpic}[30]{0}{7}{0}{2}
-\tlabel[cc](6.25,1.5){\scriptsize $a = 4$}
-\tlabel[cc](1.5,1.5){\scriptsize  $c = 5$}
-\tlabel[cc](2,0.35){\scriptsize $\alpha \approx 34.05^{\circ}$}
-\tlabel[cc](4,2){\scriptsize $\beta \approx 101.54^{\circ}$}
-\tlabel[cc](5,0.35){\scriptsize $\gamma \approx 44.42^{\circ}$}
-\tlabel[cc](3.5,-0.25){\scriptsize $b = 7$}
-\arrow \reverse \arrow \parafcn{5, 30, 5}{1.25*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(4.14,2.8)}  \parafcn{220, 310, 5}{0.5*dir(t)}
-\arrow \reverse \arrow  \shiftpath{(7,0)}  \parafcn{140, 175, 5}{1.25*dir(t)}
-\penwd{1.25pt}
-\polyline{(0,0), (4.14,2.8), (7,0),(0,0)}
-\end{mfpic}
+% Geometry:
+% b = 7, c = 5, alpha ≈ 34.05°
+\coordinate (A) at (0,0);
+\coordinate (B) at ({5*cos(34.05)},{5*sin(34.05)});
+\coordinate (C) at (7,0);
 
-\end{center}
+% Triangle
+\draw[line width=1.3pt] (A)--(B)--(C)--cycle;
+
+% Side labels
+\node[left=8pt]
+    at ($(A)!0.55!(B)$)
+    {$c=5$};
+
+\node[right=8pt]
+    at ($(B)!0.55!(C)$)
+    {$a=4$};
+
+\node[below]
+    at ($(A)!0.50!(C)$)
+    {$b=7$};
+
+% Alpha
+\draw[-,line width=0.8pt]
+    ($(A)+(1.10,0)$)
+    arc[
+        start angle=0,
+        end angle=34.05,
+        radius=1.10
+    ];
+
+\node at ($(A)+(1.95,0.42)$)
+    {$\alpha\approx34.05^\circ$};
+
+% Beta
+\draw[-,line width=0.8pt]
+    ($(B)+(-0.72,-0.52)$)
+    arc[
+        start angle=-144.5,
+        end angle=-43.0,
+        radius=0.82
+    ];
+
+\node at ($(B)+(0,-1.2)$)
+    {$\beta\approx101.54^\circ$};
+
+% Gamma
+\draw[-,line width=0.8pt]
+    ($(C)+(-0.95,0)$)
+    arc[
+        start angle=180,
+        end angle=135.58,
+        radius=0.95
+    ];
+
+\node at ($(C)+(-1.8,0.50)$)
+    {$\gamma\approx44.42^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 \vspace{-.5in} \qed
