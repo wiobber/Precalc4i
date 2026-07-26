@@ -205,23 +205,65 @@ A great example of this is number   \ref{locsss} in  Example \ref{locex}, where 
 
 \begin{example}  \label{locapplication}  A researcher wishes to determine the width of a vernal pond as drawn below. From a point $P$, he finds the distance to the eastern-most point of the pond to be $950$ feet, while the distance to the western-most point of the pond from $P$ is $1000$ feet. If the angle between the two lines of sight is $60^{\circ}$, find the width of the pond.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    scale=1.05,
+    line cap=round,
+    line join=round
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\fillcolor[gray]{0.7}
-\gfill \cyclic[1.25]{(-5,-3), (-3,0), (-1,2), (0,0), (1,1), (3,2), (4,4), (5,4.75), (3,-2), (0,-3), (-3,-2),  (-5,-3)}
-\plotsymbol[5pt]{Asterisk}{(-5,-3),(5,5)}
-\dashed \polyline{(-5,-3), (5,5)}
-\dashed \polyline{(-5,-3), (4.25,-5), (5,5)}
-\tlabel[cc](-0.5,-4.75){$950$ feet}
-\tlabel(4.75,0){$1000$ feet}
-\arrow \reverse \arrow \shiftpath{(4.25,-5)}  \parafcn{100, 160, 5}{1.5*dir(t)}
-\tlabel[cc](3,-3){$60^{\circ}$}
-\point {(4.25,-5)}
-\tlabel[cc](4.25,-5.5){$P$}
-\end{mfpic}
+% Key points
+\coordinate (A) at (0,0);
+\coordinate (P) at (5.15,-1.05);
+\coordinate (B) at (5.55,4.25);
 
-\end{center}
+% Irregular shaded region
+\fill[blue!35]
+    (A)
+    .. controls (0.70,0.65) and (1.15,2.55) .. (2.05,2.45)
+    .. controls (2.55,2.35) and (2.05,1.45) .. (2.70,1.25)
+    .. controls (3.20,1.05) and (3.55,1.75) .. (4.10,1.85)
+    .. controls (4.65,2.00) and (4.75,3.60) .. (B)
+    .. controls (4.95,2.45) and (4.60,0.45) .. (3.85,0.05)
+    .. controls (2.85,-0.45) and (2.20,-0.40) .. (1.45,0.00)
+    .. controls (0.90,0.30) and (0.45,0.20) .. cycle;
+
+% Dashed triangle
+\draw[dashed,line width=0.9pt] (A)--(B);
+\draw[dashed,line width=0.9pt] (A)--(P);
+\draw[dashed,line width=0.9pt] (P)--(B);
+
+% Endpoint marks
+\node at (A) {\Large $*$};
+\node at (B) {\Large $*$};
+\fill (P) circle (2.2pt);
+
+% Point label
+\node[below=4pt] at (P) {$P$};
+
+% Side labels
+\node[below=7pt,rotate=-11]
+    at ($(A)!0.52!(P)$)
+    {$950\text{ feet}$};
+
+\node[right=8pt]
+    at ($(P)!0.52!(B)$)
+    {$1000\text{ feet}$};
+
+% Angle at P
+\draw[-,line width=0.8pt]
+    ($(P)+(-0.75,0.15)$)
+    arc[
+        start angle=169,
+        end angle=87,
+        radius=0.75
+    ];
+
+\node at ($(P)+(-0.5,0.9)$)
+    {$60^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 {\bf Solution.}  We are given the lengths of two sides and the measure of an included angle, so we may apply the Law of Cosines to find the length of the missing side opposite the given angle. 
 
