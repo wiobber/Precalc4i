@@ -1007,30 +1007,52 @@ Once again, our answers to Example \ref{tangentcotangentfromgraphex} are one of 
 { \bf Solution.}
 
 We begin by sketching the scenario below.  Since the rocket us launched `directly upwards,' we may assume the rocket is launched at a $90^{\circ}$ angle which provides us with a right triangle.  
-\begin{center}
 
+\begin{image}
+\begin{tikzpicture}[
+    line cap=round,
+    line join=round,
+    >=Latex
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \shiftpath{(0,-4.330)} \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel(1.6,-3.75){$\theta$}
+% Key points
+\coordinate (A) at (0,0);
+\coordinate (B) at (4.2,0);
+\coordinate (C) at (4.2,6);
 
-\tlabel(2,-5.5){$42$ ft.}
-\tlabel(5.25,0){$f(\theta)$ ft.}
-\tlabel(5.25,4.330){rocket}
-\tlabel(-5.5,-4.330){observation point}
-\tlabel(0.25,0){$g(\theta)$ ft.}
-\polyline{(4.6, -4.330), (4.6,-3.930), (5, -3.930)}
-\dashed \polyline{(5,-4.330),(5,4.330),  (0,-4.330)}
-\plotsymbol[4pt]{Asterisk}{(5,4.330)}
-\plotsymbol[4pt]{Asterisk}{(0,-4.330)}
-\penwd{1.25pt}
-\polyline{(0,-4.330), (5,-4.330)}
+% Triangle
+\draw[very thick] (A) -- (B);
+\draw[thick,dashed] (A) -- (C);
+\draw[thick,dashed] (B) -- (C);
 
-\end{mfpic}
+% Right-angle marker
+\draw[thick]
+    ($(B)+(-0.28,0)$)
+    -- ($(B)+(-0.28,0.28)$)
+    -- ($(B)+(0,0.28)$);
 
+% Angle theta
+\draw[thick,->]
+    (0.95,0)
+    arc[start angle=0,end angle=55,radius=0.95];
 
-\end{center}
+\node at (1.35,0.55) {$\theta$};
 
+% Endpoint markers
+\node[font=\Large] at (A) {$\ast$};
+\node[font=\Large] at (C) {$\ast$};
+
+% Labels
+\node[left=7pt] at (A) {observation point};
+\node[above right=1pt] at (C) {rocket};
+
+\node[left=10pt] at (2.6,3.2) {$g(\theta)\ \text{ft.}$};
+\node[right=7pt] at (4.2,3.2) {$f(\theta)\ \text{ft.}$};
+
+\node[below=8pt] at ($(A)!0.5!(B)$) {$42\ \text{ft.}$};
+
+\end{tikzpicture}
+\end{image}
 \begin{enumerate}
 
 \item  From the remarks preceding Theorem \ref{circularfunctionscircle}, we know the definitions of the circular functions agree with those specified for acute angles in right triangles as described in  Definition \ref{righttriangletherest} in Section \ref{AppRightTrig}.  Hence, $\tan(\theta) = \frac{f(\theta)}{42}$, so $f(\theta) = 42 \tan(\theta)$. 
