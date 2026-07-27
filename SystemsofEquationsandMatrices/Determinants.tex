@@ -32,7 +32,7 @@ To explain how we will take an $n \times n$ matrix and distill an $(n-1) \times 
 
 \smallskip
 
-For the matrix $A$ below, we obtain $A_{\mbox{\tiny$23$}}$ by deleting the second row and third column of $A$:
+For the matrix $A$ below, we obtain $A_23}$ by deleting the second row and third column of $A$:
 
 \[ \begin{array}{ccc}
 
@@ -42,7 +42,7 @@ A = \left[ \begin{array}{rr>{\columncolor[gray]{0.7}}r} 3 &  1 & 2 \\ \rowcolor[
 
 &
 
-A_{\mbox{\tiny$23$}} = \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \\
+A_23} = \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \\
 
 \end{array}\]
 
@@ -56,9 +56,9 @@ We are now in the position to define the determinant of a matrix.
 
 \begin{itemize}
 
-\item  If $n=1$, then $A = \left[ a_{\mbox{\tiny$11$}} \right]$ and $\det(A) = \det\left( \left[ a_{\mbox{\tiny$11$}} \right] \right) = a_{\mbox{\tiny$11$}}$.
+\item  If $n=1$, then $A = \left[ a_11} \right]$ and $\det(A) = \det\left( \left[ a_11} \right] \right) = a_11}$.
 
-\item  If $n>1$, then $A = \left[ a_{ij} \right]_{n \times n}$ and \[ \det(A) = \det\left( \left[ a_{ij} \right]_{n \times n} \right) =  a_{\mbox{\tiny$11$}} \det\left(A_{\mbox{\tiny$11$}}\right)- a_{\mbox{\tiny$12$}} \det\left(A_{\mbox{\tiny$12$}}\right) + -  \ldots  + (-1)^{1+n} a_{\mbox{\tiny$1$}n} \det\left(A_{\mbox{\tiny$1$}n}\right)\]
+\item  If $n>1$, then $A = \left[ a_{ij} \right]_{n \times n}$ and \[ \det(A) = \det\left( \left[ a_{ij} \right]_{n \times n} \right) =  a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
 
 \end{itemize}
 
@@ -70,9 +70,9 @@ We are now in the position to define the determinant of a matrix.
 There are two commonly used notations for the determinant of a matrix $A$: `$\det(A)$' and `$|A|$'
 We have chosen to use the notation $\det(A)$ as opposed to $|A|$ because we find that the latter is often confused with absolute value, especially in the context of a $1 \times 1$ matrix.  
 
-In the expansion $a_{\mbox{\tiny$11$}} \det\left(A_{\mbox{\tiny$11$}}\right)- a_{\mbox{\tiny$12$}} \det\left(A_{\mbox{\tiny$12$}}\right) + -  \ldots  + (-1)^{1+n} a_{\mbox{\tiny$1$}n} \det\left(A_{\mbox{\tiny$1$}n}\right)$, the notation `$+ -  \ldots  + (-1)^{1+n} a_{\mbox{\tiny$1$}n}$' means that the signs alternate and the final sign is dictated by the sign of the quantity $(-1)^{1+n}$. 
+In the expansion $a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)$, the notation `$+ -  \ldots  + (-1)^{1+n} a_{1n}$' means that the signs alternate and the final sign is dictated by the sign of the quantity $(-1)^{1+n}$. 
 
-Since the entries $a_{\mbox{\tiny$11$}}$, $a_{\mbox{\tiny$12$}}$ and so forth up through $a_{\mbox{\tiny$1$}n}$ comprise the first row of $A$, we say we are finding the determinant of $A$  by `expanding along the first row'. Later in the section, we will develop a formula for $\det(A)$ which allows us to find it by expanding along any row.
+Since the entries $a_11}$, $a_12}$ and so forth up through $a_{1n}$ comprise the first row of $A$, we say we are finding the determinant of $A$  by `expanding along the first row'. Later in the section, we will develop a formula for $\det(A)$ which allows us to find it by expanding along any row.
 
 \smallskip
 
@@ -80,8 +80,8 @@ Applying Definition \ref{determinantdefn} to the matrix $A = \left[ \begin{array
 
 \[ \begin{array}{rcl} 
 
-\det(A) & = & \det \left( \left[ \begin{array}{rr} 4 & -3 \\ 2 & 1 \\ \end{array} \right] \right)\\[13pt]
-& = &   4\det\left(A_{\mbox{\tiny$11$}}\right) - (-3)\det\left(A_{\mbox{\tiny$12$}}\right)\\
+\det(A) & = & \det \left( \left[ \begin{array}{rr} 4 & -3 \\ 2 & 1 \\ \end{array} \right] \right)\\ 
+& = &   4\det\left(A_11}\right) - (-3)\det\left(A_12}\right)\\
 & = & 4 \det([1]) +3\det([2]) \\
 & = & 4(1) + 3(2) \\
 & = & 10 \\ \end{array}\]
@@ -90,8 +90,8 @@ For a generic $2 \times 2$ matrix $A = \left[ \begin{array}{cc} a & b \\ c & d \
 
 \[ \begin{array}{rcl} 
 
-\det(A) & = & \det \left( \left[ \begin{array}{cc}  a & b \\ c & d \\ \end{array} \right] \right)\\[13pt]
- & = &  a \det\left(A_{\mbox{\tiny$11$}}\right) - b \det\left(A_{\mbox{\tiny$12$}}\right) \\
+\det(A) & = & \det \left( \left[ \begin{array}{cc}  a & b \\ c & d \\ \end{array} \right] \right)\\ 
+ & = &  a \det\left(A_11}\right) - b \det\left(A_12}\right) \\
 & = &  a \det\left(\left[ d \right]\right) - b \det\left(\left[c \right]\right) \\
 & = & ad-bc \end{array}\]
 
@@ -113,9 +113,9 @@ Applying Definition \ref{determinantdefn} to the $3 \times 3$ matrix $A =  \left
 
 \[ \begin{array}{rcl} 
 
-\det(A) & = & \det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)\\[13pt]
-        & = & 3\det\left(A_{\mbox{\tiny$11$}}\right) - 1\det\left(A_{\mbox{\tiny$12$}}\right) + 2\det\left(A_{\mbox{\tiny$13$}}\right) \\[13pt]
-        & = & 3\det \left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right) - \det \left( \left[ \begin{array}{rr} 0 & 5 \\ 2 & 4 \\ \end{array} \right] \right) + 2 \det \left( \left[ \begin{array}{rr} 0 & -1 \\ 2 & 1 \\ \end{array} \right] \right) \\[13pt]
+\det(A) & = & \det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)\\ 
+        & = & 3\det\left(A_11}\right) - 1\det\left(A_12}\right) + 2\det\left(A_13}\right) \\ 
+        & = & 3\det \left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right) - \det \left( \left[ \begin{array}{rr} 0 & 5 \\ 2 & 4 \\ \end{array} \right] \right) + 2 \det \left( \left[ \begin{array}{rr} 0 & -1 \\ 2 & 1 \\ \end{array} \right] \right) \\ 
         & = & 3((-1)(4) - (5)(1)) - ((0)(4)-(5)(2))+2((0)(1)-(-1)(2)) \\
         & = & 3(-9)-(-10)+2(2) \\
         & = & -13 \\ \end{array}  \]
@@ -144,15 +144,15 @@ To evaluate the determinant of a $4 \times 4$ matrix, we would have to evaluate 
 
 We note that in Definition \ref{determinantdefn}, the sum 
 
-\[a_{\mbox{\tiny$11$}} \det\left(A_{\mbox{\tiny$11$}}\right)- a_{\mbox{\tiny$12$}} \det\left(A_{\mbox{\tiny$12$}}\right) + -  \ldots  + (-1)^{1+n} a_{\mbox{\tiny$1$}n} \det\left(A_{\mbox{\tiny$1$}n}\right)\]
+\[a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
 
 can be rewritten as
 
-\[a_{\mbox{\tiny$11$}} (-1)^{1+1} \det\left(A_{\mbox{\tiny$11$}}\right) + a_{\mbox{\tiny$12$}} (-1)^{1+2} \det\left(A_{\mbox{\tiny$12$}}\right) + \ldots  + a_{\mbox{\tiny$1$}n} (-1)^{1+n} \det\left(A_{\mbox{\tiny$1$}n}\right)\]
+\[a_11} (-1)^{1+1} \det\left(A_11}\right) + a_12} (-1)^{1+2} \det\left(A_12}\right) + \ldots  + a_{1n} (-1)^{1+n} \det\left(A_{1n}\right)\]
 
 which, in the language of cofactors is
 
-\[a_{\mbox{\tiny$11$}} C_{\mbox{\tiny$11$}} + a_{\mbox{\tiny$12$}}C_{\mbox{\tiny$12$}} + \ldots  + a_{\mbox{\tiny$1$}n}C_{\mbox{\tiny$1$}n} \]
+\[a_11} C_11} + a_12}C_12} + \ldots  + a_{1n}C_{1n} \]
 
 We are now ready to state our main theorem concerning determinants.
 
@@ -166,7 +166,7 @@ We are now ready to state our main theorem concerning determinants.
 
 \item  We may find the determinant by expanding along any row.  That is, for any $1 \leq k \leq n$, 
 
-\[\det(A) = a_{k\mbox{\tiny$1$}}C_{k\mbox{\tiny$1$}} +  a_{k\mbox{\tiny$2$}}C_{k\mbox{\tiny$2$}} + \ldots + a_{kn} C_{kn}\]
+\[\det(A) = a_{k1}C_{k1} +  a_{k2}C_{k2} + \ldots + a_{kn} C_{kn}\]
 
 \item  If $A'$ is the matrix obtained from $A$ by:
 
@@ -208,11 +208,11 @@ We found $\det(A) = -13$ by expanding along the first row.  To take advantage of
 
 \[ \begin{array}{rcl} 
 
-\det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)& = & 0C_{\mbox{\tiny$21$}} + (-1)C_{\mbox{\tiny$22$}}+5C_{\mbox{\tiny$23$}} \\
+\det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)& = & 0C_{21} + (-1)C_{22}+5C_23} \\
 
-& = &  (-1) (-1)^{2+2} \det\left(A_{\mbox{\tiny$22$}}\right) + 5 (-1)^{2+3}\det\left(A_{\mbox{\tiny$23$}}\right) \\[13pt]
+& = &  (-1) (-1)^{2+2} \det\left(A_{22}\right) + 5 (-1)^{2+3}\det\left(A_23}\right) \\ 
         
-        & = & - \det \left( \left[ \begin{array}{rr} 3 & 2 \\ 2 & 4 \\ \end{array} \right] \right) -5 \det \left( \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \right) \\[13pt]
+        & = & - \det \left( \left[ \begin{array}{rr} 3 & 2 \\ 2 & 4 \\ \end{array} \right] \right) -5 \det \left( \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \right) \\ 
         & = & -((3)(4)-(2)(2)) - 5((3)(1)-(2)(1)) \\
         & = & -8-5 \\
         & = & -13 \, \, \checkmark \\ \end{array}  \]
@@ -305,7 +305,7 @@ It is worth noting that when we first introduced the notion of a matrix inverse,
 \subsection{Cramer's Rule and Matrix Adjoints}
 \label{CramersRuleMatrixAdjoints}
 
-In this section, we introduce a theorem which enables us to solve a system of linear equations by means of determinants only.  As usual, the theorem is stated in full generality, using numbered unknowns $x_{\mbox{\tiny$1$}}$, $x_{\mbox{\tiny$2$}}$, etc., instead of the more familiar letters $x$, $y$, $z$, etc.   As with many results in this chapter, the proof of the general case is best left to a course in Linear Algebra.
+In this section, we introduce a theorem which enables us to solve a system of linear equations by means of determinants only.  As usual, the theorem is stated in full generality, using numbered unknowns $x_{1}$, $x_{\mbox{\tiny$2$}}$, etc., instead of the more familiar letters $x$, $y$, $z$, etc.   As with many results in this chapter, the proof of the general case is best left to a course in Linear Algebra.
 
 \smallskip
 
@@ -313,7 +313,7 @@ In this section, we introduce a theorem which enables us to solve a system of li
 
 \begin{theorem} \label{CramersRule} \index{Cramer's Rule} \textbf{Cramer's Rule:} Suppose  $AX = B$ is the matrix form of a system of $n$ linear equations in $n$ unknowns where $A$ is the coefficient matrix, $X$ is the unknowns matrix, and $B$ is the constant matrix. 
 
-If $\det(A) \neq 0$, then the corresponding system is consistent and independent and the solution for unknowns $x_{\mbox{\tiny$1$}}$, $x_{\mbox{\tiny$2$}}$, \ldots $x_{n}$ is given by:
+If $\det(A) \neq 0$, then the corresponding system is consistent and independent and the solution for unknowns $x_{1}$, $x_{\mbox{\tiny$2$}}$, \ldots $x_{n}$ is given by:
 
 \[ x_{j} = \dfrac{\det\left(A_{j}\right)}{\det(A)},\]
 
@@ -333,7 +333,7 @@ In words, Cramer's Rule tells us we can solve for each unknown, one at a time, b
 
 \begin{enumerate}
 
-\item  Solve $\left\{ \begin{array}{rcr} 2x_{\mbox{\tiny$1$}} - 3x_{\mbox{\tiny$2$}} & = & 4 \\ 5x_{\mbox{\tiny$1$}} + x_{\mbox{\tiny$2$}} & = & -2   \end{array} \right.$ for $x_{\mbox{\tiny$1$}}$ and $x_{\mbox{\tiny$2$}}$
+\item  Solve $\left\{ \begin{array}{rcr} 2x_{1} - 3x_{\mbox{\tiny$2$}} & = & 4 \\ 5x_{1} + x_{\mbox{\tiny$2$}} & = & -2   \end{array} \right.$ for $x_{1}$ and $x_{\mbox{\tiny$2$}}$
 
 \item  Solve $\left\{ \begin{array}{rcr} 2x - 3y + z & = & -1 \\ x-y+z & = & 1 \\ 3x-4z & = & 0   \end{array} \right.$ for $z$.
 
@@ -349,17 +349,17 @@ In words, Cramer's Rule tells us we can solve for each unknown, one at a time, b
 
 A = \left[ \begin{array}{rr} 2 & -3 \\ 5 & 1 \\ \end{array} \right] 
 &
-\qquad X = \left[ \begin{array}{r} x_{\mbox{\tiny$1$}} \\ x_{\mbox{\tiny$2$}} \\ \end{array} \right] 
+\qquad X = \left[ \begin{array}{r} x_{1} \\ x_{\mbox{\tiny$2$}} \\ \end{array} \right] 
 & 
 \qquad B = \left[ \begin{array}{r} 4 \\ -2 \\ \end{array} \right] \\
 
 \end{array} \]
 
-To find the matrix $A_{\mbox{\tiny$1$}}$, we remove the column of the coefficient matrix $A$ which holds the coefficients of $x_{\mbox{\tiny$1$}}$ and replace it with the corresponding entries in $B$.  Likewise, we replace the column of $A$ which corresponds to the coefficients of $x_{\mbox{\tiny$2$}}$ with the constants to form the matrix $A_{\mbox{\tiny$2$}}$.  This yields 
+To find the matrix $A_{1}$, we remove the column of the coefficient matrix $A$ which holds the coefficients of $x_{1}$ and replace it with the corresponding entries in $B$.  Likewise, we replace the column of $A$ which corresponds to the coefficients of $x_{\mbox{\tiny$2$}}$ with the constants to form the matrix $A_{\mbox{\tiny$2$}}$.  This yields 
 
 \[ \begin{array}{cc}
 
-A_{\mbox{\tiny$1$}} = \left[ \begin{array}{rr} 4 & -3 \\ -2 & 1 \\ \end{array} \right] 
+A_{1} = \left[ \begin{array}{rr} 4 & -3 \\ -2 & 1 \\ \end{array} \right] 
 
 &
 
@@ -367,11 +367,11 @@ A_{\mbox{\tiny$1$}} = \left[ \begin{array}{rr} 4 & -3 \\ -2 & 1 \\ \end{array} \
 
 \end{array} \]
 
-Computing determinants, we get $\det(A) = 17$, $\det\left(A_{\mbox{\tiny$1$}}\right) = -2$ and  $\det\left(A_{\mbox{\tiny$2$}}\right) = -24$, so that
+Computing determinants, we get $\det(A) = 17$, $\det\left(A_{1}\right) = -2$ and  $\det\left(A_{\mbox{\tiny$2$}}\right) = -24$, so that
 
 \[ \begin{array}{cc}
 
-x_{\mbox{\tiny$1$}} = \dfrac{\det\left(A_{\mbox{\tiny$1$}}\right)}{\det(A)} = -\dfrac{2}{17} 
+x_{1} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = -\dfrac{2}{17} 
 & 
 \qquad x_{\mbox{\tiny$2$}} = \dfrac{\det\left(A_{\mbox{\tiny$2$}}\right)}{\det(A)} = -\dfrac{24}{17} \\
 
@@ -379,7 +379,7 @@ x_{\mbox{\tiny$1$}} = \dfrac{\det\left(A_{\mbox{\tiny$1$}}\right)}{\det(A)} = -\
 
 The reader can check that the solution to the system is $\left(-\frac{2}{17}, -\frac{24}{17}\right)$.
 
-\item To use Cramer's Rule to find $z$, we identify $x_{\mbox{\tiny$3$}}$ as $z$.  We have 
+\item To use Cramer's Rule to find $z$, we identify $x_3$ as $z$.  We have 
 
 \[ \begin{array}{cccc}
 
@@ -391,7 +391,7 @@ B = \left[ \begin{array}{r} -1 \\ 1 \\ 0 \end{array} \right]
 
 &
 
-A_{\mbox{\tiny$3$}} = A_{z} =  \left[ \begin{array}{rrr} 2 & -3 & -1 \\ 1 & -1 & 1 \\ 3 & 0 & 0 \end{array} \right] \\
+A_3 = A_{z} =  \left[ \begin{array}{rrr} 2 & -3 & -1 \\ 1 & -1 & 1 \\ 3 & 0 & 0 \end{array} \right] \\
 
 \end{array} \]
 
@@ -417,23 +417,23 @@ Let us consider the $3 \times 3$ matrix $A$ which we so extensively studied in S
 
 We found through a variety of methods that $\det(A) = -13$.  To our surprise and delight, its inverse below has a remarkable number of $13$'s in the denominators of its entries. This is no coincidence.
 
-\[ A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]\]
+\[ A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right]\]
 
-Recall that to find $A^{-1}$,  we are essentially solving the matrix equation $AX = I_{\mbox{\tiny$3$}}$, where $X = \left[ x_{ij} \right]_{3 \times 3}$ is a $3 \times 3$ matrix.  Because of how matrix multiplication is defined, the first column of $I_{\mbox{\tiny$3$}}$ is the product of $A$ with the first column of $X$, the second column of $I_{\mbox{\tiny$3$}}$ is the product of $A$ with the second column of $X$ and the third column of $I_{\mbox{\tiny$3$}}$ is the product of $A$ with the third column of $X$.  In other words, we are solving three equations\footnote{The reader is encouraged to stop and think this through.}
+Recall that to find $A^{-1}$,  we are essentially solving the matrix equation $AX = I_3$, where $X = \left[ x_{ij} \right]_{3 \times 3}$ is a $3 \times 3$ matrix.  Because of how matrix multiplication is defined, the first column of $I_3$ is the product of $A$ with the first column of $X$, the second column of $I_3$ is the product of $A$ with the second column of $X$ and the third column of $I_3$ is the product of $A$ with the third column of $X$.  In other words, we are solving three equations\footnote{The reader is encouraged to stop and think this through.}
 
 \[\begin{array}{ccc}
 
-A\left[ \begin{array}{r} x_{\mbox{\tiny$11$}} \\ x_{\mbox{\tiny$21$}} \\ x_{\mbox{\tiny$31$}} \end{array} \right] = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right]
+A\left[ \begin{array}{r} x_11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right]
 
 &
 \qquad
-A\left[ \begin{array}{r} x_{\mbox{\tiny$12$}} \\ x_{\mbox{\tiny$22$}} \\ x_{\mbox{\tiny$32$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array} \right] 
+A\left[ \begin{array}{r} x_12} \\ x_{22} \\ x_{\mbox{\tiny$32$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array} \right] 
 
 & 
 
 \qquad
 
-A\left[ \begin{array}{r} x_{\mbox{\tiny$13$}} \\ x_{\mbox{\tiny$23$}} \\ x_{\mbox{\tiny$33$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array} \right] \\
+A\left[ \begin{array}{r} x_13} \\ x_23} \\ x_{\mbox{\tiny$33$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array} \right] \\
 
 \end{array}\]
 
@@ -441,7 +441,7 @@ We can solve each of these systems using Cramer's Rule.  Focusing on the first s
 
 \[ \begin{array}{ccc}
 
-A_{\mbox{\tiny$1$}} = \left[ \begin{array}{rrr} 1 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 0 & 1 & 4 \\ \end{array} \right]
+A_{1} = \left[ \begin{array}{rrr} 1 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 0 & 1 & 4 \\ \end{array} \right]
 
 &
 
@@ -449,68 +449,68 @@ A_{\mbox{\tiny$2$}} = \left[ \begin{array}{rrr} 3 &  1 & 2 \\ 0 & 0 & 5 \\ 2 & 0
 
 &
 
-A_{\mbox{\tiny$3$}} = \left[ \begin{array}{rrr} 3 &  1 & \hphantom{-}1 \\ 0 & -1 & 0 \\ 2 & 1 & 0 \\ \end{array} \right]
+A_3 = \left[ \begin{array}{rrr} 3 &  1 & \hphantom{-}1 \\ 0 & -1 & 0 \\ 2 & 1 & 0 \\ \end{array} \right]
 
 \end{array} \]
 
-If we expand $\det\left(A_{\mbox{\tiny$1$}}\right)$ along the first row, we get
+If we expand $\det\left(A_{1}\right)$ along the first row, we get
 
 \[ \begin{array}{rcl}
 
- \det\left(A_{\mbox{\tiny$1$}}\right) & = &  \det\left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right) - \det\left( \left[ \begin{array}{rr} 0 & 5 \\ 0 & 4 \\ \end{array} \right] \right) + 2 \det\left( \left[ \begin{array}{rr} 0 & -1 \\ 0 & 1 \\ \end{array} \right] \right) \\ [13pt]
+ \det\left(A_{1}\right) & = &  \det\left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right) - \det\left( \left[ \begin{array}{rr} 0 & 5 \\ 0 & 4 \\ \end{array} \right] \right) + 2 \det\left( \left[ \begin{array}{rr} 0 & -1 \\ 0 & 1 \\ \end{array} \right] \right) \\  
                         
                       & = & \det\left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right)
                         
 \end{array} \]
 
-Amazingly, this is none other than the  $C_{\mbox{\tiny$11$}}$ cofactor of $A$.  The reader is invited to check this, as well as the claims that  $\det\left(A_{\mbox{\tiny$2$}}\right) = C_{\mbox{\tiny$12$}}$ and $\det\left(A_{\mbox{\tiny$3$}}\right) = C_{\mbox{\tiny$13$}}$.\footnote{In a solid Linear Algebra course you will learn that the properties in Theorem \ref{determinantprops} hold equally well if the word `row' is replaced by the word `column'.  We're not going to get into column operations in this text, but they do make some of what we're trying to say easier to follow.} (To see this, though it seems unnatural to do so, expand along the first row.) Cramer's Rule tells us
+Amazingly, this is none other than the  $C_11}$ cofactor of $A$.  The reader is invited to check this, as well as the claims that  $\det\left(A_{\mbox{\tiny$2$}}\right) = C_12}$ and $\det\left(A_3\right) = C_13}$.\footnote{In a solid Linear Algebra course you will learn that the properties in Theorem \ref{determinantprops} hold equally well if the word `row' is replaced by the word `column'.  We're not going to get into column operations in this text, but they do make some of what we're trying to say easier to follow.} (To see this, though it seems unnatural to do so, expand along the first row.) Cramer's Rule tells us
 
 \[\begin{array}{ccc}
 
-x_{\mbox{\tiny$11$}} = \dfrac{\det\left(A_{\mbox{\tiny$1$}}\right)}{\det(A)} = \dfrac{C_{\mbox{\tiny$11$}}}{\det(A)}, 
+x_11} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = \dfrac{C_11}}{\det(A)}, 
 &
-x_{\mbox{\tiny$21$}} = \dfrac{\det\left(A_{\mbox{\tiny$2$}}\right)}{\det(A)}  = \dfrac{C_{\mbox{\tiny$12$}}}{\det(A)}, 
+x_{21} = \dfrac{\det\left(A_{\mbox{\tiny$2$}}\right)}{\det(A)}  = \dfrac{C_12}}{\det(A)}, 
 &
- x_{\mbox{\tiny$31$}} = \dfrac{\det\left(A_{\mbox{\tiny$3$}}\right)}{\det(A)} = \dfrac{C_{\mbox{\tiny$13$}}}{\det(A)}
+ x_{31} = \dfrac{\det\left(A_3\right)}{\det(A)} = \dfrac{C_13}}{\det(A)}
 
 
 \end{array} \]
 
 So the first column of the inverse matrix $X$ is:
 
-\[  \left[ \begin{array}{r} x_{\mbox{\tiny$11$}} \\ x_{\mbox{\tiny$21$}} \\ x_{\mbox{\tiny$31$}} \end{array} \right] = \left[ \begin{array}{r} \dfrac{C_{\mbox{\tiny$11$}}}{\det(A)} \\ [13pt]  \dfrac{C_{\mbox{\tiny$12$}}}{\det(A)} \\  [13pt] \dfrac{C_{\mbox{\tiny$13$}}}{\det(A)} \end{array} \right] = \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{\mbox{\tiny$11$}} \\ C_{\mbox{\tiny$12$}} \\ C_{\mbox{\tiny$13$}} \end{array} \right]  \]
+\[  \left[ \begin{array}{r} x_11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} \dfrac{C_11}}{\det(A)} \\    \dfrac{C_12}}{\det(A)} \\    \dfrac{C_13}}{\det(A)} \end{array} \right] = \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_11} \\ C_12} \\ C_13} \end{array} \right]  \]
 
 Notice the reversal of the subscripts going from the unknown to the corresponding cofactor of $A$. This trend continues and we get
 \[ \begin{array}{cc}
 
-\left[ \begin{array}{r} x_{\mbox{\tiny$12$}} \\ x_{\mbox{\tiny$22$}} \\ x_{\mbox{\tiny$32$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{\mbox{\tiny$21$}} \\ C_{\mbox{\tiny$22$}} \\ C_{\mbox{\tiny$23$}} \end{array} \right]
+\left[ \begin{array}{r} x_12} \\ x_{22} \\ x_{\mbox{\tiny$32$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{21} \\ C_{22} \\ C_23} \end{array} \right]
 
 &
 \qquad
 
-\left[ \begin{array}{r} x_{\mbox{\tiny$13$}} \\ x_{\mbox{\tiny$23$}} \\ x_{\mbox{\tiny$33$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{\mbox{\tiny$31$}} \\ C_{\mbox{\tiny$32$}} \\ C_{\mbox{\tiny$33$}} \end{array} \right]
+\left[ \begin{array}{r} x_13} \\ x_23} \\ x_{\mbox{\tiny$33$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{31} \\ C_{\mbox{\tiny$32$}} \\ C_{\mbox{\tiny$33$}} \end{array} \right]
 
 \end{array}\]
 
 Putting all of these together, we have obtained a new and surprising formula for $A^{-1}$, namely
 
-\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_{\mbox{\tiny$11$}} & C_{\mbox{\tiny$21$}} & C_{\mbox{\tiny$31$}} \\ C_{\mbox{\tiny$12$}} & C_{\mbox{\tiny$22$}} & C_{\mbox{\tiny$32$}} \\ C_{\mbox{\tiny$13$}} & C_{\mbox{\tiny$23$}} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] \]
+\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_11} & C_{21} & C_{31} \\ C_12} & C_{22} & C_{\mbox{\tiny$32$}} \\ C_13} & C_23} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] \]
 
 To see that this does indeed yield $A^{-1}$, we find all of the cofactors of $A$
 
 \[\begin{array}{rcrrcrrcr}
 
-C_{\mbox{\tiny$11$}} & = & -9, & C_{\mbox{\tiny$21$}} & = & -2, & C_{\mbox{\tiny$31$}} & = & 7\\
+C_11} & = & -9, & C_{21} & = & -2, & C_{31} & = & 7\\
 
-C_{\mbox{\tiny$12$}} & = & 10, & C_{\mbox{\tiny$22$}} & = & 8, & C_{\mbox{\tiny$32$}} & = & -15 \\
+C_12} & = & 10, & C_{22} & = & 8, & C_{\mbox{\tiny$32$}} & = & -15 \\
 
-C_{\mbox{\tiny$13$}} & = &  2,  & C_{\mbox{\tiny$23$}} & = & -1,  & C_{\mbox{\tiny$33$}} & = & -3 \\
+C_13} & = &  2,  & C_23} & = & -1,  & C_{\mbox{\tiny$33$}} & = & -3 \\
 
 \end{array} \]
 
 And, as promised,
 
-\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_{\mbox{\tiny$11$}} & C_{\mbox{\tiny$21$}} & C_{\mbox{\tiny$31$}} \\ C_{\mbox{\tiny$12$}} & C_{\mbox{\tiny$22$}} & C_{\mbox{\tiny$32$}} \\ C_{\mbox{\tiny$13$}} & C_{\mbox{\tiny$23$}} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] = -\dfrac{1}{13} \left[ \begin{array}{rrr} -9 & -2 & 7\\ 10 & 8 & -15 \\ 2  &  -1 &  -3 \\ \end{array} \right]  =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\[3pt] -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\[3pt] -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right] \]
+\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_11} & C_{21} & C_{31} \\ C_12} & C_{22} & C_{\mbox{\tiny$32$}} \\ C_13} & C_23} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] = -\dfrac{1}{13} \left[ \begin{array}{rrr} -9 & -2 & 7\\ 10 & 8 & -15 \\ 2  &  -1 &  -3 \\ \end{array} \right]  =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right] \]
 
 To generalize this to invertible $n \times n$ matrices, we need another definition and a theorem.  Our definition gives a special name to the cofactor matrix, and the theorem gives us a recipe for the matrix inverse.
 
@@ -524,10 +524,10 @@ The \index{matrix ! adjoint}\index{adjoint of a matrix}\textbf{adjoint} of $A$, 
 
 \[ \text{adj}(A) = \left[
 \begin{array}{cccc} 
-C_{\mbox{\tiny$11$}} & C_{\mbox{\tiny$21$}} & \ldots & C_{n\mbox{\tiny$1$}} \\  
-C_{\mbox{\tiny$12$}} & C_{\mbox{\tiny$22$}} & \ldots & C_{n\mbox{\tiny$2$}} \\
+C_11} & C_{21} & \ldots & C_{n1} \\  
+C_12} & C_{22} & \ldots & C_{n\mbox{\tiny$2$}} \\
    \vdots  & \vdots & & \vdots \\
-C_{\mbox{\tiny$1$}n} & C_{\mbox{\tiny$2$}n} & \ldots & C_{nn} \\  \end{array} \right] \]
+C_{1n} & C_{\mbox{\tiny$2$}n} & \ldots & C_{nn} \\  \end{array} \right] \]
 
 
 \end{definition}
