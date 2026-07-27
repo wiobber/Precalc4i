@@ -65,8 +65,67 @@ We start by proving $\cos(-\theta) = \cos(\theta)$ and $\sin(-\theta) = -\sin(\t
 
 Consider an angle $\theta$ plotted in standard position. Let $\theta_0$ be the angle coterminal with $\theta$ with $0 \leq \theta_0 < 2\pi$.  (We can construct the angle $\theta_0$ by rotating counter-clockwise from the positive $x$-axis to the terminal side of $\theta$ as pictured below.)  Since $\theta$ and $\theta_0$ are coterminal, $\cos(\theta) = \cos(\theta_0)$ and $\sin(\theta) = \sin(\theta_0)$.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{120} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{0.75}   % ending radius (grows slightly over the sweep)
+\def\amax{-600}    % total sweep in degrees: 360 + 60 = 7*180/3
+
+% --- Full circle, light gray ---
+\draw[gray!50] (0,0) circle (\R);
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+
+% --- Angle arc for theta, with label ---
+
+\draw[->] (1,0) arc [start angle=0, end angle=\tdeg, radius=1];
+\node[right] at (-1.1,-0.5) {$\theta$};
+
+\node[] at (0.9,0.9) {$\theta_0$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[->,
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
+
+\end{tikzpicture}
+
+\end{image}
 
 We now consider the angles $-\theta$ and $-\theta_0$.  Since  $\theta$ is coterminal with $\theta_0$, there is some integer $k$ so that $\theta = \theta_0 + 2\pi \cdot k$.  Hence, $-\theta =   -\theta_0 - 2\pi \cdot k = -\theta_0 + 2\pi \cdot(-k)$.  Since $k$ is an integer, so is $(-k)$, which means $-\theta$ is coterminal with $-\theta_0$.  Therefore,   $\cos(-\theta) = \cos(-\theta_0)$ and $\sin(-\theta) = \sin(-\theta_0)$.  
+
+
+
+Let $P$ and $Q$ denote the points on the terminal sides of $\theta_0$ and $-\theta_0$, respectively, which lie on the Unit Circle. By definition, the coordinates of $P$ are $(\cos(\theta_0),\sin(\theta_0))$ and the coordinates of $Q$ are $(\cos(-\theta_0),\sin(-\theta_0))$.  
 
  \begin{image}
 \begin{tikzpicture}[
@@ -74,116 +133,60 @@ We now consider the angles $-\theta$ and $-\theta_0$.  Since  $\theta$ is coterm
     every node/.style={font=\normalsize}
 ]
 
-%------------------------------------------------
-% Parameters
-%------------------------------------------------
-
+% --- Parameters ---
+\def\panelwidth{6.5}
 \def\R{2}
-\def\innerR{0.45}
-\def\midR{0.80}
-\def\ang{150}
+\def\tdeg{150} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{0.75}   % ending radius (grows slightly over the sweep)
 
-\pgfmathsetmacro{\px}{\R*cos(\ang)}
-\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-%------------------------------------------------
-% Unit circle
-%------------------------------------------------
-
+% --- Full circle, light gray ---
 \draw[gray!50] (0,0) circle (\R);
 
-%------------------------------------------------
-% Axes
-%------------------------------------------------
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-\R-0.6) -- (0,\R+0.9) node[above] {$y$};
 
-\draw[->] (-2.8,0) -- (3.2,0)
-    node[right] {$x$};
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
 
-\draw[->] (0,-2.6) -- (0,2.8)
-    node[above] {$y$};
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-%------------------------------------------------
-% Positive x-axis emphasized
-%------------------------------------------------
-
-\draw[very thick] (0,0)--(3,0);
-
-%------------------------------------------------
-% Radius
-%------------------------------------------------
-
-\draw[very thick] (0,0)--(\px,\py);
-\draw[very thick]
-    (\px,\py)--({1.35*\R*cos(\ang)},{1.35*\R*sin(\ang)});
-
-%------------------------------------------------
-% Points
-%------------------------------------------------
-
+% --- Center and P points ---
 \fill (0,0) circle (2.5pt);
 \fill (\px,\py) circle (2.5pt);
 
-%------------------------------------------------
-% Small inner circle
-%------------------------------------------------
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,-\py);
 
-\draw (0,0) circle (\innerR);
 
-%------------------------------------------------
-% Thick angle arc
-%------------------------------------------------
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\draw[
-    very thick,
-    ->,
-    line cap=round
-]
-(0.95,0)
-arc[
-    start angle=0,
-    end angle=\ang,
-    radius=0.95
-];
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,-\py) circle (2.5pt);
 
-%------------------------------------------------
-% Spiral (theta increasing)
-%------------------------------------------------
 
-\draw[
-    ->,
-    samples=180,
-    domain=0:300,
-    variable=\t,
-    smooth
-]
-plot
-(
-    {(\innerR+0.0019*\t)*cos(\t)},
-    {(\innerR+0.0019*\t)*sin(\t)}
-);
+% --- Angle arc for theta, with label ---
 
-%------------------------------------------------
-% Labels
-%------------------------------------------------
+\draw[->] (1,0) arc [start angle=0, end angle=\tdeg, radius=1];
+\node[] at (0.9,0.9) {$\theta_0$};
+\draw[->] (1,0) arc [start angle=0, end angle=-\tdeg, radius=1];
+\node[right] at (-1.1,-0.5) {$\theta$};
 
-\node at (-1.55,1.45)
-    {$\theta_0$};
-
-\node at (0.95,-0.35)
-    {$\theta$};
-
-\node[above right] at (0,\R)
-    {$1$};
-
-\node[below right] at (\R,0)
-    {$1$};
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
 
 \end{tikzpicture}
+
 \end{image}
-
-Let $P$ and $Q$ denote the points on the terminal sides of $\theta_0$ and $-\theta_0$, respectively, which lie on the Unit Circle. By definition, the coordinates of $P$ are $(\cos(\theta_0),\sin(\theta_0))$ and the coordinates of $Q$ are $(\cos(-\theta_0),\sin(-\theta_0))$.  
-
- 
 
 Since $\theta_0$ and $-\theta_0$ sweep out congruent central sectors of the Unit Circle, it follows that the points $P$ and $Q$ are symmetric about the $x$-axis.  Thus, $\cos(-\theta_0) = \cos(\theta_0)$ and $\sin(-\theta_0) = -\sin(\theta_0)$. 
 
