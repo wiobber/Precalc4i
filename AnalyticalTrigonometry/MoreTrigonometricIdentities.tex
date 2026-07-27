@@ -241,8 +241,18 @@ We first prove the result for differences.  As in the proof of the Even / Odd Id
 \pgfmathsetmacro{\px}{\R*cos(\tdeg)}
 \pgfmathsetmacro{\py}{\R*sin(\tdeg)}
 \def\ttdeg{45} % theta, in degrees
-\pgfmathsetmacro{\pxx}{\R*cos(\tdeg)}
-\pgfmathsetmacro{\pyy}{\R*sin(\tdeg)}
+\pgfmathsetmacro{\pxx}{\R*cos(\ttdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\ttdeg)}
+
+\def\tdegr{75} % theta, in degrees
+\pgfmathsetmacro{\pxr}{\R*cos(\tdegr)}
+\pgfmathsetmacro{\pyr}{\R*sin(\tdegr)}
+\def\ttdegr{0} % theta, in degrees
+\pgfmathsetmacro{\pxxr}{\R*cos(\ttdegr)}
+\pgfmathsetmacro{\pyyr}{\R*sin(\ttdegr)}
+
+% --- triangle ---
+\fill[blue!35](0,0)--(\px,\py)--(\pxx,\pyy);
 
 % --- Full circle, light gray ---
 \draw[gray!50] (\R,0) arc [start angle=0, end angle=180, radius=\R];
@@ -253,34 +263,42 @@ We first prove the result for differences.  As in the proof of the Even / Odd Id
 
 % --- Radius segment (thick, solid) from center to P ---
 \draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (\pxx,\pyy);
 \draw[very thick] (0,0) -- (2,0);
 
 % --- Ray continuing past P (thin, with arrowhead) ---
 \draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
+\draw[-] (\pxx,\pyy) -- ({1.5*\R*cos(\ttdeg)},{1.5*\R*sin(\ttdeg)});
+
 % --- Center and P points ---
 \fill (0,0) circle (2.5pt);
 \fill (\px,\py) circle (2.5pt);
+\fill (\pxx,\pyy) circle (2.5pt);
 
 
 % --- Angle arc for theta, with label ---
-\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
-\node[right] at (-1.8,1.8) {$\theta$};
+\draw[->] (1,1) arc [start angle=\ttdeg, end angle=\tdeg, radius=1.4];
+\node[] at (0.1,1.7) {$\alpha_0-\beta_0$};
 
-\draw[->] (1,0) arc [start angle=360, end angle=\tdeg, radius=1];
-\node[right] at (1,-0.5) {$-\alpha$};
+\draw[->] (0.6,0) arc [start angle=0, end angle=\tdeg, radius=0.6];
+\node[right] at (0,0.7) {$\alpha_0$};
 
-\draw[->] (0.55,0) arc [start angle=0, end angle=360, radius=0.55];
-\node[right] at (-0.7,-0.6) {$\pi$};
+\draw[->] (1,0) arc [start angle=0, end angle=\ttdeg, radius=1];
+\node[right] at (1,0.6) {$\beta_0$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
 
+
+
 %%%% Second panel %%%%%%%
 
 \begin{scope}[xshift=\panelwidth cm]
-% --- Full circle, light gray ---
+% --- triangle ---
+\fill[blue!35](0,0)--(\pxr,\pyr)--(\pxxr,\pyyr);
+
 % --- Full circle, light gray ---
 \draw[gray!50] (\R,0) arc [start angle=0, end angle=180, radius=\R];
 
@@ -289,31 +307,35 @@ We first prove the result for differences.  As in the proof of the Even / Odd Id
 \draw[->] (0,-0.5) -- (0,\R+0.9) node[above] {$y$};
 
 % --- Radius segment (thick, solid) from center to P ---
-\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (\pxr,\pyr);
+\draw[very thick] (0,0) -- (\pxxr,\pyyr);
 \draw[very thick] (0,0) -- (2,0);
-% --- Ray continuing past P (thin, with arrowhead) ---
 
-\draw[dashed] (\px,-\py) -- (0,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\pxr,\pyr) -- ({1.5*\R*cos(\tdegr)},{1.5*\R*sin(\tdegr)});
+
+\draw[-] (\pxxr,\pyyr) -- ({1.5*\R*cos(\ttdegr)},{1.5*\R*sin(\ttdegr)});
 
 % --- Center and P points ---
 \fill (0,0) circle (2.5pt);
-\fill (\px,-\py) circle (2.5pt);
-\node[above right] at (\px+0.05,-\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
+\fill (\pxr,\pyr) circle (2.5pt);
+\fill (\pxxr,\pyyr) circle (2.5pt);
 
-\fill (\px,\py) circle (2.5pt);
-\node[below right] at (\px-0.05,\py-0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
 
 % --- Angle arc for theta, with label ---
-\draw[<->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
-\node[right] at (0.6,0.4) {$\alpha$};
-\draw[<->] (0.55,0) arc [start angle=360, end angle=\tdeg, radius=0.55];
-\node[right] at (0.6,-0.4) {$\alpha$};
-\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
-\node[right] at (-1.8,1.8) {$\theta$};
+\draw[->] (1,1) arc [start angle=\ttdegr, end angle=\tdegr, radius=1.4];
+\node[] at (0.1,1.7) {$\alpha_0-\beta_0$};
+
+\draw[->] (0.6,0) arc [start angle=0, end angle=\tdegr, radius=0.6];
+\node[right] at (0,0.7) {$\alpha_0$};
+
+\draw[->] (1,0) arc [start angle=0, end angle=\ttdeg, radius=1];
+\node[right] at (1,0.6) {$\beta_0$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
+
 \end{scope}
 
 \end{tikzpicture}
