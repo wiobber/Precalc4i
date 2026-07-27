@@ -424,7 +424,7 @@ We sketch the end behavior below.
 
 
 
-\item  Finally we construct our sign diagram.  We draw a dotted line through $t=-2$, an open circle at  $t=3$, and a `$0$' above $t = \frac{5}{2}$ and $t=-1$.  Choosing test values in the test intervals gives us $g(t)$ is $(+)$ on the intervals $(-\infty, -2)$, $\left(-1, \frac{5}{2}\right)$ and $(3, \infty)$, and $(-)$ on the intervals $(-2,-1)$ and $\left(\frac{5}{2}, 3\right)$.  As we piece together all of the information, it stands to reason the graph must cross the horizontal asymptote at some point after $t=3$ in order for it to approach $y=2$ from underneath.\footnote{This subtlety would have been missed had we skipped the long division and subsequent end behavior analysis.}   To find where $y = g(t)$ intersects $y = 2$, we solve $g(t) =  2 - \frac{t-7}{t^2-t-6} = 2$ and get $t-7= 0$, or $t=7$.  Note that $t-7$ is the remainder when $2t^2-3t-5$ is divided by $t^2-t-6$, so it makes sense that for $g(t)$ to equal the quotient $2$, the remainder from the division must be $0$.  Sure enough, we find $g(7)=2$.  The location of the $t$-intercepts alone dashes all hope of the function being even or odd (do you see why?) so we skip the symmetry check in this case.
+\item  Finally we construct our sign diagram.  We draw a dotted line through $t=-2$ and $t=3$, and a `$0$' above $t = \frac{5}{2}$ and $t=-1$.  Choosing test values in the test intervals gives us $g(t)$ is $(+)$ on the intervals $(-\infty, -2)$, $\left(-1, \frac{5}{2}\right)$ and $(3, \infty)$, and $(-)$ on the intervals $(-2,-1)$ and $\left(\frac{5}{2}, 3\right)$.  As we piece together all of the information, it stands to reason the graph must cross the horizontal asymptote at some point after $t=3$ in order for it to approach $y=2$ from underneath.\footnote{This subtlety would have been missed had we skipped the long division and subsequent end behavior analysis.}   To find where $y = g(t)$ intersects $y = 2$, we solve $g(t) =  2 - \frac{t-7}{t^2-t-6} = 2$ and get $t-7= 0$, or $t=7$.  Note that $t-7$ is the remainder when $2t^2-3t-5$ is divided by $t^2-t-6$, so it makes sense that for $g(t)$ to equal the quotient $2$, the remainder from the division must be $0$.  Sure enough, we find $g(7)=2$.  The location of the $t$-intercepts alone dashes all hope of the function being even or odd (do you see why?) so we skip the symmetry check in this case.
 
 \begin{center}
     \captionof{figure}{Sign diagram}
@@ -547,25 +547,6 @@ Note we can use this formula for $h(x)$ in our analysis of the graph of $h$ as l
 
 \item  \textit{The behavior of $y=h(x)$ as $x \rightarrow -1$.}    As $x \rightarrow -1$, we have $2x+1 \rightarrow -1$, $x+1 \rightarrow 0$, and $x+2 \rightarrow 1$.  Hence, $\frac{(2x+1)(x+1)}{x+2} \rightarrow \frac{(-1)(0)}{1} = 0$ so $\ds{\lim_{x \rightarrow -1} h(x) = 0}$.  This means we have a hole at $(-1,0)$.  More specifically,\footnote{We'll also see this  when we make the sign diagram later \ldots} we note that as $x \rightarrow -1^{-}$,  $h(x) > 0$ whereas as $x \rightarrow -1^{+}$, $h(x) < 0$. This helps us sketch the graph of $h$ near $(-1,0)$.
 
-\end{itemize}
-
-
-\item  To find the $x$-intercepts, as usual, we set $h(x) = 0$ and solve.  Solving $\frac{(2x+1)(x+1)}{x+2}=0$ yields $x=-\frac{1}{2}$ and $x=-1$.  The latter isn't in the domain of $h$, in fact, we know there is a hole at $(-1,0)$,  so we exclude it.  Our only $x$-intercept is $\left(-\frac{1}{2}, 0\right)$.  To find the $y$-intercept, we set $x=0$.  Since $0 \neq -1$, we can use the reduced formula for $h(x)$ and we get $h(0) = \frac{1}{2}$ for a $y$-intercept of $\left(0,\frac{1}{2}\right)$.
-
-
-\item  For end behavior, we note that the degree of the numerator of $h(x)$, $2x^3+5x^2+4x+1$, is $3$ and the degree of the denominator, $x^2+3x+2$, is $2$ so by Theorem \ref{sathm}, the graph of $y = h(x)$ has a slant asymptote.  For $x\rightarrow  -\infty$ or $x \rightarrow \infty$, we are far enough away from $x=-1$ to use the reduced formula, $h(x) = \frac{(2x+1)(x+1)}{x+2}$, $x \neq -1$.  To perform long division, we multiply out the numerator and get $h(x) = \frac{2x^2+3x+1}{x+2}$, $x \neq -1$, and rewrite $h(x) = 2x-1+\frac{3}{x+2}$, $x \neq -1$.  By Theorem \ref{sathm}, the slant asymptote is $y = 2x-1$, and to better see \textit{how} the graph approaches the asymptote, we focus our attention on the term generated from the remainder, $\frac{3}{x+2}$.
-
-\begin{itemize}
-
-\item  \textit{The behavior of $y=h(x)$ as $x \rightarrow -\infty$:} Substituting  $x = \text{$-1$ billion}$ into $\frac{3}{x+2}$, we get the estimate $\frac{3}{\text{ $-1$ billion}} \approx \text{very small $(-)$}$.  Hence, $h(x) = 2x-1+\frac{3}{x+2} \approx 2x-1 + \text{very small $(-)$}$.  This means the graph of $y=h(x)$ is a little bit \textit{below} the line $y=2x-1$ as $x \rightarrow -\infty$.
-
-\item  \textit{The behavior of $y=h(x)$ as $x \rightarrow \infty$:}  If $x \rightarrow \infty$, then $\frac{3}{x+2} \approx \text{very small $(+)$}$.  This means $h(x) \approx 2x-1 + \text{very small $(+)$}$, or that the graph of $y=h(x)$ is a little bit \textit{above} the line $y=2x-1$ as $x \rightarrow \infty$.
-
-\end{itemize}
-
-We sketch the end behavior below.
- 
-
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\LARGE
         \begin{axis}[
@@ -622,6 +603,27 @@ coordinates {
 \xmalt{Diagram illustrating behavior near a vertical asymptote. A dashed vertical line at $t=-2$ represents the asymptote. One branch approaches the asymptote from the left and decreases without bound. A second branch approaches the asymptote from the right and increases without bound. A separate line segment to the right of the asymptote, showing the behavior in the middle, contains an open circle on the $t$-axis, indicating a hole in the graph at $t=-1$.} 
 \end{center}
 
+\end{itemize}
+
+
+\item  To find the $x$-intercepts, as usual, we set $h(x) = 0$ and solve.  Solving $\frac{(2x+1)(x+1)}{x+2}=0$ yields $x=-\frac{1}{2}$ and $x=-1$.  The latter isn't in the domain of $h$, in fact, we know there is a hole at $(-1,0)$,  so we exclude it.  Our only $x$-intercept is $\left(-\frac{1}{2}, 0\right)$.  To find the $y$-intercept, we set $x=0$.  Since $0 \neq -1$, we can use the reduced formula for $h(x)$ and we get $h(0) = \frac{1}{2}$ for a $y$-intercept of $\left(0,\frac{1}{2}\right)$.
+
+
+\item  For end behavior, we note that the degree of the numerator of $h(x)$, $2x^3+5x^2+4x+1$, is $3$ and the degree of the denominator, $x^2+3x+2$, is $2$ so by Theorem \ref{sathm}, the graph of $y = h(x)$ has a slant asymptote.  For $x\rightarrow  -\infty$ or $x \rightarrow \infty$, we are far enough away from $x=-1$ to use the reduced formula, $h(x) = \frac{(2x+1)(x+1)}{x+2}$, $x \neq -1$.  To perform long division, we multiply out the numerator and get $h(x) = \frac{2x^2+3x+1}{x+2}$, $x \neq -1$, and rewrite $h(x) = 2x-1+\frac{3}{x+2}$, $x \neq -1$.  By Theorem \ref{sathm}, the slant asymptote is $y = 2x-1$, and to better see \textit{how} the graph approaches the asymptote, we focus our attention on the term generated from the remainder, $\frac{3}{x+2}$.
+
+\begin{itemize}
+
+\item  \textit{The behavior of $y=h(x)$ as $x \rightarrow -\infty$:} Substituting  $x = \text{$-1$ billion}$ into $\frac{3}{x+2}$, we get the estimate $\frac{3}{\text{ $-1$ billion}} \approx \text{very small $(-)$}$.  Hence, $h(x) = 2x-1+\frac{3}{x+2} \approx 2x-1 + \text{very small $(-)$}$.  This means the graph of $y=h(x)$ is a little bit \textit{below} the line $y=2x-1$ as $x \rightarrow -\infty$.
+
+\item  \textit{The behavior of $y=h(x)$ as $x \rightarrow \infty$:}  If $x \rightarrow \infty$, then $\frac{3}{x+2} \approx \text{very small $(+)$}$.  This means $h(x) \approx 2x-1 + \text{very small $(+)$}$, or that the graph of $y=h(x)$ is a little bit \textit{above} the line $y=2x-1$ as $x \rightarrow \infty$.
+
+\end{itemize}
+
+We sketch the end behavior below.
+ 
+
+
+
 
 
 
@@ -665,14 +667,14 @@ coordinates {
 
 
 
-\item  To make our sign diagram, we place an `\textinterrobang' above $x=-2$ and $x=-1$ and a `$0$' above $x=-\frac{1}{2}$.  On our four test intervals, we find $h(x)$ is $(+)$ on $(-2,-1)$ and $\left(-\frac{1}{2}, \infty\right)$ and $h(x)$ is $(-)$ on $(-\infty, -2)$ and $\left(-1,-\frac{1}{2}\right)$.  Putting all of our work together yields the graph below.
+\item  To make our sign diagram, we place an dotted line through $x=-2$, an open circle at $x=-1$, and a `$0$' above $x=-\frac{1}{2}$.  On our four test intervals, we find $h(x)$ is $(+)$ on $(-2,-1)$ and $\left(-\frac{1}{2}, \infty\right)$ and $h(x)$ is $(-)$ on $(-\infty, -2)$ and $\left(-1,-\frac{1}{2}\right)$.  Putting all of our work together yields the graph below.
 \end{enumerate}
 
 \begin{center}
     \captionof{figure}{Sign diagram}
 \xmalt{Sign diagram for a function with a vertical asymptote at $x=-2$, indicated by a dashed vertical line. The function is negative on the intervals $(-\infty,-2)$, $(-1,-\frac{1}{2})$, and positive on the intervals $(-2,-1)$ and $(-\frac{1}{2},\infty)$. The function has a zero $x=-\frac{1}{2}$, and a hole at $x=-1$.} 
 \end{center}
-\begin{image}
+
 \begin{tikzpicture}[scale=1]font=\Large
         \begin{axis}[
           domain=-3:0,
@@ -691,11 +693,11 @@ coordinates {
 \node[anchor=north, red] at (-1.5,1) {$(+)$};
 \node[anchor=north, blue] at (-0.5,1) {$(-)$};
 \node[anchor=north, red] at (0.5,1) {$(+)$};
+\addplot[only marks, mark=o, mark size=4pt, thick] coordinates {(-1,0)};
 
 \draw[dashed, gray] (-2,-1.5)--(-2,1.5);
       \end{axis}
         \end{tikzpicture}
-\end{image}
 
 
     \begin{image}
