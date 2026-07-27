@@ -715,8 +715,7 @@ Hence, one cycle of $f(t)$ starts at $t=\pi$ and finishes at $t = \pi + 2\pi = 3
 
 Substituting these $t$-values into $f(t)$, we find points on the graph and the vertical asymptotes.\footnote{Here, as with all tangent functions, we can partially check our new quarter marks by noting the argument of the tangent function simplifies, in each case,  to one of the original quarter marks of the interval $\left(-\frac{\pi}{2}, \frac{\pi}{2} \right)$.}
 
-\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
+
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -727,42 +726,12 @@ Substituting these $t$-values into $f(t)$, we find points on the graph and the v
 2 \pi & 1 &  (2\pi,1)  \\ [2pt] \hline 
 \frac{5\pi}{2}  & 0 &  \left(\frac{5\pi}{2}, 0 \right) \\ [2pt] \hline 
 3 \pi & \text{undefined} &   \\ [2pt] \hline 
-\end{array} \] \setlength{\extrarowheight}{0pt} &
+\end{array} \] 
 
-\begin{mfpic}[20]{-4}{4}{-3}{5}
-\point[4pt]{(-1.5708,2),(0,1), (1.5708,0)}
-%\axes
-\arrow \polyline{(-4,0), (4,0)}
-\arrow \polyline{(-4,-3), (-4,5)}
-\tlabel[cc](4,-0.3){\scriptsize $t$}
-\tlabel[cc](-3.75,5){\scriptsize $y$}
-\tlabel[cc](-4,1){\scriptsize $-$}
-\tlabel[cc](-3.7,1){\scriptsize $1$}
-\tlabel[cc](-4,2){\scriptsize $-$}
-\tlabel[cc](-3.7,2){\scriptsize $2$}
-\tlabel[cc](-4,3){\scriptsize $-$}
-\tlabel[cc](-3.7,3){\scriptsize $3$}
-\tlabel[cc](-4,4){\scriptsize $-$}
-\tlabel[cc](-3.7,4){\scriptsize $4$}
-\tcaption{One cycle of $y = 1 - \tan\left(\frac{t}{2} - \pi \right)$.}
-\xmarks{ -3.1416, -1.5708, 1.5708, 3.1416}
-%\ymarks{-2,-1,1,2}
-\tlpointsep{4pt}
-\scriptsize
-%\tlabel[cc](-1.2, 2.5){$\left(\frac{3\pi}{2}, 2 \right)$}
-%\tlabel[cc](0.5, 1.5){$(2\pi,1)$}
-%\tlabel[cc](2, 0.5){$\left(\frac{5\pi}{2}, 0 \right)$}
-\axislabels {x}{{$\pi$} -3.1416,{$\frac{3\pi}{2}$} -1.5708, {$2\pi$} 0,  {$\frac{5\pi}{2}$} 1.5708, {$3\pi$} 3.1416}
-\normalsize
-%\axislabels {y}{{\scriptsize $-2$} -2,{\scriptsize $-1$} -1, {\scriptsize $1$} 1, {\scriptsize $2$} 2}
-\dashed \polyline{(-3.1416, -3), (-3.1416, 5)}
-\dashed \polyline{(3.1416, -3), (3.1416, 5)}
-\gclear \tlabelrect(-3.75, 0){\scriptsize $)($}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-2.6516, 2.6516, 0.1}{1-tan(0.5*x)}
-\end{mfpic} \\
-
-\end{tabular}
+% https://www.desmos.com/calculator/it4qlh5vkg
+\begin{center}
+    \desmos{it4qlh5vkg}{800}{600}
+\end{center}
 
 We confirm that the period is $3\pi - \pi = 2\pi$.
 
@@ -778,8 +747,7 @@ Our quarter marks are $\frac{1}{4}$ units apart and are $t = 2$, $t = \frac{9}{4
 
 
 
-\hspace{.25in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
+
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -790,62 +758,77 @@ Our quarter marks are $\frac{1}{4}$ units apart and are $t = 2$, $t = \frac{9}{4
 \frac{5}{2} & -1 &  \left( \frac{5}{2}, -1 \right)  \\ [2pt] \hline 
 \frac{11}{4}  & 1 &  \left(\frac{11}{4}, 1 \right) \\ [2pt] \hline 
 3 & \text{undefined} &  \\ [2pt] \hline 
-\end{array} \] \setlength{\extrarowheight}{0pt} &
+\end{array} \]
 
-\begin{mfpic}[75][25]{0.5}{2.5}{-4}{2}
-\point[4pt]{(1.25,-3),(1.5,-1), (1.75,1)}
-%\axes
-\arrow \polyline{(0.5, 0), (2.5,0)}
-\arrow \polyline{(0.5,-4), (0.5, 2)} 
-\tlabel[cc](2.5,-0.3){\scriptsize $t$}
-\tlabel[cc](0.65,2){\scriptsize $y$}
-\tlabel[cc](0.5,-3){\scriptsize $-$}
-\tlabel[cc](0.65,-3){\scriptsize $-3$}
-\tlabel[cc](0.5,-2){\scriptsize $-$}
-\tlabel[cc](0.65,-2){\scriptsize $-2$}
-\tlabel[cc](0.5,-1){\scriptsize $-$}
-\tlabel[cc](0.65,-1){\scriptsize $-1$}
-\tlabel[cc](0.5,1){\scriptsize $-$}
-\tlabel[cc](0.65,1){\scriptsize $1$}
-\tcaption{One cycle of $y = 2\cot\left(2\pi - \pi t \right) - 1$.}
-\xmarks{ 1, 2, 1.25, 1.5, 1.75}
-%\ymarks{-3, -2, -1, 1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $2$} 1,{\scriptsize $3$} 2,{\scriptsize $\frac{9}{4}$} 1.25,{\scriptsize $\frac{5}{2}$} 1.5,{\scriptsize $\frac{11}{4}$} 1.75}
-%\axislabels {y}{{\scriptsize $-1$} -1,{\scriptsize $-2$} -2, {\scriptsize $-3$} -3, {\scriptsize $1$} 1}
-\dashed \polyline{(1, -4), (1, 2)}
-\dashed \polyline{(2, -4), (2, 2)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{1.18,1.82 , 0.1}{-1-2*cot((3.1416*(x+1))- 6.2832)}
-\gclear \tlabelrect(0.75, 0){\scriptsize $)($}
-\end{mfpic} \\
+% https://www.desmos.com/calculator/vwhrak3xer
+\begin{center}
+    \desmos{vwhrak3xer}{800}{600}
+\end{center}
 
-\end{tabular}
-
-We confirm the period is $3-2 = 1$. \qed
+We confirm the period is $3-2 = 1$.
 
 \end{enumerate}
 \end{example}
 
 \begin{example} \label{tangentcotangentfromgraphex}  Below is the graph of one cycle of a tangent (cotangent) function, $y = f(t)$.
 
-\begin{center}
-\begin{mfpic}[50][24]{-.75}{3}{-4}{4}
-\point[4pt]{(0.2618,1), (1.0472, 0), (1.8326, -1)}
-\axes
-\tlabel[cc](3,-0.25){$t$}
-\tlabel[cc](0.15,4){$y$}
-\xmarks{-0.5236, 0.2618, 1.0472, 1.8326, 2.618}
-\ymarks{-1, 1}
-\tlpointsep{4pt}
-\axislabels {x}{{$-2$} -0.5236, {$2$} 0.2618, {$4$} 1.0472, {$7$} 1.8326, {$10$} 2.618}
-\axislabels {y}{{$-3$} -1, {$3$} 1}
-\dashed \polyline{(-0.5236,-4),(-0.5236,4)}
-\dashed \polyline{(2.618,-4),(2.618,4)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-0.278, 2.37, 0.1}{cot(x + 0.5236)}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+% --- Parameters ---
+% x-axis: 1 unit = pi/4 (so pi/2 -> x=1, pi -> x=2, 3pi/2 -> x=3, etc.)
+\def\piunit{6}
+% Curve: y = 1.5 - 0.5*sin(2(t - pi/2)), sampled over t in [pi/2, 3pi/2]
+% In terms of u = t/pi (so x = u*\piunit): y = 1.5 - 0.5*sin(360*(u-0.5))
+
+% --- Axes ---
+\draw[->] (-3,0) -- (11,0) node[right] {$t$};
+\draw[->] (0,-10) -- (0,10) node[above] {$y$};
+
+% --- Tick marks and labels on t-axis, in units of pi/4 ---
+\node[below left] at (-2,-0.12) {$-2$};
+\node[below] at (2,-0.12) {$2$};
+\node[below] at (4,-0.12) {$4$};
+\node[below] at (6,-0.12) {$6$};
+\node[below] at (8,-0.12) {$8$};
+\node[below right] at (10,-0.12) {$10$};
+
+\foreach \x in {-2,2,4,6,8,10}
+    \draw (\x,-0.06) -- (\x,0.06);
+
+% --- Tick marks and labels on y-axis ---
+\foreach \y in {-5,5}{
+    \draw (-0.06,\y) -- (0.06,\y);
+    \node[left] at (-0.1,\y) {$\y$};
+}
+
+% --- Curve over t in [pi/2, 3pi/2], i.e. u in [0.5, 1.5] ---
+\begin{scope}
+\clip (-2.1,-10) rectangle (10.1,10);
+
+\draw[very thick,penColor1,
+      domain=-1.9:9.9,
+      samples=80,smooth,variable=\u]
+plot ({\u},
+      {-3*tan(360*((3.14/24)*\u-1/6)});
+
+
+\draw[dashed,penColor1](-1,3)--(-1,-5);    
+\draw[dashed,penColor1](2,3)--(2,-5);   
+\draw[dashed,penColor1](5,3)--(5,-5);    
+
+\end{scope}
+
+% --- Data points ---
+\fill (0.5,-2) circle (1.5pt);
+\fill (3.5,0) circle (1.5pt);
+
+\end{tikzpicture}
+
+\end{image}
 
 \begin{enumerate}
 
