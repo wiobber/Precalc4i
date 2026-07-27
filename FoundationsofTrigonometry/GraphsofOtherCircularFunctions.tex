@@ -812,19 +812,16 @@ We confirm the period is $3-2 = 1$.
 \draw[very thick,penColor1,
       domain=-1.9:9.9,
       samples=80,smooth,variable=\u]
-plot ({\u},
-      {-3*tan(360*((3.14/24)*\u-1/6)});
+plot ({\u*24},
+      {-3*tan(360*(\u-1/6)});
 
 
-\draw[dashed,penColor1](-1,3)--(-1,-5);    
-\draw[dashed,penColor1](2,3)--(2,-5);   
-\draw[dashed,penColor1](5,3)--(5,-5);    
+\draw[dashed,penColor1](-2,10)--(-2,-10);    
+\draw[dashed,penColor1](10,10)--(10,-10);   
+
 
 \end{scope}
 
-% --- Data points ---
-\fill (0.5,-2) circle (1.5pt);
-\fill (3.5,0) circle (1.5pt);
 
 \end{tikzpicture}
 
