@@ -582,32 +582,91 @@ To find $\cos(\alpha)$, we use the Pythagorean Identity $\cos^2(\alpha) = 1 - \s
  
  Since $\beta$ is a Quadrant III angle with $\tan(\beta) = 2 = \frac{-2}{-1}$, we know the point $Q(x,y) = (-1,-2)$ is on the terminal side of $\beta$ as illustrated below.\footnote{Note that even though $\tan(\beta) = \frac{\sin(\beta)}{\cos(\beta)}$,  we \textit{cannot} take $\sin(\beta)=-2$ and $\cos(\beta) = -1$.   Recall that $\sin(\beta)$ and $\cos(\beta)$ are the $y$ and $x$ coordinates on a \textit{specific} circle, the Unit Circle.  As we'll see shortly, $(-1,-2)$ lies on a circle of $\sqrt{5}$, so \textit{not} the Unit Circle.}
 
- \begin{center}
- 
-\begin{mfpic}[18]{-5}{5}{-4}{4.75}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.5){\scriptsize $y$}
-\tlabel[cc](-3,-3){\scriptsize $(-1,-2)$}
-\tlabel[cc](-2,-1.5){\scriptsize $r=\sqrt{5}$}
-\tcaption{the terminal side of $\beta$ contains $Q(-1,-2)$}
-\xmarks{-3, -1.5,  1.5, 3}
-\ymarks{-3, -1.5,  1.5, 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3.354}
-\drawcolor{black}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-1.79, -3.58)}
-\point {(0,0), (-1.5, -3)}
-\tlpointsep{4pt}
-\scriptsize 
-\axislabels {x}{ {$-2 \hspace{7pt}$} -3, {$-1 \hspace{7pt}$} -1.5,  {$1$} 1.5,  {$2$} 3}
-\axislabels {y}{ {$-2$} -3, {$-1$} -1.5, {$2$} 3, {$1$} 1.5}
-\normalsize
-\end{mfpic}
- 
- 
- \end{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\R{2.2361}    % sqrt(5)
+
+%------------------------------------------------
+% Circle
+%------------------------------------------------
+
+\draw[gray!50] (0,0) circle (\R);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-3.2,0) -- (3.7,0)
+    node[right] {$x$};
+
+\draw[->] (0,-3.0) -- (0,3.0)
+    node[above] {$y$};
+
+%------------------------------------------------
+% x-axis tick marks and labels
+%------------------------------------------------
+
+\foreach \x in {-2,-1,1,2}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
+
+%------------------------------------------------
+% y-axis tick marks and labels
+%------------------------------------------------
+
+\foreach \y in {-2,1,2}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
+
+%------------------------------------------------
+% Positive x-axis emphasized
+%------------------------------------------------
+
+\draw[very thick] (0,0) -- (3.5,0);
+
+%------------------------------------------------
+% Radius
+%------------------------------------------------
+
+\draw[very thick] (0,0) -- (-1,-2);
+
+%------------------------------------------------
+% Continuation of the ray
+%------------------------------------------------
+
+\draw[very thick] (-1,-2) -- (-1.45,-2.90);
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (0,0) circle (2.5pt);
+\fill (-1,-2) circle (2.5pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[left] at (-1.18,-1.95)
+    {$(-1,-2)$};
+
+\node at (-1.35,-1.00)
+    {$r=\sqrt{5}$};
+
+\end{tikzpicture}
+\end{image}
  
  We find $r = \sqrt{x^2 + y^2} = \sqrt{(-1)^2+(-2)^2} = \sqrt{5}$, so per Theorem \ref{circularfunctionscircle}, $\sin(\beta) = \frac{-2}{\sqrt{5}} = - \frac{2\sqrt{5}}{5}$ and $\cos(\beta) = \frac{-1}{\sqrt{5}} = - \frac{\sqrt{5}}{5}$ .
  
@@ -745,62 +804,138 @@ Since both cosine and sine of $2\theta$ are negative, the terminal side of $2\th
 Note that in order to find the point $Q(x,y)$ on the terminal side of $2\theta$ of a circle of radius $5$, we use Theorem \ref{cosinesinecircle}  again and find $x = r \cos(2\theta) = 5 \left(-\frac{7}{25} \right) = -\frac{7}{5}$ and $y = r \sin(2\theta) =  5 \left(-\frac{24}{25}\right) = -\frac{24}{5}$.
 
  
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\LARGE}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\panelwidth{12}
+\def\R{5}
+
+%================================================
+% Left panel
+%================================================
+
+% Circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Axes
+\draw[->] (-5.4,0) -- (5.5,0)
+    node[right] {$x$};
+
+\draw[->] (0,-5.5) -- (0,5.5)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0) -- (5.5,0);
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.10)--(\x,0.10);
+    \node[below] at (\x,-0.14) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.10,\y)--(0.10,\y);
+    \node[left] at (-0.14,\y) {$\y$};
+}
+
+% Radius
+\draw[very thick] (0,0)--(-3,4);
+
+% Continuation
+\draw[very thick] (-3,4)--(-4.45,5.93);
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (-3,4) circle (2.5pt);
+
+% Labels
+\node[left=8pt] at (-3,4)
+    {$P\,(-3,4)$};
+
+\node at (-2.55,2.25)
+    {$r=5$};
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Axes
+\draw[->] (-5.5,0) -- (5.5,0)
+    node[right] {$x$};
+
+\draw[->] (0,-5.5) -- (0,5.5)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0) -- (5.5,0);
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.10)--(\x,0.10);
+    \node[below] at (\x,-0.14) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.10,\y)--(0.10,\y);
+
+    \ifnum\y=-2
+    \else
+        \node[left] at (-0.14,\y) {$\y$};
+    \fi
+}
+
+% Radius to P
+\draw[very thick] (0,0)--(-3,4);
+
+% Continuation through Q
+\draw[very thick] (0,0)--(-1.4,-4.8);
+\draw[very thick] (-3,4)--(-4.45,5.93);
+\draw[very thick] (-1.4,-4.8)--(-2.0,-6.86);
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (-3,4) circle (2.5pt);
+\fill (-1.4,-4.8) circle (2.5pt);
+
+% Labels
+\node[left=8pt] at (-3,4)
+    {$P\,(-3,4)$};
+
+\node at (-2.55,2.25)
+    {$r=5$};
+
+\node at (-1.45,-2.15)
+    {$r=5$};
+
+\node[left] at (-1.55,-4.95)
+    {$Q\,\left(-\frac{7}{5},-\frac{24}{5}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 
-\begin{center}
 
-\begin{multicols}{2}
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.5){\scriptsize $y$}
-\tlabel(-4.25,2.75){\scriptsize $P(-3,4)$}
-\tlabel[cc](-2,1.5){\scriptsize $r=5$}
-\tcaption{$P(-3,4)$ is on the terminal side of $\theta$. \vphantom{$Q\left( -\frac{7}{5}, -\frac{24}{5}\right)$}}
-\xmarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\ymarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3.354}
-\drawcolor{black}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-3, 4)}
-\point {(0,0), (-2.012, 2.683)}
-\tlpointsep{4pt}
-\scriptsize 
-\axislabels {x}{ {$-3 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -0.67,  {$1$} 0.67,  {$3$} 2, {$-2 \hspace{7pt}$} -1.34, {$-4 \hspace{7pt}$} -2.68, {$2$} 1.34, {$4$} 2.68}
-\axislabels {y}{ {$-2$} -1.34, {$-4$} -2.68, {$2$} 1.34, {$4$} 2.68,  {$1$} 0.67,  {$3$} 2,  {$-1$} -0.67,  {$-3$} -2 }
-\normalsize
-\end{mfpic}
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.5){\scriptsize $y$}
-\tlabel(-4.25,2.75){\scriptsize $P(-3,4)$}
-\tlabel(-4,-3.5){\scriptsize $Q\left( -\frac{7}{5}, -\frac{24}{5}\right)$}
-\tlabel[cc](-2,1.5){\scriptsize $r=5$}
-\tlabel[cc](-1.5,-1.5){\scriptsize $r=5$}
-\tcaption{$Q\left( -\frac{7}{5}, -\frac{24}{5}\right)$ is on the terminal side of $2\theta$.}
-\xmarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\ymarks{-2.68, -2,  -1.34, -0.67, 0.67, 1.34, 2, 2.68}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3.354}
-\drawcolor{black}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-3, 4)}
-\arrow \reverse \arrow \polyline{(5,0),(0,0), (-1.4, -4.8)}
-\point {(0,0), (-2.012, 2.683), (-0.938, -3.216)}
-\tlpointsep{4pt}
-\scriptsize 
-\axislabels {x}{ {$-3 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -0.67,  {$1$} 0.67,  {$3$} 2, {$-2 \hspace{7pt}$} -1.34, {$-4 \hspace{7pt}$} -2.68, {$2$} 1.34, {$4$} 2.68}
-\axislabels {y}{ {$-2$} -1.34, {$-4$} -2.68, {$2$} 1.34, {$4$} 2.68,  {$1$} 0.67,  {$3$} 2,  {$-1$} -0.67}
-\normalsize
-\end{mfpic}
 
-\end{multicols}
-
-\end{center}
 
 
 \item  If your first reaction to `$\sin(\theta) = x$' is `No it's not, $\cos(\theta) = x$!' then you have indeed learned something, and we take comfort in that. 
@@ -1230,18 +1365,11 @@ This means $2 \sin(\phi) = 1$, or $\sin(\phi) = \frac{1}{2}$,  and $2\cos(\phi) 
 
 Hence, we have $f(t) = 2 \sin\left(2t + \frac{5\pi}{6}\right)$.  Checking our work analytically, we have \[\begin{array}{rcl} f(t) &  = &  2 \sin\left(2t + \frac{5\pi}{6}\right) \\   & = &  2 \left[ \sin(2t) \cos\left(\frac{5\pi}{6}\right) + \cos(2t) \sin\left(\frac{5\pi}{6}\right) \right]\\   & = & 2 \left[ \sin(2t) \left(-\frac{\sqrt{3}}{2}\right) +  \cos(2t) \left(\frac{1}{2}\right)\right] \\   & = & \cos(2t) - \sqrt{3} \sin(2t) \\ \end{array}\] Graphing the three formulas for $f(t)$ result in the identical curve, verifying the work done analytically.
 
-
+% https://www.desmos.com/calculator/tjttnvbp11
 \begin{center}
-
-
-
-\includegraphics[width=4in]{./MoreTrigonometricIdentitiesGraphics/ExpandedSinusoidExample.jpg} 
-
-
-
+\desmos{tjttnvbp11}{800}{600}
 \end{center}
 
-\qed
 
 \end{enumerate}
 
@@ -1257,16 +1385,10 @@ It is important to note that in order for the technique presented in Example \re
 
 However, a function such as  $f(t) = \sin(t) - \sin(3t)$ cannot be written in the form of $S(t)$ or $C(t)$. The quickest way to see this is to examine its graph below which is decidedly not a sinusoid.  That being said, we can still analyze this curve using identities.
 
-\phantomsection
-\label{beats}
-
- 
-
+% https://www.desmos.com/calculator/vfggmdtn69
 
 \begin{center}
-
-\includegraphics[width=4in]{./MoreTrigonometricIdentitiesGraphics/Beats.jpg} 
-
+\desmos{vfggmdtn69}{800}{600}
 \end{center}
 
 
