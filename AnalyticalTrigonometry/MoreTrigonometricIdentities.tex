@@ -166,19 +166,21 @@ Let $P$ and $Q$ denote the points on the terminal sides of $\theta_0$ and $-\the
 
 
 % --- Ray continuing past P (thin, with arrowhead) ---
-\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
+\draw[-] (\px,-\py) -- ({1.5*\R*cos(\tdeg)},{-1.5*\R*sin(\tdeg)});
+\node[below left] at (\px,\py) {$P(\cos(\theta_0),\sin(\theta_0))$};
 
-% --- Center and P points ---
+% --- Center and Q points ---
 \fill (0,0) circle (2.5pt);
 \fill (\px,-\py) circle (2.5pt);
-
+\node[above left] at (\px,-\py) {$Q(\cos(-\theta_0),\sin(-\theta_0))$};
 
 % --- Angle arc for theta, with label ---
 
-\draw[->] (1,0) arc [start angle=0, end angle=\tdeg, radius=1];
+\draw[->] (1,0.05) arc [start angle=0, end angle=\tdeg, radius=1];
 \node[] at (0.9,0.9) {$\theta_0$};
-\draw[->] (1,0) arc [start angle=0, end angle=-\tdeg, radius=1];
-\node[right] at (-1.1,-0.5) {$\theta$};
+
+\draw[->] (1,-0.05) arc [start angle=0, end angle=-\tdeg, radius=1];
+\node[right] at (0.9,-0.9) {$-\theta_0$};
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
@@ -226,65 +228,97 @@ Our next set of identities establish how the cosine function handles sums and di
 
 We first prove the result for differences.  As in the proof of the Even / Odd Identities, we can reduce the proof for general angles $\alpha$ and $\beta$ to angles $\alpha_0$ and $\beta_0$, coterminal with $\alpha$ and $\beta$, respectively, each of which measure between $0$ and $2\pi$ radians.  Since $\alpha$ and $\alpha_0$ are coterminal, as are $\beta$ and $\beta_0$, it follows that $(\alpha - \beta)$ is coterminal with $(\alpha_0 - \beta_0)$.  Consider the case below where $\alpha_0 \geq \beta_0$.  
 
- 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+% --- Parameters ---
+\def\panelwidth{6.5}
+\def\R{2}
+\def\tdeg{120} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\ttdeg{45} % theta, in degrees
+\pgfmathsetmacro{\pxx}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\pyy}{\R*sin(\tdeg)}
 
-\begin{mfpic}[25]{-4}{4}{-1}{5}
-\axes
-\drawcolor[gray]{0.7}
-\parafcn{0,180,5}{3*dir(t)}
-\drawcolor{black}
-\arrow \parafcn{5, 40, 5}{0.75*dir(t)}
-\arrow \parafcn{5, 115, 5}{1.35*dir(t)}
-\tlabel[cc](0.25,.95){\scriptsize $\alpha_0$}
-\tlabel[cc](0.95,0.3){\scriptsize $\beta_0$}
-\tlabel(3.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(3,-0.5){\scriptsize $1$}
-\tlabel(-0.5,-0.5){\scriptsize $O$}
-\xmarks{-3 step 3 until 3}
-\ymarks{0 step 3 until 3}
-\dotted \polyline{(2.121, 2.121), (-1.5, 2.598)}
-\point {(0,0), (3,0), (2.121, 2.121), (-1.5, 2.598) }
-\tlabel(-4.5,2.5){\scriptsize $P(\cos(\alpha_0),\sin(\alpha_0))$}
-\tlabel(2.5,2){\scriptsize $Q(\cos(\beta_0),\sin(\beta_0))$}
-\penwd{1.5pt}
-\arrow \parafcn{50, 115,5}{1.75*dir(t)}
-\tlabel(0.1,1.9){\mbox{\scriptsize \boldmath $\alpha_0 - \beta_0$}}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(4,0), (0,0), (3.535,3.535)}
-\arrow \reverse \arrow \polyline{(4,0), (0,0), (-2.5,4.330)}
+% --- Full circle, light gray ---
+\draw[gray!50] (\R,0) arc [start angle=0, end angle=180, radius=\R];
 
-\end{mfpic} 
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-0.5) -- (0,\R+0.9) node[above] {$y$};
 
-&
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
 
-\hspace{-0.5in}
+% --- Ray continuing past P (thin, with arrowhead) ---
+\draw[-] (\px,\py) -- ({1.5*\R*cos(\tdeg)},{1.5*\R*sin(\tdeg)});
 
-\begin{mfpic}[25]{-4}{4}{-1}{5}
-\axes
-\drawcolor[gray]{0.7}
-\parafcn{0,180,5}{3*dir(t)}
-\drawcolor{black}
-\tlabel(3.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\tlabel(-0.5,-0.5){\scriptsize $O$}
-\xmarks{-3 step 3 until 3}
-\ymarks{0 step 3 until 3}
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
 
-\tlabel(1.25,2.8){\scriptsize $A(\cos(\alpha_0 - \beta_0),\sin(\alpha_0 - \beta_0))$}
-\tlabel(2.25,-0.5){\scriptsize $B(1,0)$}
-\dotted \polyline{(3,0), (1.026, 2.819)}
-\point {(0,0), (3,0), (1.026, 2.819)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 65,5}{1.75*dir(t)}
-\tlabel(0.2,0.3){\mbox{\scriptsize \boldmath $\alpha_0 - \beta_0$}}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(4,0), (0,0), (1.710,4.698)}
-\end{mfpic} 
-\end{tabular}
+
+% --- Angle arc for theta, with label ---
+\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
+\node[right] at (-1.8,1.8) {$\theta$};
+
+\draw[->] (1,0) arc [start angle=360, end angle=\tdeg, radius=1];
+\node[right] at (1,-0.5) {$-\alpha$};
+
+\draw[->] (0.55,0) arc [start angle=0, end angle=360, radius=0.55];
+\node[right] at (-0.7,-0.6) {$\pi$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+
+%%%% Second panel %%%%%%%
+
+\begin{scope}[xshift=\panelwidth cm]
+% --- Full circle, light gray ---
+% --- Full circle, light gray ---
+\draw[gray!50] (\R,0) arc [start angle=0, end angle=180, radius=\R];
+
+% --- Axes ---
+\draw[->] (-\R-0.6,0) -- (\R+0.9,0) node[right] {$x$};
+\draw[->] (0,-0.5) -- (0,\R+0.9) node[above] {$y$};
+
+% --- Radius segment (thick, solid) from center to P ---
+\draw[very thick] (0,0) -- (\px,\py);
+\draw[very thick] (0,0) -- (2,0);
+% --- Ray continuing past P (thin, with arrowhead) ---
+
+\draw[dashed] (\px,-\py) -- (0,0);
+
+% --- Center and P points ---
+\fill (0,0) circle (2.5pt);
+\fill (\px,-\py) circle (2.5pt);
+\node[above right] at (\px+0.05,-\py+0.1) {$\left(\frac{5}{13},\frac{12}{13}\right)$};
+
+\fill (\px,\py) circle (2.5pt);
+\node[below right] at (\px-0.05,\py-0.1) {$\left(\frac{5}{13},-\frac{12}{13}\right)$};
+
+% --- Angle arc for theta, with label ---
+\draw[<->] (0.55,0) arc [start angle=0, end angle=60, radius=0.55];
+\node[right] at (0.6,0.4) {$\alpha$};
+\draw[<->] (0.55,0) arc [start angle=360, end angle=\tdeg, radius=0.55];
+\node[right] at (0.6,-0.4) {$\alpha$};
+\draw[->] (1.8,0) arc [start angle=0, end angle=\tdeg, radius=1.8];
+\node[right] at (-1.8,1.8) {$\theta$};
+
+% --- Unit labels on the axes ---
+\node[above left] at (-0.12,\R) {$1$};
+\node[below right] at (\R,-0.12) {$1$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{image}
 
 Since the angles $POQ$ and $AOB$ are congruent, the distance between $P$ and $Q$ is equal to the distance between $A$ and $B$.\footnote{In the picture we've drawn, the \underline{tri}angles $POQ$ and $AOB$ are congruent, which is even better.  However, $\alpha_0 - \beta_0$ could be $0$ or it could be $\pi$, neither of which makes a triangle.  It could also be larger than $\pi$, which makes a triangle, just not the one we've drawn.  You should think about those three cases.}  The distance formula, Equation \ref{distanceformula}, yields
 
