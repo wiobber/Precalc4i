@@ -493,10 +493,6 @@ Investigating the behavior near the values excluded from the domain, we find as 
 
 Putting all of this information together, we graph $y = \tan(t)$ over the interval $[0, 2\pi]$ below on the right.
 
-\smallskip
-
-\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -511,71 +507,19 @@ Putting all of this information together, we graph $y = \tan(t)$ over the interv
 \frac{3\pi}{2}  & \text{undefined} &  \\ [2pt] \hline 
 \frac{7\pi}{4}  & -1 & \left(\frac{7\pi}{4}, -1 \right) \\ [2pt] \hline 
 2\pi  & 0 & (2\pi, 0) \\  [2pt] \hline
-\end{array} \] \setlength{\extrarowheight}{0pt} &
+\end{array} \] 
 
-\begin{mfpic}[25]{-1}{7}{-4}{4}
-\point[4pt]{(0,0), (0.7854,1), (2.3562,-1), (3.1416, 0), (3.9270,1),  (5.4978,-1), (6.2832,0)}
-\dashed \polyline{(1.5708,-4), (1.5708,4)}
-\dashed \polyline{(4.7124,-4), (4.7124,4)}
-\axes
-\tlabel[cc](7,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{The graph of $y = \tan(t)$ over $[0,2\pi]$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\axislabels {y}{{$-1$} -1, {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\arrow \function{0, 1.3258, 0.1}{tan(x)}
-\arrow \reverse \arrow \function{1.8158, 4.4674, 0.1}{tan(x)}
-\arrow \reverse \function{4.9574, 6.2832,0.1}{tan(x)}
-\end{mfpic} \\
-
-\end{tabular}
-
-\smallskip
-
+% https://www.desmos.com/calculator/vlk0j42adn
+\begin{center}
+    \desmos{vlk0j42adn}{800}{600}
+\end{center}
 
 After the usual `copy and paste' procedure, we create the graph of $y = \tan(t)$ below: \index{tangent ! graph of}
 
-
+% https://www.desmos.com/calculator/hcvtzhuwnq
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-4}{4}
-\point[4pt]{(-0.7854,-1), (0,0), (0.7854,1)}
-\axes
-\tlabel[cc](13,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{The graph of $y = \tan(t)$.}
-\tlpointsep{4pt}
-\dashed \polyline{(1.5708, -4), (1.5708, 4)}
-\dashed \polyline{(4.7124, -4), (4.7124, 4)}
-\dashed \polyline{(7.8540, -4), (7.8540, 4)}
-\dashed \polyline{(10.9956, -4), (10.9956, 4)}
-\dashed \polyline{(-1.5708, -4), (-1.5708, 4)}
-\dashed \polyline{(-4.7124, -4), (-4.7124, 4)}
-\dashed \polyline{(-7.8540, -4), (-7.8540, 4)}
-\dashed \polyline{(-10.9956, -4), (-10.9956, 4)}
-\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)}
-\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{tan(x)}
-\arrow \reverse \arrow \function{4.9651, 7.6013, 0.1}{tan(x)}
-\arrow \reverse \arrow \function{8.1067, 10.7432, 0.1}{tan(x)}
-\arrow \reverse \arrow \function{-1.8235, -4.460, -0.1}{tan(x)}
-\arrow \reverse \arrow \function{-4.9651, -7.6013, -0.1}{tan(x)}
-\arrow \reverse \arrow \function{-8.1067, -10.7432, -0.1}{tan(x)}
-\arrow \reverse \function{-11.2483, -12.5664, -0.1}{tan(x)}
-\arrow \reverse \function{11.2483, 12.5664, 0.1}{tan(x)}
-\penwd{1.5pt}
-\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)}
-\end{mfpic}
-
+    \desmos{hcvtzhuwnq}{800}{600}
 \end{center}
-
-
-\smallskip
 
 The graph of $y = \tan(t)$ suggests symmetry through the origin.  Indeed, tangent is odd since sine is odd and cosine is even:   $\tan(-t) = \frac{\sin(-t)}{\cos(-t)} = \frac{-\sin(t)}{\cos(t)} = -\tan(t)$.  
 
@@ -599,8 +543,7 @@ It should be no surprise that $K(t) = \cot(t)$ behaves similarly to $J(t)=\tan(t
 
 After analyzing the behavior of $K$ near the values excluded from its domain  along with plotting points, we graph $y = \cot(t)$ over the interval $[0,2\pi]$ below on the right. \index{cotangent ! graph of}
 
-\hspace{.5in} \begin{tabular}{m{2.7in}m{3in}}
-\setlength{\extrarowheight}{2pt}
+
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -615,63 +558,18 @@ After analyzing the behavior of $K$ near the values excluded from its domain  al
 \frac{3\pi}{2}  & 0 & \left(\frac{3\pi}{2}, 0 \right) \\ [2pt] \hline 
 \frac{7\pi}{4}  & -1 & \left(\frac{7\pi}{4}, -1 \right) \\ [2pt] \hline 
 2\pi  & \text{undefined} &  \\  [2pt] \hline
-\end{array} \] \setlength{\extrarowheight}{0pt} &
+\end{array} \] 
 
-\begin{mfpic}[25]{-1}{7}{-4}{4.25}
-\point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1), (3.9270,1), (4.7124,0), (5.4978,-1)}
-\dashed \polyline{(3.1416,-4), (3.1416,4)}
-\dashed \polyline{(6.2832,-4), (6.2832,4)}
-\axes
-\tlabel[cc](7,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4.25){\scriptsize $y$}
-\tcaption{The graph of $y = \cot(t)$ over $[0,2\pi]$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$\frac{\pi}{4}$} 0.7854, {$\frac{\pi}{2}$} 1.5708, {$\frac{3\pi}{4}$} 2.3562, {$\pi$} 3.1416, {$\frac{5\pi}{4}$} 3.9270, {$\frac{3\pi}{2}$} 4.7124, {$\frac{7\pi}{4}$} 5.4978, {$2\pi$} 6.2832}
-\axislabels {y}{{$-1$} -1, {$1$} 1}
-\normalsize
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{0.2450, 2.8966, 0.1}{cot(x)}
-\arrow \reverse \arrow \function{3.3865, 6.0382,0.1}{cot(x)}
-\end{mfpic} \\
-
-\end{tabular}
-
-\smallskip
+% https://www.desmos.com/calculator/rlkr14n3t2
+\begin{center}
+    \desmos{rlkr14n3t2}{800}{600}
+\end{center}
 
 As usual, pasting copies end to end produces the graph of $K(t) = \cot(t)$ below.  \index{cotangent ! graph of}
 
+% https://www.desmos.com/calculator/hevswagsfm
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-4}{4.25}
-\point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1)}
-\axes
-\tlabel[cc](13,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4.25){\scriptsize $y$}
-\tcaption{The graph of $y = \cot(x)$.}
-\tlpointsep{4pt}
-\dashed \polyline{(3.1416, -4), (3.1416, 4)}
-\dashed \polyline{(6.2832, -4), (6.2832, 4)}
-\dashed \polyline{(-3.1416, -4), (-3.1416, 4)}
-\dashed \polyline{(-6.2832, -4), (-6.2832, 4)}
-\dashed \polyline{(9.4248, -4), (9.4248, 4)}
-\dashed \polyline{(12.5664, -4), (12.5664, 4)}
-\dashed \polyline{(-9.4248, -4), (-9.4248, 4)}
-\dashed \polyline{(-12.5664, -4), (-12.5664, 4)}
-\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{cot(x)}
-\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{cot(x)}
-\arrow \reverse \arrow \function{-0.2527, -2.889, -0.1}{cot(x)}
-\arrow \reverse \arrow \function{-3.3943, -6.0306, -0.1}{cot(x)}
-\arrow \reverse \arrow \function{6.5359, 9.1723, 0.1}{cot(x)}
-\arrow \reverse \arrow \function{-6.5359, -9.1723, -0.1}{cot(x)}
-\arrow \reverse \arrow \function{9.6775, 12.3138, 0.1}{cot(x)}
-\arrow \reverse \arrow \function{-9.6775, -12.3138, -0.1}{cot(x)}
-\penwd{1.5pt}
-\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{cot(x)}
-\end{mfpic}
-
+\desmos{hevswagsfm}{800}{600}
 \end{center}
 
 As with $J(t) = \tan(t)$, the graph of $K(t) = \cot(t)$ suggests $K$ is odd, a fact we leave to the reader to prove in Exercise \ref{cotisoddexercise}.  Also, we see that the period of cotangent (like tangent)  is $\pi$ and the range is $(-\infty, \infty)$.
