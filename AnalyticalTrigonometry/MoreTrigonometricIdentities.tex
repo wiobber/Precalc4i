@@ -291,6 +291,9 @@ We first prove the result for differences.  As in the proof of the Even / Odd Id
 \node[above left] at (-0.12,\R) {$1$};
 \node[below right] at (\R,-0.12) {$1$};
 
+\node[left=4pt] at (\px,\py) {$P(\cos(\alpha_0),\sin(\alpha_0))$};
+\node[right=4pt] at (\pxx,\pyy) {$Q(\cos(\beta_0),\sin(\beta_0))$};
+
 
 
 %%%% Second panel %%%%%%%
@@ -323,18 +326,17 @@ We first prove the result for differences.  As in the proof of the Even / Odd Id
 
 
 % --- Angle arc for theta, with label ---
-\draw[->] (1,1) arc [start angle=\ttdegr, end angle=\tdegr, radius=1.4];
-\node[] at (0.1,1.7) {$\alpha_0-\beta_0$};
 
 \draw[->] (0.6,0) arc [start angle=0, end angle=\tdegr, radius=0.6];
-\node[right] at (0,0.7) {$\alpha_0$};
+\node[right] at (0.5,0.5) {$\alpha_0-\beta_0$};
 
-\draw[->] (1,0) arc [start angle=0, end angle=\ttdeg, radius=1];
-\node[right] at (1,0.6) {$\beta_0$};
+
 
 % --- Unit labels on the axes ---
 \node[above left] at (-0.12,\R) {$1$};
-\node[below right] at (\R,-0.12) {$1$};
+\node[below right] at (\R,-0.12) {$B(1,0)$};
+
+\node[above right=4pt] at (\pxr,\pyr) {$A(\cos(\alpha_0-\beta_0),\sin(\alpha_0-\beta_0))$};
 
 \end{scope}
 
