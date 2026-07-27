@@ -328,24 +328,10 @@ Something important to note about the above example is that while $y=0$ is the h
 
 \end{itemize}
 
-We interpret this analysis graphically below on the left.
+We interpret this analysis graphically below.
 
 
-\item  To find the $t$-intercepts  we set $y = g(t) = 0$.  Using the factored form of $g(t)$ above, we find the zeros to be the solutions of $(2t-5)(t+1)=0$.  We obtain $t = \frac{5}{2}$ and $t=-1$. Since both of these numbers are in the domain of $g$, we have two $t$-intercepts, $\left( \frac{5}{2},0\right)$ and $(-1,0)$.  To find the $y$-intercept, we find $y = g(0) = \frac{5}{6}$, so our $y$-intercept is $\left(0, \frac{5}{6}\right)$.
 
-\item  Since the degrees of the numerator and denominator of $g(t)$ are the same, we know from Theorem \ref{hathm} that we can find the horizontal asymptote of the graph of $g$ by taking the ratio of the leading terms coefficients, $y = \frac{2}{1} = 2$.  However, if we take the time to do a more detailed analysis, we will be able to reveal some `hidden' behavior which would be lost otherwise.  Using long division, we may rewrite $g(t)$ as $g(t) = 2 - \frac{t-7}{t^2-t-6}.$  We focus our attention on the term $\frac{t-7}{t^2-t-6}$.  
-
-\begin{itemize}
-
-\item  \textit{The behavior of $y=g(t)$ as $t \rightarrow -\infty$:} If imagine substituting $t = \text{$-1$ billion}$ into $\frac{t-7}{t^2-t-6}$, we estimate $\frac{t-7}{t^2-t-6} \approx \frac{-1 { billion}}{1 \text{billion}^2}  = \frac{-1}{\text{ billion}} \approx \text{very small $(-)$}$.\footnote{We are once again using the fact that for polynomials, end behavior is determined by the leading term, so in the denominator, the $t^2$ term dominates the $t$ and constant terms.}  Hence, \[g(t) =  2 - \frac{t-7}{t^2-t-6} \approx 2 - \text{very small $(-)$} = 2 + \text{very small $(+)$}\]  Hence, as $t \rightarrow -\infty$, the graph is a little bit \textit{above} the line $y=2$.
-
-\item  \textit{The behavior of $y=g(t)$ as $t \rightarrow \infty$:}  To consider $\frac{t-7}{t^2-t-6}$ as $t \rightarrow \infty$, we imagine substituting $t= \text{$1$ billion}$ and, going through the usual mental routine, find \[\frac{t-7}{t^2-t-6} \approx \text{very small $(+)$}\]  Hence, $g(t) \approx 2 - \ \text{very small $(+)$}$, so the graph is just \textit{below} the line $y=2$ as $t \rightarrow \infty$.
-
-\end{itemize}
-
-We sketch the end behavior below on the right.
-
-\
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\LARGE
         \begin{axis}[
@@ -382,12 +368,24 @@ We sketch the end behavior below on the right.
       \end{axis}
         \end{tikzpicture}
 \end{image}
-%\begin{center}
+\begin{center}
     \captionof{figure}{Behavior near $t=-2$ and $t=3$}
 \xmalt{Diagram illustrating behavior near two vertical asymptotes. Dashed vertical lines indicate vertical asymptotes at $t=-2$ and $t=3$. As the graph approaches either asymptote from the outside, $y$ increases without bound. As the graph approaches either asymptote from the inside, $y$ decreases without bound.} 
-%\end{center}
+\end{center}
 
+\item  To find the $t$-intercepts  we set $y = g(t) = 0$.  Using the factored form of $g(t)$ above, we find the zeros to be the solutions of $(2t-5)(t+1)=0$.  We obtain $t = \frac{5}{2}$ and $t=-1$. Since both of these numbers are in the domain of $g$, we have two $t$-intercepts, $\left( \frac{5}{2},0\right)$ and $(-1,0)$.  To find the $y$-intercept, we find $y = g(0) = \frac{5}{6}$, so our $y$-intercept is $\left(0, \frac{5}{6}\right)$.
 
+\item  Since the degrees of the numerator and denominator of $g(t)$ are the same, we know from Theorem \ref{hathm} that we can find the horizontal asymptote of the graph of $g$ by taking the ratio of the leading terms coefficients, $y = \frac{2}{1} = 2$.  However, if we take the time to do a more detailed analysis, we will be able to reveal some `hidden' behavior which would be lost otherwise.  Using long division, we may rewrite $g(t)$ as $g(t) = 2 - \frac{t-7}{t^2-t-6}.$  We focus our attention on the term $\frac{t-7}{t^2-t-6}$.  
+
+\begin{itemize}
+
+\item  \textit{The behavior of $y=g(t)$ as $t \rightarrow -\infty$:} If imagine substituting $t = \text{$-1$ billion}$ into $\frac{t-7}{t^2-t-6}$, we estimate $\frac{t-7}{t^2-t-6} \approx \frac{-1 { billion}}{1 \text{billion}^2}  = \frac{-1}{\text{ billion}} \approx \text{very small $(-)$}$.\footnote{We are once again using the fact that for polynomials, end behavior is determined by the leading term, so in the denominator, the $t^2$ term dominates the $t$ and constant terms.}  Hence, \[g(t) =  2 - \frac{t-7}{t^2-t-6} \approx 2 - \text{very small $(-)$} = 2 + \text{very small $(+)$}\]  Hence, as $t \rightarrow -\infty$, the graph is a little bit \textit{above} the line $y=2$.
+
+\item  \textit{The behavior of $y=g(t)$ as $t \rightarrow \infty$:}  To consider $\frac{t-7}{t^2-t-6}$ as $t \rightarrow \infty$, we imagine substituting $t= \text{$1$ billion}$ and, going through the usual mental routine, find \[\frac{t-7}{t^2-t-6} \approx \text{very small $(+)$}\]  Hence, $g(t) \approx 2 - \ \text{very small $(+)$}$, so the graph is just \textit{below} the line $y=2$ as $t \rightarrow \infty$.
+
+\end{itemize}
+
+We sketch the end behavior below.
 
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\LARGE
@@ -419,14 +417,14 @@ We sketch the end behavior below on the right.
       \end{axis}
         \end{tikzpicture}
 \end{image}
-%\begin{center}
+\begin{center}
     \captionof{figure}{End behavior}
 \xmalt{Diagram illustrating end behavior. A dashed horizontal line represents a horizontal asymptote $y=2$. On the far left, the graph approaches the asymptote from above as $t \to -\infty$. On the far right, the graph approaches the same asymptote from below as $t \to \infty$.} 
 \end{center}
 
 
 
-\item  Finally we construct our sign diagram.  We place an `\textinterrobang' above $t=-2$ and $t=3$, and a `$0$' above $t = \frac{5}{2}$ and $t=-1$.  Choosing test values in the test intervals gives us $g(t)$ is $(+)$ on the intervals $(-\infty, -2)$, $\left(-1, \frac{5}{2}\right)$ and $(3, \infty)$, and $(-)$ on the intervals $(-2,-1)$ and $\left(\frac{5}{2}, 3\right)$.  As we piece together all of the information, it stands to reason the graph must cross the horizontal asymptote at some point after $t=3$ in order for it to approach $y=2$ from underneath.\footnote{This subtlety would have been missed had we skipped the long division and subsequent end behavior analysis.}   To find where $y = g(t)$ intersects $y = 2$, we solve $g(t) =  2 - \frac{t-7}{t^2-t-6} = 2$ and get $t-7= 0$, or $t=7$.  Note that $t-7$ is the remainder when $2t^2-3t-5$ is divided by $t^2-t-6$, so it makes sense that for $g(t)$ to equal the quotient $2$, the remainder from the division must be $0$.  Sure enough, we find $g(7)=2$.  The location of the $t$-intercepts alone dashes all hope of the function being even or odd (do you see why?) so we skip the symmetry check in this case.
+\item  Finally we construct our sign diagram.  We draw a dotted line through $t=-2$, an open circle at  $t=3$, and a `$0$' above $t = \frac{5}{2}$ and $t=-1$.  Choosing test values in the test intervals gives us $g(t)$ is $(+)$ on the intervals $(-\infty, -2)$, $\left(-1, \frac{5}{2}\right)$ and $(3, \infty)$, and $(-)$ on the intervals $(-2,-1)$ and $\left(\frac{5}{2}, 3\right)$.  As we piece together all of the information, it stands to reason the graph must cross the horizontal asymptote at some point after $t=3$ in order for it to approach $y=2$ from underneath.\footnote{This subtlety would have been missed had we skipped the long division and subsequent end behavior analysis.}   To find where $y = g(t)$ intersects $y = 2$, we solve $g(t) =  2 - \frac{t-7}{t^2-t-6} = 2$ and get $t-7= 0$, or $t=7$.  Note that $t-7$ is the remainder when $2t^2-3t-5$ is divided by $t^2-t-6$, so it makes sense that for $g(t)$ to equal the quotient $2$, the remainder from the division must be $0$.  Sure enough, we find $g(7)=2$.  The location of the $t$-intercepts alone dashes all hope of the function being even or odd (do you see why?) so we skip the symmetry check in this case.
 
 \begin{center}
     \captionof{figure}{Sign diagram}

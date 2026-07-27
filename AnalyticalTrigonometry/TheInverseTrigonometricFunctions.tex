@@ -210,75 +210,114 @@ By definition, the real number $t = \arcsin\left(\frac{\sqrt{3}}{2} \right)$ sat
 
 In terms of oriented arcs\footnote{See page \pageref{wrappingfunction} if you need a review of how we associate real numbers with angles in radian measure.}, if we start at $(1,0)$  and travel along the Unit Circle in the positive (counterclockwise) direction for $\frac{\pi}{3}$ units, we will arrive at the point whose $y$-coordinate is  $\frac{\sqrt{3}}{2}$.   Hence,  the real number $\frac{\pi}{3}$ also corresponds to  `arc' corresponding to the `sine' that is $\frac{\sqrt{3}}{2}$.
 
- 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
- 
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\phantomsection
-\label{arcinarcsine}
+\def\panelwidth{7}
+\def\R{2}
+\def\ang{60}
 
-\begin{center}
-\begin{tabular}{cc}
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\tlabel[cc](2.75, 2.6){\scriptsize $\left( \frac{1}{2}, \frac{\sqrt{3}}{2} \right)$}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-%\arrow \polyline{(5, 0), (0,0), (2.5, 4.3301)}
-%\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\point[3pt]{(0,0), (1.5, 2.6)}
-\end{mfpic} 
+%================================================
+% Left panel
+%================================================
 
-&
+% Circle
+\draw[gray!50] (0,0) circle (\R);
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \polyline{(0,0), (2.5, 4.3301)}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){\scriptsize $\frac{\pi}{3}$}
-\penwd{1.25pt}
-\arrow \parafcn{0,60,5}{3*dir(t)}
-\tlabel[cc](4.25,1.75){\scriptsize $\arcsin \left( \frac{\sqrt{3}}{2} \right)  = \frac{\pi}{3}$}
-\point[3pt]{(0,0), (1.5, 2.6)}
-\end{mfpic} 
+% Axes
+\draw[->] (-\R-0.6,0) -- (\R+1.3,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.6) -- (0,\R+0.8)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0) -- (\R,0);
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+% Labels
+\node[above right] at (\px+0.20,\py)
+    {$\left(\frac{1}{2},\frac{\sqrt{3}}{2}\right)$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
 
 
+%================================================
+% Right panel
+%================================================
 
-\\
+\begin{scope}[xshift=\panelwidth cm]
 
-$y$-value on Unit Circle is $\frac{\sqrt{3}}{2}$.
+% Circle
+\draw[gray!50] (0,0) circle (\R);
 
-&
+% Axes
+\draw[->] (-\R-0.6,0) -- (\R+1.9,0)
+    node[right] {$x$};
 
-corresponding oriented arc:  $t = \frac{\pi}{3}$
+\draw[->] (0,-\R-0.6) -- (0,\R+0.8)
+    node[above] {$y$};
 
+% Positive x-axis
+\draw[very thick] (0,0) -- (\R,0);
 
+% Radius
+\draw[very thick] (0,0) -- (\px,\py);
 
- \\
+% Continuation
+\draw (\px,\py) --
+    ({1.45*\R*cos(\ang)},{1.45*\R*sin(\ang)});
 
+% Arc on circle
+\draw[very thick]
+    (\R,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=\R
+    ];
 
-\end{tabular}
+% Angle
+\draw[->]
+    (0.60,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.60
+    ];
 
-\end{center}
+\node at (0.82,0.52)
+    {$\frac{\pi}{3}$};
 
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
 
+% Labels
+\node[above right] at (1.75,0.75)
+    {$\arcsin\!\left(\frac{\sqrt{3}}{2}\right)=\frac{\pi}{3}$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
  
 
 
