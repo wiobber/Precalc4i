@@ -65,65 +65,121 @@ We start by proving $\cos(-\theta) = \cos(\theta)$ and $\sin(-\theta) = -\sin(\t
 
 Consider an angle $\theta$ plotted in standard position. Let $\theta_0$ be the angle coterminal with $\theta$ with $0 \leq \theta_0 < 2\pi$.  (We can construct the angle $\theta_0$ by rotating counter-clockwise from the positive $x$-axis to the terminal side of $\theta$ as pictured below.)  Since $\theta$ and $\theta_0$ are coterminal, $\cos(\theta) = \cos(\theta_0)$ and $\sin(\theta) = \sin(\theta_0)$.
 
-\begin{center}
-
-\begin{tabular}{cc}
-
-\begin{mfpic}[18]{-5}{5}{-4.5}{4.5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.25){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{0,-555,-5}{(-t+400)*dir(t)/800} 
-\tlabel(1.5,-1){$\theta$}
-\tlabel[cc](-2.5, 2.75){\mbox{\boldmath $\theta_0$}}
-\point {(0,0),(-2.7692, 1.1538)}
-\penwd{1.25pt}
-\arrow  \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 150, 5}{1.75*dir(t)}
-\end{mfpic} 
-
-& 
-
-\begin{mfpic}[18]{-5}{5}{-4.5}{4.5}
-\axes
-\tlabel(4.75,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.25){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\tlabel[cc](-2.5, 2.75){\mbox{\boldmath $\theta_0$}}
-\tlabel[cc](-2.5, -2.75){\mbox{\boldmath $-\theta_0$}}
-\point {(0,0),(-2.7692, 1.1538)}
-\point {(0,0),(-2.7692, -1.1538)}
-\tlabel(-7,0.75){\scriptsize $P(\cos(\theta_0),\sin(\theta_0))$}
-\tlabel(-7.5,-0.85){\scriptsize $Q(\cos(-\theta_0),\sin(-\theta_0))$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
-\arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, -1.9231)}
-\penwd{1.5pt}
-\arrow \parafcn{5, 150, 5}{1.75*dir(t)}
-\arrow \parafcn{-5, -145, -5}{1.75*dir(t)}
-\end{mfpic}  \\
-
-\end{tabular}
-
-\end{center}
 
 We now consider the angles $-\theta$ and $-\theta_0$.  Since  $\theta$ is coterminal with $\theta_0$, there is some integer $k$ so that $\theta = \theta_0 + 2\pi \cdot k$.  Hence, $-\theta =   -\theta_0 - 2\pi \cdot k = -\theta_0 + 2\pi \cdot(-k)$.  Since $k$ is an integer, so is $(-k)$, which means $-\theta$ is coterminal with $-\theta_0$.  Therefore,   $\cos(-\theta) = \cos(-\theta_0)$ and $\sin(-\theta) = \sin(-\theta_0)$.  
 
- 
+ \begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\R{2}
+\def\innerR{0.45}
+\def\midR{0.80}
+\def\ang{150}
+
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
+
+%------------------------------------------------
+% Unit circle
+%------------------------------------------------
+
+\draw[gray!50] (0,0) circle (\R);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-2.8,0) -- (3.2,0)
+    node[right] {$x$};
+
+\draw[->] (0,-2.6) -- (0,2.8)
+    node[above] {$y$};
+
+%------------------------------------------------
+% Positive x-axis emphasized
+%------------------------------------------------
+
+\draw[very thick] (0,0)--(3,0);
+
+%------------------------------------------------
+% Radius
+%------------------------------------------------
+
+\draw[very thick] (0,0)--(\px,\py);
+\draw[very thick]
+    (\px,\py)--({1.35*\R*cos(\ang)},{1.35*\R*sin(\ang)});
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
+
+%------------------------------------------------
+% Small inner circle
+%------------------------------------------------
+
+\draw (0,0) circle (\innerR);
+
+%------------------------------------------------
+% Thick angle arc
+%------------------------------------------------
+
+\draw[
+    very thick,
+    ->,
+    line cap=round
+]
+(0.95,0)
+arc[
+    start angle=0,
+    end angle=\ang,
+    radius=0.95
+];
+
+%------------------------------------------------
+% Spiral (theta increasing)
+%------------------------------------------------
+
+\draw[
+    ->,
+    samples=180,
+    domain=0:300,
+    variable=\t,
+    smooth
+]
+plot
+(
+    {(\innerR+0.0019*\t)*cos(\t)},
+    {(\innerR+0.0019*\t)*sin(\t)}
+);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node at (-1.55,1.45)
+    {$\theta_0$};
+
+\node at (0.95,-0.35)
+    {$\theta$};
+
+\node[above right] at (0,\R)
+    {$1$};
+
+\node[below right] at (\R,0)
+    {$1$};
+
+\end{tikzpicture}
+\end{image}
 
 Let $P$ and $Q$ denote the points on the terminal sides of $\theta_0$ and $-\theta_0$, respectively, which lie on the Unit Circle. By definition, the coordinates of $P$ are $(\cos(\theta_0),\sin(\theta_0))$ and the coordinates of $Q$ are $(\cos(-\theta_0),\sin(-\theta_0))$.  
 
