@@ -23,32 +23,32 @@ In this section we assign to each square matrix $A$ a real number, called the \t
 
 To explain how we will take an $n \times n$ matrix and distill an $(n-1) \times (n-1)$ matrix from it, we use introduce the following notation.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 \begin{definition} \label{Aijdefn} Given an $n \times n$ matrix $A$ where $n>1$, the matrix $A_{ij}$ is the $(n-1) \times (n-1)$ matrix formed by deleting the $i$th row of $A$ and the $j$th column of $A$. 
 \end{definition}
 %% \ebm}
 
-\smallskip
+ 
 
-For the matrix $A$ below, we obtain $A_23}$ by deleting the second row and third column of $A$:
+For the matrix $A$ below, we obtain $A_{23}$ by deleting the second row and third column of $A$:
 
 \[ \begin{array}{ccc}
 
-A = \left[ \begin{array}{rr>{\columncolor[gray]{0.7}}r} 3 &  1 & 2 \\ \rowcolor[gray]{0.7} 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right]
+A = \left[ \begin{array}{rrr} 3 &  1 & \bcancel{2} \\  \bcancel{0} & \bcancel{-1} & \bcancel{5} \\ 2 & 1 & \bcancel{4}  \end{array} \right]
 &
 \xrightarrow{\text{Delete $R2$ and $C3$}}
 
 &
 
-A_23} = \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \\
+A_{23} = \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \\
 
 \end{array}\]
 
 We are now in the position to define the determinant of a matrix.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -56,32 +56,32 @@ We are now in the position to define the determinant of a matrix.
 
 \begin{itemize}
 
-\item  If $n=1$, then $A = \left[ a_11} \right]$ and $\det(A) = \det\left( \left[ a_11} \right] \right) = a_11}$.
+\item  If $n=1$, then $A = \left[ a_{11} \right]$ and $\det(A) = \det\left( \left[ a_{11} \right] \right) = a_{11}$.
 
-\item  If $n>1$, then $A = \left[ a_{ij} \right]_{n \times n}$ and \[ \det(A) = \det\left( \left[ a_{ij} \right]_{n \times n} \right) =  a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
+\item  If $n>1$, then $A = \left[ a_{ij} \right]_{n \times n}$ and \[ \det(A) = \det\left( \left[ a_{ij} \right]_{n \times n} \right) =  a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
 
 \end{itemize}
 
 \end{definition}
 %% \ebm}
 
-\smallskip
+ 
 
 There are two commonly used notations for the determinant of a matrix $A$: `$\det(A)$' and `$|A|$'
 We have chosen to use the notation $\det(A)$ as opposed to $|A|$ because we find that the latter is often confused with absolute value, especially in the context of a $1 \times 1$ matrix.  
 
-In the expansion $a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)$, the notation `$+ -  \ldots  + (-1)^{1+n} a_{1n}$' means that the signs alternate and the final sign is dictated by the sign of the quantity $(-1)^{1+n}$. 
+In the expansion $a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)$, the notation `$+ -  \ldots  + (-1)^{1+n} a_{1n}$' means that the signs alternate and the final sign is dictated by the sign of the quantity $(-1)^{1+n}$. 
 
-Since the entries $a_11}$, $a_12}$ and so forth up through $a_{1n}$ comprise the first row of $A$, we say we are finding the determinant of $A$  by `expanding along the first row'. Later in the section, we will develop a formula for $\det(A)$ which allows us to find it by expanding along any row.
+Since the entries $a_{11}$, $a_{12}$ and so forth up through $a_{1n}$ comprise the first row of $A$, we say we are finding the determinant of $A$  by `expanding along the first row'. Later in the section, we will develop a formula for $\det(A)$ which allows us to find it by expanding along any row.
 
-\smallskip
+ 
 
 Applying Definition \ref{determinantdefn} to the matrix $A = \left[ \begin{array}{rr} 4 & -3 \\ 2 & 1 \\ \end{array} \right]$ we get
 
 \[ \begin{array}{rcl} 
 
 \det(A) & = & \det \left( \left[ \begin{array}{rr} 4 & -3 \\ 2 & 1 \\ \end{array} \right] \right)\\ 
-& = &   4\det\left(A_11}\right) - (-3)\det\left(A_12}\right)\\
+& = &   4\det\left(A_{11}\right) - (-3)\det\left(A_{12}\right)\\
 & = & 4 \det([1]) +3\det([2]) \\
 & = & 4(1) + 3(2) \\
 & = & 10 \\ \end{array}\]
@@ -91,13 +91,13 @@ For a generic $2 \times 2$ matrix $A = \left[ \begin{array}{cc} a & b \\ c & d \
 \[ \begin{array}{rcl} 
 
 \det(A) & = & \det \left( \left[ \begin{array}{cc}  a & b \\ c & d \\ \end{array} \right] \right)\\ 
- & = &  a \det\left(A_11}\right) - b \det\left(A_12}\right) \\
+ & = &  a \det\left(A_{11}\right) - b \det\left(A_{12}\right) \\
 & = &  a \det\left(\left[ d \right]\right) - b \det\left(\left[c \right]\right) \\
 & = & ad-bc \end{array}\]
 
 This formula is worth remembering
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 \begin{eqn} \label{2by2determinant} For a $2 \times 2$ matrix,
@@ -107,14 +107,14 @@ This formula is worth remembering
 
 \end{eqn}
 %% \ebm}
-\smallskip
+ 
 
 Applying Definition \ref{determinantdefn} to the $3 \times 3$ matrix $A =  \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right]$ we obtain
 
 \[ \begin{array}{rcl} 
 
 \det(A) & = & \det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)\\ 
-        & = & 3\det\left(A_11}\right) - 1\det\left(A_12}\right) + 2\det\left(A_13}\right) \\ 
+        & = & 3\det\left(A_{11}\right) - 1\det\left(A_{12}\right) + 2\det\left(A_{13}\right) \\ 
         & = & 3\det \left( \left[ \begin{array}{rr} -1 & 5 \\ 1 & 4 \\ \end{array} \right] \right) - \det \left( \left[ \begin{array}{rr} 0 & 5 \\ 2 & 4 \\ \end{array} \right] \right) + 2 \det \left( \left[ \begin{array}{rr} 0 & -1 \\ 2 & 1 \\ \end{array} \right] \right) \\ 
         & = & 3((-1)(4) - (5)(1)) - ((0)(4)-(5)(2))+2((0)(1)-(-1)(2)) \\
         & = & 3(-9)-(-10)+2(2) \\
@@ -122,7 +122,7 @@ Applying Definition \ref{determinantdefn} to the $3 \times 3$ matrix $A =  \left
 
 To evaluate the determinant of a $4 \times 4$ matrix, we would have to evaluate the determinants of \textit{four} $3 \times 3$ matrices, each of which involves the finding the determinants of \textit{three} $2 \times 2$ matrices. As you can see, our method of evaluating determinants quickly gets out of hand and many of you may be reaching for the calculator.  There is some mathematical machinery which can assist us in calculating determinants and we present that here.  Before we state the theorem, we need some more terminology.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -140,23 +140,23 @@ To evaluate the determinant of a $4 \times 4$ matrix, we would have to evaluate 
 
 %% \ebm}
 
-\smallskip
+ 
 
 We note that in Definition \ref{determinantdefn}, the sum 
 
-\[a_11} \det\left(A_11}\right)- a_12} \det\left(A_12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
+\[a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)\]
 
 can be rewritten as
 
-\[a_11} (-1)^{1+1} \det\left(A_11}\right) + a_12} (-1)^{1+2} \det\left(A_12}\right) + \ldots  + a_{1n} (-1)^{1+n} \det\left(A_{1n}\right)\]
+\[a_{11} (-1)^{1+1} \det\left(A_{11}\right) + a_{12} (-1)^{1+2} \det\left(A_{12}\right) + \ldots  + a_{1n} (-1)^{1+n} \det\left(A_{1n}\right)\]
 
 which, in the language of cofactors is
 
-\[a_11} C_11} + a_12}C_12} + \ldots  + a_{1n}C_{1n} \]
+\[a_{11} C_{11} + a_{12}C_{12} + \ldots  + a_{1n}C_{1n} \]
 
 We are now ready to state our main theorem concerning determinants.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -188,7 +188,7 @@ We are now ready to state our main theorem concerning determinants.
 
 \item  $\det\left(A^{n}\right) = \det(A)^{n}$ for all natural numbers $n$.
 
-\item  $A$ is invertible if and only if $\det(A) \neq 0$.  In this case, $\det\left(A^{-1}\right) = \dfrac{1}{\det(A)}$.
+\item  $A$ is invertible if and only if $\det(A) \neq 0$.  In this case, $\det\left(A^{-1}\right) = \frac{1}{\det(A)}$.
 
 \end{itemize}
 
@@ -196,7 +196,7 @@ We are now ready to state our main theorem concerning determinants.
 
 %% \ebm}
 
-\smallskip
+ 
 
 Unfortunately, while we can easily \textit{demonstrate} the results in Theorem \ref{determinantprops}, the proofs of most of these properties are beyond the scope of this text.  We could prove these properties for generic $2 \times 2$ or even $3 \times 3$ matrices by brute force computation, but this manner of proof belies the elegance and symmetry of the determinant.  We will prove what few properties we can after we have developed some more tools such as the Principle of Mathematical Induction in Section \ref{Induction}.\footnote{For a very elegant treatment, take a course in Linear Algebra.  There, you will most likely see the treatment of determinants logically reversed than what is presented here.  Specifically, the determinant is defined as a function which takes a square matrix to a real number and satisfies some of the properties in Theorem \ref{determinantprops}. From that function, a formula for the determinant is developed.}  
 
@@ -208,9 +208,9 @@ We found $\det(A) = -13$ by expanding along the first row.  To take advantage of
 
 \[ \begin{array}{rcl} 
 
-\det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)& = & 0C_{21} + (-1)C_{22}+5C_23} \\
+\det \left( \left[ \begin{array}{rrr} 3 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 2 & 1 & 4 \\ \end{array} \right] \right)& = & 0C_{21} + (-1)C_{22}+5C_{23} \\
 
-& = &  (-1) (-1)^{2+2} \det\left(A_{22}\right) + 5 (-1)^{2+3}\det\left(A_23}\right) \\ 
+& = &  (-1) (-1)^{2+2} \det\left(A_{22}\right) + 5 (-1)^{2+3}\det\left(A_{23}\right) \\ 
         
         & = & - \det \left( \left[ \begin{array}{rr} 3 & 2 \\ 2 & 4 \\ \end{array} \right] \right) -5 \det \left( \left[ \begin{array}{rr} 3 & 1 \\ 2 & 1 \\ \end{array} \right] \right) \\ 
         & = & -((3)(4)-(2)(2)) - 5((3)(1)-(2)(1)) \\
@@ -239,7 +239,7 @@ In general, the sign of $(-1)^{i+j}$ in front of the minor in the expansion of t
 
 The reader is cautioned, however, against reading too much into these sign patterns.  In the example above, we expanded the $3 \times 3$ matrix $A$ by its second row and the term which corresponds to the second entry ended up being negative even though the sign attached to the minor is $(+)$.  These signs represent only the signs of the $(-1)^{i+j}$ in the formula;  the sign of the corresponding entry as well as the minor itself determine the ultimate sign of the term in the expansion of the determinant.
 
-\smallskip
+ 
 
 To illustrate some of the other properties in  Theorem \ref{determinantprops}, we use row operations to transform our $3 \times 3$ matrix $A$ into an upper triangular matrix, keeping track of the row operations, and labeling each successive matrix.  In what follows we follow the Gauss Jordan algorithm without worrying about getting leading $1$'s.
 
@@ -296,7 +296,7 @@ As we apply our allowable row operations on $A$ to put it into reduced row echel
 
 Conversely, if $A$ is invertible, then $A$ can be transformed into $I_{n}$ using row operations.  Since $\det\left(I_{n}\right) = 1 \neq 0$, our same logic implies $\det(A) \neq 0$. Basically, we have established that the determinant \textit{determines} whether or not the matrix $A$ is invertible.\footnote{In Section \ref{CramersRuleMatrixAdjoints}, we learn determinants (specifically cofactors) are deeply connected with the inverse of a matrix.}  
 
-\smallskip
+ 
 
 It is worth noting that when we first introduced the notion of a matrix inverse, it was in the context of solving a linear matrix equation.  In effect, we were trying to `divide' both sides of the matrix equation $AX = B$ by the matrix $A$.  Just like we cannot divide a real number by $0$, Theorem \ref{determinantprops} tells us we cannot `divide' by a matrix whose \textit{determinant} is $0$.  We also know that if the coefficient matrix of a system of linear equations is invertible, then system is consistent and independent.  It follows, then, that if the determinant of said coefficient is not zero, the system is consistent and independent.  
 
@@ -305,17 +305,17 @@ It is worth noting that when we first introduced the notion of a matrix inverse,
 \subsection{Cramer's Rule and Matrix Adjoints}
 \label{CramersRuleMatrixAdjoints}
 
-In this section, we introduce a theorem which enables us to solve a system of linear equations by means of determinants only.  As usual, the theorem is stated in full generality, using numbered unknowns $x_{1}$, $x_{\mbox{\tiny$2$}}$, etc., instead of the more familiar letters $x$, $y$, $z$, etc.   As with many results in this chapter, the proof of the general case is best left to a course in Linear Algebra.
+In this section, we introduce a theorem which enables us to solve a system of linear equations by means of determinants only.  As usual, the theorem is stated in full generality, using numbered unknowns $x_{1}$, $x_2$, etc., instead of the more familiar letters $x$, $y$, $z$, etc.   As with many results in this chapter, the proof of the general case is best left to a course in Linear Algebra.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
 \begin{theorem} \label{CramersRule} \index{Cramer's Rule} \textbf{Cramer's Rule:} Suppose  $AX = B$ is the matrix form of a system of $n$ linear equations in $n$ unknowns where $A$ is the coefficient matrix, $X$ is the unknowns matrix, and $B$ is the constant matrix. 
 
-If $\det(A) \neq 0$, then the corresponding system is consistent and independent and the solution for unknowns $x_{1}$, $x_{\mbox{\tiny$2$}}$, \ldots $x_{n}$ is given by:
+If $\det(A) \neq 0$, then the corresponding system is consistent and independent and the solution for unknowns $x_{1}$, $x_2$, \ldots $x_{n}$ is given by:
 
-\[ x_{j} = \dfrac{\det\left(A_{j}\right)}{\det(A)},\]
+\[ x_{j} = \frac{\det\left(A_{j}\right)}{\det(A)},\]
 
 where $A_{j}$ is the matrix $A$ whose $j$th column has been replaced by the constants in $B$.
 
@@ -323,17 +323,17 @@ where $A_{j}$ is the matrix $A$ whose $j$th column has been replaced by the cons
 
 %% \ebm}
 
-\smallskip
+ 
 
 In words, Cramer's Rule tells us we can solve for each unknown, one at a time, by finding the ratio of the determinant of $A_{j}$ to that of the determinant of the coefficient matrix.  The matrix $A_{j}$ is found by replacing the column in the coefficient matrix which holds the coefficients of $x_{j}$ with the constants of the system.  The following example fleshes out this method.
 
-\smallskip
+ 
 
 \begin{example}  Use Cramer's Rule to solve for the indicated unknowns.
 
 \begin{enumerate}
 
-\item  Solve $\left\{ \begin{array}{rcr} 2x_{1} - 3x_{\mbox{\tiny$2$}} & = & 4 \\ 5x_{1} + x_{\mbox{\tiny$2$}} & = & -2   \end{array} \right.$ for $x_{1}$ and $x_{\mbox{\tiny$2$}}$
+\item  Solve $\left\{ \begin{array}{rcr} 2x_{1} - 3x_2 & = & 4 \\ 5x_{1} + x_2 & = & -2   \end{array} \right.$ for $x_{1}$ and $x_2$
 
 \item  Solve $\left\{ \begin{array}{rcr} 2x - 3y + z & = & -1 \\ x-y+z & = & 1 \\ 3x-4z & = & 0   \end{array} \right.$ for $z$.
 
@@ -349,13 +349,13 @@ In words, Cramer's Rule tells us we can solve for each unknown, one at a time, b
 
 A = \left[ \begin{array}{rr} 2 & -3 \\ 5 & 1 \\ \end{array} \right] 
 &
-\qquad X = \left[ \begin{array}{r} x_{1} \\ x_{\mbox{\tiny$2$}} \\ \end{array} \right] 
+\qquad X = \left[ \begin{array}{r} x_{1} \\ x_2 \\ \end{array} \right] 
 & 
 \qquad B = \left[ \begin{array}{r} 4 \\ -2 \\ \end{array} \right] \\
 
 \end{array} \]
 
-To find the matrix $A_{1}$, we remove the column of the coefficient matrix $A$ which holds the coefficients of $x_{1}$ and replace it with the corresponding entries in $B$.  Likewise, we replace the column of $A$ which corresponds to the coefficients of $x_{\mbox{\tiny$2$}}$ with the constants to form the matrix $A_{\mbox{\tiny$2$}}$.  This yields 
+To find the matrix $A_{1}$, we remove the column of the coefficient matrix $A$ which holds the coefficients of $x_{1}$ and replace it with the corresponding entries in $B$.  Likewise, we replace the column of $A$ which corresponds to the coefficients of $x_2$ with the constants to form the matrix $A_2$.  This yields 
 
 \[ \begin{array}{cc}
 
@@ -363,17 +363,17 @@ A_{1} = \left[ \begin{array}{rr} 4 & -3 \\ -2 & 1 \\ \end{array} \right]
 
 &
 
-\qquad A_{\mbox{\tiny$2$}} = \left[ \begin{array}{rr} 2 & 4 \\ 5 & -2 \\ \end{array} \right] \\
+\qquad A_2 = \left[ \begin{array}{rr} 2 & 4 \\ 5 & -2 \\ \end{array} \right] \\
 
 \end{array} \]
 
-Computing determinants, we get $\det(A) = 17$, $\det\left(A_{1}\right) = -2$ and  $\det\left(A_{\mbox{\tiny$2$}}\right) = -24$, so that
+Computing determinants, we get $\det(A) = 17$, $\det\left(A_{1}\right) = -2$ and  $\det\left(A_2\right) = -24$, so that
 
 \[ \begin{array}{cc}
 
-x_{1} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = -\dfrac{2}{17} 
+x_{1} = \frac{\det\left(A_{1}\right)}{\det(A)} = -\frac{2}{17} 
 & 
-\qquad x_{\mbox{\tiny$2$}} = \dfrac{\det\left(A_{\mbox{\tiny$2$}}\right)}{\det(A)} = -\dfrac{24}{17} \\
+\qquad x_2 = \frac{\det\left(A_2\right)}{\det(A)} = -\frac{24}{17} \\
 
 \end{array} \]
 
@@ -397,7 +397,7 @@ A_3 = A_{z} =  \left[ \begin{array}{rrr} 2 & -3 & -1 \\ 1 & -1 & 1 \\ 3 & 0 & 0 
 
 Expanding both $\det(A)$ and $\det\left(A_{z}\right)$ along the third rows (to take advantage of the $0$'s) gives
 
-\[ z = \dfrac{\det\left(A_{z}\right)}{\det(A)} = \dfrac{-12}{-10} = \dfrac{6}{5} \]
+\[ z = \frac{\det\left(A_{z}\right)}{\det(A)} = \frac{-12}{-10} = \frac{6}{5} \]
 
 The reader is encouraged to solve this system for $x$ and $y$ similarly and check the answer.  \qed
 
@@ -407,7 +407,7 @@ The reader is encouraged to solve this system for $x$ and $y$ similarly and chec
 
 It is worth noting that finding determinants is very `computationally expensive' meaning they take quite a bit of time and effort to compute for humans and machines alike.  For that reason, determinants, and, in particular, Cramer's Rule are used mostly in theoretical contexts as convenient ways to describe and discuss solutions to systems of linear equations.\footnote{A classic case of this is the \href{https://en.wikipedia.org/wiki/Wronskian}{\underline{Wronskian}} from Differential Equations.}
 
-\smallskip
+ 
 
 Our last application of determinants is to develop an alternative method for finding the inverse of a matrix. As with the discussion in Section \ref{MatMethods} when we developed the first algorithm to find matrix inverses, we ask that you indulge us as we proceed to work to describe a \textit{general} method here via \textit{example}. 
 
@@ -423,17 +423,17 @@ Recall that to find $A^{-1}$,  we are essentially solving the matrix equation $A
 
 \[\begin{array}{ccc}
 
-A\left[ \begin{array}{r} x_11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right]
+A\left[ \begin{array}{r} x_{11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right]
 
 &
 \qquad
-A\left[ \begin{array}{r} x_12} \\ x_{22} \\ x_{\mbox{\tiny$32$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array} \right] 
+A\left[ \begin{array}{r} x_{12} \\ x_{22} \\ x_{32} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array} \right] 
 
 & 
 
 \qquad
 
-A\left[ \begin{array}{r} x_13} \\ x_23} \\ x_{\mbox{\tiny$33$}} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array} \right] \\
+A\left[ \begin{array}{r} x_{13} \\ x_{23} \\ x_{33} \end{array} \right] = \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array} \right] \\
 
 \end{array}\]
 
@@ -445,7 +445,7 @@ A_{1} = \left[ \begin{array}{rrr} 1 & 1 & \hphantom{-}2 \\ 0 & -1 & 5 \\ 0 & 1 &
 
 &
 
-A_{\mbox{\tiny$2$}} = \left[ \begin{array}{rrr} 3 &  1 & 2 \\ 0 & 0 & 5 \\ 2 & 0 & 4 \\ \end{array} \right]
+A_2 = \left[ \begin{array}{rrr} 3 &  1 & 2 \\ 0 & 0 & 5 \\ 2 & 0 & 4 \\ \end{array} \right]
 
 &
 
@@ -463,58 +463,58 @@ If we expand $\det\left(A_{1}\right)$ along the first row, we get
                         
 \end{array} \]
 
-Amazingly, this is none other than the  $C_11}$ cofactor of $A$.  The reader is invited to check this, as well as the claims that  $\det\left(A_{\mbox{\tiny$2$}}\right) = C_12}$ and $\det\left(A_3\right) = C_13}$.\footnote{In a solid Linear Algebra course you will learn that the properties in Theorem \ref{determinantprops} hold equally well if the word `row' is replaced by the word `column'.  We're not going to get into column operations in this text, but they do make some of what we're trying to say easier to follow.} (To see this, though it seems unnatural to do so, expand along the first row.) Cramer's Rule tells us
+Amazingly, this is none other than the  $C_{11}$ cofactor of $A$.  The reader is invited to check this, as well as the claims that  $\det\left(A_2\right) = C_{12}$ and $\det\left(A_3\right) = C_{13}$.\footnote{In a solid Linear Algebra course you will learn that the properties in Theorem \ref{determinantprops} hold equally well if the word `row' is replaced by the word `column'.  We're not going to get into column operations in this text, but they do make some of what we're trying to say easier to follow.} (To see this, though it seems unnatural to do so, expand along the first row.) Cramer's Rule tells us
 
 \[\begin{array}{ccc}
 
-x_11} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = \dfrac{C_11}}{\det(A)}, 
+x_{11} = \frac{\det\left(A_{1}\right)}{\det(A)} = \frac{C_{11}}{\det(A)}, 
 &
-x_{21} = \dfrac{\det\left(A_{\mbox{\tiny$2$}}\right)}{\det(A)}  = \dfrac{C_12}}{\det(A)}, 
+x_{21} = \frac{\det\left(A_2\right)}{\det(A)}  = \frac{C_{12}}{\det(A)}, 
 &
- x_{31} = \dfrac{\det\left(A_3\right)}{\det(A)} = \dfrac{C_13}}{\det(A)}
+ x_{31} = \frac{\det\left(A_3\right)}{\det(A)} = \frac{C_{13}}{\det(A)}
 
 
 \end{array} \]
 
 So the first column of the inverse matrix $X$ is:
 
-\[  \left[ \begin{array}{r} x_11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} \dfrac{C_11}}{\det(A)} \\    \dfrac{C_12}}{\det(A)} \\    \dfrac{C_13}}{\det(A)} \end{array} \right] = \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_11} \\ C_12} \\ C_13} \end{array} \right]  \]
+\[  \left[ \begin{array}{r} x_{11} \\ x_{21} \\ x_{31} \end{array} \right] = \left[ \begin{array}{r} \frac{C_{11}}{\det(A)} \\    \frac{C_{12}}{\det(A)} \\    \frac{C_{13}}{\det(A)} \end{array} \right] = \frac{1}{\det(A)} \left[ \begin{array}{r} C_{11} \\ C_{12} \\ C_{13} \end{array} \right]  \]
 
 Notice the reversal of the subscripts going from the unknown to the corresponding cofactor of $A$. This trend continues and we get
 \[ \begin{array}{cc}
 
-\left[ \begin{array}{r} x_12} \\ x_{22} \\ x_{\mbox{\tiny$32$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{21} \\ C_{22} \\ C_23} \end{array} \right]
+\left[ \begin{array}{r} x_{12} \\ x_{22} \\ x_{32} \end{array} \right] =  \frac{1}{\det(A)} \left[ \begin{array}{r} C_{21} \\ C_{22} \\ C_{23} \end{array} \right]
 
 &
 \qquad
 
-\left[ \begin{array}{r} x_13} \\ x_23} \\ x_{\mbox{\tiny$33$}} \end{array} \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{31} \\ C_{\mbox{\tiny$32$}} \\ C_{\mbox{\tiny$33$}} \end{array} \right]
+\left[ \begin{array}{r} x_{13} \\ x_{23} \\ x_{33} \end{array} \right] =  \frac{1}{\det(A)} \left[ \begin{array}{r} C_{31} \\ C_{32} \\ C_{33} \end{array} \right]
 
 \end{array}\]
 
 Putting all of these together, we have obtained a new and surprising formula for $A^{-1}$, namely
 
-\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_11} & C_{21} & C_{31} \\ C_12} & C_{22} & C_{\mbox{\tiny$32$}} \\ C_13} & C_23} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] \]
+\[ A^{-1} = \frac{1}{\det(A)} \left[ \begin{array}{ccc} C_{11} & C_{21} & C_{31} \\ C_{12} & C_{22} & C_{32} \\ C_{13} & C_{23} & C_{33} \\ \end{array} \right] \]
 
 To see that this does indeed yield $A^{-1}$, we find all of the cofactors of $A$
 
 \[\begin{array}{rcrrcrrcr}
 
-C_11} & = & -9, & C_{21} & = & -2, & C_{31} & = & 7\\
+C_{11} & = & -9, & C_{21} & = & -2, & C_{31} & = & 7\\
 
-C_12} & = & 10, & C_{22} & = & 8, & C_{\mbox{\tiny$32$}} & = & -15 \\
+C_{12} & = & 10, & C_{22} & = & 8, & C_{32} & = & -15 \\
 
-C_13} & = &  2,  & C_23} & = & -1,  & C_{\mbox{\tiny$33$}} & = & -3 \\
+C_{13} & = &  2,  & C_{23} & = & -1,  & C_{33} & = & -3 \\
 
 \end{array} \]
 
 And, as promised,
 
-\[ A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_11} & C_{21} & C_{31} \\ C_12} & C_{22} & C_{\mbox{\tiny$32$}} \\ C_13} & C_23} & C_{\mbox{\tiny$33$}} \\ \end{array} \right] = -\dfrac{1}{13} \left[ \begin{array}{rrr} -9 & -2 & 7\\ 10 & 8 & -15 \\ 2  &  -1 &  -3 \\ \end{array} \right]  =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right] \]
+\[ A^{-1} = \frac{1}{\det(A)} \left[ \begin{array}{ccc} C_{11} & C_{21} & C_{31} \\ C_{12} & C_{22} & C_{32} \\ C_{13} & C_{23} & C_{33} \\ \end{array} \right] = -\frac{1}{13} \left[ \begin{array}{rrr} -9 & -2 & 7\\ 10 & 8 & -15 \\ 2  &  -1 &  -3 \\ \end{array} \right]  =  \left[ \begin{array}{rrr} \frac{9}{13} & \frac{2}{13} & -\frac{7}{13} \\  -\frac{10}{13} & -\frac{8}{13} & \frac{15}{13} \\  -\frac{2}{13} & \frac{1}{13} & \frac{3}{13} \\ \end{array} \right] \]
 
 To generalize this to invertible $n \times n$ matrices, we need another definition and a theorem.  Our definition gives a special name to the cofactor matrix, and the theorem gives us a recipe for the matrix inverse.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -524,55 +524,51 @@ The \index{matrix ! adjoint}\index{adjoint of a matrix}\textbf{adjoint} of $A$, 
 
 \[ \text{adj}(A) = \left[
 \begin{array}{cccc} 
-C_11} & C_{21} & \ldots & C_{n1} \\  
-C_12} & C_{22} & \ldots & C_{n\mbox{\tiny$2$}} \\
+C_{11} & C_{21} & \ldots & C_{n1} \\  
+C_{12} & C_{22} & \ldots & C_{n2} \\
    \vdots  & \vdots & & \vdots \\
-C_{1n} & C_{\mbox{\tiny$2$}n} & \ldots & C_{nn} \\  \end{array} \right] \]
+C_{1n} & C_{2n} & \ldots & C_{nn} \\  \end{array} \right] \]
 
 
 \end{definition}
 
 %% \ebm}
 
-\smallskip
+ 
 
 This new notation greatly shortens the statement of the formula for the inverse of a matrix.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
 \begin{theorem}  \label{adjointinverse} Let $A$ be an invertible $n \times n$ matrix.  Then
 
-\[ A^{-1} = \dfrac{1}{\det(A)} \text{adj}(A) \]
+\[ A^{-1} = \frac{1}{\det(A)} \text{adj}(A) \]
 
 \end{theorem}
 
 %% \ebm}
 
-\smallskip
+ 
 
 For $2 \times 2$ matrices, Theorem \ref{adjointinverse} reduces to a fairly simple formula.
 
-\smallskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
 \begin{eqn}   \label{2by2inverse}  For an invertible $2 \times 2$ matrix,
 
-\[ \left[ \begin{array}{rr}  a & b \\ c & d \\ \end{array} \right]^{-1} = \dfrac{1}{ad-bc} \left[ \begin{array}{rr}  d & -b \\ -c & a \\ \end{array} \right] \]
+\[ \left[ \begin{array}{rr}  a & b \\ c & d \\ \end{array} \right]^{-1} = \frac{1}{ad-bc} \left[ \begin{array}{rr}  d & -b \\ -c & a \\ \end{array} \right] \]
 
 
 
 \end{eqn}
 %% \ebm}
-\smallskip
+ 
 
 The proof of Theorem \ref{adjointinverse} is, like so many of the results in this section, best left to a course in Linear Algebra.  In such a course, not only do you gain some more sophisticated proof techniques, you also gain a larger perspective.  Within the scope of this text, we will prove a few results involving determinants in Section \ref{Induction} using the Principle of Mathematical Induction.  Until then, make sure you have a handle on the \textit{mechanics} of matrices and the theory will come eventually.
-
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforDeterminants}
 
