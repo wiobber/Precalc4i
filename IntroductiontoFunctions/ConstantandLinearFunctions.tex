@@ -607,7 +607,7 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
  (\text{new output}) & = & (\text{known output}) & +&  (\text{change in outputs}) \\ \end{array} \] In other words, changing the \textbf{input} by $\Delta x$ results in changing the \textbf{output} by $m \Delta x$.  This tracks since \[ m \Delta x  = \frac{\Delta [f(x)]}{\Delta x} \Delta x =  \Delta[f(x)]  = \Delta \text{outputs}. \] The fact that we can write $\Delta \text{outputs} = m \Delta x$ for any choice of $x_0$ is another way to see that for linear functions, the rate of change is constant.  That is, the rate of change, $m$,  is the same for all values $x_0$ in the domain. We'll put Equation \ref{linearfunctionpointslope} to good use in the next example.
 
  
- \begin{example} \label{PortaBoyDemand}  The local retailer in Example \ref{PortaBoyCost} is trying to mathematically model the relationship between the number of PortaBoy systems sold  and the price per system.  Suppose $20$ systems were sold when the price was  $\$220$ per system but when the systems went on sale for  $\$190$ each, sales doubled.
+ \begin{example}\label{PortaBoyDemand}  The local retailer in Example \ref{PortaBoyCost} is trying to mathematically model the relationship between the number of PortaBoy systems sold  and the price per system.  Suppose $20$ systems were sold when the price was  $\$220$ per system but when the systems went on sale for  $\$190$ each, sales doubled.
  
 \begin{enumerate}
 
@@ -620,31 +620,6 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
 \item How many systems would sell if the price per system were set at $\$150$?
 
 \end{enumerate}
-
-\begin{explanation}
-
-\begin{enumerate}
-
-\item  We are asked to find a linear function $p(x)$ ostensibly because the retailer has only two data points and two points are all that is needed to determine a unique line.  We know that $20$ PortaBoys were sold  when the price was $220$ dollars and double that, so $40$ units, were sold when the price was $190$ dollars. Using the language of function notation, these statements translate to  $p(20)=220$ and $p(40)=190$, respectively.  We first find the slope \[ m = \frac{\Delta [p(x)]}{\Delta x} = \frac{190 - 220}{40 - 20} = \frac{-30}{20} = -1.5\] and then substitute it and a pair $(x_0, p(x_0))$ into the point-slope formula.  We have two choices:  $x_0 = 20$ and $p(x_0) = 220$ or $x_0 = 40$ and $p(x_0) = 190$.  We'll choose the former and invite the reader to use the latter - both will result in the same simplified expression.  The point-slope formula yields  \[p(x) = p(x_0) + m (x - x_0) = 220 + (-1.5)(x - 40)\] which simplifies to $p(x) = -1.5x + 250$.  (To check this algebraically, we can verify that $p(20) = 220$ and $p(40) = 190$.) To find the $y$-intercept of the graph, we substitute $x = 0$ and find $p(0) = 250$.  Hence our $y$-intercept is $(0, 250)$.  To find the $x$-intercept, we set $p(x) = 0$. Solving $-1.5x + 250 = 0$ gives $x = 166.\overline{6}$, so our $x$-intercept is $(166.\overline{6}, 0)$.\footnote{The exact value is $x = \frac{500}{3}$. Recall that the bar over the $6$ indicates that the decimal repeats.  See page \pageref{repeatingdecimalnote} for details.} The graph on the left is that of the line $y = -1.5x + 250$.  
-
-
-
-%TIKZ here
-
-To determine a reasonable domain for $p$, we certainly require $x \geq 0$, because we can't sell a negative number of game systems.\footnote{ignoring returns, that is.}  Next, we require $p(x) \geq 0$, otherwise we'd be \textbf{paying} customers to `buy'  PortaBoys.  Solving $-1.5 x + 250 \geq 0$ results in $x \leq 166.\overline{6}$.  This shouldn't be too surprising since our graph passes through the $x$-axis at $(166.\overline{6}, 0)$, going from positive $y$-values (hence, positive $p(x)$ values) to  negative $y$ (hence negative $p(x)$ values).\footnote{We'll discuss these sorts of connections in greater depth in Section \ref{AbsoluteValueFunctions}.}  
-
-
-
-Given that $x$ represents the number of PortaBoys sold, we need to choose to end the domain at either $x = 166$ or $x = 167$.  We have that $p(166) = 1 > 0$ but $p(167) = -0.5 < 0$ so we settle on the domain $[0,166]$.  Our final answer is $p(x) = -1.5x + 250$ restricted to $0 \leq x \leq 166$ which is graphed above on the right.
-
-\item The slope $m = -1.5$ represents the rate of change of the price of a system with respect to sales of PortaBoys.  The slope is negative so we have that the price is \textbf{decreasing} at a rate of $\$1.50$ per PortaBoy sold.  (Said differently, you can sell one more PortaBoy for every $\$1.50$ drop in price.)
-
-\item  To determine the price which will move $150$ PortaBoys, we find $p(150) = -1.5(150) + 250 = 25$.  That is, the price would have to be $\$25$ per system.
-
-\item  If the price of a PortaBoy were set at $\$150$, we'd have $p(x) = 150$, or $-1.5x + 250 = 150$.  This yields $-1.5x = -100$ or $x = 66.\overline{6}$. Again our algebraic solution lies between two whole numbers, so we find $p(66) = 151$ and $p(67) = 149.5$.  If the price were set at $\$ 150$, we'd sell $66$ systems, since to sell $67$ systems, we'd have to drop the price just under $\$150$.  
-
-\end{enumerate}
-\end{explanation}
 
 \end{example}
 
