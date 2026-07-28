@@ -330,7 +330,7 @@ $\{x\,|\,  3 < x < 13 \, \text{and} \, x \neq 4 \}$
 For Exercises \ref{shadevennfirst} - \ref{shadevennlast}, use the blank Venn Diagram below with $A$, $B$, and $C$ in it as a guide to help you shade the following sets.
 
 \begin{center}
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=1.5]
 
 % Circles
 \draw (0.5,-0.875) circle (1);   % Circle C
@@ -352,6 +352,106 @@ For Exercises \ref{shadevennfirst} - \ref{shadevennlast}, use the blank Venn Dia
 
 \begin{problem}\label{shadevennfirst}
 $A \cup C$
+
+\begin{multipleChoice}
+
+\choice{\begin{tikzpicture}[scale=0.75]
+
+\begin{scope}
+\clip (.875,0) circle (1);
+\fill[gray!70] (.5,-.875) circle (1);
+\end{scope}
+
+\draw (0,0) circle (1);
+\draw (.875,0) circle (1);
+\draw (.5,-.875) circle (1);
+
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+
+\end{tikzpicture}}
+
+\choice{\begin{tikzpicture}[scale=0.75]
+
+\fill[gray!70] (0,0) circle (1);
+\fill[gray!70] (.875,0) circle (1);
+\fill[gray!70] (.5,-.875) circle (1);
+
+\draw (0,0) circle (1);
+\draw (.875,0) circle (1);
+\draw (.5,-.875) circle (1);
+
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+
+\end{tikzpicture}}
+
+\choice{\begin{tikzpicture}[scale=0.75]
+
+\begin{scope}
+\clip (0,0) circle (1);
+\fill[gray!70] (.875,0) circle (1);
+\fill[gray!70] (.5,-.875) circle (1);
+\end{scope}
+
+\draw (0,0) circle (1);
+\draw (.875,0) circle (1);
+\draw (.5,-.875) circle (1);
+
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+
+\end{tikzpicture}}
+
+\choice[correct]{\begin{tikzpicture}[scale=0.75]
+\fill[gray!70] (0,0) circle (1);
+\fill[gray!70] (.5,-.875) circle (1);
+
+\draw (0,0) circle (1);
+\draw (.875,0) circle (1);
+\draw (.5,-.875) circle (1);
+
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+\end{tikzpicture}}
+
+\choice{\begin{tikzpicture}[scale=0.75]
+
+\begin{scope}
+\clip (0,0) circle (1);
+\clip (.875,0) circle (1);
+\fill[gray!70] (.5,-.875) circle (1);
+\end{scope}
+
+\draw (0,0) circle (1);
+\draw (.875,0) circle (1);
+\draw (.5,-.875) circle (1);
+
+\draw (-1.75,-2.625) rectangle (2.625,1.75);
+
+\node at (-1.25,0) {$A$};
+\node at (2.125,0) {$B$};
+\node at (.5,-2.125) {$C$};
+\node at (2.375,1.5) {$U$};
+
+\end{tikzpicture}}
+\end{multipleChoice}
 \end{problem}
 
 \begin{problem}
