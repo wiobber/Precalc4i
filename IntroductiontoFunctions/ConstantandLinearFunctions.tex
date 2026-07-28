@@ -779,7 +779,7 @@ Our next two examples focus on writing formulas for piecewise-defined functions,
 
 
 \begin{explanation} 
-From the graph of $W = L(t)$ we see that there are two distinct pieces. Taking note of the point at $(1, 4)$, we get $L(t) = 4$ for $t \leq 1$.  To represent $L$ for $t>1$, we use the point-slope form of a linear function: $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\mbox{\,\tiny $0$}})$.  The only `point' labeled with this part of the graph is the hole at $(1, 2)$ and it isn't technically part of the graph, so we will avoid using it.\footnote{We actually could use the point $(1, 2)$ to find the equation of the \textbf{line} containing $(1, 2)$ and, say $(3, 0)$, which is $y = -t + 3$.  It's just that the graph of $L(t)$ and the line $y = -t + 3$ only agree for $t > 1$, so it would be incorrect to write $L(1) = 2$.}  Instead, we infer from the graph two other points: $(2, 1)$ and $(3, 0)$.  We get the slope to be \[m = \frac{\Delta W}{\Delta t} = \frac{\Delta [L(t)]}{\Delta t} = \frac{3 - 2}{0 - 1} = -1.\] Next, we choose a point to plug into  $L(t) = L(t_{\,\mbox{\tiny $0$}}) + m(t - t_{\,\mbox{\tiny $0$}})$.  We have two options:  $t_{\,\mbox{\tiny $0$}} = 2$ and $L(t_{\,\mbox{\tiny $0$}}) = 1$ or $t_{\,\mbox{\tiny $0$}} = 3$ and $L(t_{\,\mbox{\tiny $0$}}) = 0$.  Using the latter, we get $L(t) = 0 + (-1)(t - 3)$, or $L(t) = -t + 3$.  Putting this together with the first part, we get:
+From the graph of $W = L(t)$ we see that there are two distinct pieces. Taking note of the point at $(1, 4)$, we get $L(t) = 4$ for $t \leq 1$.  To represent $L$ for $t>1$, we use the point-slope form of a linear function: $L(t) = L(t_0) + m(t - t_0)$.  The only `point' labeled with this part of the graph is the hole at $(1, 2)$ and it isn't technically part of the graph, so we will avoid using it.\footnote{We actually could use the point $(1, 2)$ to find the equation of the \textbf{line} containing $(1, 2)$ and, say $(3, 0)$, which is $y = -t + 3$.  It's just that the graph of $L(t)$ and the line $y = -t + 3$ only agree for $t > 1$, so it would be incorrect to write $L(1) = 2$.}  Instead, we infer from the graph two other points: $(2, 1)$ and $(3, 0)$.  We get the slope to be \[m = \frac{\Delta W}{\Delta t} = \frac{\Delta [L(t)]}{\Delta t} = \frac{3 - 2}{0 - 1} = -1.\] Next, we choose a point to plug into  $L(t) = L(t_0) + m(t - t_0)$.  We have two options:  $t_0 = 2$ and $L(t_0) = 1$ or $t_0 = 3$ and $L(t_0) = 0$.  Using the latter, we get $L(t) = 0 + (-1)(t - 3)$, or $L(t) = -t + 3$.  Putting this together with the first part, we get:
 \[L(t) = \left\{ \begin{array}{rcl}  4 & \mbox{ if } & t \leq 1 \\
 -t+3 & \mbox{ if } & t >1
  \end{array} \right.\]
@@ -807,26 +807,6 @@ We are graphing a line so we need to plot just one more point to determine the g
 
 \begin{center}
 
-% \begin{mfpic}[20]{-1}{7}{-1}{5}
-% \axes
-% \gclear \tlabelrect(-0.05,0.5){$\asymp$}
-% \tlabel[cc](7,-0.5){  $g$}
-% \tlabel[cc](0.5,5){  $y$}
-% \xmarks{1,2,3,4,5,6}
-% \ymarks{1,2,3,4}
-%  
-% \tlabel[cc](-0.75, 1){$(0, 60)$}
-% \tlabel[cc](4, 0.5){$(4, 60)$}
-% \tlabel[cc](6.5, 2.5){$(6, 70)$}
-% \tlpointsep{4pt}
-% \axislabels {x}{ {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6 }
-% \axislabels {y}{{$65$} 2,   {$70$} 3, {$75$} 4}
-% \penwd{1.25pt}
-% \arrow \polyline{(0, 1), (4, 1), (7, 4)}
-% \point[3pt]{(0,1), (4, 1), (6,3) }
-% \tcaption{  $y =C(g)$}
-% \normalsize
-% \end{mfpic} 
 
 \begin{tikzpicture}[scale=1]
   % Axes
