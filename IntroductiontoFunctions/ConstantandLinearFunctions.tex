@@ -138,4 +138,216 @@ Some remarks about  Definition \ref{constantfunction} are in order.   First, not
 Also note that we are using the generic defaults for function names and independent variables, namely $f$ and $x$, respectively.   The functions  $G(t) = \sqrt{\pi}$ and $Z(\rho) = 0$ are also fine examples of constant functions.  Recall that inherent in the definition of a function is the notion of domain, so we record (as part of the definition) that a constant function has domain $(-\infty, \infty)$.  The range of a constant function is the set $\{b \}$.  The value $b$ in this case is both the maximum and minimum of $f$, attained at each value in its domain.\footnote{It gets much weirder than that as we explore other more complicated functions.  The key is to pay attention to the precision in the definitions of the terms involved in the discussion. Stay tuned!}\label{rangeofconstantismaxandmin}
 
 The next example showcases an application of constant functions and introduces the notion of a \textbf{piecewise-defined} function.
+
+
+
+\begin{example} \label{piecewiseconstantex}  The price of admission to see a matinee showing at a local movie theater is a function of the age  of the ticket holder.  If a person is aged $A$ years, the price per ticket is $p(A)$ dollars and is given by:
+
+\[
+p(A) = \begin{cases} 
+        5.75 & \text{if $0 \leq A < 6$ or $A \geq 50$}, \\ 
+        7.25 & \text{if $6 \leq A < 50$} 
+      \end{cases}
+\]
+
+\begin{enumerate}
+
+\item Find and interpret $p(3)$, $p(6)$ and $p(62)$.
+
+\item Explain the pricing structure verbally.
+
+\item Graph $p$.
+
+\end{enumerate}
+
+\begin{explanation}  The function $p$ described above is an example of a \index{function ! piecewise-defined} \textbf{piecewise-defined} function because the \textbf{rule} to determine outputs, not just the value of the output,  changes depending on the inputs.
+
+\begin{enumerate}
+
+\item To find $p(3)$, we note that the value $A = 3$ satisfies the inequality $0 \leq A < 6$ so we use the rule $p(A) = 5.75$.  Hence, $p(3) = 5.75$ which means a ticket for a $3$ year old is $\$ 5.75$.  The next age, $A = 6$, just barely satisfies the inequality $6 \leq A < 50$ so we use the rule $p(A) = 7.25$, This yields $p(6) = 7.25$ which means a ticket for a $6$ year old is $\$ 7.25$.  Lastly, $A = 62$ satisfies the inequality $A \geq 50$, so we are back to the rule $p(A) = 5.75$.  Thus $p(62) = 5.75$ which means someone $62$ years young gets in for $\$ 5.75$.
+
+\item  Now that we've had some practice interpreting function values, we can begin to verbalize what the function is really saying.  In the first `piece' of the function, the inequality $0 \leq A < 6$  describes ticket holders under the age of 6 years and  the inequality $A \geq 50$ describes ticket holders fifty years old or or older.  For  folks in these two age demographics, $p(A) = 5.75$ so the price per ticket is $\$ 5.75$.  For everyone else, that is for folks at least $6$ but younger than $50$, the price is $\$7.25$ per ticket.
+
+\item   The independent variable here is specified as $A$, so we'll label our horizontal axis that way.  The dependent variable remains unspecified so we can use the default $y$.  The graph of $y = p(A)$ consists of three horizontal line pieces:  the first is $y = 5.75$ for $0 \leq A < 6$, the second piece is $y = 7.25$ for $6 \leq A < 50$, and the last piece is $y = 5.75$ for $A \geq 50$.  
+
+For the first piece, note that $A = 0$ is included in the inequality $0 \leq A < 6$ but $A = 6$ is not.  For this reason, we have a point indicated at $(0, 5.75)$ but leave a hole\footnote{See our discussion about holes in graphs in Example \ref{volumeex1} in Section \ref{FunctionsandtheirRepresentations}.} at $(6, 5.75)$.  Similarly, to graph the second piece, we begin with a point at $(6, 7.25)$ and continue the horizontal line to a hole at $(50, 7.25)$.  Lastly,  we finish the graph with a point at $(50, 5.75)$ and continue to the right indefinitely.\footnote{The domain of $p$ is $[0, \infty)$ by definition, even though few 327 year olds are out and about these days.} Note the scaling on the horizontal axis compared to the vertical axis.
+
+
+\begin{image}
+
+\begin{tikzpicture}[scale=0.9]
+  % Axes
+  \draw[->] (-1,0) -- (6.5,0) node[below right] {  $A$};
+  \draw[->] (0,-1) -- (0,5.5) node[above right] {  $y$};
+
+  % Ticks
+  \foreach \x/\xlabel in {1/10,2/20,3/30,4/40,5/50}
+    \draw (\x,0.1) -- (\x,-0.1) node[below=3pt] {  $\xlabel$};
+  \foreach \y/\ylabel in {1/2,2/4,4/8}
+    \draw (0.1,\y) -- (-0.1,\y) node[left=3pt] {  $\ylabel$};
+
+  % Labels near points
+  \node[left] at (0,2.875) {  $(0, 5.75)$};
+  \node[above right] at (0.6,3.625) {  $(6, 7.25)$};
+  \node[above left] at (5,2.4) {  $(50, 5.75)$};
+
+  % Piecewise function
+  \draw[thick] (0,2.875) -- (0.6,2.875);              % left horizontal
+  \draw[thick] (0.6,3.625) -- (5,3.625);              % middle horizontal
+  \draw[->,thick] (5,2.875) -- (6,2.875);             % right horizontal with arrow
+
+  % Points
+  \filldraw (0,2.875) circle (2pt);
+  \filldraw (5,2.875) circle (2pt);
+  \filldraw (0.6,3.625) circle (2pt);
+
+  % Hollow points
+  \draw (0.6,2.875) circle (2pt);
+  \draw (5,3.625) circle (2pt);
+
+  % Caption
+  \node[below,align=left] at (2.5,-1) 
+    {  $y = p(A) = 
+      \begin{cases} 
+        5.75 & \text{if $0 \leq A < 6$ or $A \geq 50$}, \\ 
+        7.25 & \text{if $6 \leq A < 50$} 
+      \end{cases}$};
+\end{tikzpicture}
+\end{image}
+\begin{center}
+  \captionof{figure}{Graphs of constant functions}
+%\xmalt{A horizontal segment} at $y=5.75$ begins with a closed circle at $(0,5.75)$ and ends with an open circle at $(6,5.75)$. A second horizontal segment at $y=7.25$ begins with a closed circle at $(6,7.25)$ and ends with an open circle at $(50,7.25)$. A third horizontal ray at $y=5.75$ begins with a closed circle at $(50,5.75)$ and extends to the right. The graph jumps upward at $A=6$ and downward at $A=50$.} 
+\end{center}
+
+\end{enumerate}
+
+\end{explanation}
+
+\end{example}
+
+
+
+One of the favorite piecewise-defined functions in mathematical circles is the \index{integer ! greatest integer function} \index{greatest integer function}\textbf{greatest integer of \boldmath{$x$}}, denoted by $\lfloor x \rfloor$. In Section \ref{setsofnumbersboxonthispage} we defined the set of \textbf{integers} as  $\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$.\footnote{The use of the letter $\mathbb{Z}$ for the integers is ostensibly because the German word \textbf{zahlen} means `to count'.}  The value $\lfloor x \rfloor$  is defined to be the largest integer $k$ with $k \leq x$.  That is, $\lfloor x \rfloor$ is the unique integer $k$ such that $k \leq  x < k+1$.  Said differently, given any real number $x$, if $x$ is an integer, then  $\lfloor x \rfloor = x$.  If not, then $x$ lies in an interval between two integers, $k$ and $k+1$ and we choose  $\lfloor x \rfloor = k$, the left endpoint.
+
+\begin{example} \label{greatestintegerdefn} Let  $\lfloor x \rfloor$  denote the greatest integer function.
+
+\begin{enumerate}
+
+\item  Find $\lfloor 0.785 \rfloor$, $\lfloor 117 \rfloor$, $\lfloor -2.001 \rfloor$ and $\lfloor \pi + 6 \rfloor$
+
+\item  Explain how we can view $\lfloor x \rfloor$ as a piecewise-defined function and use this to graph $y = \lfloor x \rfloor$.
+
+\end{enumerate}
+
+\begin{explanation}
+
+\begin{enumerate}
+
+\item To find $\lfloor 0.785 \rfloor$, we note that $0 \leq 0.785  < 1$ so $\lfloor 0.785 \rfloor = 0$.  Given that $117$ is an integer, we have $\lfloor 117 \rfloor = 117$.  To find $\lfloor -2.001 \rfloor$, we note that $-3 \leq -2.001 < -2$, so $\lfloor -2.001 \rfloor = -3$. Finally, with $\pi \approx 3.14$, we get $\pi + 6  \approx 9.14$ and $9 \leq \pi+6 < 10$ so $\lfloor \pi + 6  \rfloor = 9$.
+
+\item  The first step in evaluating $\lfloor x \rfloor$ is to determine the interval $[k, k+1)$ containing $x$ so it seems reasonable that these are the intervals which produce the `pieces'.  In this case, there happen to be infinitely many pieces.  The inequality `$k \leq  x < k+1$' includes the left endpoint but excludes the right endpoint, so we have points at the left endpoints of our horizontal line segments while we have holes at the right endpoints. 
+\end{enumerate}
+
+
+A partial description of $\lfloor x \rfloor$ is given alongside a partial graph at the top of the next page.  (A full description or a complete graph would require infinitely large paper!) We use the vertical dots $\, \smash{\vdots} \,$ to indicate that both the rule and the graph continue indefinitely following the established pattern.\footnote{It is always dangerous to leave the rest of the pattern to the reader.  See, for instance, \href{http://www.math.kent.edu/~white/papers/pattern.pdf}{\underline{this paper}.}}
+
+
+
+$ \lfloor x \rfloor = \begin{cases} 
+\vdots & \\
+-5 & \text{if $\,-5 \leq x < -4$} \\
+-4 & \text{if $\,-4 \leq x < -3$} \\
+-3 & \text{if $\,-3 \leq x < -2$} \\
+-2 & \text{if $\,-2 \leq x < -1$} \\
+-1 & \text{if $\,-1 \leq x < 0$} \\
+0 & \text{if $\,\hphantom{-}0 \leq x < 1$} \\
+1 & \text{if $\,\hphantom{-}1 \leq x < 2$} \\
+2 & \text{if $\,\hphantom{-}2 \leq x < 3$} \\
+3 & \text{if $\,\hphantom{-}3 \leq x < 4$} \\
+4 & \text{if $\,\hphantom{-}4 \leq x < 5$} \\
+5 & \text{if $\,\hphantom{-}5 \leq x < 6$} \\ 
+\smash{\vdots} & \end{cases} $
+
+
+% \begin{mfpic}[15]{-7}{7}{-7}{7}
+% \axes
+% \tlabel[cc](7,-0.5){  $x$}
+% \tlabel[cc](0.5,7){  $y$}
+% \tlabel[cc](7,7){$\vdots$}
+% \tlabel[cc](-6,-6.5){$\vdots$}
+% \xmarks{-6,-5,-4,-3,-2,-1,2,3,4,5,6}
+% \ymarks{-6,-5,-4,-3,-2,1,2,3,4,5,6}
+% \tlpointsep{5pt}
+%  
+% \axislabels {x}{{$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+% \axislabels {y}{{$-6$} -6, {$-5$} -5,{$-4$} -4, {$-3$} -3,{$-2$} -2,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
+% \normalsize
+% \penwd{1.25pt}
+% \point[3pt]{(-6,-6), (-5,-5), (-4,-4), (-3,-3), (-2,-2), (-1,-1), (0,0), (1,1), (2,2), (3,3), (4,4), (5,5), (6,6) }
+% \polyline{(-6,-6), (-5,-6)}
+% \polyline{(-5,-5), (-4,-5)}
+% \polyline{(-4,-4), (-3,-4)}
+% \polyline{(-3,-3), (-2,-3)}
+% \polyline{(-2,-2), (-1,-2)}
+% \polyline{(-1,-1), (0,-1)}
+% \polyline{(0,0), (1,0)}
+% \polyline{(1,1), (2,1)}
+% \polyline{(2,2), (3,2)}
+% \polyline{(3,3), (4,3)}
+% \polyline{(4,4), (5,4)}
+% \polyline{(5,5), (6,5)}
+% \polyline{(6,6), (7,6)}
+% \pointfillfalse
+% \point[3pt]{(-5, -6), (-4, -5), (-3, -4), (-2, -3), (-1, -2), (0, -1), (1,0), (2,1), (3,2), (4,3), (5,4), (6, 5), (7, 6)}
+% \tcaption{The graph of $y= \lfloor x \rfloor$.}
+% \end{mfpic} 
+
+
+\begin{tikzpicture}[scale=0.6]
+  % Axes
+  \draw[->] (-7,0) -- (7.5,0) node[below right] {  $x$};
+  \draw[->] (0,-7) -- (0,7.5) node[above right] {  $y$};
+
+  % Decorative vertical dots
+  \node at (7,7) {$\vdots$};
+  \node at (-6,-6.5) {$\vdots$};
+
+  % Ticks
+  \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+    \draw (\x,0.15) -- (\x,-0.15);
+  \foreach \y in {-6,-5,-4,-3,-2,1,2,3,4,5,6}
+    \draw (0.15,\y) -- (-0.15,\y);
+
+  % Axis labels
+  \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+    \node[below] at (\x,0) {  $\x$};
+  \foreach \y in {-6,-5,-4,-3,-2,1,2,3,4,5,6}
+    \node[left] at (0,\y) {  $\y$};
+
+  % Filled points on diagonal (integer, integer)
+  \foreach \k in {-6,-5,...,6}
+    \filldraw (\k,\k) circle (2pt);
+
+  % Horizontal step segments
+  \foreach \k in {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6}
+    \draw[thick] (\k,\k) -- (\k+1,\k);
+
+  % Open points at right end of steps
+  \foreach \k in {-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7}
+    \draw (\k,\k-1) circle (2pt);
+
+  % Caption
+  \node[below] at (0,-7) {The graph of $y=\lfloor x \rfloor$.};
+\end{tikzpicture}
+\end{explanation}
+\end{example}
+
+\subsection{Linear Functions}
+\label{LinearFunctions}
+
+Now that we've discussed the functions which correspond to horizontal lines, $y = b$, we move to discussing the functions which can be represented by lines of the form $y = mx + b$ where $m \neq 0$.  These functions are called \textbf{linear} functions and are described below.
+
+\begin{definition}\label{linearfunction} A \index{function ! linear}\index{line ! linear function}\index{linear function}\textbf{linear function} is a function of the form \[ f(x) = mx + b,\] where $m$ and $b$ are real numbers with $m \neq 0$.  The domain of a linear function is $(-\infty, \infty)$.
+\end{definition}
+
 \end{document}
