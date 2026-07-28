@@ -1524,66 +1524,135 @@ If, however, $ \frac{\pi}{2} < t \leq \pi$, then $x = \sec(t) \leq -1$, so we ne
 
 
 
-\begin{center}
-\begin{tabular}{ccc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-%\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){\scriptsize $\theta$}
-\tlabel[cc](3,2.75){\scriptsize $P(1,\sqrt{x^2-1})$}
-\gclear \tlabelrect(0,1.5){\scriptsize $r = x$ \vphantom{$\frac{1}{2}$}}
-\point[4pt]{(0,0), (1.5, 2.6)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (2.5, 4.3301)}
-\end{mfpic} 
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-&
+\def\panelwidth{8}
+\def\R{2}
+\def\ang{60}
 
-&
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-%\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 115, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){\scriptsize $\theta$}
-\tlabel[cc](-3.5,2.75){\scriptsize $P(-1,\sqrt{x^2-1})$}
-\tlabel[cc](-2,1.25){\scriptsize $r = -x$}
-\point[4pt]{(0,0), (-1.5, 2.6)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)}
-\end{mfpic} 
+%================================================
+% Left panel
+%================================================
 
-\\
+% Circle
+\draw[gray!50] (0,0) circle (\R);
 
+% Axes
+\draw[->] (-\R-0.55,0) -- (\R+1.3,0)
+    node[right] {$x$};
 
-$0 < \theta < \frac{\pi}{2}$, $x \geq 1$, $r = x$.
+\draw[->] (0,-\R-0.55) -- (0,\R+0.8)
+    node[above] {$y$};
 
-&
-&
+% Positive x-axis
+\draw[very thick] (0,0)--(\R,0);
 
-$\frac{\pi}{2} < \theta < \pi$, $x \leq -1$, $r = -x$. \\
+% Radius
+\draw[very thick] (0,0)--(\px,\py);
+\draw[very thick]
+    (\px,\py)--({1.45*\R*cos(\ang)},{1.45*\R*sin(\ang)});
 
-\end{tabular}
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
 
-\end{center}
+% Angle
+\draw[->]
+    (0.60,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.60
+    ];
+
+\node at (0.88,0.4) {$\theta$};
+
+% Radius label
+\node at (0,0.95)
+    {$r=x$};
+
+% Point label
+\node[right] at (\px+0.15,\py+0.08)
+    {$P\!\left(1,\sqrt{x^{2}-1}\right)$};
+
+% Unit labels
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% Bottom text
+\node at (0,-3.0)
+    {$0<\theta<\frac{\pi}{2},\;x\ge1,\;r=x$};
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Axes
+\draw[->] (-\R-0.55,0) -- (\R+1.3,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.55) -- (0,\R+0.8)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0)--(\R,0);
+
+% Radius
+\draw[very thick] (0,0)--(-\px,\py);
+\draw[very thick]
+    (-\px,\py)--({-1.45*\R*cos(\ang)},{1.45*\R*sin(\ang)});
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (-\px,\py) circle (2.5pt);
+
+% Angle
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=120,
+        radius=0.75
+    ];
+
+\node at (0.9,0.7) {$\theta$};
+
+% Radius label
+\node at (-1.25,1.15)
+    {$r=-x$};
+
+% Point label
+\node[left] at (-\px-0.15,\py+0.08)
+    {$P\!\left(-1,\sqrt{x^{2}-1}\right)$};
+
+% Unit labels
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% Bottom text
+\node at (0,-3.0)
+    {$\frac{\pi}{2}<\theta<\pi,\;x\le-1,\;r=-x$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
  
 
@@ -1897,67 +1966,138 @@ If, however, $ \pi \leq t < \frac{3\pi}{2}$, then $x = \sec(t) \leq -1$, so we n
 
 
 
-\begin{center}
-\begin{tabular}{ccc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-%\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){\scriptsize $\theta$}
-\tlabel[cc](3,2.75){\scriptsize $P(1,\sqrt{x^2-1})$}
-\gclear \tlabelrect(0,1.5){\scriptsize $r = x$ \vphantom{$\frac{1}{2}$}}
-\point[4pt]{(0,0), (1.5, 2.6)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (2.5, 4.3301)}
-\end{mfpic} 
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-&
+\def\panelwidth{7.4}
+\def\R{2}
+\def\ang{60}
 
-&
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
 
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-%\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.5,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \parafcn{5, 235, 5}{1.5*dir(t)}
-\tlabel[cc](1.732, 1){\scriptsize $\theta$}
-\tlabel[cc](-3.5,-2.75){\scriptsize $P(-1,-\sqrt{x^2-1})$}
-\tlabel[cc](-2,-1.25){\scriptsize $r = -x$}
-\point[4pt]{(0,0), (-1.5, -2.6)}
-\penwd{1.25pt}
-\arrow \polyline{(5,0), (0,0), (-2.5, -4.3301)}
-\end{mfpic} 
+%================================================
+% Left panel
+%================================================
 
-\\
+% Circle
+\draw[gray!50] (0,0) circle (\R);
 
+% Axes
+\draw[->] (-\R-0.55,0) -- (\R+1.25,0)
+    node[right] {$x$};
 
-$0 < \theta < \frac{\pi}{2}$, $x \geq 1$, $r = x$.
+\draw[->] (0,-\R-0.55) -- (0,\R+0.8)
+    node[above] {$y$};
 
-&
-&
+% Positive x-axis
+\draw[very thick] (0,0)--(\R,0);
 
-$\pi < \theta < \frac{3 \pi}{2}$, $x \leq -1$, $r = -x$. \\
+% Radius
+\draw[very thick] (0,0)--(\px,\py);
+\draw[very thick]
+    (\px,\py)--({1.45*\R*cos(\ang)},{1.45*\R*sin(\ang)});
 
-\end{tabular}
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (\px,\py) circle (2.5pt);
 
-\end{center}
+% Angle
+\draw[->]
+    (0.62,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.62
+    ];
 
+\node at (0.90,0.54) {$\theta$};
+
+% Radius label
+\node at (0,0.95)
+    {$r=x$};
+
+% Point label
+\node[right] at (\px+0.15,\py+0.08)
+    {$P\!\left(1,\sqrt{x^{2}-1}\right)$};
+
+% Unit labels
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% Bottom text
+\node at (0,-3.05)
+    {$0<\theta<\frac{\pi}{2},\;x\ge1,\;r=x$};
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Inner reference circle
+%\draw (0,0) circle (0.95);
+
+% Axes
+\draw[->] (-\R-0.55,0) -- (\R+1.25,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.55) -- (0,\R+0.8)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0)--(\R,0);
+
+% Radius
+\draw[very thick] (0,0)--(-\px,-\py);
+\draw[very thick]
+    (-\px,-\py)--({-1.45*\R*cos(\ang)},{-1.45*\R*sin(\ang)});
+
+% Points
+\fill (0,0) circle (2.5pt);
+\fill (-\px,-\py) circle (2.5pt);
+
+% Angle
+\draw[->]
+    (0.95,0)
+    arc[
+        start angle=0,
+        end angle=240,
+        radius=0.95
+    ];
+
+\node at (1.10,0.65) {$\theta$};
+
+% Radius label
+\node at (-1.30,-0.75)
+    {$r=-x$};
+
+% Point label
+\node[left] at (-\px-0.18,-\py-0.05)
+    {$P\!\left(-1,-\sqrt{x^{2}-1}\right)$};
+
+% Unit labels
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+% Bottom text
+\node at (0,-3.05)
+    {$\pi<\theta<\frac{3\pi}{2},\;x\le-1,\;r=-x$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
  
 
 In the Quadrant I case, when $x \geq 1$, we get $\tan(\theta)  = \frac{\sqrt{x^2-1}}{1} = \sqrt{x^2-1}$.  In Quadrant III, when $x \leq -1$, we obtain  $\tan(\theta)  = \frac{-\sqrt{x^2-1}}{-1} = \sqrt{x^2-1}$.   Hence, in both cases, we obtain the same answer as we did in number \ref{tangentofarcsecantexample2} above:  $f(x)  = \tan(\mbox{arcsec}(x)) = \sqrt{x^2-1}$ for $x$ in $(-\infty, -1] \cup [1, \infty)$.
@@ -2040,63 +2180,175 @@ Let  $\alpha$ be the reference angle for $\theta$, as pictured below on the left
 
 Since the argument of arccotangent is now a \emph{positive} $2$, we can use  Theorem \ref{arctangentcotangentfunctionprops} to get $\alpha = \mbox{arccot}(2) =\arctan\left(\frac{1}{2}\right)$ radians. Since $\theta = \pi - \alpha =  \pi - \arctan\left(\frac{1}{2}\right) \approx 2.6779$ radians, we get  $\mbox{arccot}(-2) \approx 2.6779$.
 
-\begin{multicols}{2}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\panelwidth{7.6}
+\def\R{2}
+\def\ang{153.435}   % arccot(-2) in Quadrant II
+\def\refang{26.565} % reference angle
+\def\refangopp{333.4}
+
+\pgfmathsetmacro{\px}{\R*cos(\ang)}
+\pgfmathsetmacro{\py}{\R*sin(\ang)}
+
+%================================================
+% Left panel
+%================================================
+
+% Circle
+\draw[gray!50] (0,0) circle (\R);
+
+% Axes
+\draw[->] (-\R-1.0,0) -- (\R+1.4,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\R-0.35) -- (0,\R+0.75)
+    node[above] {$y$};
+
+% Positive x-axis
+\draw[very thick] (0,0) -- (\R+0.9,0);
+
+% Terminal line
+\draw[very thick]
+    ({1.5*\R*cos(\ang)},{1.5*\R*sin(\ang)})
+    --
+    (0,0);
+
+% Points
+\fill (0,0) circle (2.5pt);
+
+% Main angle
+\draw[->]
+    (0.95,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.95
+    ];
+
+% Reference angle
+\draw[-]
+    (180:0.66)
+    arc[
+        start angle=180,
+        end angle=\ang,
+        radius=0.66
+    ];
+
+% Labels
+\node at (-1,0.2) {$\alpha$};
+
+\node[right] at (0.45,1)
+    {$\theta=\operatorname{arccot}(-2)\text{ radians}$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\node at (0,-2.75)
+    {$\alpha\text{ is a reference angle of }\theta$};
 
 
-\begin{mfpic}[18]{-5}{5}{-3.5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \arrow \parafcn{157, 177, 5}{2.25*dir(t)}
-\tlabel[cc](-2.75, 0.5){\scriptsize $\alpha$}
-\point[4pt]{(0,0)}
-\gclear \tlabelrect[cc](2.75, 2.5){\scriptsize \mbox{$\theta = \mbox{arccot}(-2)$ radians}}
-\arrow \parafcn{0, 150, 5}{2.25*dir(t)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.532, 2.113)}
-\tcaption{\scriptsize $\alpha$ is a reference angle of $\theta$ \vphantom{$\beta = \arctan\left(-\frac{1}{2}\right)$}}
-\end{mfpic}
+%================================================
+% Right panel
+%================================================
 
+\begin{scope}[xshift=\panelwidth cm]
 
+% Circle
+\draw[gray!50] (0,0) circle (\R);
 
+% Axes
+\draw[->] (-\R-1.0,0) -- (\R+1.4,0)
+    node[right] {$x$};
 
-\begin{mfpic}[18]{-5}{5}{-3.5}{5}
-\axes
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\tlabel(3.1,-0.75){\scriptsize $1$}
-\tlabel(0.25,3.1){\scriptsize $1$}
-\xmarks{-3 step 3 until 3}
-\ymarks{-3 step 3 until 3}
-\drawcolor[gray]{0.7}
-\circle{(0,0),3}
-\drawcolor{black}
-\arrow \reverse \parafcn{157, 177, -5}{2*dir(t)}
-\arrow  \parafcn{-3, -23, -5}{2*dir(t)}
-\gclear \tlabelrect[cc](0, 1.6){\scriptsize \mbox{$\pi$}}
-\arrow  \parafcn{5, 175, 5}{1.35*dir(t)}
-\arrow \reverse \arrow \parafcn{160,325,5}{0.9*dir(t)}
-\tlabel[cc](-0.65,-1){\scriptsize $\pi$}
-\tlabel[cc](-2.5, 0.5){\scriptsize $\beta$}
-\tlabel[cc](2.5, -0.5){\scriptsize $\beta$}
-\point[4pt]{(0,0)}
-\gclear \tlabelrect[cc](2.75, 2.5){\mbox{\scriptsize $\theta = \mbox{arccot}(-2)$ radians}}
-\arrow \parafcn{0, 150, 5}{2.25*dir(t)}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (-4.532, 2.113)}
-\arrow \reverse \arrow \polyline{(5,0), (0,0), (4.532, -2.113)}
-\tcaption{\scriptsize $\beta = \arctan\left(-\frac{1}{2}\right)$ radians}
-\end{mfpic} 
+\draw[->] (0,-\R-0.35) -- (0,\R+0.75)
+    node[above] {$y$};
 
-\end{multicols}
+% Positive x-axis
+\draw[very thick] (0,0) -- (\R+0.9,0);
 
+% Full terminal line
+\draw[very thick]
+    ({1.5*\R*cos(\ang)},{1.5*\R*sin(\ang)})
+    --
+    ({1.5*\R*cos(\ang+180)},{1.5*\R*sin(\ang+180)});
+
+% Points
+\fill (0,0) circle (2.5pt);
+
+% Outer angle theta
+\draw[->]
+    (1.15,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=1.15
+    ];
+
+% Upper reference angle beta
+\draw[->]
+    (180:1.4)
+    arc[
+        start angle=180,
+        end angle=\ang,
+        radius=1.4
+    ];
+
+% Lower reference angle beta
+\draw[->]
+    (0:1.4)
+    arc[
+        start angle=0,
+        end angle=-\refang,
+        radius=1.4
+    ];
+
+% Upper half-turn
+\draw[<->]
+    (0.8,0)
+    arc[
+        start angle=0,
+        end angle=180,
+        radius=0.8
+    ];
+
+% Lower half-turn
+\draw[<->]
+    (-0.54,0.27)
+    arc[
+        start angle=\ang,
+        end angle=\refangopp,
+        radius=0.6
+    ];
+
+% Labels
+\node at (-1.62,0.34) {$\beta$};
+\node at (1.72,-0.34) {$\beta$};
+
+\node at (0.1,0.9) {$\pi$};
+\node at (-0.42,-0.8) {$\pi$};
+
+\node[right] at (0.48,1.3)
+    {$\theta=\operatorname{arccot}(-2)\text{ radians}$};
+
+\node[above right] at (0,\R) {$1$};
+\node[below right] at (\R,0) {$1$};
+
+\node at (0,-2.75)
+    {$\beta=\arctan\!\left(-\frac{1}{2}\right)\text{ radians}$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Another way to attack the problem is to use $\arctan\left(-\frac{1}{2}\right)$.  By definition, we have the real number $t = \arctan\left(-\frac{1}{2}\right)$ satisfies $\tan(t) = -\frac{1}{2}$ with $-\frac{\pi}{2} < t < \frac{\pi}{2}$. Since $\tan(t)<0$, we know more specifically that $-\frac{\pi}{2} < t < 0$, so $t$ corresponds to an angle $\beta$ in Quadrant IV. We sketch $\beta$ along with $\theta =  \mbox{arccot}(-2)$ radians above on the right. 
  
