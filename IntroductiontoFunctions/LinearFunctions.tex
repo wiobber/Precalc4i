@@ -1,0 +1,283 @@
+\documentclass{ximera}
+
+% \input{../preamble.tex}
+
+%\title{Constant and Linear Functions}
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{Linear Functions}{}
+\license{CC BY-NC-SA 4.0}   
+\begin{abstract}
+\end{abstract}
+%\maketitle
+
+
+\label{LinearFunctions}
+
+
+
+Now that we've discussed the functions which correspond to horizontal lines, $y = b$, we move to discussing the functions which can be represented by lines of the form $y = mx + b$ where $m \neq 0$.  These functions are called \textbf{linear} functions and are described below.
+
+\begin{definition}\label{linearfunction} A \index{function ! linear}\index{line ! linear function}\index{linear function}\textbf{linear function} is a function of the form \[ f(x) = mx + b,\] where $m$ and $b$ are real numbers with $m \neq 0$.  The domain of a linear function is $(-\infty, \infty)$.
+\end{definition}
+
+
+
+
+
+
+
+As with Definition \ref{constantfunction},  in Definition \ref{linearfunction}, $x$ is the independent variable, $f$ is the function name, and both $m$ and $b$ are parameters.  Notice that $m$ is restricted by $m \neq 0$ for if $m = 0$ then the function $f(x) = mx + b$ would reduce to the constant function $f(x) = b$.  The domain of linear functions, like that of constant functions,  is specified as $(-\infty, \infty)$
+
+
+
+Recall\footnote{or see Section \ref{AppLines}} that the form of the line $y = mx + b$ is called the slope-intercept form of the line and the slope,  $m$, and the $y$-intercept $(0, b)$, are easily determined when the line is written this way. Likewise, the form of the function in Definition \ref{linearfunction}, $f(x) = mx + b$, is often called the \index{linear function ! slope-intercept} \textbf{slope-intercept form} of a linear function.
+
+
+
+The graph of a linear function is the graph of the line  $y = mx + b$.   Lines are uniquely determined by two points, and two points of geometric interest are the axis intercepts.  We've already reminded you of the $y$-intercept, $(0,b)$, which is obtained by setting $x = 0$. Similarly, to find the $x$-intercept, we set $y = 0$ and solve $mx + b = 0$ for $x$.  We leave this to the reader in Exercise \ref{xinterceptoflinear}.  In addition to having special graphical significance, axis intercepts quite often play important roles in applications involving both linear and non-linear functions.   For that reason, we take the time to define them here using function notation.
+
+
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition}\label{interceptdefns}
+
+Suppose $f$ is a function represented by the graph of $y = f(x)$.
+
+\begin{itemize}
+
+\item  If $0$ is in the domain of $f$ then the point $(0, f(0))$ is the \index{intercept ! $y$-intercept}  \textbf{$y$-intercept} of the graph of $y = f(x)$.
+
+That is, $(0,f(0))$ is where the graph meets the $y$-axis.
+
+\item  If $0$ is in the range of $f$ then the solutions to $f(x) = 0$ are called the \index{zeros} \textbf{zeros} of $f$.  If $c$ is a zero of $f$ then the point $(c,0)$ is an \index{intercept ! $x$-intercept}  \textbf{$x$-intercept} of the graph of $y = f(x)$.
+
+That is, $(c,0)$ is where the graph meets the $x$-axis.
+
+\end{itemize}
+
+\end{definition}
+
+As is customary in this text, Definition \ref{interceptdefns} uses the default independent variable $x$, function name $f$, and dependent variable $y$, so these letters will change depending on the context.  Also note that the `zeros' of a function are the solutions to $f(x) = 0$ - so they are \textbf{real numbers}.  The $x$-intercepts are, on the other hand, \textbf{points} on the graph.  As a quick example, consider $f(x) = x-3$.  The zeros of $f$ are found by solving $f(x) = 0$, or $x-3=0$.  We get one solution, $x = 3$.  Therefore, $x=3$ is the \textbf{zero} of $f$ that corresponds graphically to the $x$-\textbf{intercept} $(3,0)$.  
+
+
+
+We now turn our attention to slope.  The role of slope, or more generally a `rate of change',  in Science and Mathematics  cannot be overstated.\footnote{The first half of any introductory Calculus course is about slope.} As you may recall, or quickly read about on page \pageref{slope}, the slope of a line that has been graphed in the $xy$-plane is defined geometrically as follows: \[m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} ,\] where the capital Greek letter  `$\Delta$' denotes `change in.'\footnote{More specifically, if $(x_{0}, y_{0})$ and $(x_{1}, y_{1})$ are two distinct points in the plane, then $\Delta x = x_{1} - x_{0}$ and $\Delta y = y_{1} - y_{0}$.} In this course, it is vital that we regard the slope of a linear function as a  rate of change of \textbf{function outputs}  to \textbf{function inputs}.  That is, given the graph of a linear function $y = f(x) = mx + b$:   \[ m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x} = \frac{\Delta [f(x)]}{\Delta x} = \frac{\Delta \text{outputs}}{\Delta \text{inputs}}. \]  What is important to note here is that for linear functions, the rate of change $m$ is constant for all values in the domain.\footnote{See Exercise \ref{lineshaveconstantratesofchange} for more details.}  We'll see the importance of this statement in the upcoming examples.
+
+
+
+Geometrically, the sign of the slope has a profound impact on the graph of the line.  Recall that if the slope $m > 0$, the line rises as we read from left to right;   if $m<0$, the line falls as we read from left to right; if $m=0$, we have a horizontal line and the graph plateaus.  We define these notions more precisely for general functions in the following definition.
+
+%% \colorbox{ResultColor}{\bbm
+
+\begin{definition}
+
+\label{incdeccnstdefn}
+
+Let $f$ be a function defined on an interval $I$.  Then $f$ is said to be:
+
+\begin{itemize}
+
+\item  \textbf{increasing} on $I$ if, whenever $a < b$, then $f(a) < f(b)$.   (i.e., as inputs increase, outputs \textbf{increase}.)
+
+\textbf{NOTE:}  The graph of an increasing function  \textbf{rises} as one moves from left to right.
+
+\item  \textbf{decreasing} on $I$ if, whenever $a < b$, then $f(a) > f(b)$.  (i.e., as inputs increase, outputs \textbf{decrease}.)
+
+\textbf{NOTE:}  The graph of a decreasing function \textbf{falls} as one moves from left to right.
+
+\item  \textbf{constant} on $I$ if $f(a) = f(b)$ for all $a$, $b$ in $I$.  (i.e., outputs don't change with inputs.)
+
+\textbf{NOTE:}  The graph of a function that is constant over an interval is a horizontal line.
+
+\end{itemize}
+
+\end{definition}
+
+%% \ebm}
+
+
+
+Again, as with Definition \ref{interceptdefns}, Definition  \ref{incdeccnstdefn} applies to any function, not just linear and constant functions.  Also, note that, like Definition \ref{absmaxmindefn}, Definition \ref{incdeccnstdefn}  blurs the line between the function, $f$, and its outputs, $f(x)$, because the verbiage `$f$ is increasing' is really a statement about the outputs, $f(x)$.  Finally, when we ask `where' a function is increasing, decreasing or constant, we are looking for an interval of \textbf{inputs}.  We'll have more to say about this in later sections, but for now, we summarize these ideas graphically below.
+
+
+
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
+
+  % X marks
+  \foreach \x in {-3,-2,-1,1,2,3}
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\x};
+
+  % Y marks
+  \foreach \y in {-2,-1,1,2,3,4}
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\y};
+
+  % Line with arrows
+  \draw[thick, ->, >=stealth] (-3,-2.5) -- (2,4);
+  \draw[thick, <-, >=stealth] (-3,-2.5) -- (2,4);
+
+  % Caption
+
+  \node[below,align=left] at (3,3) {`increasing', $m > 0$};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[scale=0.8]
+
+  % Axes
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
+
+  % X ticks + labels
+  \foreach \x/\xlabel in {-3/{$-3 \hspace{7pt}$}, -2/{$-2 \hspace{7pt}$}, -1/{$-1 \hspace{7pt}$}, 1/{$1$}, 2/{$2$}, 3/{$3$}}
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\xlabel};
+
+  % Y ticks + labels
+  \foreach \y/\ylabel in {-2/{$-2$}, -1/{$-1$}, 1/{$1$}, 2/{$2$}, 3/{$3$}, 4/{$4$}}
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
+
+  % Decreasing line with arrows on both ends
+  \draw[thick, <->, >=stealth] (-3.5,3) -- (2,-3);
+
+  % Caption
+  % \node[below,align=left] at (3,-1) {`decreasing', $m < 0$};
+
+\end{tikzpicture}
+
+
+
+
+
+\begin{tikzpicture}[scale=0.8]
+
+  % Axes
+  \draw[->] (-4,0) -- (4.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-3) -- (0,5.2) node[above, font= ] {$y$};
+
+  % X ticks + labels
+  \foreach \x/\xlabel in {-3/{$-3 \hspace{7pt}$}, -2/{$-2 \hspace{7pt}$}, -1/{$-1 \hspace{7pt}$}, 
+                          1/{$1$}, 2/{$2$}, 3/{$3$}}
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\xlabel};
+
+  % Y ticks + labels
+  \foreach \y/\ylabel in {-2/{$-2$}, -1/{$-1$}, 1/{$1$}, 2/{$2$}, 3/{$3$}, 4/{$4$}}
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
+
+  % Constant line with arrows on both ends
+  \draw[thick, <->, >=stealth] (-4,3) -- (4,3);
+
+  % Caption
+  % \node[above,align=left] at (3,2){`constant', $m = 0$};
+
+\end{tikzpicture}
+
+
+
+
+
+From the graphs above, we see that regardless if $m>0$ or $m<0$, the range of linear functions is $(-\infty, \infty)$.  Therefore, linear functions have no maximum or minimum.\footnote{This is one of the more pedantic reasons why we distinguish between constant and linear functions.  See the discussion concerning the range of a constant function on page \pageref{rangeofconstantismaxandmin}.}
+
+\begin{example} \label{PortaBoyCost} The cost, in dollars, to produce $x$ PortaBoy\footnote{The similarity of this name to \href{http://www.toilets.com}{\underline{PortaJohn}} is deliberate.} game systems for a local retailer is given by   $C(x) = 80x + 150$ for $x \geq 0$.  
+
+\begin{enumerate}
+
+\item  Find and interpret $C(0)$ and $C(5)$ and use these to graph $y = C(x)$.
+
+\item  Explain the significance of the restriction on the domain, $x \geq 0$.
+
+\item  Interpret the slope of $y = C(x)$ geometrically and as a rate of change.
+
+\item How many PortaBoys can be produced for $\$15,\! 000$?  
+
+\end{enumerate}
+
+\smallskip
+
+{\bf Solution.}  
+
+\begin{enumerate}
+
+\item  To find $C(0)$, we substitute $0$ for $x$ in the formula $C(x)$ and obtain: $C(0) = 80(0) + 150 = 150$.  Given that $x$ represents the number of PortaBoys produced and $C(x)$ represents the cost to produce said PortaBoys, $C(0) = 150$ means it costs $\$150$ even if we don't produce any PortaBoys at all.  At first, this may not seem realistic, but that $\$150$ is often called the\index{cost ! fixed}\index{cost ! start-up} \textbf{fixed} or \textbf{start-up} cost of the venture.  Things like re-tooling equipment, leasing space, or any other `up front' costs get lumped into the fixed cost.  To find $C(5)$, we substitute $5$ for  $x$  in the formula $C(x)$:   $C(5) = 80(5)+150 = 550$.  This  means it costs $\$550$ to produce $5$ PortaBoys for the local retailer.  These two computations give us two points on the graph: $(0, C(0))$ and $(5, C(5))$.  Along with the domain restriction $x \geq 0$, we get:
+
+
+\begin{center}
+
+
+\begin{tikzpicture}[scale=0.9]
+
+  % Axes
+  \draw[->] (-1,0) -- (7.2,0) node[right, font= ] {$x$};
+  \draw[->] (0,-1) -- (0,7.2) node[above, font= ] {$y$};
+
+  % X ticks + labels
+  \foreach \x in {1,2,3,4,5,6}
+    \draw (\x,0.1) -- (\x,-0.1) node[below, font= ] {\x};
+
+  % Y ticks + labels (scaled to 100s)
+  \foreach \y/\ylabel in {1/{$100$}, 2/{$200$}, 3/{$300$}, 4/{$400$}, 5/{$500$}, 6/{$600$}}
+    \draw (0.1,\y) -- (-0.1,\y) node[left, font= ] {\ylabel};
+
+  % Line with arrow
+  \draw[thick, ->, >=stealth] (0,1.5) -- (6,6.3);
+
+  % Highlighted points
+  \filldraw (0,1.5) circle (2pt);
+  \filldraw (5,5.5) circle (2pt);
+
+  % Labels for points
+  \node[font= , right] at (0.2,1.5) {$(0,150)$};
+  \node[font= , right] at (5.2,5.5) {$(5,550)$};
+
+  % Caption
+  \node[font= , below] at (3,-1) {$y = C(x)$};
+
+\end{tikzpicture}
+
+
+\end{center}
+
+\item   In this context, $x$ represents the number of PortaBoys produced.  It makes no sense to produce a negative quantity of game systems,\footnote{Actually, it makes no sense to produce a fractional part of a game system, either, which we'll discuss later in this example.}  so $x \geq 0$.
+
+
+\item  The cost function $C(x)= 80x + 150$ is in slope-intercept form so we recognize the slope as the coefficient of $x$, $m = 80$.  With $m > 0$, the function $C$ is always increasing.  This means that it costs more money to make more game systems.  To interpret the slope as a rate of change, we note that the output, $C(x)$, is the cost in dollars, while the input, $x$,  is the number of PortaBoys produced:  \[ m = 80 = \frac{80}{1} =  \frac{\Delta [C(x)]}{\Delta x} = \frac{\$ 80}{1 \, \mbox{PortaBoy produced}}.\]  Hence, the cost to produce PortaBoys is increasing at a rate of $\$80$ per PortaBoy produced.  This is often called the \index{cost ! variable}\index{variable cost}\textbf{variable cost} for the venture. 
+
+
+\item  To find how many PortaBoys can be produced for $\$15, \! 000$, we solve $C(x) = 15000$, which means $80x+150 = 15000$.  This yields  $x = 185.625$.  We can produce only a whole number amount of PortaBoys so we are left with two options: produce $185$ or $186$ PortaBoys.  Given that $C(185) =  14950$ and $C(186) = 15030$, we would be over budget if we produced $186$ PortaBoys.  Hence, we can produce $185$ PortaBoys for $\$15, \! 000$ (with $\$50$ to spare). 
+
+\end{enumerate}
+
+\end{example}
+
+A couple of remarks about Example \ref{PortaBoyCost} are in order.  First, if $x$ represents the number of PortaBoy game systems being produced, then $x$ can really only take on whole number values.  We will revisit this scenario in Section \ref{QuadraticFunctions} where we will see how the approach presented here allows us to use more elegant techniques when analyzing the situation than a discrete data set would allow.\footnote{This is an example of using a `continuous' variable to model a `discrete' scenario.  Contrast this with the discussion following Example \ref{timetempex1} in Section \ref{FunctionsandtheirRepresentations}.} 
+
+
+
+Second, once we know that the variable cost is $\$80$ per PortaBoy, we can revisit a computation we did earlier in the example.  We computed $C(185) = 14950$ and needed to compute $C(186)$.  With $186$ being just one more PortaBoy than $185$, we can use the variable cost to get \[C(186) = C(185) + 80(1) =  14950 + 80 = 15030,\] which agrees with our earlier computation.\footnote{The cost to produce `just one more item' is called the\index{cost ! marginal} \index{marginal cost} \textbf{marginal cost}.  The difference between variable and marginal costs in this case are the units used: the variable cost is $\$ 80$ per Portaboy whereas the marginal cost is simply $\$80$.}  If we wanted to find $C(300)$, we could do something similar.  Using $300 - 185 = 115$, we can find $C(300)$ as follows: \[C(300) = C(185) + 80(115) = 14950 + 9200 = 24150.\] In general, we could rewrite  $C(x) = C(185) + 80(x - 115)$. This same reasoning shows that for any $x_0$ in the domain of $C$, we have $C(x) = C(x_0) + 80(x - x_0)$ - a fact we invite the reader to verify.\footnote{In the case $x_{0} = 0$, this formula reduces to $C(x) = C(0) + 80(x - 0) = 150 + 80x = 80x + 150$.  To show the formula in general, consider $C(x_{0}) = 80x_{0} + 150$ \ldots}   
+
+
+
+Indeed, the computations above are at the heart of what it means to be a linear function: linear functions change at a constant rate known as the slope.  To better see this algebraically, recall that given a point $(x_0, y_0)$ on a line along with the slope, $m$, the {\bf point-slope form of the line} is:  $y - y_0 = m(x - x_0)$.\footnote{See Section \ref{AppLines} for a review of this form.}  Rewriting, we get $y = y_0 + m (x - x_0)$ and setting $y = f(x)$ and $y_0 = f(x_0)$ yields:
+
+
+
+
+
+\begin{formula} \label{linearfunctionpointslope} The \index{linear function ! point-slope form} \index{point-slope form ! of a linear function} \textbf{point-slope form} of a linear function is \[ f(x) = f(x_0) + m (x - x_0) \]
+\end{formula}
+
+
+A few remarks are in order.  First note that if the point $(x_0, f(x_0))$ is the $y$-intercept $(0, b)$, Equation \ref{linearfunctionpointslope} immediately reduces to the slope-intercept form of the line: $ f(x) = f(x_0) + m (x - x_0)  = b + m(x - 0) = mx + b,$ so you can use Equation \ref{linearfunctionpointslope} exclusively from this point forward.\footnote{In other words, the slope intercept form of a line is just a special case of the point-slope form.}
+
+Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can rewrite Equation \ref{linearfunctionpointslope}  as follows: \[ \begin{array}{ccccc}
+ f(x_0 + \Delta x) & = & f(x_0) & + & m \Delta x \\
+ (\text{new output}) & = & (\text{known output}) & +&  (\text{change in outputs}) \\ \end{array} \] In other words, changing the \textbf{input} by $\Delta x$ results in changing the \textbf{output} by $m \Delta x$.  This tracks since \[ m \Delta x  = \frac{\Delta [f(x)]}{\Delta x} \Delta x =  \Delta[f(x)]  = \Delta \text{outputs}. \] The fact that we can write $\Delta \text{outputs} = m \Delta x$ for any choice of $x_0$ is another way to see that for linear functions, the rate of change is constant.  That is, the rate of change, $m$,  is the same for all values $x_0$ in the domain. We'll put Equation \ref{linearfunctionpointslope} to good use in the next example.
+
+
+
+\end{document}
