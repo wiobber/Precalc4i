@@ -15,7 +15,68 @@
 %\mfpicnumber{1}
 %\opengraphsfile{ConstantAndLinearFunctions}
 
+\begin{center}
 
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
+
+  % Axis labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
+
+  % Labels for points
+  \node at (1,5.5) {  $(0,250)$};
+  \node at (8.5,0.75) {  $(166.\overline{6}, 0)$};
+
+  % Line
+  \draw[thick,->,>=stealth] (-1,5.6)--(9,-0.4);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8.33,0) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {  $y = -1.5x + 250$};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
+
+  % Axis ticks and labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,5/250,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
+
+  % Labels for points
+  \node at (1,5.5) {  $(0, 250)$};
+  \node at (8.5,0.75) {  $(166, 1)$};
+
+  % Line
+  \draw[thick] (0,5)--(8,0.02);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8,0.02) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {  $y = p(x)$};
+\end{tikzpicture}
+
+\end{center}
+%TIKZ ABOVE HERE
+
+
+
+%%%%
 The function $p$ in Example \ref{PortaBoyDemand} is called the\index{price-demand function}\index{function ! price-demand} \textbf{price-demand} function (or, sometimes called more simply a `demand function') because it returns the price $p(x)$ associated with a certain demand $x$ - that is, how many products will sell.\footnote{It may seem counter-intuitive to express price as a function of demand.  Shouldn't the price determine how many systems people will buy?  We will address this issue later.}  These functions, along with cost functions like the one in Example \ref{PortaBoyCost}, will be revisited in Example \ref{PortaBoyProfit}.
 
 
