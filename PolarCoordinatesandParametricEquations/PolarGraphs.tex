@@ -347,61 +347,9 @@ We see that as $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ ranges from $6$ 
 
 The arrows drawn in the figure below are meant to help you visualize this process.  In the $\theta r$-plane, the arrows are drawn  from the $\theta$-axis to the curve $r = 6\cos(\theta)$.  In the $xy$-plane, each of these arrows starts at the origin and is rotated through the corresponding angle $\theta$, in accordance with how we plot polar coordinates.  This method is less precise than plotting actual function values, but much faster.
 
+% https://www.geogebra.org/classic/rjj6bump
 \begin{center}
-
-\begin{tabular}{cc}
-
-\begin{mfpic}[20][10]{-1}{7}{-7}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-6,-3,3,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.35, {$\pi$} 3.1416,  {$\frac{3\pi}{2}$} 4.9,  {$2\pi$} 6.2832}
-\axislabels{y}{{$-6$} -6, {$-3$} -3,{$3$} 3,{$6$} 6}
-\normalsize
-\tlabel[cc](7.1,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6.75){\scriptsize $r$}
-\function{0,6.28,0.1}{6*cos(x)}
-\arrow \polyline{(0,0), (0,6)}
-\arrow \polyline{(0.39,0), (0.39,5.25)}
-\arrow \polyline{(0.785,0), (0.785,3.9)}
-\arrow \polyline{(1.14,0), (1.14,2)}
-\point[3pt]{(0,6), (1.57,0)}
-\penwd{1.025}
-\arrow \function{0,1.1,0.1}{6*cos(x)}
-\function{1.1,1.57,0.1}{6*cos(x)}
-\end{mfpic}
-
-& \hspace{.75in}
-
-\begin{mfpic}[10]{-7}{7}{-7}{7}
-\axes
-\xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.5,6.75){\scriptsize $y$}
-\arrow \polyline{(0,0), (6,0)}
-\arrow \polyline{(0,0), (5, 2)}
-\arrow \polyline{(0,0), (2.9,2.9)}
-\arrow \polyline{(0,0), (0.8, 1.9)}
-\arrow \parafcn{5, 85, 5}{6.5*dir(t)}
-\point[3pt]{(6,0),(0,0)}
-\gclear \tlabelrect[cc](5,5){\scriptsize $\theta$ runs from $0$ to $\frac{\pi}{2}$}
-\penwd{1.025}
-\arrow \plrfcn{0,63,5}{6*cosd(t)}
-\plrfcn{63,90,5}{6*cosd(t)}
-\end{mfpic} \\
-
-$r = 6 \cos(\theta)$ in the $\theta r$-plane
-
-
-& \hspace{.75in}
-
-$r = 6 \cos(\theta)$ in the $xy$-plane \\
-
-\end{tabular}
-
+\geogebra{rjj6bump}{800}{600}
 \end{center}
 
 Next, we repeat the process as $\theta$ ranges from $\frac{\pi}{2}$ to $\pi$.  Here, the $r$ values are all negative.  This means that in the $xy$-plane, instead of graphing in Quadrant II, we graph in Quadrant IV, with all of the angle rotations starting from the negative $x$-axis.
