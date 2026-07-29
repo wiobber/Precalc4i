@@ -83,7 +83,7 @@ In Section \ref{circularmotion}, we introduced circular motion and derived a for
 
  By associating the point $P$ with the angle $\theta$, we are assigning a \emph{position} on the Unit Circle to the angle $\theta$.  Since for each angle $\theta$, the terminal side of $\theta$, when graphed in standard position, intersects The Unit Circle only once, the mapping of $\theta$ to $P$ is a function.\footnote{See Definition \ref{functiondefn} in Section \ref{FunctionsandtheirRepresentations}.}   Since there is only \textit{one} way to describe a point using rectangular coordinates,\footnote{See page \pageref{importantfactscartesianplane} in Section \ref{AppCartesianPlane}.}  the mappings of $\theta$ to each of the $x$ and $y$ coordinates of $P$ are also functions.  We give these functions names in the following definition.
  
- \smallskip
+ 
  
  %% \colorbox{ResultColor}{\bbm
 
@@ -101,15 +101,11 @@ In Section \ref{circularmotion}, we introduced circular motion and derived a for
 
 %% \ebm} 
  
- 
-\smallskip
 
 You may have already seen definitions for the sine and cosine of an (acute) angle  in terms of ratios of sides of a right triangle.\footnote{For instance, Definition \ref{righttrianglesinecosinetangent} in Section \ref{AppRightTrig}.}  While not incorrect, defining sine and cosine using right triangles limits the angles we can study to acute angles only.  Definition \ref{sinecosineunitcircledefn}, on the other hand, applies to \textit{all} angles. Since these functions are defined in terms of points on the Unit \textit{Circle}, they are called \index{circular functions}\index{functions ! circular} \textbf{circular} functions.  Rest assured,  Definition \ref{sinecosineunitcircledefn} specializes to Definition \ref{righttrianglesinecosinetangent} when $\theta$ is an acute angle.  We will see instances of this fact in the next example.
 
 
 \begin{example} \label{cosinesineviaunitcircle}  Find the sine and cosine of the following angles.
-
-\begin{multicols}{5}
 
 \begin{enumerate}
 
@@ -125,9 +121,7 @@ You may have already seen definitions for the sine and cosine of an (acute) angl
 
 \end{enumerate}
 
-\end{multicols}
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -451,6 +445,7 @@ You may have already seen definitions for the sine and cosine of an (acute) angl
 
 \end{enumerate}
 
+\end{explanation}
 \end{example}
 
 A few remarks are in order.  First, after having re-used some of our work from Section \ref{AppRightTrig} in a few specific instances, we can reconcile Definition \ref{sinecosineunitcircledefn} with Definition \ref{righttrianglesinecosinetangent} in the case $\theta$ is an acute angle.  We situate $\theta$ in a right triangle with hypotenuse length $1$, adjacent side length `$x$,' and the opposite side length `$y$' as seen below on the left. Placing the vertex of $\theta$ at the origin and the adjacent side of $\theta$ along the $x$-axis as seen below on the right effectively puts $\theta$ in standard position with $\theta$'s adjacent side as the initial side of $\theta$ and the hypotenuse  as the terminal side of $\theta$.  Since the hypotenuse of the triangle has length $1$, we know the point $P(x,y)$ is on the Unit Circle.\footnote{Do you see why?}
@@ -537,11 +532,11 @@ A few remarks are in order.  First, after having re-used some of our work from S
 
 Definition \ref{righttrianglesinecosinetangent} gives $\cos(\theta) = \frac{x}{1} = x$ and $\sin(\theta) = \frac{y}{1} = y$ which exactly matches Definition \ref{sinecosineunitcircledefn}.  Hence, in the case of acute angles, the two definitions agree. In other words,  the values of the \textit{trigonometric ratios} of acute angles are the same as the corresponding \textit{circular function} values. 
 
-\smallskip
+
  
 A second important take-away from Example \ref{cosinesineviaunitcircle} is use of symmetry in  number \ref{refangleintro}.  Indeed, we found the sine and cosine of $\frac{5\pi}{6}$ using  the (acute) angle $\frac{\pi}{6}$ `for reference.'   Since the Unit Circle is rife with symmetry, we would like to generalize this concept and exploit symmetry whenever possible.  To that end, we introduce the notion of \index{angle ! reference}\index{reference angle}\textbf{reference angle}.
 
-\smallskip
+
 
 In general, for a non-quadrantal angle $\theta$, the reference angle for $\theta$ (which we'll usually denote $\alpha$) is the \textit{acute} angle made between the terminal side of $\theta$ and the $x$-axis.  If $\theta$ is a Quadrant I or IV angle, $\alpha$ is the angle between the terminal side of $\theta$ and the \textit{positive} $x$-axis:
 
@@ -710,7 +705,7 @@ If $\theta$ is a Quadrant II or III angle, $\alpha$ is the angle between the ter
 
 If we let $P$ denote the point $(\cos(\theta), \sin(\theta))$, then $P$ lies on the Unit Circle.  Since the Unit Circle possesses symmetry with respect to the $x$-axis, $y$-axis and origin, regardless of where the terminal side of $\theta$ lies, there is a point $Q$ symmetric with $P$ which determines $\theta$'s reference angle, $\alpha$.  The only difference between the points $P$ and $Q$ are the signs of their coordinates, $\pm$. Hence, we have the following:
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -721,26 +716,26 @@ If we let $P$ denote the point $(\cos(\theta), \sin(\theta))$, then $P$ lies on 
 
 where the choice of the ($\pm$) depends on the quadrant in which the terminal side of $\theta$ lies. \index{Reference Angle Theorem ! for sine and cosine} 
 
-\smallskip
+
 
 \end{theorem}
 
 %% \ebm}
 
-\smallskip
+
 
 In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine values for certain common Quadrant I angles as well as to keep in mind the signs of the coordinates of points in the given quadrants. 
 
-\begin{center}
+
 \[ \begin{array}{|c|c||c|c|} \hline
  \theta (\mbox{degrees}) &  \theta (\mbox{radians}) & \cos(\theta) & \sin(\theta) \\ \hline
 0^{\circ} & 0 & 1 & 0 \\ \hline
-30^{\circ} & \frac{\pi}{6} & \frac{\sqrt{3}}{2} & \frac{1}{2} \\ [2pt] \hline
-45^{\circ} & \frac{\pi}{4} & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ [2pt] \hline
-60^{\circ} & \frac{\pi}{3} & \frac{1}{2} & \frac{\sqrt{3}}{2} \\ [2pt] \hline
-90^{\circ} & \frac{\pi}{2} & 0 & 1 \\ [2pt] \hline
+30^{\circ} & \frac{\pi}{6} & \frac{\sqrt{3}}{2} & \frac{1}{2} \\  \hline
+45^{\circ} & \frac{\pi}{4} & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\ \hline
+60^{\circ} & \frac{\pi}{3} & \frac{1}{2} & \frac{\sqrt{3}}{2} \\  \hline
+90^{\circ} & \frac{\pi}{2} & 0 & 1 \\  \hline
 \end{array} \]
-\end{center}
+
 
 \begin{image}
 \begin{tikzpicture}[
@@ -796,8 +791,6 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 
 \begin{example} \label{refangleex}  Find the sine and cosine of the following angles.
 
-\begin{multicols}{4}
-
 \begin{enumerate}
 
 \item  $\theta = 225^{\circ}$
@@ -811,10 +804,8 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 
 \end{enumerate}
 
-\end{multicols}
 
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1011,19 +1002,19 @@ In light of Theorem \ref{refanglethm}, it pays to know the sine and cosine value
 
 \end{enumerate}
 
-
+\end{explanation}
 
 \end{example}
 
 
 A couple of remarks are in order.  First off,  the reader may have noticed that when expressed in radian measure, the reference angle for a non-quadrantal angle is easy to spot.  Reduced fraction multiples of $\pi$ with a denominator of $6$ have $\frac{\pi}{6}$ as a reference angle, those with a denominator of $4$ have $\frac{\pi}{4}$ as their reference angle, and those with a denominator of $3$ have $\frac{\pi}{3}$ as their reference angle.\footnote{For once, we have something convenient about using radian measure in contrast to the abstract theoretical nonsense about using them as a `natural' way to match oriented angles with real numbers!}   
 
-\smallskip
+
 
 Also note in number \ref{coterminalsamesinecosineexample} above, the angles $\frac{\pi}{3}$ and $\frac{7\pi}{3}$ are coterminal.  As a result, have the same values for sine and cosine.  It turns out that we can characterize coterminal angles in this manner, as stated below.
 
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -1031,21 +1022,21 @@ Also note in number \ref{coterminalsamesinecosineexample} above, the angles $\fr
 
  \centerline{$\cos(\alpha) =  \cos(\beta)$ and  $\sin(\alpha) =  \sin(\beta)$.}
 
-\smallskip
+
 
 \end{theorem}
 
 %% \ebm}
 
-\smallskip
+
 
 Recall the phraseology `if and only if' means there are two things to argue in Theorem \ref{coterminalsamcosinesinethm}:  first, if $\alpha$ and $\beta$ are co-terminal, then $\cos(\alpha) =  \cos(\beta)$ and $\sin(\alpha) =  \sin(\beta)$.  This is immediate since coterminal share terminal sides, and, in particular, the (unique) point on the Unit Circle shared by said terminal side.  Second, we need to argue that if $\cos(\alpha) =  \cos(\beta)$ and $\sin(\alpha) =  \sin(\beta)$, then $\alpha$ and $\beta$ are coterminal.  
 
-\smallskip
+
 
 To prove this second claim, note that when an angle is drawn in standard position, the terminal side of the angle is the ray that starts at the origin  and is completely determined by \textit{any} other point on the terminal side. If $\cos(\alpha) =  \cos(\beta)$ and $\sin(\alpha) =  \sin(\beta)$, then their terminal sides share a point on  the Unit Circle, namely $(\cos(\alpha), \sin(\alpha)) = (\cos(\beta), \sin(\beta))$.  Hence, $\alpha$ and $\beta$ are coterminal.
 
-\smallskip
+
 
 The Reference Angle Theorem in conjunction with the table of sine and cosine values on Page \pageref{CosineSineFacts} can be used to generate the figure on the next page.  We recommend committing it to memory.
 
@@ -1092,25 +1083,25 @@ The Reference Angle Theorem in conjunction with the table of sine and cosine val
 \node[anglelabel,above left] at (-2,0) {$\pi$};
 \node[anglelabel,above right] at (2,0) {$0,\ 2\pi$};
 
-\node[anglelabel] at (30:2) {$\dfrac{\pi}{6}$};
-\node[anglelabel] at (45:2) {$\dfrac{\pi}{4}$};
-\node[anglelabel] at (60:2) {$\dfrac{\pi}{3}$};
+\node[anglelabel] at (30:2) {$\frac{\pi}{6}$};
+\node[anglelabel] at (45:2) {$\frac{\pi}{4}$};
+\node[anglelabel] at (60:2) {$\frac{\pi}{3}$};
 
-\node[anglelabel,right] at (90:2) {$\dfrac{\pi}{2}$};
+\node[anglelabel,right] at (90:2) {$\frac{\pi}{2}$};
 
-\node[anglelabel] at (120:2) {$\dfrac{2\pi}{3}$};
-\node[anglelabel] at (135:2) {$\dfrac{3\pi}{4}$};
-\node[anglelabel] at (150:2) {$\dfrac{5\pi}{6}$};
+\node[anglelabel] at (120:2) {$\frac{2\pi}{3}$};
+\node[anglelabel] at (135:2) {$\frac{3\pi}{4}$};
+\node[anglelabel] at (150:2) {$\frac{5\pi}{6}$};
 
-\node[anglelabel] at (210:2) {$\dfrac{7\pi}{6}$};
-\node[anglelabel] at (225:2) {$\dfrac{5\pi}{4}$};
-\node[anglelabel] at (240:2) {$\dfrac{4\pi}{3}$};
+\node[anglelabel] at (210:2) {$\frac{7\pi}{6}$};
+\node[anglelabel] at (225:2) {$\frac{5\pi}{4}$};
+\node[anglelabel] at (240:2) {$\frac{4\pi}{3}$};
 
-\node[anglelabel,right] at (270:2) {$\dfrac{3\pi}{2}$};
+\node[anglelabel,right] at (270:2) {$\frac{3\pi}{2}$};
 
-\node[anglelabel] at (300:2) {$\dfrac{5\pi}{3}$};
-\node[anglelabel] at (315:2) {$\dfrac{7\pi}{4}$};
-\node[anglelabel] at (330:2) {$\dfrac{11\pi}{6}$};
+\node[anglelabel] at (300:2) {$\frac{5\pi}{3}$};
+\node[anglelabel] at (315:2) {$\frac{7\pi}{4}$};
+\node[anglelabel] at (330:2) {$\frac{11\pi}{6}$};
 
 % --------------------------------------------------------------------
 % Coordinate labels on the axes
@@ -1190,8 +1181,6 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 
 \item  Find the sine and cosine of the following angles:
 
-\begin{multicols}{4}
-
 \begin{enumerate}
 
 \item  $\theta = \pi + \alpha$
@@ -1203,11 +1192,11 @@ Our next example uses The Reference Angle Theorem in a slightly more sophisticat
 \item  $\theta = \frac{\pi}{2} + \alpha$
 
 \end{enumerate}
-\end{multicols}
+
 
 \end{enumerate}
 
-{\bf Solution.}  
+\begin{explanation} 
 
 \begin{enumerate}
 
@@ -1684,38 +1673,35 @@ The Pythagorean Theorem gives $\left(\frac{5}{13}\right)^2 + y^2 = 1^2$ or $y = 
 \end{enumerate}
 
 \end{enumerate}
+
+
+\end{explanation}
 \end{example}
 
  A couple of remarks about Example \ref{advancedrefangleex} are in order.  First, we note the right triangle we used to find $\sin(\alpha)$ is a scaled 5-12-13 triangle.  Recognizing this Pythagorean Triple\footnote{See Section \ref{AppRightTrig} for more examples of Pythagorean Triples.}  may have simplified our workflow.  Along the same lines, since, the Unit Circle, by definition, is described by the equation $x^2+y^2 = 1$,  we could substitute $x = \frac{5}{13}$ in order to find $y$.   We leave it to the reader to show we get the exact same answer regardless of the approach used.
- 
- \smallskip
 
 
-Our next example turns the tables and makes good use of the Unit Circle values given on \pageref{commonanglesunitcircle} as well as Theorem \ref{coterminalsamcosinesinethm} in a different way:  instead of giving information about the angle and asking for sine or cosine values, we are given sine or cosine values and asked to produce the corresponding angles.  In other words, we solve some rudimentary equations involving sine and cosine.\footnote{We will study equations in more detail in Section \ref{TrigonometricEquationsandInequalities}.}
+Our next example turns the tables and makes good use of the Unit Circle values as well as Theorem \ref{coterminalsamcosinesinethm} in a different way:  instead of giving information about the angle and asking for sine or cosine values, we are given sine or cosine values and asked to produce the corresponding angles.  In other words, we solve some rudimentary equations involving sine and cosine.\footnote{We will study equations in more detail in Section \ref{TrigonometricEquationsandInequalities}.}
 
 \begin{example}  \label{solveforangle}  Find all angles that satisfy the following equations. Express your answers in radians.\footnote{This ensures we keep building  the `fluency with radians' which is so necessary for later work.}
 
-\begin{multicols}{4}
-
 \begin{enumerate}
 
-\item  \label{cosineishalf} $\cos(\theta) = \dfrac{1}{2}$ \vphantom{$\dfrac{3}{2}$}
+\item  \label{cosineishalf} $\cos(\theta) = \frac{1}{2}$ \vphantom{$\frac{3}{2}$}
 
-\item \label{sineisnegativehalf} $\sin(\alpha) = -\dfrac{1}{2}$ \vphantom{$\dfrac{3}{2}$}
+\item \label{sineisnegativehalf} $\sin(\alpha) = -\frac{1}{2}$ \vphantom{$\frac{3}{2}$}
 
-\item  \label{cosineiszero} $\cos(\beta) = 0$. \vphantom{$\dfrac{3}{2}$}
+\item  \label{cosineiszero} $\cos(\beta) = 0$. \vphantom{$\frac{3}{2}$}
 
-\item  \label{sineisover1} $\sin(\gamma) = \dfrac{3}{2}$
+\item  \label{sineisover1} $\sin(\gamma) = \frac{3}{2}$
 
 \end{enumerate}
 
-\end{multicols}
-
-{\bf Solution.}  
+\begin{explanation} 
 
 \begin{enumerate} 
 
-\item If $\cos(\theta) = \frac{1}{2}$, then we know the terminal side of $\theta$, when plotted in standard position, intersects the Unit Circle at $x = \frac{1}{2}$.  This means $\theta$ is a Quadrant I or IV angle.  Since $\cos(\theta) = \frac{1}{2}$, we know from the values on page \pageref{commonanglesunitcircle}  that the reference angle is $\frac{\pi}{3}$.
+\item If $\cos(\theta) = \frac{1}{2}$, then we know the terminal side of $\theta$, when plotted in standard position, intersects the Unit Circle at $x = \frac{1}{2}$.  This means $\theta$ is a Quadrant I or IV angle.  Since $\cos(\theta) = \frac{1}{2}$, we know that that the reference angle is $\frac{\pi}{3}$.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -2055,24 +2041,26 @@ One solution in  Quadrant I is  $\theta = \frac{\pi}{3}$.  Per Theorem \ref{cote
 
 While, technically speaking, $\frac{\pi}{2}$ isn't a reference angle (it's not acute), we can nonetheless use it to find our answers.  If we follow the procedure set forth in the previous examples, we find $\beta = \frac{\pi}{2} + 2\pi k$ and $\beta = \frac{3\pi}{2} + 2\pi k$ for integers, $k$. While this solution is correct, it can be shortened to $\beta = \frac{\pi}{2} + \pi k$ for integers $k$.  The reader is encouraged to see the geometry using the diagram above on the left.
 
-\item  We are asked to solve $\sin(\gamma) = \frac{3}{2}$.   Since sine values are $y$-coordinates on the Unit Circle, $\sin(\gamma)$ can't be any larger than $1$.  Hence, $\sin(t) = \frac{3}{2}$ has no solutions.  \qed
+\item  We are asked to solve $\sin(\gamma) = \frac{3}{2}$.   Since sine values are $y$-coordinates on the Unit Circle, $\sin(\gamma)$ can't be any larger than $1$.  Hence, $\sin(t) = \frac{3}{2}$ has no solutions. 
 
 \end{enumerate}
+
+\end{explanation}
 
 \end{example}
 
 One of the key items to take from Example \ref{solveforangle} is that, in general, solutions to trigonometric equations consist of infinitely many answers.  To get a feel for these answers, the reader is encouraged to follow our mantra from Chapter \ref{SequencesandtheBinomialTheorem} - that is, `When in doubt, write it out!'   This is especially important when checking answers to the exercises.  
 
-\smallskip
+
 
  For example, another Quadrant IV solution to $\sin(\theta) = -\frac{1}{2}$ is $\theta = -\frac{\pi}{6}$.  Hence, the family of Quadrant IV answers to number \ref{sineisnegativehalf} above could just have easily been written $\theta = -\frac{\pi}{6} + 2\pi k$ for integers $k$.  While on the surface, this family may look different than the stated solution of $\theta = \frac{11\pi}{6} + 2\pi k$ for integers $k$, we leave it to the reader to show they represent the same list of angles.
 
-\smallskip
+
 
 \phantomsection
 \label{cosinesineequationsrealnumbers}
 
-It is also worth noting that when asked to solve equations in algebra, we are usually looking for  \textit{real number} solutions.  Thanks to the identifications made on page \pageref{wrappingfunction}, we are able to regard the inputs to the sine and cosine functions as real numbers by identifying any real number $t$ with an oriented angle $\theta$ measuring $\theta = t$ radians.  That is, for  each real number $t$, we associate an oriented arc $t$ units in length with initial point $(1,0)$ and endpoint $P(\cos(t), \sin(t))$.
+It is also worth noting that when asked to solve equations in algebra, we are usually looking for  \textit{real number} solutions. Since we can identify radians with real numbers (see Section \ref{RadianMeasure}), we are able to regard the inputs to the sine and cosine functions as real numbers by identifying any real number $t$ with an oriented angle $\theta$ measuring $\theta = t$ radians.  That is, for  each real number $t$, we associate an oriented arc $t$ units in length with initial point $(1,0)$ and endpoint $P(\cos(t), \sin(t))$.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -2192,23 +2180,23 @@ It is also worth noting that when asked to solve equations in algebra, we are us
 
 In practice this means in expressions like `$\cos(\pi)$' and `$\sin(2)$,'  the inputs can be thought of as either angles in radian measure or real numbers, whichever is more convenient.  
 
-\smallskip
+
 
 Suppose, as in the Exercises, we are asked to find all \textit{real number} solutions to the equation such as $\sin(t) = -\frac{1}{2}$.   The discussion above allows us to find  the \textit{real number} solutions to this equation by \textit{thinking} in angles.  Indeed, we would solve this equation in the exact way we solved $\sin(\theta) = -\frac{1}{2}$ in  Example \ref{solveforangle} number \ref{sineisnegativehalf}.  Our solution is only cosmetically different in that the variable used is $t$ rather than $\theta$:  $t = \frac{7\pi}{6} + 2\pi k$ or  $t = \frac{11\pi}{6} + 2\pi k$ for integers, $k$.  
 
-\smallskip
+
 
 We will study the sine and cosine functions in greater detail in Section \ref{GraphsofSineandCosine}.  Until then, keep in mind that any properties of the sine and cosine functions developed in the following sections which regard them as functions of \textit{angles} in \textit{radian} measure apply equally well if the inputs are regarded as \textit{real numbers}.
 
 
-\smallskip
+
 
 \subsection{Beyond the Unit Circle}
 \label{cosinesinebeyond}
 
 In Definition \ref{sinecosineunitcircledefn}, we define the sine and cosine functions using the \textit{Unit} Circle, $x^2+y^2=1$.   It turns out that we can use \textit{any} circle centered at the origin to determine the sine and cosine values of angles.  To show this,  we essentially recycle the same similarity arguments used in Section \ref{AppRightTrig} to show the trigonometric ratios described in Definition \ref{righttrianglesinecosinetangent} are independent of the choice of right triangle used.\footnote{Another approach uses transformations.  See Exercise \ref{circleofradiusrsinecosinetrans}.}
 
-\smallskip
+
 
 Consider for the moment the \textit{acute} angle $\theta$ drawn below in standard position.  Let $Q(x,y)$ be the point on the terminal side of $\theta$ which lies on the circle $x^2+y^2 = r^2$, and let $P(x',y')$ be the point on the terminal side of $\theta$ which lies on the Unit Circle.   Now consider dropping perpendiculars from $P$ and $Q$ to create two right triangles, $\Delta OPA$ and $\Delta OQB$. These triangles are similar,\footnote{Do you remember why?} thus it follows that $\frac{x}{x'} = \frac{r}{1} = r$, so $x = r x'$ and, similarly, we find $y = r y'$.  Since, by definition, $x' = \cos(\theta)$ and $y' = \sin(\theta)$,  we get the coordinates of $Q$ to be $x = r \cos(\theta)$ and $y = r \sin(\theta)$.  By reflecting these points through the $x$-axis, $y$-axis and origin, we obtain the result for all non-quadrantal angles $\theta$, and we leave it to the reader to verify these formulas hold for the quadrantal angles as well.
 
@@ -2369,21 +2357,18 @@ Consider for the moment the \textit{acute} angle $\theta$ drawn below in standar
 
 Not only can we describe the coordinates of $Q$ in terms of $\cos(\theta)$ and $\sin(\theta)$ but since the radius of the circle is $r = \sqrt{x^2 + y^2}$, we can also express $\cos(\theta)$ and $\sin(\theta)$ in terms of the coordinates of $Q$.  These results are summarized in the following theorem.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 \begin{theorem}  \label{cosinesinecircle} If $Q(x,y)$ is the point on the terminal side of an angle $\theta$, plotted in standard position, which lies on the circle $x^2+y^2 = r^2$ then $x = r \cos(\theta)$ and $y = r \sin(\theta)$.  Moreover, \index{cosine ! of an angle} \index{sine ! of an angle}
 
-\[\begin{array}{ccc} \cos(\theta)= \dfrac{x}{r}  = \dfrac{x}{\sqrt{x^2+y^2}} & \text{and} &  \sin(\theta) = \dfrac{y}{r} = \dfrac{y}{\sqrt{x^2+y^2}} \\ \end{array} \]
+\[\begin{array}{ccc} \cos(\theta)= \frac{x}{r}  = \frac{x}{\sqrt{x^2+y^2}} & \text{and} &  \sin(\theta) = \frac{y}{r} = \frac{y}{\sqrt{x^2+y^2}} \\ \end{array} \]
 
 \end{theorem}
 %% \ebm}
-\smallskip
+
 
 Note that in the case of the Unit Circle we have $r = \sqrt{x^2+y^2} = 1$, so Theorem \ref{cosinesinecircle} reduces to our definitions of $\cos(\theta)$ and $\sin(\theta)$ in Definition \ref{sinecosineunitcircledefn}. Our next example makes good use of Theorem \ref{cosinesinecircle}.  
-
-\smallskip
-
 
 
 \begin{example} \label{cosinesinecircleex}  $~$
@@ -2398,9 +2383,7 @@ Note that in the case of the Unit Circle we have $r = \sqrt{x^2+y^2} = 1$, so Th
 
 \end{enumerate}
 
-\newpage
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -2546,12 +2529,14 @@ Note that in the case of the Unit Circle we have $r = \sqrt{x^2+y^2} = 1$, so Th
 
 
 
-\item  Recall the diagram below on the left indicating the circles which are the parallels of latitude.\footnote{Diagram credit:  \href{https://commons.wikimedia.org/wiki/File:Latitude_(PSF).png}{\underline{Pearson Scott Foresman [Public domain], via Wikimedia Commons}}.}   
+\item  Recall the diagram below indicating the circles which are the parallels of latitude.\footnote{Diagram credit:  \href{https://commons.wikimedia.org/wiki/File:Latitude_(PSF).png}{\underline{Pearson Scott Foresman [Public domain], via Wikimedia Commons}}.}   
 
 
 \begin{center}
 \includegraphics[width=2in]{./RadianMeasureGraphics/Latitude_(PSF).png}
 \end{center}
+
+Assuming the Earth is a sphere of radius $3960$ miles, a cross-section through the poles produces a circle of radius $3960$ miles. Viewing the Equator as the $x$-axis, the value we seek is the $x$-coordinate of the point $Q(x,y)$ indicated in the figure below.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -2639,9 +2624,10 @@ Note that in the case of the Unit Circle we have $r = \sqrt{x^2+y^2} = 1$, so Th
 \end{tikzpicture}
 \end{image}
 
-\end{enumerate}
+Using Theorem \ref{cosinesinecircle}, we get $x = 3960 \cos\left(41.628^{\circ}\right) \approx 2960$.  Hence, the radius of the Earth at North Latitude $41.628^{\circ}$ is approximately $2960$ miles. 
 
-Assuming the Earth is a sphere of radius $3960$ miles, a cross-section through the poles produces a circle of radius $3960$ miles. Viewing the Equator as the $x$-axis, the value we seek is the $x$-coordinate of the point $Q(x,y)$ indicated in the figure above on the right.  Using Theorem \ref{cosinesinecircle}, we get $x = 3960 \cos\left(41.628^{\circ}\right) \approx 2960$.  Hence, the radius of the Earth at North Latitude $41.628^{\circ}$ is approximately $2960$ miles. \qed
+\end{enumerate}
+\end{explanation}
 
 \end{example}
  
@@ -2732,22 +2718,22 @@ Theorem \ref{cosinesinecircle} gives us what we need to `circle back' to the que
  We have just argued the following.
 
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 \begin{eqn} \label{equationsforcircularmotion} Suppose an object is traveling in a circular path of radius $r$ centered at the origin with constant angular velocity $\omega$.  If $t=0$ corresponds to the point $(r,0)$, then the $x$ and $y$ coordinates of the object are functions of $t$ and are given by $x =  r \cos(\omega t)$ and $y = r \sin(\omega t)$.  Here, $\omega > 0$ indicates a counter-clockwise direction and $\omega < 0$ indicates a clockwise direction.
 
 \end{eqn}
 %% \ebm}
-\smallskip
+
 
 \begin{example}  Suppose we are in the situation of Example \ref{EarthRotationEx}.  Find the equations of motion of Lakeland Community College as the earth rotates.
 \label{Lakelandrotates}
 
-\smallskip
 
-{\bf Solution.}  From Example \ref{EarthRotationEx}, we take $r = 2960$ miles and and $\omega = \frac{\pi}{12 \, \text{hours}}$.  Hence, the equations of motion are $x =  r \cos(\omega t) = 2960 \cos\left(\frac{\pi}{12} t\right)$ and  $y =  r \sin(\omega t) = 2960 \sin\left(\frac{\pi}{12} t\right)$, where $x$ and $y$ are measured in miles and $t$ is measured in hours.\footnote{We will revisit this concept of associating points with times in Section \ref{ParametricEquations}.} \qed
 
+\begin{explanation} From Example \ref{EarthRotationEx}, we take $r = 2960$ miles and and $\omega = \frac{\pi}{12 \, \text{hours}}$.  Hence, the equations of motion are $x =  r \cos(\omega t) = 2960 \cos\left(\frac{\pi}{12} t\right)$ and  $y =  r \sin(\omega t) = 2960 \sin\left(\frac{\pi}{12} t\right)$, where $x$ and $y$ are measured in miles and $t$ is measured in hours.\footnote{We will revisit this concept of associating points with times in Section \ref{ParametricEquations}.} 
+\end{explanation}
 \end{example}
 
 
