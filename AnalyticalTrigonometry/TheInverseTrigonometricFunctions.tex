@@ -19,22 +19,10 @@ In this section we concern ourselves with finding inverses of the circular (trig
 We start with $f(t)  = \sin(t)$ and restrict our domain to $\left[ -\frac{\pi}{2}, \frac{\pi}{2}\right]$ in order to keep the range as $[-1,1]$ as well as the properties of being smooth and continuous.
 
  
-
+% https://www.desmos.com/calculator/5i2gtuzyfd
 
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-1.5}{1.5}
-\axes
-\point[4pt]{(-1.5708,-1), (0,0), (1.5708,1)}
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,1.5){\scriptsize $y$}
-\tcaption{Restricting the domain of $f(t) = \sin(t)$ to $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.}
-\ymarks{-1,1}
-\dashed \arrow \reverse \arrow \function{-12, 12, 0.1}{sin(x)}
-\penwd{1.25pt}
-\function{-1.5708,1.5708, 0.1}{sin(x)}
-\end{mfpic}
-
+\desmos{5i2gtuzyfd}{800}{600}
 \end{center} 
 
 
@@ -47,104 +35,25 @@ Recall from Section \ref{InverseFunctions} that the inverse of a function $f$ is
 Instead, we use the notation $f^{-1}(t) = \arcsin(t)$, read `arc-sine of $t$'.  We'll explain the `arc' in `arcsine' shortly.  For now, we graph $f(t) = \sin(t)$ and $f^{-1}(t) = \arcsin(t)$, where we obtain the latter from the former by reflecting it across the line $y=t$, in accordance with Theorem \ref{inversefunctionprops}. \index{arcsine ! graph of}
 
 
-\[ \begin{array}{ccc}
-
-\begin{mfpic}[25]{-2}{2}{-2}{2}
-\point[4pt]{(-1.5708,-1), (0,0), (1.5708,1)}
-\axes
-\tlabel[cc](2,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,2){\scriptsize $y$}
-\tcaption{\scriptsize $f(t) = \sin(t)$,  $-\frac{\pi}{2} \leq t \leq  \frac{\pi}{2}$.}
-\xmarks{-1.5708, 1.5708}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-\frac{\pi}{2} \hspace{7pt}$} -1.5708, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\function{-1.5708,1.5708, 0.1}{sin(x)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[25]{-2}{2}{-2}{2}
-\point[4pt]{(-1,-1.5708), (0,0), (1,1.5708)}
-\axes
-\tlabel[cc](2,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,2){\scriptsize $y$}
-\tcaption{\scriptsize $f^{-1}(t) = \arcsin(t)$.}
-\ymarks{-1.5708, 1.5708}
-\xmarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $-\frac{\pi}{2}$} -1.5708, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\parafcn{-1.5708,1.5708, 0.1}{(sin(t),t)}
-\end{mfpic}
-
-\end{array}\]
+% https://www.desmos.com/calculator/ciq1xmnnzu
+\begin{center}
+    \desmos{ciq1xmnnzu}{800}{600}
+\end{center}
 
 Next, we consider $g(t) = \cos(t)$.  Here, we select the interval $[0,\pi]$ for our restriction.  
+
+% https://www.desmos.com/calculator/b19mpifqa8
 \begin{center}
-
-\begin{mfpic}[15]{-13}{13}{-1.5}{1.5}
-\axes
-\point[4pt]{(0,1), (1.5708,0), (3.1416, -1)}
-\tlabel[cc](13,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,1.5){\scriptsize $y$}
-\tcaption{Restricting the domain of $f(t) = \cos(t)$ to $[0,\pi]$.}
-\ymarks{-1,1}
-\dashed \arrow \reverse \arrow \function{-12.5664, 12.5664, 0.1}{cos(x)}
-\penwd{1.25pt}
-\function{0, 3.1416, 0.1}{cos(x)}
-\end{mfpic}
-
+\desmos{b19mpifqa8}{800}{600}
 \end{center} 
 
 Reflecting the across the line $y = t$ produces  the graph $y = g^{-1}(t) = \arccos(t)$. \index{arccosine ! graph of}
 
 
-\[ \begin{array}{ccc}
-\begin{mfpic}[25]{-0.5}{4}{-2.25}{2.25}
-\point[4pt]{(0,1), (1.5708,0), (3.1416, -1)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,2.25){\scriptsize $y$}
-\tcaption{\scriptsize  $f(t) = \cos(t)$, $0 \leq t \leq \pi$}
-\xmarks{1.5708, 3.1416}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $\frac{\pi}{2}$} 1.5708,  {\scriptsize $\pi$} 3.1416}
-\axislabels {y}{{\scriptsize $-1$} -1, { \scriptsize $1$} 1}
-\penwd{1.25pt}
-\function{0, 3.1416, 0.1}{cos(x)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[25]{-2.25}{2.25}{-0.5}{4}
-\point[4pt]{(1,0), (0,1.5708), (-1,3.1416)}
-\axes
-\tlabel[cc](2.25,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{\scriptsize $f^{-1}(t) = \arccos(t)$.}
-\xmarks{-1,1}
-\ymarks{1.5708, 3.1416}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $\frac{\pi}{2}$} 1.5708,  {\scriptsize $\pi$} 3.1416}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\parafcn{0, 3.1416, 0.1}{(cos(t), t)}
-\end{mfpic}
-
-\end{array}\]
+% https://www.desmos.com/calculator/znnd0i082l
+\begin{center}
+    \desmos{znnd0i082l}{800}{600}
+\end{center}
 
 We list some important facts about the arcsine and arccosine functions in the following theorem.\footnote{We switch the input variable to the arcsine and arccosine functions to `$x$' to avoid confusion with the outputs we label `$t$.'}   Everything in Theorem \ref{arccosinesinefunctionprops} is a direct consequence of Theorem \ref{inversefunctionprops} as applied to the (restricted) sine and cosine functions, and as such, its proof is left to the reader.
 
@@ -534,92 +443,19 @@ It is important to note that in this case, even though the algebraic expression 
 
 The next pair of functions we wish to discuss are the inverses of tangent and cotangent.  First, we restrict $f(t) = \tan(t)$ to its fundamental cycle on $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ to obtain the arctangent function, $f^{-1}(t) = \arctan(t)$. Among other things, note that the \textit{vertical} asymptotes $t = -\frac{\pi}{2}$ and $t = \frac{\pi}{2}$ of the graph of $f(t) = \tan(t)$ become the \textit{horizontal} asymptotes $y = -\frac{\pi}{2}$ and $y = \frac{\pi}{2}$ of the graph of $f^{-1}(t) = \arctan(t)$.  \index{arctangent ! graph of}
 
-\[ \begin{array}{ccc}
-
-\begin{mfpic}[25][20]{-2}{2}{-4}{4}
-\point[4pt]{(-0.7854,-1), (0,0), (0.7854,1)}
-\axes
-\tlabel[cc](2,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{\scriptsize $f(t) = \tan(t)$,  $-\frac{\pi}{2} < t <  \frac{\pi}{2}$.}
-\xmarks{-0.7854, 0.7854}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-\frac{\pi}{4} \hspace{7pt}$} -0.7854, {\scriptsize $-\frac{\pi}{2} \hspace{7pt}$} -1.5708, {\scriptsize $\frac{\pi}{4}$} 0.7854, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\dashed \polyline{(1.5708,-4), (1.5708,4)}
-\dashed \polyline{(-1.5708,-4), (-1.5708,4)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[20][25]{-4}{4}{-2}{2}
-\point[4pt]{(-1, -0.7854), (0,0), (1,0.7854)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,2){\scriptsize $y$}
-\tcaption{\scriptsize $f^{-1}(t) = \arctan(t)$.}
-\ymarks{-0.7854, 0.7854}
-\xmarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $-\frac{\pi}{4}$} -0.7854, {\scriptsize $-\frac{\pi}{2}$} -1.5708, {\scriptsize $\frac{\pi}{4}$} 0.7854, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1}
-\dashed \polyline{(-4, 1.5708), (4, 1.5708)}
-\dashed \polyline{(-4, -1.5708), (4, -1.5708)}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-1.3181, 1.3181, 0.1}{(tan(t), t)}
-\end{mfpic}
-
-\end{array}\]
+% https://www.desmos.com/calculator/iqis4b4scs
+\begin{center}
+    \desmos{iqis4b4scs}{800}{600}
+\end{center}
 
 Next, we restrict $g(t) = \cot(t)$ to its fundamental cycle on $(0,\pi)$ to obtain $g^{-1}(t) = \mbox{arccot}(t)$, the arccotangent function.  Once again, the vertical asymptotes $t=0$ and $t=\pi$ of the graph of $g(t) = \cot(t)$ become the horizontal asymptotes $y = 0$ and $y = \pi$ of the graph of $g^{-1}(t) = \mbox{arccot}(t)$.  
-\[ \begin{array}{ccc}
 
-\begin{mfpic}[25][20]{-1}{4}{-4}{4.25}
-\point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1)}
-\dashed \polyline{(3.1416,-4), (3.1416,4)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4.25){\scriptsize $y$}
-\tcaption{\scriptsize $g(t) = \cot(t)$, $0 < t < \pi$.}
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $\frac{\pi}{4}$} 0.7854, {\scriptsize $\frac{\pi}{2}$} 1.5708, {\scriptsize $\frac{3\pi}{4}$} 2.3562, {\scriptsize $\pi$} 3.1416}
-\axislabels {y}{{\scriptsize $-1$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\arrow \reverse \arrow \function{0.2450, 2.8966, 0.1}{cot(x)}
-\end{mfpic}
+% https://www.desmos.com/calculator/wy9wcmdcrg
+\begin{center}
+    \desmos{wy9wcmdcrg}{800}{600}
+\end{center}
 
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[20][25]{-4}{4.25}{-1}{4}
-\point[4pt]{ (1,0.7854), (0,1.5708), (-1,2.3562)}
-\dashed \polyline{(-4,3.1416), (4,3.1416)}
-\axes
-\tlabel[cc](4.25,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{\scriptsize $g^{-1}(t) = \mbox{arccot}(t)$.}
-\ymarks{0.7854, 1.5708, 2.3562, 3.1416}
-\xmarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $\frac{\pi}{4}$} 0.7854, {\scriptsize $\frac{\pi}{2}$} 1.5708, {\scriptsize $\frac{3\pi}{4}$} 2.3562, {\scriptsize $\pi$} 3.1416}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, {\scriptsize $1$} 1}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{0.2450, 2.8966, 0.1}{(cot(t),t)}
-\end{mfpic}
-
-\end{array}\] \index{arccotangent ! graph of}
+ \index{arccotangent ! graph of}
 
 Below we summarize the important properties of the arctangent and arccotangent functions.
 
@@ -1124,73 +960,14 @@ It shouldn't surprise the reader that there are some cases where the approach ou
 
 The last two functions to invert are secant and cosecant.  A portion of each of their graphs, which were first discussed in Subsection \ref{secantcosecantgraphsection}, are given below with the fundamental cycles highlighted. 
 
- 
+% https://www.desmos.com/calculator/eioogqph2y
+% https://www.desmos.com/calculator/4plklhdy86
+\begin{center}
+    \desmos{eioogqph2y}{800}{600}\\
+    \desmos{4plklhdy86}{800}{600}
+\end{center}
 
-\begin{tabular}{cc}
 
-\begin{mfpic}[12]{-8.5}{8.5}{-4}{4}
-\point[4pt]{(0,1), (3.1416, -1), (6.2832,1)}
-\axes
-\tlabel[cc](8.5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{The graph of $y = \sec(x)$.}
-\tlpointsep{4pt}
-\dotted \function{-7.854, 7.854, 0.1}{cos(x)}
-\dashed \polyline{(1.5708, -4), (1.5708, 4)}
-\dashed \polyline{(4.7124, -4), (4.7124, 4)}
-\dashed \polyline{(7.8540, -4), (7.8540, 4)}
-%\dashed \polyline{(10.9956, -4), (10.9956, 4)}
-\dashed \polyline{(-1.5708, -4), (-1.5708, 4)}
-\dashed \polyline{(-4.7124, -4), (-4.7124, 4)}
-\dashed \polyline{(-7.8540, -4), (-7.8540, 4)}
-%\dashed \polyline{(-10.9956, -4), (-10.9956, 4)}
-\arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{1/cos(x)}
-\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
-\arrow \reverse \arrow \function{4.9651, 7.6013, 0.1}{1/cos(x)}
-%\arrow \reverse \arrow \function{8.1067, 10.7432, 0.1}{1/cos(x)}
-\arrow \reverse \arrow \function{-1.8235, -4.460, -0.1}{1/cos(x)}
-\arrow \reverse \arrow \function{-4.9651, -7.6013, -0.1}{1/cos(x)}
-%\arrow \reverse \arrow \function{-8.1067, -10.7432, -0.1}{1/cos(x)}
-%\arrow \reverse \function{-11.2483, -12.5664, -0.1}{1/cos(x)}
-%\arrow \reverse \function{11.2483, 12.5664, 0.1}{1/cos(x)}
-\penwd{1.5pt}
-\arrow \function{0, 1.3181, 0.1}{1/cos(x)}
-\arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
-\arrow \reverse \function{4.9651, 6.28, 0.1}{1/cos(x)}
-\end{mfpic}
-
-& \hspace{.45in}
-
-\begin{mfpic}[12]{-8.5}{8.5}{-4}{4.25}
-\point[4pt]{ (1.5708, 1), (4.7124, -1)}
-\axes
-\tlabel[cc](8.5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4.25){\scriptsize $y$}
-\tcaption{The graph of $y = \csc(x)$.}
-\tlpointsep{4pt}
-\dotted \function{-7.854, 7.854, 0.1}{sin(x)}
-\dashed \polyline{(3.1416, -4), (3.1416, 4)}
-\dashed \polyline{(6.2832, -4), (6.2832, 4)}
-\dashed \polyline{(-3.1416, -4), (-3.1416, 4)}
-\dashed \polyline{(-6.2832, -4), (-6.2832, 4)}
-%\dashed \polyline{(9.4248, -4), (9.4248, 4)}
-%\dashed \polyline{(12.5664, -4), (12.5664, 4)}
-%\dashed \polyline{(-9.4248, -4), (-9.4248, 4)}
-%\dashed \polyline{(-12.5664, -4), (-12.5664, 4)}
-\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
-\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
-\arrow \reverse \arrow \function{-0.2527, -2.889, -0.1}{1/sin(x)}
-\arrow \reverse \arrow \function{-3.3943, -6.0306, -0.1}{1/sin(x)}
-\arrow \reverse \function{6.5359, 7.854, 0.1}{1/sin(x)}
-\arrow \reverse \function{-6.5359, -7.854, -0.1}{1/sin(x)}
-%\arrow \reverse \arrow \function{9.6775, 12.3138, 0.1}{1/sin(x)}
-%\arrow \reverse \arrow \function{-9.6775, -12.3138, -0.1}{1/sin(x)}
-\penwd{1.5pt}
-\arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
-\arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
-\end{mfpic}\\
-
-\end{tabular}
 
  
 
@@ -1214,94 +991,18 @@ For completeness,  we present both points of view, each in its own subsection.
 
 In this subsection, we restrict the secant and cosecant functions to coincide with the restrictions on cosine and sine, respectively.  For $f(t) = \sec(t)$, we restrict the domain to $\left[0, \frac{\pi}{2}\right) \cup \left( \frac{\pi}{2}, \pi\right]$ \index{arcsecant ! trigonometry friendly ! graph of}
 
+% https://www.desmos.com/calculator/wg9sjrpyxt
+\begin{center}
+    \desmos{wg9sjrpyxt}{800}{600}
+\end{center}
 
- \[ \begin{array}{ccc}
-
-\begin{mfpic}[25][20]{-0.5}{4}{-4}{4}
-\point[4pt]{(0,1), (3.1416, -1)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{\scriptsize  $f(t) = \sec(t)$ on  $\left[0, \frac{\pi}{2}\right) \cup \left( \frac{\pi}{2}, \pi\right]$}
-\xmarks{1.5708, 3.1416}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $\frac{\pi}{2}$} 1.5708,  {\scriptsize $\pi$} 3.1416}
-\axislabels {y}{{\scriptsize $-1$} -1, { \scriptsize $1$} 1}
-\dashed \polyline{(1.5708, -4), (1.5708, 4)}
-\penwd{1.25pt}
-\arrow \function{0, 1.3181, 0.1}{1/cos(x)}
-\arrow  \reverse  \function{1.8235, 3.1416, 0.1}{1/cos(x)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[20][25]{-4}{4}{-0.5}{4}
-\point[4pt]{(1,0), (-1,3.1416)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tcaption{\scriptsize  $f^{-1}(t) = \mbox{arcsec}(t)$}
-\ymarks{1.5708, 3.1416}
-\xmarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $\frac{\pi}{2}$} 1.5708,  {\scriptsize $\pi$} 3.1416}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, { \scriptsize $1$} 1}
-\dashed \polyline{(-4, 1.5708), (4, 1.5708)}
-\penwd{1.25pt}
-\arrow \parafcn{0, 1.3181, 0.1}{(1/cos(t),t)}
-\arrow  \reverse  \parafcn{1.8235, 3.1416, 0.1}{(1/cos(t),t)}
-\end{mfpic}
-
-\end{array}\]
 
 and we restrict $g(t) = \csc(t)$ to $\left[-\frac{\pi}{2}, 0\right) \cup \left(0,  \frac{\pi}{2}\right]$. \index{arccosecant ! trigonometry friendly ! graph of}
 
- \[ \begin{array}{ccc}
-
-\begin{mfpic}[27][20]{-2}{2}{-4}{4}
-\point[4pt]{(-1.5708,-1), (1.5708, 1)}
-\axes
-\tlabel[cc](2,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,4.25){\scriptsize $y$}
-\tcaption{\scriptsize  $g(t) = \csc(t)$ on  $\left[-\frac{\pi}{2}, 0\right) \cup \left(0,  \frac{\pi}{2}\right]$}
-\xmarks{-1.5708, 1.5708}
-\ymarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-\frac{\pi}{2} \hspace{7pt}$} -1.5708, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {y}{{\scriptsize $-1$} -1, { \scriptsize $1$} 1}
-\penwd{1.25pt}
-\arrow \reverse \function{0.2527, 1.5708, 0.1}{1/sin(x)}
-\arrow  \reverse \function{-0.2527, -1.5708, -0.1}{1/sin(x)}
-\end{mfpic}
-
-&
-
-\stackrel{\stackrel{\mbox{\scriptsize reflect across $y=t$}}{\xrightarrow{\hspace{1in}}}}{\mbox{ \scriptsize switch $t$ and $y$ coordinates}} 
-
-&
-
-\begin{mfpic}[20][25]{-4}{4}{-2}{2}
-\point[4pt]{(-1,-1.5708), (1,1.5708)}
-\axes
-\tlabel[cc](4,-0.25){\scriptsize $t$}
-\tlabel[cc](0.25,2){\scriptsize $y$}
-\tcaption{\scriptsize  $g^{-1}(t) = \mbox{arccsc}(t)$}
-\ymarks{-1.5708, 1.5708}
-\xmarks{-1,1}
-\tlpointsep{4pt}
-\axislabels {y}{{\scriptsize $-\frac{\pi}{2}$} -1.5708, {\scriptsize $\frac{\pi}{2}$} 1.5708}
-\axislabels {x}{{\scriptsize $-1 \hspace{7pt}$} -1, { \scriptsize $1$} 1}
-\penwd{1.25pt}
-\arrow \reverse \parafcn{0.2527, 1.5708, 0.1}{(1/sin(t),t)}
-\arrow  \reverse \parafcn{-0.2527, -1.5708, -0.1}{(1/sin(t),t)}
-\end{mfpic}
-
-\end{array}\]
+ % https://www.desmos.com/calculator/0vilpj1cno
+ \begin{center}
+     \desmos{0vilpj1cno}{800}{600}
+ \end{center}
 
 Note that for both arcsecant and arccosecant, the domain is $(-\infty, -1] \cup [1, \infty)$.  Taking a page from Section \ref{AppAbsValEqIneq}, we can rewrite this as $\left\{ x \, | \, |x| \geq 1\right\}$.  (This is often done in Calculus textbooks, so we include it here for completeness.)
 
