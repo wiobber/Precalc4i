@@ -56,10 +56,10 @@ jobs:
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
           ./xmScripts/xmlatex veryclean RationalFunctions  # recompile
-          ./xmScripts/xmlatex bake  course.tex testxourse.tex -j 5 
-          ./xmScripts/xmlatex frost course.tex testxourse.tex 
-          ./xmScripts/xmlatex name  course.tex testxourse.tex 
-          ./xmScripts/xmlatex serve course.tex testxourse.tex 
+          ./xmScripts/xmlatex bake  course.tex testxourse.tex -j 5  || echo NOK
+          ./xmScripts/xmlatex frost course.tex testxourse.tex || echo NOK
+          ./xmScripts/xmlatex name  course.tex testxourse.tex || echo NOK
+          ./xmScripts/xmlatex serve course.tex testxourse.tex || echo NOK
           # ./xmScripts/xmlatex ghaction
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
