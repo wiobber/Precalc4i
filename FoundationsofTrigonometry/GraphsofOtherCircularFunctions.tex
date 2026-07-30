@@ -19,15 +19,15 @@
 
 As mentioned at the end of Section \ref{TheOtherCircularFunctions}, one way to proceed with our analysis of the circular functions is to use what we know about the functions $\sin(t)$ and $\cos(t)$ to rewrite the four additional circular functions in terms of sine and cosine with help from Theorem \ref{recipquotid}.  We use this approach to analyze $F(t) = \sec(t)$.
 
-\smallskip
+
 
 Rewriting $F(t) = \sec(t)= \frac{1}{\cos(t)}$, we first note that  $F(t)$ is undefined whenever $\cos(t) = 0$.  Thanks to Example \ref{solveforangle} number \ref{cosineiszero}, we know $\cos(t) = 0$ whenever $t = \frac{\pi}{2} + \pi k$ for integers $k$.
 
-\smallskip
+
 
 This gives us one way to describe the domain of $F$:  $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  To get a better feel for the set of real numbers we're dealing with, we write out and graph the domain on the number line.
 
-\smallskip
+
 
 Running through a few values of $k$, we find some of the values excluded from the domain:   $t \neq  \pm \frac{\pi}{2}, \, \pm \frac{3\pi}{2}, \, \pm \frac{5\pi}{2}$.  Using these we can graph the domain on the number line below.
 
@@ -54,48 +54,48 @@ Running through a few values of $k$, we find some of the values excluded from th
 \draw[<->,line width=0.8pt] (-7.6,0.05)--(7.6,0.05);
 
 % Labels
-\node[below=2pt] at (-5,0.05) {$-\dfrac{5\pi}{2}$};
-\node[below=2pt] at (-3,0.05) {$-\dfrac{3\pi}{2}$};
-\node[below=2pt] at (-1,0.05) {$-\dfrac{\pi}{2}$};
+\node[below=2pt] at (-5,0.05) {$-\frac{5\pi}{2}$};
+\node[below=2pt] at (-3,0.05) {$-\frac{3\pi}{2}$};
+\node[below=2pt] at (-1,0.05) {$-\frac{\pi}{2}$};
 
 \node[below=2pt] at (0,0.05) {$0$};
 
-\node[below=2pt] at (1,0.05) {$\dfrac{\pi}{2}$};
-\node[below=2pt] at (3,0.05) {$\dfrac{3\pi}{2}$};
-\node[below=2pt] at (5,0.05) {$\dfrac{5\pi}{2}$};
+\node[below=2pt] at (1,0.05) {$\frac{\pi}{2}$};
+\node[below=2pt] at (3,0.05) {$\frac{3\pi}{2}$};
+\node[below=2pt] at (5,0.05) {$\frac{5\pi}{2}$};
 
 \end{tikzpicture}
 \end{image}
 
 Expressing this set using interval notation is a bit of a challenge, owing to the infinitely many intervals present.  As a first attempt, we have:  $\ldots \cup \left( -\frac{5\pi}{2}, -\frac{3\pi}{2}\right) \cup \left( -\frac{3\pi}{2}, -\frac{\pi}{2}\right) \cup  \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3\pi}{2}\right) \cup  \left(\frac{3\pi}{2}, \frac{5\pi}{2}\right) \cup \ldots$, where, as usual, the periods of ellipsis indicate the pattern continues indefinitely.\footnote{We introduce an extended form of interval notation in Section \ref{extendedinterval} which gives us a more compact way to express this set. } Hence, for now, it suffices to know that the domain of $F(t) = \sec(t)$ excludes the odd multiples of $\frac{\pi}{2}$.
 
-\smallskip
+
 
 
 To find the range of $F$, we find it helpful once again to view  $F(t) = \sec(t) = \frac{1}{\cos(t)}$.   We know the range of $\cos(t)$ is $[-1,1]$, and since $F(t) = \sec(t) = \frac{1}{\cos(t)}$ is  undefined when $\cos(t) = 0$, we split our discussion into two cases: when $0 < \cos(t) \leq 1$ and when $-1 \leq \cos(t) < 0$. 
 
-\smallskip
+
 
  If $0 < \cos(t) \leq 1$, then we can divide the inequality $\cos(t) \leq 1$ by  $\cos(t)$ to obtain  $\sec(t) = \frac{1}{\cos(t)} \geq 1$.  Moreover, we see as  $\cos(t) \rightarrow 0^{+}$, $\sec(t) \rightarrow \infty$.   If, on the other hand, if $-1 \leq \cos(t) < 0$, then dividing by $\cos(t)$ causes a reversal of the inequality so that $\sec(t) = \frac{1}{\cos(t)} \leq -1$.  In this case, as $\cos(t) \rightarrow 0^{-}$,  $\sec(t) \rightarrow -\infty$.   Since $\cos(t)$ admits all of the values in $[-1,1]$, the function $F(t) = \sec(t)$ admits all of the values in $(-\infty, -1] \cup [1,\infty)$.  
 
-\smallskip
+
 
 Since $\cos(t)$ is periodic with period $2\pi$, it shoudn't be too surprising to find that $\sec(t)$ is also.  Indeed, provided $\sec(\alpha)$ and  $\sec(\beta)$ are defined, $\sec(\alpha) = \sec(\beta)$ if and only if $\cos(\alpha) = \cos(\beta)$.  Said differently,  $\sec(t)$ `inherits' its period from $\cos(t)$. 
 
-\smallskip
+
 
 We now turn our attention to graphing $F(t) = \sec(t)$.  Using the table of values we tabulated when graphing $y = \cos(t)$ in Section \ref{GraphsofSineandCosine}, we can generate points on the graph of $y = \sec(t)$ by taking reciprocals.
 
-\smallskip
+
 
 Using the techniques developed in Section \ref{IntroRational}, we can more closely analyze the behavior of $F$ near the values excluded from its domain.  We find  as $t \rightarrow \frac{\pi}{2}^{-}$, $\cos(t) \rightarrow 0^{+}$, so $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{-}}\sec(t) = \infty}$.  Similarly, we get $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{+}}\sec(t) = -\infty}$, $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{-}}\sec(t) = -\infty}$, and $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{+}}\sec(t)  = \infty}$.  This means the lines $t = \frac{\pi}{2}$ and $t = \frac{3\pi}{2}$ are vertical asymptotes to the graph of $y = \sec(t)$.
 
 
-\smallskip
+
 
 Below on the right we graph a fundamental cycle of $y = \sec(t)$ \index{secant ! graph of} with the graph of the fundamental cycle of $y = \cos(t)$ dotted for reference.  
 
-\smallskip
+
 
 
 \[ \begin{array}{|r||r|r|r|}  
@@ -130,7 +130,7 @@ To get a graph of the entire secant function, we paste copies of the fundamental
 
 As one would expect, to graph $G(t) = \csc(t)$ we begin with $y = \sin(t)$ and take reciprocals of the corresponding $y$-values.  Here, we encounter issues at $t = 0$, $t = \pi$, $t = 2\pi$, and, in general, at all whole number multiples of $\pi$, so the domain of $G$ is $\{ t \, | \, t \neq  \pi k, \text{for integers $k$} \}$.  Not surprisingly, these values produce vertical asymptotes.  
 
-\smallskip
+
 
 Proceeding as above,  we graph produce the graph of the fundamental cycle of $y = \csc(t)$ below along with the dotted graph of $y=\sin(t)$ for reference.  
 
@@ -157,7 +157,7 @@ Proceeding as above,  we graph produce the graph of the fundamental cycle of $y 
 
 Pasting copies of the fundamental period of $y = \csc(t)$ end to end produces the graph below.  Since the graphs of  $y = \sin(t)$ and $y = \cos(t)$ are merely phase shifts of each other,  it is not too surprising to find the graphs of  $y = \csc(t)$ and $y = \sec(t)$ are as well. \index{cosecant ! graph of}
 
-\smallskip
+
 
 % https://www.desmos.com/calculator/4plklhdy86
 \begin{center}
@@ -166,15 +166,15 @@ Pasting copies of the fundamental period of $y = \csc(t)$ end to end produces th
 
 As with the graph of secant, the graph below suggests symmetry.  Indeed, since the sine function is odd, that is $\sin(-t) = -\sin(t)$, so too is the cosecant function:  $\csc(-t) = \frac{1}{\sin(-t)} = -\frac{1}{\sin(t)} = -\csc(t)$.  Hence, the graph of $G(t) = \csc(t)$ is symmetric about the origin.
 
-\smallskip
+
 
 Note that, on the intervals between the vertical asymptotes, both $F(t) = \sec(t)$ and $G(t) = \csc(t)$ are continuous and smooth.  In other words, they are continuous and smooth \textit{on their domains}.\footnote{Just like the rational functions in Chapter \ref{RationalFunctions} are continuous and smooth on their domains because polynomials are continuous and smooth everywhere, the secant and cosecant functions are continuous and smooth on their domains since the cosine and sine functions are continuous and smooth everywhere.}  
 
-\smallskip
+
 
 The following theorem summarizes the properties of the secant and cosecant functions.  Note that all of these properties are direct results of them being reciprocals of the cosine and sine functions, respectively.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -217,13 +217,13 @@ The following theorem summarizes the properties of the secant and cosecant funct
 
 \end{itemize}
 
-\smallskip
+
 
 \end{theorem}
 
 %% \ebm}
 
-\medskip
+
 
 
 In the next example, we discuss graphing more general secant and cosecant curves.  We make heavy use of the fact they are reciprocals of sine and cosine functions and apply what we learned in Section \ref{GraphsofSineandCosine}.
@@ -236,7 +236,7 @@ In the next example, we discuss graphing more general secant and cosecant curves
 
 \item  $f(t) = 1 - 2 \sec(2t)$
 
-\item  $g(t) = \dfrac{\csc(- \pi t - \pi) - 5}{3}$
+\item  $g(t) = \frac{\csc(- \pi t - \pi) - 5}{3}$
 
 \end{enumerate}
 
@@ -248,19 +248,19 @@ In the next example, we discuss graphing more general secant and cosecant curves
 
 \item  To graph $f(t) = 1 - 2 \sec(2t)$, we follow the same procedure as in Example \ref{cosinesinegraphex2}.  That is, we use the concept of frequency and phase shift to identify quarter marks, then substitute these values into the function to obtain the corresponding points.
 
-\smallskip
+
 
 If we think about a related \textit{cosine} curve, $y = 1 - 2\cos(2t) = -2\cos(2t) + 1$, we know from  Section \ref{GraphsofSineandCosine}, that the frequency is $\omega = 2$, so the period is $T = \frac{2\pi}{2} = \pi$. Since the phase $\phi = 0$, there is no phase shift.  Hence, the new quarter marks for this curve are $t=0$, $t=\frac{\pi}{4}$, $t=\frac{\pi}{2}$, $t=\frac{3\pi}{4}$, and $t=\pi$. 
 
-\smallskip
+
 
 Since we obtained the fundamental cycle of the secant curve from the fundamental cycle of the cosine curve, these same $t$-values are the new quarter marks for $f(t) = 1 - 2 \sec(2t)$.
 
-\smallskip
+
 
 Substituting these $t$ values $f(t)$, we get the table below on the left.  Note that if $f(t)$ exists, we have a point on the graph;  otherwise, we have found a vertical asymptote.\footnote{As with the examples in Section \ref{GraphsofSineandCosine}, note that we can partially check our answer since the argument of the secant function should simplify to the `original' quarter marks - the quadrantal angles.}
 
-\smallskip
+
 
 We graph one cycle of  $f(t) = 1 - 2 \sec(2t)$ below on the right along with the associated cosine curve,  $y = 1 - 2 \cos(2t)$ which is dotted, and confirm the period is $\pi - 0 = \pi$.
  
@@ -286,15 +286,15 @@ We graph one cycle of  $f(t) = 1 - 2 \sec(2t)$ below on the right along with the
 
 \item As with the previous example, we start graphing $g(t) = \frac{\csc(-\pi t- \pi ) - 5}{3}$ by first finding the quarter marks of the associated sine curve: $y =\frac{\sin(- \pi t - \pi ) - 5}{3} = \frac{1}{3} \sin( -\pi t - \pi) - \frac{5}{3}$.  
 
-\smallskip
+
 
 Since the coefficient of $t$ is negative, we make use of the odd property of sine to rewrite the function as:  $y = \frac{1}{3} \sin( - \pi t - \pi ) - \frac{5}{3} =  \frac{1}{3} \sin( -(\pi t + \pi) ) - \frac{5}{3} = -\frac{1}{3} \sin(\pi t  + \pi) - \frac{5}{3}$.
 
-\smallskip
+
 
 We find the frequency  is $\omega = \pi$, so the period is $T = \frac{2\pi}{\pi} = 2$.  The  phase is $\phi = \pi$, so the phase shift is $-\frac{\pi}{\pi} = -1$.  Hence the fundamental cycle $[0, 2\pi]$ is shifted to the interval $[-1,1]$ with quarter marks $t = -1$, $t = -\frac{1}{2}$, $t=0$, $t = \frac{1}{2}$ and $t=1$.
 
-\smallskip
+
 
 
 Substituting these $t$-values into $g(t)$, we generate the graph below on the right confirm the period is $1 - (-1) = 2$.   The associated sine curve, $y = \frac{\sin(- \pi t- \pi) - 5}{3}$, is dotted in as a reference.  
@@ -322,11 +322,11 @@ Substituting these $t$-values into $g(t)$, we generate the graph below on the ri
 
 As suggested in Example \ref{seccscgraphex}, the concepts of frequency, period, phase shift, and baseline are alive and well with graphs of the secant and cosecant functions.  Since the secant and cosecant curves are unbounded, we do not have the concept of `amplitude' for these curves.  That being said, the amplitudes of the corresponding cosine and sine curves do play a role here - they measure how wide the gap  is between the baseline and the curve.  
 
-\smallskip
+
 
 We gather these observations in the  following result whose proof is a consequence of Theorem \ref{sinusoidform} and is relegated to Exercise \ref{sinusoidformseccscexercise}.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -336,9 +336,9 @@ We gather these observations in the  following result whose proof is a consequen
 
 \begin{itemize}
 
-\item  have period  $T = \dfrac{2\pi}{\omega}$
+\item  have period  $T = \frac{2\pi}{\omega}$
 
-\item  have phase shift $-\dfrac{\phi}{\omega}$
+\item  have phase shift $-\frac{\phi}{\omega}$
 
 
 \end{itemize}
@@ -353,11 +353,11 @@ We gather these observations in the  following result whose proof is a consequen
 
 \end{theorem}
 
-\smallskip
+
 
 %% \ebm}
 
-\smallskip
+
 
 We put Theorem \ref{secantcosecanttperiodphaseshift} to good use in the next example.
 
@@ -440,19 +440,19 @@ plot ({\u*\piunit},
 
 \item  We first note the period:  $T = \frac{5\pi}{6} - \left(-\frac{\pi}{6}\right) = \pi$.  Since $T  = \frac{2\pi}{\omega} = \pi$, we get $\omega  = 2$.  
 
-\smallskip
+
 
 To find the phase $\phi$, we need to first determine the phase shift.  Recall that what is graphed here is only one \text{cycle} of the function, so by copying and pasting one more cycle, we identify what looks like a fundamental cycle of the secant function to us\footnote{Assuming $A>0$, that is.} as highlighted below on the left.
 
-\smallskip
+
 
 We get the phase shift is $\frac{7\pi}{12}$ so solving  $ -\frac{\phi}{2} = \frac{7\pi}{12} $, we get $\phi = - \frac{7\pi}{6}$.
 
-\smallskip
+
 
 To find the baseline, $B$, we take a cue from our work in Example \ref{fitsinusoidtodata1} in Section \ref{GraphsofSineandCosine}.  We find the average of the local minimums and maximums to be $\frac{-2+0}{2} = -1$, so $B = -1$.  Since there is a $1$ unit gap between the baseline and the graph of the function, we have $A = 1$.   Alternatively, we can sketch the corresponding cosine curve (dotted in the figure below) and determine $B$ and $A$ that way.
 
-\smallskip
+
 
 We find our final answer to be $f(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$.  As usual, we check our answer by graphing. 
 
@@ -465,11 +465,11 @@ We find our final answer to be $f(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -
 
 \item  Since the secant and cosecant curves are phase shifts of each other, we could find a formula for $f(t)$ in terms of cosecants by shifting our formula $F(t) = \sec\left( 2 t - \frac{7\pi}{6} \right) -1$ .  We leave this to the reader.\footnote{See Exercise \ref{secantcosecantshiftexercise}.}  
 
-\smallskip
+
 
 Working `from scratch,' we would find $T = \pi$, $\omega = 2$, $B=-1$, and $A=1$ the same as above.\footnote{Again, assuming we want $A > 0$.}  To determine the phase shift, we refer to the figure above on the right.
 
-\smallskip
+
 
 Since the phase shift is $\frac{\pi}{3}$, we solve  $-\frac{\phi}{2} = \frac{\pi}{3}$ to get $\phi = -\frac{2\pi}{3}$. Putting all our work together, we get our final answer: $f(t) = \csc\left(2t - \frac{2\pi}{3} \right) - 1$.  Again, our best check here is to graph. \qed
 
@@ -485,11 +485,11 @@ We cannot stress enough that our answers to Example \ref{secantcosecantfromgraph
 
 Next, we turn our attention to the tangent and cotangent functions.  Viewing $J(t) = \tan(t) = \frac{\sin(t)}{\cos(t)}$, we find the domain of $J$ excludes all values where $\cos(t) = 0$.  Hence, the domain of $J$ is $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  Using this information along with the common values we derived in Section \ref{TheOtherCircularFunctions}, we create the table of values below on the left.
 
-\smallskip
+
 
 Investigating the behavior near the values excluded from the domain, we find as $t \rightarrow \frac{\pi}{2}^{-}$, $\sin(t) \rightarrow 1^{-}$ and $\cos(t) \rightarrow 0^{+}$. Hence,   $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{-}}\tan(t) = \infty}$ producing a vertical asymptote to the graph at $t = \frac{\pi}{2}$.  Similarly, we get that as $\ds{\lim_{t \rightarrow \frac{\pi}{2}^{+}} \tan(t) = -\infty}$,   $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{-}} \tan(t) = \infty}$, and  $\ds{\lim_{t \rightarrow \frac{3\pi}{2}^{+}}\tan(t) = -\infty}$.
 
-\smallskip
+
 
 Putting all of this information together, we graph $y = \tan(t)$ over the interval $[0, 2\pi]$ below on the right.
 
@@ -523,23 +523,23 @@ After the usual `copy and paste' procedure, we create the graph of $y = \tan(t)$
 
 The graph of $y = \tan(t)$ suggests symmetry through the origin.  Indeed, tangent is odd since sine is odd and cosine is even:   $\tan(-t) = \frac{\sin(-t)}{\cos(-t)} = \frac{-\sin(t)}{\cos(t)} = -\tan(t)$.  
 
-\smallskip
+
 
 We also see the graph suggests the range of $J(t) = \tan(t)$ is all real numbers, $(-\infty, \infty)$.  We present one proof of this fact in Exercise \ref{rangeoftangentexercise}.
 
-\smallskip
+
 
 Moreover, as noted in Section \ref{TheOtherCircularFunctions}, the period of the tangent function is $\pi$, and we see that reflected in the graph. This means we can choose \textit{any} interval of length $\pi$ to serve as our `fundamental cycle.'  
 
-\smallskip
+
 
 We choose the cycle traced out  over the (open) interval $\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ as highlighted above.  In addition to the asymptotes at the endpoints $t = \pm \frac{\pi}{2}$, we use the `quarter marks' $t = \pm \frac{\pi}{4}$ and $t = 0$. 
 
-\smallskip
+
 
 It should be no surprise that $K(t) = \cot(t)$ behaves similarly to $J(t)=\tan(t)$.  Since $\cot(t) = \frac{\cos(t)}{\sin(t)}$, the domain of $K$ excludes the values where $\sin(t) = 0$:   $\{ t \, | \, t \neq  \pi k, \text{for integers $k$} \}$.
 
-\smallskip
+
 
 After analyzing the behavior of $K$ near the values excluded from its domain  along with plotting points, we graph $y = \cot(t)$ over the interval $[0,2\pi]$ below on the right. \index{cotangent ! graph of}
 
@@ -574,15 +574,15 @@ As usual, pasting copies end to end produces the graph of $K(t) = \cot(t)$ below
 
 As with $J(t) = \tan(t)$, the graph of $K(t) = \cot(t)$ suggests $K$ is odd, a fact we leave to the reader to prove in Exercise \ref{cotisoddexercise}.  Also, we see that the period of cotangent (like tangent)  is $\pi$ and the range is $(-\infty, \infty)$.
 
-\smallskip
+
 
 We take as one fundamental cycle the graph as traced out over the interval $(0,\pi)$, highlighted above, with quarter marks:  $t= 0$, $t=\frac{\pi}{4}$, $t=\frac{\pi}{2}$, $t=\frac{3\pi}{4}$ and $t=\pi$. 
 
-\smallskip
+
 
 The properties of the tangent and cotangent functions are summarized below. As with Theorem \ref{secantcosecantfunctionprops}, each of the results below can be traced back to properties of the cosine and sine functions and the definition of the tangent and cotangent functions as quotients thereof. 
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -621,7 +621,7 @@ The properties of the tangent and cotangent functions are summarized below. As w
 
 \item has period $\pi$
 
-\smallskip
+
 
 \end{itemize}
 
@@ -632,11 +632,11 @@ The properties of the tangent and cotangent functions are summarized below. As w
 %% \ebm}
 
 
-\smallskip
+
 
 Unlike the secant and cosecant functions, the tangent and cotangent functions have different periods than sine and cosine.  Moreover,  in the case of the tangent function, the fundamental cycle we've chosen starts at $-\frac{\pi}{2}$ instead of $0$.  Nevertheless, we can use the same notions of period and phase shift to graph transformed versions of tangent and cotangent functions, since these results ultimately trace back to applying Theorem \ref{transformationsthm}.  We state a version of Theorem \ref{sinusoidform} for tangent and cotangent functions below. 
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -646,7 +646,7 @@ Unlike the secant and cosecant functions, the tangent and cotangent functions ha
 
 \begin{itemize}
 
-\item  have period  $T = \dfrac{\pi}{\omega}$
+\item  have period  $T = \frac{\pi}{\omega}$
 
 \item  have vertical shift or `baseline'  $B$
 
@@ -658,9 +658,9 @@ Unlike the secant and cosecant functions, the tangent and cotangent functions ha
 
 \begin{itemize}
 
-\item  The phase shift for $y = J(t)$ is $-\dfrac{\phi}{\omega} - \dfrac{\pi}{2 \omega}$.
+\item  The phase shift for $y = J(t)$ is $-\frac{\phi}{\omega} - \frac{\pi}{2 \omega}$.
 
-\item  The phase shift for $y = K(t)$ is $-\dfrac{\phi}{\omega}$.
+\item  The phase shift for $y = K(t)$ is $-\frac{\phi}{\omega}$.
 
 \end{itemize}
 
@@ -668,16 +668,16 @@ Unlike the secant and cosecant functions, the tangent and cotangent functions ha
 
 \end{theorem}
 
-\smallskip
+
 
 %% \ebm}
 
 
-\smallskip
+
 
 The proof of  the proof of  Theorem \ref{tangentcotangentperiodphaseshift} is left to the reader in Exercise \ref{sinusoidformtancotexercise}.  
 
-\smallskip
+
 
 We put Theorem \ref{tangentcotangentperiodphaseshift} to good use in the following example.
 
@@ -703,15 +703,15 @@ We put Theorem \ref{tangentcotangentperiodphaseshift} to good use in the followi
 
 \item Rewriting $f(t)$ so it fits the form in  Theorem \ref{tangentcotangentperiodphaseshift}, we get $f(t) = - \tan\left(\frac{1}{2} t  + (- \pi) \right) + 1$.   
 
-\smallskip
+
 
 With $\omega = \frac{1}{2}$, we find the period $T = \frac{\pi}{1/2} = 2 \pi$.  Since $\phi = -\pi$, the phase shift is $-\frac{(-\pi)}{1/2} - \frac{\pi}{2 (1/2)} = \pi$.
 
-\smallskip
+
 
 Hence, one cycle of $f(t)$ starts at $t=\pi$ and finishes at $t = \pi + 2\pi = 3\pi$.  Our quarter marks are $\frac{2\pi}{4} = \frac{\pi}{2}$ units apart and are $t  = \pi$, $t = \frac{3\pi}{2}$, $t = 2\pi$, $t  = \frac{5\pi}{2}$, and, finally, $t = 3\pi$.  
 
-\smallskip
+
 
 Substituting these $t$-values into $f(t)$, we find points on the graph and the vertical asymptotes.\footnote{Here, as with all tangent functions, we can partially check our new quarter marks by noting the argument of the tangent function simplifies, in each case,  to one of the original quarter marks of the interval $\left(-\frac{\pi}{2}, \frac{\pi}{2} \right)$.}
 
@@ -737,11 +737,11 @@ We confirm that the period is $3\pi - \pi = 2\pi$.
 
 \item  To put $g(t)$ into the form prescribed by Theorem \ref{tangentcotangentperiodphaseshift}, we make use of the odd property of cotangent:  $g(t) = 2\cot\left(2\pi - \pi t \right) - 1 = 2\cot( -[\pi t- 2\pi]) - 1 = -2 \cot(\pi t- 2\pi) - 1= -2 \cot(\pi t + (- 2\pi)) - 1$.
 
-\smallskip
+
 
 We identify $\omega = \pi$ so the period is $T = \frac{\pi}{\pi} = 1$.  Since $\phi = -2\pi$, the phase shift is $-\frac{-2\pi}{\pi} = 2$.  Hence, one cycle of $g(t)$ starts at $t = 2$ and ends at $t = 2+1 = 3$.  
 
-\smallskip
+
 
 Our quarter marks are $\frac{1}{4}$ units apart and are $t = 2$, $t = \frac{9}{4}$, $t = \frac{5}{2}$, $t = \frac{11}{4}$, and $t = 3$.  We generate the graph below.
 
@@ -846,25 +846,25 @@ plot ({\u},
 
 \item We first find the period $T = 10-(-2) = 12$.  Per Theorem \ref{tangentcotangentperiodphaseshift}, we know $\frac{\pi}{\omega} = 12$, or $\omega = \frac{\pi}{12}$.
 
-\smallskip
+
 
 Next, we look for the phase shift. We notice the cycle graphed for us is decreasing instead of the usual increasing we expect for a standard tangent cycle.  When this sort of thing happened in Examples \ref{fitsinusoidtodata1} and \ref{secantcosecantfromgraphex}, we pasted another cycle of the function and used that to help identify the phase shift in order to keep the value of $A> 0$.  Here, no amount of `copying and pasting' will produce an increasing cycle (do you see why?), so we know $A<0$ and use $-2$ as the phase shift.
 
-\smallskip
+
 
 The formula given in Theorem \ref{tangentcotangentperiodphaseshift} tells us $-\frac{\phi}{\omega} - \frac{\pi}{2 \omega} = -2$ so substituting $\omega =  \frac{\pi}{12}$ gives $\phi = -\frac{\pi}{3}$.
 
-\smallskip
+
 
 Next, we see the baseline here is still the $t$-axis, so $B=0$.  This means all that's left to find is $A$.  We have already established that $A<0$ to account for the reflection across the $t$-axis.   Moreover, the $y$-values of the points off of the baseline are $3$ units from the baseline, indicating a vertical stretch by a factor of $3$.  Hence, $A = -3$ and $f(t) = -3 \tan\left( \frac{\pi}{12} t - \frac{\pi}{3} \right)$.  As usual, the ultimate check is to graph.
 
 \item  We find $T = 12$, $\omega = \frac{\pi}{12}$, and $B = 0$ as above.  Since the fundamental cycle of cotangent is decreasing, we know $A>0$ and identify the phase shift as $-2$.  
 
-\smallskip
+
 
 Using Theorem \ref{tangentcotangentperiodphaseshift}, we know $-\frac{\phi}{\omega} = -2$ so substituting $\omega = \frac{\pi}{12}$, we get $\phi = \frac{\pi}{6}$.
 
-\smallskip
+
 
 As above, the vertical stretch is by a factor of $3$, so we take $A = 3$ for our final answer:  $f(t) = 3 \cot \left( \frac{\pi}{12} t  + \frac{\pi}{6}\right)$.  As always, we check our answer by graphing. \qed
 
@@ -940,7 +940,7 @@ We begin by sketching the scenario below.  Since the rocket us launched `directl
 
 \item  From the remarks preceding Theorem \ref{circularfunctionscircle}, we know the definitions of the circular functions agree with those specified for acute angles in right triangles as described in  Definition \ref{righttriangletherest} in Section \ref{AppRightTrig}.  Hence, $\tan(\theta) = \frac{f(\theta)}{42}$, so $f(\theta) = 42 \tan(\theta)$. 
 
-\smallskip
+
 
 We find $f\left( \frac{\pi}{3} \right) =  42 \tan\left( \frac{\pi}{3} \right) = 30 \sqrt{3}$.  This means when the angle of inclination is $\frac{\pi}{3}$ or $60^{\circ}$, the rocket is  or $30 \sqrt{3} \approx 73$ feet off of the ground.
 
@@ -962,15 +962,15 @@ We find $f\left( \frac{\pi}{3} \right) =  42 \tan\left( \frac{\pi}{3} \right) = 
 
 Using interval notation to describe the domains of the secant, cosecant, tangent, and cotangent functions is complicated by the fact there are infinitely many intervals to represent.  In this section, we introduce \index{interval notation ! extended}\index{extended interval notation}\textbf{extended interval notation} to handle these situations.
 
-\smallskip
+
 
 Let us return to the domain of $F(t) = \sec(t)$, $\{ t \, | \, t \neq  \frac{\pi}{2} + \pi k, \text{for integers $k$} \}$.  Using interval notation, we describe this set as: $\ldots \cup \left( -\frac{5\pi}{2}, -\frac{3\pi}{2}\right) \cup \left( -\frac{3\pi}{2}, -\frac{\pi}{2}\right) \cup  \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3\pi}{2}\right) \cup  \left(\frac{3\pi}{2}, \frac{5\pi}{2}\right) \cup \ldots$
 
-\smallskip
+
 
 In order to write this set in a more compact way, we let $t_{\mbox{\tiny $k$}}$ denote the  the $k$th real number excluded from the domain.  That is,  $t_{\mbox{\tiny $k$}} =  \frac{\pi}{2} + \pi k$.  (This is sequence notation from Chapter \ref{SequencesandtheBinomialTheorem}.)
 
-\smallskip
+
 
 Getting a common denominator and factoring out the $\pi$ in the numerator, we get  $t_{\mbox{\tiny $k$}} = \frac{(2k+1)\pi}{2}$.  The set we're after consists of the union of intervals determined by the successive points $t_{\mbox{\tiny $k$}}$:   $\left(t_{\mbox{\tiny $k$}}, t_{\mbox{\tiny $k+1$}}\right) = \left( \frac{(2k+1)\pi}{2},  \frac{(2k+3)\pi}{2}\right)$ where $k$ ranges through the integers.  We denote this union as:
 
@@ -987,11 +987,11 @@ The reader should compare this notation with summation notation introduced in Se
  
  never equals $\infty$ or $-\infty$, but rather, this conveys the idea that $k$ ranges through all of the integers.  
  
- \smallskip
+ 
 
 Using extended interval notation, we summarize the domains and ranges of all six circular functions below.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -1008,7 +1008,7 @@ Using extended interval notation, we summarize the domains and ranges of all six
 
 \end{tabular}
 
-\medskip
+
 
 \begin{tabular}{ll}
 
@@ -1019,7 +1019,7 @@ Using extended interval notation, we summarize the domains and ranges of all six
 
 \end{tabular}
 
-\medskip
+
 
 \begin{tabular}{ll}
 

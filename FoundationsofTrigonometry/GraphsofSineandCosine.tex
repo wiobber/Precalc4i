@@ -134,7 +134,7 @@ While arguably the most important property shared by  $f(t) = \sin(t)$ and $g(t)
 
 
 
-Note the graphs of both $f(t) = \sin(t)$ and $g(t) = \cos(t)$ meander  as $t \rightarrow -\infty$ or as $ \rightarrow \infty$.  Said differently, none of the limits  $\ds{\lim_{t \rightarrow -\infty} \sin(t)}$,   $\ds{\lim_{t \rightarrow \infty} \sin(t)}$, $\ds{\lim_{t \rightarrow -\infty} \cos(t)}$, or $\ds{\lim_{t \rightarrow \infty} \cos(t)}$ exist.  Even though these functions are `trapped' (or \index{bounded}\textbf{bounded}) between $-1$ and $1$, neither graph has any horizontal asymptotes.
+Note the graphs of both $f(t) = \sin(t)$ and $g(t) = \cos(t)$ meander  as $t \rightarrow -\infty$ or as $ \rightarrow \infty$.  Said differently, none of the limits  $\lim_{t \rightarrow -\infty} \sin(t)$,   $\lim_{t \rightarrow \infty} \sin(t)$, $\lim_{t \rightarrow -\infty} \cos(t)$, or $\lim_{t \rightarrow \infty} \cos(t)$ exist.  Even though these functions are `trapped' (or \index{bounded}\textbf{bounded}) between $-1$ and $1$, neither graph has any horizontal asymptotes.
 
 
 
@@ -1273,7 +1273,7 @@ The scenario described in Example \ref{sinusoidsunlight} is a typical example of
 \subsection{Limits involving Sine and Cosine}
 \label{SineCosineLimits}
 
-We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = \cos(t)$ are continuous.  Per Definition \ref{continuousdefn}, this means that $\ds{\lim_{t \rightarrow a} \sin(t) = \sin(a)}$ and $\ds{\lim_{t \rightarrow a} \cos(t) = \cos(a)}$ for all real numbers, $a$.  This means, for instance, we can compute  $\ds{\lim_{t \rightarrow \pi} \cos(t) = \cos(\pi) = -1}$.  Per the discussion following Definition \ref{continuousdefn}, so long as we avoid the usual domain pitfalls, we can also compute:
+We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = \cos(t)$ are continuous.  Per Definition \ref{continuousdefn}, this means that $\lim_{t \rightarrow a} \sin(t) = \sin(a)$ and $lim_{t \rightarrow a} \cos(t) = \cos(a)$ for all real numbers, $a$.  This means, for instance, we can compute  $\lim_{t \rightarrow \pi} \cos(t) = \cos(\pi) = -1$.  Per the discussion following Definition \ref{continuousdefn}, so long as we avoid the usual domain pitfalls, we can also compute:
  \[ \lim_{t \rightarrow \pi} \frac{2t \cos(t) - \sin(3t)}{\sqrt{\cos(2t)}} = \frac{2 \pi \cos(\pi) - \sin(3\pi)}{\sqrt{\cos(2\pi)}} = \frac{-2\pi - 0}{\sqrt{1}} = - 2\pi \]
  
  In the next example we investigate a few (similar looking) limits of sinusoids.
@@ -1284,9 +1284,9 @@ We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = 
 
  \begin{enumerate}
  
- \item $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ 
-  \item $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( 10^{23} \, t \right)$
-   \item $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t}$
+ \item $ \lim_{t \rightarrow 0} \sin\left( \frac{\pi}{t} \right)$ 
+  \item $\lim_{t \rightarrow 0} \sin\left( 10^{23} \, t \right)$
+   \item $\lim_{t \rightarrow 0} \frac{\sin(t)}{t}$
    
    \end{enumerate}
 
@@ -1295,17 +1295,17 @@ We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = 
 
 \begin{enumerate}
 
-\item   To analyze $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ numerically, we construct a table of values `near' $t = 0$ for $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Choosing values such as $t = \pm 0.001$,  $t = \pm 0.01$, etc., we get  a list of `$0$'s. This result shouldn't be too surprising since in each of these cases, $\frac{\pi}{t}$ results in an integer multiple of $\pi$. However, the graph near $t=0$ (literally) paints a different picture.  The graph appears to wildly oscillate near $t=0$, suggesting that  $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ does not exist.
+\item   To analyze $\lim_{t \rightarrow 0} \sin\left( \frac{\pi}{t} \right)$ numerically, we construct a table of values `near' $t = 0$ for $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Choosing values such as $t = \pm 0.001$,  $t = \pm 0.01$, etc., we get  a list of `$0$'s. This result shouldn't be too surprising since in each of these cases, $\frac{\pi}{t}$ results in an integer multiple of $\pi$. However, the graph near $t=0$ (literally) paints a different picture.  The graph appears to wildly oscillate near $t=0$, suggesting that  $\lim_{t \rightarrow 0}\sin\left( \frac{\pi}{t} \right)$ does not exist.
 
 % https://www.desmos.com/calculator/ag6olhwkkb
 \begin{center}
 \desmos{ag6olhwkkb}{800}{600}
 \end{center}
  
- Indeed, as $t \rightarrow 0^{-}$, $\frac{\pi}{t} \rightarrow -\infty$ and as $t \rightarrow 0^{+}$, $\frac{\pi}{t} \rightarrow \infty$.  In other words, all of the infinite oscillations experienced by the standard sine function, $f(t) = \sin(t)$ as $t \rightarrow -\infty$ and as $t \rightarrow \infty$ are being brought  back to near  $t = 0$ in $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Hence, $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( \frac{\pi}{t} \right)$ does not exist.
+ Indeed, as $t \rightarrow 0^{-}$, $\frac{\pi}{t} \rightarrow -\infty$ and as $t \rightarrow 0^{+}$, $\frac{\pi}{t} \rightarrow \infty$.  In other words, all of the infinite oscillations experienced by the standard sine function, $f(t) = \sin(t)$ as $t \rightarrow -\infty$ and as $t \rightarrow \infty$ are being brought  back to near  $t = 0$ in $F(t) = \sin\left( \frac{\pi}{t} \right)$.  Hence, $\lim_{t \rightarrow 0} \sin\left( \frac{\pi}{t} \right)$ does not exist.
 
 
-\item  We proceed as above to investigate $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( 10^{23} \, t \right)$.    A table and  a graph of  $F(t) = \sin \left( 10^{23} \, t\right)$  `near' $t = 0$ produces numerical and graphical noise.  Neither the table nor the graph suggest $\ds{\lim_{t \rightarrow 0} F(t)}$ exists.  However, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is a sinusoid with frequency $\omega = 10^{23}$.  Hence, resetting the window on the desmos interactive below to $-\frac{\pi}{10^{23}} \leq x \leq \frac{\pi}{10^{23}}$ and $-1 \leq y \leq 1$, we see one cycle of $F$ which suggests the limit is, in fact, $0$.
+\item  We proceed as above to investigate $ \lim_{t \rightarrow 0} \sin\left( 10^{23} \, t \right)$.    A table and  a graph of  $F(t) = \sin \left( 10^{23} \, t\right)$  `near' $t = 0$ produces numerical and graphical noise.  Neither the table nor the graph suggest $\lim_{t \rightarrow 0} F(t)$ exists.  However, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is a sinusoid with frequency $\omega = 10^{23}$.  Hence, resetting the window on the desmos interactive below to $-\frac{\pi}{10^{23}} \leq x \leq \frac{\pi}{10^{23}}$ and $-1 \leq y \leq 1$, we see one cycle of $F$ which suggests the limit is, in fact, $0$.
 
 % https://www.desmos.com/calculator/jue9qbhzmb
 \begin{center}
@@ -1314,9 +1314,9 @@ We've already stated as fact (but not proven) that $f(t) = \sin(t)$ and $g(t) = 
 
 
 
-Indeed, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is continuous, so $\ds{ \lim_{t \rightarrow 0}}$ $\sin\left( 10^{23} \, t \right) = \sin\left(10^{23} (0)) \right) = \sin(0) = 0$.   
+Indeed, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is continuous, so $\lim_{t \rightarrow 0} \sin\left( 10^{23} \, t \right) = \sin\left(10^{23} (0)) \right) = \sin(0) = 0$.   
 
-\item  Next we investigate  $F(t) =  \frac{\sin(t)}{t}$ near $t=0$.   The table and graph both suggest   $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t} = 1$. 
+\item  Next we investigate  $F(t) =  \frac{\sin(t)}{t}$ near $t=0$.   The table and graph both suggest   $\lim_{t \rightarrow 0} \frac{\sin(t)}{t} = 1$. 
 
 
 % https://www.desmos.com/calculator/ohffbwnwsf
@@ -1324,7 +1324,7 @@ Indeed, we know  $F(t) = \sin \left( 10^{23} \, t\right)$ is continuous, so $\ds
 \desmos{ohffbwnwsf}{800}{600}
  \end{center}
  
- Attempting to analyze this limit analytically, we see that  $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t}$ produces the indeterminate form `$\frac{0}{0}$'.  At this stage, we do not have the tools to either prove or disprove our conjecture that  $\ds{ \lim_{t \rightarrow 0}}$ $ \frac{\sin(t)}{t} = 1$,  but we will soon, \footnote{See Exercises \ref{sintovertexercise1} through \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}.} so stay tuned! 
+ Attempting to analyze this limit analytically, we see that  $\lim_{t \rightarrow 0} \frac{\sin(t)}{t}$ produces the indeterminate form `$\frac{0}{0}$'.  At this stage, we do not have the tools to either prove or disprove our conjecture that  $\lim_{t \rightarrow 0} \frac{\sin(t)}{t} = 1$,  but we will soon, \footnote{See Exercises \ref{sintovertexercise1} through \ref{sintovertexercise3} in Section \ref{TheOtherCircularFunctions}.} so stay tuned! 
 
 \end{enumerate}
 \end{explanation}
