@@ -54,7 +54,7 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
   \node[below right] at (1,-3) {\scriptsize $(1,-3)$};
 
   % Function plot: w = v^2 - 4
-  \draw[thick,domain=-2:3,blue, samples=100] plot (\x,{\x*\x-4});
+  \draw[thick,domain=-2:3,blue, samples=100,->] plot (\x,{\x*\x-4});
 
   % Points
   \filldraw ( -2, 0) circle (2pt);
@@ -90,38 +90,38 @@ Even though we didn't introduce the limit concept or notation until Chapter \ref
 \end{center}
 
 
-The hole in the graph tells us that even though $F(1)$ is undefined, we'd \textbf{expect} $F(1)$ to be $-3$ based on what's happening with the graph \textbf{near} the point $(1,-3)$.  Using limit notation, we'd write  $\ds{\lim_{v \rightarrow 1} F(v) = -3}$.  We take a moment below to better define what we mean when use the limit notation.
+The hole in the graph tells us that even though $F(1)$ is undefined, we'd \textbf{expect} $F(1)$ to be $-3$ based on what's happening with the graph \textbf{near} the point $(1,-3)$.  Using limit notation, we'd write  $\lim_{v \rightarrow 1} F(v) = -3$.  We take a moment below to better define what we mean when use the limit notation.
 
-\medskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{informallimitdefn} \textbf{Informal Definition of Limit:}  Given a function $f$ defined on an open interval containing $x=a$, except possibly at $x=a$, the notation $\ds{\lim_{x \rightarrow a} f(x) = L}$,\index{limit ! informal definition} means as input values, $x$, approach\footnote{ignoring what is happening at $x=a$} the number $a$, the output values, $f(x)$, approach the number $L$.  The notation ` $\ds{\lim_{x \rightarrow a} f(x) = L}$'  is read read `the \textbf{limit} as $x$ approaches $a$ of $f(x)$ equals $L$.' 
+\begin{definition} \label{informallimitdefn} \textbf{Informal Definition of Limit:}  Given a function $f$ defined on an open interval containing $x=a$, except possibly at $x=a$, the notation $\lim_{x \rightarrow a} f(x) = L$,\index{limit ! informal definition} means as input values, $x$, approach\footnote{ignoring what is happening at $x=a$} the number $a$, the output values, $f(x)$, approach the number $L$.  The notation ` $\lim_{x \rightarrow a} f(x) = L$'  is read read `the \textbf{limit} as $x$ approaches $a$ of $f(x)$ equals $L$.' 
 \end{definition}
 
 %% \ebm}
 
 
-\medskip
+
 
 
 Some remarks about Definition \ref{informallimitdefn} are in order.  Note that the business about $f$ being defined on `an open interval containing $x=a$'  is there to guarantee that we have the appropriate `room' for inputs $x$ to approach $a$ from either direction.\footnote{We'll get to `one-sided' limits here shortly.}  (For now, we'll just assume we all understand what the word `approach' means in this context and let a Calculus class explain how this is more precisely codified mathematically.)
 
-\medskip 
+ 
 
-The phrase  `except possibly at $x=a$' which immediately follows means the limit doesn't concern itself with what is actually happening at $x=a$.  The function  $f$ may or may not be defined at $x = a$.  Indeed,  if  $\ds{\lim_{x \rightarrow a} f(x) = L}$, $f(a)$ could be $L$, $f(a)$  could be a number different than $L$ or $f(a)$ could not be defined. 
+The phrase  `except possibly at $x=a$' which immediately follows means the limit doesn't concern itself with what is actually happening at $x=a$.  The function  $f$ may or may not be defined at $x = a$.  Indeed,  if  $\lim_{x \rightarrow a} f(x) = L$, $f(a)$ could be $L$, $f(a)$  could be a number different than $L$ or $f(a)$ could not be defined. 
 
-\medskip
 
- This drives home the principle difference between the precalculus notion of `$f(a)$' and the Calculus notion of  `$\ds{\lim_{x \rightarrow a} f(x)}$':  `$\ds{\lim_{x \rightarrow a} f(x)}$' is what we \textbf{expect} $f(a)$ to be - which may or may not agree with what $f(a)$, if $f(a)$ is even defined. 
 
-\medskip
+ This drives home the principle difference between the precalculus notion of `$f(a)$' and the Calculus notion of  `$\lim_{x \rightarrow a} f(x)$':  `$\lim_{x \rightarrow a} f(x)$' is what we \textbf{expect} $f(a)$ to be - which may or may not agree with what $f(a)$, if $f(a)$ is even defined. 
 
-For example, using the graph from Example \ref{functiongraphex01}, we write $\ds{\lim_{v \rightarrow 0} F(v) = -4}$ since as $v \rightarrow 0$, we see $w = F(v) \rightarrow -4$.  In this particular case, $F(0) = -4$ so we get from $F$ at $v=0$ what we expect to get.\footnote{This is another way to describe the notion of \index{continuity}\textbf{continuity}.  (See Definition \ref{continuousdefn}.)}
 
-\medskip
 
-For another example, consider the graphs of the functions $f$, $g$, and $h$ below near $x = 2$. Through a precalculus lens, each of these functions is different at $x = 2$:   $f(2) = 3$, $g(2) = 1$, and $h(2)$ is undefined.  Through a Calculus lens, however, all three of these functions are behaving identically as  $x$ approaches $2$:   $\ds{\lim_{x \rightarrow 2} f(x) = 3}$, $\ds{ \lim_{x \rightarrow 2} g(x)= 3}$, and $\ds{\lim_{x \rightarrow 2} h(x) = 3}$.
+For example, using the graph from Example \ref{functiongraphex01}, we write $\lim_{v \rightarrow 0} F(v) = -4$ since as $v \rightarrow 0$, we see $w = F(v) \rightarrow -4$.  In this particular case, $F(0) = -4$ so we get from $F$ at $v=0$ what we expect to get.\footnote{This is another way to describe the notion of \index{continuity}\textbf{continuity}.  (See Definition \ref{continuousdefn}.)}
+
+
+
+For another example, consider the graphs of the functions $f$, $g$, and $h$ below near $x = 2$. Through a precalculus lens, each of these functions is different at $x = 2$:   $f(2) = 3$, $g(2) = 1$, and $h(2)$ is undefined.  Through a Calculus lens, however, all three of these functions are behaving identically as  $x$ approaches $2$:   $\lim_{x \rightarrow 2} f(x) = 3$, $ \lim_{x \rightarrow 2} g(x)= 3$, and $\lim_{x \rightarrow 2} h(x) = 3$.
 
 
 \begin{image}
@@ -274,13 +274,13 @@ $$y = p(A) = \begin{cases}
 
 \end{image}   
 
-What can be said about $\ds{ \lim_{A \rightarrow 6} p(A)}$?   Remember, $\ds{ \lim_{A \rightarrow 6} p(A)}$ is what we would \textbf{expect} $p(6)$ to be by analyzing $p$ as $A \rightarrow  6$, ignoring what is happening at $A=6$.  If $A<6$,  $p(A)$ is always $5.75$, so, based on this information, we'd \textbf{expect} $p(6)$ to be $5.75$.   If $A>6$, then  $p(A)$ is always $7.25$, so we'd \text{expect} $p(6)$ to be $7.25$.  Since Definition  \ref{informallimitdefn} requires the $p(A)$ values to approach a \textbf{single} value $L$ as $A \rightarrow 6$, we'd say in this case that   $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist.  
+What can be said about $\lim_{A \rightarrow 6} p(A)$?   Remember, $\lim_{A \rightarrow 6} p(A)$ is what we would \textbf{expect} $p(6)$ to be by analyzing $p$ as $A \rightarrow  6$, ignoring what is happening at $A=6$.  If $A<6$,  $p(A)$ is always $5.75$, so, based on this information, we'd \textbf{expect} $p(6)$ to be $5.75$.   If $A>6$, then  $p(A)$ is always $7.25$, so we'd \text{expect} $p(6)$ to be $7.25$.  Since Definition  \ref{informallimitdefn} requires the $p(A)$ values to approach a \textbf{single} value $L$ as $A \rightarrow 6$, we'd say in this case that   $\lim_{A \rightarrow 6} p(A)$ does not exist.  
 
-\medskip
 
-Even though $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist, we've used so-called `one-sided' limit notation in Chapters \ref{RationalFunctions} and \ref{RootRadicalPowerFunctions} which we can apply here.  Specifically, we write  $\ds{\lim_{A \rightarrow 6^{-}} p(A) = 5.75}$ and  $\ds{\lim_{A \rightarrow 6^{+}} p(A) = 7.25}$ to more precisely record the behavior of $p$ as we approach $ A = 6$ from either direction.\footnote{Note that $\ds{\lim_{A \rightarrow 6^{+}} p(A) = 7.25 = p(6)}$ in this case.  So at least we `get' what we `expect to get' when approaching $6$ from the right.}
 
-\medskip
+Even though $\lim_{A \rightarrow 6} p(A)$ does not exist, we've used so-called `one-sided' limit notation in Chapters \ref{RationalFunctions} and \ref{RootRadicalPowerFunctions} which we can apply here.  Specifically, we write  $\lim_{A \rightarrow 6^{-}} p(A) = 5.75$ and  $\lim_{A \rightarrow 6^{+}} p(A) = 7.2$ to more precisely record the behavior of $p$ as we approach $ A = 6$ from either direction.\footnote{Note that $\lim_{A \rightarrow 6^{+}} p(A) = 7.25 = p(6)$ in this case.  So at least we `get' what we `expect to get' when approaching $6$ from the right.}
+
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -288,9 +288,9 @@ Even though $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist, we've used so-ca
 
 \begin{itemize}
 
-\item If $f$ is defined on an open interval for $x<a$ except possibly at $x=a$, the notation  $\ds{\lim_{x \rightarrow a^{-}} f(x) = L}$,\index{limit ! informal definition ! from the left} read `the \textbf{limit} as $x$ approaches $a$ \textbf{from the left} of $f(x)$ equals $L$' means as input values, $x$, $x < a$, approach the number $a$ (ignoring what is happening at $x=a$), the output values, $f(x)$, approach the number $L$. 
+\item If $f$ is defined on an open interval for $x<a$ except possibly at $x=a$, the notation  $\lim_{x \rightarrow a^{-}} f(x) = L$,\index{limit ! informal definition ! from the left} read `the \textbf{limit} as $x$ approaches $a$ \textbf{from the left} of $f(x)$ equals $L$' means as input values, $x$, $x < a$, approach the number $a$ (ignoring what is happening at $x=a$), the output values, $f(x)$, approach the number $L$. 
 
-\item If $f$ is defined on an open interval for $x>a$ except possibly at $x=a$, the notation  $\ds{\lim_{x \rightarrow a^{+}} f(x) = L}$,\index{limit ! informal definition ! from the right} read `the \textbf{limit} as $x$ approaches $a$ \textbf{from the right} of $f(x)$ equals $L$' means as input values, $x$, $x > a$, approach the number $a$ (ignoring what is happening at $x=a$), the output values, $f(x)$, approach the number $L$. 
+\item If $f$ is defined on an open interval for $x>a$ except possibly at $x=a$, the notation  $\lim_{x \rightarrow a^{+}} f(x) = L$,\index{limit ! informal definition ! from the right} read `the \textbf{limit} as $x$ approaches $a$ \textbf{from the right} of $f(x)$ equals $L$' means as input values, $x$, $x > a$, approach the number $a$ (ignoring what is happening at $x=a$), the output values, $f(x)$, approach the number $L$. 
 
 
 \end{itemize}
@@ -300,21 +300,21 @@ Even though $\ds{ \lim_{A \rightarrow 6} p(A)}$ does not exist, we've used so-ca
 %% \ebm}
 
 
-\medskip
+
 
 In order for the (two-sided) limit to exist, both one-sided limits need to exist, be equal, and vice-versa.  This is recorded in the following theorem.
 
-\medskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{theorem}  \label{onesidedlimit}  Given a function $f$ defined on an open interval containing $x=a$, except possibly at $x=a$,  $\ds{\lim_{x \rightarrow a} f(x) = L}$ if and only if $\ds{\lim_{x \rightarrow a^{-}} f(x) = L}$ and $\ds{\lim_{x \rightarrow a^{+}} f(x) = L}$.
+\begin{theorem}  \label{onesidedlimit}  Given a function $f$ defined on an open interval containing $x=a$, except possibly at $x=a$,  $\lim_{x \rightarrow a} f(x) = L$ if and only if $\lim_{x \rightarrow a^{-}} f(x) = L$ and $\lim_{x \rightarrow a^{+}} f(x) = L$.
 
 
 \end{theorem}
 %% \ebm}
 
-\medskip
+
 
 It's time for an example.
 
@@ -387,126 +387,116 @@ It's time for an example.
 
 \item  Find the following values. Explain your reasoning.
 
- \begin{multicols}{4}
+ 
+ \begin{enumerate}
+
+ \item Behavior at and near $x = -1$:
  
  \begin{itemize}
- 
  \item $f(-1)$
  
- \item  $\ds{ \lim_{x \rightarrow -1^{-}} f(x)}$
+ \item  $\lim_{x \rightarrow -1^{-}} f(x)$
  
-  \item  $\ds{ \lim_{x \rightarrow -1^{+}} f(x)}$
+  \item  $\lim_{x \rightarrow -1^{+}} f(x)$
  
-  \item  $\ds{ \lim_{x \rightarrow -1} f(x)}$
+  \item  $\lim_{x \rightarrow -1} f(x)$
+ 
+ \end{itemize}
+
+\item Behavior at and near $x = 0$:
+
+\begin{itemize} \item $f(0)$
+ 
+ \item  $\lim_{x \rightarrow 0^{-}} f(x)$
+ 
+  \item  $\lim_{x \rightarrow 0^{+}} f(x)$
+ 
+  \item  $\lim_{x \rightarrow 0} f(x)$
+\end{itemize}
+ 
+ \item Behavior at and near $x = 1$:
+ 
+ \begin{itemize}\item $f(1)$
+ 
+ \item  $\lim_{x \rightarrow 1^{-}} f(x)$
+ 
+  \item  $\lim_{x \rightarrow 1^{+}} f(x)$
+ 
+   \item  $\lim_{x \rightarrow 1} f(x)$
  
  \end{itemize}
  
-  \end{multicols}
  
-\smallskip
- 
-  \begin{multicols}{4}
- 
- \begin{itemize}
- 
- \item $f(1)$
- 
- \item  $\ds{ \lim_{x \rightarrow 1^{-}} f(x)}$
- 
-  \item  $\ds{ \lim_{x \rightarrow 1^{+}} f(x)}$
- 
-   \item  $\ds{ \lim_{x \rightarrow 1} f(x)}$
- 
- \end{itemize}
- 
-  \end{multicols}
- 
-\smallskip
- 
- \begin{multicols}{4}
- 
- \begin{itemize}
- 
- \item $f(0)$
- 
- \item  $\ds{ \lim_{x \rightarrow 0^{-}} f(x)}$
- 
-  \item  $\ds{ \lim_{x \rightarrow 0^{+}} f(x)}$
- 
-  \item  $\ds{ \lim_{x \rightarrow 0} f(x)}$
- 
- \end{itemize}
- 
-  \end{multicols}
- 
-\smallskip
- 
-  \begin{multicols}{4}
- 
- \begin{itemize}
- 
+\item Behavior at and near $x = 3$:
+
+\begin{itemize}
  \item $f(3)$
  
- \item  $\ds{ \lim_{x \rightarrow 3^{-}} f(x)}$
+ \item  $\lim_{x \rightarrow 3^{-}} f(x)$
  
-  \item  $\ds{ \lim_{x \rightarrow 3^{+}} f(x)}$
+  \item  $\lim_{x \rightarrow 3^{+}} f(x)$
  
-   \item  $\ds{ \lim_{x \rightarrow 3} f(x)}$
- 
+   \item  $\lim_{x \rightarrow 3} f(x)$
+
  \end{itemize}
+ \end{enumerate}
  
-  \end{multicols}
+
  
-\smallskip
 
-\item  Explain why  $\ds{ \lim_{x \rightarrow -4} f(x)}$ does not exist and find  $\ds{ \lim_{x \rightarrow -4^{+}} f(x)}$
-\smallskip
 
-\item  Explain why  $\ds{ \lim_{x \rightarrow 4} f(x)}$ does not exist and find  $\ds{ \lim_{x \rightarrow 4^{-}} f(x)}$
+\item  Explain why  $\lim_{x \rightarrow -4} f(x)$ does not exist and find  $\lim_{x \rightarrow -4^{+}} f(x)$
+
+
+\item  Explain why  $\lim_{x \rightarrow 4} f(x)$ does not exist and find  $\lim_{x \rightarrow 4^{-}} f(x)$
 
 \end{enumerate}
 
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
 \item  Projecting the graph of $f$ to the $x-$axis, we find that everything from $-4$ to $4$, inclusive, is covered except for $x = 3$.  Hence the domain is $[-4,3) \cup (3,4]$.  When projecting the graph of $f$ to the $y$-axis, we see everything between $0$ and $3$ is covered (excluding $0$ and including $3$) then everything between $4$  and $5$ is covered (excluding $4$ and including $5$).  Hence the range is $(0,3] \cup (4,5]$.
 
 
-\item  \begin{itemize}  \item  Regarding $x = -1$:  since the point $(-1,2)$ is on the graph of $f$, we know $f(-1) =2$.  To determine  $\ds{ \lim_{x \rightarrow -1^{-}} f(x)}$, we see that the graph to the left of $x = -1$ is headed towards the point $(-1,0)$ as $x$ approaches $-1$.  Hence,  $\ds{ \lim_{x \rightarrow -1^{-}} f(x)= 0}$.  To determine  $\ds{ \lim_{x \rightarrow -1^{+}} f(x)}$, we see that the graph to the right of $x = -1$  is headed towards the point $(-1,4)$ as $x$ approaches $-1$.  Hence,  $\ds{ \lim_{x \rightarrow -1^{+}} f(x)= 4}$.    Since $\ds{ \lim_{x \rightarrow -1^{-}} f(x)}$ and $\ds{ \lim_{x \rightarrow -1^{+}} f(x)}$ are different,  $\ds{ \lim_{x \rightarrow -1} f(x)}$ does not exist.
-
-\item  Regarding $x = 1$:  since the point $(1,2)$ is on the graph of $f$, we know $f(1) =2$.  To determine  $\ds{ \lim_{x \rightarrow 1^{-}} f(x)}$, we see that the graph to the left of $x = 1$ is headed towards the point $(1,4)$ as $x$ approaches $1$.  Hence,  $\ds{ \lim_{x \rightarrow 1^{-}} f(x)= 4}$.  To determine  $\ds{ \lim_{x \rightarrow 1^{+}} f(x)}$, we see that the graph to the right of $x = 1$  is headed towards the point $(1,2)$ as $x$ approaches $1$.  Hence,  $\ds{ \lim_{x \rightarrow 1^{+}} f(x)= 2}$.    Since $\ds{ \lim_{x \rightarrow 1^{-}} f(x)}$ and $\ds{ \lim_{x \rightarrow 1^{+}} f(x)}$ are different,  $\ds{ \lim_{x \rightarrow 1} f(x)}$ does not exist.
-
-\item  Regarding $x = 0$:  since the point $(0,5)$ is on the graph of $f$, we know $f(0) =5$.  To determine  $\ds{ \lim_{x \rightarrow 0^{-}} f(x)}$, we see that the graph to the left of $x = 0$ is headed towards the point $(0,5)$ as $x$ approaches $0$.  Hence,  $\ds{ \lim_{x \rightarrow 0^{-}} f(x)= 5}$.  To determine  $\ds{ \lim_{x \rightarrow 0^{+}} f(x)}$, we see that the graph to the right of $x = 0$  is headed towards the point $(0,5)$ as $x$ approaches $0$.  Hence,  $\ds{ \lim_{x \rightarrow 0^{+}} f(x)= 5}$.    Since $\ds{ \lim_{x \rightarrow 0^{-}} f(x)}$ and $\ds{ \lim_{x \rightarrow 0^{+}} f(x)}$ are both $5$,  $\ds{ \lim_{x \rightarrow 0} f(x) = 5}$.
+\item  \begin{enumerate}  \item  Regarding $x = -1$:  since the point $(-1,2)$ is on the graph of $f$, we know $f(-1) =2$.  To determine  $\lim_{x \rightarrow -1^{-}} f(x)$, we see that the graph to the left of $x = -1$ is headed towards the point $(-1,0)$ as $x$ approaches $-1$.  Hence,  $\lim_{x \rightarrow -1^{-}} f(x)= 0$.  To determine  $\lim_{x \rightarrow -1^{+}} f(x)$, we see that the graph to the right of $x = -1$  is headed towards the point $(-1,4)$ as $x$ approaches $-1$.  Hence,  $\lim_{x \rightarrow -1^{+}} f(x)= 4$.    Since $\lim_{x \rightarrow -1^{-}} f(x)$ and $\lim_{x \rightarrow -1^{+}} f(x)$ are different,  $\lim_{x \rightarrow -1} f(x)$ does not exist.
 
 
-\item  Regarding $x = 3$:  since there is no point on the graph of $f$ with an $x$-coordinate of $3$, $f(3)$ is undefined.  To determine  $\ds{ \lim_{x \rightarrow 3^{-}} f(x)}$, we see that the graph to the left of $x = 3$ is headed towards the point $(3,0)$ as $x$ approaches $3$.  Hence,  $\ds{ \lim_{x \rightarrow 3^{-}} f(x)= 0}$.  To determine  $\ds{ \lim_{x \rightarrow 3^{+}} f(x)}$, we see that the graph to the right of $x = 3$  is headed towards the point $(3,0)$ as $x$ approaches $3$.  Hence,  $\ds{ \lim_{x \rightarrow 3^{+}} f(x)= 0}$.    Since $\ds{ \lim_{x \rightarrow 3^{-}} f(x)}$ and $\ds{ \lim_{x \rightarrow 3^{+}} f(x)}$ are both $0$,  $\ds{ \lim_{x \rightarrow 3} f(x) = 0}$.
-
-\end{itemize}
-
-\item In order to find   $\ds{ \lim_{x \rightarrow -4} f(x)}$, we need to analyze the graph of $f$ from both the left an right of $x=-4$.  Since there is no graph to the left of $x = -4$,  $\ds{ \lim_{x \rightarrow -4^{-}} f(x)}$, and hence $\ds{ \lim_{x \rightarrow -4} f(x)}$ does not exist.  However, $\ds{ \lim_{x \rightarrow -4^{+}} f(x) = 3}$, since, when coming from the right, the graph approaches the point $(-4,3)$ as $x$ approaches $-4$.
+\item  Regarding $x = 0$:  since the point $(0,5)$ is on the graph of $f$, we know $f(0) =5$.  To determine  $\lim_{x \rightarrow 0^{-}} f(x)$, we see that the graph to the left of $x = 0$ is headed towards the point $(0,5)$ as $x$ approaches $0$.  Hence,  $ \lim_{x \rightarrow 0^{-}} f(x)= 5$.  To determine  $ \lim_{x \rightarrow 0^{+}} f(x)$, we see that the graph to the right of $x = 0$  is headed towards the point $(0,5)$ as $x$ approaches $0$.  Hence,  $\lim_{x \rightarrow 0^{+}} f(x)= 5$.    Since $\lim_{x \rightarrow 0^{-}} f(x)$ and  $\lim_{x \rightarrow 0^{+}} f(x)$ are both $5$,  $\lim_{x \rightarrow 0} f(x) = 5$.
 
 
-\item In order to find  $\ds{ \lim_{x \rightarrow 4} f(x)}$, we need to analyze the graph of $f$ from both the left an right of $x=4$.  Since there is no graph to the right of $x = 4$,  $\ds{ \lim_{x \rightarrow 4^{+}} f(x)}$, and hence $\ds{ \lim_{x \rightarrow 4} f(x)}$ does not exist.  However, $\ds{ \lim_{x \rightarrow 4^{-}} f(x) = 1}$, since, when coming from the left, the graph approaches the point $(4,1)$ as $x$ approaches $4$.  
+
+\item  Regarding $x = 1$:  since the point $(1,2)$ is on the graph of $f$, we know $f(1) =2$.  To determine  $\lim_{x \rightarrow 1^{-}} f(x)$, we see that the graph to the left of $x = 1$ is headed towards the point $(1,4)$ as $x$ approaches $1$.  Hence,  $\lim_{x \rightarrow 1^{-}} f(x)= 4$.  To determine  $\lim_{x \rightarrow 1^{+}} f(x)$, we see that the graph to the right of $x = 1$  is headed towards the point $(1,2)$ as $x$ approaches $1$.  Hence,  $\lim_{x \rightarrow 1^{+}} f(x)= 2$.    Since $\lim_{x \rightarrow 1^{-}} f(x)$ and $\lim_{x \rightarrow 1^{+}} f(x)$ are different,  $\lim_{x \rightarrow 1} f(x)$ does not exist.
+
+
+
+\item  Regarding $x = 3$:  since there is no point on the graph of $f$ with an $x$-coordinate of $3$, $f(3)$ is undefined.  To determine  $\lim_{x \rightarrow 3^{-}} f(x)$, we see that the graph to the left of $x = 3$ is headed towards the point $(3,0)$ as $x$ approaches $3$.  Hence,  $\lim_{x \rightarrow 3^{-}} f(x)= 0$.  To determine  $\lim_{x \rightarrow 3^{+}} f(x)$, we see that the graph to the right of $x = 3$  is headed towards the point $(3,0)$ as $x$ approaches $3$.  Hence,  $\lim_{x \rightarrow 3^{+}} f(x)= 0$.    Since $\lim_{x \rightarrow 3^{-}} f(x)$ and $\lim_{x \rightarrow 3^{+}} f(x)$ are both $0$,  $\lim_{x \rightarrow 3} f(x) = 0$.
+
+\end{enumerate}
+
+\item In order to find   $\lim_{x \rightarrow -4} f(x)$, we need to analyze the graph of $f$ from both the left an right of $x=-4$.  Since there is no graph to the left of $x = -4$,  $\lim_{x \rightarrow -4^{-}} f(x)$, and hence $\lim_{x \rightarrow -4} f(x)$ does not exist.  However, $\lim_{x \rightarrow -4^{+}} f(x) = 3$, since, when coming from the right, the graph approaches the point $(-4,3)$ as $x$ approaches $-4$.
+
+
+\item In order to find  $\lim_{x \rightarrow 4} f(x)$, we need to analyze the graph of $f$ from both the left an right of $x=4$.  Since there is no graph to the right of $x = 4$,  $\lim_{x \rightarrow 4^{+}} f(x)$, and hence $\lim_{x \rightarrow 4} f(x)$ does not exist.  However, $\lim_{x \rightarrow 4^{-}} f(x) = 1$, since, when coming from the left, the graph approaches the point $(4,1)$ as $x$ approaches $4$.  
 
 
 \end{enumerate}
 
+\end{explanation}
 \end{example}
 
 
-Another use of limits we've seen is to codify unbounded behavior.  Since $\infty$ and $-\infty$ aren't real numbers,  we used limit notation to help us describe end behavior  (as $x \rightarrow - \infty$ or $x \rightarrow \infty$) and unbounded function behavior ($f(x)\rightarrow -\infty$ or $f(x) \rightarrow \infty$.)  Let's take a moment to think about what it means to write $\ds{\lim_{x \rightarrow \infty} f(x) = \infty}$.  How does one `approach' infinity anyhow?  
+Another use of limits we've seen is to codify unbounded behavior.  Since $\infty$ and $-\infty$ aren't real numbers,  we used limit notation to help us describe end behavior  (as $x \rightarrow - \infty$ or $x \rightarrow \infty$) and unbounded function behavior ($f(x)\rightarrow -\infty$ or $f(x) \rightarrow \infty$.)  Let's take a moment to think about what it means to write $\lim_{x \rightarrow \infty} f(x) = \infty$.  How does one `approach' infinity anyhow?  
 
-\medskip
 
-Let's consider  $\ds{\lim_{x \rightarrow \infty} x^2 = \infty}$.  What me mean here is that as $x$ grows larger and larger (without bound), $f(x) = x^2$ follows suit.  To prove something like this, we'd need to show that for any `arbitrarily large' real number, $N$, we can find some threshold $M$ so that if the inputs, $x>M$, the outputs, $f(x) > N$.  For example, if we set $N = 10000$, then to guarantee $f(x) = x^2 > 10000$, we can solve and get $x > \sqrt{10000} = 100$.  So provided $x > 100$, $f(x) > 10000$.  In this case, $N = 10000$ and $M = \sqrt{10000} = 100$.  In general, if $x > \sqrt{N}$, $x^2 > N$, which justifies us writing $\ds{\lim_{x \rightarrow \infty} x^2 = \infty}$.
 
-\medskip
+Let's consider  $\lim_{x \rightarrow \infty} x^2 = \infty$.  What me mean here is that as $x$ grows larger and larger (without bound), $f(x) = x^2$ follows suit.  To prove something like this, we'd need to show that for any `arbitrarily large' real number, $N$, we can find some threshold $M$ so that if the inputs, $x>M$, the outputs, $f(x) > N$.  For example, if we set $N = 10000$, then to guarantee $f(x) = x^2 > 10000$, we can solve and get $x > \sqrt{10000} = 100$.  So provided $x > 100$, $f(x) > 10000$.  In this case, $N = 10000$ and $M = \sqrt{10000} = 100$.  In general, if $x > \sqrt{N}$, $x^2 > N$, which justifies us writing $\lim_{x \rightarrow \infty} x^2 = \infty$.
+
+
 
 We can adjust the inequality signs in the sort of argument\footnote{If this sort of argument seems familiar, it should!  Replacing `$>$' with `$=$' is how we proved the ranges  of the monomial functions and Laurent monomials  in Sections \ref{GraphsofPolynomials} and \ref{IntroRational}, respectively.}   above to direct $x$ or $f(x)$ to either $\infty$ or $-\infty$.  Doing so gives us the (formal) definitions of below.
 
-\medskip
+
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -519,9 +509,9 @@ We can adjust the inequality signs in the sort of argument\footnote{If this sort
 
 \begin{itemize}
 
-\item   the notation `$\ds{\lim_{x \rightarrow \infty} f(x) = \infty}$' means that for any real number $N$ there is a real number $M$ so that if $x > M$, $f(x) > N$.
+\item   the notation `$\lim_{x \rightarrow \infty} f(x) = \infty$' means that for any real number $N$ there is a real number $M$ so that if $x > M$, $f(x) > N$.
 
-\item   the notation `$\ds{\lim_{x \rightarrow \infty} f(x) = -\infty}$' means that for any real number $N$ there is a real number $M$ so that if $x > M$, $f(x) < N$.
+\item   the notation `$\lim_{x \rightarrow \infty} f(x) = -\infty$' means that for any real number $N$ there is a real number $M$ so that if $x > M$, $f(x) < N$.
 
 \end{itemize}
 
@@ -529,9 +519,9 @@ We can adjust the inequality signs in the sort of argument\footnote{If this sort
 
 \begin{itemize}
 
-\item   the notation `$\ds{\lim_{x \rightarrow -\infty} f(x) = \infty}$' means that for any real number $N$ there is a real number $M$ so that if $x < M$, $f(x) > N$.
+\item   the notation `$\lim_{x \rightarrow -\infty} f(x) = \infty$' means that for any real number $N$ there is a real number $M$ so that if $x < M$, $f(x) > N$.
 
-\item   the notation `$\ds{\lim_{x \rightarrow -\infty} f(x) = -\infty}$' means that for any real number $N$ there is a real number $M$ so that if $x < M$, $f(x) < N$.
+\item   the notation `$\lim_{x \rightarrow -\infty} f(x) = -\infty$' means that for any real number $N$ there is a real number $M$ so that if $x < M$, $f(x) < N$.
 
 \end{itemize}
 
@@ -540,7 +530,7 @@ We can adjust the inequality signs in the sort of argument\footnote{If this sort
 \end{definition}
 %% \ebm}
 
-\medskip
+
 
 We'll explore Definition \ref{infinitelimitsatinfinity} more in the Exercises. In the meantime, the reader is encouraged to take some time and think about the inequalities in Definition \ref{infinitelimitsatinfinity} and how they force the corresponding graphical behavior showcased below:
 
@@ -680,53 +670,33 @@ Combining the ideas of what it means for $x$ or $f(x)$ to approach (finite) real
     
 
 
-We would be remiss in our duties as (pre)Calculus instructors if we failed to point out that even though we've  used notation `$= \infty$'  in expressions like $\ds{\lim_{x \rightarrow 5^{-} }f(x) = \infty}$ above, since $\infty$ is not a real number, technically, $\ds{\lim_{x \rightarrow 5^{-} }f(x)}$ does not exist.  The  `$= \infty$' here just codifies better \textbf{the manner in which} the limit fails to exist.
+We would be remiss in our duties as (pre)Calculus instructors if we failed to point out that even though we've  used notation `$= \infty$'  in expressions like $\lim_{x \rightarrow 5^{-} }f(x) = \infty$ above, since $\infty$ is not a real number, technically, $\lim_{x \rightarrow 5^{-} }f(x)$ does not exist.  The  `$= \infty$' here just codifies better \textbf{the manner in which} the limit fails to exist.
 
-\medskip
+
 
 Our last example of this section turns the tables and has you construct the graph of function given information provided by limits.
 
 
 \begin{example} \label{graphfromlimits} Sketch the graph of a function $f$ which satisfies all of the following criteria:
 
-\begin{center}
-
-
-\begin{multicols}{3}
 
 \begin{itemize}
 
-\item $\ds{\lim_{x \rightarrow -\infty} f(x) = 0}$
+\item $\lim_{x \rightarrow -\infty} f(x) = 0$
 
-\item $\ds{\lim_{x \rightarrow -1^{-}} f(x) = \infty}$
+\item $\lim_{x \rightarrow -1^{-}} f(x) = \infty$
 
-\item $\ds{\lim_{x \rightarrow -1^{+}} f(x) = - \infty}$
-
-
-\end{itemize}
-
-\end{multicols}
-
-\begin{multicols}{3}
-
-\begin{itemize}
+\item $\lim_{x \rightarrow -1^{+}} f(x) = - \infty$
 
 
-\item $\ds{\lim_{x \rightarrow 1^{-}} f(x) = -\frac{1}{2}}$ 
+\item $\lim_{x \rightarrow 1^{-}} f(x) = -\frac{1}{2}$ 
 
-\item $\ds{\lim_{x \rightarrow 1^{+}} f(x) = 0}$ 
+\item $\lim_{x \rightarrow 1^{+}} f(x) = 0$ 
 
 
-\item  $\ds{\lim_{x \rightarrow \infty } f(x) = \infty}$  \\
+\item  $\lim_{x \rightarrow \infty } f(x) = \infty$  \\
 
 \end{itemize}
-
-\end{multicols}
-
-
-
-
-\end{center}
 
 The sign diagram for $f$ is:
 
@@ -748,29 +718,29 @@ The sign diagram for $f$ is:
 
 
 
-{\bf Solution.} Each piece of information given describes a portion of the graph of $y = f(x)$.  The strategy is to sketch each individual portion and connect them together.
+\begin{explanation} Each piece of information given describes a portion of the graph of $y = f(x)$.  The strategy is to sketch each individual portion and connect them together.
 
-\medskip
 
-First off, $\ds{\lim_{x \rightarrow -\infty} f(x) = 0}$ tells us that $y = 0$ is a horizontal asymptote to the graph.  This means as we head off to the left, the graph approaches the $x$-axis.  Since the sign diagram tells is $f(x) > 0$ for $x<-1$, we know the graph must approach the $x$-axis from above.
 
-\medskip
+First off, $\lim_{x \rightarrow -\infty} f(x) = 0$ tells us that $y = 0$ is a horizontal asymptote to the graph.  This means as we head off to the left, the graph approaches the $x$-axis.  Since the sign diagram tells is $f(x) > 0$ for $x<-1$, we know the graph must approach the $x$-axis from above.
 
-Next, we have $\ds{\lim_{x \rightarrow -1^{-}} f(x) = \infty}$ and  $\ds{\lim_{x \rightarrow -1^{+}} f(x) = - \infty}$ which tells us $x=-1$ is a vertical asymptote to the graph.  These behaviors agree with the sign diagram both in sign (`$+$' $\infty$ for $x<-1$ and `$-$' $\infty$ for $x>-1$) and the fact that $f$ is undefined at $x = -1$.
 
-\medskip
 
-Moving on we are given information about $f$ near $x = 1$.    The limit $\ds{\lim_{x \rightarrow 1^{-}} f(x)}$ $= -\frac{1}{2}$  means as we approach $x=1$ from the left, the $y$-values approach $-\frac{1}{2}$.  Likewise, $\ds{\lim_{x \rightarrow 1^{+}} f(x) = 0}$ means as we approach $x=1$ from the right, the $y$-values approach $0$ (the $x$-axis).  
+Next, we have $\lim_{x \rightarrow -1^{-}} f(x) = \infty$ and  $\lim_{x \rightarrow -1^{+}} f(x) = - \infty$ which tells us $x=-1$ is a vertical asymptote to the graph.  These behaviors agree with the sign diagram both in sign (`$+$' $\infty$ for $x<-1$ and `$-$' $\infty$ for $x>-1$) and the fact that $f$ is undefined at $x = -1$.
 
-\medskip
+
+
+Moving on we are given information about $f$ near $x = 1$.    The limit $\lim_{x \rightarrow 1^{-}} f(x)$ $= -\frac{1}{2}$  means as we approach $x=1$ from the left, the $y$-values approach $-\frac{1}{2}$.  Likewise, $\lim_{x \rightarrow 1^{+}} f(x) = 0$ means as we approach $x=1$ from the right, the $y$-values approach $0$ (the $x$-axis).  
+
+
 
 The sign diagram tells us that, indeed, $f(1) = 0$.  Hence, as $x \rightarrow 1^{-}$,  the graph of $f$ approaches a hole at $\left(0, -\frac{1}{2}\right)$.  As $x \rightarrow 0^{+}$, the graph of $f$ approaches an $x$-intercept, $(1,0)$, which is included in the graph. 
 
-\medskip
 
-Finally,   $\ds{\lim_{x \rightarrow \infty } f(x) = \infty}$  means that as we move farther to the right, the graph moves farther up which we indicate, as usual, with an arrow up to the right.
 
-\medskip
+Finally,   $\lim_{x \rightarrow \infty } f(x) = \infty$  means that as we move farther to the right, the graph moves farther up which we indicate, as usual, with an arrow up to the right.
+
+
 
 Connecting these pieces together (careful to not violate the Vertical Line Test, Theorem \ref{VLT}) we get:
 
@@ -858,7 +828,7 @@ coordinates {(1,-0.5)};
 \node[
     anchor=west
 ] at (axis cs:1.55,-0.5)
-{$\left(1,-\dfrac12\right)$};
+{$\left(1,-\frac12\right)$};
 
 
 (axis cs:3.82,1.59) -- (axis cs:4.05,1.88);
@@ -866,7 +836,7 @@ coordinates {(1,-0.5)};
 \end{axis}
 \end{tikzpicture}
 \end{image}
-
+\end{explanation}
 \end{example}
 
 
@@ -876,17 +846,17 @@ coordinates {(1,-0.5)};
 \subsection{Limit Properties and an Introduction to Continuity}
 \label{LimitPropertiesandContinuity}
 
-Let  $f(x) = 6$.  Consider $\ds{\lim_{x \rightarrow 5} f(x)  =  \lim_{x \rightarrow 5} 6}$.   Since the function values are unchanging, there is no other value other than `$6$' to expect from $f$ so it stands to reason that $\ds{\lim_{x \rightarrow 5} f(x)  =  \lim_{x \rightarrow 5} 6 = 6}$. Indeed, for any real number $a$,  $\ds{\lim_{x \rightarrow a} 6  = 6}$.   In general, if $f(x) = c$ is a constant function, $\ds{\lim_{x \rightarrow a} f(x) =   \lim_{x \rightarrow a} c = c}$.  The formal proof of this fact requires a formal definition of limit,but for now, we'll just take it as true.
-
-\medskip
-
-Next, let's consider $f(x) = x$.  Consider $\ds{\lim_{x \rightarrow 5} f(x) = \lim_{x \rightarrow 5} x }$. What do we expect the value of `$x$' to be as $x \rightarrow 5$?  Well, `$5$'.  Indeed, it can be proved that $\ds{\lim_{x \rightarrow a} x = a}$ for all real numbers, $a$.
+Let  $f(x) = 6$.  Consider $\lim_{x \rightarrow 5} f(x)  =  \lim_{x \rightarrow 5} 6$.   Since the function values are unchanging, there is no other value other than `$6$' to expect from $f$ so it stands to reason that $\lim_{x \rightarrow 5} f(x)  =  \lim_{x \rightarrow 5} 6 = 6$. Indeed, for any real number $a$,  $\lim_{x \rightarrow a} 6  = 6$.   In general, if $f(x) = c$ is a constant function, $\lim_{x \rightarrow a} f(x) =   \lim_{x \rightarrow a} c = c$.  The formal proof of this fact requires a formal definition of limit,but for now, we'll just take it as true.
 
 
-\medskip
 
-What about $\ds{\lim_{x \rightarrow 5}  (x+6)}$?  Since $\ds{\lim_{x \rightarrow 5} x = 5}$ and $\ds{ \lim_{x \rightarrow 5} 6 = 6}$, it stands to reason that \[\ds{\lim_{x \rightarrow 5}  (x+6) = \lim_{x \rightarrow 5} x  + \lim_{x \rightarrow 5} 6 = 5 + 6 = 11,}\] which is indeed the case.  It turns out that in most cases, limits do respect arithmetic:
-\medskip
+Next, let's consider $f(x) = x$.  Consider $\lim_{x \rightarrow 5} f(x) = \lim_{x \rightarrow 5} x$. What do we expect the value of `$x$' to be as $x \rightarrow 5$?  Well, `$5$'.  Indeed, it can be proved that $\lim_{x \rightarrow a} x = a$ for all real numbers, $a$.
+
+
+
+
+What about $\lim_{x \rightarrow 5}  (x+6)$?  Since $\lim_{x \rightarrow 5} x = 5$ and $\lim_{x \rightarrow 5} 6 = 6$, it stands to reason that \[\lim_{x \rightarrow 5}  (x+6) = \lim_{x \rightarrow 5} x  + \lim_{x \rightarrow 5} 6 = 5 + 6 = 11,\] which is indeed the case.  It turns out that in most cases, limits do respect arithmetic:
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -894,51 +864,51 @@ What about $\ds{\lim_{x \rightarrow 5}  (x+6)}$?  Since $\ds{\lim_{x \rightarrow
 
 \begin{enumerate}
 
-\item  \textbf{Constant Rule:} If $c$ is a constant, then $\ds{ \lim_{x \rightarrow a} c = c}$ for every real number $a$.
+\item  \textbf{Constant Rule:} If $c$ is a constant, then $ \lim_{x \rightarrow a} c = c$ for every real number $a$.
 
-\item \textbf{Identity Rule:} $\ds{ \lim_{x \rightarrow a} x = a}$ for every real number $a$.
+\item \textbf{Identity Rule:} $\lim_{x \rightarrow a} x = a$ for every real number $a$.
 
-\item  \textbf{Limits Respect Function Arithmetic:}  If $\ds{ \lim_{x \rightarrow a} f(x) = L}$ and $\ds{ \lim_{x \rightarrow a} g(x) = K}$, then:
+\item  \textbf{Limits Respect Function Arithmetic:}  If $\lim_{x \rightarrow a} f(x) = L$ and $\lim_{x \rightarrow a} g(x) = K$, then:
 
 \begin{enumerate}
 
-\item \textbf{Sum and Difference Rule:}  $\ds{\lim_{x \rightarrow a} \left[f(x)\pm g(x)\right] =
+\item \textbf{Sum and Difference Rule:}  $\lim_{x \rightarrow a} \left[f(x)\pm g(x)\right] =
 \lim_{x \rightarrow a} f(x) \pm \lim_{x \rightarrow a} g(x) = L
-\pm K}$
+\pm K$
 
-\item \textbf{Product Rule:}  $\ds{\lim_{x \rightarrow a} \left[f(x) \, g(x)\right] =
+\item \textbf{Product Rule:}  $\lim_{x \rightarrow a} \left[f(x) \, g(x)\right] =
 \left[\lim_{x \rightarrow a} f(x)\right] \, \left[ \lim_{x
-\rightarrow a} g(x)\right] = L \, K}$
+\rightarrow a} g(x)\right] = L \, K$
 
 \begin{enumerate}
 
-\item \textbf{Scalar Multiple Rule:}  If $c$ is a real number, $\ds{\lim_{x \rightarrow a} \left[c \, f(x)\right] =
-c \, \left[\lim_{x \rightarrow a} f(x)\right] =c \, L}$
+\item \textbf{Scalar Multiple Rule:}  If $c$ is a real number, $\lim_{x \rightarrow a} \left[c \, f(x)\right] =
+c \, \left[\lim_{x \rightarrow a} f(x)\right] =c \, L$
 
 
 \item \textbf{Power Rule:}  If   $n$ is any
 natural number,\footnote{Recall this means  $n = 1,2,3,\ldots$}
-$\ds{\lim_{x \rightarrow a} \left[f(x)\right]^{n} = \left[
-\lim_{x \rightarrow a} f(x) \right]^{n}= L^{n}}$.
+$\lim_{x \rightarrow a} \left[f(x)\right]^{n} = \left[
+\lim_{x \rightarrow a} f(x) \right]^{n}= L^{n}$.
 \end{enumerate}
 
-\item \textbf{Quotient Rule:}  $\ds{\lim_{x \rightarrow a} \left[ \frac{f(x)}{g(x)}\right]
-= \frac{\ds{\lim_{x \rightarrow a} f(x)}} { \ds{\lim_{x
-\rightarrow a} g(x)}} = \frac{L}{K}}$, provided $K \neq 0$.
+\item \textbf{Quotient Rule:}  $\lim_{x \rightarrow a} \left[ \frac{f(x)}{g(x)}\right]
+= \frac{\lim_{x \rightarrow a} f(x)} { \lim_{x
+\rightarrow a} g(x)} = \frac{L}{K}$, provided $K \neq 0$.
 
 \item \textbf{Rules for Radicals:}  
 
 \begin{itemize}
 
-\item If $n$ is \textbf{odd}, $\ds{\lim_{x \rightarrow a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \rightarrow a} f(x)} = \sqrt[n]{L}} $. 
+\item If $n$ is \textbf{odd}, $\lim_{x \rightarrow a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \rightarrow a} f(x)} = \sqrt[n]{L} $. 
 
-\item  If $n$ is \textbf{even} and $L>0$, $\ds{\lim_{x \rightarrow a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \rightarrow a} f(x)} = \sqrt[n]{L}} $. 
+\item  If $n$ is \textbf{even} and $L>0$, $\lim_{x \rightarrow a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \rightarrow a} f(x)} = \sqrt[n]{L} $. 
 
-\item  If $n$ is \textbf{even} and $L=0$, $\ds{\lim_{x \rightarrow a} \sqrt[n]{f(x)} = 0}$ provided $f(x) \geq 0$ for all $x$ near $a$.
+\item  If $n$ is \textbf{even} and $L=0$, $\lim_{x \rightarrow a} \sqrt[n]{f(x)} = 0$ provided $f(x) \geq 0$ for all $x$ near $a$.
  
  \end{itemize}
  
- \item \textbf{Real Number Powers:}  If $L>0$ and $p$ is a real number, $\ds{\lim_{x \rightarrow a} [f(x)]^{p} = \left[\lim_{x \rightarrow a} f(x)\right]^{p} = L^{p}} $.
+ \item \textbf{Real Number Powers:}  If $L>0$ and $p$ is a real number, $\lim_{x \rightarrow a} [f(x)]^{p} = \left[\lim_{x \rightarrow a} f(x)\right]^{p} = L^{p} $.
  
 
 \end{enumerate}
@@ -949,85 +919,74 @@ $\ds{\lim_{x \rightarrow a} \left[f(x)\right]^{n} = \left[
 \end{theorem}
 %% \ebm}
 
-\medskip
+
 
 For those interested, the Scalar Multiple Rule and Power Rule are grouped with the Product Rule since they both follow directly from the Product Rule.  For instance, using the Product Rule,  \[ \lim_{x \rightarrow a} \left[c \, f(x)\right] = \lim_{x \rightarrow a} c \, \lim_{x \rightarrow a}  f(x) = c \, \lim_{x \rightarrow a}  f(x).\]  For powers, note that $\left[f(x)\right]^2 = f(x)  \, f(x) $ so that \[ \lim_{x \rightarrow a} \left[ f(x)\right]^2 = \lim_{x \rightarrow a} \left[ f(x) \, f(x) \right] =  \lim_{x \rightarrow a} f(x)  \, \lim_{x \rightarrow a}  f(x) = L \, L = L^2.\]  Once this is established, we can use the fact that $\left[f(x)\right]^3 = f(x)  \, \left[f(x)\right]^2 $ and the product rule again to get \[ \lim_{x \rightarrow a} \left[ f(x)\right]^3 = \lim_{x \rightarrow a} \left[ f(x) \, \left[f(x)\right]^2 \right] =  \lim_{x \rightarrow a} f(x)  \, \lim_{x \rightarrow a}  \left[f(x)\right]^2= L \, L^2 = L^3.\] Continuing in this manner gives us the Power Rule.\footnote{See Exercise \ref{limitpowerruleproof} in Section \ref{Induction} for more details.}
 
-\medskip
 
-A note regarding the Rules for Radicals:  since $\sqrt{N}$ is not real  if $N<0$, we have to be careful about limits involving even-indexed radicals (or exponents which indicate even-indexed radicals.)   For example, consider $\ds{\lim_{x \rightarrow 5} \sqrt{5-x}}$.  Since this is a `two-sided' limit, we must consider both $x \rightarrow 5^{-}$ and $x \rightarrow 5^{+}$.
 
-\medskip
+A note regarding the Rules for Radicals:  since $\sqrt{N}$ is not real  if $N<0$, we have to be careful about limits involving even-indexed radicals (or exponents which indicate even-indexed radicals.)   For example, consider $\lim_{x \rightarrow 5} \sqrt{5-x}$.  Since this is a `two-sided' limit, we must consider both $x \rightarrow 5^{-}$ and $x \rightarrow 5^{+}$.
 
-As $x \rightarrow 5^{-}$, the radicand, $(5-x) >0$ so $\sqrt{5-x}$ is defined as a real number.  More specifically, as $x \rightarrow 5^{-}$, the quantity $(5-x) \rightarrow 0^{+}$ so $\ds{\lim_{x \rightarrow 5^{-}} \sqrt{5-x} = 0}$.  On the other hand, if $x \rightarrow 5^{+}$, the quantity $(5-x) < 0$, and $\sqrt{5-x}$ is no longer a real number.  Therefore, $\ds{\lim_{x \rightarrow 5^{+}} \sqrt{5-x}}$, and, hence, $\ds{\lim_{x \rightarrow 5} \sqrt{5-x}}$ does not exist.
 
-\medskip
+
+As $x \rightarrow 5^{-}$, the radicand, $(5-x) >0$ so $\sqrt{5-x}$ is defined as a real number.  More specifically, as $x \rightarrow 5^{-}$, the quantity $(5-x) \rightarrow 0^{+}$ so $\lim_{x \rightarrow 5^{-}} \sqrt{5-x} = 0$.  On the other hand, if $x \rightarrow 5^{+}$, the quantity $(5-x) < 0$, and $\sqrt{5-x}$ is no longer a real number.  Therefore, $\lim_{x \rightarrow 5^{+}} \sqrt{5-x}$, and, hence, $\lim_{x \rightarrow 5} \sqrt{5-x}$ does not exist.
+
+
 
 Note the Real Number Powers rule can be thought as a generalization of the Power Rule, Quotient Rule, and  Rules for Radicals for the case $L>0$. Recall that positive rational number exponents can be defined in terms of natural number powers and radicals as:  $x^{\frac{m}{n}} = \left( \sqrt[n]{x}\right)^{m}$.  Negative exponents can be defined in terms of quotients:  $x^{-\frac{m}{n}} = \frac{1}{x^{\frac{m}{n}}}$.  For the Real Number Exponents rule, we are generalizing the exponents to any real number but keeping the stipulation that $L>0$ to make sure the resulting answer is defined.\footnote{See the discussion of real number exponents in  Section \ref{PowerFunctions}.}
 
-\medskip
+
 
 We put the limit properties to good use in the following example.
 
-\pagebreak
-
-\begin{example} \label{limitpropex} Let $f(x)=  \dfrac{ x \sqrt{x+1}}{x^2+2x-4}$.  Use Theorem \ref{LimitProp01} to find $\ds{\lim_{x \rightarrow 3} f(x) }$.
-
-\medskip
+\begin{example} \label{limitpropex} Let $f(x)=  \frac{ x \sqrt{x+1}}{x^2+2x-4}$.  Use Theorem \ref{LimitProp01} to find $\lim_{x \rightarrow 3} f(x)$.
 
 
-{\bf Solution.}
+
+
+\begin{explanation}
 
 \[ \begin{array}{rclr}
 
-\ds{\lim_{x \rightarrow 3} \dfrac{ x \sqrt{x+1}}{x^2+2x-4}} & = &  \ds{\dfrac{\lim_{x \rightarrow 3} x \sqrt{x+1} }{\lim_{x \rightarrow 3} \left(x^2+2x-4\right)}}  & \text{Quotient Rule }  \\ 
+\lim_{x \rightarrow 3} \frac{ x \sqrt{x+1}}{x^2+2x-4} & = &  \frac{\lim_{x \rightarrow 3} x \sqrt{x+1} }{\lim_{x \rightarrow 3} \left(x^2+2x-4\right)} & \text{Quotient Rule }  \\ 
 
-&&&\\
-                                                                                           & = &  \ds{  \dfrac{ \left( \lim_{x \rightarrow 3} x \right) \left(  \lim_{x \rightarrow 3} \sqrt{x+1} \right) }{\lim_{x \rightarrow 3} \left( x^2 \right) +\lim_{x \rightarrow 3} ( 2x ) - \lim_{x \rightarrow 3} 4 }}  & \dfrac{\text{Product Rule}}{\text{Sum and Difference Rule}}  \\ 
+& = &  \frac{ \left( \lim_{x \rightarrow 3} x \right) \left(  \lim_{x \rightarrow 3} \sqrt{x+1} \right) }{\lim_{x \rightarrow 3} \left( x^2 \right) +\lim_{x \rightarrow 3} ( 2x ) - \lim_{x \rightarrow 3} 4 }  & \frac{\text{Product Rule}}{\text{Sum and Difference Rule}}  \\ 
 
-&&& \\
+ & = &  \frac{ 3   \, \sqrt{ \lim_{x \rightarrow 3} (x+1) } }{ \left( \lim_{x \rightarrow 3}  x \right)^2  +2 \, \lim_{x \rightarrow 3} x  -4 } & \frac{\text{Identity and Radical Rules}}{\text{Power, Constant Multiple, and Constant Rules}}  \\ 
 
- & = &  \ds{  \dfrac{ 3   \, \sqrt{ \lim_{x \rightarrow 3} (x+1) } }{ \left( \lim_{x \rightarrow 3}  x \right)^2  +2 \, \lim_{x \rightarrow 3} x  -4 }}  & \dfrac{\text{Identity and Radical Rules}}{\text{Power, Constant Multiple, and Constant Rules}}  \\ 
- 
- &&& \\
+ & = &  \frac{ 3   \, \sqrt{ \lim_{x \rightarrow 3} x+\lim_{x \rightarrow 3} 1  } }{ (3)^2  +2 (3)   -4 }  & \frac{\text{Sum Rule }}{\text{Identity Rule }}  \\ 
 
- & = &  \ds{  \dfrac{ 3   \, \sqrt{ \lim_{x \rightarrow 3} x+\lim_{x \rightarrow 3} 1  } }{ (3)^2  +2 (3)   -4 }}  & \dfrac{\text{Sum Rule }}{\text{Identity Rule }}  \\ 
- 
- 
- &&& \\
-
- & = &  \ds{  \dfrac{ 3   \, \sqrt{ 3+ 1  } }{ 9+6   -4 } = \dfrac{6}{11} }  & \text{Identity and Constant Rules, Simplify}  \\ 
+ & = &   \frac{ 3   \, \sqrt{ 3+ 1  } }{ 9+6   -4 } = \frac{6}{11}   & \text{Identity and Constant Rules, Simplify}  \\ 
 
 \end{array} \] 
+\end{explanation}
 
 \end{example}
 
-\medskip
-
 It is worth noting that we could have arrived at the same (correct) answer to Example \ref{limitpropex} by evaluating $f(3)$:  $f(3) = \frac{ 3   \, \sqrt{ 3+ 1  } }{ (3)^2+6   -4 } = \frac{6}{11}$.  That's really the power of Theorem \ref{LimitProp01}.  Under `nice' circumstances,\footnote{primarily those in which we're not dealing with piecewise-defined functions or dividing by $0$ \ldots}  Theorem \ref{LimitProp01} allows us to compute limits using direct substitution.  Functions with this property have a  familiar name.
 
-\medskip
+
 
 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition}\index{continuous ! limit definition}  \label{continuousdefn}  A function $f$ is said to be \textbf{continuous} at an input $x  = a$ if $\ds{\lim_{x \rightarrow a} f(x) = f(a)}$.  
+\begin{definition}\index{continuous ! limit definition}  \label{continuousdefn}  A function $f$ is said to be \textbf{continuous} at an input $x  = a$ if $\lim_{x \rightarrow a} f(x) = f(a)$.  
 
-\medskip
 
-Said differently, a function $f$ is said to be continuous at a real number $a$ if what we \textbf{get}, $f(a)$, exactly what we \textbf{expect to get}, $\ds{\lim_{x \rightarrow a} f(x)}$. 
+
+Said differently, a function $f$ is said to be continuous at a real number $a$ if what we \textbf{get}, $f(a)$, exactly what we \textbf{expect to get}, $\lim_{x \rightarrow a} f(x)$. 
 
 
 \end{definition}
 
 %% \ebm}
 
-\medskip
+
 
  This is not the first time we've mentioned this property of functions.  Indeed, we've discussed continuity albeit in graphical terms throughout Chapters \ref{IntroductiontoFunctions} through \ref{RootRadicalPowerFunctions}.  In those chapters, we described continuous functions as those whose graphs are connected meaning they have  `no holes or breaks' in them.  It is a great exercise to compare the description given in Definition \ref{continuousdefn} to the graphical description to see how those two ideas mesh.
  
- \medskip
+ 
  
  In a standard Calculus course, you'll explore properties of continuous functions more extensively.  For our purposes here, polynomial, and, more generally, rational functions are continuous \textbf{on their domains}, as well as the functions we encountered in Chapter \ref{RootRadicalPowerFunctions}.  Indeed, so long as we avoid the usual domain pitfalls, combining continuous functions via the standard four operation function arithmetic or using function composition results in a continuous function.  This means in order to \textbf{evaluate limits} of these functions, we may use Definition \ref{continuousdefn} and simply \textbf{evaluate the function} at the corresponding value.
 
@@ -1047,81 +1006,62 @@ Said differently, a function $f$ is said to be continuous at a real number $a$ i
 
 \begin{enumerate}
 
-\item To determine if $f$ is continuous at $x=2$, we need to check to see if $\ds{\lim_{x \rightarrow 2} f(x) = f(2)}$.   We note that $f$ is defined at $x=2$ and that  $f(2) = (2)^2 = 4$ so we set about determining  $\ds{\lim_{x \rightarrow 2} f(x)}$.  
+\item To determine if $f$ is continuous at $x=2$, we need to check to see if $\lim_{x \rightarrow 2} f(x) = f(2)$.   We note that $f$ is defined at $x=2$ and that  $f(2) = (2)^2 = 4$ so we set about determining  $\lim_{x \rightarrow 2} f(x)$.  
 
-\medskip
+Since $f$ is a piecewise-defined function which has different formulas on either side of $2$, we need to check $\lim_{x \rightarrow 2} f(x)$ from both directions.  To find $\lim_{x \rightarrow 2^{-}} f(x)$, we note that as $x\rightarrow 2^{-}$, $x < 2$ so $f(x) = 2x-1$.  Hence, $\lim_{x \rightarrow 2^{-}} f(x) = \lim_{x \rightarrow 2^{-}} (2x-1) = 2(2)-1 = 3$, the last step coming from the fact that for $x<2$, $f(x) = 2x-1$ is a linear function (a polynomial)  and is continuous.  
 
-Since $f$ is a piecewise-defined function which has different formulas on either side of $2$, we need to check $\ds{\lim_{x \rightarrow 2} f(x)}$ from both directions.  To find $\ds{\lim_{x \rightarrow 2^{-}} f(x)}$, we note that as $x\rightarrow 2^{-}$, $x < 2$ so $f(x) = 2x-1$.  Hence, $\ds{\lim_{x \rightarrow 2^{-}} f(x) = \lim_{x \rightarrow 2^{-}} (2x-1) = 2(2)-1 = 3}$, the last step coming from the fact that for $x<2$, $f(x) = 2x-1$ is a linear function (a polynomial)  and is continuous.  
+Now on to  $\lim_{x \rightarrow 2^{+}} f(x)$.  Here, $x\rightarrow 2^{+}$, so $x > 2$ and  $f(x) = x^2$.  Hence, $\lim_{x \rightarrow 2^{+}} f(x) = \lim_{x \rightarrow 2^{+}} x^2 = (2)^2 = 4$,  the last step courtesy of the fact that for $x>2$,  $f(x) = x^2$ is a quadratic function (a polynomial) and is continuous.  
 
-\medskip
 
-Now on to  $\ds{\lim_{x \rightarrow 2^{+}} f(x)}$.  Here, $x\rightarrow 2^{+}$, so $x > 2$ and  $f(x) = x^2$.  Hence, $\ds{\lim_{x \rightarrow 2^{+}} f(x) = \lim_{x \rightarrow 2^{+}} x^2 = (2)^2 = 4}$,  the last step courtesy of the fact that for $x>2$,  $f(x) = x^2$ is a quadratic function (a polynomial) and is continuous.  
 
-\medskip
-
-Since $\ds{\lim_{x \rightarrow 2^{-}} f(x) = 3}$ and $\ds{\lim_{x \rightarrow 2^{+}} f(x) = 4}$, we have that $\ds{\lim_{x \rightarrow 2} f(x)}$ does not exist per Theorem \ref{onesidedlimit}.  Hence, $f$ is not continuous.  If we graph $f$ near $x=2$ using desmos, we can see the vertical gap or `jump' occurring at $x = 2$.  
+Since $\lim_{x \rightarrow 2^{-}} f(x) = 3$ and $\lim_{x \rightarrow 2^{+}} f(x) = 4$, we have that $\lim_{x \rightarrow 2} f(x)$ does not exist per Theorem \ref{onesidedlimit}.  Hence, $f$ is not continuous.  If we graph $f$ near $x=2$ using desmos, we can see the vertical gap or `jump' occurring at $x = 2$.  
 
 % https://www.desmos.com/calculator/xgc7fk7dcz
 \begin{center}
     \desmos{xgc7fk7dcz}{800}{600}
 \end{center}
 
-\medskip
-
-\item In this problem,\footnote{For a graphically interactive take on this problem, check out this \href{https://www.desmos.com/calculator/ibtrzesg4i}{\underline{desmos worksheet}}.}  we're given a parameter `$m$' to help us adjust the left hand side of the graph to meet the right hand side at $x = 2$.  If $x<2$, $g(x) = mx-1$ so $\ds{\lim_{x \rightarrow 2^{-}} g(x) = \lim_{x \rightarrow 2^{-}} (mx-1) = 2m-1}$. 
-
-\medskip
-
-To ensure the limit exists, we need  $\ds{\lim_{x \rightarrow 2^{-}} g(x) = \lim_{x \rightarrow 2^{+}} g(x)}$.  Since $g(x) = f(x) = x^2$ for $x \geq 2$, we know $\ds{ \lim_{x \rightarrow 2^{+}} g(x) = 4}$.  Solving  $2m-1 = 4$, we get $m = \frac{5}{2} = 2.5$.  Sure enough, $\ds{\lim_{x \rightarrow 2^{-}} (2.5x-1) = 5 - 1 = 4}$.  Since $g(2) = 4$, we have $\ds{\lim_{x \rightarrow 2} g(x) = g(2)}$, so $g$ is continuous at $x = 2$. 
+\item In this problem, we're given a parameter `$m$' to help us adjust the left hand side of the graph to meet the right hand side at $x = 2$. Using the desmos interactive below, we can adjust the slider for `$m$' so that portion of the graph of $y = (x)$ for $x<2$ matches up with the portion of the graph for $x \geq 2$.  We see that when $m \approx 2.5$, both parts of the graph appear to meet at $(2,4)$.
 
 % https://www.desmos.com/calculator/540rbz9coa
 \begin{center}
 \desmos{540rbz9coa}{800}{600}
  \end{center}
 
+To determine $m$ analytically (and prove our claim), note that  if $x<2$, $g(x) = mx-1$ so $\lim_{x \rightarrow 2^{-}} g(x) = \lim_{x \rightarrow 2^{-}} (mx-1) = 2m-1$. To ensure the limit exists, we need  $\lim_{x \rightarrow 2^{-}} g(x) = \lim_{x \rightarrow 2^{+}} g(x)$.  Since $g(x) = f(x) = x^2$ for $x \geq 2$, we know $\lim_{x \rightarrow 2^{+}} g(x) = 4$.  Solving  $2m-1 = 4$, we get $m = \frac{5}{2} = 2.5$.  Sure enough, $\lim_{x \rightarrow 2^{-}} (2.5x-1) = 5 - 1 = 4$.  Since $g(2) = 4$, we have $\lim_{x \rightarrow 2} g(x) = g(2)$, so $g$ is continuous at $x = 2$. 
+
 \end{enumerate}
 \end{example}
 
 It is worth noting that despite each `piece' of the piecewise-defined function $f$ in Example \ref{piecewisecontex} being continuous, the pieces don't match up at $x=2$ causing what is called a\index{discontinuity ! jump} \textbf{discontinuity}.   A discontinuity is a place where a function is \textbf{not} continuous.  The particular variety of discontinuity appearing here  is usually called a `jump' discontinuity - a type of discontinuity belonging to a larger class of  `non-removable' or `essential' discontinuities.  We'll point out other types of discontinuities as we encounter them.\footnote{Probably in the footnotes because, after all, this is (supposedly) a \underline{pre}calculus book, not a Calculus book \ldots} 
 
-\medskip
-
 We close this section with an example that ties (most of) the fundamental concepts of limits and their calculations together.
 
-\medskip
+\begin{example} \label{rationallimit}  Let  $f(x) =  \frac{x^2-2x-3}{x^2-1}$.  Find $\lim_{x \rightarrow -1} f(x)$ analytically\footnote{i.e, using properties of limits} and interpret graphically.
 
-\begin{example} \label{rationallimit}  Let  $f(x) =  \frac{x^2-2x-3}{x^2-1}$.  Find $\ds{\lim_{x \rightarrow -1} f(x)}$ analytically\footnote{i.e, using properties of limits} and interpret graphically.
+\begin{explanation}  Since $f$ is a rational function, and rational functions are continuous on their domains, it's worth checking to see what happens when we attempt to find $f(-1)$.  We get  $f(-1) = \frac{(-1)^2 - 2(-1)-3}{(-1)^2-1} = \frac{0}{0},$ which is undefined because of the `$0$' in the denominator.  However, the `$0$' in the numerator signals to us\footnote{courtesy of the Factor Theorem (Theorem \ref{factorthm}) \ldots} there are common factors of $(x-(-1)) = (x+1)$ which will cancel and potentially help us determine the indeterminate form.  To that end, we simplify: $f(x) =  \frac{x^2-2x-3}{x^2-1} = \frac{(x-3)(x+1)}{(x-1)(x+1)} = \frac{(x-3)\cancel{(x+1)}}{(x-1)\cancel{(x+1)}} = \frac{x-3}{x-1}, \quad x \neq -1$. 
 
-\medskip
 
-{\bf Solution.}  Since $f$ is a rational function, and rational functions are continuous on their domains, it's worth checking to see what happens when we attempt to find $f(-1)$.  We get  $f(-1) = \frac{(-1)^2 - 2(-1)-3}{(-1)^2-1} = \frac{0}{0},$ which is undefined because of the `$0$' in the denominator.  However, the `$0$' in the numerator signals to us\footnote{courtesy of the Factor Theorem (Theorem \ref{factorthm}) \ldots} there are common factors of $(x-(-1)) = (x+1)$ which will cancel and potentially help us determine the indeterminate form.  To that end, we simplify: $f(x) =  \frac{x^2-2x-3}{x^2-1} = \frac{(x-3)(x+1)}{(x-1)(x+1)} = \frac{(x-3)\cancel{(x+1)}}{(x-1)\cancel{(x+1)}} = \frac{x-3}{x-1}, \quad x \neq -1$. 
 
-\medskip
+That is, for all real numbers \textbf{except} $x = -1$, $\frac{x^2-2x-3}{x^2-1} = \frac{x-3}{x-1}$.   Since $\lim_{x \rightarrow -1} f(x)$ is concerned only with what's happening \textbf{near} $x = -1$, but not with what's happening \textbf{at} $x = -1$, it seems reasonable to suggest that $\lim_{x \rightarrow -1} f(x) =  \lim_{x \rightarrow -1}$  $\frac{x^2-2x-3}{x^2-1} =$  $\lim_{x \rightarrow -1}$ $\frac{x-3}{x-1}$.
 
-That is, for all real numbers \textbf{except} $x = -1$, $\frac{x^2-2x-3}{x^2-1} = \frac{x-3}{x-1}$.   Since $\ds{\lim_{x \rightarrow -1} f(x)}$ is concerned only with what's happening \textbf{near} $x = -1$, but not with what's happening \textbf{at} $x = -1$, it seems reasonable to suggest that $\ds{\lim_{x \rightarrow -1} f(x) =  \lim_{x \rightarrow -1}}$  $\frac{x^2-2x-3}{x^2-1} =$  $\ds{\lim_{x \rightarrow -1}}$ $\frac{x-3}{x-1}$.
+Note that $x = -1$ is in the domain of the function $g(x) = \frac{x-3}{x-1}$, hence $g$  \textbf{is} continuous at $x = -1$.   This means $\lim_{x \rightarrow -1} g(x) = g(-1)$, that is, $\lim_{x \rightarrow -1}$ $\frac{x-3}{x-1} = \frac{-1-3}{-1-1} = 2$.
 
-\medskip
-
-Note that $x = -1$ is in the domain of the function $g(x) = \frac{x-3}{x-1}$, hence $g$  \textbf{is} continuous at $x = -1$.   This means $\ds{\lim_{x \rightarrow -1} g(x) = g(-1)}$, that is, $\ds{\lim_{x \rightarrow -1}}$ $\frac{x-3}{x-1} = \frac{-1-3}{-1-1} = 2$.
-
-\medskip
-
-Putting all of this work together, we get $\ds{\lim_{x \rightarrow -1} f(x) =   \lim_{x \rightarrow -1}}$ $ \frac{x-3}{x-1}  =  \frac{-1-3}{-1-1} = 2$.   Graphically, this means there is a hole in the graph of $f$ at the location $(-1,2)$.\footnote{Since $f(-1)$ is undefined but  $\ds{\lim_{x \rightarrow -1} f(x)}$ exists means the discontinuity here is classified as `removable.'  We can `remove' the discontinuity by `patching' the `hole' by defining $f(-1) = 2$. We do such repairs in Calculus.}  The table and graph below confirm our answer.\footnote{Note that depending on which graphing utility is used, the `hole' at $(-1,2)$ may or may not be immediately visible on the graph.}
+Putting all of this work together, we get $\lim_{x \rightarrow -1} f(x) =   \lim_{x \rightarrow -1}$ $ \frac{x-3}{x-1}  =  \frac{-1-3}{-1-1} = 2$.   Graphically, this means there is a hole in the graph of $f$ at the location $(-1,2)$.\footnote{Since $f(-1)$ is undefined but  $\lim_{x \rightarrow -1} f(x)$ exists means the discontinuity here is classified as `removable.'  We can `remove' the discontinuity by `patching' the `hole' by defining $f(-1) = 2$. We do such repairs in Calculus.}  The table and graph below, courtesy of desmos, confirm our answer.\footnote{Note that when clicking on the graph in desmos, we are able to trace along the graph, and, if we're dextrous enough, we can catch desmos indicating the hole at $(-1,2)$.}
 
 % https://www.desmos.com/calculator/ikgtpsjfzm
 \begin{center}
 \desmos{ikgtpsjfzm}{800}{600}
 \end{center}
 
+\end{explanation}
 \end{example}
-
-
 
 The above reasoning is sound and is true in general.  We'll be getting a lot of use out of the following:
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{theorem}  \label{limitsagree} If $f$ and $g$ are two functions which agree on an open interval containing $x = a$, except possibly at $x = a$, then if $\ds{\lim_{x \rightarrow a} g(x)}$ exists, $\ds{ \lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a} g(x)}$.
+\begin{theorem}  \label{limitsagree} If $f$ and $g$ are two functions which agree on an open interval containing $x = a$, except possibly at $x = a$, then if $\lim_{x \rightarrow a} g(x)$ exists, $\lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a} g(x)$.
 
 
 \end{theorem}

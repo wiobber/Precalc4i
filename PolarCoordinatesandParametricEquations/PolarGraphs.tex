@@ -194,309 +194,36 @@ Proceeding further, we find that when $\frac{3\pi}{2} \leq \theta \leq 2\pi$, we
 
 As $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ decreases from $4$ to $2$.  This means that the curve in the $xy$-plane starts $4$ units from the origin on the positive $x$-axis and gradually pulls in towards the origin as it moves towards the positive $y$-axis.
 
+% https://www.geogebra.org/classic/szhdtpxn
 \begin{center}
-
-\hspace{.5in} \begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14,  {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6}
-\normalsize
-\tlabel[cc](7.25,-0.5){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{4-2*sin(x)}
-\arrow \polyline{(0,0), (0,3.9)}
-\arrow \polyline{(0.39,0), (0.39,3.13)}
-\arrow \polyline{(1.18,0), (1.18,2.05)}
-\arrow \polyline{(1.57,0), (1.57,1.9)}
-\point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)}
-\penwd{1.025}
-\arrow \function{0,1,0.1}{4-2*sin(x)}
-\function{1, 1.57,0.1}{4-2*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[12]{-5}{5}{-7}{3}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (3.9,0)}}
-\arrow \polyline{\plr{(0,0), (3.13,22.5)}}
-\arrow \polyline{\plr{(0,0), (2.05,67.5)}}
-\arrow \polyline{\plr{(0,0), (1.9,90)}}
-\point[2pt]{\plr{(4,0),(2,90)}}
-\arrow \plrfcn{10,80,5}{1.25*(4-2*sind(t))}
-\gclear \tlabelrect(6,2){\scriptsize $\theta$ runs from $0$ to $\frac{\pi}{2}$}
-\penwd{1.025}
-\arrow \plrfcn{0,45,5}{4-2*sind(t)}
-\plrfcn{45,90,5}{4-2*sind(t)}
-\end{mfpic} 
-
-\end{tabular}
-
+\geogebra{szhdtpxn}{800}{600}
 \end{center}
 
 Next, as $\theta$ runs from $\frac{\pi}{2}$ to $\pi$, we see that $r$ increases from $2$ to $4$.  Picking up where we left off, we gradually pull the graph away from the origin until we reach the negative $x$-axis.
 
-\begin{tabular}{ll}
 
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14,  {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6}
-\normalsize
-\tlabel[cc](7.25,-0.5){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{4-2*sin(x)}
-\arrow \polyline{(1.57,0), (1.57,1.9)}
-\arrow \polyline{(1.96,0), (1.96,2.05)}
-\arrow \polyline{(2.75,0), (2.75,3.13)}
-\arrow \polyline{(3.14,0), (3.14,3.9)}
-\point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)}
-\penwd{1.025}
-\arrow \function{1.57,2.35,0.1}{4-2*sin(x)}
-\function{2.35, 3.14,0.1}{4-2*sin(x)}
-\end{mfpic}
-
-& \hspace{.35in}
-
-\begin{mfpic}[12]{-5}{5}{-7}{3}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (1.9,90)}}
-\arrow \polyline{\plr{(0,0), (2.05,112.5)}}
-\arrow \polyline{\plr{(0,0), (3.13,157.5)}}
-\arrow \polyline{\plr{(0,0), (3.9,180)}}
-\point[2pt]{\plr{(4,0),(2,90), (4,180)}}
-\arrow \plrfcn{100,170,5}{1.25*(4-2*sind(t))}
-\gclear \tlabelrect(-6,2){\scriptsize $\theta$ runs from $\frac{\pi}{2}$ to $\pi$}
-\plrfcn{0,90,5}{4-2*sind(t)}
-\penwd{1.025}
-\arrow \plrfcn{90,135,5}{4-2*sind(t)}
-\plrfcn{135,180,5}{4-2*sind(t)}
-\end{mfpic} 
-
-\end{tabular}
 
 Over the interval $\left[\pi, \frac{3\pi}{2}\right]$, we see that $r$ increases from $4$ to $6$.  On the $xy$-plane, the curve sweeps out away from the origin as it travels from the negative $x$-axis  to the negative $y$-axis.
 
-\begin{tabular}{ll}
 
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14,  {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6}
-\normalsize
-\tlabel[cc](7.25,-0.5){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{4-2*sin(x)}
-\arrow \polyline{(3.14,0), (3.14,3.9)}
-\arrow \polyline{(3.53,0), (3.53,4.66)}
-\arrow \polyline{(4.32,0), (4.32,5.75)}
-\arrow \polyline{(4.71,0), (4.71,5.9)}
-\point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)}
-\penwd{1.025}
-\arrow \function{3.14,3.93,0.1}{4-2*sin(x)}
-\function{3.93, 4.71,0.1}{4-2*sin(x)}
-\end{mfpic}
-
-& \hspace{.24in}
-
-\begin{mfpic}[12]{-5}{5}{-7}{3}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (3.9,180)}}
-\arrow \polyline{\plr{(0,0), (4.66,202.5)}}
-\arrow \polyline{\plr{(0,0), (5.75,247.5)}}
-\arrow \polyline{\plr{(0,0), (5.9,270)}}
-\point[2pt]{\plr{(4,0),(2,90), (4,180), (6,270)}}
-\arrow \plrfcn{190,260,5}{1.15*(4-2*sind(t))}
-\gclear \tlabelrect(-6,-6){\hphantom{A} \scriptsize $\theta$ runs from $\pi$ to $\frac{3\pi}{2}$}
-\plrfcn{0,180,5}{4-2*sind(t)}
-\penwd{1.025}
-\arrow \plrfcn{180,225,5}{4-2*sind(t)}
-\plrfcn{225,270,5}{4-2*sind(t)}
-\end{mfpic} 
-
-\end{tabular}
 
 Finally, as $\theta$ takes on values from $\frac{3\pi}{2}$ to $2\pi$, $r$ decreases from $6$ back to $4$.  The graph on the $xy$-plane pulls in from the negative $y$-axis to finish where we started. 
 
-\begin{tabular}{ll}
 
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14,  {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{4-2*sin(x)}
-\arrow \polyline{(4.71,0), (4.71,5.9)}
-\arrow \polyline{(5.1,0), (5.1,5.75)}
-\arrow \polyline{(5.9,0), (5.9,4.66)}
-\arrow \polyline{(6.28,0), (6.28,3.9)}
-\point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)}
-\penwd{1.025}
-\arrow \function{4.71,5.75,0.1}{4-2*sin(x)}
-\function{5.75, 6.28,0.1}{4-2*sin(x)}
-\end{mfpic}
-
-& \hspace{1in}
-
-\begin{mfpic}[12]{-5}{5}{-7}{3}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (5.9,270)}}
-\arrow \polyline{\plr{(0,0), (5.75,292.5)}}
-\arrow \polyline{\plr{(0,0), (4.66,337.5)}}
-\arrow \polyline{\plr{(0,0), (4,360)}}
-\point[2pt]{\plr{(4,0),(2,90), (4,180), (6,270)}}
-\arrow \plrfcn{280,350,5}{1.15*(4-2*sind(t))}
-\gclear \tlabelrect(6,-6){\scriptsize $\theta$ runs from $\frac{3\pi}{2}$ to $2\pi$}
-\plrfcn{0,270,5}{4-2*sind(t)}
-\penwd{1.025}
-\arrow \plrfcn{270,315,5}{4-2*sind(t)}
-\plrfcn{315,360,5}{4-2*sind(t)}
-\end{mfpic} 
-
-\end{tabular}
 
 We leave it to the reader to verify that plotting points corresponding to values of $\theta$ outside the interval $[0,2\pi]$ results in retracing portions of the curve, so we are finished.
 
-\hspace{.25in} \begin{tabular}{cc}
 
-\begin{mfpic}[15]{-1}{7}{-1}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14,  {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$2$} 2, {$4$} 4, {$6$} 6}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\point[4pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)}
-\penwd{1.25pt}
-\function{0,6.28,0.1}{4-2*sin(x)}
-\end{mfpic}
-
-& \hspace{.75in} 
-
-\begin{mfpic}[12]{-5}{5}{-7}{3}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3){\scriptsize $y$}
-\point[4pt]{(4,0), (0,2), (-4,0), (0,-6)}
-\penwd{1.25pt}
-\plrfcn{0,360,5}{4-2*sind(t)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{6pt}$} -3.75,  {$4$} 3.75}
-\axislabels {y}{{$-6$} -5.7, {$2$} 1.7}
-\normalsize
-\end{mfpic}  \\
-
-$r = 4 - 2\sin(\theta)$ in the $\theta r$-plane 
-
-& \hspace{.75in} 
-
-$r = 4 - 2\sin(\theta)$ in the $xy$-plane.
-
-\end{tabular}
 
 \item The first thing to note when graphing $r = 2 + 4\cos(\theta)$ on the $\theta r$-plane over the interval $[0,2\pi]$ is that the graph crosses through the $\theta$-axis.  This corresponds to the graph of the curve passing through the origin in the $xy$-plane, so our first task is to determine when this happens.  
 
-\smallskip
-
 Setting $r=0$ we get $2 + 4\cos(\theta) = 0$, or $\cos(\theta) = -\frac{1}{2}$.   Solving for $\theta$ in  $[0,2\pi]$ gives $\theta = \frac{2\pi}{3}$ and $\theta = \frac{4\pi}{3}$.   Since these values of $\theta$ are important geometrically, we break the interval $[0,2\pi]$ into six subintervals:  $\left[0,\frac{\pi}{2}\right]$, $\left[\frac{\pi}{2},\frac{2\pi}{3}\right]$, $\left[\frac{2\pi}{3},\pi\right]$, $\left[\pi,\frac{4\pi}{3}\right]$, $\left[\frac{4\pi}{3}, \frac{3\pi}{2}\right]$ and $\left[\frac{3\pi}{2}, 2\pi\right]$.  
-
-\smallskip
 
 As $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ decreases from $6$ to $2$.  Plotting this on the $xy$-plane, we start $6$ units out from the origin on the positive $x$-axis and slowly pull in towards the positive $y$-axis.
 
+% https://www.geogebra.org/classic/fmvv5rhy
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(0,0), (0,5.9)}
-\arrow \polyline{(0.39,0), (0.39,5.60)}
-\arrow \polyline{(1.18,0), (1.18,3.30)}
-\arrow \polyline{(1.57,0), (1.57,1.9)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{0,1,0.1}{2+4*cos(x)}
-\function{1, 1.57,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (5.9,0)}}
-\arrow \polyline{\plr{(0,0), (5.6,22.5)}}
-\arrow \polyline{\plr{(0,0), (3.43,67.5)}}
-\arrow \polyline{\plr{(0,0), (1.9,90)}}
-\point[2pt]{\plr{(6,0),(2,90)}}
-\arrow \plrfcn{10,60,5}{1.15*(2+4*cosd(t))}
-\gclear \tlabelrect(7,3){\scriptsize $\theta$ runs from $0$ to $\frac{\pi}{2}$}
-\penwd{1.025}
-\arrow \plrfcn{0,45,5}{2+4*cosd(t)}
-\plrfcn{45,90,5}{2+4*cosd(t)}
-\end{mfpic} 
-
-\end{tabular}
-
+\geogebra{fmvv5rhy}{800}{600}
 \end{center}
 
 On the interval $\left[\frac{\pi}{2}, \frac{2\pi}{3}\right]$, $r$ decreases from $2$ to $0$, which means the graph is heading into (and will eventually cross through) the origin.  
@@ -505,317 +232,26 @@ On the interval $\left[\frac{\pi}{2}, \frac{2\pi}{3}\right]$, $r$ decreases from
 
 Not only do we reach the origin when $\theta = \frac{2\pi}{3}$, a theorem from Calculus\footnote{The `tangents at the pole' theorem from second semester Calculus.} states that the curve hugs the line $\theta = \frac{2\pi}{3}$ as it approaches the origin.  
 
-\begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(1.57,0), (1.57,1.7)}
-\arrow \polyline{(1.83,0), (1.83,0.6)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{1.57,1.83,0.1}{2+4*cos(x)}
-\function{1.83, 2.09,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\point[2pt]{\plr{(6,0),(2,90), (0,120)}}
-\dashed \polyline{(-2, 3.46), (2,-3.46)}
-\gclear \tlabelrect(-1.5,3){\scriptsize $\theta = \frac{2\pi}{3}$}
-\plrfcn{0,90,5}{2+4*cosd(t)}
-\penwd{1.025}
-\arrow \plrfcn{90,105,5}{2+4*cosd(t)}
-\plrfcn{105,120,5}{2+4*cosd(t)}
- \end{mfpic} 
-
-\end{tabular}
-
-\end{center}
 
 On the interval $\left[\frac{2\pi}{3}, \pi\right]$, $r$ ranges from $0$ to $-2$.  Since $r \leq 0$, the curve passes through the origin in the $xy$-plane,\footnote{Recall that one way to visualize plotting polar coordinates $(r,\theta)$ with $r<0$ is to start the rotation from the left side of the pole, in this case, the negative $x$-axis.  Rotating between $\frac{2\pi}{3}$ and $\pi$ radians from the negative $x$-axis in this case determines the region between the line $\theta = \frac{2\pi}{3}$ and the $x$-axis in Quadrant IV.}  following the line $\theta = \frac{2\pi}{3}$.  Since $|r|$ is increasing from $0$ to $2$, the curve pulls away from the origin and continues upwards through Quadrant IV to finish at a point on the positive $x$-axis.
 
  
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(2.35,0), (2.35,-0.6)}
-\arrow \polyline{(2.75,0), (2.75,-1.5)}
-\arrow \polyline{(3.14,0), (3.14,-1.9)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{2.09, 2.5,0.1}{2+4*cos(x)}
-\function{2.5, 3.14,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (-1.6,157.5)}}
-\arrow \polyline{\plr{(0,0), (-1.9,180)}}
-\point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180)}}
-\dashed \polyline{(-2, 3.46), (2,-3.46)}
-\gclear \tlabelrect(-1.5,3.5){\scriptsize $\theta = \frac{2\pi}{3}$}
-\plrfcn{0,120,5}{2+4*cosd(t)}
-\penwd{1.025}
-\arrow \plrfcn{120,140,5}{2+4*cosd(t)}
-\plrfcn{140,180,5}{2+4*cosd(t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
 
 Next, as $\theta$ progresses from $\pi$ to $\frac{4\pi}{3}$, $r$ ranges from $-2$ to $0$.  Since $r \leq 0$, we continue our graph in the first quadrant, heading into the origin along the line $\theta = \frac{4\pi}{3}$.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(3.14,0), (3.14,-1.9)}
-\arrow \polyline{(3.53,0), (3.53,-1.5)}
-\arrow \polyline{(3.93,0), (3.93,-0.6)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{3.14, 3.9,0.1}{2+4*cos(x)}
-\function{3.9, 4.19,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (-1.9,180)}}
-\arrow \polyline{\plr{(0,0), (-1.6,202.5)}}
-\point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180)}}
-\dashed \polyline{(1.5, 2.6), (-2, -3.46)}
-\gclear \tlabelrect(1.5,2){\scriptsize $\theta = \frac{4\pi}{3}$}
-\plrfcn{0,180,5}{2+4*cosd(t)}
-\penwd{1.025}
-\arrow \plrfcn{180,220,5}{2+4*cosd(t)}
-\plrfcn{220,240,5}{2+4*cosd(t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
-
-\vspace*{-.25in}
 
 On the interval $\left[\frac{4\pi}{3}, \frac{3\pi}{2}\right]$, $r$ returns to positive values and increases from $0$ to $2$.  We hug the line $\theta = \frac{4\pi}{3}$ as we move through the origin and head towards the negative $y$-axis.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(4.45,0), (4.45,0.65)}
-\arrow \polyline{(4.71,0), (4.71,1.75)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{4.19, 4.6,0.1}{2+4*cos(x)}
-\function{4.6, 4.71,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180), (2,270)}}
-\dashed \polyline{(1.5, 2.6), (-2, -3.46)}
-\gclear \tlabelrect(1.5,2){\scriptsize $\theta = \frac{4\pi}{3}$}
-\plrfcn{0,240,5}{2+4*cosd(t)}
-\penwd{1.025}
-\arrow \plrfcn{240,255,5}{2+4*cosd(t)}
-\plrfcn{255,270,5}{2+4*cosd(t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
-
-\vspace*{-.25in}
 
 As we round out the interval, we find that as $\theta$ runs through $\frac{3\pi}{2}$ to $2\pi$, $r$ increases from $2$ out to $6$, and we end up back where we started, $6$ units from the origin on the positive $x$-axis.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\arrow \polyline{(4.71,0), (4.71,1.75)}
-\arrow \polyline{(5.1,0), (5.1,3.30)}
-\arrow \polyline{(5.9,0), (5.9,5.6)}
-\arrow \polyline{(6.28,0), (6.28,5.9)}
-\point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.025}
-\arrow \function{4.71, 5.5,0.1}{2+4*cos(x)}
-\function{5.5, 6.28,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (1.9,270)}}
-\arrow \polyline{\plr{(0,0), (3.43,292.5)}}
-\arrow \polyline{\plr{(0,0), (5.6,337.5)}}
-\arrow \polyline{\plr{(0,0), (5.9,360)}}
-\point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180), (2,270)}}
-\arrow \plrfcn{280,350,5}{1.15*(2+4*cosd(t))}
-\gclear \tlabelrect(7.5,-3){\scriptsize $\theta$ runs from $\frac{3\pi}{2}$ to $2\pi$}
-\plrfcn{0,270,5}{2+4*cosd(t)}
-\penwd{1.025}
-\arrow \plrfcn{270,315,5}{2+4*cosd(t)}
-\plrfcn{315,360,5}{2+4*cosd(t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
 
 Again, we invite the reader to show that plotting the curve for values of $\theta$ outside $[0,2\pi]$ results in retracing a portion of the curve already traced.  Our final graph is below.
 
-\begin{tabular}{cc}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\point[4pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\penwd{1.25pt}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-& \hspace{.75in}
-
-\begin{mfpic}[17]{-2}{7}{-4}{4}
-\axes
-\xmarks{-1,1,2,3,4,5,6}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$2$} 2, {$6$} 6.25}
-\axislabels {y}{{$-2$} -2, {$2$} 2}
-\normalsize
-\dashed \polyline{(1.5, 2.6), (-2, -3.46)}
-\gclear \tlabelrect(-1.5,-2){\scriptsize $\theta = \frac{4\pi}{3}$}
-\dashed \polyline{(1.5, -2.6), (-2, 3.46)}
-\gclear \tlabelrect(-1.5,2){\scriptsize $\theta = \frac{2\pi}{3}$}
-\point[4pt]{(6,0), (2,0), (0,2), (0,-2), (0,0)}
-\penwd{1.25pt}
-\plrfcn{0,360,5}{2+4*cosd(t)}
-\end{mfpic} \\
-
-$r = 2+4\cos(\theta)$ in the $\theta r$-plane 
-
-& \hspace{.75in}
-
-$r = 2+4\cos(\theta)$ in the $xy$-plane \\
-
-\end{tabular}
 
 \item As usual, we start by graphing a fundamental cycle of $r = 5\sin(2\theta)$ in the $\theta r$-plane, which in this case, occurs as $\theta$ ranges from $0$ to $\pi$.  We partition our interval into subintervals to help us with the graphing, namely $\left[0, \frac{\pi}{4}\right]$, $\left[\frac{\pi}{4}, \frac{\pi}{2}\right]$, $\left[\frac{\pi}{2},\frac{3\pi}{4}\right]$ and $\left[\frac{3\pi}{4}, \pi \right]$. 
 
@@ -823,202 +259,22 @@ $r = 2+4\cos(\theta)$ in the $xy$-plane \\
 
 As $\theta$ ranges from $0$ to $\frac{\pi}{4}$, $r$ increases from $0$ to $5$.  Hence the graph of $r = 5\sin(2\theta)$ in the $xy$-plane starts at the origin and gradually sweeps out so it is $5$ units away from the origin on the line $\theta = \frac{\pi}{4}$.
 
+% https://www.geogebra.org/classic/nevwynxt
 \begin{center}
-
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[13]{-1}{7}{-6}{6}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\function{0,6.28,0.1}{5*sin(x)}
-\arrow \polyline{(0.39,0), (0.39,1.4)}
-\arrow \polyline{(1.18,0), (1.18,4.42)}
-\arrow \polyline{(1.57,0), (1.57,4.9)}
-\point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\penwd{1.025}
-\arrow \function{0,0.8,0.1}{5*sin(x)}
-\function{0.8, 1.57,0.1}{5*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (1.4,11.25)}}
-\arrow \polyline{\plr{(0,0), (4.52,33.75)}}
-\arrow \polyline{\plr{(0,0), (4.9,45)}}
-\point[2pt]{\plr{(0,0),(5,45)}}
-\penwd{1.025}
-\arrow \plrfcn{0,22,5}{5*sind(2*t)}
-\plrfcn{22,45,5}{5*sind(2*t)}
-\end{mfpic} 
-
-\end{tabular}
-
+\geogebra{nevwynxt}{800}{600}
 \end{center}
 
 Next, we see that $r$ decreases from $5$ to $0$ as $\theta$ runs through $\left[\frac{\pi}{4}, \frac{\pi}{2}\right]$. Moreover, $r$ is becomes negative as $\theta$ crosses $\frac{\pi}{2}$.  Hence, we draw the curve hugging the line $\theta = \frac{\pi}{2}$ (the $y$-axis) as the curve heads to the origin.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[13]{-1}{7}{-6}{6}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\function{0,6.28,0.1}{5*sin(x)}
-\arrow \polyline{(1.57,0), (1.57,4.9)}
-\arrow \polyline{(1.96,0), (1.96,4.4)}
-\arrow \polyline{(2.75,0), (2.75,1.4)}
-\point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\penwd{1.025}
-\arrow \function{1.57,2.35,0.1}{5*sin(x)}
-\function{2.35, 3.14,0.1}{5*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (4.9,45)}}
-\arrow \polyline{\plr{(0,0), (4.52,56.25)}}
-\arrow \polyline{\plr{(0,0), (1.4,78.75)}}
-\point[2pt]{\plr{(0,0),(5,45)}}
-\plrfcn{0,45,5}{5*sind(2*t)}
-\penwd{1.025}
-\arrow \plrfcn{45,67,5}{5*sind(2*t)}
-\plrfcn{67,90,5}{5*sind(2*t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
-
-\vspace*{-.25in}
 
 As $\theta$ runs from $\frac{\pi}{2}$ to $\frac{3\pi}{4}$, $r$ becomes negative and ranges from $0$ to $-5$.  Since $r \leq 0$, the curve pulls away from the negative $y$-axis into Quadrant IV.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[13]{-1}{7}{-6}{6}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\function{0,6.28,0.1}{5*sin(x)}
-\arrow \polyline{(3.53,0), (3.53,-1.4)}
-\arrow \polyline{(4.32,0), (4.32,-4.52)}
-\arrow \polyline{(4.71,0), (4.71,-4.9)}
-\point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\penwd{1.025}
-\arrow \function{3.14,3.93,0.1}{5*sin(x)}
-\function{3.93, 4.71,0.1}{5*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (-1.4,101.25)}}
-\arrow \polyline{\plr{(0,0), (-4.52,123.75)}}
-\arrow \polyline{\plr{(0,0), (-4.9,135)}}
-\point[2pt]{\plr{(0,0),(5,45),(-5,135)}}
-\plrfcn{0,90,5}{5*sind(2*t)}
-\penwd{1.025}
-\arrow \plrfcn{90,112,5}{5*sind(2*t)}
-\plrfcn{112,135,5}{5*sind(2*t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
-
-\vspace*{-.25in}
 
 For  $\frac{3\pi}{4} \leq \theta \leq  \pi$, $r$ increases from $-5$ to $0$, so the curve pulls back to the origin.
 
-\begin{center}
 
-\begin{tabular}{m{2.5in}m{2.5in}}
-
-\begin{mfpic}[13]{-1}{7}{-6}{6}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\function{0,6.28,0.1}{5*sin(x)}
-\arrow \polyline{(4.71,0), (4.71,-4.9)}
-\arrow \polyline{(5.1,0), (5.1,-4.52)}
-\arrow \polyline{(5.9,0), (5.9,-1.4)}
-\point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\penwd{1.025}
-\arrow \function{4.71,5.5,0.1}{5*sin(x)}
-\function{5.5, 6.28,0.1}{5*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\arrow \polyline{\plr{(0,0), (-4.9,135)}}
-\arrow \polyline{\plr{(0,0), (-4.52,146.25)}}
-\arrow \polyline{\plr{(0,0), (-1.4,168.75)}}
-\point[2pt]{\plr{(0,0),(5,45),(-5,135)}}
-\plrfcn{0,135,5}{5*sind(2*t)}
-\penwd{1.025}
-\arrow \plrfcn{135,157.5,5}{5*sind(2*t)}
-\plrfcn{157.5,180,5}{5*sind(2*t)}
-\end{mfpic} 
-
-\end{tabular}
-
-\end{center}
 
 Even though we have finished with one complete cycle of $r = 5\sin(2\theta)$, if we continue plotting beyond $\theta = \pi$, we find to our surprise and delight that the curve continues into the third quadrant!  
 
@@ -1026,108 +282,11 @@ Even though we have finished with one complete cycle of $r = 5\sin(2\theta)$, if
 
 Below we present a graph of a second cycle of $r = 5\sin(2\theta)$ as continued from the first.  The boxed labels on the $\theta$-axis correspond to the portions with matching labels on the curve in the $xy$-plane.
 
-\hspace{-.25in} \begin{tabular}{cc}
 
-\begin{mfpic}[13]{-1}{7}{-6}{6}
-\arrow \reverse \arrow \polyline{(-1,0), (7,0)}
-\dashed \arrow \reverse \arrow \polyline{(0,-6), (0,6)}
-\xmarks{0, 0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\pi$} 0, {$\frac{5\pi}{4}$} 1.57, {$\frac{3\pi}{2}$} 3.14,  {$\frac{7\pi}{4}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\tlabelsep{1pt}
-\tlabelrect[0pt](0.78,-0.5){\vphantom{1}\scriptsize $1\,$}
-\tlabelrect[0pt](2.35,-0.5){\vphantom{1}\scriptsize $2\,$}
-\tlabelrect[0pt](3.93,-0.5){\vphantom{1}\scriptsize $3\,$}
-\tlabelrect[0pt](5.5,-0.5){\vphantom{1}\scriptsize $4\,$}
-\penwd{1.025}
-\arrow \function{0,0.78,0.1}{5*sin(x)}
-\function{0.78,1.57,0.1}{5*sin(x)}
-\arrow \function{1.57, 2.36,0.1}{5*sin(x)}
-\function{2.36,3.14,0.1}{5*sin(x)}
-\arrow \function{3.14, 3.93,0.1}{5*sin(x)}
-\function{3.93,4.71,0.1}{5*sin(x)}
-\arrow \function{4.71, 5.5,0.1}{5*sin(x)}
-\function{5.5,6.28,0.1}{5*sin(x)}
-\end{mfpic}
-
-& \hspace*{.54in}
-
-\begin{mfpic}[13]{-6}{6}{-6}{6}
-\axes
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlabel[cc](6.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,6){\scriptsize $y$}
-\point[2pt]{\plr{(0,0),(5,45),(5,135), (5,225), (5,315)}}
-\plrfcn{0,180,5}{5*sind(2*t)}
-\tlabelsep{1pt}
-\tlabelrect[0pt](-4,-1){\vphantom{1}\scriptsize $1\,$}
-\tlabelrect[0pt](-1,-4){\vphantom{1}\scriptsize $2\,$}
-\tlabelrect[0pt](-1,4){\vphantom{1}\scriptsize $3\,$}
-\tlabelrect[0pt](-4,1){\vphantom{1}\scriptsize $4\,$}
-\penwd{1.025}
-\arrow \plrfcn{180,202,5}{5*sind(2*t)}
-\plrfcn{202,225,5}{5*sind(2*t)}
-\arrow \plrfcn{225,247,5}{5*sind(2*t)}
-\plrfcn{247,270,5}{5*sind(2*t)} 
-\arrow \plrfcn{270,292,5}{5*sind(2*t)}
-\plrfcn{292,315,5}{5*sind(2*t)} 
-\arrow \plrfcn{315,337,5}{5*sind(2*t)}
-\plrfcn{337,360,5}{5*sind(2*t)} 
-\end{mfpic} 
-
-\end{tabular}
 
 We have the final graph below.
 
-\hspace{-.25in} \begin{tabular}{cc}
 
-\begin{mfpic}[13]{-1}{13.5}{-6}{6}
-\axes
-\xmarks{0, 1.5708, 3.1416, 4.7124, 6.2832, 7.8540, 9.4248, 10.9956, 12.5664}
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28,  {$\frac{5\pi}{4}$} 7.85,  {$\frac{3\pi}{2}$} 9.42, {$\frac{7\pi}{4}$} 11.00,  {$2\pi$} 12.57}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](13.75,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\point[4pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0), (7.85, 5), (9.42, 0), (11.00,-5), (12.57,0)}
-\penwd{1.25pt}
-\function{0,12.57,0.1}{5*sin(x)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[13]{-6}{6}{-6}{6}
-\axes
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\tlabel[cc](6.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,6){\scriptsize $y$}
-\point[4pt]{\plr{(0,0),(5,45),(5,135), (5,225), (5,315)}}
-\penwd{1.25pt}
-\plrfcn{0,360,5}{5*sind(2*t)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-5 \hspace{6pt}$} -5, {$5$} 5}
-\axislabels {y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\end{mfpic} \\
-
-$r = 5\sin(2\theta)$ in the $\theta r$-plane &
-
-$r = 5\sin(2\theta)$ in the $xy$-plane \\
-
-\end{tabular}
 
 \item  Graphing $r^2 = 16 \cos(2\theta)$ is complicated by the $r^2$, so we solve for $r$ by extracting square roots  and get $r = \pm \sqrt{16 \cos(2\theta)} = \pm 4 \sqrt{\cos(2\theta)}$.  
 
