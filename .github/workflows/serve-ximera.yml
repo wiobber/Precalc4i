@@ -2,8 +2,7 @@ name: Ximera Workflow
 
 on:
   push:    
-    branches:
-        - 'main'
+
 
 jobs:
   build-ximera:
@@ -48,7 +47,7 @@ jobs:
           # XIMERA_URL: "https://test.xronos.clas.ufl.edu/"
           # XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
           XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: precalc4i*main
+          XIMERA_NAME: precalc4i*test
           XM_COMPILE_SEQUENCE: "html,handout.pdf"
         run: |
           ls -alrt
