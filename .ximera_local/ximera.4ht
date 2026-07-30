@@ -102,7 +102,7 @@
   \ConfigureQuestionEnv{hint}{hint} % 2024: hint is no longer a 'question-environment'.
 \fi
 \newcommand{\ConfigureTheoremEnv}[1]{%
-\renewenvironment{#1}[1][]{\refstepcounter{problem}\refstepcounter{#1}%
+\renewenvironment{#1}[1][]{\refstepcounter{problem}\@ifundefined{c@#1}{}{\refstepcounter{#1}}%
 \ifthenelse{\equal{##1}{}}{}{%
   \HCode{<span class="theorem-like-title">}##1\HCode{</span>}%
 }}{}
