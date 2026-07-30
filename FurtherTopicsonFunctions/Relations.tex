@@ -148,7 +148,7 @@ Note here  the grammar `$g$ is a relation \textit{from} $T$ \textit{to} $N$' is 
 
 \textit{Unlike} functions, we do not use function notation when describing the input/output relationship for general relations.  For example, we may write `$f(\text{White Paw}) = \text{cat}$'  since $f$ maps the input `White Paw' to only one output, `cat.'  However, $g(\text{cat})$ is ambiguous since it could mean `White Paw' or `Cooper.'\footnote{In more advanced texts, we would write `$\text{cat} \, g \, \text{White Paw}$' and `$\text{cat} \,  g \, \text{Cooper}$' to indicate $g$ maps `cat' to both `White Paw' and `Cooper.'  Our study of relations, however, isn't deep enough to necessitate introducing and using this notation.  Similarly, we won't introduce the notions of `domain,' `codomain,' and `range' for relations, either.}
 
-As with functions, our focus in this course will rest with relations of real numbers.  Consider the relation $R$ described as follows:  $R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}$.  Below on the left is a mapping diagram of $R$.  However, since $R$ relates real numbers, we can also create the graph of $R$ in the same way we graphed functions - by interpreting the ordered pairs which comprise $R$ as points in the plane.  Since we have no context, we use the default labels `$x$' for the horizontal axis and `$y$' for the vertical axis.
+As with functions, our focus in this course will rest with relations of real numbers.  Consider the relation $R$ described as follows:  $R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}$.  Below is a mapping diagram of $R$.  
 
 \begin{image}
 \begin{tikzpicture}[
@@ -199,6 +199,8 @@ As with functions, our focus in this course will rest with relations of real num
 \begin{center}
     \captionof{figure}{Mapping diagram for $R$}
 \end{center}
+
+However, since $R$ relates real numbers, we can also create the graph of $R$ in the same way we graphed functions - by interpreting the ordered pairs which comprise $R$ as points in the plane.  Since we have no context, we use the default labels `$x$' for the horizontal axis and `$y$' for the vertical axis.
 
 
 \begin{image}
@@ -567,7 +569,7 @@ How do we communicate $y=1$ is not part of the graph?  One way is to visualize p
 
 \item  The graph of $Q$ appears to be the graph of the function $s = f(t) = t^2$.  Again, as the graph consists of infinitely many points, we will use set-builder notation to describe $Q$ out of necessity.  
 
-There are a couple of different ways to do this.  Taking a cue from the relation $P$ above, we could write $Q = \{ (t, t^2) \, | \, \text{$t$ is a real number} \}$.  Alternatively, we could introduce the dependent variable, $s$ into the description by  writing  $Q = \{ (t, s) \, | \, s = t^2 \}$ where here the assumption is $x$ takes in all real number values.
+There are a couple of different ways to do this.  Taking a cue from the relation $P$ above, we could write $Q = \{ (t, t^2) \, | \, \text{$t$ is a real number} \}$.  Alternatively, we could introduce the dependent variable, $s$ into the description by  writing  $Q = \{ (t, s) \, | \, s = t^2 \}$ where here the assumption is $t$ takes in all real number values.
 \item  As with the relation $R$ above, the relation $T$ describes a region in the plane,  The $v$-values appear to range between $-3$ (not including $-3$) and up to, and including, $v = 4$.  The only restriction on the $w$-values is that $w \geq 1$, so we have $T = \{ (v, w) \, | \, \text{$-3 < v \leq 4$, $w \geq 1$} \}$. 
 
 \end{enumerate}
@@ -712,7 +714,7 @@ Using this table, we produce the graph below.
 
 Note that regardless of which geometric depiction we choose for $v^2+w^3 = 1$, the graph appears to be symmetric about the $w$-axis.  To prove this is the case, consider a generic point $(v,w)$ on the graph of   $v^2+w^3 = 1$ in the $vw$-plane. 
 
- To show the point symmetric about the $w$-axis, $(-v,w)$ is also on the graph of $v^2+w^3 = 1$, we need to show that the coordinates of the point $(-v,w)$ satisfy the equation $v^2+w^3 = 1$.  That is, we need to show $(-v)^2+w^3 = 1$.  Since $(-v)^2+w^3 = v^2 + w^3$, and we know by assumption $v^2 + w^3 = 1$, we get $(-v)^2+w^3 = v^2+w^3 = 1$,  proving $(-v,w)$ is also on the graph of the equation.  
+ To show the point symmetric about the $w$-axis, $(-v,w)$, is also on the graph of $v^2+w^3 = 1$, we need to show that the coordinates of the point $(-v,w)$ satisfy the equation $v^2+w^3 = 1$.  That is, we need to show $(-v)^2+w^3 = 1$.  Since $(-v)^2+w^3 = v^2 + w^3$, and we know by assumption $v^2 + w^3 = 1$, we get $(-v)^2+w^3 = v^2+w^3 = 1$,  proving $(-v,w)$ is also on the graph of the equation.  
 
 The key reason our proof above is successful is that algebraically, the equation $v^2+w^3 = 1$ is unchanged if $v$ is replaced with $-v$.  Geometrically, this means the graph is the same if it undergoes a reflection across the $w$-axis. We generalize this reasoning in the following result.  Note that, as usual, we default to the more common $x$ and $y$-axis labels.
   
@@ -1082,7 +1084,7 @@ Note that in this case, we are fortunate to have two \textit{explicit} formulas 
 
 \item  Since the maximum number of times a vertical line intersects the graph of $R$ is three, it stands to reason we need to resolve the graph of $R$ into at least three pieces. 
 
-One strategy is to begin at the far left and begin tracing the graph until it begins to `double back' and repeat $y$-coordinates.  Doing so we get three functions (represented by the bold solid lines) below. 
+One strategy is to begin at the far left and begin tracing the graph until it begins to `double back' and repeat $y$-coordinates.  Doing so we get three functions (represented by the blue segments) below. 
 
 \begin{image}
 \begin{tikzpicture}[scale=1]font=\LARGE

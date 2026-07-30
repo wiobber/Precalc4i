@@ -30,7 +30,7 @@ In this section, we develop the Law of Cosines which handles solving triangles i
 
 or, solving for the cosine in each equation, we have
  
-\[ \cos(\alpha) = \dfrac{b^2+c^2 - a^2}{2bc} \qquad \cos(\beta) = \dfrac{a^2+c^2 - b^2}{2ac} \qquad \cos(\gamma) = \dfrac{a^2+b^2 - c^2}{2ab} \]
+\[ \cos(\alpha) = \frac{b^2+c^2 - a^2}{2bc} \qquad \cos(\beta) = \frac{a^2+c^2 - b^2}{2ac} \qquad \cos(\gamma) = \frac{a^2+b^2 - c^2}{2ab} \]
 
 
  
@@ -349,7 +349,7 @@ We note that, depending on how many decimal places are carried through successiv
 A great example of this is number   \ref{locsss} in  Example \ref{locex}, where the \textit{approximate} values we record for the measures of the angles sum to $180.01^{\circ}$, which is geometrically impossible. 
  
 
-\begin{example}  \label{locapplication}  A researcher wishes to determine the width of a vernal pond as drawn below. From a point $P$, he finds the distance to the eastern-most point of the pond to be $950$ feet, while the distance to the western-most point of the pond from $P$ is $1000$ feet. If the angle between the two lines of sight is $60^{\circ}$, find the width of the pond.
+\begin{example}  \label{locapplication}  A researcher wishes to determine the width of a vernal pond as drawn below. From a point $P$, he finds the distance to the western-most point of the pond to be $950$ feet, while the distance to the eastern-most point of the pond from $P$ is $1000$ feet. If the angle between the two lines of sight is $60^{\circ}$, find the width of the pond.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -443,23 +443,23 @@ In order to simplify computations, we start by manipulating the expression for $
 
 \[ \begin{array}{rclr} 
 
-A^2 & = & \left(\dfrac{1}{2} ab \sin(\gamma)\right)^2 &\\  
-    & =  &  \dfrac{1}{4} a^2 b^2 \sin^{2}(\gamma) & \\ 
-    & = & \dfrac{a^2b^2}{4} \left(1 - \cos^{2}(\gamma)\right) & \text{since $\sin^2(\gamma) = 1 - \cos^{2}(\gamma)$.} \\ \end{array}\]
+A^2 & = & \left(\frac{1}{2} ab \sin(\gamma)\right)^2 &\\  
+    & =  &  \frac{1}{4} a^2 b^2 \sin^{2}(\gamma) & \\ 
+    & = & \frac{a^2b^2}{4} \left(1 - \cos^{2}(\gamma)\right) & \text{since $\sin^2(\gamma) = 1 - \cos^{2}(\gamma)$.} \\ \end{array}\]
 
 The Law of Cosines tells us $\cos(\gamma) = \frac{a^2 + b^2 - c^2}{2ab}$, so substituting this into our equation for $A^2$ gives
 
 \[ \begin{array}{rclr}
 
-A^2 & = &  \dfrac{a^2b^2}{4} \left(1 - \cos^{2}(\gamma)\right) 	& \\ 
+A^2 & = &  \frac{a^2b^2}{4} \left(1 - \cos^{2}(\gamma)\right) 	& \\ 
 
-    & = & \dfrac{a^2b^2}{4} \left[1 - \left( \dfrac{a^2 + b^2 - c^2}{2ab} \right)^2\right] &  \\  
+    & = & \frac{a^2b^2}{4} \left[1 - \left( \frac{a^2 + b^2 - c^2}{2ab} \right)^2\right] &  \\  
     
-	 	& = & \dfrac{a^2b^2}{4} \left[1 - \dfrac{\left(a^2 + b^2 - c^2\right)^2}{4a^2b^2} \right] &  \\    
+	 	& = & \frac{a^2b^2}{4} \left[1 - \frac{\left(a^2 + b^2 - c^2\right)^2}{4a^2b^2} \right] &  \\    
 		
-		& = & \dfrac{a^2b^2}{4} \left[\dfrac{4a^2 b^2  - \left(a^2 + b^2 - c^2\right)^2}{4a^2b^2} \right] &   \\  
+		& = & \frac{a^2b^2}{4} \left[\frac{4a^2 b^2  - \left(a^2 + b^2 - c^2\right)^2}{4a^2b^2} \right] &   \\  
 		
-		& = & \dfrac{4a^2 b^2  - \left(a^2 + b^2 - c^2\right)^2}{16}  &  \\  \end{array} \]
+		& = & \frac{4a^2 b^2  - \left(a^2 + b^2 - c^2\right)^2}{16}  &  \\  \end{array} \]
 	
 	
 Recognizing $4a^2 b^2$ as a perfect square, $4a^2 b^2 = (2ab)^2$, we can factor the resulting difference of squares:
@@ -467,37 +467,37 @@ Recognizing $4a^2 b^2$ as a perfect square, $4a^2 b^2 = (2ab)^2$, we can factor 
 \[ \begin{array}{rclr}
 	 
 	 	
-	A^2 	& = & \dfrac{(2ab)^2  - \left(a^2 + b^2 - c^2\right)^2}{16}  &  \\  
+	A^2 	& = & \frac{(2ab)^2  - \left(a^2 + b^2 - c^2\right)^2}{16}  &  \\  
 	 	
-	 		& = & \dfrac{\left( 2ab - \left[a^2+b^2 - c^2\right]\right)  \left( 2ab + \left[a^2+b^2 - c^2\right]\right)}{16}  & \text{difference of squares.} \\  
-	 	 	& = & \dfrac{\left(c^2 - a^2 + 2ab - b^2 \right)\left( a^2 + 2ab + b^2- c^2\right)}{16}  &  \\  
+	 		& = & \frac{\left( 2ab - \left[a^2+b^2 - c^2\right]\right)  \left( 2ab + \left[a^2+b^2 - c^2\right]\right)}{16}  & \text{difference of squares.} \\  
+	 	 	& = & \frac{\left(c^2 - a^2 + 2ab - b^2 \right)\left( a^2 + 2ab + b^2- c^2\right)}{16}  &  \\  
 	 	\end{array} \]
 		
 Next, we regroup $c^2 - a^2 + 2ab - b^2 = c^2 - \left[a^2 - 2ab + b^2\right]$ and  $a^2 + 2ab + b^2- c^2 = \left[a^2 + 2ab + b^2\right]- c^2$.  Recognizing $a^2 - 2ab + b^2 = (a-b)^2$ and $a^2 + 2ab + b^2 = (a+b)^2$, we continue factoring:
 	 	
 \[ \begin{array}{rclr}
 
-A^2	& = & \dfrac{\left(c^2 - \left[a^2 - 2ab + b^2\right] \right)  \left( \left[a^2 + 2ab + b^2\right]- c^2\right)}{16}  &  \\  
+A^2	& = & \frac{\left(c^2 - \left[a^2 - 2ab + b^2\right] \right)  \left( \left[a^2 + 2ab + b^2\right]- c^2\right)}{16}  &  \\  
 
-	 	& = & \dfrac{\left(c^2 - (a-b)^2 \right)  \left( (a+b)^2- c^2\right)}{16}  &  \text{perfect square trinomials.}\\  
+	 	& = & \frac{\left(c^2 - (a-b)^2 \right)  \left( (a+b)^2- c^2\right)}{16}  &  \text{perfect square trinomials.}\\  
 	 	
-	 	& = & \dfrac{ (c-(a-b))(c+(a-b))((a+b) -c)((a+b)+c)}{16}  &  \text{difference of squares.} \\  
+	 	& = & \frac{ (c-(a-b))(c+(a-b))((a+b) -c)((a+b)+c)}{16}  &  \text{difference of squares.} \\  
 	 			 
-	 	& = & \dfrac{ (b+c-a)(a+c-b)(a+b-c)(a+b+c)}{16}  &  \\  	 	
+	 	& = & \frac{ (b+c-a)(a+c-b)(a+b-c)(a+b+c)}{16}  &  \\  	 	
 	 	
-	  & = & \dfrac{(b+c-a)}{2} \cdot \dfrac{(a+c-b)}{2} \cdot \dfrac{(a+b-c)}{2} \cdot \dfrac{(a+b+c)}{2}  &  \\  	 
+	  & = & \frac{(b+c-a)}{2} \cdot \frac{(a+c-b)}{2} \cdot \frac{(a+b-c)}{2} \cdot \frac{(a+b+c)}{2}  &  \\  	 
 	 		
 \end{array} \]
 
 At this stage, we recognize the last factor as the semiperimeter, $s = \frac{1}{2}(a+b+c) = \frac{a+b+c}{2}$.  To complete the proof, we note that
 
-\[ (s - a) = \dfrac{a+b+c}{2} - a = \dfrac{a+b+c-2a}{2} = \dfrac{b+c-a}{2} \]  
+\[ (s - a) = \frac{a+b+c}{2} - a = \frac{a+b+c-2a}{2} = \frac{b+c-a}{2} \]  
 			
 Similarly, we find $(s-b) = \frac{a+c-b}{2}$ and $(s-c) = \frac{a+b-c}{2}$.  Hence, we get
 
 \[ \begin{array}{rclr}
 
-A^2 & = & \dfrac{(b+c-a)}{2} \cdot \dfrac{(a+c-b)}{2} \cdot \dfrac{(a+b-c)}{2} \cdot \dfrac{(a+b+c)}{2}  &  \\  	 
+A^2 & = & \frac{(b+c-a)}{2} \cdot \frac{(a+c-b)}{2} \cdot \frac{(a+b-c)}{2} \cdot \frac{(a+b+c)}{2}  &  \\  	 
 	 	
 	 	& = & (s-a) (s-b) (s-c) s  &  \\  	 	
 	 	

@@ -68,55 +68,14 @@ In our first example,  only one of the variables $r$ and $\theta$ is present mak
 
 \item  As in the previous example, the variable $r$ is free in the equation $\theta  = -\frac{3\pi}{2}$.  Plotting $\left(r, -\frac{3\pi}{2}\right)$ for various values of $r$ shows us that we are tracing out the $y$-axis.
 
+% https://www.geogebra.org/classic/q5krpqj3
 \begin{center}
-
-\begin{tabular}{cc}
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\point[3pt]{(0,0)}
-\tlabel[cc](1.5,4){\scriptsize $r > 0$}
-\tlabel[cc](1.5,-4){\scriptsize $r < 0$}
-\tlabel[cc](1,0.5){\scriptsize $r=0$}
-\arrow \parafcn{-5, -265, -5}{0.75*dir(t)}
-\tlabel[cc](-1.5,-1.5){\scriptsize $\theta = -\frac{3\pi}{2}$}
-\penwd{1.05}
-\arrow \reverse \arrow \polyline{(0,-1.5), (0,1.5)}
-\arrow \reverse \arrow \polyline{(0,-2.5), (0,2.5)}
-\arrow \reverse \arrow \polyline{(0,-3.5), (0,3.5)}
-\arrow \reverse \arrow \polyline{(0,-4.5), (0,4.5)}
-\end{mfpic}
-
-& \hspace{.75in}
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{6pt}$} -4, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$4$} 4}
-\normalsize
-\penwd{1.25}
-\arrow \reverse \arrow \polyline{(0,-5), (0,5)}
-\end{mfpic}  \\
-
-In $\theta = -\frac{3\pi}{2}$, $r$ is free & \hspace{.75in} The graph of $\theta = -\frac{3\pi}{2}$ \\
-
-\end{tabular}
-
+\geogebra{q5krpqj3}{800}{600}
 \end{center}
 
 \end{enumerate}
 
-\vspace{-.25in} \qed
+\vspace{-.25in}  
 
 \end{example}
 
@@ -147,8 +106,6 @@ Hopefully, our experience in Example \ref{rthetaconstant} makes the following re
 
 Suppose we wish to graph $r = 6\cos(\theta)$.  A reasonable way to start is to treat $\theta$ as the independent variable, $r$ as the dependent variable,  evaluate $r = f(\theta)$ at some `friendly' values of $\theta$ and plot the resulting points.\footnote{For a review of these concepts and this process, see Section \ref{FunctionsandtheirRepresentations}.}  
 
-\hspace{.25in} \begin{tabular}{m{2.7in}m{4in}}
-\setlength{\extrarowheight}{2pt}
 \[ \begin{array}{|r||r|r|}  
 
 \hline
@@ -164,25 +121,12 @@ Suppose we wish to graph $r = 6\cos(\theta)$.  A reasonable way to start is to t
 \frac{7\pi}{4}  & 3\sqrt{2} & \left(3\sqrt{2}, \frac{7\pi}{4}\right) \\ [2pt] \hline 
 2\pi  & 6 & (6,2\pi) \\  [2pt] \hline
 \end{array} \]
-\setlength{\extrarowheight}{0pt}
 
-& 
-\hspace*{.5in}
-\begin{mfpic}[15]{-3}{7}{-5}{5}
-\axes
-\xmarks{-2,-1,1,2,3,4,5,6}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](7,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\point[3pt]{(6,0), (3,3), (0,0), (3,-3)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$3$} 3, {$6$} 6}
-\axislabels {y}{{$-3$} -3, {$3$} 3}
-\normalsize
-\end{mfpic}
+% https://www.geogebra.org/classic/rmusbpbp
+\begin{center}
+    \geogebra{rmusbpbp}{800}{600}
+\end{center}
 
-\end{tabular}
 
 Despite having nine ordered pairs, we get only four distinct points on the graph.  For this reason, we employ a slightly different strategy.  We graph one cycle of $r = 6\cos(\theta)$ on the $\theta r$-plane\footnote{The graph looks exactly like $y = 6\cos(x)$ in the $xy$-plane, and for good reason. At this stage, we are just graphing the relationship between $r$ and $\theta$ before we interpret them as polar coordinates $(r,\theta)$ on the $xy$-plane.} below on the left and use it to help graph the equation on the $xy$-plane below on the right.  
 
@@ -215,52 +159,9 @@ As $\theta$ ranges from $\pi$ to $\frac{3\pi}{2}$, the $r$ values are still nega
 
 Proceeding further, we find that when $\frac{3\pi}{2} \leq \theta \leq 2\pi$, we retrace the portion of the curve in Quadrant IV that we first traced out as $\frac{\pi}{2} \leq \theta \leq \pi$. The reader is invited to verify that plotting any range of $\theta$ outside the interval $\left[ 0, \pi \right]$ results in retracting some portion of the curve.\footnote{The graph of $r=6\cos(\theta)$ looks suspiciously like a circle, for good reason. See number \ref{ris6costheta} in Example \ref{eqnconversionex}.} We present the final graph below.
 
+% https://www.geogebra.org/classic/jeyx22fe
 \begin{center}
-
-\begin{tabular}{cc}
-
-\begin{mfpic}[20][10]{-1}{4}{-7}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416}
-\ymarks{-6,-3,3,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.35, {$\pi$} 3.14}
-\axislabels{y}{{$-6$} -6, {$-3$} -3,{$3$} 3,{$6$} 6}
-\normalsize
-\point[4pt]{(0,6), (1.57,0), (3.14,-6)}
-\tlabel[cc](4.1,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\penwd{1.25pt}
-\function{0,3.14156,0.1}{6*cos(x)}
-\end{mfpic}
-
-& \hspace{.75in}
-
-\begin{mfpic}[10]{-7}{7}{-7}{7}
-\axes
-\xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.5,7){\scriptsize $y$}
-\point[4pt]{(0,0), (6,0)}
-\penwd{1.25pt}
-\plrfcn{0,180,5}{6*cosd(t)}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$3$} 3, {$6$} 6.25}
-\axislabels {y}{{$-3$} -3, {$3$} 3}
-\normalsize
-\end{mfpic} \\
-
-$r = 6\cos(\theta)$ in the $\theta r$-plane 
-
-& \hspace{.75in}
-
-$r = 6\cos(\theta)$ in the $xy$-plane
-
-\end{tabular}
-
+\geogebra{jeyx22fe}{800}{600}
 \end{center}
 
 \vspace{-.1in}
@@ -1362,7 +1263,7 @@ As we plot points corresponding to values of  $\theta$ outside of the interval $
 
 \end{enumerate}
 
-\vspace{-0.25in} \qed
+\vspace{-0.25in}  
 
 \end{example}
 
@@ -1660,7 +1561,7 @@ Note when $k = 0$,  $\sin\left(\frac{(2k+1)\pi}{2}\right) = \sin\left(\frac{\pi}
 \smallskip
 
 What this means is that if a polar representation $(r,\theta)$ for the point $P$ satisfies $r = 3\sin\left(\frac{\theta}{2}\right)$, then the representation  $(-r, \theta + \pi)$ for $P$ automatically satisfies $r = 3\cos\left(\frac{\theta}{2}\right)$.  
-Hence the equations $r = 3\sin\left(\frac{\theta}{2}\right)$ and $r = 3\cos\left(\frac{\theta}{2}\right)$ determine the same set of points in the plane. \qed
+Hence the equations $r = 3\sin\left(\frac{\theta}{2}\right)$ and $r = 3\cos\left(\frac{\theta}{2}\right)$ determine the same set of points in the plane.  
 
 \end{enumerate}
 
@@ -1675,17 +1576,17 @@ Our work in Example \ref{polargraphintex} justifies the following.
 
 \smallskip
 
-To find the points of intersection of the graphs of two polar equations $E_{\mbox{\tiny $1$}}$ and $E_{\mbox{\tiny $2$}}$:
+To find the points of intersection of the graphs of two polar equations $E_1$ and $E_2$:
 
 \begin{itemize}
 
-\item  Sketch the graphs of $E_{\mbox{\tiny $1$}}$ and $E_{\mbox{\tiny $2$}}$. Check to see if the curves intersect at the origin (pole).
+\item  Sketch the graphs of $E_1$ and $E_2$. Check to see if the curves intersect at the origin (pole).
 
-\item  Solve for pairs $(r,\theta)$ which satisfy both $E_{\mbox{\tiny $1$}}$ and $E_{\mbox{\tiny $2$}}$. 
+\item  Solve for pairs $(r,\theta)$ which satisfy both $E_1$ and $E_2$. 
 
-\item  Substitute $(\theta + 2\pi k)$ for $\theta$ in either one of $E_{\mbox{\tiny $1$}}$ or $E_{\mbox{\tiny $2$}}$  (but not both) and solve for pairs $(r,\theta)$ which satisfy both equations.  Keep in mind that $k$ is an integer.
+\item  Substitute $(\theta + 2\pi k)$ for $\theta$ in either one of $E_1$ or $E_2$  (but not both) and solve for pairs $(r,\theta)$ which satisfy both equations.  Keep in mind that $k$ is an integer.
 
-\item  Substitute $(-r)$ for $r$ and $(\theta + (2k+1)\pi)$ for $\theta$ in either one of $E_{\mbox{\tiny $1$}}$ or $E_{\mbox{\tiny $2$}}$ (but not both) and solve for pairs $(r,\theta)$ which satisfy both equations.  Keep in mind that $k$ is an integer.
+\item  Substitute $(-r)$ for $r$ and $(\theta + (2k+1)\pi)$ for $\theta$ in either one of $E_1$ or $E_2$ (but not both) and solve for pairs $(r,\theta)$ which satisfy both equations.  Keep in mind that $k$ is an integer.
 
 \smallskip
 
@@ -1938,13 +1839,10 @@ $r = 2-2\sin(\theta)$ and \boldmath $r=2\sin(\theta)$ & \hspace{.35in}
 
 \end{enumerate}
 
-\qed
+ 
 
 \end{example}
 
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforPolarGraphs}
 

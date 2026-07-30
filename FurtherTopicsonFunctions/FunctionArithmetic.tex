@@ -420,9 +420,9 @@ Suppose we have two quantities, $u$ and $v$ with $\Delta u = u_{2} - u_{1}$ and 
  
 \[ \begin{array}{rcl}
 
- \Delta[u+v] & = & (u_{2} + v_{2}) - (u_{1} + v_{1})   \\[8pt]
-                                & = &   u_{2} + v_{2} - u_{1} - v_{1} \\[8pt]
-                                & = &  (u_{2} - u_{1}) + (v_{2} - v_{1}) \\[8pt]
+ \Delta[u+v] & = & (u_{2} + v_{2}) - (u_{1} + v_{1})   \\
+                                & = &   u_{2} + v_{2} - u_{1} - v_{1} \\
+                                & = &  (u_{2} - u_{1}) + (v_{2} - v_{1}) \\
                                 & = &  \Delta u + \Delta v  \\ \end{array} \]
 
 A similar calculation gives $\Delta[u - v] = \Delta u - \Delta v$.
@@ -519,10 +519,10 @@ Instead of appealing to geometric reasoning here,\footnote{If you come up with o
 
 \[ \begin{array}{rcl}
 
-\Delta\left[ \frac{u}{v}  \right]& = & \frac{u_{2}}{v_{2}} - \frac{u_{1}}{v_{1}}   \\[10pt]
-                       & = &   \frac{ u_{1} + \Delta u}{ v_{1} + \Delta v} - \frac{u_{1}}{v_{1}}  \\[10pt]
-                       & = &   \frac{(u_{1} + \Delta u) \, v_{1}}{(v_{1} + \Delta v) \, v_{1}} - \frac{u_{1} \, (v_{1} + \Delta v)}{v_{1} \,   (v_{1} + \Delta v) }\\[10pt]   
-                            & = &   \frac{u_{1} \, v_{1}  + v_{1} \, \Delta u- u_{1} \, v_{1} - u_{1} \, \Delta v}{v_{1} \,  (v_{1} + \Delta v)}\\[10pt]   
+\Delta\left[ \frac{u}{v}  \right]& = & \frac{u_{2}}{v_{2}} - \frac{u_{1}}{v_{1}}   \\
+                       & = &   \frac{ u_{1} + \Delta u}{ v_{1} + \Delta v} - \frac{u_{1}}{v_{1}}  \\
+                       & = &   \frac{(u_{1} + \Delta u) \, v_{1}}{(v_{1} + \Delta v) \, v_{1}} - \frac{u_{1} \, (v_{1} + \Delta v)}{v_{1} \,   (v_{1} + \Delta v) }\\  
+                            & = &   \frac{u_{1} \, v_{1}  + v_{1} \, \Delta u- u_{1} \, v_{1} - u_{1} \, \Delta v}{v_{1} \,  (v_{1} + \Delta v)}\\   
                          & = &   \frac{ v_{1} \, \Delta u  - u_{1}  \, \Delta v}{v_{1} \,  (v_{1}  + \Delta v_{1})}\\
                        \end{array} \]
                        
@@ -545,7 +545,7 @@ We summarize these results in the following theorem.
 
 \end{itemize}
 
-\item  \textbf{The Quotient Rule for Change:}  $\ds{ \Delta\left[ \frac{u}{v} \right] =  \frac{ v_{1} \, \Delta u  - u_{1}  \, \Delta v}{v_{1} \,  (v_{1}  + \Delta v_{1})}}$
+\item  \textbf{The Quotient Rule for Change:}  $\Delta\left[ \frac{u}{v} \right] =  \frac{ v_{1} \, \Delta u  - u_{1}  \, \Delta v}{v_{1} \,  (v_{1}  + \Delta v_{1})}$
 
 
 \end{itemize}
@@ -585,7 +585,7 @@ Since we have no idea the exact value of each uncertainty, we need to make a jud
  
  Hence, $\frac{\Delta \rho}{\rho} \approx \frac{0.3517 \, \frac{\text{g}}{\text{mL}}}{13.64 \, \frac{\text{g}}{\text{mL}}}  \approx 0.0258 = 2.58 \%$.  
  
- \medskip
+ 
  
  We may interpret this as the uncertainties in the measurements for mass and volume in this situation could produce up to a $2.58 \%$ error in the calculated density.
 \end{enumerate}
@@ -618,7 +618,7 @@ In the result below, we abbreviate the average rate of change as `ARoC' for conv
 
 \[ \begin{array}{rcl}
 
-\text{ARoC}[(fg)(x)]  & = & \text{ARoC}[f(x)] \, g(x) + f(x) \, \text{ARoC}[g(x)]  + \text{ARoC}[f(x)] \, g(x) \\[8pt]
+\text{ARoC}[(fg)(x)]  & = & \text{ARoC}[f(x)] \, g(x) + f(x) \, \text{ARoC}[g(x)]  + \text{ARoC}[f(x)] \, g(x) \\
                        & = &   \text{ARoC}[f(x)] \, g(x) + f(x) \, \text{ARoC}[g(x)]  + f(x) \, \text{ARoC}[g(x)]   \end{array} \]
                        
                        \begin{itemize}
@@ -656,7 +656,7 @@ Our final example  revisits the scenario in Exercise \ref{newportaboycost} in Se
 
 For revenue, we find  $\text{ARoC}[R(x)] = \frac{R(71) - R(70)}{71-70} = \frac{10188.5 - 10150}{1} = 38.5$.  This means that as we move from selling $70$ to $71$ PortaBoy systems, the revenue generated will increase by $\$ 38.5$ per system.
 
-\item  Since $P(x) = R(x) - C(x)$, the Difference Rule of Theorem \ref{functionarithmeticaroc} gives $\text{ARoC}[P(x)] = \text{ARoC}[R(x)] - \text{ARoC}[C(x)]$.  In this case, we'd get $\text{ARoC}[P(x)] =  38.5 - 37.83 = 0.67$.   This means as we move from producing and selling $70$ to $71$ PortaBoy systems, the profit generated will increase by just $67$ cents per system.  At this point, the increase in revenue is nearly balanced out by the increase in cost.  Since costs typically continue to rise as the number of items is produced while the revenue falls as we try to sell more items,\footnote{we've seen this before: to sell more, we lower the price which, in turn, lowers revenue \ldots} we are likely near a maximum point with the profit.  A quick check of the graph on Desmos confirms our suspicions.
+\item  Since $P(x) = R(x) - C(x)$, the Difference Rule of Theorem \ref{functionarithmeticaroc} gives $\text{ARoC}[P(x)] = \text{ARoC}[R(x)] - \text{ARoC}[C(x)]$.  In this case, we'd get $\text{ARoC}[P(x)] =  38.5 - 37.83 = 0.67$.   This means as we move from producing and selling $70$ to $71$ PortaBoy systems, the profit generated will increase by just $67$ cents per system.  At this point, the increase in revenue is nearly balanced out by the increase in cost.  Since costs typically continue to rise as the number of items is produced while the revenue falls as we try to sell more items,\footnote{we've seen this before: to sell more, we lower the price which, in turn, lowers revenue \ldots} we are likely near a maximum point with the profit.  A quick check of the graph on desmos confirms our suspicions.
 
 % https://www.desmos.com/calculator/uvclz8fotk
 \begin{center}
