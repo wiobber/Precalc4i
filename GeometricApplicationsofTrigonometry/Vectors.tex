@@ -33,29 +33,14 @@ The point $P$  is called the \index{vector ! initial point}\textit{initial point
 
 While it is true that $P$ and $Q$ completely determine $\overrightarrow{v}$, it is important to note that since vectors are defined in terms of their two characteristics,  magnitude and direction, any directed line segment with the same length and direction as $\overrightarrow{v}$ is considered to be the same vector as $\overrightarrow{v}$, regardless of its initial point.
 
+ In the case of our vector $\overrightarrow{v}$ above, any vector which moves three units to the right and four up\footnote{If this idea of `over' and `up' seems familiar, it should.  The slope of the line segment containing $\overrightarrow{v}$ is  $\frac{4}{3}$.} from its initial point to arrive at its terminal point is considered the same vector as $\overrightarrow{v}$.  The notation we use to capture this idea is the \index{vector ! component form} \textit{component form} of the vector, $\overrightarrow{v} = \left<3,4\right>$, where the first number, $3$, is called the $x$-\textit{component} \index{vector ! $x$-component} of $\overrightarrow{v}$ and the second number, $4$, is called the $y$-\textit{component} \index{vector ! $y$-component} of $\overrightarrow{v}$\footnote{Note that there are a number of other notations for vectors.  In fact, the Geogebra code to draw this vector uses the form 
+$\overrightarrow{v} = \left(\begin{array}{cc}
+3 \\ 4 \end{array}\right).$}.  
  
+ For example, if we wanted to reconstruct $\overrightarrow{v} = \left<3,4\right>$ with initial point $P'(-2,3)$, then we would find the terminal point of $\overrightarrow{v}$ by adding $3$ to the $x$-coordinate and adding $4$ to the $y$-coordinate to obtain the terminal point $Q'(1,7)$, as seen below if we set $a=-2$ and $b=3$.
 
- In the case of our vector $\overrightarrow{v}$ above, any vector which moves three units to the right and four up\footnote{If this idea of `over' and `up' seems familiar, it should.  The slope of the line segment containing $\overrightarrow{v}$ is  $\frac{4}{3}$.} from its initial point to arrive at its terminal point is considered the same vector as $\overrightarrow{v}$.  The notation we use to capture this idea is the \index{vector ! component form} \textit{component form} of the vector, $\overrightarrow{v} = \left<3,4\right>$, where the first number, $3$, is called the $x$-\textit{component} \index{vector ! $x$-component} of $\overrightarrow{v}$ and the second number, $4$, is called the $y$-\textit{component} \index{vector ! $y$-component} of $\overrightarrow{v}$.  
- 
-  
- 
- For example, if we wanted to reconstruct $\overrightarrow{v} = \left<3,4\right>$ with initial point $P'(-2,3)$, then we would find the terminal point of $\overrightarrow{v}$ by adding $3$ to the $x$-coordinate and adding $4$ to the $y$-coordinate to obtain the terminal point $Q'(1,7)$, as seen below.
-
-\begin{center}
-\begin{mfpic}[20]{0}{6}{0}{6}
-\point[4pt]{(1,2), (4,6)}
-\tlabel(-1,1.75){\scriptsize $P'\left(-2, 3 \right)$}
-\tlabel(4.25,6){\scriptsize $Q'\left(1, 7 \right)$}
-\tlabel[cc](2.5,1.5){\scriptsize over $3$}
-\tlabel[cc](4.5,4){\scriptsize up $4$}
-\dashed \arrow \polyline{(1.25,2), (4,2)}
-\dashed \arrow \polyline{(4,2.25), (4,5.75)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\tcaption{\scriptsize $\overrightarrow{v} = \left<3,4\right>$ with initial point $P'\left(-2, 3 \right)$.}
-\penwd{1.25pt}
-\arrow \polyline{(1,2),(4,6)}
-\end{mfpic}
+\begin{center} 
+\geogebra{fn9njhcn}{800}{600} 
 \end{center}
 
 The component form of a vector is what ties these very geometric objects back to Algebra and ultimately Trigonometry.  We generalize our example in our definition below.

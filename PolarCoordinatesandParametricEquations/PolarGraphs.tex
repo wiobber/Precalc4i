@@ -493,32 +493,13 @@ In our next example, we see the need to rely on Geometry as much as Algebra to s
 
 \item  Following the procedure in Example \ref{polargraphex}, we graph $r = 2\sin(\theta)$ and find it to be a circle centered at the point with rectangular coordinates $(0,1)$ with a radius of $1$.  The graph of $r = 2-2\sin(\theta)$ is a special kind of lima\c{c}on called a \index{cardioid} `\href{http://en.wikipedia.org/wiki/Cardioid}{\underline{cardioid}}.'\footnote{Presumably, the name is derived from its resemblance to a stylized human heart.}
 
+% https://www.geogebra.org/graphing/qkhkthvy
 \begin{center}
-
-\begin{mfpic}[20]{-3.5}{3.5}{-5}{3}
-\axes
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-4,-3,-2,-1,1,2}
-\tlabel[cc](3.75,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3.25){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{6pt}$} -1.75, {$2$} 1.9}
-\axislabels {y}{{$-4$} -3.75, {$2$} 1.7}
-\normalsize
-\point[3pt]{\plr{(1,30),(1,150),(0,0)}}
-\plrfcn{0,360,5}{2-2*sind(t)}
-\penwd{1.05}
-\plrfcn{0,180,5}{2*sind(t)}
-\end{mfpic} 
-
-$r = 2-2\sin(\theta)$ and \boldmath $r=2\sin(\theta)$
-
+\geogebra{qkhkthvy}{800}{600}
 \end{center}
 
 It appears as if there are three intersection points:  one in the first quadrant, one in the second quadrant, and the origin.  Our next task is to find polar representations of these points. 
 
-\smallskip
 
  In order for a point $P$ to be on the graph of $r = 2\sin(\theta)$, it must have a representation $P(r,\theta)$ which satisfies $r = 2\sin(\theta)$.  If $P$ is also on the graph of $r = 2 - 2\sin(\theta)$, then $P$ has a (possibly different) representation $P(r',\theta')$ which satisfies $r'=2\sin(\theta')$.   We first try to see if we can find any points which have a single representation $P(r,\theta)$ that satisfies both $r = 2\sin(\theta)$ and $r = 2-2\sin(\theta)$.  
  
@@ -548,27 +529,9 @@ We now turn our attention to the origin.  We know from Section \ref{PolarCoordin
 
 The graph of $r = 3\cos(\theta)$ is also a circle - but this one is centered at the point with rectangular coordinates $\left(\frac{3}{2}, 0\right)$ and has a radius of $\frac{3}{2}$. 
 
+% https://www.geogebra.org/graphing/fhvk3s89
 \begin{center}
-
-\begin{mfpic}[20]{-3.5}{3.5}{-3}{3}
-\axes
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-2,-1,1,2}
-\tlabel[cc](3.75,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,3.25){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{6pt}$} -2.25, {$2$} 2.15, {$3$} 3.15}
-\axislabels {y}{{$-2$} -2.25, {$2$} 2.25}
-\normalsize
-\point[3pt]{\plr{(2,48.19),(2,311.81)}}
-\plrfcn{0,360,5}{2}
-\penwd{1.025}
-\plrfcn{0,180,5}{3*cosd(t)}
-\end{mfpic} 
-
-$r = 2$ and \boldmath $r=3\cos(\theta)$
-
+\geogebra{fhvk3s89}{800}{600}
 \end{center}
 
 We have two intersection points to find, one in Quadrant I and one in Quadrant IV.  Proceeding as above, we first determine if any of the intersection points $P$ have a representation $(r,\theta)$ which satisfies both $r=2$ and $r=3\cos(\theta)$. 
