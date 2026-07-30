@@ -55,6 +55,7 @@ jobs:
           rm -rf ximera-downloads/with-answers
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
+          ./xmScripts/xmlatex veryclean RationalFunctions  # recompile
           ./xmScripts/xmlatex bake  course.tex testxourse.tex -j 5 
           ./xmScripts/xmlatex frost course.tex testxourse.tex 
           ./xmScripts/xmlatex name  course.tex testxourse.tex 
