@@ -270,8 +270,221 @@ Second, if we write $\Delta x = x - x_0$, then  $x = x_0 + \Delta x$  so we can 
  f(x_0 + \Delta x) & = & f(x_0) & + & m \Delta x \\
  (\text{new output}) & = & (\text{known output}) & +&  (\text{change in outputs}) \\ \end{array} \] In other words, changing the \textbf{input} by $\Delta x$ results in changing the \textbf{output} by $m \Delta x$.  This tracks since \[ m \Delta x  = \frac{\Delta [f(x)]}{\Delta x} \Delta x =  \Delta[f(x)]  = \Delta \text{outputs}. \] The fact that we can write $\Delta \text{outputs} = m \Delta x$ for any choice of $x_0$ is another way to see that for linear functions, the rate of change is constant.  That is, the rate of change, $m$,  is the same for all values $x_0$ in the domain. We'll put Equation \ref{linearfunctionpointslope} to good use in the next example.
 
+ \begin{example}\label{PortaBoyDemand}  The local retailer in Example \ref{PortaBoyCost} is trying to mathematically model the relationship between the number of PortaBoy systems sold  and the price per system.  Suppose $20$ systems were sold when the price was  $\$220$ per system but when the systems went on sale for  $\$190$ each, sales doubled.
  
+\begin{enumerate}
+
+\item Find a formula for a linear function $p$ which represents the price $p(x)$ as a function of the number of systems sold, $x$. Graph $y = p(x)$, find and interpret the intercepts, and determine a reasonable domain for $p$.
+
+\item Interpret the slope of $p(x)$ in terms of price and game system sales.
+
+\item  If the retailer wants to sell $150$ PortaBoys next week, what should the price be?
+
+\item How many systems would sell if the price per system were set at $\$150$?
+
+\end{enumerate}
 
 
+
+\begin{explanation}
+
+\begin{enumerate}
+
+\item  We are asked to find a linear function $p(x)$ ostensibly because the retailer has only two data points and two points are all that is needed to determine a unique line.  We know that $20$ PortaBoys were sold  when the price was $220$ dollars and double that, so $40$ units, were sold when the price was $190$ dollars. Using the language of function notation, these statements translate to  $p(20)=220$ and $p(40)=190$, respectively.  We first find the slope \[ m = \frac{\Delta [p(x)]}{\Delta x} = \frac{190 - 220}{40 - 20} = \frac{-30}{20} = -1.5\] and then substitute it and a pair $(x_0, p(x_0))$ into the point-slope formula.  We have two choices:  $x_0 = 20$ and $p(x_0) = 220$ or $x_0 = 40$ and $p(x_0) = 190$.  We'll choose the former and invite the reader to use the latter - both will result in the same simplified expression.  The point-slope formula yields  \[p(x) = p(x_0) + m (x - x_0) = 220 + (-1.5)(x - 40)\] which simplifies to $p(x) = -1.5x + 250$.  (To check this algebraically, we can verify that $p(20) = 220$ and $p(40) = 190$.) To find the $y$-intercept of the graph, we substitute $x = 0$ and find $p(0) = 250$.  Hence our $y$-intercept is $(0, 250)$.  To find the $x$-intercept, we set $p(x) = 0$. Solving $-1.5x + 250 = 0$ gives $x = 166.\overline{6}$, so our $x$-intercept is $(166.\overline{6}, 0)$.\footnote{The exact value is $x = \frac{500}{3}$. Recall that the bar over the $6$ indicates that the decimal repeats.  See page \pageref{repeatingdecimalnote} for details.} The graph on the left is that of the line $y = -1.5x + 250$.  
+
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
+
+  % Axis labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
+
+  % Labels for points
+  \node at (1,5.5) {  $(0,250)$};
+  \node at (8.5,0.75) {  $(166.\overline{6}, 0)$};
+
+  % Line
+  \draw[thick,->,>=stealth] (-1,5.6)--(9,-0.4);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8.33,0) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {  $y = -1.5x + 250$};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[scale=0.8]
+  % Axes
+  \draw[->] (-1,0)--(9.5,0) node[right] {  $x$};
+  \draw[->] (0,-1)--(0,7.5) node[above] {  $y$};
+
+  % Axis ticks and labels
+  \foreach \x/\xl in {1/20,2/40,3/60,4/80,5/100,6/120,7/140,8/160}
+    \draw (\x,0.1)--(\x,-0.1) node[below] {  $\xl$};
+  \foreach \y/\yl in {1/50,2/100,3/150,4/200,5/250,6/300}
+    \draw (0.1,\y)--(-0.1,\y) node[left] {  $\yl$};
+
+  % Labels for points
+  \node at (1,5.5) {  $(0, 250)$};
+  \node at (8.5,0.75) {  $(166, 1)$};
+
+  % Line
+  \draw[thick] (0,5)--(8,0.02);
+
+  % Points
+  \fill (0,5) circle (2pt);
+  \fill (8,0.02) circle (2pt);
+
+  % Caption
+  \node at (4,-1.5) {  $y = p(x)$};
+\end{tikzpicture}
+
+\end{center}
+
+
+To determine a reasonable domain for $p$, we certainly require $x \geq 0$, because we can't sell a negative number of game systems.\footnote{ignoring returns, that is.}  Next, we require $p(x) \geq 0$, otherwise we'd be \textbf{paying} customers to `buy'  PortaBoys.  Solving $-1.5 x + 250 \geq 0$ results in $x \leq 166.\overline{6}$.  This shouldn't be too surprising since our graph passes through the $x$-axis at $(166.\overline{6}, 0)$, going from positive $y$-values (hence, positive $p(x)$ values) to  negative $y$ (hence negative $p(x)$ values).\footnote{We'll discuss these sorts of connections in greater depth in Section \ref{AbsoluteValueFunctions}.}  
+
+
+
+Given that $x$ represents the number of PortaBoys sold, we need to choose to end the domain at either $x = 166$ or $x = 167$.  We have that $p(166) = 1 > 0$ but $p(167) = -0.5 < 0$ so we settle on the domain $[0,166]$.  Our final answer is $p(x) = -1.5x + 250$ restricted to $0 \leq x \leq 166$ which is graphed above on the right.
+
+\item The slope $m = -1.5$ represents the rate of change of the price of a system with respect to sales of PortaBoys.  The slope is negative so we have that the price is \textbf{decreasing} at a rate of $\$1.50$ per PortaBoy sold.  (Said differently, you can sell one more PortaBoy for every $\$1.50$ drop in price.)
+
+\item  To determine the price which will move $150$ PortaBoys, we find $p(150) = -1.5(150) + 250 = 25$.  That is, the price would have to be $\$25$ per system.
+
+\item  If the price of a PortaBoy were set at $\$150$, we'd have $p(x) = 150$, or $-1.5x + 250 = 150$.  This yields $-1.5x = -100$ or $x = 66.\overline{6}$. Again our algebraic solution lies between two whole numbers, so we find $p(66) = 151$ and $p(67) = 149.5$.  If the price were set at $\$ 150$, we'd sell $66$ systems, since to sell $67$ systems, we'd have to drop the price just under $\$150$.  
+
+\end{enumerate}
+\end{explanation}
+
+\end{example}
+
+%%%%
+The function $p$ in Example \ref{PortaBoyDemand} is called the\index{price-demand function}\index{function ! price-demand} \textbf{price-demand} function (or, sometimes called more simply a `demand function') because it returns the price $p(x)$ associated with a certain demand $x$ - that is, how many products will sell.\footnote{It may seem counter-intuitive to express price as a function of demand.  Shouldn't the price determine how many systems people will buy?  We will address this issue later.}  These functions, along with cost functions like the one in Example \ref{PortaBoyCost}, will be revisited in Example \ref{PortaBoyProfit}.
+
+
+
+Our next two examples focus on writing formulas for piecewise-defined functions, the second of which models a real-world situation.
+
+\begin{example} \label{piecewisefromgraphex}  Find a formula for the function $L$ graphed below.
+
+\begin{center}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=-5, xmax=5,
+    ymin=-3, ymax=6,
+    xtick={-4,-3,-2,-1,1,2,3,4},
+    ytick={-2,-1,1,2,3,4,5},
+    xlabel={$t$},
+    ylabel={$W$},
+    xlabel style={anchor=north},
+    ylabel style={anchor=east},
+    grid=none,
+    width=10cm, height=7cm,
+    every axis plot/.append style={thick}
+]
+
+% --- left horizontal segment y=4, for -5 <= x <= 1 ---
+\addplot[domain=-5:1,samples=2] {4};
+
+% --- right decreasing segment y=3-x, for 1 <= x <= 5 ---
+\addplot[domain=1:5,samples=2] {3-x};
+
+% --- filled point at (1,4) ---
+\addplot[only marks,mark=*,mark size=2pt] coordinates {(1,4)};
+\node[anchor=west,font= ] at (axis cs:1,4.5) {$(1,4)$};
+
+% --- open point at (1,2) ---
+\addplot[only marks,mark=o,mark size=2pt] coordinates {(1,2)};
+\node[anchor=west,font= ] at (axis cs:1,2.5) {$(1,2)$};
+
+\end{axis}
+\end{tikzpicture}
+
+\end{center}
+
+
+\begin{explanation} 
+From the graph of $W = L(t)$ we see that there are two distinct pieces. Taking note of the point at $(1, 4)$, we get $L(t) = 4$ for $t \leq 1$.  To represent $L$ for $t>1$, we use the point-slope form of a linear function: $L(t) = L(t_0) + m(t - t_0)$.  The only `point' labeled with this part of the graph is the hole at $(1, 2)$ and it isn't technically part of the graph, so we will avoid using it.\footnote{We actually could use the point $(1, 2)$ to find the equation of the \textbf{line} containing $(1, 2)$ and, say $(3, 0)$, which is $y = -t + 3$.  It's just that the graph of $L(t)$ and the line $y = -t + 3$ only agree for $t > 1$, so it would be incorrect to write $L(1) = 2$.}  Instead, we infer from the graph two other points: $(2, 1)$ and $(3, 0)$.  We get the slope to be \[m = \frac{\Delta W}{\Delta t} = \frac{\Delta [L(t)]}{\Delta t} = \frac{3 - 2}{0 - 1} = -1.\] Next, we choose a point to plug into  $L(t) = L(t_0) + m(t - t_0)$.  We have two options:  $t_0 = 2$ and $L(t_0) = 1$ or $t_0 = 3$ and $L(t_0) = 0$.  Using the latter, we get $L(t) = 0 + (-1)(t - 3)$, or $L(t) = -t + 3$.  Putting this together with the first part, we get:
+\[L(t) = \left\{ \begin{array}{rcl}  4 & \mbox{ if } & t \leq 1 \\
+-t+3 & \mbox{ if } & t >1
+ \end{array} \right.\]
+Note that when $t = 1$ is substituted into the expression $-t + 3$, we get $2$, so the hole at $(1, 2)$ checks.\footnote{Alternatively, for $t$ values larger than $1$ but getting closer and closer to $1$, $L(t) \approx 2$.} 
+\end{explanation}
+
+\end{example}
+
+\begin{example}  \label{dataplanex} A popular F\={o}n-i smartphone carrier offers the following smartphone data plan: use any amount of data up to and including 4 gigabytes for $\$ 60$ per month with an `overage' charge of $ \$5$ per gigabyte.  Determine a formula that computes the cost in dollars as a function of using $g$ gigabytes of data per month. Graph your answer.
+
+\begin{explanation}  
+It is clear from context that we are to use the variable $g$ (for `g'igabytes) as the independent variable.  We are asked to compute the cost so it seems natural to name the function $C$.  Hence, we are after a formula for $C(g)$.  Knowing that $g$ represents the amount of data used each month, we must have $g \geq 0$.  In order to get a feel for the formula for $C(g)$, we can choose some specific values for $g$ and determine the cost, $C(g)$.  For example, if we use no data at all, $1$ gigabyte of data,  or $3.796$ gigabytes of data, the cost is the same:  $\$60$.  Indeed, per the plan, for any amount of data up to and including $4$ gigabytes, the cost is $\$60$.  
+
+
+
+Translating this to function notation means $C(0) = 60$, $C(1) = 60$, $C(3.796) = 60$, and, in general, $C(g) = 60$ for  $0 \leq g \leq 4$.  What happens if we use more than $4$ gigabytes?  Let's say we use $6$ gigabytes.  Per the plan, we are charged $\$60$ for the first $4$ and then $\$5$ for each gigabyte over $4$.  Using $6$ gigabytes means that we are $2$ gigabytes over and our overage charge is $ (\$ 5)(2) = \$ 10$.  The total cost is the base plus the overages or $\$60 + \$10 = \$70$.  In general, if $g>4$, the expression $(g-4)$ computes the amount of data used over $4$ gigabytes.  Our base plus overage then comes to: $60 + 5(g-4) = 5g+40$.  Putting this together with our previous work, we get
+\[C(g) = \left\{ \begin{array}{rcl}  60 & \mbox{ if } & 0 \leq g \leq 4 \\
+5g+40 & \mbox{ if } & g > 4
+ \end{array} \right.\]
+To graph $C$, we graph $y = C(g)$.  For $0 \leq g \leq 4$, we have the horizontal line $y = 60$ from $(0,60)$ to $(4,60)$.  For $g>4$, we have the line $y = 5g+ 40$.  Even though the inequality $g > 4$ is strict, we nevertheless substitute $g = 4$ into the formula $y = 5g + 40$ and get $y = 60$.  Normally, this would produce a hole at $(4, 60)$, but in this case, the point $(4, 60)$ is already on the graph from the first piece of the function.  Essentially, the point $(4,60)$ from $C(g) = 60$ for $0 \leq g \leq 4$ `plugs' the hole from $C(g) = 5g + 40$ when $g> 4$.   
+
+
+
+We are graphing a line so we need to plot just one more point to determine the graph.  From our work above, we know $C(6) = 70$, so we use $(6,70)$ as our second point.   Our graph is below.   As with the graphs shown on page \pageref{firsttimewebreaktheaxis} from Example \ref{timetempex1}, we use `$\asymp$' to denote  a break in the vertical axis in order to better display the graph.
+
+\begin{center}
+
+
+\begin{tikzpicture}[scale=1]
+  % Axes
+  \draw[->] (-1,0) -- (7.5,0) node[below] {  $g$};
+  \draw[->] (0,-0.5) -- (0,5) node[left] {  $y$};
+
+  % Tick marks on x-axis
+  \foreach \x in {1,2,3,4,5,6} {
+    \draw (\x,0.1) -- (\x,-0.1);
+    \node[below] at (\x,-0.1) {  $\x$};
+  }
+
+  % Tick marks on y-axis
+  \foreach \y/\label in {1/60,2/65,3/70,4/75} {
+    \draw (0.1,\y) -- (-0.1,\y);
+    \node[left] at (-0.1,\y) {  $\label$};
+  }
+
+  % Polyline with arrow
+  \draw[thick,->] (0,1) -- (4,1) -- (7,4);
+
+  % Points
+  \foreach \pt in {(0,1),(4,1),(6,3)} {
+    \fill \pt circle (2pt);
+  }
+
+  % Labels for points
+  \node[below right] at (0,1) {  $(0,60)$};
+  \node[below] at (4,1) {  $(4,60)$};
+  \node[right] at (6,3) {  $(6,70)$};
+
+  % Caption
+  \node at (3,-0.8) {  $y = C(g)$};
+\end{tikzpicture}
+
+
+\end{center}
+\end{explanation}
+
+\end{example}
 
 \end{document}
