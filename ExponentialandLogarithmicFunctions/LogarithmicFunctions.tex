@@ -643,42 +643,42 @@ The vertical asymptote is only affected by the horizontal shift, so we have $x =
 
 From the graph, we  get the  domain of $f^{-1}$ is $(-3, \infty)$, which matches the range of $f$, and the range of $f^{-1}$ is $(-\infty, \infty)$, which matches the domain of $f$, in accordance with Theorem \ref{inversefunctionprops}.
 
-\item  We now verify that $f(x) = 2^{x-1}-3$ and $f^{-1}(x) = \log_{2}(x+3)+1$ satisfy the composition requirement for inverses.  When simplifying $(f^{-1} \circ f)(x)$ we assume $x$ can be any real number while when simplifying $(f \circ f^{-1})(x)$, we restrict our attention to $x > -3$. (Do you see why?)  
+\item  We now verify that $f(x) = 2^{x-1}-3$ and $f^{-1}(x) = \log_{2}(x+3)+1$ satisfy the composition requirement for inverses. 
 
+First, we simplify $(f^{-1} \circ f)(x)$.  Here we assume $x$ can be any real number.  
 
-Note the use of the inverse properties of exponential and logarithmic functions  from Theorem \ref{logfcnprops} when it comes to simplifying expressions of the form $\log_{2}(2^{u})$ and $2^{\log_{2}(u)}$. 
+\[\begin{array}{rclr}
 
-\[\begin{array}{rcl}
+\left(f^{-1}\circ f\right)(x) & = & f^{-1}(f(x)) & \\
 
-\left(f^{-1}\circ f\right)(x) & = & f^{-1}(f(x))  \\
+& = & f^{-1}\left(2^{x-1}-3 \right)  & \\
 
-& = & f^{-1}\left(2^{x-1}-3 \right)  \\
+& = & \log_{2}\left( \left[2^{x-1}-3\right]+3 \right)+1 &  \\
 
-& = & \log_{2}\left( \left[2^{x-1}-3\right]+3 \right)+1  \\
+& = & \log_{2}\left( 2^{x-1} \right)+1 & \\
 
-& = & \log_{2}\left( 2^{x-1} \right)+1  \\
+& = & (x-1) +1 & \text{since $\log_{2}(2^{u}) = u$.} \\
 
-& = & (x-1) +1  \\
-
-& = & x \, \, \checkmark \\
+& = & x \, \, \checkmark &  \\
 
 \end{array}\]
 
 
+Next, we check $(f \circ f^{-1})(x)$.  Here,  we restrict our attention to $x > -3$.
 
-\[\begin{array}{rcl}
+\[\begin{array}{rclr}
 
-\left(f\circ f^{-1}\right)(x) & = & f\left(f^{-1}(x)\right) \\
+\left(f\circ f^{-1}\right)(x) & = & f\left(f^{-1}(x)\right) & \\
 
-& = & f\left( \log_{2}(x+3)+1 \right) \\
+& = & f\left( \log_{2}(x+3)+1 \right) & \\
 
-& = & 2^{\left( \log_{2}(x+3)+1 \right)-1} - 3 \\
+& = & 2^{\left( \log_{2}(x+3)+1 \right)-1} - 3 & \\
 
-& = & 2^{\log_{2}(x+3)} - 3  \\
+& = & 2^{\log_{2}(x+3)} - 3  & \\
 
-& = & (x+3) -3  \\
+& = & (x+3) -3 &  \text{since $2^{\log_{2}(u)} = u$.} \\
 
-& = & x \, \, \checkmark \\
+& = & x \, \, \checkmark&  \\
 
 \end{array}\]
 
