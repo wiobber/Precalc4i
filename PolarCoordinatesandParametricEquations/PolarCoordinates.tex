@@ -25,94 +25,126 @@ As seen below on the left, to plot a point with Cartesian coordinates, say $P(-3
 For the most part, the `motions' of the Cartesian system (over and up) describe a rectangle, and most points can be thought of as the corner diagonally across the rectangle from the origin.\footnote{Excluding, of course, the points in which one or both coordinates are $0$.}  For this reason, the Cartesian coordinates of a point are often called  \index{rectangular coordinates ! also known as Cartesian coordinates} \index{coordinates ! rectangular} `rectangular' coordinates.  
 
  
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\large}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\panelwidth{12}
+\def\gridR{5}
+\def\polarR{3.4}
+\def\thetaP{126.87}
+
+%================================================
+% Left panel: Cartesian coordinates
+%================================================
+
+% --- Grid ---
+\draw[gray!45,step=1]
+    (-5,-5) grid (5,5);
+
+% --- Axes ---
+\draw[->] (-5.5,0) -- (5.6,0)
+    node[right] {$x$};
+
+\draw[->] (0,-5.5) -- (0,5.6)
+    node[above] {$y$};
+
+% --- Tick marks and labels ---
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.10) -- (\x,0.10);
+    \node[below] at (\x,-0.14) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.10,\y) -- (0.10,\y);
+    \node[left] at (-0.14,\y) {$\y$};
+}
+
+% --- Coordinate decomposition ---
+\draw[very thick,red,->]
+    (0,0) -- (-3,0);
+
+\draw[very thick,red,->]
+    (-3,0) -- (-3,4);
+
+%\draw[very thick,->]
+ %   (-3,4) -- (0,4);
+
+% --- Points ---
+\fill (0,0) circle (2.5pt);
+\fill (-3,4) circle (2.5pt);
+
+% --- Point label ---
+\node[left] at (-3.12,4.10)
+    {$P(-3,4)$};
 
 
-\begin{center}
-\begin{tabular}{cc}
-\begin{mfpic}[15]{-5.5}{5.5}{-5.5}{5.5}
-\drawcolor[gray]{0.7}
-\polyline{(-5,-5), (-5,5)}
-\polyline{(-4,-5), (-4,5)}
-\polyline{(-3,-5), (-3,5)}
-\polyline{(-2,-5), (-2,5)}
-\polyline{(-1,-5), (-1,5)}
-\polyline{(1,-5), (1,5)}
-\polyline{(2,-5), (2,5)}
-\polyline{(3,-5), (3,5)}
-\polyline{(4,-5), (4,5)}
-\polyline{(5,-5), (5,5)}
-\polyline{(-5,-5), (5,-5)}
-\polyline{(-5,-4), (5,-4)}
-\polyline{(-5,-3), (5,-3)}
-\polyline{(-5,-2), (5,-2)}
-\polyline{(-5,-1), (5,-1)}
-\polyline{(-5,1), (5,1)}
-\polyline{(-5,2), (5,2)}
-\polyline{(-5,3), (5,3)}
-\polyline{(-5,4), (5,4)}
-\polyline{(-5,5), (5,5)}
-\drawcolor[rgb]{0.33,0.33,0.33}
-\axes
-\tlabel[cc](5.5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5.5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0),(-3,4)}
-\gclear \tlabelrect[cc](-4.5,4){\scriptsize $P(-3,4)$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$3$} 3, {$2$} 2}
-\normalsize
-\penwd{1.05pt}
-\arrow \polyline{(0,0), (0,4)}
-\arrow \polyline{(0,4), (-2.8,4)}
-\arrow \polyline{(0,0), (-3,0)}
-\arrow \polyline{(-3,0), (-3,3.8)}
-\end{mfpic}
+%================================================
+% Right panel: Polar coordinates
+%================================================
 
-&
+\begin{scope}[xshift=\panelwidth cm]
 
-\begin{mfpic}[15]{-5.5}{5.5}{-5.5}{5.5}
-\drawcolor{white}
-\circle{(0,0), 5.5}
-\drawcolor[gray]{0.7}
-\circle{(0,0),1}
-\circle{(0,0),2}
-\circle{(0,0),3}
-\circle{(0,0),4}
-\circle{(0,0),5}
-\polyline{(-4.33, -2.5), (4.33, 2.5)}
-\polyline{(-4.33, 2.5), (4.33, -2.5)}
-\polyline{(-2.5, -4.33), (2.5, 4.33)}
-\polyline{(-2.5, 4.33), (2.5, -4.33)}
-\polyline{(3.53, 3.53), (-3.53, -3.53)}
-\polyline{(-3.53, 3.53), (3.53, -3.53)}
-\polyline{(0, -5), (0, 5)}
-\polyline{(-5, 0), (0, 0)}
-\polyline{(4.83, 1.29), (-4.83, -1.29)}
-\polyline{(-4.83, 1.29), (4.83, -1.29)}
-\polyline{(1.29, 4.83), (-1.29, -4.83)}
-\polyline{(-1.29, 4.83), (1.29, -4.83)}
-\drawcolor[rgb]{0.33, 0.33, 0.33}
- \tlabel(2.5,-0.4){\scriptsize $r$}
-\gclear \tlabelrect[cc](-1.77,1.77){\scriptsize $r$}
-\gclear \tlabelrect[cc](1.25,2.16){\scriptsize $\theta$}
-\gclear \tlabelrect[cc](0,-0.5){\scriptsize Pole}
- \tlabel[cc](6.5,0){\scriptsize Polar Axis}
-\gclear \tlabelrect[cc](-4.5,4){\scriptsize $P(r,\theta)$}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (5,0)}
-\arrow \polyline{(0,0), (-3,4)}
-\arrow \parafcn{5, 120, 5}{2*dir(t)}
-\point[3pt]{(0,0), (-3,4)}
-\end{mfpic}
+% --- Polar circles ---
+\foreach \r in {0.7,1.4,2.1,2.8,3.5}
+{
+    \draw[gray!45] (0,0) circle (\r);
+}
 
+% --- Polar rays ---
+\foreach \a in {0,15,...,345}
+{
+    \draw[gray!45] (0,0) -- (\a:3.5);
+}
 
-\end{tabular}
-\end{center}
+% --- Polar axis ---
+\draw[->] (0,0) -- (4.1,0);
 
+\node[right] at (4.15,0)
+    {Polar Axis};
 
+% --- Radius to P ---
+\draw[very thick,red]
+    (0,0) -- (\thetaP:3.45);
+
+% --- Point P ---
+\fill (\thetaP:3.45) circle (2.5pt);
+
+\node[left] at (\thetaP:3.55)
+    {$P(r,\theta)$};
+
+% --- Radius label ---
+\node[left=8pt] at (\thetaP:1.65)
+    {$r$};
+
+% --- Angle measure ---
+\draw[->,very thick,red]
+    (1.40,0)
+    arc[
+        start angle=0,
+        end angle=\thetaP,
+        radius=1.40
+    ];
+
+\node at (1.00,1.38)
+    {$\theta$};
+
+% --- Pole label ---
+\node[below] at (0,-0.08)
+    {Pole};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 
 In this section, we introduce a new system for assigning coordinates to points in the plane --  \index{polar coordinates ! definition of} \index{coordinates ! polar}\textbf{polar coordinates} as diagrammed above on the right.  We start with an origin point, called the \index{polar coordinates ! pole} \textbf{pole}, and a ray called the \index{polar coordinates ! polar axis} \textbf{polar axis}. 
