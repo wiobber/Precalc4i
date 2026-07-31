@@ -575,38 +575,31 @@ At this point, the quadratic model fits the data better, ostensibly because we h
 
 If we think about this situation from a scientific perspective, it does seem to make sense that, at least in the early stages of the outbreak, the more people who have the flu, the faster it will spread.  This suggests we fit the data to an uninhibited growth model.
 
- 
 
 As  written,  Equation \ref{lawofuninhibitedgrowth} gives uninhibited growth as  $N(t) = N_0e^{kt}$. Here, for simplicity's sake, we relabel $N_0 = a$ and $e^{k} = b$ so that we are looking for parameters $a$ and $b$ so that $N(t) = a \cdot b^{t}$.
 
  
-
 \phantomsection
 \label{swineflulinearized}
 If we assume $N(t) = a \cdot b^{t}$ then, taking logs as before, we get $\ln(N(t)) = t \ln(b) + \ln(a)$. If we let $y= \ln(N(t))$, then, once again, we get a linear model this time with slope $\ln(b)$ and $y$-intercept $\ln(a)$.  We present the results of the regression below.  While there is a strong correlation, $r = 0.962$, the plot doesn't instill the greatest of confidence in this model.
-
 
 % https://www.desmos.com/calculator/dhzzdqvflh
 \begin{center}
 \desmos{dhzzdqvflh}{800}{600}
 \end{center}
 
+From the slope of the model, we have   $m = \ln(b) \approx 0.202$  so $b \approx 1.223$.  From the $y$-intercept of the model, we get $B = \ln(a) \approx  5.596$ so $a \approx 269.35$, so that our model is $N(t) = 269.35(1.223)^{t}$. Using the built-in exponential regression, seen below,  (again, with `log mode' checked) returns the model  $N(t) = 269.41 (1.223)^{t}$, the discrepancy between   $269.35$ and $269.41$ stemming ostensibly from round-off error.    
+
 % https://www.desmos.com/calculator/dpbyawjdyk
 \begin{center}
     \desmos{dpbyawjdyk}{800}{600}
 \end{center}
 
-From the slope of the model, we have   $m = \ln(b) \approx 0.202$  so $b \approx 1.223$.  From the $y$-intercept of the model, we get $B = \ln(a) \approx  5.596$ so $a \approx 269.35$, so that our model is $N(t) = 269.35(1.223)^{t}$. Using the built-in exponential regression (again, with `log mode' checked) returns the model  $N(t) = 269.41 (1.223)^{t}$, the discrepancy between   $269.35$ and $269.41$ stemming ostensibly from round-off error.    
-
- 
 
 The exponential model didn't fit the data as well as the quadratic or power function model, but it stands to reason that, perhaps, the spread of the flu is not unlike that of the spread of a rumor and that a logistic model can be used to model the data.  Again, for simplicity, we abbreviate the model given in Equation \ref{logisticgrowth} from $N(t) =\frac{L}{1 + Ce^{-kLt}}$ to $N(t) = \frac{L}{1 + Ce^{Kt}}$.
 
- 
 
 Running the data, a logistic function appears to be an excellent fit, both judging by the graph as well as the coefficient of determination, $R^2 \approx 0.995$.  Moreover, the underlying principles which lead to the formulation of this model seem reasonable enough.
-
-
 
 % https://www.desmos.com/calculator/ucern1m1hc
  
