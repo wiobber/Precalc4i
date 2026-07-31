@@ -15,17 +15,14 @@
 
 In this section, we discuss how to graph equations relating the \textit{polar coordinate} variables $r$ and $\theta$  on the \textit{rectangular coordinate} plane.  Since every point in the plane has infinitely many different representations in polar coordinates, in order for a point $P$ to be on the graph of a given equation,  there must be \textit{at least one} representation of $P(r, \theta)$ that satisfies that equation.  
 
-\smallskip
+
 
 In our first example,  only one of the variables $r$ and $\theta$ is present making the other variable free.\footnote{See the discussion in Example \ref{eqnconversionex} number \ref{risneg3} in Section \ref{PolarCoordinates}.}  This makes these graphs easier to visualize than others.
 
 
-\smallskip
+
 
 \begin{example} \label{rthetaconstant} Graph the following polar equations in the $xy$-plane.
-
-\begin{multicols}{4}
-
 \begin{enumerate}
 
 \item  $r = 4$
@@ -38,13 +35,13 @@ In our first example,  only one of the variables $r$ and $\theta$ is present mak
 
 \end{enumerate}
 
-\end{multicols}
-
-{\bf Solution.} 
+\begin{explanation}
 
 \begin{enumerate}
 
-\item  In the equation $r=4$, $\theta$ is free.  The graph of this equation is, therefore,  all points which have a polar coordinate representation $(4,\theta)$, for any choice of $\theta$.  In other words, we trace out all of the points $4$ units away from the origin.  This is exactly the definition of circle, centered at the origin, with a radius of $4$.
+\item  In the equation $r=4$, $\theta$ is free.  The graph of this equation is, therefore,  all points which have a polar coordinate representation $(4,\theta)$, for any choice of $\theta$. 
+
+We can explore this relationship using the GeoGebra interactive below.  Adjusting the slider for $\theta$ while keeping $r$ fixed at $4$ sweeps out a circle of radius $4$, centered at the origin.
 
 % https://www.geogebra.org/classic/euypn4hp
 \begin{center}
@@ -52,21 +49,21 @@ In our first example,  only one of the variables $r$ and $\theta$ is present mak
 \end{center}
 
 
-\item  Once again we have $\theta$ being free in the equation $r = -3\sqrt{2}$.  Plotting all of the points of the form $(-3\sqrt{2}, \theta)$ gives us a circle of radius $3\sqrt{2}$ centered at the origin.
+\item  Once again we have $\theta$ being free in the equation $r = -3\sqrt{2}$.  Using the GeoGebra interactive below, we see that plotting all of the points of the form $(-3\sqrt{2}, \theta)$ gives us a circle of radius $3\sqrt{2}$ centered at the origin. 
 
 % https://www.geogebra.org/classic/kqassh6e
 \begin{center}
 \geogebra{kqassh6e}{800}{600}
 \end{center}
 
-\item  In the equation $\theta = \frac{5\pi}{4}$, $r$ is free, so we plot all of the points with polar representation $\left(r, \frac{5\pi}{4}\right)$.  The result is the line containing the terminal side of $\theta = \frac{5\pi}{4}$, when plotted in standard position.
+\item  In the equation $\theta = \frac{5\pi}{4}$, $r$ is free, so we plot all of the points with polar representation $\left(r, \frac{5\pi}{4}\right)$.  As seen below in the GeoGebra interactive, the result is the line containing the terminal side of $\theta = \frac{5\pi}{4}$, when plotted in standard position.
 
 % https://www.geogebra.org/classic/f94fkjpn
 \begin{center}
 \geogebra{f94fkjpn}{800}{600}
 \end{center}
 
-\item  As in the previous example, the variable $r$ is free in the equation $\theta  = -\frac{3\pi}{2}$.  Plotting $\left(r, -\frac{3\pi}{2}\right)$ for various values of $r$ shows us that we are tracing out the $y$-axis.
+\item  As in the previous example, the variable $r$ is free in the equation $\theta  = -\frac{3\pi}{2}$.  Plotting $\left(r, -\frac{3\pi}{2}\right)$ for various values of $r$ shows us that we are tracing out the $y$-axis.  This is clearly seen in the GeoGebra interative below.
 
 % https://www.geogebra.org/classic/q5krpqj3
 \begin{center}
@@ -75,13 +72,14 @@ In our first example,  only one of the variables $r$ and $\theta$ is present mak
 
 \end{enumerate}
 
-\vspace{-.25in}  
+\end{explanation}
+
 
 \end{example}
 
 Hopefully, our experience in Example \ref{rthetaconstant} makes the following result clear.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -96,31 +94,31 @@ Hopefully, our experience in Example \ref{rthetaconstant} makes the following re
 
 \end{itemize}
 
-\smallskip
+
 
 \end{theorem}
 
 %% \ebm}
 
-\smallskip
+
 
 Suppose we wish to graph $r = 6\cos(\theta)$.  A reasonable way to start is to treat $\theta$ as the independent variable, $r$ as the dependent variable,  evaluate $r = f(\theta)$ at some `friendly' values of $\theta$ and plot the resulting points.\footnote{For a review of these concepts and this process, see Section \ref{FunctionsandtheirRepresentations}.}  
 
-\[ \begin{array}{|r||r|r|}  
 
-\hline
-
+\[ \begin{array}{|r||r|r|} \hline
 \theta & r = 6\cos(\theta) & (r,\theta) \\ \hline
-0  & 6 & (6,0) \\ [2pt]   \hline
-\frac{\pi}{4}  & 3\sqrt{2} & \left(3\sqrt{2}, \frac{\pi}{4}\right) \\ [2pt] \hline 
-\frac{\pi}{2}  & 0 & \left(0,\frac{\pi}{2}\right) \\ [2pt] \hline 
-\frac{3\pi}{4}  & -3\sqrt{2} & \left(-3\sqrt{2}, \frac{3\pi}{4}\right) \\ [2pt] \hline 
-\pi & -6 & (-6,\pi) \\ [2pt] \hline 
-\frac{5\pi}{4}  & -3\sqrt{2} & \left(-3\sqrt{2}, \frac{5\pi}{4}\right) \\ [2pt] \hline 
-\frac{3\pi}{2}  & 0 & \left(0, \frac{3\pi}{2} \right) \\ [2pt] \hline 
-\frac{7\pi}{4}  & 3\sqrt{2} & \left(3\sqrt{2}, \frac{7\pi}{4}\right) \\ [2pt] \hline 
-2\pi  & 6 & (6,2\pi) \\  [2pt] \hline
+0  & 6 & (6,0) \\  \hline
+\frac{\pi}{4}  & 3\sqrt{2} & \left(3\sqrt{2}, \frac{\pi}{4}\right) \\ \hline 
+\frac{\pi}{2}  & 0 & \left(0,\frac{\pi}{2}\right) \\ \hline 
+\frac{3\pi}{4}  & -3\sqrt{2} & \left(-3\sqrt{2}, \frac{3\pi}{4}\right) \\  \hline 
+\pi & -6 & (-6,\pi) \\  \hline 
+\frac{5\pi}{4}  & -3\sqrt{2} & \left(-3\sqrt{2}, \frac{5\pi}{4}\right) \\ \hline 
+\frac{3\pi}{2}  & 0 & \left(0, \frac{3\pi}{2} \right) \\ \hline 
+\frac{7\pi}{4}  & 3\sqrt{2} & \left(3\sqrt{2}, \frac{7\pi}{4}\right) \\  \hline 
+2\pi  & 6 & (6,2\pi) \\  \hline
 \end{array} \]
+
+Using the GeoGebra interactive below, we can plot these points, in sequence, to get an idea of the graph.
 
 % https://www.geogebra.org/classic/rmusbpbp
 \begin{center}
@@ -128,20 +126,18 @@ Suppose we wish to graph $r = 6\cos(\theta)$.  A reasonable way to start is to t
 \end{center}
 
 
-Despite having nine ordered pairs, we get only four distinct points on the graph.  For this reason, we employ a slightly different strategy.  We graph one cycle of $r = 6\cos(\theta)$ on the $\theta r$-plane\footnote{The graph looks exactly like $y = 6\cos(x)$ in the $xy$-plane, and for good reason. At this stage, we are just graphing the relationship between $r$ and $\theta$ before we interpret them as polar coordinates $(r,\theta)$ on the $xy$-plane.} below on the left and use it to help graph the equation on the $xy$-plane below on the right.  
+To our dismay, despite having nine ordered pairs, we get only four distinct points on the graph.  For this reason, we employ a slightly different strategy.  
 
-\smallskip
+In the interactive below, we have the graph of $r = 6\cos(\theta)$  in the $xy$-plane below on the left along with the graph of $r = 6\cos(\theta)$ in the $\theta r$-plane below on the right.\footnote{The graph looks exactly like $y = 6\cos(x)$ in the $xy$-plane, and for good reason. At this stage, we are just graphing the relationship between $r$ and $\theta$ before we interpret them as polar coordinates $(r,\theta)$ on the $xy$-plane.}   
 
-We see that as $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ ranges from $6$ to $0$.  In the $xy$-plane, this means that the curve starts $6$ units from the origin on the positive $x$-axis ($\theta = 0$) and gradually returns to the origin by the time the curve reaches the $y$-axis ($\theta = \frac{\pi}{2}$).   
-
-\smallskip
-
-The arrows drawn in the figure below are meant to help you visualize this process.  In the $\theta r$-plane, the arrows are drawn  from the $\theta$-axis to the curve $r = 6\cos(\theta)$.  In the $xy$-plane, each of these arrows starts at the origin and is rotated through the corresponding angle $\theta$, in accordance with how we plot polar coordinates.  This method is less precise than plotting actual function values, but much faster.
+As we adjust the slider for $\theta$ from $0$ to $\frac{\pi}{2}$, $r$ ranges from $6$ to $0$. In the $xy$-plane, this means that the curve starts $6$ units from the origin on the positive $x$-axis ($\theta = 0$) and gradually returns to the origin by the time the curve reaches the $y$-axis, $\theta = \frac{\pi}{2}$. This action in the $xy$-plane is matched by tracing the point $(0,6)$ in the $\theta r$ plane to the point $\left( \frac{\pi}{2}, 0\right)$.
 
 % https://www.geogebra.org/classic/rjj6bump
 \begin{center}
 \geogebra{rjj6bump}{800}{600}
 \end{center}
+
+The arrows drawn in the interactive are meant to help you visualize this process.  In the $xy$-plane, each of these arrows starts at the origin and is rotated through the corresponding angle $\theta$, in accordance with how we plot polar coordinates. In the $\theta r$-plane, the arrows are drawn  from the $\theta$-axis to the curve $r = 6\cos(\theta)$. Understanding this correspondence can help us quickly (albeit less accurately) sketch the graph of a polar curve in the $xy$-plane by using our knowledge of sinusoids gained in Section \ref{GraphsofSineandCosine}.
 
 Next, we repeat the process as $\theta$ ranges from $\frac{\pi}{2}$ to $\pi$.  Here, the $r$ values are all negative.  This means that in the $xy$-plane, instead of graphing in Quadrant II, we graph in Quadrant IV, with all of the angle rotations starting from the negative $x$-axis.
 
@@ -151,11 +147,9 @@ Next, we repeat the process as $\theta$ ranges from $\frac{\pi}{2}$ to $\pi$.  H
 \geogebra{w5pdqrfw}{800}{600}
 \end{center}
 
-\phantomsection
 \label{circletangenttoyaxis}
 As $\theta$ ranges from $\pi$ to $\frac{3\pi}{2}$, the $r$ values are still negative, which means the graph is traced out in Quadrant I instead of Quadrant III. Since the $|r|$ for these values of $\theta$ match the $r$ values for $\theta$ in $\left[0, \frac{\pi}{2} \right]$, we have that the curve begins to retrace itself at this point.  
 
-\smallskip
 
 Proceeding further, we find that when $\frac{3\pi}{2} \leq \theta \leq 2\pi$, we retrace the portion of the curve in Quadrant IV that we first traced out as $\frac{\pi}{2} \leq \theta \leq \pi$. The reader is invited to verify that plotting any range of $\theta$ outside the interval $\left[ 0, \pi \right]$ results in retracting some portion of the curve.\footnote{The graph of $r=6\cos(\theta)$ looks suspiciously like a circle, for good reason. See number \ref{ris6costheta} in Example \ref{eqnconversionex}.} We present the final graph below.
 
@@ -190,7 +184,7 @@ Proceeding further, we find that when $\frac{3\pi}{2} \leq \theta \leq 2\pi$, we
 
 \item We first plot the fundamental cycle of $r = 4 - 2\sin(\theta)$ on the $\theta r$-axes.  To help us visualize what is going on graphically, we divide up $[0,2\pi]$ into the usual four subintervals $\left[0, \frac{\pi}{2}\right]$, $\left[\frac{\pi}{2}, \pi\right]$, $\left[\pi, \frac{3\pi}{2}\right]$ and $\left[\frac{3\pi}{2}, 2\pi \right]$, and proceed as we did above. 
 
-\smallskip
+
 
 As $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ decreases from $4$ to $2$.  This means that the curve in the $xy$-plane starts $4$ units from the origin on the positive $x$-axis and gradually pulls in towards the origin as it moves towards the positive $y$-axis.
 
@@ -228,7 +222,7 @@ As $\theta$ ranges from $0$ to $\frac{\pi}{2}$, $r$ decreases from $6$ to $2$.  
 
 On the interval $\left[\frac{\pi}{2}, \frac{2\pi}{3}\right]$, $r$ decreases from $2$ to $0$, which means the graph is heading into (and will eventually cross through) the origin.  
 
-\smallskip
+
 
 Not only do we reach the origin when $\theta = \frac{2\pi}{3}$, a theorem from Calculus\footnote{The `tangents at the pole' theorem from second semester Calculus.} states that the curve hugs the line $\theta = \frac{2\pi}{3}$ as it approaches the origin.  
 
@@ -255,7 +249,7 @@ Again, we invite the reader to show that plotting the curve for values of $\thet
 
 \item As usual, we start by graphing a fundamental cycle of $r = 5\sin(2\theta)$ in the $\theta r$-plane, which in this case, occurs as $\theta$ ranges from $0$ to $\pi$.  We partition our interval into subintervals to help us with the graphing, namely $\left[0, \frac{\pi}{4}\right]$, $\left[\frac{\pi}{4}, \frac{\pi}{2}\right]$, $\left[\frac{\pi}{2},\frac{3\pi}{4}\right]$ and $\left[\frac{3\pi}{4}, \pi \right]$. 
 
-\smallskip
+
 
 As $\theta$ ranges from $0$ to $\frac{\pi}{4}$, $r$ increases from $0$ to $5$.  Hence the graph of $r = 5\sin(2\theta)$ in the $xy$-plane starts at the origin and gradually sweeps out so it is $5$ units away from the origin on the line $\theta = \frac{\pi}{4}$.
 
@@ -278,7 +272,7 @@ For  $\frac{3\pi}{4} \leq \theta \leq  \pi$, $r$ increases from $-5$ to $0$, so 
 
 Even though we have finished with one complete cycle of $r = 5\sin(2\theta)$, if we continue plotting beyond $\theta = \pi$, we find to our surprise and delight that the curve continues into the third quadrant!  
 
-\smallskip
+
 
 Below we present a graph of a second cycle of $r = 5\sin(2\theta)$ as continued from the first.  The boxed labels on the $\theta$-axis correspond to the portions with matching labels on the curve in the $xy$-plane.
 
@@ -290,23 +284,23 @@ We have the final graph below.
 
 \item  Graphing $r^2 = 16 \cos(2\theta)$ is complicated by the $r^2$, so we solve for $r$ by extracting square roots  and get $r = \pm \sqrt{16 \cos(2\theta)} = \pm 4 \sqrt{\cos(2\theta)}$.  
 
-\smallskip
+
 
 How do we sketch such a curve?  First off, we sketch a fundamental period of $r = \cos(2\theta)$ which we have dotted in the figure below.  When $\cos(2\theta) < 0$, $\sqrt{\cos(2\theta)}$ is undefined, so we don't have any values on the interval $\left(\frac{\pi}{4}, \frac{3\pi}{4}\right)$.  
 
-\smallskip
+
 
 On the intervals which remain, $\cos(2\theta)$ ranges from $0$ to $1$, inclusive.  Hence, $\sqrt{\cos(2\theta)}$ ranges from $0$ to $1$ as well.\footnote{Owing to the relationship between $y = x$ and $y = \sqrt{x}$ over $[0,1]$, we know $\sqrt{\cos(2\theta)} \geq \cos(2\theta)$ wherever the former is defined.}  From this, we know $r = \pm 4 \sqrt{\cos(2\theta)}$ ranges continuously from $0$ to $\pm 4$, respectively.   
 
-\smallskip
+
 
 Below we graph both $r = 4\sqrt{\cos(2\theta)}$ and $r = -4\sqrt{\cos(2\theta)}$ on the $\theta r$ plane and use them to sketch the corresponding pieces of the curve $r^2 = 16\cos(2\theta)$ in the $xy$-plane.   
 
-\smallskip
+
 
 As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$, which are the  zeros of the functions $r = \pm 4 \sqrt{\cos(2\theta)}$, serve as guides for us to draw the curve as is passes through the origin.
 
-\hspace{-.5in} \begin{tabular}{cc}
+ \begin{tabular}{cc}
 
 \begin{mfpic}[13]{-1}{7}{-5}{5}
 \axes
@@ -337,7 +331,7 @@ As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\th
 \function{5.5,6.28,0.1}{0-4*sqrt(cos(x))}
 \end{mfpic}
 
-& \hspace{.75in}
+& 
 
 \begin{mfpic}[13]{-5}{5}{-5}{5}
 \axes
@@ -366,14 +360,14 @@ As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\th
 \plrfcn{157,180,5}{0-4*sqrt(cosd(2*t))}
 \end{mfpic} \\
 
-\hspace{.8in} $r = 4\sqrt{\cos(2\theta)}$ and & \hspace{.75in} \\
-\hspace{.8in} \boldmath $r = -4\sqrt{\cos(2\theta)}$  & \hspace{.75in} \\
+ $r = 4\sqrt{\cos(2\theta)}$ and &  \\
+\boldmath $r = -4\sqrt{\cos(2\theta)}$  &  \\
 
 \end{tabular}
 
 As we plot points corresponding to values of  $\theta$ outside of the interval $[0,\pi]$, we find ourselves retracing parts of the curve,\footnote{In this case, we could have generated the entire graph by using just the plot $r = 4\sqrt{\cos(2\theta)}$, but graphed over the interval  $[0,2\pi]$ in the $\theta r$-plane.  We leave the details to the reader.} so our final answer is below.
 
-\hspace{.06in} \begin{tabular}{cc}
+ \begin{tabular}{cc}
 
 \begin{mfpic}[13]{-1}{7}{-5}{5}
 \axes
@@ -394,7 +388,7 @@ As we plot points corresponding to values of  $\theta$ outside of the interval $
 \function{4.713,6.28,0.1}{4*sqrt(cos(x))}
 \end{mfpic}
 
-& \hspace{.755in}
+& 
 
 \begin{mfpic}[13]{-5}{5}{-5}{5}
 \axes
@@ -429,35 +423,35 @@ As we plot points corresponding to values of  $\theta$ outside of the interval $
 
 A few remarks are in order.  First, there is no relation, in general,  between the period of the function $f(\theta)$  and the length of the interval required to sketch the complete graph of $r = f(\theta)$ in the $xy$-plane.  
 
-\smallskip
+
 
 As we saw on page \pageref{circletangenttoyaxis}, despite the fact that the period of  $f(\theta) = 6\cos(\theta)$  is $2\pi$, we sketched the complete graph of $r = 6\cos(\theta)$ in the $xy$-plane just using the values of $\theta$ as $\theta$ ranged from $0$ to $\pi$.   
 
-\smallskip
+
 
 On the other hand, in Example \ref{polargraphex}, number \ref{rose}, the period of $f(\theta) = 5\sin(2\theta)$ is $\pi$, but in order to obtain the complete graph of $r = 5\sin(2\theta)$, we needed to run $\theta$ from $0$ to $2\pi$.  
 
-\smallskip
+
 
 Second, the symmetry seen in the examples is also a common occurrence when graphing polar equations.  
 
-\smallskip
+
 
 In addition symmetry about each axis and the origin, it is possible to talk about \textit{rotational} symmetry with these curves.  We leave the exploration of symmetry to Exercises \ref{sympolarfirst} - \ref{sympolarlast}. 
 
-\smallskip
+
 
 Last we note that while many of the \index{lima\c{c}on} \index{polar rose} \index{lemniscate} `common' polar graphs can be grouped into families,\footnote{Numbers \ref{limacon01} and \ref{limacon02} in Example \ref{polargraphex} are examples of `\href{http://en.wikipedia.org/wiki/Limacon}{\underline{lima\c{c}ons}},' number \ref{rose} is an example of a `\href{http://en.wikipedia.org/wiki/Rose_(mathematics)}{\underline{polar rose}},' and number \ref{lemniscate} is the famous `\href{http://en.wikipedia.org/wiki/Lemniscate_of_Bernoulli}{\underline{Lemniscate of Bernoulli}}.'} the authors truly feel that taking the time to work through each graph in the manner presented here is the best way to not only understand the polar coordinate system, but also prepare you for what is needed in Calculus.  
 
-\smallskip
+
 
  Next we turn our attention to finding the intersection points of polar curves.  What complicates matters in polar coordinates is that any given point has infinitely many representations.  As a result, if a point $P$ is on the graph of two different polar equations, it is entirely possible that the representation $P(r,\theta)$ which satisfies one of the equations does not satisfy the other equation.
  
- \smallskip
+ 
  
 In our next example, we see the need to rely on Geometry as much as Algebra to solve each problem.
 
-\smallskip
+
 
 \begin{example}  \label{polargraphintex} Find the points of intersection of the graphs of the following polar equations.
 
@@ -503,29 +497,29 @@ It appears as if there are three intersection points:  one in the first quadrant
 
  In order for a point $P$ to be on the graph of $r = 2\sin(\theta)$, it must have a representation $P(r,\theta)$ which satisfies $r = 2\sin(\theta)$.  If $P$ is also on the graph of $r = 2 - 2\sin(\theta)$, then $P$ has a (possibly different) representation $P(r',\theta')$ which satisfies $r'=2\sin(\theta')$.   We first try to see if we can find any points which have a single representation $P(r,\theta)$ that satisfies both $r = 2\sin(\theta)$ and $r = 2-2\sin(\theta)$.  
  
- \smallskip
+ 
  
  Assuming such a pair $(r,\theta)$ exists, then equating\footnote{We are really using the technique of substitution to solve the system of equations  $\left\{ \begin{array}{rcl} r & = & 2\sin(\theta) \\ r & = & 2-2\sin(\theta) \\ \end{array} \right.$} the expressions for $r$ gives $2\sin(\theta) = 2-2\sin(\theta)$ or $\sin(\theta) = \frac{1}{2}$.  From this, we get $\theta = \frac{\pi}{6} + 2\pi k$ or $\theta = \frac{5\pi}{6} + 2\pi k$ for integers $k$.  
  
- \smallskip
+ 
  
  Plugging $\theta = \frac{\pi}{6}$ into $r = 2\sin(\theta)$, we get $r = 2\sin\left(\frac{\pi}{6}\right) = 2\left(\frac{1}{2}\right) = 1$, which is also the value we obtain when we substitute it into $r = 2-2\sin(\theta)$.  Hence, $\left(1, \frac{\pi}{6}\right)$ is one representation for the point of intersection in the first quadrant. 
  
- \smallskip
+ 
  
  For the point of intersection in the second quadrant, we try $\theta = \frac{5\pi}{6}$. Both equations give us the point $\left(1, \frac{5\pi}{6}\right)$, so this is our answer here.  
  
- \smallskip
+ 
  
 We now turn our attention to the origin.  We know from Section \ref{PolarCoordinates} that the pole may be represented as $(0,\theta)$ for any angle $\theta$. On the graph of $r = 2\sin(\theta)$, we start at the origin when $\theta =0$ and return to it at $\theta = \pi$, and as the reader can verify, we are at the origin exactly when $\theta = \pi k$ for integers $k$. 
  
- \smallskip
+ 
  
  On the curve $r = 2 - 2\sin(\theta)$, however, we reach the origin when $\theta = \frac{\pi}{2}$, and more generally, when $\theta = \frac{\pi}{2} + 2\pi k$ for integers $k$.  There is no integer value of $k$ for which $\pi k = \frac{\pi}{2} + 2\pi k$ which means while the origin is on both graphs, the point is never reached simultaneously.  In any case, we have determined the three points of intersection to be $\left(1, \frac{\pi}{6}\right)$, $\left(1,\frac{5\pi}{6}\right)$ and the origin. 
 
 \item As before, we make a quick sketch of  $r = 2$ and $r =3\cos(\theta)$ to get feel for the number and location of the intersection points.  The graph of $r=2$ is a circle, centered at the origin, with a radius of $2$.  
 
-\smallskip
+
 
 The graph of $r = 3\cos(\theta)$ is also a circle - but this one is centered at the point with rectangular coordinates $\left(\frac{3}{2}, 0\right)$ and has a radius of $\frac{3}{2}$. 
 
@@ -536,21 +530,21 @@ The graph of $r = 3\cos(\theta)$ is also a circle - but this one is centered at 
 
 We have two intersection points to find, one in Quadrant I and one in Quadrant IV.  Proceeding as above, we first determine if any of the intersection points $P$ have a representation $(r,\theta)$ which satisfies both $r=2$ and $r=3\cos(\theta)$. 
 
-\smallskip
+
 
 Equating $r=2$ and $r=3\cos(\theta)$, we get $2 = 3 \cos(\theta)$, or $\cos(\theta) = \frac{2}{3}$. To solve this equation, we need the arccosine function:   $\theta = \arccos\left(\frac{2}{3}\right) + 2\pi k$ or $\theta = 2\pi - \arccos\left(\frac{2}{3}\right) + 2\pi k$ for integers $k$.  
 
-\smallskip
+
 
 From these solutions, we get $\left(2, \arccos\left(\frac{2}{3}\right)\right)$ as one representation for our answer in Quadrant I, and  $\left(2, 2\pi - \arccos\left(\frac{2}{3}\right)\right)$ as one representation for our answer in Quadrant IV.  
 
-\smallskip
+
 
 The reader is encouraged to check these results algebraically and geometrically.
 
 \item  Proceeding as above, we first graph $r = 3$ and $r = 6\cos(2\theta)$  to get an idea of how many intersection points to expect and where they lie.  
 
-\smallskip
+
 
 The graph of $r=3$ is a circle centered at the origin with a radius of $3$ and the graph of $r = 6\cos(2\theta)$ is another four-leafed rose.\footnote{See Example \ref{polargraphex} number \ref{rose}.}  
 
@@ -561,31 +555,31 @@ The graph of $r=3$ is a circle centered at the origin with a radius of $3$ and t
 
 It appears as if there are eight points of intersection - two in each quadrant. We first look to see if there any points $P(r,\theta)$ with a representation that satisfies both $r=3$ and $r = 6\cos(2\theta)$. 
 
-\smallskip
+
 
 Solving $6\cos(2\theta) = 3$, we get $\cos(2\theta) = \frac{1}{2}$, so  $\theta = \frac{\pi}{6} + \pi k$  or $\theta = \frac{5\pi}{6} + \pi k$ for integers $k$.  From these, we obtain  four distinct points represented by $\left(3, \frac{\pi}{6}\right)$, $\left(3, \frac{5\pi}{6} \right)$, $\left(3, \frac{7\pi}{6}\right)$ and $\left(3, \frac{11\pi}{6} \right)$.  
  
- \smallskip
+ 
  
  To determine the coordinates of the remaining four points, we have to consider how the representations of the points of intersection can differ.  We know from Section \ref{PolarCoordinates} that if $(r,\theta)$ and $(r', \theta')$ represent the same point and $r \neq 0$, then either $r = r'$ or $r = -r'$.  
  
- \smallskip
+ 
  
  If $r = r'$, then $\theta' = \theta + 2\pi k$, so one possibility is that an intersection point $P$ has a representation $(r,\theta)$ which satisfies $r=3$  and another representation $(r, \theta + 2\pi k)$ for some integer, $k$ which satisfies $r = 6\cos(2\theta)$.   At this point,\footnote{The authors have chosen to replace $\theta$ with $\theta + 2\pi k$ in the equation $r = 6\cos(2\theta)$ for illustration purposes only.  We could have just as easily chosen to do this substitution in the equation $r = 3$.  Since there is no $\theta$ in $r=3$, however, this case would reduce to the previous case instantly.  The reader is encouraged to follow this latter procedure in the interests of efficiency.} we replace every occurrence of $\theta$ in the equation $r=6\cos(2\theta)$ with $(\theta + 2\pi k)$ to see if, by equating the resulting expressions for $r$, we get any more solutions for $\theta$. 
  
- \smallskip
+ 
  
 Doing so, we get $\cos(2(\theta + 2\pi k)) = \cos(2\theta + 4\pi k) = \cos(2\theta)$ for every integer $k$.  Hence, the equation $r = 6\cos(2(\theta + 2\pi k))$ reduces to the same equation we had before, $r = 6\cos(2\theta)$,  which means we get no additional solutions.     
  
- \smallskip
+ 
  
  Moving on to the case where $r = -r'$, we have that $\theta' = \theta + (2k+1)\pi$ for integers $k$.  We look to see if we can find points $P$ which have a representation $(r,\theta)$ that satisfies $r=3$  and another, $(-r, \theta + (2k+1)\pi)$, that satisfies  $r = 6\cos(2\theta)$.  
  
- \smallskip
+ 
  
  Substituting\footnote{Again, we could have easily chosen to substitute these into $r=3$ which would give $-r=3$, or $r=-3$.}   $(-r)$ for $r$ and  $(\theta + (2k+1)\pi)$ for $\theta$ in  $r = 6\cos(2\theta)$ gives $-r = 6\cos(2(\theta + (2k+1)\pi))$.  Since $\cos(2(\theta + (2k+1)\pi)) = \cos(2\theta + (2k+1)(2\pi)) = \cos(2\theta)$ for all integers $k$, the equation $-r = 6\cos(2(\theta + (2k+1)\pi))$ reduces to $-r = 6\cos(2\theta)$, or $r = -6\cos(2\theta)$.   
  
- \smallskip
+ 
  
  Coupling $r = -6\cos(2\theta)$ with  $r=3$ gives $-6\cos(2\theta) = 3$ or $\cos(2\theta) = -\frac{1}{2}$.  Solving, we get $\theta = \frac{\pi}{3} + \pi k$ or $\theta = \frac{2\pi}{3} + \pi k$.   From these solutions, we obtain\footnote{We obtain these representations by substituting the values for $\theta$ into $r = 6\cos(2\theta)$, once again, for illustration purposes. Again, we could `plug' these values for $\theta$ into $r=3$ (where there is no $\theta$) and get the list of points: $\left(3, \frac{\pi}{3}\right)$,  $\left(3, \frac{2\pi}{3}\right)$,  $\left(3, \frac{4\pi}{3}\right)$ and  $\left(3, \frac{5\pi}{3}\right)$.  While it is not true that  $\left(3, \frac{\pi}{3}\right)$ represents the same point as  $\left(-3, \frac{\pi}{3}\right)$, we still get the same \textit{set} of solutions.} the remaining four intersection points with representations $\left(-3, \frac{\pi}{3}\right)$,  $\left(-3, \frac{2\pi}{3}\right)$,  $\left(-3, \frac{4\pi}{3}\right)$ and  $\left(-3, \frac{5\pi}{3}\right)$, which check graphically.
 
@@ -598,51 +592,51 @@ Doing so, we get $\cos(2(\theta + 2\pi k)) = \cos(2\theta + 4\pi k) = \cos(2\the
 
 To verify this incredible claim,\footnote{Graphing $r =  3\sin\left(\frac{\theta}{2}\right)$ and $r= 3\cos\left(\frac{\theta}{2}\right)$ in the $\theta r$-plane show that viewed as functions of $r$, these are two different animals.} we need to show that, in fact, the graphs of these two equations intersect at all points on the plane.  
 
-\smallskip 
+ 
 
 Suppose $P$ has a representation $(r,\theta)$ which satisfies both $r = 3\sin\left(\frac{\theta}{2}\right)$ and $r = 3\cos\left(\frac{\theta}{2}\right)$.  Equating these two expressions for $r$ gives the equation $3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)$.  While normally we discourage dividing by a variable expression (in case it could be $0$), we use the same logic here as we did in the solution to Example \ref{eqnconversionex} number \ref{yisxsquared} in Section \ref{PolarCoordinates}.  
 
-\smallskip
+
 
 If $3\cos\left(\frac{\theta}{2}\right) = 0$, then $\cos\left(\frac{\theta}{2}\right) = 0$ and for the equation $3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)$ to hold, $\sin\left(\frac{\theta}{2}\right) = 0$ as well.  Since no angles have both cosine and sine equal to zero, we are safe to divide both sides of the equation  $3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)$ by  $3\cos\left(\frac{\theta}{2}\right)$ to get $\tan\left(\frac{\theta}{2}\right) = 1$.  Solving this equation gives  $\theta =  \frac{\pi}{2} + 2\pi k$ for integers $k$ which corresponds to just \textit{one} intersection point:  $\left( \frac{3\sqrt{2}}{2}, \frac{\pi}{2}\right)$.  We now investigate other representations for the intersection points.  
 
-\smallskip
+
 
 Suppose $P$ is an intersection point with a representation $(r,\theta)$ which satisfies $r =  3\sin\left(\frac{\theta}{2}\right)$ and  a  different representation $(r, \theta + 2\pi k)$ for some integer $k$ which satisfies $r =  3\cos\left(\frac{\theta}{2}\right)$.  
 
-\smallskip
+
 
 Substituting $(r, \theta + 2\pi k)$  into $r =  3\cos\left(\frac{\theta}{2}\right)$, we get $r = 3\cos\left(\frac{1}{2} \left[ \theta + 2\pi k\right]\right) = 3\cos\left(\frac{\theta}{2} + \pi k\right)$.  Using the sum formula for cosine, we expand  $3\cos\left(\frac{\theta}{2} + \pi k\right) = 3\cos\left(\frac{\theta}{2}\right) \cos(\pi k) - 3\sin\left(\frac{\theta}{2}\right)\sin\left(\pi k\right)$.  Since $\sin(\pi k) = 0$  for all integers $k$,  $r=3\cos\left(\frac{\theta}{2} + \pi k\right)$ reduces to  $r=3\cos\left(\frac{\theta}{2}\right)\cos\left(\pi k\right)$.
-\smallskip
+
 
 If $k$ is an even integer, $\cos\left(\pi k \right)  = 1$, so we get the same equation $r = 3\cos\left(\frac{\theta}{2}\right)$ as before, and hence any new solutions come from the case when $k$ is odd.
 
-\smallskip
+
 
 If $k$ is odd, $r=3\cos\left(\frac{\theta}{2}\right)\cos\left(\pi k\right)$ reduces to $r = -3\cos\left(\frac{\theta}{2}\right)$.  Coupling $r = -3\cos\left(\frac{\theta}{2}\right)$ with the equation $r = 3\sin\left(\frac{\theta}{2}\right)$ gives  $3\sin\left(\frac{\theta}{2}\right) = -3\cos\left(\frac{\theta}{2}\right)$, or $\tan\left(\frac{\theta}{2}\right) = -1$. Solving, we get $\theta = -\frac{\pi}{2} + 2\pi k$ for integers $k$, which again produces just one intersection point:  $\left(\frac{3\sqrt{2}}{2},-\frac{\pi}{2}\right)$.  
 
-\smallskip
+
 
 Next, we assume $P$ has a representation $(r,\theta)$ which satisfies $r=3\sin\left(\frac{\theta}{2}\right)$ and  a representation $(-r, \theta + (2k+1)\pi)$ which satisfies $r = 3\cos\left(\frac{\theta}{2}\right)$ for some integer $k$.  
 
-\smallskip
+
 
 Substituting $(-r)$ for $r$ and $(\theta + (2k+1)\pi)$ in for $\theta$ into $r = 3\cos\left(\frac{\theta}{2}\right)$ gives  $-r = 3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)$ or $r = -3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)$.  Once again, we use the sum formula for cosine to get
 
 \[ \begin{array}{rcl}
 
-r &  = & -3 \cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)  \\[3pt]
-  &  = & -3  \cos\left(\frac{\theta}{2} + \frac{(2k+1)\pi}{2} \right) \\[4pt]
-  & =  & -3 \left[\cos\left(\frac{\theta}{2}\right) \cos\left(\frac{(2k+1)\pi}{2}\right) - \sin\left(\frac{\theta}{2}\right) \sin\left(\frac{(2k+1)\pi}{2}\right) \right] \\[4pt]
+r &  = & -3 \cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)  \\
+  &  = & -3  \cos\left(\frac{\theta}{2} + \frac{(2k+1)\pi}{2} \right) \\
+  & =  & -3 \left[\cos\left(\frac{\theta}{2}\right) \cos\left(\frac{(2k+1)\pi}{2}\right) - \sin\left(\frac{\theta}{2}\right) \sin\left(\frac{(2k+1)\pi}{2}\right) \right] \\
   & = &  3 \sin\left(\frac{\theta}{2}\right)  \sin\left(\frac{(2k+1)\pi}{2}\right) \\ \end{array}\]
                                                          
 where the last equality is true  since $\cos\left(\frac{(2k+1)\pi}{2}\right) = 0$.  
 
-\smallskip
+
 
 Note when $k = 0$,  $\sin\left(\frac{(2k+1)\pi}{2}\right) = \sin\left(\frac{\pi}{2}\right)= 1$, and the equation  $r = -3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)$  reduces to $r = 3\sin\left(\frac{\theta}{2}\right)$,  which is the other equation under consideration!
 
-\smallskip
+
 
 What this means is that if a polar representation $(r,\theta)$ for the point $P$ satisfies $r = 3\sin\left(\frac{\theta}{2}\right)$, then the representation  $(-r, \theta + \pi)$ for $P$ automatically satisfies $r = 3\cos\left(\frac{\theta}{2}\right)$.  
 Hence the equations $r = 3\sin\left(\frac{\theta}{2}\right)$ and $r = 3\cos\left(\frac{\theta}{2}\right)$ determine the same set of points in the plane.  
@@ -653,12 +647,12 @@ Hence the equations $r = 3\sin\left(\frac{\theta}{2}\right)$ and $r = 3\cos\left
 
 Our work in Example \ref{polargraphintex} justifies the following.
 
-\smallskip
+
 
 %% \colorbox{ResultColor}{\bbm
 \centerline{\textbf{Guidelines for Finding Points of Intersection of Graphs of Polar Equations:}}
 
-\smallskip
+
 
 To find the points of intersection of the graphs of two polar equations $E_1$ and $E_2$:
 
@@ -672,13 +666,13 @@ To find the points of intersection of the graphs of two polar equations $E_1$ an
 
 \item  Substitute $(-r)$ for $r$ and $(\theta + (2k+1)\pi)$ for $\theta$ in either one of $E_1$ or $E_2$ (but not both) and solve for pairs $(r,\theta)$ which satisfy both equations.  Keep in mind that $k$ is an integer.
 
-\smallskip
+
 
 \end{itemize}
 
 %% \ebm}  
 
-\smallskip
+
 
 
 Our last example ties together graphing and points of intersection to describe regions in the plane.
@@ -703,7 +697,7 @@ Our last example ties together graphing and points of intersection to describe r
 
 \item  We know from  Example \ref{polargraphex} number \ref{rose} that the graph of $r = 5\sin(2\theta)$ is a rose.  Moreover, we know  as  $0 \leq \theta \leq \frac{\pi}{2}$,  we trace out the `leaf' of the rose which lies in the first quadrant. 
 
-\smallskip
+
 
  The inequality $0 \leq r \leq 5\sin(2\theta)$ means we want  all of the points between the origin ($r=0$) and the curve $r = 5\sin(2\theta)$ as $\theta$ runs through $\left[0, \frac{\pi}{2}\right]$.  Hence, the region we seek is the leaf itself.
 
@@ -755,7 +749,7 @@ $r = 5\sin(2\theta)$
 
 \item  We know from Example \ref{polargraphintex} number \ref{circroseint} that $r=3$ and $r = 6\cos(2\theta)$ intersect at $\theta = \frac{\pi}{6}$, so the region that is being described here is the set of points whose directed distance $r$ from the origin is at least $3$ but no more than $6\cos(2\theta)$ as $\theta$ runs from $0$ to $\frac{\pi}{6}$. 
 
-\smallskip
+
 
  In other words, we are looking at the points outside or on the circle (since $r \geq 3$) but inside or on the rose (since $r \leq 6\cos(2\theta)$).  We shade the region below.
 
@@ -801,7 +795,7 @@ $\left\{ (r,\theta) \, | \, 3 \leq r \leq 6 \cos(2\theta),  0 \leq \theta \leq \
 
 \item From Example \ref{polargraphex} number \ref{limacon02}, we know that the graph of $r = 2+4\cos(\theta)$ is a lima\c{c}on whose `inner loop' is traced out as $\theta$ runs through the given values $\frac{2\pi}{3}$ to $\frac{4\pi}{3}$.  
 
-\smallskip
+
 
 Since the values $r$ takes on in this interval are non-positive, the inequality $2+4\cos(\theta) \leq r \leq 0$ makes sense, and we are looking for all of the points between the pole $r = 0$ and the lima\c{c}on as $\theta$ ranges over the interval $\left[\frac{2\pi}{3}, \frac{4\pi}{3}\right]$.  In other words, we shade in the inner loop of the lima\c{c}on.
 
@@ -857,16 +851,16 @@ $r = 2+4\cos(\theta)$
 
 \item  We have two regions described here connected with the union symbol `$\cup$.' We shade each in turn and find our final answer by combining the two. 
 
-\smallskip
+
 
 In Example \ref{polargraphintex}, number \ref{circcardint}, we found that the curves $r = 2\sin(\theta)$ and $r = 2-2\sin(\theta)$ intersect when $\theta = \frac{\pi}{6}$.    Hence, for the first region, $ \left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta),  0 \leq \theta \leq \frac{\pi}{6} \right\}$,  we are shading the region between the origin ($r=0$) out to the circle ($r = 2\sin(\theta)$) as $\theta$ ranges from $0$ to $\frac{\pi}{6}$, which is the angle of intersection of the two curves. 
 
 
-\smallskip
+
 
 For the second region,  $\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta),   \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}$,  $\theta$ picks up where it left off at $\frac{\pi}{6}$ and continues to $\frac{\pi}{2}$.  In this case, however, we are shading from the origin ($r=0$) out to the cardioid $r = 2-2\sin(\theta)$ which pulls into the origin at $\theta = \frac{\pi}{2}$. 
 
-\smallskip
+
 
 We combine these two regions to obtain our final answer.
 

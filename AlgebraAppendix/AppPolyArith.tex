@@ -265,9 +265,9 @@ The division algorithm for polynomials has the same basic two steps but when we 
 \begin{array}{r}
 3 \cdot 10  \, +  \, 2 \\
 7 \cdot 10  \, +  \, 9 \, \overline{)\quad 2\cdot 10^3  \, +  \, 5 \cdot 10^2  \, +  \, 8 \cdot 10  \, +  \, 5 } \\
-\underline{ \left(- \, 2 \cdot 10^3 \right.  \, +  \,  3 \cdot 10^2   \, +  \, \left. 7 \cdot 10 \right)  \,   \,  \downarrow}  \\
+- \,\underline{ \left( 2 \cdot 10^3 \right.  \, +  \,  3 \cdot 10^2   \, +  \, \left. 7 \cdot 10 \right)  \,   \,  \downarrow}  \\
 2 \cdot 10^2  \, +   \, 1 \cdot 10  \, +  \, 5 \\ 
- \left(- \, 1 \cdot 10^2 \right.  \, +   \,  5 \cdot 10  \,  +  \,\left.  8 \right) \\
+- \, \left( 1 \cdot 10^2 \right.  \, +   \,  5 \cdot 10  \,  +  \,\left.  8 \right) \\
 5 \cdot 10   \, +  \, 7 \\
 \end{array}
 \]
@@ -354,8 +354,8 @@ In this case, we get a quotient of $x^2 + 6x + 7$ with a remainder of $0$.  To c
 
 \[
 \begin{array}{r}
-\frac{2}{3}\quad\\
-3\,t\,-\,4 \, \overline{)\quad 2t\,+\,7\quad} \\
+\frac{2}{3}\\
+3\,t\,-\,4 \, \overline{)\quad 2t\,+\,7} \\
  \underline{-\left(2t\,-\,\frac{8}{3}\right)\,}\\
  \frac{29}{3}\,\,\,
 \end{array}
@@ -363,43 +363,29 @@ In this case, we get a quotient of $x^2 + 6x + 7$ with a remainder of $0$.  To c
 
 Our answer is $\frac{2}{3}$ with a remainder of $\frac{29}{3}$.  To check our answer, we compute \[(3t-4) \left(\frac{2}{3}\right) + \frac{29}{3} = 2t - \frac{8}{3} + \frac{29}{3} = 2t + \frac{21}{3} = 2t + 7 \, \checkmark\]
 
-\item When we set-up the tableau for   $\left(6y^2 - 1 \right) \div \left(2y + 5\right)$, we must first issue a `placeholder' for the `missing' $y$-term in the dividend, $6y^2 -1 = 6y^2 + 0y - 1$.  We then proceed as before.  Since $\frac{6y^2}{2y} = 3y$, $3y$ is the first term in our quotient. We multiply $(2y+5)$ times $3y$ and subtract it from the dividend.  We bring down the $-1$, and repeat.  \setlength\arraycolsep{0.1pt}\setlength\extrarowheight{5pt}\[ \begin{array}{cccccccc}
+\item When we set-up the tableau for   $\left(6y^2 - 1 \right) \div \left(2y + 5\right)$, we must first issue a `placeholder' for the `missing' $y$-term in the dividend, $6y^2 -1 = 6y^2 + 0y - 1$.  We then proceed as before.  Since $\frac{6y^2}{2y} = 3y$, $3y$ is the first term in our quotient. We multiply $(2y+5)$ times $3y$ and subtract it from the dividend.  We bring down the $-1$, and repeat.  
 
-& & & & & 3y & - &  \frac{15}{2}  \\ \hhline{~~~|-----}
-
-2y& + & 5 \, \vline& 6y^2 & + & 0y & - & 1  \\
-
- &  &  -& \left(6y^2 \right. & + & \left.  15y\right) &  & \downarrow  \\ \hhline{~~~---~~} 
- &  &  &   &  & -15y & - & 1  \\ 
- &  &  &   & - & \left(-15y\vphantom{ \frac{75}{2}} \right. & - & \left.  \frac{75}{2} \right) \\ \hhline{~~~~~---} 
- &  &  &   &   &  & &  \frac{73}{2} \vphantom{\sqrt{ \frac{73}{2}}}\\
- 
-\end{array}\]
-\setlength\arraycolsep{5pt}
-\setlength\extrarowheight{0pt}
- 
-Our answer is $3y - \frac{15}{2}$ with a remainder of $\frac{73}{2}$.  To check our answer, we compute:
-
-\[ (2y + 5)\left(3y -  \frac{15}{2}\right) +  \frac{73}{2} = 6y^2 - 15y + 15y -  \frac{75}{2} +  \frac{73}{2} = 6y^2 - 1 \, \checkmark\]
-
+\[
+\begin{array}{r}
+3y\,-\,\frac{15}{2}\\
+2y\,+\,5 \, \overline{)\quad \,6y^2\,+\,0y\,-\,1} \\
+ \underline{-\left(\,6y^2\,+\,15y\right)} \phantom{1}\downarrow\\
+ -15y-\,1\\
+  \underline{-\left(-15y-\,\frac{75}{2}\right)}\\
+  \frac{73}{2}
+\end{array}
+\]
 
 \item For our last example, we need `placeholders' for both the divisor  $w^2 - \sqrt{2} = w^2 + 0w -\sqrt{2}$ and the dividend $w^3 = w^3 + 0w^2 + 0w + 0$.  The first term in the quotient is $\frac{w^3}{w^2} = w$, and when we multiply and subtract this from the dividend, we're left with just $0w^2 + w\sqrt{2} + 0 = w\sqrt{2}$.
 
-\setlength\arraycolsep{0.1pt}
-\setlength\extrarowheight{2pt}
-
-\[ \begin{array}{cccccccccccc}
-
-    &   &    &   &                    &     &   &      &   &  w &   & \\ \hhline{~~~~~|-------}
-
-w^2 & + & 0w & - & \sqrt{2} \, \vline & w^3 & + & 0w^2 & + & 0w & + & 0  \\
-    
-		&   &    &    &                  -&\left(w^3\vphantom{w\sqrt{2}} \right. & + & 0w^2 & - & \left.  w\sqrt{2} \right) & & \downarrow \\ \hhline{~~~~~-----~~}
-    &   &    &    &                   &                                       &  &  0w^2     &  + &   w\sqrt{2}  & + & 0\\ 
- 
-\end{array}\]
-\setlength\arraycolsep{5pt}
-\setlength\extrarowheight{0pt}
+\[
+\begin{array}{r}
+w\,\phantom{\,-2\,14}\\
+w^2\,+\,0w\,-\,\sqrt{2} \,\, \overline{)\quad w^3\,+\,0w^2\,+\,0w\,+\,0} \\
+ \underline{-\left(w^3\,+\,0w^2\,+\,w\sqrt{2}\right)}\,\,\downarrow \\
+ 0w^2\,+\,w\sqrt{2}\,+\,0
+\end{array}
+\]
 
 Since the degree of $w\sqrt{2}$ (which is $1$) is less than the degree of the divisor (which is $2$), we are done.\footnote{Since $\frac{0w^2}{w^2} = 0$, we could proceed, write our quotient as $w+0$, and move on\ldots but even pedants have limits.}  Our answer is $w$ with a remainder of $w \sqrt{2}$.  To check, we compute:
 
