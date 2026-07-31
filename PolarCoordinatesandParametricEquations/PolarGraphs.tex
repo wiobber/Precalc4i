@@ -524,153 +524,28 @@ Our last example ties together graphing and points of intersection to describe r
 
  The inequality $0 \leq r \leq 5\sin(2\theta)$ means we want  all of the points between the origin ($r=0$) and the curve $r = 5\sin(2\theta)$ as $\theta$ runs through $\left[0, \frac{\pi}{2}\right]$.  Hence, the region we seek is the leaf itself.
 
-\hspace{-.37in} \begin{tabular}{cc}
-
-\begin{mfpic}[13][7.5]{-1}{7}{-6}{6}
-\axes
-\xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
-\ymarks{-5,5}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-5$} -5, {$5$} 5}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,6){\scriptsize $r$}
-\arrow \polyline{(0.39,0), (0.39,1.4)}
-\arrow \polyline{(0.78,0), (0.78,3.43)}
-\arrow \polyline{(1.18,0), (1.18,4.42)}
-\arrow \polyline{(1.57,0), (1.57,4.9)}
-\arrow \polyline{(1.96,0), (1.96,4.52)}
-\arrow \polyline{(2.35,0), (2.35,3.43)}
-\arrow \polyline{(2.75,0), (2.75,1.8)}
-\point[3pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)}
-\penwd{1.15pt}
-\function{0,6.28,0.1}{5*sin(x)}
-\end{mfpic}
-
-& \hspace{.75in}
-
-\begin{mfpic}[15]{-1}{5}{-1}{5}
-\axes
-\xmarks{1,2,3,4}
-\ymarks{1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\fillcolor[gray]{0.7}
-\gfill \plrregion{0,90,1}{5*sind(2*t)}
-\point[3pt]{\plr{(0,0),(5,45)}}
-\penwd{1.025}
-\plrfcn{0,90,5}{5*sind(2*t)}
-\end{mfpic} \\
-
-$r = 5\sin(2\theta)$
-
-& \hspace{.75in}  $\left\{ (r,\theta) \, | \, 0 \leq r \leq 5\sin(2\theta), 0 \leq \theta \leq \frac{\pi}{2} \right\}$  \\
-
-\end{tabular}
+% https://www.geogebra.org/classic/fsfj2xha
+\begin{center}
+    \geogebra{fsfj2xha}{800}{600}
+\end{center}
 
 \item  We know from Example \ref{polargraphintex} number \ref{circroseint} that $r=3$ and $r = 6\cos(2\theta)$ intersect at $\theta = \frac{\pi}{6}$, so the region that is being described here is the set of points whose directed distance $r$ from the origin is at least $3$ but no more than $6\cos(2\theta)$ as $\theta$ runs from $0$ to $\frac{\pi}{6}$. 
 
-
-
  In other words, we are looking at the points outside or on the circle (since $r \geq 3$) but inside or on the rose (since $r \leq 6\cos(2\theta)$).  We shade the region below.
 
-\hspace{.25in} \begin{tabular}{cc}
-
-\begin{mfpic}[15]{-1}{7}{-3}{4}
-\axes
-\xmarks{1,2,3,4,5,6}
-\ymarks{-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\point[3pt]{\plr{(3,30)}}
-\plrfcn{0,90,5}{3}
-\dotted \polyline{(-1,-0.58), (5.2, 3)}
-\tlabel[cc](6,3){\scriptsize $\theta = \frac{\pi}{6}$}
-\penwd{1.025}
-\plrfcn{0,45,5}{6*cosd(2*t)}
-\end{mfpic} 
-
-& \hspace{.75in} 
-
-\begin{mfpic}[15]{-1}{7}{-3}{4}
-\fillcolor[gray]{0.7}
-\gfill \plrregion{0,45,1}{6*cosd(2*t)}
-\gclear \plrregion{0,45,1}{3}
-\axes
-\xmarks{1,2,3,4,5,6}
-\ymarks{-2,-1,1,2,3}
-\tlabel[cc](7.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\point[3pt]{\plr{(3,30)}, (3,0), (6,0)}
-\penwd{1.025}
-\plrfcn{0,30,5}{3}
-\plrfcn{0,30,5}{6*cosd(2*t)}
-\polyline{(3,0), (6,0)}
-\end{mfpic}\\
-
-$r = 3$ and \boldmath $r = 6\cos(2\theta)$ & \hspace{.75in}
-
-$\left\{ (r,\theta) \, | \, 3 \leq r \leq 6 \cos(2\theta),  0 \leq \theta \leq \frac{\pi}{6} \right\}$ \\
-
-\end{tabular}
+% https://www.geogebra.org/classic/uyr74p9m
+\begin{center}
+    \geogebra{uyr74p9m}{800}{600}
+\end{center}
 
 \item From Example \ref{polargraphex} number \ref{limacon02}, we know that the graph of $r = 2+4\cos(\theta)$ is a lima\c{c}on whose `inner loop' is traced out as $\theta$ runs through the given values $\frac{2\pi}{3}$ to $\frac{4\pi}{3}$.  
 
-
-
 Since the values $r$ takes on in this interval are non-positive, the inequality $2+4\cos(\theta) \leq r \leq 0$ makes sense, and we are looking for all of the points between the pole $r = 0$ and the lima\c{c}on as $\theta$ ranges over the interval $\left[\frac{2\pi}{3}, \frac{4\pi}{3}\right]$.  In other words, we shade in the inner loop of the lima\c{c}on.
 
-\hspace{-.25in} \begin{tabular}{cc}
-
-\begin{mfpic}[15]{-1}{7}{-3}{7}
-\axes
-\xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 }
-\ymarks{-2, 2,4,6}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{2}$} 1.57, {$\pi$} 3.14, {$\frac{3\pi}{2}$} 4.71,  {$2\pi$} 6.28}
-\axislabels{y}{{$-2$} -2, {$2$} 2, {$4$} 4, {$6$} 6}
-\tlabel[cc](2.2,0.5){$\frac{2\pi}{3}$}
-\tlabel[cc](3.9,0.5){$\frac{4\pi}{3}$}
-\normalsize
-\tlabel[cc](7.25,-0.75){\scriptsize $\theta$}
-\tlabel[cc](0.25,7){\scriptsize $r$}
-\arrow \polyline{(2.35,0), (2.35,-0.6)}
-\arrow \polyline{(2.75,0), (2.75,-1.5)}
-\arrow \polyline{(3.14,0), (3.14,-1.9)}
-\arrow \polyline{(3.53,0), (3.53,-1.6)}
-\arrow \polyline{(3.93,0), (3.93,-0.6)}
-\point[3pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)}
-\penwd{1.15pt}
-\function{0,6.28,0.1}{2+4*cos(x)}
-\end{mfpic}
-
-& \hspace{.5in}
-
-\begin{mfpic}[17]{-2}{3}{-4}{4}
-\fillcolor[gray]{0.7}
-\gfill \plrregion{120,240,1}{2+4*cosd(t)}
-\axes
-\xmarks{-1,1,2}
-\ymarks{-3,-2,-1,1,2,3}
-\tlabel[cc](3.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,4){\scriptsize $y$}
-\point[3pt]{\plr{(0,0),(-2,180)}}
-\dashed \polyline{(1.5, 2.6), (-2, -3.46)}
-\gclear \tlabelrect(-1.5,-2){\scriptsize $\theta = \frac{4\pi}{3}$}
-\dashed \polyline{(1.5, -2.6), (-2, 3.46)}
-\gclear \tlabelrect(-1.5,2){\scriptsize $\theta = \frac{2\pi}{3}$}
-\penwd{1.025}
-\plrfcn{120,240,5}{2+4*cosd(t)} 
-\end{mfpic} \\
-
-$r = 2+4\cos(\theta)$
-
-& \hspace{.5in} $\left\{ (r,\theta) \, | \, 2+4\cos(\theta) \leq r \leq 0,  \frac{2\pi}{3} \leq \theta \leq \frac{4\pi}{3} \right\}$ \\
-
-\end{tabular}
+% https://www.geogebra.org/classic/ecvqpk84
+\begin{center}
+    \geogebra{ecvqpk84}{800}{600}
+\end{center}
 
 \item  We have two regions described here connected with the union symbol `$\cup$.' We shade each in turn and find our final answer by combining the two. 
 
@@ -688,55 +563,10 @@ For the second region,  $\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta)
 We combine these two regions to obtain our final answer.
 
 
-\begin{tabular}{cc}
-
-\hspace{-.1in} \begin{mfpic}[50]{-0.5}{2.5}{-0.5}{1.5}
-\axes
-\xmarks{1}
-\ymarks{1}
-\tlabel[cc](2.5,-0.15){\scriptsize $x$}
-\tlabel[cc](0.15,1.5){\scriptsize $y$}
-\point[3pt]{\plr{(1,30),(0,0)}}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$1$} 1}
-\axislabels {y}{{$1$} 1}
-\normalsize
-\dashed \polyline{(0,0), (1.5, 0.87)}
-\tlabel[cc](1.9,0.87){\scriptsize $\theta = \frac{\pi}{6}$}
-\plrfcn{0,90,5}{2-2*sind(t)}
-\penwd{1.025}
-\plrfcn{0,60,5}{2*sind(t)}
-\end{mfpic} 
-
-& \hspace{.35in}
-
-\begin{mfpic}[50]{-0.5}{1.5}{-0.5}{1.5}
-\axes
-\xmarks{1}
-\ymarks{1}
-\tlabel[cc](1.5,-0.15){\scriptsize $x$}
-\tlabel[cc](0.15,1.5){\scriptsize $y$}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels {x}{{$1$} 1}
-\axislabels {y}{{$1$} 1}
-\normalsize
-\fillcolor[gray]{0.7}
-\gfill \plrregion{0,31,1}{2*sind(t)}
-\gfill \plrregion{30,90,1}{2-2*sind(t)}
-\penwd{1.025}
-\plrfcn{30,90,1}{2-2*sind(t)}
-\plrfcn{0,30,1}{2*sind(t)}
-\point[3pt]{\plr{(1,30),(0,0)}}
-\end{mfpic} \\
-
-$r = 2-2\sin(\theta)$ and \boldmath $r=2\sin(\theta)$ & \hspace{.35in}
-
- $ \left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta), \,  0 \leq \theta \leq \frac{\pi}{6} \right\} \cup$ \\
- & \hspace{.35in} $\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta), \,  \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}$ \\
-
-\end{tabular}
+% https://www.geogebra.org/graphing/gms7kgys
+\begin{center}
+    \geogebra{gms7kgys}{800}{600}
+\end{center}
 
 \end{enumerate}
 
