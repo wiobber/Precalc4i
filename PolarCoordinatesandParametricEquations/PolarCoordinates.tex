@@ -162,222 +162,335 @@ Roughly speaking,  the polar coordinates $(r,\theta)$ of a point measure `how fa
 
  For example, if we wished to plot the point $P$ with polar coordinates $\left(4, \frac{5\pi}{6}\right)$, we'd start at the pole, move out along the polar axis $4$ units, then rotate $\frac{5\pi}{6}$ radians counter-clockwise.
 
-
+% https://www.geogebra.org/classic/ftghtgsc
 \begin{center}
-
-\begin{tabular}{ccc}
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](2,0.5){\scriptsize $r=4$}
-\penwd{1.05}
-\arrow \polyline{(0,0), (4,0)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](0,1.25){\scriptsize $\theta = \frac{5\pi}{6}$}
-\arrow \parafcn{5, 145, 5}{0.75*dir(t)}
-\point[3pt]{(-3.46,2)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-3.46,2)}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\point[3pt]{(-3.46,2)}
-\tlabel[cc](-3.5,2.5){\scriptsize $P\left(4, \frac{5\pi}{6}\right)$}
-\dotted \parafcn{5, 145, 5}{0.75*dir(t)}
-\dotted \polyline{(0,0),(-3.46,2)}
-\end{mfpic} \\
-
-\end{tabular}
-
+\geogebra{ftghtgsc}{800}{600}
 \end{center}
 
 We may also visualize this process by thinking of the rotation first.\footnote{As with anything in Mathematics, the more ways you have to look at something, the better. The authors encourage the reader to take time to think about both approaches to plotting points given in polar coordinates.}  To plot $P\left(4,\frac{5\pi}{6}\right)$ this way,  we rotate  $\frac{5\pi}{6}$ counter-clockwise from the polar axis, then move outwards from the pole $4$ units.  Essentially we are locating a point on the terminal side of $\frac{5\pi}{6}$ which is $4$ units away from the pole.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{ccc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](0,1.25){\scriptsize $\theta = \frac{5\pi}{6}$}
-\arrow \parafcn{5, 145, 5}{0.75*dir(t)}
-\dashed \rotatepath{(0,0),150} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)}
-\end{mfpic}
+\def\panelwidth{7}
+\def\ang{150}      % 5pi/6
+\def\raylength{3.2}
+\def\pointdist{4}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](0,1.25){\scriptsize $\theta = \frac{5\pi}{6}$}
-\arrow \parafcn{5, 145, 5}{0.75*dir(t)}
-\point[3pt]{(-3.46,2)}
-\dashed \rotatepath{(0,0),150} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-3.46,2)}
-\end{mfpic}
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
 
-&
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\point[3pt]{(-3.46,2)}
-\tlabel[cc](-3.5,2.5){\scriptsize $P\left(4, \frac{5\pi}{6}\right)$}
-\dotted \parafcn{5, 145, 5}{0.75*dir(t)}
-\dotted \polyline{(0,0),(-3.46,2) }
-\end{mfpic} \\
+% Dashed terminal ray
+\draw[dashed]
+    (0,0) -- (\ang:\raylength);
 
-\end{tabular}
+% Tick marks on terminal ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
 
-\end{center}
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,0) {Pole};
+
+% Angle
+\draw[->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.65
+    ];
+
+\node at (-0.15,1.1)
+    {$\theta=\frac{5\pi}{6}$};
+
+
+%================================================
+% Middle panel
+%================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Solid terminal ray
+\draw[very thick]
+    (0,0) -- (\ang:\raylength);
+
+% Short dashed continuation
+\draw[dashed]
+    (\ang:\raylength) -- (\ang:{\raylength+0.7});
+
+% Tick marks on terminal ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,0) {Pole};
+
+% Angle
+\draw[->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.65
+    ];
+
+\node at (-0.15,1.1)
+    {$\theta=\frac{5\pi}{6}$};
+
+\end{scope}
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=14 cm]
+
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Point P at r=4, theta=5pi/6
+\coordinate (P) at (\ang:\pointdist);
+
+% Dotted guide from pole to P
+\draw[densely dotted]
+    (0,0) -- (P);
+
+% Pole and point
+\fill (0,0) circle (2.5pt);
+\fill (P) circle (2.5pt);
+
+% Labels
+\node[below] at (0,0) {Pole};
+
+\node[above] at (P)
+    {$P\left(4,\frac{5\pi}{6}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 If $r < 0$, we begin by moving in the opposite direction on the polar axis from the pole.  For example, to plot the point with polar coordinates $Q\left(-3.5, \frac{\pi}{4}\right)$ we have
 
+% https://www.geogebra.org/classic/cpcceeus
 \begin{center}
-
-\begin{tabular}{ccc}
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(-4.5,0), (0,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](-1.75,0.5){\scriptsize $r=-3.5$}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-3.5,0)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$Q\left(-3.5, \frac{\pi}{4}\right)$}}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-4.5,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](-2.25,-0.75){\scriptsize $\theta = \frac{\pi}{4}$}
-\arrow \parafcn{185, 220, 5}{1.25*dir(t)}
-\point[3pt]{(-2.48,-2.48)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$Q\left(-3.5, \frac{\pi}{4}\right)$}}
-\end{mfpic}
-
-&
-
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-4.5,0)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\point[3pt]{(-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize $Q\left(-3.5, \frac{\pi}{4}\right)$}
-\dotted  \parafcn{185, 220, 5}{1.25*dir(t)}
-\dotted \polyline{(0,0),(-2.48,-2.48)}
-\end{mfpic} \\
-
-\end{tabular}
-
+\geogebra{cpcceeus}{800}{600}
 \end{center}
 
 If we interpret the angle first, we rotate $\frac{\pi}{4}$ radians, then move back through the pole $3.5$ units.  Here we are locating a point $3.5$ units away from the pole on the terminal side of $\frac{5\pi}{4}$, not $\frac{\pi}{4}$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{ccc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\dashed \rotatepath{(0,0),45} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](2.15,0.5){\scriptsize $\theta = \frac{\pi}{4}$}
-\arrow \parafcn{5, 40, 5}{1.25*dir(t)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$Q\left(-3.5, \frac{\pi}{4}\right)$}}
-\end{mfpic}
+\def\panelwidth{7}
+\def\ang{45}
+\def\raylength{3.2}
+\def\negdist{3.5}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\dashed \rotatepath{(0,0),45} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
-\dotted \rotatepath{(0,0),45} \polyline{(-4.75,0),(0,0)}
-\rotatepath{(0,0),45} \polyline{(-1,-0.15),(-1,0.15)}
-\rotatepath{(0,0),45} \polyline{(-2,-0.15),(-2,0.15)}
-\rotatepath{(0,0),45} \polyline{(-3,-0.15),(-3,0.15)}
-\rotatepath{(0,0),45} \polyline{(-4,-0.15),(-4,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-2.48,-2.48)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](2.15,0.5){\scriptsize $\theta = \frac{\pi}{4}$}
-\arrow \parafcn{5, 40, 5}{1.25*dir(t)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$Q\left(-3.5, \frac{\pi}{4}\right)$}}
-\end{mfpic}
+% Polar axis
+\draw[->] (0,0) -- (3.5,0);
 
-&
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \rotatepath{(0,0),45} \polyline{(5,0),(0,0)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\point[3pt]{(-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize $Q\left(-3.5, \frac{\pi}{4}\right)$}
-\dotted  \parafcn{5, 45, 5}{1.25*dir(t)}
-\dotted \polyline{(0,0),(-2.48,-2.48)}\end{mfpic} \\
+% Dashed ray at theta = pi/4
+\draw[dashed]
+    (0,0) -- (\ang:\raylength);
 
-\end{tabular}
+% Tick marks on dashed ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
 
-\end{center}
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,0) {Pole};
+
+% Angle
+\draw[->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.65
+    ];
+
+\node at (1.2,0.42)
+    {$\theta=\frac{\pi}{4}$};
+
+
+%================================================
+% Middle panel
+%================================================
+
+\begin{scope}[xshift=\panelwidth cm]
+
+% Polar axis
+\draw[->] (0,0) -- (3.5,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Dashed positive ray
+\draw[dashed]
+    (0,0) -- (\ang:\raylength);
+
+% Tick marks on dashed positive ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Solid negative-radius ray
+\draw[very thick]
+    (0,0) -- ({-\negdist*cos(\ang)},{-\negdist*sin(\ang)});
+
+% Tick marks on negative-radius ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({-\r*cos(\ang)-0.06*sin(\ang)},
+         {-\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({-\r*cos(\ang)+0.06*sin(\ang)},
+         {-\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Pole and endpoint
+\fill (0,0) circle (2.5pt);
+\fill ({-\negdist*cos(\ang)},{-\negdist*sin(\ang)})
+    circle (2.5pt);
+
+\node[left=5pt] at (0,0) {Pole};
+
+% Angle
+\draw[->]
+    (0.65,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.65
+    ];
+
+\node at (1.2,0.42)
+    {$\theta=\frac{\pi}{4}$};
+
+\end{scope}
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=14 cm]
+
+% Polar axis
+\draw[->] (0,0) -- (3.5,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Point with negative radius
+\coordinate (Q) at ({-\negdist*cos(\ang)},{-\negdist*sin(\ang)});
+
+% Dotted full line through the pole
+\draw[densely dotted]
+    (Q) -- (\ang:\raylength);
+
+% Pole and point
+\fill (0,0) circle (2.5pt);
+\fill (Q) circle (2.5pt);
+
+% Labels
+\node[below] at (0,0) {Pole};
+
+\node[below] at (Q)
+    {$Q\left(-3.5,\frac{\pi}{4}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 As you may have guessed, $\theta < 0$ means the rotation away from the polar axis is clockwise instead of counter-clockwise. Hence, to plot $R\left(3.5, -\frac{3\pi}{4}\right)$ we have the following.
 
