@@ -33,9 +33,9 @@ We then use the Power Rule to write the exponent $x$ as a factor then divide bot
 
 \[ \begin{array}{rclr}
 2^{x} & = & 129 & \\
-\ln\left(2^{x}\right) & = & \ln(129) & \mbox{Take the natural log of both sides.} \\
-x \ln(2) & = & \ln(129) & \mbox{Power Rule} \\  
-x & = &\dfrac{\ln(129)}{\ln(2)} & \\
+\ln\left(2^{x}\right) & = & \ln(129) & \text{Take the natural log of both sides.} \\
+x \ln(2) & = & \ln(129) & \text{Power Rule} \\  
+x & = &\frac{\ln(129)}{\ln(2)} & \\
 \end{array}\]
 
 We summarize our two strategies for solving equations featuring exponential functions below.
@@ -70,8 +70,6 @@ We summarize our two strategies for solving equations featuring exponential func
 
 
 \begin{example}  \label{expeqnsex1} Solve the following equations.  Check your answer using a graphing utility.
-
-\begin{multicols}{3}
 \begin{enumerate}
 
 \item  $2^{3x} = 16^{1-x}$
@@ -80,14 +78,6 @@ We summarize our two strategies for solving equations featuring exponential func
 
 \item  $9 \cdot 3^{x} = 7^{2x}$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{3}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
 \item  $75 = \frac{100}{1 + 3e^{-2t}}$
 
 \item  $25^{x} = 5^{x} + 6$
@@ -95,22 +85,16 @@ We summarize our two strategies for solving equations featuring exponential func
 \item  $\frac{e^{x} - e^{-x}}{2} = 5$
 
 \end{enumerate}
-\end{multicols}
 
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
 \item  Since $16$ is a power of $2$, we can rewrite  $2^{3x} =  16^{1-x}$ as $2^{3x} = \left(2^4\right)^{1-x}$.  Using properties of exponents, we get $2^{3x} = 2^{4(1-x)}$.  
 
-
-
 Using the one-to-one property of exponential functions, we get $3x = 4(1-x)$ which gives $x=\frac{4}{7}$. 
 
-
-
-Graphing $f(x) = 2^{3x}$ and $g(x) = 16^{1-x}$ and see that they intersect at $x \approx 0.571  \approx \frac{4}{7}$.
+Using desmos, we graph $f(x) = 2^{3x}$ and $g(x) = 16^{1-x}$ and see that they intersect at $x \approx 0.571  \approx \frac{4}{7}$.
  % https://www.desmos.com/calculator/vgz48cail0
 \begin{center}
     \desmos{vgz48cail0}{800}{600}
@@ -119,17 +103,11 @@ Graphing $f(x) = 2^{3x}$ and $g(x) = 16^{1-x}$ and see that they intersect at $x
 
 \item  We begin solving $2000 = 1000 \cdot 3^{-0.1 t}$  by dividing both sides by $1000$ to isolate the exponential which yields $3^{-0.1t} = 2$.  
 
-
-
 Since it is inconvenient to write $2$ as a power of $3$, we use the natural log to get $\ln\left(3^{-0.1t}\right) = \ln(2)$.  
-
-
 
 Using the Power Rule, we get $-0.1 t \ln(3) = \ln(2)$, so we divide both sides by $-0.1 \ln(3)$  and obtain $t = -\frac{\ln(2)}{0.1 \ln(3)} = -\frac{10\ln(2)}{\ln(3)}$.  
 
-
-
-We see the graphs of  $f(x) = 2000$ and $g(x) =  1000 \cdot 3^{-0.1 x}$ intersect at $x \approx -6.309 \approx -\frac{10\ln(2)}{\ln(3)} $.
+Using desmos, we find the graphs of  $f(x) = 2000$ and $g(x) =  1000 \cdot 3^{-0.1 x}$ intersect at $x \approx -6.309 \approx -\frac{10\ln(2)}{\ln(3)} $.
 
 % https://www.desmos.com/calculator/pv2dugdpjn
 \begin{center}
@@ -137,8 +115,6 @@ We see the graphs of  $f(x) = 2000$ and $g(x) =  1000 \cdot 3^{-0.1 x}$ intersec
 \end{center}
 
 \item  We first note that we can rewrite the equation $9 \cdot 3^{x} = 7^{2x}$ as $3^2 \cdot 3^x = 7^{2x}$ to obtain $3^{x+2} = 7^{2x}$. 
-
-
 
 Since it is not convenient to express both sides as a power of $3$ (or $7$ for that matter) we use the natural log:  $\ln\left(3^{x+2}\right) = \ln\left(7^{2x}\right)$.  
 
@@ -155,11 +131,11 @@ The equation $(x+2) \ln(3) = 2x \ln(7)$ is actually a linear equation (do you se
 
 x \ln(3) + 2 \ln(3) & = & 2x \ln(7) & \\
 2 \ln(3) & = & 2x \ln(7) - x \ln(3) & \\
-2 \ln(3) & = & x (2 \ln(7) - \ln(3)) & \mbox{Factor.}\\
+2 \ln(3) & = & x (2 \ln(7) - \ln(3)) & \text{Factor.}\\
 x & = & \frac{2 \ln(3)}{2\ln(7) - \ln(3)} & \\  
 \end{array}\]
 
-We see the graphs of $f(x) = 9 \cdot 3^{x}$ and $g(x) = 7^{2x}$ intersect at $x  \approx 0.787 \approx  \frac{2 \ln(3)}{2\ln(7) - \ln(3)}$.
+Using desmos, we see the graphs of $f(x) = 9 \cdot 3^{x}$ and $g(x) = 7^{2x}$ intersect at $x  \approx 0.787 \approx  \frac{2 \ln(3)}{2\ln(7) - \ln(3)}$.
 
 % https://www.desmos.com/calculator/tvahxyxai6
 \begin{center}
@@ -182,7 +158,7 @@ Putting these two steps together, we simplify $\ln\left(e^{-2t}\right) = \ln\lef
 
 
 
- To check, we see the graphs of  $f(x) = 75$ and $g(x) = \frac{100}{1 + 3e^{-2x}}$,  intersect at $x \approx 1.099 \approx \ln(3)$.
+ To check, we see the graphs of  $f(x) = 75$ and $g(x) = \frac{100}{1 + 3e^{-2x}}$, intersect at $x \approx 1.099 \approx \ln(3)$.  As usual, our graph below is courtesy of desmos.
 
 % https://www.desmos.com/calculator/kqpadz2v1h
 \begin{center}
@@ -207,7 +183,7 @@ Since $5^{x} = -2$ has no real solution,\footnote{Why not?} we focus on $5^{x} =
 
 
 
-We see the graphs of $f(x) = 25^{x}$ and $g(x) = 5^{x} + 6$ intersect at $x \approx 0.683 \approx \frac{\ln(3)}{\ln(5)} $.
+Desmos shows the graphgs of $f(x) = 25^{x}$ and $g(x) = 5^{x} + 6$ intersect at $x \approx 0.683 \approx \frac{\ln(3)}{\ln(5)} $.
 
 % https://www.desmos.com/calculator/vxcygzddiq
 \begin{center}
@@ -231,7 +207,7 @@ From this, we have $e^{x} = 5 \pm \sqrt{26}$.  Since $5 - \sqrt{26} < 0$, we get
 
 
 
-We see the graphs of  $f(x) = \frac{e^{x} - e^{-x}}{2}$ and $g(x) = 5$ intersect at $x \approx 2.312 \approx \ln\left(5 + \sqrt{26}\right)$.
+Graphing $f(x) = \frac{e^{x} - e^{-x}}{2}$ and $g(x) = 5$ using desmos, we find an intersection at $x \approx 2.312 \approx \ln\left(5 + \sqrt{26}\right)$.
 
 % https://www.desmos.com/calculator/u0x0hbap10
 \begin{center}
@@ -240,7 +216,7 @@ We see the graphs of  $f(x) = \frac{e^{x} - e^{-x}}{2}$ and $g(x) = 5$ intersect
 
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 Note that verifying our solutions to the equations in Example \ref{expeqnsex1} \textit{analytically} holds great educational value, since it reviews many of the properties of logarithms and exponents in tandem.
@@ -252,58 +228,38 @@ For example, to verify our solution to  $2000 = 1000 \cdot 3^{-0.1 t}$, we subst
 
 2000 & \stackrel{?}{=} & 1000 \cdot 3^{-0.1 \left(-\frac{10\ln(2)}{\ln(3)}\right)} & \\
 2000 & \stackrel{?}{=} & 1000 \cdot 3^{\frac{\ln(2)}{\ln(3)}} & \\
-2000 & \stackrel{?}{=} & 1000 \cdot 3^{\log_{3}(2)} & \mbox{Change of Base}\\
-2000 & \stackrel{?}{=} & 1000 \cdot 2 & \mbox{Inverse Property}\\
+2000 & \stackrel{?}{=} & 1000 \cdot 3^{\log_{3}(2)} & \text{Change of Base}\\
+2000 & \stackrel{?}{=} & 1000 \cdot 2 & \text{Inverse Property}\\
 2000 & \stackrel{\checkmark}{=} & 2000 & \\
 
 \end{array}\]
 
-We strongly encourage the reader to check the remaining equations analytically as well.
-
-
+We strongly encourage the reader to check the remaining equations analytically as well.\footnote{Who knows?  Maybe your instructor will offer up a bonus point (or two!)}
 
 Since exponential functions are continuous on their domains, the Intermediate Value Theorem \ref{IVT} applies. This allows us to solve inequalities using sign diagrams as demonstrated below.
 
 \begin{example}  Solve the following inequalities.  Check your answer graphically.
 \label{expineq}
 
-\begin{multicols}{3}
-
 \begin{enumerate}
 
 \item \label{canuselogsex} $2^{x^2-3x} - 16 \geq 0$
 
-\item  $\dfrac{e^{x}}{e^{x}-4} \leq 3$
+\item  $\frac{e^{x}}{e^{x}-4} \leq 3$
 
 \item  $t e^{2t} < 4t$
 
 \end{enumerate}
 
-\end{multicols}
-
-
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
 \item  Since we already have $0$ on one side of the inequality, we set $r(x) = 2^{x^2-3x} - 16$.  
 
-
-
 The domain of $r$ is all real numbers, so to construct our sign diagram, we need to find the zeros of $r$.  
 
-
-
-Setting $r(x) = 0$ gives $2^{x^2-3x} - 16 = 0$ or $2^{x^2-3x} = 16$.  Since $16 = 2^{4}$ we have $2^{x^2-3x} = 2^{4}$.   By the one-to-one property of exponential functions, $x^2 -3x = 4$ which gives $x=4$ and $x=-1$.  
-
-
-
-From the sign diagram, we see $r(x) \geq 0$ on $(-\infty, -1] \cup [4, \infty)$, which is our solution.  
-
-
-
-Graphing $r(x) = 2^{x^2-3x} - 16$,  we find it is on or above the line $y=0$ (the $x$-axis) precisely on the intervals  $(-\infty, -1]$ and $ [4, \infty)$ which checks our answer.
+Setting $r(x) = 0$ gives $2^{x^2-3x} - 16 = 0$ or $2^{x^2-3x} = 16$.  Since $16 = 2^{4}$ we have $2^{x^2-3x} = 2^{4}$.   By the one-to-one property of exponential functions, $x^2 -3x = 4$ which gives $x=4$ and $x=-1$.  We construct a sign diagram below.
 
 \begin{image}
 % \input{PowerFunctions_pic26.tex}
@@ -313,11 +269,20 @@ Graphing $r(x) = 2^{x^2-3x} - 16$,  we find it is on or above the line $y=0$ (th
   \draw (0,-0.12) -- (0,0.12);
   \node at (-3, 0.5) {$(+)$};
   \node at (-2,-0.5) {$-1$};
+  \node at (-2,0.5) {$0$};
   \node at (-1,0.5) {$(-)$};
   \node at (0,-0.5) {$4$};
+  \node at (0,0.5) {$0$};
   \node at (1,0.5) {$(+)$};
 \end{tikzpicture}
 \end{image}
+
+
+From the sign diagram, we see $r(x) \geq 0$ on $(-\infty, -1] \cup [4, \infty)$, which is our solution.  
+
+
+
+Graphing $r(x) = 2^{x^2-3x} - 16$ using desmos,  we find it is on or above the line $y=0$ (the $x$-axis) precisely on the intervals  $(-\infty, -1]$ and $ [4, \infty)$ which checks our answer.
 
 % https://www.desmos.com/calculator/olb42m5yup
 \begin{center}
@@ -327,39 +292,30 @@ Graphing $r(x) = 2^{x^2-3x} - 16$,  we find it is on or above the line $y=0$ (th
 \item The first step we need to take to solve  $\frac{e^{x}}{e^{x}-4} \leq 3$ is to get $0$ on one side of the inequality. To that end, we subtract $3$ from both sides and get a common denominator
 
 
-\setlength{\extrarowheight}{12pt}
 \[ \begin{array}{rclr}
 
-\dfrac{e^{x}}{e^{x}-4} & \leq & 3 & \\
+\frac{e^{x}}{e^{x}-4} & \leq & 3 & \\
 
-\dfrac{e^{x}}{e^{x}-4} - 3 & \leq & 0 & \\
+\frac{e^{x}}{e^{x}-4} - 3 & \leq & 0 & \\
 
-\dfrac{e^{x}}{e^{x}-4} - \dfrac{3 \left(e^{x}-4\right)}{e^{x}-4} & \leq & 0 & \mbox{Common denomintors.} \\
+\frac{e^{x}}{e^{x}-4} - \frac{3 \left(e^{x}-4\right)}{e^{x}-4} & \leq & 0 & \text{Common denomintors.} \\
 
-\dfrac{12 - 2e^{x}}{e^{x}-4} & \leq & 0 & \\
+\frac{12 - 2e^{x}}{e^{x}-4} & \leq & 0 & \\
 
 \end{array}\]
-\setlength{\extrarowheight}{2pt}
+
 
 We set $r(x) = \frac{12 - 2e^{x}}{e^{x}-4}$ and we note that $r$ is undefined when its denominator $e^{x}-4=0$, or when $e^{x} = 4$.  Solving this gives $x = \ln(4)$, so the domain of $r$ is $(-\infty, \ln(4)) \cup (\ln(4), \infty)$. 
 
-
-
 To find the zeros of $r$, we solve $r(x) = 0$ and obtain $12 - 2e^{x} = 0$.  We find $e^{x} = 6$, or $x = \ln(6)$.  
-
-
 
 When we build our sign diagram, finding test values may be a little tricky since we need to check values around $\ln(4)$ and $\ln(6)$.  
 
-
-
 Recall that the function $\ln(x)$ is increasing\footnote{This is because the base of $\ln(x)$ is $e > 1$.  If the base $b$ were in the interval $0 < b < 1$, then $\log_{b}(x)$ would decreasing.} which means $\ln(3) < \ln(4) < \ln(5) < \ln(6) < \ln(7)$.  
-
-
 
 To determine the sign of $r\left(\ln(3)\right)$, we remember that $e^{\ln(3)} = 3$ and get \[r\left(\ln(3)\right) = \frac{12 - 2e^{\ln(3)}}{e^{\ln(3)}-4} = \frac{12-2(3)}{3-4} = -6.\]  
 
-We determine the signs of $r\left(\ln(5)\right)$ and $r\left(\ln(7)\right)$ similarly.\footnote{We could, of course, use the calculator, but what fun would that be?} From the sign diagram, we find our answer to be $(-\infty,\ln(4)) \cup [\ln(6), \infty)$.  
+We determine the signs of $r\left(\ln(5)\right)$ and $r\left(\ln(7)\right)$ similarly.\footnote{We could, of course, use the calculator, but what fun would that be?}   
 
 
 \begin{image}
@@ -370,13 +326,17 @@ We determine the signs of $r\left(\ln(5)\right)$ and $r\left(\ln(7)\right)$ simi
   \draw (0,-0.12) -- (0,0.12);
   \node at (-3, 0.5) {$(-)$};
   \node at (-2,-0.5) {$\ln 4$};
+  \node at (-2,0.5) {\textinterrobang};
   \node at (-1,0.5) {$(+)$};
   \node at (0,-0.5) {$\ln 6$};
+  \node at (0,0.5) {$0$};
   \node at (1,0.5) {$(-)$};
 \end{tikzpicture}
 \end{image}
 
-Using a graphing utility, we find the graph of $f(x) = \frac{e^{x}}{e^{x}-4}$ is below the graph of $g(x) = 3$ on $(-\infty,\ln(4)) \cup (\ln(6), \infty)$, and they intersect at $x  \approx 1.792 \approx  \ln(6)$.
+From the sign diagram, we find our answer to be $(-\infty,\ln(4)) \cup [\ln(6), \infty)$.
+
+Using desmos, we find the graph of $f(x) = \frac{e^{x}}{e^{x}-4}$ is below the graph of $g(x) = 3$ on $(-\infty,\ln(4)) \cup (\ln(6), \infty)$, and they intersect at $x  \approx 1.792 \approx  \ln(6)$.
 
 % https://www.desmos.com/calculator/7zustjcohd
 \begin{center}
@@ -412,7 +372,7 @@ r\left(\ln\left(\frac{1}{2}\right)\right) & = & \ln\left(\frac{1}{2}\right) e^{2
 
 & = & \frac{1}{4}  \ln\left(\frac{1}{2}\right) - 4  \ln\left(\frac{1}{2}\right) =  -\frac{15}{4} \ln\left(\frac{1}{2}\right) & \end{array}\] 
 
-Since $\frac{1}{2} < 1$, $ \ln\left(\frac{1}{2}\right) < 0$ and we get $r(\ln\left(\frac{1}{2}\right))$ is $(+)$.  Proceeding similarly, we find $r\left(\ln\left(\frac{3}{2}\right)\right)  < 0$ and $r(\ln(3)) > 0$.  Our solution corresponds to $r(t) < 0$ which occurs on $(0 ,\ln(2))$.  
+Since $\frac{1}{2} < 1$, $ \ln\left(\frac{1}{2}\right) < 0$ and we get $r(\ln\left(\frac{1}{2}\right))$ is $(+)$.  Proceeding similarly, we find $r\left(\ln\left(\frac{3}{2}\right)\right)  < 0$ and $r(\ln(3)) > 0$. 
 
 \begin{image}
 % \input{PowerFunctions_pic26.tex}
@@ -422,13 +382,17 @@ Since $\frac{1}{2} < 1$, $ \ln\left(\frac{1}{2}\right) < 0$ and we get $r(\ln\le
   \draw (0,-0.12) -- (0,0.12);
   \node at (-3, 0.5) {$(+)$};
   \node at (-2,-0.5) {$0$};
+   \node at (-2,0.5) {$0$};
   \node at (-1,0.5) {$(-)$};
   \node at (0,-0.5) {$\ln 2$};
+  \node at (0,0.5) {$0$};
   \node at (1,0.5) {$(+)$};
 \end{tikzpicture}
 \end{image}
 
-The graphing utility confirms that the graph of $f(t) = t e^{2t} $ is below the graph of $g(t) = 4t$ on $(0 ,\ln(2))$.\footnote{Note: $\ln(2) \approx 0.693$.}
+ Our solution corresponds to $r(t) < 0$ which occurs on $(0 ,\ln(2))$.  
+
+Desmos confirms that the graph of $f(t) = t e^{2t} $ is below the graph of $g(t) = 4t$ on $(0 ,\ln(2))$.\footnote{Note: $\ln(2) \approx 0.693$.}
 
 % https://www.desmos.com/calculator/t1dr2ragzl
 \begin{center}
@@ -436,7 +400,7 @@ The graphing utility confirms that the graph of $f(t) = t e^{2t} $ is below the 
 \end{center}
 
 \end{enumerate}
-
+\end{explanation}
 
 
 \end{example}
@@ -463,37 +427,25 @@ x^2 - 3x & \geq & 4 &\\ \end{array} \]
 
 Hence, we've  reduced our given inequality to $x^2-3x \geq 4$.  As seen in Section \ref{QuadraticFunctions}, we can solve this inequality by completing the square, graphing, or a sign diagram, whichever strikes the reader's fancy.
 
-
-
 Our next example is a follow-up to Example \ref{exptempex} in Section \ref{ExponentialFunctions}.  
 
+\begin{example}  \label{coffeewarmerex} Recall from Example \ref{exptempex}  the temperature of coffee $T$ (in degrees Fahrenheit) $t$ minutes after it is served can be modeled by $T(t) = 70 + 90 e^{-0.1 t}$.  When will the coffee be warmer than $100^{\circ}\text{F}$?
 
 
-\begin{example}  \label{coffeewarmerex} Recall from Example \ref{exptempex}  the temperature of coffee $T$ (in degrees Fahrenheit) $t$ minutes after it is served can be modeled by $T(t) = 70 + 90 e^{-0.1 t}$.  When will the coffee be warmer than $100^{\circ}\mbox{F}$?
-
-
-
-{\bf Solution.}  We need to find when $T(t) > 100$, that is, we need to solve  $70 + 90 e^{-0.1 t} > 100$.  
+\begin{explanation} We need to find when $T(t) > 100$, that is, we need to solve  $70 + 90 e^{-0.1 t} > 100$.  
 
 
 
 To use a sign diagram, we need to get $0$ on one side of the inequality.  Subtracting $100$ from both sides of $70 + 90 e^{-0.1 t} > 100$ produces   $90 e^{-0.1 t} - 30 > 0$. 
 
-
-
 Identifying  $r(t) = 90 e^{-0.1 t} - 30$, we note from the context of the problem the domain of $r$ is $[0, \infty)$, so to build the sign diagram, we proceed to find the zeros of $r$.  
-
-
 
 Solving $90 e^{-0.1 t} - 30=0$ results in $e^{-0.1t} = \frac{1}{3}$ so that $t = -10\ln\left(\frac{1}{3}\right)$  which reduces to $t = 10 \ln(3)$.
 
-
-
 If we wish to avoid using the calculator to choose test values, we note that $f(x)  = \ln(x)$ is increasing.  As a result,  since $1 < 3$, $0 = \ln(1) < \ln(3)$ which proves $10\ln(3) > 0$. Hence, we may choose $t = 0$ as a test value in $[0, 10 \ln(3))$.  Since $3 < 4$, $\ln(3) < \ln(4)$, so $10 \ln(3) < 10 \ln(4)$. Hence,  we may choose $10 \ln(4)$   as test value for the interval $(10 \ln(3), \infty)$. 
 
-
-
 We find $r(0)>0$ and $r(10\ln(4))<0$  which gives  the sign diagram below. We see $r(t)>0$ on $[0, 10\ln(3))$.
+
 
 \begin{image}
 % \input{PowerFunctions_pic26.tex}
@@ -501,29 +453,31 @@ We find $r(0)>0$ and $r(10\ln(4))<0$  which gives  the sign diagram below. We se
   \draw[-{Latex[length=5pt,width=3pt]}, line width=1.25pt] (-2,0) -- (2,0);
   \draw (-2,-0.12) -- (-2,0.12);
   \draw (0,-0.12) -- (0,0.12);
- 
   \node at (-2,-0.5) {$0$};
   \node at (-1,0.5) {$(+)$};
   \node at (0,-0.5) {$10\ln 3$};
+    \node at (0,0.5) {$0$};
   \node at (1,0.5) {$(-)$};
 \end{tikzpicture}
 \end{image}
 
-We graph $y=T(t)$ from Example  \ref{exptempex} below on the right along with with the horizontal line $y = 100$.   We see the graph of $T$ is above the horizontal line to the left of the intersection point, which we leave to the reader to show is $(10 \ln(3), 100)$.
+
+Using desmos, we graph $y=T(t)$ along with with the horizontal line $y = 100$.   We see the graph of $T$ is above the horizontal line to the left of the intersection point, which we leave to the reader to show is $(10 \ln(3), 100)$.
 
 % https://www.desmos.com/calculator/ijdrhxov9w
 \begin{center}
 \desmos{ijdrhxov9w}{800}{600}
 \end{center}
 
-Hence, the coffee is warmer than $100^{\circ}$F up to $10 \ln(3) \approx 11$ minutes after it is served, or, said differently, it takes approximately 11 minutes for the coffee to cool to under $100^{\circ}$F.  \qed
+Hence, the coffee is warmer than $100^{\circ}$F up to $10 \ln(3) \approx 11$ minutes after it is served, or, said differently, it takes approximately 11 minutes for the coffee to cool to under $100^{\circ}$F.  
+
+\end{explanation}
 
 \end{example}
 
 We note that, once again, we can short-cut the sign diagram in Example \ref{coffeewarmerex} to solve $70 + 90 e^{-0.1 t} > 100$.  Since $\ln(x)$ is increasing, it preserves inequality.  This means we can solve this inequality as follows.
 
 \[ \begin{array}{rclr}
-
 70 + 90 e^{-0.1 t} & > & 100 & \\
 90 e^{-0.1 t} & > & 30 & \\
 e^{-0.1 t} > & \frac{1}{3} & \\
@@ -533,39 +487,32 @@ t & < & \frac{-\ln(3)}{-0.1} = 10 \ln(3) & \\ \end{array} \]
 
 Since we are given $t \geq 0$, we arrive at the same answer $0 \leq t < 10\ln(3)$ or $[0, 10 \ln(3))$.  
 
-
-
 Note the importance, once again, of having a base larger than $1$ so that the corresponding logarithmic function is \textit{increasing}.  We can still adapt this strategy to exponential functions whose base is less than $1$, but we need to remember the corresponding logarithmic function is \textit{decreasing} so it \textit{reverses}  inequalities.  
 
 
-
-
-\begin{example}  \label{expfracinverse} The function $f(x) = \dfrac{5e^{x}}{e^{x}+1}$ is one-to-one. 
-
-\begin{multicols}{2} 
+\begin{example}  \label{expfracinverse} The function $f(x) = \frac{5e^{x}}{e^{x}+1}$ is one-to-one. 
 
 \begin{enumerate}
 
 \item Find a formula for $f^{-1}(x)$.
 
-\item  Solve $\dfrac{5e^{x}}{e^{x}+1} = 4$.
+\item  Solve $\frac{5e^{x}}{e^{x}+1} = 4$.
 
 \end{enumerate}
 
-\end{multicols}
 
-{\bf Solution.}  \begin{enumerate} \item We start by writing $y=f(x)$, and interchange the roles of $x$ and $y$.  To solve for $y$, we first clear denominators and then isolate the exponential function.
+\begin{explanation} \begin{enumerate} \item We start by writing $y=f(x)$, and interchange the roles of $x$ and $y$.  To solve for $y$, we first clear denominators and then isolate the exponential function.
 
 \[ \begin{array}{rclr}
-y & = & \dfrac{5e^{x}}{e^{x}+1} & \\  
-x & = & \dfrac{5e^{y}}{e^{y}+1} & \mbox{Switch $x$ and $y$} \\  
+y & = & \frac{5e^{x}}{e^{x}+1} & \\  
+x & = & \frac{5e^{y}}{e^{y}+1} & \text{Switch $x$ and $y$} \\  
 x \left(e^{y}+1\right) & = & 5e^{y} & \\  
 x e^{y}+x & = & 5e^{y} & \\  
 x & = & 5e^{y} - x e^{y} & \\  
 x & = & e^{y}(5 - x) & \\  
-e^{y}& = & \dfrac{x}{5-x} & \\ 
-\ln\left(e^{y}\right) & = & \ln\left(\dfrac{x}{5-x}\right) & \\ 
-y & = & \ln\left(\dfrac{x}{5-x}\right) & \\
+e^{y}& = & \frac{x}{5-x} & \\ 
+\ln\left(e^{y}\right) & = & \ln\left(\frac{x}{5-x}\right) & \\ 
+y & = & \ln\left(\frac{x}{5-x}\right) & \\
 \end{array}\]
 
 We claim $f^{-1}(x) = \ln\left(\frac{x}{5-x}\right)$.  To verify this analytically, we would need to verify the compositions $\left(f^{-1} \circ f\right)(x) = x$ for all $x$ in the domain of $f$ and that $\left(f \circ f^{-1}\right)(x) = x$ for all $x$ in the domain of $f^{-1}$.   We leave this, as well as a graphical check, to the reader in Exercise \ref{checkingexpfracinverse}.
@@ -579,13 +526,10 @@ We claim $f^{-1}(x) = \ln\left(\frac{x}{5-x}\right)$.  To verify this analytical
 
 \item We recognize the equation $\frac{5e^{x}}{e^{x}+1} = 4$ as $f(x) = 4$.  Hence, our solution is $x = f^{-1}(4) = \ln\left(\frac{4}{5-4}\right) = \ln(4)$.  
 
-We can check this fairly quickly algebraically.  Using  $e^{\ln(4)} = 4$, we find $\frac{5e^{\ln(4)}}{e^{\ln(4)}+1}  = \frac{5(4)}{4+1} = \frac{20}{5} = 4$. \qed
-
+We can check this fairly quickly algebraically.  Using  $e^{\ln(4)} = 4$, we find $\frac{5e^{\ln(4)}}{e^{\ln(4)}+1}  = \frac{5(4)}{4+1} = \frac{20}{5} = 4$. 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
-
-\pagebreak
 
 Our last example uses the tools of this section along with those developed in Section \ref{AppDerivatives}.
 
@@ -605,13 +549,11 @@ Our last example uses the tools of this section along with those developed in Se
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
 \item  To determine where $f$ is increasing and decreasing, we need to make a sign diagram for $f'(x)$.  Since the domain of $f'$ is all real numbers, we just need to find the zeros of $f'$. 
-
-\medskip
 
 Solving $f'(x) =  3e^{-x} - 3x e^{-x} = 0$ gives $3e^{-x} (1-x) = 0$ so $3e^{-x} = 0$, which has no solution,  or $1-x =0$ so $x=1$.  We make a sign diagram for $f'(x)$ below.
 
@@ -673,15 +615,15 @@ We get $f$ is increasing on $(-\infty, 1)$ and decreasing on $(1, \infty)$.
 
 \end{image}
 
-\medskip
+
 
 \item Using the sign diagram for $f'(x)$, we see we have a local maximum at $(1, f(1)) = \left(1, 3e^{-1} \right)$.
 
-\medskip
+
 
 \item Once again, the domain of $f''$ is all real numbers, so our first step in constructing a sign diagram for $f''(x)$ is to find the zeros.
 
-\medskip
+
 
 Solving $f''(x) = 3xe^{-x} - 6e^{-x} = 0$ gives $3e^{-x}(x-2) = 0$ so either $3e^{-x} = 0$, which has no solution, or $x-2 = 0$, so $x = 2$. We make the sign diagram for $f''(x)$ below.
 
@@ -730,8 +672,8 @@ We see the graph of $f$ is concave up on $(-\infty, 2)$ and concave down on $(2,
 \node[below] at (\crit,-0.12) {$2$};
 %\node[above] at (\crit,0.15) {$0$};
 
-\node[above] at ({(\xmin+\crit)/2},0.15) {Down};
-\node[above] at ({(\crit+\xmax-0.6)/2},0.10) {Up};
+\node[above] at ({(\xmin+\crit)/2},0.15) {C. Down};
+\node[above] at ({(\crit+\xmax-0.6)/2},0.10) {C. Up};
 \node[right] at (\xmax+0.15,0.55) {$f(x)$};
 
 %\draw[->, gray] (\testL,-0.9) -- (\testL,-0.15);
@@ -744,32 +686,30 @@ We see the graph of $f$ is concave up on $(-\infty, 2)$ and concave down on $(2,
 
 \end{image}
 
-\medskip
+
 
 \item  Since $f$ changes concavity at $x=2$, we have an inflection point at $(2, f(2)) = \left( 2, 6e^{-2} \right)$.
 
-\bigskip
 
-\item We check using \href{https://www.desmos.com/calculator}{\underline{desmos}}:
+
+\item Below is our check usingh desmos.
 
 % https://www.desmos.com/calculator/ekrm7o7ecc
 \begin{center}
     \desmos{ekrm7o7ecc}{800}{600}
 \end{center}
 \end{enumerate}
-
+\end{explanation}
 
 \end{example}
 
-Note that the graph of $f(x) = 3xe^{-x}$ produced by the graphing utility in  Example \ref{exponentialcurvesketchingex} suggests the graph of $f$ has a horizontal asymptote as $x \rightarrow \infty$.
+Note that the graph of $f(x) = 3xe^{-x}$ produced by desmos in  Example \ref{exponentialcurvesketchingex} suggests the graph of $f$ has a horizontal asymptote $y=0$ as $x \rightarrow \infty$.
 
-\medskip
+Indeed, it is the case that $\lim_{x \rightarrow \infty} f(x) = 0$, however if we try to reason this analytically, we get another instance of an indeterminate form.\footnote{Previously, we've seen the indeterminate form `$\frac{0}{0}$.'}  As $x \rightarrow \infty$, $3x \rightarrow \infty$ but $e^{-x} \rightarrow 0$.  Hence, as $x \rightarrow \infty$, we get the indeterminate form `$\infty \cdot 0$.' Depending on how quickly the first factor approaches `$\infty$' and how quickly the second factor approaches `$0$', we could end up with `$\infty$', `$0$,' or some number in between.\footnote{It is important here to understand that the factor  $e^{-x}$ which results in the `$0$' in the indeterminate form  `$\infty \cdot 0$' is \textbf{approaching} $0$ and is not actually \textbf{equal} to $0$.  An incorrect reasoning that  the form $\infty \cdot 0 \rightarrow 0$ in this case is that `anything times $0$ is $0$.'  Again, we'll have more to say about this in the Exercises.}
 
-Indeed, it is the case that $\ds{\lim_{x \rightarrow \infty} f(x) = 0}$, however if we try to reason this analytically, we get another instance of an indeterminate form.\footnote{Previously, we've seen the indeterminate form `$\frac{0}{0}$.'}  As $x \rightarrow \infty$, $3x \rightarrow \infty$ but $e^{-x} \rightarrow 0$.  Hence, as $x \rightarrow \infty$, we get the indeterminate form `$\infty \cdot 0$.' Depending on how quickly the first factor approaches `$\infty$' and how quickly the second factor approaches `$0$', we could end up with `$\infty$', `$0$,' or some number in between.\footnote{It is important here to understand that the factor  $e^{-x}$ which results in the `$0$' in the indeterminate form  `$\infty \cdot 0$' is \textbf{approaching} $0$ and is not actually \textbf{equal} to $0$.  An incorrect reasoning that  the form $\infty \cdot 0 \rightarrow 0$ in this case is that `anything times $0$ is $0$.'  Again, we'll have more to say about this in the Exercises.}
 
-\medskip
 
-We'll explore more of this phenomenon in Exercise \ref{powerexponentialgrowthex}.\footnote{With formal proofs found in Calculus \ldots} For now, we take it as true that exponential functions dominate polynomial functions so in the above indeterminate form,  the factor $e^{-x}$ determines\footnote{Less formally, the factor $e^{-x} \rightarrow 0$ `faster' than the factor $3x \rightarrow \infty$ which forces the product $3x e^{-x} \rightarrow 0$.} the end behavior of $f$, so $\ds{\lim_{x \rightarrow \infty} f(x) = 0}$.
+We'll explore more of this phenomenon in Exercise \ref{powerexponentialgrowthex}.\footnote{With formal proofs found in Calculus \ldots} For now, we take it as true that exponential functions dominate polynomial functions so in the above indeterminate form,  the factor $e^{-x}$ determines\footnote{Less formally, the factor $e^{-x} \rightarrow 0$ `faster' than the factor $3x \rightarrow \infty$ which forces the product $3x e^{-x} \rightarrow 0$.} the end behavior of $f$, so $\lim_{x \rightarrow \infty} f(x) = 0$.
 
 
 %% SKIPPED %% \input{ExercisesforExponentialEquationsandInequalities}
