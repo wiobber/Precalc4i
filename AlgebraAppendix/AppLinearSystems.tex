@@ -17,7 +17,7 @@
 
 This section of the Appendix combines ideas from Section \ref{AppLinearEqIneq} and \ref{AppLines} so that we can start to solve systems of linear equations.  Before we get ahead of ourselves, let's review a few definitions.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -27,15 +27,15 @@ This section of the Appendix combines ideas from Section \ref{AppLinearEqIneq} a
 
 %% \ebm}
 
-\medskip
+ 
 
 For reasons which will become clear when you study Chapter \ref{SystemsofEquationsandMatrices}, we are using subscripts in Definition \ref{lineareqntwovariables} to indicate different, but fixed, real numbers and those subscripts have no mathematical meaning beyond that.  For example, $3x - \frac{y}{2} = 0.1$ is a linear equation in two variables with $a_1 = 3$, $a_2 = -\frac{1}{2}$ and $c = 0.1$.  We can also consider $x = 5$ to be a linear equation in two variables\footnote{Critics may argue that $x=5$ is clearly an equation in one variable.  It can also be considered an equation in $117$ variables with the coefficients of $116$ variables set to $0$.  As with many conventions in Mathematics, the context will clarify the situation.} by identifying $a_1 = 1$, $a_2 = 0$, and $c = 5$.  
 
-\medskip
+ 
 
 If $a_1$ and $a_2$ are both $0$, then depending on $c$, we get either an equation which is \textit{always} true, called an \index{equation ! identity}\index{identity ! statement which is always true}\textbf{identity}, or an equation which is \textit{never} true, called a \index{equation ! contradiction}\index{contradiction}\textbf{contradiction}. (If $c = 0$, then we get $0 = 0$, which is always true.  If $c \neq 0$, then we'd have  $0 \neq 0$, which is never true.)  Even though identities and contradictions have a large role to play throughout Chapter \ref{SystemsofEquationsandMatrices}, we do not consider them linear equations.  The key to identifying linear equations is to note that the variables involved are to the first power and that the coefficients of the variables are numbers.  Some examples of equations which are non-linear are $x^2 + y = 1$, $xy = 5$ and $e^{2x} + \ln(y) = 1$.  The reader should consider why these do not satisfy Definition \ref{lineareqntwovariables}.  
 
-\medskip
+ 
 
 We know from our work is Sections \ref{AppLines} that the graphs of linear equations are lines.  If we couple two or more linear equations together, in effect to find the points of intersection of two or more lines, we obtain a \textbf{system of linear equations in two variables}. \index{system of equations ! linear ! two variables} Our first example explores the basic techniques for solving these systems.  Remember - if we are looking for points in the plane, then both the $x$ and $y$ values are important.  This is a key distinction between solving one equation and solving a \emph{system} of equations.
 
@@ -142,23 +142,23 @@ $~$
 
 \setlength{\extrarowheight}{0pt} 
 
-\medskip
+ 
 
 This system has infinitely many solutions and one way to describe the solution set to this system is to use the roster method\footnote{See Section \ref{AppSetTheory} for a review of this.} and write $\{(x,y) \, | \, 2x-4y = 6\}$.  While this is correct (and corresponds exactly to what's happening graphically, as we shall see shortly), we take this opportunity to introduce the notion of a \index{parametric solution} \index{system of equations ! parametric solution}\textbf{parametric solution to a system}.  
 
-\medskip
+ 
 
 Our first step is to solve $2x-4y = 6$ for one of the variables, say $y = \frac{1}{2} x - \frac{3}{2}$.  For each value of $x$, the formula $y = \frac{1}{2} x - \frac{3}{2}$ determines the corresponding $y$-value of a solution.  Since we have no restriction on $x$, it is called a \index{system of equations ! free variable}\index{free variable}\textbf{free variable}.  We let $x=t$, a so-called `parameter', and get $y = \frac{1}{2} t - \frac{3}{2}$. Our set of solutions can then be described as $\left\{ \left(t, \frac{1}{2} t - \frac{3}{2}\right) \, | \, -\infty < t < \infty \right\}$.\footnote{Note that we could have just as easily chosen to solve $2x-4y = 6$ for $x$ to obtain $x = 2y + 3$.  Letting $y$ be the parameter $t$, we have that for any value of $t$, $x = 2t+3$, which gives $\{(2t+3, t) \, | \, - \infty < t < \infty\}$.  There is no one correct way to parameterize the solution set, which is why it is always best to check your answer.}  
 
-\medskip
+ 
 
 For specific values of $t$, we can generate solutions.  For example, $t=0$ gives us the solution $\left(0,-\frac{3}{2}\right)$;  $t = 117$ gives us $(117,57)$, and while we can  check that each of these particular solutions satisfy both equations, the question is how do we check our general answer algebraically?  Same as always.  
 
-\medskip
+ 
 
 We claim that for any real number $t$, the pair $\left(t, \frac{1}{2} t - \frac{3}{2}\right)$ satisfies both equations.  Substituting $x = t$ and $y =  \frac{1}{2} t - \frac{3}{2}$ into $2x - 4y = 6$ gives $2t - 4\left(\frac{1}{2} t - \frac{3}{2}\right) = 6$.  Simplifying, we get $2t - 2t + 6 = 6$, which is always true.  Similarly, when we make these substitutions in the equation $3x-6y = 9$, we get $3t - 6\left(\frac{1}{2} t - \frac{3}{2}\right) = 9$ which reduces to $3t - 3t + 9 = 9$, so it checks out, too.  
 
-\medskip
+ 
 
 Geometrically, $2x-4y = 6$ and $3x-6y=9$ are the same line, which means that they intersect at every point on their graphs.  The reader is encouraged to think about how our parametric solution says exactly that.
 
@@ -288,37 +288,35 @@ $~$
 
 A few remarks about Example \ref{reviewsubelim} are in order.  Notice that some of the systems of linear equations had solutions while others did not.  Those which have solutions are called \index{consistent system}\index{system of equations ! consistent}\textbf{consistent}, those with no solution are called \index{inconsistent system}\index{system of equations ! inconsistent}\textbf{inconsistent}.  We also distinguish between the two different types of behavior among consistent systems. Those which admit free variables are called \index{system of equations ! dependent}\index{dependent system}\textbf{dependent} and those with no free variables are called \index{system of equations ! independent}\index{independent system}\textbf{independent}.\footnote{In the case of systems of linear equations, regardless of the number of equations or variables, consistent independent systems have exactly one solution.  The reader is encouraged to think about why this is the case for linear equations in two variables.  Hint: think geometrically.}   
 
-\medskip
+ 
 
 Using this new vocabulary, we classify numbers 1, 2 and 3 in Example \ref{reviewsubelim} as consistent independent systems, number 4 is consistent dependent, and numbers 5 and 6 are inconsistent.\footnote{The adjectives `dependent' and `independent' apply only to \textit{consistent} systems -- they describe the \textit{type} of solutions.  Is there a free variable (dependent) or not (independent)?}  The system in 6 above is called \index{system of equations ! overdetermined}\index{overdetermined system}\textbf{overdetermined}, since we have more equations  than variables.\footnote{If we think if each variable being an unknown quantity, then ostensibly, to recover two unknown quantities, we need two pieces of information - i.e., two equations.  Having more than two equations suggests we have more information than necessary to determine the values of the unknowns.  While this is not necessarily the case, it does explain the choice of terminology `overdetermined'.}  Not surprisingly, a system with more variables than equations is called \index{system of equations ! underdetermined}\index{underdetermined system}\textbf{underdetermined}.  While the system in number 6 above is overdetermined and inconsistent, there exist overdetermined consistent systems (both dependent and independent) and we leave it to the reader to think about what is happening algebraically and geometrically in these cases.  Likewise, there are both consistent and inconsistent underdetermined systems,\footnote{We need more than two variables to give an example of the latter.} but a consistent underdetermined system of linear equations is necessarily dependent.\footnote{Again, experience with systems with more variables helps to see this here, as does a solid course in Linear Algebra.}  
 
-\medskip
+ 
 
 We end this section with a story problem.  It is an example of a classic ``mixture'' problem and should be familiar to most readers.  The basic goal here is to create two equations: one which represents \[\text{stuff} + \text{other stuff} = \text{total stuff}\] and the other which represents \[\text{value of stuff} + \text{value of other stuff} =  \text{value of total stuff.}\] 
  
 \begin{example} \label{dudebromixture} The Dude-Bros want to create a highly caffeinated, yet still drinkable, fruit punch for their annual ``Disturb the Neighbors BBQ and Dance Competition''. They plan to add Sasquatch Sweat\textsuperscript{TM} Energy Drink, which has 100 mg.\ of caffeine per fluid ounce, to Frooty Giggle Delight\textsuperscript{TM}, which has only 3 mg.\ of caffeine per fluid ounce.  How much of each component is required to make 5 gallons\footnote{Warning: unit conversion ahead!} of a fruit punch that has 80 mg.\ of caffeine per fluid ounce.
 
-\medskip
+ 
 
 {\bf Solution.}  Let $S$ stand for the number of fluid ounces of Sasquatch Sweat\textsuperscript{TM} Energy Drink and let $F$ be the number of fluid ounces of Frooty Giggle Delight\textsuperscript{TM} that will be added together.  The goal is to make 5 gallons and there are 128 fluid ounces per gallon so the first equation is \[S + F = 640.\] That equation describes ``stuff + other stuff = total stuff'' measured in fluid ounces. Now we need to consider the value of the stuff - in this case we need to see how much caffeine is being contributed by each component.  Each fluid ounce of Sasquatch Sweat\textsuperscript{TM} contains 100 mg.\ of caffeine so $S$ fluid ounces would contain $100S$ mg./ of caffeine.
 
-\medskip
+ 
 
 Similarly, the $F$ fluid ounces of Frooty Giggle Delight\textsuperscript{TM} add $3F$ mg.\ of caffeine to the total mixture.  Thus when we go to express ``value of stuff + value of other stuff = value of total stuff'' we need to figure out how much caffeine is supposed to be in the end product.  Well, the goal was 5 gallons of punch that had 80 mg.\ of caffeine per fluid ounce so the Dude-Bros need to end up with $5*128*80 = 51200$ mg. of caffeine when they're done.  Hence the second is equation is \[100S + 3F = 51200.\]
 
-\medskip
+ 
 
 By turning the first equation into $F = 640 - S$ and substituting that into the second equation we get \[100S + 3(640 - S) = 51200\] which yields $S = \frac{49280}{97} \approx 508.04$ fluid ounces.  Back-substituting this value of $S$ into the first equation gives us $F = \frac{12800}{97} \approx 131.96$ fluid ounces.
 
-\medskip 
+  
 
 The reader should take the time to verify that $S = \frac{49280}{97}$ and $F = \frac{12800}{97}$ do indeed satisfy both equations and thus are the solution to the problem. Those are fairly unattractive numbers so we end this example by discussing a way to verify an approximate answer which is \emph{reasonable} without having to fight with fractions.  Round $S$ down to 508 and round $F$ up to 132. Clearly $508 + 132 = 640$ so the first equation is still satisfied.  Notice that $100*508 + 3*132 = 51196$ which is really close to 51200. Thus the second equation is nearly satisfied which means the values $S = 508$ and $F = 132$, while not precise, are reasonable.\footnote{Just be careful here - sometimes ``close enough for the Dude-Bros'' is not good enough for your Professor!} \qed
 
 \end{example}
 
-\newpage
 
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforAppLinearSystems}
 
