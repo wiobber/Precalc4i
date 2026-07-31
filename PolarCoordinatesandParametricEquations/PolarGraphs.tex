@@ -265,120 +265,16 @@ Below we graph both $r = 4\sqrt{\cos(2\theta)}$ and $r = -4\sqrt{\cos(2\theta)}$
 
 As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$, which are the  zeros of the functions $r = \pm 4 \sqrt{\cos(2\theta)}$, serve as guides for us to draw the curve as is passes through the origin.
 
-\begin{tabular}{cc}
-
-\begin{mfpic}[13]{-1}{7}{-5}{5}
-\axes
-\xmarks{1.5708, 3.1416, 4.7124, 6.2832}
-\ymarks{-4,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-4$} -4, {$4$} 4}
-\normalsize
-\tlabel[cc](7.25,-0.5){\scriptsize $\theta$}
-\tlabel[cc](0.25,5){\scriptsize $r$}
-\tlabelsep{1pt}
-\tlabelrect[0pt](0.78,2){\vphantom{1}\scriptsize $1\,$}
-\tlabelrect[0pt](0.78,-2){\vphantom{1}\scriptsize $2\,$}
-\tlabelrect[0pt](5.5,-2){\vphantom{1}\scriptsize $3\,$}
-\tlabelrect[0pt](5.5,2){\vphantom{1}\scriptsize $4\,$}
-\dotted \function{0, 6.2832, 0.1}{cos(x)}
-\arrow \function{0,0.78,0.1}{4*sqrt(cos(x))}
-\function{0.78,1.57,0.1}{4*sqrt(cos(x))}
-\arrow \function{4.713,5.5,0.1}{4*sqrt(cos(x))}
-\function{5.5,6.28,0.1}{4*sqrt(cos(x))}
-\point[2pt]{(0,4), (0,-4), (1.57,0), (4.71,0), (6.28,4), (6.28,-4)}
-\penwd{1.025}
-\arrow \function{0,0.78,0.1}{0-4*sqrt(cos(x))}
-\function{0.78,1.5,0.1}{0-4*sqrt(cos(x))}
-\arrow \function{4.8,5.5,0.1}{0-4*sqrt(cos(x))}
-\function{5.5,6.28,0.1}{0-4*sqrt(cos(x))}
-\end{mfpic}
-
-& 
-
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabelsep{1pt}
-\tlabelrect[0pt](3,2){\vphantom{1}\scriptsize $1\,$}
-\tlabelrect[0pt](-3,-2){\vphantom{1}\scriptsize $2\,$}
-\tlabelrect[0pt](-3,2){\vphantom{1}\scriptsize $4\,$}
-\tlabelrect[0pt](3,-2){\vphantom{1}\scriptsize $3\,$}
-\point[2pt]{\plr{(0,0),(4,0), (-4,0)}}
-\dashed \polyline{(-4,-4), (4,4)}
-\dashed \polyline{(-4,4), (4,-4)}
-\gclear \tlabelrect[cc](4,4){$\theta = \frac{\pi}{4}$}
-\gclear \tlabelrect[cc](-4,4){$\theta = \frac{3\pi}{4}$}
-\arrow \plrfcn{0,22,5}{4*sqrt(cosd(2*t))}
-\plrfcn{22,45,5}{4*sqrt(cosd(2*t))}
-\arrow \plrfcn{135,157,5}{4*sqrt(cosd(2*t))}
-\plrfcn{157,180,5}{4*sqrt(cosd(2*t))}
-\penwd{1.025}
-\arrow \plrfcn{0,22,5}{0-4*sqrt(cosd(2*t))}
-\plrfcn{22,45,5}{0-4*sqrt(cosd(2*t))}
-\arrow \plrfcn{135,157,5}{0-4*sqrt(cosd(2*t))}
-\plrfcn{157,180,5}{0-4*sqrt(cosd(2*t))}
-\end{mfpic} \\
-
- $r = 4\sqrt{\cos(2\theta)}$ and &  \\
-\boldmath $r = -4\sqrt{\cos(2\theta)}$  &  \\
-
-\end{tabular}
-
 As we plot points corresponding to values of  $\theta$ outside of the interval $[0,\pi]$, we find ourselves retracing parts of the curve,\footnote{In this case, we could have generated the entire graph by using just the plot $r = 4\sqrt{\cos(2\theta)}$, but graphed over the interval  $[0,2\pi]$ in the $\theta r$-plane.  We leave the details to the reader.} so our final answer is below.
 
- \begin{tabular}{cc}
+% https://www.geogebra.org/classic/q7edszea
+\begin{center}
+    \geogebra{q7edszea}{800}{600}
+\end{center}
 
-\begin{mfpic}[13]{-1}{7}{-5}{5}
-\axes
-\xmarks{1.5708, 3.1416, 4.7124, 6.2832 }
-\ymarks{-4,4}
-\tlpointsep{4pt}
-\scriptsize
-\axislabels{x}{{$\frac{\pi}{4}$} 1.57, {$\frac{\pi}{2}$} 3.14,  {$\frac{3\pi}{4}$} 4.71,  {$\pi$} 6.28}
-\axislabels{y}{{$-4$} -4, {$4$} 4}
-\normalsize
-\tlabel[cc](7.25,-0.5){\scriptsize $\theta$}
-\tlabel[cc](0.25,5){\scriptsize $r$}
-\point[4pt]{(0,4), (0,-4), (1.57,0), (4.71,0), (6.28,4), (6.28,-4)}
-\penwd{1.25pt}
-\function{0,1.5,0.1}{0-4*sqrt(cos(x))}
-\function{4.8,6.28,0.1}{0-4*sqrt(cos(x))}
-\function{0,1.57,0.1}{4*sqrt(cos(x))}
-\function{4.713,6.28,0.1}{4*sqrt(cos(x))}
-\end{mfpic}
 
-& 
 
-\begin{mfpic}[13]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5.25,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlpointsep{4pt}
-\axislabels {x}{{\scriptsize $-4 \hspace{6pt}$} -4.5, {\scriptsize $4$} 4.5}
-\axislabels {y}{{\scriptsize $-4$} -4, {\scriptsize $4$} 4}
-\point[4pt]{\plr{(0,0),(4,0), (-4,0)}}
-\dashed \polyline{(-4,-4), (4,4)}
-\dashed \polyline{(-4,4), (4,-4)}
-\gclear \tlabelrect[cc](4,4){$\theta = \frac{\pi}{4}$}
-\gclear \tlabelrect[cc](-4,4){$\theta = \frac{3\pi}{4}$}
-\penwd{1.25pt}
-\plrfcn{0,45,5}{4*sqrt(cosd(2*t))}
-\plrfcn{135, 225,5}{4*sqrt(cosd(2*t))}
-\plrfcn{315, 360,5}{4*sqrt(cosd(2*t))}
-\end{mfpic} \\
-\hspace{.25in} $r = \pm 4\sqrt{\cos(2\theta)}$  & \hspace{.75in} $r^2 = 16\cos(2\theta)$ \\
-\hspace{.25in} in the $\theta r$-plane          & \hspace{.75in} in the $xy$-plane \\
-
-\end{tabular}
-
+ 
 \end{enumerate}
 
  
