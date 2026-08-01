@@ -1137,7 +1137,7 @@ For the case  $r = -2$, we visualize our rotation starting $2$ units to the left
 % Right panel
 %================================================
 
-\begin{scope}[xshift=8.0cm]
+\begin{scope}[xshift=12cm]
 
 % Polar axis
 \draw[->] (-4.8,0) -- (4.8,0);
@@ -1205,7 +1205,7 @@ To find a different representation for $P$ with $r = -4$, we may choose any angl
 % Parameters
 %------------------------------------------------
 
-\def\panelwidth{8.0}
+\def\panelwidth{20.0}
 \def\ang{30}
 \def\pointdist{4}
 
@@ -1265,7 +1265,7 @@ radius=0.75];
 % Right panel : P(-4,-5pi/6)
 %================================================
 
-\begin{scope}[xshift=8.0cm]
+\begin{scope}[xshift=12cm]
 
 % Polar axis
 \draw[->] (-4.8,0)--(4.8,0);
@@ -1338,6 +1338,15 @@ radius=0.75];
 
 \def\panelwidth{7.6}
 \def\radius{3.0}      % display length (represents r=117)
+%%%%
+\def\R{2}
+\def\tdeg{60} % theta, in degrees
+\def\ttdeg{60} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{1}   % ending radius (grows slightly over the sweep)
+\def\amax{-450}    % total sweep in degrees: 360 + 60 = 7*180/3
 
 %================================================
 % Left panel
@@ -1366,6 +1375,12 @@ radius=0.75];
 
 \node[right] at (1.20,-0.55)
 {$\theta=-\frac{5\pi}{2}$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[->,
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
 
 
 %================================================
@@ -1397,6 +1412,12 @@ radius=0.75];
 % Label
 \node[below] at (P)
 {$P\left(117,-\frac{5\pi}{2}\right)$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[densely dotted,
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
 
 \end{scope}
 

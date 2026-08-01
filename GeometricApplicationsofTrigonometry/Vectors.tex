@@ -84,80 +84,88 @@ From the vector diagram, we get a triangle, the lengths of whose sides are the m
 
 From the given bearing information, we go through the usual geometry to determine that the angle between the sides of length 35 and 175 measures $100^{\circ}$. 
 
+
 \begin{center}
 \begin{tabular}{cc}
-\begin{mfpic}[15]{-1}{8}{-2}{9}
-\axes
-\tlabel[cl](8,-0.5){\scriptsize E}
-\tlabel[cl](0.5,9){\scriptsize N}
-\arrow \parafcn{85,55,-5}{5*dir(t)}
-\tlabel[cc](1.88, 5.17){\scriptsize $40^{\circ}$}
-%\arrow \parafcn{5,45,5}{5*dir(t)}
-%\tlabel[cc](4.98, 2.32){\scriptsize $50^{\circ}$}
-\arrow \parafcn{275,325,-5}{1.5*dir(t)}
-\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
-%\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
-%\tlabel[cc](2.5, -0.52){\scriptsize $-30^{\circ}$}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\tlabel[cc](6.75, 8.04){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](2.16, -1.25){\scriptsize $\overrightarrow{w}$}
-\arrow \dashed \polyline{(0,0), (8.16,6.66)}
-\dotted \polyline{(1.73, -1), (8.16, 6.66)}
-\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
-\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
-\normalsize
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (6.43, 7.66)}
-\arrow \polyline{(0,0), (1.73, -1)}
-\end{mfpic}
+
+%================ LEFT FIGURE =====================
+\begin{tikzpicture}[scale=0.75,font=\large,
+    >=Latex,
+    line cap=round,
+    line join=round]
+
+% Axes
+\draw[->,line width=1.2pt] (-0.5,0)--(8.5,0) node[right] {\scriptsize E};
+\draw[->,line width=1.2pt] (0,-1.5)--(0,9) node[above] {\scriptsize N};
+
+% Vectors
+\draw[->,line width=1.5pt] (0,0)--(6.43,7.66)
+    node[pos=1.05,left] {\scriptsize $\overrightarrow{v}$};
+
+\draw[->,line width=1.5pt] (0,0)--(1.73,-1)
+    node[pos=.99,below] {\scriptsize $\overrightarrow{w}$};
+
+% Construction lines
+\draw[dashed,->] (0,0)--(8.16,6.66);
+\draw[dotted] (1.73,-1)--(8.16,6.66);
+\draw[dotted] (6.43,7.66)--(8.16,6.66);
+
+\node[right] at (8.16,6.66)
+    {\scriptsize $\overrightarrow{v}+\overrightarrow{w}$};
+
+% Angle arcs
+\draw[->] (85:5) arc (85:55:5);
+\node at (1.88,5.17) {\scriptsize $40^\circ$};
+
+\draw[->] (275:1.5) arc (275:325:1.5);
+\node at (1,-1.73) {\scriptsize $60^\circ$};
+
+\end{tikzpicture}
 
 &
-
 \hspace{0.75in}
 
-\begin{mfpic}[15]{-1}{8}{-2}{9}
-\axes
-\tlabel[cl](8,-0.5){\scriptsize E}
-\tlabel[cl](0.5,9){\scriptsize N}
-\tlabel[cc](3,4.5){\scriptsize $175$}
-\tlabel[cc](5,3.5){\scriptsize $c$}
-\tlabel[cc](7.5, 7.5){\scriptsize $35$}
-\arrow \parafcn{85,55,-5}{3*dir(t)}
-\tlabel[cc](1.2, 3.3){\scriptsize $40^{\circ}$}
-%\arrow \parafcn{5,45,5}{5*dir(t)}
-%\tlabel[cc](4.98, 2.32){\scriptsize $50^{\circ}$}
-\arrow \parafcn{275,325,-5}{1.5*dir(t)}
-\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
-%\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
-%\tlabel[cc](2.5, -0.52){\scriptsize $-30^{\circ}$}
-%\setlength{\headlen}{4pt}
-%\headshape{1}{1}{true}
-%\tlabel[cc](6.75, 8.04){\scriptsize $\overrightarrow{v}$}
-%\arrow \polyline{(0,0), (1.73, -1)}
-%\tlabel[cc](2.16, -1.25){\scriptsize $\overrightarrow{w}$}
-%\dotted \polyline{(1.73, -1), (8.16, 6.66)}
-%\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
-\arrow \reverse \arrow \shiftpath{(6.43, 7.66)} \parafcn{235, 325,5}{dir(t)}
-\tlabel[cc]{(6.5,6.25)}{\scriptsize $100^{\circ}$}
-\arrow \reverse \arrow \parafcn{41,49,1}{5*dir(t)}
-\tlabel[cc]{(3.9, 3.9)}{\scriptsize $\alpha$}
-\normalsize
-\dotted \polyline{(5.9,7.66), (6.9, 7.66)}
-\dotted \polyline{(6.43, 7.15), (6.43,8.15)}
-\dotted  \polyline{(0,0), (1.73, -1)}
-\penwd{1.25pt}
-\polyline{(0,0), (6.43, 7.66)}
-\polyline{(0,0), (8.16,6.66)}
-\polyline{(6.43, 7.66), (8.16, 6.66)}
-\end{mfpic}
+%================ RIGHT FIGURE =====================
+\begin{tikzpicture}[scale=0.75,font=\large,
+    >=Latex,
+    line cap=round,
+    line join=round]
 
+% Axes
+\draw[->,line width=1.2pt] (-0.5,0)--(8.5,0) node[right] {\scriptsize E};
+\draw[->,line width=1.2pt] (0,-1.5)--(0,9) node[above] {\scriptsize N};
 
+% Triangle
+\draw[line width=1.5pt]
+    (0,0)--(6.43,7.66)--(8.16,6.66)--cycle;
 
-\\
+% Dotted reference lines
+\draw[dotted] (0,0)--(1.73,-1);
+\draw[dotted] (5.93,7.66)--(6.93,7.66);
+\draw[dotted] (6.43,7.15)--(6.43,8.17);
+
+% Side labels
+\node at (3,4.5) {\scriptsize 175};
+\node at (5,3.5) {\scriptsize $c$};
+\node at (7.5,7.5) {\scriptsize 35};
+
+% Angle arcs
+\draw[->] (85:3) arc (85:55:3);
+\node at (1.2,3.3) {\scriptsize $40^\circ$};
+
+\draw[->] (275:1.5) arc (275:325:1.5);
+\node at (1,-1.73) {\scriptsize $60^\circ$};
+
+\draw[<->] ($(6.43,7.66)+({cos(235)},{sin(235)})$)
+    arc (235:325:1);
+\node at (6.5,6.25) {\scriptsize $100^\circ$};
+
+\draw[<->] (41:5) arc (41:49:5);
+\node at (3.9,3.9) {\scriptsize $\alpha$};
+
+\end{tikzpicture}
 
 \end{tabular}
-
 \end{center}
 
 From the Law of Cosines, we determine $c = \sqrt{31850 - 12250\cos(100^{\circ})} \approx 184$, which means the true speed of the plane is (approximately) $184$ miles per hour. 

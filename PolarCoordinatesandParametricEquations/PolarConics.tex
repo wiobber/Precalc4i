@@ -332,9 +332,7 @@ That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'
 \node at (0, 5.5) {\small $y$};
 \node at (2, -0.5) {\scriptsize $2$};
 \node at (-.5, -4) {\scriptsize $-4$};
-\node at (2,-4.5) {\small $P(x,y) = (2, -4)$};
-\node at (2,-5) {\small $P(x',y') \approx (-2.46,-3.73)$};
-\fill (2,-4) circle (2pt);
+
 %Rotation arc
 \draw[->]
     (4,0)
@@ -438,7 +436,6 @@ We put Theorem \ref{rotatedconicthm} to good use in the following example.
 
 This means $\cot(2\theta) = 0$ which gives $\theta = \frac{\pi}{4} + \frac{\pi}{2} k$ for integers $k$.  We choose $\theta = \frac{\pi}{4}$ so that our rotation equations are $x = \frac{x' \sqrt{2}}{2} -\frac{y' \sqrt{2}}{2}$ and $y = \frac{x' \sqrt{2}}{2} + \frac{y' \sqrt{2}}{2}$.  The reader should verify that 
 
-\vspace{-.1in}
 
 \[ x^2 = \frac{(x')^2}{2} - x'y' +\frac{(y')^2}{2}, \quad xy = \frac{(x')^2}{2} -\frac{(y')^2}{2}, \quad y^2 = \frac{(x')^2}{2} + x'y' +\frac{(y')^2}{2} \]
 
@@ -469,17 +466,17 @@ Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in
 ]
 
 %Curve
-\draw[<->, thick, blue, smooth, samples=100, domain=-50:50] 
+\draw[<->, thick, blue, smooth, samples=100, domain=-45:45] 
    plot ({ 2*sec(\x) }, { 2+3*tan(\x)});
 
-\draw[<->, thick, blue, smooth, samples=100, domain=-50:50] 
+\draw[<->, thick, blue, smooth, samples=100, domain=-45:45] 
    plot ({ -2*sec(\x) }, { 2+3*tan(\x)});
 
  
 %Asymptotes
-\draw[dotted, domain=-4:4] plot({ \x }, { 1.5*\x + 2});
-\draw[dotted, domain=-4:4] plot({ \x }, { -1.5*\x + 2});
-\draw[dotted, domain=-4:4] (-2,2) -- (2,2);
+\draw[dotted, domain=-2:2] plot({ \x }, { 1.5*\x + 2});
+\draw[dotted, domain=-2:2] plot({ \x }, { -1.5*\x + 2});
+\draw[dotted] (-2,2) -- (2,2);
 %Points
 \fill[blue] (2,2) circle (2pt);
 \fill[blue] (-2,2) circle (2pt);
@@ -491,18 +488,12 @@ Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in
 \draw[->] (0,-5) -- (0,5);
 \node at (5.5, 0) {\small $x$};
 \node at (0, 5.5) {\small $y$};
-\node at (1.5,5) {\small $P(x,y) = P(x',y')$};
 
 %Rotation arc
 \draw[->]
     (4,0)
     arc[start angle=0,end angle=40,radius=4];
 \node at (4.25, 1.5) {\small $\theta = \frac{\pi}{4}$};
-\draw[->]
-    (0,4)
-    arc[start angle=90,end angle=130,radius=4];
-\node at (-1.5, 4.25) {\small $\theta = \frac{\pi}{4}$};
-
 \end{scope}
 
 \end{axis}
@@ -547,48 +538,59 @@ Our rotation equations are $x = x' \cos(\theta) - y' \sin(\theta) = \frac{4x'}{5
 
 Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose graph is a parabola opening along the positive $y'$-axis with vertex $(0,0)$. We graph this equation below. 
 
+
+
+\begin{image}
+\begin{tikzpicture}[rotate=36, transform shape]
+
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
+    axis lines=middle,
+    axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x'$}, ylabel={$y'$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2,-1, 1, 2, 3, 4},
+    ytick={-4, -3, -2,-1, 1, 2, 3, 4},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+
+%Curve
+ \draw[<->, thick, blue, smooth, samples=100, domain=-2.25:2.25] 
+    plot ({ \x }, { (\x)^2});
+
+%Points
+\fill[blue] (0,0) circle (2pt);
+\fill[blue] (-1, 1) circle (2pt);
+\fill[blue] (1, 1) circle (2pt);
+\fill[blue] (-2, 4) circle (2pt);
+\fill[blue] (2, 4) circle (2pt);
+
+% Create original axes by rotating -45 degrees counterclockwise around the origin (0,0)
+\begin{scope}[rotate around={-36:(0,0)}]
+  
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
+
+%Rotation arc
+\draw[->]
+    (3,0)
+    arc[start angle=0,end angle=28,radius=3];
+\node at (4, 1) {\small $\theta = \arctan\left(\frac{3}{4}\right)$};
+\end{scope}
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 \end{enumerate}
-\begin{center}
-
-
-\begin{mfpic}[18]{-4}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4.25,2.35){\scriptsize $x'$}
-\tlabel[cc](-2.5,4.5){\scriptsize $y'$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-3,-2,-1,1,2,3,4}
-\dashed \arrow \rotatepath{(0,0),36.87} \polyline{(-5,0), (5,0)}
-\dashed \arrow \rotatepath{(0,0),36.87} \polyline{(0,-5), (0,5)}
-\rotatepath{(0,0),36.87} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),36.87} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),36.87} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),36.87} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),126.87} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),126.87} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),126.87} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),126.87} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),216.87} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),216.87} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),216.87} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),216.87} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),306.87} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),306.87} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),306.87} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),306.87} \polyline{(4,-0.15),(4,0.15)}
-\point {(0,0)}
-\arrow \parafcn{5,30,5}{2*dir(t)}
-\tlabel[cc](3.75,0.5){\scriptsize $\theta = \arctan\left(\frac{3}{4}\right)$}
-\tcaption{$16x^2+24xy+9y^2 +15x-20y = 0$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \rotatepath{(0,0),36.87} \function{-2,2,0.1}{x**2}
-\end{mfpic}
-
-\end{center}
-
-
-
 \end{explanation}
 \end{example}
 
@@ -629,19 +631,15 @@ As you may expect, the quantity $B^2 - 4AC$ mentioned in Theorem \ref{conicclass
 
 First note that if the coefficient $B=0$ in the equation $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, Theorem \ref{conicclassification} reduces to the result presented in Exercise \ref{conicsclassificationnoxytermex} in Section \ref{Hyperbolas}.
 
- 
 
 Hence,  we proceed under the assumption that $B \neq 0$.  We rotate the $xy$-axes counter-clockwise through an angle $\theta$ which satisfies $\cot(2\theta) = \frac{A-C}{B}$ to produce an equation with no $x'y'$-term in accordance with  Theorem \ref{rotatedconicthm}:  $A'(x')^2 +C(y')^2 + Dx' + Ey' + F'= 0$.  
 
- 
 
 In this form, we can invoke Exercise \ref{conicsclassificationnoxytermex} in Section \ref{Hyperbolas} once more using the product $A'C'$.  Our goal is to find the product $A'C'$ in terms of the coefficients $A$, $B$ and $C$ in the original equation.  
 
- 
 
 We substitute $x = x' \cos(\theta) - y' \sin(\theta)$  $y =  x'\sin(\theta) + y'\cos(\theta)$ into  $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$.  After gathering like terms, the coefficient $A'$ on $(x')^2$ and the coefficient $C'$ on $(y')^2$ are
-\vspace{-.1in}
-\enlargethispage{.2in}
+
 \[ \begin{array}{rcll}
 
 A' & = & A \cos^{2}(\theta) + B \cos(\theta) \sin(\theta) + C \sin^{2}(\theta) \\  
@@ -721,7 +719,7 @@ Hence, $B^2 - 4AC = -4 A'C'$, so the quantity $B^2 - 4AC$ has the opposite sign 
 
 \end{enumerate}
 
-{\bf Solution.} This is a straightforward application of Theorem \ref{conicclassification}.
+\begin{explanation} This is a straightforward application of Theorem \ref{conicclassification}.
 
  \begin{enumerate}
  
@@ -729,9 +727,10 @@ Hence, $B^2 - 4AC = -4 A'C'$, so the quantity $B^2 - 4AC$ has the opposite sign 
  
 \item  Here,  $A = 5$, $B = 26$ and $C = 5$, so $B^2 - 4AC = 26^2 - 4(5)(5) = 576 > 0$. Theorem \ref{conicclassification} classifies the graph as a hyperbola, which matches our answer to Example \ref{graphrotatedconicex} number \ref{rotatedhyperbolaex}. 
 
-\item  Finally,  we have $A = 16$, $B = 24$ and $C = 9$ which gives $24^2 - 4(16)(9) = 0$. Theorem \ref{conicclassification} tells us that the graph is a parabola,  matching our result from Example \ref{graphrotatedconicex} number \ref{rotatedparabolaex}. \qed
+\item  Finally,  we have $A = 16$, $B = 24$ and $C = 9$ which gives $24^2 - 4(16)(9) = 0$. Theorem \ref{conicclassification} tells us that the graph is a parabola,  matching our result from Example \ref{graphrotatedconicex} number \ref{rotatedparabolaex}. 
 
 \end{enumerate}
+\end{explanation}
 
 \end{example}
 
@@ -768,28 +767,49 @@ One way to reconcile the `old' ideas of focus, directrix and eccentricity with t
 
 We begin by assuming the conic section has eccentricity $e$, a focus $F$ at the origin and that the  directrix is the vertical line $x = -d$ as in the figure below.  
 
-\begin{center}
-\begin{mfpic}[20]{-5}{5}{-1}{6}
-\axes
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](3.75,4){\scriptsize $P(r,\theta)$}
-\dashed \polyline{(3,4), (-4,4)}
-\dashed \polyline{(0,0), (3,4)}
-\plotsymbol {Asterisk}{(0, 0)}
-\point {(3,4)}
-\arrow \reverse \arrow \polyline{(-4,-0.5), (-4,6)}
-\tlabel[cc](-4,-1){\scriptsize $x = -d$}
-\arrow \reverse \arrow \polyline{(0.25,4.5), (2.75,4.5)}
-\gclear \tlabelrect[cc](1.5,4.5){\scriptsize $r\cos(\theta)$}
-\arrow \reverse \arrow \polyline{(-3.75,4.5), (-0.25,4.5)}
-\gclear \tlabelrect[cc](-2,4.5){\scriptsize $d$}
-\tlabel[cc](0.75,-0.5){\scriptsize $O = F$}
-\arrow \parafcn{5,48,5}{1.5*dir(t)}
-\tlabel[cc](1.75,0.75){\scriptsize $\theta$}
-\tlabel[cc](1.5,2.5){\scriptsize $r$}
-\end{mfpic}
-\end{center}
+\begin{image}
+\begin{tikzpicture}
+
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-5, xmax=5, ymin=-2, ymax=6,
+    ticks=none,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2,-1, 1, 2, 3, 4},
+    ytick={-4, -3, -2,-1, 1, 2, 3, 4},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+
+\draw[dashed] (3,4) -- (-4,4);
+\draw[dashed] (0,0) -- (3,4);
+\node at (3.75,4){\scriptsize $P(r,\theta)$};
+\node at (0,0) {*};
+\fill (3,4) circle (2pt);
+\draw[<->] (-4,-0.5) -- (-4,6);
+\draw[<->] (0.25,4.5) -- (2.75,4.5);
+\draw[<->] (-3.75,4.5) -- (-0.25,4.5);
+\node at (-4,-1) {\scriptsize $x = -d$}
+\node at (1.5,4.75) {\scriptsize $r\cos(\theta)$};
+\node at (-2.5, 5) {\scriptsize $d$};
+\node at (0.75,-0.5) {\scriptsize $O = F$};
+\node at (1.75,0.75) {\scriptsize $\theta$};
+\node at (1.5,2.5 ){\scriptsize $r$};
+\draw[->]
+    (1.5,0)
+    arc[start angle=0,end angle=50,radius=1.5];
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 
 Using a polar coordinate representation $P(r,\theta)$ for a point on the conic with $r > 0$, we get
 
@@ -1094,7 +1114,6 @@ Using all of our work, we graph the hyperbola below.
 
 \end{center}
 
-\vspace{-0.15in} \qed
 
 \end{enumerate}
 
