@@ -963,14 +963,6 @@ For the case  $r = -2$, we visualize our rotation starting $2$ units to the left
 % Point
 \coordinate (P) at (-120:\radius);
 
-% Dotted angle
-\draw[densely dotted]
-    (0.65,0)
-    arc[start angle=0,end angle=-120,radius=0.65];
-
-% Dotted guide
-\draw[densely dotted]
-    (0,0)--(P);
 
 % Solid ray
 \draw[very thick]
@@ -1027,18 +1019,9 @@ For the case  $r = -2$, we visualize our rotation starting $2$ units to the left
 % Point
 \coordinate (Q) at (240:\radius);
 
-% Dotted guide
-\draw[densely dotted]
-    (0,0)--(Q);
 
-% Dotted reference ray
-\draw[densely dotted]
-    (0,0)--(180:3.2);
 
-% Dotted angle
-\draw[densely dotted]
-    (0.65,0)
-    arc[start angle=0,end angle=60,radius=0.65];
+
 
 % Solid ray (negative radius)
 \draw[very thick]
@@ -1317,13 +1300,7 @@ radius=0.75];
      {\r*sin(30)-0.06*cos(30)});
 }
 
-% Dotted clockwise angle
-\draw[densely dotted]
-(0.75,0)
-arc[
-start angle=0,
-end angle=-150,
-radius=0.75];
+
 
 % Angle annotation
 \draw[->]
