@@ -24,7 +24,7 @@ Our first example reviews the basics of right triangle trigonometry.  The reader
 
  
 
-{\bf Solution.}  For definitiveness, we label the triangle below. 
+\begin{explanation} For definitiveness, we label the triangle below. 
 
 \begin{image}
 \begin{tikzpicture}[scale=1.15, line cap=round, line join=round]
@@ -88,13 +88,13 @@ Now that we have the measure of angle $\alpha$, we could find the measure of ang
 
  
 
-Once again, in the interests of minimizing propagated error, we opt to use the data given to us in the problem. According to Definition  \ref{righttrianglesinecosinetangent},  $\sin(\beta) = \frac{4}{7}$ so $\beta = \arcsin\left(\frac{4}{7}\right)$ radians $\approx 34.85^{\circ}$.  \qed
+Once again, in the interests of minimizing propagated error, we opt to use the data given to us in the problem. According to Definition  \ref{righttrianglesinecosinetangent},  $\sin(\beta) = \frac{4}{7}$ so $\beta = \arcsin\left(\frac{4}{7}\right)$ radians $\approx 34.85^{\circ}$.  
 
+\end{explanation}
 \end{example} 
 
 A few remarks about Example \ref{righttrianglereviewex}  are in order.  First, we adhere to the convention that a lower case Greek letter denotes an angle (as well as the measure of said angle) and the corresponding lowercase English letter represents the side (as well as the length of said side) opposite that angle.  
 
- 
 
 More specifically, $a$ is the side opposite $\alpha$, $b$ is the side opposite $\beta$ and $c$ is the side opposite $\gamma$.  Taken together, the pairs $(\alpha, a)$, $(\beta, b)$ and $(\gamma, c)$ are called \index{angle side opposite pairs} \textit{angle-side opposite pairs}.  
 
@@ -506,48 +506,23 @@ In order to use the Law of Sines to solve a triangle, we need at least one angle
 
 \begin{example}  \label{losex} Solve the following triangles.  Give exact answers and decimal approximations (rounded to hundredths) and sketch the triangle.
 
-\begin{multicols}{2}
-
 \begin{enumerate}
 
 \item  \label{losaas} $\alpha = 120^{\circ}$, $a = 7$ units, $\beta = 45^{\circ}$
 \item  \label{losasa} $\alpha = 85^{\circ}$, $\beta = 30^{\circ}$, $c = 5.25$ units
 
-\setcounter{HW}{\value{enumi}}
 
-\end{enumerate}
-
-\end{multicols}
-
-\begin{multicols}{2} 
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
 
 \item  \label{losnotriangleex} $\alpha = 30^{\circ}$, $a=1$ units, $c = 4$ units
 \item  \label{losrighttriangleex} $\alpha = 30^{\circ}$, $a=2$ units, $c = 4$ units
 
-\setcounter{HW}{\value{enumi}}
-
-\end{enumerate}
-
-\end{multicols}
-
-\begin{multicols}{2} 
-
-\begin{enumerate}
-
-\setcounter{enumi}{\value{HW}}
 
 \item  \label{lostwotriangleex} $\alpha = 30^{\circ}$, $a=3$ units, $c = 4$ units
 \item  \label{losonetriangleex} $\alpha = 30^{\circ}$, $a=4$ units, $c = 4$ units
 
 \end{enumerate}
 
-\end{multicols}
-
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1063,9 +1038,7 @@ Hence,  $\beta = 180^{\circ} - 30^{\circ} - 30^{\circ} = 120^{\circ}$.  The Law 
 \end{image}
 
 \end{enumerate}
-
-  \qed
-
+\end{explanation}
 \end{example}
 
 Some remarks about Example \ref{losex} are in order. First note that if we are given the measures of two of the angles in a triangle, say $\alpha$ and $\beta$, the measure of the third angle $\gamma$ is uniquely determined using the equation  $\gamma = 180^{\circ} - \alpha - \beta$.  Knowing the measures of all three angles of a triangle completely determines the triangle's  \textit{shape}.
@@ -1396,12 +1369,14 @@ That is, the area enclosed by the triangle $A = \frac{1}{2} \, (\text{the produc
 
  
 
-{\bf Solution.} From our work in  Example \ref{losex} number \ref{losaas}, we have all three angles and all three sides to work with.  However, to minimize propagated error, we choose $A = \frac{1}{2} ac \sin(\beta)$ from Theorem \ref{areaformulasine} because it uses the most pieces of given information.  
+\begin{explanation}
+
+From our work in  Example \ref{losex} number \ref{losaas}, we have all three angles and all three sides to work with.  However, to minimize propagated error, we choose $A = \frac{1}{2} ac \sin(\beta)$ from Theorem \ref{areaformulasine} because it uses the most pieces of given information.  
 
  
 
-We are given  $a = 7$ and $\beta = 45^{\circ}$, and we calculated $c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}$.   Using these values, we find the area  $A =  \frac{1}{2}(7)\left(\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \right) \sin\left(45^{\circ}\right) =  \approx 5.18$ square units. The reader is encouraged to check this answer against the results obtained using the other formulas in Theorem \ref{areaformulasine}. \qed
-
+We are given  $a = 7$ and $\beta = 45^{\circ}$, and we calculated $c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}$.   Using these values, we find the area  $A =  \frac{1}{2}(7)\left(\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \right) \sin\left(45^{\circ}\right) =  \approx 5.18$ square units. The reader is encouraged to check this answer against the results obtained using the other formulas in Theorem \ref{areaformulasine}. 
+\end{explanation}
 \end{example}
 
 \subsection{Bearings}
@@ -1584,7 +1559,7 @@ We make good use of bearings and the Law of Sines in our next example.
 
 Assuming the coastline continues to run due East, find the distance from the point $Q$ to the island.  What point on the shore is closest to the island? How far is the island from this point?  
 
-{\bf Solution.}  As illustrated above, the points $P$, $Q$, and the location of the island (represented as a point) form a triangle.  Using the bearings information given, we get that the angle between the shore and the island at point $P$ is $90^{\circ} - 60^{\circ}  = 30^{\circ}$ while  the angle between the shore and the island at point $Q$ is $90^{\circ} - 45^{\circ} = 45^{\circ}$.   
+\begin{explanation}  As illustrated above, the points $P$, $Q$, and the location of the island (represented as a point) form a triangle.  Using the bearings information given, we get that the angle between the shore and the island at point $P$ is $90^{\circ} - 60^{\circ}  = 30^{\circ}$ while  the angle between the shore and the island at point $Q$ is $90^{\circ} - 45^{\circ} = 45^{\circ}$.   
 
  
 
@@ -1776,7 +1751,8 @@ To  find the point on the coast closest to the island, which we've labeled as $C
  
   
  
- To find the distance from $Q$ to $C$, we note that $\beta = 180^{\circ} - 90^{\circ} - 45^{\circ} = 45^{\circ}$ so by symmetry,\footnote{Or by Definition  \ref{righttrianglesinecosinetangent} again \ldots} we get $x = y \approx 6.83$ miles.  Hence, the point on the shore closest to the island is approximately $6.83$ miles down the coast from the second observation point $Q$. \qed
+ To find the distance from $Q$ to $C$, we note that $\beta = 180^{\circ} - 90^{\circ} - 45^{\circ} = 45^{\circ}$ so by symmetry,\footnote{Or by Definition  \ref{righttrianglesinecosinetangent} again \ldots} we get $x = y \approx 6.83$ miles.  Hence, the point on the shore closest to the island is approximately $6.83$ miles down the coast from the second observation point $Q$. 
+ \end{explanation}
 \end{example} 
 
 
