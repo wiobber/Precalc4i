@@ -618,62 +618,167 @@ radius=0.65];
 
 From an `angles first' approach, we rotate $-\frac{3\pi}{4}$ then move out $3.5$ units from the pole. We see that $R$ is the point on the terminal side of $\theta = -\frac{3\pi}{4}$ which is $3.5$ units from the pole.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
+
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
+
+\def\panelwidth{6.3}
+\def\ang{-135}
+\def\raylength{3.4}
+\def\pointdist{3.5}
+
+%================================================
+% Left panel
+%================================================
+
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Dashed terminal ray
+\draw[dashed]
+    (0,0) -- (\ang:\raylength);
+
+% Tick marks on terminal ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above] at (0,0) {Pole};
+
+% Clockwise angle
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.75
+    ];
+
+\node at (0.25,-1)
+    {$\theta=-\frac{3\pi}{4}$};
 
 
-\begin{tabular}{ccc}
+%================================================
+% Middle panel
+%================================================
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\dashed \rotatepath{(0,0),45} \polyline{(-4.75,0),(0,0)}
-\rotatepath{(0,0), 45} \polyline{(-1,-0.15),(-1,0.15)}
-\rotatepath{(0,0), 45} \polyline{(-2,-0.15),(-2,0.15)}
-\rotatepath{(0,0), 45} \polyline{(-3,-0.15),(-3,0.15)}
-\rotatepath{(0,0),45} \polyline{(-4,-0.15),(-4,0.15)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](0.5,-1.75){\scriptsize $\theta = -\frac{3\pi}{4}$}
-\arrow \parafcn{-5, -130, -5}{1.25*dir(t)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$R\left(3.5, -\frac{3\pi}{4}\right)$}}
-\end{mfpic}
+\begin{scope}[xshift=6.3cm]
 
-&
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\dashed \rotatepath{(0,0),45} \polyline{(-4.75,0),(0,0)}
-\rotatepath{(0,0), 45} \polyline{(-1,-0.15),(-1,0.15)}
-\rotatepath{(0,0), 45} \polyline{(-2,-0.15),(-2,0.15)}
-\rotatepath{(0,0), 45} \polyline{(-3,-0.15),(-3,0.15)}
-\rotatepath{(0,0),45} \polyline{(-4,-0.15),(-4,0.15)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\tlabel[cc](0.5,-1.75){\scriptsize $\theta = -\frac{3\pi}{4}$}
-\arrow \parafcn{-5, -130, -5}{1.25*dir(t)}
-\point[3pt]{(-2.48,-2.48)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize \phantom{$R\left(3.5, -\frac{3\pi}{4}\right)$}}
-\end{mfpic}
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-&
+% Terminal ray
+\draw[very thick]
+    (0,0) -- (\ang:\raylength);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.3,-0.5){\scriptsize Pole}
-\point[3pt]{(-2.48,-2.48)}
-\tlabel[cc](-2.5,-3){\scriptsize $R\left(3.5, -\frac{3\pi}{4}\right)$}
-\dotted  \parafcn{-5, -130, -5}{1.25*dir(t)}
-\dotted \polyline{(0,0),(-2.48,-2.48)}
-\end{mfpic} \\
+% Short dashed continuation
+\draw[dashed]
+    (\ang:\raylength) -- (\ang:4.1);
 
-\end{tabular}
+% Tick marks on terminal ray
+\foreach \r in {0.7,1.4,2.1,2.8}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
 
-\end{center}
+% Pole and point
+\fill (0,0) circle (2.5pt);
+\fill (\ang:\pointdist) circle (2.5pt);
+
+\node[above] at (0,0) {Pole};
+
+% Clockwise angle
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.75
+    ];
+
+\node at (0.25,-1)
+    {$\theta=-\frac{3\pi}{4}$};
+
+\end{scope}
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=12.6cm]
+
+% Polar axis
+\draw[->] (0,0) -- (3.6,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.7,1.4,2.1,2.8}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above] at (0,0) {Pole};
+
+% Point
+\coordinate (R) at (\ang:\pointdist);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0) -- (R);
+
+% Dotted clockwise angle
+\draw[densely dotted]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.75
+    ];
+
+% Point
+\fill (R) circle (2.5pt);
+
+% Label
+\node[below] at (R)
+    {$R\left(3.5,-\frac{3\pi}{4}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 The points $Q$ and $R$ above are, in fact, the same point despite the fact that their polar coordinate representations are different.  Unlike Cartesian coordinates where $(a,b)$ and $(c,d)$ represent the same point if and only if $a=c$ and $b=d$, a point can be represented by infinitely many polar coordinate pairs. 
 
@@ -705,47 +810,117 @@ We explore this notion more in the following example.
 
 \item  Whether we move $2$ units along the polar axis and then rotate $240^{\circ}$ or rotate $240^{\circ}$ then move out $2$ units from the pole, we plot  $P\left(2, 240^{\circ}\right)$  below. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\xmarks{1,2,3,4}
-\dashed \rotatepath{(0,0),240} \polyline{(0,0),(2.5,0)}
-\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-1,-1.73)}
-\tlabel[cc](0.5,-0.5){\scriptsize Pole}
-\tlabel[cc](2.15,0.5){\scriptsize $\theta = 240^{\circ}$}
-\arrow \parafcn{5, 235, 5}{0.75*dir(t)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-1,-1.73)}
-\tlabel[cc](-1,-2.25){\scriptsize \phantom{$Q\left(2, 240^{\circ}\right)$}}
-\end{mfpic}
+\def\panelwidth{7.0}
+\def\ang{240}
+\def\pointdist{2}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\hspace{0.75in}
+% Polar axis
+\draw[->] (0,0) -- (4.2,0);
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\tlabel[cc](0.5,-0.5){\scriptsize Pole}
-\tlabel[cc](0,0.5){\scriptsize \phantom{Pole}}
-\point[3pt]{(-1,-1.73)}
-\tlabel[cc](-1,-2.25){\scriptsize $P\left(2, 240^{\circ}\right)$}
-\dotted \parafcn{5, 235, 5}{0.75*dir(t)}
-\dotted \polyline{(0,0),(-1,-1.73) }
-\end{mfpic}
+% Tick marks on polar axis
+\foreach \x in {0.8,1.6,2.4,3.2}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-\\
+% Radius
+\draw[very thick]
+    (0,0) -- (\ang:\pointdist);
 
-\end{tabular}
+% Short dashed continuation
+\draw[dashed]
+    (\ang:\pointdist) -- (\ang:2.6);
 
-\end{center}
+% Tick marks on radius
+\foreach \r in {0.8,1.6}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Pole and endpoint
+\fill (0,0) circle (2.5pt);
+\fill (\ang:\pointdist) circle (2.5pt);
+
+\node[below right] at (0,0) {Pole};
+
+% Angle theta
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.75
+    ];
+
+\node at (1.45,0.45)
+    {$\theta=240^\circ$};
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=7.0cm]
+
+% Polar axis
+\draw[->] (0,0) -- (4.2,0);
+
+% Tick marks on polar axis
+\foreach \x in {0.8,1.6,2.4,3.2}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below right] at (0,0) {Pole};
+
+% Point P
+\coordinate (P) at (\ang:\pointdist);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0) -- (P);
+
+% Dotted angle
+\draw[densely dotted]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=\ang,
+        radius=0.75
+    ];
+
+% Point
+\fill (P) circle (2.5pt);
+
+% Label
+\node[below] at (P)
+    {$P(2,240^\circ)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 We now set about finding alternate descriptions $(r,\theta)$ for the point $P$. Since $P$ is $2$ units from the pole, $r = \pm 2$.  Next, we choose angles $\theta$ for each of the $r$ values.  
 
@@ -757,95 +932,275 @@ The given representation for $P$ is $\left(2, 240^{\circ}\right)$ so the angle $
 
 For the case  $r = -2$, we visualize our rotation starting $2$ units to the left of the pole.  From this position, we need only to rotate $\theta = 60^{\circ}$ to arrive at location coterminal with $240^{\circ}$.  Hence, our answer here is  $\left(-2,60^{\circ}\right)$.  We check our answers by plotting them.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\xmarks{1,2,3,4}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-1,-1.73)}
-\tlabel[cc](-1,-2.5){\scriptsize $P\left(2, -120^{\circ}\right)$}
-\dotted \parafcn{5, 235, 5}{0.75*dir(t)}
-\arrow  \parafcn{-5, -115, -5}{0.75*dir(t)}
-\dashed \rotatepath{(0,0),240} \polyline{(0,0),(2.5,0)}
-\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-1,-1.73)}
-\gclear \tlabelrect[cc](0.5,0.5){\scriptsize Pole}
-\tlabel[cc](1.75,-0.5){\scriptsize $\theta = -120^{\circ}$}
-\end{mfpic}
-&
-\hspace{0.5in}
+\def\panelwidth{7.8}
+\def\radius{2}
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\xmarks{-2,-1,1,2,3,4}
-\dotted \polyline{(0,0), (-5,0)}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-1,-1.73)}
-\tlabel[cc](-1,-2.5){\scriptsize $P\left(-2, 60^{\circ}\right)$}
-\dotted \parafcn{5, 235, 5}{0.75*dir(t)}
-\arrow  \parafcn{185, 235, 5}{1.25*dir(t)}
-\dotted \rotatepath{(0,0),240} \polyline{(0,0),(2.5,0)}
-\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-1,-1.73)}
-\tlabel[cc](0.5,-0.5){\scriptsize Pole}
-\tlabel[cc](-2,-0.75){\scriptsize $\theta = 60^{\circ}$}
-\end{mfpic}
+%================================================
+% Left panel : P(2,-120°)
+%================================================
 
-\\
+% Polar axis
+\draw[->] (0,0)--(4.4,0);
 
-\end{tabular}
+% Tick marks
+\foreach \x in {0.8,1.6,2.4,3.2}
+    \draw (\x,-0.08)--(\x,0.08);
 
-\end{center}
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above left] at (0,0) {Pole};
+
+% Point
+\coordinate (P) at (-120:\radius);
+
+% Dotted angle
+\draw[densely dotted]
+    (0.65,0)
+    arc[start angle=0,end angle=-120,radius=0.65];
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0)--(P);
+
+% Solid ray
+\draw[very thick]
+    (0,0)--(P);
+
+% Short dashed continuation
+\draw[dashed]
+    (P)--(-120:2.7);
+
+% Tick marks
+\foreach \r in {0.8,1.6}
+{
+    \draw
+    ({\r*cos(-120)-0.06*sin(-120)},
+     {\r*sin(-120)+0.06*cos(-120)})
+    --
+    ({\r*cos(-120)+0.06*sin(-120)},
+     {\r*sin(-120)-0.06*cos(-120)});
+}
+
+% Point
+\fill (P) circle (2.5pt);
+
+% Angle
+\draw[->]
+    (0.78,0)
+    arc[start angle=0,end angle=-120,radius=0.78];
+
+\node[right] at (0.60,-0.70)
+{$\theta=-120^\circ$};
+
+% Label
+\node[left] at (P)
+{$P(2,-120^\circ)$};
+
+
+%================================================
+% Right panel : P(-2,60°)
+%================================================
+
+\begin{scope}[xshift=7.8cm]
+
+% Polar axis
+\draw[->] (-3.2,0)--(4.4,0);
+
+% Tick marks
+\foreach \x in {-2.4,-1.6,-0.8,0.8,1.6,2.4,3.2}
+    \draw (\x,-0.08)--(\x,0.08);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above] at (0,0.18) {Pole};
+
+% Point
+\coordinate (Q) at (240:\radius);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0)--(Q);
+
+% Dotted reference ray
+\draw[densely dotted]
+    (0,0)--(180:3.2);
+
+% Dotted angle
+\draw[densely dotted]
+    (0.65,0)
+    arc[start angle=0,end angle=60,radius=0.65];
+
+% Solid ray (negative radius)
+\draw[very thick]
+    (0,0)--(Q);
+
+% Short dashed continuation
+\draw[dashed]
+    (Q)--(240:2.7);
+
+% Tick marks
+\foreach \r in {0.8,1.6}
+{
+    \draw
+    ({-\r*cos(60)-0.06*sin(240)},
+     {-\r*sin(60)+0.06*cos(240)})
+    --
+    ({-\r*cos(60)+0.06*sin(240)},
+     {-\r*sin(60)-0.06*cos(240)});
+}
+
+% Point
+\fill (Q) circle (2.5pt);
+
+% Angle
+\draw[->]
+    (-0.78,0)
+    arc[start angle=180,end angle=240,radius=0.78];
+
+\node[left] at (-1.10,-0.80)
+{$\theta=60^\circ$};
+
+% Label
+\node[left] at (Q)
+{$P(-2,60^\circ)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 \item  We plot $\left(-4,\frac{7\pi}{6}\right)$ by first moving $4$ units to the left of the pole and then rotating $\frac{7\pi}{6}$ radians.  Since $r = -4 < 0$, we find our point lies $4$ units from the pole on the terminal side of $\frac{\pi}{6}$.  
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\dotted \rotatepath{(0,0),30} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),30} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),30} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(3.46,2)}
-\tlabel[cc](-0.5,0.5){\scriptsize Pole}
-\tlabel[cc](0,-1.5){\scriptsize $\theta = \frac{7\pi}{6}$}
-\arrow \parafcn{185, 385, 5}{0.75*dir(t)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (3.46,2)}
-\end{mfpic}
+\def\panelwidth{8.0}
+\def\ang{30}
+\def\pointdist{4}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(3.46,2)}
-\tlabel[cc](-0.5,0.5){\scriptsize Pole}
-\tlabel[cc](0,-1.5){\scriptsize \phantom{$\theta = \frac{7\pi}{6}$}}
-\dotted \parafcn{185, 385, 5}{0.75*dir(t)}
-\dotted \polyline{(0,0), (3.46,2)}
-\tlabel(3.75,1.85){\scriptsize $P\left(-4,\frac{7\pi}{6}\right)$}
-\end{mfpic}  \\
+% Polar axis
+\draw[->] (-4.8,0) -- (4.8,0);
 
-\end{tabular}
+% Tick marks on polar axis
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-\end{center}
+% Dotted negative polar axis
+\draw[densely dotted] (-4.8,0) -- (0,0);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above left] at (0,0) {Pole};
+
+% Radius corresponding to theta = 7pi/6
+\draw[very thick]
+    (0,0) -- (\ang:\pointdist);
+
+% Tick marks on radius
+\foreach \r in {1,2,3}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Endpoint
+\fill (\ang:\pointdist) circle (2.5pt);
+
+% Short dotted continuation
+\draw[densely dotted]
+    (\ang:\pointdist) -- (\ang:5.0);
+
+% Angle theta = 7pi/6
+\draw[->]
+    (-0.75,0)
+    arc[
+        start angle=180,
+        end angle=390,
+        radius=0.75
+    ];
+
+\node at (0,-1.40)
+    {$\theta=\frac{7\pi}{6}$};
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=8.0cm]
+
+% Polar axis
+\draw[->] (-4.8,0) -- (4.8,0);
+
+% Tick marks on polar axis
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+% Dotted negative polar axis
+\draw[densely dotted] (-4.8,0) -- (0,0);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above left] at (0,0) {Pole};
+
+% Point P(-4,7pi/6)
+% Negative radius reverses the direction by pi,
+% so the plotted point lies at angle pi/6.
+\coordinate (P) at (\ang:\pointdist);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0) -- (P);
+
+% Dotted angle illustration
+\draw[densely dotted]
+    (-0.75,0)
+    arc[
+        start angle=180,
+        end angle=390,
+        radius=0.75
+    ];
+
+% Point
+\fill (P) circle (2.5pt);
+
+% Label
+\node[right] at (P)
+    {$P\left(-4,\frac{7\pi}{6}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 To find alternate descriptions for $P$, we note that the distance from $P$ to the pole is $4$ units, so any representation $(r,\theta)$ for $P$ must have $r = \pm 4$.  
 
