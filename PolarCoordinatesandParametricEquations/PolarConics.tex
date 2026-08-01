@@ -37,7 +37,7 @@ Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose
 \begin{tikzpicture}[rotate=45, transform shape]
 
 \begin{axis}[
-    width=4in, height=4in,
+    width=6in, height=6in,
     xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
     axis lines=middle,
     axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
@@ -48,8 +48,8 @@ Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\tiny},
-    label style={font=\scriptsize},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
     samples=100,
 ]
 
@@ -68,24 +68,24 @@ Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose
   
 \draw[->] (-5,0) -- (5,0);
 \draw[->] (0,-5) -- (0,5);
-\node at (5.5, 0) {\scriptsize $x$};
-\node at (0, 5.5) {\scriptsize $y$};
-\node at (1.5,5) {\scriptsize $P(x,y) = P(x',y')$};
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
+\node at (1.5,5) {\small $P(x,y) = P(x',y')$};
 
 %Rotation arc
 \draw[->]
     (3,0)
     arc[start angle=0,end angle=40,radius=3];
-\node at (3.25, 1.25) {\scriptsize $\theta$};
+\node at (3.25, 1.25) {\small $\theta$};
 \draw[->]
     (0,3)
     arc[start angle=90,end angle=130,radius=3];
-\node at (-1.25, 3.25) {\scriptsize $\theta$};
+\node at (-1.25, 3.25) {\small $\theta$};
 
 \draw[->]
     (2.12, 2.12)
     arc[start angle=50,end angle=75,radius=3];
-\node at (2, 2.75) {\scriptsize $\phi$};
+\node at (2, 2.75) {\small $\phi$};
 
 \end{scope}
 
@@ -210,8 +210,8 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
 \begin{tikzpicture}[rotate=60, transform shape]
 
 \begin{axis}[
-    width=4in, height=4in,
-    xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
+    width=6in, height=6in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
     axis lines=middle,
     axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -219,15 +219,12 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
     xlabel={$x'$}, ylabel={$y'$},
     xlabel style={anchor=west},
     ylabel style={anchor=south},
-    xtick={-4, -3, -2,-1, 1, 2, 3, 4},
-    ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\tiny},
-    label style={font=\scriptsize},
+    xtick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
+    ytick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
     samples=100,
 ]
-
-%Points
-
 
 
 %dotted lines
@@ -238,8 +235,8 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
 % Create original axes by rotating -45 degrees counterclockwise around the origin (0,0)
 \begin{scope}[rotate around={-60:(0,0)}]
   
-\draw[->] (-5,0) -- (5,0);
-\draw[->] (0,-5) -- (0,5);
+\draw[->] (-4.75,0) -- (5,0);
+\draw[->] (0,-4.75) -- (0,5);
 \draw[-] (1,-0.15) -- (1,0.15);
 \draw[-] (2,-0.15) -- (2,0.15);
 \draw[-] (3,-0.15) -- (3,0.15);
@@ -247,22 +244,22 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
 \draw[-] (-0.15,-2) -- (0.15,-2);
 \draw[-] (-0.15,-3) -- (0.15,-3);
 \draw[-] (-0.15,-4) -- (0.15,-4);
-\node at (5.5, 0) {\scriptsize $x$};
-\node at (0, 5.5) {\scriptsize $y$};
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
 \node at (2, -0.5) {\scriptsize $2$};
 \node at (-.5, -4) {\scriptsize $-4$};
-\node at (2,-4.5) {\scriptsize $P(x,y) = (2, -4)$};
-\node at (2,-5) {\scriptsize $P(x',y') \approx (-2.46,-3.73)$};
+\node at (2,-4.5) {\small $P(x,y) = (2, -4)$};
+\node at (2,-5) {\small $P(x',y') \approx (-2.46,-3.73)$};
 \fill (2,-4) circle (2pt);
 %Rotation arc
 \draw[->]
     (3,0)
     arc[start angle=0,end angle=50,radius=3];
-\node at (3.5, 1.25) {\scriptsize $\theta = \frac{\pi}{3}$};
+\node at (3.5, 1.25) {\small $\theta = \frac{\pi}{3}$};
 \draw[->]
     (0,3)
     arc[start angle=90,end angle=145,radius=3];
-\node at (-1.25, 3.25) {\scriptsize $\theta = \frac{\pi}{3}$};
+\node at (-1.5, 3.25) {\small $\theta = \frac{\pi}{3}$};
 
 
 \end{scope}
@@ -288,44 +285,74 @@ To our surprise and delight, the equation $21x^2+10xy\sqrt{3}+31y^2=144$ in $xy$
 That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'$-axis with ($x'y'$-coordinates) $(0, \pm 3)$ and whose minor axis has endpoints with ($x'y'$-coordinates) $(\pm 2, 0)$ as seen below.
 
 
-\begin{center}
-\begin{mfpic}[18]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](2.75,4){\scriptsize $x'$}
-\tlabel[cc](-4,2.75){\scriptsize $y'$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[4pt]{\plr{(2,60)}, \plr{(-2,60)}, \plr{(3,150)}, \plr{(-3,150)}}
-\dashed \arrow \rotatepath{(0,0),60} \polyline{(-5,0), (5,0)}
-\dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)}
-\rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),240} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)}
-\arrow \parafcn{5,55,5}{4*dir(t)}
-\arrow \parafcn{95,145,5}{4*dir(t)}
-\penwd{1.25pt}
-\rotatepath{(0,0),60} \ellipse{(0,0), 2, 3}
-\tlabel[cc](4,1.75){\scriptsize $\frac{\pi}{3}$}
-\tlabel[cc](-1.75,4){\scriptsize $\frac{\pi}{3}$}
-\tcaption{$21x^2+10xy\sqrt{3}+31y^2=144$}
-\end{mfpic}
+\begin{image}
+\begin{tikzpicture}[rotate=60, transform shape]
 
-\end{center}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-6, xmax=6, ymin=-6, ymax=6,
+    axis lines=middle,
+    axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x'$}, ylabel={$y'$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
+    ytick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+
+
+%Curve 
+\draw[-, thick, blue, smooth, samples=100, domain=0:360] plot ({ 2*cos(\x)}, {3*sin(\x) }); 
+
+%Points 
+\fill[blue] (-2,0) circle (2pt); 
+\fill[blue] (2,0) circle (2pt); 
+\fill[blue] (0,-3) circle (2pt);
+\fill[blue] (0,3) circle (2pt);
+
+
+% Create original axes by rotating -45 degrees counterclockwise around the origin (0,0)
+\begin{scope}[rotate around={-60:(0,0)}]
+  
+\draw[->] (-4.75,0) -- (5,0);
+\draw[->] (0,-4.75) -- (0,5);
+\draw[-] (1,-0.15) -- (1,0.15);
+\draw[-] (2,-0.15) -- (2,0.15);
+\draw[-] (3,-0.15) -- (3,0.15);
+\draw[-] (-0.15,-1) -- (0.15,-1);
+\draw[-] (-0.15,-2) -- (0.15,-2);
+\draw[-] (-0.15,-3) -- (0.15,-3);
+\draw[-] (-0.15,-4) -- (0.15,-4);
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
+\node at (2, -0.5) {\scriptsize $2$};
+\node at (-.5, -4) {\scriptsize $-4$};
+\node at (2,-4.5) {\small $P(x,y) = (2, -4)$};
+\node at (2,-5) {\small $P(x',y') \approx (-2.46,-3.73)$};
+\fill (2,-4) circle (2pt);
+%Rotation arc
+\draw[->]
+    (4,0)
+    arc[start angle=0,end angle=50,radius=4];
+\node at (4.25, 2) {\small $\theta = \frac{\pi}{3}$};
+\draw[->]
+    (0,4)
+    arc[start angle=90,end angle=145,radius=4];
+\node at (-2, 4.25) {\small $\theta = \frac{\pi}{3}$};
+
+
+\end{scope}
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+
 
 \end{enumerate}
 
