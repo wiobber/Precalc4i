@@ -250,22 +250,8 @@ Even though we have finished with one complete cycle of $r = 5\sin(2\theta)$ at 
  Indeed, we need to trace through two periods of  the sinusoid $r = 5\sin(2\theta)$ in the $\theta r$ plane in order to complete the graph of $r = 5\sin(2\theta)$ in the $xy$-plane.
 
 \item  Graphing $r^2 = 16 \cos(2\theta)$ is complicated by the $r^2$, so we solve for $r$ by extracting square roots  and get $r = \pm \sqrt{16 \cos(2\theta)} = \pm 4 \sqrt{\cos(2\theta)}$.  
-
-How do we sketch such a curve?  First off, we sketch a fundamental period of $r = \cos(2\theta)$ which we have dotted in the figure below.  When $\cos(2\theta) < 0$, $\sqrt{\cos(2\theta)}$ is undefined, so we don't have any values on the interval $\left(\frac{\pi}{4}, \frac{3\pi}{4}\right)$.  
-
-
-
-On the intervals which remain, $\cos(2\theta)$ ranges from $0$ to $1$, inclusive.  Hence, $\sqrt{\cos(2\theta)}$ ranges from $0$ to $1$ as well.\footnote{Owing to the relationship between $y = x$ and $y = \sqrt{x}$ over $[0,1]$, we know $\sqrt{\cos(2\theta)} \geq \cos(2\theta)$ wherever the former is defined.}  From this, we know $r = \pm 4 \sqrt{\cos(2\theta)}$ ranges continuously from $0$ to $\pm 4$, respectively.   
-
-
-
-Below we graph both $r = 4\sqrt{\cos(2\theta)}$ and $r = -4\sqrt{\cos(2\theta)}$ on the $\theta r$ plane and use them to sketch the corresponding pieces of the curve $r^2 = 16\cos(2\theta)$ in the $xy$-plane.   
-
-
-
-As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$, which are the  zeros of the functions $r = \pm 4 \sqrt{\cos(2\theta)}$, serve as guides for us to draw the curve as is passes through the origin.
-
-As we plot points corresponding to values of  $\theta$ outside of the interval $[0,\pi]$, we find ourselves retracing parts of the curve,\footnote{In this case, we could have generated the entire graph by using just the plot $r = 4\sqrt{\cos(2\theta)}$, but graphed over the interval  $[0,2\pi]$ in the $\theta r$-plane.  We leave the details to the reader.} so our final answer is below.
+  
+In the GeoGebra interactive below, note that as we move the slider for $\theta$, on both the plot in the $xy$-plane and the plot in the $\theta r$ plane, two portions of the curve are being traced out at once, then nothing at all, then two more portions of the graph, then nothing at all. We'll explain these phenomena at length momentarily, but we'll offer a brief explanation first.  The `$\pm$' accounts for tracing out two portions of the curve at the same time while the gaps in sketching for certain $\theta$ values is due to the presence of the square root.
 
 % https://www.geogebra.org/classic/q7edszea
 \begin{center}
@@ -273,6 +259,15 @@ As we plot points corresponding to values of  $\theta$ outside of the interval $
 \end{center}
 
 
+How would we approach this analytically?  First off, we would sketch a fundamental period of $r = \cos(2\theta)$.  When $\cos(2\theta) < 0$, $\sqrt{\cos(2\theta)}$ is undefined, so we wouldn't have any values on those intervals. In this particular case,  $\cos(2\theta) < 0$ on the interval $\left(\frac{\pi}{4}, \frac{3\pi}{4}\right)$, so there would be no graph for either $r = 4\sqrt{\cos(2\theta)}$ or $r =-4 \sqrt{\cos(2\theta)}$ there.
+
+On the intervals which remain, $\cos(2\theta)$ ranges from $0$ to $1$, inclusive.  Hence, $\sqrt{\cos(2\theta)}$ ranges from $0$ to $1$ as well.\footnote{Owing to the relationship between $y = x$ and $y = \sqrt{x}$ over $[0,1]$, we know $\sqrt{\cos(2\theta)} \geq \cos(2\theta)$ wherever the former is defined.}  From this, we know $r = \pm 4 \sqrt{\cos(2\theta)}$ ranges continuously from $0$ to $\pm 4$, respectively.   
+
+These observations allow us to sketch $r = 4\sqrt{\cos(2\theta)}$ and $r = -4\sqrt{\cos(2\theta)}$ on the $\theta r$ plane as in the interactive above on the right and use them to sketch the corresponding pieces of the curve $r^2 = 16\cos(2\theta)$ in the $xy$-plane.   
+
+As we have seen in earlier examples, the lines $\theta = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$, which are the  zeros of the functions $r = \pm 4 \sqrt{\cos(2\theta)}$, serve as guides for us to draw the curve as is passes through the origin.
+
+As we plot points corresponding to values of  $\theta$ outside of the interval $[0,\pi]$, we find ourselves retracing parts of the curve,\footnote{In this case, we could have generated the entire graph by using just the plot $r = 4\sqrt{\cos(2\theta)}$, but graphed over the interval  $[0,2\pi]$ in the $\theta r$-plane.  We leave the details to the reader.}
 
  
 \end{enumerate}
@@ -388,8 +383,7 @@ It appears as if there are eight points of intersection - two in each quadrant. 
 
 Solving $6\cos(2\theta) = 3$, we get $\cos(2\theta) = \frac{1}{2}$, so  $\theta = \frac{\pi}{6} + \pi k$  or $\theta = \frac{5\pi}{6} + \pi k$ for integers $k$.  From these, we obtain  four distinct points represented by $\left(3, \frac{\pi}{6}\right)$, $\left(3, \frac{5\pi}{6} \right)$, $\left(3, \frac{7\pi}{6}\right)$ and $\left(3, \frac{11\pi}{6} \right)$.  
  
- 
- 
+
  To determine the coordinates of the remaining four points, we have to consider how the representations of the points of intersection can differ.  We know from Section \ref{PolarCoordinates} that if $(r,\theta)$ and $(r', \theta')$ represent the same point and $r \neq 0$, then either $r = r'$ or $r = -r'$.  
  
  
@@ -520,9 +514,9 @@ Our last example ties together graphing and points of intersection to describe r
 
 \item  We know from  Example \ref{polargraphex} number \ref{rose} that the graph of $r = 5\sin(2\theta)$ is a rose.  Moreover, we know  as  $0 \leq \theta \leq \frac{\pi}{2}$,  we trace out the `leaf' of the rose which lies in the first quadrant. 
 
+ The inequality $0 \leq r \leq 5\sin(2\theta)$ means we want  all of the points between the origin ($r=0$) and the curve $r = 5\sin(2\theta)$ as $\theta$ runs through $\left[0, \frac{\pi}{2}\right]$.
 
-
- The inequality $0 \leq r \leq 5\sin(2\theta)$ means we want  all of the points between the origin ($r=0$) and the curve $r = 5\sin(2\theta)$ as $\theta$ runs through $\left[0, \frac{\pi}{2}\right]$.  Hence, the region we seek is the leaf itself.
+ Not only does the GeoGebra interactive below show us the shaded region, we can also adjust the slider to see how the ray from the origin out to the curve sweeps out the region as $\theta$ varies from $0$ to $\frac{\pi}{2}$.
 
 % https://www.geogebra.org/classic/fsfj2xha
 \begin{center}
@@ -531,7 +525,7 @@ Our last example ties together graphing and points of intersection to describe r
 
 \item  We know from Example \ref{polargraphintex} number \ref{circroseint} that $r=3$ and $r = 6\cos(2\theta)$ intersect at $\theta = \frac{\pi}{6}$, so the region that is being described here is the set of points whose directed distance $r$ from the origin is at least $3$ but no more than $6\cos(2\theta)$ as $\theta$ runs from $0$ to $\frac{\pi}{6}$. 
 
- In other words, we are looking at the points outside or on the circle (since $r \geq 3$) but inside or on the rose (since $r \leq 6\cos(2\theta)$).  We shade the region below.
+ In other words, we are looking at the points outside or on the circle (since $r \geq 3$) but inside or on the rose (since $r \leq 6\cos(2\theta)$) as seen below.
 
 % https://www.geogebra.org/classic/uyr74p9m
 \begin{center}
@@ -542,6 +536,8 @@ Our last example ties together graphing and points of intersection to describe r
 
 Since the values $r$ takes on in this interval are non-positive, the inequality $2+4\cos(\theta) \leq r \leq 0$ makes sense, and we are looking for all of the points between the pole $r = 0$ and the lima\c{c}on as $\theta$ ranges over the interval $\left[\frac{2\pi}{3}, \frac{4\pi}{3}\right]$.  In other words, we shade in the inner loop of the lima\c{c}on.
 
+Once again, we can see not only the region in question in the GeoGebra interactive below, but how the region is swept out as $\theta$ ranges from $\frac{2\pi}{3}$ to $\frac{4\pi}{3}$
+
 % https://www.geogebra.org/classic/ecvqpk84
 \begin{center}
     \geogebra{ecvqpk84}{800}{600}
@@ -549,18 +545,11 @@ Since the values $r$ takes on in this interval are non-positive, the inequality 
 
 \item  We have two regions described here connected with the union symbol `$\cup$.' We shade each in turn and find our final answer by combining the two. 
 
-
-
 In Example \ref{polargraphintex}, number \ref{circcardint}, we found that the curves $r = 2\sin(\theta)$ and $r = 2-2\sin(\theta)$ intersect when $\theta = \frac{\pi}{6}$.    Hence, for the first region, $ \left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta),  0 \leq \theta \leq \frac{\pi}{6} \right\}$,  we are shading the region between the origin ($r=0$) out to the circle ($r = 2\sin(\theta)$) as $\theta$ ranges from $0$ to $\frac{\pi}{6}$, which is the angle of intersection of the two curves. 
-
-
-
 
 For the second region,  $\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta),   \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}$,  $\theta$ picks up where it left off at $\frac{\pi}{6}$ and continues to $\frac{\pi}{2}$.  In this case, however, we are shading from the origin ($r=0$) out to the cardioid $r = 2-2\sin(\theta)$ which pulls into the origin at $\theta = \frac{\pi}{2}$. 
 
-
-
-We combine these two regions to obtain our final answer.
+We combine these two regions to obtain our final answer depicted below.
 
 
 % https://www.geogebra.org/graphing/gms7kgys
