@@ -428,7 +428,7 @@ We put Theorem \ref{rotatedconicthm} to good use in the following example.
 
 \end{enumerate}
 
-{\bf Solution.}  
+\begin{explanation} 
 
 \begin{enumerate}
 
@@ -448,48 +448,69 @@ Making the other substitutions, we get that $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt
 
 Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in the $x'$ direction with vertices $(\pm 2,2)$ (in $x'y'$-coordinates)  and asymptotes $y' = \pm \frac{3}{2} x' + 2$. We graph this equation below. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[rotate=45, transform shape]
 
-\begin{mfpic}[18]{-5}{5}{-4}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](3.75,3.25){\scriptsize $x'$}
-\tlabel[cc](-3.25,3.75){\scriptsize $y'$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-3,-2,-1,1,2,3,4}
-\dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)}
-\dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)}
-\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{1.5*x+2}
-\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2-1.5*x}
-\dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2}
-\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
-\point {(0,2.83), (-2.83,0)}
-\arrow \parafcn{5,40,5}{1.25*dir(t)}
-\tlabel[cc](2.35,0.4){\scriptsize $\theta = \frac{\pi}{4}$}
-\tcaption{$5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(2*sec(t), 2+3*tan(t))}
-\arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(0-2*sec(t), 2+3*tan(t))}
-\end{mfpic}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
+    axis lines=middle,
+    axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x'$}, ylabel={$y'$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2,-1, 1, 2, 3, 4},
+    ytick={-4, -3, -2,-1, 1, 2, 3, 4},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+
+%Curve
+\draw[<->, thick, blue, smooth, samples=100, domain=-50:50] 
+   plot ({ 2*sec(\x) }, { 2+3*tan(\x)});
+
+\draw[<->, thick, blue, smooth, samples=100, domain=-50:50] 
+   plot ({ -2*sec(\x) }, { 2+3*tan(\x)});
+
+ 
+%Asymptotes
+\draw[dotted, domain=-4:4] plot({ \x }, { 1.5*\x + 2});
+\draw[dotted, domain=-4:4] plot({ \x }, { -1.5*\x + 2});
+\draw[dotted, domain=-4:4] (-2,2) -- (2,2);
+%Points
+\fill[blue] (2,2) circle (2pt);
+\fill[blue] (-2,2) circle (2pt);
+
+% Create original axes by rotating -45 degrees counterclockwise around the origin (0,0)
+\begin{scope}[rotate around={-45:(0,0)}]
+  
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
+\node at (1.5,5) {\small $P(x,y) = P(x',y')$};
+
+%Rotation arc
+\draw[->]
+    (4,0)
+    arc[start angle=0,end angle=40,radius=4];
+\node at (4.25, 1.5) {\small $\theta = \frac{\pi}{4}$};
+\draw[->]
+    (0,4)
+    arc[start angle=90,end angle=130,radius=4];
+\node at (-1.5, 4.25) {\small $\theta = \frac{\pi}{4}$};
+
+\end{scope}
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 
-\end{center}
+
 
 \item  From $16x^2+24xy+9y^2 +15x-20y = 0$, we get $A = 16$, $B=24$ and $C = 9$ so that $\cot(2\theta) = \frac{7}{24}$.  Since this isn't one of the values of the common angles, we will need to use inverse functions. 
 
@@ -566,9 +587,9 @@ Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose gra
 
 \end{center}
 
-\vspace{-.15in} \qed
 
 
+\end{explanation}
 \end{example}
 
 
