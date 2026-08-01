@@ -1435,42 +1435,126 @@ For the $r=117$ case, we can  take $\theta$ to be any angle coterminal with $-\f
 For the $r = -117$ case,  we visualize moving left $117$ units from the pole and then rotating through an angle $\theta$ to reach $P$.  We find that $\theta = \frac{\pi}{2}$ works here, so our second answer is $\left(-117, \frac{\pi}{2}\right)$.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
-\point[3pt]{(0,-4.5)}
-\tlabel[cc](0,0.5){\scriptsize Pole}
-\dotted \parafcn{0,445,5}{(t+200)*dir(0-t)/400}
-\arrow \parafcn{5,265,5}{1.5 * dir(t)}
-\dashed \polyline{(0,0), (0,-4.5)}
-\tlabel[cc](-2.5,-1){\scriptsize $\theta = \frac{3\pi}{2}$}
-\tlabel[cc](0,-5.5){\scriptsize $P\left(117, \frac{3\pi}{2}\right)$}
-\end{mfpic}
+\def\panelwidth{8.2}
+\def\radius{3.0}      % Display length for r=117
+%%%%
+\def\R{2}
+\def\tdeg{60} % theta, in degrees
+\def\ttdeg{60} % theta, in degrees
+\pgfmathsetmacro{\px}{\R*cos(\tdeg)}
+\pgfmathsetmacro{\py}{\R*sin(\tdeg)}
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{1}   % ending radius (grows slightly over the sweep)
+\def\amax{-450}    % total sweep in degrees: 360 + 60 = 7*180/3
 
-&
+%================================================
+% Left panel : P(117,3pi/2)
+%================================================
 
-\hspace{0.5in}
+% Polar axis
+\draw[->] (0,0)--(4.3,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\point[3pt]{(0,0)}
-\point[3pt]{(0,-4.5)}
-\tlabel[cc](0,0.5){\scriptsize Pole}
-\dotted \parafcn{0,445,5}{(t+200)*dir(0-t)/400}
-\arrow \parafcn{185,265,5}{1.5*dir(t)}
-\dotted \polyline{(0,0), (0,-4.5)}
-\tlabel[cc](-2.5,-1){\scriptsize $\theta  = \frac{\pi}{2}$}
-\tlabel[cc](0,-5.5){\scriptsize $P\left(-117, \frac{\pi}{2}\right)$}
-\end{mfpic} \\
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above] at (0,0.18) {Pole};
 
-\end{tabular}
 
-\end{center}
+
+% Endpoint
+\fill (270:\radius) circle (2.5pt);
+
+% Dashed continuation
+\draw[dashed]
+    (0,0)--(270:\radius);
+
+
+% Angle (counterclockwise 3pi/2)
+\draw[->]
+    (0.95,0)
+    arc[
+        start angle=0,
+        end angle=270,
+        radius=0.95
+    ];
+
+\node[left] at (-1.15,-0.65)
+{$\theta=\frac{3\pi}{2}$};
+
+% Label
+\node[below] at (270:\radius)
+{$P\left(117,\frac{3\pi}{2}\right)$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[densely dotted,
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
+
+%================================================
+% Right panel : P(-117,pi/2)
+%================================================
+
+\begin{scope}[xshift=12cm]
+
+% Polar axis
+\draw[->] (-3.8,0)--(4.3,0);
+
+% Dotted negative polar axis
+\draw[densely dotted]
+    (-3.8,0)--(0,0);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[above] at (0,0.18) {Pole};
+
+% Point (negative radius)
+\coordinate (P) at (270:\radius);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0)--(P);
+
+
+
+% Angle (pi/2)
+\draw[->]
+    (-0.95,0)
+    arc[
+        start angle=180,
+        end angle=270,
+        radius=0.95
+    ];
+
+\node[left] at (-1.35,-0.55)
+{$\theta=\frac{\pi}{2}$};
+
+% Point
+\fill (P) circle (2.5pt);
+
+% Label
+\node[below] at (P)
+{$P\left(-117,\frac{\pi}{2}\right)$};
+
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[densely dotted,
+      domain=0:\amax, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/\amax)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/\amax)*sin(\a)});
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 \item We move three units to the left of the pole and follow up with a clockwise rotation of $\frac{\pi}{4}$ radians to  plot $P\left(-3, -\frac{\pi}{4} \right)$.  We see that $P$ lies on the terminal side of $\frac{3\pi}{4}$.
 

@@ -202,30 +202,10 @@ Our next step is to define addition of vectors component-wise to match the geome
   \[\overrightarrow{v} + \overrightarrow{w} =  \left<3,4\right> + \left<1,-2\right> =  \left< 3 + 1, 4 + (-2) \right> =  \left<4, 2\right>. \]
                                         
 To visualize this sum, we draw $\overrightarrow{v}$ with its initial point at $(0,0)$ (for convenience) so that its terminal point is $(3,4)$.  Next, we graph $\overrightarrow{w}$ with its initial point at $(3,4)$.  Moving one to the right and two down, we find the terminal point of $\overrightarrow{w}$ to be $(4,2)$.  
-\begin{center}
-\begin{mfpic}[20]{-0.25}{5}{-0.5}{5}
-\axes
-\xmarks{1,2,3,4}
-\ymarks{1,2,3,4}
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\point  {(0,0), (3,4), (4,2)}
-\tlabel[cc](1.5,2.5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](4,3){\scriptsize $\overrightarrow{w}$}
-\tlabel[cc](2.5,0.5){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,4)}
-\arrow \polyline{(3,4),(4,2)}
-\arrow \polyline{(0,0),(4,2)}
-\tlpointsep{4pt}
-\axislabels{x}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2,{\scriptsize $3$} 3,{\scriptsize $4$}4}
-\axislabels{y}{ {\scriptsize $1$} 1, {\scriptsize $2$} 2,{\scriptsize $3$} 3,{\scriptsize $4$}4}]
-\end{mfpic}
+
+\begin{center} 
+\geogebra{wevqxuzp}{800}{600} 
 \end{center}
-
-
 
 We see the vector $\overrightarrow{v} + \overrightarrow{w}$ has initial point $(0,0)$ and terminal point $(4,2)$ so its component form  is $\left<4,2\right>$. \qed
 
@@ -233,15 +213,9 @@ We see the vector $\overrightarrow{v} + \overrightarrow{w}$ has initial point $(
 
 In order for vector addition to enjoy the same kinds of properties as real number addition, it is necessary to extend our definition of vectors to include a `zero vector', $\overrightarrow{0} = \left<0, 0\right>$.  
 
- 
-
 Geometrically,  $\overrightarrow{0}$ represents a point, which we can (very broadly) think of as a directed line segment with the same initial and terminal points.  The reader may well object to the inclusion of $\overrightarrow{0}$, since after all, vectors are supposed to have both a magnitude (length) and a direction.
 
- 
-
-  While it seems clear that the magnitude of $\overrightarrow{0}$ should be $0$, it is not clear what its direction is.  As we shall see, the direction of $\overrightarrow{0}$ is in fact undefined, but this minor hiccup in the natural flow of things is worth the benefits we reap by including $\overrightarrow{0}$ in our discussions.  We have the following theorem.
-
- 
+While it seems clear that the magnitude of $\overrightarrow{0}$ should be $0$, it is not clear what its direction is.  As we shall see, the direction of $\overrightarrow{0}$ is in fact undefined, but this minor hiccup in the natural flow of things is worth the benefits we reap by including $\overrightarrow{0}$ in our discussions.  We have the following theorem.
 
 %% \colorbox{ResultColor}{\bbm
 \begin{theorem} \label{vectoradditionprops}  \textbf{Properties of Vector Addition} \index{vector ! addition ! properties of}
@@ -266,8 +240,6 @@ That is, the additive inverse of a vector is the vector of the additive inverses
 
 The properties in Theorem \ref{vectoradditionprops} are easily verified using the definition of vector addition,\footnote{The interested reader is encouraged to compare Theorem \ref{vectoradditionprops} and the ensuing discussion with Theorem \ref{matrixadditionprops} in Section \ref{MatArithmetic}.}  and are a direct consequence of the definition of vector addition along with properties inherited from real number arithmetic.
 
- 
-
 For the commutative property, we note that if $\overrightarrow{v} = \left<v_1,v_2\right>$ and $\overrightarrow{w} = \left<w_1,w_2\right>$ then
 
 \[ \begin{array}{rcl} \overrightarrow{v} + \overrightarrow{w}  & = &  \left< v_1, v_2 \right> +  \left<  w_1, w_2 \right> \\
@@ -277,43 +249,17 @@ For the commutative property, we note that if $\overrightarrow{v} = \left<v_1,v_
 
 Geometrically, we can `see' the commutative property by realizing that the sums $\overrightarrow{v}+\overrightarrow{w}$ and $\overrightarrow{w} + \overrightarrow{v}$ are the same directed diagonal determined by the parallelogram below.
 
-
-\begin{center}
-\begin{mfpic}[20]{0}{6}{0}{7}
-\point[4pt]{(0,0), (1,4), (3,2), (4,6)}
-\tlabel[cc](1.5, 0.5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](4, 4){\scriptsize$\overrightarrow{w}$}
-\tlabel[cc](2, 5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](0, 2){\scriptsize $\overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,2)}
-\arrow \polyline{(3,2),(4,6)}
-\arrow \polyline{(0,0),(4,6)}
-\arrow \polyline{(0,0),(1,4)}
-\arrow \polyline{(1,4),(4,6)}
-\tlabelsep{-10pt}
-\tlabel(0,0){\rotatebox{56}{\hspace{.85in} \scriptsize $\overrightarrow{w}+\overrightarrow{v}$}}
-\tlabelsep{5pt}
-\tlabel(0,0){\rotatebox{56}{\hspace{0.75in} \scriptsize $\overrightarrow{v}+\overrightarrow{w}$}}
-\end{mfpic}
-
-Demonstrating the commutative property of vector addition.
-
+\begin{center} 
+\geogebra{dnfpqykt}{800}{600} 
 \end{center}
 
 The proofs of the associative and identity properties proceed similarly, and the reader is encouraged to verify them and provide accompanying diagrams.  
-
- 
 
 The additive identity property is likewise verified algebraically using a calculation.  If $\overrightarrow{v} = \left<v_1,v_2\right>$ , then
 
  \[ \overrightarrow{v} + \overrightarrow{0} = \left<v_1,v_2\right> + \left<0, 0\right> = \left< v_1 + 0, v_2 + 0 \right> =  \left<v_1,v_2\right>  = \overrightarrow{v}.\]
  
  From the commutative property of vector addition, we get that $\overrightarrow{0} + \overrightarrow{v} = \overrightarrow{v}$ as well.  Again, the reader is encouraged to visualize what this means geometrically.\footnote{Recall, $\overrightarrow{0}$ is represented geometrically as a point \ldots}
- 
- 
 
 Regarding additive inverses, we can verify by direct computation that if $\overrightarrow{v} = \left< v_1, v_2 \right>$ and  $\overrightarrow{w} = \left< - v_1, -v_2 \right>$, 
 
@@ -321,32 +267,32 @@ Regarding additive inverses, we can verify by direct computation that if $\overr
 
 Once again, the commutative property of vector addition assures us  that, likewise, $\overrightarrow{w} + \overrightarrow{v} = \overrightarrow{0}$.
 
- 
-
 Moreover, additive inverses of vectors are \textit{unique}.    That is, given a vector $\overrightarrow{v} = \left<v_1, v_2\right>$, there is precisely only \textit{one} vector $\overrightarrow{w}$ so that $\overrightarrow{v} + \overrightarrow{w} = \overrightarrow{0}$.
-
- 
 
 To see this, suppose a vector $\overrightarrow{w} = \left<w_1,w_2\right>$ satisfies  $\overrightarrow{v} + \overrightarrow{w} = \overrightarrow{0}$.  By the definition of vector addition, we have $\left<v_1 + w_1, v_2 + w_2\right> = \left<0,0\right>$.  Hence, $v_1 + w_1 = 0$ and $v_2 + w_2 = 0$.  We get $w_1 = -v_1$ and $w_2  = -v_2 $ so that $\overrightarrow{w} = \left<-v_1 , -v_2 \right>$ as prescribed in Theorem \ref{vectoradditionprops}.  
 
- 
-
 Hence, every vector $\overrightarrow{v}$ has one, and only one, additive inverse.  In general, we denote the additive inverse of a vector $\overrightarrow{v}$ with the (highly suggestive) notation $- \overrightarrow{v}$.
-
- 
 
  Geometrically, the vectors $\overrightarrow{v} = \left<v_1, v_2\right>$ and $-\overrightarrow{v} = \left<-v_1, -v_2\right>$ have the same length, but opposite directions.  As a result, when adding the vectors geometrically, the sum $\overrightarrow{v} + (-\overrightarrow{v})$ results in starting at the initial point of $\overrightarrow{v}$ and ending back at the initial point of $\overrightarrow{v}$. That is,  the net result of moving $\overrightarrow{v}$ then $-\overrightarrow{v}$ is not moving at all.
 
 \begin{center}
-\begin{mfpic}[20]{0}{6}{0}{7}
-\tlabel[cc](1.5, 4.5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](3.5, 3.5){\scriptsize $-\overrightarrow{v}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{2}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,2),(3,6)}
-\arrow \reverse \polyline{(2,2),(5,6)}
-\end{mfpic}
+\begin{tikzpicture}[
+    scale=1,
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\scriptsize}
+]
+
+% Vectors
+\draw[->,line width=1.5pt] (0,2) -- (3,6);
+\draw[<-,line width=1.5pt] (2,2) -- (5,6);
+
+% Labels
+\node[left]  at (1.5,4.5) {$\overrightarrow{v}$};
+\node[right] at (3.5,3.5) {$-\overrightarrow{v}$};
+
+\end{tikzpicture}
 \end{center}
 
 Using the additive inverse of a vector, we can define the difference of two vectors: $\overrightarrow{v} - \overrightarrow{w} = \overrightarrow{v} + (-\overrightarrow{w})$.  Looking at this at the level of components, we see if $\overrightarrow{v} = \left<v_1,v_2\right>$ and $\overrightarrow{w} = \left<w_1,w_2\right>$ then  
@@ -373,43 +319,92 @@ This means that the `net result' of moving along $\overrightarrow{w}$ then movin
  
 
 From the diagram below on the left, we see that  $\overrightarrow{v}-\overrightarrow{w}$ may be interpreted as the vector whose initial point is the terminal point of $\overrightarrow{w}$ and whose terminal point is the terminal point of $\overrightarrow{v}$.
+
 \begin{center}
 \begin{tabular}{cc}
-\hspace{.5in} \begin{mfpic}[20]{0}{6}{0}{7}
-\point  {(0,0), (1,4), (3,2)}
-\tlabel[cc](1.5, 0.5){\scriptsize$\overrightarrow{v}$}
-\tlabel[cc](0, 2){\scriptsize $\overrightarrow{w}$}
-\tlabel[cc](2.5, 3.5){\scriptsize$\overrightarrow{v} - \overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,2)}
-\arrow \polyline{(1,4),(3,2)}
-\arrow \polyline{(0,0),(1,4)}
-\end{mfpic}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\hspace{.5in}
+\begin{tikzpicture}[
+    scale=0.9,
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\scriptsize}
+]
+
+% Important points
+\coordinate (O) at (0,0);
+\coordinate (A) at (1,4);
+\coordinate (B) at (3,2);
+
+% Vectors
+\draw[->,line width=1.5pt] (O)--(B);
+\draw[->,line width=1.5pt] (A)--(B);
+\draw[->,line width=1.5pt] (O)--(A);
+
+% Points
+\fill (O) circle (2pt);
+\fill (A) circle (2pt);
+\fill (B) circle (2pt);
+
+% Labels
+\node[below] at (1.5,0.7) {$\overrightarrow{v}$};
+\node[left]  at (0.35,2.2) {$\overrightarrow{w}$};
+\node[above] at (2.3,3.1) {$\overrightarrow{v}-\overrightarrow{w}$};
+
+\end{tikzpicture}
 
 &
+
 \hspace{1in}
 
-\begin{mfpic}[20]{0}{6}{0}{7}
-\point  {(0,0), (1,4), (3,2), (4,6)}
-\tlabel[cc](1.5, 0.5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](4, 4){\scriptsize$\overrightarrow{w}$}
-\tlabel[cc](2, 5){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](0, 2){\scriptsize $\overrightarrow{w}$}
-\tlabel[cc](2.5, 3.5){\scriptsize$\overrightarrow{v} - \overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,2)}
-\arrow \polyline{(3,2),(4,6)}
-\arrow \polyline{(1,4),(3,2)}
-\arrow \polyline{(0,0),(1,4)}
-\arrow \polyline{(1,4),(4,6)}
-\end{mfpic} \\
+%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[
+    scale=0.9,
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\scriptsize}
+]
+
+% Important points
+\coordinate (O) at (0,0);
+\coordinate (A) at (1,4);
+\coordinate (B) at (3,2);
+\coordinate (C) at (4,6);
+
+% Vectors
+\draw[->,line width=1.5pt] (O)--(B);
+\draw[->,line width=1.5pt] (B)--(C);
+\draw[->,line width=1.5pt] (A)--(B);
+\draw[->,line width=1.5pt] (O)--(A);
+\draw[->,line width=1.5pt] (A)--(C);
+
+% Points
+\fill (O) circle (2pt);
+\fill (A) circle (2pt);
+\fill (B) circle (2pt);
+\fill (C) circle (2pt);
+
+% Labels
+\node[below] at (1.5,0.7) {$\overrightarrow{v}$};
+\node[left]  at (0.35,2.2) {$\overrightarrow{w}$};
+
+\node[left]  at (2.0,5.1) {$\overrightarrow{v}$};
+\node[right] at (4.25,4.1) {$\overrightarrow{w}$};
+
+\node[above] at (2.3,3.1) {$\overrightarrow{v}-\overrightarrow{w}$};
+
+\end{tikzpicture}
 
 \end{tabular}
-
 \end{center}
 
  It is also worth mentioning that in the parallelogram determined by the vectors $\overrightarrow{v}$ and $\overrightarrow{w}$ above on the right, the vector $\overrightarrow{v}-\overrightarrow{w}$ is one of the diagonals -- the other being $\overrightarrow{v} + \overrightarrow{w}$.

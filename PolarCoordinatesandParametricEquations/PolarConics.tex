@@ -791,7 +791,7 @@ We begin by assuming the conic section has eccentricity $e$, a focus $F$ at the 
 \draw[dashed] (3,4) -- (-4,4);
 \draw[dashed] (0,0) -- (3,4);
 \node at (3.75,4){\small $P(r,\theta)$};
-\node at (0,0) {*};
+\node at (0,0) {\large $*$};
 \fill (3,4) circle (2pt);
 \draw[<->] (-4,-0.5) -- (-4,6);
 \draw[<->] (0.25,4.5) -- (2.75,4.5);
@@ -932,8 +932,6 @@ We test out Theorem \ref{polarformofconicsthm} in the next example.
 
 \begin{example}  \label{polarconicgraphex}  Sketch the graphs of the following equations.
 
-
-\begin{multicols}{3}
 \begin{enumerate}
 
 \item  \label{polarparabola} $r  = \frac{4}{1-\sin(\theta)}$
@@ -944,11 +942,10 @@ We test out Theorem \ref{polarformofconicsthm} in the next example.
 
 
 \end{enumerate}
-\end{multicols}
 
 
 
-{\bf Solution.}  \begin{enumerate}  \item From $r  = \frac{4}{1-\sin(\theta)}$, we first note $e =1$ which means we have a parabola on our hands.  
+\begin{explanation} \begin{enumerate}  \item From $r  = \frac{4}{1-\sin(\theta)}$, we first note $e =1$ which means we have a parabola on our hands.  
 
  
 
@@ -964,7 +961,48 @@ With $d=4$, we have a focal diameter of $2d = 8$, so the parabola contains the p
 
  
 
-Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below on the left.
+Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below.
+
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-5, xmax=5, ymin=-7, ymax=3,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2, -1, 1, 2, 3, 4},
+    ytick={-6, -5, -4, -3, -2, -1, 1, 2},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[thick, blue, smooth, samples=100, domain=-190:10, <->] 
+    plot ({ (4/(1-sin(\x))) * cos(\x) }, { (4/(1-sin(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-5,-4) -- (5,-4);
+
+\node at (1.5,-4.5) {\small $y = -4$};
+
+%Focus
+\node at (0,0) {\large $*$};
+
+%Points
+\fill[blue] (-4,0) circle (2pt);
+\fill[blue] (0,-2) circle (2pt);
+\fill[blue] (4,0) circle (2pt);
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 
 \item  We first rewrite $r = \frac{12}{3 - \cos(\theta)}$ in the form found in Theorem \ref{polarformofconicsthm}, namely $r = \frac{4}{1 - (1/3) \cos(\theta)}$.  
@@ -999,76 +1037,65 @@ Finally, we know from Theorem \ref{polarformofconicsthm} that the length of the 
 
  
 
-We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below on the right.
+We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below.\footnote{The directrix, $x = -12$ is too distant to represent on the graph below.}
 
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-4, xmax=7, ymin=-5, ymax=6,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={ -3, -2, -1, 1, 2, 3, 4, 5, 6},
+    ytick={-4, -3, -2, -1, 1, 2, 3, 4, 5},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
 
-\begin{tabular}{cc}
+\draw[thick, blue, smooth, samples=100, domain=0:360] 
+    plot ({ (12/(3-cos(\x))) * cos(\x) }, { (12/(3-cos(\x))) * sin(\x) });
+    
+% Directrix
+%\draw[<->] (-6,-4) -- (-6,4);
+%\node at (-6,-4.5) {\small $x = -12$};
 
-\begin{mfpic}[13]{-5}{5}{-5}{4}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3}
-\point[4pt]{(-4,0), (4,0), (0,-2)}
-\plotsymbol {Asterisk}{(0, 0)}
-\arrow \reverse \arrow \polyline{(-5,-4), (5,-4)}
-\gclear \tlabelrect(0,-5){\scriptsize $y = -4$}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
-\tcaption{$r = \frac{4}{1-\sin(\theta)}$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \plrfcn{-200,20,5}{4/(1-sind(t))}
-\end{mfpic} 
+%Focus
+\node at (0,0) {\large $*$};
+\node at (3,0) {\large $*$};
+\node at (1.5,0) {\large $\times$};
 
-&
+%Points
+\fill[blue] (-3,0) circle (2pt);
+\fill[blue] (6,0) circle (2pt);
+\fill[blue] (1.5,4.25) circle (2pt);
+\fill[blue] (1.5,-4.25) circle (2pt);
 
-\begin{mfpic}[13]{-4}{7}{-6}{6}
-\axes
-\tlabel[cc](7,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,6){\scriptsize $y$}
-\dashed \polyline{(-6,0), (-4,0)}
-\xmarks{-3,-2,-1,1,2,3,4,5,6}
-\ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\point[4pt]{(-3,0), (6,0), (1.5, 4.25), (1.5,-4.25)}
-\plotsymbol {Asterisk}{(0, 0), (3,0)}
-\plotsymbol {Cross}{(1.5,0)}
-\arrow \reverse \arrow \polyline{(-6,-6), (-6,6)}
-\gclear \tlabelrect(-6,-4){\scriptsize $x = -12$}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{ {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\tcaption{$r = \frac{12}{3-\cos(\theta)}$}
-\penwd{1.25pt}
-\ellipse{(1.5,0),4.5,4.25}
-\end{mfpic} \\
-
-\end{tabular}
-\end{center}
-
-
-
-\item From $r = \frac{6}{1 + 2\sin(\theta)}$ we get $e = 2 > 1$ so the graph is a hyperbola.  
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
  
+\item From $r = \frac{6}{1 + 2\sin(\theta)}$ we get $e = 2 > 1$ so the graph is a hyperbola.  
+
 
 Since $ed = 6$, we get $d=3$, and from the form of the equation, we know the directrix is $y = 3$.  
 
- 
 
 Hence,  the transverse axis of the hyperbola lies along the $y$-axis, so we can find the vertices by looking where the hyperbola intersects the $y$-axis.  
 
- 
 
 We find $r\left( \frac{\pi}{2} \right) = 2$ and $r\left(\frac{3\pi}{2}\right) = -6$.  These two points correspond to the rectangular points $(0,2)$ and $(0,6)$ which puts the center of the hyperbola at $(0,4)$.  
 
- 
 
 Since one focus is at $(0,0)$,  $4$ units away from the center, we know the other focus is at $(0,8)$.  
 
@@ -1085,38 +1112,59 @@ Since the center of the hyperbola is $(0,4)$, the asymptotes are $y = \pm \frac{
 Using all of our work, we graph the hyperbola below.
 
 
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-6, xmax=6, ymin=-2, ymax=11,
+    axis lines=middle,
+    axis line style={-{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x$}, ylabel={$y$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={ -5, -4, -3, -2, -1, 1, 2, 3, 4, 5},
+    ytick={-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+    % Polar Graph
+    % TikZ math engine uses degrees by default
 
-\begin{center}
+\draw[thick, blue, smooth, samples=100, domain=5:175, <->] 
+    plot ({ (6/(1+2*sin(\x))) * cos(\x) }, { (6/(1+2*sin(\x))) * sin(\x) });
 
-\begin{mfpic}[13]{-6}{6}{-1}{9}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,9){\scriptsize $y$}
-\dashed \function{-5,5,0.1}{0.577*x+4}
-\dashed \function{-5,5,0.1}{4-0.577*x}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{1,2,3,5,6,7,8}
-\point[4pt]{(0,2), (0,6)}
-\plotsymbol {Asterisk}{(0, 0), (0,8)}
-\plotsymbol {Cross}{(0,4)}
-\arrow \reverse \arrow \polyline{(-6,3), (6,3)}
-\gclear \tlabelrect(0,3){\scriptsize $y = 3$}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{ {$-5 \hspace{7pt} $} -5,{$-4 \hspace{7pt} $} -4,{$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
-\normalsize
-\tcaption{$r = \frac{6}{1 + 2\sin(\theta)}$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \plrfcn{5,175,5}{6/(1+2*sind(t))}
-\arrow \reverse \arrow \plrfcn{-125,-55,5}{6/(1+2*sind(t))}
-\end{mfpic}
+\draw[thick, blue, smooth, samples=100, domain=-125:-55, <->] 
+    plot ({ (6/(1+2*sin(\x))) * cos(\x) }, { (6/(1+2*sin(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-6,3) -- (6,3); 
 
-\end{center}
+\node at (-3,3.5) {\small $y = 3$};
 
+%Focus
+\node at (0,0) {\large $*$};
+\node at (0,0) {\large $*$};
+\node at (0,4) {\large $\times$};
+
+%Points
+\fill[blue] (0,2) circle (2pt);
+\fill[blue] (0,6) circle (2pt);
+
+%Asymptotes
+
+\draw[dotted, domain=-5.5:5.5] plot({ \x }, {0.577*\x+4});
+\draw[dotted, domain=-5.5:5.5] plot({ \x }, {-0.577*\x+4});
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
+\end{explanation}
 \end{example}
 
 
@@ -1130,45 +1178,64 @@ We know from Exercise \ref{polargraphtransformations} in Section \ref{PolarGraph
 
 For instance, to graph $r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$ all we need to do is rotate the graph of  $r = \frac{4}{1-\sin\left(\theta\right)}$, which we obtained in Example \ref{polarconicgraphex} number \ref{polarparabola}, counter-clockwise by $\frac{\pi}{4}$ radians, as shown below.
 
-\begin{center}
-\begin{mfpic}[12]{-5}{5}{-5}{4}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-5,-4,-3,-2,-1,1,2,3}
-\point[4pt]{\plr{(4,225)}, \plr{(4,45)}, \plr{(2,315)}}
-\plotsymbol {Asterisk}{(0, 0)}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
 
-\dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)}
-\dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)}
-\rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
-\rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
 
-\tcaption{$r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$}
-\penwd{1.25pt}
-\arrow \reverse \arrow \plrfcn{85,185,5}{0-4/sind(t-45)}
-\arrow \reverse \arrow \plrfcn{-155,65,5}{4/(1-sind(t-45))}
-\end{mfpic} 
+\begin{image}
+\begin{tikzpicture}[rotate=45, transform shape]
 
-\end{center}
+\begin{axis}[
+    width=6in, height=6in,
+    xmin=-5.5, xmax=5.5, ymin=-5.5, ymax=5.5,
+    axis lines=middle,
+    axis line style={dashed, -{Latex[length=8pt,width=6pt]}},
+    tick style={line width=1pt},
+    major tick length=5pt,
+    xlabel={$x'$}, ylabel={$y'$},
+    xlabel style={anchor=west},
+    ylabel style={anchor=south},
+    xtick={-4, -3, -2,-1, 1, 2, 3, 4},
+    ytick={-4, -3, -2,-1, 1, 2, 3, 4},
+    tick label style={font=\scriptsize},
+    label style={font=\small},
+    samples=100,
+]
+
+% Polar Graph
+    % TikZ math engine uses degrees by default
+
+\draw[thick, blue, smooth, samples=100, domain=-190:10, <->] 
+    plot ({ (4/(1-sin(\x))) * cos(\x) }, { (4/(1-sin(\x))) * sin(\x) });
+    
+% Directrix
+\draw[<->] (-5,-4) -- (5,-4);
+
+%Focus
+\node at (0,0) {\large $*$};
+
+%Points
+\fill[blue] (-4,0) circle (2pt);
+\fill[blue] (0,-2) circle (2pt);
+\fill[blue] (4,0) circle (2pt);
+
+% Create original axes by rotating -45 degrees counterclockwise around the origin (0,0)
+\begin{scope}[rotate around={-45:(0,0)}]
+  
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-5) -- (0,5);
+\node at (5.5, 0) {\small $x$};
+\node at (0, 5.5) {\small $y$};
+
+%Rotation arc
+\draw[->]
+    (4,0)
+    arc[start angle=0,end angle=40,radius=4];
+\node at (4.25, 1.5) {\small $\theta = \frac{\pi}{4}$};
+\end{scope}
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
 
 
 
