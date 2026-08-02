@@ -649,24 +649,25 @@ Since the domain of $f$ is all real numbers, we can immediately set  about findi
  
  Since our original inequality is equivalent to $f(t) \leq 0$, we are looking for where the function is negative $(-)$ or $0$, and we get the intervals $\left[0, \frac{\pi}{6}\right] \cup \left[\frac{5\pi}{6}, 2\pi \right)$.  We can confirm our answer graphically by seeing where the graph of $y = 2\sin(t)$ crosses or is below the graph of $y = 1$. 
 
-\begin{center}
-
-\begin{mfpic}[10]{-6}{6}{-2}{2}
-\polyline{(-6,0),(6,0)}
-\xmarks{-6,-2,2,6}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-\tlabel[cc](-6,-1){$0$}
-\tlabel[cc](-4,1){$(-)$}
-\tlabel[cc](-2,-1){$\frac{\pi}{6}$}
-\tlabel[cc](-2,1){0}
-\tlabel[cc](0,1){$(+)$}
-\tlabel[cc](2,-1){$\frac{5\pi}{6}$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](4,1){$(-)$}
-\tlabel[cc](6,-1){$2\pi$}
-\end{mfpic} 
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[-, line width=1.25pt] (0,0) -- (6,0);
+  \draw (0,-0.12) -- (0,0.12);
+  \draw (2,-0.12) -- (2,0.12);
+   \draw (4,-0.12) -- (4,0.12);
+    \draw (6,-0.12) -- (6,0.12);
+  \node at (1, 0.5) {$(-)$};
+  \node at (2,0.5) {$0$};
+   \node at (4,0.5) {$0$};
+  \node at (3,0.5) {$(+)$};
+   \node at (5,0.5) {$(-)$};
+    \node at (0,-0.5) {$0$};
+   \node at (2,-0.5) {$\pi/6$};
+   \node at (4,-0.5) {$5\pi/6$};
+   \node at (6,-0.5) {$2\pi$};
+\end{tikzpicture}
+\end{image}
 
 
 
@@ -676,7 +677,7 @@ Since the domain of $f$ is all real numbers, we can immediately set  about findi
 
 
 
-\end{center}
+
 
 
 \item  We first rewrite  $\sin(2x) > \cos(x)$   as $\sin(2x) - \cos(x) > 0$ and let $f(x) = \sin(2x) - \cos(x)$.  
@@ -705,37 +706,40 @@ Choosing test values, we get: for  $x =0$ we find $f(0) = -1$; when $x = \frac{\
 
 We see $f(x) > 0$ on $\left(\frac{\pi}{6}, \frac{\pi}{2}\right) \cup \left(\frac{5\pi}{6}, \frac{3\pi}{2}\right)$, so this is our answer.  Geometrically, we see the graph of $y = \sin(2x)$ is indeed above the graph of $y = \cos(x)$ on those intervals. 
 
-\begin{center}
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[-, line width=1.25pt] (0,0) -- (10,0);
+  \draw (0,-0.12) -- (0,0.12);
+  \draw (2,-0.12) -- (2,0.12);
+   \draw (4,-0.12) -- (4,0.12);
+    \draw (6,-0.12) -- (6,0.12);
+      \draw (8,-0.12) -- (8,0.12);
+    \draw (10,-0.12) -- (10,0.12);
+   \node at (2,0.5) {$0$};
+   \node at (4,0.5) {$0$};
+   \node at (6,0.5) {$0$};
+   \node at (8,0.5) {$0$};
+    \node at (1, 0.5) {$(-)$};
+  \node at (3,0.5) {$(+)$};
+   \node at (5,0.5) {$(-)$};
+    \node at (7,0.5) {$(+)$};
+   \node at (9,0.5) {$(-)$};
+    \node at (0,-0.5) {$0$};
+   \node at (2,-0.5) {$\pi/6$};
+   \node at (4,-0.5) {$\pi/2$};
+   \node at (6,-0.5) {$5\pi/6$};
+    \node at (8,-0.5) {$3\pi/2$};
+   \node at (10,-0.5) {$2\pi$};
+\end{tikzpicture}
+\end{image}
 
-
-\begin{mfpic}[10]{-10}{10}{-2}{2}
-\polyline{(-10,0),(10,0)}
-\xmarks{-10,-6,-2,2,6,10}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-\tlabel[cc](-10,-1){$0$}
-\tlabel[cc](-8,1){$(-)$}
-\tlabel[cc](-6,-1){$\frac{\pi}{6}$}
-\tlabel[cc](-6,1){0}
-\tlabel[cc](-4,1){$(+)$}
-\tlabel[cc](-2,-1){$\frac{\pi}{2}$}
-\tlabel[cc](-2,1){0}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,-1){$\frac{5\pi}{6}$}
-\tlabel[cc](2,1){0}
-\tlabel[cc](4,1){$(+)$}
-\tlabel[cc](6,-1){$\frac{3\pi}{2}$}
-\tlabel[cc](6,1){0}
-\tlabel[cc](8,1){$(-)$}
-\tlabel[cc](10,-1){$2\pi$}
-\end{mfpic} 
 
  \includegraphics[height=2.5in]{./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq16.jpg}
 
  { $y = \sin(2x)$} and  $y = \cos(x)$ 
 
-\end{center}
+
 
 \item  Proceeding as above, we rewrite  $\tan(x) \geq 3$ as $\tan(x) - 3 \geq 0$ and let $f(x) = \tan(x) - 3$.  
 
@@ -767,36 +771,39 @@ For our last test value, we choose $x = \frac{7\pi}{4}$ and find $f\left(\frac{7
 
 Since we want $f(x) \geq 0$, we see that our answer is $\left[ \arctan(3), \frac{\pi}{2}\right) \cup  \left[\arctan(3)+\pi, \frac{3\pi}{2}\right)$.  Using the graphs of $y = \tan(x)$ and $y = 3$, we see when the graph of the former is above (or meets) the graph of the latter. (Note, $\arctan(3) \approx 1.249$ and $\arctan(3) + \pi \approx 4.391$.)
 
-\begin{center}
-
-\begin{mfpic}[10]{-10}{10}{-2}{2}
-\polyline{(-10,0),(10,0)}
-\xmarks{-10,-6,-2,2,6,10}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-\tlabel[cc](-10,-1){$0$}
-\tlabel[cc](-8,1){$(-)$}
-\tlabel[cc](-6,-1){\tiny $\arctan(3)$}
-\tlabel[cc](-6,1){0}
-\tlabel[cc](-4,1){$(+)$}
-\tlabel[cc](-2,-1){$\frac{\pi}{2}$}
-\tlabel[cc](-2,1){\textinterrobang}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,-1){\tiny $(\arctan(3)+\pi)$}
-\tlabel[cc](2,1){0}
-\tlabel[cc](4,1){$(+)$}
-\tlabel[cc](6,-1){$\frac{3\pi}{2}$}
-\tlabel[cc](6,1){\textinterrobang}
-\tlabel[cc](8,1){$(-)$}
-\tlabel[cc](10,-1){$2\pi$}
-\end{mfpic} 
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[-, line width=1.25pt] (0,0) -- (10,0);
+  \draw (0,-0.12) -- (0,0.12);
+  \draw (2,-0.12) -- (2,0.12);
+   \draw (4,-0.12) -- (4,0.12);
+    \draw (6,-0.12) -- (6,0.12);
+      \draw (8,-0.12) -- (8,0.12);
+    \draw (10,-0.12) -- (10,0.12);
+   \node at (2,0.5) {$0$};
+   %\node at (4,0.5) {$0$};
+   \node at (6,0.5) {$0$};
+   %\node at (8,0.5) {$0$};
+    \node at (1, 0.5) {$(-)$};
+  \node at (3,0.5) {$(+)$};
+   \node at (5,0.5) {$(-)$};
+    \node at (7,0.5) {$(+)$};
+   \node at (9,0.5) {$(-)$};
+    \node at (0,-0.5) {$0$};
+   \node at (2,-0.5) {$\arctan(3)$};
+   \node at (4,-0.5) {$\pi/2$};
+   \node at (6,-0.5) {$\arctan(3)+\pi$};
+    \node at (8,-0.5) {$3\pi/2$};
+   \node at (10,-0.5) {$2\pi$};
+\end{tikzpicture}
+\end{image}
 
  \includegraphics[height=2.5in]{./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq17.jpg} 
  
  { $y = \tan(x)$} and $y =3$ 
 
-\end{center}
+
 
 
 \vspace{-.25in} \qed
@@ -838,40 +845,40 @@ Our next example puts solving equations and inequalities to good use -- finding 
 
 Solving $\sin\left(2x + \frac{\pi}{3}\right) = 0$, we get $x = -\frac{\pi}{6} + \frac{\pi}{2} k$ for integers $k$.  In set-builder notation, our domain is  $\left\{ x \, | \, x  \neq  -\frac{\pi}{6} + \frac{\pi}{2} k \, \text{for integers $k$} \right\}$.  To help visualize the domain,  we follow the old mantra `When in doubt, write it out!' We get $\left\{ x \, | \, x  \neq  -\frac{\pi}{6}, \frac{2\pi}{6}, -\frac{4\pi}{6}, \frac{5\pi}{6}, -\frac{7\pi}{6}, \frac{8\pi}{6}, \ldots \right\}$, where we have kept the denominators $6$ throughout to help see the pattern.  Graphing the situation on a number line, we have
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=0.75,>=Latex]
 
-\begin{mfpic}[15]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\xmarks{-5,-3,-1,1,3,5}
-\tlpointsep{5pt}
-\axislabels {x}{{\small $-\frac{7\pi}{6} \hspace{7pt}$} -5,{\small $-\frac{4\pi}{6} \hspace{7pt}$} -3, {\small $-\frac{\pi}{6} \hspace{7pt}$} -1,{\small $\frac{2\pi}{6}$} 1,{\small $\frac{5\pi}{6}$} 3,  {\small $\frac{8\pi}{6}$} 5}
+% Number line
+\draw[line width=1.4pt,<->] (-7.6,1.1) -- (7.6,1.1);
 
-\penwd{1.5}
-\arrow \reverse \arrow \polyline{(-5.75,1), (5.75,1)}
+% Open circles
+\foreach \x in {-5,-3,-1,1,3,5}
+{
+    \draw[line width=1pt,fill=white] (\x,1.1) circle (0.2);
+}
 
-\penwd{0.75}
+% Tick marks
+\foreach \x in {-5,-3,-1,1,3,5}
+{
+    \draw[line width=0.8pt] (\x,-0.05)--(\x,0.15);
+}
 
-\gclear \circle{(-5,1),0.15}
-\circle{(-5,1),0.15}
+% Lower axis
+\draw[<->,line width=0.8pt] (-7.6,0.05)--(7.6,0.05);
 
-\gclear \circle{(-3,1),0.15}
-\circle{(-3,1),0.15}
+% Labels
+\node[below=2pt] at (-5,0.05) {$-\frac{7\pi}{6}$};
+\node[below=2pt] at (-3,0.05) {$-\frac{4\pi}{6}$};
+\node[below=2pt] at (-1,0.05) {$-\frac{\pi}{6}$};
 
-\gclear \circle{(-1,1),0.15}
-\circle{(-1,1),0.15}
+%\node[below=2pt] at (0,0.05) {$0$};
 
-\gclear \circle{(5,1),0.15}
-\circle{(5,1),0.15}
+\node[below=2pt] at (1,0.05) {$\frac{2\pi}{6}$};
+\node[below=2pt] at (3,0.05) {$\frac{5\pi}{6}$};
+\node[below=2pt] at (5,0.05) {$\frac{8\pi}{6}$};
 
-\gclear \circle{(3,1),0.15}
-\circle{(3,1),0.15}
-
-\gclear \circle{(1,1),0.15}
-\circle{(1,1),0.15}
-
-\end{mfpic}
-
-\end{center}
+\end{tikzpicture}
+\end{image}
 
 Proceeding as in Section \ref{extendedinterval}, we let $x_k$ denote the $k$th number excluded from the domain and we have  $x_k = -\frac{\pi}{6} + \frac{\pi}{2} k = \frac{(3k-1)\pi}{6}$ for integers $k$.  The intervals which comprise the domain are of the form $\left(x_k, x_{k+1}  \right) = \left(\frac{(3k-1)\pi}{6}, \frac{(3k+2)\pi}{6} \right)$ as $k$ runs through the integers.  Using extended interval notation, we have that the domain is
 
@@ -886,47 +893,42 @@ We can check our answer by substituting in values of $k$ to see that it matches 
 
 From $2\cos(t) - 1 = 0$ we get $\cos(t) = \frac{1}{2}$ so $t = \frac{\pi}{3} + 2\pi k$ or $t = \frac{5\pi}{3} + 2\pi k$ for integers $k$.  Using set-builder notation, the domain is $\left\{ t \, | \, t  \neq \frac{\pi}{3} + 2\pi k \, \text{and} \, t \neq \frac{5\pi}{3} + 2\pi k \, \text{for integers $k$} \right\}$. Writing this out, we find the domain is  $\left\{ t \, | \, t  \neq \pm \frac{\pi}{3}, \pm \frac{5\pi}{3}, \pm \frac{7\pi}{3}, \pm \frac{11\pi}{3}, \ldots \right\}$, so we have
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[scale=0.75,>=Latex]
 
-\begin{mfpic}[15]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-8,0), (8,0)}
-\xmarks{-7,-5,-3,-1,1,3,5,7}
-\tlpointsep{5pt}
-\axislabels {x}{{\small $-\frac{11\pi}{3} \hspace{7pt}$} -7,{\small $-\frac{7\pi}{3} \hspace{7pt}$} -5,{\small $-\frac{5\pi}{3} \hspace{7pt}$} -3, {\small $-\frac{\pi}{3} \hspace{7pt}$} -1,{\small $\frac{\pi}{3}$} 1,{\small $\frac{5\pi}{3}$} 3,  {\small $\frac{7\pi}{3}$} 5,  {\small $\frac{11\pi}{3}$} 7}
+% Number line
+\draw[line width=1.4pt,<->] (-8,1.1) -- (8,1.1);
 
-\penwd{1.5}
-\arrow \reverse \arrow \polyline{(-7.75,1), (7.75,1)}
+% Open circles
+\foreach \x in {-7,-5,-3,-1,1,3,5,7}
+{
+    \draw[line width=1pt,fill=white] (\x,1.1) circle (0.2);
+}
 
-\penwd{0.75}
+% Tick marks
+\foreach \x in {-7,-5,-3,-1,1,3,5,7}
+{
+    \draw[line width=0.8pt] (\x,-0.05)--(\x,0.15);
+}
 
-\gclear \circle{(-7,1),0.15}
-\circle{(-7,1),0.15}
+% Lower axis
+\draw[<->,line width=0.8pt] (-8,0.05)--(8,0.05);
 
-\gclear \circle{(-5,1),0.15}
-\circle{(-5,1),0.15}
+% Labels
+\node[below=2pt] at (-7,0.05) {$-\frac{11\pi}{3}$};
+\node[below=2pt] at (-5,0.05) {$-\frac{7\pi}{3}$};
+\node[below=2pt] at (-3,0.05) {$-\frac{5\pi}{3}$};
+\node[below=2pt] at (-1,0.05) {$-\frac{\pi}{3}$};
 
-\gclear \circle{(-3,1),0.15}
-\circle{(-3,1),0.15}
+%\node[below=2pt] at (0,0.05) {$0$};
 
-\gclear \circle{(-1,1),0.15}
-\circle{(-1,1),0.15}
+\node[below=2pt] at (1,0.05) {$\frac{\pi}{3}$};
+\node[below=2pt] at (3,0.05) {$\frac{5\pi}{3}$};
+\node[below=2pt] at (5,0.05) {$\frac{7\pi}{3}$};
+\node[below=2pt] at (7,0.05) {$\frac{11\pi}{3}$};
 
-\gclear \circle{(7,1),0.15}
-\circle{(7,1),0.15}
-
-\gclear \circle{(5,1),0.15}
-\circle{(5,1),0.15}
-
-\gclear \circle{(3,1),0.15}
-\circle{(3,1),0.15}
-
-\gclear \circle{(1,1),0.15}
-\circle{(1,1),0.15}
-
-
-\end{mfpic}
-
-\end{center}
+\end{tikzpicture}
+\end{image}
 
 Unlike the previous example, we have \textit{two} different families of points to consider, and we present two ways of dealing with this kind of situation.  One way is to generalize what we did in the previous example and use the formulas we found in our domain work to describe the intervals. 
 
@@ -965,23 +967,23 @@ We let $g(x) = 1 - \cot(x)$ and set about making a sign diagram for $g$ over the
 
 Next, we look for the zeros of $g$.  Solving $g(x) = 0$, we get $\cot(x) = 1$ or $x = \frac{\pi}{4} + \pi k$ for integers $k$ and only one of these, $x = \frac{\pi}{4}$, lies in $(0,\pi)$.   Choosing the test values $x = \frac{\pi}{6}$ and $x = \frac{\pi}{2}$, we get $g\left(\frac{\pi}{6}\right) = 1 - \sqrt{3}$, and $g\left(\frac{\pi}{2}\right) = 1$.   We construct the sign diagram for $g$ over the interval $(0, \pi)$ below:
 
-\begin{center}
-\begin{mfpic}[10]{-2}{6}{-2}{2}
-\polyline{(-2,0),(6,0)}
-\xmarks{-2,2,6}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-\tlabel[cc](-2,-1){$0$}
-\tlabel[cc](-2,1){\textinterrobang}
-\tlabel[cc](0,1){$(-)$}
-\tlabel[cc](2,-1){$\frac{\pi}{4}$}
-\tlabel[cc](2,1){$0$}
-\tlabel[cc](4,1){$(+)$}
-\tlabel[cc](6,-1){$\pi$}
-\tlabel[cc](6,1){\textinterrobang}
-\end{mfpic} 
-\end{center}
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[-, line width=1.25pt] (0,0) -- (4,0);
+  \draw (0,-0.12) -- (0,0.12);
+  \draw (2,-0.12) -- (2,0.12);
+   \draw (4,-0.12) -- (4,0.12);
+     \node at (1, 0.5) {$(-)$};
+  \node at (2,0.5) {$0$};
+  
+  \node at (3,0.5) {$(+)$};
+  
+    \node at (0,-0.5) {$0$};
+   \node at (2,-0.5) {$\pi/4$};
+   \node at (4,-0.5) {$\pi$};
+\end{tikzpicture}
+\end{image}
 
 We find $g(x) \geq 0$ on $\left[\frac{\pi}{4}, \pi \right)$.  Adding multiples of the period we get our solution to consist of the intervals  $\left[\frac{\pi}{4} + \pi k, \pi + \pi k  \right) = \left[\frac{(4k+1)\pi}{4}, (k+1)\pi \right)$.  
 
@@ -1145,29 +1147,30 @@ Choosing test values $x = \pm 1$, we get $f(-1) = -3\pi^2 < 0$ and $f(1) = \pi^2
 
 Geometrically,  we find the graph of $y = \pi^2-4\arccos^{2}(x)$ is below $y = 0$ (the $x$-axis) on $[-1,0)$.
 
-
-\begin{center}
-
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\polyline{(-5,0),(5,0)}
-\xmarks{-5,0,5}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-\tlabel[cc](-5,-1){$-1$}
-\tlabel[cc](-2.5,1){$(-)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](0,-1){$0$}
-\tlabel[cc](5,-1){$1$}
-\tlabel[cc](2.5,1){$(+)$}
-\end{mfpic} 
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[x=20pt,y=20pt]
+  \draw[-, line width=1.25pt] (0,0) -- (4,0);
+  \draw (0,-0.12) -- (0,0.12);
+  \draw (2,-0.12) -- (2,0.12);
+   \draw (4,-0.12) -- (4,0.12);
+     \node at (1, 0.5) {$(-)$};
+  \node at (2,0.5) {$0$};
+  
+  \node at (3,0.5) {$(+)$};
+  
+    \node at (0,-0.5) {$-1$};
+   \node at (2,-0.5) {$0$};
+   \node at (4,-0.5) {$1$};
+\end{tikzpicture}
+\end{image}
 
 
  \includegraphics[height=2.5in]{./TrigonometricEquationsandInequalitiesGraphics/ARCCOSINEQ.jpg} \\
 
 { $y = \pi^2-4\arccos^{2}(x)$} and $y=0$  
 
-\end{center}
+
 
 \item   As in the previous problem, we will use a sign diagram to solve $4 \, \text{arccot}(3t) > \pi$.  Our first step is to rewrite the inequality as $4 \, \text{arccot}(3t) -  \pi > 0$. 
 
@@ -1198,21 +1201,21 @@ Next, we make a sign diagram for $f$.  Since the domain of $f$ is all real numbe
  We find $f(0) = \pi > 0$ and $f\left(\frac{\sqrt{3}}{3}\right) = -\frac{\pi}{3} < 0$.  Since we are looking for where $f(t) > 0$, we get our answer $\left(-\infty, \frac{1}{3}\right)$.   Graphically, we see  the graph of $y = 4 \, \text{arccot}(3t)$  is above the horizontal line $y = \pi$ on $\left(-\infty, \frac{1}{3}\right)= \left(-\infty, 0.\overline{3} \right)$.
 
 
+\begin{image}
+% \input{PowerFunctions_pic26.tex}
+\begin{tikzpicture}[>=Latex,x=20pt,y=20pt]
+  \draw[<->, line width=1.25pt] (0,0) -- (4,0);
+  
+  \draw (2,-0.12) -- (2,0.12);
+  
+     \node at (1, 0.5) {$(+)$};
+  \node at (2,0.5) {$0$};
+  
+  \node at (3,0.5) {$(-)$};
+     \node at (2,-0.5) {$1/3$};
+ \end{tikzpicture}
+\end{image}
 
-\begin{center}
-
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0),(5,0)}
-\xmarks{0}
-\tiny
-\tlpointsep{6pt}
-\normalsize
-
-\tlabel[cc](-2.5,1){$(+)$}
-\tlabel[cc](0,1){$0$}
-\tlabel[cc](0,-1){$\frac{1}{3}$}
-\tlabel[cc](2.5,1){$(-)$}
-\end{mfpic}
 
  \includegraphics[height=2.5in]{./TrigonometricEquationsandInequalitiesGraphics/ARCCOTINEQ.jpg} 
 
@@ -1220,7 +1223,6 @@ Next, we make a sign diagram for $f$.  Since the domain of $f$ is all real numbe
 
 
 
-\end{center}
 
 
 \end{enumerate}
@@ -1244,70 +1246,180 @@ In Physics, `mass' is defined as a measure of an object's resistance to straight
 
 We convert between mass and weight using the formula\footnote{This is a consequence of Newton's Second Law of Motion $F = ma$ where $F$ is force, $m$ is mass and $a$ is acceleration.  In our present setting, the force involved is weight which is caused by the acceleration due to gravity.} $w = mg$.   Here, $w$ is the weight of the object, $m$ is the mass and $g$ is the acceleration due to gravity.  In the English system, $g = 32 \frac{\text{feet}}{\text{second}^2}$, and in the SI system, $g = 9.8\frac{\text{meters}}{\text{second}^2}$. Hence, on Earth a \textit{mass} of 1 slug \textit{weighs} 32 lbs. and a \textit{mass} of 1 kg \textit{weighs} 9.8 N.\footnote{Note that $1$ pound $ = 1 \, \frac{\text{slug foot}}{\text{second}^2}$ and $1$ Newton $ = 1 \, \frac{\text{kg meter}}{\text{second}^2}$.}    Suppose we attach an object with mass $m$ to a spring as depicted below. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}[t]{ccc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[15]{-3}{3}{-2}{5}
-\dashed \polyline{(-3,0.5), (3,0.5)}
-\hatchcolor[gray]{.7}
-\lhatch \rect{(-3,4), (3,5)}
-\fillcolor[gray]{.7} 
-\gfill \rect{(-0.5,0), (0.5,1)}
-\polyline{(0,4), (0,3.5), (0.25,3.25), (-0.25, 3), (0.25,2.75), (-0.25,2.5), (0.25,2.25), (-0.25,2), (0.25,1.75), (-0.25,1.5), (0, 1.25), (0,1)}
-\penwd{1.025}
-\rect{(-3,4), (3,5)}
-\rect{(-0.5,0), (0.5,1)}
-\drawcolor{white} \polyline{(-3,-2), (-3,2)}
-\end{mfpic} 
+\def\panelwidth{5.6}
+\def\supportwidth{3.4}
+\def\supportheight{0.55}
+\def\masswidth{0.58}
+\def\massheight{0.58}
+\def\equily{-2.55}
 
-&
+%================================================
+% Left panel: equilibrium position
+%================================================
 
-\hspace{0.5in}
-\begin{mfpic}[15]{-3}{3}{-2}{5}
-\dashed \polyline{(-3,0.5), (3,0.5)}
-\hatchcolor[gray]{.7}
-\lhatch \rect{(-3,4), (3,5)}
-\fillcolor[gray]{.7} 
-\gfill \rect{(-0.5,0.95), (0.5,1.95)}
-\polyline{(0,4), (0,3.5), (0.25,3.4), (-0.25, 3.25), (0.25,3.1), (-0.25,2.95), (0.25,2.8), (-0.25,2.65), (0.25,2.5), (-0.25,2.35), (0, 2.2), (0,1.95)}
-\penwd{1.025}
-\rect{(-3,4), (3,5)}
-\rect{(-0.5,0.95), (0.5,1.95)}
-\drawcolor{white} \polyline{(-3,-2), (-3,2)}
-\end{mfpic} 
+% Ceiling support
+\draw[very thick, fill=brown]
+    (-\supportwidth/2,0)
+    rectangle
+    (\supportwidth/2,\supportheight);
 
-&
 
-\hspace{0.5in}
-\begin{mfpic}[15]{-3}{3}{-2}{5}
-\dashed \polyline{(-3,0.5), (3,0.5)}
-\hatchcolor[gray]{.7}
-\lhatch \rect{(-3,4), (3,5)}
-\fillcolor[gray]{.7} 
-\gfill \rect{(-0.5,-1.35), (0.5,-0.35)}
-\polyline{(0,4), (0,3.5), (0.25,3.1), (-0.25, 2.7), (0.25,2.3), (-0.25, 1.9), (0.25,1.5), (-0.25,1.1), (0.25,0.7), (-0.25,0.3), (0, -0.1), (0,-0.35)}
-\penwd{1.025}
-\rect{(-3,4), (3,5)}
-\rect{(-0.5,-1.35), (0.5,-0.35)}
-\drawcolor{white} \polyline{(-3,-2), (-3,2)}
-\end{mfpic} \\
- 
-$x(t) = 0$ at the &
-\hspace{0.5in}
-$x(t) < 0$ above the&
-\hspace{0.5in}
-$x(t) > 0$ below the \\
 
-equilibrium position & 
-\hspace{0.5in}
-equilibrium position & 
-\hspace{0.5in}
-equilibrium position \\
+% Spring
+\draw
+    (0,0)
+    --
+    (0,-0.28)
+    --
+    (-0.13,-0.42)
+    --
+    (0.13,-0.56)
+    --
+    (-0.13,-0.70)
+    --
+    (0.13,-0.84)
+    --
+    (-0.13,-0.98)
+    --
+    (0.13,-1.12)
+    --
+    (-0.13,-1.26)
+    --
+    (0.13,-1.40)
+    --
+    (0,-1.54);
 
-\end{tabular}
+% Mass
+\draw[very thick,fill=gray!45]
+    (-\masswidth/2,-1.54-\massheight)
+    rectangle
+    (\masswidth/2,-1.54);
 
-\end{center}
+% Equilibrium line
+\draw[dashed]
+    (-1.5,-1.54-\massheight/2) -- (1.5,-1.54-\massheight/2);
+
+% Caption
+\node[align=center] at (0,-4.1)
+    {$x(t)=0$ at the\\equilibrium position};
+
+
+%================================================
+% Middle panel: above equilibrium
+%================================================
+
+\begin{scope}[xshift=5.6cm]
+
+% Ceiling support
+\draw[very thick, fill=brown]
+    (-\supportwidth/2,0)
+    rectangle
+    (\supportwidth/2,\supportheight);
+
+
+
+% Shorter spring
+\draw
+    (0,0)
+    --
+    (0,-0.25)
+    --
+    (-0.13,-0.37)
+    --
+    (0.13,-0.49)
+    --
+    (-0.13,-0.61)
+    --
+    (0.13,-0.73)
+    --
+    (-0.13,-0.85)
+    --
+    (0,-0.97);
+
+% Mass
+\draw[very thick,fill=gray!45]
+    (-\masswidth/2,-0.97-\massheight)
+    rectangle
+    (\masswidth/2,-0.97);
+
+% Equilibrium line
+\draw[dashed]
+   (-1.5,-1.54-\massheight/2) -- (1.5,-1.54-\massheight/2);
+
+% Caption
+\node[align=center] at (0,-4.1)
+    {$x(t)<0$ above the\\equilibrium position};
+
+\end{scope}
+
+
+%================================================
+% Right panel: below equilibrium
+%================================================
+
+\begin{scope}[xshift=11.2cm]
+
+% Ceiling support
+\draw[very thick, fill=brown]
+    (-\supportwidth/2,0)
+    rectangle
+    (\supportwidth/2,\supportheight);
+
+
+% Longer spring
+\draw
+    (0,0)
+    --
+    (0,-0.38)
+    --
+    (-0.13,-0.56)
+    --
+    (0.13,-0.74)
+    --
+    (-0.13,-0.92)
+    --
+    (0.13,-1.10)
+    --
+    (-0.13,-1.28)
+    --
+    (0.13,-1.46)
+    --
+    (-0.13,-1.64)
+    --
+    (0.13,-1.82)
+    --
+    (-0.13,-2.00)
+    --
+    (0,-2.18);
+
+% Mass
+\draw[very thick,fill=gray!45]
+    (-\masswidth/2,-2.18-\massheight)
+    rectangle
+    (\masswidth/2,-2.18);
+
+% Equilibrium line
+\draw[dashed]
+    (-1.5,-1.54-\massheight/2) -- (1.5,-1.54-\massheight/2);
+
+% Caption
+\node[align=center] at (0,-4.1)
+    {$x(t)>0$ below the\\equilibrium position};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 The weight of the object will stretch the spring.   The system is said to be in `equilibrium' when the weight of the object is perfectly balanced with the restorative force of the spring.  How far the spring stretches to reach equilibrium depends on the spring's `spring constant'. Usually denoted by the letter $k$, the spring constant relates the force $F$ applied to the spring to the amount $d$ the spring stretches in accordance with \href{http://en.wikipedia.org/wiki/Hooke's_law}{\underline{Hooke's Law}}\footnote{Look familiar?  We saw Hooke's Law in Section \ref{AppVariation}.} $F = kd$.  
 
