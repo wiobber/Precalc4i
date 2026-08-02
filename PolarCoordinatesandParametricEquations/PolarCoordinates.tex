@@ -1558,45 +1558,124 @@ For the $r = -117$ case,  we visualize moving left $117$ units from the pole and
 
 \item We move three units to the left of the pole and follow up with a clockwise rotation of $\frac{\pi}{4}$ radians to  plot $P\left(-3, -\frac{\pi}{4} \right)$.  We see that $P$ lies on the terminal side of $\frac{3\pi}{4}$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\dotted \rotatepath{(0,0),135} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\point[3pt]{(0,0)}
-\point[3pt]{(-2.12,2.12)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](-2.75,0.5){\scriptsize $\theta = -\frac{\pi}{4}$}
-\arrow \parafcn{175, 140, -5}{1.5*dir(t)}
-\penwd{1.05}
-\arrow \polyline{(0,0), (-2.12,2.12)}
-\end{mfpic}
+\def\panelwidth{8.0}
+\def\ang{135}          % equivalent direction for (-3,-pi/4)
+\def\pointdist{3}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(-2.12,2.12)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\dotted \polyline{(0,0), (-2.12,2.12)}
-\tlabel[cc](-2.12,2.5){\scriptsize $P\left(-3,-\frac{\pi}{4}\right)$}
-\dotted \parafcn{175, 140, -5}{1.5*dir(t)}
-\end{mfpic}  \\
+% Polar axis
+\draw[->] (-4.6,0)--(4.8,0);
 
-\end{tabular}
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+}
 
-\end{center}
+% Dotted negative polar axis
+\draw[densely dotted] (-4.6,0)--(0,0);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,-0.18) {Pole};
+
+% Solid ray
+\draw[very thick]
+    (0,0)--(\ang:\pointdist);
+
+% Dashed continuation
+\draw[dashed]
+    (\ang:\pointdist)--(\ang:4.0);
+
+% Tick marks on ray
+\foreach \r in {1,2}
+{
+    \draw
+        ({\r*cos(\ang)-0.06*sin(\ang)},
+         {\r*sin(\ang)+0.06*cos(\ang)})
+        --
+        ({\r*cos(\ang)+0.06*sin(\ang)},
+         {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Endpoint
+\fill (\ang:\pointdist) circle (2.5pt);
+
+% Angle
+\draw[->]
+    (-0.80,0)
+    arc[
+        start angle=180,
+        end angle=135,
+        radius=0.80
+    ];
+
+\node[left] at (-1.10,0.45)
+{$\theta=-\frac{\pi}{4}$};
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=10cm]
+
+% Polar axis
+\draw[->] (-4.6,0)--(4.8,0);
+
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+}
+
+% Dotted negative polar axis
+\draw[densely dotted] (-4.6,0)--(0,0);
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,-0.18) {Pole};
+
+% Point
+\coordinate (P) at (\ang:\pointdist);
+
+% Dotted guide
+\draw[densely dotted]
+    (0,0)--(P);
+
+% Dotted angle
+\draw[densely dotted]
+    (-0.80,0)
+    arc[
+        start angle=180,
+        end angle=135,
+        radius=0.80
+    ];
+
+% Point
+\fill (P) circle (2.5pt);
+
+% Label
+\node[above left] at (P)
+{$P\left(-3,-\frac{\pi}{4}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Since $P$ lies on the terminal side of $\frac{3\pi}{4}$, one alternative representation for  $P$ is $\left(3, \frac{3\pi}{4}\right)$. 
 
@@ -1604,53 +1683,142 @@ Since $P$ lies on the terminal side of $\frac{3\pi}{4}$, one alternative represe
 
  To find a different representation for $P$ with $r=-3$, we may choose any angle coterminal with $-\frac{\pi}{4}$.  We choose $\theta = \frac{7\pi}{4}$ for our final answer $\left(-3, \frac{7\pi}{4} \right)$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\dashed\rotatepath{(0,0),135} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\xmarks{1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(-2.12,2.12)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](-1,2.25){\scriptsize $P\left(3,\frac{3\pi}{4}\right)$}
-\dotted \parafcn{175, 140, -5}{1.5*dir(t)}
-\arrow \parafcn{5, 130, 5}{0.75*dir(t)}
-\tlabel[cc](1, 1){\scriptsize $\theta = \frac{3\pi}{4}$}
-\drawcolor{white} \parafcn{240, 300, 5}{0.85*dir(t)}
-\end{mfpic}
+\def\panelwidth{8.2}
+\def\ang{135}          % 3pi/4
+\def\pointdist{3}
 
-&
+%================================================
+% Left panel : P(3,3pi/4)
+%================================================
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\arrow \polyline{(0,0), (5,0)}
-\dotted \polyline{(0,0), (-5,0)}
-\dotted \rotatepath{(0,0),135} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(-2.12,2.12)}
-\tlabel[cc](0,-0.5){\scriptsize Pole}
-\tlabel[cc](-1,2.25){\scriptsize $P\left(-3,\frac{7\pi}{4}\right)$}
-\dotted \parafcn{175, 140, -5}{1.5*dir(t)}
-\arrow \parafcn{185, 490, 5}{0.85*dir(t)}
-\tlabel[cc](1.5, 1){\scriptsize $\theta = \frac{7\pi}{4}$}
-\end{mfpic}  \\
+% Polar axis
+\draw[->] (-4.8,0)--(4.8,0);
 
-\end{tabular}
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+}
 
-\end{center}
 
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,-0.18) {Pole};
+
+% Dashed terminal ray
+\draw[dashed]
+    (0,0)--(\ang:4.2);
+
+% Tick marks on ray
+\foreach \r in {1,2,3}
+{
+    \draw
+    ({\r*cos(\ang)-0.06*sin(\ang)},
+     {\r*sin(\ang)+0.06*cos(\ang)})
+    --
+    ({\r*cos(\ang)+0.06*sin(\ang)},
+     {\r*sin(\ang)-0.06*cos(\ang)});
+}
+
+% Point
+\fill (\ang:\pointdist) circle (2.5pt);
+
+\node[right] at (\ang:\pointdist)
+{$P\left(3,\frac{3\pi}{4}\right)$};
+
+
+% Angle
+\draw[->]
+(0.80,0)
+arc[
+start angle=0,
+end angle=135,
+radius=0.80];
+
+\draw[densely dotted]
+(-0.80,0)
+arc[
+start angle=180,
+end angle=135,
+radius=0.80];
+
+\node[right] at (0.40,0.78)
+{$\theta=\frac{3\pi}{4}$};
+
+
+%================================================
+% Right panel : P(-3,7pi/4)
+%================================================
+
+\begin{scope}[xshift=10cm]
+
+% Polar axis
+\draw[->] (-4.8,0)--(4.8,0);
+
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08)--(\x,0.08);
+}
+
+
+
+% Pole
+\fill (0,0) circle (2.5pt);
+\node[below] at (0,-0.18) {Pole};
+
+% Point (negative radius reverses direction)
+\coordinate (P) at (135:\pointdist);
+
+% Dotted guide
+\draw[densely dotted]
+(0,0)--(135:4.2);
+
+% Tick marks on guide
+\foreach \r in {1,2,3}
+{
+    \draw
+    ({\r*cos(135)-0.06*sin(135)},
+     {\r*sin(135)+0.06*cos(135)})
+    --
+    ({\r*cos(135)+0.06*sin(135)},
+     {\r*sin(135)-0.06*cos(135)});
+}
+
+% Point
+\fill (P) circle (2.5pt);
+
+\node[right] at (P)
+{$P\left(-3,\frac{7\pi}{4}\right)$};
+
+
+
+% Large angle (7pi/4)
+\draw[->]
+(0.90,0)
+arc[
+start angle=0,
+end angle=-225,
+radius=0.90];
+
+\node[right] at (-1.4,-1.2)
+{$\theta=\frac{7\pi}{4}$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 \end{enumerate}
 
    
@@ -1814,55 +1982,133 @@ We find $\tan(\theta) = \frac{-3}{-3} = 1$, which means $\theta$ has a reference
 
 Checking our answer, we find that $x = r\cos(\theta) = (3\sqrt{2}) \cos\left(\frac{5\pi}{4}\right) = (3\sqrt{2})\left(-\frac{\sqrt{2}}{2}\right) = -3$ and compute  $y = r\sin(\theta) = (3\sqrt{2}) \sin\left(\frac{5\pi}{4}\right) = (3\sqrt{2})\left(-\frac{\sqrt{2}}{2}\right) = -3$, so we are done.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{center}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{tabular}{cc}
+\def\panelwidth{7.8}
+\def\R{4.6}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\dashed\rotatepath{(0,0),300} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0), 300} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0), 300} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),300} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),300} \polyline{(4,-0.15),(4,0.15)}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\tlabel[cc](2.5,-3.5){\scriptsize $P$}
-\point[3pt]{(0,0)}
-\point[3pt]{(2,-3.46)}
-\arrow \parafcn{5, 295, 5}{0.75*dir(t)}
-\tlabel[cc](1.5, 1){\scriptsize $\theta = \frac{5\pi}{3}$}
-\end{mfpic}
+%================================================
+% Left panel : theta = 5pi/3
+%================================================
 
-&
+% Axes
+\draw[->] (-\R,0)--(\R,0)
+    node[right]{$x$};
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\dashed\rotatepath{(0,0), 225} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0), 225} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0), 225} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0), 225} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(-3,-3)}
-\tlabel[cc](-3.5,-3){\scriptsize $Q$}
-\arrow \parafcn{5, 220, 5}{0.75*dir(t)}
-\tlabel[cc](1.5, 1){\scriptsize $\theta = \frac{5\pi}{4}$}
-\end{mfpic}  \\
+\draw[->] (0,-\R)--(0,\R)
+    node[above]{$y$};
 
-$P$ has rectangular coordinates $(2,-2\sqrt{3})$ & $Q$ has rectangular coordinates $(-3,-3)$ \\
-$P$ has polar coordinates $\left(4,\frac{5\pi}{3}\right)$ & $Q$ has polar coordinates $\left(3\sqrt{2}, \frac{5\pi}{4}\right)$  \\
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+    \draw (\x,-0.08)--(\x,0.08);
 
-\end{tabular}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+    \draw (-0.08,\y)--(0.08,\y);
 
-\end{center}
+% Origin
+\fill (0,0) circle (2.5pt);
+
+% Dashed ray
+\draw[dashed]
+    (0,0)--(300:5.0);
+
+% Tick marks on ray
+\foreach \r in {1,2,3}
+{
+\draw
+({\r*cos(300)-0.06*sin(300)},
+ {\r*sin(300)+0.06*cos(300)})
+--
+({\r*cos(300)+0.06*sin(300)},
+ {\r*sin(300)-0.06*cos(300)});
+}
+
+% Point
+\fill (300:3.8) circle (2.5pt);
+
+\node[right=5pt] at (300:3.8)
+{$P$};
+
+
+
+\draw[->]
+(0.60,0)
+arc[
+start angle=0,
+end angle=300,
+radius=0.60];
+
+\node[right] at (0.65,0.80)
+{$\theta=\frac{5\pi}{3}$};
+
+%================================================
+% Right panel : theta = 5pi/4
+%================================================
+
+\begin{scope}[xshift=10cm]
+
+% Axes
+\draw[->] (-\R,0)--(\R,0)
+    node[right]{$x$};
+
+\draw[->] (0,-\R)--(0,\R)
+    node[above]{$y$};
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+    \draw (\x,-0.08)--(\x,0.08);
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+    \draw (-0.08,\y)--(0.08,\y);
+
+% Origin
+\fill (0,0) circle (2.5pt);
+
+% Dashed ray
+\draw[dashed]
+    (0,0)--(225:5.0);
+
+% Tick marks
+\foreach \r in {1,2,3}
+{
+\draw
+({\r*cos(225)-0.06*sin(225)},
+ {\r*sin(225)+0.06*cos(225)})
+--
+({\r*cos(225)+0.06*sin(225)},
+ {\r*sin(225)-0.06*cos(225)});
+}
+
+% Point
+\fill (225:3.8) circle (2.5pt);
+
+\node[left=5pt] at (225:3.8)
+{$Q$};
+
+% Angle
+\draw[->]
+(0.60,0)
+arc[
+start angle=0,
+end angle=225,
+radius=0.60];
+
+\node[right] at (0.65,0.80)
+{$\theta=\frac{5\pi}{4}$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
+
 
 \item The point $R(0,-3)$ lies along the negative $y$-axis.  While we could go through the usual computations\footnote{Since $x=0$, we would have to determine $\theta$ geometrically.} to find the polar form of $R$, in this case it is much more efficient to find the polar coordinates of $R$ using the definition.
 
@@ -1890,50 +2136,126 @@ To check our answers requires a bit of tenacity since we need to simplify expres
 
 \end{enumerate}
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Parameters
+%------------------------------------------------
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\point[3pt]{(0,0)}
-\point[3pt]{(0,-3)}
-\tlabel[cc](0.5,-3){\scriptsize $R$}
-\arrow \parafcn{5, 265, 5}{0.75*dir(t)}
-\tlabel[cc](1.5, 1){\scriptsize $\theta = \frac{3\pi}{2}$}
-\end{mfpic}
+\def\panelwidth{7.8}
+\def\axislength{4.8}
 
-&
+%================================================
+% Left panel
+%================================================
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\dashed\rotatepath{(0,0), 127} \polyline{(0,0),(5,0)}
-\rotatepath{(0,0), 127} \polyline{(1,-0.15),(1,0.15)}
-\rotatepath{(0,0), 127} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0), 127} \polyline{(3,-0.15),(3,0.15)}
-\rotatepath{(0,0), 127} \polyline{(4,-0.15),(4,0.15)}
-\tlabel[cc](5,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0)}
-\point[3pt]{(-3,4)}
-\tlabel[cc](-3.5,4){\scriptsize $S$}
-\arrow \parafcn{5, 120, 5}{0.75*dir(t)}
-\tlabel[cc](3, 1){\scriptsize $\theta =\pi - \arctan\left(\frac{4}{3}\right)$}
-\end{mfpic}  \\
+% Axes
+\draw[->] (-\axislength,0) -- (\axislength,0)
+    node[right] {$x$};
 
-$R$ has rectangular coordinates $(0,-3)$ & $S$ has rectangular coordinates $(-3,4)$ \\
-$R$ has polar coordinates $\left(3,\frac{3\pi}{2}\right)$ & $S$ has polar coordinates $\left(5, \pi - \arctan\left(\frac{4}{3}\right)\right)$  \\
+\draw[->] (0,-\axislength) -- (0,\axislength)
+    node[above] {$y$};
 
-\end{tabular}
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
 
-\end{center}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+}
 
+% Origin and point R
+\fill (0,0) circle (2.5pt);
+\fill (0,-3) circle (2.5pt);
+
+\node[right] at (0.18,-3)
+    {$R$};
+
+% Angle
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=270,
+        radius=0.75
+    ];
+
+\node at (1.25,0.85)
+    {$\theta=\frac{3\pi}{2}$};
+
+
+%================================================
+% Right panel
+%================================================
+
+\begin{scope}[xshift=10cm]
+
+% Axes
+\draw[->] (-\axislength,0) -- (\axislength,0)
+    node[right] {$x$};
+
+\draw[->] (0,-\axislength) -- (0,\axislength)
+    node[above] {$y$};
+
+% Tick marks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+}
+
+% Origin
+\fill (0,0) circle (2.5pt);
+
+% Point S and dashed ray
+\coordinate (S) at (-3,4);
+
+\draw[dashed]
+    (0,0) -- (S);
+
+\fill (S) circle (2.5pt);
+
+\node[left] at (-3.15,4.05)
+    {$S$};
+
+% Tick marks on the dashed ray
+\foreach \r in {1.25,2.5,3.75}
+{
+    \draw
+        ({-\r*3/5-0.07*4/5},
+         {\r*4/5-0.07*3/5})
+        --
+        ({-\r*3/5+0.07*4/5},
+         {\r*4/5+0.07*3/5});
+}
+
+% Angle
+\draw[->]
+    (0.75,0)
+    arc[
+        start angle=0,
+        end angle=126.87,
+        radius=0.75
+    ];
+
+\node[right] at (0.85,0.85)
+    {$\theta=\pi-\arctan\left(\frac{4}{3}\right)$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
    
 
 \end{example}

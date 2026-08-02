@@ -427,23 +427,45 @@ Next, we discuss \textit{scalar} multiplication -- that is, taking a real number
 
 Scalar multiplication by $k$ in vectors can be understood geometrically as scaling the vector (if $k > 0$) or scaling the vector and reversing its direction (if $k < 0$) as demonstrated below.
 
-\begin{center}
-\begin{mfpic}[18]{0}{6}{0}{6}
-\tlabel[cc](0,3){\scriptsize $\overrightarrow{v}$}
-\tlabel[cc](2.5,4){\scriptsize $2\overrightarrow{v}$}
-\tlabel[cc](3.75,2.5){\scriptsize$\frac{1}{2}\overrightarrow{v}$}
-\tlabel[cc](5,1){\scriptsize $-2\overrightarrow{v}$}
-\dotted \polyline{(0,2), (6,2)}
-\setlength{\headlen}{5pt}
-\headshape{1}{2}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,2),(1,4)}
-\arrow \polyline{(2,2), (4, 6)}
-\arrow \polyline{(4,2),(4.5,3)}
-\arrow \polyline{(6,2), (5,0)}
+\begin{image}
+\begin{tikzpicture}[scale=1,font=\LARGE]
+\begin{axis}[
+    xmin=0, xmax=6,
+    ymin=0, ymax=6,
+    width=6in,
+    height=6in,
+    axis lines=none,
+    clip=false
+]
 
-\end{mfpic}
-\end{center}
+% Dotted reference line
+\addplot[dotted, line width=1.2pt] coordinates {(0,2) (6,2)};
+
+% Vector v
+\draw[-{Latex[length=10pt,width=8pt]}, line width=3pt]
+(axis cs:0,2) -- (axis cs:1,4);
+\node[anchor=east] at (axis cs:0.3,3) {$\overrightarrow{v}$};
+
+% Vector 2v
+\draw[-{Latex[length=10pt,width=8pt]}, line width=3pt]
+(axis cs:2,2) -- (axis cs:4,6);
+\node[anchor=east] at (axis cs:2.8,4) {$2\overrightarrow{v}$};
+
+% Vector 1/2 v
+\draw[-{Latex[length=10pt,width=8pt]}, line width=3pt]
+(axis cs:4,2) -- (axis cs:4.5,3);
+\node[anchor=east] at (axis cs:4.2,2.55)
+{$\frac{1}{2}\overrightarrow{v}$};
+
+% Vector -2v
+\draw[-{Latex[length=10pt,width=8pt]}, line width=3pt]
+(axis cs:6,2) -- (axis cs:5,0);
+\node[anchor=east] at (axis cs:5.4,1)
+{$-2\overrightarrow{v}$};
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
 
 
 Note  by definition \ref{scalarmultvector}, $(-1)\overrightarrow{v} = (-1)\left<v_1,v_2\right> = \left<(-1)v_1, (-1)v_2\right> = \left<-v_1,-v_2\right> = -\overrightarrow{v}$, which is what we would expect.   This and other properties of scalar multiplication are summarized in the theorem below. 
@@ -503,9 +525,9 @@ Our next example demonstrates how Theorem \ref{vectorscalarmultprops} allows us 
 
 \begin{example} \label{vectoreqnex}  Solve $5\overrightarrow{v} - 2\left(\overrightarrow{v} + \left<1,-2\right>\right) = \overrightarrow{0}$ for $\overrightarrow{v}$.
 
-\medskip
 
-{\bf Solution.}  
+
+\begin{explanation} 
 
 \[ \begin{array}{rcl}
 
@@ -530,30 +552,48 @@ Our next example demonstrates how Theorem \ref{vectorscalarmultprops} allows us 
 
 The reader is invited to check our solution in the original equation.  \qed
 
-
+\end{explanation}
 \end{example}
 
 A vector whose initial point is $(0,0)$ is said to be in \index{vector ! standard position} \index{standard position of a vector} \textbf{standard position}.  If $\overrightarrow{v} = \left<v_1,v_2\right>$ is plotted in standard position, then its terminal point is necessarily $\left(v_1,v_2\right)$. (Once more, think about this before reading on.)  
 
 \begin{center}
-\begin{mfpic}[20]{-1}{5}{-0.5}{5}
-\axes
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\arrow \parafcn{5,45,5}{1.5*dir(t)}
-\tlabel[cc](1.75, 0.75){$\theta$}
-\tlabel(0,1){\rotatebox{55}{\hspace{.1in} \scriptsize $\| \overrightarrow{v} \| = \sqrt{v_1^2 + v_2^2}$}}
-\point[4pt]{(0,0), (3,4)}
-\tlabel(3.25,4){\scriptsize $\left(v_1,v_2\right)$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,4)}
-\end{mfpic}
+\begin{tikzpicture}[scale=0.8]
 
+% Axes
+\draw[->] (-1,0) -- (5.2,0);
+\draw[->] (0,-0.5) -- (0,5.2);
 
-$\overrightarrow{v} =\left<v_1,v_2\right>$ in standard position.
-\end{center} 
+% Axis labels
+\node at (5.15,-0.25) {\scriptsize $x$};
+\node at (0.25,5.0) {\scriptsize $y$};
+
+% Angle theta
+\draw (0.6,0) arc[start angle=0,end angle=53.13,radius=0.6];
+\node at (0.95,0.45) {$\theta$};
+
+% Length label
+\node[rotate=53.13] at (1,2.5)
+    {\scriptsize $\|\overrightarrow{v}\|=\sqrt{v_1^2+v_2^2}$};
+
+% Endpoints
+\fill (0,0) circle (2pt);
+\fill (3,4) circle (2pt);
+
+% Vector
+\draw[->,line width=1.25pt] (0,0) -- (3,4);
+
+% Endpoint label
+\node[right] at (3.1,4)
+    {\scriptsize $\left(v_1,v_2\right)$};
+
+\end{tikzpicture}
+
+\[
+\overrightarrow{v}=\langle v_1,v_2\rangle
+\text{ in standard position.}
+\]
+\end{center}
 
 \phantomsection
 \label{polarformvectorsection} 
@@ -687,7 +727,7 @@ The formula for   $\hat{v}$ stated  in Theorem \ref{magdirprops}  is a consequen
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -698,32 +738,7 @@ The formula for   $\hat{v}$ stated  in Theorem \ref{magdirprops}  is a consequen
  To determine $\hat{v}$, we appeal to Definition \ref{polarformvector}.  Since $\overrightarrow{v}$ lies in Quadrant II and makes a  $60^{\circ}$ angle with the negative $x$-axis, one angle $\theta$ satisfying the criteria of  Definition \ref{polarformvector} is $\theta = 120^{\circ}$.  
  
 
-\begin{center}
 
-\begin{mfpic}[20]{-4}{4}{-1}{6}
-
-\axes
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1,2,3,4,5}
-\arrow \reverse \arrow \parafcn{125,175,5}{1.5*dir(t)}
-\arrow \parafcn{5,115,5}{1.5*dir(t)}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\tlabel[cc](4,-0.25){\scriptsize $x$}
-\tlabel[cc](0.25,6){\scriptsize $y$}
-\tlabel[cc](2.5,1){\scriptsize $\theta = 120^{\circ}$}
-\tlabel[cc](-2,1){\scriptsize $60^{\circ}$}
-\tlabel[cc](-1.25,3){\scriptsize $\overrightarrow{v}$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\normalsize
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (-2.5, 4.33)}
-\end{mfpic}
-
-\end{center} 
 
 Hence,  $\hat{v} = \left< \cos\left(120^{\circ}\right), \sin\left(120^{\circ}\right) \right> = \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right>$, so  $\overrightarrow{v} = \| \overrightarrow{v} \| \hat{v} = 5  \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right> =  \left< - \frac{5}{2} , \frac{5\sqrt{3}}{2} \right>$.
 
@@ -763,7 +778,7 @@ For a third way to show $\| \hat{w} \| = 1$, we can appeal to Definition \ref{po
 \end{enumerate}
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 Note that the second and third solutions to number \ref{preludetounitvector} in Example \ref{polarformvecex} above work for \textit{any} nonzero vector, $\overrightarrow{w}$.  We will have more to say about this shortly.
@@ -824,10 +839,7 @@ so using the arctangent function,\footnote{We could just have easily used arcsin
 \tlabel[cc](6.75, 8.04){\scriptsize $\overrightarrow{v}$}
 \arrow \polyline{(0,0), (1.73, -1)}
 \tlabel[cc](2.16, -1.25){\scriptsize $\overrightarrow{w}$}
-%\arrow \dashed \polyline{(0,0), (8.16,6.66)}
-%\dotted \polyline{(1.73, -1), (8.16, 6.66)}
-%\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
-%\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
+
 
 \normalsize
 \end{mfpic}
@@ -864,7 +876,10 @@ so using the arctangent function,\footnote{We could just have easily used arcsin
 
 \vspace{-.25in}
 \qed
-
+%\arrow \dashed \polyline{(0,0), (8.16,6.66)}
+%\dotted \polyline{(1.73, -1), (8.16, 6.66)}
+%\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
+%\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
 \end{example}
 
 In part \ref{preludetounitvector} of Example \ref{polarformvecex}, we saw that the length of the direction vector, $\hat{w}$,  $\| \hat{w} \| = 1$.  Vectors of length $1$  play such an important role that they are given a special name.
