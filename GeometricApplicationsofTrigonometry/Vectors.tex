@@ -738,7 +738,45 @@ The formula for   $\hat{v}$ stated  in Theorem \ref{magdirprops}  is a consequen
  To determine $\hat{v}$, we appeal to Definition \ref{polarformvector}.  Since $\overrightarrow{v}$ lies in Quadrant II and makes a  $60^{\circ}$ angle with the negative $x$-axis, one angle $\theta$ satisfying the criteria of  Definition \ref{polarformvector} is $\theta = 120^{\circ}$.  
  
 
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
 
+% Axes
+\draw[->] (-4.2,0) -- (4.2,0);
+\draw[->] (0,-1.2) -- (0,6.2);
+
+% Tick marks and labels on x-axis
+\foreach \x in {-3,-2,-1,1,2,3}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\x$};
+}
+
+% Tick marks and labels on y-axis
+\foreach \y in {1,2,3,4,5}{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\scriptsize $\y$};
+}
+
+% Axis labels
+\node at (4,-0.35) {\scriptsize $x$};
+\node at (0.3,6) {\scriptsize $y$};
+
+% Angle arcs
+\draw[->] (1.2,0) arc[start angle=0,end angle=120,radius=1.2];
+\draw[<->] (-0.6,1.04) arc[start angle=120,end angle=180,radius=1.2];
+
+% Angle labels
+\node at (2.5,1) {\scriptsize $\theta=120^\circ$};
+\node at (-2,1) {\scriptsize $60^\circ$};
+
+% Vector
+\draw[->,line width=1.25pt] (0,0) -- (-2.5,4.33);
+
+% Vector label
+\node at (-1.25,3) {\scriptsize $\overrightarrow{v}$};
+
+\end{tikzpicture}
+\end{center}
 
 Hence,  $\hat{v} = \left< \cos\left(120^{\circ}\right), \sin\left(120^{\circ}\right) \right> = \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right>$, so  $\overrightarrow{v} = \| \overrightarrow{v} \| \hat{v} = 5  \left< - \frac{1}{2} , \frac{\sqrt{3}}{2} \right> =  \left< - \frac{5}{2} , \frac{5\sqrt{3}}{2} \right>$.
 
@@ -788,9 +826,8 @@ The process exemplified by number \ref{resolvecomponents} in Example \ref{polarf
 
 \begin{example} \label{vectorbearingexresolve}  A plane leaves an airport with an airspeed of 175 miles per hour with bearing N$40^{\circ}$E.  A 35 mile per hour wind is blowing at a bearing of S$60^{\circ}$E.  Find the true speed of the plane, rounded to the nearest mile per hour,  and the true bearing of the plane, rounded to the nearest degree.
 
- 
-
-{\bf Solution:}  We proceed as we did in Example \ref{vectorbearingex} and let $\overrightarrow{v}$ denote the plane's velocity and $\overrightarrow{w}$ denote the wind's velocity, and set about determining $\overrightarrow{v} + \overrightarrow{w}$.  
+\begin{explanation}
+We proceed as we did in Example \ref{vectorbearingex} and let $\overrightarrow{v}$ denote the plane's velocity and $\overrightarrow{w}$ denote the wind's velocity, and set about determining $\overrightarrow{v} + \overrightarrow{w}$.  
 
  
 
@@ -819,58 +856,70 @@ Hence, the `true' speed of the plane is approximately 184 miles per hour.
 so using the arctangent function,\footnote{We could just have easily used arcsine or arccosine here \ldots} we get $\theta \approx 39^{\circ}$.  Since, for the purposes of bearing, we need the angle between $\overrightarrow{v} + \overrightarrow{w}$ and the positive $y$-axis, we take the complement of $\theta$ and find the `true' bearing of the plane to be approximately N$51^{\circ}$E.
 
 \begin{center}
-\begin{tabular}{cc}
-\begin{mfpic}[15]{-1}{8}{-2}{9}
-\axes
-\tlabel[cl](8,-0.5){\scriptsize $x$  (E)}
-\tlabel[cl](0.5,9){\scriptsize $y$ (N)}
-\arrow \parafcn{85,55,-5}{3*dir(t)}
-\tlabel[cc](1.2, 3.3){\scriptsize $40^{\circ}$}
-\arrow \parafcn{5,45,5}{3*dir(t)}
-\tlabel[cc](3.2, 1.5){\scriptsize $50^{\circ}$}
-\arrow \parafcn{275,325,-5}{1.5*dir(t)}
-\tlabel[cc](1, -1.73){\scriptsize $60^{\circ}$}
-\arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
-\tlabel[cc](2.3, -0.52){\scriptsize $-30^{\circ}$}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (6.43, 7.66)}
-\tlabel[cc](6.75, 8.04){\scriptsize $\overrightarrow{v}$}
-\arrow \polyline{(0,0), (1.73, -1)}
-\tlabel[cc](2.16, -1.25){\scriptsize $\overrightarrow{w}$}
 
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.6]
 
-\normalsize
-\end{mfpic}
+% Axes
+\draw[->] (-1,0) -- (8.3,0);
+\draw[->] (0,-2.2) -- (0,9.3);
 
-&
-\hspace{0.75in}
+% Axis labels
+\node[anchor=west] at (8,-0.5) {\scriptsize $x$ (E)};
+\node[anchor=west] at (0.5,9) {\scriptsize $y$ (N)};
 
-\begin{mfpic}[15]{-1}{8}{-2}{9}
-\axes
-\tlabel[cl](8,-0.5){\scriptsize $x$ (E)}
-\tlabel[cl](0.5,9){\scriptsize $y$ (N)}
-\arrow \parafcn{5,35,5}{3*dir(t)}
-\tlabel[cc]{(4,1.2)}{\scriptsize $\theta \approx 39^{\circ}$}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (6.43, 7.66)}
-\tlabel[cc](6.75, 8.04){\scriptsize $\overrightarrow{v}$}
-\arrow \polyline{(0,0), (1.73, -1)}
-\tlabel[cc](2.16, -1.25){\scriptsize $\overrightarrow{w}$}
-\arrow \polyline{(0,0), (8.16,6.66)}
-\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
+% Angle arcs
+\draw[->] (0,3) ++(85:0) arc[start angle=85,end angle=45,radius=3];
+\node at (1.2,3.3) {\scriptsize $40^\circ$};
 
-\normalsize
-\end{mfpic}
+\draw[->] (3,0) arc[start angle=5,end angle=45,radius=3];
+\node at (3.2,1.5) {\scriptsize $50^\circ$};
 
+\draw[->] (0,1.5) ++(275:0) arc[start angle=275,end angle=325,radius=1.5];
+\node at (1,-1.73) {\scriptsize $60^\circ$};
 
+\draw[->] (1.5,0) arc[start angle=-5,end angle=-25,radius=1.5];
+\node at (2.3,-0.52) {\scriptsize $-30^\circ$};
 
-\\
+% Vectors
+\draw[->,line width=1.25pt] (0,0)--(6.43,7.66);
+\node at (6.75,8.04) {\scriptsize $\vec v$};
 
-\end{tabular}
+\draw[->,line width=1.25pt] (0,0)--(1.73,-1);
+\node at (2.16,-1.25) {\scriptsize $\vec w$};
+
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.6]
+
+% Axes
+\draw[->] (-1,0) -- (8.3,0);
+\draw[->] (0,-2.2) -- (0,9.3);
+
+% Axis labels
+\node[anchor=west] at (8,-0.5) {\scriptsize $x$ (E)};
+\node[anchor=west] at (0.5,9) {\scriptsize $y$ (N)};
+
+% Resultant angle
+\draw[->] (3,0) arc[start angle=5,end angle=39,radius=3];
+\node at (4,1.2) {\scriptsize $\theta\approx39^\circ$};
+
+% Vectors
+\draw[->,line width=1.25pt] (0,0)--(6.43,7.66);
+\node at (6.75,8.04) {\scriptsize $\vec v$};
+
+\draw[->,line width=1.25pt] (0,0)--(1.73,-1);
+\node at (2.16,-1.25) {\scriptsize $\vec w$};
+
+\draw[->,line width=1.25pt] (0,0)--(8.16,6.66);
+\node[right] at (8.16,6.66) {\scriptsize $\vec v+\vec w$};
+
+\end{tikzpicture}
+\end{minipage}
 
 \end{center}
 
@@ -880,6 +929,7 @@ so using the arctangent function,\footnote{We could just have easily used arcsin
 %\dotted \polyline{(1.73, -1), (8.16, 6.66)}
 %\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
 %\tlabel[cc](9,6.75){\scriptsize $\overrightarrow{v} + \overrightarrow{w}$}
+\end{explanation} 
 \end{example}
 
 In part \ref{preludetounitvector} of Example \ref{polarformvecex}, we saw that the length of the direction vector, $\hat{w}$,  $\| \hat{w} \| = 1$.  Vectors of length $1$  play such an important role that they are given a special name.
@@ -909,33 +959,48 @@ In other words, unit vectors are direction vectors and vice-versa. Indeed, the v
 
 \begin{center}
 
-\begin{mfpic}[20]{-4}{4}{-4}{4}
-\drawcolor[gray]{0.7}
-\circle{(0,0),2}
-\drawcolor[rgb]{0.33,0.33,0.33}
-\axes
-\tlabel[cl](4,-0.5){\scriptsize $x$}
-\tlabel[cl](0.5,4){\scriptsize $y$}
-\xmarks{-2,2}
-\ymarks{-2,2}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (2, 3.46)}
-\tlabel[cc](2.25, 3.46){$\overrightarrow{v}$}
-\tlabel[cc](1.5, 1.73){\text{\boldmath $\hat{v}$}}
-\penwd{1.025}
-\setlength{\headlen}{4pt}
-\headshape{1}{1}{true}
-\arrow \polyline{(0,0), (1, 1.73)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-1\hspace{7pt} $} -2, {$1$} 2}
-\axislabels {y}{{$-1$} -2,  {$1$} 2}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}[scale=0.8]
 
-Visualizing vector normalization $\hat{v} = \left( \frac{1}{\|\overrightarrow{v}\|} \right) \overrightarrow{v}$
+% Unit circle
+\draw[gray!70] (0,0) circle (2);
+
+% Axes
+\draw[->] (-4.2,0) -- (4.2,0);
+\draw[->] (0,-4.2) -- (0,4.2);
+
+% Tick marks
+\foreach \x/\lbl in {-2/-1,2/1}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+\foreach \y/\lbl in {-2/-1,2/1}{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (-0.08,\y) {\scriptsize $\lbl$};
+}
+
+% Axis labels
+\node[anchor=west] at (4,-0.45) {\scriptsize $x$};
+\node[anchor=west] at (0.3,4) {\scriptsize $y$};
+
+% Vector v
+\draw[->,line width=1.25pt] (0,0) -- (2,3.46);
+\node[right] at (2,3.46) {$\overrightarrow{v}$};
+
+% Unit vector v-hat
+\draw[->,line width=1.0pt] (0,0) -- (1,1.73);
+\node at (1.45,1.73) {$\hat{v}$};
+
+\end{tikzpicture}
+
+\vspace{1ex}
+
+Visualizing vector normalization
+\[
+\hat{v}
+=
+\left(\frac{1}{\|\overrightarrow{v}\|}\right)\overrightarrow{v}.
+\]
 
 \end{center}
 
@@ -988,31 +1053,60 @@ Geometrically, the situation looks like this:
 
 
 \begin{center}
-\begin{mfpic}[20]{-1}{5}{-1}{5}
-\axes
-\tlabel(5,-0.25){\scriptsize $x$}
-\tlabel(0.25,5){\scriptsize $y$}
-\point  {(0,0)}
-\xmarks{1,3}
-\ymarks{1,4}
-\tlabel(3.25,4){\scriptsize $\overrightarrow{v} = \left<v_1,v_2\right>$}
-\tlabel[cc](3,-0.5){\scriptsize $v_1 \hat{\text{i}}$}
-\tlabel(-1,4){\scriptsize $v_2 \hat{\text{j}}$}
-\tlabel[cc](1,-0.5){\scriptsize $\hat{\text{i}}$}
-\tlabel(-0.5,1){\scriptsize $\hat{\text{j}}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(3,4)}
-\penwd{1.025}
-\arrow \polyline{(0,0), (1,0)}
-\arrow \polyline{(1,0), (3,0)}
-\arrow \polyline{(0,0), (0,1)}
-\arrow \polyline{(0,1), (0,4)}
-\tcaption{$\overrightarrow{v} = \left<v_1,v_2\right> = v_1\hat{\text{i}} + v_2 \hat{\text{j}}$.}
-\end{mfpic}
+\begin{tikzpicture}[scale=0.8]
 
-\end{center} 
+% Axes
+\draw[->] (-1,0) -- (5.2,0);
+\draw[->] (0,-1) -- (0,5.2);
+
+% Tick marks
+\foreach \x in {1,3}
+    \draw (\x,0.08) -- (\x,-0.08);
+
+\foreach \y in {1,4}
+    \draw (0.08,\y) -- (-0.08,\y);
+
+% Axis labels
+\node at (5.1,-0.25) {\scriptsize $x$};
+\node at (0.25,5.1) {\scriptsize $y$};
+
+% Origin
+\fill (0,0) circle (2pt);
+
+% Vector v
+\draw[->,line width=1.25pt] (0,0) -- (3,4);
+\node[right] at (3.1,4)
+    {\scriptsize $\overrightarrow{v}=\langle v_1,v_2\rangle$};
+
+% x-component
+\draw[->,line width=1pt] (0,0) -- (1,0);
+\draw[->,line width=1pt] (1,0) -- (3,0);
+
+% y-component
+\draw[->,line width=1pt] (0,0) -- (0,1);
+\draw[->,line width=1pt] (0,1) -- (0,4);
+
+% Labels
+\node at (1,-0.45) {\scriptsize $\hat{\mathbf{i}}$};
+\node at (3,-0.45) {\scriptsize $v_1\hat{\mathbf{i}}$};
+
+\node[left] at (-0.1,1) {\scriptsize $\hat{\mathbf{j}}$};
+\node[left] at (-0.1,4) {\scriptsize $v_2\hat{\mathbf{j}}$};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\displaystyle
+\overrightarrow{v}
+=\langle v_1,v_2\rangle
+=
+v_1\hat{\mathbf{i}}
++
+v_2\hat{\mathbf{j}}.
+$
+
+\end{center}
 
 We conclude this section with a classic example which demonstrates how vectors are used in physics to study forces.  A `force' is defined as a `push' or a `pull.'   The intensity of the push or pull is the magnitude of the force, and is  measured in Netwons (N) in the SI system or pounds (lbs.)$\!$ in the English system.\footnote{See also Section \ref{harmomicmotion}.} 
 
@@ -1022,69 +1116,98 @@ We conclude this section with a classic example which demonstrates how vectors a
 
 \begin{example} \label{forceex}  A $50$ pound speaker is  suspended from the ceiling by two support braces.   If one of them makes a $60^{\circ}$ angle with the ceiling and the other makes a $30^{\circ}$ angle with the ceiling, what are the tensions on each of the supports?
 
+\begin{explanation}
+We represent the problem schematically below along with  the corresponding vector diagram. 
 
-{\bf Solution.}  We represent the problem schematically below along with  the corresponding vector diagram. 
 \begin{center}
+\begin{tikzpicture}[scale=0.7]
 
-\begin{tabular}{cc}
+%========================
+% Left picture
+%========================
+\begin{scope}
 
-\begin{mfpic}[18]{-8}{3}{-5}{5}
-\hatchcolor[gray]{.7}
-\lhatch \rect{(-8,4), (3,5)}
-%\setlength{\headlen}{5pt}
-%\headshape{1}{1}{true}
-\polyline{(0,0),(2.31,4)}
-\polyline{(0,0),  (-6.93, 4)}
-\arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
-\tlabel[cc](-4,3.25){$30^{\circ}$}
-\tlabel[cc](0,3.25){$60^{\circ}$}
-\tlabel[cc](0,-2){50 lbs.}
-\point  {(0,0), (-6.93,4), (2.31,4)}
-\penwd{1.025}
-\rect{(-8,4), (3,5)}
-\rect{(-2,-4),(2,0)}
+% Ceiling
+\fill[pattern=north east lines,pattern color=gray!70]
+    (-8,4) rectangle (3,5);
+\draw (-8,4) rectangle (3,5);
 
-\end{mfpic}
+% Block
+\draw (-2,-4) rectangle (2,0);
 
-&
+% Cables
+\draw (0,0)--(2.31,4);
+\draw (0,0)--(-6.93,4);
 
-\hspace{.5in}
+% Angles
+\draw[<->] (2.31,4) ++(185:1.5)
+    arc[start angle=185,end angle=235,radius=1.5];
 
-\begin{mfpic}[18]{-8}{3}{-5}{5}
+\draw[<->] (-6.93,4) ++(-5:2)
+    arc[start angle=-5,end angle=-25,radius=2];
 
-\dotted \polyline{(0,0), (-6.93,4)}
-\dotted \polyline{(0,0), (2.31,4)}
-\dotted \polyline{(-8,4), (3,4)}
-\arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
-\tlabel[cc](-4,3.25){$30^{\circ}$}
-\tlabel[cc](0,3.25){$60^{\circ}$}
-\dashed \polyline{(-8,0), (3,0)}
-\arrow \reverse \arrow   \parafcn{155, 175, 5}{2*dir(t)}
-\arrow \reverse \arrow  \parafcn{5, 55, 5}{1.5*dir(t)}
-\tlabel[cc](-2.5,0.5){$30^{\circ}$}
-\tlabel[cc](2,1){$60^{\circ}$}
-\tlabel[cc](0.5,-2){$\overrightarrow{w}$}
-\tlabel[cc](2.5,3.4){$\overrightarrow{T_1}$}
-\tlabel[cc](-3,2.25){$\overrightarrow{T_2}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), \plr{(4,60)}}
-\arrow \polyline{(0,0),  \plr{(4,150)} }
-\arrow \polyline{(0,0), (0,-4)}
-\point[4pt]{(0,0)}
+% Labels
+\node at (-4,3.25) {$30^\circ$};
+\node at (0,3.25) {$60^\circ$};
+\node at (0,-2) {50 lbs.};
+
+% Points
+\fill (0,0) circle (2pt);
+\fill (-6.93,4) circle (2pt);
+\fill (2.31,4) circle (2pt);
+
+\end{scope}
 
 
-\end{mfpic}
+%========================
+% Right picture
+%========================
+\begin{scope}[xshift=12cm]
 
+% Dotted original vectors
+\draw[dotted] (0,0)--(-6.93,4);
+\draw[dotted] (0,0)--(2.31,4);
+\draw[dotted] (-8,4)--(3,4);
 
-\\
+% Horizontal reference
+\draw[dashed] (-8,0)--(3,0);
 
-\end{tabular}
+% Tension vectors
+\draw[->,line width=1.25pt]
+    (0,0)--({4*cos(60)},{4*sin(60)});
 
-\end{center} 
+\draw[->,line width=1.25pt]
+    (0,0)--({4*cos(150)},{4*sin(150)});
+
+% Weight vector
+\draw[->,line width=1.25pt]
+    (0,0)--(0,-4);
+
+% Angle labels
+\node at (-4,3.25) {$30^\circ$};
+\node at (0,3.25) {$60^\circ$};
+
+\node at (-2.5,0.5) {$30^\circ$};
+\node at (2,1) {$60^\circ$};
+
+% Vector labels
+\node at (0.5,-2) {$\overrightarrow{w}$};
+\node at (2.5,3.4) {$\overrightarrow{T_1}$};
+\node at (-3,2.25) {$\overrightarrow{T_2}$};
+
+% Angle arcs at origin
+\draw[<->] (2,0) arc[start angle=0,end angle=60,radius=2];
+%\draw[<->] (2*cos(150),2*sin(150))
+ %   arc[start angle=150,end angle=180,radius=2];  NEED TO FIX THIS!
+
+% Joint
+\fill (0,0) circle (2pt);
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+
  We have three forces acting on the speaker:  the weight of the speaker, which we'll call  $\overrightarrow{w}$, pulling the speaker directly downward, and the forces on the support rods, which we'll call $\overrightarrow{T_1}$ and $\overrightarrow{T_2}$ (for `tensions') acting upward at angles $60^{\circ}$ and $30^{\circ}$, respectively.  
  
   
@@ -1127,6 +1250,7 @@ From $(E1)$, we get $\| \overrightarrow{T_1} \| = \| \overrightarrow{T_2} \| \sq
  
 
 Solving, we get  $2\| \overrightarrow{T_2} \| - 50 =0$, so  $\| \overrightarrow{T_2} \| = 25$ pounds.  Hence,   $\| \overrightarrow{T_1} \| = \| \overrightarrow{T_2} \| \sqrt{3} = 25 \sqrt{3}$ pounds.   \qed
+\end{explanation}
 \end{example}
 
 
