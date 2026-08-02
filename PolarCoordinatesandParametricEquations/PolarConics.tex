@@ -48,9 +48,7 @@ Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+        samples=100
 ]
 
 %Points
@@ -68,24 +66,24 @@ Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose
   
 \draw[->] (-5,0) -- (5,0);
 \draw[->] (0,-5) -- (0,5);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
-\node at (1.5,5) {\small $P(x,y) = P(x',y')$};
+\node at (5.5, 0) {$x$};
+\node at (0, 5.5) {$y$};
+\node at (1.5,5) {$P(x,y) = P(x',y')$};
 
 %Rotation arc
 \draw[->]
     (3,0)
     arc[start angle=0,end angle=40,radius=3];
-\node at (3.25, 1.25) {\small $\theta$};
+\node at (3.25, 1.25) {$\theta$};
 \draw[->]
     (0,3)
     arc[start angle=90,end angle=130,radius=3];
-\node at (-1.25, 3.25) {\small $\theta$};
+\node at (-1.25, 3.25) {$\theta$};
 
 \draw[->]
     (2.12, 2.12)
     arc[start angle=50,end angle=75,radius=3];
-\node at (2, 2.75) {\small $\phi$};
+\node at (2, 2.75) {$\phi$};
 
 \end{scope}
 
@@ -284,7 +282,7 @@ That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'
 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=60, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=60, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -298,9 +296,7 @@ That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'
     ylabel style={anchor=south},
     xtick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
     ytick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+       samples=100
 ]
 
 
@@ -326,20 +322,20 @@ That is, the curve is an ellipse centered at $(0,0)$ with vertices along the $y'
 \draw[-] (-0.15,-2) -- (0.15,-2);
 \draw[-] (-0.15,-3) -- (0.15,-3);
 \draw[-] (-0.15,-4) -- (0.15,-4);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
-\node at (2, -0.5) {\scriptsize $2$};
-\node at (-.5, -4) {\scriptsize $-4$};
+\node at (5.5, 0) { $x$};
+\node at (0, 5.5) { $y$};
+\node at (2, -0.5) { $2$};
+\node at (-.5, -4) { $-4$};
 
 %Rotation arc
 \draw[->]
     (4,0)
     arc[start angle=0,end angle=50,radius=4];
-\node at (4.25, 2) {\small $\theta = \frac{\pi}{3}$};
+\node at (4.25, 2) {$\theta = \frac{\pi}{3}$};
 \draw[->]
     (0,4)
     arc[start angle=90,end angle=145,radius=4];
-\node at (-2, 4.25) {\small $\theta = \frac{\pi}{3}$};
+\node at (-2, 4.25) {$\theta = \frac{\pi}{3}$};
 
 
 \end{scope}
@@ -444,7 +440,7 @@ Making the other substitutions, we get that $5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt
 Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in the $x'$ direction with vertices $(\pm 2,2)$ (in $x'y'$-coordinates)  and asymptotes $y' = \pm \frac{3}{2} x' + 2$. We graph this equation below. 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -458,9 +454,7 @@ Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+        samples=100
 ]
 
 %Curve
@@ -484,14 +478,14 @@ Hence, we have a hyperbola centered at the $x'y'$-coordinates $(0,2)$ opening in
   
 \draw[->] (-5,0) -- (5,0);
 \draw[->] (0,-5) -- (0,5);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
+\node at (5.5, 0) { $x$};
+\node at (0, 5.5) { $y$};
 
 %Rotation arc
 \draw[->]
     (4,0)
     arc[start angle=0,end angle=40,radius=4];
-\node at (4.25, 1.5) {\small $\theta = \frac{\pi}{4}$};
+\node at (4.25, 1.5) { $\theta = \frac{\pi}{4}$};
 \end{scope}
 
 \end{axis}
@@ -539,7 +533,7 @@ Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose gra
 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=36, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=36, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -553,9 +547,7 @@ Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose gra
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+    samples=100
 ]
 
 %Curve
@@ -574,14 +566,14 @@ Once the dust settles, we get $25(x')^2 - 25y' = 0$, or $y' = (x')^2$, whose gra
   
 \draw[->] (-5,0) -- (5,0);
 \draw[->] (0,-5) -- (0,5);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
+\node at (5.5, 0) { $x$};
+\node at (0, 5.5) { $y$};
 
 %Rotation arc
 \draw[->]
     (3,0)
     arc[start angle=0,end angle=28,radius=3];
-\node at (4, 1) {\small $\theta = \arctan\left(\frac{3}{4}\right)$};
+\node at (4, 1) { $\theta = \arctan\left(\frac{3}{4}\right)$};
 \end{scope}
 
 \end{axis}
@@ -766,7 +758,7 @@ One way to reconcile the `old' ideas of focus, directrix and eccentricity with t
 We begin by assuming the conic section has eccentricity $e$, a focus $F$ at the origin and that the  directrix is the vertical line $x = -d$ as in the figure below.  
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -781,25 +773,23 @@ We begin by assuming the conic section has eccentricity $e$, a focus $F$ at the 
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+       samples=100
 ]
 
 \draw[dashed] (3,4) -- (-4,4);
 \draw[dashed] (0,0) -- (3,4);
-\node at (3.75,4){\small $P(r,\theta)$};
+\node at (3.75,4){ $P(r,\theta)$};
 \node at (0,0) {\large $*$};
 \fill (3,4) circle (2pt);
 \draw[<->] (-4,-0.5) -- (-4,6);
 \draw[<->] (0.25,4.5) -- (2.75,4.5);
 \draw[<->] (-3.75,4.5) -- (-0.25,4.5);
-\node at (-4,-0.5) {\small $x = -d$};
-\node at (1.5,4.75) {\small $r\cos(\theta)$};
-\node at (-2, 4.75) {\small $d$};
-\node at (0.5,-0.25) {\small $O = F$};
-\node at (1.75,0.75) {\small $\theta$};
-\node at (1.5,2.5 ){\small $r$};
+\node at (-4,-0.5) { $x = -d$};
+\node at (1.5,4.75) { $r\cos(\theta)$};
+\node at (-2, 4.75) { $d$};
+\node at (0.5,-0.25) { $O = F$};
+\node at (1.75,0.75) { $\theta$};
+\node at (1.5,2.5 ){ $r$};
 \draw[->]
     (1.5,0)
     arc[start angle=0,end angle=50,radius=1.5];
@@ -962,7 +952,7 @@ With $d=4$, we have a focal diameter of $2d = 8$, so the parabola contains the p
 Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below.
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0]font=\LARGE
 \begin{axis}[
     width=6in, height=6in,
     xmin=-5, xmax=5, ymin=-7, ymax=3,
@@ -975,9 +965,7 @@ Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below.
     ylabel style={anchor=south},
     xtick={-4, -3, -2, -1, 1, 2, 3, 4},
     ytick={-6, -5, -4, -3, -2, -1, 1, 2},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+    samples=100
 ]
     % Polar Graph
     % TikZ math engine uses degrees by default
@@ -988,7 +976,7 @@ Putting all this together, we graph  $r  = \frac{4}{1-\sin(\theta)}$ below.
 % Directrix
 \draw[<->] (-5,-4) -- (5,-4);
 
-\node at (1.5,-4.5) {\small $y = -4$};
+\node at (1.5,-4.5) { $y = -4$};
 
 %Focus
 \node at (0,0) {\large $*$};
@@ -1031,7 +1019,7 @@ We know one focus is $(0,0)$, which is $\frac{3}{2}$ from the center $\left(\fra
 
  
 
-Finally, we know from Theorem \ref{polarformofconicsthm} that the length of the minor axis is $\frac{2ed}{\sqrt{1-e^2}} =$ {\scriptsize $\frac{4}{\sqrt{1-(1/3)^2}}$} $= 6\sqrt{3}$ which means the endpoints of the minor axis are $\left(\frac{3}{2}, \pm 3\sqrt{2}\right)$. 
+Finally, we know from Theorem \ref{polarformofconicsthm} that the length of the minor axis is $\frac{2ed}{\sqrt{1-e^2}} =$ { $\frac{4}{\sqrt{1-(1/3)^2}}$} $= 6\sqrt{3}$ which means the endpoints of the minor axis are $\left(\frac{3}{2}, \pm 3\sqrt{2}\right)$. 
 
  
 
@@ -1040,7 +1028,7 @@ We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below.
 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0]font=\LARGE
 \begin{axis}[
     width=6in, height=6in,
     xmin=-4, xmax=7, ymin=-5, ymax=6,
@@ -1053,9 +1041,7 @@ We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below.
     ylabel style={anchor=south},
     xtick={ -3, -2, -1, 1, 2, 3, 4, 5, 6},
     ytick={-4, -3, -2, -1, 1, 2, 3, 4, 5},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+       samples=100
 ]
     % Polar Graph
     % TikZ math engine uses degrees by default
@@ -1065,7 +1051,7 @@ We now have everything we need to graph $r = \frac{12}{3 - \cos(\theta)}$ below.
     
 % Directrix
 %\draw[<->] (-6,-4) -- (-6,4);
-%\node at (-6,-4.5) {\small $x = -12$};
+%\node at (-6,-4.5) { $x = -12$};
 
 %Focus
 \node at (0,0) {\large $*$};
@@ -1111,7 +1097,7 @@ Using all of our work, we graph the hyperbola below.
 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.0]font=\LARGE
 \begin{axis}[
     width=6in, height=6in,
     xmin=-6, xmax=6, ymin=-2, ymax=11,
@@ -1124,9 +1110,7 @@ Using all of our work, we graph the hyperbola below.
     ylabel style={anchor=south},
     xtick={ -5, -4, -3, -2, -1, 1, 2, 3, 4, 5},
     ytick={-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+       samples=100
 ]
     % Polar Graph
     % TikZ math engine uses degrees by default
@@ -1140,7 +1124,7 @@ Using all of our work, we graph the hyperbola below.
 % Directrix
 \draw[<->] (-6,3) -- (6,3); 
 
-\node at (-3,3.5) {\small $y = 3$};
+\node at (-3,3.5) { $y = 3$};
 
 %Focus
 \node at (0,0) {\large $*$};
@@ -1179,7 +1163,7 @@ For instance, to graph $r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$
 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -1193,9 +1177,7 @@ For instance, to graph $r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$
     ylabel style={anchor=south},
     xtick={-4, -3, -2,-1, 1, 2, 3, 4},
     ytick={-4, -3, -2,-1, 1, 2, 3, 4},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+       samples=100
 ]
 
 % Polar Graph
@@ -1220,14 +1202,14 @@ For instance, to graph $r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}$
   
 \draw[->] (-5,0) -- (5,0);
 \draw[->] (0,-5) -- (0,5);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
+\node at (5.5, 0) { $x$};
+\node at (0, 5.5) { $y$};
 
 %Rotation arc
 \draw[->]
     (4,0)
     arc[start angle=0,end angle=40,radius=4];
-\node at (4.25, 1.5) {\small $\theta = \frac{\pi}{4}$};
+\node at (4.25, 1.5) { $\theta = \frac{\pi}{4}$};
 \end{scope}
 
 \end{axis}
