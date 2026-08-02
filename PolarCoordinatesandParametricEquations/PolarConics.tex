@@ -34,7 +34,7 @@ Suppose we wished to find rectangular coordinates based on the $x'$- and $y'$-ax
 Consider the angle $\phi$ whose initial side is the positive $x'$-axis and whose terminal side contains the point $P$.   We relate $P(x,y)$ and $P(x',y')$ by converting them to polar coordinates. 
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=45, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -207,7 +207,7 @@ Similarly, using  $y =  x'\sin(\theta) + y'\cos(\theta)$, we obtain $y = -4$ as 
 To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see if the new coordinates   $P(x',y') = \left(1-2\sqrt{3},-2-\sqrt{3}\right) \approx (-2.46,-3.73)$ seem reasonable.  Our graph is below.
 
 \begin{image}
-\begin{tikzpicture}[scale=1.0, rotate=60, transform shape]
+\begin{tikzpicture}[scale=1.0, rotate=60, transform shape]font=\LARGE
 
 \begin{axis}[
     width=6in, height=6in,
@@ -221,9 +221,7 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
     ylabel style={anchor=south},
     xtick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
     ytick={-5, -4, -3, -2,-1, 1, 2, 3, 4,5},
-    tick label style={font=\scriptsize},
-    label style={font=\small},
-    samples=100,
+        samples=100
 ]
 
 
@@ -244,22 +242,22 @@ To check our answer graphically, we sketch in the $x'$-axis and $y'$-axis to see
 \draw[-] (-0.15,-2) -- (0.15,-2);
 \draw[-] (-0.15,-3) -- (0.15,-3);
 \draw[-] (-0.15,-4) -- (0.15,-4);
-\node at (5.5, 0) {\small $x$};
-\node at (0, 5.5) {\small $y$};
-\node at (2, -0.5) {\scriptsize $2$};
-\node at (-.5, -4) {\scriptsize $-4$};
-\node at (2,-4.5) {\small $P(x,y) = (2, -4)$};
-\node at (2,-5) {\small $P(x',y') \approx (-2.46,-3.73)$};
+\node at (5.5, 0) {$x$};
+\node at (0, 5.5) {$y$};
+\node at (2, -0.5) {$2$};
+\node at (-.5, -4) {$-4$};
+\node at (2,-4.5) {$P(x,y) = (2, -4)$};
+\node at (2,-5) {$P(x',y') \approx (-2.46,-3.73)$};
 \fill (2,-4) circle (2pt);
 %Rotation arc
 \draw[->]
     (3,0)
     arc[start angle=0,end angle=50,radius=3];
-\node at (3.5, 1.25) {\small $\theta = \frac{\pi}{3}$};
+\node at (3.5, 1.25) {$\theta = \frac{\pi}{3}$};
 \draw[->]
     (0,3)
     arc[start angle=90,end angle=145,radius=3];
-\node at (-1.5, 3.25) {\small $\theta = \frac{\pi}{3}$};
+\node at (-1.5, 3.25) {$\theta = \frac{\pi}{3}$};
 
 
 \end{scope}
