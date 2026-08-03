@@ -102,9 +102,9 @@ The following example puts Theorem \ref{dotprodprops} to good use.  As in Exampl
 
 \begin{example}  \label{dotprodpropex}  Prove the identity:  $\| \overrightarrow{v} - \overrightarrow{w} \|^2 =  \|\overrightarrow{v}\|^2  -2 (\overrightarrow{v}\cdot\overrightarrow{w}) + \|\overrightarrow{w}\|^2$.
 
- 
+\begin{explanation} 
 
-{\bf Solution.} We begin by rewriting  $\| \overrightarrow{v} - \overrightarrow{w} \|^2$ in terms of the dot product using Theorem \ref{dotprodprops}.
+We begin by rewriting  $\| \overrightarrow{v} - \overrightarrow{w} \|^2$ in terms of the dot product using Theorem \ref{dotprodprops}.
 
 \[ \begin{array}{rcl}
 
@@ -119,7 +119,7 @@ The following example puts Theorem \ref{dotprodprops} to good use.  As in Exampl
 & = & \overrightarrow{v} \cdot \overrightarrow{v} -2(\overrightarrow{v} \cdot \overrightarrow{w}) + \overrightarrow{w}\cdot\overrightarrow{w} \\ 
 & = & \|\overrightarrow{v}\|^2-2(\overrightarrow{v} \cdot \overrightarrow{w}) + \|\overrightarrow{w}\|^2 \\ \end{array} \]
 Hence,  $\| \overrightarrow{v} - \overrightarrow{w} \|^2 =  \|\overrightarrow{v}\|^2  -2 (\overrightarrow{v}\cdot\overrightarrow{w}) + \|\overrightarrow{w}\|^2$ as required.  \qed
-
+\end{explanation}
 \end{example} 
 
 If we take a step back from the pedantry in Example \ref{dotprodpropex}, we see that the bulk of the work is needed to show that $(\overrightarrow{v} - \overrightarrow{w}) \cdot (\overrightarrow{v} - \overrightarrow{w})  = \overrightarrow{v} \cdot \overrightarrow{v} -2(\overrightarrow{v} \cdot \overrightarrow{w}) + \overrightarrow{w}\cdot\overrightarrow{w}$.  If this looks familiar, it should. 
@@ -183,40 +183,57 @@ Once again, both $\overrightarrow{v} \cdot \overrightarrow{w} = k \| \overrighta
  Next, if $0 < \theta < \pi$, the  vectors $\overrightarrow{v}$, $\overrightarrow{w}$ and $\overrightarrow{v} - \overrightarrow{w}$ determine a triangle with side lengths $\| \overrightarrow{v} \|$, $\| \overrightarrow{w} \|$ and $\| \overrightarrow{v} - \overrightarrow{w} \|$, respectively, as seen in the diagram below.
 
 \begin{center}
-\begin{tabular}{cc}
-\begin{mfpic}[15]{0}{5}{0}{5}
-\point[4pt]{(0,0),(-2,3.46), (4.33, 2.5)}
-\arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
-\tlabel[cc](0.5,1.75){$\theta$}
-\tlabel[cc](4.75,2.5){$\overrightarrow{v}$}
-\tlabel[cc](-2.5, 3.5){$\overrightarrow{w}$}
-\tlabel[cc](1.75, 4){$\overrightarrow{v} - \overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(-2,3.46)}
-\arrow \polyline{(0,0),(4.33,2.5)}
-\arrow \polyline{(-2,3.46), (4.33, 2.5)}
 
-\end{mfpic}
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.8]
 
-&
+% Points
+\fill (0,0) circle (2pt);
+\fill (-2,3.46) circle (2pt);
+\fill (4.33,2.5) circle (2pt);
 
-\hspace{1in}
+% Angle arc
+\draw[<->] (35:1.25) arc[start angle=35,end angle=115,radius=1.25];
+\node at (0.55,1.75) {$\theta$};
 
-\begin{mfpic}[15]{0}{5}{0}{5}
-\point[4pt]{(0,0),(-2,3.46), (4.33, 2.5)}
-\arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
-\tlabel[cc](0.5,1.75){$\theta$}
-\tlabel[cc](2.25,0.5){$\|\overrightarrow{v}\|$}
-\tlabel[cc](-2, 1.5){$\|\overrightarrow{w}\|$}
-\tlabel[cc](1.75, 4){$\|\overrightarrow{v} - \overrightarrow{w}\|$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\polyline{(0,0),(-2,3.46),(4.33,2.5), (0,0)}
-\end{mfpic}
-\end{tabular}
+% Vectors
+\draw[->,line width=1.2pt] (0,0) -- (-2,3.46);
+\draw[->,line width=1.2pt] (0,0) -- (4.33,2.5);
+\draw[->,line width=1.2pt] (-2,3.46) -- (4.33,2.5);
+
+% Labels
+\node[right] at (4.33,2.5) {$\overrightarrow{v}$};
+\node[left] at (-2.2,3.46) {$\overrightarrow{w}$};
+\node[above] at (1.2,4.0) {$\overrightarrow{v}-\overrightarrow{w}$};
+
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.8]
+
+% Points
+\fill (0,0) circle (2pt);
+\fill (-2,3.46) circle (2pt);
+\fill (4.33,2.5) circle (2pt);
+
+% Angle arc
+\draw[<->] (35:1.25) arc[start angle=35,end angle=115,radius=1.25];
+\node at (0.55,1.75) {$\theta$};
+
+% Triangle
+\draw[line width=1.2pt]
+    (0,0) -- (-2,3.46) -- (4.33,2.5) -- cycle;
+
+% Labels
+\node at (2.25,0.5) {$\|\overrightarrow{v}\|$};
+\node at (-2.1,1.5) {$\|\overrightarrow{w}\|$};
+\node at (1.2,4.0) {$\|\overrightarrow{v}-\overrightarrow{w}\|$};
+
+\end{tikzpicture}
+\end{minipage}
 
 \end{center}
 
@@ -268,64 +285,90 @@ Using Theorem \ref{dotprodprops}, we can rewrite \[ \frac{\overrightarrow{v} \cd
 
 \end{enumerate}
 
-
-{\bf Solution.}  We use the formula $\theta = \arccos\left( \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right)$ from Theorem \ref{anglebetweenvectorthm} in each case below.
+\begin{explanation}
+We use the formula $\theta = \arccos\left( \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right)$ from Theorem \ref{anglebetweenvectorthm} in each case below.
 
 \begin{enumerate}
 
-\item  We have $\overrightarrow{v} \cdot \overrightarrow{w} = \left< 3, -3\sqrt{3} \right> \cdot \left<-\sqrt{3}, 1 \right> = -3\sqrt{3} - 3\sqrt{3} = -6\sqrt{3}$.  Computing lengths of vectors, we find  $\| \overrightarrow{v} \| = \sqrt{3^2+(-3\sqrt{3})^2} = \sqrt{36} =6$ and $\| \overrightarrow{w}\| = \sqrt{(-\sqrt{3})^2+1^2} = \sqrt{4} =2$.  Hence,  we find $\theta = \arccos\left(\frac{-6\sqrt{3}}{12}\right) = \arccos\left(-\frac{\sqrt{3}}{2}\right) = \frac{5\pi}{6}$.  We check our answer geometrically by graphing this pair of vectors below on the left.
+\item  We have $\overrightarrow{v} \cdot \overrightarrow{w} = \left< 3, -3\sqrt{3} \right> \cdot \left<-\sqrt{3}, 1 \right> = -3\sqrt{3} - 3\sqrt{3} = -6\sqrt{3}$.  Computing lengths of vectors, we find  $\| \overrightarrow{v} \| = \sqrt{3^2+(-3\sqrt{3})^2} = \sqrt{36} =6$ and $\| \overrightarrow{w}\| = \sqrt{(-\sqrt{3})^2+1^2} = \sqrt{4} =2$.  Hence,  we find $\theta = \arccos\left(\frac{-6\sqrt{3}}{12}\right) = \arccos\left(-\frac{\sqrt{3}}{2}\right) = \frac{5\pi}{6}$.  We check our answer geometrically by graphing this pair of vectors below.
 
-\item  For $\overrightarrow{v} = \left< 2, 2 \right>$  and $\overrightarrow{w} = \left<5, -5\right>$, we find $\overrightarrow{v} \cdot \overrightarrow{w} = \left< 2, 2 \right> \cdot \left<5, -5\right> = 10-10 = 0$.  Hence, it doesn't matter what $\| \overrightarrow{v} \|$ and $\| \overrightarrow{w} \|$ are,  $\theta = \arccos\left( \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right) = \arccos(0) = \frac{\pi}{2}$.  We check our answer geometrically by graphing this pair of vectors below on the right.
+\item  For $\overrightarrow{v} = \left< 2, 2 \right>$  and $\overrightarrow{w} = \left<5, -5\right>$, we find $\overrightarrow{v} \cdot \overrightarrow{w} = \left< 2, 2 \right> \cdot \left<5, -5\right> = 10-10 = 0$.  Hence, it doesn't matter what $\| \overrightarrow{v} \|$ and $\| \overrightarrow{w} \|$ are,  $\theta = \arccos\left( \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right) = \arccos(0) = \frac{\pi}{2}$.  We check our answer geometrically by graphing this pair of vectors below.
 
 \begin{center}
 
-\begin{multicols}{2}
+\begin{minipage}{0.47\textwidth}
+\centering
 
-\begin{mfpic}[15]{-3}{5}{-5}{3}
-\axes
-\tlabel[cc](5, -0.25){\scriptsize $x$}
-\tlabel[cc](0.25, 3){\scriptsize $y$}
-\point[4pt]{(0,0)}
-\tlabel[cc](4,-4.5){$\overrightarrow{v}$}
-\tlabel[cc](-2, 1.5){$\overrightarrow{w}$}
-\arrow \reverse \arrow \parafcn{157, 293,5}{dir(t)}
-\tlabel[cc](-2,-1){$\theta = \frac{5\pi}{6}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (3,-5.196)}
-\arrow \polyline{(0,0), (-1.732,1)}
-\end{mfpic}
+\begin{tikzpicture}[scale=0.5]
 
+% Axes
+\draw[->] (-3.2,0) -- (5.2,0);
+\draw[->] (0,-5.4) -- (0,3.2);
 
+\node[right] at (5,0) {\scriptsize $x$};
+\node[above] at (0,3) {\scriptsize $y$};
 
-\begin{mfpic}[15]{-3}{5}{-5}{3}
-\axes
-\tlabel[cc](5, -0.25){\scriptsize $x$}
-\tlabel[cc](0.25, 3){\scriptsize $y$}
-\point[4pt]{(0,0)}
-\tlabel[cc](2.5, 2){$\overrightarrow{v}$}
-\tlabel[cc](5.5, -5){$\overrightarrow{w}$}
-%\arrow \reverse \arrow \parafcn{-38, 38,5}{dir(t)}
-\polyline{(0.3, 0.3), (0.6,0), (0.3, -0.3)}
-\tlabel[cc](2, -0.75){$\theta = \frac{\pi}{2}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (2,2)}
-\arrow \polyline{(0,0), (5,-5)}
-\end{mfpic}
+% Origin
+\fill (0,0) circle (2pt);
 
-\end{multicols}
+% Angle arc
+\draw[<->]
+  ({cos(157)},{sin(157)})
+  arc[start angle=157,end angle=293,radius=1];
 
-\begin{multicols}{2}
+\node at (-2,-1) {$\theta=\dfrac{5\pi}{6}$};
 
-$\overrightarrow{v}$ and $\overrightarrow{w}$ from  number \ref{anglebetweenvectorexone}
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(3,-5.196);
+\draw[->,line width=1.2pt] (0,0)--(-1.732,1);
 
+% Labels
+\node at (4,-4.5) {$\overrightarrow{v}$};
+\node at (-2,1.5) {$\overrightarrow{w}$};
 
-$\overrightarrow{v}$ and $\overrightarrow{w}$ from number \ref{anglebetweenvectorextwo}
+\end{tikzpicture}
 
-\end{multicols}
+\vspace{0.5em}
+
+$\overrightarrow{v}$ and $\overrightarrow{w}$ from number~\ref{anglebetweenvectorexone}
+
+\end{minipage}
+
+\begin{minipage}{0.47\textwidth}
+\centering
+
+\begin{tikzpicture}[scale=0.5]
+
+% Axes
+\draw[->] (-3.2,0) -- (5.2,0);
+\draw[->] (0,-5.4) -- (0,3.2);
+
+\node[right] at (5,0) {\scriptsize $x$};
+\node[above] at (0,3) {\scriptsize $y$};
+
+% Origin
+\fill (0,0) circle (2pt);
+
+% Right-angle marker
+\draw (0.3,0.3)--(0.6,0)--(0.3,-0.3);
+
+\node at (2,-0.75) {$\theta=\dfrac{\pi}{2}$};
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(2,2);
+\draw[->,line width=1.2pt] (0,0)--(5,-5);
+
+% Labels
+\node at (2.5,2) {$\overrightarrow{v}$};
+\node at (5.5,-5) {$\overrightarrow{w}$};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\overrightarrow{v}$ and $\overrightarrow{w}$ from number~\ref{anglebetweenvectorextwo}
+
+\end{minipage}
 
 \end{center}
 
@@ -335,32 +378,49 @@ $\overrightarrow{v}$ and $\overrightarrow{w}$ from number \ref{anglebetweenvecto
 
 Since $\frac{2\sqrt{5}}{25}$ isn't the cosine of one of the `common angles,' we leave our \textit{exact} answer in terms of the arccosine function. For the purposes of checking our answer, however, we  \textit{approximate} $\theta \approx 79.7^{\circ}$.
 
+
+
 \begin{center}
 
-\begin{mfpic}[15]{-3}{5}{-5}{3}
-\axes
-\tlabel[cc](5, -0.25){\scriptsize $x$}
-\tlabel[cc](0.25, 3){\scriptsize $y$}
-\arrow \reverse \arrow \parafcn{-45, 19,5}{dir(t)}
-\tlabel[cc](6, -2){$\theta = \arccos\left(\frac{2\sqrt{5}}{25}\right) \approx  79.7^{\circ}$}
-\point[4pt]{(0,0)}
-\tlabel[cc](3.5, -4){$\overrightarrow{v}$}
-\tlabel[cc](2.5, 1){$\overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (3,-4)}
-\arrow \polyline{(0,0), (2,1)}
-\end{mfpic} 
+\begin{tikzpicture}[scale=0.75]
 
-$\overrightarrow{v}$ and $\overrightarrow{w}$ from number \ref{anglebetweenvectorexthree} \\
+% Axes
+\draw[->] (-3.2,0) -- (5.2,0);
+\draw[->] (0,-5.4) -- (0,3.2);
+
+% Axis labels
+\node[right] at (5,0) {\scriptsize $x$};
+\node[above] at (0,3) {\scriptsize $y$};
+
+% Origin
+\fill (0,0) circle (2pt);
+
+% Angle arc
+\draw[<->]
+    ({cos(-45)},{sin(-45)})
+    arc[start angle=-45,end angle=19,radius=1];
+
+\node[anchor=west] at (3.2,-1.8)
+{$\theta=\arccos\!\left(\dfrac{2\sqrt5}{25}\right)\approx79.7^\circ$};
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(3,-4);
+\draw[->,line width=1.2pt] (0,0)--(2,1);
+
+% Labels
+\node at (3.5,-4) {$\overrightarrow{v}$};
+\node at (2.5,1) {$\overrightarrow{w}$};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\overrightarrow{v}$ and $\overrightarrow{w}$ from number~\ref{anglebetweenvectorexthree}
 
 \end{center}
 
- \qed 
-
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
  
@@ -383,88 +443,103 @@ Note there is no `zero product property' for the dot product.  As with the vecto
  
 Finally, if $\overrightarrow{v} \cdot \overrightarrow{w} > 0$, then $\cos(\theta) > 0$ so $\theta$ is an acute angle, as in the case of number \ref{anglebetweenvectorexthree} above. 
 
-
- 
-
  We summarize all of our observations in the schematic below.
 
 \begin{center}
 
-\begin{tabular}{ccc}
+\begin{minipage}{0.31\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.5]
 
+% Origin
+\fill (0,0) circle (2pt);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\tlabel[cc](5, 0.5){$\overrightarrow{w}$}
-\tlabel[cc](-2.25, 5.5){$\overrightarrow{v}$}
-\tlabel[cc](0.75,1.5){$\theta$}
-\arrow \reverse \arrow \parafcn{7,113,5}{dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow  \polyline{(0,0),(5,0)}
-\arrow\rotatepath{(0,0),60}  \polyline{(0,0),\plr{(6,60)}}
-\end{mfpic}
+% Angle arc
+\draw[<->]
+    ({cos(7)},{sin(7)})
+    arc[start angle=7,end angle=113,radius=1];
 
+\node at (0.75,1.5) {$\theta$};
 
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(5,0);
+\draw[->,line width=1.2pt] (0,0)--({6*cos(120)},{6*sin(120)});
 
-&
-\hspace{0.5in}
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\tlabel[cc](0.5, 6){$\overrightarrow{v}$}
-\tlabel[cc](5, 0.5){$\overrightarrow{w}$}
-\tlabel[cc](0.75,1.25){$\theta$}
-\polyline{(0,0.5), (0.5, 0.5), (0.5,0)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(5,0)}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
-\end{mfpic}
+% Labels
+\node at (5,0.5) {$\overrightarrow{w}$};
+\node at (-2.25,5.5) {$\overrightarrow{v}$};
 
-&
-\hspace{0.5in}
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\tlabel[cc](5, 0.5){$\overrightarrow{w}$}
-\tlabel[cc](3.5, 5){$\overrightarrow{v}$}
-\tlabel[cc](1.5,0.8){$\theta$}
-\arrow \reverse \arrow \parafcn{7,53,5}{dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
- \arrow  \polyline{(0,0),(5,0)}
-\arrow  \polyline{(0,0),\plr{(6,60)}}
-\end{mfpic}
+\end{tikzpicture}
 
-\\
+\vspace{0.5em}
 
-$\overrightarrow{v} \cdot \overrightarrow{w} < 0$
-
-
-&
-\hspace{0.5in}
-$\overrightarrow{v} \cdot \overrightarrow{w} = 0$
-
-&
-\hspace{0.5in}
-$\overrightarrow{v} \cdot \overrightarrow{w} > 0$
-
-\\
+$\overrightarrow{v}\cdot\overrightarrow{w}<0$
 
 $\theta$ is obtuse
 
-&
-\hspace{0.5in}
-$\theta = \frac{\pi}{2} = 90^{\circ}$
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.5]
 
-&
-\hspace{0.5in}
-$\theta$ is acute \\
+% Origin
+\fill (0,0) circle (2pt);
 
+% Right-angle marker
+\draw (0,0.5)--(0.5,0.5)--(0.5,0);
 
-\end{tabular}
+\node at (0.75,1.25) {$\theta$};
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(5,0);
+\draw[->,line width=1.2pt] (0,0)--({6*cos(90)},{6*sin(90)});
+
+% Labels
+\node at (5,0.5) {$\overrightarrow{w}$};
+\node at (0.5,6) {$\overrightarrow{v}$};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\overrightarrow{v}\cdot\overrightarrow{w}=0$
+
+$\theta=\dfrac{\pi}{2}=90^\circ$
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.31\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.5]
+
+% Origin
+\fill (0,0) circle (2pt);
+
+% Angle arc
+\draw[<->]
+    ({cos(7)},{sin(7)})
+    arc[start angle=7,end angle=53,radius=1];
+
+\node at (1.5,0.8) {$\theta$};
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(5,0);
+\draw[->,line width=1.2pt] (0,0)--({6*cos(60)},{6*sin(60)});
+
+% Labels
+\node at (5,0.5) {$\overrightarrow{w}$};
+\node at (3.5,5) {$\overrightarrow{v}$};
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\overrightarrow{v}\cdot\overrightarrow{w}>0$
+
+$\theta$ is acute
+
+\end{minipage}
 
 \end{center}
 
@@ -496,9 +571,8 @@ We can use Theorem \ref{dotprodorththm} in the following example to provide a di
 
 \begin{example}\label{perpendicularlines2} Let $L_1$ be the line $y = m_1x + b_1$ and let $L_2$ be the line $y = m_2x + b_2$.  Prove that $L_1$ is perpendicular to $L_2$ if and only if $m_1 \cdot m_2 = -1$.
 
- 
-
-{\bf Solution.}  Our strategy is to find two vectors: $\overrightarrow{v_1}$, which has the same direction as $L_1$,  and $\overrightarrow{v_2}$, which has the same direction as $L_2$ and show $\overrightarrow{v_1} \perp \overrightarrow{v_2}$ if and only if $ m_1  m_2 = -1$. 
+\begin{explanation}
+Our strategy is to find two vectors: $\overrightarrow{v_1}$, which has the same direction as $L_1$,  and $\overrightarrow{v_2}$, which has the same direction as $L_2$ and show $\overrightarrow{v_1} \perp \overrightarrow{v_2}$ if and only if $ m_1  m_2 = -1$. 
 
  
 
@@ -512,8 +586,9 @@ $L_2$.  Hence, $L_1$ and $L_2$ are perpendicular if and only if $\overrightarrow
 
  
 
-Notice that $\overrightarrow{v_1} \cdot \overrightarrow{v_2} = \left<1,m_1\right> \cdot \left<1,m_2\right> = 1 + m_1m_2$.  Hence,  $\overrightarrow{v_1} \cdot \overrightarrow{v_2} = 0$ if and only if $1 + m_1m_2  =0$, which is true if and only if $ m_1  m_2 = -1$, as required. \qed
+Notice that $\overrightarrow{v_1} \cdot \overrightarrow{v_2} = \left<1,m_1\right> \cdot \left<1,m_2\right> = 1 + m_1m_2$.  Hence,  $\overrightarrow{v_1} \cdot \overrightarrow{v_2} = 0$ if and only if $1 + m_1m_2  =0$, which is true if and only if $ m_1  m_2 = -1$, as required. 
 
+\end{explanation}
 \end{example}
 
 \subsection{Vector Projections}
@@ -522,77 +597,131 @@ Notice that $\overrightarrow{v_1} \cdot \overrightarrow{v_2} = \left<1,m_1\right
 While Theorem \ref{dotprodorththm} certainly gives us some insight into what the dot product means geometrically, there is more to the story of the dot product.  Consider the two nonzero vectors $\overrightarrow{v}$ and $\overrightarrow{w}$ drawn with a common initial point $O$  below.  For the moment, assume that the angle between $\overrightarrow{v}$ and $\overrightarrow{w}$, $\theta$, is acute. 
 
 \begin{center}
-\begin{tabular}{ccc}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.5,-0.5){$O$}
-\tlabel[cc](4.75,2.5){$\overrightarrow{w}$}
-\tlabel[cc](-0.5, 6){$\overrightarrow{v}$}
-\tlabel[cc](0.75,1.5){$\theta$}
-\arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),(5,0)}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First picture
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{mfpic}
+\begin{scope}
 
+% Origin
+\fill (0,0) circle (2pt);
+\node[below left] at (0,0) {$O$};
 
+% Angle arc
+\draw[<->]
+({cos(40)},{sin(40)})
+arc[start angle=40,end angle=80,radius=1];
+\node at (0.75,1.5) {$\theta$};
 
+% Vectors
+\draw[->,line width=1.2pt]
+(0,0)--({5*cos(30)},{5*sin(30)});
 
-&
+\draw[->,line width=1.2pt]
+(0,0)--({6*cos(90)},{6*sin(90)});
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\tlabel[cc](-0.5,-0.5){$O$}
-\point[4pt]{(0,0), \plr{(3,30)}, (0,6)}
-\tlabel[cc](4.75,2.5){$\overrightarrow{w}$}
-\tlabel[cc](-0.5, 6){$\overrightarrow{v}$}
-\tlabel[cc](3,1.25){$R$}
-\tlabel[cc](0.5,6){$T$}
-\tlabel[cc](1.75,0.25){$\overrightarrow{p} = \overrightarrow{OR}$}
-\tlabel[cc](0.75,1.5){$\theta$}
-\arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),(5,0)}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
-\dashed\rotatepath{(0,0),30}  \polyline{\plr{(6,60)},(3,0)}
-			  \rotatepath{(0,0),30} \polyline{(2.75,0), (2.75,0.25), (3,0.25)}
-\penwd{1.25pt}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),(3,0)}
+% Labels
+\node[right] at ({5*cos(30)},{5*sin(30)}) {$\vec w$};
+\node[above] at ({6*cos(90)},{6*sin(90)}) {$\vec v$};
 
-\end{mfpic}
+\end{scope}
 
-&
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second picture
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{scope}[xshift=8cm]
 
-\hspace{.25in}
+% Points
+\fill (0,0) circle (2pt);
+\fill ({3*cos(30)},{3*sin(30)}) circle (2pt);
+\fill (0,6) circle (2pt);
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\point[4pt]{(0,0), \plr{(3,30)}, (0,6)}
-\tlabel[cc](-0.5,-0.5){$O$}
-\tlabel[cc](3,1.25){$R$}
-\tlabel[cc](0.5,6){$T$}
-\tlabel[cc](-0.75, 3){$\|\overrightarrow{v}\|$}
-\tlabel[cc](1.5,0){$\|\overrightarrow{p}\|$}
-\tlabel[cc](0.75,1.5){$\theta$}
-\arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\rotatepath{(0,0),30} \polyline{(2.75,0), (2.75,0.25), (3,0.25)}
-\penwd{1.25pt}
-\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
-\rotatepath{(0,0),30}  \polyline{\plr{(6,60)},(3,0)}
-\rotatepath{(0,0),30}  \polyline{(0,0),(3,0)}
+\node[below left] at (0,0) {$O$};
+\node[right] at ({3*cos(30)},{3*sin(30)}) {$R$};
+\node[above] at (0,6) {$T$};
 
+% Angle
+\draw[<->]
+({cos(40)},{sin(40)})
+arc[start angle=40,end angle=80,radius=1];
+\node at (0.75,1.5) {$\theta$};
 
-\end{mfpic}
+% Vectors
+\draw[->] (0,0)--({5*cos(30)},{5*sin(30)});
+\draw[->] (0,0)--(0,6);
+\draw[->,line width=1.2pt] (0,0)--({3*cos(30)},{3*sin(30)});
 
+% Projection
+\draw[dashed]
+(0,6)--({3*cos(30)},{3*sin(30)});
 
-\end{tabular}
+% Right-angle mark
+\draw
+({3*cos(30)-0.2*sin(30)},{3*sin(30)+0.2*cos(30)})
+--
+({3*cos(30)-0.2*sin(30)-0.2*cos(30)},
+ {3*sin(30)+0.2*cos(30)-0.2*sin(30)})
+--
+({3*cos(30)-0.4*cos(30)},
+ {3*sin(30)-0.4*sin(30)});
+
+% Labels
+\node[right] at ({5*cos(30)},{5*sin(30)}) {$\vec w$};
+\node[left] at (0,6) {$\vec v$};
+\node[below] at ({1.75*cos(30)},{1.75*sin(30)})
+{$\vec p=\overrightarrow{OR}$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Third picture
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=16cm]
+
+% Points
+\fill (0,0) circle (2pt);
+\fill ({3*cos(30)},{3*sin(30)}) circle (2pt);
+\fill (0,6) circle (2pt);
+
+\node[below left] at (0,0) {$O$};
+\node[right] at ({3*cos(30)},{3*sin(30)}) {$R$};
+\node[above] at (0,6) {$T$};
+
+% Angle
+\draw[<->]
+({cos(40)},{sin(40)})
+arc[start angle=40,end angle=80,radius=1];
+\node at (0.75,1.5) {$\theta$};
+
+% Triangle
+\draw[line width=1.2pt]
+(0,0)--({3*cos(30)},{3*sin(30)})
+--(0,6)--cycle;
+
+% Right-angle mark
+\draw
+({3*cos(30)-0.2*sin(30)},{3*sin(30)+0.2*cos(30)})
+--
+({3*cos(30)-0.2*sin(30)-0.2*cos(30)},
+ {3*sin(30)+0.2*cos(30)-0.2*sin(30)})
+--
+({3*cos(30)-0.4*cos(30)},
+ {3*sin(30)-0.4*sin(30)});
+
+% Labels
+\node[left] at (0,3) {$\|\vec v\|$};
+\node[below] at ({1.5*cos(30)},{1.5*sin(30)})
+{$\|\vec p\|$};
+
+\end{scope}
+
+\end{tikzpicture}
 \end{center}
+
  We wish to develop a formula for the vector $\overrightarrow{p}$, indicated  below, which is called the \textbf{orthogonal projection of $\overrightarrow{v}$ onto $\overrightarrow{w}$}.\index{vector ! orthogonal projection}\index{projection ! orthogonal}\index{orthogonal projection}  The vector $\overrightarrow{p}$ is obtained geometrically as follows:  drop a perpendicular from the terminal point $T$ of $\overrightarrow{v}$ to the vector $\overrightarrow{w}$ and call the point of intersection $R$.  The vector $\overrightarrow{p}$ is then defined as $\overrightarrow{p} = \overrightarrow{OR}$.   
 
  
@@ -616,33 +745,64 @@ Now suppose that the angle $\theta$ between $\overrightarrow{v}$ and $\overright
  
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[20]{-5}{5}{-5}{5}
-\tlabel[cc](0,-0.5){$O$}
-\point{(0,0), \plr{(-3,30)}, \plr{(6,150)}}
-\tlabel[cc](4.75,2.5){$\overrightarrow{w}$}
-\tlabel[cc](-4.5, 3){$\overrightarrow{v}$}
-\tlabel[cc](-2.75,-2){$R$}
-\tlabel[cc](-6,3){$T$}
-\tlabel[cc](-0.75,-1.75){$\overrightarrow{p} = \overrightarrow{OR}$}
-\tlabel[cc](0,1.5){$\theta$}
-\tlabel[cc](-1.5,0){$\theta'$}
-\arrow \reverse \arrow \parafcn{40,140,5}{dir(t)}
-\arrow \reverse \arrow \parafcn{160,200,5}{dir(t)}
+% Coordinates
+\coordinate (O) at (0,0);
+\coordinate (W) at ({5*cos(30)},{5*sin(30)});
+\coordinate (T) at ({6*cos(150)},{6*sin(150)});
+\coordinate (R) at ({3*cos(210)},{3*sin(210)});
+\coordinate (L) at ({5*cos(210)},{5*sin(210)}); % extension of OR
 
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),(5,0)}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,120)}}
-\dotted\rotatepath{(0,0),30}  \polyline{(-5,0),(0,0)}
-\dashed\rotatepath{(0,0),30}  \polyline{\plr{(6,120)},(-3,0)}
-			  \rotatepath{(0,0),30} \polyline{(-2.75,0), (-2.75,0.25), (-3,0.25)}
-\penwd{1.25pt}
-\arrow\rotatepath{(0,0),30}  \polyline{(0,0),(-3,0)}
+% Points
+\fill (O) circle (2pt);
+\fill (R) circle (2pt);
+\fill (T) circle (2pt);
 
-\end{mfpic}
+% Labels
+\node[below] at (O) {$O$};
+\node[right] at (W) {$\overrightarrow{w}$};
+\node[left] at (T) {$\overrightarrow{v}$};
+\node[below left] at (R) {$R$};
+\node[left] at (T) {$T$};
+\node[below] at ({1.5*cos(220)},{1.5*sin(220)})
+    {$\overrightarrow{p}=\overrightarrow{OR}$};
+
+% Angle arcs
+\draw[<->]
+({cos(40)},{sin(40)})
+arc[start angle=40,end angle=140,radius=1];
+
+\node at (0,1.5) {$\theta$};
+
+\draw[<->]
+({cos(160)},{sin(160)})
+arc[start angle=160,end angle=200,radius=1];
+
+\node at (-1.5,0) {$\theta'$};
+
+% Vectors
+\draw[->,line width=1.2pt] (O)--(W);
+\draw[->,line width=1.2pt] (O)--(T);
+\draw[->,line width=1.2pt] (O)--(R);
+
+% Dotted extension of p
+\draw[dotted] (L)--(O);
+
+% Dashed altitude
+\draw[dashed] (T)--(R);
+
+% Right-angle marker
+\draw
+({3*cos(210)},{3*sin(210)})
+--
+({3*cos(210)+0.22*cos(120)},{3*sin(210)+0.22*sin(120)})
+--
+({3*cos(210)+0.22*cos(120)+0.22*cos(30)},
+ {3*sin(210)+0.22*sin(120)+0.22*sin(30)});
+
+\end{tikzpicture}
 \end{center}
-
  
 
 In this case, we see that $\hat{p} = - \hat{w}$ and using the triangle $\triangle ORT$, we find $\| \overrightarrow{p} \| = \| \overrightarrow{v} \| \cos(\theta')$.   Since $\theta + \theta' = \pi$, it follows that $\cos(\theta') = -\cos(\theta)$, which means $\| \overrightarrow{p} \| = \| \overrightarrow{v} \| \cos(\theta') = - \| \overrightarrow{v} \| \cos(\theta)$.  
@@ -698,9 +858,8 @@ The proof of Theorem \ref{altprojformulas}, which we leave to the reader as an e
 
 \begin{example} \label{projex}  Let $\overrightarrow{v} = \left<1,8\right>$ and $\overrightarrow{w} = \left<-1,2\right>$.  Find $\overrightarrow{p} = \text{proj}_{\overrightarrow{w}}(\overrightarrow{v})$.  Check your answer geometrically.
 
- 
-
-{\bf Solution.}  We find $\overrightarrow{v} \cdot \overrightarrow{w} = \left<1,8\right> \cdot \left<-1,2\right> = (-1) + 16 = 15$ and $\overrightarrow{w} \cdot \overrightarrow{w} = \left<-1,2\right> \cdot \left<-1,2\right> = 1 + 4 = 5$.  Hence, \[\overrightarrow{p} = \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}} \overrightarrow{w} = \frac{15}{5} \left<-1,2\right> = \left<-3,6\right> .\] We plot $\overrightarrow{v}$, $\overrightarrow{w}$ and $\overrightarrow{p}$ in standard position below on the left. We see $\overrightarrow{p}$ has the same direction as $\overrightarrow{w}$, but we need to do more to show  $\overrightarrow{p}$ in is indeed the \textit{orthogonal} projection of $\overrightarrow{v}$ onto $\overrightarrow{w}$. 
+\begin{explanation}
+We find $\overrightarrow{v} \cdot \overrightarrow{w} = \left<1,8\right> \cdot \left<-1,2\right> = (-1) + 16 = 15$ and $\overrightarrow{w} \cdot \overrightarrow{w} = \left<-1,2\right> \cdot \left<-1,2\right> = 1 + 4 = 5$.  Hence, \[\overrightarrow{p} = \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}} \overrightarrow{w} = \frac{15}{5} \left<-1,2\right> = \left<-3,6\right> .\] We plot $\overrightarrow{v}$, $\overrightarrow{w}$ and $\overrightarrow{p}$ in standard position below on the left. We see $\overrightarrow{p}$ has the same direction as $\overrightarrow{w}$, but we need to do more to show  $\overrightarrow{p}$ in is indeed the \textit{orthogonal} projection of $\overrightarrow{v}$ onto $\overrightarrow{w}$. 
 
  
 
@@ -711,60 +870,103 @@ Consider the vector $\overrightarrow{q}$ whose initial point is the terminal poi
 Since $\overrightarrow{v} = \left<1,8\right>$ and $\overrightarrow{p} = \left<-3,6\right>$,  $\overrightarrow{q} = \left<1,8\right> - \left<-3,6\right> = \left<4,2\right>$.  To prove $\overrightarrow{q} \perp \overrightarrow{w}$, we compute the dot product:  $\overrightarrow{q} \cdot \overrightarrow{w} = \left<4,2\right> \cdot \left<-1,2\right> = (-4)+4  = 0$.  Hence, per  Theorem \ref{dotprodorththm}, we know $\overrightarrow{q} \perp \overrightarrow{w}$ which completes our check.\footnote{Note that, necessarily, $\overrightarrow{q} \perp \overrightarrow{p}$ as well!}
 
 \begin{center}
+\begin{tikzpicture}[scale=0.75]
 
-\begin{multicols}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{mfpic}[18]{-4}{2}{-0.25}{9}
-\axes
-\xmarks{-3,-2,-1,1}
-\ymarks{1,2,3,4,5,6,7,8}
-\point[4pt]{(0,0)}
-\tlabel[cc](1.5,8){ $\overrightarrow{v}$}
-\tlabel[cc](-1.75,1.75){$\overrightarrow{w}$}
-\tlabel[cc](-3.5,6){$\overrightarrow{p}$}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1}
-\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
-\normalsize
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (1,8)}
-\arrow \polyline{(0,0), (-1,2)}
-\arrow \polyline{(0,0), (-3,6)}
-\end{mfpic}
+\begin{scope}
 
-\begin{mfpic}[18]{-4}{2}{-0.25}{9}
-\axes
-\xmarks{-3,-2,-1,1}
-\ymarks{1,2,3,4,5,6,7,8}
-\point[4pt]{(0,0), (-3,6), (1,8)}
-\tlabel[cc](1.5,8){$\overrightarrow{v}$}
-\tlabel[cc](-1.75,1.75){ $\overrightarrow{w}$}
-\tlabel[cc](-3.5,6){$\overrightarrow{p}$}
-\tlabel[cc](-1.25,7.5){$\overrightarrow{q}$}
-\rotatepath{(0,0),116}  \polyline{(6.3,0), (6.3,-0.4), (6.7,-0.4)}
-\tlabelsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1,{$1$} 1}
-\axislabels {y}{{$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8}
-\normalsize
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (1,8)}
-\arrow \polyline{(0,0), (-1,2)}
-\arrow \polyline{(0,0), (-3,6)}
-\arrow \polyline{(-3,6), (1,8)}
-\end{mfpic}
+% Axes
+\draw[->] (-4.2,0) -- (2.2,0);
+\draw[->] (0,-0.3) -- (0,9.2);
 
-\end{multicols}
+% Tick marks
+\foreach \x in {-3,-2,-1,1}
+  \draw (\x,0.08)--(\x,-0.08);
+\foreach \y in {1,...,8}
+  \draw (0.08,\y)--(-0.08,\y);
 
-\end{center}  
+% Tick labels
+\foreach \x in {-3,-2,-1,1}
+  \node[below] at (\x,0) {\scriptsize $\x$};
 
- \vspace{-0.25in} \qed
+\foreach \y in {2,...,8}
+  \node[left] at (0,\y) {\scriptsize $\y$};
 
+% Axis labels
+\node[right] at (2.1,0) {\scriptsize $x$};
+\node[above] at (0,9.1) {\scriptsize $y$};
+
+% Origin
+\fill (0,0) circle (2pt);
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(1,8);
+\draw[->,line width=1.2pt] (0,0)--(-1,2);
+\draw[->,line width=1.2pt] (0,0)--(-3,6);
+
+% Labels
+\node[right] at (1,8) {$\overrightarrow{v}$};
+\node[left] at (-1,2) {$\overrightarrow{w}$};
+\node[left] at (-3,6) {$\overrightarrow{p}$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=8cm]
+
+% Axes
+\draw[->] (-4.2,0) -- (2.2,0);
+\draw[->] (0,-0.3) -- (0,9.2);
+
+% Tick marks
+\foreach \x in {-3,-2,-1,1}
+  \draw (\x,0.08)--(\x,-0.08);
+\foreach \y in {1,...,8}
+  \draw (0.08,\y)--(-0.08,\y);
+
+% Tick labels
+\foreach \x in {-3,-2,-1,1}
+  \node[below] at (\x,0) {\scriptsize $\x$};
+
+\foreach \y in {2,...,8}
+  \node[left] at (0,\y) {\scriptsize $\y$};
+
+% Axis labels
+\node[right] at (2.1,0) {\scriptsize $x$};
+\node[above] at (0,9.1) {\scriptsize $y$};
+
+% Points
+\fill (0,0) circle (2pt);
+\fill (-3,6) circle (2pt);
+\fill (1,8) circle (2pt);
+
+% Vectors
+\draw[->,line width=1.2pt] (0,0)--(1,8);
+\draw[->,line width=1.2pt] (0,0)--(-1,2);
+\draw[->,line width=1.2pt] (0,0)--(-3,6);
+\draw[->,line width=1.2pt] (-3,6)--(1,8);
+
+% Right-angle marker
+\draw
+(-0.16,5.64)--(-0.52,5.46)--(-0.34,5.10);
+
+% Labels
+\node[right] at (1,8) {$\overrightarrow{v}$};
+\node[left] at (-1,2) {$\overrightarrow{w}$};
+\node[left] at (-3,6) {$\overrightarrow{p}$};
+\node at (-1.25,7.5) {$\overrightarrow{q}$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+\end{explanation}
 \end{example}
  
 
@@ -824,25 +1026,42 @@ We close this section with an application of the dot product. In Physics, if a c
 Consider the scenario sketched below in which  the constant force $\overrightarrow{F}$ is applied to move an object from the point $P$ to the point $Q$.  Here the force is being applied at an angle $\theta$ as opposed to being applied directly in the direction of the motion.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[15]{-5}{5}{0}{5}
-\dashed \polyline{(0,0), (5,0)}
-\point[4pt]{(-5,0), (0,0)}
-\tlabel[cc](-5,-0.5){$P$}
-\tlabel[cc](0,-0.5){$Q$}
-\tlabel[cc](6,3){$\overrightarrow{F}$}
-\tlabel[cc](1,3){$\overrightarrow{F}$}
-\tlabel[cc](2.5,0.75){$\theta$}
-\tlabel[cc](-2.5,0.75){$\theta$}
-\arrow \reverse \arrow \parafcn{5,25,5}{2*dir(t)}
-\arrow \reverse \arrow \shiftpath{(-5,0)}  \parafcn{5,25,5}{2*dir(t)}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(-5,0), (0,0)}
-\arrow \polyline{(0,0), (5.2, 3)}
-\arrow \polyline{(-5,0), (0.2, 3)}
-\end{mfpic}
+% Points
+\fill (-5,0) circle (2pt);
+\fill (0,0) circle (2pt);
+
+% Labels for points
+\node[below] at (-5,0) {$P$};
+\node[below] at (0,0) {$Q$};
+
+% Ground line
+\draw[dashed] (0,0)--(5,0);
+
+% Angle arcs
+\draw[<->]
+({2*cos(5)-5},{2*sin(5)})
+arc[start angle=5,end angle=25,radius=2];
+
+\draw[<->]
+({2*cos(5)},{2*sin(5)})
+arc[start angle=5,end angle=25,radius=2];
+
+% Angle labels
+\node at (-2.5,0.75) {$\theta$};
+\node at (2.5,0.75) {$\theta$};
+
+% Force vectors
+\draw[->,line width=1.25pt] (-5,0)--(0.2,3);
+\draw[->,line width=1.25pt] (0,0)--(5.2,3);
+\draw[->,line width=1.25pt] (-5,0)--(0,0);
+
+% Force labels
+\node at (5.5,3) {$\overrightarrow{F}$};
+\node at (1,3) {$\overrightarrow{F}$};
+
+\end{tikzpicture}
 \end{center}
 
 To find the work $W$ done in this scenario, we need to find how much of the force $\overrightarrow{F}$ is  in the \text{direction} of the motion $\overrightarrow{PQ}$.  This is precisely what the dot product $\overrightarrow{F} \cdot \widehat{PQ}$ represents.  
@@ -877,24 +1096,40 @@ We test out our formula for work in the following example.
 \begin{example}  \label{vectorworkex} Taylor exerts a force of $10$ pounds to pull her wagon a distance of $50$ feet over level ground.  If the handle of the wagon makes a $30^{\circ}$ angle with the horizontal, how much work did Taylor do pulling the wagon? Assume  the force of $10$ pounds is exerted at a $30^{\circ}$ angle for the duration of the $50$ feet.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\dashed \polyline{(0,0), (5,0)}
-\tlabel[cc](2.75,0.5){$30^{\circ}$}
-\arrow \reverse \arrow \parafcn{5,25,5}{2*dir(t)}
-\penwd{1.025}
-\polyline{(0,0), \plr{(4,30)}}
-\rect{(3.5, 2), (3.75,2.25)}
-\rect{(-4,0), (0,2)}
-\gclear \circle{(-3,-0.5),0.75}
-\circle{(-3,-0.5),0.75}
-\gclear \circle{(-1,-0.5),0.75}
-\circle{(-1,-0.5),0.75}
-\point[5pt]{(-1,-0.5), (-3,-0.5)}
-\end{mfpic}
+% Dashed horizontal reference line
+\draw[dashed] (0,0) -- (5,0);
+
+% Angle arc
+\draw[<->]
+  ({2*cos(5)},{2*sin(5)})
+  arc[start angle=5,end angle=25,radius=2];
+
+\node at (2.75,0.5) {$30^\circ$};
+
+% Inclined segment
+\draw[line width=1.0pt] (0,0) -- ({4*cos(30)},{4*sin(30)});
+
+% Small square at end of inclined segment
+\draw (3.5,2) rectangle (3.75,2.25);
+
+% Large rectangle
+\draw (-4,0) rectangle (0,2);
+
+% Wheels (white-filled circles)
+\filldraw[fill=white] (-3,-0.5) circle (0.75);
+\filldraw[fill=white] (-1,-0.5) circle (0.75);
+
+% Wheel centers
+\fill (-3,-0.5) circle (2pt);
+\fill (-1,-0.5) circle (2pt);
+
+\end{tikzpicture}
 \end{center}
 
-{\bf Solution.}  There are (at least) two ways to attack this problem.  One way is to find the vectors $\overrightarrow{F}$ and $\overrightarrow{PQ}$ mentioned in Theorem \ref{workthm} and compute $W = \overrightarrow{F} \cdot \overrightarrow{PQ}$.  
+\begin{explanation}
+There are (at least) two ways to attack this problem.  One way is to find the vectors $\overrightarrow{F}$ and $\overrightarrow{PQ}$ mentioned in Theorem \ref{workthm} and compute $W = \overrightarrow{F} \cdot \overrightarrow{PQ}$.  
 
  
 
@@ -913,8 +1148,8 @@ Per Theorem \ref{workthm},  $W = \overrightarrow{F} \cdot \overrightarrow{PQ} = 
   
  
   
- Alternatively, we can use the formula $W =  \| \overrightarrow{F} \| \| \overrightarrow{PQ} \| \cos(\theta)$.  With $\| \overrightarrow{F} \| = 10$ pounds, $\| \overrightarrow{PQ} \| = 50$ feet and $\theta = 30^{\circ}$, we get $W = (10 \, \text{pounds})(50 \, \text{feet}) \cos\left(30^{\circ}\right) = 250 \sqrt{3}$ foot-pounds of work. \qed
-
+ Alternatively, we can use the formula $W =  \| \overrightarrow{F} \| \| \overrightarrow{PQ} \| \cos(\theta)$.  With $\| \overrightarrow{F} \| = 10$ pounds, $\| \overrightarrow{PQ} \| = 50$ feet and $\theta = 30^{\circ}$, we get $W = (10 \, \text{pounds})(50 \, \text{feet}) \cos\left(30^{\circ}\right) = 250 \sqrt{3}$ foot-pounds of work. 
+\end{explanation}
 \end{example}
 
 
