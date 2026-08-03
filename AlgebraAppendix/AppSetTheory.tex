@@ -173,13 +173,16 @@ In the Venn Diagram above we have three circles - one for each of the sets $C$, 
 
 All of these circles lie in a rectangle labeled $U$ for the `universal' set.  A universal set contains all of the elements under discussion, so it could always be taken as the union of all of the sets in question, or an even larger set.  In this case, we could take $U = S \cup V$ or $U$ as the set of letters in the entire alphabet.  The reader may well wonder if there is an ultimate universal set which contains \textit{everything}.  The short answer is `no' and we refer you once again to \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\underline{Russell's Paradox}}.  The usual triptych of Venn Diagrams indicating generic sets $A$ and  $B$ along with $A \cap B$ and $A \cup B$ is given below.
 
-\[
-\begin{array}{ccc}
-\begin{tikzpicture}[scale=1.25]
+
+\begin{center}
+
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
 % Circles
-\draw (0,0) circle (1);          % Circle A
-\draw (1.25,0) circle (1);      % Circle B
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
 % Labels
 \node at (0,-1.25) {$A$};
@@ -189,56 +192,63 @@ All of these circles lie in a rectangle labeled $U$ for the `universal' set.  A 
 
 % Rectangle
 \draw (-1.4,-1.55) rectangle (2.625,1.5);
+
 \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
-&
-
-\begin{tikzpicture}[scale=1.25]
-
-%  Shading
+% Shading
 \fill[gray!50] (0,0) circle (1);
 \fill[gray!50] (1.25,0) circle (1);
 
 % Circles
-\draw (0,0) circle (1);          % Circle A
-\draw (1.25,0) circle (1);      % Circle B
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
 % Labels
 \node at (0,-1.25) {$A$};
 \node at (1.25,-1.25) {$B$};
 \node at (2.375,1.25) {$U$};
-\node at (0.5,-1.85) {$A \cup B$ is shaded};
+\node at (0.5,-1.85) {$A\cup B$ is shaded};
 
 % Rectangle
 \draw (-1.4,-1.55) rectangle (2.625,1.5);
+
 \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
-&
-
-\begin{tikzpicture}[scale=1.25]
-
-%Shading
+% Shading
 \begin{scope}
 \clip (0,0) circle (1);
 \fill[gray!70] (1.25,0) circle (1);
 \end{scope}
 
 % Circles
-\draw (0,0) circle (1);          % Circle A
-\draw (1.25,0) circle (1);      % Circle B
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
 % Labels
 \node at (0,-1.25) {$A$};
 \node at (1.25,-1.25) {$B$};
 \node at (2.375,1.25) {$U$};
-\node at (0.5,-1.85) {$A \cap B$ is shaded};
+\node at (0.5,-1.85) {$A\cap B$ is shaded};
 
 % Rectangle
 \draw (-1.4,-1.55) rectangle (2.625,1.5);
-\end{tikzpicture}
 
-\end{array}
-\]
+\end{tikzpicture}
+\end{minipage}
+
+\end{center}
+
+
 
 The one major limitation of Venn Diagrams is that they become unwieldy if more than four sets need to be drawn simultaneously within the same universal set.  This idea is explored in the Exercises.
 
