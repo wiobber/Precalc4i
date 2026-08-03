@@ -638,86 +638,16 @@ In particular, our solution $R = \{ (x,y)  \, | \,  -1 \leq x \leq 2, \,  x^2 \l
 
 There are times in Calculus where it may be convenient to describe the region $R$ as filling up left-to-right as $y$ varies from the bottom most extent, $y = 0$ to the top most extent, $y = 4$.  In this case, we need to describe the bounding curves as functions of $y$.  To that end, we solve $y = x+2$ and $y = x^2$ for $x$ and get three functions of $y$:  $x = y-2$, $x = \sqrt{y}$ and $x = -\sqrt{y}$ as labeled below.
 
-\begin{tabular}{ccc}
-
-\begin{mfpic}[20]{-4}{4}{-1}{5}
-\axes
-\tlabel[cc](4,-0.5){$x$}
-\tlabel[cc](0.5,5){$y$}
-\tlabel[cc](-2,1){$(-1,1)$}
-\tlabel[cc](0.5,-0.5){$(0,0)$}
-\tlabel[cc](2.75,4){$(2,4)$}
-\xmarks{-3 step 1 until 3}
-\ymarks{2, 3, 4}
-\tcaption{`Filling up'  $R$ from left to right.}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$2$} 2,{$3$} 3}
-\axislabels {y}{ {$2$} 2, {$3$} 3,{$4$} 4}
-\normalsize 
-\arrow \polyline{ (-0.5, 0.25), (0.4, 0.25)}
-\arrow \polyline{ (-0.7, 0.5), (0.6, 0.5)}
-\arrow \polyline{ (-0.86, 0.75), (0.76, 0.75)}
-\dotted  \polyline{ (-1, 1), (1, 1)}
-\arrow \polyline{ (-0.75, 1.25), (1.01, 1.25)}
-\arrow \polyline{ (-0.5, 1.5), (1.12, 1.5)}
-\arrow \polyline{ (-0.25, 1.75), (1.22, 1.75)}
-\arrow \polyline{ (0, 2), (1.31, 2)}
-\arrow \polyline{ (0.25, 2.25), (1.4, 2.25)}
-\arrow \polyline{ (0.5, 2.5), (1.48, 2.5)}
-\arrow \polyline{ (0.75, 2.75), (1.55, 2.75)}
-\arrow \polyline{ (1, 3), (1.63, 3)}
-\arrow \polyline{ (1.25, 3.25), (1.70, 3.25)}
-\arrow \polyline{ (1.5, 3.5), (1.77, 3.5)}
-\penwd{1.25pt}
-\function{-1,2,0.1}{x**2}
-\function{-1,2,0.1}{x+2}
-\point[4pt]{(-1,1), (2,4), (0,0)}
-\end{mfpic}
-
-&
-
-$\xrightarrow{\hspace{0.5in}}$
-
-&
-
-\begin{mfpic}[20]{-4}{4}{-1}{5}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-1,2,0.1}{x**2}{x+2}
-\axes
-\tlabel[cc](4,-0.5){$x$}
-\tlabel[cc](0.5,5){$y$}
-\tlabel[cc](1.75,1){$y=1$}
-\tlabel[cc](2.5,2){$x = \sqrt{y}$}
-\tlabel[cc](1.5,0.5){$x = \sqrt{y}$}
-\tlabel[cc](-2,0.5){$x = - \sqrt{y}$}
-\gclear \tlabelrect(0,3){$x=y-2$ \vphantom{ $\frac{x^2}{x^2}$} }
-%\tlabel[cc](-2,1){$(-1,1)$}
-%\tlabel[cc](2.75,4){$(2,4)$}
-\xmarks{-3 step 1 until 3}
-\ymarks{1, 2, 4}
-\tcaption{The region  $R$}
-\scriptsize
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1,{$1$} 1,{$2$} 2,{$3$} 3}
-\axislabels {y}{{$2$} 2,{$4$} 4}
-\normalsize 
-\gfill \btwnfcn{0.5,2,0.1}{x**2}{x+2}
-\polyline{(-1,1), (1,1)}
-\penwd{1.25pt}
-\function{-1,2,0.1}{x**2}
-\function{-1,2,0.1}{x+2}
-\point[4pt]{(-1,1), (2,4), (1,1), (0,0)}
-\end{mfpic} \\
-
-\end{tabular}
+% https://www.geogebra.org/classic/fausea5a
+\begin{center}
+    \geogebra{fausea5a}{800}{600}
+\end{center}
 
 
 Based on the diagram, we see we need to describe $R$ as \textit{two} pieces.  The first piece being bounded on the left by $x = -\sqrt{y}$ and on the right $x = \sqrt{y}$  from $y = 0$ to $y=1$, and the second piece bounded on the left by $x = y-2$ and on the right by $x= \sqrt{y}$ from $y = 1$ to $y = 4$.  That is,
 
     \[ R = \{ (x,y) \, | \, 0 \leq y \leq 1, \, -\sqrt{y} \leq x \leq \sqrt{y} \} \cup\{ (x,y) \, | \, 1 \leq y \leq 4, \, y-2 \leq x \leq \sqrt{y} \}. \]
 
-\newpage
 
 Not all regions in the plane are best described using functions of $x$ or $y$.\footnote{See Section \ref{PolarGraphs} for instance!} Suppose, for instance,  we wish to sketch the region $\{ (x,y) \, | \,  x^2 < 4 - y^2. \}$  Algebraically, we wish to plot all points $(x,y)$ for which the inequality $x^2<4 - y^2$ is true.  One way to proceed is to mimic the `sign diagram' routine we use for solving nonlinear inequalities in one variable:   rewrite the inequality so as to obtain $0$ on one side of the inequality, find the zeros of the non-zero side, choose test values determined by the zeros, and record our solution.
 
@@ -725,27 +655,64 @@ First, we gather all of the terms on one side and leave a $0$ on the other:  $x^
 
 Just like we used test \textit{values} to determine whether or not an interval belongs to the solution of the inequality, we use test \textit{points} in the each of the regions to see which of these belong to our solution set.\footnote{The theory behind why all this works is, surprisingly, the same theory which guarantees that sign diagrams work the way they do - continuity and the Intermediate Value Theorem - but in this case, applied to functions of more than one variable.}  We choose $(0,0)$ to represent the region inside the circle and $(0,3)$ to represent the points outside of the circle. When we substitute $(0,0)$ into $x^2 + y^2 -4 < 0$, we get $-4 < 4$ which is true.  This means $(0,0)$ and all the other points inside the circle are part of the solution.  On the other hand, when we substitute $(0,3)$ into the same inequality, we get $5 < 0$ which is false.  This means $(0,3)$ along with all other points outside the circle are not part of the solution.  What about points on the circle itself?  Choosing a point on the circle, say $(0,2)$, we get $0 < 0$, which means the circle itself does not satisfy the inequality.\footnote{Another way to see this is that points on the circle satisfy $x^2 + y^2 - 4 = 0$, so they do not satisfy $x^2 + y^2 - 4 < 0$.}  As a result, we leave the circle dashed in the final diagram. 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize}
+]
 
-\begin{mfpic}[25]{-3}{3}{-3}{3}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-1.99,1.99,0.1}{0-sqrt(4-x**2)}{sqrt(4-x**2)}
-\axes
-\tlabel[cc](3,-0.5){$x$}
-\tlabel[cc](0.5,3){$y$}
-\tlabel[cc](0.5,2.25){$2$}
-\tlabel[cc](0.5,-2.25){$-2$}
-\xmarks{-2,-1,1,2}
-\ymarks{-2,-1,1,2}
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{15pt}$} -2, {$\hspace{7pt} 2$} 2}
-\penwd{1.25pt}
-\dashed \circle{(0,0),2.01}
-\end{mfpic}
+%------------------------------------------------
+% Filled region
+%------------------------------------------------
 
-The solution to $x^2 < 4 - y^2$
+\fill[blue!35,opacity=0.5] (0,0) circle (2);
 
-\end{center}
+%------------------------------------------------
+% Circle boundary
+%------------------------------------------------
+
+\draw[
+    very thick,
+    dashed,
+    dash pattern=on 4pt off 3pt
+] (0,0) circle (2);
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+
+\draw[->] (-2.8,0) -- (2.9,0)
+    node[right] {$x$};
+
+\draw[->] (0,-2.8) -- (0,2.9)
+    node[above] {$y$};
+
+%------------------------------------------------
+% Tick marks
+%------------------------------------------------
+
+\foreach \x in {-2,-1,1,2}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+}
+
+\foreach \y in {-2,-1,1,2}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+}
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+
+\node[left] at (-2,-0.20) {$-2$};
+\node[right] at (2,-0.20) {$2$};
+
+\node[above left] at (-0.12,2) {$2$};
+\node[below left] at (-0.12,-2) {$-2$};
+
+\end{tikzpicture}
+\end{image}
 
 We put this technique to good use in the following example.
 
@@ -789,70 +756,10 @@ We see that these two regions do overlap but to make the graph more precise, we 
 
 Solving $E1$ for $x$, we get $x = y^2 - 4$.  Substituting this into $E2$ gives $y = y^2 - 4 - 2$, or $y^2-y-6 = 0$.  We find $y = -2$ and $y=3$ and since $x = y^2-4$, we get that the graphs intersect at $(0,-2)$ and $(5,3)$.  Putting all of this together, we get our final answer below.
 
-\[ \begin{array}{ccc}
-
-\begin{mfpic}[10]{-6}{6}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-4,5.5,0.1}{0-sqrt(x+4)}{sqrt(x+4)}
-\axes
-\tlabel[cc](6,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$-5 \hspace{7pt}$} -5}
-\axislabels {y}{{$-3$} -3,{$3$} 3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \parafcn{-3.16,3.16,0.1}{(t^2-4,t)}
-\end{mfpic}
-
-&
-
-\hspace{.25in}
-
-\begin{mfpic}[10]{-6}{6}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-2,5.5,0.1}{x-2}{3.5}
-\gfill \btwnfcn{-6,-2,0.1}{-4}{3.5}
-
-\axes
-\tlabel[cc](6,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$2$} 2, {$3$} 3,{$4$} 4,{$5$} 5}
-\penwd{1.25pt}
-\dashed \polyline{(-2,-4), (5.5,3.5)}
-\end{mfpic} 
-
-&
-
-\hspace{.25in}
-
-\begin{mfpic}[10]{-6}{6}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-4,0,0.1}{0-sqrt(x+4)}{sqrt(x+4)}
-\gfill \btwnfcn{0,5,0.1}{x-2}{sqrt(x+4)}
-\axes
-\tlabel[cc](6,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\tlabel[cc](2, -2){$(0,-2)$}
-\tlabel[cc](5,4){$(5,3)$}
-\xmarks{-5,-4,-3,-2,-1,1,2,3,4,5}
-\ymarks{-3,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$-5 \hspace{7pt}$} -5, {$2$} 2, {$3$} 3,{$4$} 4,{$5$} 5}
-\penwd{1.25pt}
-\parafcn{-2,3,0.1}{(t^2-4,t)}
-\dashed \polyline{(0,-2), (5,3)}
-\pointfillfalse
-\point[4pt]{(0,-2), (5,3)}
-\end{mfpic} \\
-
-y^2 - 4 \leq x & \hspace{.25in}  x < y+2 & \hspace{.25in} y^2 - 4 \leq x < y+2 \\
-
-\end{array} \]
+% https://www.desmos.com/calculator/a6nzqlnlku
+\begin{center}
+    \desmos{a6nzqlnlku}{800}{600}
+\end{center}
 
 \item  Like any system, our solution to this problem requires us to graph the points $(x,y)$ which satisfy \textit{both} inequalities.  To do this, we solve each inequality separately and take the set theoretic intersection of the solution sets.  
 
@@ -869,70 +776,10 @@ Our final answer, then, consists of the points on or outside of the circle $x^2 
 We can eliminate both the $x^2$ and $y^2$ by replacing $E2$ with $-E1 + E2$.  Doing so produces $-2x - 2y = -4$.  Solving  for $y$ gives $y = 2-x$.  Substituting this into $E1$ gives $x^2 + (2-x)^2 = 4$ which simplifies to $x^2 + 4-4x+x^2 = 4$ or $2x^2 - 4x = 0$.  Factoring yields $2x(x-2)$ which gives $x=0$ or $x=2$.  Substituting these values into $y=2-x$ gives the points $(0,2)$ and $(2,0)$.  The intermediate graphs and final solution are below.
 
 
-\[ \begin{array}{ccc}
-
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-3.5,3.5,0.1}{-3.5}{3.5}
-\gclear \circle{(0,0),2}
-\axes
-\tlabel[cc](4,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$1$} 1 }
-\axislabels {y}{{$-1$} -1,{$1$} 1}
-\penwd{1.25pt}
-\circle{(0,0),2}
-\end{mfpic}
-
-&
-
-\hspace{.25in}
-
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\gfill \circle{(1,1),1.414}
-\axes
-\tlabel[cc](4,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1, {$\hspace{7pt} 2$} 2}
-\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1,{$2$} 2,{$3$} 3}
-\penwd{1.25pt}
-\circle{(1,1),1.414}
-\end{mfpic}
-
-&
-
-\hspace{.25in}
-
-\begin{mfpic}[15]{-4}{4}{-4}{4}
-\fillcolor[gray]{.7}
-\penwd{1.25pt}
-\gfill \circle{(1,1),1.414}
-\circle{(1,1),1.414}
-\gclear \circle{(0,0),2}
-\arc[s]{(2,0),(0,2),90} 
-\penwd{0.5pt}
-\axes
-\tlabel[cc](4,-0.5){$x$}
-\tlabel[cc](0.5,4){$y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{7pt}$} -3,{$-2 \hspace{7pt}$} -2,{$-1 \hspace{7pt}$} -1}
-\axislabels {y}{{$-3$} -3,{$-2$} -2,{$-1$} -1,{$3$} 3}
-\point[4pt]{(0,2), (2,0)}
-\tlabel[cc](-1, 2){$(0,2)$}
-\tlabel[cc](2,-0.5){$(2,0)$}
-\end{mfpic} \\
-x^2+y^2 \geq 4 & \hspace{.25in} x^2 - 2x + y^2 - 2y \leq 0  & \hspace{.25in} \text{Solution to the system.} \\
-
-\end{array} \]
+% https://www.desmos.com/calculator/qb52fmk6rq
+\begin{center}
+    \desmos{qb52fmk6rq}{800}{600}
+\end{center}
 
 \end{enumerate}
 
@@ -946,8 +793,285 @@ Based on our experience from the earlier problems, we know points outside the Un
 
 We close this section with a follow-up to Example \ref{circuitex} in Section \ref{MatMethods}.  Recall in the circuit diagrammed below, we have two batteries with source voltages $V\!B_1$ and $V\!B_2$, measured in volts $V$, along with six resistors with resistances $R_1$ through $R_6$, measured in kiloohms, $k\Omega$.Recall if we think of electrons flowing through the circuit, we can think of the voltage sources as providing the `push' which makes the electrons move, the resistors as obstacles for the electrons to overcome, and the mesh current as a net rate of flow of electrons around the indicated loops.
 
-[We will replace this circuit diagram this summer]
+%[We will replace this circuit diagram this summer]
 %\centerline{\includegraphics{./NonLinearInequalitiesGraphics/CircuitDiagram01.pdf}}
+
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\normalsize},
+    line cap=round,
+    line join=round
+]
+
+%------------------------------------------------
+% Main circuit coordinates
+%------------------------------------------------
+
+\coordinate (A) at (0,3);
+\coordinate (B) at (3.2,3);
+\coordinate (C) at (6.4,3);
+\coordinate (D) at (9.6,3);
+
+\coordinate (Ab) at (0,0);
+\coordinate (Bb) at (3.2,0);
+\coordinate (Cb) at (6.4,0);
+\coordinate (Db) at (9.6,0);
+
+%------------------------------------------------
+% Resistor R1
+%------------------------------------------------
+
+\draw (A) -- (1.25,3);
+
+\draw
+    (1.25,3)
+    -- (1.35,3.16)
+    -- (1.50,2.84)
+    -- (1.65,3.16)
+    -- (1.80,2.84)
+    -- (1.95,3.16)
+    -- (2.10,2.84)
+    -- (2.25,3.16)
+    -- (2.35,3);
+
+\draw (2.35,3) -- (B);
+
+\node[above] at (1.80,3.35) {$R_1$};
+
+%------------------------------------------------
+% Resistor R2
+%------------------------------------------------
+
+\draw (B) -- (4.45,3);
+
+\draw
+    (4.45,3)
+    -- (4.55,3.16)
+    -- (4.70,2.84)
+    -- (4.85,3.16)
+    -- (5.00,2.84)
+    -- (5.15,3.16)
+    -- (5.30,2.84)
+    -- (5.45,3.16)
+    -- (5.55,3);
+
+\draw (5.55,3) -- (C);
+
+\node[above] at (5.00,3.35) {$R_2$};
+
+%------------------------------------------------
+% Resistor R6
+%------------------------------------------------
+
+\draw (C) -- (7.65,3);
+
+\draw
+    (7.65,3)
+    -- (7.75,3.16)
+    -- (7.90,2.84)
+    -- (8.05,3.16)
+    -- (8.20,2.84)
+    -- (8.35,3.16)
+    -- (8.50,2.84)
+    -- (8.65,3.16)
+    -- (8.75,3);
+
+\draw (8.75,3) -- (D);
+
+\node[above] at (8.20,3.35) {$R_6$};
+
+%------------------------------------------------
+% Vertical resistor R3
+%------------------------------------------------
+
+\draw (B) -- (3.2,1.75);
+
+\draw
+    (3.2,1.75)
+    -- (3.04,1.65)
+    -- (3.36,1.50)
+    -- (3.04,1.35)
+    -- (3.36,1.20)
+    -- (3.04,1.05)
+    -- (3.36,0.90)
+    -- (3.04,0.75)
+    -- (3.2,0.65);
+
+\draw (3.2,0.65) -- (Bb);
+
+\node[left] at (2.85,1.20) {$R_3$};
+
+%------------------------------------------------
+% Vertical resistor R4
+%------------------------------------------------
+
+\draw (C) -- (6.4,1.75);
+
+\draw
+    (6.4,1.75)
+    -- (6.24,1.65)
+    -- (6.56,1.50)
+    -- (6.24,1.35)
+    -- (6.56,1.20)
+    -- (6.24,1.05)
+    -- (6.56,0.90)
+    -- (6.24,0.75)
+    -- (6.4,0.65);
+
+\draw (6.4,0.65) -- (Cb);
+
+\node[left] at (6.05,1.20) {$R_4$};
+
+%------------------------------------------------
+% Top branch and resistor R5
+%------------------------------------------------
+
+\draw (A) -- (0,6) -- (4.25,6);
+
+\draw
+    (4.25,6)
+    -- (4.35,6.16)
+    -- (4.50,5.84)
+    -- (4.65,6.16)
+    -- (4.80,5.84)
+    -- (4.95,6.16)
+    -- (5.10,5.84)
+    -- (5.25,6.16)
+    -- (5.35,6);
+
+\draw (5.35,6) -- (9.6,6) -- (D);
+
+\node[above] at (4.80,6.35) {$R_5$};
+
+%------------------------------------------------
+% Bottom conductor
+%------------------------------------------------
+
+\draw (Ab) -- (Bb) -- (Cb) -- (Db);
+
+%------------------------------------------------
+% Left battery VB1
+%------------------------------------------------
+
+\draw (A) -- (0,1.80);
+
+% Battery plates
+\draw (-0.36,1.68) -- (0.36,1.68);
+\draw (-0.25,1.45) -- (0.25,1.45);
+\draw (-0.36,1.22) -- (0.36,1.22);
+\draw (-0.25,0.99) -- (0.25,0.99);
+
+\draw (0,1.80) -- (0,1.68);
+\draw (0,0.99) -- (Ab);
+
+\node[left] at (-0.52,1.34) {$VB_1$};
+
+%------------------------------------------------
+% Right battery VB2
+%------------------------------------------------
+
+\draw (D) -- (9.6,1.80);
+
+% Battery plates
+\draw (9.24,1.68) -- (9.96,1.68);
+\draw (9.35,1.45) -- (9.85,1.45);
+\draw (9.24,1.22) -- (9.96,1.22);
+\draw (9.35,0.99) -- (9.85,0.99);
+
+\draw (9.6,1.80) -- (9.6,1.68);
+\draw (9.6,0.99) -- (Db);
+
+\node[right] at (10.12,1.34) {$VB_2$};
+
+%------------------------------------------------
+% Junction points
+%------------------------------------------------
+
+\fill (A) circle (2.5pt);
+\fill (B) circle (2.5pt);
+\fill (C) circle (2.5pt);
+\fill (D) circle (2.5pt);
+\fill (Bb) circle (2.5pt);
+
+%------------------------------------------------
+% Ground symbol
+%------------------------------------------------
+
+\draw (Bb) -- (3.2,-0.55);
+
+\draw (2.85,-0.55) -- (3.55,-0.55);
+\draw (2.95,-0.70) -- (3.45,-0.70);
+\draw (3.07,-0.85) -- (3.33,-0.85);
+
+%------------------------------------------------
+% Mesh-current arrow i1
+%------------------------------------------------
+
+\draw[rounded corners=10pt]
+    (0.75,0.50)
+    -- (0.75,2.18)
+    -- (2.25,2.18)
+    -- (2.25,0.50)
+    -- (1.25,0.50);
+
+\draw[->]
+    (1.70,0.50) -- (1.15,0.50);
+
+\node at (1.50,1.35) {$i_1$};
+
+%------------------------------------------------
+% Mesh-current arrow i2
+%------------------------------------------------
+
+\draw[rounded corners=10pt]
+    (3.95,0.50)
+    -- (3.95,2.18)
+    -- (5.45,2.18)
+    -- (5.45,0.50)
+    -- (4.45,0.50);
+
+\draw[->]
+    (4.90,0.50) -- (4.35,0.50);
+
+\node at (4.70,1.35) {$i_2$};
+
+%------------------------------------------------
+% Mesh-current arrow i3
+%------------------------------------------------
+
+\draw[rounded corners=10pt]
+    (7.15,0.50)
+    -- (7.15,2.18)
+    -- (8.65,2.18)
+    -- (8.65,0.50)
+    -- (7.65,0.50);
+
+\draw[->]
+    (8.10,0.50) -- (7.55,0.50);
+
+\node at (7.90,1.35) {$i_3$};
+
+%------------------------------------------------
+% Upper mesh-current arrow i4
+%------------------------------------------------
+
+\draw[rounded corners=12pt]
+    (1.00,4.10)
+    -- (1.00,5.00)
+    -- (8.60,5.00)
+    -- (8.60,4.10)
+    -- (3.15,4.10);
+
+\draw[->]
+    (3.80,4.10) -- (2.90,4.10);
+
+\node at (4.80,4.62) {$i_4$};
+
+\end{tikzpicture}
+\end{image}
+
+
 
 Using \href{http://en.wikipedia.org/wiki/Ohm's_law}{\underline{Ohm's Law}} \index{Ohm's Law} \index{Kirchhoff's Voltage Law} and \href{http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws}{\underline{Kirchhoff's Voltage Law}}, we can relate the voltage supplied to the circuit by the two batteries to the voltage drops across the six resistors in order to find the four `mesh' currents: $i_1$, $i_2$, $i_3$ and $i_4$, measured in milliamps, $mA$. This gives rise to the following system of linear equations:
 
@@ -1007,48 +1131,149 @@ Since resistance values are always positive, we need to restrict our values of $
  
  
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    every node/.style={font=\Large}
+]
 
-\begin{mfpic}[20]{-3}{5}{-2}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{-2.25,4.75,0.1}{(4.1-1.5*x)/3.5}{3.5}
-\axes
-\penwd{1.25pt}
-\dashed \arrow \reverse \arrow \function{-2.5,5,0.1}{(4-1.5*x)/3.5}
-\xmarks{-2,-1,1,2,3,4}
-\ymarks{-1,1,2,3}
-\tlabel(5,-0.5){$t$}
-\tlabel(0.25,4){$s$}
-\tcaption{ \scriptsize The region where $3.5s+1.5t-4> 0$}
-\tlpointsep{5pt}
-\axislabels {x}{{$-2 \hspace{7pt}$} -2,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\end{mfpic}
+% Slanted boundary:
+% 3.5s+1.5t-4=0
+% s=(8-3t)/7
 
-&
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LEFT PANEL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{mfpic}[20]{-3}{5}{-2}{4}
-\fillcolor[gray]{.7}
-\gfill \btwnfcn{0,2.6666,0.1}{(4.1-1.5*x)/3.5}{2.2857}
-\penwd{1.25pt}
-\arrow \dashed \polyline{(0,-2), (0,4)}
-\arrow \polyline{(-3,0),(5,0)}
-\dashed \polyline{(-1.5,2.2857),(4,2.2857)}
-\dashed \polyline{(2.6666,-1),(2.6666,3)}
-\dashed \arrow \reverse \arrow \function{-2.5,5,0.1}{(4-1.5*x)/3.5}
-\xmarks{-2,-1,1,2,3,4}
-\ymarks{-1,1,2,3}
-\tlabel(5,-0.5){$t$}
-\tlabel(0.25,4){$s$}
-\tlabel[cc](2.6666,-1.75){$t =2.\overline{6}$}
-\tlabel[cc](4.75,2){$s =2.\overline{285714}$}
-\tcaption{ \scriptsize The region $R$ for our parameters $s$ and $t$.}
-\tlpointsep{5pt}
-\axislabels {x}{{$-2 \hspace{7pt}$} -2,  {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\end{mfpic}
+\begin{scope}
 
-\end{array} \]
+% Shaded region
+\fill[blue!35,opacity=0.5]
+    (-2.1,3.5)
+    --
+    (4.8,3.5)
+    --
+    plot[
+        domain=4.8:-2.1,
+        samples=100,
+        smooth
+    ]
+    (\x,{(8-3*\x)/7})
+    -- cycle;
+
+% Axes
+\draw[->] (-2.6,0) -- (5.1,0)
+    node[right] {$t$};
+
+\draw[->] (0,-2.0) -- (0,4.0)
+    node[above] {$s$};
+
+% Tick marks
+\foreach \x in {-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
+
+\foreach \y in {-1,1,2,3}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
+
+% Dashed slanted boundary
+\draw[
+    very thick,
+    dashed,
+    ->,
+    domain=-2.4:5.0,
+    samples=100,
+    smooth
+]
+plot (\x,{(8-3*\x)/7});
+
+\end{scope}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% RIGHT PANEL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[xshift=8.8cm]
+
+% Important values
+\def\tcut{2.6}
+\def\stop{2.285714}
+
+% Shaded region:
+% 0 <= t <= 2.6
+% (8-3t)/7 <= s <= 2.285714
+\fill[blue!35,opacity=0.5]
+    (0,\stop)
+    --
+    (\tcut,\stop)
+    --
+    plot[
+        domain=\tcut:0,
+        samples=100,
+        smooth
+    ]
+    (\x,{(8-3*\x)/7})
+    -- cycle;
+
+% Axes
+\draw[->] (-2.6,0) -- (5.1,0)
+    node[right] {$t$};
+
+\draw[->] (0,-2.0) -- (0,4.0)
+    node[above] {$s$};
+
+% Tick marks
+\foreach \x in {-2,-1,1,2,3,4}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.12) {$\x$};
+}
+
+\foreach \y in {-1,1,2,3}
+{
+    \draw (-0.08,\y) -- (0.08,\y);
+    \node[left] at (-0.12,\y) {$\y$};
+}
+
+% Slanted boundary
+\draw[
+    very thick,
+    dashed,
+    ->,
+    domain=-2.4:5.0,
+    samples=100,
+    smooth
+]
+plot (\x,{(8-3*\x)/7});
+
+% Vertical dashed boundaries
+\draw[very thick,dashed]
+    (0,-2.0) -- (0,4.0);
+
+\draw[very thick,dashed]
+    (\tcut,-1.0) -- (\tcut,3.1);
+
+% Top horizontal dashed boundary
+\draw[very thick,dashed]
+    (-1.5,\stop) -- (5.0,\stop);
+
+% Labels
+\node[right] at (3.55,\stop-0.32)
+    {$s=2.285714$};
+
+\node[below] at (\tcut,-1.55)
+    {$t=2.6$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
  Hence,  our final answer is:    
  
