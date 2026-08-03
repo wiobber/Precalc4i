@@ -204,7 +204,7 @@ Our next step is to define addition of vectors component-wise to match the geome
 To visualize this sum, we draw $\overrightarrow{v}$ with its initial point at $(0,0)$ (for convenience) so that its terminal point is $(3,4)$.  Next, we graph $\overrightarrow{w}$ with its initial point at $(3,4)$.  Moving one to the right and two down, we find the terminal point of $\overrightarrow{w}$ to be $(4,2)$.  
 
 \begin{center} 
-\geogebra{wevqxuzp}{800}{600} 
+\geogebra{rqhjc7ev}{800}{600} 
 \end{center}
 
 We see the vector $\overrightarrow{v} + \overrightarrow{w}$ has initial point $(0,0)$ and terminal point $(4,2)$ so its component form  is $\left<4,2\right>$. \qed
@@ -855,10 +855,9 @@ Hence, the `true' speed of the plane is approximately 184 miles per hour.
 
 so using the arctangent function,\footnote{We could just have easily used arcsine or arccosine here \ldots} we get $\theta \approx 39^{\circ}$.  Since, for the purposes of bearing, we need the angle between $\overrightarrow{v} + \overrightarrow{w}$ and the positive $y$-axis, we take the complement of $\theta$ and find the `true' bearing of the plane to be approximately N$51^{\circ}$E.
 
-\begin{center}
+\[
+\begin{array}{cc}
 
-\begin{minipage}{0.46\textwidth}
-\centering
 \begin{tikzpicture}[scale=0.6]
 
 % Axes
@@ -890,10 +889,8 @@ so using the arctangent function,\footnote{We could just have easily used arcsin
 \node at (2.16,-1.25) {\scriptsize $\vec w$};
 
 \end{tikzpicture}
-\end{minipage}
-\hfill
-\begin{minipage}{0.46\textwidth}
-\centering
+
+&\quad
 \begin{tikzpicture}[scale=0.6]
 
 % Axes
@@ -919,12 +916,8 @@ so using the arctangent function,\footnote{We could just have easily used arcsin
 \node[right] at (8.16,6.66) {\scriptsize $\vec v+\vec w$};
 
 \end{tikzpicture}
-\end{minipage}
-
-\end{center}
-
-\vspace{-.25in}
-\qed
+\end{array}
+\]
 %\arrow \dashed \polyline{(0,0), (8.16,6.66)}
 %\dotted \polyline{(1.73, -1), (8.16, 6.66)}
 %\dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
