@@ -136,64 +136,8 @@ The identity verified in Example \ref{dotprodpropex} plays a large role in the d
 
 Suppose $\overrightarrow{v}$ and $\overrightarrow{w}$ are two nonzero vectors.  If we draw $\overrightarrow{v}$ and $\overrightarrow{w}$ with the same initial point, we define the \textbf{angle between}\index{vector ! angle between two}\index{angle ! between two vectors} $\overrightarrow{v}$ and $\overrightarrow{w}$ to be the angle $\theta$ determined by the rays containing the vectors $\overrightarrow{v}$ and $\overrightarrow{w}$, as illustrated below.  We require $0 \leq \theta \leq \pi$.  (Think about why this is needed in the definition.)
 
-\begin{center}
-
-\begin{tabular}{ccc}
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\tlabel[cc](4,3.54){$\overrightarrow{v}$}
-\tlabel[cc](3.25, 2.5){$\overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),\plr{(5,45)}}
-\arrow \polyline{(0,0),\plr{(4,45)}}
-
-\end{mfpic}
-
-&
-
-\hspace{.25in}
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\point[4pt]{(0,0)}
-\arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
-\tlabel[cc](0.5,1.75){$\theta$}
-\tlabel[cc](4.75,2.5){$\overrightarrow{v}$}
-\tlabel[cc](-2.5, 3.5){$\overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),(-2,3.46)}
-\arrow \polyline{(0,0),(4.33,2.5)}
-
-\end{mfpic}
-
-&
-
-\hspace{.25in}
-\begin{mfpic}[15]{-5}{5}{-5}{-5}
-\point[4pt]{(0,0)}
-\arrow \reverse \arrow \parafcn{55,215,5}{0.75*dir(t)}
-\tlabel[cc](2.5,2){$\overrightarrow{v}$}
-\tlabel[cc](-1.85, -1.45){$\overrightarrow{w}$}
-\setlength{\headlen}{5pt}
-\headshape{1}{1}{true}
-\penwd{1.25pt}
-\arrow \polyline{(0,0),\plr{(3,45)}}
-\arrow \polyline{(0,0), \plr{(-2,45)}}
-
-\end{mfpic} \\
-
-$\theta = 0$ &
-
-$0 < \theta < \pi$ &
-
-
-$\theta = \pi$ \\
-
-
-\end{tabular}
-
+\begin{center} 
+\geogebra{pbqt2adx}{800}{600} 
 \end{center}
 
 The following theorem gives us some insight into the geometric role the dot product plays.
@@ -291,7 +235,7 @@ An immediate consequence of Theorem \ref{dotproductgeo} is the following.
 
 \begin{theorem} \label{anglebetweenvectorthm} Let $\overrightarrow{v}$ and $\overrightarrow{w}$ be nonzero vectors and let $\theta$ the angle between $\overrightarrow{v}$ and $\overrightarrow{w}$.  Then \index{vector ! angle between two} \index{angle ! between two vectors}
 
-\[ \theta = \arccos\left( \dfrac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right) = \arccos(\hat{v} \cdot \hat{w}) \]
+\[ \theta = \arccos\left( \frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{v} \| \|\overrightarrow{w} \|}\right) = \arccos(\hat{v} \cdot \hat{w}) \]
 
  
 
@@ -741,7 +685,7 @@ While the formula given in Definition \ref{vectorproj} is theoretically appealin
 
 \begin{theorem} \label{altprojformulas} \textbf{Alternate Formulas for Vector Projections:}  If $\overrightarrow{v}$ and $\overrightarrow{w}$ are nonzero vectors then
 
-\[\text{proj}_{\overrightarrow{w}}(\overrightarrow{v}) = (\overrightarrow{v} \cdot \hat{w}) \hat{w} = \left(\dfrac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{w}\|^2}\right) \overrightarrow{w} = \left(\dfrac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}}\right) \overrightarrow{w} \]
+\[\text{proj}_{\overrightarrow{w}}(\overrightarrow{v}) = (\overrightarrow{v} \cdot \hat{w}) \hat{w} = \left(\frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\| \overrightarrow{w}\|^2}\right) \overrightarrow{w} = \left(\frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}}\right) \overrightarrow{w} \]
 
 \end{theorem}
 %% \ebm}
@@ -849,8 +793,8 @@ To prove Theorem \ref{generalizeddecompthm}, we take  $\overrightarrow{p} = \tex
 
 \overrightarrow{q} \cdot \overrightarrow{w} & = & (\overrightarrow{v} - \overrightarrow{p}) \cdot \overrightarrow{w}& \text{Definition of $\overrightarrow{q}$.} \\ 
 & = & \overrightarrow{v} \cdot \overrightarrow{w} - \overrightarrow{p} \cdot \overrightarrow{w} & \text{Properties of Dot Product} \\  
-& = & \overrightarrow{v} \cdot \overrightarrow{w} - \left(\dfrac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}} \overrightarrow{w}\right) \cdot \overrightarrow{w} & \text{Since $\overrightarrow{p} = \text{proj}_{\overrightarrow{w}}(\overrightarrow{v})$.} \\  
-& = & \overrightarrow{v} \cdot \overrightarrow{w} - \left(\dfrac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}}\right) (\overrightarrow{w} \cdot \overrightarrow{w}) & \text{Properties of Dot Product.} \\  
+& = & \overrightarrow{v} \cdot \overrightarrow{w} - \left(\frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}} \overrightarrow{w}\right) \cdot \overrightarrow{w} & \text{Since $\overrightarrow{p} = \text{proj}_{\overrightarrow{w}}(\overrightarrow{v})$.} \\  
+& = & \overrightarrow{v} \cdot \overrightarrow{w} - \left(\frac{\overrightarrow{v} \cdot \overrightarrow{w}}{\overrightarrow{w} \cdot \overrightarrow{w}}\right) (\overrightarrow{w} \cdot \overrightarrow{w}) & \text{Properties of Dot Product.} \\  
 & = & \overrightarrow{v} \cdot \overrightarrow{w} - \overrightarrow{v}\cdot \overrightarrow{w} & \\ 
 & = & 0. & \end{array} \]
 											
