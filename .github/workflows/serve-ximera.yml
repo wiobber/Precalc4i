@@ -53,9 +53,8 @@ jobs:
           XMDEPLOY: "precalc.tex testxourse.tex"
         run: |
           ls -alrt
-          ls -al /root/texmf/tex/latex/ximeraLatex/luaxake/
-          chmod +x /root/texmf/tex/latex/ximeraLatex/luaxake/luaxake
           chmod +x xmScripts/xmlatex
+          chmod +x .ximera_local/luaxake/luaxake
           # rm -rf ximera-downloads/with-answers
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
@@ -124,8 +123,8 @@ jobs:
           XIMERA_URL: "https://xerxes.ximera.org/"
           XIMERA_NAME: stitz-zeager
         run: |
-          chmod +x /root/texmf/tex/latex/ximeraLatex/luaxake/luaxake
           chmod +x xmScripts/xmlatex
+          chmod +x .ximera_local/luaxake/luaxake
           # env
           ls -alrt
           ./xmScripts/xmlatex name  
