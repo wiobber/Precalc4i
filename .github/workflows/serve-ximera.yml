@@ -21,6 +21,7 @@ jobs:
           fetch-depth: 0   # full 
 
       - name: Setup cache
+        if: ${{ !contains(github.event.head_commit.message, '[nocache]') }}
         uses: actions/cache@v4
         with:
           path: | 
