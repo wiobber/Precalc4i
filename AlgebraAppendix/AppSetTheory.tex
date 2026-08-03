@@ -142,125 +142,113 @@ As promised, the empty set is the set containing no elements since no matter wha
 
  
 
-A nice way to visualize the relationships between sets and set operations is to draw a  \href{http://en.wikipedia.org/wiki/Venn_diagram}{\underline{\textbf{Venn Diagram}}}\index{diagram ! Venn Diagram}\index{Venn Diagram}.  A Venn Diagram for the sets $S$, $C$ and $V$ is drawn at the top of the next page.  
-
-\phantomsection
-\label{venndiagram}
+A nice way to visualize the relationships between sets and set operations is to draw a  \href{http://en.wikipedia.org/wiki/Venn_diagram}{\underline{\textbf{Venn Diagram}}}\index{diagram ! Venn Diagram}\index{Venn Diagram}.  A Venn Diagram for the sets $S$, $C$ and $V$ is drawn below.
 
 \begin{center}
+\begin{tikzpicture}[scale=1.5]
 
-\begin{mfpic}[10]{-10}{10}{-10}{10} 
+% Circles
+\draw (0,0) circle (1);          % Circle A
+\draw (1.25,0) circle (1);      % Circle B
+\draw (-0.2,0) circle (0.3);      % Circle C
 
-\rect{(-10,-8),(10,8)}
-\circle{(-3,0), 5}
-\circle{(3,0), 5}
-\circle{(-4,0), 1.5}
-\tlabel[cc](-4,0){\scriptsize $s$ $m$ $l$ $k$}
-\tlabel[cc](0,0){\scriptsize $o$}
-\tlabel[cc](4,0){\scriptsize $a$ $e$ $i$ $u$}
-\tlabel[cc](-3,-6){\scriptsize $S$}
-\tlabel[cc](3,-6){\scriptsize $V$}
-\tlabel[cc](-4,2){\scriptsize $C$}
-\tlabel[cc](9,7){\scriptsize $U$}
+% Labels
+\node at (0,-1.25) {$A$};
+\node at (1.25,-1.25) {$B$};
+\node at (-0.2,0.45) {$C$};
+\node at (2.375,1.5) {$U$};
+\node at (-0.25,0.15) {$s \,\, m$};
+\node at (-0.25,-0.15) {$l \,\, k$};
+\node at (0.62,0) {$o$};
+\node at (1.5,0) {$a\,\, e\,\, i\,\, u$};
 
-\end{mfpic}
+% Rectangle
+\draw (-1.75,-1.75) rectangle (2.625,1.75);
 
-A Venn Diagram for $C$, $S$ and $V$.  
+\end{tikzpicture}
 
 \end{center}
 
-In the Venn Diagram above we have three circles - one for each of the sets $C$, $S$ and $V$.  We visualize the area enclosed by each of these circles as the elements of each set.  Here, we've spelled out the elements for definitiveness.  Notice that the circle representing the set $C$ is completely inside the circle representing $S$.  This is a geometric way of  showing that $C \subseteq S$.  Also, notice that the circles representing $S$ and $V$ overlap on the letter `o'.  This common region is how we visualize $S \cap V$.  Notice that since $C \cap V = \emptyset$, the circles which represent $C$ and $V$ have no overlap whatsoever.  
-
- 
+In the Venn Diagram above we have three circles - one for each of the sets $C$, $S$ and $V$.  We visualize the area enclosed by each of these circles as the elements of each set.  Here, we've spelled out the elements for definitiveness.  Notice that the circle representing the set $C$ is completely inside the circle representing $S$.  This is a geometric way of  showing that $C \subseteq S$.  Also, notice that the circles representing $S$ and $V$ overlap on the letter `o'.  This common region is how we visualize $S \cap V$.  Notice that since $C \cap V = \emptyset$, the circles which represent $C$ and $V$ have no overlap whatsoever. 
 
 All of these circles lie in a rectangle labeled $U$ for the `universal' set.  A universal set contains all of the elements under discussion, so it could always be taken as the union of all of the sets in question, or an even larger set.  In this case, we could take $U = S \cup V$ or $U$ as the set of letters in the entire alphabet.  The reader may well wonder if there is an ultimate universal set which contains \textit{everything}.  The short answer is `no' and we refer you once again to \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\underline{Russell's Paradox}}.  The usual triptych of Venn Diagrams indicating generic sets $A$ and  $B$ along with $A \cap B$ and $A \cup B$ is given below.
 
+
 \begin{center}
 
-\begin{tabular}{ccc}
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
+% Circles
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
-\begin{mfpic}[40]{-2}{2}{-2}{2}
+% Labels
+\node at (0,-1.25) {$A$};
+\node at (1.25,-1.25) {$B$};
+\node at (2.375,1.25) {$U$};
+\node at (0.5,-1.85) {Sets $A$ and $B$};
 
-\fillcolor[gray]{0.7}
+% Rectangle
+\draw (-1.4,-1.55) rectangle (2.625,1.5);
 
- \circle{(0.4375,0),1}
- \circle{(-0.4375,0),1}
-\tlabel[cc](-0.4375,-1.25){\scriptsize $A$}
-\tlabel[cc](0.4375,-1.25){\scriptsize $B$}
-\tlabel[cc](1.25,1.25){\scriptsize $U$}
-\rect{(-1.5, -1.5), (1.5, 1.5)}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
-    
-\end{mfpic}
+% Shading
+\fill[gray!50] (0,0) circle (1);
+\fill[gray!50] (1.25,0) circle (1);
 
+% Circles
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
+% Labels
+\node at (0,-1.25) {$A$};
+\node at (1.25,-1.25) {$B$};
+\node at (2.375,1.25) {$U$};
+\node at (0.5,-1.85) {$A\cup B$ is shaded};
 
-&
+% Rectangle
+\draw (-1.4,-1.55) rectangle (2.625,1.5);
 
-\hspace{0.15in}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.95]
 
-\begin{mfpic}[40]{-2}{2}{-2}{2}
+% Shading
+\begin{scope}
+\clip (0,0) circle (1);
+\fill[gray!70] (1.25,0) circle (1);
+\end{scope}
 
+% Circles
+\draw (0,0) circle (1);
+\draw (1.25,0) circle (1);
 
+% Labels
+\node at (0,-1.25) {$A$};
+\node at (1.25,-1.25) {$B$};
+\node at (2.375,1.25) {$U$};
+\node at (0.5,-1.85) {$A\cap B$ is shaded};
 
-\fillcolor[gray]{0.7}
-\gfill\circle{(0.4375,0),1}
- \gclip\circle{(-0.4375,0),1}
- \circle{(0.4375,0),1}
- \circle{(-0.4375,0),1}
+% Rectangle
+\draw (-1.4,-1.55) rectangle (2.625,1.5);
 
-\tlabel[cc](0,0){\scriptsize $A \cap B$}
-\tlabel[cc](-0.4375,-1.25){\scriptsize $A$}
-\tlabel[cc](0.4375,-1.25){\scriptsize $B$}
-\tlabel[cc](1.25,1.25){\scriptsize $U$}
-\rect{(-1.5, -1.5), (1.5, 1.5)}
-    
-\end{mfpic}
-
-&
-
-\hspace{0.15in}
-
-\begin{mfpic}[40]{-2}{2}{-2}{2}
-
-
-
-\fillcolor[gray]{0.7}
-\gfill\circle{(0.4375,0),1}
-\gfill\circle{(-0.4375,0),1}
- \circle{(0.4375,0),1}
- \circle{(-0.4375,0),1}
-\tlabel[cc](0,0){\scriptsize $A \cup B$}
-\tlabel[cc](-0.4375,-1.25){\scriptsize $A$}
-\tlabel[cc](0.4375,-1.25){\scriptsize $B$}
-\tlabel[cc](1.25,1.25){\scriptsize $U$}
-\rect{(-1.5, -1.5), (1.5, 1.5)}
-    
-\end{mfpic}
-
-\\
-
-Sets $A$ and $B$. 
-
-
-
-&
-
-\hspace{0.15in}
-
-$A \cap B$ is shaded.
-
-&
-
-\hspace{0.15in}
-
-$A \cup B$ is shaded.
-
-\\
-\end{tabular}
+\end{tikzpicture}
+\end{minipage}
 
 \end{center}
+
+
 
 The one major limitation of Venn Diagrams is that they become unwieldy if more than four sets need to be drawn simultaneously within the same universal set.  This idea is explored in the Exercises.
 
@@ -371,17 +359,20 @@ So suppose $s \in S$.  What can be said about $s$?  We know there is some real n
 As you may recall, we often visualize the set of real numbers $\mathbb{R}$ as a line where each point on the line corresponds to one and only one real number.  Given two different real numbers $a$ and $b$,  we write $a < b$ if $a$ is located to the left of $b$ on the number line, as shown below.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[10]{-5}{5}{-2}{2} 
+% Number line
+\draw[<->, line width=1pt] (-5,0) -- (5,0);
 
+% Endpoints
+\fill (-3,0) circle (3pt);
+\fill (3,0) circle (3pt);
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt} $} -3, {$b$} 3}
+% Labels
+\node[below] at (-3,0) {$a$};
+\node[below] at (3,0) {$b$};
 
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\point[3pt]{(3,0), (-3,0)}
-
-\end{mfpic}
+\end{tikzpicture}
 
 The real number line with two numbers $a$ and $b$ where $a < b$.
 
@@ -436,65 +427,80 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 & &  \\
 \shortstack{$\{x\,|\,1\leq x< 3\}$ \\ \hfill} & \shortstack{$[1,3)$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
+\begin{tikzpicture}[scale=.75]
 
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\tlpointsep{4pt}
-\axislabels {x}{{$1 \hspace{4pt} $} -3, {$3$} 3}
+% Filled point at (-1,0)
+\fill (-1,0) circle (3pt);
 
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(-3,0)}
-\pointfillfalse
-\point[3pt]{(3,0)}
+% Open point at (3,0)
+\draw (3,0) circle (3pt);
 
-\end{mfpic}   \\
+% Endpoint labels
+\node[below] at (-1,0) {$-1$};
+\node[below] at (3,0) {$3$};
+
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,|\,-1\leq x \leq 4\}$ \\ \hfill}& \shortstack{$[-1,4]$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
+\begin{tikzpicture}[scale=.75]
 
+% Horizontal axis line 
+\draw (-1,0) -- (4,0);
 
-\tlpointsep{4pt}
-\axislabels {x}{{$-1 \hspace{8pt} $} -3, {$4$} 3}
+% Filled point at (-1,0)
+\fill (-1,0) circle (3pt);
 
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(-3,0), (3,0)}
+% Filled point at (4,0)
+\fill (4,0) circle (3pt);
 
-\end{mfpic}   \\
+% Endpoint labels
+\node[below] at (-1,0) {$-1$};
+\node[below] at (4,0) {$4$};
+
+\end{tikzpicture}    \\
 \hline
 
 &  & \\
 
 \shortstack{$\{x\,| \, x \leq 5 \}$ \\ \hfill} & \shortstack{$(-\infty, 5]$ \\ \hfill} &
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
+\begin{tikzpicture}[scale=.75]
 
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\tlpointsep{4pt}
-\axislabels {x}{{$5$} 3}
+% Closed point at (3,0)
+\fill (3,0) circle (3pt);
 
-\arrow \polyline{(3,0), (-3,0)}
-\point[3pt]{(3,0)}
+% Endpoint labels
+\node[below] at (3,0) {$5$};
+\node at (-1,0) {$<$};
 
-\end{mfpic}   \\
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,| \, x > -2 \}$ \\ \hfill} & \shortstack{$(-2, \infty)$ \\ \hfill} &  
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
+\begin{tikzpicture}[scale=.75]
 
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\tlpointsep{4pt}
-\axislabels {x}{{$-2 \hspace{8pt} $} -3}
+% Open point at (-1,0)
+\draw (-1,0) circle (3pt);
 
-\arrow \polyline{(-3,0), (3,0)}
-\pointfillfalse
-\point[3pt]{(-3,0)}
+% Endpoint labels
+\node[below] at (-1,0) {$-2$};
+\node at (3,0) {$>$};
 
-\end{mfpic}   \\
+\end{tikzpicture}    \\
 \hline
 
 \end{tabular}
@@ -530,82 +536,103 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
  &  & \\
 \shortstack{$\{x\,|\,a<x<b\}$ \\ \hfill}& \shortstack{$(a,b)$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt} $} -3, {$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\polyline{(-3,0), (3,0)}
-\pointfillfalse
-\point[3pt]{(3,0), (-3,0)}
+% Open point at (-1,0)
+\draw (-1,0) circle (3pt);
 
-\end{mfpic}  \\ \hline
+% Open point at (3,0)
+\draw (3,0) circle (3pt);
+
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}  \\ \hline
 
 & &  \\
 \shortstack{$\{x\,|\,a\leq x<b\}$ \\ \hfill}& \shortstack{$[a,b)$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt} $} -3, {$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(-3,0)}
-\pointfillfalse
-\point[3pt]{(3,0)}
+% Filled point at (-1,0)
+\fill (-1,0) circle (3pt);
 
-\end{mfpic}   \\
+% Open point at (3,0)
+\draw (3,0) circle (3pt);
+
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,|\,a<x\leq b\}$ \\ \hfill}&\shortstack{$(a,b]$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt} $} -3, {$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(3,0)}
-\pointfillfalse
-\point[3pt]{(-3,0)}
+% Open point at (-1,0)
+\draw (-1,0) circle (3pt);
 
-\end{mfpic}   \\
+% Filled point at (3,0)
+\fill (3,0) circle (3pt);
+
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,|\,a\leq x \leq b\}$ \\ \hfill}& \shortstack{$[a,b]$ \\ \hfill}& 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt} $} -3, {$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\polyline{(-3,0), (3,0)}
-\point[3pt]{(3,0), (-3,0)}
+% Filled point at (-1,0)
+\fill (-1,0) circle (3pt);
 
-\end{mfpic}   \\
+% Filled point at (3,0)
+\fill (3,0) circle (3pt);
+
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}   \\
 \hline
 
  & & \\
 \shortstack{$\{x\,| \, x<b\}$ \\ \hfill}& \shortstack{$(-\infty,b)$ \\ \hfill}& 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\arrow \polyline{(3,0), (-3,0)}
 
-\pointfillfalse
-\point[3pt]{(3,0)}
+% Open point at (3,0)
+\draw (3,0) circle (3pt);
 
-\end{mfpic}   \\
+% Endpoint labels
+\node at (-1,0) {$<$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}  \\
 \hline
 
 
@@ -613,64 +640,72 @@ Set of Real Numbers & Interval Notation &  Region on the Real Number Line  \\
 
 \shortstack{$\{x\,| \, x \leq b\}$ \\ \hfill} & \shortstack{$(-\infty,b]$ \\ \hfill}& 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$b$} 3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\arrow \polyline{(3,0), (-3,0)}
 
-\point[3pt]{(3,0)}
+% Filled point at (3,0)
+\fill (3,0) circle (3pt);
 
-\end{mfpic}   \\
+% Endpoint labels
+\node at (-1,0) {$<$};
+\node[below] at (3,0) {$b$};
+
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,| \, x>a\}$ \\ \hfill}& \shortstack{$(a,\infty)$ \\ \hfill}& 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt}$} -3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\arrow \polyline{(-3,0), (3,0)}
+% Open point at (-1,0)
+\draw (-1,0) circle (3pt);
 
-\pointfillfalse
-\point[3pt]{(-3,0)}
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node at (3,0) {$>$};
 
-\end{mfpic}   \\
+\end{tikzpicture}   \\
 \hline
 
  &  & \\
 \shortstack{$\{x\,| \, x \geq a \}$ \\ \hfill}& \shortstack{$[a,\infty)$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$a\vphantom{b} \hspace{4pt}$} -3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\arrow \polyline{(-3,0), (3,0)}
+% Filled point at (-1,0)
+\fill (-1,0) circle (3pt);
 
-\point[3pt]{(-3,0)}
+% Endpoint labels
+\node[below] at (-1,0) {$a$};
+\node at (3,0) {$>$};
 
-\end{mfpic}   \\
+\end{tikzpicture}   \\
 \hline
 
 &  & \\
 \shortstack{$\mathbb{R}$ \\ \hfill}& \shortstack{$(-\infty,\infty)$ \\ \hfill} & 
 
-\begin{mfpic}[10]{-3}{3}{-2}{2} 
-\backgroundcolor[gray]{.95}
+\begin{tikzpicture}[scale=.75]
 
-\tlpointsep{4pt}
-\axislabels {x}{{$\vphantom{b} \hspace{4pt}$} -3}
+% Horizontal axis line 
+\draw (-1,0) -- (3,0);
 
-\arrow \reverse \arrow \polyline{(-3,0), (3,0)}
 
-\end{mfpic}   \\
+% Endpoint labels
+\node at (-1,0) {$<$};
+\node at (3,0) {$>$};
+
+\end{tikzpicture}   \\
 \hline
 
 \end{tabular}
@@ -695,13 +730,10 @@ Unfortunately, the words `open' and `closed' are not antonyms here because the e
 
 We close this section with an example that ties together some of the concepts presented earlier.  Specifically, we demonstrate how to use interval notation along with the concepts of union and intersection to describe a variety of sets on the real number line.  In many sections of the text to come you will need to be fluent with this notation so take the time to study it deeply now.
 
-\pagebreak
 
-\begin{example} \label{intervalex} $~$
+\begin{example}\label{intervalex} $~$
 
 \begin{enumerate} \item Express the following sets of numbers using interval notation.
-
-\begin{multicols}{2}
 
 \begin{enumerate}
 
@@ -709,17 +741,6 @@ We close this section with an example that ties together some of the concepts pr
 
 \item  $\{ x \, | \, x < \sqrt{3} \,\,  \text{and} \,\, x \geq -\frac{8}{5}  \}$
 
-\setcounter{HW}{\value{enumii}}
-
-\end{enumerate}
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{enumerate}
-
-\setcounter{enumii}{\value{HW}}
 
 \item  $\{ x \, | \, x \neq \pm 3 \}$
 
@@ -727,14 +748,14 @@ We close this section with an example that ties together some of the concepts pr
 
 \end{enumerate}
 
-\end{multicols}
+
 
 \item  Let $A = [-5,3)$ and $B = (1, \infty)$.  Find  $A \cap B$ and $A\cup B$. 
 
 \end{enumerate}
 
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -746,16 +767,30 @@ We close this section with an example that ties together some of the concepts pr
 
 \begin{center}
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\polyline{(-5,0), (5,0)}
-\tlpointsep{5pt}
-\axislabels {x}{{$-2 \hspace{8pt}$} -2, {$2$} 2}
-\penwd{1.15pt}
-\arrow \polyline{(2,0), (5,0)}
-\arrow \polyline{(-2,0), (-5,0)}
-\point[4pt]{(-2,0), (2,0)}
-\end{mfpic}  \\
-$(-\infty, -2] \cup [2, \infty)$ 
+\begin{tikzpicture}[scale=0.8]
+
+% Number line
+\draw (-5,0) -- (5,0);
+
+% Tick marks
+\foreach \x/\lbl in {-2/-2,2/2}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Rays
+\draw[->,line width=1.15pt] (-2,0) -- (-5,0);
+\draw[->,line width=1.15pt] (2,0) -- (5,0);
+
+% Closed endpoints
+\fill (-2,0) circle (3pt);
+\fill (2,0) circle (3pt);
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$(-\infty,-2]\cup[2,\infty)$
 
 \end{center}
 
@@ -763,22 +798,29 @@ $(-\infty, -2] \cup [2, \infty)$
  
 \begin{center}
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\tlpointsep{5pt}
-\axislabels {x}{{$-\frac{8}{5}$} -3, {$\sqrt{3}$} 3}
-\penwd{1.15pt}
-\polyline{(-3,0), (3,0)}
-\point[4pt]{(-3,0)}
-\pointfillfalse
-\point[3pt]{(3,0)}
-\end{mfpic}  \\
+\begin{tikzpicture}[scale=0.8]
 
+% Number line
+\draw[<->] (-5,0) -- (5,0);
 
+% Tick marks and labels
+\foreach \x/\lbl in {-3/{-\frac{8}{5}},3/{\sqrt{3}}}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
 
- $\left[ -\frac{8}{5}, \sqrt{3} \right)$ 
- 
- 
+% Interval
+\draw[line width=1.15pt] (-3,0) -- (3,0);
+
+% Endpoints
+\fill (-3,0) circle (3pt);   % closed endpoint
+\draw (3,0) circle (3pt);    % open endpoint
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$\left[-\dfrac{8}{5},\,\sqrt{3}\right)$
 
 \end{center}
 
@@ -787,18 +829,28 @@ $(-\infty, -2] \cup [2, \infty)$
 
 \begin{center}
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\tlpointsep{5pt}
-\axislabels {x}{{$-3 \hspace{8pt}$} -3, {$3$} 3}
-\penwd{1.15pt}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\pointfillfalse
-\point[3pt]{(-3,0), (3,0)}
-\end{mfpic} \\
+\begin{tikzpicture}[scale=0.8]
 
- $(-\infty, -3) \cup (-3,3) \cup (3, \infty)$
- 
- \end{center}
+% Number line
+\draw[<->] (-5,0) -- (5,0);
+
+% Tick marks and labels
+\foreach \x/\lbl in {-3/-3,3/3}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Open endpoints
+\draw (-3,0) circle (3pt);
+\draw (3,0) circle (3pt);
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$(-\infty,-3)\cup(-3,3)\cup(3,\infty)$
+
+\end{center}
 
 
 
@@ -807,19 +859,33 @@ $(-\infty, -2] \cup [2, \infty)$
 
 \begin{center}
 
-\begin{mfpic}[10]{-5}{5}{-2}{2}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\tlpointsep{5pt}
-\axislabels {x}{{$-1 \hspace{8pt}$} -3, {$3$} 1, {$5$} 3}
-\penwd{1.15pt}
-\polyline{(-3,0), (1,0)}
-\point[4pt]{(3,0), (1,0)}
-\pointfillfalse
-\point[3pt]{(-3,0)}
-\end{mfpic} \\
-  
- $(-1,3] \cup \{ 5\}$
- 
+\begin{tikzpicture}[scale=0.8]
+
+% Number line
+\draw[<->] (-5,0) -- (5,0);
+
+% Tick marks and labels
+\foreach \x/\lbl in {-3/-1,1/3,3/5}{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Interval
+\draw[line width=1.15pt] (-3,0) -- (1,0);
+
+% Endpoints
+\draw (-3,0) circle (3pt);   % open endpoint at -1
+\fill (1,0) circle (3pt);    % closed endpoint at 3
+
+% Isolated point
+\fill (3,0) circle (3pt);    % point at 5
+
+\end{tikzpicture}
+
+\vspace{0.5em}
+
+$(-1,3]\cup\{5\}$
+
 \end{center}
 
 
@@ -832,63 +898,88 @@ $(-\infty, -2] \cup [2, \infty)$
 To find $A \cup B$, we need to find the numbers in at least one of $A$ or $B$.  Graphically, we shade $A$ and $B$ along with it.   Notice here that even though $1$ isn't in $B$, it is in $A$, so it's in the union along with all of the other elements of $A$ between $-5$ and $1$.  A similar argument goes for the inclusion of $3$ in the union.  The result of shading both $A$ and $B$ together gives us $A \cup B = [-5,\infty)$.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{tabular}{ccc}
+% Number line
+\draw[->] (-5.5,0) -- (7.5,0);
 
-\begin{mfpic}[10]{-5}{7}{-2}{2}
-\arrow \polyline{(-5.5,0),(7.5,0)}
-\axismarks{x}{-5,1,3}
-\tlpointsep{4pt}
-\axislabels {x}{{$-5 \hspace{8pt} $} -5, {$1$} 1,{$3$} 3,}
-\penwd{1.15pt}
-\polyline{(-5,2), (3,2)}
-\arrow \polyline{ (1,1), (7,1)}
-\point[4pt]{(-5,2)}
-\pointfillfalse
-\point[3pt]{(1,1), (3,2)}
-\tcaption{$A = [-5,3)$,  $B = (1, \infty)$ }
-\end{mfpic}  &
+% Tick marks and labels
+\foreach \x/\lbl in {-5/-5,1/1,3/3}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
 
-\begin{mfpic}[10]{-5}{7}{-2}{2}
-\arrow \polyline{(-5,0),(7,0)}
-\axismarks{x}{-5,3}
-\tlpointsep{5pt}
-\axislabels {x}{{$-5 \hspace{8pt} $} -5, {$1$} 1,{$3$} 3,}
-\penwd{1.15pt}
-\polyline{(-5,2), (3,2)}
-\arrow \polyline{ (1,1), (7,1)}
-\polyline{(1,0), (3,0)}
-\point[4pt]{(-5,2)}
-\pointfillfalse
-\point[3pt]{(1,0),(1,1), (3,2), (3,0)}
-\tcaption{$A \cap B = (1,3)$}
-\end{mfpic}  &
+% A
+\draw[line width=1.15pt] (-5,2)--(3,2);
+\fill (-5,2) circle (3pt);
+\draw (3,2) circle (3pt);
 
-\begin{mfpic}[10]{-5}{7}{-2}{2}
-\tlpointsep{5pt}
-\axislabels {x}{{$-5 \hspace{8pt} $} -5, {$1$} 1,{$3$} 3,}
-\penwd{1.15pt}
-\polyline{(-5,2), (3,2)}
-\arrow \polyline{ (1,1), (7,1)}
-\arrow \polyline{(-5,0), (7,0)}
-\point[4pt]{(-5,0),(-5,2)}
-\pointfillfalse
-\point[3pt]{(1,1), (3,2)}
-\tcaption{$A \cup B = [-5,\infty)$}
-\end{mfpic} \\
+% B
+\draw[->,line width=1.15pt] (1,1)--(7,1);
+\draw (1,1) circle (3pt);
 
-\end{tabular}
+\node at (1,-1.3) {$A=[-5,3),\qquad B=(1,\infty)$};
 
+\end{tikzpicture}
 \end{center}
 
+%NUMBER 2
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+
+% Number line
+\draw[->] (-5.5,0) -- (7.5,0);
+
+% Tick marks and labels
+\foreach \x/\lbl in {-5/-5,1/1,3/3}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Original intervals
+
+
+% Intersection
+\draw[line width=1.15pt] (1,0)--(3,0);
+\draw (1,0) circle (3pt);
+\draw (3,0) circle (3pt);
+
+\node at (1,-1.3) {$A\cap B=(1,3)$};
+
+\end{tikzpicture}
+\end{center}
+
+%NUMBER 3
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+
+% Number line
+\draw[->] (-5.5,0) -- (7.5,0);
+
+% Tick marks and labels
+\foreach \x/\lbl in {-5/-5,1/1,3/3}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Original intervals
+
+
+% Union
+\draw[->,line width=1.15pt] (-5,0)--(7,0);
+\fill (-5,0) circle (3pt);
+
+\node at (1,-1.3) {$A\cup B=[-5,\infty)$};
+
+\end{tikzpicture}
+\end{center}
 \end{enumerate}
-
-\vspace*{-.4in} \qed
-
+\end{explanation}
 \end{example}
 
 
-%\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforAppSetTheory}
 

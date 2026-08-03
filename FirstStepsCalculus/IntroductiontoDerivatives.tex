@@ -19,11 +19,11 @@
 We begin this section by revisiting (again!) the notion of \textbf{average velocity} - a concept we first encountered in  Example \ref{ARCRocketExample} in Section \ref{ConstantandLinearFunctions} and later revisited in Example \ref{averagevelocityrocketex} in Section \ref{IntroRational}. 
 
 
-\medskip
+
 
 In this scenario,  the \index{function ! position}\index{position function}position  function\footnote{So named because $s(t)$   provides information about \textbf{where} the rocket is at time $t$.} $s(t) = -5t^2+100t$, $0 \leq t \leq 20$ gives the height of a model rocket above the Moon's surface, in feet,  $t$ seconds after liftoff.  The average rate of change of $s$ over an interval is the \index{velocity ! average}\index{average veocity}\textbf{average velocity} of the rocket over that interval.  The average velocity provides two pieces of information:  the average speed of the rocket along with the rocket's direction.   We formalized the average velocity in Definition \ref{averagevelocitydefn} in Section \ref{IntroRational}:
 
-\medskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -36,7 +36,7 @@ In this scenario,  the \index{function ! position}\index{position function}posit
 
 %% \ebm}
 
-\medskip
+
 
 If we define the change in time, $\Delta t = t - t_{0}$, we get $t = t_{0} + \Delta t$  which gives:
 
@@ -44,7 +44,7 @@ If we define the change in time, $\Delta t = t - t_{0}$, we get $t = t_{0} + \De
 
 The above formula measures the average velocity between time $t_{0}$ and time $t_{0} + \Delta t$ as a function of $\Delta t$.
 
-\medskip
+
 
 
 We now revisit Example \ref{averagevelocityrocketex} in Section \ref{IntroRational} using this new formulation.\footnote{Along with some of the new tools we learned in Section \ref{IntroLimits}.}
@@ -58,16 +58,14 @@ We now revisit Example \ref{averagevelocityrocketex} in Section \ref{IntroRation
 
 \item  Find and interpret $\overline{v}(-1)$.
 
-\item  \label{limitavgvelocity2} Find and interpret $\ds{\lim_{\Delta t \rightarrow 0}  \overline{v}(\Delta t)}$.
+\item  \label{limitavgvelocity2} Find and interpret $\lim_{\Delta t \rightarrow 0}  \overline{v}(\Delta t)$.
 
 \item  Graph $y = \overline{v}(\Delta t)$ and interpret your answer to part \ref{limitavgvelocity2} graphically.
-
-
 
 \end{enumerate}
 
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -84,10 +82,10 @@ Since $s(15) = -5(15)^2 + 100(15) = 375$, we get:
 \[ \begin{array}{rclr}
 
 \overline{v}(\Delta t)& = &  \frac{s(15+ \Delta t) - s(15)}{\Delta t} & \\  
-	                        & = &  \frac{(-5(\Delta t)^2-50 \Delta t + 375) - 375}{\Delta t} & \\  
-	                        & = &  \frac{\Delta t (-5 \Delta t - 50)}{\Delta t} & \\  
-	                         & = &  \frac{\cancel{\Delta} t (-5 \Delta t - 50)}{\cancel{\Delta t}} & \\  
-	                         & = & -5 \Delta t - 50 & \text{$\Delta t \neq 0$} \\ \end{array} \]
+ & = &  \frac{(-5(\Delta t)^2-50 \Delta t + 375) - 375}{\Delta t} & \\  
+ & = &  \frac{\Delta t (-5 \Delta t - 50)}{\Delta t} & \\  
+ & = &  \frac{\cancel{\Delta} t (-5 \Delta t - 50)}{\cancel{\Delta t}} & \\  
+& = & -5 \Delta t - 50 & \text{$\Delta t \neq 0$} \\ \end{array} \]
 
 In addition to $\Delta t \neq 0$,  the domain of $s$ is restricted to $0 \leq t \leq 20$.  Hence, we require  $0 \leq 15 + \Delta t \leq 20$ or  $-15 \leq \Delta t \leq 5$.  Our final answer is $\overline{v}(\Delta t) = -5 \Delta t - 50$, for $\Delta t \in [-15, 0) \cup (0, 5]$.
 
@@ -97,7 +95,7 @@ In addition to $\Delta t \neq 0$,  the domain of $s$ is restricted to $0 \leq t 
 
 
 
-\item  Since $\overline{v}(\Delta t) = -5 \Delta t - 50$, for all values of $\Delta t$ near $\Delta t = 0$ (excluding $\Delta t = 0$),  Theorem \ref{limitsagree} applies.  We get   $\ds{\lim_{\Delta t \rightarrow 0}  \overline{v}(\Delta t) = \lim_{\Delta t \rightarrow 0}  -5 \Delta t - 50 = -5(0) - 50 = -50}$, where we have used the fact that the function $f(\Delta t) = -5 \Delta t - 50$ is continuous to evaluate the limit.
+\item  Since $\overline{v}(\Delta t) = -5 \Delta t - 50$, for all values of $\Delta t$ near $\Delta t = 0$ (excluding $\Delta t = 0$),  Theorem \ref{limitsagree} applies.  We get   $\lim_{\Delta t \rightarrow 0}  \overline{v}(\Delta t) = \lim_{\Delta t \rightarrow 0}  -5 \Delta t - 50 = -5(0) - 50 = -50$, where we have used the fact that the function $f(\Delta t) = -5 \Delta t - 50$ is continuous to evaluate the limit.
 
 
 
@@ -190,13 +188,13 @@ coordinates {
 
 \end{enumerate}
 
-
+\end{explanation}
 
 \end{example}
 
 The reader is invited to compare Example \ref{averagevelocityrocketex} in Section \ref{IntroRational} with Exercise \ref{averagevelocityrocketexreprise} above. We obtain the \text{exact same} information because we are asking the \textit{exact same} questions - they are just framed differently.  We now take the time to formally define \index{instantaneous velocity}\index{velocity ! instantaneous}\textbf{instantaneous velocity}:
 
-\medskip
+
 
 
 
@@ -204,22 +202,20 @@ The reader is invited to compare Example \ref{averagevelocityrocketex} in Sectio
 
 \begin{definition} Let $s(t)$ be the position of an object at time $t$ and $t_{0}$  a fixed time in the domain of $s$.  The \index{instantaneous velocity}\index{velocity ! instantaneous}\textbf{instantaneous velocity} at $t_{0}$ is given by:
 
-\[ v\left(t_{0}\right) = \lim_{\Delta t \rightarrow 0}  \frac{\Delta [s(t)]}{\Delta t} = \lim_{\Delta t \rightarrow 0}  \frac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t}, \quad \text{provided this limit exists.} \]
+\[ v\left(t_{0}\right) = \lim_{\Delta t \rightarrow 0}  \frac{\Delta [s(t)]}{\Delta t} = \lim_{\Delta t \rightarrow 0}  \frac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t},\]
+
+provided this limit exists.
 
 \end{definition}
 
 %% \ebm}
 
-\medskip
+
 
 Based on our work in Examples \ref{averagevelocityrocketex}   and \ref{averagevelocityrocketexreprise}, we have  $v(15) = -50$.   In both of those examples, we've seen what $v(15)$ means on the graph of $\overline{v}$, but there is a more important interpretation when we analyze the graph of $s$.  Recall that the average velocity, and, more generally, average rates of change can be visualized as slopes of \textbf{secant lines}.\footnote{See Section \ref{AverageRateofChange} for a refresher, if needed.}  
 
-\medskip
 
 Below is a sequence of secant lines along with the graph of $y = s(t)$.  In each case, the secant line is graphed between $(15, s(15)) = (15, 375)$ and another point on the graph.\footnote{For an interactive demonstration of this process, check out this \href{https://www.desmos.com/calculator/mbqfpe4cmh}{\underline{desmos worksheet}}.} As the points on the parabola approach $(15, 375)$ the secant lines approach what is known as the \index{tangent line}\index{line ! tangent}\textbf{tangent line}.
-
-\medskip
-
 
 
 \begin{center}
@@ -236,19 +232,22 @@ Below is a sequence of secant lines along with the graph of $y = s(t)$.  In each
  
 The tangent line can best be thought of as `the best linear approximation' to the graph of $y = s(t)$ at $(15,375)$.  That is, if we zoom in near $(15,375)$, the graph of $y = s(t)$ and this tangent line become indistinguishable.  This geometric property of $y = s(t)$ is called \index{local linearity}\textbf{local linearity}\footnote{a.k.a. \index{differentiability}\textbf{differentiability}} and is foundational to the analysis of functions.   Below we graph $y = s(t) =  -5t^2+100t$ along with $y = L(t) = -50t + 1125$ and observe the local linearity near $(15, 375)$. 
   
-  \medskip
+  
 
 \begin{center}
 
 \begin{tabular}{ccc}
 
  \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/tangent.png} &  \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/tangentzoom1.png} &  \includegraphics[width=2in]{./IntroductiontoDerivativesGraphics/tangentzoom2.png} \\
- 
- The tangent line at $(15, 375)$. & Zooming in near $(15, 375)$. & Zooming in closer to $(15, 375)$. \\
- 
+  The tangent line at $(15, 375)$. & Zooming in near $(15, 375)$. & Zooming in closer to $(15, 375)$. \\
  \end{tabular}
+ 
+ \end{center}
+ 
 
+ Using desmos, we can more smoothly\footnote{math pun!} visualize this process using the interactive below.  By dragging the highlighted point along the graph of $y=s(t)$ closer to $(15, 375)$, we can observe the secant lines approaching the tangent line.
 
+\begin{center}
  % https://www.desmos.com/calculator/ht4ljf0bsv
  \desmos{ht4ljf0bsv}{800}{600}
  \end{center}
@@ -334,16 +333,16 @@ The above is an example of what is traditionally called the  \index{difference q
 
 It is important to understand that in this formulation of the difference quotient, the variables `$x$' and `$\Delta x$' are distinct - that is they do not combine as like terms. 
 
-\medskip
+
 
 
 Note that, regardless of which form the difference quotient takes, when $h$,  $\Delta x$, or  $\Delta t$ is $0$, the difference quotient returns the indeterminate form `$\frac{0}{0}$.' As we've seen with rational functions in Section \ref{IntroRational}, when this happens, we can use a limit to help us \textbf{determine} the \textbf{indeterminate} form.  
 
-\medskip
+
 
 In Section \ref{avginstantvelocity}, taking the limit of average velocity as $\Delta t \rightarrow 0$  produced instantaneous velocity.  More generally, taking the limit of the average rate of change  as the denominator approaches $0$ produces the \index{instantaneous rate of change}\index{rate of change ! instantaneous}\textbf{instantaneous rate of change} of the function at that point.   The instantaneous rate of change of a function, called the \index{derivative}\textbf{derivative} of the function, is defined below.
 
-\medskip
+
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -358,16 +357,11 @@ In Section \ref{avginstantvelocity}, taking the limit of average velocity as $\D
 
 %% \ebm}
 
-\medskip
+
 
 Using the language of derivatives, Examples \ref{averagevelocityrocketex}  and \ref{averagevelocityrocketexreprise} have us computing $v(15) = s'(15)$.   Moreover, since the derivative is a rate of change, it's important to note that the associated units of $f'(a)$ are $\frac{ \text{units of $f(x)$}}{\text{units of $x$}}$.  This tracks with the units of  $v(15) = s'(15)$ being $\frac{ \text{feet}}{\text{second}}$, a velocity.
 
-\medskip
-
 As in Section \ref{avginstantvelocity},  $f'(a)$ represents the slope of the tangent line at the point $(a, f(a))$.  We use this to formally define the \index{tangent line}\index{line ! tangent}\textbf{tangent line} below.
-
-\medskip
-
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -379,11 +373,10 @@ As in Section \ref{avginstantvelocity},  $f'(a)$ represents the slope of the tan
 
 %% \ebm}
 
-\medskip
+
 
 We put these definitions to good use in the following example.
 
-\pagebreak
 
 \begin{example}  \label{tangentlineex}  Let $f(x) = -x^2 + 3x-1$.  
 
@@ -395,9 +388,9 @@ We put these definitions to good use in the following example.
 
 \end{enumerate}
 
-\bigskip
 
-{\bf Solution.}  \begin{enumerate} \item We first find $m_{\text{tan}} = f'(-2)$ using Definition \ref{derivativedefn} with $a = -2$:  $ f'(-2) = \ds{\lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h}}$. 
+
+\begin{explanation} \begin{enumerate} \item We first find $m_{\text{tan}} = f'(-2)$ using Definition \ref{derivativedefn} with $a = -2$:  $ f'(-2) = \lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h}$. 
 
 First we find $f(-2+h)$ and are  careful to apply the exponent in the expression $-(-2+h)^2$:
 
@@ -413,16 +406,13 @@ Next, we find $f(-2) = -(-2)^2 + 3(-2)-1 = -11$, so the difference quotient is:
 \[ \begin{array}{rclr}
 
  \frac{f(-2+h)-f(-2)}{h} & = &  \frac{(-h^2+7h-11) -(-11)}{h} & \\ 
-                                & = &  \frac{-h^2+7h}{h} & \text{simplify}\\ 
-                                & = &   \frac{h(-h+7)}{h} & \text{factor} \\ 
-                                & = &   \frac{\cancel{h}(-h+7)}{\cancel{h}} &  \text{cancel} \\ 
-                                & = & -h+7\\ \end{array} \]
+ & = &  \frac{-h^2+7h}{h} & \text{simplify}\\ 
+ & = &   \frac{h(-h+7)}{h} & \text{factor} \\ 
+ & = &   \frac{\cancel{h}(-h+7)}{\cancel{h}} &  \text{cancel} \\  & = & -h+7\\ \end{array} \]
+
+Finally, we get $ f'(-2) = \lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h} = \lim_{h \rightarrow 0} (-h+7) = -(0) + 7 = 7$.
 
 
-
-Finally, we get $ f'(-2) = \ds{\lim_{h \rightarrow 0}  \frac{f(-2+h) - f(-2)}{h} = \lim_{h \rightarrow 0} (-h+7) = -(0) + 7 = 7}$.
-
-\bigskip
 
 Hence, the slope of the tangent line is $m_{\text{tan}} = f'(-2) = 7$.  The equation of the tangent line is: 
 
@@ -433,7 +423,7 @@ Hence, the slope of the tangent line is $m_{\text{tan}} = f'(-2) = 7$.  The equa
   y & = & 7x+3& \\
  \end{array} \]
 
-Graphing $y = 7x+3$ and $y = f(x)$ near $(-2,-11)$ reveals the local linearity we would expect:
+Graphing $y = 7x+3$ and $y = f(x)$ near $(-2,-11)$ reveals the local linearity we would expect.  Using the desmos graph below, we can zoom in on the point $(-2,-11)$ to our heart's content until the graph of $y = f(x)$ and the tangent line become indistinguishable.
 
 % https://www.desmos.com/calculator/jhyxrweogw
 \begin{center}
@@ -445,25 +435,27 @@ Graphing $y = 7x+3$ and $y = f(x)$ near $(-2,-11)$ reveals the local linearity w
  \end{enumerate}
 
 
-
+\end{explanation}
 \end{example}
 
 What if we wanted to find the equation of the tangent line to the graph of the function in Example \ref{tangentlineex}  at $x = 0$?  $x = 1$?  $x = 5$?  We'd ostensibly need to run through difference quotients and limit calculations for each and every input value: $x = 0$, $x = 1$, and $x = 5$.  Or we could do a single limit with a generic `$x$', simplify the difference quotient and take the limit once, and substitute in particular values of $x$:
 
-\medskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
 \begin{definition} \label{derivativefcndefn} Given a function $f$ defined on an open interval, the \textbf{derivative} of $f$, denoted  $f'(x)$, is the function
 
-\[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h}, \quad \text{provided the limit exists.}\]
+\[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h},\]
+
+provided the limit exists.
 
 \end{definition}
 
 %% \ebm}
 
 
-It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(x)$, we get:  \[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{\Delta x \rightarrow 0}  \frac{f(x+\Delta x) - f(x)}{\Delta x}  = \lim_{\Delta x \rightarrow 0}  \frac{\Delta [f(x)] }{\Delta x} =  \lim_{\Delta x \rightarrow 0}  \frac{\Delta y }{\Delta x} ,\] which is why sometimes the derivative is denoted\footnote{This is the so-called  \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{\underline{Leibniz}} notation \ldots}  $\frac{dy}{dx}$.
+It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(x)$, we get:  \[ f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{\Delta x \rightarrow 0}  \frac{f(x+\Delta x) - f(x)}{\Delta x}  = \lim_{\Delta x \rightarrow 0}  \frac{\Delta [f(x)] }{\Delta x} =  \lim_{\Delta x \rightarrow 0}  \frac{\Delta y }{\Delta x} ,\] which is why sometimes\footnote{This is the so-called  \href{https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{\underline{Leibniz}} notation \ldots}  the derivative is denoted $\frac{dy}{dx}$.
 
 
 
@@ -481,13 +473,10 @@ It is worth noting that if we set $h = \Delta x$, and consider the graph $y = f(
 
 \end{enumerate}
 
-\bigskip
-
-{\bf Solution.}
-
+\begin{explanation}
 \begin{enumerate}
 
-\item  To find  $f'(x) = \ds{ \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h}}$ we  first find $f(x+h)$:
+\item  To find  $f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h}$ we  first find $f(x+h)$:
 
 \[ \begin{array}{rclr}  
   f(x+h) & = & -(x+h)^2 +3(x+h) -1 & \\ 
@@ -500,13 +489,13 @@ The difference quotient simplifies as follows:
 \[ \begin{array}{rclr}
 
  \frac{f(x+h)-f(x)}{h} & = &  \frac{( -x^2 - 2xh - h^2+3x+3h-1) -(-x^2+3x-1)}{h} & \\ 
-                                & = &  \frac{-x^2 - 2xh - h^2+3x+3h-1 + x^2-3x+1}{h} & \\ 
-                                 & = &  \frac{-2xh-h^2+3h}{h} & \text{simplify}\\ 
-                                & = &   \frac{h(-2x - h + 3)}{h} & \text{factor} \\ 
-                                & = &   \frac{\cancel{h}(-2x-h+3)}{\cancel{h}} &  \text{cancel} \\ 
-                                & = & -2x-h+3\\ \end{array} \]
+ & = &  \frac{-x^2 - 2xh - h^2+3x+3h-1 + x^2-3x+1}{h} & \\ 
+ & = &  \frac{-2xh-h^2+3h}{h} & \text{simplify}\\ 
+ & = &   \frac{h(-2x - h + 3)}{h} & \text{factor} \\ 
+ & = &   \frac{\cancel{h}(-2x-h+3)}{\cancel{h}} &  \text{cancel} \\ 
+ & = & -2x-h+3\\ \end{array} \]
 
-Our last step is to take the limit:   $f'(x) = \ds{ \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} (-2x-h+3)}$.  Notice here that we have two variables, $x$ and $h$, in the limit.  Of these two variables, we are taking the limit on the $h$:  $h \rightarrow 0$.  As far as $h$ is concerned, $x$ may as well be just another constant like the `$3$'.  Hence, $f'(x) = \ds{ \lim_{h \rightarrow 0} (-2x-h+3)}=  -2x - 0 + 3 = -2x+3$.
+Our last step is to take the limit:   $f'(x) = \lim_{h \rightarrow 0}  \frac{f(x+h) - f(x)}{h} = \lim_{h \rightarrow 0} (-2x-h+3)$.  Notice here that we have two variables, $x$ and $h$, in the limit.  Of these two variables, we are taking the limit on the $h$:  $h \rightarrow 0$.  As far as $h$ is concerned, $x$ may as well be just another constant like the `$3$'.  Hence, $f'(x) = \lim_{h \rightarrow 0} (-2x-h+3)=  -2x - 0 + 3 = -2x+3$.
 
 \item  Evaluating our formula for $f'(x)$ at $x = -2$ gives $f'(-2) = -2(-2) + 3 = 7$ which matches with what we obtained in Example \ref{tangentlineex}.
 
@@ -527,22 +516,16 @@ Our last step is to take the limit:   $f'(x) = \ds{ \lim_{h \rightarrow 0}  \fra
  \end{center}
  
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 The astute reader will note that the graph of $f(x) = -x^2+3x-1$ in Example \ref{derivativeex} is a parabola and finding where $f'(x) = 0$ lead us right back to the vertex.  Using a derivative to find the vertex may seem a bit excessive given that we've algebraically derived a handy `vertex formula' in Section \ref{QuadraticFunctions}.   However, as the functions we aim to analyze become more and more sophisticated, the tools we use to analyze them must also become more sophisticated.  The derivative is one such tool that has a near universal application.\footnote{As we'll see in Section \ref{DerivativeAnalysis}.}
-
-\medskip
-
-
 
 \begin{example}  \label{morederivativesex} $~$
 
 \begin{enumerate}
 
 \item  For $f(x) = x^2-x-2$, find and simplify:   
-
-
 
 \begin{enumerate}
 
@@ -556,11 +539,7 @@ Check your answer graphically.
 
 \end{enumerate}
 
-
-
 \item  For $g(x) =  \frac{3}{2x+1}$, find and simplify:\footnote{A review of Section \ref{AppRatExpEqus} may be in order for this problem.}
-
-
 
 \begin{enumerate}
 
@@ -573,9 +552,6 @@ Check your answer graphically.
 \item  $g'(x)$ %$ \frac{g(x+\Delta x)-g(x)}{\Delta x}$.
 
 \end{enumerate}
-
-
-
 
 \item  $r(t) = \sqrt{t}$,  find and simplify:\footnote{A review of Section \ref{rationalizingdenomandnumer} may be in order for this problem.}
 
@@ -594,13 +570,11 @@ Check your answer graphically.
 
 \end{enumerate}
 
-
-
-{\bf Solution.}
+\begin{explanation}
  
 \begin{enumerate}
 
-\item \begin{enumerate} \item To find $f'(3) = \ds{\lim_{h \rightarrow 0}}$ $\frac{f(3+h)-f(3)}{h}$ we first simplify $f(3+h)$:
+\item \begin{enumerate} \item To find $f'(3) =\lim_{h \rightarrow 0}$ $\frac{f(3+h)-f(3)}{h}$ we first simplify $f(3+h)$:
 
 \[ \begin{array}{rclr}  
   f(3+h) & = & (3+h)^2 - (3+h) -2 & \\ 
@@ -617,7 +591,7 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
                                 & = &   \frac{h(5+h)}{h} & \text{factor} \\ 
                                 & = &   \frac{\cancel{h}(5+h)}{\cancel{h}} & \text{cancel}\\ 
                                 & = & 5+h \\ \end{array} \]
- Hence, $f'(3) = \ds{\lim_{h \rightarrow 0} (5+h) = 5+0 = 5}$.
+ Hence, $f'(3) = \lim_{h \rightarrow 0} (5+h) = 5+0 = 5$.
  
  
  \item  The equation of the tangent line at $x = 3$ is:  $y = f'(3)(x-3) + f(3) = 5(x-3) + 4$, or $y = 5x-11$. We check graphically below.
@@ -627,7 +601,7 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
 \desmos{qrzvujthok}{800}{600}
  \end{center}
 
- \item To find $f'(x) = \ds{\lim_{h \rightarrow 0}}$ $\frac{f(x+h)-f(x)}{h}$, we first find $f(x+h)$:
+ \item To find $f'(x) = \lim_{h \rightarrow 0}\frac{f(x+h)-f(x)}{h}$, we first find $f(x+h)$:
 
 
 \[ \begin{array}{rclr}  
@@ -638,39 +612,34 @@ Since $f(3) = (3)^2-3-2 = 4$, we get for the difference quotient:
 
 So the difference quotient is
 
-\setlength{\extrarowheight}{12pt}
+ \[ \begin{array}{rclr}  
 
-\begin{longtable}{rclr}  
+\frac{f(x+h)-f(x)}{h} & = & \frac{\left(x^2+2xh+h^2-x-h-2 \right)-\left(x^{2}-x-2 \right)}{h} & \\  
+& = & \frac{x^2+2xh+h^2-x-h-2-x^2+x+2}{h} & \\ 
+& = &  \frac{2xh+h^2-h}{h} & \\ 
+& = &  \frac{h \left(2x+h-1\right)}{h} & \text{factor} \\ 
+& = & \frac{\cancel{h} \left(2x+h-1\right)}{\cancel{h}} & cancel \\ 
+& = & 2x+h-1. \\ \end{array} \]
 
-$ \frac{f(x+h)-f(x)}{h}$ & = & $ \frac{\left(x^2+2xh+h^2-x-h-2 \right)-\left(x^{2}-x-2 \right)}{h}$ & \\  
-& = & $ \frac{x^2+2xh+h^2-x-h-2-x^2+x+2}{h}$ & \\ 
-& = & $ \frac{2xh+h^2-h}{h}$ & \\ 
-& = & $ \frac{h \left(2x+h-1\right)}{h}$ & factor \\ 
-& = & $ \frac{\cancel{h} \left(2x+h-1\right)}{\cancel{h}}$ & cancel \\ 
-& = & $2x+h-1$. \\
-
-\end{longtable} 
-
-Hence, $f'(x) = \ds{\lim_{h \rightarrow 0} (2x+h-1) = 2x + 0 - 1}$ so $f'(x) = 2x-1$. Note that using this formula, we get  $f'(3) = 2(3)-1 = 5$ which checks our answer above.
+Hence, $f'(x) = \lim_{h \rightarrow 0} (2x+h-1) = 2x + 0 - 1$ so $f'(x) = 2x-1$. Note that using this formula, we get  $f'(3) = 2(3)-1 = 5$ which checks our answer above.
 
 
 \end{enumerate}
 
-\item  \begin{enumerate} \item Next we find  $g'(0) = \ds{\lim_{h \rightarrow 0}}$$\frac{g(0+h)-g(0)}{h}  = \frac{g(h) - g(0)}{h}$.
+\item  \begin{enumerate} \item Next we find  $g'(0) = \lim_{h \rightarrow 0} \frac{g(0+h)-g(0)}{h}  = \frac{g(h) - g(0)}{h}$.
 
 Since $g(h) = \frac{3}{2 h + 1}$ and $g(0) = \frac{3}{2(0)+1} = 3$, our difference quotient contains a complex fraction.  Thinking ahead, we need to (eventually) be able to cancel the factor `$h$' from the denominator $\frac{g(h) - g(0)}{h}$, so we begin by simplifying the complex fraction and see where that takes us:
 
-\begin{longtable}{rclr}  
+ \[ \begin{array}{rclr} 
 
-$ \frac{g(0+h)-g(0)}{h}$ & = & $ \frac{ \frac{3}{2h+1}-3}{h}$ & \\
-& = &  $ \frac{ \frac{3}{2h+1}-3}{h} \cdot  \frac{(2h+1)}{(2h+1)}$ & \\
-& = &  $ \frac{3-3(2h+1)}{h(2h+1)}$  & \\
-& = &  $ \frac{3 - 6 h - 3}{h(2h+1)}$  & \\
-& = &  $ \frac{-6h}{h(2h+1)}$  & \\
-& = &  $ \frac{-6\cancel{h}}{\cancel{h}(2h+1)}$  & \text{cancel} \\
-& = &  $ \frac{-6}{2h+1}$.  & \\ 
+ \frac{g(0+h)-g(0)}{h} & = &  \frac{ \frac{3}{2h+1}-3}{h} & \\
+& = &   \frac{ \frac{3}{2h+1}-3}{h} \cdot  \frac{(2h+1)}{(2h+1)} & \\
+& = &   \frac{3-3(2h+1)}{h(2h+1)}  & \\
+& = &   \frac{3 - 6 h - 3}{h(2h+1)}  & \\
+& = &   \frac{-6h}{h(2h+1)}  & \\
+& = &   \frac{-6\cancel{h}}{\cancel{h}(2h+1)}  & \text{cancel} \\
+& = &   \frac{-6}{2h+1}.  & \\  \end{array} \]
 
-\end{longtable}
 
 We are now ready to take the limit:  \[g'(0) = \lim_{h \rightarrow 0} \frac{-6}{2h+1} = \frac{-6}{2(0)+1} = -6.\]
 
@@ -692,17 +661,15 @@ We are now ready to take the limit:  \[g'(0) = \lim_{h \rightarrow 0} \frac{-6}{
 
 Simplifying the difference quotient involves simplifying the resulting complex fraction, as above, keeping an eye out for an opportunity to cancel the factor `$h$' from the denominator:
 
-\begin{longtable}{rclr}  
+ \[ \begin{array}{rclr} 
 
-$ \frac{g(x+h)-g(x)}{h}$ & = & $ \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h}$ & \\
-& = &  $ \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h} \cdot  \frac{(2x+2h+1)(2x+1)}{(2x+2h+1)(2x+1)}$ & \\
-& = &  $ \frac{3(2x+1)-3(2x+2h+1)}{h(2x+2h+1)(2x+1)}$  & \\
-& = &  $ \frac{6x+3-6x-6h-3}{h(2x+2h+1)(2x+1)}$  & \\
-& = &  $ \frac{-6h}{h(2x+2h+1)(2x+1)}$  & \\
-& = &  $ \frac{-6\cancel{h}}{\cancel{h}(2x+2h+1)(2x+1)}$  & \text{cancel} \\
-& = &  $ \frac{-6}{(2x+2h+1)(2x+1)}$.  & \\ 
-
-\end{longtable}
+\frac{g(x+h)-g(x)}{h} & = & \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h} & \\
+& = &   \frac{ \frac{3}{2x+2h+1}- \frac{3}{2x+1}}{h} \cdot  \frac{(2x+2h+1)(2x+1)}{(2x+2h+1)(2x+1)} & \\
+& = &  \frac{3(2x+1)-3(2x+2h+1)}{h(2x+2h+1)(2x+1)}  & \\
+& = &  \frac{6x+3-6x-6h-3}{h(2x+2h+1)(2x+1)}  & \\
+& = &   \frac{-6h}{h(2x+2h+1)(2x+1)}  & \\
+& = &  \frac{-6\cancel{h}}{\cancel{h}(2x+2h+1)(2x+1)} & \text{cancel} \\
+& = &   \frac{-6}{(2x+2h+1)(2x+1)}.  & \\  \end{array} \]
 
 Hence, \[g'(x) = \lim_{h \rightarrow 0} \frac{-6}{(2x+2h+1)(2x+1)} = \frac{-6}{(2x + 2(0) +1)(2x+1)} = - \frac{6}{(2x+1)^2}. \]   We check $g'(0) = -\frac{6}{(2(0)+1)^2} = \ldots = -6$, as required.
 
@@ -710,7 +677,7 @@ Hence, \[g'(x) = \lim_{h \rightarrow 0} \frac{-6}{(2x+2h+1)(2x+1)} = \frac{-6}{(
 
 
 
-\item \begin{enumerate} \item To find $r'(9) = \ds{\lim_{h \rightarrow 0}}$$\frac{r(9+h) - r(9)}{h}$, we start with $r(9+h) = \sqrt{9+h}$ and $r(9) = \sqrt{9} = 3$. Hence  our difference quotient is:
+\item \begin{enumerate} \item To find $r'(9) = \lim_{h \rightarrow 0}\frac{r(9+h) - r(9)}{h}$, we start with $r(9+h) = \sqrt{9+h}$ and $r(9) = \sqrt{9} = 3$. Hence  our difference quotient is:
 
 \[  \frac{r(9+h)-r(9)}{h} =  \frac{\sqrt{9+h} - 3}{h}.\]
 
@@ -722,19 +689,18 @@ In order for us to determine the limit as $h \rightarrow 0$, we need to somehow 
 
  \frac{r(9+h) - r(9)}{h} & = &  \frac{\sqrt{9+h} - 3}{h} & \\ 
 												
-												 & = &  \frac{\left(\sqrt{9+h} - 3 \right)}{h} \cdot  \frac{\left(\sqrt{9+h} + 3\right)}{\left(\sqrt{9+h} + 3\right)} & \text{Multiply by the conjugate.} \\ 
+	 & = &  \frac{\left(\sqrt{9+h} - 3 \right)}{h} \cdot  \frac{\left(\sqrt{9+h} + 3\right)}{\left(\sqrt{9+h} + 3\right)} & \text{Multiply by the conjugate.} \\ 
 										
-												 & = &   \frac{\left(\sqrt{9+h}\right)^2 -(3)^2}{h\left(\sqrt{9+h} + 3\right)} & \text{Difference of Squares.}\\ 
+    & = &   \frac{\left(\sqrt{9+h}\right)^2 -(3)^2}{h\left(\sqrt{9+h} + 3\right)} & \text{Difference of Squares.}\\ 
 												
-												& = &   \frac{(9+h) - 9}{h\left(\sqrt{9+h} + 3\right)} & \\ 
+	& = &   \frac{(9+h) - 9}{h\left(\sqrt{9+h} + 3\right)} & \\ 
 												
-												 & = &   \frac{h}{h\left(\sqrt{9+h} + 3\right)} & \\ 
+	& = &   \frac{h}{h\left(\sqrt{9+h} + 3\right)} & \\ 
 												 
-												 & = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{9+h} + 3\right)} & \text{cancel} \\ 
+	& = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{9+h} + 3\right)} & \text{cancel} \\ 
 										
 										
-												 & = &   \frac{1}{\sqrt{9+h} +3} & \\ 
-												\end{array}\]	
+	 & = &   \frac{1}{\sqrt{9+h} +3} & \\ \end{array}\]	
 
 
 Hence, \[ r'(9) = \lim_{h \rightarrow 0} \frac{1}{\sqrt{9+h} +3} = \frac{1}{\sqrt{9+0} +3} = \frac{1}{6}.\]
@@ -752,30 +718,27 @@ Hence, \[ r'(9) = \lim_{h \rightarrow 0} \frac{1}{\sqrt{9+h} +3} = \frac{1}{\sqr
 
  \frac{r(t+h) - r(t)}{h} & = &  \frac{\sqrt{t+h} - \sqrt{t}}{h} & \\  
 												
-												 & = &  \frac{\left(\sqrt{t+h} - \sqrt{t}\right)}{h} \cdot  \frac{\left(\sqrt{t+h} + \sqrt{t}\right)}{\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Multiply by the conjugate.} \\  
+	 & = &  \frac{\left(\sqrt{t+h} - \sqrt{t}\right)}{h} \cdot  \frac{\left(\sqrt{t+h} + \sqrt{t}\right)}{\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Multiply by the conjugate.} \\  
 										
-												 & = &   \frac{\left(\sqrt{t+h}\right)^2 - \left(\sqrt{t}\right)^2}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Difference of Squares.}\\  
+    & = &   \frac{\left(\sqrt{t+h}\right)^2 - \left(\sqrt{t}\right)^2}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \text{Difference of Squares.}\\  
 												
-												& = &   \frac{(t+h) - t}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
+	& = &   \frac{(t+h) - t}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
 												
-												 & = &   \frac{h}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
-												 
-												 												 & = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
-										
-										
-												 & = &   \frac{1}{\sqrt{t+h} + \sqrt{t}} & \\ 
-												\end{array}\]	
+	 & = &   \frac{h}{h\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
+
+& = &   \frac{\cancelto{1}{h}}{\cancel{h}\left(\sqrt{t+h} + \sqrt{t}\right)} & \\  
+
+& = &   \frac{1}{\sqrt{t+h} + \sqrt{t}} & \\ \end{array}\]	
 
 
-We get \[r'(t) =  \lim_{h \rightarrow 0} \frac{1}{\sqrt{t+h} + \sqrt{t}} = \frac{1}{\sqrt{t+0} + \sqrt{t}}  = \frac{1}{2 \sqrt{t}}.\]   We check $r'(9) = \frac{1}{2\sqrt{9}} = \frac{1}{2(3)} = \frac{1}{6}$ as above.  
+We get \[r'(t) =  \lim_{h \rightarrow 0} \frac{1}{\sqrt{t+h} + \sqrt{t}} = \frac{1}{\sqrt{t+0} + \sqrt{t}}  = \frac{1}{2 \sqrt{t}}.\]   We check $r'(9) = \frac{1}{2\sqrt{9}} = \frac{1}{2(3)} = \frac{1}{6}$ which matches our answer above.  
 
 \end{enumerate}
 
 \end{enumerate}
 
+\end{explanation}
 \end{example}
-
-
 
 
 %% SKIPPED %% \input{ExercisesforIntroductiontoDerivatives}

@@ -56,8 +56,6 @@ Our next entry in the conic sections menagerie is the circle.  Recall from Geome
 
 \end{image}
 
- 
-
 
 From the diagram, we see that a point $(x,y)$ is on the circle if and only if its distance to $(h,k)$ is $r$.  We  express this relationship algebraically using the Distance Formula, Equation \ref{distanceformula}, as 
 
@@ -98,8 +96,6 @@ Note in the standard equation of a circle, \textit{both} of the variables square
 
 \end{itemize}
 
-\begin{multicols}{2}
-
 \begin{enumerate}
 
 \item $(x+2)^2+(y-1)^2 = 4$
@@ -107,8 +103,6 @@ Note in the standard equation of a circle, \textit{both} of the variables square
 \item  \label{ctscircleex} $3x^2 - 6x + 3y^2 + 4y -4 = 0$
 
 \end{enumerate}
-
-\end{multicols}
 
 \item  Graph $f(x) = - \sqrt{4x-x^2}$.
 
@@ -182,9 +176,7 @@ coordinates {
 
 \end{enumerate}
 
- 
-
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -194,7 +186,6 @@ coordinates {
 
 \item Rewriting  $(x+2)^2+(y-1)^2 = 4$ as  $(x-(-2))^2+(y-1)^2 = (2)^2$, we identify $h = -2$, $k=1$ and $r = 2$.  Thus we have a circle centered at $(-2,1)$ with a radius of $2$.  
 
- 
 
 To help us create a detailed graph, we start from the center $(-2,1)$ and move  two units to the left and two units up and down to the right to identify four points on the graph.\footnote{Note the center of the circle is \textit{not} on the graph of the circle!} We get $(-2-2, 1) = (-4,1)$, $(-2+2, 1) = (0,1)$,  $(-2, 1+2) = (-2,3)$ and $(-2,1-2) = (-2,-1)$.  Our graph is below.
 
@@ -297,7 +288,7 @@ coordinates {
 
 
 \[ \begin{array}{rclr} 3x^2 - 6x + 3y^2 + 4y -4 & = & 0 & \\ 
- 3x^2 - 6x + 3y^2 + 4y & = & 4 & \text{add $4$ to both sides} \\ [3pt]
+ 3x^2 - 6x + 3y^2 + 4y & = & 4 & \text{add $4$ to both sides} \\ 
  3\left(x^2 - 2x \right) + 3\left(y^2 + \frac{4}{3} y\right) & = & 4 & \text{factor out leading coefficients} \\  
  3\left(x^2 - 2x + \underline{1} \right) + 3\left(y^2 + \frac{4}{3} y + \underline{\underline{\frac{4}{9}}} \right) & = & 4 + 3\underline{(1)} + 3\underline{\underline{\left(\frac{4}{9}\right)}} &  \text{complete the square in $x$, $y$} \\   
  3(x - 1)^2 + 3\left(y + \frac{2}{3}\right)^2 & = & \frac{25}{3} & \text{factor} \\  
@@ -411,12 +402,9 @@ coordinates {
 
 \item  We are asked to graph $f(x) = - \sqrt{4x-x^2}$, which, at first glance, seems out of place in this section. However, to graph means we graph the equation  $y = -\sqrt{4x-x^2}$.  
 
- 
 
 Squaring both sides, we get  $y^2 = (-\sqrt{4x-x^2})^2$ or   $y^2 = 4x - x^2$.  Rearranging this equation gives $x^2-4x+y^2 = 0$.   Completing the square, we obtain $(x-2)^2 + y^2  = 4$ which, when rewritten as $(x-2)^2 + (y-0)^2 = (2)^2$ is precisely the standard form of a circle as written in Equation \ref{standardcircle}.  
 
-
- 
 
 With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a circle of radius $2$ centered at $(2,0)$.  However,  the graph we want isn't the \textit{entire} circle.\footnote{For one thing, the graph of a circle fails the Vertical Line Test so it does not represent $y$ as a function of $x$ in this case.}  Indeed, we want the graph of $y = -\sqrt{4x-x^2}$. Because of the `$-$ ',  we want the \textit{lower} semicircle, graphed below.
 
@@ -430,7 +418,10 @@ With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a 
 
 \begin{enumerate}
 
-\item  We recall that a diameter of a circle is a line segment containing the center and two points on the circle.  We plot the data given to us below.
+\item  We recall that a diameter of a circle is a line segment containing the center and two points on the circle.
+
+
+The desmos interactive plots the data below and walks us through the steps required to find our solution geometrically.
 
 % https://www.desmos.com/calculator/z6nlhojphg
 
@@ -438,36 +429,38 @@ With $h = 2$, $k=0$ and $r=2$, we know the graph of   $(x-2)^2 + y^2  = 4$ is a 
     \desmos{z6nlhojphg}{800}{600}
 \end{center}
 
-Since the given points are endpoints of a diameter, we know their midpoint $(h, k)$ is the center of the circle.  Likewise, the diameter of the circle is the distance between the given points, so we can find the radius of the circle by taking half of this distance.  Using Equations \ref{midpointformula} and \ref{distanceformula}, respectively, we get:
+The task before us is to analytically follow these steps to find our answer. 
 
-\begin{multicols}{2}
+First, note that since the given points are endpoints of a diameter, we know their midpoint $(h, k)$ is the center of the circle.  Using Equations \ref{midpointformula}, we find the center of the circle below.
 
-$\begin{array}{rcl} (h,k) &  = & \left( \frac{x_0 + x_1}{2},  \frac{y_0 + y_1}{2} \right) \\  
+
+\[\begin{array}{rcl} (h,k) &  = & \left( \frac{x_0 + x_1}{2},  \frac{y_0 + y_1}{2} \right) \\  
 &  = &  \left( \frac{-1+2}{2},  \frac{3+4}{2} \right) \\  
-& = &  \left( \frac{1}{2},  \frac{7}{2} \right)   \\   
-&& \\ \end{array}$
+& = &  \left( \frac{1}{2},  \frac{7}{2} \right)   \\  \end{array}\]
 
-$\begin{array}{rcl} r &  = & \frac{1}{2} \sqrt{\left(x_1 - x_0\right)^2+\left(y_1-y_0\right)^2}  \\  
+
+ Likewise, the diameter of the circle is the distance between the given points, so we can find the radius of the circle by taking half of this distance.  Using \ref{distanceformula}, we get:
+ 
+\[\begin{array}{rcl} r &  = & \frac{1}{2} \sqrt{\left(x_1 - x_0\right)^2+\left(y_1-y_0\right)^2}  \\  
  &  = & \frac{1}{2} \sqrt{(2-(-1))^2+(4-3)^2} \\  
  & = & \frac{1}{2} \sqrt{3^2+1^2} \\  
- & = &\frac{\sqrt{10}}{2} \end{array} $
+ & = &\frac{\sqrt{10}}{2} \end{array}\]
  
- \end{multicols}
- 
- 
+
+
 Finally, since $\left( \frac{\sqrt{10}}{2} \right)^2 = \frac{10}{4} = \frac{5}{2}$, our answer becomes $\left(x - \frac{1}{2} \right)^2 + \left(y - \frac{7}{2} \right)^2 =\frac{5}{2}$
 
-\item  From the graph given to us, we are safe to assume the center of the circle is $(-2,2)$ since the circle appears to be \textit{tangent} to the coordinate axes at $(-2,0)$ and $(0,2)$.\footnote{Recall that for every point $P$ on the circle, the tangent line at $P$ is perpendicular to the radial line containing the center and $P$. Since the circle is tangent to the $x$-axis at $(-2,0)$, the center must lie on a line perpendicular to the $x$-axis which contains $(-2,0)$ or $x = -2$.  Likewise,  the circle is tangent to the $y$-axis at $(0,2)$,  the center must lie on $y=2$.  Hence the center is $(-2,2)$.}   Moreover, since the distance from $(-2,2)$ to either of $(-2,0)$ or $(0,2)$ is $2$, the radius of the circle is $2$.  Per Equation \ref{standardcircle}, our answer is $(x-(-2))^2 + (y-2)^2 = (2)^2$ or $(x+2)^2+(y-2)^2 = 4$. \qed
+
+
+\item  From the graph given to us, we are safe to assume the center of the circle is $(-2,2)$ since the circle appears to be \textit{tangent} to the coordinate axes at $(-2,0)$ and $(0,2)$.\footnote{Recall that for every point $P$ on the circle, the tangent line at $P$ is perpendicular to the radial line containing the center and $P$. Since the circle is tangent to the $x$-axis at $(-2,0)$, the center must lie on a line perpendicular to the $x$-axis which contains $(-2,0)$ or $x = -2$.  Likewise,  the circle is tangent to the $y$-axis at $(0,2)$,  the center must lie on $y=2$.  Hence the center is $(-2,2)$.}   Moreover, since the distance from $(-2,2)$ to either of $(-2,0)$ or $(0,2)$ is $2$, the radius of the circle is $2$.  Per Equation \ref{standardcircle}, our answer is $(x-(-2))^2 + (y-2)^2 = (2)^2$ or $(x+2)^2+(y-2)^2 = 4$. 
 
 \end{enumerate}
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 In number \ref{ctscircleex} above, we needed to transform a given equation into the standard form as stated in Equation \ref{standardcircle}.  We record these steps below.  Note that given an equation that represents a circle, \textit{both} variables need to be squared and the squared terms must have the \textit{same} coefficients.
-
- 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -535,7 +528,7 @@ Our last example has us find some important points on the the Unit Circle.
 
  
 
-{\bf Solution.}  Note that all points $(x,y)$ on the Unit Circle satisfy the equation $x^2+y^2 = 1$. Hence, our first step is  to replace $y$ with $\frac{\sqrt{3}}{2}$ and solve for $x$. 
+\begin{explanation} Note that all points $(x,y)$ on the Unit Circle satisfy the equation $x^2+y^2 = 1$. Hence, our first step is  to replace $y$ with $\frac{\sqrt{3}}{2}$ and solve for $x$. 
 
  \[ \begin{array}{rclr} x^2 + y^2 & = & 1 & \\
  x^2 + \left(\frac{\sqrt{3}}{2}\right)^2 & = & 1 &  \\  
@@ -545,8 +538,8 @@ Our last example has us find some important points on the the Unit Circle.
  x & = & \pm \frac{1}{2} & \\  \end{array} \]
 
 
-We find $x = \pm \frac{1}{2}$ so our final answers are  $\left(\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$ and $\left(-\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$.  \qed
-
+We find $x = \pm \frac{1}{2}$ so our final answers are  $\left(\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$ and $\left(-\frac{1}{2}, \frac{\sqrt{3}}{2} \right)$.  
+\end{explanation}
 \end{example}
 
 

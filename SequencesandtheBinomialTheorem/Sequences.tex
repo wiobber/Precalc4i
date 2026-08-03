@@ -19,10 +19,8 @@ In this section, we introduce \textit{sequences} which are an important class of
 
 As usual, the periods of \index{ellipsis (\ldots)} ellipsis, $\ldots$, indicate that the proposed pattern continues forever.  Each of the numbers in the list is called a  \textit{term}, and we call $\frac{1}{2}$ the `first term', $-\frac{3}{4}$  the `second term', $\frac{9}{8}$  the `third term' and so forth.  In numbering them this way, we are setting up a function, which we'll call `$a$' per tradition, between the natural numbers and the terms in the sequence.
 
-\setlength{\extrarowheight}{2pt}
 
 \[ \begin{array}{|r||r|}  \hline
-
 n & a(n)  \\   \hline
 1  & \frac{1}{2} \\   \hline 
 2 & -\frac{3}{4}  \\  \hline 
@@ -31,7 +29,7 @@ n & a(n)  \\   \hline
 \vdots & \vdots  \\  \hline
 \end{array} \] 
 
-\setlength{\extrarowheight}{0pt}
+
 
 In other words, $a(n)$ is the $n^{\text{th}}$ term in the sequence.  We formalize these ideas in our definition of a  sequence and introduce some accompanying notation.
 
@@ -54,46 +52,21 @@ Suppose we wanted to know $a_117$, that is, the $117^{\text{th}}$ term in the se
 
 \begin{example} \label{seqex1}  Write the first four terms of the following sequences.
 
-\begin{multicols}{2}
 \begin{enumerate}
+\item  $a_{n} = \frac{5^{n-1}}{3^{n}}$, $n \geq 1$
 
+\item  $b_{k} = \frac{(-1)^{k}}{2k+1}$, $k \geq 0$
 
-\item  $a_{n} = \dfrac{5^{n-1}}{3^{n}}$, $n \geq 1$
+\item  $\left\{ 2n - 1 \right\}_{n=1}^{\infty} \vphantom{\left\{\frac{1 + (-1)^{i}}{i} \right\}_{i=2}^{\infty}}$
 
-\item  $b_{k} = \dfrac{(-1)^{k}}{2k+1}$, $k \geq 0$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
-\item  $\left\{ 2n - 1 \right\}_{n=1}^{\infty} \vphantom{\left\{\dfrac{1 + (-1)^{i}}{i} \right\}_{i=2}^{\infty}}$
-
-\item  $\left\{\dfrac{1 + (-1)^{i}}{i} \right\}_{i=2}^{\infty}$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
+\item  $\left\{\frac{1 + (-1)^{i}}{i} \right\}_{i=2}^{\infty}$
 
 \item\label{introrecursiveex01}  $a_1 = 7$, $a_{n+1} = 2 - a_{n}$, $n \geq 1$
 
 \item  \label{factorialintroex} $f_0 = 1$, $f_{n} =n \cdot f_{n-1}$, $n \geq 1$
-
-\setcounter{HW}{\value{enumi}}
 \end{enumerate}
-\end{multicols}
 
-
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -107,13 +80,13 @@ Suppose we wanted to know $a_117$, that is, the $117^{\text{th}}$ term in the se
 
 \item  To obtain the terms of this sequence, we start with $a_1 = 7$ and use the equation $a_{n+1} = 2 - a_{n}$ for $n \geq 1$ to generate successive terms.  When $n = 1$, this equation becomes $a_{\text{$1 + 1$}} = 2 - a_1$ which simplifies to $a_2 = 2 - a_1 = 2 - 7 = -5$.  When $n = 2$, the equation becomes $a_{\text{$2 + 1$}} = 2 - a_2$ so we get $a_3 = 2 - a_2 = 2 - (-5) = 7$.  Finally, when $n = 3$, we get $a_{\text{$3 + 1$}} = 2 - a_3$ so $a_4 = 2 - a_3 = 2-7 = -5$.  
 
-\item  As with the problem above, we are given a place to start with $f_0 = 1$ and given a formula to build other terms of the sequence.  Substituting $n = 1$ into the equation $f_{n} = n \cdot f_{n-1}$, we get $f_1 = 1 \cdot f_0 = 1 \cdot 1 = 1$.  Advancing to $n = 2$, we get $f_2 = 2 \cdot f_1 = 2 \cdot 1 = 2$.  Finally, $f_3 = 3 \cdot f_2 = 3 \cdot 2 = 6$.  \qed
+\item  As with the problem above, we are given a place to start with $f_0 = 1$ and given a formula to build other terms of the sequence.  Substituting $n = 1$ into the equation $f_{n} = n \cdot f_{n-1}$, we get $f_1 = 1 \cdot f_0 = 1 \cdot 1 = 1$.  Advancing to $n = 2$, we get $f_2 = 2 \cdot f_1 = 2 \cdot 1 = 2$.  Finally, $f_3 = 3 \cdot f_2 = 3 \cdot 2 = 6$.  
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
-Some remarks about Example \ref{seqex1} are in order. We first note that since sequences are functions, we can graph them in the same way we graph functions.  For example, if we wish to graph the sequence $\left\{ b_{k} \right\}_{k=0}^{\infty}$ from Example \ref{seqex1}, we graph the equation $y=b(k)$ for the values $k \geq 0$. That is, we plot the points $(k, b(k))$ for the values of $k$ in the domain, $k = 0, 1, 2, \ldots$.  The resulting collection of points is the graph of the sequence.  Note that we do not connect the dots in a pleasing fashion as we are used to doing, because the domain is just the whole numbers in this case, not a collection of intervals of real numbers.\footnote{If you feel a sense of nostalgia, you should see Section \ref{FunctionsandtheirRepresentations}.}
+Some remarks about Example \ref{seqex1} are in order. We first note that since sequences are functions, we can graph them in the same way we graph functions.  For example, if we wish to graph the sequence $\left\{ b_{k} \right\}_{k=0}^{\infty}$ from Example \ref{seqex1}, we graph the equation $y=b(k)$ for the values $k \geq 0$. That is, we plot the points $(k, b(k))$ for the values of $k$ in the domain, $k = 0, 1, 2, \ldots$.  The resulting collection of points is the graph of the sequence. 
 
 \begin{image}
 \begin{tikzpicture}[
@@ -175,6 +148,9 @@ Some remarks about Example \ref{seqex1} are in order. We first note that since s
 \end{tikzpicture}
 \end{image}
 
+Note that we do not connect the dots in a pleasing fashion as we are used to doing, because the domain is just the whole numbers in this case, not a collection of intervals of real numbers.\footnote{If you feel a sense of nostalgia, you should see Section \ref{FunctionsandtheirRepresentations}.}
+
+
 Speaking of $\left\{ b_{k} \right\}_{k=0}^{\infty}$, the astute and mathematically minded reader will correctly note that this technically isn't a sequence, since according to Definition \ref{sequencedefn}, sequences are functions whose domains are the \textit{natural} numbers, not the \textit{whole} numbers, as is the case with $\left\{ b_{k} \right\}_{k=0}^{\infty}$.  In other words, to satisfy Definition \ref{sequencedefn}, we need to shift the variable $k$ so it starts at $k=1$ instead of $k=0$.  
 
 To see how we can do this, it helps to think of the problem graphically.  What we want is to shift the graph of $y=b(k)$ to the right one unit, and thinking back to Section \ref{Transformations}, we can accomplish this by replacing $k$ with $k-1$ in the definition of $\left\{ b_{k} \right\}_{k=0}^{\infty}$.  
@@ -220,32 +196,20 @@ Some sequences are arithmetic, some are geometric and some are neither as the ne
 
 \begin{example}  \label{arithgeoex1}  Determine if the following sequences are arithmetic, geometric or neither.  If arithmetic, find the common difference $d$; if geometric, find the common ratio $r$.
 
-\begin{multicols}{2}
 \begin{enumerate}
 
+\item  $a_{n} = \frac{5^{n-1}}{3^{n}}$, $n \geq 1$
 
-\item  $a_{n} = \dfrac{5^{n-1}}{3^{n}}$, $n \geq 1$
+\item  $b_{k} = \frac{(-1)^{k}}{2k+1}$, $k \geq 0$
 
-\item  $b_{k} = \dfrac{(-1)^{k}}{2k+1}$, $k \geq 0$
+\item  $\left\{ 2n - 1 \right\}_{n=1}^{\infty} \vphantom{\frac{1}{2}, -\frac{3}{4}, \frac{9}{8}, -\frac{27}{16}, \ldots}$
 
-\setcounter{HW}{\value{enumi}}
+\item  $\frac{1}{2}, -\frac{3}{4}, \frac{9}{8}, -\frac{27}{16}, \ldots$
+
 \end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
 
-\item  $\left\{ 2n - 1 \right\}_{n=1}^{\infty} \vphantom{\dfrac{1}{2}, -\dfrac{3}{4}, \dfrac{9}{8}, -\dfrac{27}{16}, \ldots}$
-
-\item  $\dfrac{1}{2}, -\dfrac{3}{4}, \dfrac{9}{8}, -\dfrac{27}{16}, \ldots$
-
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-{\bf Solution.}  A good rule of thumb to keep in mind when working with sequences is ``When in doubt, write it out!''  Writing out the first several terms can help you identify the pattern of the sequence should one exist.
+\begin{explanation}  A good rule of thumb to keep in mind when working with sequences is ``When in doubt, write it out!''  Writing out the first several terms can help you identify the pattern of the sequence should one exist.
 
 \begin{enumerate}
 
@@ -254,7 +218,7 @@ Some sequences are arithmetic, some are geometric and some are neither as the ne
 To see if the sequence is geometric, we compute the ratios of successive terms.  The first three ratios  \textit{suggest} the sequence is geometric:   \[\frac{a_2}{a_1} = \frac{\frac{5}{9}}{\frac{1}{3}} = \frac{5}{3}, \;\;\; \frac{a_3}{a_2} = \frac{\frac{25}{27}}{\frac{5}{9}} = \frac{5}{3} \;\; \text{ and } \;\; \frac{a_4}{a_3} = \frac{\frac{125}{81}}{\frac{25}{27}} = \frac{5}{3}\] 
 To \textit{prove} the sequence is geometric, however, we must show that $\frac{a_{n+1}}{a_{n}} = r$ for all $n$:
 
-\[ \dfrac{a_{n+1}}{a_{n}} = \dfrac{\dfrac{5^{(n+1)-1}}{3^{n+1}}}{\dfrac{5^{n-1}}{3^{n}}} = \dfrac{5^{n}}{3^{n+1}} \cdot \dfrac{3^{n}}{5^{n-1}} = \dfrac{5}{3} \]
+\[ \frac{a_{n+1}}{a_{n}} = \frac{\frac{5^{(n+1)-1}}{3^{n+1}}}{\frac{5^{n-1}}{3^{n}}} = \frac{5^{n}}{3^{n+1}} \cdot \frac{3^{n}}{5^{n-1}} = \frac{5}{3} \]
 
 Hence, the sequence is geometric with common ratio $r = \frac{5}{3}$.
 
@@ -262,10 +226,10 @@ Hence, the sequence is geometric with common ratio $r = \frac{5}{3}$.
 
 \item  As we saw in Example \ref{seqex1}, the sequence $\left\{ 2n - 1 \right\}_{n=1}^{\infty}$ generates the odd numbers:  $1, 3, 5, 7, \ldots$.  Computing the first few differences, we find $a_2 - a_1 = 2$, $a_3 - a_2 = 2$, and $a_4 - a_3 = 2$.  This suggests that the sequence is arithmetic.  To prove this is the case, we find \[a_{n+1} - a_{n} = (2(n+1)-1) - (2n-1) = 2n+2-1-2n+1 = 2\]  This establishes that the sequence is arithmetic with common difference $d = 2$.  To see if it is geometric, we compute $\frac{a_2}{a_1} = 3$ and  $\frac{a_3}{a_2} = \frac{5}{3}$.  Since these ratios are different, we conclude the sequence is not geometric.
 
-\item  We met our last sequence at the beginning of the section.  Given that $a_2 - a_1 = -\frac{5}{4}$ and $a_3 - a_2 = \frac{15}{8}$, the sequence is not arithmetic.  Computing the first few ratios, however, gives us $\frac{a_2}{a_1} = -\frac{3}{2}$, $\frac{a_3}{a_2} = -\frac{3}{2}$ and $\frac{a_4}{a_3} = -\frac{3}{2}$.  Since these are the only terms given to us, we \textit{assume} that the pattern of ratios continue in this fashion and conclude that the sequence is geometric. \qed
+\item  We met our last sequence at the beginning of the section.  Given that $a_2 - a_1 = -\frac{5}{4}$ and $a_3 - a_2 = \frac{15}{8}$, the sequence is not arithmetic.  Computing the first few ratios, however, gives us $\frac{a_2}{a_1} = -\frac{3}{2}$, $\frac{a_3}{a_2} = -\frac{3}{2}$ and $\frac{a_4}{a_3} = -\frac{3}{2}$.  Since these are the only terms given to us, we \textit{assume} that the pattern of ratios continue in this fashion and conclude that the sequence is geometric. 
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 We are now one step away from determining an explicit formula for the sequence given in (\ref{seq1}).  We know that it is a geometric sequence and our next result gives us the explicit formula we require.
@@ -291,8 +255,6 @@ We are now one step away from determining an explicit formula for the sequence g
 \end{eqn}
 
 %% \ebm}
-
- 
 
 
 An intuitive way to arrive at Equation \ref{arithgeoformula} appeals to Definition \ref{arithgeodefn} directly.  Given an arithmetic sequence with first term $a$ and common difference $d$, the way we get from one term to the next is by adding $d$.  Hence, the terms of the sequence are:  $a$, $a+d$, $a+2d$, $a+3d$, \ldots.  We see that to reach the $n$th term, we add $d$ to $a$ exactly $(n-1)$ times, which is exactly what the formula says.\footnote{We formalize this argument in Section \ref{Induction}.}
@@ -324,20 +286,18 @@ Our next example gives us more practice finding patterns.
 
 
 \begin{example}  \label{seqex2}  Find an explicit formula for the $n^{\text{th}}$ term of the following sequences.
-
-\begin{multicols}{3}
 \begin{enumerate}
 
 \item  $0.9, 0.09, 0.009, 0.0009, \ldots$
 
-\item  $\dfrac{2}{5}, 2, -\dfrac{2}{3}, -\dfrac{2}{7}, \ldots$
+\item  $\frac{2}{5}, 2, -\frac{2}{3}, -\frac{2}{7}, \ldots$
 
-\item  $1, -\dfrac{2}{7}, \dfrac{4}{13}, -\dfrac{8}{19}, \ldots$
+\item  $1, -\frac{2}{7}, \frac{4}{13}, -\frac{8}{19}, \ldots$
 
 \end{enumerate}
-\end{multicols}
 
-{\bf Solution.}
+
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -363,10 +323,10 @@ The sequence of the denominators: $5,1,-3,-7, \ldots$ is seen to be an arithmeti
  
  The denominators $1, 7, 13, 19, \ldots$ form an arithmetic sequence with $a = 1$ and $d = 6$.  Hence, we get $D_{n} = 1 + 6(n-1) = 6n-5$, for $n \geq 1$.  
  
- Putting these two formulas together, we obtain our formula for $a_{n} = \frac{C_{n}}{D_{n}} = \frac{(-2)^{n-1}}{6n-5}$, for $n \geq 1$.  We leave it to the reader to show that this checks out. \qed
+ Putting these two formulas together, we obtain our formula for $a_{n} = \frac{C_{n}}{D_{n}} = \frac{(-2)^{n-1}}{6n-5}$, for $n \geq 1$.  We leave it to the reader to show that this checks out. 
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 While the last problem in Example \ref{seqex2} was neither geometric nor arithmetic, it did resolve into a combination of these two kinds of sequences.  If handed the sequence $2, 5, 10, 17, \ldots$, we would be hard-pressed to find a formula for $a_{n}$ if we restrict our attention to these two archetypes.  We said before that there is no general algorithm for finding the explicit formula for the $n$th term of a given sequence, and it is only through experience gained from evaluating sequences from explicit formulas that we learn to begin to recognize number patterns.  
@@ -380,9 +340,9 @@ Sequences and Number Patterns Fail the Test}}.}  Just because your answer doesn'
 
 Sequences play a major role in the Mathematics of Finance, as we have already seen with Equation \ref{compoundinterest} in Section \ref{ExpLogApplications}.  Recall that if we invest $P$ dollars at an annual percentage rate $r$ and compound the interest $n$ times per year,  the formula for $A_{k}$, the amount in the account after $k$ compounding periods, is $A_{k} = P\left(1 + \frac{r}{n}\right)^{k} = \left[P\left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right)^{k-1}$, $ k \geq 1$.  We leave it to the reader to show this is a geometric sequence with first term $P\left(1 + \frac{r}{n}\right)$ and common ratio $\left(1 + \frac{r}{n}\right)$. 
 
-\medskip
 
- In section \ref{ExpLogApplications}, we showed $\ds{\lim_{n \rightarrow \infty} P\left(1 + \frac{r}{n}\right)^{nt} = Pe^{rt}}$, where we noted, at the time, that the limit here was taken on a discrete, rather than continuous variable.  That didn't stop us from using the limit properties listed in Theorem \ref{LimitProp01}.  We talk more on the limits of sequences next.
+
+ In section \ref{ExpLogApplications}, we showed $\lim_{n \rightarrow \infty} P\left(1 + \frac{r}{n}\right)^{nt} = Pe^{rt}$, where we noted, at the time, that the limit here was taken on a discrete, rather than continuous variable.  That didn't stop us from using the limit properties listed in Theorem \ref{LimitProp01}.  We talk more on the limits of sequences next.
 
 
 \subsection{Limits of Sequences}
@@ -390,13 +350,13 @@ Sequences play a major role in the Mathematics of Finance, as we have already se
 
 
 
-Consider the sequence $a_{n} = \frac{3n}{n+1}$, $n \geq 1$. Suppose we wished to find $\ds{\lim_{n \rightarrow \infty} a_{n}}$.
+Consider the sequence $a_{n} = \frac{3n}{n+1}$, $n \geq 1$. Suppose we wished to find $\lim_{n \rightarrow \infty} a_{n}$.
 
-\medskip
+
 
 We should first note that even though the domain of the sequence $a_{n}$ is discrete, we can nonetheless discuss what happens as $n \rightarrow \infty$ since for any real number $M>0$, we can find a natural number $n > M$.  (We could, for instance take $n  = \lfloor M \rfloor + 1$.)  
 
-\medskip
+
 
 Next, note that we can visualize  the sequence $a_{n} = \frac{3n}{n+1}$, $n \geq 1$ as being points on the graph of $f(x) = \frac{3x}{x+1}$:
 
@@ -405,41 +365,41 @@ Next, note that we can visualize  the sequence $a_{n} = \frac{3n}{n+1}$, $n \geq
 \geogebra{sjcvj5e3}{800}{600}
 \end{center}
 
-Comparing leading terms of numerator and denominator, as $x \rightarrow \infty$, $\frac{3x}{x+1} \approx \frac{3x}{x} = 3$.   Hence,  $\ds{\lim_{x \rightarrow \infty}}$ $\frac{3x}{x+1} = 3$, which means \textbf{all} of the $y$-values on the graph of $y = f(x)$, including the $y$-values of the graph of the sequence,  approach $3$ as $x \rightarrow \infty$.  It stands to reason, then that $\ds{\lim_{n \rightarrow \infty}}$  $\frac{3n}{n+1} = 3$.
+Comparing leading terms of numerator and denominator, as $x \rightarrow \infty$, $\frac{3x}{x+1} \approx \frac{3x}{x} = 3$.   Hence,  $\lim_{x \rightarrow \infty} \frac{3x}{x+1} = 3$, which means \textbf{all} of the $y$-values on the graph of $y = f(x)$, including the $y$-values of the graph of the sequence,  approach $3$ as $x \rightarrow \infty$.  It stands to reason, then that $\lim_{n \rightarrow \infty} \frac{3n}{n+1} = 3$.
 
 
-\medskip
 
-The long and short of the above argument is that since $\ds{\lim_{x\rightarrow \infty}}$ $\frac{3x}{x+1}$ exists, $\ds{\lim_{n \rightarrow \infty}}$   $\frac{3n}{n+1} = $ $\ds{\lim_{x \rightarrow \infty}}$ $\frac{3x}{x+1}$.  While the syntax of `$\ds{\lim_{n \rightarrow \infty}}$  $\frac{3n}{n+1} =$ $\ds{\lim_{x \rightarrow \infty}}$  $\frac{3x}{x+1}$' appears to be just a switch in a dummy variable,\footnote{which it would be without context}  the switch from `$n$' to `$x$' indicates switching from a \textbf{discrete} variable to a \textbf{continuous} one. This sort of maneuver is called \index{continuous variable ! passing to}\index{passing to a continuous variable}\textbf{passing to a continuous variable} and is one of the primary ways we can use what we've already studied to analyze limits of sequences.  
 
-\medskip
+The long and short of the above argument is that since $\lim_{x\rightarrow \infty} \frac{3x}{x+1}$ exists, $\lim_{n \rightarrow \infty} \frac{3n}{n+1} = \lim_{x \rightarrow \infty} \frac{3x}{x+1}$.  While the syntax of `$\lim_{n \rightarrow \infty}\frac{3n}{n+1} = \lim_{x \rightarrow \infty} \frac{3x}{x+1}$' appears to be just a switch in a dummy variable,\footnote{which it would be without context}  the switch from `$n$' to `$x$' indicates switching from a \textbf{discrete} variable to a \textbf{continuous} one. This sort of maneuver is called \index{continuous variable ! passing to}\index{passing to a continuous variable}\textbf{passing to a continuous variable} and is one of the primary ways we can use what we've already studied to analyze limits of sequences.  
+
+
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{theorem}\label{passingtocontinuous}   If $\ds{ \lim_{x \rightarrow \infty} f(x) = L}$  and $f(n) = a_{n}$  for all $n \geq k$ for some natural number $k$, then $\ds{ \lim_{n \rightarrow \infty} a_{n} = L}$.
+\begin{theorem}\label{passingtocontinuous}   If $\lim_{x \rightarrow \infty} f(x) = L$  and $f(n) = a_{n}$  for all $n \geq k$ for some natural number $k$, then $\lim_{n \rightarrow \infty} a_{n} = L$.
 
 \end{theorem}
 
 %% \ebm}
 
-\medskip
 
-Note the phrase `$f(n) = a_{n}$  for all $n \geq k$ for some natural number $k$' indicates the focus on what is happening as $n \rightarrow \infty$. In other words, the first finitely many sequence values do not impact the value of $\ds{\lim_{n \rightarrow \infty} a_{n}}$.  We are just concerned with the long-run or end behavior here.  The reason Theorem \ref{passingtocontinuous}  works, indeed why all of the limit properties discussed in Section \ref{IntroLimits} work with sequences as well as functions of continuous variables is because the formal definitions associated with limits of both sequences and functions share the same mathematical `bones.'  (See a Calculus instructor for more details.) We'll explore these connections more deeply in the Exercises.
 
-\medskip
+Note the phrase `$f(n) = a_{n}$  for all $n \geq k$ for some natural number $k$' indicates the focus on what is happening as $n \rightarrow \infty$. In other words, the first finitely many sequence values do not impact the value of $\lim_{n \rightarrow \infty} a_{n}$.  We are just concerned with the long-run or end behavior here.  The reason Theorem \ref{passingtocontinuous}  works, indeed why all of the limit properties discussed in Section \ref{IntroLimits} work with sequences as well as functions of continuous variables is because the formal definitions associated with limits of both sequences and functions share the same mathematical `bones.'  (See a Calculus instructor for more details.) We'll explore these connections more deeply in the Exercises.
+
+
 
 We have special words to describe sequences which have limits and those which do not.
 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{definition} \label{convdiv} If $\left\{ a_{n} \right\}$  is  a sequence and $\ds{\lim_{n \rightarrow \infty} a_{n} = L}$, we say the sequence $\left\{ a_{n} \right\}$ \index{sequence ! converge}\index{sequence ! convergent}\textbf{converges} to $L$.  If                   $\ds{\lim_{n \rightarrow \infty} a_{n}}$ does not exist, we say the sequence \index{sequence ! diverge}\index{sequence ! divergent}\textbf{diverges}.
+\begin{definition} \label{convdiv} If $\left\{ a_{n} \right\}$  is  a sequence and $\lim_{n \rightarrow \infty} a_{n} = L$, we say the sequence $\left\{ a_{n} \right\}$ \index{sequence ! converge}\index{sequence ! convergent}\textbf{converges} to $L$.  If  $\lim_{n \rightarrow \infty} a_{n}$ does not exist, we say the sequence \index{sequence ! diverge}\index{sequence ! divergent}\textbf{diverges}.
 
 \end{definition}
 
 %% \ebm}
 
-\medskip
+
 
 \begin{example}\label{limitofsequenceexample} $~$
 
@@ -447,26 +407,26 @@ We have special words to describe sequences which have limits and those which do
 
 \begin{enumerate}
 
-\item  $\ds{\lim_{n \rightarrow \infty}}$ $\frac{1 - n^2}{2n^2-3n+1}$.
+\item  $\lim_{n \rightarrow \infty} \frac{1 - n^2}{2n^2-3n+1}$.
 
-\item  $\ds{\lim_{n \rightarrow \infty} n e^{-2n}}$.
-
-\end{enumerate}
-
-
-\item\label{squeezemotivation} What difficulties do you encounter when trying to pass the limit $\ds{\lim_{n \rightarrow \infty}}$ $\frac{(-1)^{n}}{n^2 +1}$ to a continuous variable?  What appears to be the limit?
-
+\item  $\lim_{n \rightarrow \infty} n e^{-2n}$.
 
 \end{enumerate}
 
-{\bf Solution.}  \begin{enumerate} \item  \begin{enumerate} \item Passing $\ds{\lim_{n \rightarrow \infty}}$ $\frac{1 - n^2}{2n^2-3n+1}$ to a continuous variable gives  $\ds{\lim_{x \rightarrow \infty}}$ $\frac{1 - x^2}{2x^2-3x+1}$.   Comparing leading terms, we have that as $x \rightarrow \infty$, $\frac{1 - x^2}{2x^2-3x+1} \approx \frac{-x^2}{2x^2} = -\frac{1}{2}$, so $\ds{\lim_{x \rightarrow \infty}}$ $\frac{1 - x^2}{2x^2-3x+1} = -\frac{1}{2}$.  By Theorem \ref{passingtocontinuous}, $\ds{\lim_{n \rightarrow \infty}}$ $\frac{1 - n^2}{2n^2-3n+1} = -\frac{1}{2}$.  This tracks given the graph below.
+
+\item\label{squeezemotivation} What difficulties do you encounter when trying to pass the limit $\lim_{n \rightarrow \infty} \frac{(-1)^{n}}{n^2 +1}$ to a continuous variable?  What appears to be the limit?
+
+
+\end{enumerate}
+
+\begin{explanation} \begin{enumerate} \item  \begin{enumerate} \item Passing $\lim_{n \rightarrow \infty} \frac{1 - n^2}{2n^2-3n+1}$ to a continuous variable gives  $\lim_{x \rightarrow \infty}\frac{1 - x^2}{2x^2-3x+1}$.   Comparing leading terms, we have that as $x \rightarrow \infty$, $\frac{1 - x^2}{2x^2-3x+1} \approx \frac{-x^2}{2x^2} = -\frac{1}{2}$, so $\lim_{x \rightarrow \infty} \frac{1 - x^2}{2x^2-3x+1} = -\frac{1}{2}$.  By Theorem \ref{passingtocontinuous}, $\lim_{n \rightarrow \infty} \frac{1 - n^2}{2n^2-3n+1} = -\frac{1}{2}$.  This tracks given the graph below.
 
 % https://www.geogebra.org/graphing/ekmwstte
 \begin{center}
 \geogebra{ekmwstte}{800}{600}
 \end{center}
 
-\item Passing  $\ds{\lim_{n \rightarrow \infty} n e^{-2n}}$ to a continuous variable gives  $\ds{\lim_{x \rightarrow \infty} x e^{-2x}}$.  Here we do not have leading terms to compare - but we do have an indeterminate form `$\infty \cdot 0$',  That being said, as discussed following Example \ref{exponentialcurvesketchingex} in Section \ref{ExponentialEquationsandInequalities}, the factor $e^{-2x}$ will dominate the factor $x$ as $x \rightarrow \infty$, so we have  $\ds{\lim_{n \rightarrow \infty} n e^{-2n}} = \ds{\lim_{x \rightarrow \infty} x e^{-2x} = 0}$.  The graph below confirms this.
+\item Passing  $\lim_{n \rightarrow \infty} n e^{-2n}$ to a continuous variable gives  $\lim_{x \rightarrow \infty} x e^{-2x}$.  Here we do not have leading terms to compare - but we do have an indeterminate form `$\infty \cdot 0$',  That being said, as discussed following Example \ref{exponentialcurvesketchingex} in Section \ref{ExponentialEquationsandInequalities}, the factor $e^{-2x}$ will dominate the factor $x$ as $x \rightarrow \infty$, so we have  $\lim_{n \rightarrow \infty} n e^{-2n} = \lim_{x \rightarrow \infty} x e^{-2x} = 0$.  The graph below confirms this.
 
 % https://www.geogebra.org/graphing/cnsjyu8c
 \begin{center}
@@ -475,15 +435,15 @@ We have special words to describe sequences which have limits and those which do
 
 \end{enumerate}
 
-\item When passing  $\ds{\lim_{n \rightarrow \infty}}$ $\frac{(-1)^{n}}{n^2 +1}$ to a continuous variable, we get the factor $(-1)^{x}$ which is non-real for several\footnote{Actually, `uncountably infinite' \ldots} real numbers such as $x = \frac{1}{2}$, $x = 117.23$, or $x = 3000 \pi$.  That being said, we note that the factor $(-1)^{n}$ alternates the sign of each term:  $(+)1$ if $n$ is even and $-1$ if $n$ is odd:  $-\frac{1}{2}, \frac{1}{5}, -\frac{1}{10}, \frac{1}{17}, \ldots$.
+\item When passing  $\lim_{n \rightarrow \infty} \frac{(-1)^{n}}{n^2 +1}$ to a continuous variable, we get the factor $(-1)^{x}$ which is non-real for several\footnote{Actually, `uncountably infinite' \ldots} real numbers such as $x = \frac{1}{2}$, $x = 117.23$, or $x = 3000 \pi$.  That being said, we note that the factor $(-1)^{n}$ alternates the sign of each term:  $(+)1$ if $n$ is even and $-1$ if $n$ is odd:  $-\frac{1}{2}, \frac{1}{5}, -\frac{1}{10}, \frac{1}{17}, \ldots$.
 
-\medskip
+
 
 This means that we can bound the sequence we're interested in between two other sequences we know something about:  $-\frac{1}{n^2 + 1} \leq \frac{(-1)^{n}}{n^2 +1} \leq \frac{1}{n^2+1}$.
 
-\medskip
 
-Passing to a continuous variable,  $\ds{\lim_{n \rightarrow \infty}}$ $-\frac{1}{n^2 +1} = $ $\ds{\lim_{x \rightarrow \infty}}$ $-\frac{1}{x^2 +1} =0$ and $\ds{\lim_{n \rightarrow \infty}}$ $\frac{1}{n^2 +1} = $ $\ds{\lim_{x \rightarrow \infty}}$ $\frac{1}{x^2 +1} =0$, so it stands to reason that $\ds{\lim_{n \rightarrow \infty}}$ $\frac{(-1)^{n}}{n^2 +1} = 0$ as well.  We sketch the situation out below.
+
+Passing to a continuous variable,  $\lim_{n \rightarrow \infty} -\frac{1}{n^2 +1} = \lim_{x \rightarrow \infty} -\frac{1}{x^2 +1} =0$ and $\lim_{n \rightarrow \infty} \frac{1}{n^2 +1} = \lim_{x \rightarrow \infty} \frac{1}{x^2 +1} =0$, so it stands to reason that $\lim_{n \rightarrow \infty} \frac{(-1)^{n}}{n^2 +1} = 0$ as well.  We sketch the situation out below.
 
 % https://www.geogebra.org/graphing/kvqxmwjy
 \begin{center}
@@ -491,22 +451,18 @@ Passing to a continuous variable,  $\ds{\lim_{n \rightarrow \infty}}$ $-\frac{1}
 \end{center}
 
 \end{enumerate}
-
-
-\hfill \qed
+\end{explanation}
 
 
 \end{example}
 
-\medskip
+
 
 The sequence in number \ref{squeezemotivation} in Example \ref{limitofsequenceexample} is an example of an \index{alternating sequence}\index{sequence ! alternating}\textbf{alternating sequence}, so-named because the terms alternate in sign.  Alternating sequences play a large role in the study of infinite series (whatever those are) in Calculus,\footnote{We'll touch on these in the next section, too.}  so it is worth pointing them out here.
 
-\medskip
+Next, the reasoning we used to determine  $\lim_{n \rightarrow \infty} \frac{(-1)^{n}}{n^2 +1} = 0$ is sound and is codified in the following theorem. We state the result for both sequences (discrete functions) and (continuous) functions.
 
-Next, the reasoning we used to determine  $\ds{\lim_{n \rightarrow \infty}}$ $\frac{(-1)^{n}}{n^2 +1} = 0$ is sound and is codified in the following theorem. We state the result for both sequences (discrete functions) and (continuous) functions.
 
-\medskip
 
 
 
@@ -520,13 +476,13 @@ Next, the reasoning we used to determine  $\ds{\lim_{n \rightarrow \infty}}$ $\f
 
  
 
-If $\ds{\lim_{n \rightarrow \infty} b_{n} = \lim_{n \rightarrow \infty} c_{n} = L}$, then $\ds{\lim_{n \rightarrow \infty} a_{n} = L}$.
+If $\lim_{n \rightarrow \infty} b_{n} = \lim_{n \rightarrow \infty} c_{n} = L$, then $\lim_{n \rightarrow \infty} a_{n} = L$.
 
 \item Suppose for some real number $M$, $g(x) \leq f(x) \leq h(x)$ for all $x \geq M$.
 
  
 
-If $\ds{\lim_{x \rightarrow \infty} g(x) = \lim_{x \rightarrow \infty} h(x) = L}$, then $\ds{\lim_{x \rightarrow \infty} f(x)= L}$.
+If $\lim_{x \rightarrow \infty} g(x) = \lim_{x \rightarrow \infty} h(x) = L$, then $\lim_{x \rightarrow \infty} f(x)= L$.
 
 \end{itemize}
 
@@ -534,7 +490,7 @@ If $\ds{\lim_{x \rightarrow \infty} g(x) = \lim_{x \rightarrow \infty} h(x) = L}
 
 %% \ebm}
 
-\medskip
+
 
 The Squeeze Theorem is so-named because the two sequences (functions) which bound the middle sequence (function) `squeeze' the middle function to the common limit, $L$.
 
@@ -561,7 +517,7 @@ The Squeeze Theorem is so-named because the two sequences (functions) which boun
 
 Passing to a continuous variable in conjunction with the Squeeze Theorem can be used to prove certain classes of Geometric Sequences converge.  We have the following:
 
-\medskip
+
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -573,11 +529,11 @@ Passing to a continuous variable in conjunction with the Squeeze Theorem can be 
 
 \item If $-1 < r < 1$, the sequence converges to $0$.
 
-\medskip
+
 
 \item If $r=1$, the sequence converges to the first term, $a$.
 
-\medskip
+
 
 \item If $r> 1$ or $r \leq -1$, the sequence diverges.
 
@@ -587,7 +543,7 @@ Passing to a continuous variable in conjunction with the Squeeze Theorem can be 
 
 %% \ebm}
 
-\medskip
+
 
 We encourage the reader to think through each of the cases stated in Theorem \ref{limitsofgeometricsequences} to make sure the conclusions seem reasonable.  We'll have occasion to cite Theorem \ref{limitsofgeometricsequences} in the next section.  For now, it's time for some Exercises. 
 

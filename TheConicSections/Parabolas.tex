@@ -114,8 +114,6 @@ x^2 & = & 4py & \mbox{gather like terms} \\ \end{array} \]
 Solving for $y$ yields $y = \frac{x^2}{4p} = \frac{1}{4p} x^2$, which is a quadratic function of the form found in Equation \ref{vertexofquadraticfunctions} with $a = \frac{1}{4p}$ and vertex $(0, 0)$.
 
 
- 
-
 We know from previous experience that if the coefficient of $x^2$ is negative, the parabola opens downwards.  In the equation $y = \frac{1}{4p} x^2$ this happens when $p < 0$.  In our formulation, we say that $p$ is a `directed distance' from the vertex to the focus:  if $p > 0$, the focus is above the vertex;  if $p < 0$, the focus is below the vertex.   The \index{parabola ! focal length} \index{focal length of a parabola} \textbf{focal length} of a parabola, that is, the length from the vertex to the focus,  is therefore $|p|$.
 
 
@@ -151,7 +149,7 @@ Before embarking on an example,  we take a moment to better illustrate the affec
 \geogebra{rscgdtbm}{800}{600}
 \end{center}
 
-The dashed line segment in each of the illustrations above is called the \textit{latus rectum} of the parabola.  More specifically, the \index{parabola ! latus rectum} \index{latus rectum of a parabola}\textbf{latus rectum} of a parabola is the line segment with endpoints on the parabola which contains the focus and is parallel to the directrix.\footnote{Hence, the endpoints of the latus rectum are  two points on `opposite' sides of the parabola.}   
+The dashed line segment in the interactive above is called the \textit{latus rectum} of the parabola.  More specifically, the \index{parabola ! latus rectum} \index{latus rectum of a parabola}\textbf{latus rectum} of a parabola is the line segment with endpoints on the parabola which contains the focus and is parallel to the directrix.\footnote{Hence, the endpoints of the latus rectum are  two points on `opposite' sides of the parabola.}   
 
 
  
@@ -199,7 +197,7 @@ Knowing the focus and focal diameter allows to plot two points on the parabola i
   }
           ]
 %% Extra thick graph
-\addplot[smooth, line width=3.5pt, penColor1] {-0.5*(x+1)^2+2};
+\addplot[smooth, line width=3.5pt, penColor1, domain] {-0.5*(x+1)^2+2};
 
 %% Regular points, labeled
 \addplot[
@@ -235,9 +233,7 @@ coordinates {
 
 \end{enumerate}
 
- 
-
-{\bf Solution.}  
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -307,10 +303,10 @@ Since the focus is $(2,1)$, we know the the vertex lies on the vertical line $x=
 
  
 
-To determine the value of $p$, we see $(1,0)$ is on the graph so when $x = 1$, $y = 0$.  Substituting these values into our equation gives $(1+1)^2 = 4p(0-2)$ so $4=-8p$ or $p = -\frac{1}{2}$.  (The fact $p<0$ tracks with the parabola opening downwards.)  Hence, $4p = 4\left( -\frac{1}{2} \right) = -2$ so the equation of the parabola is  $(x+1)^2 = -2(y-2)$.  We leave it to the reader to check our answer analytically and graphically. \qed 
+To determine the value of $p$, we see $(1,0)$ is on the graph so when $x = 1$, $y = 0$.  Substituting these values into our equation gives $(1+1)^2 = 4p(0-2)$ so $4=-8p$ or $p = -\frac{1}{2}$.  (The fact $p<0$ tracks with the parabola opening downwards.)  Hence, $4p = 4\left( -\frac{1}{2} \right) = -2$ so the equation of the parabola is  $(x+1)^2 = -2(y-2)$.  We leave it to the reader to check our answer analytically and graphically.  
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 We can produce `horizontal' parabolas in the $xy$-plane by reflecting our so-called `vertical' parabolas about the line $y=x$.  As you may recall from Section \ref{InverseFunctions}, we accomplish this algebraically by interchanging the variables $x$ and $y$.  Such parabolas necessarily open to the left or to the right, which means that unlike the vertical parabolas, these parabolas do not represent $y$ as a function of $x$.   As we shall see, however, they can \textit{implicitly} describe $y$ as a function of $x$, provided certain restrictions are in place.
@@ -449,7 +445,7 @@ coordinates {
 
  
 
-{\bf Solution.} 
+\begin{explanation}
 
 
 \begin{enumerate}
@@ -523,7 +519,7 @@ We let $f(x) = 2 + \sqrt{3x+3}$ and $g(x) = 2-\sqrt{3x+3}$. Note that since $\sq
 
  
 
-To use the quadratic formula, we need to set the equation to $0$:  $y^2 + 4y + 8x-4 = 0$.  Since we are solving for $y$, we identify $a = 1$, $b=4$ and $c = 8x-4$.  We find the discriminant $b^2-4ac = (4)^2 - 4(1)(8x-4) = 32-32x$ so \[ y = \dfrac{-4 \pm \sqrt{32-32x}}{2} = \dfrac{-4 \pm \sqrt{32(1-x)}}{2}  = \dfrac{-4 \pm 4\sqrt{2(1-x)}}{2} = -2 \pm 2 \sqrt{2-2x}. \]
+To use the quadratic formula, we need to set the equation to $0$:  $y^2 + 4y + 8x-4 = 0$.  Since we are solving for $y$, we identify $a = 1$, $b=4$ and $c = 8x-4$.  We find the discriminant $b^2-4ac = (4)^2 - 4(1)(8x-4) = 32-32x$ so \[ y = \frac{-4 \pm \sqrt{32-32x}}{2} = \frac{-4 \pm \sqrt{32(1-x)}}{2}  = \frac{-4 \pm 4\sqrt{2(1-x)}}{2} = -2 \pm 2 \sqrt{2-2x}. \]
 
 We identify $f(x) =  -2 + 2 \sqrt{2-2x}$ and $g(x) =  -2 - 2 \sqrt{2-2x}$. Since $\sqrt{2-2x} \geq 0$, we see the graph of $f$ traces out the \textit{upper} half of the parabola while the graph of $g$ traces out the \textit{lower} half of the parabola.
 
@@ -574,13 +570,13 @@ Since the focus is $(-4,2)$ and the directrix is a vertical line, we know the ve
 
 
 
-\item  From the graph, we may infer the vertex of the parabola is $(-2,3)$ so $h = -2$ and $k = 3$.  Per Equation \ref{standardhparabola}, we have $(y-3)^2 = 4p(x-(-2))$ or $(y-3)^2 = 4p(x+2)$.  Since the graph contains $(0,6)$, we substitute $x=0$ and $y=6$ to get $(6-3)^2 = 4p(0+2)$.  We find $p = \frac{9}{8}$ which gives our final answer $(y-3)^2 = 4\left( \frac{9}{8} \right) (x+2)$ or $(y-3)^2 = \frac{9}{2} (x+2)$. \qed
+\item  From the graph, we may infer the vertex of the parabola is $(-2,3)$ so $h = -2$ and $k = 3$.  Per Equation \ref{standardhparabola}, we have $(y-3)^2 = 4p(x-(-2))$ or $(y-3)^2 = 4p(x+2)$.  Since the graph contains $(0,6)$, we substitute $x=0$ and $y=6$ to get $(6-3)^2 = 4p(0+2)$.  We find $p = \frac{9}{8}$ which gives our final answer $(y-3)^2 = 4\left( \frac{9}{8} \right) (x+2)$ or $(y-3)^2 = \frac{9}{2} (x+2)$. 
 
 
 \end{enumerate}
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 As we have seen, not all equations which describe parabolas will immediately match Equation \ref{standardvparabola} or Equation \ref{standardhparabola}.  Indeed, completing the square as we did with the equation in number \ref{ctsparabolaex} in Example \ref{horizontalparabolaex}  will be a necessary skill not only in this section, but in the rest of this chapter. 
@@ -640,7 +636,7 @@ In the GeoGebra interactive below, click and drag the point on the parabola $A$ 
 
  
 
-{\bf Solution.}  One way to approach this problem is to determine the equation of the parabola suggested to us by this data.  For simplicity, we'll assume the vertex is $(0,0)$ and the parabola opens upwards.  Our standard form for such a parabola is $x^2 = 4py$.  Since the focus is $2$ units above the vertex, we know  $p=2$, so we have $x^2 = 8y$.  Visually,
+\begin{explanation} One way to approach this problem is to determine the equation of the parabola suggested to us by this data.  For simplicity, we'll assume the vertex is $(0,0)$ and the parabola opens upwards.  Our standard form for such a parabola is $x^2 = 4py$.  Since the focus is $2$ units above the vertex, we know  $p=2$, so we have $x^2 = 8y$.  Visually,
 
 \begin{image}
    \begin{tikzpicture}[
@@ -702,7 +698,7 @@ In the GeoGebra interactive below, click and drag the point on the parabola $A$ 
 \end{image}
 
 Since the parabola is $12$ feet wide, we know the edge is $6$ feet from the vertex.  To find the depth, we are looking for the $y$ value when $x=6$.  Substituting $x=6$ into the equation of the parabola yields $6^2 = 8y$ or $y = \frac{36}{8} = \frac{9}{2} = 4.5$.  Hence, the dish will be  $4.5$ feet deep. 
-
+\end{explanation}
 \end{example}
 
 
