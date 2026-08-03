@@ -20,9 +20,9 @@ jobs:
         with:
           fetch-depth: 0   # full 
 
-      - name: Setup cache
+      - name: Restore cache
         if: ${{ !contains(github.event.head_commit.message, '[nocache]') }}
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: | 
             **/*.html
@@ -65,6 +65,24 @@ jobs:
           ./xmScripts/xmlatex serve $XMDEPLOY       
           # ./xmScripts/xmlatex ghaction
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
+      - name: SAVE cache
+        if: ${{ !contains(github.event.head_commit.message, '[nosavecache]') }}
+        uses: actions/cache/save@v4
+        with:
+          path: | 
+            **/*.html
+            **/*.pdf
+            **/*.svg
+            **/*.aux
+            **/*.xref
+            **/*.toc
+            !xmPictures/**
+            !.git/**
+            !.github/**
+          key: ximera-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            ximera-${{ github.ref_name }}-
+            ximera-
 
       - name: Setup ximera serve cache (only .git)
         id: serve-cache
