@@ -92,6 +92,7 @@ jobs:
           path: | 
             xmScripts/**
             .git/**
+            .ximera_local/**
           key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
 
 
@@ -112,6 +113,7 @@ jobs:
           path: | 
             xmScripts/**
             .git/**
+            .ximera_local/**
           key: ximeraSERVE-${{ github.ref_name }}-${{ github.sha }}
           
       - name: Serve
@@ -124,7 +126,7 @@ jobs:
           XIMERA_NAME: stitz-zeager
         run: |
           chmod +x xmScripts/xmlatex
-          chmod +x .ximera_local/luaxake/luaxake
+          chmod +x .ximera_local/luaxake/luaxake  || echo NOK
           # env
           ls -alrt
           ./xmScripts/xmlatex name  
