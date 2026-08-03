@@ -1,0 +1,107 @@
+\documentclass{ximera}
+
+
+\begin{document}
+	\author{Stitz-Zeager}
+	\xmtitle{The Average Rate of Change of a Function}{}
+\license{CC BY-NC-SA 4.0}   
+\begin{abstract}
+\end{abstract}
+\label{AverageRateofChange}
+
+As mentioned earlier in the section, the concepts of slope and the more general rates of change are important concepts not just in Mathematics, but also in other fields.   Many important phenomena are modeled using non-linear functions, and while the rates of change of these functions are not constant, we can sample the function at two points and compute what is known as an \textbf{average rate of change} between them to give some sense as to the function's behavior over that interval.\footnote{We are basically pretending that the function is linear on a short interval to see what we can say about its behavior.}
+
+
+\begin{definition} \label{arc}  Let $f$ be a function defined on the interval $[a,b]$. 
+
+ The \index{average rate of change}\index{rate of change ! average}\textbf{average rate of change}  of $f$ over $[a,b]$ is defined as: \[ \frac{\Delta [f(x)]}{\Delta x} = \frac{f(b) - f(a)}{b-a} \]
+
+Geometrically, the average rate of change is the slope of the line\footnote{This line is called a \index{secant line}\index{line ! secant}\textbf{secant line}.}  containing $(a, f(a))$ and $(b, f(b))$.
+
+\end{definition}
+
+% https://www.desmos.com/calculator/2ctplusi5g
+
+\begin{center}
+\desmos{2ctplusi5g}{800}{600}
+\end{center}
+
+As with Definitions \ref{absmaxmindefn}  and \ref{incdeccnstdefn}, the wording in Definition \ref{arc}, while referring to the function $f$, is really making a statement about its outputs $f(x)$.  
+
+
+
+If $f$ is increasing over $[a,b]$, then the average rate of change will be positive. Likewise, if $f$ is decreasing or constant, the average rate of change will be negative or $0$, respectively. (Think about this for a moment.) However, as the next example demonstrates, the converses of these statements aren't always true.\footnote{For example, the average rate of change over an interval could be positive yet the function could decrease over part of that interval and then increase on a different part.}
+
+\begin{example} \label{ARCRocketExample} The formula $s(t) = -5t^{\,2} + 100t$ for $0 \leq t \leq 20$ gives the height, $s(t)$, measured in feet, of a model rocket above the Moon's surface as a function of the time $t$, in seconds after lift-off.
+
+\begin{enumerate}
+
+\item Find $s(0)$, $s(5)$, $s(10)$, $s(15)$ and $s(20)$ and use these along with a graphing utility to graph $y = s(t)$.
+
+\item State the range of $s$ and interpret the extrema, if any exist.
+
+\item Find and interpret the $t$- and $y$-intercepts.  
+
+\item Find and interpret the interval(s) over which $s$ is increasing, decreasing or constant.  
+
+\item Find and interpret the average rate of change of $s$ over the intervals $[0,5]$, $[5,10]$, $[10, 20]$ and $[5, 15]$.
+
+
+\end{enumerate}
+
+\begin{explanation}
+
+\begin{enumerate}
+
+\item  To find $s(0)$, we substitute $t=0$ into the formula for $s(t)$:  $s(0) = -5(0)^2+100(0) = 0$.  Similarly,  $s(5) = -5(5)^2+100(5) = -5(25)+500 = -125+500 = 375$.  Continuing, we obtain: $s(10) = 500$, $s(15) = 375$ and $s(20) = 0$.  We construct a table of values and with a graphing utility we obtain:
+
+% https://www.desmos.com/calculator/gh2t8utkoz
+
+\begin{center}
+\desmos{gh2t8utkoz}{800}{600}
+\end{center}
+
+\item  Projecting the graph to the $y$-axis, we see that the range of $s$ is $[0, 500]$ so the minimum of $s$ is $0$ and the maximum is $500$.  This means that the rocket at some point is on the surface of the Moon and reaches its highest altitude of $500$ feet above the lunar surface.
+
+\item The first intercept we see is $(0, 0)$ which is both a $t$- and a $y$-intercept.  Since $t$ is the time after lift-off and $y = s(t)$ is  the height above the Moon's surface, the point $(0, 0)$ means that the model rocket was launched ($t=0$) from the Moon's surface ($s(t) = 0$).  The remaining intercept, $(20, 0)$,  is another $t$-intercept.  This means that $20$ seconds after lift-off ($t=20$), the model rocket returns to the Moon's surface ($s(t) = 0$).   That is, the `time of flight' of the model rocket is 20 seconds.
+
+\item  Referring to Definition \ref{incdeccnstdefn}, $s$ increases over the interval $[0, 10]$, since for those values of $t$, as we read from left to right, the graph of the function is rising meaning the $y$ values (hence $s(t)$ values) are getting larger. Thus the model rocket is heading upwards for the first $10$ seconds of its flight.  We find that $s$ decreases over the interval $[10, 20]$, indicating once it has reached its highest altitude of $500$ feet $10$ seconds into the flight, the rocket begins to fall back to the surface of the Moon, landing $20$ seconds after lift-off.
+
+\item  To find the average rate of change of $s$ over the interval $[0, 5]$ we compute \[ \frac{\Delta[s(t)]}{\Delta t} = \frac{s(5) - s(0)}{5 - 0} = \frac{\text{$375$ feet}}{\text{$5$ seconds}} = \text{$75$ feet per second}.\] In other words, the height is \textbf{increasing} at an \textbf{average rate} of $75$ feet per second during the first 5 seconds of flight.  The rate here is called the\index{average velocity} \index{velocity ! average} \textbf{average velocity} of the rocket over this interval.  Velocity differs from speed in that velocity comes with a direction.  In this case, a positive velocity indicates that the rocket is traveling \textbf{upwards}, since when $s$ is increasing, the model rocket is climbing higher.  
+
+
+
+Similarly, the average rate of change of $s$ over the interval $[5, 10]$ works out to be $25$.  This means that the average velocity over the next $5$ seconds of the flight has slowed to $25$ feet per second. The model rocket is still, on average, traveling upwards, albeit more slowly than before.  
+
+
+
+Over the interval $[10, 20]$, the average rate of change of $s$ works out to be $-50$.  This means that, on average, the rocket is \textbf{falling} at a rate of $50$ feet per second.  The rocket has managed to fall from its highest point $500$ feet above the surface of the Moon back to the Moon's surface in $10$ seconds so this makes sense. Finally, the average rate of change of $s$ over $[5, 15]$ is $0$.  This means that the model is the same height above the ground after $5$ seconds ($375$ feet) as it is after $15$ seconds.    
+
+
+
+Geometrically, the average rate of change of a function over an interval can be interpreted as the slope of a secant line. Below on the left is a dotted line containing $(0, 0)$ and $(5, 375)$ (which has slope $75$) along with a dotted line containing the points $(5, 375)$ and $(10, 500)$ (which has slope $25$).  Visually, the lines help demonstrate that, while $s$ is increasing over $[0, 10]$, the rate of increase is slowing down as $t$ nears $10$.  
+
+% https://www.desmos.com/calculator/qj3xoaviev
+\begin{center}
+    \desmos{qj3xoaviev}{800}{600}
+\end{center}
+
+
+
+
+
+The graph above on the right depicts a dotted line through $(10, 500)$ and $(20,0)$ indicating a net decrease over that interval.  We also have a horizontal line ($0$ slope) containing the points $(5, 375)$ and $(15, 375)$, which shows no net change between those two points, despite the fact that the rocket rose to its maximum height then began its descent during the interval $[5, 15]$.   
+
+
+
+
+\end{enumerate}
+
+\end{explanation}
+
+\end{example}
+
+An important lesson from the last example is that average rates of change give us a snapshot of what is happening \textbf{at the endpoints} of an interval, but not necessarily what happens \textbf{over the course} of the interval.  Calculus gives us tools to compute slopes \textbf{at} points which correspond to  \textbf{instantaneous} rates of changes.  While we don't quite have the machinery to properly express these ideas, we can hint at them in the Exercises. Speaking of exercises \ldots 
+
+
+\end{document}

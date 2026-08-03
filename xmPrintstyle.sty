@@ -516,11 +516,11 @@
 %% \@ifclassloaded{xourse}    % only in xourses !!  (this could replace \isXourse )
 \ifdefined\isXourse  
   \ifxake%
-    \renewcommand\activity[2][]{}%
+    \AtBeginDocument{\renewcommand\activity[2][]{}}%
   \else
     \makeatletter
     \let\otherinput\input
-    \renewcommand{\activity}[2][]{%
+    \AtBeginDocument{\renewcommand{\activity}[2][]{%
       \setkeys{activity}{#1}%
       \renewcommand{\input}[1]{}%
       \ifnonewpage%
@@ -529,7 +529,7 @@
          \begingroup\skip@preamble\otherinput{#2}\endgroup\clearpage%
       \fi%
       \let\input\otherinput%
-    }%
+    }}%
     \makeatother
   \fi
 %\fi%
