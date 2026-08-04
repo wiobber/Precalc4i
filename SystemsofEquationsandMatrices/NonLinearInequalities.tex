@@ -23,23 +23,12 @@ With few exceptions, we have spent our time in this course graphing equations re
 \item Sketch the following sets of points in the $xy$-plane.
 
 
-\begin{multicols}{2}
-
 \begin{enumerate}
 
 \item $R = \{ (x,y) \, | \,  y > |x| \}$
 
 \item $S = \{ (x,y)  \, | \,   y \leq 6-x^2 \}$
 
-\setcounter{HW}{\value{enumii}}
-
-\end{enumerate}
-
-\end{multicols}
-
-\begin{enumerate}
-
-\setcounter{enumii}{\value{HW}}
 \item $T = \{ (x,y)  \, | \,   |x| < y \leq 6 -x^2 \}$
 
 \end{enumerate}
@@ -129,7 +118,7 @@ plot (\x,{\x*\x});
 
 \end{enumerate}
 
-{\bf Solution.}  
+\begin{explanation} 
 
 \begin{enumerate}
 
@@ -139,9 +128,8 @@ plot (\x,{\x*\x});
 
 \item  The set $R$ consists of all points $(x,y)$ whose $y$-coordinate is greater than $|x|$.  If we graph $y=|x|$, we get the familiar `$\vee$' shape with vertex at $(0,0)$.  Hence, in order for an ordered pair $(x,y)$ to satisfy  $y > |x|$,  the point $(x,y)$ must be \textit{above} the graph of $y = |x|$.  
 
-Since the inequality here, $y > |x|$ is strict, we use a dashed line with which to indicate the graph of  $y=|x|$ and shade the region above, or `inside,' the `$\vee$' as shown below on the left.  
+Since the inequality here, $y > |x|$ is strict, we use a dashed line with which to indicate the graph of  $y=|x|$ and shade the region above, or `inside,' the `$\vee$' as shown below.  
 
-Note that one way to check our answer is to choose points both inside and outside the shaded region to verify the inequality either holds or it doesn't, respectively.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -194,7 +182,9 @@ Note that one way to check our answer is to choose points both inside and outsid
 \end{tikzpicture}
 \end{image}
 
-\item  Using the same reasoning as above we note a point $(x,y)$ is in  $S$ if its  $y$-coordinate is less than or equal to the $y$-coordinate on the parabola $y=6-x^2$.  Hence, we graph the points  \textit{below} the parabola ($y < 6-x^2$) along with the points \textit{on} the parabola ($y=6-x^2$)  below on the right.
+Note that one way to check our answer is to choose points both inside and outside the shaded region to verify the inequality either holds or it doesn't, respectively.
+
+\item  Using the same reasoning as above we note a point $(x,y)$ is in  $S$ if its  $y$-coordinate is less than or equal to the $y$-coordinate on the parabola $y=6-x^2$.  Hence, we graph the points  \textit{below} the parabola ($y < 6-x^2$) along with the points \textit{on} the parabola ($y=6-x^2$)  below.
 
 \begin{image}
 \begin{tikzpicture}[
@@ -509,17 +499,26 @@ We first consider the piece for $-2 \leq x \leq 0$. Unlike the previous problem,
     \[ S = \{ (x,y) \, | \, -2 \leq x \leq 0, \, x \leq y \leq x^3-3x \} \cup\{ (x,y) \, | \, 0 \leq x \leq 2, \, x^3-3x \leq y \leq x \}. \]
 
 
-\qed
+
 
 \end{enumerate}
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 A few remarks about Example \ref{ineqgraphex01} are in order.  First note that each of the regions presented here can be views as graphs of relations as described in Section \ref{Relations}.  Moreover, there are many ways to describe a region so our answers to number \ref{describeregionex} above are by no means unique.
 
-In particular, our solution $R = \{ (x,y)  \, | \,  -1 \leq x \leq 2, \,  x^2 \leq y \leq x+2 \}$ to number  \ref{parabolalineregionex} can be visualized as `filling up' the region $R$ from the bottom curve, $y = x^2$ to the top curve, $y = x+2$ as $x$ runs from the leftmost extent of the region at $x = -1$ to the rightmost extent at $x = 2$ as indicated below. The notion that each $x$ determines where to start and stop filling the region is a consequence of us viewing the bounding curves as functions of $x$.  That is, for each $x$, we can determine the lower boundary of the region, $y = x^2$ and the upper boundary of the region, $y = x+2$.
+In particular, our solution $R = \{ (x,y)  \, | \,  -1 \leq x \leq 2, \,  x^2 \leq y \leq x+2 \}$ to number  \ref{parabolalineregionex} can be visualized as `filling up' the region $R$ from the bottom curve, $y = x^2$ to the top curve, $y = x+2$ as $x$ runs from the leftmost extent of the region at $x = -1$ to the rightmost extent at $x = 2$.  The GeoGebra inteactive below captures this motion.
+
+
+% https://www.geogebra.org/classic/pw6uqmff
+\begin{center}
+    \geogebra{pw6uqmff}{800}{600}
+\end{center}
+
+
+The notion that each $x$ determines where to start and stop filling the region is a consequence of us viewing the bounding curves as functions of $x$.  That is, for each $x$, we can determine the lower boundary of the region, $y = x^2$ and the upper boundary of the region, $y = x+2$.
 
 % \begin{image}
 % \begin{tikzpicture}[
@@ -631,12 +630,9 @@ In particular, our solution $R = \{ (x,y)  \, | \,  -1 \leq x \leq 2, \,  x^2 \l
 % \end{tikzpicture}
 % \end{image}
 
-% https://www.geogebra.org/classic/pw6uqmff
-\begin{center}
-    \geogebra{pw6uqmff}{800}{600}
-\end{center}
 
-There are times in Calculus where it may be convenient to describe the region $R$ as filling up left-to-right as $y$ varies from the bottom most extent, $y = 0$ to the top most extent, $y = 4$.  In this case, we need to describe the bounding curves as functions of $y$.  To that end, we solve $y = x+2$ and $y = x^2$ for $x$ and get three functions of $y$:  $x = y-2$, $x = \sqrt{y}$ and $x = -\sqrt{y}$ as labeled below.
+
+There are times in Calculus where it may be convenient to describe the region $R$ as filling up left-to-right as $y$ varies from the bottom most extent, $y = 0$ to the top most extent, $y = 4$.  In this case, we need to describe the bounding curves as functions of $y$.  To that end, we solve $y = x+2$ and $y = x^2$ for $x$ and get three functions of $y$:  $x = y-2$, $x = \sqrt{y}$ and $x = -\sqrt{y}$.  The GeoGebra interactive below shows this `left to right' filling action along with the bounding curves, reframed as functions of $y$.
 
 % https://www.geogebra.org/classic/fausea5a
 \begin{center}
@@ -716,8 +712,6 @@ Just like we used test \textit{values} to determine whether or not an interval b
 
 We put this technique to good use in the following example.
 
-\newpage
-
 \begin{example} \label{nonlinearineqex}   $~$  
 
 \begin{enumerate}
@@ -736,7 +730,7 @@ We put this technique to good use in the following example.
 
 \end{enumerate}
 
-{\bf Solution.}  
+\begin{explanation} 
 
 \begin{enumerate}
 
@@ -754,7 +748,9 @@ We see that these two regions do overlap but to make the graph more precise, we 
 
 \[\left\{\begin{array}{lrcr}  (E1) & y^2 & = & x + 4 \\ (E2) & y & = & x - 2 \\ \end{array} \right.\]
 
-Solving $E1$ for $x$, we get $x = y^2 - 4$.  Substituting this into $E2$ gives $y = y^2 - 4 - 2$, or $y^2-y-6 = 0$.  We find $y = -2$ and $y=3$ and since $x = y^2-4$, we get that the graphs intersect at $(0,-2)$ and $(5,3)$.  Putting all of this together, we get our final answer below.
+Solving $E1$ for $x$, we get $x = y^2 - 4$.  Substituting this into $E2$ gives $y = y^2 - 4 - 2$, or $y^2-y-6 = 0$.  We find $y = -2$ and $y=3$ and since $x = y^2-4$, we get that the graphs intersect at $(0,-2)$ and $(5,3)$.  
+
+Using the GeoGebra interactive below, we can select (and deselect) the graphs of each of the inequalities $y^2 - 4 \leq x$, $x<y+2$, and   $y^2 - 4 \leq x < y+2$ to see how the graph of the compound inequality builds from the previous two inequalities.
 
 % https://www.desmos.com/calculator/a6nzqlnlku
 \begin{center}
@@ -773,8 +769,9 @@ Our final answer, then, consists of the points on or outside of the circle $x^2 
 
 \[\left\{\begin{array}{lrcr}  (E1) & x^2 + y^2 & = & 4 \\ (E2) & x^2 - 2x + y^2 - 2y & = & 0 \\ \end{array} \right.\]
 
-We can eliminate both the $x^2$ and $y^2$ by replacing $E2$ with $-E1 + E2$.  Doing so produces $-2x - 2y = -4$.  Solving  for $y$ gives $y = 2-x$.  Substituting this into $E1$ gives $x^2 + (2-x)^2 = 4$ which simplifies to $x^2 + 4-4x+x^2 = 4$ or $2x^2 - 4x = 0$.  Factoring yields $2x(x-2)$ which gives $x=0$ or $x=2$.  Substituting these values into $y=2-x$ gives the points $(0,2)$ and $(2,0)$.  The intermediate graphs and final solution are below.
+We can eliminate both the $x^2$ and $y^2$ by replacing $E2$ with $-E1 + E2$.  Doing so produces $-2x - 2y = -4$.  Solving  for $y$ gives $y = 2-x$.  Substituting this into $E1$ gives $x^2 + (2-x)^2 = 4$ which simplifies to $x^2 + 4-4x+x^2 = 4$ or $2x^2 - 4x = 0$.  Factoring yields $2x(x-2)$ which gives $x=0$ or $x=2$.  Substituting these values into $y=2-x$ gives the points $(0,2)$ and $(2,0)$.  
 
+Once again, we can use the GeoGebra interactive below to select and deselect each the graph of each inequality to see how the final solution to the system of inequalities builds from the solution of each of the individual inequalities.
 
 % https://www.desmos.com/calculator/qb52fmk6rq
 \begin{center}
@@ -785,10 +782,11 @@ We can eliminate both the $x^2$ and $y^2$ by replacing $E2$ with $-E1 + E2$.  Do
 
 \item We first recall the Unit Circle is the circle centered at the origin with radius $1$ and hence is described algebraically by the equation $x^2+y^2 = 1$.  The equation $x^2+y^2 = 16$ describes a circle centered at the origin with radius $4$.  Hence, the `region between' these two circles indicates we want is \textit{outside} the Unit Circle but \textit{inside} the circle $x^2+y^2 = 16$. 
 
-Based on our experience from the earlier problems, we know points outside the Unit Circle satisfy $x^2+y^2 > 1$ whereas the points inside the circle $x^2+y^2 = 16$ satisfy $x^2+y^2<16$.  Hence, the points we seek satisfy \textit{both} inequalities, so our solution is $\{ (x,y) \, | \, 1 < x^2+y^2 < 16 \}$.  \qed
+Based on our experience from the earlier problems, we know points outside the Unit Circle satisfy $x^2+y^2 > 1$ whereas the points inside the circle $x^2+y^2 = 16$ satisfy $x^2+y^2<16$.  Hence, the points we seek satisfy \textit{both} inequalities, so our solution is $\{ (x,y) \, | \, 1 < x^2+y^2 < 16 \}$.  
 
 \end{enumerate}
 
+\end{explanation}
 \end{example}
 
 We close this section with a follow-up to Example \ref{circuitex} in Section \ref{MatMethods}.  Recall in the circuit diagrammed below, we have two batteries with source voltages $V\!B_1$ and $V\!B_2$, measured in volts $V$, along with six resistors with resistances $R_1$ through $R_6$, measured in kiloohms, $k\Omega$.Recall if we think of electrons flowing through the circuit, we can think of the voltage sources as providing the `push' which makes the electrons move, the resistors as obstacles for the electrons to overcome, and the mesh current as a net rate of flow of electrons around the indicated loops.
@@ -1087,9 +1085,8 @@ In Example \ref{circuitex}, we found that under the assumptions $V\!B_1 = 10 V$,
 
 \begin{example}  \label{circuitex02}  For the circuit described above, if $V\!B_1 = 10 V$ and $V\!B_2 = 5 V$, find the possible combinations of resistances which yield the currents  $i_1 = 10.625 \, \, mA$, $i_2 = 6.25 \, \, mA$, $i_3 = 3.125 \, \, mA$, and $i_4 = 5 \, \, mA$.
 
-\newpage
 
-{\bf Solution.}
+\begin{explanation}
 
 We begin by substituting the known values of the currents into the system of equations.  We get:
 
@@ -1286,8 +1283,8 @@ R_5 & = & 1, \\  \end{array} \right.\]
  
 where $s$ and $t$ are pulled from the region $R = \left\{ (s,t) \, | \,  0 < s < 2.\overline{285714}, \, \,  0 < t < 2.\overline{6}, \, \, 3.5s+1.5t-4 > 0\right\}$.  
 
-The reader is encouraged to check that the solution presented in Example \ref{circuitex}, namely all resistance values equal to $1$, corresponds to a pair $(s,t)$ in this region. \qed
-
+The reader is encouraged to check that the solution presented in Example \ref{circuitex}, namely all resistance values equal to $1$, corresponds to a pair $(s,t)$ in this region. 
+\end{explanation}
 \end{example}
 
 

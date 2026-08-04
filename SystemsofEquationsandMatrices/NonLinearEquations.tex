@@ -234,24 +234,23 @@ We use the quadratic formula to solve $8u^2+4u-2=0$  and find $u = \frac{-1 \pm 
 
 As for $e^{x} =  \frac{-1 \pm \sqrt{5}}{4}$, we first note that $ \frac{-1 - \sqrt{5}}{4} < 0$, so $e^{x} =  \frac{-1 - \sqrt{5}}{4}$ has no real solutions.  We are left with $e^{x} =  \frac{-1 + \sqrt{5}}{4}$, so that $x = \ln\left(\frac{-1 + \sqrt{5}}{4}\right)$.  
 
-We now return to $y = 1 - 4e^{2x}$ to find the accompanying $y$ values for each of our solutions for $x$:
+We now return to $y = 1 - 4e^{2x}$ to find the accompanying $y$ values for each of our solutions for $x$.
 
-\begin{center}
-\begin{multicols}{2}
+For $x=-\ln(2)$: 
 
-$\begin{array}{rcl}
-x & = & -\ln(2):  \\
+\[\begin{array}{rcl}
 y & = & 1 - 4e^{2x}\\
   & = & 1 - 4e^{-2\ln(2)} \\
   & = & 1 - 4e^{\ln\left(\frac{1}{4}\right)} \\
   & = & 1 - 4\left(\frac{1}{4}\right) \\
   & = & 0 \\
-\end{array}$
+\end{array}\]
 
+Hence, one solution is  $(-\ln(2), 0)$.  
 
+Next, for $x = \ln\left(\frac{-1 + \sqrt{5}}{4}\right)$:
 
-$\begin{array}{rcl}
-x & =  & \ln\left(\frac{-1 + \sqrt{5}}{4}\right): \\
+\[\begin{array}{rcl} 
 y & = & 1 - 4e^{2x} \\
   & = & 1 - 4e^{2\ln\left(\frac{-1 + \sqrt{5}}{4}\right)} \\
   & = & 1 - 4e^{\ln\left(\frac{-1 + \sqrt{5}}{4}\right)^2} \\
@@ -259,14 +258,13 @@ y & = & 1 - 4e^{2x} \\
   & = & 1 - 4\left(\frac{3-\sqrt{5}}{8}\right) \\
   &  = & \frac{-1+\sqrt{5}}{2}\\
 
-\end{array}$ \\
+\end{array}\]
+
+This gives the other solution:  $\left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right)$
 
 
-\end{multicols}
 
-\end{center}
-
-We get two solutions, $\left\{ (-\ln(2),0), \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right) \right\}$.  It is a good review of the properties of logarithms to verify both solutions algebrically, so we leave that to the reader.  
+  It is a good review of the properties of logarithms to verify both solutions algebrically, so we leave that to the reader.  
 
 While we are able to sketch  $y = 1 - 4e^{2x}$ using the techniques in Section \ref{ExponentialFunctions},  the second equation is more difficult and so we opt to use Desmos.  We see the two graphs intersect at $(-0.6931,0) \approx (-\ln(2), 0)$ and $(-1.1744, 0.618) \approx  \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right)$.
 
@@ -274,8 +272,6 @@ While we are able to sketch  $y = 1 - 4e^{2x}$ using the techniques in Section \
 \begin{center}
 \desmos{fxfqmpryud}{800}{600}
 \end{center}
-
-
 
 
 \item  Our last system involves three variables and provides an opportunity to gain some insight on how to keep such systems organized.  Labeling the equations as before, we have
@@ -299,7 +295,7 @@ Equation $E1$ gives us $x-2 = x$ or $-2 = 0$, which is a contradiction.  This me
 
 Hence, our final answer is $\left\{ (1,0,-1), (3,0,3) \right\}$.  These points are easy enough to check algebraically in our three original equations, so that is left to the reader.  
 
-As for verifying these solutions graphically, they require plotting surfaces in three dimensions and looking for intersection points.  While this is beyond the scope of this book, we provide a snapshot of the graphs of our three equations near one of the solution points,  $(1,0,-1)$ and $(3,0,3)$ courtesy of GeoGebra. \qed
+As for verifying these solutions graphically, they require plotting surfaces in three dimensions and looking for intersection points.  While this is beyond the scope of this book, we provide a snapshot of the graphs of our three equations near one of the solution points,  $(1,0,-1)$ and $(3,0,3)$ courtesy of GeoGebra. 
 
 % https://www.geogebra.org/3d/w8af728v
 \begin{center}
@@ -316,9 +312,9 @@ Next we explore some common application problems which give rise to systems of n
 
 \begin{example}  \label{upstreamdownstreamex}  Carl decides to explore the Meander River, the location of several recent Sasquatch sightings.  From camp, he canoes downstream five miles to check out a purported Sasquatch nest.  Finding nothing, he immediately turns around, retraces his route (this time traveling upstream), and returns to camp 3 hours after he left.  If Carl canoes at a rate  of 6 miles per hour in still water, how fast was the Meander River flowing on that day?
 
-\smallskip
 
-{\bf Solution.}  We are given information about distances, rates (speeds) and times.  The basic principle relating these quantities is: \[ \text{distance} = \text{rate} \cdot \text{time}\]  The first observation to make, however, is that the distance, rate and time given to us aren't `compatible':  the distance given is the distance for only \textit{part} of the trip,  the rate given is the speed Carl can canoe in still water, not in a flowing river, and  the time given is the duration of the \textit{entire} trip.  Ultimately, we are after the speed of the river, so let's call that $R$ measured in miles per hour to be consistent with the other rate given to us.  To get started, let's divide the trip into its two parts:  the initial trip downstream and the return trip upstream.  For the downstream trip, all we know is that the distance traveled is $5$ miles.
+\begin{explanation}
+ We are given information about distances, rates (speeds) and times.  The basic principle relating these quantities is: \[ \text{distance} = \text{rate} \cdot \text{time}\]  The first observation to make, however, is that the distance, rate and time given to us aren't `compatible':  the distance given is the distance for only \textit{part} of the trip,  the rate given is the speed Carl can canoe in still water, not in a flowing river, and  the time given is the duration of the \textit{entire} trip.  Ultimately, we are after the speed of the river, so let's call that $R$ measured in miles per hour to be consistent with the other rate given to us.  To get started, let's divide the trip into its two parts:  the initial trip downstream and the return trip upstream.  For the downstream trip, all we know is that the distance traveled is $5$ miles.
 
 \[ \begin{array}{rcl}
 
@@ -370,17 +366,17 @@ The last piece of information given to us is that the total trip lasted $3$ hour
 
  \[\left\{\begin{array}{lrcl}   E1 & (6+R) \, t_{\text{down}} & = & 5 \\ E2 & (6-R) \, t_{\text{up}} & = & 5 \\ E3 & t_{\text{down}} + t_{\text{up}} & = & 3 \end{array} \right.\]
 
-Since we are ultimately after $R$, we need to use these three equations to get at least one equation involving \textit{only} $R$.  We start with equation $E1$. We know that both $(6+R) \neq 0$  and  $t_{\text{down}} \neq 0$ since the product of these two quantities is $5$ and is nonzero.\footnote{This is a restatement of the Zero Product Property from Section \ref{AppRealNumberArithmetic}.}  Hence, we may solve $E1$ for $t_{\text{down}}$ by dividing both sides by the quantity $(6+R)$ to get $t_{\text{down}} = \frac{5}{6+R}$.   Similarly, we use $E2$  to get $t_{\text{up}} = \frac{5}{6-R}$. Substituting these into $E3$, we get:\footnote{The reader is encouraged to verify that the units in this equation are consistent. For starters, the units on the `3' is `hours.'} \[\dfrac{5}{6+R} + \dfrac{5}{6 - R} = 3.\] Clearing denominators, we get $5(6-R) + 5(6+R) = 3(6+R)(6-R)$ which reduces to  $R^2 = 16$.   We find $R = \pm 4$, and since $R$ represents the speed of the river, we choose $R = 4$.   On the day in question, the Meander River is flowing at a rate of $4$ miles per hour. \qed
-
+Since we are ultimately after $R$, we need to use these three equations to get at least one equation involving \textit{only} $R$.  We start with equation $E1$. We know that both $(6+R) \neq 0$  and  $t_{\text{down}} \neq 0$ since the product of these two quantities is $5$ and is nonzero.\footnote{This is a restatement of the Zero Product Property from Section \ref{AppRealNumberArithmetic}.}  Hence, we may solve $E1$ for $t_{\text{down}}$ by dividing both sides by the quantity $(6+R)$ to get $t_{\text{down}} = \frac{5}{6+R}$.   Similarly, we use $E2$  to get $t_{\text{up}} = \frac{5}{6-R}$. Substituting these into $E3$, we get:\footnote{The reader is encouraged to verify that the units in this equation are consistent. For starters, the units on the `3' is `hours.'} \[\frac{5}{6+R} + \frac{5}{6 - R} = 3.\] Clearing denominators, we get $5(6-R) + 5(6+R) = 3(6+R)(6-R)$ which reduces to  $R^2 = 16$.   We find $R = \pm 4$, and since $R$ represents the speed of the river, we choose $R = 4$.   On the day in question, the Meander River is flowing at a rate of $4$ miles per hour. 
+\end{explanation}
 \end{example}
 
 One of the important lessons to learn from Example \ref{upstreamdownstreamex} is that speeds, and more generally, rates, are additive.  As we see in our next example, the concept of rate and its associated principles can be applied to a wide variety of problems - not just `distance-rate-time' scenarios.
 
 \begin{example} \label{workex}  Working alone, Taylor can weed the garden in 4 hours.  If Carl helps, they can weed the garden in 3 hours.  How long would it take for Carl to weed the garden on his own?
 
-\smallskip
 
-{\bf Solution.}  The key relationship between work and time which we use in this problem is: \[\text{amount of work done} = \text{rate of work} \cdot \text{time spent working} \]
+
+\begin{explanation}  The key relationship between work and time which we use in this problem is: \[\text{amount of work done} = \text{rate of work} \cdot \text{time spent working} \]
 
 We are told that, working alone, Taylor can weed the garden in 4 hours.  In Taylor's case then: \[ \begin{array}{rcl}
 
@@ -420,8 +416,8 @@ so that $R = \frac{1}{12} \frac{\text{garden}}{\text{hour}}$.  Substituting this
 
 1 \, \text{garden} & = & \left(\frac{1}{12} \frac{\text{garden}}{\text{hour}} \right) \cdot (t \, \text{hours}) \\ \end{array} \]
 
-Solving $1 = \frac{1}{12} t$, we get $t = 12$, so it takes Carl 12 hours to weed the garden on his own.\footnote{Carl would much rather spend his time writing open-source Mathematics texts than gardening anyway.} \qed
-
+Solving $1 = \frac{1}{12} t$, we get $t = 12$, so it takes Carl 12 hours to weed the garden on his own.\footnote{Carl would much rather spend his time writing open-source Mathematics texts than gardening anyway.} 
+\end{explanation}
 \end{example}
 
 As is common with `word problems' like Examples \ref{upstreamdownstreamex} and \ref{workex}, there is no short-cut to the answer.  Note that in  Examples \ref{upstreamdownstreamex}, we formalized the system of non-linear equations before solving whereas in Example \ref{workex}, the system remained much in the background.  We encourage the reader to carefully think through and apply the basic principles of rate to each (potentially different!) situation.  It is time well spent.  We also encourage the tracking of units, especially in the early stages of the problem.  Not only does this promote uniformity in the units, it also serves as a quick means to check if an equation makes sense.\footnote{In other words, make sure you don't try to add apples to oranges!}
