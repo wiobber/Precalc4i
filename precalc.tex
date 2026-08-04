@@ -14,9 +14,121 @@ This is a Precalculus of Stitz-Zeager, adapted for Ximera
 \maketitle
 
 
-% \setcounter{part}{-1}
-% \part{Intro}
+%
+% Hocus-pocus to get partnumbers from TeX  (see also global.css to make this work)
+%   (adhoc adaptation from KULeuven VBTW implementation)
+%
+\ifdefined\HCode
+\providecommand\subpart{}
+\titlecontents{subpart}[0pt]{\normalfont\bfseries}%
+{\thecontentslabel\enspace ---\enspace\large}%
+{\normalfont\large\bfseries}{\hspace{2em plus 1fill}\large\contentspage}
+
+\newcounter{ximera@subpart}%
+\setcounter{ximera@subpart}{0}%
+\renewcommand\subpart[1]{%
+  \stepcounter{ximera@subpart}%
+  \stepcounter{subpart}%
+  \ifnumberactivitiesbysubpart%
+    \setcounter{titlenumber}{0}%
+    \setcounter{sectiontitlenumber}{0}%
+  \fi%
+  \ifvmode \IgnorePar\fi \EndP%
+  \HCode{<h2 id="subpart\arabic{ximera@subpart}" class="card subpart" data-toc-label="\thesubpart">}#1\HCode{</h2>\Hnewline}%
+  \IgnoreIndent%
+}
+
+\renewcommand{\thepart}{\arabic{part}}
+%\renewcommand{\thesubpart}{\thepart\Alph{subpart}}
+\providecommand{\thesubpart}{}%
+\renewcommand{\thesubpart}{%
+  \arabic{subpart}%
+%   \ifnum0=\value{part}%
+%      \arabic{subpart}%
+%    \else%
+%      %\thepart\Alph{subpart}%
+%      \thepart.\arabic{subpart}%
+%   \fi%
+}
+\renewcommand{\thetitlenumber}{%
+    \ifnumberactivitiesbysubpart%
+        \thesubpart.\arabic{titlenumber}%    
+    \else%
+        % if continuous counting of activities, don't include subparts
+        \thepart.\arabic{titlenumber}%    
+    \fi%
+}
+% \renewcommand{\thesectiontitlenumber}{\thetitlenumber\alph{sectiontitlenumber}}
+\renewcommand{\thesectiontitlenumber}{\thetitlenumber.\arabic{sectiontitlenumber}}
+
+\providebool{addtitlenumber}        % default false ...!
+\providebool{addsectiontitlenumber} %
+
+\renewcommand\chapterstyle{%
+  \def\activitystyle{chapter}%
+  \setcounter{sectiontitlenumber}{0}%
+  \ifaddtitlenumber%
+    \addtocounter{titlenumber}{1}%
+    \def\activitytoclabel{\thetitlenumber}%
+  \else%
+    \def\activitytoclabel{}%
+  \fi%
+}
+\renewcommand\sectionstyle{%
+  \def\activitystyle{section}%
+  \ifaddsectiontitlenumber%
+    \addtocounter{sectiontitlenumber}{1}%
+    \def\activitytoclabel{\thesectiontitlenumber}%
+  \else%
+    \def\activitytoclabel{}%
+  \fi%
+}
+
+\renewcommand\activity[2][]{%
+  \ifvmode \IgnorePar\fi \EndP%
+  \HCode{  <a class="activity card \activitystyle #1" href="#2" data-toc-label="\activitytoclabel" data-options="#1">#2</a>\Hnewline}%
+  \IgnoreIndent%
+}
+
+\renewcommand\practice[2][]{%
+  \ifvmode\IgnorePar\fi\EndP%
+  \HCode{  <a class="activity card practice \activitystyle" href="#2" data-toc-label="\activitytoclabel" data-options="#1">#2</a>\Hnewline}%
+  \IgnoreIndent%
+}
+
+% \newcounter{ximera@part}
+\newcounter{subpart}   % subpart implementation incomplete !!!
+\setcounter{ximera@part}{0}%
+\renewcommand\part[1]{%
+  \setcounter{ximera@subpart}{0}
+  \stepcounter{ximera@part}%
+  \stepcounter{part}%
+  \setcounter{titlenumber}{0}%
+  \setcounter{sectiontitlenumber}{0}%
+  \setcounter{subpart}{0}
+  \ifvmode \IgnorePar\fi \EndP%
+  \HCode{<h1 id="part\arabic{ximera@part}" class="card part" data-toc-label="\thepart">}#1\HCode{</h1>\Hnewline}%
+  \IgnoreIndent%
+}
+
+\newcommand\partNoLabel[1]{%
+  % \setcounter{ximera@subpart}{0}
+%   \stepcounter{ximera@part}%
+%   \stepcounter{part}%
+  \setcounter{titlenumber}{0}%
+  \setcounter{sectiontitlenumber}{0}%
+%   \setcounter{subpart}{0}
+  \ifvmode \IgnorePar\fi \EndP%
+  \HCode{<h1 id="part\arabic{ximera@part}" class="card part" data-toc-label="">}#1\HCode{</h1>\Hnewline}%
+  \IgnoreIndent%
+}
+\else    % PDF
+\newcommand\partNoLabel[1]{\part*{#1}\addcontentsline{toc}{part}{#1}}%
+\fi
+
+\partNoLabel{PreCalculus}   % an initial 'part' is needed in the current HTML (08-2026)
 \activitychapter{Intro}  
+
 
 \part{Introduction to Functions}
 \activitychapter{IntroductiontoFunctions/FunctionsandtheirRepresentations}   

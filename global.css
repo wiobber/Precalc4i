@@ -622,19 +622,37 @@ table.tabular td {
 	width: max(20vw, 20rem)
 }
 
+.toc .card.activity-card.part::before {
+    padding: unset;
+}
+
 /* 2023-09: use  data-toc-label  (via count-in-(supported)-TeX) ipv data-nav-counter  (via count-in-JS) */
-/* .toc li::before {
+.toc li::before {
     content: attr(data-toc-label) "  ";
 	min-width: 2.5rem;
     padding-right: 0.5rem;
 }
 
+.toc li.part::before {
+	min-width: 1.2rem;
+}
 .toc li.section::before {
+	min-width: 3rem;
+}
+
+
+/* .toc li.section::before {
     content: attr(data-toc-label) "  ";
     padding-left: 2.7rem;
     padding-right: 0.5rem;
 } */
 
+.toc li::before {
+    content: attr(data-toc-label) "  ";
+    /* content: attr(data-nav-counter) "  "; */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
 
 /* correct layout of footer */
 footer .page-link {
