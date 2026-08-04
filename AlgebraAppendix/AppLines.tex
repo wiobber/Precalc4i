@@ -18,200 +18,262 @@
 In Section \ref{Distance}, we concerned ourselves with the finite line segment between two points $P$ and $Q$.  Specifically, we found its length (the distance between $P$ and $Q$) and its midpoint.  In this section, our focus will be on the \textit{entire} line, and ways to describe it algebraically.  Consider the generic situation below.
 
 \begin{center}
+    \begin{tikzpicture}[scale=0.7]
 
-\begin{mfpic}[15]{0}{4}{0}{4}
-\point[3pt]{(1,3), (3,1)}
-\arrow \reverse \arrow \polyline{(0,4),(4,0)}
-\tlabel(1.5,3){\small $P\left(x_0, y_0\right)$}
-\tlabel(3.5,1){\small $Q\left(x_1, y_1\right)$}
-\end{mfpic}
+\coordinate (P) at (1,3);
+\coordinate (Q) at (3,1);
 
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
+
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[above right] at (P) {\small $P(x_0,y_0)$};
+\node[above right] at (Q) {\small $Q(x_1,y_1)$};
+
+\end{tikzpicture}
 \end{center}
+
 
 To give a sense of the `steepness' of the line, we recall that we can compute the \textbf{slope} of the line as follows. (Read the character $\Delta$ as `change in'.)
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
-\begin{eqn} \label{slope} The \index{slope ! definition} \textbf{slope} $m$ of the line containing the points $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$ is: \index{line ! slope of} \index{slope ! of a line}
+\begin{formula}\label{slope} The \index{slope ! definition} \textbf{slope} $m$ of the line containing the points $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$ is: \index{line ! slope of} \index{slope ! of a line}
 
-\[ m  = \dfrac{y_1 - y_0}{x_1 - x_0} = \dfrac{\Delta y}{\Delta x},\]
+\[ m  = \frac{y_1 - y_0}{x_1 - x_0} = \frac{\Delta y}{\Delta x},\]
 
 provided $x_1 \neq x_0$, that is, $\Delta x \neq 0$.
 
-\end{eqn}
+\end{formula}
 
 %% \ebm}
 
-\medskip
+ 
 
 A couple of notes about Equation \ref{slope} are in order.  First, don't ask why we use the letter `$m$' to represent slope.  There are many explanations out there, but apparently no one really knows for sure.\footnote{See  \href{http://mathforum.org/dr.math/faq/faq.terms.html}{\underline{www.mathforum.org}} or \href{http://mathworld.wolfram.com/Slope.html}{\underline{www.mathworld.wolfram.com}} for discussions on this topic.} Secondly, the stipulation  $x_1 \neq x_0$ (or $\Delta x \neq 0$) ensures that we aren't trying to divide by zero.  The reader is invited to pause to think about what is happening geometrically when the `change in $x$' is $0$; the anxious reader can skip along to the next example.
 
 \begin{example}  Find the slope of the line containing the following pairs of points, if it exists.  Plot each pair of points and the line containing them.
 
-\begin{multicols}{2}
+
 \begin{enumerate}
 
 \item  $P(0,0)$, $Q(2,4)$
 \item  $P(-1,2)$, $Q(3,4)$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
 \item  $P(-2,3)$, $Q(2,-3)$
 \item  $P(-3,2)$, $Q(4,2)$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
 \item  $P(2,3)$, $Q(2,-1)$
 \item  $P(2,3)$, $Q(2.1, -1)$
 
 \end{enumerate}
-\end{multicols}
 
-{\bf Solution.}  In each of these examples, we apply the slope formula, Equation \ref{slope}.
+\begin{explanation}
+In each of these examples, we apply the slope formula, Equation \ref{slope}.
 
 \begin{enumerate}
 
-\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{4 - 0}{2 - 0} = \dfrac{4}{2} = 2$ & 
+\item   
 
-\begin{mfpic}[15]{-1}{5}{-1}{5}
-\point[3pt]{(0,0),(2,4)}
-\arrow \reverse \arrow \polyline{(-0.5,-1), (2.5, 5)}
-\tlabel(0.25,-0.5){\tiny $P$}
-\tlabel(2,3.5){\tiny $Q$}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\end{mfpic} \\
+$m = \frac{4-0}{2-0} = \frac{4}{2} = 2$
 
-\end{tabular}
 
-\item \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{4 - 2}{3 - (-1)} = \dfrac{2}{4} = \dfrac{1}{2}$ &
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
 
-\begin{mfpic}[15]{-2}{4}{0}{5}
-\point[3pt]{(-1,2),(3,4)}
-\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
-\tlabel(-1,1.5){\tiny $P$}
-\tlabel(3,3.5){\tiny $Q$}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-1,1,2,3}
-\ymarks{1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\end{mfpic} \\
+\coordinate (P) at (0,0);
+\coordinate (Q) at (2,4);
 
-\end{tabular}
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
 
-\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{-3 - 3}{2 - (-2)} = \dfrac{-6}{4} = -\dfrac{3}{2}$ &
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
 
-\begin{mfpic}[15]{-4}{4}{-5}{5}
-\point[3pt]{(-2,3),(2,-3)}
-\arrow \reverse \arrow \polyline{( -3,4.5), (3 ,-4.5 )}
-\tlabel(-1.5,3){\tiny $P$}
-\tlabel(2.5,-3){\tiny $Q$}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\axislabels {y}{{\tiny $-4$} -4, {\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\end{mfpic} \\
+\node[above right] at (P) {\small $P(0,0)$};
+\node[above right] at (Q) {\small $Q(2,4)$};
 
-\end{tabular}
+\end{tikzpicture}
 
-\item  \begin{tabular}{m{2.5in}m{2.5in}} $ m = \dfrac{2 - 2}{4 - (-3)} = \dfrac{0}{7} = 0$ &
 
-\begin{mfpic}[15]{-5}{5}{0}{4}
-\point[3pt]{(-3,2),(4,2)}
-\arrow \reverse \arrow \polyline{( -5,2), (5,2)}
-\tlabel[cc](-3,1.5){\tiny $P$}
-\tlabel[cc](4,1.5){\tiny $Q$}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $-4 \hspace{7pt}$} -4,{\tiny $-3 \hspace{7pt}$} -3,{\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\end{mfpic} \\
 
-\end{tabular}
+\item 
 
-\item  \begin{tabular}{m{3in}m{2in}} $ m = \dfrac{-1 - 3}{2 - 2} = \dfrac{-4}{0}$, which is undefined &
+$m = \frac{4 - 2}{3 - (-1)} = \frac{2}{4} = \frac{1}{2}$
 
-\begin{mfpic}[15]{0}{3}{-4}{4}
-\point[3pt]{(2,3),(2,-1)}
-\arrow \reverse \arrow \polyline{( 2,-4), (2,4)}
-\tlabel[t](2.25,3){\tiny $P$}
-\tlabel[t](2.25,-1){\tiny $Q$}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{1,2}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2}
-\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\end{mfpic} \\
 
-\end{tabular}
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
 
-\item  \begin{tabular}{m{3in}m{2in}} $ m = \dfrac{-1 - 3}{2.1 - 2} = \dfrac{-4}{0.1}=-40$ &
+\coordinate (P) at (-1,2);
+\coordinate (Q) at (3,4);
 
-\begin{mfpic}[15]{0}{3}{-4}{4}
-\point[3pt]{(2,3),(2.1,-1)}
-\arrow \reverse \arrow \polyline{( 1.99,3.4), (2.15,-3)}
-\tlabel[t](2.25,3){\tiny $P$}
-\tlabel[t](2.25,-1){\tiny $Q$}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4){\scriptsize $y$}
-\xmarks{1,2}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2}
-\axislabels {y}{{\tiny $-3$} -3, {\tiny $-2$} -2, {\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
-\end{mfpic} \\
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
 
-\end{tabular}
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[above left] at (P) {\small $P(-1,2)$};
+\node[above left] at (Q) {\small $Q(3,4)$};
+
+\end{tikzpicture}
+
+\item
+
+$ m = \frac{-3 - 3}{2 - (-2)} = \frac{-6}{4} = -\frac{3}{2}$ 
+
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
+
+\coordinate (P) at (-2,3);
+\coordinate (Q) at (2,-3);
+
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
+
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[below left] at (P) {\small $P(-2,3)$};
+\node[above right] at (Q) {\small $Q(2,-3)$};
+
+\end{tikzpicture} 
+
+ 
+
+\item   $ m = \frac{2 - 2}{4 - (-3)} = \frac{0}{7} = 0$ 
+
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
+
+\coordinate (P) at (-3,2);
+\coordinate (Q) at (4,2);
+
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
+
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[above] at (P) {\small $P(-3,2)$};
+\node[above] at (Q) {\small $Q(4,2)$};
+
+\end{tikzpicture} 
+
+\item
+
+$ m = \frac{-1 - 3}{2 - 2} = \frac{-4}{0}$, which is undefined 
+
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
+
+\coordinate (P) at (2,3);
+\coordinate (Q) at (2,-1);
+
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
+
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[right] at (P) {\small $P(2,3)$};
+\node[below right] at (Q) {\small $Q(2,-1)$};
+
+\end{tikzpicture}
+
+\item
+
+$ m = \frac{-1 - 3}{2.1 - 2} = \frac{-4}{0.1}=-40$ 
+
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (\x,0.15) -- (\x,-0.15);
+  \node[below] at (\x,-0.15) {$\x$};
+}
+\foreach \y in {-4,-3,-2,-1,1,2,3,4} {
+  \draw (0.15,\y) -- (-0.15,\y);
+  \node[left] at (-0.15,\y) {$\y$};
+}
+
+\coordinate (P) at (2,3);
+\coordinate (Q) at (2.1,-1);
+
+\draw[<->,line width=1pt]
+  ($(P)!-0.5!(Q)$) -- ($(P)!1.5!(Q)$);
+
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+\node[right] at (P) {\small $P(2,3)$};
+\node[below right] at (Q) {\small $Q(2.1,-1)$};
+
+\end{tikzpicture}
 
 \end{enumerate}
 
 \label{slopeex}
 
-\vspace{-.2in}
 
-\qed
+
+\end{explanation}
 
 \end{example} 
 
-\smallskip
 
 A few comments about Example \ref{slopeex} are in order.  First, if the slope is positive then the resulting line is said to be `increasing', meaning as we move from left to right,\footnote{That is, as we increase the $x$-values \ldots} the $y$-values are getting larger.\footnote{We'll have more to say about this idea in Section \ref{ConstantandLinearFunctions}.}  Similarly, if the slope is negative, we say the line is `decreasing', since as we move from left to right, the $y$-values are getting smaller.  A slope of $0$ results in a horizontal line which we say is `constant', since the $y$-values here remain unchanged as we move from left to right,  and an undefined slope results in a vertical line.\footnote{Some authors use the unfortunate moniker `no slope' when a slope is undefined.  It's easy to confuse the notions of `no slope' with `slope of $0$'.  For this reason, we will describe slopes of vertical lines as `undefined'.}   
 
@@ -241,7 +303,7 @@ Second, the larger the slope is in absolute value, the steeper the line.  You ma
 
 % Points
 \foreach \x/\y in {-1/2, 1/3, 3/4}
-  \fill (\x,\y) circle (2pt);
+  \fill (\x,\y) circle (3pt);
 
 % Labels
 \node at (2,2.5) {\tiny over $2$};
@@ -250,65 +312,98 @@ Second, the larger the slope is in absolute value, the steeper the line.  You ma
 \end{tikzpicture}
 \end{center}
 
-
-
-In this way, we may view the slope as  `the \textbf{rate of change} of $y$ with respect to $x$'.  From the expression \[ m = \dfrac{\Delta y}{\Delta x}\] we get $\Delta y = m \Delta x$ so that the $y$-values change `$m$' times as fast as the $x$-values.  We'll have more to say about this concept in Section \ref{ConstantandLinearFunctions} when we explore applications of linear functions;  presently, we will keep our attention focused on the analytic geometry of lines.  To that end, our next task is to find algebraic equations that describe lines and we start with a discussion of vertical and horizontal lines.
+In this way, we may view the slope as  `the \textbf{rate of change} of $y$ with respect to $x$'.  From the expression \[ m = \frac{\Delta y}{\Delta x}\] we get $\Delta y = m \Delta x$ so that the $y$-values change `$m$' times as fast as the $x$-values.  We'll have more to say about this concept in Section \ref{ConstantandLinearFunctions} when we explore applications of linear functions;  presently, we will keep our attention focused on the analytic geometry of lines.  To that end, our next task is to find algebraic equations that describe lines and we start with a discussion of vertical and horizontal lines.
 
 
 Consider the two lines shown below: $V$ (for `V'ertical Line) and $H$ (for `H'orizontal Line).    
 
 
 
-\hspace{1in} \begin{tabular}{m{2in}m{3in}}
+\begin{center}
+\begin{tikzpicture}[scale=0.5,every node/.style={font=\scriptsize}]
 
-\begin{mfpic}[18]{-1}{5}{-5}{5}
-\arrow \reverse \arrow \polyline{(3,-5), (3,5)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\tcaption{The line $V$}
-\end{mfpic} &
-\begin{mfpic}[18]{-5}{5}{-5}{1}
-\arrow \reverse \arrow \polyline{(-5,-2), (5,-2)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,1){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1}
-\normalsize
-\tcaption{The line $H$}
-\end{mfpic} \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure: Line V
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\end{tabular}
+% Axes
+\draw[->] (-1.2,0) -- (5.2,0);
+\draw[->] (0,-5.2) -- (0,5.2);
 
-\smallskip
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
+
+% Tick marks and labels
+\foreach \x in {1,2,3,4}{
+  \draw (\x,0.08)--(\x,-0.08);
+  \node[below] at (\x,0) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}{
+  \draw (0.08,\y)--(-0.08,\y);
+  \node[left] at (0,\y) {$\y$};
+}
+
+% Vertical line x=3
+\draw[<->,line width=1pt] (3,-5.2) -- (3,5.2);
+
+% Caption
+\node[font=\normalsize] at (2,-6.2) {The line $V$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure: Line H
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=15cm]
+
+% Axes
+\draw[->] (-5.2,0) -- (5.2,0);
+\draw[->] (0,-5.2) -- (0,1.2);
+
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,1.1) {$y$};
+
+% Tick marks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}{
+  \draw (\x,0.08)--(\x,-0.08);
+  \node[below] at (\x,0) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1}{
+  \draw (0.08,\y)--(-0.08,\y);
+  \node[left] at (0,\y) {$\y$};
+}
+
+% Horizontal line y=-2
+\draw[<->,line width=1pt] (-5.2,-2) -- (5.2,-2);
+
+% Caption
+\node[font=\normalsize] at (0,-6.2) {The line $H$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+ 
 
 All of the points on the line $V$ have an $x$-coordinate of $3$.  Conversely, any point with an $x$-coordinate of $3$ lies on the line $V$.  Said differently, the point $(x,y)$ lies on $V$ if and only if $x = 3$.  Because of this, we say the equation $x=3$ \textit{describes} the line $V$, or, said differently, the \textit{graph} of the equation $x=3$ is the line $V$.  
 
-\medskip
+ 
 
 In Section \ref{Relations}, we'll spend a great deal of time talking about graphing equations.  For now, it suffices to know that a graph of an equation is a plot of all of the points which make the equation true.  So to graph $x=3$,  we plot all of the points $(x,y)$ which satisfy $x = 3$ and this gives us our vertical line $V$.      
 
-\medskip
+ 
 
 Turning our attention to $H$, we note that every point on $H$ has a $y$-coordinate of $-2$, and vice-versa.  Hence the equation $y = -2$ describes the line $H$, or the graph of the equation $y=-2$ is $H$.  In general:
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn} \label{verticalhorizontallines} Equations of Vertical and Horizontal Lines
+\begin{formula} \label{verticalhorizontallines} Equations of Vertical and Horizontal Lines
 
 \begin{itemize}
 
@@ -318,11 +413,11 @@ Turning our attention to $H$, we note that every point on $H$ has a $y$-coordina
 
 \end{itemize}
 
-\end{eqn}
+\end{formula}
 
 %% \ebm}
 
-\medskip
+ 
 
 Of course, we may be working on axes which aren't labeled with the `usual' $x$'s and $y$'s.  In this case, we understand Equation \ref{verticalhorizontallines} to say `$\text{horizontal axis label} = a$' describes a \textit{vertical} line through $(a,0)$ and  `$\text{vertical axis label} = b$' describes a \textit{horizontal} line through $(0,b)$.  
 
@@ -331,7 +426,6 @@ Of course, we may be working on axes which aren't labeled with the `usual' $x$'s
 
 \begin{enumerate}  \item Graph the following equations in the $xy$-plane: 
 
-\begin{multicols}{2}
 \begin{enumerate}
 
 \item $y = 3$ 
@@ -339,118 +433,192 @@ Of course, we may be working on axes which aren't labeled with the `usual' $x$'s
 \item $x=-117$
 
 \end{enumerate}
-\end{multicols}
-
-\enlargethispage{.1in}
-
-\pagebreak
 
 \item Find the equation of each of the given lines.
 
-\medskip
+\begin{center}
+\begin{tikzpicture}[scale=0.75,every node/.style={font=\scriptsize}]
 
-\hspace{0.5in} \begin{tabular}{m{2.5in}m{3in}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure: Line L1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\begin{mfpic}[18]{-1}{5}{-5}{5}
-\arrow \reverse \arrow \polyline{(2,-5), (2,5)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\tcaption{Line $L_{1}$}
-\end{mfpic} &
-\begin{mfpic}[18]{-5}{5}{-1}{5}
-\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,5){\scriptsize $s$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$4$} 4, {$3$} 3, {$2$} 2, {$1$} 1}
-\normalsize
-\tcaption{Line $L_{2}$}
-\end{mfpic} \\
+% Axes
+\draw[->] (-1.2,0) -- (5.2,0);
+\draw[->] (0,-5.2) -- (0,5.2);
 
-\end{tabular}
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
+
+% Tick marks and labels
+\foreach \x in {1,2,3,4}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,0) {$\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}{
+    \draw (0.08,\y)--(-0.08,\y);
+    \node[left] at (0,\y) {$\y$};
+}
+
+% Line x = 2
+\draw[<->,line width=1pt] (2,-5.2) -- (2,5.2);
+
+% Caption
+\node[font=\normalsize] at (2,-6.2) {Line $L_1$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure: Line L2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=10cm]
+
+% Axes
+\draw[->] (-5.2,0) -- (5.2,0);
+\draw[->] (0,-1.2) -- (0,5.2);
+
+\node[right] at (5.1,0) {$t$};
+\node[above] at (0,5.1) {$s$};
+
+% Tick marks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,0) {$\x$};
+}
+
+\foreach \y in {1,2,3,4}{
+    \draw (0.08,\y)--(-0.08,\y);
+    \node[left] at (0,\y) {$\y$};
+}
+
+% Line y = 3
+\draw[<->,line width=1pt] (-5.2,3) -- (5.2,3);
+
+% Caption
+\node[font=\normalsize] at (0,-2.2) {Line $L_2$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 
 \end{enumerate}
 
-{\bf Solution.}
-
+\begin{explanation}
+    
 \begin{enumerate}
 
 \item  Since we're in the familiar $xy$-plane, the graph of $y=3$ is a horizontal line through $(0,3)$, shown below on the left and the graph of $x = -117$ is a vertical line through $(-117, 0)$.  We scale the $x$-axis differently than the $y$-axis to produce the graph below on the right.
 
-\bigskip
+\begin{center}
+\begin{tikzpicture}[scale=0.5,every node/.style={font=\scriptsize}]
 
-\begin{tabular}{m{3in}m{2.5in}}
-\begin{mfpic}[18]{-5}{5}{-1}{5}
-\arrow \reverse \arrow \polyline{(-5,3), (5,3)}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{1,2,3,4}
-\point[3pt]{(0,3)}
-\tlabel[cc](0.75, 3.5){\scriptsize $(0,3)$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$4$} 4,{$3$} 3, {$2$} 2, {$1$} 1}
-\normalsize
-\tcaption{The line $y = 3$}
-\end{mfpic} &
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure: y = 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\hspace{.3in} \begin{mfpic}[18]{-5}{1}{-5}{5}
-\arrow \reverse \arrow \polyline{(-3,-5), (-3,5)}
-\axes
-\tlabel[cc](1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\point[3pt]{(-3,0)}
-\tlabel[cc](-1.75, 0.5){\scriptsize $(-117,0)$}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-117 \hspace{10pt}$} -3}
-\axislabels {y}{{$-4$} -4,{$-3$} -3,{$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\tcaption{The line $x=-117$}
-\end{mfpic} \\
+% Axes
+\draw[->] (-5.2,0) -- (5.2,0);
+\draw[->] (0,-1.2) -- (0,5.2);
 
-\end{tabular}
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
+
+% Tick marks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}{
+  \draw (\x,0.08)--(\x,-0.08);
+  \node[below] at (\x,0) {$\x$};
+}
+
+\foreach \y in {1,2,3,4}{
+  \draw (0.08,\y)--(-0.08,\y);
+  \node[left] at (0,\y) {$\y$};
+}
+
+% Horizontal line y=3
+\draw[<->,line width=1pt] (-5.2,3) -- (5.2,3);
+
+% Point and label
+\fill (0,3) circle (3pt);
+\node[above right] at (0,3) {$(0,3)$};
+
+% Caption
+\node[font=\normalsize] at (0,-2.1) {The line $y=3$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure: x = -117
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=15cm]
+
+% Axes
+\draw[->] (-5.2,0) -- (1.2,0);
+\draw[->] (0,-5.2) -- (0,5.2);
+
+\node[right] at (1.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
+
+% x tick at displayed value -117
+\draw (-3,0.08)--(-3,-0.08);
+\node[below] at (-3,0) {$-117$};
+
+% y ticks
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}{
+  \draw (0.08,\y)--(-0.08,\y);
+  \node[left] at (0,\y) {$\y$};
+}
+
+% Vertical line
+\draw[<->,line width=1pt] (-3,-5.2) -- (-3,5.2);
+
+% Point and label
+\fill (-3,0) circle (3pt);
+\node[above right] at (-3,0) {$(-117,0)$};
+
+% Caption
+\node[font=\normalsize] at (-2,-6.2) {The line $x=-117$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 
 \item  Since $L_{1}$ is a vertical line through $(2,0)$, and the horizontal axis is labeled with `$x$', the equation of $L_{1}$ is $x = 2$.  Since $L_{2}$ is a horizontal line through $(0,3)$ and the vertical axis is labeled as `$s$', the equation of this line is $s = 3$.  \qed
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
- 
-\pagebreak
+
 
 Using the concept of slope, we can develop equations for the other varieties of lines.  Suppose a line has a slope of $m$ and contains the point $\left(x_0, y_0\right)$.  Suppose $(x,y)$ is another point on the line, as indicated below.
 
 \begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-\begin{mfpic}[15]{-2}{4}{0}{5}
-\point[3pt]{(-1,2), (3,4)}
-\arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )}
-\dashed \polyline{(-1,2), (3,2), (3,4)}
-\tlabel[t](-1.5,1.5){$\left(x_0, y_0\right)$}
-\tlabel[t](3.5,4){$\left(x, y \right)$}
-\end{mfpic}
+% Coordinates
+\coordinate (P) at (-1,2);
+\coordinate (Q) at (3,4);
 
+% Line through the two points
+\draw[<->,line width=1pt] (-2,1.5) -- (4,4.5);
+
+% Dashed helper lines
+\draw[dashed] (P) -- (3,2) -- (Q);
+
+% Points
+\fill (P) circle (3pt);
+\fill (Q) circle (3pt);
+
+% Labels
+\node[above left] at (P) {$\left(x_0,y_0\right)$};
+\node[above left] at (Q) {$\left(x,y\right)$};
+
+\end{tikzpicture}
 \end{center}
-
-\vspace{-.1in}
 
 Equation \ref{slope} yields
 
@@ -459,49 +627,45 @@ Equation \ref{slope} yields
 \setlength{\extrarowheight}{2pt}
 
 \[ \begin{array}{rclr}  
-                      m & = & \dfrac{y - y_0}{x-x_0} & \\
+                      m & = & \frac{y - y_0}{x-x_0} & \\
 m\left(x - x_0\right) & = & y - y_0 & \\ 
               y - y_0 & = & m\left(x - x_0\right) & \\
    \end{array} \]
 
 which is known as the \textbf{point-slope form} of a line.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn} \label{pointslope} The\index{point-slope form of a line}\index{line ! point-slope form} \textbf{point-slope form} of the line with slope $m$ containing the point $\left(x_0, y_0\right)$ is the equation \[y - y_0  =  m\left(x - x_0\right)\] $ $ \vspace{-.2in}
-\end{eqn}
+\begin{formula}\label{pointslope} The\index{point-slope form of a line}\index{line ! point-slope form} \textbf{point-slope form} of the line with slope $m$ containing the point $\left(x_0, y_0\right)$ is the equation \[y - y_0  =  m\left(x - x_0\right)\] $ $ \vspace{-.2in}
+\end{formula}
 
 %% \ebm}
 
-\medskip
+ 
 
 A few remarks about Equation \ref{pointslope} are in order. First, note that if the slope $m = 0$, then the line is horizontal and Equation \ref{pointslope} reduces to  $y - y_0 = 0$ or $y = y_0$, as prescribed by Equation \ref{verticalhorizontallines}.\footnote{Here we have $y_0$ as the constant whereas in the Equation we used the letter $b$. The form $y =$ constant is what matters.} Second, we may need to change the letters in Equation \ref{pointslope} from `$x$' and `$y$' depending on the context, so while  Equation \ref{pointslope} should be committed to memory, it should be understood that `$x$' refers to whichever variable is used to label the horizontal axis, and $y$ refers to whichever variable is used to label the vertical axis. Lastly, while Equation \ref{pointslope} is, by far, the easiest way to \textit{construct} the equation of a line given a point and a slope, more often than not, the equation is solved for $y$ and simplified into the form below.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn} \label{slopeintercept} The\index{slope-intercept form of a line}\index{line ! slope-intercept form} \textbf{slope-intercept form} of the line with slope $m$ and $y$-intercept $(0,b)$ is the equation \[y  =  mx + b\] $ $ \vspace{-.2in}
-\end{eqn}
+\begin{formula}\label{slopeintercept} The\index{slope-intercept form of a line}\index{line ! slope-intercept form} \textbf{slope-intercept form} of the line with slope $m$ and $y$-intercept $(0,b)$ is the equation \[y  =  mx + b\] $ $ \vspace{-.2in}
+\end{formula}
 
 %% \ebm}
 
-\smallskip
+ 
 
-Equation \ref{slopeintercept} is probably\footnote{Hopefully?} a familiar sight from Intermediate Algebra.  You may recall from that class that the  `intercept' in `slope-intercept' comes from the fact that this line `intercepts' or crosses the $y$-axis at the point $(0,b)$.\footnote{We can verify this algebraically by setting $x=0$ in the equation $y=mx+b$ and obtaining $y = b$.} If we set the slope, $m = 0$, we obtain $y=b$, the formula for Horizontal Lines first introduced in Equation \ref{verticalhorizontallines}.  Hence, any line which has a defined slope $m$ can be represented in both point-slope and slope-intercept forms.  The only exceptions are vertical lines.\footnote{We'll have more to say about this in Section \ref{ConstantandLinearFunctions}.}  There is one equation - the aptly named 'general form' - which describes every type of line and it is presented on the next page.
+Equation \ref{slopeintercept} is probably\footnote{Hopefully?} a familiar sight from Intermediate Algebra.  You may recall from that class that the  `intercept' in `slope-intercept' comes from the fact that this line `intercepts' or crosses the $y$-axis at the point $(0,b)$.\footnote{We can verify this algebraically by setting $x=0$ in the equation $y=mx+b$ and obtaining $y = b$.} If we set the slope, $m = 0$, we obtain $y=b$, the formula for Horizontal Lines first introduced in Equation \ref{verticalhorizontallines}.  Hence, any line which has a defined slope $m$ can be represented in both point-slope and slope-intercept forms.  The only exceptions are vertical lines.\footnote{We'll have more to say about this in Section \ref{ConstantandLinearFunctions}.}  There is one equation - the aptly named 'general form' - which describes every type of line and it is presented next.
 
-\pagebreak
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn} \label{generallineform} Every line may be represented by an equation of the form $Ax + By = C$, where $A$, $B$ and $C$ are real numbers for which $A$ and $B$ aren't both zero.  This is called \textit{a}  \index{line ! general form}\textbf{general form} of the line. \index{general form of a line}
-\end{eqn}
+\begin{formula}\label{generallineform} Every line may be represented by an equation of the form $Ax + By = C$, where $A$, $B$ and $C$ are real numbers for which $A$ and $B$ aren't both zero.  This is called \textit{a}  \index{line ! general form}\textbf{general form} of the line. \index{general form of a line}
+\end{formula}
 
-%% \ebm}
-
-\medskip
 
 Note the indefinite article `a' in Equation \ref{generallineform}.  The line $y = 5$ is a general form for the horizontal line through $(0,5)$, but so are $3y = 15$ and $0.5 y = 2.5$.  The reader is left to ponder the use of the definite article `the' in Equations \ref{pointslope} and \ref{slopeintercept}.  Regardless of \textit{which} form the equation of a line takes, note that the variables involved are all raised to the first power.\footnote{Recall, $x = x^{1}$, $y = y^{1}$, etc.}  For instance, there are no $\sqrt{x}$ terms, no $y^2$ terms or any variables appearing in denominators.  Let's look at a few examples.
 
@@ -526,86 +690,142 @@ Note the indefinite article `a' in Equation \ref{generallineform}.  The line $y 
 \item  Find the slope-intercept form of the equation of the line below:
 
 \begin{center}
-\begin{mfpic}[15]{-1}{6}{-1}{6}
-\arrow \reverse \arrow \polyline{(-1,6), (6,-1)}
-\point[3pt]{(0,5),(5,0)}
-\axes
-\tlabel[cc](6,-0.5){\scriptsize $t$}
-\tlabel[cc](0.5,6){\scriptsize $s$}
-\xmarks{1,2,3,4,5}
-\ymarks{1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
-\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
+\begin{tikzpicture}[scale=0.75,every node/.style={font=\scriptsize}]
 
-\end{mfpic}
+% Axes
+\draw[->] (-1.2,0) -- (6.2,0);
+\draw[->] (0,-1.2) -- (0,6.2);
 
+\node[right] at (6.1,0) {$t$};
+\node[above] at (0,6.1) {$s$};
 
+% Tick marks and labels
+\foreach \x in {1,2,3,4,5}{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,0) {\tiny $\x$};
+}
+
+\foreach \y in {1,2,3,4,5}{
+    \draw (0.08,\y)--(-0.08,\y);
+    \node[left] at (0,\y) {\tiny $\y$};
+}
+
+% Line
+\draw[<->,line width=1pt] (-1,6) -- (6,-1);
+
+% Points
+\fill (0,5) circle (3pt);
+\fill (5,0) circle (3pt);
+
+\end{tikzpicture}
 \end{center}
 
 \end{enumerate}
 
-\smallskip
+ 
 
 {\bf Solution.}  
 
 \begin{enumerate}
 
-\item To graph a line, we need just two points on that line.  There are several ways to do this, and we showcase two of them here.  For the first equation, we recognize that $y = 3x-1$ is in slope-intercept form, $y = mx+b$, with $m = 3$ and $b = -1$.  This immediately gives us one point on the graph -- the $y$-intercept $(0,-1)$. From here, we use the slope $m = 3 = \frac{3}{1}$ and move one unit to the right and three units up, to obtain a second point on the line, $(1,2)$.  Connecting these points gives us the graph on the left at the top of the next page.  
+\item To graph a line, we need just two points on that line.  There are several ways to do this, and we showcase two of them here.  For the first equation, we recognize that $y = 3x-1$ is in slope-intercept form, $y = mx+b$, with $m = 3$ and $b = -1$.  This immediately gives us one point on the graph -- the $y$-intercept $(0,-1)$. From here, we use the slope $m = 3 = \frac{3}{1}$ and move one unit to the right and three units up, to obtain a second point on the line, $(1,2)$.  Connecting these points gives us the graph below on the left.  
 
-\smallskip
+ 
 
-The second equation,  $2x+4y = 3$, is a general form of a line.  To get two points here, we choose `convenient' values for one of the variables, and solve for the other variable.  Choosing $x=0$, for example, reduces $2x+4y = 3$ to $4y = 3$, or $y = \frac{3}{4}$.  This means the point $\left(0, \frac{3}{4} \right)$ is on the graph.  Choosing $y = 0$ gives $2x = 3$, or $x = \frac{3}{2}$.  This gives is a second point on the line, $\left(\frac{3}{2}, 0 \right)$.\footnote{You may recall, that this is the $x$-intercept of the line.} Our graph of $2x+4y = 3$ is on the right at the top of the next page.
+The second equation,  $2x+4y = 3$, is a general form of a line.  To get two points here, we choose `convenient' values for one of the variables, and solve for the other variable.  Choosing $x=0$, for example, reduces $2x+4y = 3$ to $4y = 3$, or $y = \frac{3}{4}$.  This means the point $\left(0, \frac{3}{4} \right)$ is on the graph.  Choosing $y = 0$ gives $2x = 3$, or $x = \frac{3}{2}$.  This gives is a second point on the line, $\left(\frac{3}{2}, 0 \right)$.\footnote{You may recall, that this is the $x$-intercept of the line.} Our graph of $2x+4y = 3$ is below on the right.
 
-\pagebreak 
+\begin{center}
+\begin{tikzpicture}[scale=0.75,every node/.style={font=\scriptsize}]
 
-\hspace{1in} \begin{tabular}{m{2in}m{3in}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left graph: y = 3x - 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\begin{mfpic}[10]{-3}{3}{-5}{5}
-\point[3pt]{(0,-1), (1,2)}
-\arrow \reverse \arrow \polyline{( -1,-4), (2,5)}
-\axes
-\tlabel[cc](3,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\xmarks{-2,-1,1,2}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tcaption{$y = 3x-1$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2}
-\axislabels {y}{{\tiny $-1$} -1, {\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
-\end{mfpic} & 
+% Axes
+\draw[->] (-3.2,0) -- (3.2,0);
+\draw[->] (0,-5.2) -- (0,5.2);
 
-\begin{mfpic}[15]{-4}{4}{-1}{3}
-\point[3pt]{( 0,0.75), (1.5,0)}
-\arrow \reverse \arrow \polyline{(-3,2.25),(3,-0.75)}
-\axes
-\tlabel[cc](4,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,3){\scriptsize $y$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{1}
-\tcaption{$2x+4y = 3$}
-\tlpointsep{4pt}
-\axislabels {x}{ {\tiny $-3 \hspace{7pt}$} -3, {\tiny $-2 \hspace{7pt}$} -2,{\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2 , {\tiny $3$} 3}
-\axislabels {y}{{\tiny $1$} 1,{\tiny $2$} 2}
-\end{mfpic} \\
+\node[right] at (3.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
 
-\end{tabular}
+% Tick marks
+\foreach \x in {-2,-1,1,2}{
+  \draw (\x,0.08)--(\x,-0.08);
+  \node[below] at (\x,0) {\tiny $\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}{
+  \draw (0.08,\y)--(-0.08,\y);
+}
+
+% Label selected y-values (to match the original)
+\foreach \y in {-1,1,2,3,4}{
+  \node[left] at (0,\y) {\tiny $\y$};
+}
+
+% Line
+\draw[<->,line width=1pt] (-1,-4) -- (2,5);
+
+% Points
+\fill (0,-1) circle (3pt);
+\fill (1,2) circle (3pt);
+
+% Caption
+\node[font=\normalsize] at (0,-6.2) {$y=3x-1$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right graph: 2x + 4y = 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=9cm]
+
+% Axes
+\draw[->] (-4.2,0) -- (4.2,0);
+\draw[->] (0,-1.2) -- (0,3.2);
+
+\node[right] at (4.1,0) {$x$};
+\node[above] at (0,3.1) {$y$};
+
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3}{
+  \draw (\x,0.08)--(\x,-0.08);
+  \node[below] at (\x,0) {\tiny $\x$};
+}
+
+\foreach \y in {1,2}{
+  \draw (0.08,\y)--(-0.08,\y);
+  \node[left] at (0,\y) {\tiny $\y$};
+}
+
+% Line
+\draw[<->,line width=1pt] (-3,2.25) -- (3,-0.75);
+
+% Points
+\fill (0,0.75) circle (3pt);
+\fill (1.5,0) circle (3pt);
+
+% Caption
+\node[font=\normalsize] at (0,-2.0) {$2x+4y=3$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 
 \item We'll assume we're using the familiar $(x,y)$ axis labels and begin by finding the slope of the line using Equation \ref{slope}:  $m = \frac{\Delta y}{\Delta x} = \frac{1 - 3}{2 - (-1)} = -\frac{2}{3}$.  Next, we substitute this result, along with one of the given points, into the point-slope equation of the line, Equation \ref{pointslope}. We have two options for the point $\left(x_0, y_0\right)$. We'll use $(-1,3)$ and leave it to the reader to check that using $(2,1)$ results in the same equation.  Substituting into the point-slope form of the line, we get 
 
-\vspace{-.1in}
 
 \setlength{\extrarowheight}{10pt}
 \[\begin{array}{rclr} 
 y - y_0 & = & m\left(x - x_0\right)  & \\
-y - 3 & = & -\dfrac{2}{3} \left(x - (-1)\right) & \\
-y - 3 & = & -\dfrac{2}{3} \left(x +1 \right) & \\
-y - 3& = & -\dfrac{2}{3}x - \dfrac{2}{3}\\
-y& = & -\dfrac{2}{3}x - \dfrac{2}{3} + 3\\
-y & = & -\dfrac{2}{3} x + \dfrac{7}{3}. \\ 
+y - 3 & = & -\frac{2}{3} \left(x - (-1)\right) & \\
+y - 3 & = & -\frac{2}{3} \left(x +1 \right) & \\
+y - 3& = & -\frac{2}{3}x - \frac{2}{3}\\
+y& = & -\frac{2}{3}x - \frac{2}{3} + 3\\
+y & = & -\frac{2}{3} x + \frac{7}{3}. \\ 
 \end{array} \]
-
-\setlength{\extrarowheight}{2pt}
 
 We can check our answer by showing that both $(-1,3)$ and $(2,1)$ are on the graph of $y  =  -\frac{2}{3} x + \frac{7}{3}$ algebraically by showing that the equation holds true when we substitute $x = -1$ and $y=3$ and when $x = 2$ and $y = 1$.
 
@@ -628,11 +848,11 @@ As before we can check this line contains both points $(t,s) = (0,5)$ and $(t,s)
 
 While every point on a line holds value and meaning,\footnote{Lines missing points  - even one - usually belie some algebraic pathology which we'll discuss in more detail in Chapter \ref{RationalFunctions}.} we've reminded you of certain points, called `intercepts,' which hold special enough significance to be singled out. Formally, we define these as follows.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \begin{definition}  Given a graph of an equation in the $xy$-plane:
 
@@ -654,18 +874,18 @@ While every point on a line holds value and meaning,\footnote{Lines missing poin
 
 %% \ebm}
 
-\medskip
+ 
 
 As usual, the labels of the axes in the problem will dictate the labels on the intercepts.  If we're working in the $vw$-plane, for instance, there would be $v$- and $w$-intercepts.
 
-\smallskip
+ 
 
 The last little bit of analytic geometry we need to review about lines are the concepts of `parallel' and `perpendicular' lines.  Parallel lines do not intersect,\footnote{Well, at least in Euclidean Geometry \dots} and hence, parallel lines necessarily have the same slope.  Perpendicular lines intersect at a right ($90^{\circ}$) angle.   The relationship between these slopes is somewhat more complicated, and is summarized below.
 
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \begin{theorem}  Suppose line $L_1$ has slope $m_1$ and line $L_2$ has slope $m_2$:
 
@@ -679,7 +899,7 @@ The last little bit of analytic geometry we need to review about lines are the c
 
 \item If $m_1 \neq 0$ and  $m_2 \neq 0$ then $L_1$ and $L_2$ are perpendicular (written $L_1 \perp L_2$) if and only if $m_1 m_2 = -1$.
 
-\textbf{NOTE:} $m_1 m_2 = -1$  is equivalent to $m_2 = -\dfrac{1}{m_1}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
+\textbf{NOTE:} $m_1 m_2 = -1$  is equivalent to $m_2 = -\frac{1}{m_1}$, so that perpendicular lines have slopes which are `opposite reciprocals' of one another.
 
 \end{itemize}
 
@@ -688,40 +908,67 @@ The last little bit of analytic geometry we need to review about lines are the c
 %% \ebm}
 
 \begin{center}
+\begin{tikzpicture}[scale=0.75,every node/.style={font=\scriptsize}]
 
-\begin{tabular}{cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure: Parallel lines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\begin{mfpic}[15]{-1}{5}{-1}{5}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4.5,4){\scriptsize $L_1$}
-\tlabel[cc](3.5,5){\scriptsize $L_2$}
-\arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
-\arrow \reverse \arrow \polyline{(-2,0), (3,5)} 
-\tlpointsep{4pt}
-\tcaption{$L_1 \parallel L_2$, $m_1 = m_2$}
-\axes
+% Axes
+\draw[->] (-1.2,0) -- (5.2,0);
+\draw[->] (0,-1.2) -- (0,5.2);
 
-\end{mfpic} \hspace{1.5in} & 
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
 
-\begin{mfpic}[15]{-1}{5}{-1}{5}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](4.5,4){\scriptsize $L_1$}
-\tlabel[cc](5,-1){\scriptsize $L_2$}
-\arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
-\arrow \reverse \arrow \polyline{(-1,5), (4.5,-0.5)}
-\polyline{(2,2), (1.75, 2.25), (2,2.5), (2.25, 2.25)} 
-\point[3pt]{(2,2)}
-\tlpointsep{4pt}
-\axes
-\tcaption{$L_1 \perp L_2$, $m_1 m_2 = -1$}
+% Lines
+\draw[<->,line width=1pt] (-1,-1) -- (4,4);
+\draw[<->,line width=1pt] (-2,0) -- (3,5);
 
-\end{mfpic} \\
+% Labels
+\node at (4.4,4.0) {$L_1$};
+\node at (3.4,5.0) {$L_2$};
 
+% Caption
+\node[font=\normalsize,align=center] at (2,-2)
+{$L_1\parallel L_2,\quad m_1=m_2$};
 
-\end{tabular}
+\end{scope}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure: Perpendicular lines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=10cm]
+
+% Axes
+\draw[->] (-1.2,0) -- (5.2,0);
+\draw[->] (0,-1.2) -- (0,5.2);
+
+\node[right] at (5.1,0) {$x$};
+\node[above] at (0,5.1) {$y$};
+
+% Lines
+\draw[<->,line width=1pt] (-1,-1) -- (4,4);
+\draw[<->,line width=1pt] (-1,5) -- (4.5,-0.5);
+
+% Intersection point
+\fill (2,2) circle (3pt);
+
+% Right-angle marker
+\draw (2,2) -- (1.75,2.25) -- (2,2.5) -- (2.25,2.25);
+
+% Labels
+\node at (4.4,4.0) {$L_1$};
+\node at (5.0,-1.0) {$L_2$};
+
+% Caption
+\node[font=\normalsize,align=center] at (2,-2)
+{$L_1\perp L_2,\quad m_1m_2=-1$};
+
+\end{scope}
+
+\end{tikzpicture}
 \end{center}
 
 
@@ -750,9 +997,9 @@ y& = & 2x-2\\
 
 \item To find the line perpendicular to $y = 2x-1$ containing $(3,4)$, we use the slope $m = -\frac{1}{2}$ in the point-slope formula:\[\begin{array}{rclr} 
 y - y_0 & = & m\left(x - x_0\right)  & \\ 
-y - 4 & = & -\dfrac{1}{2} \left(x - 3\right) & \\  
-y - 4 & = & -\dfrac{1}{2} x + \dfrac{3}{2} & \\  
-y& = & -\dfrac{1}{2} x + \dfrac{11}{2}\\
+y - 4 & = & -\frac{1}{2} \left(x - 3\right) & \\  
+y - 4 & = & -\frac{1}{2} x + \frac{3}{2} & \\  
+y& = & -\frac{1}{2} x + \frac{11}{2}\\
 \end{array} \]  Algebraically, we check that the slope is $m = -\frac{1}{2}$ and when $x = 3$ we get $y = 4$ as required.  When checking using our graphing utility, we centered the viewing window at $(3, 4)$ and had to `square' it, removing its default aspect ratio, to truly observe the perpendicular nature of the lines.
 
 \begin{center}
@@ -788,49 +1035,51 @@ Our last example with lines sets up a fourth kind of symmetry which will be revi
 
 \begin{example} \label{inversemidpointex2} Show that the points $(a,b)$ and $(b,a)$ in the $xy$-plane are symmetric about the line $y = x$.  
 
-\medskip
+ 
 
 {\bf Solution.}  If $a = b$ then $(a, b) = (a, a) = (b, a)$ and this point lies on the line $y = x$.\footnote{Please ask your instructor if lying on the line counts as being `symmetric about the line' or not.}  To prove the claim for the case when $a \neq b$, we will show that the line $y = x$ is a perpendicular bisector of the line segment with endpoints $(a,b)$ and $(b,a)$, as illustrated below.
 
-
 \begin{center}
-\begin{mfpic}[15]{-1}{5}{-1}{5}
-\arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](1,3.5){\scriptsize $(a,b)$}
-\tlabel[cc](3,0.5){\scriptsize $(b,a)$}
-\dashed \polyline{(1,3), (3,1)}
-\polyline{(2,2), (1.75, 2.25), (2,2.5), (2.25, 2.25)} 
-\point[3pt]{(1,3),(3,1), (2,2)}
-\tlpointsep{4pt}
-\axes
+\begin{tikzpicture}[scale=0.9]
 
-\end{mfpic}
+% Axes
+\draw[->] (-1.2,0) -- (5.2,0) node[right] {\scriptsize $x$};
+\draw[->] (0,-1.2) -- (0,5.2) node[above] {\scriptsize $y$};
 
+% Line y=x
+\draw[<->, thick] (-1,-1) -- (4,4);
 
+% Dashed segment joining the reflected points
+\draw[dashed] (1,3) -- (3,1);
+
+% Right-angle marker
+\draw (1.82,2.18) -- (2,2.36) -- (2.18,2.18) -- (2,2);
+
+% Points
+\fill (1,3) circle (3pt);
+\fill (3,1) circle (3pt);
+\fill (2,2) circle (3pt);
+
+% Labels
+\node[above left] at (1,3) {\scriptsize $(a,b)$};
+\node[below right] at (3,1) {\scriptsize $(b,a)$};
+
+\end{tikzpicture}
 \end{center}
 
-
-
-To show the `perpendicular' part,  we first note the slope of the line containing $(a,b)$ and $(b,a)$ is \[ m= \dfrac{a-b}{b-a} = \dfrac{\cancel{(a-b)}}{-\cancel{(b-a)}} = -1\]
+To show the `perpendicular' part,  we first note the slope of the line containing $(a,b)$ and $(b,a)$ is \[ m= \frac{a-b}{b-a} = \frac{\cancel{(a-b)}}{-\cancel{(b-a)}} = -1\]
 
 Since the slope of $y = x = 1x + 0$ is $m = 1$,  we see that the slopes of these two lines are negative reciprocals.  Hence, $y=x$ and the line segment with endpoints $(a,b)$ and $(b,a)$ are perpendicular.  For the `bisector' part, we use Equation \ref{midpointformula} to find the midpoint of  the line segment with endpoints $(a,b)$ and $(b,a)$:
 
-\setlength{\extrarowheight}{10pt}
 
 \[ \begin{array}{rcl}
 
- M & = & \left( \dfrac{a+b}{2},  \dfrac{b+a}{2} \right) \\
-   & = & \left( \dfrac{a+b}{2},  \dfrac{a+b}{2} \right)  \\ \end{array} \]
+ M & = & \left( \frac{a+b}{2},  \frac{b+a}{2} \right) \\
+   & = & \left( \frac{a+b}{2},  \frac{a+b}{2} \right)  \\ \end{array} \]
 
-Since the $x$ and $y$ coordinates of this point are the same, we find that the midpoint lies on the line $y=x$. \qed
+Since the $x$ and $y$ coordinates of this point are the same, we find that the midpoint lies on the line $y=x$. 
 
 \end{example}
-
-\newpage
-
-\subsection{Exercises}
 
 %% SKIPPED %% \input{ExercisesforAppLines}
 
