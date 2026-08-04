@@ -89,7 +89,7 @@ Again, the reader is encouraged to write out the sum and compare it to Definitio
 
 \item  $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + - \ldots + \frac{1}{117}$
 
-\item  $0.9 + 0.09 + 0.009 + \ldots 0. \! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9$
+\item  $0.9 + 0.09 + 0.009 + \ldots 0.\!  \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! 9$
 
 \end{enumerate}
 
@@ -153,7 +153,7 @@ To determine the upper limit of summation, we note that to produce the $n-1$ zer
 Since $n$ is used in the limits of the summation, we need to choose a different letter for the index of summation.\footnote{To see why, try writing the summation using `$n$' as the index.}  We choose $k$ and get
 
   
-\[ \begin{array}{rcl} 0.9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9 & = & \displaystyle{\sum_{k=1}^{n} \frac{9}{10^{k}}} \end{array} \]
+\[ \begin{array}{rcl} 0.9 + 0.09 + 0.009 + \ldots 0.\!  \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \!  9 & = & \displaystyle{\sum_{k=1}^{n} \frac{9}{10^{k}}} \end{array} \]
 
 \qed
 
@@ -292,7 +292,7 @@ Our results are summarized below.\footnote{Alternatively, we can use Exercise \r
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn}  \label{arithgeosum}  \textbf{Sums of Arithmetic and Geometric Sequences:}
+\begin{formula}  \label{arithgeosum}  \textbf{Sums of Arithmetic and Geometric Sequences:}
 
 \begin{itemize}
 
@@ -313,7 +313,7 @@ Our results are summarized below.\footnote{Alternatively, we can use Exercise \r
 
 \end{itemize}
 
-\end{eqn}
+\end{formula}
 
 %% \ebm}
 
@@ -406,11 +406,11 @@ If we let $t$ be the number of years this investment strategy is followed, then 
 
 %% \colorbox{ResultColor}{\bbm
 
-\begin{eqn}  \label{fvannuity}  \textbf{Future Value of an Ordinary Annuity:}  Suppose an annuity offers an annual interest rate $r$ compounded $n$ times per year. Let $i = \frac{r}{n}$ be the interest rate per compounding period. If a deposit $P$ is made at the end of each compounding  period, the amount $A$ in the account after $t$ years is given by
+\begin{formula}  \label{fvannuity}  \textbf{Future Value of an Ordinary Annuity:}  Suppose an annuity offers an annual interest rate $r$ compounded $n$ times per year. Let $i = \frac{r}{n}$ be the interest rate per compounding period. If a deposit $P$ is made at the end of each compounding  period, the amount $A$ in the account after $t$ years is given by
 
 \[A = \frac{P\left((1+i)^{nt} - 1\right)}{i}\]
 
-\end{eqn}
+\end{formula}
 
 %% \ebm}
 
@@ -475,7 +475,7 @@ As a motivating example, consider the number $0.\overline{9}$.  We can write thi
 
 From Example \ref{seriesex1}, we know we can write the sum of the first $n$ of these terms as 
 
-\[ 0.\underbrace{9 \cdots 9}_{\text{$n$ nines}} = .9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}} \! \! \! \! 9 = \displaystyle{\sum_{k=1}^{n} \frac{9}{10^{k}}} \]
+\[ 0.\underbrace{9 \cdots 9}_{\text{$n$ nines}} = .9 + 0.09 + 0.009 + \ldots 0.\!  \underbrace{0 \cdots 0}_{\text{$n-1$ zeros}}  \! 9 = \displaystyle{\sum_{k=1}^{n} \frac{9}{10^{k}}} \]
 
 Using Equation \ref{arithgeosum}, we have
 
@@ -824,10 +824,10 @@ RS_{n} & = & \displaystyle{ \sum_{k=1}^{n} f(x_{k}) \Delta x} & \\
             & = & \displaystyle{ \sum_{k=1}^{n} \left[\frac{16k}{n} - \frac{16k^2}{n^2} \right] \left( \frac{4}{n} \right)} & \\  
              & = & \displaystyle{ \sum_{k=1}^{n} \left[\frac{64k}{n^2} - \frac{64k^2}{n^3} \right]} & \text{Distribute the $ \frac{4}{n}$.}  \\  
              & = & \displaystyle{ \sum_{k=1}^{n} \frac{64k}{n^2}  - \sum_{k=1}^{n} \frac{64k^2}{n^3} } & \text{Sum and Difference Property} \\  
-            & = & \displaystyle{ \frac{64}{n^2} \sum_{k=1}^{n} k  - \frac{64}{n^3} \sum_{k=1}^{n} k^2 } & \text{Distributive Property\footnotemark} \\  
+            & = & \displaystyle{ \frac{64}{n^2} \sum_{k=1}^{n} k  - \frac{64}{n^3} \sum_{k=1}^{n} k^2 } & \text{Distributive Property (} n \text{ is a constant we can factor out)}\\  
             & = & \displaystyle{ \frac{64}{n^2} \left( \frac{n(n+1)}{2} \right) - \frac{64}{n^3}\left( \frac{n(n+1)(2n+1)}{6} \right) } & \text{Summation Formulas} \\  
           & = & \displaystyle{\frac{32(n+1)}{n}  - \frac{32(n+1)(2n+1)}{3n^2} =  \frac{32n^2-32}{3n^2}}&  \\  
- \end{array}\] \footnotetext{Note:  the counter here is `$k$,' not `$n$,'  so as far as $k$ is concerned, `$n$' is a constant so we can factor it out of the summation.}
+ \end{array}\] %\footnotetext{Note:  the counter here is `$k$,' not `$n$,'  so as far as $k$ is concerned, `$n$' is a constant so we can factor it out of the summation.}
  
  Note we can partially check our answer at thus point by substituting $n=4$ and $n=8$ to our formula to $RS_{n}$ to see if we recover our answers from above.  We get $RS_{4} = \frac{32(4)^2 - 32}{3(4^2)}= \frac{480}{48} = 10$ and $RS_{8} = \frac{32(8)^2 - 32}{3(8)^2} = \frac{2016}{192} = 10.5$, as required.
  
