@@ -211,7 +211,7 @@ Now that we've had practice computing the modulus of a complex number, we state 
 
 \item  \textbf{Power Rule:}  $\left|z^{n}\right| = |z|^{n}$ for all natural numbers, $n$ \index{power rule ! for the modulus of a complex number}
 
-\item  \textbf{Quotient Rule:}  $\left| \dfrac{z}{w} \right| = \dfrac{|z|}{|w|}$, provided $w \neq 0$ \index{quotient rule ! for the modulus of a complex number}
+\item  \textbf{Quotient Rule:}  $\left| \frac{z}{w} \right| = \frac{|z|}{|w|}$, provided $w \neq 0$ \index{quotient rule ! for the modulus of a complex number}
 
 \end{itemize}
 
@@ -271,8 +271,8 @@ Hence, $P(k+1)$ is true, which means $\left|z^{n}\right| = |z|^{n}$ is true for 
 Like the Power Rule, the Quotient Rule can also be established with the help of the Product Rule. We assume $w \neq 0$ (so $|w| \neq 0$) and we get
 \[ \begin{array}{rcll}
 
-\left| \dfrac{z}{w} \right| &  = & \left| (z) \left( \dfrac{1}{w} \right) \right| & \\ [7pt] 
-										        & = & |z| \left| \dfrac{1}{w}\right| & \text{Product Rule.} \\ \end{array} \]
+\left| \frac{z}{w} \right| &  = & \left| (z) \left( \frac{1}{w} \right) \right| & \\ [7pt] 
+										        & = & |z| \left| \frac{1}{w}\right| & \text{Product Rule.} \\ \end{array} \]
 Hence, the proof really boils down to showing $\left| \frac{1}{w} \right| = \frac{1}{|w|}$.  This is left as an exercise.
 
  
@@ -364,7 +364,7 @@ is called a polar form for $z$.
 
 %% \ebm}
 
-\medskip										
+ 										
 
 Since there are infinitely many choices for $\theta \in \text{arg}(z)$, there infinitely many polar forms for $z$, so we used the indefinite article `a' in Definition \ref{polarformcomplex}.  It is time for an example.
 
@@ -460,7 +460,7 @@ Head out $3$ units from $0$ along the positive real axis. Rotating $\frac{\pi}{2
 
 The following theorem summarizes the advantages of working with complex numbers in polar form.
 
-\medskip
+ 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -474,7 +474,7 @@ Suppose $z$ and $w$ are complex numbers with polar forms $z = |z|\text{cis}(\alp
 
 \item  \textbf{Power Rule} (\index{DeMoivre's Theorem}\textbf{\href{http://en.wikipedia.org/wiki/Abraham_de_Moivre}{\underline{DeMoivre's Theorem}}}) \textbf{:}  $z^{n} = |z|^{n} \text{cis}(n \theta)$ for every natural number $n$ \index{power rule ! for complex numbers}
 
-\item  \textbf{Quotient Rule:} $\dfrac{z}{w} = \dfrac{|z|}{|w|} \text{cis}(\alpha - \beta)$, provided $|w| \neq 0$ \index{quotient rule ! for complex numbers}
+\item  \textbf{Quotient Rule:} $\frac{z}{w} = \frac{|z|}{|w|} \text{cis}(\alpha - \beta)$, provided $|w| \neq 0$ \index{quotient rule ! for complex numbers}
 
 \end{itemize}
 
@@ -482,7 +482,7 @@ Suppose $z$ and $w$ are complex numbers with polar forms $z = |z|\text{cis}(\alp
 
 %% \ebm}
 
-\medskip
+ 
 
 The proof of Theorem \ref{prodquotpolarcomplex} requires a healthy mix of definition, arithmetic and identities.  We first start with the product rule.
 
@@ -532,14 +532,14 @@ The last property in Theorem \ref{prodquotpolarcomplex} to prove is the quotient
 
 \[ \begin{array}{rcl}
 
-\dfrac{z}{w} & = & \dfrac{|z| \text{cis}(\alpha)}{|w| \text{cis}(\beta)}  \\ [8pt]
-						 & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)}   \\ 		 \end{array}\]
+\frac{z}{w} & = & \frac{|z| \text{cis}(\alpha)}{|w| \text{cis}(\beta)}  \\  
+& = & \left( \frac{|z|}{|w|}\right) \frac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)}   \\ 		 \end{array}\]
 						 
 Next, we multiply both the numerator and denominator of the right hand side by $(\cos(\beta) - i \sin(\beta))$ which is the complex conjugate of $(\cos(\beta) + i \sin(\beta))$ to get
 
 \[\begin{array}{rcll}
 
-\dfrac{z}{w}	& = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \dfrac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\ \end{array}\]
+\frac{z}{w}	& = & \left( \frac{|z|}{|w|}\right) \frac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \frac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\ \end{array}\]
 
 If we let the numerator be $N = \left[\cos(\alpha) + i \sin(\alpha)\right] \left[\cos(\beta) - i \sin(\beta)\right]$ and simplify we get
 
@@ -558,14 +558,14 @@ D & = & \left[\cos(\beta) + i\sin(\beta)\right]\left[\cos(\beta) - i\sin(\beta)\
   & = & \cos^{2}(\beta) - i^2 \sin^{2}(\beta) & \text{Simplify}  \\[3pt]
 	& = & \cos^{2}(\beta) + \sin^{2}(\beta) &  \text{Again, $i^{2} = -1$}\\[3pt]
 	& = & 	1  & \text{Pythagorean Identity} \\ \end{array} \]
-																																							 
+											 
 Putting it all together, we get
 
 \[ \begin{array}{rcll}
 
-\dfrac{z}{w} & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \dfrac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\[8pt]
-						 & = & \left( \dfrac{|z|}{|w|}\right) \dfrac{\text{cis}(\alpha - \beta)}{1}  &  \\ 	[8pt]	 
-						 & = &  \dfrac{|z|}{|w|} \text{cis}(\alpha - \beta) \\ \end{array}\]
+\frac{z}{w} & = & \left( \frac{|z|}{|w|}\right) \frac{\cos(\alpha) + i \sin(\alpha)}{\cos(\beta) + i \sin(\beta)} \cdot \frac{\cos(\beta) - i \sin(\beta)}{\cos(\beta) - i \sin(\beta)} & \\ 
+& = & \left( \frac{|z|}{|w|}\right) \frac{\text{cis}(\alpha - \beta)}{1}  &  \\ 	 	 
+						 & = &  \frac{|z|}{|w|} \text{cis}(\alpha - \beta) \\ \end{array}\]
 
 and we are done.  The next example makes good use of Theorem \ref{prodquotpolarcomplex}.
 
@@ -580,7 +580,7 @@ and we are done.  The next example makes good use of Theorem \ref{prodquotpolarc
 
 \item  $w^5$
 
-\item $\dfrac{z}{w}$
+\item $\frac{z}{w}$
 
 \end{enumerate}
 
@@ -588,7 +588,7 @@ and we are done.  The next example makes good use of Theorem \ref{prodquotpolarc
 
 Write your final answers in rectangular form.
 
-\medskip
+ 
 
 {\bf Solution.}  In order to use Theorem \ref{prodquotpolarcomplex}, we need to write $z$ and $w$ in polar form.
 
@@ -618,7 +618,7 @@ Write your final answers in rectangular form.
 
 Since $\frac{10\pi}{3}$ is coterminal with $\frac{4\pi}{3}$, we get $w^{5} = 32\left[ \cos\left(\frac{4\pi}{3}\right) + i\sin\left(\frac{4\pi}{3}\right) \right] = -16-16i\sqrt{3}$.
 
-\item  Last, but not least, we have $\dfrac{z}{w} = \frac{4 \text{cis}\left(\frac{\pi}{6}\right)}{2\text{cis}\left(\frac{2\pi}{3}\right)} = \frac{4}{2} \text{cis}\left(\frac{\pi}{6} - \frac{2\pi}{3}\right) = 2\text{cis}\left(-\frac{\pi}{2}\right)$.  
+\item  Last, but not least, we have $\frac{z}{w} = \frac{4 \text{cis}\left(\frac{\pi}{6}\right)}{2\text{cis}\left(\frac{2\pi}{3}\right)} = \frac{4}{2} \text{cis}\left(\frac{\pi}{6} - \frac{2\pi}{3}\right) = 2\text{cis}\left(-\frac{\pi}{2}\right)$.  
 
  
 
@@ -808,7 +808,7 @@ In the case of $z$ and $w$ from Example \ref{polararithmeticex}, we arrive at $\
 \end{tabular}
 
 
- Visualizing $\dfrac{z}{w}$ for $z = 4\text{cis}\left(\frac{\pi}{6}\right)$ and $w = 2 \text{cis}\left(\frac{2\pi}{3}\right)$.
+ Visualizing $\frac{z}{w}$ for $z = 4\text{cis}\left(\frac{\pi}{6}\right)$ and $w = 2 \text{cis}\left(\frac{2\pi}{3}\right)$.
 
 \end{center}
 

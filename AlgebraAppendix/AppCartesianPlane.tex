@@ -25,19 +25,19 @@ In order to visualize the pure excitement that is Precalculus, we need to unite 
 \begin{tikzpicture}[scale=0.6]
 
 % Axes
-\draw[->] (-10,0) -- (10.5,0) node[right] {\scriptsize $x$};
-\draw[->] (0,-10) -- (0,10.5) node[above] {\scriptsize $y$};
+\draw[->] (-10,0) -- (10.5,0) node[right] {$x$};
+\draw[->] (0,-10) -- (0,10.5) node[above] {$y$};
 
 % Tick marks and labels on x-axis
 \foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
   \draw (\x,0.15) -- (\x,-0.15);
-  \node[below] at (\x,-0.15) {\scriptsize $\x$};
+  \node[below] at (\x,-0.15) {$\x$};
 }
 
 % Tick marks and labels on y-axis
 \foreach \y in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {
   \draw (0.15,\y) -- (-0.15,\y);
-  \node[left] at (-0.15,\y) {\scriptsize $\y$};
+  \node[left] at (-0.15,\y) {$\y$};
 }
 
 \end{tikzpicture}
@@ -56,64 +56,64 @@ In practice, the distinction between a point and its coordinates is blurred; for
 \begin{tikzpicture}[scale=0.6]
 
 % Axes
-\draw[->] (-5,0) -- (5,0) node[right] {\scriptsize $x$};
-\draw[->] (0,-5) -- (0,5) node[above] {\scriptsize $y$};
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
 
 % Tick marks and labels on x-axis
 \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
   \draw (\x,0.15) -- (\x,-0.15);
-  \node[below] at (\x,-0.15) {\scriptsize $\x$};
+  \node[below] at (\x,-0.15) {$\x$};
 }
 
 % Tick marks and labels on y-axis
 \foreach \y in {-4,-3,-2,-1,1,2,3,4} {
   \draw (0.15,\y) -- (-0.15,\y);
-  \node[left] at (-0.15,\y) {\scriptsize $\y$};
+  \node[left] at (-0.15,\y) {$\y$};
 }
 
 % Dotted lines and point P
 \draw[dotted] (2,0) -- (2,-4);
 \draw[dotted] (0,-4) -- (2,-4);
-\node[fill,circle,inner sep=1pt,label=right:{\scriptsize $P$}] at (2,-4){}; 
+\node[fill,circle,inner sep=1pt,label=right:{$P$}] at (2,-4){}; 
 
 
 % ---------- Right grid ----------
 % Axes
-\draw[->] (10,0) -- (20,0) node[right] {\scriptsize $x$};
-\draw[->] (15,-5) -- (15,5) node[above] {\scriptsize $y$};
+\draw[->] (10,0) -- (20,0) node[right] {$x$};
+\draw[->] (15,-5) -- (15,5) node[above] {$y$};
 
 % Tick marks and labels on x-axis
 \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
   \draw (\x+15,0.15) -- (\x+15,-0.15);
-  \node[below] at (\x+15,-0.15) {\scriptsize $\x$};
+  \node[below] at (\x+15,-0.15) {$\x$};
 }
 
 % Tick marks and labels on y-axis
 \foreach \y in {-4,-3,-2,-1,1,2,3,4} {
   \draw (15.15,\y) -- (15-0.15,\y);
-  \node[left] at (15-0.15,\y) {\scriptsize $\y$};
+  \node[left] at (15-0.15,\y) {$\y$};
 }
 
 % Dotted lines and point P
 \draw[dotted] (17,0) -- (17,-4);
 \draw[dotted] (15,-4) -- (17,-4);
-\node[fill,circle,inner sep=1pt,label=right:{\scriptsize $P (2,-4)$} ] at (17,-4){}; 
+\node[fill,circle,inner sep=1pt,label=right:{$P (2,-4)$} ] at (17,-4){}; 
 \draw[dotted] (11,0) -- (11,2);
 \draw[dotted] (11,2) -- (15,2);
-\node[fill,circle,inner sep=1pt,label=left:{\scriptsize $(-4,2)$} ] at (11,2){}; 
+\node[fill,circle,inner sep=1pt,label=left:{$(-4,2)$} ] at (11,2){}; 
 
 \end{tikzpicture}
 \end{center}
 
 When we speak of the Cartesian Coordinate Plane, we mean the set of all possible ordered pairs $(x,y)$ as $x$ and $y$ take values from the real numbers.  Below is a summary of some basic, but nonetheless important, facts about Cartesian coordinates.
 
-\smallskip
+ 
 \phantomsection
 \label{importantfactscartesianplane}
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \centerline{\textbf{Important Facts about the Cartesian Coordinate Plane}}
 
@@ -127,7 +127,7 @@ When we speak of the Cartesian Coordinate Plane, we mean the set of all possible
 
 \item The origin is the point $(0,0)$.  It is the only point common to both axes.
 
-%\smallskip
+% 
 
 \end{itemize}
 
@@ -141,81 +141,101 @@ When we speak of the Cartesian Coordinate Plane, we mean the set of all possible
 
 {\bf Solution.}  To plot these points, we start at the origin and move to the right if the $x$-coordinate is positive; to the left if it is negative.   Next, we move up if the $y$-coordinate is positive or down if it is negative.  If the $x$-coordinate is $0$, we start at the origin and move along the $y$-axis only.  If the  $y$-coordinate is $0$ we move along the $x$-axis only.
 
-
 \begin{center}
+\begin{tikzpicture}[scale=0.5]
 
-\begin{mfpic}[14]{-10}{10}{-10}{10}
-\axes
-\tlabel[cc](10,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,10){\scriptsize $y$}
-\xmarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
-\ymarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
-\gfill \circle{(5,8),0.1}
-\tlabel[cc](5,7.25){$A(5,8)$}
-\gfill \circle{(-2.5,3),0.1}
-\tlabel[cc](-2.5,2.25){$B\left(-\frac{5}{2},3\right)$}
-\gfill \circle{(-5.8,-3),0.1}
-\tlabel[cc](-5.8,-3.75){$C(-5.8,-3)$}
-\gfill \circle{(4.5,-1),0.1}
-\tlabel[cc](4.5,-1.75){$D(4.5,-1)$}
-\gfill \circle{(5,0),0.1}
-\tlabel[cc](5,0.5){$E(5,0)$}
-\gfill \circle{(0,5),0.1}
-\tlabel[cc](1.35,5){$F(0,5)$}
-\gfill \circle{(-7,0),0.1}
-\tlabel[cc](-7,0.5){$G(-7,0)$}
-\gfill \circle{(0,-9),0.1}
-\tlabel[cc](1.5,-9){$H(0,-9)$}
-\gfill \circle{(0,0),0.1}
-\tlabel[cc](1.2,0.5){$O(0,0)$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-9 \hspace{7pt}$} -9, {$-8 \hspace{7pt}$} -8, {$-7 \hspace{7pt}$} -7, {$-6 \hspace{7pt}$} -6, {$-5 \hspace{7pt}$} -5, {$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\axislabels {y}{{$-9$} -9, {$-8$} -8, {$-7$} -7, {$-6$} -6, {$-5$} -5, {$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5, {$6$} 6, {$7$} 7, {$8$} 8, {$9$} 9}
-\normalsize
-\end{mfpic}
+% Axes
+\draw[->] (-10,0) -- (10.5,0) node[right] {$x$};
+\draw[->] (0,-10) -- (0,10.5) node[above] {$y$};
 
+% Tick marks
+\foreach \x in {-9,-8,...,-1,1,2,3,4,5,6,7,8,9}
+  \draw (\x,0.15) -- (\x,-0.15);
+
+\foreach \y in {-9,-8,...,-1,1,2,3,4,5,6,7,8,9}
+  \draw (0.15,\y) -- (-0.15,\y);
+
+% Tick labels
+\foreach \x in {-9,-8,...,-1,1,2,3,4,5,6,7,8,9}
+  \node[below,font=\scriptsize] at (\x,0) {$\x$};
+
+\foreach \y in {-9,-8,...,-1,1,2,3,4,5,6,7,8,9}
+  \node[left,font=\scriptsize] at (0,\y) {$\y$};
+
+% Points
+\fill (5,8) circle (2pt);
+\node[below] at (5,8) {$A(5,8)$};
+
+\fill (-2.5,3) circle (2pt);
+\node[below] at (-2.5,3) {$B\left(-\frac52,3\right)$};
+
+\fill (-5.8,-3) circle (2pt);
+\node[below] at (-5.8,-3) {$C(-5.8,-3)$};
+
+\fill (4.5,-1) circle (2pt);
+\node[below] at (4.5,-1) {$D(4.5,-1)$};
+
+\fill (5,0) circle (2pt);
+\node[above] at (5,0) {$E(5,0)$};
+
+\fill (0,5) circle (2pt);
+\node[right] at (0,5) {$F(0,5)$};
+
+\fill (-7,0) circle (2pt);
+\node[above] at (-7,0) {$G(-7,0)$};
+
+\fill (0,-9) circle (2pt);
+\node[right] at (0,-9) {$H(0,-9)$};
+
+\fill (0,0) circle (2pt);
+\node[above right] at (0,0) {$O(0,0)$};
+
+\end{tikzpicture}
 \end{center}
 
-\vspace*{-.4in}
-
-\qed
-
 \end{example}
-
-\vspace*{.1in}
 
 The axes divide the plane into four regions called \index{quadrants} \textbf{quadrants}.  They are labeled with Roman numerals and proceed counterclockwise around the plane:
 
 \label{quadrant}
 
 \begin{center}
-\begin{mfpic}[16]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\tlabel[cc](3,3.5){Quadrant I}
-\tlabel[cc](3,2.5){ $x > 0$, $y > 0$}
-\tlabel[cc](-3,3.5){Quadrant II}
-\tlabel[cc](-3,2.5){ $x < 0$, $y > 0$}
-\tlabel[cc](-3,-2.5){Quadrant III}
-\tlabel[cc](-3,-3.5){ $x < 0$, $y < 0$}
-\tlabel[cc](3,-2.5){Quadrant IV}
-\tlabel[cc](3,-3.5){ $x > 0$, $y < 0$}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4$} -4, {$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\begin{tikzpicture}[scale=0.5]
 
+% Axes
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
+
+% Tick marks
+\foreach \x in {-4,-3,...,-1,1,2,3,4}
+  \draw (\x,0.15) -- (\x,-0.15);
+
+\foreach \y in {-4,-3,...,-1,1,2,3,4}
+  \draw (0.15,\y) -- (-0.15,\y);
+
+% Tick labels
+\foreach \x in {-4,-3,...,-1,1,2,3,4}
+  \node[below,font=\scriptsize] at (\x,0) {$\x$};
+
+\foreach \y in {-4,-3,...,-1,1,2,3,4}
+  \node[left,font=\scriptsize] at (0,\y) {$\y$};
+
+% Label the quadrants
+\node at (3,3) {Quadrant I};
+\node at (3,2) {$x>0\,$,$\,y>0$};
+\node at (-3,3) {Quadrant II};
+\node at (-3,2) {$x<0\,$,$\,y>0$};
+\node at (-3,-2) {Quadrant III};
+\node at (-3,-3) {$x<0\,$,$\,y<0$};
+\node at (3,-2) {Quadrant IV};
+\node at (3,-3) {$x>0\,$,$\,y<0$};
+
+\end{tikzpicture}
 \end{center}
 
 For example, $(1,2)$ lies in Quadrant I, $(-1,2)$ in Quadrant II, $(-1,-2)$ in Quadrant III and $(1,-2)$ in Quadrant IV.  If a point other than the origin happens to lie on the axes, we typically refer to that point as lying on the positive or negative $x$-axis (if $y = 0$) or on the positive or negative $y$-axis (if $x = 0$).  For example, $(0,4)$ lies on the positive $y$-axis whereas $(-117,0)$ lies on the negative $x$-axis.  Such points do not belong to any of the four quadrants.
 
-\bigskip
+ 
 
 One of the most important concepts in all of Mathematics is \textbf{symmetry}.\footnote{According to Carl.  Jeff thinks symmetry is overrated.}  There are many types of symmetry in Mathematics, but three of them can be discussed easily using Cartesian Coordinates.
 
@@ -223,7 +243,7 @@ One of the most important concepts in all of Mathematics is \textbf{symmetry}.\f
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \begin{definition}
 
@@ -250,29 +270,29 @@ Two points $(a,b)$ and $(c,d)$ in the plane are said to be
 Schematically,
 
 \begin{center}
+\begin{tikzpicture}[scale=0.5]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cc](0.25,-0.35){$0$}
-\tlabel[cc](5,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,5){\scriptsize $y$}
-\gfill \circle{(4,2),0.1}
-\tlabel[cc](4,3){$P(x,y)$}
-\gfill \circle{(-4,2),0.1}
-\tlabel[cc](-4,3){$Q(-x,y)$}
-\gfill \circle{(4,-2),0.1}
-\tlabel[cc](4,-3){$S(x,-y)$}
-\gfill \circle{(-4,-2),0.1}
-\tlabel[cc](-4,-3){$R(-x,-y)$}
-\end{mfpic}
+% Axes
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-5) -- (0,5) node[above] {$y$};
 
+
+% Label the points
+\fill (3,2) circle (2pt);
+\fill (-3,2) circle (2pt);
+\fill (-3,-2) circle (2pt);
+\fill (3,-2) circle (2pt);
+\node at (3,3) {$P(x,y)$};
+\node at (-3,3) {$Q(-x,y)$};
+\node at (-3,-2) {$R(-x,-y)$};
+\node at (3,-2) {$S(x,-y)$};
+
+\end{tikzpicture}
 \end{center}
 
 In the above figure, $P$ and $S$ are symmetric about the $x$-axis, as are $Q$ and $R$;  $P$ and $Q$ are symmetric about the $y$-axis, as are $R$ and $S$;  and $P$ and $R$ are symmetric about the origin, as are $Q$ and $S$.
 
 \begin{example}  Let $P$ be the point $(-2,3)$.  Find the points which are symmetric to $P$ about the:
-
-\begin{multicols}{3}
 
 \begin{enumerate}
 
@@ -284,7 +304,6 @@ In the above figure, $P$ and $S$ are symmetric about the $x$-axis, as are $Q$ an
 
 \end{enumerate}
 
-\end{multicols}
 
 Check your answer by plotting the points.
 
@@ -303,34 +322,46 @@ Check your answer by plotting the points.
 \end{enumerate}
 
 \begin{center}
+\begin{tikzpicture}[scale=0.9,every node/.style={font=\scriptsize}]
 
-\begin{mfpic}[20]{-4}{4}{-4}{4}
-\axes
-\tlabel[cc](4.1,-0.5){\scriptsize $x$}
-\tlabel[cc](0.5,4.1){\scriptsize $y$}
-\gfill \circle{(-2,3),0.1}
-\tlabel[cc](-2.5,2){\scriptsize $P(-2,3)$}
-\gfill \circle{(-2,-3),0.1}
-\tlabel[cc](-2.5,-3.7){\scriptsize $(-2,-3)$}
-\gfill \circle{(2,3),0.1}
-\tlabel[cc](2,2){\scriptsize $(2,3)$}
-\gfill \circle{(2,-3),0.1}
-\tlabel[cc](2,-3.7){\scriptsize $(2,-3)$}
-\xmarks{-3,-2,-1,1,2,3}
-\ymarks{-3,-2,-1,1,2,3}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\axislabels {y}{{$-3$} -3, {$-2$} -2, {$-1$} -1, {$1$} 1, {$2$} 2, {$3$} 3}
-\normalsize
+% Axes
+\draw[->] (-4.2,0) -- (4.2,0);
+\draw[->] (0,-4.2) -- (0,4.2);
 
-\end{mfpic}
+\node[right] at (4.1,0) {$x$};
+\node[above] at (0,4.1) {$y$};
 
+% Tick marks
+\foreach \x in {-3,-2,-1,1,2,3}
+  \draw (\x,0.1)--(\x,-0.1);
+
+\foreach \y in {-3,-2,-1,1,2,3}
+  \draw (0.1,\y)--(-0.1,\y);
+
+% Tick labels
+\foreach \x in {-3,-2,-1,1,2,3}
+  \node[below] at (\x,0) {$\x$};
+
+\foreach \y in {-3,-2,-1,1,2,3}
+  \node[left] at (0,\y) {$\y$};
+
+% Points
+\fill (-2,3) circle (2pt);
+\node[below] at (-2,3) {$P(-2,3)$};
+
+\fill (-2,-3) circle (2pt);
+\node[below] at (-2,-3) {$(-2,-3)$};
+
+\fill (2,3) circle (2pt);
+\node[below] at (2,3) {$(2,3)$};
+
+\fill (2,-3) circle (2pt);
+\node[below] at (2,-3) {$(2,-3)$};
+
+\end{tikzpicture}
 \end{center}
 
-\vspace{-.4in}
 
-\qed
 
 \end{example}
 
@@ -340,7 +371,7 @@ One way to visualize the processes in the previous example is with the concept o
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \centerline{\textbf{Reflections}} \label{reflectionsinabox}
 
@@ -369,21 +400,31 @@ Another fundamental concept in Geometry is the notion of length.  If we are goin
 
 \begin{theorem} \label{PythagoreanStatement}\index{Pythagorean Theorem}\textbf{The Pythagorean Theorem:}  The triangle $ABC$ shown below is a right triangle if and only if $a^{2} + b^{2} = c^{2}$
 
-\vspace*{-.2in}
-
 \begin{center}
+\begin{tikzpicture}[scale=0.8,every node/.style={font=\normalsize}]
 
-\begin{mfpic}[10]{-5}{5}{-5}{5}
-\polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)}
-\tlabel(-5.2,-0.4){$A$}
-\tlabel(4,5.1){$B$}
-\tlabel(4.5,-0.4){$C$}
-\tlabel(0,-1){$b$}
-\tlabel(4.7,2.25){$a$}
-\tlabel(-1.2,2.9){$c$}
-%\polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)}
-\end{mfpic}
+% Vertices
+\coordinate (A) at (-4.330,0);
+\coordinate (B) at (4.330,5);
+\coordinate (C) at (4.330,0);
 
+% Triangle
+\draw[line width=1pt] (A)--(C)--(B)--cycle;
+
+% Vertex labels
+\node[below left] at (A) {$A$};
+\node[above] at (B) {$B$};
+\node[below right] at (C) {$C$};
+
+% Side labels
+\node[below] at (0,0) {$b$};
+\node[right] at (4.330,2.5) {$a$};
+\node[left] at (0,2.8) {$c$};
+
+% Uncomment if you want the right-angle marker
+% \draw (3.93,0)--(3.93,0.4)--(4.33,0.4);
+
+\end{tikzpicture}
 \end{center}
 
 \end{theorem}
@@ -394,36 +435,76 @@ Another fundamental concept in Geometry is the notion of length.  If we are goin
 
 A proof of this theorem will be given in Section \ref{QDensity}.  The theorem actually says two different things.  If we know that $a^{2} + b^{2} = c^{2}$ then the angle $C$ must be a right angle.  If we know geometrically that $C$ is already a right angle then we have that $a^{2} + b^{2} = c^{2}$.  We need the latter statement in the discussion which follows.  
 
-\smallskip
+ 
 
 Suppose we have two points, $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right),$ in the plane. By the \index{distance ! definition} \textbf{distance} $d$  between $P$ and $Q$, we mean the length of the line segment joining $P$ with $Q$.  (Remember, given any two distinct points in the plane, there is a unique line containing both points.)  Our goal now is to create an algebraic formula to compute the distance between these two points. Consider the generic situation below on the left.
 
  
 
-\hspace{.8in} \begin{tabular}{m{2.5in}m{2.75in}}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-\gfill \circle{(0,0),0.1}
-\tlabel[c](-1,-1){$P\left(x_0, y_0\right)$}
-\gfill \circle{(4,3),0.1}
-\tlabel[c](4.25,3){$Q\left(x_1, y_1\right)$}
-\arrow\reverse\arrow \polyline{(0.1,0.075), (3.9,2.925)}
-\tlabel[c](1.25,2.25){$d$}
-\end{mfpic} & 
-\begin{mfpic}[20]{-1}{5}{-1}{4}
-\gfill \circle{(0,0),0.1}
-\tlabel[c](-1,-1){$P\left(x_0, y_0\right)$}
-\gfill \circle{(4,3),0.1}
-\tlabel[c](4.25,3){$Q\left(x_1, y_1\right)$}
-\arrow\reverse\arrow \polyline{(0.1,0.075), (3.9,2.925)}
-\tlabel[c](1.25,2.25){$d$}
-\dashed \polyline{(0,0), (4,0), (4,3)}
-\gfill \circle{(4,0),0.1}
-\tlabel[c](4,-1){$\left(x_1, y_0\right)$}
-\polyline{(3.5, 0), (3.5, 0.5), (4, 0.5)}
-\end{mfpic} \\ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Left figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}
 
-\end{tabular}
+% Coordinates
+\coordinate (P) at (0,0);
+\coordinate (Q) at (4,3);
+
+% Points
+\fill (P) circle (2pt);
+\fill (Q) circle (2pt);
+
+% Labels
+\node[below left] at (P) {$P(x_0,y_0)$};
+\node[right] at (Q) {$Q(x_1,y_1)$};
+
+% Distance arrow
+\draw[<->,line width=1pt] (0.1,0.075) -- (3.9,2.925);
+
+% Label
+\node at (1.25,2.25) {$d$};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Right figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scope}[xshift=7cm]
+
+% Coordinates
+\coordinate (P) at (0,0);
+\coordinate (Q) at (4,3);
+\coordinate (R) at (4,0);
+
+% Points
+\fill (P) circle (2pt);
+\fill (Q) circle (2pt);
+\fill (R) circle (2pt);
+
+% Labels
+\node[below left] at (P) {$P(x_0,y_0)$};
+\node[right] at (Q) {$Q(x_1,y_1)$};
+\node[below] at (R) {$(x_1,y_0)$};
+
+% Distance arrow
+\draw[<->,line width=1pt] (0.1,0.075) -- (3.9,2.925);
+
+% Distance label
+\node at (1.25,2.25) {$d$};
+
+% Dashed legs
+\draw[dashed] (P)--(R)--(Q);
+
+% Right-angle marker
+\draw (3.5,0) -- (3.5,0.5) -- (4,0.5);
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 
  
 
@@ -438,7 +519,7 @@ With a little more imagination, we can envision a right triangle whose hypotenus
  
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \begin{eqn} \label{distanceformula}\index{distance ! distance formula}\textbf{The Distance Formula:}  The distance $d$ between the points $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$ is:
  
@@ -454,31 +535,20 @@ A couple of remarks about Equation \ref{distanceformula} are in order.  First, i
 
 \begin{example} \label{distanceexample1} Find and simplify the distance between the following sets of points:
 
-\begin{multicols}{2}
 \begin{enumerate}
 
 \item $P(-2,3)$ and  $Q(1,-3)$ \vphantom{$R\left( \frac{1}{2}, \frac{2}{3}\right)$ and $S\left( \frac{3}{4}, \frac{1}{5}\right)$}
 
 \item $R\left( \frac{1}{2}, \frac{2}{3}\right)$ and $S\left( \frac{3}{4}, \frac{1}{5}\right)$ 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
 \item  $T(\sqrt{3}, -\sqrt{20})$ and $V(\sqrt{12}, \sqrt{5})$
 
 \item   $O(0,0)$ and $P(x,y)$. \vphantom{$T(\sqrt{3}, -\sqrt{20})$ and $V(\sqrt{12}, \sqrt{5})$}
 
 \end{enumerate}
-\end{multicols}
 
- 
 
-\flushleft {\bf Solution.}  In each case, we apply the distance formula, Equation \ref{distanceformula} with the first point listed taken as  $\left(x_0, y_0\right)$ and the second point taken as $\left(x_1, y_1\right)$.\footnote{This choice is completely arbitrary.  The reader is encouraged to work these examples taking the first point listed as $\left(x_1, y_1\right)$ and the second point listed as $\left(x_0, y_0\right)$ and verifying the distance works out to be the same.  Can you see why the order of the subtraction in Equation \ref{distanceformula} ultimately doesn't matter?}
+{\bf Solution.}  In each case, we apply the distance formula, Equation \ref{distanceformula} with the first point listed taken as  $\left(x_0, y_0\right)$ and the second point taken as $\left(x_1, y_1\right)$.\footnote{This choice is completely arbitrary.  The reader is encouraged to work these examples taking the first point listed as $\left(x_1, y_1\right)$ and the second point listed as $\left(x_0, y_0\right)$ and verifying the distance works out to be the same.  Can you see why the order of the subtraction in Equation \ref{distanceformula} ultimately doesn't matter?}
 
 \begin{enumerate}
 
@@ -566,17 +636,27 @@ As tempting as it may look, $\sqrt{x^2+y^2}$ does not, in general, reduce to $x 
 Related to finding the distance between two points is the problem of finding the \index{midpoint ! definition of} \textbf{midpoint} of the line segment connecting two points.  Given two points, $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$, the \textbf{midpoint} $M$  of $P$ and $Q$ is defined to be the point on the line segment connecting $P$ and $Q$ whose distance from $P$ is equal to its distance from  $Q$.  
 
 \begin{center}
+\begin{tikzpicture}[scale=0.9]
 
-\begin{mfpic}[15]{-1}{5}{-1}{4}
-\gfill \circle{(0,0),0.1}
-\tlabel[c](-1,-0.9){$P\left(x_0, y_0\right)$}
-\gfill \circle{(4,3),0.1}
-\tlabel[c](4.25,3){$Q\left(x_1, y_1\right)$}
-\polyline{(0,0), (4,3)}
-\gfill \circle{(2,1.5),0.1}
-\tlabel[c](2,1){$M$}
-\end{mfpic}
+% Coordinates
+\coordinate (P) at (0,0);
+\coordinate (Q) at (4,3);
+\coordinate (M) at (2,1.5);
 
+% Line segment
+\draw[line width=1pt] (P) -- (Q);
+
+% Points
+\fill (P) circle (2pt);
+\fill (Q) circle (2pt);
+\fill (M) circle (2pt);
+
+% Labels
+\node[below left] at (P) {$P(x_0,y_0)$};
+\node[right] at (Q) {$Q(x_1,y_1)$};
+\node[below] at (M) {$M$};
+
+\end{tikzpicture}
 \end{center}
 
 If we think of reaching $M$ by going `halfway over' and `halfway up' we get the following formula. 
@@ -585,7 +665,7 @@ If we think of reaching $M$ by going `halfway over' and `halfway up' we get the 
 
 %% \colorbox{ResultColor}{\bbm
 
-%\smallskip
+% 
 
 \begin{eqn} \index{midpoint ! midpoint formula}\label{midpointformula}\textbf{The Midpoint Formula:}  The midpoint $M$ of the line segment connecting $P\left(x_0, y_0\right)$ and $Q\left(x_1, y_1\right)$ is:
 
@@ -604,27 +684,20 @@ If we let $d$ denote the distance between $P$ and $Q$, we leave it as Exercise \
 Find the midpoint of the line segment connecting the following pairs of points:  
 
 
-\begin{multicols}{2}
+
 \begin{enumerate}
 
 \item $P(-2,3)$ and  $Q(1,-3)$ \vphantom{$R\left( \frac{1}{2}, \frac{2}{3}\right)$ and $S\left( \frac{3}{4}, \frac{1}{5}\right)$}
 
 \item $R\left( \frac{1}{2}, \frac{2}{3}\right)$ and $S\left( \frac{3}{4}, \frac{1}{5}\right)$ 
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
 
 \item  $T(\sqrt{3}, -\sqrt{20})$ and $V(\sqrt{12}, \sqrt{5})$
 
 \item   $O(0,0)$ and $P(x,y)$. \vphantom{$T(\sqrt{3}, -\sqrt{20})$ and $V(\sqrt{12}, \sqrt{5})$}
 
 \end{enumerate}
-\end{multicols}
+
 
  
 
