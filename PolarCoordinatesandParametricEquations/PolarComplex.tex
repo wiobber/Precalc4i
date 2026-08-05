@@ -423,31 +423,85 @@ To prove Theorem \ref{argprops}, suppose $z = a + bi$ for real numbers $a$ and $
 
 Our next goal is to completely marry the Geometry and the Algebra of the complex numbers.  To that end,  consider the figure below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-1}{10}{-1}{8}
-\axes
-\tlabel[cl](10,-0.5){Real Axis}
-\tlabel[cl](0.5,8){Imaginary Axis}
-\xmarks{8.66}
-\ymarks{5}
-\dashed \polyline{(0,0), \plr{(10,30)}}
-\point[3pt]{(0,0), \plr{(10,30)}}
-\tlabel[cc](8.66,6){$(a,b) \longleftrightarrow z = a+bi \longleftrightarrow (r,\theta)$}
-\tlabel[cc](0.25,-0.35){$0$}
-\tlabel(2.25,0.35){$\theta \in \text{arg}(z)$}
-\arrow \parafcn{2,28,0.1}{2*dir(t)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$a$} 8.66}
-\axislabels {y}{{$bi$} 5}\tlpointsep{-10pt}
-\tlabel(0,0){\rotatebox{30}{\hspace{.75in}$|z| = \sqrt{a^2+b^2} = r$}}
-\normalsize
-\end{mfpic}
+%---------------------------------------
+% Parameters
+%---------------------------------------
+\def\xa{4.5}
+\def\yb{3.2}
 
-{Polar coordinates, $(r, \theta)$ associated with $z = a+bi$ with $r \geq 0$.}
+%---------------------------------------
+% Axes
+%---------------------------------------
+\draw[->,line width=1pt] (0,-0.8)--(0,5.8);
+\draw[->,line width=1pt] (-0.2,0)--(5.2,0);
 
-\end{center}
+% Tick marks
+\draw (-0.10,\yb)--(0.10,\yb);
+\node[left] at (-0.08,\yb) {$bi$};
+
+\draw (\xa,-0.10)--(\xa,0.10);
+\node[below] at (\xa,-0.08) {$a$};
+
+% Axis labels
+\node[above right] at (0,5.6) {Imaginary Axis};
+\node[right] at (5.2,-0.35) {Real Axis};
+
+% Origin
+\fill (0,0) circle (2.8pt);
+\node[below right] at (0,0) {$0$};
+
+%---------------------------------------
+% Point
+%---------------------------------------
+\fill (\xa,\yb) circle (2.8pt);
+
+%---------------------------------------
+% Dashed radius
+%---------------------------------------
+\draw[dashed]
+    (0,0)--(\xa,\yb);
+
+%---------------------------------------
+% Radius label
+%---------------------------------------
+\node[
+    rotate={atan2(\yb,\xa)},
+    fill=white,
+    inner sep=1pt
+]
+at ($(0.53*(\xa,\yb))$)
+{$|z|=\sqrt{a^2+b^2}=r$};
+
+%---------------------------------------
+% Angle
+%---------------------------------------
+\pgfmathsetmacro{\theta}{atan2(\yb,\xa)}
+
+\draw[<->]
+    (1.0,0)
+    arc[start angle=0,end angle=\theta,radius=1.0];
+
+\node at (1.55,0.42)
+{$\theta\in\arg(z)$};
+
+%---------------------------------------
+% Top equivalence
+%---------------------------------------
+\node at (4.65,4.35)
+{$(a,b)\;\longleftrightarrow\;
+z=a+bi\;\longleftrightarrow\;
+(r,\theta)$};
+
+\end{tikzpicture}
+\end{image}
 
 We know from  Theorem \ref{polarrectangularconversion} that $a = r\cos(\theta)$ and $b = r\sin(\theta)$. Making these substitutions for $a$ and $b$ gives $z = a + bi = r\cos(\theta) + r \sin(\theta) i = r \left[\cos(\theta) + i \sin(\theta)\right]$.
 
