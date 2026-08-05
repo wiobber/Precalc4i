@@ -115,8 +115,8 @@ else
     tty >/dev/null && INTERACTIVE="-it"  # HACK: in termanal, run with -it, to process interrupts with CTRL-C
 
     [[ -n "$DEBUG" ]] && echo  \
-    docker run --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
-    docker run --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
+    docker run --env XM_COMPILE_SEQUENCE --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
+    docker run --env XM_COMPILE_SEQUENCE --env LOCAL_IP --env XIMERA_URL --env XIMERA_NAME --env GPG_KEY --env GPG_KEY_ID --env DEBUG --network host --rm $INTERACTIVE --mount type=bind,source=$MOUNTDIR,target=/code $DOCKER_IMAGE $COMMAND $*
     exit 
 fi
 
