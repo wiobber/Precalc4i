@@ -15,186 +15,392 @@
 
 This section serves as a review of the concept of `angle' and the use of the degree system to measure angles.  Recall that a   \index{ray ! definition of} \textbf{ray} is usually described as a `half-line' and can be thought of as a line segment in which one of the two endpoints is pushed off infinitely distant from the other, as pictured below.  The point from which the ray originates is called the \index{ray ! initial point} \textbf{initial point} of the ray.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-1}{7}{-1}{3}
-\penwd{1.25pt}
-\arrow \polyline{(0,0), (7,2)}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.25,-0.5){\scriptsize $P$}
-\tcaption{A ray with initial point $P$.}
-\end{mfpic}
+% Points
+\coordinate (P) at (0,0);
+\coordinate (Q) at (4.5,1.3);
 
-\end{center}
+% Ray
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}] (P)--(Q);
+
+% Endpoint
+\fill (P) circle (2.5pt);
+
+% Label
+\node[below] at (P) {$P$};
+
+\end{tikzpicture}
+\end{image}
 
 When two rays share a common initial point they form an \index{angle ! definition} \textbf{angle} and the common initial point is called the \index{angle ! vertex}\index{vertex ! of an angle}\textbf{vertex} of the angle.  Two  examples of what are commonly thought of as angles are
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-5,2), (0,0), (5,2)}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.1,-0.5){\scriptsize $P$}
-\tcaption{An angle with vertex $P$.}
-\end{mfpic}  
+%==================================================
+% Left figure
+%==================================================
+\begin{scope}
 
-&
+\coordinate (P) at (0,0);
 
-\hspace{1.75in}
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (P)--++(-2.3,1);
 
-\begin{mfpic}[15]{-5}{7}{-3}{3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(7,2), (0,0), (7,-2)}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.25,-0.5){\scriptsize $Q$}
-\tcaption{An angle with vertex $Q$.}
-\end{mfpic}   \\ \end{array} \]
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (P)--++(2.3,1);
+
+\fill (P) circle (2.5pt);
+\node[below=2pt] at (P) {$P$};
+
+\end{scope}
+
+%==================================================
+% Right figure
+%==================================================
+\begin{scope}[xshift=3cm]
+
+\coordinate (Q) at (0,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (Q)--++(3.2,1);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (Q)--++(3.2,-1);
+
+\fill (Q) circle (2.5pt);
+\node[below left] at (Q) {$Q$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 However, the two figures below also depict angles - albeit these are, in some sense, extreme cases.  In the first case, the two rays are directly opposite each other forming what is known as a \index{angle ! straight}\index{straight angle}\textbf{straight angle}; in the second, the rays are identical so the `angle' is indistinguishable from the ray itself.
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.1,-0.5){\scriptsize $P$}
-\tcaption{A straight angle.}
-\end{mfpic}  
+%==================================================
+% Left figure: Straight angle
+%==================================================
+\begin{scope}
 
-&
+\coordinate (P) at (0,0);
 
-\hspace{1.75in}
+\draw[line width=1.2pt,
+      {Latex[length=3mm,width=2mm]}-{Latex[length=3mm,width=2mm]}]
+      (-2.8,0)--(2.8,0);
 
-\begin{mfpic}[15]{-5}{7}{-3}{3}
-\penwd{1.25pt}
-\arrow  \polyline{(0,0), (7,-2)}
-\point[4pt]{(0,0)}
-\tlabel[cc](-0.25,-0.5){\scriptsize $Q$}
-\end{mfpic}   \\ \end{array} \]
+\fill (P) circle (2.5pt);
+\node[below=2pt] at (P) {$P$};
+
+
+\end{scope}
+
+%==================================================
+% Right figure
+%==================================================
+\begin{scope}[xshift=4cm]
+
+\coordinate (Q) at (0,0);
+
+\draw[line width=1.2pt,
+      -{Latex[length=3mm,width=2mm]}]
+      (Q)--++(3.8,-1.1);
+
+\fill (Q) circle (2.5pt);
+\node[below left] at (Q) {$Q$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 The \index{angle ! measurement}\index{measure of an angle}\textbf{measure of an angle} is a number which indicates the amount of rotation that separates the rays of the angle.  There is one immediate problem with this, as pictured below. 
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,-0.9), 40}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)}
-\point[4pt]{(0,0)}
-\drawcolor{white} \arc[c]{(0,0), (2.4,-1.1), -310}
-\end{mfpic}  
+%==================================================
+% Left figure (interior angle)
+%==================================================
+\begin{scope}
 
-& 
+\coordinate (P) at (0,0);
 
-\hspace{2in}
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (P)--++(3,1.3);
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.4,-1.1), -310}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)}
-\point[4pt]{(0,0)}
-\end{mfpic} \\ \end{array} \]
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (P)--++(3,-1.3);
+
+\fill (P) circle (2.5pt);
+
+% Interior angle arrow
+\draw[<->,line width=0.8pt]
+    ($(P)+(1.55,-0.67)$)
+    arc[start angle=-23,end angle=23,radius=1.69];
+
+\end{scope}
+
+%==================================================
+% Right figure (reflex angle)
+%==================================================
+\begin{scope}[xshift=6cm]
+
+\coordinate (Q) at (0,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (Q)--++(3,1.3);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (Q)--++(3,-1.3);
+
+\fill (Q) circle (2.5pt);
+
+% Reflex angle arrow
+\draw[<->,line width=0.8pt]
+    ($(Q)+(1.55,0.67)$)
+    arc[start angle=23,end angle=337,radius=1.69];
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Which amount of rotation are we attempting to quantify?  What we have just discovered is that we have at least two angles described by this diagram.\footnote{The phrase `at least' will be justified in short order.}  Clearly these two angles have different measures because one appears to represent a larger rotation than the other, so we must label them differently.  In this book, we use lower case Greek letters such as $\alpha$ (alpha),   $\beta$ (beta),  $\gamma$ (gamma) and $\theta$ (theta) to label angles.  So, for instance, we have
 
-\[ \begin{mfpic}[15]{-5}{5}{-3}{3}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,-0.9), 40}
-\tlabel[cc](3,0){\scriptsize{$\alpha$}}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.4,-1.1), -310}
-\tlabel[cc](-3,0){\scriptsize{$\beta$}}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)}
-\point[3pt]{(0,0)}
-\end{mfpic}  \]
+%==================================================
+% Vertex
+%==================================================
+\coordinate (O) at (0,0);
+
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,1.3);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,-1.3);
+
+\fill (O) circle (2.5pt);
+
+%--------------------------------------------------
+% Interior angle alpha
+%--------------------------------------------------
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.55,-0.67)$)
+    arc[start angle=-23,end angle=23,radius=1.69];
+
+\node at ($(O)+(2.00,0)$) {$\alpha$};
+
+%--------------------------------------------------
+% Reflex angle beta
+%--------------------------------------------------
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.55,0.67)$)
+    arc[start angle=23,end angle=337,radius=1.69];
+
+\node at ($(O)+(-2,0)$) {$\beta$};
+
+\end{tikzpicture}
+\end{image}
 
 One system to measure angles is \index{angle ! degree}\index{degree measure}\textbf{degree measure}.  Quantities measured in degrees are denoted by the symbol `$^{\circ}$.'  One complete revolution as shown below is $360^{\circ}$, and parts of a revolution are measured proportionately.\footnote{The choice of `$360$' is most often attributed to the \href{http://en.wikipedia.org/wiki/Degree_(angle)}{\underline{Babylonians}}.}  Thus half of a revolution (a straight angle) measures $\frac{1}{2} \left(360^{\circ}\right) = 180^{\circ}$, a quarter of a revolution (a \index{right angle}\index{angle ! right}\textbf{right angle}) measures $\frac{1}{4} \left(360^{\circ}\right) = 90^{\circ}$ and so on.
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 355}
-\penwd{1.25pt}
-\arrow  \polyline{(0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tcaption{One revolution $\leftrightarrow 360^{\circ}$}
-\end{mfpic} 
+%==================================================
+% One revolution (360 degrees)
+%==================================================
+\begin{scope}
 
-&
+\coordinate (O) at (0,0);
 
-\hspace{.5in}
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,0);
 
-\begin{mfpic}[15]{-5}{5}{-3}{3}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 175}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(-5,0), (5,0)}
-\drawcolor{white} \arc[c]{(0,0), (2.5,-0.1), -175}
-\point[4pt]{(0,0)}
-\tcaption{$180^{\circ}$}
-\end{mfpic} 
+\fill (O) circle (2.5pt);
 
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.55,0)$)
+    arc[start angle=0,end angle=360,radius=1.55];
 
-\begin{mfpic}[15]{-5}{5}{-3}{5}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 85}
-\polyline{(0,0.5), (0.5,0.5), (0.5,0)}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(0,5), (0,0),  (5,0)}
-\drawcolor{white} \arc[c]{(0,0), (2.5,-0.1), -265}
-\point[4pt]{(0,0)}
-\tcaption{$90^{\circ}$}
-\end{mfpic} 
+\node[below=2cm] at (O)
+    {One revolution $360^\circ$};
 
-\\  \end{array} \]
+\end{scope}
+
+%==================================================
+% 180 degrees
+%==================================================
+\begin{scope}[xshift=6cm]
+
+\coordinate (O) at (0,0);
+
+\draw[line width=1.2pt,
+      {Latex[length=3mm,width=2mm]}-{Latex[length=3mm,width=2mm]}]
+      (-2.2,0)--(2.2,0);
+
+\fill (O) circle (2.5pt);
+
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.30,0)$)
+    arc[start angle=0,end angle=180,radius=1.30];
+
+\node[below=2cm] at (O)
+    {$180^\circ$};
+
+\end{scope}
+
+%==================================================
+% 90 degrees
+%==================================================
+\begin{scope}[xshift=9cm]
+
+\coordinate (O) at (0,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(0,2.4);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(2.6,0);
+
+\fill (O) circle (2.5pt);
+
+% Right-angle marker
+\draw[line width=0.9pt]
+    ($(O)+(0.22,0)$) --
+    ($(O)+(0.22,0.22)$) --
+    ($(O)+(0,0.22)$);
+
+% Angle arrow
+\draw[<->,line width=0.8pt]
+    ($(O)+(0,1.25)$)
+    arc[start angle=90,end angle=0,radius=1.25];
+
+\node[below=2cm] at ($(O)+(1.0,0)$)
+    {$90^\circ$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Note that in the above figure,  we have used the small square `$\! \! \! \! \! \! \qed$' to denote a right angle, as is commonplace in Geometry.  Recall that if an angle measures strictly between $0^{\circ}$ and $90^{\circ}$ it is called an \index{acute angle}\index{angle ! acute}\textbf{acute angle} and if it measures strictly between $90^{\circ}$ and $180^{\circ}$ it is called an \index{obtuse angle}\index{angle ! obtuse}\textbf{obtuse angle}. It is important to note that, theoretically, we can know the measure of any angle as long as we know the proportion it represents of entire revolution.\footnote{This is how a protractor is graded.}  For instance, the measure of an angle which represents a rotation of $\frac{2}{3}$ of a revolution would measure $\frac{2}{3} \left(360^{\circ}\right) = 240^{\circ}$,  the measure of an angle which constitutes only $\frac{1}{12}$ of a revolution measures $\frac{1}{12} \left(360^{\circ}\right) = 30^{\circ}$ and an angle which indicates no rotation at all is measured as $0^{\circ}$.
 
-\[ \begin{array}{ccc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 235}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-2.5,-4.33), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tcaption{$240^{\circ}$}
-\end{mfpic} 
+%==================================================
+% 240 degrees
+%==================================================
+\begin{scope}
 
-&
+\coordinate (O) at (0,0);
 
-\hspace{.5in}
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(2.6,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor{white}
-\arc[c]{(0,0), (2.5,0.1), 235}
-\drawcolor{black}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25}
-\penwd{1.25pt}\drawcolor{white}
-\polyline{(-2.5,-4.33), (0,0), (5,0)}
-\drawcolor{black}
-\arrow \reverse \arrow  \polyline{(4.33, 2.5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(240:2.6);
 
-\tcaption{$30^{\circ}$}
-\end{mfpic} 
+\fill (O) circle (2.5pt);
 
-&
+% Reflex angle
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.35,0)$)
+    arc[start angle=0,end angle=240,radius=1.35];
 
-\hspace{.5in}
+\node[below=1.2cm] at ($(O)+(0,-1.2)$) {$240^\circ$};
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor{white}
-\arc[c]{(0,0), (2.5,0.1), 235}
-\penwd{1.25pt}
-\polyline{(-2.5,-4.33), (0,0), (5,0)}
-\drawcolor{black}
-\arrow \polyline{(0,0), (5,0)}
-\point[3pt]{(0,0)}
+\end{scope}
 
-\tcaption{$0^{\circ}$}
-\end{mfpic} 
+%==================================================
+% 30 degrees
+%==================================================
+\begin{scope}[xshift=4cm]
 
-\\  \end{array} \]
+\coordinate (O) at (0,0);
+
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(2.7,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(30:2.7);
+
+\fill (O) circle (2.5pt);
+
+% Angle
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.25,0)$)
+    arc[start angle=0,end angle=30,radius=1.25];
+
+\node[below=1.2cm] at ($(O)+(0.7,-0.1)$) {$30^\circ$};
+
+\end{scope}
+
+%==================================================
+% 0 degrees
+%==================================================
+\begin{scope}[xshift=8cm]
+
+\coordinate (O) at (0,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(2.7,0);
+
+\fill (O) circle (2.5pt);
+
+\node[below=1.2cm] at ($(O)+(0.7,0)$) {$0^\circ$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 Using our definition of degree measure, we have that $1^{\circ}$ represents the measure of an angle which constitutes $\frac{1}{360}$ of a revolution.  Even though it may be hard to draw, it is nonetheless not difficult to imagine an angle with measure smaller than $1^{\circ}$.  There are two ways to subdivide degrees.  The first, and most familiar, is \index{decimal degrees}\index{angle ! decimal degrees}\textbf{decimal degrees}.  For example, an angle with a measure of $30.5^{\circ}$ would represent a rotation halfway between $30^{\circ}$ and $31^{\circ}$, or equivalently, $\frac{30.5}{360} = \frac{61}{720}$ of a full rotation.  This can be taken to the limit using Calculus so that measures like $\sqrt{2}^{\, \circ}$ make sense.\footnote{Awesome math pun aside, this is the same idea behind defining irrational exponents in Section \ref{PowerFunctions}.}  The second way to divide degrees is the \index{angle ! DMS}\index{DMS}\textbf{Degree - Minute - Second} (\textbf{DMS}) system.  In this system, one degree is divided equally into sixty minutes, and in turn, each minute is divided equally into sixty seconds.\footnote{Does this kind of system seem familiar?}  In symbols, we write $1^{\circ} = 60'$ and $1' = 60''$, from which it follows that  $1^{\circ} = 3600''$.  To convert a measure of $42.125^{\circ}$ to the DMS system, we start by noting that $42.125^{\circ} = 42^{\circ} + 0.125^{\circ}$. Converting the partial amount of degrees to minutes, we find $0.125^{\circ} \left( \frac{60'}{1^{\circ}} \right) = 7.5' = 7' + 0.5'$. Converting the partial amount of minutes to seconds gives  $0.5' \left(\frac{60''}{1'} \right) = 30''$.  Putting it all together yields 
 
@@ -217,38 +423,89 @@ On the other hand, to convert $117^{\circ}15'45''$ to decimal degrees, we first 
 
 Recall that two acute angles are called \index{complementary angles}\index{angle ! complementary}\textbf{complementary angles} if their measures add to $90^{\circ}$.  Two angles, either a pair of right angles or one acute angle and one obtuse angle, are called \index{supplementary angles}\index{angle ! supplementary}\textbf{supplementary angles} if their measures add to $180^{\circ}$. In the diagram below,  the angles $\alpha$ and $\beta$ are supplementary angles while the pair $\gamma$ and $\theta$ are complementary angles. 
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
+%==================================================
+% Supplementary Angles
+%==================================================
+\begin{scope}
 
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25}
-\arrow \reverse \arrow \arc[c]{(0,0), (-2.5,0.1), -145}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(-5,0), (5,0)}
-\arrow \polyline{(0,0),  (4.33, 2.5)}
-\point[4pt]{(0,0)}
-\tlabel[cc](3,0.75){\scriptsize{$\alpha$}}
-\tlabel[cc](-0.5,3){\scriptsize{$\beta$}}
-\tcaption{Supplementary Angles}
-\end{mfpic} 
+\coordinate (O) at (0,0);
 
-&
+% Line
+\draw[line width=1.2pt,
+      {Latex[length=3mm,width=2mm]}-{Latex[length=3mm,width=2mm]}]
+      (-2.6,0)--(2.6,0);
 
-\hspace{1in}
+% Ray
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+      (O)--++(30:2.2);
 
-\begin{mfpic}[15]{-5}{6}{-5}{5}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25}
-\arrow \reverse \arrow \arc[c]{(0,0), (0.1,2.5), -55}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(0,5), (0,0), (6,0)}
-\arrow \polyline{(0,0),  (4.33, 2.5)}
-\point[4pt]{(0,0)}
-\tlabel[cc](3,0.75){\scriptsize{$\gamma$}}
-\tlabel[cc](1.5,2.5){\scriptsize{$\theta$}}
-\tcaption{Complementary Angles}
-\end{mfpic} 
+\fill (O) circle (2.5pt);
 
-\\  \end{array} \]
+% alpha
+\draw[<->,line width=0.8pt]
+      ($(O)+(1.2,0)$)
+      arc[start angle=0,end angle=30,radius=1.2];
+
+\node at ($(O)+(1.5,0.33)$) {$\alpha$};
+
+% beta
+\draw[<->,line width=0.8pt]
+      ($(O)+(-0.95,0)$)
+      arc[start angle=180,end angle=30,radius=0.95];
+
+\node at ($(O)+(-0.35,1.15)$) {$\beta$};
+
+\node[below=0.8cm] at (O) {Supplementary Angles};
+
+\end{scope}
+
+%==================================================
+% Complementary Angles
+%==================================================
+\begin{scope}[xshift=4cm]
+
+\coordinate (O) at (0,0);
+
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+      (O)--++(0,2.3);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+      (O)--++(2.6,0);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+      (O)--++(30:2.3);
+
+\fill (O) circle (2.5pt);
+
+% theta
+\draw[<->,line width=0.8pt]
+      ($(O)+(0,0.95)$)
+      arc[start angle=90,end angle=30,radius=0.95];
+
+\node at ($(O)+(0.78,1.08)$) {$\theta$};
+
+% gamma
+\draw[<->,line width=0.8pt]
+      ($(O)+(1.2,0)$)
+      arc[start angle=0,end angle=30,radius=1.2];
+
+\node at ($(O)+(1.50,0.32)$) {$\gamma$};
+
+\node[below=0.8cm] at ($(O)+(1.0,0)$) {Complementary Angles};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 In practice, the distinction between the angle itself and its measure is blurred so that the sentence `$\alpha$ is an angle measuring $42^{\circ}$' is often abbreviated as `$\alpha = 42^{\circ}$.'  It is now time for an example.
 
@@ -295,34 +552,76 @@ Rounding to seconds, we obtain $\alpha \approx 111^{\circ}22'16''$.
 
 \item  To sketch $\alpha$, we first note that $90^{\circ} < \alpha < 180^{\circ}$.  Dividing this range in half, we get $90^{\circ} < \alpha < 135^{\circ}$, and once more, we have $90^{\circ} < \alpha < 112.5^{\circ}$.  This gives us a pretty good estimate for $\alpha$, as shown below.\footnote{If this process seems hauntingly familiar, it should. Compare this method to the Bisection Method introduced in Section \ref{IVTaninequalities}.}  Proceeding similarly for $\beta$, we find $0^{\circ} < \beta < 90^{\circ}$, then $0^{\circ} < \beta < 45^{\circ}$, $22.5^{\circ} < \beta < 45^{\circ}$, and lastly, $33.75^{\circ} < \beta < 45^{\circ}$.  
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\dotted \polyline{ (-5,0), (0,0), (0,5)}
-\dotted \polyline{ (-3.5355,3.5355), (0,0)}
-\dotted \polyline{ (-1.9134,4.6194), (0,0)}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 107}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(-1.822, 4.656), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tcaption{Angle $\alpha$}
-\end{mfpic} 
+%==================================================
+% Angle alpha
+%==================================================
+\begin{scope}
 
-&
+\coordinate (O) at (0,0);
 
-\hspace{1in}
+% Reference lines
+\draw[dotted] (-2.2,0)--(2.2,0);
+\draw[dotted] (0,-0.2)--(0,2.7);
+\draw[dotted] (O)--++(135:2.3);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\dotted \polyline{ (0,5), (0,0), (5,0)}
-\dotted \polyline{ (3.5355,3.5355), (0,0)}
-\dotted \polyline{ (4.6194,1.9134), (0,0)}
-\dotted \polyline{ (4.1573,2.7778), (0,0)}
-\arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 33}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(3.9683, 3.0417), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tcaption{Angle $\beta$}
-\end{mfpic}  \\ \end{array} \]
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(110:2.5);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(0:2.4);
+
+\fill (O) circle (2.5pt);
+
+% Angle arrow
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.15,0)$)
+    arc[start angle=0,end angle=110,radius=1.15];
+
+\node[below=0.35cm] at (O) {Angle $\alpha$};
+
+\end{scope}
+
+%==================================================
+% Angle beta
+%==================================================
+\begin{scope}[xshift=3.5cm]
+
+\coordinate (O) at (0,0);
+
+% Reference lines
+\draw[dotted] (0,-0.2)--(0,2.7);
+\draw[dotted] (O)--++(45:2.4);
+\draw[dotted] (O)--++(22.5:2.4);
+
+% Rays
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(0:2.4);
+
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(35:2.4);
+
+\fill (O) circle (2.5pt);
+
+% Angle arrow
+\draw[<->,line width=0.8pt]
+    ($(O)+(1.0,0)$)
+    arc[start angle=0,end angle=35,radius=1.0];
+
+\node[below=0.35cm] at ($(O)+(1.0,0)$) {Angle $\beta$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 \item  To find a supplementary angle for $\alpha$, we seek an angle $\theta$ so that $\alpha + \theta = 180^{\circ}$.  We get $\theta = 180^{\circ} - \alpha =  180^{\circ} - 111.371^{\circ} = 68.629^{\circ}$.
 
@@ -334,47 +633,129 @@ Rounding to seconds, we obtain $\alpha \approx 111^{\circ}22'16''$.
 
 Up to this point, we have discussed only angles which measure between $0^{\circ}$ and $360^{\circ}$, inclusive.  Ultimately, we want to use the arsenal of Algebra which we have stockpiled in Chapters \ref{IntroductiontoFunctions} through \ref{SequencesandtheBinomialTheorem} to not only solve geometric problems involving angles, but also to extend their applicability to other real-world phenomena.  A first step in this direction is to extend our notion of `angle' from merely measuring an extent of rotation to quantities which indicate an amount of rotation along with a \textbf{direction}.  To that end, we introduce the concept of an \index{angle ! oriented}\index{oriented angle}\textbf{oriented angle}.  As its name suggests, in an oriented angle, the direction of the rotation is important.  We imagine the angle being swept out starting from an \index{angle ! initial side}\index{initial side of an angle}\textbf{initial side} and ending at a \index{angle ! terminal side}\index{terminal side of an angle}\textbf{terminal side}, as shown below.  When the rotation is counter-clockwise\footnote{`widdershins'} from initial side to terminal side, we say that the angle is \index{angle ! positive}\index{positive angle}\textbf{positive}; when the rotation is clockwise, we say that the angle is \index{angle ! negative}\index{negative angle}\textbf{negative}.
 
-\[ \begin{array}{cc}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \arc[c]{(0,0), (2.5,0.1), 40}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(3.5355, 3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlabel[cc](2, -0.5){\tiny Initial Side}
-\tlabel[cc](1.5,2){\tiny \rotatebox{45}{Terminal Side}}
-\end{mfpic}
+%==================================================
+% Positive angle
+%==================================================
+\begin{scope}
 
-&
+\coordinate (O) at (0,0);
 
-\hspace{1.5in}
+% Initial side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\arrow \arc[c]{(0,0), (2.5,-0.1), -40}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(3.5355, -3.5355), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlabel[cc](2, 0.5){\tiny Initial Side}
-\tlabel[cc](1.5,-2){\tiny \rotatebox{-45}{Terminal Side}}
-\end{mfpic} \\ 
+% Terminal side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(45:3);
 
-\text{A positive angle, $45^{\circ}$} & \hspace{1.5in} \text{A negative angle, $-45^{\circ}$}
+\fill (O) circle (2.5pt);
 
-\end{array} \]
+% Angle arrow
+\draw[->,line width=0.8pt]
+    ($(O)+(1.3,0)$)
+    arc[start angle=0,end angle=45,radius=1.3];
+
+% Labels
+\node[below] at ($(O)!0.55!(3,0)$) {\small Initial Side};
+
+\node[
+    rotate=45,
+    above,
+    font=\small
+] at ($(O)!0.55!({3*cos(45)},{3*sin(45)})$)
+{Terminal Side};
+
+\node[below=0.8cm] at ($(O)+(1.5,0)$)
+{A positive angle, $45^\circ$};
+
+\end{scope}
+
+%==================================================
+% Negative angle
+%==================================================
+\begin{scope}[xshift=5cm]
+
+\coordinate (O) at (0,0);
+
+% Initial side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,0);
+
+% Terminal side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(-45:3);
+
+\fill (O) circle (2.5pt);
+
+% Clockwise angle arrow
+\draw[->,line width=0.8pt]
+    ($(O)+(1.3,0)$)
+    arc[start angle=0,end angle=-45,radius=1.3];
+
+% Labels
+\node[above] at ($(O)!0.55!(3,0)$) {\small Initial Side};
+
+\node[
+    rotate=-45,
+    below,
+    font=\small
+] at ($(O)!0.55!({3*cos(-45)},{3*sin(-45)})$)
+{Terminal Side};
+
+\node[below=0.8cm] at ($(O)+(1.25,2)$)
+{A negative angle, $-45^\circ$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{image}
 
 At this point, we also extend our allowable rotations to include angles which encompass more than one revolution.  For example, to sketch an angle with measure $450^{\circ}$ we start with an initial side, rotate counter-clockwise one complete revolution (to take care of the `first' $360^{\circ}$) then continue with an additional $90^{\circ}$ counter-clockwise rotation, as seen below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{mfpic}[15]{-5}{5}{-3}{5}
-\arrow \parafcn{0,445,5}{(t+200)*dir(t)/200} 
-\tcaption{$450^{\circ}$}
-\penwd{1.25pt}
-\arrow \reverse \arrow  \polyline{(0,5), (0,0),  (5,0)}
-\point[4pt]{(0,0)}
-\end{mfpic} 
+\coordinate (O) at (0,0);
 
-\end{center}
+% Initial side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(3,0);
+
+% Terminal side
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (O)--++(0,3);
+
+% Vertex
+\fill (O) circle (2.5pt);
+
+% First full revolution
+\draw[->,line width=0.8pt]
+    ($(O)+(0.75,0)$)
+    arc[start angle=0,end angle=359.5,radius=0.75];
+
+% Additional 90 degrees
+\draw[->,line width=0.8pt]
+    ($(O)+(1.7,0)$)
+    arc[start angle=0,end angle=90,radius=1.7];
+
+% Label
+\node[below] at ($(O)+(0.8,-1.45)$) {$450^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 To further connect angles with the Algebra which has come before, we shall often overlay an angle diagram on the coordinate plane.  An angle is said to be in \index{angle ! standard position}\index{standard position of an angle}\textbf{standard position} if its vertex is the origin and its initial side coincides with the positive horizontal (usually labeled as the $x$-) axis.  Angles in standard position are classified according to where their terminal side lies.  For instance, an angle in standard position whose terminal side lies in Quadrant I is called a `Quadrant I angle'.  If the terminal side of an angle lies on one of the coordinate axes, it is called a \index{angle ! quadrantal}\index{quadrantal angle}\textbf{quadrantal angle}.  Two angles in standard position are called \index{angle ! coterminal}\index{coterminal angle}\textbf{coterminal} if they share the same terminal side.\footnote{Note that by being in standard position they automatically share the same initial side which is the positive $x$-axis.}  In the figure below, $\alpha = 120^{\circ}$ and $\beta = -240^{\circ}$ are two coterminal Quadrant II angles drawn in standard position.    Note that $\alpha = \beta + 360^{\circ}$, or equivalently, $\beta = \alpha - 360^{\circ}$. We leave it as an exercise to the reader to verify that coterminal angles always differ by a multiple of $360^{\circ}$.\footnote{It is worth noting that all of the pathologies of Analytic Trigonometry result from this innocuous fact.} More precisely, if $\alpha$ and $\beta$ are coterminal angles, then $\beta = \alpha + 360^{\circ} \cdot k$ where $k$ is an integer.\footnote{Recall that this means $k = 0, \pm 1, \pm 2, \ldots$.}
 
