@@ -990,47 +990,112 @@ Each successive root is found by adding  $\frac{2\pi}{n}$ to the argument, which
 
 As an example of this, we plot our answers to number \ref{fourthrootsneg16} in Example \ref{nthrootscomplexex} below.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
+%--------------------------------------------
+% Parameters
+%--------------------------------------------
+\def\rsmall{0.75}      % radius of inner circle
+\def\rbig{2.0}         % radius of outer points
 
-\begin{mfpic}[13]{-6}{6}{-6}{6}
-\axes
-\tlabel[cl](6,-0.5){Real Axis}
-\tlabel[cl](0.5,6){Imaginary Axis}
-\xmarks{-4,-2,2,4}
-\ymarks{-4,-2,2,4}
-\dashed \rotatepath{(0,0),45} \polyline{(0,0),(4,0)}
-\rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)}
-\point[3pt]{(0,0), \plr{(4,45)}, \plr{(4,135)}, \plr{(4,225)}, \plr{(4,315)}}
-\dashed \rotatepath{(0,0),135} \polyline{(0,0),(4,0)}
-\rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)}
-\dashed \rotatepath{(0,0),225} \polyline{(0,0),(4,0)}
-\rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)}
-\dashed \rotatepath{(0,0),315} \polyline{(0,0),(4,0)}
-\rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)}
-\rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
-\arrow \parafcn{55, 125, 5}{1.5*dir(t)}
-\arrow \parafcn{145, 215, 5}{1.5*dir(t)}
-\arrow \parafcn{235, 305, 5}{1.5*dir(t)}
-\arrow \parafcn{325, 395, 5}{1.5*dir(t)}
-\tlabel[cc](0.25,-0.5){$0$}
-\tlabel[cc](4,3){$w_0$}
-\tlabel[cc](-4,3){$w_1$}
-\tlabel[cc](-4,-3){$w_2$}
-\tlabel[cc](4,-3){$w_3$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-2 \hspace{7pt}$} -4, {$-1\hspace{7pt}$} -2, {$1$} 2, {$2$} 4}
-\axislabels {y}{{$-2i$} -4,{$-i$} -2,{$i$} 2,  {$2i$} 4}
-\normalsize
-\end{mfpic}
+%--------------------------------------------
+% Axes
+%--------------------------------------------
+\draw[->,line width=1pt] (-2.8,0)--(2.9,0)
+    node[right]{Real Axis};
 
-{The four fourth roots of $z = -16$ equally spaced $\frac{2\pi}{4} = \frac{\pi}{2}$ around the plane.}
+\draw[->,line width=1pt] (0,-2.8)--(0,2.9)
+    node[above]{Imaginary Axis};
 
-\end{center}
+%--------------------------------------------
+% Tick marks
+%--------------------------------------------
+\foreach \x in {-2,-1,1,2}
+{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,-0.08) {$\x$};
+}
+
+\foreach \y/\lab in
+{
+    -2/{-2i},
+    -1/{-i},
+     1/{i},
+     2/{2i}
+}
+{
+    \draw (0.08,\y)--(-0.08,\y);
+    \node[left] at (-0.08,\y) {$\lab$};
+}
+
+%--------------------------------------------
+% Origin
+%--------------------------------------------
+\fill (0,0) circle (2.8pt);
+\node[below right] at (0,0) {$0$};
+
+%--------------------------------------------
+% Dashed rays
+%--------------------------------------------
+\foreach \a in {45,135,225,315}
+{
+    \draw[dashed] (0,0)--(\a:\rbig);
+}
+
+%--------------------------------------------
+% Red plus signs
+%--------------------------------------------
+\foreach \a in {45,135,225,315}
+{
+    \node[
+        text=red,
+        font=\fontsize{20}{20}\selectfont
+    ] at ({cos(\a)},{sin(\a)}) {$+$};
+}
+
+%--------------------------------------------
+% Outer points
+%--------------------------------------------
+\foreach \a in {45,135,225,315}
+{
+    \fill (\a:\rbig) circle (2.8pt);
+}
+
+\node[right=5pt] at (45:\rbig) {$w_0$};
+\node[left=5pt]  at (135:\rbig) {$w_1$};
+\node[left=5pt]  at (225:\rbig) {$w_2$};
+\node[right=5pt] at (315:\rbig) {$w_3$};
+
+%--------------------------------------------
+% Inner circle
+%--------------------------------------------
+\draw (0,0) circle (\rsmall);
+
+%--------------------------------------------
+% Rotation arrows
+%--------------------------------------------
+\foreach \s/\e in
+{
+45/-45,
+-45/-135,
+-135/-225,
+-225/-315
+}
+{
+    \draw[<-]
+      ({\rsmall*cos(\s)},{\rsmall*sin(\s)})
+      arc[start angle=\s,end angle=\e,radius=\rsmall];
+}
+
+\end{tikzpicture}
+\end{image}
+
 
 We have only glimpsed at the beauty of the complex numbers in this section.  The complex plane is without a doubt one of the most important mathematical constructs ever devised.  Coupled with Calculus, it is the venue for incredibly important Science and Engineering applications.\footnote{For more on this, see the beautifully written epilogue to Section \ref{ComplexZeros} found on page \pageref{complexepilogue}.} 
 
