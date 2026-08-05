@@ -1340,16 +1340,15 @@ x & g(x) & x-1 \\ \hline
   \end{tabular}
   \end{center}
   
-  
+
+Geometrically, this means that the graph of $y=g(x)$ should resemble the line $y = x-1$ as $x \rightarrow  -\infty$ and $x \rightarrow \infty$.   Our graph below provided by desmos confirms this. 
+ 
 % https://www.desmos.com/calculator/zyeycofx4r
 \begin{center}
 \desmos{zyeycofx4r}{800}{600} 
 \end{center} 
  
 The way we symbolize the relationship between the end behavior of $y=g(x)$ with that of the line $y=x-1$ is to write `as $x \rightarrow  -\infty$ and $x \rightarrow \infty$, $g(x) \rightarrow x-1$' in order to have some notational consistency with what we have done earlier in this section when it comes to end behavior.\footnote{Other notations include $g(x) \asymp x-1$ or $g(x) \sim x-1$.}  In this case, we say the line $y=x-1$ is a \index{asymptote ! slant (oblique)} \index{slant asymptote} \index{oblique asymptote} \textbf{slant asymptote}\footnote{Also called an `oblique' asymptote in some, ostensibly higher class (and more expensive), texts.}  to the graph of $y=g(x)$.  Informally, the graph of a rational function has a slant asymptote if, as $x \rightarrow -\infty$ or as $x \rightarrow \infty$, the graph resembles a non-horizontal, or `slanted' line.  More formally, we define a slant asymptote as follows.
-
-
-
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -1366,8 +1365,6 @@ The way we symbolize the relationship between the end behavior of $y=g(x)$ with 
 A few remarks are in order.  First, note that the stipulation $m \neq 0$ in Definition \ref{sa} is what makes the `slant' asymptote `slanted' as opposed to the case when $m=0$ in which case we'd have a horizontal asymptote.  
 
 Secondly, while we have motivated what me mean intuitively by the notation `$f(x)  \rightarrow mx+b$,' like so many ideas in this section, the formal definition requires Calculus.  Another way to express this sentiment, however, is to rephrase `$f(x)  \rightarrow mx+b$' as `$[f(x) - (mx+b)] \rightarrow 0$.'  In other words, the graph of $y=f(x)$ has the \textbf{slant} asymptote $y = mx+b$ if and only if the graph of $y = f(x) - (mx+b)$ has a \textbf{horizontal} asymptote $y=0$.   This last sentiment can be encoded using limit notation as follows.
-
-
 
 
 %% \colorbox{ResultColor}{\bbm
@@ -1407,34 +1404,21 @@ In the same way that Theorem \ref{hathm} gives us an easy way to see if the grap
 
 \end{itemize}
 
-
-%\begin{multicols}{2}
 \begin{enumerate}
 
 \item  $f(x) = \frac{x^2-4x+2}{1-x}$  
 
 \item  \label{sacancel} $g(t) = \frac{t^2-4}{t-2}$
 
-\setcounter{HW}{\value{enumi}}
-\end{enumerate}
-%\end{multicols}
-
-%\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\value{HW}}
-
 
 \item  $h(x) = \frac{x^3+1}{x^2-4}$
 
 \item  $r(t) = 2t-1+\frac{4t^3}{1-t^2}$ \vphantom{$h(x) = \frac{x^3+1}{x^2-4}$}
 
-\setcounter{HW}{\value{enumi}}
+
 \end{enumerate}
-%\end{multicols}
 
-
-
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1455,24 +1439,25 @@ so we have that the slant asymptote $y=t+2$ is identical to the graph of $y=g(t)
 \desmos{fan3rfclao}{800}{600} 
 \end{center} 
 
-\item   For $h(x) = \frac{x^3+1}{x^2-4}$, the degree of the numerator is $3$ and the degree of the denominator is $2$ so again, we are guaranteed the existence of a slant asymptote.  The long division $\left(x^3+1 \right) \div \left(x^2-4\right)$ gives a quotient of just $x$, so our slant asymptote is the line $y=x$.  The graphing utility confirms this.  
-
-Note the graph of $h$ appears to be symmetric about the origin.  We check $h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}$.  However, $-h(x) = - \frac{x^3+1}{x^2-4}$, so it appears as if $h(-x) \neq -h(x)$ for all $x$.  Checking $x=1$, we find $h(1) = -\frac{2}{3}$ but $h(-1) = 0$ which shows the graph of $h$, is in fact,  \textbf{not} symmetric about the origin.
+\item   For $h(x) = \frac{x^3+1}{x^2-4}$, the degree of the numerator is $3$ and the degree of the denominator is $2$ so again, we are guaranteed the existence of a slant asymptote.  The long division $\left(x^3+1 \right) \div \left(x^2-4\right)$ gives a quotient of just $x$, so our slant asymptote is the line $y=x$.  Desmos confirms this.  
 
 % https://www.desmos.com/calculator/8d7qp8aqbz
 \begin{center}
 \desmos{8d7qp8aqbz}{800}{600} 
 \end{center} 
 
+
+Note the graph of $h$ appears to be symmetric about the origin.  We check $h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}$.  However, $-h(x) = - \frac{x^3+1}{x^2-4}$, so it appears as if $h(-x) \neq -h(x)$ for all $x$.  Checking $x=1$, we find $h(1) = -\frac{2}{3}$ but $h(-1) = 0$ which shows the graph of $h$, is in fact,  \textbf{not} symmetric about the origin.
+
+
 \item  For our last example,  $r(t) = 2t-1+\frac{4t^3}{1-t^2}$, the expression $r(t)$ is not in the form to apply Theorem \ref{sathm} directly.  We can, nevertheless, appeal to the spirit of the theorem and use long division to rewrite the term $\frac{4t^3}{1-t^2} = -4t + \frac{4t}{1-t^2}$.  We then get:
 
  \[ \begin{array}{rcl}
- 
  r(t) & = & 2t-1+\frac{4t^3}{1-t^2} \\
        &= &  2t-1-4t+\frac{4t}{1-t^2} \\
        & = & -2t-1 + \frac{4t}{1-t^2} \\ \end{array}\]
        
-As $t \rightarrow -\infty$ or $x \rightarrow \infty$,  Theorem \ref{EBPolynomials} gives  $\frac{4t}{1-t^2} \approx \frac{4t}{-t^2} = -\frac{4}{t} \rightarrow 0$.  Hence, as $t \rightarrow -\infty$ or $t \rightarrow \infty$, $r(t) \rightarrow -2t-1$, so $y = -2t-1$ is the slant asymptote to the graph as confirmed by the graphing utility below.  From a distance, the graph of $r$ appears to be symmetric about the origin.  However, if we look carefully, we see the $y$-intercept is $(0,-1)$, as borne out by the computation $r(0) = -1$.  Hence $r$ cannot be odd.\footnote{Do you see why?}
+As $t \rightarrow -\infty$ or $x \rightarrow \infty$,  Theorem \ref{EBPolynomials} gives  $\frac{4t}{1-t^2} \approx \frac{4t}{-t^2} = -\frac{4}{t} \rightarrow 0$.  Hence, as $t \rightarrow -\infty$ or $t \rightarrow \infty$, $r(t) \rightarrow -2t-1$, so $y = -2t-1$ is the slant asymptote to the graph as confirmed by desmos below.  
 
 % https://www.desmos.com/calculator/ba1wjcg3yx
 \begin{center}
@@ -1480,9 +1465,10 @@ As $t \rightarrow -\infty$ or $x \rightarrow \infty$,  Theorem \ref{EBPolynomial
 \end{center} 
 
 
+From a distance, the graph of $r$ appears to be symmetric about the origin.  However, if we look carefully, we see the $y$-intercept is $(0,-1)$, as borne out by the computation $r(0) = -1$.  Hence $r$ cannot be odd.\footnote{Do you see why?}
 
 \end{enumerate}
-
+\end{explanation}
 \end{example}
 
 Our last example gives a real-world application of a slant asymptote. The problem features the concept of \textbf{average profit}. The average profit, denoted $\overline{P}(x)$,  is the total profit, $P(x)$,  divided by the number of items sold, $x$. In English, the average profit tells us the profit made per item sold. It, along with average cost, is defined below.
@@ -1524,7 +1510,7 @@ You'll explore average cost (and its relation to variable cost) in Exercise \ref
 
 \end{enumerate}
 
-{\bf Solution.}
+\begin{explanation}
 
 \begin{enumerate}
 
@@ -1532,20 +1518,20 @@ You'll explore average cost (and its relation to variable cost) in Exercise \ref
 
 \item  We find $\overline{P}(50) = -1.5(50)+170 - \frac{150}{50} = 92$.  This means that when $50$ PortaBoy systems are sold, the average profit is $\$ 92$ per system.
 
-\item  Technically, the graph of $y = \overline{P}(x)$ has no slant asymptote since the domain of the function is restricted to $(0, 166]$.  That being said, if we were to let $x \rightarrow \infty$, the term $\frac{150}{x} \rightarrow 0$, so we'd  have $\overline{P}(x)  \rightarrow -1.5x + 170$.  This means the slant asymptote would be $y = -1.5x + 170$.  We graph $y = \overline{P}(x)$ and $y = -1.5x+170$.
+\item  Technically, the graph of $y = \overline{P}(x)$ has no slant asymptote since the domain of the function is restricted to $(0, 166]$.  That being said, if we were to let $x \rightarrow \infty$, the term $\frac{150}{x} \rightarrow 0$, so we'd  have $\overline{P}(x)  \rightarrow -1.5x + 170$.  This means the slant asymptote would be $y = -1.5x + 170$.  We graph $y = \overline{P}(x)$ and $y = -1.5x+170$ below.
 
-  
 % https://www.desmos.com/calculator/hnnzvyr0yf
 \begin{center} 
 \desmos{hnnzvyr0yf}{800}{600} 
 \end{center}
 
+\item The slope of the slant asymptote $y = -1.5x+170$ is $-1.5$.  Allowing for $x \rightarrow \infty$, $\overline{P}(x) \approx -1.5 x + 170$ which means as we sell more systems, the average profit is \textbf{decreasing} at about a rate of $\$ 1.50$ per system.  
 
-\item The slope of the slant asymptote $y = -1.5x+170$ is $-1.5$.  Allowing for $x \rightarrow \infty$, $\overline{P}(x) \approx -1.5 x + 170$ which means as we sell more systems, the average profit is \textbf{decreasing} at about a rate of $\$ 1.50$ per system.  If the number $1.5$ sounds familiar to this problem situation, it should.  In Example \ref{PortaBoyDemand} in Section \ref{ConstantandLinearFunctions}, we determined the slope of the demand function to be $-1.5$. In that situation, the $-1.5$ meant that in order to sell an additional system, the price had to drop by $\$ 1.50$.  The fact the average profit is decreasing at more or less this same rate means the loss in profit per system can be attributed to the reduction in price needed to sell each additional system.\footnote{We generalize this result in Exercise \ref{slantyintaverageprofitexercise}.} 
+If the number $1.5$ sounds familiar to this problem situation, it should.  In Example \ref{PortaBoyDemand} in Section \ref{ConstantandLinearFunctions}, we determined the slope of the demand function to be $-1.5$. In that situation, the $-1.5$ meant that in order to sell an additional system, the price had to drop by $\$ 1.50$.  The fact the average profit is decreasing at more or less this same rate means the loss in profit per system can be attributed to the reduction in price needed to sell each additional system.\footnote{We generalize this result in Exercise \ref{slantyintaverageprofitexercise}.} 
 
 \end{enumerate}
 
-
+\end{explanation}
 \end{example}
 
 \newpage
