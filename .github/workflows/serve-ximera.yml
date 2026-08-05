@@ -49,14 +49,14 @@ jobs:
           # 
           XIMERA_NAME: ${{ format('{0}*{1}', 'stitz-zeager', github.ref_name) }}          
           XIMERA_URL: "https://xerxes.ximera.org/"
-          # XM_COMPILE_SEQUENCE: "html"
-          XM_COMPILE_SEQUENCE: "html,handout.pdf"
+          XM_COMPILE_SEQUENCE: "html"
+          # XM_COMPILE_SEQUENCE: "html,handout.pdf"
           XMDEPLOY: "precalc.tex testxourse.tex"
         run: |
           ls -alrt
           chmod +x xmScripts/xmlatex
           chmod +x .ximera_local/luaxake/luaxake
-          rm -f precalc.aux precalc.toc
+          # rm -f precalc.aux precalc.toc
           # rm -rf ximera-downloads/with-answers
           # git config --global http.postBuffer 524288000
           # git config --global core.compression 9
