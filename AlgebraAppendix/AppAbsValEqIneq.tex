@@ -28,39 +28,64 @@ In this section, we review some of the basic concepts involving the absolute val
 For example, $|5| = 5$ and $|-5| = 5$, since each is $5$ units from $0$ on the number line:
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[20]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\arrow \reverse \arrow \polyline{(-5,1), (0,1)}
-\arrow \reverse \arrow \polyline{(5,1), (0,1)}
-\point[3pt]{(-5,0), (5,0)}
-\tlabel[cc](-2.5,1.5){distance is $5$ units}
-\tlabel[cc](2.5,1.5){distance is $5$ units}
-\xmarks{-5,-4,-3,-2,-1,0,1,2,3,4,5}
-\tlpointsep{4pt}
-\axislabels {x}{{$-5 \hspace{10pt}$} -5,{$-4 \hspace{10pt}$} -4,{$-3 \hspace{10pt}$} -3,{$-2 \hspace{10pt}$} -2,{$-1 \hspace{10pt}$} -1,{$0$} 0,{$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4, {$5$} 5}
-\end{mfpic}
+% Number line
+\draw[<->, thick] (-6.3,0) -- (6.3,0);
 
-Graphically why $|-5| = 5$ and $|5| = 5$
+% Tick marks and labels
+\foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+{
+  \draw (\x,-0.08) -- (\x,0.08);
+  \node[below] at (\x,-0.08) {\scriptsize $\x$};
+}
+
+% Filled points
+\fill (-5,0) circle (2pt);
+\fill (5,0) circle (2pt);
+
+% Distance arrows
+\draw[<->] (-5,1) -- (0,1);
+\draw[<->] (0,1) -- (5,1);
+
+% Labels
+\node at (-2.5,1.35) {\scriptsize distance is $5$ units};
+\node at ( 2.5,1.35) {\scriptsize distance is $5$ units};
+
+\end{tikzpicture}
+
+Graphically why $|-5|=5$ and $|5|=5$.
 
 \end{center}
 
 Computationally, the absolute value `makes negative numbers positive',  though we need to be a little cautious with this description. While $|-7| = 7$, $|5-7| \neq 5+7$.  The absolute value acts as a grouping symbol, so $|5-7| = |-2| = 2$, which makes sense since $5$ and $7$ are two units away from each other on the number line:
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[20]{-5}{5}{-1}{2}
-\arrow \reverse \arrow \polyline{(-5,0), (5,0)}
-\arrow \reverse \arrow \polyline{(-4,1), (4,1)}
-\point[3pt]{(-4,0), (4,0)}
-\tlabel[cc](0,1.5){distance is $2$ units}
-\xmarks{-4, 0, 4}
-\tlpointsep{4pt}
-\axislabels {x}{{$5$} -4,{$6$} 0,{$7$} 4}
+% Number line
+\draw[<->, thick] (-5.3,0) -- (5.3,0);
 
-\end{mfpic}
+% Tick marks and labels
+\foreach \x/\lbl in {-4/5,0/6,4/7}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
 
-Graphically why $|5-7| = 2$
+% Points
+\fill (-4,0) circle (2pt);
+\fill (4,0) circle (2pt);
+
+% Distance arrow
+\draw[<->] (-4,1) -- (4,1);
+
+% Label
+\node at (0,1.35) {\scriptsize distance is $2$ units};
+
+\end{tikzpicture}
+
+Graphically why $|5-7|=2$
 
 \end{center}
 
@@ -95,29 +120,37 @@ Thinking of absolute value in terms of distance gives us a geometric way to inte
 
 
 \begin{center}
+\begin{tikzpicture}[scale=0.8]
 
-\begin{mfpic}[20]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\arrow \reverse \arrow \polyline{(-4,1), (0,1)}
-\arrow \reverse \arrow \polyline{(4,1), (0,1)}
-\point[3pt]{(-4,0), (4,0)}
-\tlabel[cc](2,1.5){\small $3$ units}
-\tlabel[cc](-2,1.5){\small $3$ units}
-\xmarks{-4, 0, 4}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{10pt}$} -4,{$0$} 0,{$3$} 4}
+% Number line
+\draw[<->, thick] (-6.3,0) -- (6.3,0);
 
-\end{mfpic}
+% Tick marks and labels
+\foreach \x/\lbl in {-4/-3,0/0,4/3}
+{
+    \draw (\x,-0.08) -- (\x,0.08);
+    \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
 
-The solutions to  $|x| = 3$ are $x = \pm 3$.  
+% Filled points
+\fill (-4,0) circle (2pt);
+\fill (4,0) circle (2pt);
+
+% Distance arrows
+\draw[<->] (-4,1) -- (0,1);
+\draw[<->] (0,1) -- (4,1);
+
+% Labels
+\node at (-2,1.35) {\scriptsize $3$ units};
+\node at ( 2,1.35) {\scriptsize $3$ units};
+
+\end{tikzpicture}
+
+The solutions to $|x| = 3$ are $x=\pm3$.
 
 \end{center}
 
-
-
 Thinking this way gives us the following.
-
- 
 
 %% \colorbox{ResultColor}{\bbm
 
@@ -242,48 +275,76 @@ We now turn our attention to solving some basic inequalities involving the absol
 
 \begin{tabular}{cc}
 
-\begin{mfpic}[15]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\arrow \reverse \arrow \polyline{(-4,1), (0,1)}
-\arrow \reverse \arrow \polyline{(4,1), (0,1)}
-\tlabel[cc](2,1.5){\small $3$ units}
-\tlabel[cc](-2,1.5){\small $3$ units}
-\xmarks{-4, 0, 4}
-\penwd{1.5pt}
-\polyline{(-4,0), (4,0)}
-\pointfillfalse
-\point[4pt]{(-4,0), (4,0)}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{10pt}$} -4,{$0$} 0,{$3$} 4}
+%---------------------------------------------------------
+% |x| < 3
+%---------------------------------------------------------
+\begin{tikzpicture}[scale=0.5]
 
-\end{mfpic}
+% Number line
+\draw[<->, thick] (-6.3,0) -- (6.3,0);
 
-& 
+% Tick marks and labels
+\foreach \x/\lbl in {-4/-3,0/0,4/3}
+{
+  \draw (\x,-0.08) -- (\x,0.08);
+  \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
 
-\begin{mfpic}[15]{-6}{6}{-1}{2}
-\arrow \reverse \arrow \polyline{(-6,0), (6,0)}
-\arrow \reverse \arrow \polyline{(-4,1), (0,1)}
-\arrow \reverse \arrow \polyline{(4,1), (0,1)}
-\point[3pt]{(-4,0), (4,0)}
-\tlabel[cc](2,1.5){\small $3$ units}
-\tlabel[cc](-2,1.5){\small $3$ units}
-\xmarks{-4, 0, 4}
-\penwd{1.5pt}
-\arrow \polyline{(-4,0), (-6,0)}
-\arrow \polyline{(4,0), (6,0)}
-\pointfillfalse
-\point[4pt]{(-4,0), (4,0)}
-\tlpointsep{4pt}
-\axislabels {x}{{$-3 \hspace{10pt}$} -4,{$0$} 0,{$3$} 4}
+% Distance arrows
+\draw[<->] (-4,1) -- (0,1);
+\draw[<->] (0,1) -- (4,1);
 
-\end{mfpic}
+\node at (-2,1.35) {\scriptsize $3$ units};
+\node at ( 2,1.35) {\scriptsize $3$ units};
 
-\\
+% Solution interval
+\draw[line width=1.5pt] (-4,0) -- (4,0);
 
+% Open endpoints
+\draw[line width=1.2pt] (-4,0) circle (2pt);
+\draw[line width=1.2pt] (4,0) circle (2pt);
 
+\end{tikzpicture}
 
+&
 
-The solution to  $|x| < 3$ is $(-3,3)$ &   The solution to  $|x| > 3$ is $(-\infty, -3) \cup (3, \infty)$ \\
+%---------------------------------------------------------
+% |x| > 3
+%---------------------------------------------------------
+\begin{tikzpicture}[scale=0.5]
+
+% Number line
+\draw[<->, thick] (-6.3,0) -- (6.3,0);
+
+% Tick marks and labels
+\foreach \x/\lbl in {-4/-3,0/0,4/3}
+{
+  \draw (\x,-0.08) -- (\x,0.08);
+  \node[below] at (\x,-0.08) {\scriptsize $\lbl$};
+}
+
+% Distance arrows
+\draw[<->] (-4,1) -- (0,1);
+\draw[<->] (0,1) -- (4,1);
+
+\node at (-2,1.35) {\scriptsize $3$ units};
+\node at ( 2,1.35) {\scriptsize $3$ units};
+
+% Rays
+\draw[->, line width=1.5pt] (-4,0) -- (-6.2,0);
+\draw[->, line width=1.5pt] (4,0) -- (6.2,0);
+
+% Open endpoints
+\draw[line width=1.2pt] (-4,0) circle (2pt);
+\draw[line width=1.2pt] (4,0) circle (2pt);
+
+\end{tikzpicture}
+
+\\[1ex]
+
+The solution to $|x|<3$ is $(-3,3)$
+&
+The solution to $|x|>3$ is $(-\infty,-3)\cup(3,\infty)$
 
 \end{tabular}
 
