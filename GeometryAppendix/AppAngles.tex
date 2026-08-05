@@ -899,131 +899,225 @@ To further connect angles with the Algebra which has come before, we shall often
 
 \item  Since $\beta = - 225^{\circ}$ is negative, we start at the positive $x$-axis and rotate \textit{clockwise} $\frac{225^{\circ}}{360^{\circ}} = \frac{5}{8}$ of a revolution. We see that $\beta$ is a Quadrant II angle.  To find coterminal angles, we proceed as before and compute $\theta = -225^{\circ} + 360^{\circ} \cdot k$ for integer values of $k$.  We find $135^{\circ}$, $-585^{\circ}$ and $495^{\circ}$ are all coterminal with $-225^{\circ}$.   
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+\draw[->,gray!65,line width=0.9pt]
+    (-5,0)--(5.2,0);
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(2.5,1){\scriptsize $\alpha = 60^{\circ}$}
-%\drawcolor[rgb]{0.33,0.33,0.33}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,0.1), 55}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)}
-\point[4pt]{(0,0)}
+\draw[->,gray!65,line width=0.9pt]
+    (0,-5)--(0,5);
 
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+% x-axis ticks
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (\x,0.13)--(\x,-0.13);
+    \node[below] at (\x,-0.08) {$\x$};
+}
 
-&
+% y-axis ticks
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (0.13,\y)--(-0.13,\y);
+    \node[left] at (-0.08,\y) {$\y$};
+}
 
-\hspace{.5in}
+% Axis labels
+\node[right] at (5.05,-0.20) {$x$};
+\node[above right] at (0.10,4.85) {$y$};
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(-4.5,-2.5){\scriptsize $\beta = -225^{\circ}$}
-%\drawcolor[rgb]{0.33,0.33,0.33}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,-0.1), -220}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-3.801, 3.801), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
+%------------------------------------------------
+% Rays
+%------------------------------------------------
 
-\\
+% Initial side
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(5,0);
 
-$\alpha = 60^{\circ}$ in standard position. & \hspace{1in} $\beta = -225^{\circ}$ in standard position.\\
+% Terminal side (-225 = 135 degrees)
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(135:5.6);
 
-\end{tabular}
+% Vertex
+\fill (0,0) circle (3pt);
 
-\end{center}
+%------------------------------------------------
+% Clockwise angle arrow
+%------------------------------------------------
+\draw[->,line width=0.9pt]
+    (2.5,0)
+    arc[start angle=0,end angle=-225,radius=2.5];
+
+%------------------------------------------------
+% Label
+%------------------------------------------------
+\node at (-3.25,-2.3) {$\beta=-225^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \item Since $\gamma = 540^{\circ}$ is positive, we rotate counter-clockwise from the positive $x$-axis.  One full revolution accounts for $360^{\circ}$, with $180^{\circ}$, or $\frac{1}{2}$ of a revolution remaining.  Since the terminal side of $\gamma$ lies on the negative $x$-axis, $\gamma$ is a quadrantal angle.  All angles coterminal with $\gamma$ are of the form $\theta = 540^{\circ} + 360^{\circ} \cdot k$, where $k$ is an integer.  Working through the arithmetic, we find three such angles: $180^{\circ}$, $-180^{\circ}$ and $900^{\circ}$.
 
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
+
+%------------------------------------------------
+% Spiral parameters
+%------------------------------------------------
+\def\rstart{1.0}
+\def\rend{3.7}
+
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+\draw[->,gray!65,line width=0.9pt]
+    (-5,0)--(5.2,0);
+
+\draw[->,gray!65,line width=0.9pt]
+    (0,-5)--(0,5);
+
+% x-axis ticks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (\x,0.13)--(\x,-0.13);
+    \node[below] at (\x,-0.08) {$\x$};
+}
+
+% y-axis ticks and labels
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (0.13,\y)--(-0.13,\y);
+    \node[left] at (-0.08,\y) {$\y$};
+}
+
+% Axis labels
+\node[right] at (5.05,-0.20) {$x$};
+\node[above right] at (0.10,4.85) {$y$};
+
+%------------------------------------------------
+% Initial and terminal sides
+%------------------------------------------------
+\draw[line width=1.4pt,
+      {Latex[length=3mm,width=2mm]}-{Latex[length=3mm,width=2mm]}]
+    (-5,0)--(5,0);
+
+% Origin
+\fill (0,0) circle (3pt);
+
+%------------------------------------------------
+% Spiral: radius grows linearly with angle
+%------------------------------------------------
+\draw[->,
+      line width=0.9pt,
+      domain=0:540,
+      samples=150,
+      smooth,
+      variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/540)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/540)*sin(\a)});
+
+%------------------------------------------------
+% Label
+%------------------------------------------------
+\node at (-3.4,2.65) {$\gamma=540^\circ$};
+
+\end{tikzpicture}
+\end{image}
+
 \item  The Greek letter $\phi$ is pronounced `fee' or `fie' and since $\phi$ is negative, we begin our rotation clockwise from the positive $x$-axis.  Two full revolutions account for $720^{\circ}$, with just $30^{\circ}$ or $\frac{1}{12}$ of a revolution to go. We find that $\phi$ is a Quadrant IV angle. To find coterminal angles, we compute $\theta = -750^{\circ} +   360^{\circ} \cdot k$ for a few integers $k$ and obtain $-390^{\circ}$, $-30^{\circ}$ and $330^{\circ}$.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
 
-\begin{tabular}{cc}
+%------------------------------------------------
+% Spiral parameters
+%------------------------------------------------
+\def\rstart{0.35}
+\def\rend{2.15}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(-4.5,2.5){\scriptsize $\gamma = 540^{\circ}$}
-%\drawcolor[rgb]{0.33,0.33,0.33}
-\drawcolor{black}
-\arrow \parafcn{0,535,5}{(t+200)*dir(t)/200} 
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-5,0), (0,0), (5,0)}
-\point[4pt]{(0,0)}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+\draw[->,gray!65,line width=0.9pt]
+    (-5,0)--(5.2,0);
 
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+\draw[->,gray!65,line width=0.9pt]
+    (0,-5)--(0,5);
 
-&
+% x-axis ticks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (\x,0.13)--(\x,-0.13);
+    \node[below] at (\x,-0.08) {$\x$};
+}
 
-\hspace{.5in}
+% y-axis ticks and labels
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (0.13,\y)--(-0.13,\y);
+    \node[left] at (-0.08,\y) {$\y$};
+}
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(0.5,-2.5){\scriptsize $\phi = -750^{\circ}$}
-%\drawcolor[rgb]{0.33,0.33,0.33}
-\drawcolor{black}
-\arrow \parafcn{0,745,5}{(t+100)*dir(0-t)/400}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(4.3301, -2.5), (0,0), (5,0)}
-\point[4pt]{(0,0)}
+% Axis labels
+\node[right] at (5.05,-0.20) {$x$};
+\node[above right] at (0.10,4.85) {$y$};
 
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic} 
+%------------------------------------------------
+% Initial side
+%------------------------------------------------
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(5,0);
 
-\\
+%------------------------------------------------
+% Terminal side
+% -750 degrees is coterminal with -30 degrees
+%------------------------------------------------
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(-30:5);
 
-$\gamma = 540^{\circ}$ in standard position. & \hspace{1in} $\phi = -750^{\circ}$ in standard position.   \\
+% Origin
+\fill (0,0) circle (3pt);
 
-\end{tabular}
+%------------------------------------------------
+% Clockwise spiral: radius grows linearly
+% from 0 degrees to -750 degrees
+%------------------------------------------------
+\draw[->,
+      line width=0.9pt,
+      domain=0:-750,
+      samples=220,
+      smooth,
+      variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/(-750))*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/(-750))*sin(\a)});
 
-\end{center}
+%------------------------------------------------
+% Label
+%------------------------------------------------
+\node at (1.65,-2.35) {$\phi=-750^\circ$};
 
+\end{tikzpicture}
+\end{image}
 \end{enumerate}
-\qed
+
 
 \end{example}
 
