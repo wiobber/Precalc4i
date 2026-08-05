@@ -23,29 +23,79 @@ The number $a$ is called the \index{complex number ! real part} \textbf{real par
 
 To start off this section, we associate each complex number $z = a+bi$ with the point $(a,b)$ on the Cartesian (rectangular) coordinate plane.  In this case, the $x$-axis is relabeled as the \index{real axis}\textbf{real axis}, which corresponds to the real number line as usual,  and the $y$-axis is relabeled as the \index{imaginary axis}\textbf{imaginary axis}, which is demarcated in increments of the imaginary unit $i$.  The plane determined by these two axes is called the \index{complex plane}\textbf{complex plane}.
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\LARGE}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\axes
-\tlabel[cl](5,-0.5){Real Axis}
-\tlabel[cl](0.5,5){Imaginary Axis}
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\point[3pt]{(0,0),(3,0), (-4,2), (0,-3)}
-\tlabel[cc](-4,2.5){$(-4,2) \longleftrightarrow z = -4+2i$}
-\tlabel[cl](0.25,-3){$(0,-3) \longleftrightarrow z = -3i$}
-\tlabel[cc](3,0.5){$(3,0) \longleftrightarrow z = 3$}
-\tlabel[cc](0.25,-0.35){$0$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt} $} -3, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-4i$} -4, {$-3i$} -3, {$-2i$} -2, {$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
-\normalsize
-\end{mfpic}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+\draw[->,line width=1pt] (-5,0)--(5,0);
+\draw[->,line width=1pt] (0,-5)--(0,5);
 
-The Complex Plane
+%------------------------------------------------
+% Tick marks and labels
+%------------------------------------------------
 
-\end{center}
+% x-axis
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,0.12)--(\x,-0.12);
+    \node[below] at (\x,-0.08) {$\x$};
+}
+
+% y-axis
+\foreach \y/\lab in
+{
+    -4/{-4i},
+    -3/{-3i},
+    -2/{-2i},
+    -1/{-i},
+     1/{i},
+     2/{2i},
+     3/{3i},
+     4/{4i}
+}
+{
+    \draw (0.12,\y)--(-0.12,\y);
+    \node[left] at (-0.08,\y) {$\lab$};
+}
+
+%------------------------------------------------
+% Axis labels
+%------------------------------------------------
+\node[above right] at (0,4.8) {Imaginary Axis};
+\node[right] at (5.05,-0.45) {Real Axis};
+
+% Origin label
+\node[below right] at (0,0) {$0$};
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+\fill[blue] (-4,2) circle (3pt);
+\fill[blue] (3,0) circle (3pt);
+\fill[blue] (0,-3) circle (3pt);
+\fill[blue] (0,0) circle (3pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+\node[above] at (-4,2.25)
+{$(-4,2)\ \longleftrightarrow\ z=-4+2i$};
+
+\node[above] at (3,0.25)
+{$(3,0)\ \longleftrightarrow\ z=3$};
+
+\node[right] at (0.25,-3.0)
+{$(0,-3)\ \longleftrightarrow\ z=-3i$};
+
+\end{tikzpicture}
+\end{image}
 
 Since the ordered pair $(a,b)$ gives the \textit{rectangular} coordinates associated with $z = a+bi$, the expression $z=a+bi$ is called the \index{complex number ! rectangular form}\index{rectangular form of a complex number}\textbf{rectangular form} of  the complex number $z$. 
 
@@ -160,31 +210,85 @@ The point $(-117,0)$ is $117$ units away from the origin along the negative $x$-
 Only one of these values, $\theta = \pi$, (just barely!) lies in the interval $(-\pi, \pi]$ which means and $\text{Arg}(z) =\pi$. We plot $z$ along with the other numbers in this example below.
 
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\LARGE}
+]
 
-\begin{mfpic}[15]{-7}{5}{-2}{5}
-\arrow  \polyline{(0,-2), (0,5)}
-\arrow  \polyline{(-2,0), (5,0)}
-\dashed \polyline{(-7,0), (-2,0)}
-\tlabel[cl](5,-0.5){Real Axis}
-\tlabel[cl](0.5,5){Imaginary Axis}
-\xmarks{-6,-2,-1,1,2,3,4}
-\ymarks{-1,1,2,3,4}
-\point[3pt]{(1.72,-1), (-2,4), (0,3), (-6,0)}
-\tlabel(1.5, -1.75){$z = \sqrt{3}-i$}
-\tlabel[cc](-4, 4){$z = -2 + 4i$}
-\tlabel[cc](1,3){$z=3i$}
-\tlabel(-6.25,0.5){$z=-117$}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-117 \hspace{7pt}$} -6, {$-2\hspace{7pt} $} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-i$} -1, {$i$} 1, {$2i$} 2, {$3i$} 3, {$4i$} 4}
-\normalsize
-\end{mfpic}
+%------------------------------------------------
+% Axes
+%------------------------------------------------
+\draw[->,line width=1pt] (-2,0)--(5.2,0);
+\draw[->,line width=1pt] (0,-2.0)--(0,5.0);
 
-\end{center}
+%------------------------------------------------
+% x-axis ticks
+%------------------------------------------------
+\foreach \x in {-2,-1,1,2,3,4}
+{
+    \draw (\x,0.12)--(\x,-0.12);
+    \node[below] at (\x,-0.08) {$\x$};
+}
 
-\vspace{-.25in} \qed
+% Special tick at -117
+\draw (-6,0.12)--(-6,-0.12);
+\node[below] at (-6,-0.08) {$-117$};
+
+%------------------------------------------------
+% y-axis ticks
+%------------------------------------------------
+\foreach \y/\lab in
+{
+    -1/{-i},
+     1/{i},
+     2/{2i},
+     3/{3i},
+     4/{4i}
+}
+{
+    \draw (0.12,\y)--(-0.12,\y);
+    \node[left] at (-0.08,\y) {$\lab$};
+}
+
+%------------------------------------------------
+% Axis labels
+%------------------------------------------------
+\node[above right] at (0,4.8) {Imaginary Axis};
+\node[right] at (5.2,-0.40) {Real Axis};
+
+%------------------------------------------------
+% Dashed extension to -117
+%------------------------------------------------
+\draw[dashed] (-6,0)--(-2,0);
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+\fill[blue] (-2,4) circle (3pt);
+\fill[blue] (0,3) circle (3pt);
+\fill[blue] ({sqrt(3)},-1) circle (3pt);
+\fill[blue] (-6,0) circle (3pt);
+
+%------------------------------------------------
+% Labels
+%------------------------------------------------
+\node[left] at (-2.3,4)
+    {$z=-2+4i$};
+
+\node[right] at (0.35,3)
+    {$z=3i$};
+
+\node[below] at ({sqrt(3)},-1.25)
+    {$z=\sqrt3-i$};
+
+\node[above] at (-6,0.35)
+    {$z=-117$};
+
+\end{tikzpicture}
+\end{image}
 
 \end{enumerate}
 
