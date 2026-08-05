@@ -728,6 +728,9 @@ At this point, we also extend our allowable rotations to include angles which en
     every node/.style={font=\large}
 ]
 
+\def\rstart{0.35} % starting radius (near the center)
+\def\rend{1}   % ending radius (grows slightly over 
+
 \coordinate (O) at (0,0);
 
 % Initial side
@@ -741,52 +744,79 @@ At this point, we also extend our allowable rotations to include angles which en
 % Vertex
 \fill (O) circle (2.5pt);
 
-% First full revolution
-\draw[->,line width=0.8pt]
-    ($(O)+(0.75,0)$)
-    arc[start angle=0,end angle=359.5,radius=0.75];
-
-% Additional 90 degrees
-\draw[->,line width=0.8pt]
-    ($(O)+(1.7,0)$)
-    arc[start angle=0,end angle=90,radius=1.7];
+% --- Spiral: radius grows linearly with angle from 0 to amax ---
+\draw[->,
+      domain=0:450, samples=120, smooth, variable=\a]
+    plot ({(\rstart + (\rend-\rstart)*\a/450)*cos(\a)},
+          {(\rstart + (\rend-\rstart)*\a/450)*sin(\a)});
 
 % Label
-\node[below] at ($(O)+(0.8,-1.45)$) {$450^\circ$};
+\node[below] at ($(O)+(0.8,-0.8)$) {$450^\circ$};
 
 \end{tikzpicture}
 \end{image}
 
 To further connect angles with the Algebra which has come before, we shall often overlay an angle diagram on the coordinate plane.  An angle is said to be in \index{angle ! standard position}\index{standard position of an angle}\textbf{standard position} if its vertex is the origin and its initial side coincides with the positive horizontal (usually labeled as the $x$-) axis.  Angles in standard position are classified according to where their terminal side lies.  For instance, an angle in standard position whose terminal side lies in Quadrant I is called a `Quadrant I angle'.  If the terminal side of an angle lies on one of the coordinate axes, it is called a \index{angle ! quadrantal}\index{quadrantal angle}\textbf{quadrantal angle}.  Two angles in standard position are called \index{angle ! coterminal}\index{coterminal angle}\textbf{coterminal} if they share the same terminal side.\footnote{Note that by being in standard position they automatically share the same initial side which is the positive $x$-axis.}  In the figure below, $\alpha = 120^{\circ}$ and $\beta = -240^{\circ}$ are two coterminal Quadrant II angles drawn in standard position.    Note that $\alpha = \beta + 360^{\circ}$, or equivalently, $\beta = \alpha - 360^{\circ}$. We leave it as an exercise to the reader to verify that coterminal angles always differ by a multiple of $360^{\circ}$.\footnote{It is worth noting that all of the pathologies of Analytic Trigonometry result from this innocuous fact.} More precisely, if $\alpha$ and $\beta$ are coterminal angles, then $\beta = \alpha + 360^{\circ} \cdot k$ where $k$ is an integer.\footnote{Recall that this means $k = 0, \pm 1, \pm 2, \ldots$.}
 
-\begin{center}
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\LARGE}
+]
 
-\begin{mfpic}[15]{-5}{5}{-5}{5}
-\drawcolor[gray]{0.7}
-\axes
-\xmarks{-4,-3,-2,-1,1,2,3,4}
-\ymarks{-4,-3,-2,-1,1,2,3,4}
-\tlabel(5,-0.5){\scriptsize $x$}
-\tlabel(0.25,4.75){\scriptsize $y$}
-\tlabel(2,2){\scriptsize $\alpha = 120^{\circ}$}
-\tlabel(-5,-2){\scriptsize $\beta = -240^{\circ}$}
-%\drawcolor[rgb]{0.33,0.33,0.33}
-\drawcolor{black}
-\arrow \arc[c]{(0,0), (2.5,0.1), 115}
-\arrow \arc[c]{(0,0), (2.5,-0.1), -235}
-\penwd{1.25pt}
-\arrow \reverse \arrow \polyline{(-2.5, 4.3301), (0,0), (5,0)}
-\point[4pt]{(0,0)}
-\tlpointsep{5pt}
-\scriptsize
-\axislabels {x}{{$-4 \hspace{7pt}$} -4, {$-3 \hspace{7pt}$} -3, {$-2 \hspace{7pt}$} -2, {$-1 \hspace{7pt}$} -1, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\axislabels {y}{{$-1$} -1, {$-2$} -2, {$-3$} -3, {$-4$} -4, {$1$} 1, {$2$} 2, {$3$} 3, {$4$} 4}
-\normalsize
-\end{mfpic}
+%----------------------------------------
+% Parameters
+%----------------------------------------
+\def\r{2.5}
 
-Two coterminal angles, $\alpha = 120^{\circ}$ and $\beta = -240^{\circ}$, in standard position.
+%----------------------------------------
+% Axes
+%----------------------------------------
+\draw[->,line width=1pt] (-4.8,0)--(4.8,0) node[right] {$x$};
+\draw[->,line width=1pt] (0,-4.8)--(0,4.8) node[above] {$y$};
 
-\end{center}
+% Tick marks and labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (\x,0.08)--(\x,-0.08);
+    \node[below] at (\x,0) {\small $\x$};
+}
+
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw (0.08,\y)--(-0.08,\y);
+    \node[left] at (0,\y) {\small $\y$};
+}
+
+%----------------------------------------
+% Terminal side (120 degrees)
+%----------------------------------------
+\draw[line width=1.2pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(120:4.8);
+
+\fill (0,0) circle (2.4pt);
+
+%----------------------------------------
+% Angle alpha
+%----------------------------------------
+\draw[->,red,line width=0.8pt]
+    (\r,0)
+    arc[start angle=0,end angle=120,radius=\r];
+
+    \draw[->,blue,line width=0.8pt]
+    (\r,0)
+    arc[start angle=0,end angle=-240,radius=\r];
+
+%----------------------------------------
+% Labels
+%----------------------------------------
+\node[right] at (1.9,2.1) {$\alpha=120^\circ$};
+\node[left] at (-2.6,-1.6) {$\beta=-240^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \begin{example}  \label{orientedcoterminaldegree} Graph each of the (oriented) angles below in standard position and classify them according to where their terminal side lies. Find three coterminal angles, at least one of which is positive and one of which is negative.
 
@@ -811,6 +841,61 @@ Two coterminal angles, $\alpha = 120^{\circ}$ and $\beta = -240^{\circ}$, in sta
 \begin{enumerate}
 
 \item  To graph $\alpha = 60^{\circ}$, we draw an angle with its initial side on the positive $x$-axis and rotate counter-clockwise $\frac{60^{\circ}}{360^{\circ}} = \frac{1}{6}$ of a revolution.  We see that $\alpha$ is a Quadrant I angle.  To find angles which are coterminal, we look for angles $\theta$ of the form $\theta = \alpha + 360^{\circ} \cdot k$, for some integer $k$.  When $k = 1$, we get $\theta =  60^{\circ} + 360^{\circ} = 420^{\circ}$.   Substituting $k = -1$ gives $\theta = 60^{\circ} - 360^{\circ} = -300^{\circ}$.  Finally, if we let $k = 2$, we get $\theta =  60^{\circ} + 720^{\circ} = 780^{\circ}$.  
+
+\begin{image}
+\begin{tikzpicture}[
+    >=Latex,
+    line cap=round,
+    line join=round,
+    every node/.style={font=\large}
+]
+
+% Axes
+\draw[->,gray!65,line width=0.9pt]
+    (-5,0)--(5.2,0);
+
+\draw[->,gray!65,line width=0.9pt]
+    (0,-5)--(0,5);
+
+% Tick marks and x-axis labels
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (\x,0.13)--(\x,-0.13);
+    \node[below] at (\x,-0.08) {$\x$};
+}
+
+% Tick marks and y-axis labels
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+{
+    \draw[gray!65] (0.13,\y)--(-0.13,\y);
+    \node[left] at (-0.08,\y) {$\y$};
+}
+
+% Axis labels
+\node[right] at (5.05,-0.20) {$x$};
+\node[above right] at (0.10,4.85) {$y$};
+
+% Initial side
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(5,0);
+
+% Terminal side at 60 degrees
+\draw[line width=1.4pt,-{Latex[length=3mm,width=2mm]}]
+    (0,0)--(60:5);
+
+% Vertex
+\fill (0,0) circle (3pt);
+
+% Angle arrow
+\draw[->,line width=0.9pt]
+    (2.5,0)
+    arc[start angle=0,end angle=60,radius=2.5];
+
+% Angle label
+\node at (3.25,1.15) {$\alpha=60^\circ$};
+
+\end{tikzpicture}
+\end{image}
 
 \item  Since $\beta = - 225^{\circ}$ is negative, we start at the positive $x$-axis and rotate \textit{clockwise} $\frac{225^{\circ}}{360^{\circ}} = \frac{5}{8}$ of a revolution. We see that $\beta$ is a Quadrant II angle.  To find coterminal angles, we proceed as before and compute $\theta = -225^{\circ} + 360^{\circ} \cdot k$ for integer values of $k$.  We find $135^{\circ}$, $-585^{\circ}$ and $495^{\circ}$ are all coterminal with $-225^{\circ}$.   
 
