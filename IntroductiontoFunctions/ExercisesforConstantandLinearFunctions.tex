@@ -372,7 +372,7 @@ $L(x) = \answer{-\frac{3}{5} x + 1}$
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-5, xmax=5, ymin=-5, ymax=5,
+    xmin=-6, xmax=5, ymin=-5, ymax=5,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -387,14 +387,17 @@ $L(x) = \answer{-\frac{3}{5} x + 1}$
     samples=100,
 ]
 \addplot[line width=2.5pt,blue,
-    <-,domain=-3.3:-1,samples=2]
+    -,domain=-3:-1.1,samples=2]
     {3*x + 5};
 \addplot[line width=2.5pt,blue,
-    ->,domain=-1:5,samples=2]
+    -,domain=-0.8:3,samples=2]
     {2};
 \addplot[only marks,mark=*,
     mark size=4pt]
-    coordinates {(-3,-4)(-1,2)(3,2)};
+    coordinates {(-3,-4)(3,2)};
+\addplot[only marks,mark=o,
+    mark size=4pt]
+    coordinates {(-1,2)};
 \node at (axis cs:-3,-4) [above left=6pt] {$(-3,-4)$};
 \node at (axis cs:-1,2) [above left=6pt] {$(-1,2)$};
 \node at (axis cs:3,2) [above right=6pt] {$(3,2)$};
