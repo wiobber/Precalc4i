@@ -318,3 +318,20 @@
 
 % This will be overwritten by \chapterstyle !!!
 \AtBeginDocument{\renewcommand{\thesubsection}{\arabic{subsection}}}%
+
+
+%% HACK: in tex4ht, the first use of \section or \subsection OVERWRITES the Ximera \ref (re-)definition
+\ifdefined\HCode
+\let\origsection\section 
+\let\origsubsection\subsection 
+
+\renewcommand{\section}[1]{
+    \origsection{#1}
+    \renewcommand{\ref}[1]{\HCode{<a class="reference" href="\###1">##1</a>}}
+}
+\renewcommand{\subsection}[1]{
+    \origsubsection{#1}
+    \renewcommand{\ref}[1]{\HCode{<a class="reference" href="\###1">##1</a>}}
+}
+
+\fi
