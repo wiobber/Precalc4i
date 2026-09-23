@@ -443,7 +443,7 @@ Find a possible formula for the polynomial function given its graph.  You may le
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-8, xmax=8, ymin=-100, ymax=100,
+    xmin=-8, xmax=8, ymin=-100, ymax=120,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -458,10 +458,11 @@ Find a possible formula for the polynomial function given its graph.  You may le
     samples=100,
 ]
 \addplot[<->,line width=2.5pt, blue, domain=-7:7] {x*(x-6)*(x+6)};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-6,0)(0,0)(6,0)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-6,0)(0,0)(6,0)(-3,81)};
 \node at (-6,0) [above=8pt,right=4pt] {$(-6,0)$};
 \node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
-\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (6,0) [above=8pt,left=2pt] {$(6,0)$};
+\node at (-3,81) [above=8pt] {$(-3,81)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
 \end{tikzpicture}
@@ -492,10 +493,10 @@ Find a possible formula for the polynomial function given its graph.  You may le
     samples=100,
 ]
 \addplot[<->,line width=2.5pt, blue, domain=-3:0.5] {x*(x+2)^3};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)(-1,-1)};
 \node at (-2,0) [above=8pt,right=2pt] {$(-2,0)$};
 \node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
-%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (-1,-1) [left=8pt, below=4pt] {$(-1,-1)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=g(t)$.};
 \end{tikzpicture}
@@ -513,7 +514,7 @@ $y = p(z)$  %$p(z) = -2(z+1)(z-2)^2$
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-3, xmax=3.6, ymin=-5, ymax=10,
+    xmin=-3, xmax=3.6, ymin=-10, ymax=10,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -527,11 +528,11 @@ $y = p(z)$  %$p(z) = -2(z+1)(z-2)^2$
     label style={font=\scriptsize},
     samples=100,
 ]
-\addplot[<->,line width=2.5pt, blue, domain=-1.7:3.45] {(-0.4)*((x-2)^2*(x+1)};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1,0)(2,0)};
+\addplot[<->,line width=2.5pt, blue, domain=-1.7:3.45] {(-2)*((x-2)^2*(x+1)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1,0)(2,0)(0,-8)};
 \node at (-1,0) [above=8pt,left=8pt] {$(-1,0)$};
 \node at (2,0) [above=8pt] {$(2,0)$};
-%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (0,-8) [left=8pt] {$(0,-8)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=p(z)$.};
 \end{tikzpicture}
@@ -547,7 +548,7 @@ Find a possible formula for the polynomial function given its graph.  You may le
 \begin{tikzpicture}
 \begin{axis}[
     width=3in, height=3in,
-    xmin=-2, xmax=4, ymin=-5, ymax=5,
+    xmin=-2, xmax=4, ymin=-30, ymax=30,
     axis lines=middle,
     axis line style={-{Latex[length=8pt,width=6pt]}},
     tick style={line width=1pt},
@@ -561,11 +562,11 @@ Find a possible formula for the polynomial function given its graph.  You may le
     label style={font=\scriptsize},
     samples=100,
 ]
-\addplot[<->,line width=2.5pt, blue, domain=-1.5:3.3] {(0.5)*((x+0.5)^2)*(x-3)};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1/2,0)(3,0)};
+\addplot[<->,line width=2.5pt, blue, domain=-1.5:3.3] {(4)*((x+0.5)^2)*(x-3)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-1/2,0)(3,0)(2,-25)};
 \node at (-1/2,0) [above=14pt,left=2pt] {$(-\frac{1}{2},0)$};
 \node at (3,0) [above=8pt,left=2pt] {$(3,0)$};
-%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (2,-25) [right=8pt] {$(2,-25)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=f(x)$.};
 \end{tikzpicture}
@@ -596,10 +597,10 @@ Find a possible formula for the polynomial function given its graph.  You may le
     samples=100,
 ]
 \addplot[<->,line width=2.5pt, blue, domain=-3:0.65] {0-x*((x + 2)^2)};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)(-1,1)};
 \node at (-2,0) [below=8pt] {$(-2,0)$};
 \node at (0,0) [above=8pt,right=4pt] {$(0,0)$};
-%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (-1,1) [above=8pt,left=4pt] {$(-1,1)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=F(s)$.};
 \end{tikzpicture}
@@ -630,10 +631,10 @@ Find a possible formula for the polynomial function given its graph.  You may le
     samples=100,
 ]
 \addplot[<->,line width=2.5pt, blue, domain=-2.45:0.85] {x^3*((x + 2)^2)};
-\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)};
+\addplot[only marks,mark=*,mark size=4pt] coordinates {(-2,0)(0,0)(-1,-1)};
 \node at (-2,0) [above=8pt] {$(-2,0)$};
 \node at (0,0) [below=8pt,right=4pt] {$(0,0)$};
-%\node at (6,0) [above=8pt,left=4pt] {$(6,0)$};
+\node at (-1,-1) [below=8pt] {$(-1,-1)$};
 \end{axis}
 \node at (rel axis cs:0.5,0) [below] {The graph of $y=G(t)$.};
 \end{tikzpicture}
